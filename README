@@ -2,7 +2,7 @@ Build Information for Linux:
 
 Required:
 * qt4
-* cmake
+* cmake >= 2.6
 
 Build:
 
