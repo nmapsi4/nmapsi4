@@ -25,11 +25,6 @@ mainProfile::mainProfile()
      QApplication::setFont (serifFont);
 
      setupUi(this);
-//	setWindowFlags(windowFlags() & ~Qt::WindowSystemMenuHint);
-//	Qt::WindowFlags flags = 0;
-//	flags = Qt::Dialog;
-//	QWidget::setWindowFlags(flags);
-     
      QSettings ptrFile("nmapsi4","nmapsi4");
 	
      connect( buttonSave, SIGNAL( clicked(bool) ), 
@@ -81,18 +76,18 @@ mainProfile::mainProfile()
 
      profileItem = new QListWidgetItem(listViewOptions);
      profileItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-system-windows.png")));
-     profileItem->setText("Profiles");
+     profileItem->setText(tr("Profiles"));
      
      logItem = new QListWidgetItem(listViewOptions);
      logItem->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-log-viewer.png")));
-     logItem->setText("Log");
+     logItem->setText(tr("Log"));
      
      sizeItem = new QListWidgetItem(listViewOptions);
      sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
-     sizeItem->setText("Size");
+     sizeItem->setText(tr("Size"));
 	
      profileItem->setSelected(true);
-     labelTitle->setText("<h3>Profiles Scan</h3>");
+     labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
 
      connect( checkLogOn, SIGNAL(pressed()), 
 	      this, SLOT(update_saveButton()));

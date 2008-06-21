@@ -18,7 +18,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1816"/>
+        <location filename="../src/mainwin.ui" line="1811"/>
         <source>Scan</source>
         <translation type="unfinished"></translation>
     </message>
@@ -83,442 +83,437 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="505"/>
-        <source>Idle Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwin.ui" line="519"/>
+        <location filename="../src/mainwin.ui" line="514"/>
         <source>Ports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="545"/>
+        <location filename="../src/mainwin.ui" line="540"/>
         <source>Version Probe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="580"/>
+        <location filename="../src/mainwin.ui" line="575"/>
         <source>Don&apos;t Ping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="594"/>
+        <location filename="../src/mainwin.ui" line="589"/>
         <source>Normal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="599"/>
+        <location filename="../src/mainwin.ui" line="594"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="604"/>
+        <location filename="../src/mainwin.ui" line="599"/>
         <source>Most Important</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="609"/>
+        <location filename="../src/mainwin.ui" line="604"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="623"/>
+        <location filename="../src/mainwin.ui" line="618"/>
         <source>OS Detection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="659"/>
+        <location filename="../src/mainwin.ui" line="654"/>
         <source>Fragmentation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="672"/>
+        <location filename="../src/mainwin.ui" line="667"/>
         <source>Ipv6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="685"/>
+        <location filename="../src/mainwin.ui" line="680"/>
         <source>Ordered Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="721"/>
+        <location filename="../src/mainwin.ui" line="716"/>
         <source>ICMP Echo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="734"/>
+        <location filename="../src/mainwin.ui" line="729"/>
         <source>ICMP TImestamp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="786"/>
+        <location filename="../src/mainwin.ui" line="781"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="799"/>
+        <location filename="../src/mainwin.ui" line="794"/>
         <source>UDP Ping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="812"/>
+        <location filename="../src/mainwin.ui" line="807"/>
         <source>TCP SYN Ping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="838"/>
+        <location filename="../src/mainwin.ui" line="833"/>
         <source>TCP ACK Ping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="864"/>
+        <location filename="../src/mainwin.ui" line="859"/>
         <source>ICMP Netmask</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="913"/>
+        <location filename="../src/mainwin.ui" line="908"/>
         <source>Input File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="929"/>
+        <location filename="../src/mainwin.ui" line="924"/>
         <source>Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="959"/>
+        <location filename="../src/mainwin.ui" line="954"/>
         <source>Scan Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1039"/>
+        <location filename="../src/mainwin.ui" line="1034"/>
         <source>Max. RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1074"/>
+        <location filename="../src/mainwin.ui" line="1069"/>
         <source>Max. Parallel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1106"/>
+        <location filename="../src/mainwin.ui" line="1101"/>
         <source>Min, RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1119"/>
+        <location filename="../src/mainwin.ui" line="1114"/>
         <source>Min. Parallel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1132"/>
+        <location filename="../src/mainwin.ui" line="1127"/>
         <source>Scan Delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1164"/>
+        <location filename="../src/mainwin.ui" line="1159"/>
         <source>Initial RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1177"/>
+        <location filename="../src/mainwin.ui" line="1172"/>
         <source>Host Timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1209"/>
+        <location filename="../src/mainwin.ui" line="1204"/>
         <source>Ipv4 TTL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1223"/>
+        <location filename="../src/mainwin.ui" line="1218"/>
         <source>Normal Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1228"/>
+        <location filename="../src/mainwin.ui" line="1223"/>
         <source>Paranoid Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1233"/>
+        <location filename="../src/mainwin.ui" line="1228"/>
         <source>Sneaky Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1238"/>
+        <location filename="../src/mainwin.ui" line="1233"/>
         <source>Polite Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1243"/>
+        <location filename="../src/mainwin.ui" line="1238"/>
         <source>Aggressive Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1248"/>
+        <location filename="../src/mainwin.ui" line="1243"/>
         <source>Insane Throttling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1337"/>
+        <location filename="../src/mainwin.ui" line="1332"/>
         <source>Quiet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1342"/>
+        <location filename="../src/mainwin.ui" line="1337"/>
         <source>Verbose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1347"/>
+        <location filename="../src/mainwin.ui" line="1342"/>
         <source>Very Verbose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1352"/>
+        <location filename="../src/mainwin.ui" line="1347"/>
         <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1357"/>
+        <location filename="../src/mainwin.ui" line="1352"/>
         <source>Verbose Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1372"/>
+        <location filename="../src/mainwin.ui" line="1367"/>
         <source>When Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1377"/>
+        <location filename="../src/mainwin.ui" line="1372"/>
         <source>Always</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1382"/>
+        <location filename="../src/mainwin.ui" line="1377"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1396"/>
+        <location filename="../src/mainwin.ui" line="1391"/>
         <source>DNS Resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1409"/>
+        <location filename="../src/mainwin.ui" line="1404"/>
         <source>Verbosity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1435"/>
+        <location filename="../src/mainwin.ui" line="1430"/>
         <source>Spoof Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1448"/>
+        <location filename="../src/mainwin.ui" line="1443"/>
         <source>Specific Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1474"/>
+        <location filename="../src/mainwin.ui" line="1469"/>
         <source>Decoy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1487"/>
+        <location filename="../src/mainwin.ui" line="1482"/>
         <source>Source Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1531"/>
+        <location filename="../src/mainwin.ui" line="1526"/>
         <source>S&amp;can Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1551"/>
+        <location filename="../src/mainwin.ui" line="1546"/>
         <source>&amp;Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1568"/>
+        <location filename="../src/mainwin.ui" line="1563"/>
         <source>M. Optio&amp;ns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1582"/>
+        <location filename="../src/mainwin.ui" line="1577"/>
         <source>&amp;Discover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1596"/>
+        <location filename="../src/mainwin.ui" line="1591"/>
         <source>F&amp;ile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1610"/>
+        <location filename="../src/mainwin.ui" line="1605"/>
         <source>&amp;Timing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1634"/>
+        <location filename="../src/mainwin.ui" line="1629"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1645"/>
+        <location filename="../src/mainwin.ui" line="1640"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1652"/>
+        <location filename="../src/mainwin.ui" line="1647"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1658"/>
+        <location filename="../src/mainwin.ui" line="1653"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1704"/>
+        <location filename="../src/mainwin.ui" line="1699"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1736"/>
+        <location filename="../src/mainwin.ui" line="1731"/>
         <source>toolBar_2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1855"/>
+        <location filename="../src/mainwin.ui" line="1850"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1771"/>
+        <location filename="../src/mainwin.ui" line="1766"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1774"/>
+        <location filename="../src/mainwin.ui" line="1769"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1783"/>
+        <location filename="../src/mainwin.ui" line="1778"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1846"/>
+        <location filename="../src/mainwin.ui" line="1841"/>
         <source>&amp;Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1819"/>
+        <location filename="../src/mainwin.ui" line="1814"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1828"/>
+        <location filename="../src/mainwin.ui" line="1823"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1837"/>
+        <location filename="../src/mainwin.ui" line="1832"/>
         <source>&amp;Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1867"/>
+        <location filename="../src/mainwin.ui" line="1862"/>
         <source>Stop Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1879"/>
+        <location filename="../src/mainwin.ui" line="1874"/>
         <source>Clear History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1891"/>
+        <location filename="../src/mainwin.ui" line="1886"/>
         <source>Close Tree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1894"/>
+        <location filename="../src/mainwin.ui" line="1889"/>
         <source>Close Scan Tree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1903"/>
+        <location filename="../src/mainwin.ui" line="1898"/>
         <source>Clear HostName</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1906"/>
+        <location filename="../src/mainwin.ui" line="1901"/>
         <source>Clear Hostname IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1921"/>
+        <location filename="../src/mainwin.ui" line="1916"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1936"/>
+        <location filename="../src/mainwin.ui" line="1931"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1948"/>
+        <location filename="../src/mainwin.ui" line="1943"/>
         <source>S&amp;ave</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1960"/>
+        <location filename="../src/mainwin.ui" line="1955"/>
         <source>Save &amp;As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1975"/>
+        <location filename="../src/mainwin.ui" line="1970"/>
         <source>F&amp;ull Screen Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1978"/>
+        <location filename="../src/mainwin.ui" line="1973"/>
         <source>Ctrl+Shift+F11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1993"/>
+        <location filename="../src/mainwin.ui" line="1988"/>
         <source>Show &amp;Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1996"/>
+        <location filename="../src/mainwin.ui" line="1991"/>
         <source>Ctrl+M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="1662"/>
+        <location filename="../src/mainwin.ui" line="1657"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="2007"/>
+        <location filename="../src/mainwin.ui" line="2002"/>
         <source>Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="2018"/>
+        <location filename="../src/mainwin.ui" line="2013"/>
         <source>Actions Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.ui" line="2029"/>
+        <location filename="../src/mainwin.ui" line="2024"/>
         <source>Show Status Bar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -613,6 +608,29 @@
     <message>
         <location filename="../src/preference/profilemain.ui" line="376"/>
         <source>&amp;Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>mainProfile</name>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="79"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="83"/>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="87"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="90"/>
+        <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -782,52 +800,52 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="124"/>
+        <location filename="../src/core/updateUI.cpp" line="125"/>
         <source>SYN Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="125"/>
+        <location filename="../src/core/updateUI.cpp" line="126"/>
         <source>ACK Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="126"/>
+        <location filename="../src/core/updateUI.cpp" line="127"/>
         <source>FIN|ACK Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="127"/>
+        <location filename="../src/core/updateUI.cpp" line="128"/>
         <source>FIN Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="128"/>
+        <location filename="../src/core/updateUI.cpp" line="129"/>
         <source>NULL Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="129"/>
+        <location filename="../src/core/updateUI.cpp" line="130"/>
         <source>XMAS Tree Stealth Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="130"/>
+        <location filename="../src/core/updateUI.cpp" line="131"/>
         <source>TCP Window Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="131"/>
+        <location filename="../src/core/updateUI.cpp" line="132"/>
         <source>UDP Ports Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="132"/>
+        <location filename="../src/core/updateUI.cpp" line="133"/>
         <source>IP Protocol Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/updateUI.cpp" line="282"/>
+        <location filename="../src/core/updateUI.cpp" line="283"/>
         <source>Warning: Operation more expansive.
 </source>
         <translation type="unfinished"></translation>
@@ -847,6 +865,11 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../src/core/extensions.cpp" line="45"/>
         <source>Disable Ftp bounce</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/updateUI.cpp" line="124"/>
+        <source>Idle Scan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
