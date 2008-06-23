@@ -24,14 +24,16 @@ MESSAGE( STATUS ${SOURCES_UI} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
+QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4-logr_it.ts 
+	ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+
+#QT4_ADD_TRANSLATION(qms ts/nmapsi4-logr_it.ts ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 #ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-ADD_EXECUTABLE(nmapsi4-logr ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H})
+ADD_EXECUTABLE(nmapsi4-logr ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${qms})
 INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
 TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} )
-
-#QT4_CREATE_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts ts/nmapsi4_es.ts nmapsi4_de.ts ts/nmapsi4_pl.ts)
-#QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts ts/nmapsi4_es.ts nmapsi4_de.ts ts/nmapsi4_pl.ts)
 
 
 #if (Q_WS_X11)
