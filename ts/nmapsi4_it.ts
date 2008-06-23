@@ -644,9 +644,19 @@
         <translation>Grandezza</translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="90"/>
+        <location filename="../src/preference/profilemain.cpp" line="145"/>
         <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Profili di scansione&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="150"/>
+        <source>&lt;h3&gt;Automatic Logs Options&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/preference/profilemain.cpp" line="155"/>
+        <source>&lt;h3&gt;Size Options&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

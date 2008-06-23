@@ -142,17 +142,17 @@ void mainProfile::updateItem() {
      QString itemText = listViewOptions->currentItem()->text();
 
      if(itemText.contains(tr("Profiles"))) {
-	  labelTitle->setText("<h3>Profiles Scan</h3>");
+	  labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
 	  stackPref->setCurrentIndex(0);
      }
      
      if(itemText.contains(tr("Log"))) {
-	  labelTitle->setText("<h3>Automatic Logs Options</h3>");
+	  labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
 	      stackPref->setCurrentIndex(1);
      }
      
      if(itemText.contains(tr("Size"))) {
-	  labelTitle->setText("<h3>Size Options</h3>");
+	  labelTitle->setText(tr("<h3>Size Options</h3>"));
 	  stackPref->setCurrentIndex(2);
 	}
 }
