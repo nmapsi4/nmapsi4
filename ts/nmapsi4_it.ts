@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="it">
-<defaultcodec></defaultcodec>
 <context>
     <name>MainWindow</name>
     <message>
@@ -630,22 +629,22 @@
 <context>
     <name>mainProfile</name>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="80"/>
+        <location filename="../src/preference/profilemain.cpp" line="144"/>
         <source>Profiles</source>
         <translation>Profili</translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="84"/>
+        <location filename="../src/preference/profilemain.cpp" line="149"/>
         <source>Log</source>
         <translation>Diario</translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="88"/>
+        <location filename="../src/preference/profilemain.cpp" line="154"/>
         <source>Size</source>
         <translation>Grandezza</translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="91"/>
+        <location filename="../src/preference/profilemain.cpp" line="90"/>
         <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Profili di scansione&lt;/h3&gt;</translation>
     </message>
@@ -735,31 +734,31 @@ Nessun errore o avvertimento</translation>
         <translation>Errori o avvertimenti:</translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="56"/>
+        <location filename="../src/core/saveLog.cpp" line="59"/>
         <source>Save Log</source>
         <translation>Salva log</translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="44"/>
+        <location filename="../src/core/saveLog.cpp" line="46"/>
         <source>No Scan found
 </source>
         <translation>Nessuno scan trovato
 </translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="104"/>
+        <location filename="../src/core/saveLog.cpp" line="109"/>
         <source>Information</source>
         <translation>Informazioni</translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="142"/>
+        <location filename="../src/core/toolsUI.cpp" line="144"/>
         <source>Save File permission Error (Log stored in /tmp)
 </source>
         <translation>Errore nei permessi del file (Log salvato in /tmp)
 </translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="105"/>
+        <location filename="../src/core/saveLog.cpp" line="110"/>
         <source>Save File permission Error
 </source>
         <translation>Errore nei permessi del file
@@ -828,22 +827,22 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="obsolete">Versione di Nmap: </translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="221"/>
+        <location filename="../src/core/toolsUI.cpp" line="225"/>
         <source>Not Present</source>
         <translation>Non presente</translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="229"/>
+        <location filename="../src/core/toolsUI.cpp" line="233"/>
         <source>Full</source>
         <translation>Completo</translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="231"/>
+        <location filename="../src/core/toolsUI.cpp" line="235"/>
         <source>User</source>
         <translation>Utente</translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="57"/>
+        <location filename="../src/core/saveLog.cpp" line="60"/>
         <source>Log (*.log)</source>
         <translation></translation>
     </message>
@@ -872,12 +871,12 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="210"/>
+        <location filename="../src/core/toolsUI.cpp" line="214"/>
         <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/core/toolsUI.cpp" line="227"/>
+        <location filename="../src/core/toolsUI.cpp" line="231"/>
         <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
         <translation></translation>
     </message>

@@ -614,17 +614,17 @@
 <context>
     <name>mainProfile</name>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="79"/>
+        <location filename="../src/preference/profilemain.cpp" line="144"/>
         <source>Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="83"/>
+        <location filename="../src/preference/profilemain.cpp" line="149"/>
         <source>Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="87"/>
+        <location filename="../src/preference/profilemain.cpp" line="154"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
