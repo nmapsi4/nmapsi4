@@ -111,7 +111,7 @@ void nmapClass::nmapParser()
 	listScanError->setIconSize(QSize::QSize (22, 22));
 	listScanError->header()->setResizeMode(0, QHeaderView::Interactive );
 	listScan->header()->setResizeMode(0, QHeaderView::Interactive );
-	treeWinfo->setIconSize(QSize::QSize (22, 22));
+	treeWinfo->setIconSize(QSize::QSize (32, 32));
 	treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive );
 
 	if(!hostEdit->text().contains("(Stopped)"))
@@ -209,6 +209,7 @@ void nmapClass::nmapParser()
 		     itemList.push_front(infoItemObj); // reference to address
 
 		     if(!b3_line.isEmpty()) {
+			  infoItemObj->setSizeHint(0, QSize::QSize (22, 22));
 			  infoItemObj->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
 			  infoItemObj->setText(0,b3_line);
 			  infoItemObj->setToolTip(0,b3_line); // field information
