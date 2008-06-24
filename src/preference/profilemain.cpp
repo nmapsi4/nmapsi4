@@ -139,22 +139,17 @@ void mainProfile::setScan() {
 
 
 void mainProfile::updateItem() {
-     QString itemText = listViewOptions->currentItem()->text();
 
-     if(itemText.contains(tr("Profiles"))) {
+     if(profileItem->isSelected()) {
 	  labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
 	  stackPref->setCurrentIndex(0);
-     }
-     
-     if(itemText.contains(tr("Log"))) {
+     } else if(logItem->isSelected()) {
 	  labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
-	      stackPref->setCurrentIndex(1);
-     }
-     
-     if(itemText.contains(tr("Size"))) {
+	  stackPref->setCurrentIndex(1);
+     } else if(sizeItem->isSelected()) {
 	  labelTitle->setText(tr("<h3>Size Options</h3>"));
 	  stackPref->setCurrentIndex(2);
-	}
+     }
 }
 
 void mainProfile::log_browser()
@@ -162,8 +157,10 @@ void mainProfile::log_browser()
      QString FileName;
      QString url = QDir::homePath();
      
-     FileName = QFileDialog::getExistingDirectory(this, "Open Directory",
-						  url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+     FileName = QFileDialog::getExistingDirectory(
+	  this, "Open Directory",
+	  url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+	  );
      
      lineEditPath->setText(FileName);
 }
