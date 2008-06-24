@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
 
 #else // MS Windows
-    urlTranslate = QDir::homePath(); // Insert a url for MS Windows Translate ( FIXME check for local binary path)
+    urlTranslate = QDir::homePath();
     qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
 
 #endif

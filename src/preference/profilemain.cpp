@@ -126,15 +126,15 @@ void mainProfile::setScan() {
      else
 	  ptrFile.setValue("savePos", "false"); 
      
-      if(checkSize->isChecked()) 
-	   ptrFile.setValue("saveSize", "true"); 
-      else
-	   ptrFile.setValue("saveSize", "false"); 
+     if(checkSize->isChecked()) 
+	  ptrFile.setValue("saveSize", "true"); 
+     else
+	  ptrFile.setValue("saveSize", "false"); 
 
      if(checkVerboseLog->isChecked()) 
-	   ptrFile.setValue("Vlog", "true"); 
-      else
-	   ptrFile.setValue("Vlog", "false"); 
+	  ptrFile.setValue("Vlog", "true"); 
+     else
+	  ptrFile.setValue("Vlog", "false"); 
 }
 
 
@@ -198,7 +198,7 @@ void mainProfile::setProfile() {
 	  ScanActive = "fullversion";
      } else if(uid)
 	  checkFullVersion->setEnabled(false);
-	
+     
      if(!tmpProfile.compare("quickversion") && !uid) {
 	  checkQuickVersion->setChecked(true);
 	  ScanActive = "quickversion";

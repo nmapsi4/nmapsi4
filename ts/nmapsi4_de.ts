@@ -614,32 +614,32 @@
 <context>
     <name>mainProfile</name>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="144"/>
+        <location filename="../src/preference/profilemain.cpp" line="79"/>
         <source>Profiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="149"/>
+        <location filename="../src/preference/profilemain.cpp" line="83"/>
         <source>Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="154"/>
+        <location filename="../src/preference/profilemain.cpp" line="87"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="145"/>
+        <location filename="../src/preference/profilemain.cpp" line="144"/>
         <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="150"/>
+        <location filename="../src/preference/profilemain.cpp" line="147"/>
         <source>&lt;h3&gt;Automatic Logs Options&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/preference/profilemain.cpp" line="155"/>
+        <location filename="../src/preference/profilemain.cpp" line="150"/>
         <source>&lt;h3&gt;Size Options&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
