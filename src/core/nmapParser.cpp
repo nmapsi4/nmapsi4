@@ -106,7 +106,7 @@ void nmapClass::nmapParser()
 	     *out << nmap_command << endl << endl;
 	}
 
-	listWscan->setIconSize(QSize::QSize (22, 22));
+	listWscan->setIconSize(QSize::QSize (32, 32));
 	listWscan->header()->setResizeMode(0, QHeaderView::Interactive );
 	listScanError->setIconSize(QSize::QSize (22, 22));
 	listScanError->header()->setResizeMode(0, QHeaderView::Interactive );
@@ -124,10 +124,10 @@ void nmapClass::nmapParser()
 	infoItem->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 
 	if(!buffer.isEmpty()) { // Host line scan
-	     root->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     root2->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     error->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     root->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     root2->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     error->setBackground(0, QColor::fromRgb(210, 210, 210));
 	     
 	     QFont rootFont = root->font(0);
 	     rootFont.setWeight(QFont::Normal);
@@ -138,10 +138,10 @@ void nmapClass::nmapParser()
 	     infoItem->setText(0,buffer);
 	     if((PFile) && (!verboseLog)) *out << root->text(0) << endl;
 	} else {
-	     root->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     root2->setBackground(0, QColor::fromRgb(210, 210, 210));
-	     error->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     root->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     root2->setBackground(0, QColor::fromRgb(210, 210, 210));
+//	     error->setBackground(0, QColor::fromRgb(210, 210, 210));
 	     
 	     QFont rootFont = root->font(0);
 	     rootFont.setWeight(QFont::Normal);
@@ -169,13 +169,16 @@ void nmapClass::nmapParser()
 		     || b2_line.contains("unfiltered")) {
 		       
 		       if(b2_line.contains("filtered") || b2_line.contains("unfiltered")) {
+			    item2->setSizeHint(0, QSize::QSize (22, 22));
 			    item2->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
 			    filtered_port++;
 		       } else {
+			    item2->setSizeHint(0, QSize::QSize (22, 22));
 			    item2->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
 			    open_port++;
 		       }
 		  } else {
+		       item2->setSizeHint(0, QSize::QSize (22, 22));
 		       item2->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
 		       close_port++;
 		  }
