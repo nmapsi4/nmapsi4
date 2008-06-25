@@ -109,8 +109,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>830</width>
-         <height>423</height>
+         <width>834</width>
+         <height>429</height>
         </rect>
        </property>
        <attribute name="title" >
@@ -208,9 +208,9 @@
         <item>
          <widget class="QTreeWidget" name="treeWinfo" >
           <property name="sizePolicy" >
-           <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+           <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
             <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
+            <verstretch>170</verstretch>
            </sizepolicy>
           </property>
           <property name="frameShape" >
@@ -254,8 +254,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>830</width>
-         <height>423</height>
+         <width>834</width>
+         <height>429</height>
         </rect>
        </property>
        <attribute name="title" >
@@ -263,7 +263,7 @@
        </attribute>
        <attribute name="icon" >
         <iconset resource="../mainwin.qrc" >
-         <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+         <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
        </attribute>
        <layout class="QVBoxLayout" >
         <item>
@@ -312,8 +312,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>830</width>
-         <height>423</height>
+         <width>834</width>
+         <height>429</height>
         </rect>
        </property>
        <attribute name="title" >
@@ -321,7 +321,7 @@
        </attribute>
        <attribute name="icon" >
         <iconset resource="../mainwin.qrc" >
-         <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
+         <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
        </attribute>
        <layout class="QVBoxLayout" >
         <item>

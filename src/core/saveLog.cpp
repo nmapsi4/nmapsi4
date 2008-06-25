@@ -50,7 +50,13 @@ void nmapClass::saveAsLog() {
 
      QString url;
      url = QDir::homePath();
+
+#ifndef Q_WS_WIN
      url.append("/");
+#else
+     url.append("\\");
+#endif
+
      url.append(hostEdit->text());
      url.append(".log");
      qDebug() << "Nmapsi4/saveLog::-->" << url;
@@ -74,8 +80,6 @@ void nmapClass::saveAsLog() {
 				     tr("Save File permission Error (Log stored in /tmp)\n"),tr("Close"));
 	  
 	  logSessionFile = FileNameTmp;
-//	  actionSave->setEnabled(true);
-//	  actionSave_Menu->setEnabled(true);
 	  this->setWindowModified(false);
      }
 

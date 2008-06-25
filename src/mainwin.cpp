@@ -19,7 +19,10 @@
 
 #include "mainwin.h"
 
-nmapClass::nmapClass() : PFile(0), labelVersion(0), dialog(0), proc(0)
+nmapClass::nmapClass() : PFile(0), 
+			 labelVersion(0), 
+			 dialog(0), 
+			 proc(0)
 {
      int uid = 0;
 	
