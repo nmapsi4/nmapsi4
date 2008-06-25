@@ -106,10 +106,11 @@ void nmapClass::nmapParser()
 	     *out << nmap_command << endl << endl;
 	}
 
-	listWscan->setIconSize(QSize::QSize (42, 48));
+	listWscan->setIconSize(QSize::QSize (48, 48));
 	listWscan->header()->setResizeMode(0, QHeaderView::Interactive );
-	listScanError->setIconSize(QSize::QSize (42, 48));
+	listScanError->setIconSize(QSize::QSize (32, 32));
 	listScanError->header()->setResizeMode(0, QHeaderView::Interactive );
+	listScan->setIconSize(QSize::QSize (32, 32));
 	listScan->header()->setResizeMode(0, QHeaderView::Interactive );
 	treeWinfo->setIconSize(QSize::QSize (32, 32));
 	treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive );
