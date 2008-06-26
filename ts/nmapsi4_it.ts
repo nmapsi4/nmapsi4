@@ -20,17 +20,17 @@
     <message>
         <location filename="../src/mainwin.ui" line="262"/>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation>Errori</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="303"/>
         <source>Error(s)</source>
-        <translation>Errore(i)</translation>
+        <translation>Errori</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="320"/>
         <source>Log</source>
-        <translation>Diario</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="514"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../src/mainwin.ui" line="954"/>
         <source>Scan Profile</source>
-        <translation>Profile Scan</translation>
+        <translation>Profilo Scansione</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="1127"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/mainwin.ui" line="1526"/>
         <source>S&amp;can Options</source>
-        <translation>Opzioni per S&amp;can</translation>
+        <translation>Opzioni di S&amp;can</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="1546"/>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/mainwin.ui" line="367"/>
         <source>Log(s)</source>
-        <translation></translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="../src/mainwin.ui" line="439"/>
@@ -636,12 +636,12 @@
     <message>
         <location filename="../src/preference/profilemain.cpp" line="83"/>
         <source>Log</source>
-        <translation>Diario</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="../src/preference/profilemain.cpp" line="87"/>
         <source>Size</source>
-        <translation>Grandezza</translation>
+        <translation>Dimensione</translation>
     </message>
     <message>
         <location filename="../src/preference/profilemain.cpp" line="144"/>
@@ -651,12 +651,12 @@
     <message>
         <location filename="../src/preference/profilemain.cpp" line="147"/>
         <source>&lt;h3&gt;Automatic Logs Options&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Opzioni di log automatico&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../src/preference/profilemain.cpp" line="150"/>
         <source>&lt;h3&gt;Size Options&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Opzioni della finestra&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
@@ -669,7 +669,7 @@
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwin.cpp" line="57"/>
+        <location filename="../src/mainwin.cpp" line="60"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
@@ -686,43 +686,43 @@
         <translation>Scan predefinito</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="189"/>
+        <location filename="../src/core/nmapParser.cpp" line="193"/>
         <source>No Ports</source>
         <translation>Nessuna porta</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="195"/>
+        <location filename="../src/core/nmapParser.cpp" line="199"/>
         <source>
 (No scan informations)</source>
         <translation>
 Nessuna informazione per la scansione</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="214"/>
+        <location filename="../src/core/nmapParser.cpp" line="219"/>
         <source>No Info</source>
         <translation>Nessuna informazione</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="217"/>
+        <location filename="../src/core/nmapParser.cpp" line="222"/>
         <source>
 (No Host Informations)</source>
         <translation>
 Nessuna informazione per l&apos;host</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="275"/>
+        <location filename="../src/core/nmapParser.cpp" line="280"/>
         <source>
 (Report: </source>
         <translation>
 Rapporto:</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="225"/>
+        <location filename="../src/core/nmapParser.cpp" line="230"/>
         <source>Open: </source>
         <translation>Aperte: </translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="227"/>
+        <location filename="../src/core/nmapParser.cpp" line="232"/>
         <source>, Close: </source>
         <translation>, Chiuse:</translation>
     </message>
@@ -732,19 +732,19 @@ Rapporto:</translation>
         <translation type="obsolete">, Filtrato/Non filtrato: </translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="269"/>
+        <location filename="../src/core/nmapParser.cpp" line="274"/>
         <source>
 (No Errors or Warnings)</source>
         <translation>
 Nessun errore o avvertimento</translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="276"/>
+        <location filename="../src/core/nmapParser.cpp" line="281"/>
         <source>Errors or Warnings: </source>
         <translation>Errori o avvertimenti:</translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="59"/>
+        <location filename="../src/core/saveLog.cpp" line="65"/>
         <source>Save Log</source>
         <translation>Salva log</translation>
     </message>
@@ -756,7 +756,7 @@ Nessun errore o avvertimento</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="109"/>
+        <location filename="../src/core/saveLog.cpp" line="113"/>
         <source>Information</source>
         <translation>Informazioni</translation>
     </message>
@@ -768,7 +768,7 @@ Nessun errore o avvertimento</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="110"/>
+        <location filename="../src/core/saveLog.cpp" line="114"/>
         <source>Save File permission Error
 </source>
         <translation>Errore nei permessi del file
@@ -820,14 +820,14 @@ MS Windows Packages: el.diabl09@gmail.com
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwin.cpp" line="57"/>
+        <location filename="../src/mainwin.cpp" line="60"/>
         <source>No Host Target
 </source>
         <translation>Nessun host specificato
 </translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="229"/>
+        <location filename="../src/core/nmapParser.cpp" line="234"/>
         <source>, Fi/Unfiltered: </source>
         <translation>, Filtrato/Non filtrato: </translation>
     </message>
@@ -852,9 +852,9 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation>Utente</translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="60"/>
+        <location filename="../src/core/saveLog.cpp" line="66"/>
         <source>Log (*.log)</source>
-        <translation></translation>
+        <translation>Log (*.log)</translation>
     </message>
     <message>
         <location filename="../src/core/toolsUI.cpp" line="23"/>

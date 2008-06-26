@@ -653,7 +653,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.cpp" line="57"/>
+        <location filename="../src/mainwin.cpp" line="60"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -669,61 +669,61 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="189"/>
+        <location filename="../src/core/nmapParser.cpp" line="193"/>
         <source>No Ports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="195"/>
+        <location filename="../src/core/nmapParser.cpp" line="199"/>
         <source>
 (No scan informations)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="214"/>
+        <location filename="../src/core/nmapParser.cpp" line="219"/>
         <source>No Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="217"/>
+        <location filename="../src/core/nmapParser.cpp" line="222"/>
         <source>
 (No Host Informations)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="275"/>
+        <location filename="../src/core/nmapParser.cpp" line="280"/>
         <source>
 (Report: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="225"/>
+        <location filename="../src/core/nmapParser.cpp" line="230"/>
         <source>Open: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="227"/>
+        <location filename="../src/core/nmapParser.cpp" line="232"/>
         <source>, Close: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="229"/>
+        <location filename="../src/core/nmapParser.cpp" line="234"/>
         <source>, Fi/Unfiltered: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="269"/>
+        <location filename="../src/core/nmapParser.cpp" line="274"/>
         <source>
 (No Errors or Warnings)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/nmapParser.cpp" line="276"/>
+        <location filename="../src/core/nmapParser.cpp" line="281"/>
         <source>Errors or Warnings: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="59"/>
+        <location filename="../src/core/saveLog.cpp" line="65"/>
         <source>Save Log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -734,12 +734,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="60"/>
+        <location filename="../src/core/saveLog.cpp" line="66"/>
         <source>Log (*.log)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="109"/>
+        <location filename="../src/core/saveLog.cpp" line="113"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -750,7 +750,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/saveLog.cpp" line="110"/>
+        <location filename="../src/core/saveLog.cpp" line="114"/>
         <source>Save File permission Error
 </source>
         <translation type="unfinished"></translation>
@@ -861,7 +861,7 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwin.cpp" line="57"/>
+        <location filename="../src/mainwin.cpp" line="60"/>
         <source>No Host Target
 </source>
         <translation type="unfinished"></translation>
