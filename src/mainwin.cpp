@@ -20,9 +20,7 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass() : PFile(0), 
-			 labelVersion(0), 
-			 dialog(0), 
-			 proc(0)
+			 labelVersion(0) 
 {
      int uid = 0;
 	
@@ -42,6 +40,8 @@ void nmapClass::init() {
 
      //QApplication::setStyle(new QPlastiqueStyle);
      setupUi(this);
+     dialog = 0;
+     proc = 0;
      progressScan = new QProgressBar();
      progressScan->setValue(0);
      progressScan->setLayoutDirection(Qt::LeftToRight);
