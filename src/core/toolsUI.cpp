@@ -211,13 +211,15 @@ void nmapClass::setNmapVersion() {
 	  }
      }
 
-     versionNmap.prepend(tr("<b>Nmap Version:</b> "));
      labelVersion = new QLabel();
     
      if(!versionNmap.isEmpty()) {
+
 	  versionNmap.remove("Nmap version ");
-	  versionNmap.remove(" ( http://insecure.org )");
+	  versionNmap.resize(4);
+	  versionNmap.prepend(tr("<b>Nmap Version:</b> "));
 	  labelVersion->setText(versionNmap);
+
 	  statusBar()->addPermanentWidget(labelVersion,1);
      } else {
 	  action_Scan_menu->setEnabled(false);
