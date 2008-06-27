@@ -86,13 +86,15 @@ mainProfile::mainProfile()
      sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
      sizeItem->setText(tr("Size"));
 	
-     profileItem->setSelected(true);
-     labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
 
      connect( checkLogOn, SIGNAL(pressed()), 
 	      this, SLOT(update_saveButton()));
      connect(listViewOptions, SIGNAL(itemSelectionChanged()), 
 	     this, SLOT(updateItem()));
+
+     profileItem->setSelected(true);
+     //abelTitle->setText(tr("<h3>Profiles Scan</h3>"));
+
      connect(buttonLogB, SIGNAL(clicked()), 
 	     this, SLOT(log_browser())); 
      connect(buttonDefault, SIGNAL(clicked()), 
