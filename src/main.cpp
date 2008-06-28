@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
 #else // MS Windows
     //urlTranslate = QDir::homePath();
-    urlTranslate = QDir::drives().absolutePath();
+    urlTranslate = QDir::rootPath();
     urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
     qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
 
