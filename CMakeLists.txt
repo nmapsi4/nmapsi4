@@ -4,6 +4,10 @@ cmake_minimum_required(VERSION 2.6.0)
 FIND_PACKAGE(Qt4 REQUIRED)
 include(${QT_USE_FILE})
 
+if (Q_WS_WIN)
+  include(CMakeMinGWFindMake)
+endif (Q_WS_WIN)
+
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 SET(SOURCES_CPP src/core/nmapsi4Slot.cpp
@@ -35,7 +39,13 @@ QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
-ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+
+if (NOT WIN32)
+  ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+else (WIN32) 
+  ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+endif (NOT WIN32)
+
 INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
 TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} )
 
