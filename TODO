@@ -4,5 +4,6 @@
 * remove debug for stable release
 
 version 2.x:
-* support for theme
+* support for theme (nmapsi4)
 * log reader
+* logreader hostory (five url)
