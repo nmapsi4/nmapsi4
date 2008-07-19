@@ -7,7 +7,7 @@ mwClass::mwClass() {
      connect( actionOpen, SIGNAL(triggered()), 
 	      this, SLOT(logReader()));
 
-     // Take a nmapsi4 geometry info
+     // Take nmapsi4 geometry info
      QSettings settings("nmapsi4","nmapsi4");
      QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
      QSize size = settings.value("window/size", QSize(869, 605)).toSize();
