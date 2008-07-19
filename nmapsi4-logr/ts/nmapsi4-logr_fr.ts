@@ -3,52 +3,47 @@
 <context>
     <name>mWindow</name>
     <message>
-        <location filename="../build/ui_mainwin.h" line="102"/>
+        <location filename="../build/ui_mainwin.h" line="121"/>
         <source>Nmapsi4 log reader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="103"/>
+        <location filename="../build/ui_mainwin.h" line="122"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="106"/>
+        <location filename="../build/ui_mainwin.h" line="126"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="105"/>
+        <location filename="../build/ui_mainwin.h" line="125"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="107"/>
+        <location filename="../build/ui_mainwin.h" line="124"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="108"/>
-        <source>Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../build/ui_mainwin.h" line="109"/>
+        <location filename="../build/ui_mainwin.h" line="127"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="110"/>
+        <location filename="../build/ui_mainwin.h" line="128"/>
         <source>&amp;FIle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="111"/>
+        <location filename="../build/ui_mainwin.h" line="129"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../build/ui_mainwin.h" line="112"/>
+        <location filename="../build/ui_mainwin.h" line="130"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>

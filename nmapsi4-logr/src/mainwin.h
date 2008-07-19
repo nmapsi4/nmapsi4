@@ -11,6 +11,10 @@ class mwClass : public QMainWindow , private Ui::mWindow
 
 private:
      QString showBrowser();
+     QTreeWidgetItem *root;
+     QTreeWidgetItem *item;
+     QList<QTreeWidgetItem*> ItemList;
+     void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
 
 public:
      mwClass();

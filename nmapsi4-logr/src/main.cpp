@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     app.installTranslator(&translator);*/
 
-    mwClass *dialog = new mwClass();
-    dialog->show();
+    mwClass dialog;
+    dialog.show();
     return app.exec();
 }

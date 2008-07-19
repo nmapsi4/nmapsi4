@@ -18,18 +18,31 @@
   <property name="windowTitle" >
    <string>Nmapsi4 log reader</string>
   </property>
+  <property name="windowIcon" >
+   <iconset resource="../../mainwin.qrc" >
+    <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget" >
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>58</y>
+     <y>85</y>
      <width>815</width>
-     <height>507</height>
+     <height>480</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout" >
     <item>
      <widget class="QTreeWidget" name="treeLogView" >
+      <property name="alternatingRowColors" >
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode" >
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+      <property name="rootIsDecorated" >
+       <bool>false</bool>
+      </property>
       <column>
        <property name="text" >
         <string>Host(s)</string>
@@ -78,31 +91,62 @@
      <x>0</x>
      <y>27</y>
      <width>815</width>
-     <height>31</height>
+     <height>58</height>
     </rect>
    </property>
    <property name="windowTitle" >
     <string>toolBar</string>
    </property>
+   <property name="iconSize" >
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle" >
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
    <attribute name="toolBarArea" >
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak" >
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
    <addaction name="actionOpen" />
    <addaction name="actionClear" />
    <addaction name="actionQuit" />
   </widget>
   <action name="actionClear" >
+   <property name="icon" >
+    <iconset resource="../../mainwin.qrc" >
+     <normaloff>:/images/images/window_new.png</normaloff>:/images/images/window_new.png</iconset>
+   </property>
    <property name="text" >
     <string>Clear</string>
    </property>
-   <property name="shortcut" >
-    <string>Ctrl+Q</string>
-   </property>
   </action>
   <action name="actionClose" >
+   <property name="text" >
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcutContext" >
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionOpen" >
+   <property name="icon" >
+    <iconset resource="../../mainwin.qrc" >
+     <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionQuit" >
+   <property name="icon" >
+    <iconset resource="../../mainwin.qrc" >
+     <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
+   </property>
    <property name="text" >
     <string>&amp;Quit</string>
    </property>
@@ -110,18 +154,10 @@
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="actionOpen" >
-   <property name="text" >
-    <string>Open</string>
-   </property>
-  </action>
-  <action name="actionQuit" >
-   <property name="text" >
-    <string>Quit</string>
-   </property>
-  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../mainwin.qrc" />
+ </resources>
  <connections>
   <connection>
    <sender>actionClose</sender>

@@ -100,6 +100,7 @@ void nmapClass::nmapParser()
 	     out = new QTextStream(PFile);
 	     QString nmap_command;
 	     *out << "--------------------------------------------------------------------" << endl;
+	     nmap_command.append("\nLog Start: ");
 	     nmap_command.append("\nnmap ");
 	     nmap_command.append(lineOptions->text()); 
 	     nmap_command.append(hostEdit->text()); // write host target in the log
@@ -253,7 +254,7 @@ void nmapClass::nmapParser()
 		  *out << blog_line << "\n";
 	     }
 	}
-
+	*out << "Log End";
 	*out << "--------------------------------------------------------------------" << endl;
  	if(PFile) delete out;
 
