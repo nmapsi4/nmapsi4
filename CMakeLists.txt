@@ -4,10 +4,10 @@ include(${QT_USE_FILE})
 ADD_DEFINITIONS(-O2 -Wall -Wextra)
 
 if ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nmapsi4 )
-    	add_subdirectory( nmapsi4 )
+  add_subdirectory( nmapsi4 )
 endif ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nmapsi4 )
 
 if ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nmapsi4-logr )
-    	add_subdirectory( nmapsi4-logr )
+  add_subdirectory( nmapsi4-logr )
 endif ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nmapsi4-logr )
 
