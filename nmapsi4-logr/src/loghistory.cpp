@@ -60,8 +60,7 @@ void mwClass::updateTreeHistory() {
      logTree->setIconSize(QSize::QSize (32, 32));
      logTree->clear();
      QFile *tmpFile = new QFile();
-     
-     if(!urlList.contains("NULL")) {
+     if(urlList.first().compare("NULL")) {
 	  foreach(QString item, urlList) {
 	       tmpFile->setFileName(item);
 	       if(tmpFile->exists()) {
@@ -78,8 +77,9 @@ void mwClass::updateTreeHistory() {
 	       }
 	  }
      } else {
+	  qDebug() << "cazzo";
 	  history = new QTreeWidgetItem(logTree);
-	  historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+	  history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 	  ItemListHistory.push_front(historyItem);
 	  history->setText(0, "No Url Cache");
      }
