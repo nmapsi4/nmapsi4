@@ -1,11 +1,34 @@
+/***************************************************************************
+ *   Copyright (C) 2008 by Francesco Cecconi                               *
+ *   francesco.cecconi@gmail.com                                           *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License.        *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
 #include "mainwin.h"
 
 
-mwClass::mwClass() {
+mwClass::mwClass() : logF(0) {
      setupUi(this);
 
      connect( actionOpen, SIGNAL(triggered()), 
-	      this, SLOT(logReader()));
+	      this, SLOT(Breader()));
+
+     //FIXME
+     connect( logTree, SIGNAL(itemSelectionChanged()), 
+           this, SLOT(logFromHistory()));
 
      // Take nmapsi4 geometry info
      QSettings settings("nmapsi4","nmapsi4");
@@ -13,19 +36,31 @@ mwClass::mwClass() {
      QSize size = settings.value("window/size", QSize(869, 605)).toSize();
      resize(size);
      move(pos);
+
+     // TEST
+     //historyReadUrl();
+     updateTreeHistory();
+}
+
+void mwClass::Breader() {
+     url = showBrowser();
+     logReader();
 }
 
 void mwClass::logReader() {
-     // TODO
-     // Read log
-     if((url = showBrowser()).isEmpty())
-	  return;
-
-     QFile *logF = new QFile();
+     
+     if(url.isEmpty())
+	       return;
+     
+     qDebug() << "Path Current Item::" << url;
+     historyUpdateUrl(url);
+     if(!logF) logF = new QFile();
      qDebug() << "nmapsi4-logr:: --> url::" << url;
      logF->setFileName(url);
-     if(!logF->open(QIODevice::ReadOnly))
+     if(!logF->open(QIODevice::ReadOnly)) {
 	  qDebug() << "Log File open error." << endl;
+	  return;
+     }
 
      QTextStream buffer(logF);
      QString tmpLine;
@@ -54,12 +89,13 @@ void mwClass::logReader() {
 	  }
      }
 
+     updateTreeHistory();
      logF->close();
-     delete logF;
 
 }
 
 mwClass::~mwClass() 
 {
      itemDeleteAll(ItemList);
+     //delete logF;
 }

@@ -31,7 +31,7 @@
      <height>480</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout" >
+   <layout class="QHBoxLayout" name="horizontalLayout" >
     <item>
      <widget class="QTreeWidget" name="treeLogView" >
       <property name="alternatingRowColors" >
@@ -46,6 +46,27 @@
       <column>
        <property name="text" >
         <string>Host(s)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTreeWidget" name="logTree" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
+        <horstretch>250</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="alternatingRowColors" >
+       <bool>true</bool>
+      </property>
+      <property name="rootIsDecorated" >
+       <bool>false</bool>
+      </property>
+      <column>
+       <property name="text" >
+        <string>Log History</string>
        </property>
       </column>
      </widget>
@@ -110,7 +131,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak" >
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionOpen" />
    <addaction name="actionClear" />

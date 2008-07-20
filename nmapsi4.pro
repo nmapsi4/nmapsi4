@@ -16,32 +16,32 @@ win32 {
 }
 
 # Input
-HEADERS += src/mainwin.h \
-	src/preference/profilemain.h 
+HEADERS += nmapsi4/mainwin.h \
+	nmapsi4/preference/profilemain.h 
 
-FORMS += src/mainwin.ui \
-	src/preference/profilemain.ui
+FORMS += nmapsi4/mainwin.ui \
+	nmapsi4/preference/profilemain.ui
 
-SOURCES += 	src/core/nmapsi4Slot.cpp \
-		src/core/resizeNmapsi4.cpp \
-		src/preference/profilemain.cpp \
-		src/preference/profilemainupdate.cpp \
-		src/core/nmapParser.cpp \
-		src/core/extensions.cpp \
-		src/mainwin.cpp \
-		src/core/updateUI.cpp \
-		src/core/toolsUI.cpp \
-		src/core/profileSession.cpp \
-		src/core/saveLog.cpp \
-		src/main.cpp
+SOURCES += 	nmapsi4/core/nmapsi4Slot.cpp \
+		nmapsi4/core/resizeNmapsi4.cpp \
+		nmapsi4/preference/profilemain.cpp \
+		nmapsi4/preference/profilemainupdate.cpp \
+		nmapsi4/core/nmapParser.cpp \
+		nmapsi4/core/extensions.cpp \
+		nmapsi4/mainwin.cpp \
+		nmapsi4/core/updateUI.cpp \
+		nmapsi4/core/toolsUI.cpp \
+		nmapsi4/core/profileSession.cpp \
+		nmapsi4/core/saveLog.cpp \
+		nmapsi4/main.cpp
 
 RESOURCES = mainwin.qrc
-TRANSLATIONS = ts/nmapsi4_it.ts \
-		ts/nmapsi4_NONE.ts \
-		ts/nmapsi4_de.ts \
-		ts/nmapsi4_fr.ts \
-		ts/nmapsi4_es.ts \
-		ts/nmapsi4_pl.ts 
+TRANSLATIONS = nmapsi4/ts/nmapsi4_it.ts \
+		nmapsi4/ts/nmapsi4_NONE.ts \
+		nmapsi4/ts/nmapsi4_de.ts \
+		nmapsi4/ts/nmapsi4_fr.ts \
+		nmapsi4/ts/nmapsi4_es.ts \
+		nmapsi4/ts/nmapsi4_pl.ts 
 		
 QMAKE_CLEAN = config.h Makefile nmapsi4
 

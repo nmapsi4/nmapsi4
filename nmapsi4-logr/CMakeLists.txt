@@ -1,13 +1,15 @@
 PROJECT(nmapsi4-logr)
-cmake_minimum_required(VERSION 2.6.0)
+#cmake_minimum_required(VERSION 2.6.0)
+#ADD_DEFINITIONS(-O2 -Wall -Wextra)
 
-FIND_PACKAGE(Qt4 REQUIRED)
-include(${QT_USE_FILE})
+#FIND_PACKAGE(Qt4 REQUIRED)
+#include(${QT_USE_FILE})
 
 #configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 SET(SOURCES_CPP	src/mainwin.cpp 
                 src/logrApi.cpp
+		src/loghistory.cpp
 		src/main.cpp )
 MESSAGE( STATUS ${SOURCES_CPP} )
 
