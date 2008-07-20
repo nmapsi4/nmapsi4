@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NmapSI4 - root mode
+Comment=Is a Qt4 interface for nmap scanner
+Comment[ru]=Qt4 интерфейс для сканера nmap
+Comment[uk]=Qt4 інтерфейс для сканера nmap
+Comment[it]=Interfaccia Qt4 per nmap
+Exec=nmapsi4
+Icon=nmapsi4
+Terminal=false
+Type=Application
+X-KDE-SubstituteUID=true
+X-KDE-Username=root
+X-GNOME-Username=root
+Categories=Qt;Application;System;Security;
