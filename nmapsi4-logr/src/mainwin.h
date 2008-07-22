@@ -20,7 +20,7 @@
 #ifndef MAINWIN_H
 #define MAINWIN_H
 
-/*#include <QString>
+#include <QString>
 #include <QTreeWidgetItem>
 #include <QList>
 #include <QFile>
@@ -28,8 +28,7 @@
 #include <QDebug>
 #include <QSettings>
 #include <QDir>
-#include <QFileDialog>*/
-#include <QtGui>
+#include <QFileDialog>
 #include <assert.h>
 #include "ui_mainwin.h"
 
@@ -39,6 +38,8 @@ class mwClass : public QMainWindow , private Ui::mWindow
 
 private:
      QString showBrowser();
+     void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
+
      QTreeWidgetItem *root;
      QTreeWidgetItem *item;
      QTreeWidgetItem *history;
@@ -46,8 +47,6 @@ private:
      QFile *logF;
      QList<QTreeWidgetItem*> ItemList;
      QList<QTreeWidgetItem*> ItemListHistory;
-     void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
-
      // Hostory old log
      QList<QString> historyReadUrl();
      void historyUpdateUrl(QString url);
@@ -64,6 +63,7 @@ private slots:
      void logReader();
      void logFromHistory();
      void Breader();
+     void exit();
 
 
 };

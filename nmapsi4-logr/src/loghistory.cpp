@@ -54,11 +54,14 @@ void mwClass::historyUpdateUrl(QString url) {
 
 void mwClass::updateTreeHistory() {
      
+     qDebug() << "mwClass::updateTreeHistory() -- call";     
+     QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
+     logTree->clear();
      /*if(ItemListHistory.size() != 0)
        itemDeleteAll(ItemListHistory);*/
      logTree->setIconSize(QSize::QSize (32, 32));
-     logTree->clear();
+
      QFile *tmpFile = new QFile();
      if(urlList.first().compare("NULL")) {
 	  foreach(QString item, urlList) {
@@ -67,17 +70,14 @@ void mwClass::updateTreeHistory() {
 		    historyItem = new QTreeWidgetItem(logTree);
 		    historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 		    ItemListHistory.push_front(historyItem);
-		    // FIXME insert file exists check
 		    historyItem->setText(0,item);
 	       } else {
 		    qDebug() << "Remove Items...";
-		    // FIXME create a freelist function for the configuration file
-		    QList<QString> urlListD = urlList;
-		    urlListD.removeAll(item);
+		    urlList.removeAll(item);
+		    settings.setValue("logReader/urlList", QVariant(urlList));
 	       }
 	  }
      } else {
-	  qDebug() << "cazzo";
 	  history = new QTreeWidgetItem(logTree);
 	  history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 	  ItemListHistory.push_front(historyItem);

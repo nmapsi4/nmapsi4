@@ -26,7 +26,12 @@ mwClass::mwClass() : logF(0) {
      connect( actionOpen, SIGNAL(triggered()), 
 	      this, SLOT(Breader()));
 
-     //FIXME
+     connect( actionClose, SIGNAL(triggered()), 
+	      this, SLOT(exit()));
+
+     connect( actionQuit, SIGNAL(triggered()), 
+	      this, SLOT(exit()));
+
      connect( logTree, SIGNAL(itemSelectionChanged()), 
            this, SLOT(logFromHistory()));
 

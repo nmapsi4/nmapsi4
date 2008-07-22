@@ -15,3 +15,10 @@ void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items) {
 	  delete item;
      }
 }
+
+void mwClass::exit() {
+     QSettings settings("nmapsi4","nmapsi4");
+     settings.setValue("window/pos", pos());
+     settings.setValue("window/size", size());
+     close();
+}

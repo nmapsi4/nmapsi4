@@ -3,52 +3,52 @@
 <context>
     <name>mWindow</name>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="133"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="131"/>
         <source>Nmapsi4 log reader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="134"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="132"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="137"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="135"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="136"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="134"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="138"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="136"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="139"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="137"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="140"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="138"/>
         <source>Log History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="141"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="139"/>
         <source>&amp;FIle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="142"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="140"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="143"/>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="141"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
