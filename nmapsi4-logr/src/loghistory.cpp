@@ -41,13 +41,15 @@ void mwClass::historyUpdateUrl(QString url) {
 	  urlList.append(url);
 	  settings.setValue("logReader/urlList", QVariant(urlList));
      } else {
-	  if(urlList.size() == __CACHE_SIZE__) {
+	  if((urlList.size() == __CACHE_SIZE__) && (!urlList.contains(url)))  {
 	       urlList.removeLast();
 	       urlList.push_front(url);
 	       settings.setValue("logReader/urlList", QVariant(urlList));
 	  } else {
-	       urlList.push_front(url);
-	       settings.setValue("logReader/urlList", QVariant(urlList));
+	       if(!urlList.contains(url)) {
+		    urlList.push_front(url);
+		    settings.setValue("logReader/urlList", QVariant(urlList));
+	       }
 	  }
      }
 }
@@ -63,18 +65,22 @@ void mwClass::updateTreeHistory() {
      logTree->setIconSize(QSize::QSize (32, 32));
 
      QFile *tmpFile = new QFile();
-     if(urlList.first().compare("NULL")) {
+     if(!urlList.isEmpty() && urlList.first().compare("NULL")) {
 	  foreach(QString item, urlList) {
 	       tmpFile->setFileName(item);
 	       if(tmpFile->exists()) {
-		    historyItem = new QTreeWidgetItem(logTree);
-		    historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-		    ItemListHistory.push_front(historyItem);
-		    historyItem->setText(0,item);
+			 historyItem = new QTreeWidgetItem(logTree);
+			 historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+			 ItemListHistory.push_front(historyItem);
+			 historyItem->setText(0,item);
 	       } else {
-		    qDebug() << "Remove Items...";
-		    urlList.removeAll(item);
-		    settings.setValue("logReader/urlList", QVariant(urlList));
+		    if(urlList.contains(item)) {
+			 qDebug() << "Remove Items...";
+			 urlList.removeOne(item);
+			 settings.setValue("logReader/urlList", QVariant(urlList));
+		    }
+/*		    if(urlList.isEmpty())
+		    history->setText(0, "No Url Cache");*/
 	       }
 	  }
      } else {

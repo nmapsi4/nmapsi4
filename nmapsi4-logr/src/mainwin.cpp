@@ -20,7 +20,7 @@
 #include "mainwin.h"
 
 
-mwClass::mwClass() : logF(0) {
+mwClass::mwClass() : logF(0), url(0) {
      setupUi(this);
 
      connect( actionOpen, SIGNAL(triggered()), 
