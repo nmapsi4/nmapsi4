@@ -3,7 +3,8 @@
 * Show menu bar option
 * remove debug for stable release
 
-version 2.x:
+version x.2.x:
 * support for theme (nmapsi4)
 * log reader
 * logreader hostory (five url)
+* nmapsi4 hosts history

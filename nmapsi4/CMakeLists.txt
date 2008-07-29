@@ -12,16 +12,16 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
-		core/nmapParser.cpp 
-		core/extensions.cpp 
-		mainwin.cpp 
-		core/updateUI.cpp 
+		core/nmapParser.cpp
+		core/extensions.cpp
+		mainwin.cpp
+		core/updateUI.cpp
 		core/toolsUI.cpp
 		preference/profilemain.cpp
 		preference/profilemainupdate.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
-		main.cpp )
+		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 
 SET(SOURCES_H mainwin.h preference/profilemain.h)

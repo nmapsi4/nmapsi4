@@ -3,52 +3,52 @@
 <context>
     <name>mWindow</name>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="131"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="131"/>
         <source>Nmapsi4 log reader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="132"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="132"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="135"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="135"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="134"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="134"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="136"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="136"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="137"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="137"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="138"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="138"/>
         <source>Log History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="139"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="139"/>
         <source>&amp;FIle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="140"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="140"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="141"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="141"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -56,12 +56,12 @@
 <context>
     <name>mwClass</name>
     <message>
-        <location filename="../src/logrApi.cpp" line="6"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/nmapsi4-logr/src/logrApi.cpp" line="6"/>
         <source>Open Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/logrApi.cpp" line="7"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/nmapsi4-logr/src/logrApi.cpp" line="7"/>
         <source>Log (*.log)</source>
         <translation type="unfinished"></translation>
     </message>
