@@ -54,9 +54,9 @@ void mwClass::historyUpdateUrl(QString url) {
      }
 }
 
-void mwClass::updateTreeHistory() {
+void mwClass::updateThFile() {
      
-     qDebug() << "mwClass::updateTreeHistory() -- call";     
+     qDebug() << "mwClass::updateThFile() -- call";     
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
      logTree->clear();
@@ -79,8 +79,8 @@ void mwClass::updateTreeHistory() {
 			 urlList.removeOne(item);
 			 settings.setValue("logReader/urlList", QVariant(urlList));
 		    }
-/*		    if(urlList.isEmpty())
-		    history->setText(0, "No Url Cache");*/
+                    /*if(urlList.isEmpty())
+		      history->setText(0, "No Url Cache");*/
 	       }
 	  }
      } else {

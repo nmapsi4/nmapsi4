@@ -44,7 +44,7 @@ mwClass::mwClass() : logF(0), url(0) {
 
      // TEST
      //historyReadUrl();
-     updateTreeHistory();
+     updateThFile();
 }
 
 void mwClass::Breader() {
@@ -94,7 +94,7 @@ void mwClass::logReader() {
 	  }
      }
 
-     updateTreeHistory();
+     updateThFile();
      logF->close();
 
 }

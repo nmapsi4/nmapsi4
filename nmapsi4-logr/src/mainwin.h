@@ -47,10 +47,11 @@ private:
      QFile *logF;
      QList<QTreeWidgetItem*> ItemList;
      QList<QTreeWidgetItem*> ItemListHistory;
-     // Hostory old log
+     
+     // Hostory (FIXME create a history class)
      QList<QString> historyReadUrl();
      void historyUpdateUrl(QString url);
-     void updateTreeHistory();
+     void updateThFile();
 
 public:
      mwClass();
