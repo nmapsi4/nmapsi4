@@ -10,6 +10,7 @@ PROJECT(nmapsi4-logr)
 SET(SOURCES_CPP	src/mainwin.cpp 
                 src/logrApi.cpp
 		src/loghistory.cpp
+		../lib/loghistory.cpp
 		src/main.cpp )
 MESSAGE( STATUS ${SOURCES_CPP} )
 

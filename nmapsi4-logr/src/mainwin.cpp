@@ -44,7 +44,9 @@ mwClass::mwClass() : logF(0), url(0) {
 
      // TEST
      //historyReadUrl();
-     updateThFile();
+     logHistory *history = new logHistory(logTree);
+     history->updateThFile();
+     delete history;
 }
 
 void mwClass::Breader() {
@@ -58,7 +60,10 @@ void mwClass::logReader() {
 	       return;
      
      qDebug() << "Path Current Item::" << url;
-     historyUpdateUrl(url);
+
+     logHistory *history = new logHistory(logTree);
+     history->historyUpdateUrl(url);
+
      if(!logF) logF = new QFile();
      qDebug() << "nmapsi4-logr:: --> url::" << url;
      logF->setFileName(url);
@@ -94,8 +99,9 @@ void mwClass::logReader() {
 	  }
      }
 
-     updateThFile();
+     history->updateThFile();
      logF->close();
+     delete history;
 
 }
 

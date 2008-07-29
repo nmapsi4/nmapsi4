@@ -17,19 +17,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "mainwin.h"
+#include "loghistory.h"
 
 // TODO
 #define __CACHE_SIZE__ 10
 
-QList<QString> mwClass::historyReadUrl() {
+logHistory::logHistory(QTreeWidget* treeLog) {
+     logTree = treeLog;
+}
+
+logHistory::~logHistory() {
+}
+
+QList<QString> logHistory::historyReadUrl() {
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList;
      urlList = settings.value("logReader/urlList", "NULL").toStringList();
      return urlList;
 }
 
-void mwClass::historyUpdateUrl(QString url) {
+void logHistory::historyUpdateUrl(QString url) {
      assert(!url.isEmpty());
 
      QSettings settings("nmapsi4","nmapsi4");
@@ -54,9 +61,9 @@ void mwClass::historyUpdateUrl(QString url) {
      }
 }
 
-void mwClass::updateThFile() {
+void logHistory::updateThFile() {
      
-     qDebug() << "mwClass::updateThFile() -- call";     
+     qDebug() << "mwClass::updateTreeHistory() -- call";     
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
      logTree->clear();
@@ -79,8 +86,8 @@ void mwClass::updateThFile() {
 			 urlList.removeOne(item);
 			 settings.setValue("logReader/urlList", QVariant(urlList));
 		    }
-                    /*if(urlList.isEmpty())
-		      history->setText(0, "No Url Cache");*/
+/*		    if(urlList.isEmpty())
+		    history->setText(0, "No Url Cache");*/
 	       }
 	  }
      } else {
@@ -93,14 +100,4 @@ void mwClass::updateThFile() {
 
 }
 
-void mwClass::logFromHistory() {
-     QString url2;
-     url2 = logTree->currentItem()->text(0);
-     qDebug() << "Path Call Item::" << logTree->currentItem()->text(0);
-     if(url2.compare(url)) {
-	  url = url2;
-	  logReader();
-     } else {
-	  qDebug() << "Is equal...";
-     }
-}
+

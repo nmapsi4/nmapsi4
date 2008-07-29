@@ -17,57 +17,24 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MAINWIN_H
-#define MAINWIN_H
+#ifndef LOGHISTORY_H
+#define LOGHISTORY_H
 
-#include <QString>
-#include <QTreeWidgetItem>
-#include <QList>
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
-#include <QSettings>
-#include <QDir>
-#include <QFileDialog>
-#include <assert.h>
-#include "ui_mainwin.h"
-#include "../../src/loghistory.h"
-
-class mwClass : public QMainWindow , private Ui::mWindow
+class logHistory
 {
-     Q_OBJECT
 
 private:
-     QString showBrowser();
-     void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
+     QList<QString> historyReadUrl();
 
-     QTreeWidgetItem *root;
-     QTreeWidgetItem *item;
-     QTreeWidgetItem *history;
-     //QTreeWidgetItem *historyItem;
-     QFile *logF;
-     QList<QTreeWidgetItem*> ItemList;
-     //QList<QTreeWidgetItem*> ItemListHistory;
-     
-     // Hostory (FIXME create a history class)
-     //QList<QString> historyReadUrl();
-     //void historyUpdateUrl(QString url);
-     //void updateThFile();
-
+     QTreeWidgetItem* historyItem;
+     QList<QString> ItemListHistory;
+     QTreeWidget* logTree;
+	  
 public:
-     mwClass();
-     ~mwClass();
-
-protected:
-     QString url;
-
-private slots:
-     void logReader();
-     void logFromHistory();
-     void Breader();
-     void exit();
-
-
+     logHistory(QTreeWidget* treeLog);
+     ~logHistory();
+     void updateThFile();
+     void historyUpdateUrl(QString url);
 };
 
 #endif

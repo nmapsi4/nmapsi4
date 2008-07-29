@@ -22,3 +22,16 @@ void mwClass::exit() {
      settings.setValue("window/size", size());
      close();
 }
+
+
+void mwClass::logFromHistory() {
+     QString url2;
+     url2 = logTree->currentItem()->text(0);
+     qDebug() << "Path Call Item::" << logTree->currentItem()->text(0);
+     if(url2.compare(url)) {
+	  url = url2;
+	  logReader();
+     } else {
+	  qDebug() << "Is equal...";
+     }
+}
