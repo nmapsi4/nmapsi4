@@ -31,7 +31,7 @@
 #include <QFileDialog>
 #include <assert.h>
 #include "ui_mainwin.h"
-#include "../../src/loghistory.h"
+#include "../../lib/loghistory.h"
 
 class mwClass : public QMainWindow , private Ui::mWindow
 {
@@ -43,16 +43,8 @@ private:
 
      QTreeWidgetItem *root;
      QTreeWidgetItem *item;
-     QTreeWidgetItem *history;
-     //QTreeWidgetItem *historyItem;
      QFile *logF;
      QList<QTreeWidgetItem*> ItemList;
-     //QList<QTreeWidgetItem*> ItemListHistory;
-     
-     // Hostory (FIXME create a history class)
-     //QList<QString> historyReadUrl();
-     //void historyUpdateUrl(QString url);
-     //void updateThFile();
 
 public:
      mwClass();

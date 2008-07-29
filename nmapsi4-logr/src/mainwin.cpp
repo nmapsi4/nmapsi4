@@ -44,7 +44,7 @@ mwClass::mwClass() : logF(0), url(0) {
 
      // TEST
      //historyReadUrl();
-     logHistory *history = new logHistory(logTree);
+     logHistory *history = new logHistory(logTree,"logReader/urlList");
      history->updateThFile();
      delete history;
 }
@@ -61,7 +61,7 @@ void mwClass::logReader() {
      
      qDebug() << "Path Current Item::" << url;
 
-     logHistory *history = new logHistory(logTree);
+     logHistory *history = new logHistory(logTree,"logReader/urlList");
      history->historyUpdateUrl(url);
 
      if(!logF) logF = new QFile();

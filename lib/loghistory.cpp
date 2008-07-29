@@ -22,17 +22,19 @@
 // TODO
 #define __CACHE_SIZE__ 10
 
-logHistory::logHistory(QTreeWidget* treeLog) {
+logHistory::logHistory(QTreeWidget* treeLog, QString ConfigTag) {
      logTree = treeLog;
+     configTag = ConfigTag;
 }
 
 logHistory::~logHistory() {
+     // TODO
 }
 
 QList<QString> logHistory::historyReadUrl() {
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList;
-     urlList = settings.value("logReader/urlList", "NULL").toStringList();
+     urlList = settings.value(configTag, "NULL").toStringList();
      return urlList;
 }
 
@@ -46,16 +48,16 @@ void logHistory::historyUpdateUrl(QString url) {
      if(urlList.contains("NULL")) {
 	  urlList.removeFirst();
 	  urlList.append(url);
-	  settings.setValue("logReader/urlList", QVariant(urlList));
+	  settings.setValue(configTag, QVariant(urlList));
      } else {
 	  if((urlList.size() == __CACHE_SIZE__) && (!urlList.contains(url)))  {
 	       urlList.removeLast();
 	       urlList.push_front(url);
-	       settings.setValue("logReader/urlList", QVariant(urlList));
+	       settings.setValue(configTag, QVariant(urlList));
 	  } else {
 	       if(!urlList.contains(url)) {
 		    urlList.push_front(url);
-		    settings.setValue("logReader/urlList", QVariant(urlList));
+		    settings.setValue(configTag, QVariant(urlList));
 	       }
 	  }
      }
@@ -84,7 +86,7 @@ void logHistory::updateThFile() {
 		    if(urlList.contains(item)) {
 			 qDebug() << "Remove Items...";
 			 urlList.removeOne(item);
-			 settings.setValue("logReader/urlList", QVariant(urlList));
+			 settings.setValue(configTag, QVariant(urlList));
 		    }
 /*		    if(urlList.isEmpty())
 		    history->setText(0, "No Url Cache");*/

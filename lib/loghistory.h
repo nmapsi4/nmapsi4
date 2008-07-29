@@ -20,6 +20,14 @@
 #ifndef LOGHISTORY_H
 #define LOGHISTORY_H
 
+#include <QList>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QSettings>
+#include <QFile>
+#include <assert.h>
+#include <QDebug>
+
 class logHistory
 {
 
@@ -27,14 +35,19 @@ private:
      QList<QString> historyReadUrl();
 
      QTreeWidgetItem* historyItem;
-     QList<QString> ItemListHistory;
+     QTreeWidgetItem* history;
+     QList<QTreeWidgetItem*> ItemListHistory;
      QTreeWidget* logTree;
 	  
 public:
-     logHistory(QTreeWidget* treeLog);
+     logHistory(QTreeWidget* treeLog, QString ConfigTag);
      ~logHistory();
      void updateThFile();
+     //void updateTh(); TODO
      void historyUpdateUrl(QString url);
+
+protected:
+     QString configTag;
 };
 
 #endif
