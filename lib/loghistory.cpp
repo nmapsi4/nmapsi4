@@ -103,3 +103,41 @@ void logHistory::updateThFile() {
 }
 
 
+void logHistory::updateTh() {
+     // TODO
+     qDebug() << "logHostory::updateTH() -- call";     
+     QSettings settings("nmapsi4","nmapsi4");
+     QList<QString> urlList = historyReadUrl();
+     logTree->clear();
+     /*if(ItemListHistory.size() != 0)
+       itemDeleteAll(ItemListHistory);*/
+     logTree->setIconSize(QSize::QSize (32, 32));
+
+     //QFile *tmpFile = new QFile();
+     if(!urlList.isEmpty() && urlList.first().compare("NULL")) {
+	  foreach(QString item, urlList) {
+	       //tmpFile->setFileName(item);
+	       if(!urlList.contains(item)) {
+		    historyItem = new QTreeWidgetItem(logTree);
+		    historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+		    ItemListHistory.push_front(historyItem);
+		    historyItem->setText(0,item);
+	       } /*else {
+		    if(urlList.contains(item)) {
+			 qDebug() << "Remove Items...";
+			 urlList.removeOne(item);
+			 settings.setValue(configTag, QVariant(urlList));
+			 }*/
+/*		    if(urlList.isEmpty())
+		    history->setText(0, "No Url Cache");
+		    }*/
+	  }
+     } else {
+	  history = new QTreeWidgetItem(logTree);
+	  history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+	  ItemListHistory.push_front(historyItem);
+	  history->setText(0, "No Url Cache");
+     }
+//     delete tmpFile;
+
+}

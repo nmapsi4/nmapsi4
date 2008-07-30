@@ -43,7 +43,7 @@ public:
      logHistory(QTreeWidget* treeLog, QString ConfigTag);
      ~logHistory();
      void updateThFile();
-     //void updateTh(); TODO
+     void updateTh();
      void historyUpdateUrl(QString url);
 
 protected:
