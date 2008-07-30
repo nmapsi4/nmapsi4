@@ -31,47 +31,110 @@
      <height>480</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout" >
-    <item>
-     <widget class="QTreeWidget" name="treeLogView" >
-      <property name="alternatingRowColors" >
-       <bool>true</bool>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <widget class="QToolBox" name="toolBox" >
+      <property name="frameShadow" >
+       <enum>QFrame::Plain</enum>
       </property>
-      <property name="selectionMode" >
-       <enum>QAbstractItemView::NoSelection</enum>
+      <property name="lineWidth" >
+       <number>0</number>
       </property>
-      <property name="rootIsDecorated" >
-       <bool>false</bool>
+      <property name="currentIndex" >
+       <number>0</number>
       </property>
-      <column>
-       <property name="text" >
+      <widget class="QWidget" name="page" >
+       <property name="geometry" >
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>797</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <attribute name="label" >
         <string>Host(s)</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout" >
+        <item>
+         <widget class="QTreeWidget" name="treeLogView" >
+          <property name="frameShape" >
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow" >
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="alternatingRowColors" >
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode" >
+           <enum>QAbstractItemView::NoSelection</enum>
+          </property>
+          <property name="rootIsDecorated" >
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text" >
+            <string>List(s)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2" >
+       <property name="geometry" >
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>797</width>
+         <height>400</height>
+        </rect>
        </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTreeWidget" name="logTree" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
-        <horstretch>250</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="alternatingRowColors" >
-       <bool>true</bool>
-      </property>
-      <property name="rootIsDecorated" >
-       <bool>false</bool>
-      </property>
-      <column>
-       <property name="text" >
+       <attribute name="label" >
         <string>Log History</string>
-       </property>
-      </column>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2" >
+        <item>
+         <widget class="QTreeWidget" name="logTree" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+            <horstretch>250</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape" >
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow" >
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="alternatingRowColors" >
+           <bool>true</bool>
+          </property>
+          <property name="rootIsDecorated" >
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text" >
+            <string>List(s)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
+   <zorder>dockWidget</zorder>
+   <zorder>scrollArea</zorder>
+   <zorder>scrollArea_2</zorder>
+   <zorder>treeView</zorder>
+   <zorder>treeWidget</zorder>
+   <zorder>treeView</zorder>
+   <zorder>treeView_2</zorder>
+   <zorder>toolBox</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
@@ -134,7 +197,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpen" />
-   <addaction name="actionClear" />
    <addaction name="actionQuit" />
   </widget>
   <action name="actionClear" >

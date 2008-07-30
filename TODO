@@ -8,3 +8,4 @@ version x.2.x:
 * log reader
 * logreader hostory (five url)
 * nmapsi4 hosts history
+* new log files extension (x.ln4)

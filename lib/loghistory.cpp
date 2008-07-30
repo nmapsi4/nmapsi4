@@ -19,7 +19,7 @@
 
 #include "loghistory.h"
 
-// TODO
+// TODO insert in contructor definition
 #define __CACHE_SIZE__ 10
 
 logHistory::logHistory(QTreeWidget* treeLog, QString ConfigTag) {
