@@ -3,6 +3,16 @@
 <context>
     <name>mWindow</name>
     <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="171"/>
+        <source>Host(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="173"/>
+        <source>Log History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="164"/>
         <source>Nmapsi4 log reader</source>
         <translation type="unfinished"></translation>
@@ -28,13 +38,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="171"/>
-        <source>Host(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="173"/>
-        <source>Log History</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="172"/>
+        <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50,11 +55,6 @@
     <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="176"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_git/build/nmapsi4-logr/ui_mainwin.h" line="172"/>
-        <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
