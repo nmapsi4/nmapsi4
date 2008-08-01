@@ -3,57 +3,57 @@
 <context>
     <name>mWindow</name>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="171"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="167"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="173"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="169"/>
         <source>Log History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="164"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="160"/>
         <source>Nmapsi4 log reader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="165"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="161"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="168"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="164"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="167"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="163"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="169"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="165"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="172"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="168"/>
         <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="174"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="170"/>
         <source>&amp;FIle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="175"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="171"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="176"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="172"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>

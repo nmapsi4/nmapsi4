@@ -3,8 +3,148 @@
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="946"/>
+        <source>Host(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="948"/>
+        <source>Host(s) Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="879"/>
         <source>NmapSI4[*]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="902"/>
+        <source>&amp;Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="884"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="887"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="888"/>
+        <source>&amp;About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="901"/>
+        <source>&amp;Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="949"/>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="898"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="899"/>
+        <source>About &amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="900"/>
+        <source>&amp;Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="903"/>
+        <source>Stop Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="904"/>
+        <source>Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="910"/>
+        <source>Close Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="913"/>
+        <source>Close Scan Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="916"/>
+        <source>Clear HostName</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="919"/>
+        <source>Clear Hostname IP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="925"/>
+        <source>Save As</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="931"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="934"/>
+        <source>S&amp;ave</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="935"/>
+        <source>Save &amp;As</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="936"/>
+        <source>F&amp;ull Screen Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="937"/>
+        <source>Ctrl+Shift+F11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="938"/>
+        <source>Show &amp;Menu Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="939"/>
+        <source>Ctrl+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="940"/>
+        <source>Main Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="941"/>
+        <source>Actions Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="942"/>
+        <source>Show Status Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -18,23 +158,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="949"/>
-        <source>Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="946"/>
-        <source>Host(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="948"/>
-        <source>Host(s) Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="951"/>
-        <source>Error</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="947"/>
+        <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -43,13 +168,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="953"/>
-        <source>Log</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="951"/>
+        <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="952"/>
         <source>Log(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="953"/>
+        <source>Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -378,6 +508,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="1042"/>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="1043"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
@@ -385,141 +520,6 @@
     <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="1044"/>
         <source>toolBar_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="902"/>
-        <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="884"/>
-        <source>Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="887"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="888"/>
-        <source>&amp;About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="901"/>
-        <source>&amp;Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="898"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="899"/>
-        <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="900"/>
-        <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="903"/>
-        <source>Stop Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="904"/>
-        <source>Clear History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="910"/>
-        <source>Close Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="913"/>
-        <source>Close Scan Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="916"/>
-        <source>Clear HostName</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="919"/>
-        <source>Clear Hostname IP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="925"/>
-        <source>Save As</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="931"/>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="934"/>
-        <source>S&amp;ave</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="935"/>
-        <source>Save &amp;As</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="936"/>
-        <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="937"/>
-        <source>Ctrl+Shift+F11</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="938"/>
-        <source>Show &amp;Menu Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="939"/>
-        <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="1042"/>
-        <source>Toolbars</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="940"/>
-        <source>Main Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="941"/>
-        <source>Actions Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="942"/>
-        <source>Show Status Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4/ui_mainwin.h" line="947"/>
-        <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -652,28 +652,6 @@
 <context>
     <name>nmapClass</name>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="140"/>
-        <source>No Ports Range (ex: 20-80)
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="114"/>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="153"/>
-        <source>no input file
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="153"/>
-        <source>Normal Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/nmapParser.cpp" line="194"/>
         <source>No Ports</source>
         <translation type="unfinished"></translation>
@@ -728,90 +706,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="65"/>
-        <source>Save Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="46"/>
-        <source>No Scan found
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="45"/>
+        <source>No Ftp Address 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="66"/>
-        <source>Log (*.log)</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="45"/>
+        <source>Disable Ftp bounce</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="113"/>
-        <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="80"/>
-        <source>Save File permission Error (Log stored in /tmp)
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="140"/>
+        <source>No Ports Range (ex: 20-80)
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="114"/>
-        <source>Save File permission Error
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="153"/>
+        <source>no input file
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="23"/>
-        <source>About Nmapsi4 </source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="153"/>
+        <source>Normal Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="35"/>
-        <source>NmapSI4 is a qt4 interface for nmap scanner
-
-
-Website: http://nmapsi4.netsons.org
-Issues: http://code.google.com/p/nmapsi4/issues/list
-Mailing-list: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
-Source: http://code.google.com/p/nmapsi4/source/checkout
-
-NmapSI4 is published under the terms of the GPL v2
-
-
-Core Developer:  francesco.cecconi@kdemail.net
-MS Windows Packages: el.diabl09@gmail.com
-
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="60"/>
+        <source>No Host Target
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="46"/>
-        <source>Select the file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="220"/>
-        <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="227"/>
-        <source>Not Present</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
-        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="235"/>
-        <source>Full</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="237"/>
-        <source>User</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/updateUI.cpp" line="124"/>
+        <source>Idle Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -866,25 +801,90 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="60"/>
-        <source>No Host Target
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="23"/>
+        <source>About Nmapsi4 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="35"/>
+        <source>NmapSI4 is a qt4 interface for nmap scanner
+
+
+Website: http://nmapsi4.netsons.org
+Issues: http://code.google.com/p/nmapsi4/issues/list
+Mailing-list: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
+Source: http://code.google.com/p/nmapsi4/source/checkout
+
+NmapSI4 is published under the terms of the GPL v2
+
+
+Core Developer:  francesco.cecconi@kdemail.net
+MS Windows Packages: el.diabl09@gmail.com
+
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="45"/>
-        <source>No Ftp Address 
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="46"/>
+        <source>Select the file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="80"/>
+        <source>Save File permission Error (Log stored in /tmp)
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/extensions.cpp" line="45"/>
-        <source>Disable Ftp bounce</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="220"/>
+        <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/updateUI.cpp" line="124"/>
-        <source>Idle Scan</source>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="227"/>
+        <source>Not Present</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
+        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="235"/>
+        <source>Full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="237"/>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="65"/>
+        <source>Save Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="46"/>
+        <source>No Scan found
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="66"/>
+        <source>Log (*.log)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="113"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="114"/>
+        <source>Save File permission Error
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
