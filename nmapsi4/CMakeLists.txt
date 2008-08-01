@@ -1,8 +1,4 @@
 PROJECT(nmapsi4)
-#cmake_minimum_required(VERSION 2.6.0)
-
-#FIND_PACKAGE(Qt4 REQUIRED)
-#include(${QT_USE_FILE})
 
 if (Q_WS_WIN)
   include(CMakeMinGWFindMake)
@@ -36,7 +32,8 @@ MESSAGE( STATUS ${RESOURCES_QRC} )
 qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
-QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
+QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts 
+  ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 
@@ -48,8 +45,6 @@ endif (NOT WIN32)
 
 INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
 TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} )
-
-#QT4_CREATE_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts ts/nmapsi4_es.ts nmapsi4_de.ts ts/nmapsi4_pl.ts)
 
 if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)

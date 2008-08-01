@@ -65,7 +65,7 @@ void logHistory::historyUpdateUrl(QString url) {
 
 void logHistory::updateThFile() {
      
-     qDebug() << "mwClass::updateTreeHistory() -- call";     
+     qDebug() << "logHistory::updateTreeHistory() -- call";     
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
      logTree->clear();
@@ -105,7 +105,7 @@ void logHistory::updateThFile() {
 
 void logHistory::updateTh() {
      // TODO
-     qDebug() << "logHostory::updateTH() -- call";     
+     qDebug() << "logHistory::updateTH() -- call";     
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
      logTree->clear();
