@@ -21,9 +21,15 @@ qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
-QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4-logr_it.ts 
-	ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
-
+if (RELOAD_TRANSLATIONS)
+  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4-logr_it.ts 
+    ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+  message( "nmapsi4-logr:: update and rebuild translation " )  
+else (NOT RELOAD_TRANSLATIONS)
+  QT4_ADD_TRANSLATION(qms ts/nmapsi4-logr_it.ts	ts/nmapsi4-logr_fr.ts 
+    ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+  message( "nmapsi4-logr:: update translation " )
+endif (RELOAD_TRANSLATIONS)
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 ADD_EXECUTABLE(nmapsi4-logr ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})

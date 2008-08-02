@@ -32,8 +32,16 @@ MESSAGE( STATUS ${RESOURCES_QRC} )
 qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
-QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts 
-  ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
+
+if (RELOAD_TRANSLATIONS)
+  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts 
+    ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
+  message( "nmapsi4:: update and rebuild translation " )  
+else (NOT RELOAD_TRANSLATIONS)
+  QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts 
+    ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
+  message( "nmapsi4:: update translation " )
+endif (RELOAD_TRANSLATIONS)
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 
