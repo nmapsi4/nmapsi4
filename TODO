@@ -9,3 +9,5 @@ version x.2.x:
 * logreader hostory (five url)
 * nmapsi4 hosts history
 * new log files extension (x.ln4)
+* scan options view
+* scan type label on message bar

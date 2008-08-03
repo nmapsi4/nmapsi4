@@ -1,9 +1,5 @@
 PROJECT(nmapsi4)
 
-if (Q_WS_WIN)
-  include(CMakeMinGWFindMake)
-endif (Q_WS_WIN)
-
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 SET(SOURCES_CPP core/nmapsi4Slot.cpp
