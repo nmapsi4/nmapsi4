@@ -10,4 +10,4 @@ version x.2.x:
 * nmapsi4 hosts history
 * new log files extension (x.ln4)
 * scan options view
-* scan type label on message bar
+* scan type label on message bar --> DONE

@@ -74,6 +74,7 @@ protected:
 	QString logSessionFile;
 	QLabel *labelVersion;
 	QLabel *userMode;
+	QLabel *vBarLabel;
 	mainProfile *dialog;
 	QProgressBar *progressScan;
 

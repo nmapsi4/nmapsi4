@@ -825,7 +825,7 @@ MS Windows Packages: el.diabl09@gmail.com
 </translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="60"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="61"/>
         <source>No Host Target
 </source>
         <translation>Nessun host specificato
@@ -891,11 +891,6 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
-        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/updateUI.cpp" line="125"/>
         <source>SYN Stealth Scan</source>
         <translation></translation>
@@ -956,6 +951,16 @@ MS Windows Packages: el.diabl09@gmail.com
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/updateUI.cpp" line="124"/>
         <source>Idle Scan</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
+        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/profileSession.cpp" line="62"/>
+        <source>&lt;b&gt;Scan Type:&lt;/b&gt; </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
