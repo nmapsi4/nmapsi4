@@ -230,7 +230,7 @@ void nmapClass::setNmapVersion() {
      
      userMode = new QLabel();
      QString userModeString;
-     userModeString.prepend(tr("<b>Nmapsi4 Mode:</b> "));
+     userModeString.prepend(tr("<b>Mode:</b> "));
      if(!uid)
 	  userModeString.append(tr("Full"));
      else

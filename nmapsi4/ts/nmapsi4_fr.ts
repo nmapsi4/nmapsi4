@@ -739,7 +739,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="60"/>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/mainwin.cpp" line="61"/>
         <source>No Host Target
 </source>
         <translation type="unfinished"></translation>
@@ -846,11 +846,6 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
-        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="235"/>
         <source>Full</source>
         <translation type="unfinished"></translation>
@@ -885,6 +880,16 @@ MS Windows Packages: el.diabl09@gmail.com
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/saveLog.cpp" line="114"/>
         <source>Save File permission Error
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/toolsUI.cpp" line="233"/>
+        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/nmapsi4/core/profileSession.cpp" line="62"/>
+        <source>&lt;b&gt;Scan Type:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

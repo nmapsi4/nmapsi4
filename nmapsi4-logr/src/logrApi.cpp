@@ -25,6 +25,9 @@ void mwClass::exit() {
 
 
 void mwClass::logFromHistory() {
-     url = logTree->currentItem()->text(0);
-     logReader();
+     if(toolBoxMain->currentIndex()) {
+	  url = logTree->currentItem()->text(0);
+	  logReader();
+	  toolBoxMain->setCurrentIndex(0);
+     }
 }

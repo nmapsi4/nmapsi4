@@ -54,6 +54,16 @@ void nmapClass::checkProfile() {
      }
      
      lineProfile->setText(Profile);
+     if(!vBarLabel) 
+	  vBarLabel = new QLabel();
+     else
+	  statusBar()->removeWidget(vBarLabel);
+     QString scanVersionLabel;
+     scanVersionLabel.append(tr("<b>Scan Type:</b> "));
+     scanVersionLabel.append(lineProfile->text());
+     vBarLabel->setText(scanVersionLabel);
+     statusBar()->addPermanentWidget(vBarLabel,0);
+     vBarLabel->show();
      
      if((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
 	  Profile = "normal"; // reset profile

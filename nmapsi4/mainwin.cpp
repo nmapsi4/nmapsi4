@@ -20,7 +20,8 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass() : PFile(0), 
-			 labelVersion(0) 
+			 labelVersion(0),
+			 vBarLabel(NULL)
 {
      int uid = 0;
 	
@@ -135,4 +136,5 @@ nmapClass::~nmapClass()
      delete PFile;
      delete labelVersion;
      delete userMode;
+     delete vBarLabel;
 }
