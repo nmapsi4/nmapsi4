@@ -114,17 +114,10 @@ void logHistory::updateTh() {
 
      if(!urlList.isEmpty() && urlList.first().compare("NULL")) {
 	  foreach(QString item, urlList) {
-	       // QT 4.4.1 bug ?!?!?
-	       // QList::contains() problem
-	       bool valueRet = urlList.contains(item);
-	       qDebug() << "DEBUG::" << urlList.contains(item) << valueRet;
-	       if(urlList.contains(item)) {
-		    historyItem = new QTreeWidgetItem(logTree);
-		    historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-		    ItemListHistory.push_front(historyItem);
-		    historyItem->setText(0,item);
-		    qDebug() << "Insert Items";
-	       } 
+	       historyItem = new QTreeWidgetItem(logTree);
+	       historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+	       ItemListHistory.push_front(historyItem);
+	       historyItem->setText(0,item);
 	  }
      } else {
 	  history = new QTreeWidgetItem(logTree);

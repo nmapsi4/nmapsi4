@@ -251,3 +251,11 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items) {
 	  delete item;
      }
 }
+
+void nmapClass::callScanH() {
+     if(toolBox->currentIndex()) {
+	  hostEdit->setText(treeLogH->currentItem()->text(0));
+	  toolBox->setCurrentIndex(0);
+	  scan();
+     }
+}
