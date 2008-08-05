@@ -25,6 +25,7 @@
 #include "ui_mainwin.h"
 #include "core/staticDefine.h"
 #include "preference/profilemain.h"
+#include "../lib/loghistory.h"
 
 
 

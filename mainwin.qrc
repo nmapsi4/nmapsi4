@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/images" >
+    <file>images/brand3.png</file>
+    <file>images/reload.png</file>
     <file>images/show-menu.png</file>
     <file>icons/nmapsi4_endScan.svg</file>
     <file>icons/nmapsi4_mw.svg</file>

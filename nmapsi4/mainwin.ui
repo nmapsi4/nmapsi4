@@ -51,14 +51,6 @@
    </size>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>75</y>
-     <width>850</width>
-     <height>561</height>
-    </rect>
-   </property>
    <layout class="QGridLayout" name="gridLayout" >
     <item row="0" column="0" >
      <widget class="QLabel" name="label" >
@@ -105,14 +97,6 @@
        <enum>Qt::ElideNone</enum>
       </property>
       <widget class="QWidget" name="tab_8" >
-       <property name="geometry" >
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>834</width>
-         <height>429</height>
-        </rect>
-       </property>
        <attribute name="title" >
         <string>Scan</string>
        </attribute>
@@ -126,13 +110,16 @@
           <property name="currentIndex" >
            <number>0</number>
           </property>
+          <property name="tabSpacing" >
+           <number>2</number>
+          </property>
           <widget class="QWidget" name="page_6" >
            <property name="geometry" >
             <rect>
              <x>0</x>
              <y>0</y>
              <width>816</width>
-             <height>349</height>
+             <height>324</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -141,9 +128,6 @@
            <layout class="QVBoxLayout" name="verticalLayout_3" >
             <item>
              <widget class="QTreeWidget" name="listWscan" >
-              <property name="windowModality" >
-               <enum>Qt::NonModal</enum>
-              </property>
               <property name="sizePolicy" >
                <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
                 <horstretch>0</horstretch>
@@ -231,7 +215,7 @@
              <x>0</x>
              <y>0</y>
              <width>816</width>
-             <height>349</height>
+             <height>324</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -282,19 +266,47 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="page_8" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>816</width>
+             <height>324</height>
+            </rect>
+           </property>
+           <attribute name="label" >
+            <string>Url history</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4" >
+            <item>
+             <widget class="QTreeWidget" name="treeLogH" >
+              <property name="frameShape" >
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="alternatingRowColors" >
+               <bool>true</bool>
+              </property>
+              <property name="rootIsDecorated" >
+               <bool>false</bool>
+              </property>
+              <column>
+               <property name="text" >
+                <string>List(s)</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_2" >
-       <property name="geometry" >
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>834</width>
-         <height>429</height>
-        </rect>
-       </property>
        <attribute name="title" >
         <string>Error</string>
        </attribute>
@@ -345,14 +357,6 @@
        </layout>
       </widget>
       <widget class="QWidget" name="tab" >
-       <property name="geometry" >
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>834</width>
-         <height>429</height>
-        </rect>
-       </property>
        <attribute name="title" >
         <string>Log</string>
        </attribute>
@@ -437,14 +441,6 @@
         <number>0</number>
        </property>
        <widget class="QWidget" name="ScanOptions" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
         <property name="autoFillBackground" >
          <bool>true</bool>
         </property>
@@ -658,14 +654,6 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
         <widget class="QGroupBox" name="groupBox_3" >
          <property name="geometry" >
           <rect>
@@ -720,14 +708,6 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_2" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
         <widget class="QGroupBox" name="groupBox_4" >
          <property name="geometry" >
           <rect>
@@ -899,14 +879,6 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_3" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
         <widget class="QGroupBox" name="groupBox_5" >
          <property name="geometry" >
           <rect>
@@ -994,14 +966,6 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_5" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
         <widget class="QGroupBox" name="groupBox_6" >
          <property name="geometry" >
           <rect>
@@ -1324,25 +1288,8 @@
          </widget>
         </widget>
        </widget>
-       <widget class="QWidget" name="page_4" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>831</width>
-          <height>131</height>
-         </rect>
-        </property>
-       </widget>
+       <widget class="QWidget" name="page_4" />
        <widget class="QWidget" name="Options" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>100</width>
-          <height>30</height>
-         </rect>
-        </property>
         <widget class="QGroupBox" name="groupBox_2" >
          <property name="geometry" >
           <rect>
@@ -1708,14 +1655,6 @@
    <addaction name="menu_Help" />
   </widget>
   <widget class="QStatusBar" name="statusbar" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>636</y>
-     <width>850</width>
-     <height>24</height>
-    </rect>
-   </property>
    <property name="layoutDirection" >
     <enum>Qt::RightToLeft</enum>
    </property>
@@ -1723,14 +1662,6 @@
   <widget class="QToolBar" name="toolBar" >
    <property name="enabled" >
     <bool>true</bool>
-   </property>
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>27</y>
-     <width>217</width>
-     <height>48</height>
-    </rect>
    </property>
    <property name="windowTitle" >
     <string>toolBar</string>
@@ -1756,14 +1687,6 @@
    <addaction name="action_Save_As" />
   </widget>
   <widget class="QToolBar" name="toolBar_2" >
-   <property name="geometry" >
-    <rect>
-     <x>217</x>
-     <y>27</y>
-     <width>633</width>
-     <height>48</height>
-    </rect>
-   </property>
    <property name="windowTitle" >
     <string>toolBar_2</string>
    </property>
