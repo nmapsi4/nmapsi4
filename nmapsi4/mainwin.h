@@ -106,6 +106,8 @@ private slots:
 	void showMainToolBar();
 	void showActionToolBar();
 	void showStatusBar();
+	void updateIconsBox();
+	void callScanH();
 
 	// Check nmap version
 	void checkNmapVersion();

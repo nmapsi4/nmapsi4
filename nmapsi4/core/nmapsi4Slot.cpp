@@ -127,4 +127,10 @@ void nmapClass::setNmapsiSlot() {
 	connect( hostEdit, SIGNAL( returnPressed() ),
 		 this, SLOT(scan()));
 
+	connect( toolBox, SIGNAL(currentChanged(int)),
+		 this, SLOT(updateIconsBox()));
+
+	connect( treeLogH, SIGNAL(itemSelectionChanged()), 
+		 this, SLOT(callScanH()));
+
 }

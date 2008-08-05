@@ -303,3 +303,9 @@ void nmapClass::closeTree() {
      listScanError->collapseAll();
      listScan->collapseAll();
 }
+
+void nmapClass::updateIconsBox() {
+     int tmpBox = toolBox->currentIndex();
+     toolBox->setItemIcon(tmpBox,QIcon(QString("")));
+     
+}
