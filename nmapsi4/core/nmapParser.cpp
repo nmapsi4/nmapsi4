@@ -107,7 +107,7 @@ void nmapClass::nmapParser()
 	     *out << nmap_command << endl << endl;
 	}
 
-	listWscan->setIconSize(QSize::QSize (48, 48));
+	listWscan->setIconSize(QSize::QSize (32, 32));
 	listWscan->header()->setResizeMode(0, QHeaderView::Interactive );
 	listScanError->setIconSize(QSize::QSize (32, 32));
 	listScanError->header()->setResizeMode(0, QHeaderView::Interactive );
@@ -115,6 +115,20 @@ void nmapClass::nmapParser()
 	listScan->header()->setResizeMode(0, QHeaderView::Interactive );
 	treeWinfo->setIconSize(QSize::QSize (32, 32));
 	treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive );
+
+	int tmpBox = toolBox->currentIndex();
+	if(tmpBox == 0) {
+	     toolBox->setItemIcon(1,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	     toolBox->setItemIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	}
+	if(tmpBox == 1) {
+	     toolBox->setItemIcon(0,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	     toolBox->setItemIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	}
+	if(tmpBox == 2) {
+	     toolBox->setItemIcon(0,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	     toolBox->setItemIcon(1,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	}
 
 	if(!hostEdit->text().contains("(Stopped)"))
 	     root->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));

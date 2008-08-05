@@ -13,6 +13,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		preference/profilemainupdate.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
+		../lib/loghistory.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 

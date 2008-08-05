@@ -1,3 +1,4 @@
+
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
@@ -35,6 +36,12 @@ nmapClass::nmapClass() : PFile(0),
      // Init function
      this->rootMode(uid); // send uid value
      this->checkProfile();
+
+     // TEST
+     //historyReadUrl();
+     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList");
+     history->updateTh();
+     delete history;
 }
 
 void nmapClass::init() {
@@ -79,6 +86,10 @@ void nmapClass::scan()
      QStringList parametri; //parameters list declaration
      QString hostname = hostEdit->text();
      QString *title = new QString;
+
+     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList");
+     history->historyUpdateUrl(hostname);
+
      *title = "NmapSI4 ";
 	
      action_Scan_menu->setEnabled(false);
@@ -117,8 +128,11 @@ void nmapClass::scan()
      this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
      progressScan->setValue(60);
      this->setWindowTitle(title->replace("(55%)","(60%)"));
+     // history reload
+     history->updateTh();
 
      delete title;
+     delete history;
 
 }
 
