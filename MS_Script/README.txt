@@ -27,8 +27,10 @@ In the folder "MS_script/" you will find some files:
     * Nmap-nmapsi4_0.1.nsi, Nmap-nmapsi4_svn.nsi: scripts to create the complete installer, respectively for version 0.1 (branches) or svn (trunk)
     * nmapsi-0.1-win32.nsi, nmapsi4-svn-win32.nsi: scripts to create the nmapsi4 installer, respectively for version 0.1 (branches) or svn (trunk), this installer will be used by the final installer.
     
-    Open the file Nmap-nmapsi4_0.1 with "HM NIS Edit" and compile the script (Ctrl + F9), if you used the same paths you should not have errors and you will find in the "pack/" the executable "Nmap_with_NmapSI4_GUI. exe "ready to be used.
-    
+Open the file Nmap-nmapsi4_0.1 with "HM NIS Edit" and compile the script (Ctrl + F9), if you used the same paths you should not have errors and you will find in the "pack/" the executable "Nmap_with_NmapSI4_GUI. exe "ready to be used.
+
+P.S. In the file "nmapsi4-svn-win32.nsi" there is the label [ ! define PRODUCT_VERSION "svnDATE-REV_NUM" ], where DATE is the date in the form DMY and REV_NUM the number of revision.
+
 ### Good Luck!
 
 ########################################################################

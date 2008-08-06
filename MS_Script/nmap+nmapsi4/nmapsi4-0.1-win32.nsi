@@ -35,7 +35,7 @@
 ; Finish page
 ;!define MUI_FINISHPAGE_RUN "$INSTDIR\nmapsi4.exe"
 ;!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\README.txt"
-!insertmacro MUI_PAGE_FINISH
+;!insertmacro MUI_PAGE_FINISH
 
 ; Uninstaller pages
 !insertmacro MUI_UNPAGE_INSTFILES
@@ -50,8 +50,8 @@
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "nmapsi4-0.1-win32-setup.exe"
-InstallDir "$PROGRAMFILES\nmapsi4"
+OutFile "..\pack\nmapsi4-0.1-win32-setup.exe"
+InstallDir "$PROGRAMFILES\Nmapsi4"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
@@ -69,7 +69,6 @@ Section "Main" SEC01
   File "..\nmapsi4-0.1-win32\mingwm10.dll"
   File "..\nmapsi4-0.1-win32\TODO.txt"
   File "..\nmapsi4-0.1-win32\README.txt"
-  File "..\nmapsi4-0.1-win32\NEWS.txt"
   File "..\nmapsi4-0.1-win32\COPYING.txt"
   File "..\nmapsi4-0.1-win32\AUTHORS.txt"
   CreateDirectory "$SMPROGRAMS\NmapSI4"
@@ -83,7 +82,6 @@ Section "Language" SEC02
   File "..\nmapsi4-0.1-win32\Language\nmapsi4_es.qm"
   File "..\nmapsi4-0.1-win32\Language\nmapsi4_fr.qm"
   File "..\nmapsi4-0.1-win32\Language\nmapsi4_it.qm"
-  File "..\nmapsi4-0.1-win32\Language\nmapsi4_NONE.qm"
   File "..\nmapsi4-0.1-win32\Language\nmapsi4_pl.qm"
 SectionEnd
 

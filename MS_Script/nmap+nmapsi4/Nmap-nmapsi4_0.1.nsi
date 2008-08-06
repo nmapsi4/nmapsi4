@@ -217,7 +217,7 @@ SectionEnd
 Section "NmapSI4 (GUI Frontend)" SecNmapSI4
   SetOutPath "$INSTDIR" 
   SetOverwrite on 
-  File ..\NmapSI4-svn.exe
+  File ..\pack\nmapsi4-0.1-win32-setup.exe
   ExecWait '"$INSTDIR\nmapsi4-0.1-win32-setup.exe"'
   Delete "$INSTDIR\nmapsi4-0.1-win32-setup.exe"
   StrCpy $nmapsi4set "true"
