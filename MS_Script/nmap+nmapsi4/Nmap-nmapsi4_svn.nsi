@@ -12,7 +12,7 @@
  
   ;Name and file 
   Name "Nmap" 
-  OutFile "..\pack\Nmap_with_NmapSI4_GUI.exe"
+  OutFile "..\pack\Nmap_with_NmapSI4-svn_GUI.exe"
 
   ;Required for removing shortcuts
   RequestExecutionLevel admin
@@ -97,7 +97,7 @@ Function makeShortcuts
 
   ReadINIStr $0 "$PLUGINSDIR\shortcuts.ini" "Field 2" "State"
   StrCmp $0 "0" skipstartmenu
-  CreateDirectory "$SMPROGRAMS\Nmap"
+  ;CreateDirectory "$SMPROGRAMS\Nmap"
 
   skipstartmenu:
 
@@ -151,6 +151,7 @@ Section "Nmap Core Files" SecCore
   SetOverwrite on 
   File ..\CHANGELOG
   File ..\COPYING.txt
+  File ..\nmapsi4.ico
   File ..\nmap-mac-prefixes
   File ..\nmap-os-db
   File ..\nmap-protocols
@@ -172,7 +173,8 @@ Section "Nmap Core Files" SecCore
 
   ;Silent install of Visual C++ 2008 runtime components
   File ..\vcredist_x86.exe
-  ExecWait '"$INSTDIR\vcredist_x86.exe" /q'
+  ExecWait '"$INSTDIR\vcredist_x86.exe" /q:a /c:$TEMP\"msiexec /i vcredist.msi /qn "'
+  ;ExecWait '"$INSTDIR\vcredist_x86.exe" /q'
   Delete "$INSTDIR\vcredist_x86.exe" 
 
   ;Create uninstaller 
@@ -181,7 +183,7 @@ Section "Nmap Core Files" SecCore
   ; Register Nmap with add/remove programs 
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "DisplayName" "Nmap ${VERSION}" 
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "UninstallString" '"$INSTDIR\uninstall.exe"' 
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "DisplayIcon" '"$INSTDIR\icon1.ico"' 
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "DisplayIcon" '"$INSTDIR\nmapsi4.ico"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "NoModify" 1 
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Nmap" "NoRepair" 1 
   
@@ -288,7 +290,7 @@ Section "Uninstall"
   Delete "$INSTDIR\nmap.xsl" 
   Delete "$INSTDIR\nmap_performance.reg" 
   Delete "$INSTDIR\README-WIN32" 
-  Delete "$INSTDIR\icon1.ico"
+  Delete "$INSTDIR\nmapsi4.ico"
   Delete "$INSTDIR\libeay32.dll"
   Delete "$INSTDIR\ssleay32.dll"
   Delete "$INSTDIR\winpcap-nmap*.exe"
