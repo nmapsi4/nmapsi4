@@ -281,6 +281,12 @@
            <layout class="QVBoxLayout" name="verticalLayout_4" >
             <item>
              <widget class="QTreeWidget" name="treeLogH" >
+              <property name="minimumSize" >
+               <size>
+                <width>808</width>
+                <height>316</height>
+               </size>
+              </property>
               <property name="frameShape" >
                <enum>QFrame::Box</enum>
               </property>
@@ -296,6 +302,11 @@
               <column>
                <property name="text" >
                 <string>List(s)</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>Date</string>
                </property>
               </column>
              </widget>

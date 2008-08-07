@@ -38,6 +38,13 @@ QList<QString> logHistory::historyReadUrl() {
      return urlList;
 }
 
+QList<QString> logHistory::historyReadUrlTime() {
+     QSettings settings("nmapsi4","nmapsi4");
+     QList<QString> urlListTime;
+     urlListTime = settings.value("nmapsi4/urlListTime", "NULL").toStringList();
+     return urlListTime;
+}
+
 void logHistory::historyUpdateUrl(QString url) {
      assert(!url.isEmpty());
 
@@ -62,6 +69,55 @@ void logHistory::historyUpdateUrl(QString url) {
 	  }
      }
 }
+
+//
+// TODO 
+// Support for time in history QDateTime()
+//
+void logHistory::historyUpdateUrlTime(QString url, QString scanTime) {
+     assert(!url.isEmpty());
+
+     QSettings settings("nmapsi4","nmapsi4");
+     QList<QString> urlList;
+     // FIXME
+     QList<QString> urlListTime;
+     
+     urlList = historyReadUrl();
+     urlListTime = historyReadUrlTime();
+
+     if(urlList.contains("NULL") && urlListTime.contains("NULL")) {
+	  urlList.removeFirst();
+	  urlList.append(url);
+	  settings.setValue(configTag, QVariant(urlList));
+	  urlListTime.removeFirst();
+	  urlListTime.append(scanTime);
+	  settings.setValue("nmapsi4/urlListTime", QVariant(urlListTime));
+     } else {
+	  if((urlList.size() == __CACHE_SIZE__) && (!urlList.contains(url)))  {
+	       urlList.removeLast();
+	       urlList.push_front(url);
+	       settings.setValue(configTag, QVariant(urlList));
+	       urlListTime.removeLast();
+	       urlListTime.push_front(scanTime);
+	       settings.setValue("nmapsi4/urlListTime", QVariant(urlListTime));
+	  } else {
+	       if(!urlList.contains(url)) {
+		    urlList.push_front(url);
+		    settings.setValue(configTag, QVariant(urlList));
+		    urlListTime.push_front(scanTime);
+		    settings.setValue("nmapsi4/urlListTime", QVariant(urlListTime));
+	       } else {
+		    // TODO update data row
+		    qDebug() << "Update date row..";
+		    int index = urlList.indexOf(url);
+		    urlListTime[index].clear();
+		    urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+		    settings.setValue("nmapsi4/urlListTime", QVariant(urlListTime));
+	       }
+	  }
+     }
+}
+
 
 void logHistory::updateThFile() {
      
@@ -107,22 +163,33 @@ void logHistory::updateTh() {
      qDebug() << "logHistory::updateTH() -- call";     
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList = historyReadUrl();
+     QList<QString> urlListTime = historyReadUrlTime();
+     short index = 0;
      logTree->clear();
      /*if(ItemListHistory.size() != 0)
        itemDeleteAll(ItemListHistory);*/
      logTree->setIconSize(QSize::QSize (22, 22));
 
-     if(!urlList.isEmpty() && urlList.first().compare("NULL")) {
+     if(!urlList.isEmpty() && urlList.first().compare("NULL") && urlListTime.first().compare("NULL")) {
 	  foreach(QString item, urlList) {
 	       historyItem = new QTreeWidgetItem(logTree);
 	       historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 	       ItemListHistory.push_front(historyItem);
 	       historyItem->setText(0,item);
+	       historyItem->setText(1,urlListTime[index]);
+	       index++;
 	  }
      } else {
 	  history = new QTreeWidgetItem(logTree);
 	  history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 	  ItemListHistory.push_front(historyItem);
-	  history->setText(0, "No Url Cache");
+	  if(!urlListTime.first().compare("NULL") && urlList.first().compare("NULL"))
+	       history->setText(0, QApplication::translate("logHistory", 
+							   "Your configuration file is too old, please delete it", 
+							   0, QApplication::UnicodeUTF8));
+	  else
+	       history->setText(0, QApplication::translate("logHistory", 
+							   "No Url Cache", 
+							   0, QApplication::UnicodeUTF8));
      }
 }

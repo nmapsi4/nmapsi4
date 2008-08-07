@@ -27,12 +27,15 @@
 #include <QFile>
 #include <assert.h>
 #include <QDebug>
+#include <QApplication>
+#include <QDateTime>
 
 class logHistory
 {
 
 private:
      QList<QString> historyReadUrl();
+     QList<QString> historyReadUrlTime();
 
      QTreeWidgetItem* historyItem;
      QTreeWidgetItem* history;
@@ -45,6 +48,7 @@ public:
      void updateThFile();
      void updateTh();
      void historyUpdateUrl(QString url);
+     void historyUpdateUrlTime(QString url, QString scanTime);
 
 protected:
      QString configTag;

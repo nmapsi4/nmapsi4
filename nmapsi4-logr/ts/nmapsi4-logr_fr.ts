@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
+    <name>logHistory</name>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/lib/loghistory.cpp" line="189"/>
+        <source>Your configuration file is too old, please delete it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/lib/loghistory.cpp" line="193"/>
+        <source>No Url Cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>mWindow</name>
     <message>
         <location filename="../../../../dati_locali/progetti/nmapsi4/nmapsi4_trunk/build/nmapsi4-logr/ui_mainwin.h" line="168"/>

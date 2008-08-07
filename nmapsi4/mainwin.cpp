@@ -96,7 +96,8 @@ void nmapClass::scan()
      QString *title = new QString;
 
      logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList");
-     history->historyUpdateUrl(hostname);
+//     history->historyUpdateUrl(hostname);
+     history->historyUpdateUrlTime(hostname, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
      *title = "NmapSI4 ";
 	
