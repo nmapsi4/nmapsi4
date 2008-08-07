@@ -20,9 +20,12 @@
 
 #include "mainwin.h"
 
-nmapClass::nmapClass() : PFile(0), 
-			 labelVersion(0),
-			 vBarLabel(NULL)
+nmapClass::nmapClass() 
+     : PFile(0), 
+       labelVersion(NULL),
+       userMode(NULL),
+       vBarLabel(NULL)
+       
 {
      int uid = 0;
 	
@@ -54,6 +57,11 @@ void nmapClass::init() {
      progressScan->setValue(0);
      progressScan->setLayoutDirection(Qt::LeftToRight);
      statusBar()->addPermanentWidget(progressScan,2);
+     // TODO
+     action_Scan_menu->setEnabled(false);
+     action_Scan_2->setEnabled(false);
+     hostEdit->setEnabled(false);
+
      checkNmapVersion();
      QSettings settings("nmapsi4","nmapsi4");
      QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();

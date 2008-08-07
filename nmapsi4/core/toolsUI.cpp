@@ -1,3 +1,4 @@
+
 /***************************************************************************
  *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
@@ -187,11 +188,17 @@ void nmapClass::checkNmapVersion() {
      QStringList parametri;
      parametri << "--version";
      versionProc->start("nmap", parametri); 
+
 }
 
 void nmapClass::setNmapVersion() {
      QString* output;
      int uid = 0;
+
+     // nmap CHECK
+     action_Scan_menu->setEnabled(true);
+     action_Scan_2->setEnabled(true);
+     hostEdit->setEnabled(true);
 
 #ifndef Q_WS_WIN
      uid = getuid();
@@ -219,12 +226,13 @@ void nmapClass::setNmapVersion() {
 	  versionNmap.resize(4);
 	  versionNmap.prepend(tr("<b>Nmap Version:</b> "));
 	  labelVersion->setText(versionNmap);
-
 	  statusBar()->addPermanentWidget(labelVersion,1);
      } else {
+	  versionNmap.prepend(tr("<b>Nmap Version:</b> "));
+	  versionNmap.append(tr("Not Present"));
 	  action_Scan_menu->setEnabled(false);
 	  action_Scan_2->setEnabled(false);
-	  labelVersion->setText(tr("Not Present"));
+	  labelVersion->setText(versionNmap);
 	  statusBar()->addPermanentWidget(labelVersion,6);
      }
      
