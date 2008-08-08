@@ -79,8 +79,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>94</width>
-         <height>62</height>
+         <width>797</width>
+         <height>400</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -94,6 +94,12 @@
             <horstretch>250</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize" >
+           <size>
+            <width>789</width>
+            <height>0</height>
+           </size>
           </property>
           <property name="frameShape" >
            <enum>QFrame::NoFrame</enum>
@@ -110,6 +116,11 @@
           <column>
            <property name="text" >
             <string>List(s)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Date</string>
            </property>
           </column>
          </widget>

@@ -29,6 +29,7 @@
 #include <QSettings>
 #include <QDir>
 #include <QFileDialog>
+#include <QDateTime>
 #include <assert.h>
 #include "ui_mainwin.h"
 #include "../../lib/loghistory.h"
