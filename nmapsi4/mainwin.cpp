@@ -40,9 +40,7 @@ nmapClass::nmapClass()
      this->rootMode(uid); // send uid value
      this->checkProfile();
 
-     // TEST
-     //historyReadUrl();
-     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList");
+     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
      history->updateTh();
      delete history;
 }
@@ -95,8 +93,7 @@ void nmapClass::scan()
      QString hostname = hostEdit->text();
      QString *title = new QString;
 
-     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList");
-//     history->historyUpdateUrl(hostname);
+     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
      history->historyUpdateUrlTime(hostname, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
      *title = "NmapSI4 ";

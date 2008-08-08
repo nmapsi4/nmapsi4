@@ -21,9 +21,6 @@
 
 mainProfile::mainProfile()
 {
-     QFont serifFont("Sans", 9);
-     QApplication::setFont (serifFont);
-
      setupUi(this);
      QSettings ptrFile("nmapsi4","nmapsi4");
 	

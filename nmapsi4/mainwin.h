@@ -23,9 +23,9 @@
 #include <QProcess>
 #include <QtGui>
 #include "ui_mainwin.h"
-#include "core/staticDefine.h"
 #include "preference/profilemain.h"
 #include "../lib/loghistory.h"
+#include "../lib/staticDefine.h"
 
 
 

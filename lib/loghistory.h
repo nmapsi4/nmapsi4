@@ -43,15 +43,20 @@ private:
      QTreeWidget* logTree;
 	  
 public:
-     logHistory(QTreeWidget* treeLog, QString ConfigTag);
+     logHistory(QTreeWidget* treeLog,
+		QString ConfigTag,
+		QString ConfigTagTime,
+		int cacheSize);
+
      ~logHistory();
      void updateThFile();
      void updateTh();
-     void historyUpdateUrl(QString url);
      void historyUpdateUrlTime(QString url, QString scanTime);
 
 protected:
      QString configTag;
+     QString configTagTime;
+     int __CACHE_SIZE__;
 };
 
 #endif
