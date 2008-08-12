@@ -25,7 +25,6 @@ void nmapClass::resize_tab_Options_Scan() {
 	  stackedWidget->setFixedWidth(this->width()-4);
 	  groupBox->setFixedWidth(this->width()-17);
 	  stackedWidget->setCurrentIndex(0);
-	  //tabWidget->setGeometry(0,tabWidget->height()-widgetOptions->height(),this->width(),151);
      } else if(stackedWidget->currentIndex() != 0){
 	  stackedWidget->setCurrentIndex(0);
 	  stackedWidget->setFixedWidth(this->width()-4);
