@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
+    <width>854</width>
     <height>660</height>
    </rect>
   </property>
@@ -41,6 +41,9 @@
    <iconset resource="../mainwin.qrc" >
     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
   </property>
+  <property name="autoFillBackground" >
+   <bool>false</bool>
+  </property>
   <property name="styleSheet" >
    <string notr="true" />
   </property>
@@ -52,21 +55,7 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" >
-     <widget class="QLabel" name="label" >
-      <property name="palette" >
-       <palette>
-        <active/>
-        <inactive/>
-        <disabled/>
-       </palette>
-      </property>
-      <property name="text" >
-       <string>HostName:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="6" >
+    <item row="0" column="0" colspan="3" >
      <widget class="QLineEdit" name="hostEdit" >
       <property name="focusPolicy" >
        <enum>Qt::ClickFocus</enum>
@@ -82,10 +71,58 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" colspan="7" >
+    <item row="0" column="3" >
+     <widget class="QLabel" name="label" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+        <horstretch>20</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>70</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>70</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="palette" >
+       <palette>
+        <active/>
+        <inactive/>
+        <disabled/>
+       </palette>
+      </property>
+      <property name="text" >
+       <string>HostName</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4" colspan="4" >
+     <spacer name="horizontalSpacer_3" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>444</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0" colspan="8" >
      <widget class="QTabWidget" name="tabWidget" >
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
       <property name="tabPosition" >
-       <enum>QTabWidget::North</enum>
+       <enum>QTabWidget::South</enum>
       </property>
       <property name="tabShape" >
        <enum>QTabWidget::Rounded</enum>
@@ -118,8 +155,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>816</width>
-             <height>324</height>
+             <width>820</width>
+             <height>327</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -240,8 +277,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>816</width>
-             <height>324</height>
+             <width>820</width>
+             <height>327</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -297,8 +334,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>816</width>
-             <height>324</height>
+             <width>820</width>
+             <height>327</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -339,6 +376,105 @@
             </item>
            </layout>
           </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3" >
+       <attribute name="title" >
+        <string>Vulnerabilities</string>
+       </attribute>
+       <attribute name="icon" >
+        <iconset resource="../mainwin.qrc" >
+         <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2" >
+        <item row="0" column="0" >
+         <widget class="QComboBox" name="comboVuln" >
+          <property name="minimumSize" >
+           <size>
+            <width>281</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="duplicatesEnabled" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" >
+         <widget class="QPushButton" name="buttonVuln" >
+          <property name="minimumSize" >
+           <size>
+            <width>151</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text" >
+           <string>Search</string>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" >
+         <widget class="QPushButton" name="Bleft" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
+          </property>
+          <property name="flat" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3" >
+         <widget class="QPushButton" name="Bright" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4" >
+         <widget class="QPushButton" name="Bstop" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5" >
+         <spacer name="horizontalSpacer_4" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>383</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="6" >
+         <widget class="QWebView" name="viewVuln" >
+          <property name="url" >
+           <url>
+            <string>about:blank</string>
+           </url>
+          </property>
          </widget>
         </item>
        </layout>
@@ -451,7 +587,7 @@
       </widget>
      </widget>
     </item>
-    <item row="2" column="0" colspan="7" >
+    <item row="2" column="0" colspan="8" >
      <widget class="QWidget" native="1" name="widgetOptions" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
@@ -460,22 +596,22 @@
        </sizepolicy>
       </property>
       <property name="autoFillBackground" >
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <widget class="QStackedWidget" name="stackedWidget" >
        <property name="geometry" >
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>10</y>
          <width>831</width>
          <height>131</height>
         </rect>
        </property>
        <property name="autoFillBackground" >
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>6</number>
        </property>
        <widget class="QWidget" name="ScanOptions" >
         <property name="autoFillBackground" >
@@ -691,14 +827,20 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
         <widget class="QGroupBox" name="groupBox_3" >
          <property name="geometry" >
           <rect>
-           <x>0</x>
+           <x>10</x>
            <y>0</y>
            <width>831</width>
            <height>141</height>
           </rect>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
          </property>
          <property name="title" >
           <string/>
@@ -745,6 +887,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_2" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
         <widget class="QGroupBox" name="groupBox_4" >
          <property name="geometry" >
           <rect>
@@ -916,6 +1061,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_3" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
         <widget class="QGroupBox" name="groupBox_5" >
          <property name="geometry" >
           <rect>
@@ -1003,6 +1151,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_5" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
         <widget class="QGroupBox" name="groupBox_6" >
          <property name="geometry" >
           <rect>
@@ -1325,8 +1476,15 @@
          </widget>
         </widget>
        </widget>
-       <widget class="QWidget" name="page_4" />
+       <widget class="QWidget" name="page_4" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
+       </widget>
        <widget class="QWidget" name="Options" >
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
         <widget class="QGroupBox" name="groupBox_2" >
          <property name="geometry" >
           <rect>
@@ -1534,14 +1692,27 @@
       </widget>
      </widget>
     </item>
-    <item row="3" column="0" colspan="7" >
+    <item rowspan="2" row="3" column="0" colspan="8" >
      <widget class="Line" name="line" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2" >
+    <item rowspan="2" row="5" column="0" >
+     <spacer name="horizontalSpacer" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>62</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item rowspan="3" row="4" column="1" >
      <widget class="QPushButton" name="bscanWid" >
       <property name="text" >
        <string>S&amp;can Options</string>
@@ -1561,7 +1732,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2" >
+    <item rowspan="3" row="4" column="2" >
      <widget class="QPushButton" name="boption" >
       <property name="text" >
        <string>&amp;Options</string>
@@ -1575,7 +1746,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="3" >
+    <item rowspan="3" row="4" column="3" >
      <widget class="QPushButton" name="bmiscOptions" >
       <property name="layoutDirection" >
        <enum>Qt::LeftToRight</enum>
@@ -1592,7 +1763,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="4" >
+    <item rowspan="3" row="4" column="4" >
      <widget class="QPushButton" name="bdiscover" >
       <property name="text" >
        <string>&amp;Discover</string>
@@ -1606,7 +1777,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="5" >
+    <item rowspan="3" row="4" column="5" >
      <widget class="QPushButton" name="bfiles" >
       <property name="text" >
        <string>F&amp;ile</string>
@@ -1620,7 +1791,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="6" >
+    <item rowspan="3" row="4" column="6" >
      <widget class="QPushButton" name="btiming" >
       <property name="text" >
        <string>&amp;Timing</string>
@@ -1634,6 +1805,19 @@
       </property>
      </widget>
     </item>
+    <item row="6" column="7" >
+     <spacer name="horizontalSpacer_2" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>63</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar" >
@@ -1641,7 +1825,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>854</width>
      <height>27</height>
     </rect>
    </property>
@@ -2022,6 +2206,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../mainwin.qrc" />
  </resources>

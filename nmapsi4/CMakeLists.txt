@@ -13,6 +13,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		preference/profilemainupdate.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
+		core/searchVuln.cpp
 		../lib/loghistory.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
@@ -49,7 +50,7 @@ else (WIN32)
 endif (NOT WIN32)
 
 INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} )
+TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY})
 
 if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)

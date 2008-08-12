@@ -22,6 +22,7 @@
 
 #include <QProcess>
 #include <QtGui>
+#include <QtWebKit/QWebView>
 #include "ui_mainwin.h"
 #include "preference/profilemain.h"
 #include "../lib/loghistory.h"
@@ -75,7 +76,6 @@ protected:
 	QString logSessionFile;
 	QLabel *labelVersion;
 	QLabel *userMode;
-	QLabel *vBarLabel;
 	mainProfile *dialog;
 	QProgressBar *progressScan;
 
@@ -124,6 +124,7 @@ private slots:
 	void readProfile();
 	void saveAsLog();
 	void saveLog();
+	void searchVuln();
 
 };
 

@@ -224,7 +224,7 @@ void nmapClass::nmapParser()
 		       item2->setToolTip(4,lStr[2]);
 		       int index = 3;
 		       QString str;
-		       // Desciption
+		       // Description
 		       if(lStr.size() == 3)
 			    item2->setText(0, tr("No description"));
 		       else {
@@ -234,12 +234,31 @@ void nmapClass::nmapParser()
 				 index++;
 				 
 			    }
+
+			    QStringList tmpToken = str.split(" ");
+			    QString token;
+			    if(tmpToken.size() <= 2) {
+				 token.append(tmpToken[0]);
+				 token.append(" ");
+				 token.append(tmpToken[1]);
+			    } else {
+				 token.append(tmpToken[0]);
+				 token.append(" ");
+				 token.append(tmpToken[1]);
+				 token.append(" ");
+				 token.append(tmpToken[2]);
+			    }
+			    
+			    if(token.contains("-")) {
+				 if(comboVuln->findText(token.leftRef(token.indexOf("-")).toString(), Qt::MatchExactly) == -1)
+				      comboVuln->addItem(token.leftRef(token.indexOf("-")).toString());				 
+			    } else if(comboVuln->findText(token,Qt::MatchExactly) == -1)
+				 comboVuln->addItem(token);
+			    
 			    item2->setText(0,str);
 			    item2->setToolTip(0,str);
 		       }
 
-		       //item2->setText(0,b2_line);
-		       //item2->setToolTip(0,b2_line); // field information
 		       if((PFile) && (!verboseLog)) *out << item2->text(0) << endl;
 		  } else
 		       item2->setText(0,tr("No Ports"));

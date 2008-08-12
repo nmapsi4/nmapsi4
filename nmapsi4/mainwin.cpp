@@ -23,8 +23,7 @@
 nmapClass::nmapClass() 
      : PFile(0), 
        labelVersion(NULL),
-       userMode(NULL),
-       vBarLabel(NULL)
+       userMode(NULL)
        
 {
      int uid = 0;
@@ -156,5 +155,4 @@ nmapClass::~nmapClass()
      delete PFile;
      delete labelVersion;
      delete userMode;
-     delete vBarLabel;
 }

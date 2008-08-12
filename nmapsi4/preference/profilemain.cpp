@@ -33,7 +33,7 @@ mainProfile::mainProfile()
      connect( checkFullVersion, SIGNAL( toggled(bool) ), 
 	      this, SLOT(updateFullVersionCheck()));
      connect( checkQuickVersion, SIGNAL( toggled(bool) ), 
-		 this, SLOT(updateQuickVersionCheck()));
+	      this, SLOT(updateQuickVersionCheck()));
      
      this->setProfile(); // set profile preference
      
@@ -46,8 +46,7 @@ mainProfile::mainProfile()
 	  checkLogOn->setChecked(false);
 	  lineEditPath->setDisabled(true);
 	  buttonLogB->setDisabled(true);
-     }
-     else
+     } else
 	  checkLogOn->setChecked(true);
      
      QString tmpSavePos = ptrFile.value("savePos", "none").toString();
@@ -90,7 +89,6 @@ mainProfile::mainProfile()
 	     this, SLOT(updateItem()));
 
      profileItem->setSelected(true);
-     //abelTitle->setText(tr("<h3>Profiles Scan</h3>"));
 
      connect(buttonLogB, SIGNAL(clicked()), 
 	     this, SLOT(log_browser())); 

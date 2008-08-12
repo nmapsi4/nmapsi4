@@ -133,4 +133,16 @@ void nmapClass::setNmapsiSlot() {
 	connect( treeLogH, SIGNAL(itemSelectionChanged()), 
 		 this, SLOT(callScanH()));
 
+	// Vuln signal
+	connect( buttonVuln, SIGNAL(clicked()), 
+		 this, SLOT(searchVuln()));
+	connect( viewVuln, SIGNAL(loadProgress(int)), 
+		 progressScan, SLOT(setValue(int)));
+	connect( Bleft, SIGNAL(clicked()), 
+		 viewVuln, SLOT(back()));
+	connect( Bright, SIGNAL(clicked()), 
+		 viewVuln, SLOT(forward()));
+	connect( Bstop, SIGNAL(clicked()), 
+		 viewVuln, SLOT(stop()));
+
 }
