@@ -47,7 +47,6 @@ nmapClass::nmapClass()
 
 void nmapClass::init() {
 
-     //QApplication::setStyle(new QPlastiqueStyle);
      setupUi(this);
      dialog = 0;
      proc = 0;
@@ -61,6 +60,7 @@ void nmapClass::init() {
      hostEdit->setEnabled(false);
 
      checkNmapVersion();
+     listWscan->setColumnWidth(0, 500);
      QSettings settings("nmapsi4","nmapsi4");
      QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
      QSize size = settings.value("window/size", QSize(869, 605)).toSize();

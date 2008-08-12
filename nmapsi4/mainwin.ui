@@ -134,6 +134,12 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="minimumSize" >
+               <size>
+                <width>808</width>
+                <height>316</height>
+               </size>
+              </property>
               <property name="styleSheet" >
                <string notr="true" />
               </property>
@@ -198,11 +204,31 @@
                <bool>false</bool>
               </property>
               <property name="columnCount" >
-               <number>1</number>
+               <number>5</number>
               </property>
               <column>
                <property name="text" >
                 <string>List(s)</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>Open</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>Close</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>Fi/Unfiltered</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>Service</string>
                </property>
               </column>
              </widget>

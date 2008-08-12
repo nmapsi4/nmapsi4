@@ -203,8 +203,43 @@ void nmapClass::nmapParser()
 		  
 
 		  if(!b2_line.isEmpty()) {
-		       item2->setText(0,b2_line);
-		       item2->setToolTip(0,b2_line); // field information
+		       QString tmpStr = b2_line;
+		       QStringList lStr = tmpStr.split(" ",QString::SkipEmptyParts);
+		       qDebug() << lStr;
+
+		       if(lStr[1].contains("open")) {
+			    item2->setText(1,lStr[0]);
+			    item2->setToolTip(1,lStr[0]);
+			    item2->setForeground(1, QBrush(QColor(0, 0, 255, 127)));
+		       } else if(lStr[1].contains("filtered") || lStr[1].contains("unfiltered")) {
+			    item2->setText(3,lStr[0]);
+			    item2->setToolTip(3,lStr[0]);
+		       } else {
+			    item2->setText(2,lStr[0]);
+			    item2->setToolTip(2,lStr[0]);
+			    item2->setForeground(2, QBrush(QColor(255, 0, 0, 127)));
+		       }
+
+		       item2->setText(4,lStr[2]);
+		       item2->setToolTip(4,lStr[2]);
+		       int index = 3;
+		       QString str;
+		       // Desciption
+		       if(lStr.size() == 3)
+			    item2->setText(0, tr("No description"));
+		       else {
+			    while(index < lStr.size()) {
+				 str.append(lStr[index]);
+				 str.append(" ");
+				 index++;
+				 
+			    }
+			    item2->setText(0,str);
+			    item2->setToolTip(0,str);
+		       }
+
+		       //item2->setText(0,b2_line);
+		       //item2->setToolTip(0,b2_line); // field information
 		       if((PFile) && (!verboseLog)) *out << item2->text(0) << endl;
 		  } else
 		       item2->setText(0,tr("No Ports"));
@@ -242,16 +277,9 @@ void nmapClass::nmapParser()
 
 	if(ItemNumber) {
 	     QString tmp_buffer = root->text(0);
-		
-	     tmp_buffer.append(tr("\n(Report: "));
-	     tmp_buffer.append(tr("Open: "));
-	     tmp_buffer.append(QString("%1").arg(open_port));
-	     tmp_buffer.append(tr(", Close: "));
-	     tmp_buffer.append(QString("%1").arg(close_port));
-	     tmp_buffer.append(tr(", Fi/Unfiltered: "));
-	     tmp_buffer.append(QString("%1").arg(filtered_port));
-	     tmp_buffer.append(" )");
-	     root->setText(0,tmp_buffer);
+	     root->setText(1,QString("%1").arg(open_port));
+	     root->setText(2,QString("%1").arg(close_port));
+	     root->setText(3,QString("%1").arg(filtered_port));
 	}
 
 	actionClear_History->setEnabled(true);
