@@ -421,6 +421,12 @@
         </item>
         <item row="0" column="2" >
          <widget class="QPushButton" name="Bleft" >
+          <property name="toolTip" >
+           <string>Back</string>
+          </property>
+          <property name="statusTip" >
+           <string/>
+          </property>
           <property name="text" >
            <string/>
           </property>
@@ -435,6 +441,12 @@
         </item>
         <item row="0" column="3" >
          <widget class="QPushButton" name="Bright" >
+          <property name="toolTip" >
+           <string>Forward</string>
+          </property>
+          <property name="statusTip" >
+           <string/>
+          </property>
           <property name="text" >
            <string/>
           </property>
@@ -446,6 +458,12 @@
         </item>
         <item row="0" column="4" >
          <widget class="QPushButton" name="Bstop" >
+          <property name="toolTip" >
+           <string>Stop</string>
+          </property>
+          <property name="statusTip" >
+           <string/>
+          </property>
           <property name="text" >
            <string/>
           </property>
