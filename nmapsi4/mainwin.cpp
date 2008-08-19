@@ -20,9 +20,15 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass() 
-     : PFile(0), 
+     : proc(NULL),
+       PFile(NULL), 
        labelVersion(NULL),
+<<<<<<< HEAD:nmapsi4/mainwin.cpp
        userMode(NULL)
+=======
+       userMode(NULL),
+       dialog(0)
+>>>>>>> UI:nmapsi4/mainwin.cpp
        
 {
      int uid = 0;
@@ -46,19 +52,25 @@ nmapClass::nmapClass()
 void nmapClass::init() {
 
      setupUi(this);
-     dialog = 0;
-     proc = 0;
      progressScan = new QProgressBar();
      progressScan->setValue(0);
      progressScan->setLayoutDirection(Qt::LeftToRight);
      statusBar()->addPermanentWidget(progressScan,2);
-     // TODO
+
+     // Disable scan action (nmap check)
      action_Scan_menu->setEnabled(false);
      action_Scan_2->setEnabled(false);
      hostEdit->setEnabled(false);
 
+     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+     hostEdit->setText(tr("Insert HostName to scan"));
+
      checkNmapVersion();
      listWscan->setColumnWidth(0, 500);
+<<<<<<< HEAD:nmapsi4/mainwin.cpp
+=======
+     treeLogH->setColumnWidth(0, 500);
+>>>>>>> UI:nmapsi4/mainwin.cpp
      QSettings settings("nmapsi4","nmapsi4");
      QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
      QSize size = settings.value("window/size", QSize(869, 605)).toSize();

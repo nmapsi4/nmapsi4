@@ -166,7 +166,9 @@ void nmapClass::update_inputcheck() // control the input object update
 	  lineInputFile->setEnabled(false);
 	  buttonBrowser->setEnabled(false);
 	  lineInputFile->clear();
-	  hostEdit->setText("127.0.0.1");
+       
+	  hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+	  hostEdit->setText(tr("Insert HostName to scan"));
      }
 }
 
@@ -308,4 +310,21 @@ void nmapClass::updateIconsBox() {
      int tmpBox = toolBox->currentIndex();
      toolBox->setItemIcon(tmpBox,QIcon(QString("")));
      
+}
+
+void nmapClass::updateFontHost() {
+
+     hostEdit->clear();
+     hostEdit->setStyleSheet(QString::fromUtf8(""));
+     hostEdit->disconnect(SIGNAL(textChanged(QString)));
+     hostEdit->disconnect(SIGNAL(selectionChanged()));
+}
+
+void nmapClass::updateFontHost(QString hostName) {
+
+     Q_UNUSED(hostName);
+     hostEdit->clear();
+     hostEdit->setStyleSheet(QString::fromUtf8(""));
+     hostEdit->disconnect(SIGNAL(textChanged(QString)));
+     hostEdit->disconnect(SIGNAL(selectionChanged()));
 }

@@ -8,6 +8,9 @@ if (Q_WS_WIN)
   include(CMakeMinGWFindMake)
 endif (Q_WS_WIN)
 
+if ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/lib )
+  add_subdirectory( lib )
+endif ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/lib )
 
 if ( EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nmapsi4 )
   add_subdirectory( nmapsi4 )

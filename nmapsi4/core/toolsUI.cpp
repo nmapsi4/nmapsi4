@@ -261,6 +261,9 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items) {
 
 void nmapClass::callScanH() {
      if(toolBox->currentIndex()) {
+	  hostEdit->setStyleSheet(QString::fromUtf8(""));
+	  hostEdit->disconnect(SIGNAL(textChanged(QString)));
+	  hostEdit->disconnect(SIGNAL(selectionChanged()));
 	  hostEdit->setText(treeLogH->currentItem()->text(0));
 	  toolBox->setCurrentIndex(0);
 	  scan();

@@ -55,7 +55,24 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item row="0" column="0" colspan="3" >
+=======
+    <item row="0" column="0" >
+     <spacer name="horizontalSpacer_5" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>90</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1" colspan="7" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QLineEdit" name="hostEdit" >
       <property name="focusPolicy" >
        <enum>Qt::ClickFocus</enum>
@@ -64,13 +81,17 @@
        <bool>false</bool>
       </property>
       <property name="text" >
-       <string>127.0.0.1</string>
+       <string/>
       </property>
       <property name="frame" >
        <bool>true</bool>
       </property>
+      <property name="alignment" >
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item row="0" column="3" >
      <widget class="QLabel" name="label" >
       <property name="sizePolicy" >
@@ -104,19 +125,41 @@
      </widget>
     </item>
     <item row="0" column="4" colspan="4" >
+=======
+    <item row="0" column="8" >
+     <widget class="QPushButton" name="buttonHClear" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="../mainwin.qrc" >
+        <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="9" colspan="2" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <spacer name="horizontalSpacer_3" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
       <property name="sizeHint" stdset="0" >
        <size>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <width>444</width>
+=======
+        <width>63</width>
+>>>>>>> UI:nmapsi4/mainwin.ui
         <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item row="1" column="0" colspan="8" >
+=======
+    <item row="1" column="0" colspan="11" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QTabWidget" name="tabWidget" >
       <property name="autoFillBackground" >
        <bool>false</bool>
@@ -156,7 +199,11 @@
              <x>0</x>
              <y>0</y>
              <width>820</width>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
              <height>327</height>
+=======
+             <height>331</height>
+>>>>>>> UI:nmapsi4/mainwin.ui
             </rect>
            </property>
            <attribute name="label" >
@@ -278,7 +325,11 @@
              <x>0</x>
              <y>0</y>
              <width>820</width>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
              <height>327</height>
+=======
+             <height>331</height>
+>>>>>>> UI:nmapsi4/mainwin.ui
             </rect>
            </property>
            <attribute name="label" >
@@ -335,7 +386,11 @@
              <x>0</x>
              <y>0</y>
              <width>820</width>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
              <height>327</height>
+=======
+             <height>331</height>
+>>>>>>> UI:nmapsi4/mainwin.ui
             </rect>
            </property>
            <attribute name="label" >
@@ -346,7 +401,7 @@
              <widget class="QTreeWidget" name="treeLogH" >
               <property name="minimumSize" >
                <size>
-                <width>808</width>
+                <width>812</width>
                 <height>316</height>
                </size>
               </property>
@@ -375,6 +430,7 @@
              </widget>
             </item>
            </layout>
+           <zorder>treeLogH</zorder>
           </widget>
          </widget>
         </item>
@@ -403,6 +459,28 @@
          </widget>
         </item>
         <item row="0" column="1" >
+<<<<<<< HEAD:nmapsi4/mainwin.ui
+=======
+         <widget class="QComboBox" name="comboWebV" >
+          <item>
+           <property name="text" >
+            <string>securityfocus.com</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>cve.miltre.org</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
+            <string>secunia.com</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <widget class="QPushButton" name="buttonVuln" >
           <property name="minimumSize" >
            <size>
@@ -419,7 +497,11 @@
           </property>
          </widget>
         </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <item row="0" column="2" >
+=======
+        <item row="0" column="3" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <widget class="QPushButton" name="Bleft" >
           <property name="toolTip" >
            <string>Back</string>
@@ -439,7 +521,11 @@
           </property>
          </widget>
         </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <item row="0" column="3" >
+=======
+        <item row="0" column="4" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <widget class="QPushButton" name="Bright" >
           <property name="toolTip" >
            <string>Forward</string>
@@ -456,7 +542,11 @@
           </property>
          </widget>
         </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <item row="0" column="4" >
+=======
+        <item row="0" column="5" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <widget class="QPushButton" name="Bstop" >
           <property name="toolTip" >
            <string>Stop</string>
@@ -473,20 +563,32 @@
           </property>
          </widget>
         </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <item row="0" column="5" >
+=======
+        <item row="0" column="6" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <spacer name="horizontalSpacer_4" >
           <property name="orientation" >
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0" >
            <size>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
             <width>383</width>
+=======
+            <width>102</width>
+>>>>>>> UI:nmapsi4/mainwin.ui
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
         <item row="1" column="0" colspan="6" >
+=======
+        <item row="1" column="0" colspan="7" >
+>>>>>>> UI:nmapsi4/mainwin.ui
          <widget class="QWebView" name="viewVuln" >
           <property name="url" >
            <url>
@@ -605,7 +707,11 @@
       </widget>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item row="2" column="0" colspan="8" >
+=======
+    <item row="2" column="0" colspan="11" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QWidget" native="1" name="widgetOptions" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
@@ -1710,7 +1816,11 @@
       </widget>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="2" row="3" column="0" colspan="8" >
+=======
+    <item rowspan="2" row="3" column="0" colspan="11" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="Line" name="line" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -1730,7 +1840,11 @@
       </property>
      </spacer>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="1" >
+=======
+    <item rowspan="3" row="4" column="2" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="bscanWid" >
       <property name="text" >
        <string>S&amp;can Options</string>
@@ -1750,7 +1864,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="2" >
+=======
+    <item rowspan="3" row="4" column="3" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="boption" >
       <property name="text" >
        <string>&amp;Options</string>
@@ -1764,7 +1882,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="3" >
+=======
+    <item rowspan="3" row="4" column="4" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="bmiscOptions" >
       <property name="layoutDirection" >
        <enum>Qt::LeftToRight</enum>
@@ -1781,7 +1903,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="4" >
+=======
+    <item rowspan="3" row="4" column="5" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="bdiscover" >
       <property name="text" >
        <string>&amp;Discover</string>
@@ -1795,7 +1921,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="5" >
+=======
+    <item rowspan="3" row="4" column="6" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="bfiles" >
       <property name="text" >
        <string>F&amp;ile</string>
@@ -1809,7 +1939,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item rowspan="3" row="4" column="6" >
+=======
+    <item rowspan="3" row="4" column="7" colspan="2" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <widget class="QPushButton" name="btiming" >
       <property name="text" >
        <string>&amp;Timing</string>
@@ -1823,7 +1957,11 @@
       </property>
      </widget>
     </item>
+<<<<<<< HEAD:nmapsi4/mainwin.ui
     <item row="6" column="7" >
+=======
+    <item row="6" column="10" >
+>>>>>>> UI:nmapsi4/mainwin.ui
      <spacer name="horizontalSpacer_2" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -1945,7 +2083,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionClear_History" />
-   <addaction name="actionClear_Hostname" />
    <addaction name="actionClose_Tree" />
    <addaction name="separator" />
    <addaction name="action_Quit" />

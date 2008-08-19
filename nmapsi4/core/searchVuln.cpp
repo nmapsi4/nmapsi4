@@ -24,12 +24,44 @@ void nmapClass::searchVuln() {
      if(comboVuln->currentText().isEmpty())
 	  return;
 
+<<<<<<< HEAD:nmapsi4/core/searchVuln.cpp
      QString url ="http://www.securityfocus.com/swsearch?query=";
      QString tmp = comboVuln->currentText();
      tmp.replace(QString(" "), QString("+"));
      url.append(tmp);
      url.append("&sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank");
      qDebug() << "Call webSearch()..." << url;
+=======
+     QString url;
+     QString tmp;
+
+     switch(comboWebV->currentIndex()) {
+     case 0:
+	  url ="http://www.securityfocus.com/swsearch?query=";
+	  tmp = comboVuln->currentText();
+	  tmp.replace(QString(" "), QString("+"));
+	  url.append(tmp);
+	  url.append("&sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank");
+	  qDebug() << "Call webSearch()..." << url;
+	  break;
+     case 1:
+	  url ="http://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=";
+	  tmp = comboVuln->currentText();
+	  tmp.replace(QString(" "), QString("+"));
+	  url.append(tmp);
+	  qDebug() << "Call webSearch()..." << url;
+	  break;
+     case 2:
+	  url ="http://secunia.com/search/?search=";
+	  tmp = comboVuln->currentText();
+	  tmp.replace(QString(" "), QString("+"));
+	  url.append(tmp);
+	  url.append("&w=1");
+	  qDebug() << "Call webSearch()..." << url;
+	  break;
+     }
+
+>>>>>>> UI:nmapsi4/core/searchVuln.cpp
      QUrl urlFinal(url);
      viewVuln->load(urlFinal);
 }

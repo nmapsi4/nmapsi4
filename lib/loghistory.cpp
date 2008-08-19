@@ -24,7 +24,7 @@ logHistory::logHistory(QTreeWidget* treeLog,
 		       QString ConfigTag,
 		       QString ConfigTagTime,
 		       int cacheSize) {
-     assert(treeLog->columnCount() == 2);
+     Q_ASSERT(treeLog->columnCount() == 2);
      logTree = treeLog;
      configTag = ConfigTag;
      configTagTime = ConfigTagTime;
@@ -52,7 +52,7 @@ QList<QString> logHistory::historyReadUrlTime() {
 
 
 void logHistory::historyUpdateUrlTime(QString url, QString scanTime) {
-     assert(!url.isEmpty());
+     Q_ASSERT(!url.isEmpty());
 
      QSettings settings("nmapsi4","nmapsi4");
      QList<QString> urlList;

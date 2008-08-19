@@ -1,13 +1,18 @@
+ALL VERSION ;)
 * full nmap extensions
-* Insert Nmapsi4 log format (use the current format as verbose mode) --> done
-* Show menu bar option
-* remove debug for stable release
 
-version x.2.x:
-* support for theme (nmapsi4)
-* log reader
-* logreader hostory (five url)
-* nmapsi4 hosts history
-* new log files extension (x.ln4)
-* scan options view
-* scan type label on message bar --> DONE
+---------------------------------------------------------------
+version x.2.x
+---------------------------------------------------------------
+* support for theme (nmapsi4)		--> TODO
+* scan options view			--> TODO
+* log reader				--> IN PROGRESS
+* logreader hostory (five url)		--> IN PROGRESS
+* nmapsi4 hosts history 		--> IN PROGRESS
+  	+ clear button			--> TODO
+
+* vulnerabilities webkit check		--> IN PROGRESS
+	+ support for multiple host	--> TODO
+
+* scan type label on message bar 	--> NONE
+* new log files extension (x.ln4)	--> NONE

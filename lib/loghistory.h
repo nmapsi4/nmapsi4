@@ -25,7 +25,6 @@
 #include <QTreeWidgetItem>
 #include <QSettings>
 #include <QFile>
-#include <assert.h>
 #include <QDebug>
 #include <QApplication>
 #include <QDateTime>

@@ -52,6 +52,8 @@ void nmapClass::setNmapsiSlot() {
 		 this, SLOT( scan() ) ); // about action menu
 	connect( actionClear_History, SIGNAL( triggered() ), 
 		 this, SLOT( listClear() ) ); 
+	connect( buttonHClear, SIGNAL( clicked() ), 
+		 hostEdit, SLOT( clear() ) ); 
 	connect( action_Scan_2, SIGNAL( triggered() ), 
 		 this, SLOT( scan() ) ); // about action menu
 	connect( buttonBrowser, SIGNAL( clicked() ), 
@@ -126,6 +128,11 @@ void nmapClass::setNmapsiSlot() {
 
 	connect( hostEdit, SIGNAL( returnPressed() ),
 		 this, SLOT(scan()));
+
+	connect( hostEdit, SIGNAL( selectionChanged() ),
+		 this, SLOT(updateFontHost()));
+	connect( hostEdit, SIGNAL( textChanged(QString)),
+		 this, SLOT(updateFontHost(QString)));
 
 	connect( toolBox, SIGNAL(currentChanged(int)),
 		 this, SLOT(updateIconsBox()));
