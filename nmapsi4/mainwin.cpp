@@ -23,12 +23,8 @@ nmapClass::nmapClass()
      : proc(NULL),
        PFile(NULL), 
        labelVersion(NULL),
-<<<<<<< HEAD:nmapsi4/mainwin.cpp
-       userMode(NULL)
-=======
        userMode(NULL),
        dialog(0)
->>>>>>> UI:nmapsi4/mainwin.cpp
        
 {
      int uid = 0;
@@ -67,10 +63,7 @@ void nmapClass::init() {
 
      checkNmapVersion();
      listWscan->setColumnWidth(0, 500);
-<<<<<<< HEAD:nmapsi4/mainwin.cpp
-=======
      treeLogH->setColumnWidth(0, 500);
->>>>>>> UI:nmapsi4/mainwin.cpp
      QSettings settings("nmapsi4","nmapsi4");
      QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
      QSize size = settings.value("window/size", QSize(869, 605)).toSize();

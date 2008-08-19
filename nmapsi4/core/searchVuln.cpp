@@ -24,14 +24,6 @@ void nmapClass::searchVuln() {
      if(comboVuln->currentText().isEmpty())
 	  return;
 
-<<<<<<< HEAD:nmapsi4/core/searchVuln.cpp
-     QString url ="http://www.securityfocus.com/swsearch?query=";
-     QString tmp = comboVuln->currentText();
-     tmp.replace(QString(" "), QString("+"));
-     url.append(tmp);
-     url.append("&sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank");
-     qDebug() << "Call webSearch()..." << url;
-=======
      QString url;
      QString tmp;
 
@@ -61,7 +53,6 @@ void nmapClass::searchVuln() {
 	  break;
      }
 
->>>>>>> UI:nmapsi4/core/searchVuln.cpp
      QUrl urlFinal(url);
      viewVuln->load(urlFinal);
 }
