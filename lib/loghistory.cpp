@@ -24,7 +24,7 @@ logHistory::logHistory(QTreeWidget* treeLog,
 		       QString ConfigTag,
 		       QString ConfigTagTime,
 		       int cacheSize) {
-     Q_ASSERT(treeLog->columnCount() == 2);
+     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
      logTree = treeLog;
      configTag = ConfigTag;
      configTagTime = ConfigTagTime;
@@ -114,8 +114,10 @@ void logHistory::updateThFile() {
 			 historyItem = new QTreeWidgetItem(logTree);
 			 historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
 			 ItemListHistory.push_front(historyItem);
-			 historyItem->setText(0,item);
-			 historyItem->setText(1,urlListTime[index]);
+			 QFileInfo fInfo(item);
+			 historyItem->setText(0,fInfo.fileName());
+			 historyItem->setText(1,fInfo.filePath().remove(fInfo.fileName()));
+			 historyItem->setText(2,urlListTime[index]);
 			 index++;
 	       } else {
 		    if(urlList.contains(item) && urlListTime.first().compare("NULL")) {

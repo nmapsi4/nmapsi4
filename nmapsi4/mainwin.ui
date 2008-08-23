@@ -55,7 +55,7 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" >
+    <item row="1" column="0" >
      <spacer name="horizontalSpacer_5" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -68,7 +68,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="1" colspan="7" >
+    <item row="1" column="2" colspan="6" >
      <widget class="QLineEdit" name="hostEdit" >
       <property name="focusPolicy" >
        <enum>Qt::ClickFocus</enum>
@@ -87,18 +87,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="8" >
-     <widget class="QPushButton" name="buttonHClear" >
-      <property name="text" >
-       <string/>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="9" colspan="2" >
+    <item row="1" column="8" colspan="2" >
      <spacer name="horizontalSpacer_3" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -111,7 +100,7 @@
       </property>
      </spacer>
     </item>
-    <item row="1" column="0" colspan="11" >
+    <item row="2" column="0" colspan="10" >
      <widget class="QTabWidget" name="tabWidget" >
       <property name="autoFillBackground" >
        <bool>false</bool>
@@ -272,8 +261,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>820</width>
-             <height>331</height>
+             <width>81</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -330,7 +319,7 @@
              <x>0</x>
              <y>0</y>
              <width>820</width>
-             <height>331</height>
+             <height>324</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -370,7 +359,6 @@
              </widget>
             </item>
            </layout>
-           <zorder>treeLogH</zorder>
           </widget>
          </widget>
         </item>
@@ -620,7 +608,7 @@
       </widget>
      </widget>
     </item>
-    <item row="2" column="0" colspan="11" >
+    <item row="3" column="0" colspan="10" >
      <widget class="QWidget" native="1" name="widgetOptions" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
@@ -1725,14 +1713,14 @@
       </widget>
      </widget>
     </item>
-    <item rowspan="2" row="3" column="0" colspan="11" >
+    <item rowspan="2" row="4" column="0" colspan="10" >
      <widget class="Line" name="line" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item rowspan="2" row="5" column="0" >
+    <item rowspan="2" row="6" column="0" >
      <spacer name="horizontalSpacer" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -1745,7 +1733,7 @@
       </property>
      </spacer>
     </item>
-    <item rowspan="3" row="4" column="2" >
+    <item rowspan="3" row="5" column="1" colspan="2" >
      <widget class="QPushButton" name="bscanWid" >
       <property name="text" >
        <string>S&amp;can Options</string>
@@ -1765,7 +1753,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="3" >
+    <item rowspan="3" row="5" column="3" >
      <widget class="QPushButton" name="boption" >
       <property name="text" >
        <string>&amp;Options</string>
@@ -1779,7 +1767,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="4" >
+    <item rowspan="3" row="5" column="4" >
      <widget class="QPushButton" name="bmiscOptions" >
       <property name="layoutDirection" >
        <enum>Qt::LeftToRight</enum>
@@ -1796,7 +1784,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="5" >
+    <item rowspan="3" row="5" column="5" >
      <widget class="QPushButton" name="bdiscover" >
       <property name="text" >
        <string>&amp;Discover</string>
@@ -1810,7 +1798,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="6" >
+    <item rowspan="3" row="5" column="6" >
      <widget class="QPushButton" name="bfiles" >
       <property name="text" >
        <string>F&amp;ile</string>
@@ -1824,7 +1812,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="7" colspan="2" >
+    <item rowspan="3" row="5" column="7" >
      <widget class="QPushButton" name="btiming" >
       <property name="text" >
        <string>&amp;Timing</string>
@@ -1838,7 +1826,7 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="10" >
+    <item row="7" column="9" >
      <spacer name="horizontalSpacer_2" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -1850,6 +1838,17 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="1" column="1" >
+     <widget class="QPushButton" name="buttonHClear" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="../mainwin.qrc" >
+        <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

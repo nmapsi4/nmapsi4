@@ -28,6 +28,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QDateTime>
+#include <QFileInfo>
 
 class logHistory
 {

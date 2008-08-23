@@ -45,6 +45,8 @@ mwClass::mwClass() : logF(0), url(0) {
      // TEST
      //historyReadUrl();
      //logHistory *history = new logHistory(logTree,"logReader/urlList");
+     logTree->setColumnWidth(0, 350);
+     logTree->setColumnWidth(1, 200);
      logHistory *history = new logHistory(logTree,"logReader/urlList","logReader/urlListTime",10);
      history->updateThFile();
      delete history;
