@@ -2,7 +2,24 @@ PROJECT(nmapsi4)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
+if (WIN32)
 SET(SOURCES_CPP core/nmapsi4Slot.cpp
+		core/resizeNmapsi4.cpp
+		core/nmapParser.cpp
+		core/extensions.cpp
+		mainwin.cpp
+		core/updateUI.cpp
+		core/toolsUI.cpp
+		preference/profilemain.cpp
+		preference/profilemainupdate.cpp
+		core/profileSession.cpp
+		core/saveLog.cpp
+		core/searchVuln.cpp
+		../lib/loghistory.cpp
+		main.cpp)
+MESSAGE( STATUS ${SOURCES_CPP} )
+else (WIN32)
+  SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
 		core/nmapParser.cpp
 		core/extensions.cpp
@@ -16,6 +33,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/searchVuln.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
+endif (WIN32)
 
 SET(SOURCES_H mainwin.h preference/profilemain.h)
 MESSAGE( STATUS ${SOURCES_H} )
@@ -44,12 +62,16 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 
 if (NOT WIN32)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/)
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} nmapsi4_history)
 else (WIN32) 
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR})			
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY})	
 endif (NOT WIN32)
 
-INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/)
-TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} nmapsi4_history)
+#INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/)
+
 
 if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
