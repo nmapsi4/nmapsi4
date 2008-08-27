@@ -59,8 +59,7 @@ void nmapClass::init() {
      hostEdit->setEnabled(false);
 
      hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-     hostEdit->lineEdit()->setAlignment(Qt::AlignHCenter);
-     hostEdit->insertItem(0, tr("Insert HostName to scan"));
+     hostEdit->setText(tr("Insert HostName to scan"));
 
      checkNmapVersion();
      listWscan->setColumnWidth(0, 500);
@@ -74,7 +73,7 @@ void nmapClass::init() {
 
 void nmapClass::scan()
 {
-     if(hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
+     if(hostEdit->text().isEmpty() && lineInputFile->text().isEmpty()) {
 	  QMessageBox::warning(this, "NmapSI4",tr("No Host Target\n"),tr("Close"));
 	     return;
      }
@@ -94,7 +93,7 @@ void nmapClass::scan()
      
      
      QStringList parametri; //parameters list declaration
-     QString hostname = hostEdit->currentText();
+     QString hostname = hostEdit->text();
      QString *title = new QString;
 
      logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );

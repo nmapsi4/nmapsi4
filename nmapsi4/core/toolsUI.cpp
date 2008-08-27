@@ -101,9 +101,9 @@ void nmapClass::exit() {
 void nmapClass::stop_scan() {
      if(proc) {
 	  
-	  QString tmp_line = hostEdit->currentText();
+	  QString tmp_line = hostEdit->text();
 	  tmp_line.append(" (Stopped)"); // update hostEdit with stopped string (don't traslate)
-	  hostEdit->setItemText(0,tmp_line);
+	  hostEdit->setText(tmp_line);
 	  
 	  proc->terminate();
 	  
@@ -264,7 +264,7 @@ void nmapClass::callScanH() {
 	  hostEdit->setStyleSheet(QString::fromUtf8(""));
 	  hostEdit->disconnect(SIGNAL(textChanged(QString)));
 	  hostEdit->disconnect(SIGNAL(selectionChanged()));
-	  hostEdit->setItemText(0,treeLogH->currentItem()->text(0));
+	  hostEdit->setText(treeLogH->currentItem()->text(0));
 	  toolBox->setCurrentIndex(0);
 	  scan();
      }

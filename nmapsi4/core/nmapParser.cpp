@@ -105,7 +105,7 @@ void nmapClass::nmapParser()
 	     nmap_command.append("\nLog Start: ");
 	     nmap_command.append("\nnmap ");
 	     nmap_command.append(lineOptions->text()); 
-	     nmap_command.append(hostEdit->currentText()); // write host target in the log
+	     nmap_command.append(hostEdit->text()); // write host target in the log
 	     *out << nmap_command << endl << endl;
 	}
 
@@ -132,7 +132,7 @@ void nmapClass::nmapParser()
 	     toolBox->setItemIcon(1,QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	}
 
-	if(!hostEdit->currentText().contains("(Stopped)"))
+	if(!hostEdit->text().contains("(Stopped)"))
 	     root->setIcon( 0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 	else
 	     root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
@@ -164,10 +164,10 @@ void nmapClass::nmapParser()
 	     QFont rootFont = root->font(0);
 	     rootFont.setWeight(QFont::Normal);
 	     root->setFont(0, rootFont);
-	     root->setText(0,hostEdit->currentText());
-	     root2->setText(0,hostEdit->currentText());
-	     error->setText(0,hostEdit->currentText());
-	     infoItem->setText(0,hostEdit->currentText());
+	     root->setText(0,hostEdit->text());
+	     root2->setText(0,hostEdit->text());
+	     error->setText(0,hostEdit->text());
+	     infoItem->setText(0,hostEdit->text());
 	     if((PFile) && (!verboseLog)) *out << root->text(0) << endl;
 	}
 

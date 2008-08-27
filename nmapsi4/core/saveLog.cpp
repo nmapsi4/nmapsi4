@@ -59,7 +59,7 @@ void nmapClass::saveAsLog() {
      url.append("Si4");
      url.append(_VERSION_);
      url.append("-");
-     url.append(hostEdit->currentText());
+     url.append(hostEdit->text());
      url.append(".log");
      qDebug() << "Nmapsi4/saveLog::-->" << url;
 
