@@ -125,8 +125,8 @@ private slots:
 	void saveAsLog();
 	void saveLog();
 	void searchVuln();
-	virtual void updateFontHost();
 	virtual void updateFontHost(QString hostName); 
+	void callSearchHistory();
 };
 
 #endif
