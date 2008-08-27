@@ -185,3 +185,25 @@ void logHistory::updateTh() {
 							   0, QApplication::UnicodeUTF8));
      }
 }
+
+void logHistory::searchHistory(QString tokenWord, QComboBox* lineHistory) {
+     //TODO works in progress
+     QList<QString> urlList = historyReadUrl();
+     qDebug() << "Call --> history::searchHistory() ";
+     lineHistory->setCompleter(0);
+     foreach(QString item, urlList) {
+	if(item.contains(tokenWord)) {
+	    qDebug() << "History::fileTmp:: " << item << "Token:: " << tokenWord;	
+	    if((lineHistory->findText(item, Qt::MatchExactly) == -1) && !tokenWord.isEmpty())
+		lineHistory->insertItem(1,item);
+	    else if(tokenWord.isEmpty())
+		lineHistory->clear();
+	    lineHistory->setItemText(0, tokenWord);
+	}
+     }
+     //TODO show popup 
+     //lineHistory->setItemText(-1, tokenWord);
+     //lineHistory->setCurrentIndex(0);
+     //lineHistory->showPopup();
+     
+}
