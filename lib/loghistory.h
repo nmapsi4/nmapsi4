@@ -29,6 +29,7 @@
 #include <QApplication>
 #include <QDateTime>
 #include <QFileInfo>
+#include <QComboBox>
 
 class logHistory
 {
@@ -52,11 +53,15 @@ public:
      void updateThFile();
      void updateTh();
      void historyUpdateUrlTime(QString url, QString scanTime);
+     //void searchHistory();
 
 protected:
      QString configTag;
      QString configTagTime;
      int __CACHE_SIZE__;
+     
+public slots:
+     void searchHistory(QString tokenWord,  QComboBox* lineHistory);
 };
 
 #endif
