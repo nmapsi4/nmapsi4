@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>854</width>
+    <width>850</width>
     <height>660</height>
    </rect>
   </property>
@@ -68,7 +68,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="1" >
+    <item row="0" column="2" >
      <widget class="QPushButton" name="buttonHClear" >
       <property name="text" >
        <string/>
@@ -79,7 +79,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2" colspan="6" >
+    <item row="0" column="3" colspan="6" >
      <widget class="QComboBox" name="hostEdit" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
@@ -101,7 +101,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="8" colspan="2" >
+    <item row="0" column="9" >
      <spacer name="horizontalSpacer_3" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -153,7 +153,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>820</width>
+             <width>816</width>
              <height>332</height>
             </rect>
            </property>
@@ -275,7 +275,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>820</width>
+             <width>816</width>
              <height>332</height>
             </rect>
            </property>
@@ -337,7 +337,11 @@
             </rect>
            </property>
            <attribute name="label" >
-            <string>Url history</string>
+            <string>Bookmarks</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_4" >
             <item>
@@ -1747,7 +1751,7 @@
       </property>
      </spacer>
     </item>
-    <item rowspan="3" row="4" column="1" colspan="2" >
+    <item rowspan="3" row="4" column="2" colspan="2" >
      <widget class="QPushButton" name="bscanWid" >
       <property name="text" >
        <string>S&amp;can Options</string>
@@ -1767,7 +1771,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="3" >
+    <item rowspan="3" row="4" column="4" >
      <widget class="QPushButton" name="boption" >
       <property name="text" >
        <string>&amp;Options</string>
@@ -1781,7 +1785,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="4" >
+    <item rowspan="3" row="4" column="5" >
      <widget class="QPushButton" name="bmiscOptions" >
       <property name="layoutDirection" >
        <enum>Qt::LeftToRight</enum>
@@ -1798,7 +1802,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="5" >
+    <item rowspan="3" row="4" column="6" >
      <widget class="QPushButton" name="bdiscover" >
       <property name="text" >
        <string>&amp;Discover</string>
@@ -1812,7 +1816,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="6" >
+    <item rowspan="3" row="4" column="7" >
      <widget class="QPushButton" name="bfiles" >
       <property name="text" >
        <string>F&amp;ile</string>
@@ -1826,7 +1830,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="7" >
+    <item rowspan="3" row="4" column="8" >
      <widget class="QPushButton" name="btiming" >
       <property name="text" >
        <string>&amp;Timing</string>
@@ -1860,7 +1864,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>854</width>
+     <width>850</width>
      <height>27</height>
     </rect>
    </property>
@@ -1905,8 +1909,15 @@
     <addaction name="actionMenuBar" />
     <addaction name="actionShow_Status_Bar" />
    </widget>
+   <widget class="QMenu" name="menu_Bookmaks" >
+    <property name="title" >
+     <string>&amp;Bookmaks</string>
+    </property>
+    <addaction name="actionAdd_Bookmark" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_View" />
+   <addaction name="menu_Bookmaks" />
    <addaction name="menu_Settings" />
    <addaction name="menu_Help" />
   </widget>
@@ -2237,6 +2248,15 @@
    </property>
    <property name="text" >
     <string>Show Status Bar</string>
+   </property>
+  </action>
+  <action name="actionAdd_Bookmark" >
+   <property name="icon" >
+    <iconset resource="../mainwin.qrc" >
+     <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Add Bookmark</string>
    </property>
   </action>
  </widget>

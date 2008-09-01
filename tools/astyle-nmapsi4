@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# requirements: installed astyle 
+
+astyle --indent=spaces=4 --brackets=linux \
+      --indent-labels --pad=oper --unpad=paren \
+      --one-line=keep-statements --convert-tabs \
+      --indent-preprocessor \
+      `find -type f -name '*.c'` `find -type f -name '*.cpp'` `find -type f -name '*.h'`

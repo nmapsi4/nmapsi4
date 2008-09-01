@@ -16,6 +16,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/saveLog.cpp
 		core/searchVuln.cpp
 		../lib/loghistory.cpp
+		../lib/coreHistory.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)

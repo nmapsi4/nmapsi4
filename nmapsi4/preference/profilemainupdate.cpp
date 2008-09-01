@@ -19,52 +19,57 @@
 
 #include "profilemain.h"
 
-void mainProfile::updateNormalCheck() { // slot
+void mainProfile::updateNormalCheck()   // slot
+{
 
-	if(checkNormalScan->isChecked()) {
-		checkQuickScan->setChecked(false);
-		checkFullVersion->setChecked(false);
-		checkQuickVersion->setChecked(false);
-		ScanActive = "normal";
-	}
+    if (checkNormalScan->isChecked()) {
+        checkQuickScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "normal";
+    }
 }
 
-void mainProfile::updateQuickCheck() { //slot
+void mainProfile::updateQuickCheck()   //slot
+{
 
-	if(checkQuickScan->isChecked()) {
-		checkNormalScan->setChecked(false);
-		checkFullVersion->setChecked(false);
-		checkQuickVersion->setChecked(false);
-		ScanActive = "quick";
-	}
+    if (checkQuickScan->isChecked()) {
+        checkNormalScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "quick";
+    }
 }
 
-void mainProfile::updateFullVersionCheck() { // slot
+void mainProfile::updateFullVersionCheck()   // slot
+{
 
-	if(checkFullVersion->isChecked()) {
-		checkNormalScan->setChecked(false);
-		checkQuickScan->setChecked(false);
-		checkQuickVersion->setChecked(false);
-		ScanActive = "fullversion";
-	}
+    if (checkFullVersion->isChecked()) {
+        checkNormalScan->setChecked(false);
+        checkQuickScan->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "fullversion";
+    }
 }
 
-void mainProfile::updateQuickVersionCheck() { // slot
+void mainProfile::updateQuickVersionCheck()   // slot
+{
 
-	if(checkQuickVersion->isChecked()) {
-		checkNormalScan->setChecked(false);
-		checkQuickScan->setChecked(false);
-		checkFullVersion->setChecked(false);
-		ScanActive = "quickversion";
-	}
-} 
+    if (checkQuickVersion->isChecked()) {
+        checkNormalScan->setChecked(false);
+        checkQuickScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        ScanActive = "quickversion";
+    }
+}
 
-void mainProfile::update_saveButton() {
-	if(!checkLogOn->isChecked()) {
-		lineEditPath->setEnabled(true);
-		buttonLogB->setEnabled(true);
-	} else {
-		lineEditPath->setEnabled(false);
-		buttonLogB->setEnabled(false);
-	}
+void mainProfile::update_saveButton()
+{
+    if (!checkLogOn->isChecked()) {
+        lineEditPath->setEnabled(true);
+        buttonLogB->setEnabled(true);
+    } else {
+        lineEditPath->setEnabled(false);
+        buttonLogB->setEnabled(false);
+    }
 }

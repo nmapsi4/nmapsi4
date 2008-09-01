@@ -6,6 +6,7 @@ if (WIN32)
 SET(SOURCES_CPP	src/mainwin.cpp 
                 src/logrApi.cpp
 		../lib/loghistory.cpp
+		../lib/coreHistory.cpp
 		src/main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)

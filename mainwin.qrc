@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/images" >
+    <file>images/bookmark_folder.png</file>
+    <file>images/bookmark_toolbar.png</file>
+    <file>images/bookmark.png</file>
+    <file>images/bookmark_add.png</file>
     <file>images/world.png</file>
     <file>images/left.png</file>
     <file>images/right.png</file>

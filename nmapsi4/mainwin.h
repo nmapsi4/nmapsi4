@@ -28,105 +28,110 @@
 #include "../lib/loghistory.h"
 #include "../lib/staticDefine.h"
 
-
+//
+// QSettings description:
+// * nmapsi4/cacheHost   --> host cache for comboBox search
+// * nmapsi4/urlList  --> bookmark cache
+//    - nmapsi4/urlListTime
 
 class nmapClass : public QMainWindow , private Ui::MainWindow
 {
-  Q_OBJECT
+    Q_OBJECT
 
 private:
-	void rootMode(int uid);						
-  	void show_browser(QLineEdit *location);				
-	void isEmptyLog();						
-	void setNmapsiSlot();						
-	QFile* create_logFile(QString Path);				
-	QStringList check_extensions(QStringList parametri,QString *winTitle);
-	void resetOptions();
-	void checkProfile();
-	void init();
-	void itemDeleteAll(QList<QTreeWidgetItem*> items);
+    void rootMode(int uid);
+    void show_browser(QLineEdit *location);
+    void isEmptyLog();
+    void setNmapsiSlot();
+    QFile* create_logFile(QString Path);
+    QStringList check_extensions(QStringList parametri, QString *winTitle);
+    void resetOptions();
+    void checkProfile();
+    void init();
+    void itemDeleteAll(QList<QTreeWidgetItem*> items);
 
 public:
-	nmapClass();
-	~nmapClass();
-	void show_log_browserUrl(QString url, QLineEdit *location);			
-	void setQuickProfile();
-	void setNormalProfile();
-	void setFullVersionProfile();
-	void setQuickVersionProfile();
+    nmapClass();
+    ~nmapClass();
+    void show_log_browserUrl(QString url, QLineEdit *location);
+    void setQuickProfile();
+    void setNormalProfile();
+    void setFullVersionProfile();
+    void setQuickVersionProfile();
 
 protected:
-	QProcess *proc;
-	QProcess *versionProc;
-	QTreeWidgetItem *root,*item2, *infoItem, *infoItemObj;
-	QTreeWidgetItem *root2,*item_root2;
-	QTreeWidgetItem *error,*item_error;
-	QFile *PFile;
-	QString FileName;
-	QString firstPath;
-	QString Profile;
-	QString logPath;
-	bool checkLog;
-	bool flag_state;
-	bool savePos; 
-	bool saveSize;
-	bool listClearFlag;
-	bool verboseLog;
-	QList<QTreeWidgetItem*> itemList;
-	QString logSessionFile;
-	QLabel *labelVersion;
-	QLabel *userMode;
-	mainProfile *dialog;
-	QProgressBar *progressScan;
+    QProcess *proc;
+    QProcess *versionProc;
+    QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj;
+    QTreeWidgetItem *root2, *item_root2;
+    QTreeWidgetItem *error, *item_error;
+    QFile *PFile;
+    QString FileName;
+    QString firstPath;
+    QString Profile;
+    QString logPath;
+    bool checkLog;
+    bool flag_state;
+    bool savePos;
+    bool saveSize;
+    bool listClearFlag;
+    bool verboseLog;
+    QList<QTreeWidgetItem*> itemList;
+    QString logSessionFile;
+    QLabel *labelVersion;
+    QLabel *userMode;
+    mainProfile *dialog;
+    QProgressBar *progressScan;
 
 
 public slots:
-	void scan();
-	void about();
-	void about_qt();
-	void stop_scan();
-	void exit();
+    void scan();
+    void about();
+    void about_qt();
+    void stop_scan();
+    void exit();
 
 
 private slots:
-	void nmapParser();
-	void update_portCombo();
-	void update_scanCombo();
-	void update_inputcheck();
-	void update_discover();
-	void update_timing();
-	void update_options();
-	void update_comboVerbosity();
-	void input_browser();
-	void fileSession();
-	void listClear();
-	void closeTree();
-	void checkFullScreen();
-	void updateMenuBar();
-	void showMainToolBar();
-	void showActionToolBar();
-	void showStatusBar();
-	void updateIconsBox();
-	void callScanH();
+    void nmapParser();
+    void update_portCombo();
+    void update_scanCombo();
+    void update_inputcheck();
+    void update_discover();
+    void update_timing();
+    void update_options();
+    void update_comboVerbosity();
+    void input_browser();
+    void fileSession();
+    void listClear();
+    void closeTree();
+    void checkFullScreen();
+    void updateMenuBar();
+    void showMainToolBar();
+    void showActionToolBar();
+    void showStatusBar();
+    void updateIconsBox();
+    void callScanH();
 
-	// Check nmap version
-	void checkNmapVersion();
-	void setNmapVersion();
+    // Check nmap version
+    void checkNmapVersion();
+    void setNmapVersion();
 
-	//Resize UI
-	void resize_tab_Options_Scan();
-	void resize_tab_Options();
-	void resize_tab_MiscOptions();
-	void resize_tab_Discover();
-	void resize_tab_Files();
-	void resize_tab_Timing();
-	void startProfile_ui();
-	void readProfile();
-	void saveAsLog();
-	void saveLog();
-	void searchVuln();
-	virtual void updateFontHost(QString hostName); 
-	void callSearchHistory();
+    //Resize UI
+    void resize_tab_Options_Scan();
+    void resize_tab_Options();
+    void resize_tab_MiscOptions();
+    void resize_tab_Discover();
+    void resize_tab_Files();
+    void resize_tab_Timing();
+    void startProfile_ui();
+    void readProfile();
+    void saveAsLog();
+    void saveLog();
+    void searchVuln();
+    void updateFontHost(QString hostName);
+    void callSearchHistory();
+    void saveBoookMarks();
 };
 
 #endif

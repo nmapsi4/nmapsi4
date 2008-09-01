@@ -25,34 +25,34 @@
 
 class mainProfile : public QDialog, private Ui::ProfileMain
 {
-  Q_OBJECT
+    Q_OBJECT
 
 private:
-	void saveProfile(QString ProfileType); // Create a enum for the profile
-	QString readProfile();
-	void setProfile();
+    void saveProfile(QString ProfileType); // Create a enum for the profile
+    QString readProfile();
+    void setProfile();
 
 public:
-	mainProfile();
-	~mainProfile();
+    mainProfile();
+    ~mainProfile();
 
 protected:
-	QString ScanActive;
-	QListWidgetItem *profileItem, *logItem, *sizeItem;
+    QString ScanActive;
+    QListWidgetItem *profileItem, *logItem, *sizeItem;
 
 public slots:
-	void setScan();
+    void setScan();
 
 private slots:
-	void updateNormalCheck();            
-	void updateQuickCheck();             
-	void updateFullVersionCheck();       
-	void updateQuickVersionCheck();      
-	void updateItem();                  
-	void log_browser();
-	void update_saveButton();
-	void quit();
-	void setDefaults();
+    void updateNormalCheck();
+    void updateQuickCheck();
+    void updateFullVersionCheck();
+    void updateQuickVersionCheck();
+    void updateItem();
+    void log_browser();
+    void update_saveButton();
+    void quit();
+    void setDefaults();
 
 };
 

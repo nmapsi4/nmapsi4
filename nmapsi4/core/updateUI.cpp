@@ -22,28 +22,27 @@
 
 void nmapClass::update_portCombo()
 {
-	switch(portCombo->currentIndex())
-	{
-		case 0:
-// 			Normal
-			portEdit->setEnabled(false);
-			break;
-		case 1:
-// 			All
-			portEdit->setEnabled(false);
-			break;
-		case 2:
-// 			Most Important
-			portEdit->setEnabled(false);
-			break;
-		case 3:
-// 			Range
-			portEdit->setEnabled(true);
-			break;
-		default:
-			portEdit->setEnabled(false);
-			break;
-	}
+    switch (portCombo->currentIndex()) {
+    case 0:
+//    Normal
+        portEdit->setEnabled(false);
+        break;
+    case 1:
+//    All
+        portEdit->setEnabled(false);
+        break;
+    case 2:
+//    Most Important
+        portEdit->setEnabled(false);
+        break;
+    case 3:
+//    Range
+        portEdit->setEnabled(true);
+        break;
+    default:
+        portEdit->setEnabled(false);
+        break;
+    }
 
 }
 
@@ -51,281 +50,281 @@ void nmapClass::update_portCombo()
 void nmapClass::update_scanCombo()
 {
 
-	switch(comboScan->currentIndex())
-	{
-		case 0:
-// 			Connect Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 1:
-// 			Ping Sweep
-			bounceEdit->setEnabled(false);
-			break;
-		case 2:
-// 			Host List
-			bounceEdit->setEnabled(false);
-			break;
-		case 3:
-// 			FTP Bounce Attack
-			bounceEdit->setEnabled(true);
-			break;
-		case 4:
-// 			Idle Scan
-			bounceEdit->setEnabled(true);
-			break;
-		case 5:
-// 			SYN Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 6:
-// 			ACK Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 7:
-// 			FIN|ACK Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 8:
-// 			FIN Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 9:
-// 			NULL Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 10:
-// 			XMAS Tree Stealth Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 11:
-// 			TCP Window Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 12:
-// 			UDP Ports Scan
-			bounceEdit->setEnabled(false);
-			break;
-		case 13:
-// 			IP Protocol Scan
-			bounceEdit->setEnabled(false);
-			break;
-		default:
-			bounceEdit->setEnabled(false);
-			break;
+    switch (comboScan->currentIndex()) {
+    case 0:
+//    Connect Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 1:
+//    Ping Sweep
+        bounceEdit->setEnabled(false);
+        break;
+    case 2:
+//    Host List
+        bounceEdit->setEnabled(false);
+        break;
+    case 3:
+//    FTP Bounce Attack
+        bounceEdit->setEnabled(true);
+        break;
+    case 4:
+//    Idle Scan
+        bounceEdit->setEnabled(true);
+        break;
+    case 5:
+//    SYN Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 6:
+//    ACK Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 7:
+//    FIN|ACK Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 8:
+//    FIN Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 9:
+//    NULL Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 10:
+//    XMAS Tree Stealth Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 11:
+//    TCP Window Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 12:
+//    UDP Ports Scan
+        bounceEdit->setEnabled(false);
+        break;
+    case 13:
+//    IP Protocol Scan
+        bounceEdit->setEnabled(false);
+        break;
+    default:
+        bounceEdit->setEnabled(false);
+        break;
 
-	}
+    }
 }
 
 void nmapClass::rootMode(int uid)
 {
 
-     if( !uid ) // if root
-     {
-	  comboScan->addItem( QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "FIN|ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "FIN Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "NULL Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "XMAS Tree Stealth Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "TCP Window Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "UDP Ports Scan", 0, QApplication::UnicodeUTF8));
-	  comboScan->addItem( QApplication::translate("nmapClass", "IP Protocol Scan", 0, QApplication::UnicodeUTF8));
+    if (!uid) { // if root
+        comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "FIN|ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "FIN Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "NULL Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "XMAS Tree Stealth Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "TCP Window Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "UDP Ports Scan", 0, QApplication::UnicodeUTF8));
+        comboScan->addItem(QApplication::translate("nmapClass", "IP Protocol Scan", 0, QApplication::UnicodeUTF8));
 
-	  comboScan->setCurrentIndex(5);
-		
-     } else {
-	  checkIcmpEcho->setVisible(false);
-	  checkIcmpTimestamp->setVisible(false);
-	  checkIcmpNetmask->setVisible(false);
-	  checkOS->setVisible(false);
-	  
-	  // discover Udp Ping
-	  checkUdpPing->setVisible(false);
-	  lineUdpPing->setVisible(false);
-	  label_7->setVisible(false);
-	  
-	  // Misc Option
-	  checkFrag->setVisible(false);
-	  checkDecoy->setVisible(false);
-	  lineDecoy->setVisible(false);
-	  checkSourcePort->setVisible(false);
-	  lineSourcePort->setVisible(false);
-     }
-     
+        comboScan->setCurrentIndex(5);
+
+    } else {
+        checkIcmpEcho->setVisible(false);
+        checkIcmpTimestamp->setVisible(false);
+        checkIcmpNetmask->setVisible(false);
+        checkOS->setVisible(false);
+
+        // discover Udp Ping
+        checkUdpPing->setVisible(false);
+        lineUdpPing->setVisible(false);
+        label_7->setVisible(false);
+
+        // Misc Option
+        checkFrag->setVisible(false);
+        checkDecoy->setVisible(false);
+        lineDecoy->setVisible(false);
+        checkSourcePort->setVisible(false);
+        lineSourcePort->setVisible(false);
+    }
+
 }
 
 void nmapClass::update_inputcheck() // control the input object update
 {
-     if(checkInputFile->isChecked()) {
-	  lineInputFile->setEnabled(true);
-	  buttonBrowser->setEnabled(true);
-	  lineInputFile->clear();
-	  hostEdit->clear();
-     } else {
-	  lineInputFile->setEnabled(false);
-	  buttonBrowser->setEnabled(false);
-	  lineInputFile->clear();
-       
-	  hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-	  hostEdit->setItemText(0, tr("Insert HostName to scan"));
-     }
+    if (checkInputFile->isChecked()) {
+        lineInputFile->setEnabled(true);
+        buttonBrowser->setEnabled(true);
+        lineInputFile->clear();
+        hostEdit->clear();
+    } else {
+        lineInputFile->setEnabled(false);
+        buttonBrowser->setEnabled(false);
+        lineInputFile->clear();
+
+        hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        hostEdit->setItemText(0, tr("Insert HostName to scan"));
+    }
 }
 
 void nmapClass::update_discover()
 {
-     if(checkTcpPing->isChecked()) {
-	  lineTcpPing->setEnabled(true);
-	  lineTcpPing->clear();
-     } else {
-	  lineTcpPing->setEnabled(false);
-	  lineTcpPing->clear();
-     }
-     
-     if(checkTcpSyn->isChecked()) {
-	  lineSynPing->setEnabled(true);
-	  lineSynPing->clear();
-     } else {
-	  lineSynPing->setEnabled(false);
-	  lineSynPing->clear();
-     }
+    if (checkTcpPing->isChecked()) {
+        lineTcpPing->setEnabled(true);
+        lineTcpPing->clear();
+    } else {
+        lineTcpPing->setEnabled(false);
+        lineTcpPing->clear();
+    }
 
-     if(checkUdpPing->isChecked()) {
-	  lineUdpPing->setEnabled(true);
-	  lineUdpPing->clear();
-     } else {
-	  lineUdpPing->setEnabled(false);
-	  lineUdpPing->clear();
-     }
+    if (checkTcpSyn->isChecked()) {
+        lineSynPing->setEnabled(true);
+        lineSynPing->clear();
+    } else {
+        lineSynPing->setEnabled(false);
+        lineSynPing->clear();
+    }
+
+    if (checkUdpPing->isChecked()) {
+        lineUdpPing->setEnabled(true);
+        lineUdpPing->clear();
+    } else {
+        lineUdpPing->setEnabled(false);
+        lineUdpPing->clear();
+    }
 }
 
 void nmapClass::update_timing()
 {
-     if(TcheckIpv4ttl->isChecked())
-	  spinBoxIpv4ttl->setEnabled(true);
-     else
-	  spinBoxIpv4ttl->setEnabled(false);
-     
-     if(TcheckMinPar->isChecked())
-	  TspinBoxMinP->setEnabled(true);
-     else
-	  TspinBoxMinP->setEnabled(false);
-     
-     if(TcheckMaxPar->isChecked())
-	  spinBoxMaxPar->setEnabled(true);
-     else
-	  spinBoxMaxPar->setEnabled(false);
+    if (TcheckIpv4ttl->isChecked())
+        spinBoxIpv4ttl->setEnabled(true);
+    else
+        spinBoxIpv4ttl->setEnabled(false);
 
-     if(TcheckInitRtt->isChecked())
-	  spinBoxInitRtt->setEnabled(true);
-     else
-	  spinBoxInitRtt->setEnabled(false);
-     
-     if(TcheckMinRtt->isChecked())
-	  spinBoxMinRtt->setEnabled(true);
-     else
-	  spinBoxMinRtt->setEnabled(false);
-     
-     if(TcheckMaxRtt->isChecked())
-	  spinBoxMaxRtt->setEnabled(true);
-     else
-	  spinBoxMaxRtt->setEnabled(false);
-     
-     if(TcheckHostTime->isChecked())
-	  spinBoxHostTime->setEnabled(true);
-     else
-	  spinBoxHostTime->setEnabled(false);
-     
-     if(TcheckScanDelay->isChecked())
-	  spinBoxScanDelay->setEnabled(true);
-     else
-	  spinBoxScanDelay->setEnabled(false);
+    if (TcheckMinPar->isChecked())
+        TspinBoxMinP->setEnabled(true);
+    else
+        TspinBoxMinP->setEnabled(false);
+
+    if (TcheckMaxPar->isChecked())
+        spinBoxMaxPar->setEnabled(true);
+    else
+        spinBoxMaxPar->setEnabled(false);
+
+    if (TcheckInitRtt->isChecked())
+        spinBoxInitRtt->setEnabled(true);
+    else
+        spinBoxInitRtt->setEnabled(false);
+
+    if (TcheckMinRtt->isChecked())
+        spinBoxMinRtt->setEnabled(true);
+    else
+        spinBoxMinRtt->setEnabled(false);
+
+    if (TcheckMaxRtt->isChecked())
+        spinBoxMaxRtt->setEnabled(true);
+    else
+        spinBoxMaxRtt->setEnabled(false);
+
+    if (TcheckHostTime->isChecked())
+        spinBoxHostTime->setEnabled(true);
+    else
+        spinBoxHostTime->setEnabled(false);
+
+    if (TcheckScanDelay->isChecked())
+        spinBoxScanDelay->setEnabled(true);
+    else
+        spinBoxScanDelay->setEnabled(false);
 }
 
 void nmapClass::update_options()
 {
-     if(checkBoxDevice->isChecked())
-	  OlineDevice->setEnabled(true);
-     else {
-	  OlineDevice->setEnabled(false);
-	  OlineDevice->clear();
-     }
+    if (checkBoxDevice->isChecked())
+        OlineDevice->setEnabled(true);
+    else {
+        OlineDevice->setEnabled(false);
+        OlineDevice->clear();
+    }
 
-     if(checkDecoy->isChecked())
-	  lineDecoy->setEnabled(true);
-     else {
-	  lineDecoy->setEnabled(false);
-	  lineDecoy->clear();
-     }
+    if (checkDecoy->isChecked())
+        lineDecoy->setEnabled(true);
+    else {
+        lineDecoy->setEnabled(false);
+        lineDecoy->clear();
+    }
 
-     if(checkSpoof->isChecked()) {
-	  lineEditSpoof->setEnabled(true);
-	  comboScan->setCurrentIndex(0);
-	  notpingBox->setChecked(true);
-	  checkBoxDevice->setChecked(true);
-     } else {
-	  lineEditSpoof->setEnabled(false);
-	  lineEditSpoof->clear();
-	  checkBoxDevice->setCheckState(Qt::Unchecked);
-	  notpingBox->setChecked(false);  
-     }
-     
-     if(checkSourcePort->isChecked()) {
-	  lineSourcePort->setEnabled(true);
-	  comboScan->setCurrentIndex(5);
-     } else {
-	  lineSourcePort->setEnabled(false);
-	  lineSourcePort->clear();  
-     }
+    if (checkSpoof->isChecked()) {
+        lineEditSpoof->setEnabled(true);
+        comboScan->setCurrentIndex(0);
+        notpingBox->setChecked(true);
+        checkBoxDevice->setChecked(true);
+    } else {
+        lineEditSpoof->setEnabled(false);
+        lineEditSpoof->clear();
+        checkBoxDevice->setCheckState(Qt::Unchecked);
+        notpingBox->setChecked(false);
+    }
+
+    if (checkSourcePort->isChecked()) {
+        lineSourcePort->setEnabled(true);
+        comboScan->setCurrentIndex(5);
+    } else {
+        lineSourcePort->setEnabled(false);
+        lineSourcePort->clear();
+    }
 }
 
-void nmapClass::update_comboVerbosity() {
+void nmapClass::update_comboVerbosity()
+{
 
-     if(comboVerbosity->currentIndex() == 4)
-	  QMessageBox::warning(this, "NmapSI4",tr("Warning: Operation more expansive.\n"),tr("Close"));
+    if (comboVerbosity->currentIndex() == 4)
+        QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
 
 }
 
 
-void nmapClass::listClear() {
-     listClearFlag = true;
-     itemDeleteAll(itemList); //clear items list
-     itemList.clear();
-       
-     listWscan->clear();
-     treeWinfo->clear();
-     listScanError->clear();
-     actionClear_History->setEnabled(false);
-     action_Save_As->setEnabled(false);
+void nmapClass::listClear()
+{
+    listClearFlag = true;
+    itemDeleteAll(itemList); //clear items list
+    itemList.clear();
+
+    listWscan->clear();
+    treeWinfo->clear();
+    listScanError->clear();
+    actionClear_History->setEnabled(false);
+    action_Save_As->setEnabled(false);
 }
 
-void nmapClass::closeTree() {
-     listWscan->collapseAll();
-     treeWinfo->collapseAll();
-     listScanError->collapseAll();
-     listScan->collapseAll();
+void nmapClass::closeTree()
+{
+    listWscan->collapseAll();
+    treeWinfo->collapseAll();
+    listScanError->collapseAll();
+    listScan->collapseAll();
 }
 
-void nmapClass::updateIconsBox() {
-     // remove new update icons
-     int tmpBox = toolBox->currentIndex();
-     toolBox->setItemIcon(tmpBox,QIcon(QString("")));
-     
+void nmapClass::updateIconsBox()
+{
+    // remove new update icons
+    int tmpBox = toolBox->currentIndex();
+    if (tmpBox == 2)
+        toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+    else
+        toolBox->setItemIcon(tmpBox, QIcon(QString("")));
+
 }
 
-void nmapClass::updateFontHost(QString hostName) {
+void nmapClass::updateFontHost(QString hostName)
+{
 
-     Q_UNUSED(hostName);
-     hostEdit->clear();
-     hostEdit->setStyleSheet(QString::fromUtf8(""));
-     hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
-     connect( hostEdit, SIGNAL( editTextChanged(QString)),
-		  this, SLOT(callSearchHistory()));
+    Q_UNUSED(hostName);
+    hostEdit->clear();
+    hostEdit->setStyleSheet(QString::fromUtf8(""));
+    hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+    connect(hostEdit, SIGNAL(editTextChanged(QString)),
+            this, SLOT(callSearchHistory()));
 }
 
-void nmapClass::callSearchHistory() {
-     // TODO create a history global call
-     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
-     history->searchHistory(hostEdit->currentText(), hostEdit);
-     delete history;
-}
