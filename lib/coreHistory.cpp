@@ -23,54 +23,55 @@
 // @Developer: Francesco Cecconi
 // TODO test scanTime == NULL
 //
-void logHistory::coreItemHistory(QString url, QString scanTime) {
-     Q_ASSERT(!url.isEmpty());
+void logHistory::coreItemHistory(QString url, QString scanTime)
+{
+    Q_ASSERT(!url.isEmpty());
 
-     QSettings settings("nmapsi4","nmapsi4");
-     QList<QString> urlList;
-     QList<QString> urlListTime;
-     
-     urlList = historyReadUrl();
-     if(!scanTime.isNull())
-	  urlListTime = historyReadUrlTime();
+    QSettings settings("nmapsi4", "nmapsi4");
+    QList<QString> urlList;
+    QList<QString> urlListTime;
 
-     if(urlList.contains("NULL") /*&& urlListTime.contains("NULL")*/) {
-	  urlList.removeFirst();
-	  urlList.append(url);
-	  settings.setValue(configTag, QVariant(urlList));
-	  if(!scanTime.isNull()) {
-	      urlListTime.removeFirst();
-	      urlListTime.append(scanTime);
-	      settings.setValue(configTagTime, QVariant(urlListTime));
-	  }
-     } else {
-	  if(((urlList.size() == __CACHE_SIZE__) && ( __CACHE_SIZE__ != -1)) && (!urlList.contains(url)))  {
-	       urlList.removeLast();
-	       urlList.push_front(url);
-	       settings.setValue(configTag, QVariant(urlList));
-	       if(!scanTime.isNull()) {
-		  urlListTime.removeLast();
-		  urlListTime.push_front(scanTime);
-		  settings.setValue(configTagTime, QVariant(urlListTime));
-	       }
-	  } else {
-	       if(!urlList.contains(url)) {
-		    urlList.push_front(url);
-		    settings.setValue(configTag, QVariant(urlList));
-		    if(!scanTime.isNull()) {
-			urlListTime.push_front(scanTime);
-			settings.setValue(configTagTime, QVariant(urlListTime));
-		    }
-	       } else {
-		    if(!scanTime.isNull()) {
-			qDebug() << "Update date row..";
-			int index = urlList.indexOf(url);
-			urlListTime[index].clear();
-			urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-			settings.setValue(configTagTime, QVariant(urlListTime));
-		    }
-	       }
-	  }
-     }
+    urlList = historyReadUrl();
+    if (!scanTime.isNull())
+        urlListTime = historyReadUrlTime();
+
+    if (urlList.contains("NULL") /*&& urlListTime.contains("NULL")*/) {
+        urlList.removeFirst();
+        urlList.append(url);
+        settings.setValue(configTag, QVariant(urlList));
+        if (!scanTime.isNull()) {
+            urlListTime.removeFirst();
+            urlListTime.append(scanTime);
+            settings.setValue(configTagTime, QVariant(urlListTime));
+        }
+    } else {
+        if (((urlList.size() == __CACHE_SIZE__) && (__CACHE_SIZE__ != -1)) && (!urlList.contains(url)))  {
+            urlList.removeLast();
+            urlList.push_front(url);
+            settings.setValue(configTag, QVariant(urlList));
+            if (!scanTime.isNull()) {
+                urlListTime.removeLast();
+                urlListTime.push_front(scanTime);
+                settings.setValue(configTagTime, QVariant(urlListTime));
+            }
+        } else {
+            if (!urlList.contains(url)) {
+                urlList.push_front(url);
+                settings.setValue(configTag, QVariant(urlList));
+                if (!scanTime.isNull()) {
+                    urlListTime.push_front(scanTime);
+                    settings.setValue(configTagTime, QVariant(urlListTime));
+                }
+            } else {
+                if (!scanTime.isNull()) {
+                    qDebug() << "Update date row..";
+                    int index = urlList.indexOf(url);
+                    urlListTime[index].clear();
+                    urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+                    settings.setValue(configTagTime, QVariant(urlListTime));
+                }
+            }
+        }
+    }
 }
 

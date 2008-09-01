@@ -35,33 +35,33 @@ class logHistory
 {
 
 private:
-     QList<QString> historyReadUrl();
-     QList<QString> historyReadUrlTime();
-     QTreeWidgetItem* historyItem;
-     QTreeWidgetItem* history;
-     QList<QTreeWidgetItem*> ItemListHistory;
-     QTreeWidget* logTree;
-     void coreItemHistory(QString url, QString scanTime);
-	  
+    QList<QString> historyReadUrl();
+    QList<QString> historyReadUrlTime();
+    QTreeWidgetItem* historyItem;
+    QTreeWidgetItem* history;
+    QList<QTreeWidgetItem*> ItemListHistory;
+    QTreeWidget* logTree;
+    void coreItemHistory(QString url, QString scanTime);
+
 public:
-     logHistory(QTreeWidget* treeLog,
-		QString ConfigTag,
-		QString ConfigTagTime,
-		int cacheSize);
-     logHistory(QString ConfigTag, int cacheSize);
-     ~logHistory();
-     void updateThFile();
-     void updateBookMarks();
-     virtual void addItemHistory(QString url);
-     virtual void addItemHistory(QString url, QString scanTime);
+    logHistory(QTreeWidget* treeLog,
+               QString ConfigTag,
+               QString ConfigTagTime,
+               int cacheSize);
+    logHistory(QString ConfigTag, int cacheSize);
+    ~logHistory();
+    void updateThFile();
+    void updateBookMarks();
+    virtual void addItemHistory(QString url);
+    virtual void addItemHistory(QString url, QString scanTime);
 
 protected:
-     QString configTag;
-     QString configTagTime;
-     int __CACHE_SIZE__;
-     
+    QString configTag;
+    QString configTagTime;
+    int __CACHE_SIZE__;
+
 public slots:
-     void searchHistory(QString tokenWord,  QComboBox* lineHistory);
+    void searchHistory(QString tokenWord,  QComboBox* lineHistory);
 };
 
 #endif

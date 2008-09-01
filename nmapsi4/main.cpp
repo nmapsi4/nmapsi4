@@ -49,10 +49,10 @@ int main(int argc, char *argv[])
 #endif
 
     tmp_translator = translator.load(localeComplete, urlTranslate);
-    
-    if(tmp_translator == false)
-	 tmp_translator = translator.load(localeComplete, QDir::currentPath());
-    
+
+    if (tmp_translator == false)
+        tmp_translator = translator.load(localeComplete, QDir::currentPath());
+
     // debug messages for Translation file
     qDebug() << "Nmapsi4/core -> Locale::" << localeComplete;
     qDebug() << "Nmapsi4/core -> Translation file Load::" << tmp_translator;

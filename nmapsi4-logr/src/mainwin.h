@@ -36,29 +36,29 @@
 
 class mwClass : public QMainWindow , private Ui::mWindow
 {
-     Q_OBJECT
+    Q_OBJECT
 
 private:
-     QString showBrowser();
-     void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
+    QString showBrowser();
+    void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
 
-     QTreeWidgetItem *root;
-     QTreeWidgetItem *item;
-     QFile *logF;
-     QList<QTreeWidgetItem*> ItemList;
+    QTreeWidgetItem *root;
+    QTreeWidgetItem *item;
+    QFile *logF;
+    QList<QTreeWidgetItem*> ItemList;
 
 public:
-     mwClass();
-     ~mwClass();
+    mwClass();
+    ~mwClass();
 
 protected:
-     QString url;
+    QString url;
 
 private slots:
-     void logReader();
-     void logFromHistory();
-     void Breader();
-     void exit();
+    void logReader();
+    void logFromHistory();
+    void Breader();
+    void exit();
 
 
 };

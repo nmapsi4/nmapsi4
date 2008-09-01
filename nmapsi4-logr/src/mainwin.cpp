@@ -20,99 +20,102 @@
 #include "mainwin.h"
 
 
-mwClass::mwClass() : logF(0), url(0) {
-     setupUi(this);
-
-     connect( actionOpen, SIGNAL(triggered()), 
-	      this, SLOT(Breader()));
-
-     connect( actionClose, SIGNAL(triggered()), 
-	      this, SLOT(exit()));
-
-     connect( actionQuit, SIGNAL(triggered()), 
-	      this, SLOT(exit()));
-
-     connect( logTree, SIGNAL(itemSelectionChanged()), 
-           this, SLOT(logFromHistory()));
-
-     // Take nmapsi4 geometry info
-     QSettings settings("nmapsi4","nmapsi4");
-     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
-     QSize size = settings.value("window/size", QSize(869, 605)).toSize();
-     resize(size);
-     move(pos);
-
-     // TEST
-     //historyReadUrl();
-     //logHistory *history = new logHistory(logTree,"logReader/urlList");
-     logTree->setColumnWidth(0, 350);
-     logTree->setColumnWidth(1, 200);
-     logHistory *history = new logHistory(logTree,"logReader/urlList","logReader/urlListTime",10);
-     history->updateThFile();
-     delete history;
-}
-
-void mwClass::Breader() {
-     url = showBrowser();
-     logReader();
-}
-
-void mwClass::logReader() {
-     
-     if(url.isEmpty())
-	       return;
-     
-     qDebug() << "Path Current Item::" << url;
-
-     //logHistory *history = new logHistory(logTree,"logReader/urlList");
-     logHistory *history = new logHistory(logTree,"logReader/urlList","logReader/urlListTime",10);
-     history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-
-     if(!logF) logF = new QFile();
-     qDebug() << "nmapsi4-logr:: --> url::" << url;
-     logF->setFileName(url);
-     if(!logF->open(QIODevice::ReadOnly)) {
-	  qDebug() << "Log File open error." << endl;
-	  return;
-     }
-
-     QTextStream buffer(logF);
-     QString tmpLine;
-
-     treeLogView->setIconSize(QSize::QSize (32, 32));
-
-     while( !buffer.atEnd() ) {
-	  tmpLine = buffer.readLine();
-
-	  if(tmpLine.contains("Log Start")) {
-	       tmpLine = buffer.readLine();
-	       if(!(treeLogView->findItems(tmpLine, Qt::MatchFixedString, 0)).size()) {
-		    root = new QTreeWidgetItem(treeLogView);
-		    ItemList.push_front(root);
-		    root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-		    root->setText(0,tmpLine);
-		    while( !tmpLine.contains("Log End") ) {
-			 item = new QTreeWidgetItem(root);
-			 ItemList.push_front(item);
-			 tmpLine = buffer.readLine();
-		    
-			 // FIXME Scan info
-			 if(!tmpLine.contains("Log End"))
-			      item->setText(0,tmpLine);
-
-		    }
-	       }
-	  }
-     }
-
-     history->updateThFile();
-     logF->close();
-     delete history;
-
-}
-
-mwClass::~mwClass() 
+mwClass::mwClass() : logF(0), url(0)
 {
-     itemDeleteAll(ItemList);
-     //delete logF;
+    setupUi(this);
+
+    connect(actionOpen, SIGNAL(triggered()),
+            this, SLOT(Breader()));
+
+    connect(actionClose, SIGNAL(triggered()),
+            this, SLOT(exit()));
+
+    connect(actionQuit, SIGNAL(triggered()),
+            this, SLOT(exit()));
+
+    connect(logTree, SIGNAL(itemSelectionChanged()),
+            this, SLOT(logFromHistory()));
+
+    // Take nmapsi4 geometry info
+    QSettings settings("nmapsi4", "nmapsi4");
+    QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
+    QSize size = settings.value("window/size", QSize(869, 605)).toSize();
+    resize(size);
+    move(pos);
+
+    // TEST
+    //historyReadUrl();
+    //logHistory *history = new logHistory(logTree,"logReader/urlList");
+    logTree->setColumnWidth(0, 350);
+    logTree->setColumnWidth(1, 200);
+    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
+    history->updateThFile();
+    delete history;
+}
+
+void mwClass::Breader()
+{
+    url = showBrowser();
+    logReader();
+}
+
+void mwClass::logReader()
+{
+
+    if (url.isEmpty())
+        return;
+
+    qDebug() << "Path Current Item::" << url;
+
+    //logHistory *history = new logHistory(logTree,"logReader/urlList");
+    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
+    history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+
+    if (!logF) logF = new QFile();
+    qDebug() << "nmapsi4-logr:: --> url::" << url;
+    logF->setFileName(url);
+    if (!logF->open(QIODevice::ReadOnly)) {
+        qDebug() << "Log File open error." << endl;
+        return;
+    }
+
+    QTextStream buffer(logF);
+    QString tmpLine;
+
+    treeLogView->setIconSize(QSize::QSize(32, 32));
+
+    while (!buffer.atEnd()) {
+        tmpLine = buffer.readLine();
+
+        if (tmpLine.contains("Log Start")) {
+            tmpLine = buffer.readLine();
+            if (!(treeLogView->findItems(tmpLine, Qt::MatchFixedString, 0)).size()) {
+                root = new QTreeWidgetItem(treeLogView);
+                ItemList.push_front(root);
+                root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+                root->setText(0, tmpLine);
+                while (!tmpLine.contains("Log End")) {
+                    item = new QTreeWidgetItem(root);
+                    ItemList.push_front(item);
+                    tmpLine = buffer.readLine();
+
+                    // FIXME Scan info
+                    if (!tmpLine.contains("Log End"))
+                        item->setText(0, tmpLine);
+
+                }
+            }
+        }
+    }
+
+    history->updateThFile();
+    logF->close();
+    delete history;
+
+}
+
+mwClass::~mwClass()
+{
+    itemDeleteAll(ItemList);
+    //delete logF;
 }
