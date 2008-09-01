@@ -66,7 +66,7 @@ void mwClass::logReader() {
 
      //logHistory *history = new logHistory(logTree,"logReader/urlList");
      logHistory *history = new logHistory(logTree,"logReader/urlList","logReader/urlListTime",10);
-     history->historyUpdateUrlTime(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+     history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
      if(!logF) logF = new QFile();
      qDebug() << "nmapsi4-logr:: --> url::" << url;

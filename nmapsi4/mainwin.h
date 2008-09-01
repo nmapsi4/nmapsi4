@@ -28,7 +28,11 @@
 #include "../lib/loghistory.h"
 #include "../lib/staticDefine.h"
 
-
+//
+// QSettings description:
+//	* nmapsi4/cacheHost 		--> host cache for comboBox search
+//	* nmapsi4/urlList		--> bookmark cache
+//	   - nmapsi4/urlListTime 
 
 class nmapClass : public QMainWindow , private Ui::MainWindow
 {
@@ -125,8 +129,9 @@ private slots:
 	void saveAsLog();
 	void saveLog();
 	void searchVuln();
-	virtual void updateFontHost(QString hostName); 
+	void updateFontHost(QString hostName); 
 	void callSearchHistory();
+	void saveBoookMarks();
 };
 
 #endif

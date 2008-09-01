@@ -309,7 +309,10 @@ void nmapClass::closeTree() {
 void nmapClass::updateIconsBox() {
      // remove new update icons
      int tmpBox = toolBox->currentIndex();
-     toolBox->setItemIcon(tmpBox,QIcon(QString("")));
+     if(tmpBox == 2)
+	toolBox->setItemIcon(tmpBox,QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+     else
+	toolBox->setItemIcon(tmpBox,QIcon(QString("")));
      
 }
 
@@ -321,11 +324,4 @@ void nmapClass::updateFontHost(QString hostName) {
      hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
      connect( hostEdit, SIGNAL( editTextChanged(QString)),
 		  this, SLOT(callSearchHistory()));
-}
-
-void nmapClass::callSearchHistory() {
-     // TODO create a history global call
-     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
-     history->searchHistory(hostEdit->currentText(), hostEdit);
-     delete history;
 }

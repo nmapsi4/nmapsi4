@@ -41,7 +41,7 @@ nmapClass::nmapClass()
      this->checkProfile();
 
      logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
-     history->updateTh();
+     history->updateBookMarks();
      delete history;
 }
 
@@ -57,6 +57,7 @@ void nmapClass::init() {
      action_Scan_menu->setEnabled(false);
      action_Scan_2->setEnabled(false);
      hostEdit->setEnabled(false);
+     actionAdd_Bookmark->setEnabled(false);
 
      hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
      hostEdit->lineEdit()->setAlignment(Qt::AlignHCenter);
@@ -97,8 +98,9 @@ void nmapClass::scan()
      QString hostname = hostEdit->currentText();
      QString *title = new QString;
 
-     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
-     history->historyUpdateUrlTime(hostname, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+     //logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
+     logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
+     history->addItemHistory(hostname);
 
      *title = "NmapSI4 ";
 	
@@ -139,7 +141,7 @@ void nmapClass::scan()
      progressScan->setValue(60);
      this->setWindowTitle(title->replace("(55%)","(60%)"));
      // history reload
-     history->updateTh();
+     //history->updateTh();
 
      delete title;
      delete history;

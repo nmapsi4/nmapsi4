@@ -151,5 +151,7 @@ void nmapClass::setNmapsiSlot() {
 		 viewVuln, SLOT(forward()));
 	connect( Bstop, SIGNAL(clicked()), 
 		 viewVuln, SLOT(stop()));
-
+		 
+	connect( actionAdd_Bookmark, SIGNAL( triggered() ), 
+		 this, SLOT(saveBoookMarks()));
 }

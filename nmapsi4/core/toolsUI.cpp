@@ -262,12 +262,29 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items) {
 void nmapClass::callScanH() {
      if(toolBox->currentIndex()) {
 	  hostEdit->setStyleSheet(QString::fromUtf8(""));
-	  hostEdit->disconnect(SIGNAL(textChanged(QString)));
-	  hostEdit->disconnect(SIGNAL(selectionChanged()));
+	  hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
 	  hostEdit->setItemText(0,treeLogH->currentItem()->text(0));
 	  toolBox->setCurrentIndex(0);
 	  scan();
      }
 }
 
+void nmapClass::callSearchHistory() {
+     // TODO create a history global call
+     if(!actionAdd_Bookmark->isEnabled())
+	  actionAdd_Bookmark->setEnabled(true);
+     logHistory *history = new logHistory("nmapsi4/cacheHost", 10 );
+     history->searchHistory(hostEdit->currentText(), hostEdit);
+     delete history;
+}
 
+void nmapClass::saveBoookMarks() {
+     // TODO rember to enable saveBoomarks action
+     if(hostEdit->currentText().isEmpty())
+	  return;
+     
+     logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", -1 );
+     history->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+     history->updateBookMarks();
+     delete history;
+}
