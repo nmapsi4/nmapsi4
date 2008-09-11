@@ -21,7 +21,6 @@
 
 //
 // @Developer: Francesco Cecconi
-// TODO test scanTime == NULL
 //
 void logHistory::coreItemHistory(QString url, QString scanTime)
 {

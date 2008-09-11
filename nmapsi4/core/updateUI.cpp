@@ -328,3 +328,7 @@ void nmapClass::updateFontHost(QString hostName)
             this, SLOT(callSearchHistory()));
 }
 
+void nmapClass::activeBookTool() {
+    scanBook->setEnabled(true);
+    deleteBook->setEnabled(true);
+}

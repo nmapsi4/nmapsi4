@@ -274,7 +274,8 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 
 void nmapClass::callScanH()
 {
-    if (toolBox->currentIndex()) {
+    if (treeLogH->currentItem()) {
+	qDebug() << "Current Item::" << treeLogH->currentItem();
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
         hostEdit->setItemText(0, treeLogH->currentItem()->text(0));
@@ -293,14 +294,24 @@ void nmapClass::callSearchHistory()
     delete history;
 }
 
-void nmapClass::saveBoookMarks()
+void nmapClass::saveBookMarks()
 {
-    // TODO rember to enable saveBoomarks action
     if (hostEdit->currentText().isEmpty())
         return;
 
     logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     history->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
     history->updateBookMarks();
+    delete history;
+}
+
+void nmapClass::deleteBookMark()
+{
+    // TODO error message
+    if(!treeLogH->currentItem())
+	return;
+    
+    logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    history->deleteItemBookmark(treeLogH->currentItem()->text(0));
     delete history;
 }

@@ -130,16 +130,21 @@ void nmapClass::setNmapsiSlot()
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(scan()));
 
-    /*connect( hostEdit, SIGNAL( selectionChanged() ),
-      this, SLOT(updateFontHost()));*/
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(updateFontHost(QString)));
 
     connect(toolBox, SIGNAL(currentChanged(int)),
             this, SLOT(updateIconsBox()));
 
-    connect(treeLogH, SIGNAL(itemSelectionChanged()),
-            this, SLOT(callScanH()));
+    // BookMark signals
+    connect(scanBook, SIGNAL(clicked()),
+	    this, SLOT(callScanH()));
+    connect(deleteBook, SIGNAL(clicked()),
+	    this, SLOT(deleteBookMark()));
+    connect(treeLogH, SIGNAL( itemSelectionChanged()),
+	    this, SLOT(activeBookTool()));
+    connect(treeLogH, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+	    this, SLOT(callScanH()));
 
     // Vuln signal
     connect(buttonVuln, SIGNAL(clicked()),

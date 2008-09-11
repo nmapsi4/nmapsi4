@@ -39,10 +39,9 @@ logHistory::logHistory(QString ConfigTag, int cacheSize) :  logTree(NULL),
     __CACHE_SIZE__ = cacheSize;
 }
 
-logHistory::~logHistory()
+/*logHistory::~logHistory()
 {
-    // TODO
-}
+}*/
 
 QList<QString> logHistory::historyReadUrl()
 {
@@ -69,6 +68,28 @@ void logHistory::addItemHistory(QString url)
 void logHistory::addItemHistory(QString url, QString scanTime)
 {
     coreItemHistory(url, scanTime);
+}
+
+void logHistory::deleteItemBookmark(QString item) 
+{
+    // TODO
+    Q_ASSERT(item != NULL);
+    qDebug() << "logHistory::deleteItemBookmark() -- call";
+    QSettings settings("nmapsi4", "nmapsi4");
+    QList<QString> urlList = historyReadUrl();
+    QList<QString> urlListTime = historyReadUrlTime();
+    
+    foreach(QString itemToken, urlList) {
+	if (itemToken.contains(item)) {
+	    int index = urlList.indexOf(item);
+	    urlList.removeAt(index);
+	    urlListTime.removeAt(index);
+	    settings.setValue(configTag, QVariant(urlList));
+	    settings.setValue(configTagTime, QVariant(urlListTime));
+	    break;
+	}
+    }
+    updateBookMarks();
 }
 
 void logHistory::updateThFile()
