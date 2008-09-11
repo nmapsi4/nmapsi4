@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>660</height>
+    <width>927</width>
+    <height>693</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -153,8 +153,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>816</width>
-             <height>332</height>
+             <width>893</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -275,8 +275,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>816</width>
-             <height>332</height>
+             <width>94</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -332,8 +332,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>820</width>
-             <height>332</height>
+             <width>893</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -343,14 +343,58 @@
             <iconset resource="../mainwin.qrc" >
              <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_4" >
-            <item>
+           <layout class="QGridLayout" name="gridLayout_3" >
+            <item row="0" column="0" >
+             <widget class="QPushButton" name="scanBook" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="text" >
+               <string>Select</string>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QPushButton" name="deleteBook" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="text" >
+               <string>Delete</string>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" >
+             <spacer name="horizontalSpacer_6" >
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0" colspan="3" >
              <widget class="QTreeWidget" name="treeLogH" >
               <property name="minimumSize" >
                <size>
-                <width>812</width>
+                <width>700</width>
                 <height>316</height>
                </size>
+              </property>
+              <property name="contextMenuPolicy" >
+               <enum>Qt::CustomContextMenu</enum>
               </property>
               <property name="frameShape" >
                <enum>QFrame::Box</enum>
@@ -1864,7 +1908,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>927</width>
      <height>27</height>
     </rect>
    </property>
@@ -2263,7 +2307,7 @@
  <customwidgets>
   <customwidget>
    <class>QWebView</class>
-   <extends>QWidget</extends>
+   <extends></extends>
    <header>QtWebKit/QWebView</header>
   </customwidget>
  </customwidgets>

@@ -31,7 +31,7 @@
 //
 // QSettings description:
 // * nmapsi4/cacheHost   --> host cache for comboBox search
-// * nmapsi4/urlList  --> bookmark cache
+// * nmapsi4/urlList 	 --> bookmark cache
 //    - nmapsi4/urlListTime
 
 class nmapClass : public QMainWindow , private Ui::MainWindow
@@ -48,7 +48,7 @@ private:
     void resetOptions();
     void checkProfile();
     void init();
-    void itemDeleteAll(QList<QTreeWidgetItem*> items);
+    void itemDeleteAll(QList<QTreeWidgetItem*> items);    
 
 public:
     nmapClass();
@@ -131,7 +131,9 @@ private slots:
     void searchVuln();
     void updateFontHost(QString hostName);
     void callSearchHistory();
-    void saveBoookMarks();
+    void saveBookMarks();
+    void deleteBookMark();
+    void activeBookTool();
 };
 
 #endif

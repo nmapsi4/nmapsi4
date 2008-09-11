@@ -49,11 +49,12 @@ public:
                QString ConfigTagTime,
                int cacheSize);
     logHistory(QString ConfigTag, int cacheSize);
-    ~logHistory();
+    ~logHistory() {};
     void updateThFile();
     void updateBookMarks();
     virtual void addItemHistory(QString url);
     virtual void addItemHistory(QString url, QString scanTime);
+    void deleteItemBookmark(QString item);
 
 protected:
     QString configTag;
