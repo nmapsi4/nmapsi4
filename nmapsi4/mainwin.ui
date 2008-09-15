@@ -134,6 +134,10 @@
            <attribute name="label" >
             <string>Host(s)</string>
            </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
+           </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_3" >
             <item>
              <widget class="QTreeWidget" name="listWscan" >
@@ -249,12 +253,16 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>898</width>
-             <height>405</height>
+             <width>94</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label" >
             <string>Host(s) Info</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_2" >
             <item>
@@ -306,8 +314,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>898</width>
-             <height>405</height>
+             <width>708</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label" >

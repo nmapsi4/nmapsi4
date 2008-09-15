@@ -7,7 +7,6 @@
     <file>images/world.png</file>
     <file>images/left.png</file>
     <file>images/right.png</file>
-    <file>images/brand3.png</file>
     <file>images/reload.png</file>
     <file>images/show-menu.png</file>
     <file>icons/nmapsi4_endScan.svg</file>
@@ -15,8 +14,8 @@
     <file>icons/nmapsi4_scan.svg</file>
     <file>images/book.png</file>
     <file>images/book2.png</file>
-    <file>images/brand3.png</file>
     <file>images/button_cancel.png</file>
+    <file>images/viewmag+.png</file>
     <file>images/document-save-as.png</file>
     <file>images/erase.png</file>
     <file>images/fileopen.png</file>

@@ -60,7 +60,7 @@ void nmapClass::init()
     actionAdd_Bookmark->setEnabled(false);
 
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->lineEdit()->setAlignment(Qt::AlignHCenter);
+    //hostEdit->lineEdit()->setAlignment(Qt::AlignHCenter);
     hostEdit->insertItem(0, tr("Insert HostName to scan"));
 
     checkNmapVersion();

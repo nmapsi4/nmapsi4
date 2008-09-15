@@ -308,12 +308,18 @@ void nmapClass::closeTree()
 
 void nmapClass::updateIconsBox()
 {
-    // remove new update icons
     int tmpBox = toolBox->currentIndex();
-    if (tmpBox == 2)
-        toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-    else
-        toolBox->setItemIcon(tmpBox, QIcon(QString("")));
+    switch (tmpBox) {
+      case 0:
+	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+	break;
+      case 1:
+	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+	break;
+      case 2:
+	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+	break;
+    }
 
 }
 

@@ -21,7 +21,7 @@
 #define MAINWIN_H
 
 #include <QProcess>
-#include <QtGui>
+#include <QMainWindow>
 #include <QtWebKit/QWebView>
 #include "ui_mainwin.h"
 #include "preference/profilemain.h"
