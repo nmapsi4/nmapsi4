@@ -72,7 +72,6 @@ void logHistory::addItemHistory(QString url, QString scanTime)
 
 void logHistory::deleteItemBookmark(QString item) 
 {
-    // TODO
     Q_ASSERT(item != NULL);
     qDebug() << "logHistory::deleteItemBookmark() -- call";
     QSettings settings("nmapsi4", "nmapsi4");

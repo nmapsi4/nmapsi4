@@ -68,6 +68,7 @@ mainProfile::mainProfile()
         checkVerboseLog->setChecked(false);
 
     // Create listview items
+    // TODO insert history item and window setup
     listViewOptions->setIconSize(QSize::QSize(52, 52));
 
     profileItem = new QListWidgetItem(listViewOptions);
@@ -140,7 +141,6 @@ void mainProfile::setScan()
 
 void mainProfile::updateItem()
 {
-
     if (profileItem->isSelected()) {
         labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
         stackPref->setCurrentIndex(0);

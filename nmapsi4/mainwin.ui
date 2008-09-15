@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
-    <height>693</height>
+    <width>932</width>
+    <height>729</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -55,66 +55,7 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" >
-     <spacer name="horizontalSpacer_5" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0" >
-       <size>
-        <width>90</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="2" >
-     <widget class="QPushButton" name="buttonHClear" >
-      <property name="text" >
-       <string/>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3" colspan="6" >
-     <widget class="QComboBox" name="hostEdit" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="editable" >
-       <bool>true</bool>
-      </property>
-      <property name="currentIndex" >
-       <number>-1</number>
-      </property>
-      <property name="insertPolicy" >
-       <enum>QComboBox::InsertAfterCurrent</enum>
-      </property>
-      <property name="sizeAdjustPolicy" >
-       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="9" >
-     <spacer name="horizontalSpacer_3" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0" >
-       <size>
-        <width>63</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="0" colspan="10" >
+    <item row="0" column="0" colspan="14" >
      <widget class="QTabWidget" name="tabWidget" >
       <property name="autoFillBackground" >
        <bool>false</bool>
@@ -139,8 +80,41 @@
         <iconset resource="../mainwin.qrc" >
          <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout" >
-        <item>
+       <layout class="QGridLayout" name="gridLayout_4" >
+        <item row="0" column="0" >
+         <widget class="QPushButton" name="buttonHClear" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" >
+         <widget class="QComboBox" name="hostEdit" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="editable" >
+           <bool>true</bool>
+          </property>
+          <property name="currentIndex" >
+           <number>-1</number>
+          </property>
+          <property name="insertPolicy" >
+           <enum>QComboBox::InsertAfterCurrent</enum>
+          </property>
+          <property name="sizeAdjustPolicy" >
+           <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2" >
          <widget class="QToolBox" name="toolBox" >
           <property name="currentIndex" >
            <number>0</number>
@@ -153,12 +127,16 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>893</width>
-             <height>365</height>
+             <width>898</width>
+             <height>408</height>
             </rect>
            </property>
            <attribute name="label" >
             <string>Host(s)</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_3" >
             <item>
@@ -282,6 +260,10 @@
            <attribute name="label" >
             <string>Host(s) Info</string>
            </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+           </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_2" >
             <item>
              <widget class="QTreeWidget" name="treeWinfo" >
@@ -332,8 +314,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>893</width>
-             <height>365</height>
+             <width>708</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -670,7 +652,7 @@
       </widget>
      </widget>
     </item>
-    <item row="2" column="0" colspan="10" >
+    <item rowspan="4" row="1" column="0" colspan="14" >
      <widget class="QWidget" native="1" name="widgetOptions" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
@@ -1566,7 +1548,7 @@
        </widget>
        <widget class="QWidget" name="Options" >
         <property name="autoFillBackground" >
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <widget class="QGroupBox" name="groupBox_2" >
          <property name="geometry" >
@@ -1775,27 +1757,27 @@
       </widget>
      </widget>
     </item>
-    <item rowspan="2" row="3" column="0" colspan="10" >
+    <item row="2" column="1" colspan="13" >
      <widget class="Line" name="line" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item rowspan="2" row="5" column="0" >
-     <spacer name="horizontalSpacer" >
+    <item rowspan="2" row="3" column="13" >
+     <spacer name="horizontalSpacer_2" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
       <property name="sizeHint" stdset="0" >
        <size>
-        <width>62</width>
+        <width>63</width>
         <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
-    <item rowspan="3" row="4" column="2" colspan="2" >
+    <item rowspan="2" row="3" column="1" >
      <widget class="QPushButton" name="bscanWid" >
       <property name="text" >
        <string>S&amp;can Options</string>
@@ -1815,7 +1797,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="4" >
+    <item rowspan="2" row="3" column="3" >
      <widget class="QPushButton" name="boption" >
       <property name="text" >
        <string>&amp;Options</string>
@@ -1829,7 +1811,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="5" >
+    <item rowspan="2" row="3" column="5" >
      <widget class="QPushButton" name="bmiscOptions" >
       <property name="layoutDirection" >
        <enum>Qt::LeftToRight</enum>
@@ -1846,7 +1828,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="6" >
+    <item rowspan="2" row="3" column="7" >
      <widget class="QPushButton" name="bdiscover" >
       <property name="text" >
        <string>&amp;Discover</string>
@@ -1860,7 +1842,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="7" >
+    <item rowspan="2" row="3" column="9" >
      <widget class="QPushButton" name="bfiles" >
       <property name="text" >
        <string>F&amp;ile</string>
@@ -1874,7 +1856,7 @@
       </property>
      </widget>
     </item>
-    <item rowspan="3" row="4" column="8" >
+    <item rowspan="2" row="3" column="11" >
      <widget class="QPushButton" name="btiming" >
       <property name="text" >
        <string>&amp;Timing</string>
@@ -1888,19 +1870,6 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="9" >
-     <spacer name="horizontalSpacer_2" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0" >
-       <size>
-        <width>63</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar" >
@@ -1908,7 +1877,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>927</width>
+     <width>932</width>
      <height>27</height>
     </rect>
    </property>
