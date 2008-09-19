@@ -32,6 +32,9 @@ logHistory::logHistory(QTreeWidget* treeLog,
     __CACHE_SIZE__ = cacheSize;
 }
 
+logHistory::~logHistory() {
+}
+
 logHistory::logHistory(QString ConfigTag, int cacheSize) :  logTree(NULL),
         configTagTime(NULL)
 {

@@ -30,6 +30,7 @@
 #include <QDateTime>
 #include <QFileInfo>
 #include <QComboBox>
+#include <QString>
 
 class logHistory
 {
@@ -49,7 +50,8 @@ public:
                QString ConfigTagTime,
                int cacheSize);
     logHistory(QString ConfigTag, int cacheSize);
-    ~logHistory() {};
+    //~logHistory() {};
+    ~logHistory();
     void updateThFile();
     void updateBookMarks();
     virtual void addItemHistory(QString url);
