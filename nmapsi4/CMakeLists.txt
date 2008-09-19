@@ -14,7 +14,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		preference/profilemainupdate.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
-		core/searchVuln.cpp
+		core/support/searchVuln.cpp
 		../lib/loghistory.cpp
 		../lib/coreHistory.cpp
 		main.cpp)
@@ -31,7 +31,7 @@ else (WIN32)
 		preference/profilemainupdate.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
-		core/searchVuln.cpp
+		core/support/searchVuln.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 endif (WIN32)
