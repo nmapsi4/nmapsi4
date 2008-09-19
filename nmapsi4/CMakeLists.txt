@@ -16,8 +16,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
 		core/support/searchVuln.cpp
-		../lib/loghistory.cpp
-		../lib/coreHistory.cpp
+		../lib/history/loghistory.cpp
+		../lib/history/coreHistory.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -52,7 +52,7 @@ QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
 if (RELOAD_TRANSLATIONS)
-  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ../lib/loghistory.cpp ts/nmapsi4_it.ts 
+  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ../lib/history/loghistory.cpp ts/nmapsi4_it.ts 
     ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts)
   message( "nmapsi4:: update and rebuild translation " )  
 else (NOT RELOAD_TRANSLATIONS)
@@ -65,7 +65,7 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 
 if (NOT WIN32)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/)
   TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} nmapsi4_history)
 else (WIN32) 
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})

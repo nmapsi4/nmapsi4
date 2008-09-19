@@ -32,7 +32,7 @@
 #include <QDateTime>
 #include <assert.h>
 #include "ui_mainwin.h"
-#include "../../lib/loghistory.h"
+#include "../../lib/history/loghistory.h"
 
 class mwClass : public QMainWindow , private Ui::mWindow
 {

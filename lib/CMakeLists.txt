@@ -1,17 +1,6 @@
-PROJECT(nmapsi4_history)
-
-SET( SOURCES_CPP coreHistory.cpp 
-		 loghistory.cpp)
-MESSAGE( STATUS ${SOURCES_CPP} )
-
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
-
-INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-
-if(WIN32)
-	#ADD_LIBRARY( nmapsi4_history STATIC ${SOURCES_CPP})
-else(WIN32)
-	ADD_LIBRARY( nmapsi4_history SHARED ${SOURCES_CPP})
-endif(WIN32)
-
-
+#
+# lib CMakeLists.txt
+# Developer: Francesco Cecconi
+#
+add_subdirectory(history)
+#add_subdirectory(about)

@@ -5,8 +5,8 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 if (WIN32)
 SET(SOURCES_CPP	src/mainwin.cpp 
                 src/logrApi.cpp
-		../lib/loghistory.cpp
-		../lib/coreHistory.cpp
+		../lib/history/loghistory.cpp
+		../lib/history/coreHistory.cpp
 		src/main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -47,7 +47,7 @@ if (WIN32)
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
   TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES})
 else (WIN32)
-  INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/)
+  INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/history/)
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
   TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} nmapsi4_history)
 endif (WIN32)

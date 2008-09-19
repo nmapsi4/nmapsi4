@@ -25,8 +25,8 @@
 #include <QtWebKit/QWebView>
 #include "ui_mainwin.h"
 #include "preference/profilemain.h"
-#include "../lib/loghistory.h"
-#include "../lib/staticDefine.h"
+#include "../lib/history/loghistory.h"
+#include "../lib/about/staticDefine.h"
 
 //
 // QSettings description:
