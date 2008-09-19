@@ -17,49 +17,48 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PROFILEMAIN_H
-#define PROFILEMAIN_H
+#include "profilemain.h"
 
-#include <QtGui>
-#include "ui_profilemain.h"
+void mainProfile::checkExtension() {
+    //TODO
+    QSettings extension("nmapsi4", "nmapsi4");
+    
+    vulnExt = extension.value("vulnFlag", "false").toBool();
+    extList->clear(); // clear listWidget for reload use
+    
+    extList->setIconSize(QSize::QSize(48, 48));
+    QIcon imgA = QIcon(QString::fromUtf8(":/images/nmapsi4/preference/images/preferences-pluginA.png"));
+    QIcon imgD = QIcon(QString::fromUtf8(":/images/nmapsi4/preference/images/preferences-pluginD.png"));
+    
+    extPItem = new QListWidgetItem(extList);
+    if(vulnExt) {
+      extPItem->setIcon(imgA);
+    } else {
+      extPItem->setIcon(imgD);
+    }
+    extPItem->setText(tr("Check Vulnerabilities browser extension"));
+}
 
-class mainProfile : public QDialog, private Ui::ProfileMain
-{
-    Q_OBJECT
+void mainProfile::activeExt() {
+    QSettings extension("nmapsi4", "nmapsi4");
+    switch(extList->currentRow()) {
+      case 0:
+	if(!vulnExt) {
+	    extension.setValue("vulnFlag", "true");
+	    checkExtension();
+	}
+	break;
+    }
+}
 
-private:
-    void saveProfile(QString ProfileType); // Create a enum for the profile
-    QString readProfile();
-    void setProfile();
-    void checkExtension();
-
-public:
-    mainProfile();
-    ~mainProfile();
-
-protected:
-    QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem, *extItem;
-    QListWidgetItem *extPItem;
-    bool vulnExt;
-
-public slots:
-    void setScan();
-
-private slots:
-    void updateNormalCheck();
-    void updateQuickCheck();
-    void updateFullVersionCheck();
-    void updateQuickVersionCheck();
-    void updateItem();
-    void log_browser();
-    void update_saveButton();
-    void quit();
-    void setDefaults();
-    void activeExt();
-    void disableExt();
-
-};
-
-#endif
-
+void mainProfile::disableExt() {
+    QSettings extension("nmapsi4", "nmapsi4");
+    switch(extList->currentRow()) {
+      case 0:
+	if(vulnExt) {
+	    extension.setValue("vulnFlag", "false");
+	    checkExtension();
+	}
+	break;
+    }
+}

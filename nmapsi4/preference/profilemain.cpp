@@ -83,6 +83,11 @@ mainProfile::mainProfile()
     sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
     sizeItem->setText(tr("Size"));
 
+    extItem = new QListWidgetItem(listViewOptions);
+    extItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-plugin.png")));
+    extItem->setText(tr("Extensions"));
+    
+    checkExtension(); // update extension list
 
     connect(checkLogOn, SIGNAL(pressed()),
             this, SLOT(update_saveButton()));
@@ -95,6 +100,10 @@ mainProfile::mainProfile()
             this, SLOT(log_browser()));
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
+    connect(activeB, SIGNAL(clicked()),
+            this, SLOT(activeExt()));
+    connect(disableB, SIGNAL(clicked()),
+            this, SLOT(disableExt()));
 
 }
 
@@ -150,6 +159,9 @@ void mainProfile::updateItem()
     } else if (sizeItem->isSelected()) {
         labelTitle->setText(tr("<h3>Size Options</h3>"));
         stackPref->setCurrentIndex(2);
+    } else if (extItem->isSelected()) {
+        labelTitle->setText(tr("<h3>Extensions</h3>"));
+        stackPref->setCurrentIndex(3);
     }
 }
 

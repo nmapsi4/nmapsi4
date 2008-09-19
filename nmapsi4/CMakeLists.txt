@@ -12,6 +12,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/toolsUI.cpp
 		preference/profilemain.cpp
 		preference/profilemainupdate.cpp
+		preference/listExtension.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
 		core/support/searchVuln.cpp
@@ -29,6 +30,7 @@ else (WIN32)
 		core/toolsUI.cpp
 		preference/profilemain.cpp
 		preference/profilemainupdate.cpp
+		preference/listExtension.cpp
 		core/profileSession.cpp
 		core/saveLog.cpp
 		core/support/searchVuln.cpp

@@ -132,6 +132,18 @@ void nmapClass::checkProfile()
     else
         saveSize = false;
 
+    QString vulnExt = settings.value("vulnFlag", "none").toString();
+    if((!vulnExt.compare("none"))) {
+	settings.setValue("vulnFlag", "true"); // default value
+    } else if((!vulnExt.compare("false"))) {
+	       tabWidget->removeTab(1);
+	   } else {
+	       QIcon icon22;
+	       icon22.addPixmap(QPixmap(QString::fromUtf8(":/images/images/world.png")), 
+				 QIcon::Normal, QIcon::Off);
+	       tabWidget->insertTab(1,tab_3, icon22, QApplication::translate("MainWindow", "Vulnerabilities", 
+									 0, QApplication::UnicodeUTF8));
+	   }
 
 }
 
