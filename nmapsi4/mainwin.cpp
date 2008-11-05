@@ -96,13 +96,13 @@ void nmapClass::scan()
 
     QStringList parametri; //parameters list declaration
     QString hostname = hostEdit->currentText();
-    QString *title = new QString;
+    QString title;
 
     //logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
     logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
     history->addItemHistory(hostname);
 
-    *title = "NmapSI4 ";
+    title.append("NmapSI4 ");
 
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
@@ -139,11 +139,10 @@ void nmapClass::scan()
 
     this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
     progressScan->setValue(60);
-    this->setWindowTitle(title->replace("(55%)", "(60%)"));
+    this->setWindowTitle(title.replace("(55%)", "(60%)"));
     // history reload
     //history->updateTh();
 
-    delete title;
     delete history;
 }
 

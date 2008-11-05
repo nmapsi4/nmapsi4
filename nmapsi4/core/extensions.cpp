@@ -20,11 +20,11 @@
 #include "../mainwin.h"
 
 
-QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle)
+QStringList nmapClass::check_extensions(QStringList parametri, QString& winTitle)
 {
 
     progressScan->setValue(10); // start progress bar
-    this->setWindowTitle(winTitle->append("(10%)"));
+    this->setWindowTitle(winTitle.append("(10%)"));
 
     switch (comboScan->currentIndex()) { //scan check
     case 0:
@@ -100,7 +100,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle
     }
 
     progressScan->setValue(15);
-    this->setWindowTitle(winTitle->replace("(10%)", "(15%)"));
+    this->setWindowTitle(winTitle.replace("(10%)", "(15%)"));
 
     // start option scan
     if (rpcBox->isChecked())
@@ -117,7 +117,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle
     //end Extension
 
     progressScan->setValue(20);
-    this->setWindowTitle(winTitle->replace("(15%)", "(20%)"));
+    this->setWindowTitle(winTitle.replace("(15%)", "(20%)"));
 
     switch (portCombo->currentIndex()) { // port combo check
     case 1:
@@ -140,7 +140,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle
     }
 
     progressScan->setValue(30);
-    this->setWindowTitle(winTitle->replace("(20%)", "(30%)"));
+    this->setWindowTitle(winTitle.replace("(20%)", "(30%)"));
 
     if (checkInputFile->isChecked()) { // File options
         if (!lineInputFile->text().isEmpty()) {
@@ -257,7 +257,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle
         parametri << "-f"; // Ipv6
 
     progressScan->setValue(50);
-    this->setWindowTitle(winTitle->replace("(30%)", "(50%)"));
+    this->setWindowTitle(winTitle.replace("(30%)", "(50%)"));
 
     // Timing options
     if (TcheckIpv4ttl->isChecked()) {
@@ -346,7 +346,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString *winTitle
     }
 
     progressScan->setValue(55);
-    this->setWindowTitle(winTitle->replace("(50%)", "(55%)"));
+    this->setWindowTitle(winTitle.replace("(50%)", "(55%)"));
 
 
     return parametri;

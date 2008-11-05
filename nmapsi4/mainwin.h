@@ -44,7 +44,7 @@ private:
     void isEmptyLog();
     void setNmapsiSlot();
     QFile* create_logFile(QString Path);
-    QStringList check_extensions(QStringList parametri, QString *winTitle);
+    QStringList check_extensions(QStringList parametri, QString& winTitle);
     void resetOptions();
     void checkProfile();
     void init();
