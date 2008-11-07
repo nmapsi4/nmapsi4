@@ -19,7 +19,7 @@
 
 #include "loghistory.h"
 
-
+// history contructor
 logHistory::logHistory(QTreeWidget* treeLog,
                        QString ConfigTag,
                        QString ConfigTagTime,
@@ -32,19 +32,13 @@ logHistory::logHistory(QTreeWidget* treeLog,
     __CACHE_SIZE__ = cacheSize;
 }
 
-logHistory::~logHistory() {
-}
-
+// cache host contructor
 logHistory::logHistory(QString ConfigTag, int cacheSize) :  logTree(NULL),
         configTagTime(NULL)
 {
     configTag = ConfigTag;
     __CACHE_SIZE__ = cacheSize;
 }
-
-/*logHistory::~logHistory()
-{
-}*/
 
 QList<QString> logHistory::historyReadUrl()
 {
@@ -94,6 +88,7 @@ void logHistory::deleteItemBookmark(QString item)
     updateBookMarks();
 }
 
+// TODO change API name (updateLogHistory)
 void logHistory::updateThFile()
 {
 

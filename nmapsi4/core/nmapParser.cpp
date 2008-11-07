@@ -118,7 +118,8 @@ void nmapClass::nmapParser()
     treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
 
     int tmpBox = toolBox->currentIndex();
-    if (tmpBox == 0) {
+    // ***** TODO:: insert a swith case ****
+    if (tmpBox == 0) {  
         toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
         toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
