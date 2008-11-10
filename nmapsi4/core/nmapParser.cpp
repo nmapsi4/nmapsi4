@@ -118,18 +118,20 @@ void nmapClass::nmapParser()
     treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
 
     int tmpBox = toolBox->currentIndex();
-    // ***** TODO:: insert a swith case ****
-    if (tmpBox == 0) {  
-        toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+ 
+    switch(tmpBox) {
+      case 0:	
+	toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
         toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-    }
-    if (tmpBox == 1) {
-        toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	break;
+      case 1:
+	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
         toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-    }
-    if (tmpBox == 2) {
-        toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	break;
+      case 2:
+	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
         toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+	break;
     }
 
     if (!hostEdit->currentText().contains("(Stopped)"))
@@ -142,10 +144,22 @@ void nmapClass::nmapParser()
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
-//      root->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      root2->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      error->setBackground(0, QColor::fromRgb(210, 210, 210));
+	root->setBackground(0, QColor::fromRgb(75, 75, 75));
+	root->setBackground(1, QColor::fromRgb(75, 75, 75));
+	root->setBackground(2, QColor::fromRgb(75, 75, 75));
+	root->setBackground(3, QColor::fromRgb(75, 75, 75));
+	root->setBackground(4, QColor::fromRgb(75, 75, 75));
+	root->setForeground(0, Qt::white);
+	root->setForeground(1, Qt::white);
+	root->setForeground(2, Qt::white);
+	root->setForeground(3, Qt::white);
+	root->setForeground(4, Qt::white);
+	infoItem->setBackground(0, QColor::fromRgb(75, 75, 75));
+	infoItem->setForeground(0, Qt::white);
+	root2->setBackground(0, QColor::fromRgb(75, 75, 75));
+	root2->setForeground(0, Qt::white);
+	error->setBackground(0, QColor::fromRgb(75, 75, 75));
+	error->setForeground(0, Qt::white);
 
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
@@ -156,10 +170,22 @@ void nmapClass::nmapParser()
         infoItem->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
-//      root->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      infoItem->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      root2->setBackground(0, QColor::fromRgb(210, 210, 210));
-//      error->setBackground(0, QColor::fromRgb(210, 210, 210));
+      	root->setBackground(0, QColor::fromRgb(75, 75, 75));
+	root->setBackground(1, QColor::fromRgb(75, 75, 75));
+	root->setBackground(2, QColor::fromRgb(75, 75, 75));
+	root->setBackground(3, QColor::fromRgb(75, 75, 75));
+	root->setBackground(4, QColor::fromRgb(75, 75, 75));
+	root->setForeground(0, Qt::white);
+	root->setForeground(1, Qt::white);
+	root->setForeground(2, Qt::white);
+	root->setForeground(3, Qt::white);
+	root->setForeground(4, Qt::white);
+	infoItem->setBackground(0, QColor::fromRgb(75, 75, 75));
+	infoItem->setForeground(0, Qt::white);
+	root2->setBackground(0, QColor::fromRgb(75, 75, 75));
+	root2->setForeground(0, Qt::white);
+	error->setBackground(0, QColor::fromRgb(75, 75, 75));
+	error->setForeground(0, Qt::white);
 
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);

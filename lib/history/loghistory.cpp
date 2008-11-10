@@ -88,8 +88,7 @@ void logHistory::deleteItemBookmark(QString item)
     updateBookMarks();
 }
 
-// TODO change API name (updateLogHistory)
-void logHistory::updateThFile()
+void logHistory::updateLogHistory()
 {
 
     qDebug() << "logHistory::updateTreeHistory() -- call";
@@ -185,6 +184,7 @@ void logHistory::searchHistory(QString tokenWord, QComboBox* lineHistory)
     lineHistory->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark_toolbar.png")));
     QList<QString> urlList = historyReadUrl();
     lineHistory->setCompleter(0);
+    
     foreach(QString item, urlList) {
         if (item.contains(tokenWord)) {
             qDebug() << "History::Item:: " << item << "Token:: " << tokenWord;
