@@ -325,7 +325,6 @@ void nmapClass::updateIconsBox()
 
 void nmapClass::updateFontHost(QString hostName)
 {
-
     Q_UNUSED(hostName);
     hostEdit->clear();
     hostEdit->setStyleSheet(QString::fromUtf8(""));

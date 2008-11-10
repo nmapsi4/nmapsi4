@@ -51,7 +51,7 @@ public:
                int cacheSize);
     logHistory(QString ConfigTag, int cacheSize);
     ~logHistory() {};
-    void updateThFile();
+    void updateLogHistory();
     void updateBookMarks();
     virtual void addItemHistory(QString url);
     virtual void addItemHistory(QString url, QString scanTime);

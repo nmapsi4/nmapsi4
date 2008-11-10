@@ -49,7 +49,7 @@ mwClass::mwClass() : logF(0), url(0)
     logTree->setColumnWidth(0, 350);
     logTree->setColumnWidth(1, 200);
     logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
-    history->updateThFile();
+    history->updateLogHistory();
     delete history;
 }
 
@@ -108,7 +108,7 @@ void mwClass::logReader()
         }
     }
 
-    history->updateThFile();
+    history->updateLogHistory();
     logF->close();
     delete history;
 
