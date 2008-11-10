@@ -19,96 +19,110 @@
 
 #include "../mainwin.h"
 
+// TODO: new options look
+
 void nmapClass::resize_tab_Options_Scan()
 {
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(0);
-    } else if (stackedWidget->currentIndex() != 0) {
+    } else */
+      
+    if (stackedWidget->currentIndex() != 0) {
         stackedWidget->setCurrentIndex(0);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0); // close widget
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0); // close widget
 
 }
 
 void nmapClass::resize_tab_Options()
 {
 
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox_2->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(6);
-    } else if (stackedWidget->currentIndex() != 6) {
+    } else */
+      
+     if (stackedWidget->currentIndex() != 6) {
         stackedWidget->setCurrentIndex(6);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_2->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox_2->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
 }
 
 void nmapClass::resize_tab_MiscOptions()
 {
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox_3->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(1);
-    } else if (stackedWidget->currentIndex() != 1) {
+    } else */
+    
+    if (stackedWidget->currentIndex() != 1) {
         stackedWidget->setCurrentIndex(1);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_3->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox_3->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
 }
 
 void nmapClass::resize_tab_Discover()
 {
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox_4->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(2);
-    } else if (stackedWidget->currentIndex() != 2) {
+    } else */
+      
+    if (stackedWidget->currentIndex() != 2) {
         stackedWidget->setCurrentIndex(2);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_4->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox_4->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
 }
 
 void nmapClass::resize_tab_Files()
 {
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox_5->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(3);
-    } else if (stackedWidget->currentIndex() != 3) {
+    } else */
+      
+    if (stackedWidget->currentIndex() != 3) {
         stackedWidget->setCurrentIndex(3);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_5->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox_5->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
 }
 
 void nmapClass::resize_tab_Timing()
 {
-    if (widgetOptions->height() == 0) {
-        widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
+    /*if (widgetOptions->height() == 0) {
+        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
         stackedWidget->setFixedWidth(this->width() - 4);
         groupBox_6->setFixedWidth(this->width() - 17);
         stackedWidget->setCurrentIndex(4);
-    } else if (stackedWidget->currentIndex() != 4) {
+    } else */
+      
+    if (stackedWidget->currentIndex() != 4) {
         stackedWidget->setCurrentIndex(4);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_6->setFixedWidth(this->width() - 17);
-    } else
-        widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
+        //stackedWidget->setFixedWidth(this->width() - 4);
+        //groupBox_6->setFixedWidth(this->width() - 17);
+    } //else
+        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
 }
 
 void nmapClass::checkFullScreen()

@@ -21,19 +21,8 @@
 
 void nmapClass::about()
 {
-    QString version = tr("About Nmapsi4 ");
-    version.append(_VERSION_);
-
-    QMessageBox::about(this, version,
-                       tr("NmapSI4 is a qt4 interface for nmap scanner\n\n\n"
-                          "Website: http://nmapsi4.netsons.org\n"
-                          "Issues: http://code.google.com/p/nmapsi4/issues/list\n"
-                          "Mailing-list: https://lists.sourceforge.net/lists/listinfo/nmapsi-release\n"
-                          "Source: http://code.google.com/p/nmapsi4/source/checkout\n\n"
-                          "NmapSI4 is published under the terms of the GPL v2\n\n\n"
-                          "Core Developer:  francesco.cecconi@kdemail.net\n"
-                          "MS Windows Packages: el.diabl09@gmail.com\n\n"
-                         ));
+    mainAbout about;
+    about.exec();
 }
 
 void nmapClass::about_qt()

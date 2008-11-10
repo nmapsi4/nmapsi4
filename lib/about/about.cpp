@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2008 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,9 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef STATICDEFINE_H
-#define STATICDEFINE_H
+#include "about.h"
 
-#define _VERSION_                "0.2-svn"
-
-#endif
+mainAbout::mainAbout() {
+    setupUi(this);
+    QString version = labelVersion->text();
+    version.append(_VERSION_);
+    labelVersion->setText(version);
+}

@@ -3,4 +3,4 @@
 # Developer: Francesco Cecconi
 #
 add_subdirectory(history)
-#add_subdirectory(about)
+add_subdirectory(about)

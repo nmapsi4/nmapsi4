@@ -55,7 +55,7 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" colspan="14" >
+    <item row="0" column="0" >
      <widget class="QTabWidget" name="tabWidget" >
       <property name="autoFillBackground" >
        <bool>false</bool>
@@ -128,7 +128,7 @@
              <x>0</x>
              <y>0</y>
              <width>898</width>
-             <height>408</height>
+             <height>427</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -253,8 +253,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>898</width>
-             <height>394</height>
+             <width>94</width>
+             <height>64</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -314,8 +314,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>898</width>
-             <height>394</height>
+             <width>708</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -650,1225 +650,1234 @@
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="2" column="1" colspan="13" >
-     <widget class="Line" name="line" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="4" row="1" column="0" colspan="14" >
-     <widget class="QWidget" native="1" name="widgetOptions" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="autoFillBackground" >
-       <bool>false</bool>
-      </property>
-      <widget class="QStackedWidget" name="stackedWidget" >
-       <property name="geometry" >
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>831</width>
-         <height>131</height>
-        </rect>
-       </property>
-       <property name="autoFillBackground" >
-        <bool>true</bool>
-       </property>
-       <property name="currentIndex" >
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="ScanOptions" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox" >
-         <property name="geometry" >
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="autoFillBackground" >
-          <bool>true</bool>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QCheckBox" name="rpcBox" >
-          <property name="geometry" >
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>101</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>RPC Scan</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_39" >
-          <property name="geometry" >
-           <rect>
-            <x>350</x>
-            <y>80</y>
-            <width>91</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Bounce Host</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="portEdit" >
-          <property name="enabled" >
+      <widget class="QWidget" name="tab_4" >
+       <attribute name="title" >
+        <string>Scan Options</string>
+       </attribute>
+       <attribute name="icon" >
+        <iconset resource="../mainwin.qrc" >
+         <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5" >
+        <item row="0" column="0" colspan="7" >
+         <widget class="QStackedWidget" name="stackedWidget" >
+          <property name="autoFillBackground" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>510</x>
-            <y>50</y>
-            <width>191</width>
-            <height>27</height>
-           </rect>
+          <property name="currentIndex" >
+           <number>0</number>
           </property>
-         </widget>
-         <widget class="QComboBox" name="comboScan" >
-          <property name="geometry" >
-           <rect>
-            <x>10</x>
-            <y>80</y>
-            <width>301</width>
-            <height>26</height>
-           </rect>
-          </property>
-          <property name="mouseTracking" >
-           <bool>true</bool>
-          </property>
-          <property name="maxVisibleItems" >
-           <number>20</number>
-          </property>
-          <item>
-           <property name="text" >
-            <string>Connect Scan</string>
+          <widget class="QWidget" name="ScanOptions" >
+           <property name="autoFillBackground" >
+            <bool>false</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Ping Sweep</string>
+           <layout class="QVBoxLayout" name="verticalLayout" >
+            <item>
+             <widget class="QGroupBox" name="groupBox" >
+              <property name="autoFillBackground" >
+               <bool>true</bool>
+              </property>
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QCheckBox" name="rpcBox" >
+               <property name="geometry" >
+                <rect>
+                 <x>10</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>RPC Scan</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_39" >
+               <property name="geometry" >
+                <rect>
+                 <x>350</x>
+                 <y>80</y>
+                 <width>91</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Bounce Host</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="portEdit" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>510</x>
+                 <y>50</y>
+                 <width>191</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="comboScan" >
+               <property name="geometry" >
+                <rect>
+                 <x>10</x>
+                 <y>80</y>
+                 <width>301</width>
+                 <height>26</height>
+                </rect>
+               </property>
+               <property name="mouseTracking" >
+                <bool>true</bool>
+               </property>
+               <property name="maxVisibleItems" >
+                <number>20</number>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Connect Scan</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Ping Sweep</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Host List</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>FTP Bounce Attack</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QLabel" name="label_38" >
+               <property name="geometry" >
+                <rect>
+                 <x>350</x>
+                 <y>50</y>
+                 <width>91</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ports</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="bounceEdit" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>510</x>
+                 <y>80</y>
+                 <width>191</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="versionBox" >
+               <property name="geometry" >
+                <rect>
+                 <x>230</x>
+                 <y>20</y>
+                 <width>131</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Version Probe</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineOptions" >
+               <property name="geometry" >
+                <rect>
+                 <x>510</x>
+                 <y>20</y>
+                 <width>301</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="focusPolicy" >
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="styleSheet" >
+                <string notr="true" />
+               </property>
+               <property name="frame" >
+                <bool>false</bool>
+               </property>
+               <property name="readOnly" >
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="notpingBox" >
+               <property name="geometry" >
+                <rect>
+                 <x>120</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Don't Ping</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="portCombo" >
+               <property name="geometry" >
+                <rect>
+                 <x>10</x>
+                 <y>50</y>
+                 <width>301</width>
+                 <height>26</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Normal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>All</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Most Important</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Range</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QCheckBox" name="checkOS" >
+               <property name="geometry" >
+                <rect>
+                 <x>350</x>
+                 <y>20</y>
+                 <width>151</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>OS Detection</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page" >
+           <property name="autoFillBackground" >
+            <bool>true</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Host List</string>
+           <layout class="QVBoxLayout" name="verticalLayout_4" >
+            <item>
+             <widget class="QGroupBox" name="groupBox_3" >
+              <property name="autoFillBackground" >
+               <bool>true</bool>
+              </property>
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QCheckBox" name="checkFrag" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>80</y>
+                 <width>191</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Fragmentation</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkIpv6" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>50</y>
+                 <width>191</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ipv6</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkOrdered" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>20</y>
+                 <width>161</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ordered Port</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2" >
+           <property name="autoFillBackground" >
+            <bool>true</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>FTP Bounce Attack</string>
+           <layout class="QVBoxLayout" name="verticalLayout_5" >
+            <item>
+             <widget class="QGroupBox" name="groupBox_4" >
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QCheckBox" name="checkIcmpEcho" >
+               <property name="geometry" >
+                <rect>
+                 <x>630</x>
+                 <y>80</y>
+                 <width>171</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>ICMP Echo</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkIcmpTimestamp" >
+               <property name="geometry" >
+                <rect>
+                 <x>630</x>
+                 <y>20</y>
+                 <width>161</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>ICMP TImestamp</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_5" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>50</y>
+                 <width>41</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Port</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_7" >
+               <property name="geometry" >
+                <rect>
+                 <x>420</x>
+                 <y>50</y>
+                 <width>41</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Port</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineUdpPing" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>460</x>
+                 <y>50</y>
+                 <width>141</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_6" >
+               <property name="geometry" >
+                <rect>
+                 <x>220</x>
+                 <y>50</y>
+                 <width>41</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Port</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkUdpPing" >
+               <property name="geometry" >
+                <rect>
+                 <x>490</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>UDP Ping</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkTcpSyn" >
+               <property name="geometry" >
+                <rect>
+                 <x>270</x>
+                 <y>20</y>
+                 <width>121</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>TCP SYN Ping</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineSynPing" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>260</x>
+                 <y>50</y>
+                 <width>141</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkTcpPing" >
+               <property name="geometry" >
+                <rect>
+                 <x>70</x>
+                 <y>20</y>
+                 <width>121</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>TCP ACK Ping</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineTcpPing" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>60</x>
+                 <y>50</y>
+                 <width>141</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkIcmpNetmask" >
+               <property name="geometry" >
+                <rect>
+                 <x>630</x>
+                 <y>50</y>
+                 <width>151</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>ICMP Netmask</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_3" >
+           <property name="autoFillBackground" >
+            <bool>true</bool>
            </property>
-          </item>
-         </widget>
-         <widget class="QLabel" name="label_38" >
-          <property name="geometry" >
-           <rect>
-            <x>350</x>
-            <y>50</y>
-            <width>91</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Ports</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="bounceEdit" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>510</x>
-            <y>80</y>
-            <width>191</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="versionBox" >
-          <property name="geometry" >
-           <rect>
-            <x>230</x>
-            <y>20</y>
-            <width>131</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Version Probe</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineOptions" >
-          <property name="geometry" >
-           <rect>
-            <x>510</x>
-            <y>20</y>
-            <width>301</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="focusPolicy" >
-           <enum>Qt::NoFocus</enum>
-          </property>
-          <property name="styleSheet" >
-           <string notr="true" />
-          </property>
-          <property name="frame" >
-           <bool>false</bool>
-          </property>
-          <property name="readOnly" >
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="notpingBox" >
-          <property name="geometry" >
-           <rect>
-            <x>120</x>
-            <y>20</y>
-            <width>101</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Don't Ping</string>
-          </property>
-         </widget>
-         <widget class="QComboBox" name="portCombo" >
-          <property name="geometry" >
-           <rect>
-            <x>10</x>
-            <y>50</y>
-            <width>301</width>
-            <height>26</height>
-           </rect>
-          </property>
-          <item>
-           <property name="text" >
-            <string>Normal</string>
+           <layout class="QVBoxLayout" name="verticalLayout_6" >
+            <item>
+             <widget class="QGroupBox" name="groupBox_5" >
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QLineEdit" name="lineInputFile" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>60</y>
+                 <width>191</width>
+                 <height>31</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkInputFile" >
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Input File</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="buttonBrowser" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>132</x>
+                 <y>20</y>
+                 <width>117</width>
+                 <height>32</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Browser</string>
+               </property>
+               <property name="icon" >
+                <iconset resource="../mainwin.qrc" >
+                 <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineProfile" >
+               <property name="geometry" >
+                <rect>
+                 <x>350</x>
+                 <y>60</y>
+                 <width>271</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="readOnly" >
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_2" >
+               <property name="geometry" >
+                <rect>
+                 <x>350</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Scan Profile</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_5" >
+           <property name="autoFillBackground" >
+            <bool>true</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>All</string>
+           <layout class="QVBoxLayout" name="verticalLayout_7" >
+            <item>
+             <widget class="QGroupBox" name="groupBox_6" >
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QSpinBox" name="spinBoxScanDelay" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>550</x>
+                 <y>80</y>
+                 <width>101</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <number>9999999</number>
+               </property>
+               <property name="value" >
+                <number>6000</number>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxMaxRtt" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>310</x>
+                 <y>80</y>
+                 <width>71</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>6</number>
+               </property>
+               <property name="maximum" >
+                <number>9999999</number>
+               </property>
+               <property name="value" >
+                <number>6000</number>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckMaxRtt" >
+               <property name="geometry" >
+                <rect>
+                 <x>210</x>
+                 <y>80</y>
+                 <width>83</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Max. RTT</string>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxMinRtt" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>310</x>
+                 <y>50</y>
+                 <width>71</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <number>9999999</number>
+               </property>
+               <property name="value" >
+                <number>6000</number>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckMaxPar" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>80</y>
+                 <width>111</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Max. Parallel</string>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxIpv4ttl" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>130</x>
+                 <y>20</y>
+                 <width>61</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="maximum" >
+                <number>255</number>
+               </property>
+               <property name="value" >
+                <number>127</number>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckMinRtt" >
+               <property name="geometry" >
+                <rect>
+                 <x>210</x>
+                 <y>50</y>
+                 <width>91</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Min, RTT</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckMinPar" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>50</y>
+                 <width>111</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Min. Parallel</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckScanDelay" >
+               <property name="geometry" >
+                <rect>
+                 <x>550</x>
+                 <y>50</y>
+                 <width>151</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Scan Delay</string>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxMaxPar" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>130</x>
+                 <y>80</y>
+                 <width>61</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <number>150</number>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckInitRtt" >
+               <property name="geometry" >
+                <rect>
+                 <x>210</x>
+                 <y>20</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Initial RTT</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckHostTime" >
+               <property name="geometry" >
+                <rect>
+                 <x>410</x>
+                 <y>20</y>
+                 <width>131</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Host Timeout</string>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxInitRtt" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>310</x>
+                 <y>20</y>
+                 <width>71</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="maximum" >
+                <number>9999999</number>
+               </property>
+               <property name="value" >
+                <number>6000</number>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="TcheckIpv4ttl" >
+               <property name="geometry" >
+                <rect>
+                 <x>20</x>
+                 <y>20</y>
+                 <width>91</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ipv4 TTL</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="comboTiming" >
+               <property name="geometry" >
+                <rect>
+                 <x>550</x>
+                 <y>20</y>
+                 <width>181</width>
+                 <height>26</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Normal Throttling</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Paranoid Throttling</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Sneaky Throttling</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Polite Throttling</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Aggressive Throttling</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Insane Throttling</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QSpinBox" name="spinBoxHostTime" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>410</x>
+                 <y>50</y>
+                 <width>101</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>201</number>
+               </property>
+               <property name="maximum" >
+                <number>9999999</number>
+               </property>
+               <property name="value" >
+                <number>6000</number>
+               </property>
+              </widget>
+              <widget class="QSpinBox" name="TspinBoxMinP" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>130</x>
+                 <y>50</y>
+                 <width>61</width>
+                 <height>27</height>
+                </rect>
+               </property>
+               <property name="minimum" >
+                <number>1</number>
+               </property>
+               <property name="maximum" >
+                <number>150</number>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_4" >
+           <property name="autoFillBackground" >
+            <bool>true</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Most Important</string>
+          </widget>
+          <widget class="QWidget" name="Options" >
+           <property name="autoFillBackground" >
+            <bool>false</bool>
            </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Range</string>
-           </property>
-          </item>
+           <layout class="QVBoxLayout" name="verticalLayout_8" >
+            <item>
+             <widget class="QGroupBox" name="groupBox_2" >
+              <property name="title" >
+               <string/>
+              </property>
+              <widget class="QComboBox" name="comboVerbosity" >
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>90</y>
+                 <width>171</width>
+                 <height>26</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>Quiet</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Verbose</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Very Verbose</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Debug</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Verbose Debug</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QComboBox" name="comboDNSResolv" >
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>30</y>
+                 <width>171</width>
+                 <height>26</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text" >
+                 <string>When Required</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Always</string>
+                </property>
+               </item>
+               <item>
+                <property name="text" >
+                 <string>Never</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QLabel" name="label_40" >
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>10</y>
+                 <width>151</width>
+                 <height>18</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>DNS Resolution</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_41" >
+               <property name="geometry" >
+                <rect>
+                 <x>30</x>
+                 <y>70</y>
+                 <width>171</width>
+                 <height>18</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Verbosity</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineEditSpoof" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>360</x>
+                 <y>90</y>
+                 <width>171</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkSpoof" >
+               <property name="geometry" >
+                <rect>
+                 <x>220</x>
+                 <y>90</y>
+                 <width>141</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Spoof Address</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkBoxDevice" >
+               <property name="geometry" >
+                <rect>
+                 <x>220</x>
+                 <y>30</y>
+                 <width>151</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Specific Device</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="OlineDevice" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>360</x>
+                 <y>30</y>
+                 <width>171</width>
+                 <height>27</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkDecoy" >
+               <property name="geometry" >
+                <rect>
+                 <x>550</x>
+                 <y>30</y>
+                 <width>101</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Decoy</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkSourcePort" >
+               <property name="geometry" >
+                <rect>
+                 <x>550</x>
+                 <y>90</y>
+                 <width>111</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Source Port</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineDecoy" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>670</x>
+                 <y>30</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="lineSourcePort" >
+               <property name="enabled" >
+                <bool>false</bool>
+               </property>
+               <property name="geometry" >
+                <rect>
+                 <x>670</x>
+                 <y>80</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
-         <widget class="QCheckBox" name="checkOS" >
-          <property name="geometry" >
-           <rect>
-            <x>350</x>
-            <y>20</y>
-            <width>151</width>
-            <height>23</height>
-           </rect>
+        </item>
+        <item row="1" column="3" >
+         <spacer name="verticalSpacer" >
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
           </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>20</width>
+            <height>248</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0" colspan="7" >
+         <widget class="Line" name="line" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item rowspan="2" row="3" column="0" >
+         <widget class="QPushButton" name="bscanWid" >
           <property name="text" >
-           <string>OS Detection</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox_3" >
-         <property name="geometry" >
-          <rect>
-           <x>10</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="autoFillBackground" >
-          <bool>true</bool>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QCheckBox" name="checkFrag" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>80</y>
-            <width>191</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Fragmentation</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkIpv6" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>50</y>
-            <width>191</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Ipv6</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkOrdered" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>20</y>
-            <width>161</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Ordered Port</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_2" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox_4" >
-         <property name="geometry" >
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QCheckBox" name="checkIcmpEcho" >
-          <property name="geometry" >
-           <rect>
-            <x>630</x>
-            <y>80</y>
-            <width>171</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>ICMP Echo</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkIcmpTimestamp" >
-          <property name="geometry" >
-           <rect>
-            <x>630</x>
-            <y>20</y>
-            <width>161</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>ICMP TImestamp</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_5" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>50</y>
-            <width>41</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Port</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_7" >
-          <property name="geometry" >
-           <rect>
-            <x>420</x>
-            <y>50</y>
-            <width>41</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Port</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineUdpPing" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>460</x>
-            <y>50</y>
-            <width>141</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_6" >
-          <property name="geometry" >
-           <rect>
-            <x>220</x>
-            <y>50</y>
-            <width>41</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Port</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkUdpPing" >
-          <property name="geometry" >
-           <rect>
-            <x>490</x>
-            <y>20</y>
-            <width>101</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>UDP Ping</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkTcpSyn" >
-          <property name="geometry" >
-           <rect>
-            <x>270</x>
-            <y>20</y>
-            <width>121</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>TCP SYN Ping</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineSynPing" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>260</x>
-            <y>50</y>
-            <width>141</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkTcpPing" >
-          <property name="geometry" >
-           <rect>
-            <x>70</x>
-            <y>20</y>
-            <width>121</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>TCP ACK Ping</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineTcpPing" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>60</x>
-            <y>50</y>
-            <width>141</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkIcmpNetmask" >
-          <property name="geometry" >
-           <rect>
-            <x>630</x>
-            <y>50</y>
-            <width>151</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>ICMP Netmask</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_3" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox_5" >
-         <property name="geometry" >
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QLineEdit" name="lineInputFile" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>60</y>
-            <width>191</width>
-            <height>31</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkInputFile" >
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>20</y>
-            <width>101</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Input File</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="buttonBrowser" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>132</x>
-            <y>20</y>
-            <width>117</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Browser</string>
+           <string>S&amp;can Options</string>
           </property>
           <property name="icon" >
            <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
+            <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
           </property>
-         </widget>
-         <widget class="QLineEdit" name="lineProfile" >
-          <property name="geometry" >
-           <rect>
-            <x>350</x>
-            <y>60</y>
-            <width>271</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="readOnly" >
-           <bool>true</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_2" >
-          <property name="geometry" >
-           <rect>
-            <x>350</x>
-            <y>20</y>
-            <width>101</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Scan Profile</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_5" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox_6" >
-         <property name="geometry" >
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QSpinBox" name="spinBoxScanDelay" >
-          <property name="enabled" >
+          <property name="autoDefault" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>550</x>
-            <y>80</y>
-            <width>101</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>1</number>
-          </property>
-          <property name="maximum" >
-           <number>9999999</number>
-          </property>
-          <property name="value" >
-           <number>6000</number>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxMaxRtt" >
-          <property name="enabled" >
+          <property name="default" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>310</x>
-            <y>80</y>
-            <width>71</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>6</number>
-          </property>
-          <property name="maximum" >
-           <number>9999999</number>
-          </property>
-          <property name="value" >
-           <number>6000</number>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="TcheckMaxRtt" >
-          <property name="geometry" >
-           <rect>
-            <x>210</x>
-            <y>80</y>
-            <width>83</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Max. RTT</string>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxMinRtt" >
-          <property name="enabled" >
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>310</x>
-            <y>50</y>
-            <width>71</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>1</number>
-          </property>
-          <property name="maximum" >
-           <number>9999999</number>
-          </property>
-          <property name="value" >
-           <number>6000</number>
-          </property>
          </widget>
-         <widget class="QCheckBox" name="TcheckMaxPar" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>80</y>
-            <width>111</width>
-            <height>31</height>
-           </rect>
-          </property>
+        </item>
+        <item rowspan="2" row="3" column="1" >
+         <widget class="QPushButton" name="boption" >
           <property name="text" >
-           <string>Max. Parallel</string>
+           <string>&amp;Options</string>
           </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxIpv4ttl" >
-          <property name="enabled" >
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
+          </property>
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>130</x>
-            <y>20</y>
-            <width>61</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="maximum" >
-           <number>255</number>
-          </property>
-          <property name="value" >
-           <number>127</number>
-          </property>
          </widget>
-         <widget class="QCheckBox" name="TcheckMinRtt" >
-          <property name="geometry" >
-           <rect>
-            <x>210</x>
-            <y>50</y>
-            <width>91</width>
-            <height>23</height>
-           </rect>
+        </item>
+        <item rowspan="2" row="3" column="2" >
+         <widget class="QPushButton" name="bmiscOptions" >
+          <property name="layoutDirection" >
+           <enum>Qt::LeftToRight</enum>
           </property>
           <property name="text" >
-           <string>Min, RTT</string>
+           <string>M. Optio&amp;ns</string>
           </property>
-         </widget>
-         <widget class="QCheckBox" name="TcheckMinPar" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>50</y>
-            <width>111</width>
-            <height>31</height>
-           </rect>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
           </property>
-          <property name="text" >
-           <string>Min. Parallel</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="TcheckScanDelay" >
-          <property name="geometry" >
-           <rect>
-            <x>550</x>
-            <y>50</y>
-            <width>151</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Scan Delay</string>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxMaxPar" >
-          <property name="enabled" >
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>130</x>
-            <y>80</y>
-            <width>61</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>1</number>
-          </property>
-          <property name="maximum" >
-           <number>150</number>
-          </property>
          </widget>
-         <widget class="QCheckBox" name="TcheckInitRtt" >
-          <property name="geometry" >
-           <rect>
-            <x>210</x>
-            <y>20</y>
-            <width>101</width>
-            <height>31</height>
-           </rect>
-          </property>
+        </item>
+        <item rowspan="2" row="3" column="3" >
+         <widget class="QPushButton" name="bdiscover" >
           <property name="text" >
-           <string>Initial RTT</string>
+           <string>&amp;Discover</string>
           </property>
-         </widget>
-         <widget class="QCheckBox" name="TcheckHostTime" >
-          <property name="geometry" >
-           <rect>
-            <x>410</x>
-            <y>20</y>
-            <width>131</width>
-            <height>23</height>
-           </rect>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
           </property>
-          <property name="text" >
-           <string>Host Timeout</string>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxInitRtt" >
-          <property name="enabled" >
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>310</x>
-            <y>20</y>
-            <width>71</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="maximum" >
-           <number>9999999</number>
-          </property>
-          <property name="value" >
-           <number>6000</number>
-          </property>
          </widget>
-         <widget class="QCheckBox" name="TcheckIpv4ttl" >
-          <property name="geometry" >
-           <rect>
-            <x>20</x>
-            <y>20</y>
-            <width>91</width>
-            <height>31</height>
-           </rect>
-          </property>
+        </item>
+        <item rowspan="2" row="3" column="4" >
+         <widget class="QPushButton" name="bfiles" >
           <property name="text" >
-           <string>Ipv4 TTL</string>
+           <string>F&amp;ile</string>
           </property>
-         </widget>
-         <widget class="QComboBox" name="comboTiming" >
-          <property name="geometry" >
-           <rect>
-            <x>550</x>
-            <y>20</y>
-            <width>181</width>
-            <height>26</height>
-           </rect>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/folder_open.png</normaloff>:/images/images/folder_open.png</iconset>
           </property>
-          <item>
-           <property name="text" >
-            <string>Normal Throttling</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Paranoid Throttling</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Sneaky Throttling</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Polite Throttling</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Aggressive Throttling</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Insane Throttling</string>
-           </property>
-          </item>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxHostTime" >
-          <property name="enabled" >
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>410</x>
-            <y>50</y>
-            <width>101</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>201</number>
-          </property>
-          <property name="maximum" >
-           <number>9999999</number>
-          </property>
-          <property name="value" >
-           <number>6000</number>
-          </property>
          </widget>
-         <widget class="QSpinBox" name="TspinBoxMinP" >
-          <property name="enabled" >
+        </item>
+        <item rowspan="2" row="3" column="5" >
+         <widget class="QPushButton" name="btiming" >
+          <property name="text" >
+           <string>&amp;Timing</string>
+          </property>
+          <property name="icon" >
+           <iconset resource="../mainwin.qrc" >
+            <normaloff>:/images/images/player_time.png</normaloff>:/images/images/player_time.png</iconset>
+          </property>
+          <property name="flat" >
            <bool>false</bool>
           </property>
-          <property name="geometry" >
-           <rect>
-            <x>130</x>
-            <y>50</y>
-            <width>61</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="minimum" >
-           <number>1</number>
-          </property>
-          <property name="maximum" >
-           <number>150</number>
-          </property>
          </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_4" >
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QWidget" name="Options" >
-        <property name="autoFillBackground" >
-         <bool>false</bool>
-        </property>
-        <widget class="QGroupBox" name="groupBox_2" >
-         <property name="geometry" >
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>831</width>
-           <height>141</height>
-          </rect>
-         </property>
-         <property name="title" >
-          <string/>
-         </property>
-         <widget class="QComboBox" name="comboVerbosity" >
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>90</y>
-            <width>171</width>
-            <height>26</height>
-           </rect>
+        </item>
+        <item row="4" column="6" >
+         <spacer name="horizontalSpacer" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
           </property>
-          <item>
-           <property name="text" >
-            <string>Quiet</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Verbose</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Very Verbose</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Debug</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Verbose Debug</string>
-           </property>
-          </item>
-         </widget>
-         <widget class="QComboBox" name="comboDNSResolv" >
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>30</y>
-            <width>171</width>
-            <height>26</height>
-           </rect>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>258</width>
+            <height>20</height>
+           </size>
           </property>
-          <item>
-           <property name="text" >
-            <string>When Required</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Always</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Never</string>
-           </property>
-          </item>
-         </widget>
-         <widget class="QLabel" name="label_40" >
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>10</y>
-            <width>151</width>
-            <height>18</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>DNS Resolution</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_41" >
-          <property name="geometry" >
-           <rect>
-            <x>30</x>
-            <y>70</y>
-            <width>171</width>
-            <height>18</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Verbosity</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEditSpoof" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>360</x>
-            <y>90</y>
-            <width>171</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkSpoof" >
-          <property name="geometry" >
-           <rect>
-            <x>220</x>
-            <y>90</y>
-            <width>141</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Spoof Address</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkBoxDevice" >
-          <property name="geometry" >
-           <rect>
-            <x>220</x>
-            <y>30</y>
-            <width>151</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Specific Device</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="OlineDevice" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>360</x>
-            <y>30</y>
-            <width>171</width>
-            <height>27</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkDecoy" >
-          <property name="geometry" >
-           <rect>
-            <x>550</x>
-            <y>30</y>
-            <width>101</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Decoy</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkSourcePort" >
-          <property name="geometry" >
-           <rect>
-            <x>550</x>
-            <y>90</y>
-            <width>111</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text" >
-           <string>Source Port</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineDecoy" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>670</x>
-            <y>30</y>
-            <width>151</width>
-            <height>31</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineSourcePort" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="geometry" >
-           <rect>
-            <x>670</x>
-            <y>80</y>
-            <width>151</width>
-            <height>31</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
-       </widget>
+         </spacer>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
-    <item rowspan="2" row="3" column="1" >
-     <widget class="QPushButton" name="bscanWid" >
-      <property name="text" >
-       <string>S&amp;can Options</string>
+    <item row="1" column="0" >
+     <widget class="QFrame" name="frame" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+        <horstretch>0</horstretch>
+        <verstretch>20</verstretch>
+       </sizepolicy>
       </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
-      </property>
-      <property name="autoDefault" >
-       <bool>false</bool>
-      </property>
-      <property name="default" >
-       <bool>false</bool>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="3" >
-     <widget class="QPushButton" name="boption" >
-      <property name="text" >
-       <string>&amp;Options</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="5" >
-     <widget class="QPushButton" name="bmiscOptions" >
-      <property name="layoutDirection" >
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="text" >
-       <string>M. Optio&amp;ns</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="7" >
-     <widget class="QPushButton" name="bdiscover" >
-      <property name="text" >
-       <string>&amp;Discover</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="9" >
-     <widget class="QPushButton" name="bfiles" >
-      <property name="text" >
-       <string>F&amp;ile</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/folder_open.png</normaloff>:/images/images/folder_open.png</iconset>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="11" >
-     <widget class="QPushButton" name="btiming" >
-      <property name="text" >
-       <string>&amp;Timing</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="../mainwin.qrc" >
-        <normaloff>:/images/images/player_time.png</normaloff>:/images/images/player_time.png</iconset>
-      </property>
-      <property name="flat" >
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item rowspan="2" row="3" column="13" >
-     <spacer name="horizontalSpacer_2" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0" >
+      <property name="minimumSize" >
        <size>
-        <width>63</width>
+        <width>0</width>
         <height>20</height>
        </size>
       </property>
-     </spacer>
+      <property name="styleSheet" >
+       <string notr="true" >background-color: rgb(75, 75, 75);</string>
+      </property>
+      <property name="frameShape" >
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth" >
+       <number>0</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -2011,7 +2020,7 @@
   <action name="action_About" >
    <property name="icon" >
     <iconset resource="../mainwin.qrc" >
-     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
    <property name="text" >
     <string>&amp;About</string>
