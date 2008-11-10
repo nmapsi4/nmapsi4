@@ -26,7 +26,8 @@
 #include "ui_mainwin.h"
 #include "preference/profilemain.h"
 #include "../lib/history/loghistory.h"
-#include "../lib/about/staticDefine.h"
+//#include "../lib/about/staticDefine.h"
+#include "../lib/about/about.h"
 
 //
 // QSettings description:

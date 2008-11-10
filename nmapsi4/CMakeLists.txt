@@ -18,6 +18,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/support/searchVuln.cpp
 		../lib/history/loghistory.cpp
 		../lib/history/coreHistory.cpp
+		../lib/about/about.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -38,11 +39,21 @@ else (WIN32)
 MESSAGE( STATUS ${SOURCES_CPP} )
 endif (WIN32)
 
-SET(SOURCES_H mainwin.h preference/profilemain.h)
-MESSAGE( STATUS ${SOURCES_H} )
+if(NOT WIN32)
+  SET(SOURCES_H mainwin.h preference/profilemain.h)
+  MESSAGE( STATUS ${SOURCES_H} )
+else (WIN32)
+  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h)
+  MESSAGE( STATUS ${SOURCES_H} )
+endif (NOT WIN32)
 
-SET(SOURCES_UI mainwin.ui preference/profilemain.ui)
-MESSAGE( STATUS ${SOURCES_UI} )
+if(NOT WIN32)
+  SET(SOURCES_UI mainwin.ui preference/profilemain.ui)
+  MESSAGE( STATUS ${SOURCES_UI} )
+else (WIN32)
+  SET(SOURCES_UI mainwin.ui preference/profilemain.ui ../lib/about/about.ui)
+  MESSAGE( STATUS ${SOURCES_UI} )
+endif (NOT WIN32)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
 MESSAGE( STATUS ${RESOURCES_QRC} )
@@ -65,8 +76,8 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 
 if (NOT WIN32)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/)
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} nmapsi4_history)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} nmapsi4_history nmapsi4_about)
 else (WIN32) 
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR})			
