@@ -66,6 +66,7 @@ protected:
     QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj;
     QTreeWidgetItem *root2, *item_root2;
     QTreeWidgetItem *error, *item_error;
+    QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
     QFile *PFile;
     QString FileName;
     QString firstPath;
@@ -119,12 +120,6 @@ private slots:
     void setNmapVersion();
 
     //Resize UI
-    void resize_tab_Options_Scan();
-    void resize_tab_Options();
-    void resize_tab_MiscOptions();
-    void resize_tab_Discover();
-    void resize_tab_Files();
-    void resize_tab_Timing();
     void startProfile_ui();
     void readProfile();
     void saveAsLog();
@@ -135,6 +130,8 @@ private slots:
     void saveBookMarks();
     void deleteBookMark();
     void activeBookTool();
+    void optionListCreate();
+    void optionListUpdate();
 };
 
 #endif

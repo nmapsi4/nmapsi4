@@ -152,7 +152,7 @@
         </rect>
        </property>
        <property name="styleSheet" >
-        <string notr="true" >font: 75 12pt "Sans Serif";</string>
+        <string notr="true" >font: 75 "Sans Serif";</string>
        </property>
        <property name="text" >
         <string>License: GNU General Public License Version 2</string>
@@ -163,17 +163,11 @@
       <attribute name="title" >
        <string>A&amp;uthors</string>
       </attribute>
-      <widget class="QLabel" name="label_5" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>231</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+      <layout class="QVBoxLayout" name="verticalLayout_2" >
+       <item>
+        <widget class="QLabel" name="label_5" >
+         <property name="text" >
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
@@ -181,19 +175,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     Core Developer&lt;/p>
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     &lt;a href="mailto:francesco.cecconi@kdemail.net">&lt;span style=" text-decoration: underline; color:#0057ae;">francesco.cecconi@kdemail.net&lt;/span>&lt;/a>&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;/p>&lt;/body>&lt;/html></string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>100</y>
-         <width>231</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6" >
+         <property name="text" >
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
@@ -201,24 +189,26 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     MS Windows Packages&lt;/p>
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     &lt;a href="mailto:el.diabl09@gmail.com">&lt;span style=" text-decoration: underline; color:#0057ae;">el.diabl09@gmail.com&lt;/span>&lt;/a>&lt;/p>
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;/p>&lt;/body>&lt;/html></string>
-       </property>
-      </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_3" >
       <attribute name="title" >
        <string>&amp;Support</string>
       </attribute>
-      <widget class="QLabel" name="label_7" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>411</width>
-         <height>191</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+      <layout class="QVBoxLayout" name="verticalLayout" >
+       <item>
+        <widget class="QLabel" name="label_7" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
@@ -226,8 +216,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="http://nmapsi4.netsons.org">&lt;span style=" text-decoration:none; color:#000000;">Issue:     	&lt;/span>&lt;/a>&lt;a href="http://code.google.com/p/nmapsi4/issues/list">http://code.google.com/p/nmapsi4/issues/list&lt;/a>&lt;/p>
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="http://code.google.com/p/nmapsi4/issues/list">&lt;span style=" text-decoration:none; color:#000000;">Mailing-list:	&lt;/span>&lt;/a>&lt;a href="https://lists.sourceforge.net/lists/listinfo/nmapsi-release">https://lists.sourceforge.net/lists/listinfo/nmapsi-release&lt;/a>&lt;/p>
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="https://lists.sourceforge.net/lists/listinfo/nmapsi-release">&lt;span style=" text-decoration:none; color:#000000;">Source:	&lt;/span>&lt;/a>&lt;a href="http://code.google.com/p/nmapsi4/source/checkout">http://code.google.com/p/nmapsi4/source/checkout&lt;/a>&lt;/p>&lt;/body>&lt;/html></string>
-       </property>
-      </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

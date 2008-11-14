@@ -90,20 +90,6 @@ void nmapClass::setNmapsiSlot()
     connect(comboVerbosity, SIGNAL(activated(const QString&)),
             this, SLOT(update_comboVerbosity()));
 
-    // resize tab
-    connect(bscanWid, SIGNAL(clicked()),
-            this, SLOT(resize_tab_Options_Scan()));
-    connect(boption, SIGNAL(clicked()),
-            this, SLOT(resize_tab_Options()));
-    connect(bmiscOptions, SIGNAL(clicked()),
-            this, SLOT(resize_tab_MiscOptions()));
-    connect(bdiscover, SIGNAL(clicked()),
-            this, SLOT(resize_tab_Discover()));
-    connect(bfiles, SIGNAL(clicked()),
-            this, SLOT(resize_tab_Files()));
-    connect(btiming, SIGNAL(clicked()),
-            this, SLOT(resize_tab_Timing()));
-
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startProfile_ui()));
     connect(action_Save_As, SIGNAL(triggered()),
@@ -160,4 +146,5 @@ void nmapClass::setNmapsiSlot()
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
+
 }
