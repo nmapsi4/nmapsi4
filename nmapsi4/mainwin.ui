@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>729</height>
+    <width>910</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize" >
    <size>
-    <width>850</width>
-    <height>660</height>
+    <width>910</width>
+    <height>672</height>
    </size>
   </property>
   <property name="maximumSize" >
@@ -55,6 +55,34 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
+    <item row="1" column="0" >
+     <widget class="QFrame" name="frame" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+        <horstretch>0</horstretch>
+        <verstretch>20</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>0</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="styleSheet" >
+       <string notr="true" >background-color: rgb(75, 75, 75);</string>
+      </property>
+      <property name="frameShape" >
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth" >
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0" >
      <widget class="QTabWidget" name="tabWidget" >
       <property name="autoFillBackground" >
@@ -127,8 +155,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>898</width>
-             <height>427</height>
+             <width>876</width>
+             <height>370</height>
             </rect>
            </property>
            <attribute name="label" >
@@ -659,7 +687,57 @@
          <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5" >
-        <item row="0" column="0" colspan="7" >
+        <item row="0" column="0" >
+         <widget class="QListWidget" name="optionsListScan" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize" >
+           <size>
+            <width>131</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>131</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="autoScrollMargin" >
+           <number>16</number>
+          </property>
+          <property name="textElideMode" >
+           <enum>Qt::ElideMiddle</enum>
+          </property>
+          <property name="movement" >
+           <enum>QListView::Static</enum>
+          </property>
+          <property name="resizeMode" >
+           <enum>QListView::Adjust</enum>
+          </property>
+          <property name="spacing" >
+           <number>24</number>
+          </property>
+          <property name="viewMode" >
+           <enum>QListView::IconMode</enum>
+          </property>
+          <property name="uniformItemSizes" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="4" >
+         <widget class="Line" name="line" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" >
          <widget class="QStackedWidget" name="stackedWidget" >
           <property name="autoFillBackground" >
            <bool>false</bool>
@@ -675,7 +753,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox" >
               <property name="autoFillBackground" >
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
               <property name="title" >
                <string/>
@@ -683,8 +761,8 @@
               <widget class="QCheckBox" name="rpcBox" >
                <property name="geometry" >
                 <rect>
-                 <x>10</x>
-                 <y>20</y>
+                 <x>30</x>
+                 <y>30</y>
                  <width>101</width>
                  <height>21</height>
                 </rect>
@@ -696,8 +774,8 @@
               <widget class="QLabel" name="label_39" >
                <property name="geometry" >
                 <rect>
-                 <x>350</x>
-                 <y>80</y>
+                 <x>20</x>
+                 <y>270</y>
                  <width>91</width>
                  <height>31</height>
                 </rect>
@@ -712,8 +790,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>510</x>
-                 <y>50</y>
+                 <x>180</x>
+                 <y>240</y>
                  <width>191</width>
                  <height>27</height>
                 </rect>
@@ -722,9 +800,9 @@
               <widget class="QComboBox" name="comboScan" >
                <property name="geometry" >
                 <rect>
-                 <x>10</x>
-                 <y>80</y>
-                 <width>301</width>
+                 <x>20</x>
+                 <y>160</y>
+                 <width>351</width>
                  <height>26</height>
                 </rect>
                </property>
@@ -758,8 +836,8 @@
               <widget class="QLabel" name="label_38" >
                <property name="geometry" >
                 <rect>
-                 <x>350</x>
-                 <y>50</y>
+                 <x>20</x>
+                 <y>240</y>
                  <width>91</width>
                  <height>31</height>
                 </rect>
@@ -774,8 +852,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>510</x>
-                 <y>80</y>
+                 <x>180</x>
+                 <y>270</y>
                  <width>191</width>
                  <height>27</height>
                 </rect>
@@ -784,8 +862,8 @@
               <widget class="QCheckBox" name="versionBox" >
                <property name="geometry" >
                 <rect>
-                 <x>230</x>
-                 <y>20</y>
+                 <x>30</x>
+                 <y>70</y>
                  <width>131</width>
                  <height>23</height>
                 </rect>
@@ -797,9 +875,9 @@
               <widget class="QLineEdit" name="lineOptions" >
                <property name="geometry" >
                 <rect>
-                 <x>510</x>
-                 <y>20</y>
-                 <width>301</width>
+                 <x>20</x>
+                 <y>200</y>
+                 <width>351</width>
                  <height>23</height>
                 </rect>
                </property>
@@ -819,9 +897,9 @@
               <widget class="QCheckBox" name="notpingBox" >
                <property name="geometry" >
                 <rect>
-                 <x>120</x>
-                 <y>20</y>
-                 <width>101</width>
+                 <x>210</x>
+                 <y>30</y>
+                 <width>161</width>
                  <height>23</height>
                 </rect>
                </property>
@@ -832,9 +910,9 @@
               <widget class="QComboBox" name="portCombo" >
                <property name="geometry" >
                 <rect>
-                 <x>10</x>
-                 <y>50</y>
-                 <width>301</width>
+                 <x>20</x>
+                 <y>120</y>
+                 <width>351</width>
                  <height>26</height>
                 </rect>
                </property>
@@ -862,70 +940,14 @@
               <widget class="QCheckBox" name="checkOS" >
                <property name="geometry" >
                 <rect>
-                 <x>350</x>
-                 <y>20</y>
+                 <x>210</x>
+                 <y>70</y>
                  <width>151</width>
                  <height>23</height>
                 </rect>
                </property>
                <property name="text" >
                 <string>OS Detection</string>
-               </property>
-              </widget>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="page" >
-           <property name="autoFillBackground" >
-            <bool>true</bool>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_4" >
-            <item>
-             <widget class="QGroupBox" name="groupBox_3" >
-              <property name="autoFillBackground" >
-               <bool>true</bool>
-              </property>
-              <property name="title" >
-               <string/>
-              </property>
-              <widget class="QCheckBox" name="checkFrag" >
-               <property name="geometry" >
-                <rect>
-                 <x>20</x>
-                 <y>80</y>
-                 <width>191</width>
-                 <height>23</height>
-                </rect>
-               </property>
-               <property name="text" >
-                <string>Fragmentation</string>
-               </property>
-              </widget>
-              <widget class="QCheckBox" name="checkIpv6" >
-               <property name="geometry" >
-                <rect>
-                 <x>20</x>
-                 <y>50</y>
-                 <width>191</width>
-                 <height>23</height>
-                </rect>
-               </property>
-               <property name="text" >
-                <string>Ipv6</string>
-               </property>
-              </widget>
-              <widget class="QCheckBox" name="checkOrdered" >
-               <property name="geometry" >
-                <rect>
-                 <x>20</x>
-                 <y>20</y>
-                 <width>161</width>
-                 <height>23</height>
-                </rect>
-               </property>
-               <property name="text" >
-                <string>Ordered Port</string>
                </property>
               </widget>
              </widget>
@@ -945,8 +967,8 @@
               <widget class="QCheckBox" name="checkIcmpEcho" >
                <property name="geometry" >
                 <rect>
-                 <x>630</x>
-                 <y>80</y>
+                 <x>20</x>
+                 <y>280</y>
                  <width>171</width>
                  <height>23</height>
                 </rect>
@@ -958,8 +980,8 @@
               <widget class="QCheckBox" name="checkIcmpTimestamp" >
                <property name="geometry" >
                 <rect>
-                 <x>630</x>
-                 <y>20</y>
+                 <x>20</x>
+                 <y>220</y>
                  <width>161</width>
                  <height>23</height>
                 </rect>
@@ -984,7 +1006,7 @@
               <widget class="QLabel" name="label_7" >
                <property name="geometry" >
                 <rect>
-                 <x>420</x>
+                 <x>230</x>
                  <y>50</y>
                  <width>41</width>
                  <height>31</height>
@@ -1000,7 +1022,7 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>460</x>
+                 <x>270</x>
                  <y>50</y>
                  <width>141</width>
                  <height>27</height>
@@ -1010,8 +1032,8 @@
               <widget class="QLabel" name="label_6" >
                <property name="geometry" >
                 <rect>
-                 <x>220</x>
-                 <y>50</y>
+                 <x>20</x>
+                 <y>140</y>
                  <width>41</width>
                  <height>31</height>
                 </rect>
@@ -1023,7 +1045,7 @@
               <widget class="QCheckBox" name="checkUdpPing" >
                <property name="geometry" >
                 <rect>
-                 <x>490</x>
+                 <x>300</x>
                  <y>20</y>
                  <width>101</width>
                  <height>23</height>
@@ -1036,8 +1058,8 @@
               <widget class="QCheckBox" name="checkTcpSyn" >
                <property name="geometry" >
                 <rect>
-                 <x>270</x>
-                 <y>20</y>
+                 <x>70</x>
+                 <y>110</y>
                  <width>121</width>
                  <height>23</height>
                 </rect>
@@ -1052,8 +1074,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>260</x>
-                 <y>50</y>
+                 <x>60</x>
+                 <y>140</y>
                  <width>141</width>
                  <height>27</height>
                 </rect>
@@ -1088,8 +1110,8 @@
               <widget class="QCheckBox" name="checkIcmpNetmask" >
                <property name="geometry" >
                 <rect>
-                 <x>630</x>
-                 <y>50</y>
+                 <x>20</x>
+                 <y>250</y>
                  <width>151</width>
                  <height>23</height>
                 </rect>
@@ -1104,7 +1126,7 @@
           </widget>
           <widget class="QWidget" name="page_3" >
            <property name="autoFillBackground" >
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_6" >
             <item>
@@ -1118,7 +1140,7 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>30</x>
+                 <x>180</x>
                  <y>60</y>
                  <width>191</width>
                  <height>31</height>
@@ -1129,7 +1151,7 @@
                <property name="geometry" >
                 <rect>
                  <x>30</x>
-                 <y>20</y>
+                 <y>60</y>
                  <width>101</width>
                  <height>22</height>
                 </rect>
@@ -1144,8 +1166,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>132</x>
-                 <y>20</y>
+                 <x>390</x>
+                 <y>60</y>
                  <width>117</width>
                  <height>32</height>
                 </rect>
@@ -1161,9 +1183,9 @@
               <widget class="QLineEdit" name="lineProfile" >
                <property name="geometry" >
                 <rect>
-                 <x>350</x>
-                 <y>60</y>
-                 <width>271</width>
+                 <x>180</x>
+                 <y>130</y>
+                 <width>331</width>
                  <height>31</height>
                 </rect>
                </property>
@@ -1174,8 +1196,8 @@
               <widget class="QLabel" name="label_2" >
                <property name="geometry" >
                 <rect>
-                 <x>350</x>
-                 <y>20</y>
+                 <x>30</x>
+                 <y>130</y>
                  <width>101</width>
                  <height>31</height>
                 </rect>
@@ -1190,7 +1212,7 @@
           </widget>
           <widget class="QWidget" name="page_5" >
            <property name="autoFillBackground" >
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_7" >
             <item>
@@ -1204,8 +1226,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>550</x>
-                 <y>80</y>
+                 <x>180</x>
+                 <y>200</y>
                  <width>101</width>
                  <height>27</height>
                 </rect>
@@ -1226,7 +1248,7 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>310</x>
+                 <x>320</x>
                  <y>80</y>
                  <width>71</width>
                  <height>27</height>
@@ -1245,7 +1267,7 @@
               <widget class="QCheckBox" name="TcheckMaxRtt" >
                <property name="geometry" >
                 <rect>
-                 <x>210</x>
+                 <x>220</x>
                  <y>80</y>
                  <width>83</width>
                  <height>23</height>
@@ -1261,7 +1283,7 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>310</x>
+                 <x>320</x>
                  <y>50</y>
                  <width>71</width>
                  <height>27</height>
@@ -1312,7 +1334,7 @@
               <widget class="QCheckBox" name="TcheckMinRtt" >
                <property name="geometry" >
                 <rect>
-                 <x>210</x>
+                 <x>220</x>
                  <y>50</y>
                  <width>91</width>
                  <height>23</height>
@@ -1338,8 +1360,8 @@
               <widget class="QCheckBox" name="TcheckScanDelay" >
                <property name="geometry" >
                 <rect>
-                 <x>550</x>
-                 <y>50</y>
+                 <x>20</x>
+                 <y>200</y>
                  <width>151</width>
                  <height>23</height>
                 </rect>
@@ -1370,7 +1392,7 @@
               <widget class="QCheckBox" name="TcheckInitRtt" >
                <property name="geometry" >
                 <rect>
-                 <x>210</x>
+                 <x>220</x>
                  <y>20</y>
                  <width>101</width>
                  <height>31</height>
@@ -1383,8 +1405,8 @@
               <widget class="QCheckBox" name="TcheckHostTime" >
                <property name="geometry" >
                 <rect>
-                 <x>410</x>
-                 <y>20</y>
+                 <x>20</x>
+                 <y>150</y>
                  <width>131</width>
                  <height>23</height>
                 </rect>
@@ -1399,7 +1421,7 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>310</x>
+                 <x>320</x>
                  <y>20</y>
                  <width>71</width>
                  <height>27</height>
@@ -1428,9 +1450,9 @@
               <widget class="QComboBox" name="comboTiming" >
                <property name="geometry" >
                 <rect>
-                 <x>550</x>
-                 <y>20</y>
-                 <width>181</width>
+                 <x>20</x>
+                 <y>260</y>
+                 <width>371</width>
                  <height>26</height>
                 </rect>
                </property>
@@ -1471,8 +1493,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>410</x>
-                 <y>50</y>
+                 <x>180</x>
+                 <y>150</y>
                  <width>101</width>
                  <height>27</height>
                 </rect>
@@ -1522,6 +1544,9 @@
            <layout class="QVBoxLayout" name="verticalLayout_8" >
             <item>
              <widget class="QGroupBox" name="groupBox_2" >
+              <property name="autoFillBackground" >
+               <bool>false</bool>
+              </property>
               <property name="title" >
                <string/>
               </property>
@@ -1530,7 +1555,7 @@
                 <rect>
                  <x>30</x>
                  <y>90</y>
-                 <width>171</width>
+                 <width>311</width>
                  <height>26</height>
                 </rect>
                </property>
@@ -1565,7 +1590,7 @@
                 <rect>
                  <x>30</x>
                  <y>30</y>
-                 <width>171</width>
+                 <width>311</width>
                  <height>26</height>
                 </rect>
                </property>
@@ -1617,8 +1642,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>360</x>
-                 <y>90</y>
+                 <x>170</x>
+                 <y>200</y>
                  <width>171</width>
                  <height>27</height>
                 </rect>
@@ -1627,8 +1652,8 @@
               <widget class="QCheckBox" name="checkSpoof" >
                <property name="geometry" >
                 <rect>
-                 <x>220</x>
-                 <y>90</y>
+                 <x>30</x>
+                 <y>200</y>
                  <width>141</width>
                  <height>23</height>
                 </rect>
@@ -1640,8 +1665,8 @@
               <widget class="QCheckBox" name="checkBoxDevice" >
                <property name="geometry" >
                 <rect>
-                 <x>220</x>
-                 <y>30</y>
+                 <x>30</x>
+                 <y>140</y>
                  <width>151</width>
                  <height>23</height>
                 </rect>
@@ -1656,8 +1681,8 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>360</x>
-                 <y>30</y>
+                 <x>170</x>
+                 <y>140</y>
                  <width>171</width>
                  <height>27</height>
                 </rect>
@@ -1666,8 +1691,8 @@
               <widget class="QCheckBox" name="checkDecoy" >
                <property name="geometry" >
                 <rect>
-                 <x>550</x>
-                 <y>30</y>
+                 <x>30</x>
+                 <y>260</y>
                  <width>101</width>
                  <height>23</height>
                 </rect>
@@ -1679,8 +1704,8 @@
               <widget class="QCheckBox" name="checkSourcePort" >
                <property name="geometry" >
                 <rect>
-                 <x>550</x>
-                 <y>90</y>
+                 <x>30</x>
+                 <y>320</y>
                  <width>111</width>
                  <height>23</height>
                 </rect>
@@ -1695,9 +1720,9 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>670</x>
-                 <y>30</y>
-                 <width>151</width>
+                 <x>170</x>
+                 <y>260</y>
+                 <width>171</width>
                  <height>31</height>
                 </rect>
                </property>
@@ -1708,11 +1733,50 @@
                </property>
                <property name="geometry" >
                 <rect>
-                 <x>670</x>
-                 <y>80</y>
-                 <width>151</width>
+                 <x>170</x>
+                 <y>310</y>
+                 <width>171</width>
                  <height>31</height>
                 </rect>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkIpv6" >
+               <property name="geometry" >
+                <rect>
+                 <x>480</x>
+                 <y>60</y>
+                 <width>191</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ipv6</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkOrdered" >
+               <property name="geometry" >
+                <rect>
+                 <x>480</x>
+                 <y>30</y>
+                 <width>161</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Ordered Port</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkFrag" >
+               <property name="geometry" >
+                <rect>
+                 <x>480</x>
+                 <y>90</y>
+                 <width>191</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="text" >
+                <string>Fragmentation</string>
                </property>
               </widget>
              </widget>
@@ -1721,162 +1785,8 @@
           </widget>
          </widget>
         </item>
-        <item row="1" column="3" >
-         <spacer name="verticalSpacer" >
-          <property name="orientation" >
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0" >
-           <size>
-            <width>20</width>
-            <height>248</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0" colspan="7" >
-         <widget class="Line" name="line" >
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="0" >
-         <widget class="QPushButton" name="bscanWid" >
-          <property name="text" >
-           <string>S&amp;can Options</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
-          </property>
-          <property name="autoDefault" >
-           <bool>false</bool>
-          </property>
-          <property name="default" >
-           <bool>false</bool>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="1" >
-         <widget class="QPushButton" name="boption" >
-          <property name="text" >
-           <string>&amp;Options</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="2" >
-         <widget class="QPushButton" name="bmiscOptions" >
-          <property name="layoutDirection" >
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="text" >
-           <string>M. Optio&amp;ns</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="3" >
-         <widget class="QPushButton" name="bdiscover" >
-          <property name="text" >
-           <string>&amp;Discover</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="4" >
-         <widget class="QPushButton" name="bfiles" >
-          <property name="text" >
-           <string>F&amp;ile</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/folder_open.png</normaloff>:/images/images/folder_open.png</iconset>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="3" column="5" >
-         <widget class="QPushButton" name="btiming" >
-          <property name="text" >
-           <string>&amp;Timing</string>
-          </property>
-          <property name="icon" >
-           <iconset resource="../mainwin.qrc" >
-            <normaloff>:/images/images/player_time.png</normaloff>:/images/images/player_time.png</iconset>
-          </property>
-          <property name="flat" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="6" >
-         <spacer name="horizontalSpacer" >
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0" >
-           <size>
-            <width>258</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="1" column="0" >
-     <widget class="QFrame" name="frame" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-        <horstretch>0</horstretch>
-        <verstretch>20</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize" >
-       <size>
-        <width>0</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="styleSheet" >
-       <string notr="true" >background-color: rgb(75, 75, 75);</string>
-      </property>
-      <property name="frameShape" >
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth" >
-       <number>0</number>
-      </property>
      </widget>
     </item>
    </layout>
@@ -1886,7 +1796,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>932</width>
+     <width>910</width>
      <height>27</height>
     </rect>
    </property>

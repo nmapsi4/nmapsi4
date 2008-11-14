@@ -19,112 +19,6 @@
 
 #include "../mainwin.h"
 
-// TODO: new options look
-
-void nmapClass::resize_tab_Options_Scan()
-{
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(0);
-    } else */
-      
-    if (stackedWidget->currentIndex() != 0) {
-        stackedWidget->setCurrentIndex(0);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0); // close widget
-
-}
-
-void nmapClass::resize_tab_Options()
-{
-
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_2->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(6);
-    } else */
-      
-     if (stackedWidget->currentIndex() != 6) {
-        stackedWidget->setCurrentIndex(6);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox_2->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
-}
-
-void nmapClass::resize_tab_MiscOptions()
-{
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_3->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(1);
-    } else */
-    
-    if (stackedWidget->currentIndex() != 1) {
-        stackedWidget->setCurrentIndex(1);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox_3->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
-}
-
-void nmapClass::resize_tab_Discover()
-{
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_4->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(2);
-    } else */
-      
-    if (stackedWidget->currentIndex() != 2) {
-        stackedWidget->setCurrentIndex(2);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox_4->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
-}
-
-void nmapClass::resize_tab_Files()
-{
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_5->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(3);
-    } else */
-      
-    if (stackedWidget->currentIndex() != 3) {
-        stackedWidget->setCurrentIndex(3);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox_5->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
-}
-
-void nmapClass::resize_tab_Timing()
-{
-    /*if (widgetOptions->height() == 0) {
-        //widgetOptions->setGeometry(0, widgetOptions->y() - 140, this->width(), 151);
-        stackedWidget->setFixedWidth(this->width() - 4);
-        groupBox_6->setFixedWidth(this->width() - 17);
-        stackedWidget->setCurrentIndex(4);
-    } else */
-      
-    if (stackedWidget->currentIndex() != 4) {
-        stackedWidget->setCurrentIndex(4);
-        //stackedWidget->setFixedWidth(this->width() - 4);
-        //groupBox_6->setFixedWidth(this->width() - 17);
-    } //else
-        //widgetOptions->setGeometry(0, widgetOptions->y() + 140, this->width(), 0);
-}
-
 void nmapClass::checkFullScreen()
 {
 
@@ -182,4 +76,54 @@ void nmapClass::showStatusBar()
         statusbar->setVisible(true);
         actionShow_Status_Bar->setChecked(true);
     }
+}
+
+void nmapClass::optionListUpdate() {
+  
+    if (scanW->isSelected()) {
+        //labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
+	stackedWidget->setCurrentIndex(0);
+    } else if (toolW->isSelected()) {
+        //labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
+	stackedWidget->setCurrentIndex(5);
+    } else if (discoverW->isSelected()) {
+        //labelTitle->setText(tr("<h3>Size Options</h3>"));
+	stackedWidget->setCurrentIndex(1);
+    } else if (fileW->isSelected()) {
+        //labelTitle->setText(tr("<h3>Extensions</h3>"));
+	stackedWidget->setCurrentIndex(2);
+    } else if (timingW->isSelected()) {
+        //labelTitle->setText(tr("<h3>Extensions</h3>"));
+	stackedWidget->setCurrentIndex(3);
+    }
+}
+
+void nmapClass::optionListCreate() {
+  
+    optionsListScan->setIconSize(QSize::QSize(52, 52));
+  
+    scanW = new QListWidgetItem(optionsListScan);
+    scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    scanW->setText(tr("Scan")); // scan Options
+    
+    toolW = new QListWidgetItem(optionsListScan);
+    toolW->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    toolW->setText(tr("Options"));
+    
+    discoverW = new QListWidgetItem(optionsListScan);
+    discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    discoverW->setText(tr("Discover"));
+    
+    fileW = new QListWidgetItem(optionsListScan);
+    fileW->setIcon(QIcon(QString::fromUtf8(":/images/images/folder_open.png")));
+    fileW->setText(tr("File"));
+    
+    timingW = new QListWidgetItem(optionsListScan);
+    timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
+    timingW->setText(tr("Timing"));
+    
+    connect(optionsListScan, SIGNAL(itemSelectionChanged()),
+	  this, SLOT(optionListUpdate()));
+	
+    scanW->setSelected(true);
 }

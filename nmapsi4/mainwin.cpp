@@ -39,6 +39,7 @@ nmapClass::nmapClass()
     // Init function
     this->rootMode(uid); // send uid value
     this->checkProfile();
+    this->optionListCreate();
 
     logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", 10);
     history->updateBookMarks();
@@ -49,6 +50,7 @@ void nmapClass::init()
 {
     setupUi(this);
     progressScan = new QProgressBar();
+    progressScan->setMaximumHeight(16);
     progressScan->setValue(0);
     progressScan->setLayoutDirection(Qt::LeftToRight);
     statusBar()->addPermanentWidget(progressScan, 2);
