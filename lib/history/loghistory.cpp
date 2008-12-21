@@ -42,7 +42,7 @@ logHistory::logHistory(QString ConfigTag, int cacheSize) :  logTree(NULL),
 
 QList<QString> logHistory::historyReadUrl()
 {
-    QSettings settings("nmapsi4", "nmapsi4");
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList;
     urlList = settings.value(configTag, "NULL").toStringList();
     return urlList;
@@ -51,7 +51,7 @@ QList<QString> logHistory::historyReadUrl()
 QList<QString> logHistory::historyReadUrlTime()
 {
 
-    QSettings settings("nmapsi4", "nmapsi4");
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlListTime;
     urlListTime = settings.value(configTagTime, "NULL").toStringList();
     return urlListTime;
@@ -71,7 +71,7 @@ void logHistory::deleteItemBookmark(QString item)
 {
     Q_ASSERT(item != NULL);
     qDebug() << "logHistory::deleteItemBookmark() -- call";
-    QSettings settings("nmapsi4", "nmapsi4");
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     
@@ -92,7 +92,7 @@ void logHistory::updateLogHistory()
 {
 
     qDebug() << "logHistory::updateTreeHistory() -- call";
-    QSettings settings("nmapsi4", "nmapsi4");
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     logTree->clear();
@@ -149,7 +149,7 @@ void logHistory::updateLogHistory()
 void logHistory::updateBookMarks()
 {
     qDebug() << "logHistory::updateTH() -- call";
-    QSettings settings("nmapsi4", "nmapsi4");
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     short index = 0;
