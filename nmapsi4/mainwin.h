@@ -28,7 +28,8 @@
 #include "../lib/history/loghistory.h"
 //#include "../lib/about/staticDefine.h"
 #include "../lib/about/about.h"
-
+#include "core/scanMT/scanThread.h"
+#include <QMutex>
 //
 // QSettings description:
 // * nmapsi4/cacheHost   --> host cache for comboBox search
@@ -49,7 +50,10 @@ private:
     void resetOptions();
     void checkProfile();
     void init();
-    void itemDeleteAll(QList<QTreeWidgetItem*> items);    
+    void itemDeleteAll(QList<QTreeWidgetItem*> items);
+    void addMonitorHost(QTreeWidget* monitor, QString host);
+    void delMonitorHost(QTreeWidget* monitor, QString host);
+    void updateMonitorHost(QTreeWidget* monitor);
 
 public:
     nmapClass();
@@ -60,8 +64,12 @@ public:
     void setFullVersionProfile();
     void setQuickVersionProfile();
 
+signals:
+    void killScan();
+
+
 protected:
-    QProcess *proc;
+    //QProcess *proc;
     QProcess *versionProc;
     QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj;
     QTreeWidgetItem *root2, *item_root2;
@@ -84,6 +92,12 @@ protected:
     QLabel *userMode;
     mainProfile *dialog;
     QProgressBar *progressScan;
+    QByteArray Byte1;
+    QByteArray Byte2;
+    logHistory *history;
+    scanThread *th;
+    int scanCounter;
+    QList<QString> monitorElem;
 
 
 public slots:
@@ -95,7 +109,7 @@ public slots:
 
 
 private slots:
-    void nmapParser();
+    void nmapParser(QString hostCheck);
     void update_portCombo();
     void update_scanCombo();
     void update_inputcheck();
@@ -132,6 +146,7 @@ private slots:
     void activeBookTool();
     void optionListCreate();
     void optionListUpdate();
+    void setProgress();
 };
 
 #endif

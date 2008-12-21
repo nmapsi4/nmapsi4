@@ -337,3 +337,9 @@ void nmapClass::activeBookTool() {
     scanBook->setEnabled(true);
     deleteBook->setEnabled(true);
 }
+
+void nmapClass::setProgress() {
+    this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
+    progressScan->setValue(60);
+    this->setWindowTitle("Nmapsi4 (60%)");
+}

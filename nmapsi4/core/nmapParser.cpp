@@ -19,7 +19,7 @@
 
 #include "../mainwin.h"
 
-void nmapClass::nmapParser()
+void nmapClass::nmapParser(QString hostCheck)
 {
     QString * StdoutStr;
     QString * StderrorStr;
@@ -30,13 +30,18 @@ void nmapClass::nmapParser()
     int error_count = 0;
     int ItemNumber = 0;
 
+    //qDebug() << "return...." << StdoutStr;
+    qDebug() << "Host Checked:::: " << hostCheck;
+    delMonitorHost(scanMonitor, hostCheck);
+
     listClearFlag = false; // the listScan is not empty
-    StdoutStr = new QString(proc->readAllStandardOutput()); // read std buffer
-    StderrorStr = new QString(proc->readAllStandardError()); // read error buffer
+
+    StdoutStr = new QString(Byte1); // read std buffer
+    StderrorStr = new QString(Byte2); // read error buffer
 
     progressScan->setValue(75);
     this->setWindowTitle(title.append("(75%)"));
-
+    
     QTextStream stream(StdoutStr);
     QString tmp, buffer, buffer2, bufferInfo;
 
@@ -190,10 +195,14 @@ void nmapClass::nmapParser()
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
         root->setFont(0, rootFont);
-        root->setText(0, hostEdit->currentText());
+/*        root->setText(0, hostEdit->currentText());
         root2->setText(0, hostEdit->currentText());
         error->setText(0, hostEdit->currentText());
-        infoItem->setText(0, hostEdit->currentText());
+        infoItem->setText(0, hostEdit->currentText());*/
+        root->setText(0, hostCheck);
+        root2->setText(0, hostCheck);
+        error->setText(0, hostCheck);
+        infoItem->setText(0, hostCheck);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     }
 
@@ -383,21 +392,22 @@ void nmapClass::nmapParser()
     this->setWindowTitle(title.replace("(85%)", "(100%) [*]"));
 
     this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_endScan.svg")));
-
     // UI update
-    action_Scan_menu->setEnabled(true);
-    action_Scan_2->setEnabled(true);
-    hostEdit->setEnabled(true);
-    actionStop_Scan->setEnabled(false);
-    action_Save_As->setEnabled(true);
-    actionSave_As_Menu->setEnabled(true);
-    if (!logSessionFile.isEmpty()) {
-        actionSave->setEnabled(true);
-        actionSave_Menu->setEnabled(true);
+    if(!scanCounter) {
+	 action_Scan_menu->setEnabled(true);
+	 action_Scan_2->setEnabled(true);
+	 hostEdit->setEnabled(true);
+	 //actionStop_Scan->setEnabled(false);
+	 action_Save_As->setEnabled(true);
+	 actionSave_As_Menu->setEnabled(true);
+	 if (!logSessionFile.isEmpty()) {
+	      actionSave->setEnabled(true);
+	      actionSave_Menu->setEnabled(true);
+	 }
     }
     this->setWindowModified(true);
     listWscan->expandItem(root);
 
-    delete proc; // clear proc memory
-    proc = 0;
+//    delete proc; // clear proc memory
+//    proc = 0;
 }

@@ -58,8 +58,11 @@ void nmapClass::input_browser()
 
 void nmapClass::exit()
 {
-    if (proc)
-        proc->terminate();
+    emit killScan();
+    if(!th->isFinished()) {
+	 th->quit();
+	 th->wait();
+    }
 
     if (FileName != NULL) {
 
@@ -95,18 +98,23 @@ void nmapClass::exit()
 
 void nmapClass::stop_scan()
 {
-    if (proc) {
-
-        QString tmp_line = hostEdit->currentText();
-        tmp_line.append(" (Stopped)"); // update hostEdit with stopped string (don't traslate)
-        hostEdit->setItemText(0, tmp_line);
+/*    if (proc) {
 
         proc->terminate();
 
         progressScan->setValue(0); // clear UI element
         actionStop_Scan->setEnabled(false);
         actionClear_History->setEnabled(true);
-    }
+	}*/
+     emit killScan();
+
+     if(!th->isFinished()) {
+	  QString tmp_line = hostEdit->currentText();
+	  tmp_line.append(" (Stopped)");
+	  hostEdit->setItemText(0, tmp_line);
+	  th->quit();
+	  th->wait();
+     }
 }
 
 QFile* nmapClass::create_logFile(QString Path)
@@ -263,7 +271,7 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 
 void nmapClass::callScanH()
 {
-    if (treeLogH->currentItem() && !proc) {
+     if (treeLogH->currentItem() /*&& !proc*/) {
 	qDebug() << "Current Item::" << treeLogH->currentItem();
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));

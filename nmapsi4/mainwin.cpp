@@ -20,11 +20,12 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass()
-        : proc(NULL),
-        PFile(NULL),
-        labelVersion(NULL),
-        userMode(NULL),
-        dialog(0)
+     : //proc(NULL),
+       PFile(NULL),
+       labelVersion(NULL),
+       userMode(NULL),
+       dialog(0),
+       scanCounter(0)
 
 {
     int uid = 0;
@@ -50,7 +51,7 @@ void nmapClass::init()
 {
     setupUi(this);
     progressScan = new QProgressBar();
-    progressScan->setMaximumHeight(16);
+    progressScan->setMaximumHeight(18);
     progressScan->setValue(0);
     progressScan->setLayoutDirection(Qt::LeftToRight);
     statusBar()->addPermanentWidget(progressScan, 2);
@@ -60,6 +61,7 @@ void nmapClass::init()
     action_Scan_2->setEnabled(false);
     hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
+
 
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert HostName to scan"));
@@ -99,23 +101,22 @@ void nmapClass::scan()
     QString hostname = hostEdit->currentText();
     QString title;
 
-    logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
+    //logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
+    history = new logHistory("nmapsi4/cacheHost", 10);
     history->addItemHistory(hostname);
 
     title.append("NmapSI4 ");
 
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
-    hostEdit->setEnabled(false);
+//    hostEdit->setEnabled(false);
     actionStop_Scan->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    proc = new QProcess(); // Scan Process declaration
-    connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(nmapParser())); // nmapParser.cpp
+//    proc = new QProcess(); // Scan Process declaration
 
     parametri = this->check_extensions(parametri, title); // extensions.cpp
 
@@ -128,20 +129,28 @@ void nmapClass::scan()
     lineOptions->setText(tmp_token);
 
     parametri << hostname; // parameters list
-    proc->start("nmap", parametri);
+    
+    QMutex mutex;
 
-    if (proc->exitStatus() == 0)
-        qDebug() << "Nmapsi4/core -> ProcExitCode::" << proc->exitCode();
-    else {
-        qFatal("Nmapsi4/core -> Error with nmap process\n");
-        this->stop_scan();
-    }
+    th = new scanThread(&Byte1, &Byte2, parametri, this);
 
-    this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
+    connect(th, SIGNAL(upgradePR()),
+      this, SLOT(setProgress())); // nmapParser.cpp
+
+    addMonitorHost(scanMonitor, hostname);
+    
+    mutex.lock();
+    scanCounter++;
+    th->start();
+    connect(th, SIGNAL(threadEnd(QString)),
+      this, SLOT(nmapParser(QString))); // nmapParser.cpp
+    scanCounter--;
+    mutex.unlock();
+
+    /*
+this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
     progressScan->setValue(60);
-    this->setWindowTitle(title.replace("(55%)", "(60%)"));
-    // history reload
-    //history->updateTh();
+    this->setWindowTitle(title.replace("(55%)", "(60%)"));*/
 
     delete history;
 }
