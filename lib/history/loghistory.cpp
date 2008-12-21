@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "loghistory.h"
-
+// TODO: fix translation
 // history contructor
 logHistory::logHistory(QTreeWidget* treeLog,
                        QString ConfigTag,
@@ -139,7 +139,7 @@ void logHistory::updateLogHistory()
         history = new QTreeWidgetItem(logTree);
         history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
         ItemListHistory.push_front(historyItem);
-        history->setText(0, "No Url Cache");
+        history->setText(0, "No Log Cache");
     }
     delete tmpFile;
 

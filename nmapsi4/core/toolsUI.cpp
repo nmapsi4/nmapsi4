@@ -77,7 +77,7 @@ void nmapClass::exit()
             tmpFile->close();
             this->isEmptyLog();
         } else
-            if ((!checkLog) && (tmpFile->exists())) { // if log check is disable but the file exit
+            if ((!checkLog) && (tmpFile->exists())) { // if log check is disable but the file exist
                 tmpFile->close();
                 tmpFile->remove();
                 qDebug() << "nmapsi4/core --> deleteLog::true";

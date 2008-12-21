@@ -396,6 +396,7 @@ void nmapClass::nmapParser()
         actionSave_Menu->setEnabled(true);
     }
     this->setWindowModified(true);
+    listWscan->expandItem(root);
 
     delete proc; // clear proc memory
     proc = 0;

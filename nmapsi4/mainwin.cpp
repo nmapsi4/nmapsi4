@@ -62,7 +62,6 @@ void nmapClass::init()
     actionAdd_Bookmark->setEnabled(false);
 
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    //hostEdit->lineEdit()->setAlignment(Qt::AlignHCenter);
     hostEdit->insertItem(0, tr("Insert HostName to scan"));
 
     checkNmapVersion();
@@ -100,7 +99,6 @@ void nmapClass::scan()
     QString hostname = hostEdit->currentText();
     QString title;
 
-    //logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
     logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
     history->addItemHistory(hostname);
 
