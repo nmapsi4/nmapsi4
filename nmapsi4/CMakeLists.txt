@@ -47,7 +47,7 @@ if(NOT WIN32)
   SET(SOURCES_H mainwin.h preference/profilemain.h core/scanMT/scanThread.h)
   MESSAGE( STATUS ${SOURCES_H} )
 else (WIN32)
-  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h)
+  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h core/scanMT/scanThread.h)
   MESSAGE( STATUS ${SOURCES_H} )
 endif (NOT WIN32)
 
