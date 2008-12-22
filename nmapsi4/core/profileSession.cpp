@@ -55,28 +55,28 @@ void nmapClass::checkProfile()
         settings.setValue("configProfile", "normal"); // default value
         Profile = settings.value("configProfile", "none").toString();
     }
-
+    
     if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
-        Profile = "normal"; // reset profile
-        settings.setValue("configProfile", Profile);
-        lineProfile->setText(Profile);
+	 Profile = "normal"; // reset profile
+	 settings.setValue("configProfile", Profile);
+	 lineProfile->setText(Profile);
     } else if (!Profile.contains("fullversion") && !Profile.contains("quickversion") && !uid) {
-        Profile = "fullversion"; // reset profile
-        settings.setValue("configProfile", Profile);
-        lineProfile->setText(Profile);
+	 Profile = "fullversion"; // reset profile
+	 settings.setValue("configProfile", Profile);
+	 lineProfile->setText(Profile);
     }
 
-
+    
     if (Profile.contains("quick"))
-        this->setQuickProfile();
+	 this->setQuickProfile();
     else if (Profile.contains("normal"))
-        this->setNormalProfile();
+	 this->setNormalProfile();
     else if (Profile.contains("fullversion"))
         this->setFullVersionProfile();
     else if (Profile.contains("quickversion"))
-        this->setQuickVersionProfile();
-
-
+	 this->setQuickVersionProfile();
+    
+    
     logPath = settings.value("confPath", "none").toString();
     if (!logPath.compare("none")) {
         QString path_string = QDir::homePath();
@@ -84,67 +84,67 @@ void nmapClass::checkProfile()
         settings.setValue("confPath", path_string); // default value
         logPath = path_string;
     }
-
+    
     QString log = settings.value("logCheck", "none").toString();
-
+    
     if ((!log.compare("none")) || (log.compare("true") && (log.compare("false")))) {
-        settings.setValue("logCheck", "false"); // default value
+	 settings.setValue("logCheck", "false"); // default value
         log = "false";
     }
-
+    
     if (!log.compare("true")) {
-        checkLog = true;
-        action_Save_As->setEnabled(false);
-        actionSave->setEnabled(false);
+	 checkLog = true;
+	 action_Save_As->setEnabled(false);
+	 actionSave->setEnabled(false);
     } else
-        checkLog = false;
-
+	 checkLog = false;
+    
     QString Vlog = settings.value("Vlog", "none").toString();
 
     if ((!Vlog.compare("none"))) {
-        settings.setValue("Vlog", "false"); // default value
+	 settings.setValue("Vlog", "false"); // default value
     }
-
+    
     verboseLog = settings.value("Vlog").toBool();
     qDebug() << "nmapsi4/nmapParser --> verboseLog::" << verboseLog;
-
+    
     QString pos = settings.value("savePos", "none").toString();
 
     if ((!pos.compare("none")) || (pos.compare("true") && (pos.compare("false")))) {
         settings.setValue("savePos", "true"); // default value
         pos = "true";
     }
-
+    
     if (!pos.compare("true"))
-        savePos = true;
+	 savePos = true;
     else
-        savePos = false;
+	 savePos = false;
 
     QString size = settings.value("saveSize", "none").toString();
-
+    
     if ((!size.compare("none")) || (size.compare("true") && (size.compare("false")))) {
         settings.setValue("saveSize", "true"); // default value
         size = "true";
     }
-
+    
     if (!size.compare("true"))
         saveSize = true;
     else
-        saveSize = false;
+	 saveSize = false;
 
     QString vulnExt = settings.value("vulnFlag", "none").toString();
     if((!vulnExt.compare("none"))) {
-	settings.setValue("vulnFlag", "true"); // default value
-    } else if((!vulnExt.compare("false"))) {
-	       tabWidget->removeTab(1);
-	   } else {
-	       QIcon icon22;
-	       icon22.addPixmap(QPixmap(QString::fromUtf8(":/images/images/world.png")), 
-				 QIcon::Normal, QIcon::Off);
-	       tabWidget->insertTab(1,tab_3, icon22, QApplication::translate("MainWindow", "Vulnerabilities", 
-									 0, QApplication::UnicodeUTF8));
-	   }
-
+	 settings.setValue("vulnFlag", "true"); // default value
+    } else if((vulnExt.compare("false"))) {
+	 comboMain->insertItem(2, tr("Vulnerabilities"));
+    } else {
+	 if(comboMain->currentIndex() == 2) {
+	      stackedMain->setCurrentIndex(0);
+	      comboMain->setCurrentIndex(0);
+	 }
+	 
+	 comboMain->removeItem(2);
+    }
 }
 
 void nmapClass::setQuickProfile()

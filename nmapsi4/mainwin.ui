@@ -58,8 +58,78 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" name="gridLayout" >
+    <item row="1" column="0" >
+     <widget class="QFrame" name="frame" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+        <horstretch>0</horstretch>
+        <verstretch>20</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="layoutDirection" >
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet" >
+       <string notr="true" >background-color: rgb(75, 75, 75);
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="frameShape" >
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth" >
+       <number>0</number>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" >
+       <item>
+        <spacer name="horizontalSpacer" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>637</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboMain" >
+         <property name="minimumSize" >
+          <size>
+           <width>250</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text" >
+           <string>Scan</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Log</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="0" >
-     <widget class="QStackedWidget" name="stackedWidget" >
+     <widget class="QStackedWidget" name="stackedMain" >
       <property name="currentIndex" >
        <number>0</number>
       </property>
@@ -263,8 +333,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>868</width>
-                 <height>347</height>
+                 <width>94</width>
+                 <height>66</height>
                 </rect>
                </property>
                <attribute name="label" >
@@ -324,7 +394,7 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>851</width>
+                 <width>708</width>
                  <height>356</height>
                 </rect>
                </property>
@@ -414,248 +484,6 @@
                 </item>
                </layout>
               </widget>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_3" >
-           <attribute name="title" >
-            <string>Vulnerabilities</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
-             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_2" >
-            <item row="0" column="0" >
-             <widget class="QComboBox" name="comboVuln" >
-              <property name="minimumSize" >
-               <size>
-                <width>281</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="duplicatesEnabled" >
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" >
-             <widget class="QComboBox" name="comboWebV" >
-              <item>
-               <property name="text" >
-                <string>securityfocus.com</string>
-               </property>
-              </item>
-              <item>
-               <property name="text" >
-                <string>cve.miltre.org</string>
-               </property>
-              </item>
-              <item>
-               <property name="text" >
-                <string>secunia.com</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="0" column="2" >
-             <widget class="QPushButton" name="buttonVuln" >
-              <property name="minimumSize" >
-               <size>
-                <width>151</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="text" >
-               <string>Search</string>
-              </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
-                <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3" >
-             <widget class="QPushButton" name="Bleft" >
-              <property name="toolTip" >
-               <string>Back</string>
-              </property>
-              <property name="statusTip" >
-               <string/>
-              </property>
-              <property name="text" >
-               <string/>
-              </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
-                <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
-              </property>
-              <property name="flat" >
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4" >
-             <widget class="QPushButton" name="Bright" >
-              <property name="toolTip" >
-               <string>Forward</string>
-              </property>
-              <property name="statusTip" >
-               <string/>
-              </property>
-              <property name="text" >
-               <string/>
-              </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
-                <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="5" >
-             <widget class="QPushButton" name="Bstop" >
-              <property name="toolTip" >
-               <string>Stop</string>
-              </property>
-              <property name="statusTip" >
-               <string/>
-              </property>
-              <property name="text" >
-               <string/>
-              </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
-                <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="6" >
-             <spacer name="horizontalSpacer_4" >
-              <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0" >
-               <size>
-                <width>102</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="1" column="0" colspan="7" >
-             <widget class="QWebView" name="viewVuln" >
-              <property name="url" >
-               <url>
-                <string>about:blank</string>
-               </url>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_2" >
-           <attribute name="title" >
-            <string>Error</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
-             <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
-           </attribute>
-           <layout class="QVBoxLayout" >
-            <item>
-             <widget class="QTreeWidget" name="listScanError" >
-              <property name="frameShape" >
-               <enum>QFrame::Box</enum>
-              </property>
-              <property name="frameShadow" >
-               <enum>QFrame::Sunken</enum>
-              </property>
-              <property name="lineWidth" >
-               <number>1</number>
-              </property>
-              <property name="autoScroll" >
-               <bool>false</bool>
-              </property>
-              <property name="showDropIndicator" stdset="0" >
-               <bool>false</bool>
-              </property>
-              <property name="alternatingRowColors" >
-               <bool>true</bool>
-              </property>
-              <property name="selectionMode" >
-               <enum>QAbstractItemView::NoSelection</enum>
-              </property>
-              <property name="rootIsDecorated" >
-               <bool>false</bool>
-              </property>
-              <property name="uniformRowHeights" >
-               <bool>false</bool>
-              </property>
-              <property name="animated" >
-               <bool>true</bool>
-              </property>
-              <column>
-               <property name="text" >
-                <string>Error(s)</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab" >
-           <attribute name="title" >
-            <string>Log</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
-             <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
-           </attribute>
-           <layout class="QVBoxLayout" >
-            <item>
-             <widget class="QTreeWidget" name="listScan" >
-              <property name="frameShape" >
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow" >
-               <enum>QFrame::Sunken</enum>
-              </property>
-              <property name="lineWidth" >
-               <number>1</number>
-              </property>
-              <property name="autoScroll" >
-               <bool>false</bool>
-              </property>
-              <property name="showDropIndicator" stdset="0" >
-               <bool>false</bool>
-              </property>
-              <property name="alternatingRowColors" >
-               <bool>true</bool>
-              </property>
-              <property name="selectionMode" >
-               <enum>QAbstractItemView::NoSelection</enum>
-              </property>
-              <property name="indentation" >
-               <number>20</number>
-              </property>
-              <property name="rootIsDecorated" >
-               <bool>false</bool>
-              </property>
-              <property name="itemsExpandable" >
-               <bool>true</bool>
-              </property>
-              <property name="animated" >
-               <bool>true</bool>
-              </property>
-              <property name="columnCount" >
-               <number>1</number>
-              </property>
-              <column>
-               <property name="text" >
-                <string>Log(s)</string>
-               </property>
-              </column>
              </widget>
             </item>
            </layout>
@@ -1773,6 +1601,10 @@
            <attribute name="title" >
             <string>Scan Monitor</string>
            </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+           </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout" >
             <item>
              <widget class="QTreeWidget" name="scanMonitor" >
@@ -1804,78 +1636,273 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_9" />
-     </widget>
-    </item>
-    <item row="1" column="0" >
-     <widget class="QFrame" name="frame" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-        <horstretch>0</horstretch>
-        <verstretch>20</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize" >
-       <size>
-        <width>0</width>
-        <height>35</height>
-       </size>
-      </property>
-      <property name="layoutDirection" >
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="styleSheet" >
-       <string notr="true" >background-color: rgb(75, 75, 75);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="frameShape" >
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="lineWidth" >
-       <number>0</number>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" >
-       <item>
-        <spacer name="horizontalSpacer" >
-         <property name="orientation" >
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0" >
-          <size>
-           <width>637</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QComboBox" name="comboBox" >
-         <property name="minimumSize" >
-          <size>
-           <width>250</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="autoFillBackground" >
-          <bool>false</bool>
-         </property>
-         <item>
-          <property name="text" >
-           <string>Scan</string>
+      <widget class="QWidget" name="page_9" >
+       <layout class="QHBoxLayout" name="horizontalLayout_3" >
+        <item>
+         <widget class="QTabWidget" name="tabWidget_2" >
+          <property name="currentIndex" >
+           <number>0</number>
           </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
+          <widget class="QWidget" name="tab_5" >
+           <attribute name="title" >
+            <string>Log(s)</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_7" >
+            <item row="0" column="0" >
+             <widget class="QTreeWidget" name="listScan" >
+              <property name="frameShape" >
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="lineWidth" >
+               <number>1</number>
+              </property>
+              <property name="autoScroll" >
+               <bool>false</bool>
+              </property>
+              <property name="showDropIndicator" stdset="0" >
+               <bool>false</bool>
+              </property>
+              <property name="alternatingRowColors" >
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode" >
+               <enum>QAbstractItemView::NoSelection</enum>
+              </property>
+              <property name="indentation" >
+               <number>20</number>
+              </property>
+              <property name="rootIsDecorated" >
+               <bool>false</bool>
+              </property>
+              <property name="itemsExpandable" >
+               <bool>true</bool>
+              </property>
+              <property name="animated" >
+               <bool>true</bool>
+              </property>
+              <property name="columnCount" >
+               <number>1</number>
+              </property>
+              <column>
+               <property name="text" >
+                <string>Log(s)</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_6" >
+           <attribute name="title" >
+            <string>Warning(s)</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_8" >
+            <item row="0" column="0" >
+             <widget class="QTreeWidget" name="listScanError" >
+              <property name="frameShape" >
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="lineWidth" >
+               <number>1</number>
+              </property>
+              <property name="autoScroll" >
+               <bool>false</bool>
+              </property>
+              <property name="showDropIndicator" stdset="0" >
+               <bool>false</bool>
+              </property>
+              <property name="alternatingRowColors" >
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode" >
+               <enum>QAbstractItemView::NoSelection</enum>
+              </property>
+              <property name="rootIsDecorated" >
+               <bool>false</bool>
+              </property>
+              <property name="uniformRowHeights" >
+               <bool>false</bool>
+              </property>
+              <property name="animated" >
+               <bool>true</bool>
+              </property>
+              <column>
+               <property name="text" >
+                <string>Error(s)</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_10" >
+       <layout class="QGridLayout" name="gridLayout_9" >
+        <item row="0" column="0" >
+         <widget class="QTabWidget" name="tabWidget_3" >
+          <property name="currentIndex" >
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab" >
+           <attribute name="title" >
+            <string>Vulnerabilities</string>
+           </attribute>
+           <attribute name="icon" >
+            <iconset resource="../mainwin.qrc" >
+             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_10" >
+            <item row="0" column="0" >
+             <widget class="QComboBox" name="comboVuln" >
+              <property name="minimumSize" >
+               <size>
+                <width>281</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="duplicatesEnabled" >
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" >
+             <widget class="QComboBox" name="comboWebV" >
+              <item>
+               <property name="text" >
+                <string>securityfocus.com</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>cve.miltre.org</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>secunia.com</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="2" >
+             <widget class="QPushButton" name="buttonVuln" >
+              <property name="minimumSize" >
+               <size>
+                <width>151</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text" >
+               <string>Search</string>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3" >
+             <widget class="QPushButton" name="Bleft" >
+              <property name="toolTip" >
+               <string>Back</string>
+              </property>
+              <property name="statusTip" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
+              </property>
+              <property name="flat" >
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4" >
+             <widget class="QPushButton" name="Bright" >
+              <property name="toolTip" >
+               <string>Forward</string>
+              </property>
+              <property name="statusTip" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5" >
+             <widget class="QPushButton" name="Bstop" >
+              <property name="toolTip" >
+               <string>Stop</string>
+              </property>
+              <property name="statusTip" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="../mainwin.qrc" >
+                <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6" >
+             <spacer name="horizontalSpacer_4" >
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>128</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0" colspan="7" >
+             <widget class="QWebView" name="viewVuln" >
+              <property name="url" >
+               <url>
+                <string>about:blank</string>
+               </url>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
-   <zorder>frame</zorder>
-   <zorder>stackedWidget</zorder>
-   <zorder>comboBox</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >

@@ -343,3 +343,18 @@ void nmapClass::setProgress() {
     progressScan->setValue(60);
     this->setWindowTitle("Nmapsi4 (60%)");
 }
+
+void nmapClass::updateMainSlide() {
+     
+     switch(comboMain->currentIndex()) {
+     case 0:
+	  stackedMain->setCurrentIndex(0);
+	  break;
+     case 1:
+	  stackedMain->setCurrentIndex(1);
+	  break;
+     case 2:
+	  stackedMain->setCurrentIndex(2);
+	  break;
+     }
+}

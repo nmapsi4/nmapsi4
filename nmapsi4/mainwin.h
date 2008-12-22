@@ -147,6 +147,7 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
+    void updateMainSlide();
 };
 
 #endif

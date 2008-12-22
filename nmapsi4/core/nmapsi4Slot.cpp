@@ -147,4 +147,7 @@ void nmapClass::setNmapsiSlot()
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
 
+    connect(comboMain, SIGNAL(activated(const QString&)),
+            this, SLOT(updateMainSlide()));  // portCombo slot
+
 }
