@@ -109,7 +109,7 @@ void nmapClass::nmapParser(QString hostCheck)
         nmap_command.append("\nLog Start: ");
         nmap_command.append("\nnmap ");
         nmap_command.append(lineOptions->text());
-        nmap_command.append(hostEdit->currentText()); // write host target in the log
+        nmap_command.append(hostCheck); // write host target in the log
         *out << nmap_command << endl << endl;
     }
 
