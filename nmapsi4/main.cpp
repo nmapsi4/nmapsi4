@@ -29,7 +29,13 @@ int main(int argc, char *argv[])
     QString locale = QLocale::system().name();
     QString localeComplete;
     localeComplete.append("nmapsi4_");
-    locale.resize(2);
+
+    if(locale.contains("pt")) {
+	 locale.resize(5);
+    } else {
+	 locale.resize(2);
+    }
+
     localeComplete.append(locale);
 
     QTranslator translator;
