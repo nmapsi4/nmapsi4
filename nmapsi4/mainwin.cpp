@@ -20,11 +20,11 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass()
-     : //proc(NULL),
-       PFile(NULL),
+     : PFile(NULL),
        labelVersion(NULL),
        userMode(NULL),
        dialog(0),
+       th(NULL),
        scanCounter(0)
 
 {

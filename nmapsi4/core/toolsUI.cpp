@@ -59,10 +59,10 @@ void nmapClass::input_browser()
 void nmapClass::exit()
 {
     emit killScan();
-    if(!th->isFinished()) {
+    if(th && !th->isFinished()) {
 	 th->quit();
 	 th->wait();
-    }
+	 }
 
     if (FileName != NULL) {
 

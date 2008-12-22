@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2008 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,25 +19,20 @@
 
 #include "../mainwin.h"
 
-
-
 void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
      // TODO
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
-     //monitorElem.push_front(hostThread);
      hostThread->setText(0, host);
      monitorElem.push_front(hostThread->text(0));
 }
 
 
 void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
-     // TODO
      // TODO clear a item deleted
-
      for(int i=0; i < monitorElem.size(); i++) {
 	  if(monitorElem[i].contains(host)) {
 	       // TODO take a treeItem and clear a memory
-	       // URGENT::: memory leack
+	       // FIX::: memory leack
 	       qDebug() << "Monitor delete Scan";
 	       monitorElem.removeOne(monitorElem[i]);
 	       break; // remove only first elem
