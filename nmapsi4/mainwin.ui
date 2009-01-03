@@ -135,7 +135,7 @@ color: rgb(255, 255, 255);</string>
       </property>
       <widget class="QWidget" name="page" >
        <layout class="QGridLayout" name="gridLayout_6" >
-        <item row="0" column="0" >
+        <item row="1" column="0" >
          <widget class="QTabWidget" name="tabWidget" >
           <property name="autoFillBackground" >
            <bool>false</bool>
@@ -333,8 +333,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>94</width>
-                 <height>66</height>
+                 <width>868</width>
+                 <height>347</height>
                 </rect>
                </property>
                <attribute name="label" >
@@ -394,7 +394,7 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>708</width>
+                 <width>851</width>
                  <height>356</height>
                 </rect>
                </property>
@@ -1605,9 +1605,40 @@ color: rgb(255, 255, 255);</string>
             <iconset resource="../mainwin.qrc" >
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
-           <layout class="QHBoxLayout" name="horizontalLayout" >
+           <layout class="QVBoxLayout" name="verticalLayout_4" >
+            <item>
+             <widget class="QProgressBar" name="progressScan" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+                <horstretch>0</horstretch>
+                <verstretch>18</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>0</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="maximumSize" >
+               <size>
+                <width>16777215</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="value" >
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QTreeWidget" name="scanMonitor" >
+              <property name="minimumSize" >
+               <size>
+                <width>878</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="focusPolicy" >
                <enum>Qt::NoFocus</enum>
               </property>
@@ -1626,6 +1657,11 @@ color: rgb(255, 255, 255);</string>
               <column>
                <property name="text" >
                 <string>Host Thread</string>
+               </property>
+              </column>
+              <column>
+               <property name="text" >
+                <string>State</string>
                </property>
               </column>
              </widget>
@@ -1768,7 +1804,7 @@ color: rgb(255, 255, 255);</string>
             <iconset resource="../mainwin.qrc" >
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_10" >
+           <layout class="QGridLayout" name="gridLayout_2" >
             <item row="0" column="0" >
              <widget class="QComboBox" name="comboVuln" >
               <property name="minimumSize" >
@@ -1885,7 +1921,32 @@ color: rgb(255, 255, 255);</string>
               </property>
              </spacer>
             </item>
-            <item row="1" column="0" colspan="7" >
+            <item row="1" column="0" >
+             <widget class="QProgressBar" name="progressWeb" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+                <horstretch>0</horstretch>
+                <verstretch>18</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>0</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="maximumSize" >
+               <size>
+                <width>16777215</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="value" >
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="7" >
              <widget class="QWebView" name="viewVuln" >
               <property name="url" >
                <url>

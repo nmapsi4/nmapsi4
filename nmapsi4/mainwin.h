@@ -20,7 +20,7 @@
 #ifndef MAINWIN_H
 #define MAINWIN_H
 
-#include <QProcess>
+//#include <QProcess>
 #include <QMainWindow>
 #include <QtWebKit/QWebView>
 #include "ui_mainwin.h"
@@ -91,13 +91,13 @@ protected:
     QLabel *labelVersion;
     QLabel *userMode;
     mainProfile *dialog;
-    QProgressBar *progressScan;
     QByteArray Byte1;
     QByteArray Byte2;
     logHistory *history;
     scanThread *th;
-    int scanCounter;
-    QList<QString> monitorElem;
+    QList<QString> monitorElemHost;
+    QList<QString> monitorElemState;
+    QList<QTreeWidgetItem*> monitorElem;
 
 
 public slots:

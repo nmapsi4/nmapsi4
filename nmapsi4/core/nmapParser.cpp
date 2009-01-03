@@ -393,7 +393,7 @@ void nmapClass::nmapParser(QString hostCheck)
 
     this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_endScan.svg")));
     // UI update
-    if(!scanCounter) {
+    //if(!scanCounter) {
 	 action_Scan_menu->setEnabled(true);
 	 action_Scan_2->setEnabled(true);
 	 hostEdit->setEnabled(true);
@@ -404,7 +404,7 @@ void nmapClass::nmapParser(QString hostCheck)
 	      actionSave->setEnabled(true);
 	      actionSave_Menu->setEnabled(true);
 	 }
-    }
+    //}
     this->setWindowModified(true);
     listWscan->expandItem(root);
 

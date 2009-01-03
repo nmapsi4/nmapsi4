@@ -136,7 +136,7 @@ void nmapClass::setNmapsiSlot()
     connect(buttonVuln, SIGNAL(clicked()),
             this, SLOT(searchVuln()));
     connect(viewVuln, SIGNAL(loadProgress(int)),
-            progressScan, SLOT(setValue(int)));
+            progressWeb, SLOT(setValue(int)));
     connect(Bleft, SIGNAL(clicked()),
             viewVuln, SLOT(back()));
     connect(Bright, SIGNAL(clicked()),

@@ -24,8 +24,8 @@ nmapClass::nmapClass()
        labelVersion(NULL),
        userMode(NULL),
        dialog(0),
-       th(NULL),
-       scanCounter(0)
+       th(NULL)
+       //scanCounter(0)
 
 {
     int uid = 0;
@@ -50,11 +50,12 @@ nmapClass::nmapClass()
 void nmapClass::init()
 {
     setupUi(this);
-    progressScan = new QProgressBar();
-    progressScan->setMaximumHeight(18);
-    progressScan->setValue(0);
-    progressScan->setLayoutDirection(Qt::LeftToRight);
-    statusBar()->addPermanentWidget(progressScan, 2);
+    //progressScan = new QProgressBar();
+    //progressScan->setMaximumHeight(18);
+    //progressWeb->setMaximumHeight(18);
+    //progressScan->setValue(0);
+    //progressScan->setLayoutDirection(Qt::LeftToRight);
+    //statusBar()->addPermanentWidget(progressScan, 2);
 
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
@@ -69,6 +70,7 @@ void nmapClass::init()
     checkNmapVersion();
     listWscan->setColumnWidth(0, 500);
     treeLogH->setColumnWidth(0, 500);
+    scanMonitor->setColumnWidth(0, 500);
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window/size", QSize(869, 605)).toSize();
@@ -116,8 +118,6 @@ void nmapClass::scan()
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-//    proc = new QProcess(); // Scan Process declaration
-
     parametri = this->check_extensions(parametri, title); // extensions.cpp
 
     QString tmp_token;
@@ -140,11 +140,9 @@ void nmapClass::scan()
     addMonitorHost(scanMonitor, hostname);
     
     mutex.lock();
-    scanCounter++;
     th->start();
     connect(th, SIGNAL(threadEnd(QString)),
       this, SLOT(nmapParser(QString))); // nmapParser.cpp
-    scanCounter--;
     mutex.unlock();
 
     /*

@@ -20,21 +20,22 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
-     // TODO
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
      hostThread->setText(0, host);
-     monitorElem.push_front(hostThread->text(0));
+     hostThread->setText(1, tr("Starting..."));
+     monitorElem.push_front(hostThread);
+     monitorElemHost.push_front(hostThread->text(0));
+     monitorElemState.push_front(hostThread->text(1));
 }
 
 
 void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
-     // TODO clear a item deleted
-     for(int i=0; i < monitorElem.size(); i++) {
-	  if(monitorElem[i].contains(host)) {
-	       // TODO take a treeItem and clear a memory
-	       // FIX::: memory leack
+     for(int i=0; i < monitorElemHost.size(); i++) {
+	  if(monitorElemHost[i].contains(host)) {
 	       qDebug() << "Monitor delete Scan";
-	       monitorElem.removeOne(monitorElem[i]);
+	       monitorElemHost.removeOne(monitorElemHost[i]);
+	       monitorElemState.removeOne(monitorElemState[i]);
+	       monitorElem.removeAt(i);
 	       break; // remove only first elem
 	  }
      }
@@ -43,13 +44,17 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
 
 void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
+     monitorElem.clear();
      monitor->clear();
      QTreeWidgetItem* item;
 
-     for(int i=0; i < monitorElem.size(); i++) {
-	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElem.size();
+     for(int i=0; i < monitorElemHost.size(); i++) {
+	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
 	  item = new QTreeWidgetItem(monitor);
-	  item->setText(0, monitorElem[i]);
+	  item->setText(0, monitorElemHost[i]);
+	  item->setText(1, monitorElemState[i]);
+	  monitorElem.push_front(item);
      }
      
 }
+
