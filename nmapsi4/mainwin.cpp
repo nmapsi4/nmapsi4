@@ -25,8 +25,6 @@ nmapClass::nmapClass()
        userMode(NULL),
        dialog(0),
        th(NULL)
-       //scanCounter(0)
-
 {
     int uid = 0;
 
@@ -103,7 +101,6 @@ void nmapClass::scan()
     QString hostname = hostEdit->currentText();
     QString title;
 
-    //logHistory *history = new logHistory(treeLogH,"nmapsi4/urlList", "nmapsi4/urlListTime", 10 );
     history = new logHistory("nmapsi4/cacheHost", 10);
     history->addItemHistory(hostname);
 
@@ -144,12 +141,6 @@ void nmapClass::scan()
     connect(th, SIGNAL(threadEnd(QString)),
       this, SLOT(nmapParser(QString))); // nmapParser.cpp
     mutex.unlock();
-
-    /*
-this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
-    progressScan->setValue(60);
-    this->setWindowTitle(title.replace("(55%)", "(60%)"));*/
-
     delete history;
 }
 
@@ -158,11 +149,9 @@ nmapClass::~nmapClass()
     qDebug() << "Nmapsi4/~nmapClass() -> Global";
     qDebug() << "Nmapsi4/~nmapClass() -> Size Item List::" << itemList.size();
     if (dialog) dialog->close();
-
-
-    if (!listClearFlag) {
-        itemDeleteAll(itemList);
-    }
+    itemDeleteAll(itemList);
+    itemDeleteAll(monitorElem);
+    
     delete progressScan;
     delete PFile;
     delete labelVersion;

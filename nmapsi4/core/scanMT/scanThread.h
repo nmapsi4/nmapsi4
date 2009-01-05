@@ -27,7 +27,6 @@
 #include <QObject>
 #include <QMetaType>
 #include <QtDebug>
-//#include <QMutex>
 
 class scanThread : public QThread
 {
@@ -45,7 +44,6 @@ private:
      QByteArray* pout;
      QByteArray* perr;
      QStringList ParList;
-     //QMutex mutexLocal;
 
 private slots:
      void setValue();

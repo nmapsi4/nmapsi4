@@ -95,9 +95,9 @@ void logHistory::updateLogHistory()
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
+    qDeleteAll(ItemListHistory);
+    ItemListHistory.clear();
     logTree->clear();
-    /*if(ItemListHistory.size() != 0)
-      itemDeleteAll(ItemListHistory);*/
     logTree->setIconSize(QSize::QSize(32, 32));
 
     QFile *tmpFile = new QFile();
@@ -153,9 +153,9 @@ void logHistory::updateBookMarks()
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     short index = 0;
+    qDeleteAll(ItemListHistory);
+    ItemListHistory.clear();
     logTree->clear();
-    /*if(ItemListHistory.size() != 0)
-      itemDeleteAll(ItemListHistory);*/
     logTree->setIconSize(QSize::QSize(22, 22));
 
     if (!urlList.isEmpty() && urlList.first().compare("NULL") && urlListTime.first().compare("NULL")) {

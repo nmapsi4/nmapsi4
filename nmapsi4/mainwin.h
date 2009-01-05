@@ -69,7 +69,6 @@ signals:
 
 
 protected:
-    //QProcess *proc;
     QProcess *versionProc;
     QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj;
     QTreeWidgetItem *root2, *item_root2;

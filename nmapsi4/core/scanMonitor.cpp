@@ -35,7 +35,7 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
 	       qDebug() << "Monitor delete Scan";
 	       monitorElemHost.removeOne(monitorElemHost[i]);
 	       monitorElemState.removeOne(monitorElemState[i]);
-	       monitorElem.removeAt(i);
+	       delete monitorElem.takeAt(i);
 	       break; // remove only first elem
 	  }
      }
@@ -44,6 +44,7 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
 
 void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
+     qDeleteAll(monitorElem);
      monitorElem.clear();
      monitor->clear();
      QTreeWidgetItem* item;

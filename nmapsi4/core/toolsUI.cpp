@@ -98,14 +98,6 @@ void nmapClass::exit()
 
 void nmapClass::stop_scan()
 {
-/*    if (proc) {
-
-        proc->terminate();
-
-        progressScan->setValue(0); // clear UI element
-        actionStop_Scan->setEnabled(false);
-        actionClear_History->setEnabled(true);
-	}*/
      emit killScan();
 
      if(!th->isFinished()) {
@@ -264,9 +256,8 @@ void nmapClass::setNmapVersion()
 void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 {
     qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-    foreach(QTreeWidgetItem *item, items) {
-        delete item;
-    }
+    qDeleteAll(items);
+    items.clear();
 }
 
 void nmapClass::callScanH()

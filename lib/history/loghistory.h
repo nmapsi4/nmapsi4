@@ -50,7 +50,7 @@ public:
                QString ConfigTagTime,
                int cacheSize);
     logHistory(QString ConfigTag, int cacheSize);
-    ~logHistory() {};
+    ~logHistory() { };
     void updateLogHistory();
     void updateBookMarks();
     virtual void addItemHistory(QString url);

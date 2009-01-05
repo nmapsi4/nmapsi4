@@ -392,22 +392,17 @@ void nmapClass::nmapParser(QString hostCheck)
     this->setWindowTitle(title.replace("(85%)", "(100%) [*]"));
 
     this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_endScan.svg")));
-    // UI update
-    //if(!scanCounter) {
-	 action_Scan_menu->setEnabled(true);
-	 action_Scan_2->setEnabled(true);
-	 hostEdit->setEnabled(true);
-	 //actionStop_Scan->setEnabled(false);
-	 action_Save_As->setEnabled(true);
-	 actionSave_As_Menu->setEnabled(true);
-	 if (!logSessionFile.isEmpty()) {
-	      actionSave->setEnabled(true);
-	      actionSave_Menu->setEnabled(true);
-	 }
-    //}
+
+    action_Scan_menu->setEnabled(true);
+    action_Scan_2->setEnabled(true);
+    hostEdit->setEnabled(true);
+    //actionStop_Scan->setEnabled(false);
+    action_Save_As->setEnabled(true);
+    actionSave_As_Menu->setEnabled(true);
+    if (!logSessionFile.isEmpty()) {
+	actionSave->setEnabled(true);
+	actionSave_Menu->setEnabled(true);
+    }
     this->setWindowModified(true);
     listWscan->expandItem(root);
-
-//    delete proc; // clear proc memory
-//    proc = 0;
 }
