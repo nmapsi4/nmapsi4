@@ -262,7 +262,7 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 
 void nmapClass::callScanH()
 {
-     if (treeLogH->currentItem() /*&& !proc*/) {
+     if (treeLogH->currentItem()) {
 	qDebug() << "Current Item::" << treeLogH->currentItem();
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
@@ -274,7 +274,6 @@ void nmapClass::callScanH()
 
 void nmapClass::callSearchHistory()
 {
-    // TODO create a history global call
     if (!actionAdd_Bookmark->isEnabled())
         actionAdd_Bookmark->setEnabled(true);
     logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
