@@ -21,39 +21,62 @@
 
 void nmapClass::searchVuln()
 {
-    // TODO
-    if (comboVuln->currentText().isEmpty())
+    if (comboVulnRis->currentText().isEmpty())
         return;
 
     QString url;
     QString tmp;
+    history = new logHistory("nmapsi4/cacheVuln", 10);
+    history->addItemHistory(comboVulnRis->currentText());
+    delete history;
+    
+    tmp = comboVulnRis->currentText();
+    tmp.replace(QString(" "), QString("+"));
 
     switch (comboWebV->currentIndex()) {
     case 0:
         url = "http://www.securityfocus.com/swsearch?query=";
-        tmp = comboVuln->currentText();
-        tmp.replace(QString(" "), QString("+"));
         url.append(tmp);
         url.append("&sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank");
+
+#ifndef VULN_NO_DEBUG
         qDebug() << "Call webSearch()..." << url;
+#endif
         break;
     case 1:
         url = "http://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=";
-        tmp = comboVuln->currentText();
-        tmp.replace(QString(" "), QString("+"));
         url.append(tmp);
+#ifndef VULN_NO_DEBUG
         qDebug() << "Call webSearch()..." << url;
+#endif
         break;
     case 2:
-        url = "http://secunia.com/search/?search=";
-        tmp = comboVuln->currentText();
-        tmp.replace(QString(" "), QString("+"));
+        url = "http://secunia.com/advisories/search/?search=";
         url.append(tmp);
-        url.append("&w=1");
+#ifndef VULN_NO_DEBUG
         qDebug() << "Call webSearch()..." << url;
+#endif
         break;
     }
 
     QUrl urlFinal(url);
     viewVuln->load(urlFinal);
+}
+
+void nmapClass::callSearchHistoryVuln() {
+#ifndef VULN_NO_DEBUG
+    qDebug() << "searchVuln:: call...";
+#endif
+
+    if (!actionAdd_Bookmark->isEnabled())
+        actionAdd_Bookmark->setEnabled(true);
+    logHistory *history = new logHistory("nmapsi4/cacheVuln", 10);
+    history->searchHistory(comboVulnRis->currentText(), comboVulnRis);
+    delete history;
+     
+}
+
+void nmapClass::callVulnCheck() {
+    comboVulnRis->insertItem(0,treeBookVuln->currentItem()->text(0));
+    searchVuln();
 }

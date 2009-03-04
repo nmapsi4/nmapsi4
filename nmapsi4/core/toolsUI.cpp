@@ -283,21 +283,47 @@ void nmapClass::callSearchHistory()
 
 void nmapClass::saveBookMarks()
 {
-    if (hostEdit->currentText().isEmpty())
+    if (hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty())
         return;
+    
+    logHistory *history_ = NULL;
 
-    logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    history->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-    history->updateBookMarks();
-    delete history;
+    switch(comboMain->currentIndex()) {
+      case 0:
+	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+	history_->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+	break;
+      case 2:
+	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+	history_->addItemHistory(comboVulnRis->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+	break;
+      default:
+	break;
+    }
+    
+    history_->updateBookMarks();
+    delete history_;
 }
 
 void nmapClass::deleteBookMark()
 {
-    // TODO error message
-    if(!treeLogH->currentItem())
+    logHistory *history_ = NULL;
+    
+    if(!treeLogH->currentItem() && !treeBookVuln->currentItem())
 	return;
-    logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    history->deleteItemBookmark(treeLogH->currentItem()->text(0));
-    delete history;
+    
+    switch(comboMain->currentIndex()) {
+      case 0:
+	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+	history_->deleteItemBookmark(treeLogH->currentItem()->text(0));
+	break;
+      case 2:
+	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+	history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
+	break;
+      default:
+	break;
+    }
+    
+    delete history_;
 }

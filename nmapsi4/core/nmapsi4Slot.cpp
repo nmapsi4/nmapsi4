@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -129,8 +129,12 @@ void nmapClass::setNmapsiSlot()
 	    this, SLOT(deleteBookMark()));
     connect(treeLogH, SIGNAL( itemSelectionChanged()),
 	    this, SLOT(activeBookTool()));
+    connect(treeBookVuln, SIGNAL( itemSelectionChanged()),
+	    this, SLOT(activeBookTool()));	    
     connect(treeLogH, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
 	    this, SLOT(callScanH()));
+    connect(treeBookVuln, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+            this, SLOT(callVulnCheck()));
 
     // Vuln signal
     connect(buttonVuln, SIGNAL(clicked()),
@@ -143,6 +147,14 @@ void nmapClass::setNmapsiSlot()
             viewVuln, SLOT(forward()));
     connect(Bstop, SIGNAL(clicked()),
             viewVuln, SLOT(stop()));
+    connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
+            comboVulnRis, SLOT(setEditText(const QString&)));
+    connect(deleteBookVuln, SIGNAL(clicked()),
+	    this, SLOT(deleteBookMark()));
+
+    // FIXME
+    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
+            this, SLOT(callSearchHistoryVuln()));
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));

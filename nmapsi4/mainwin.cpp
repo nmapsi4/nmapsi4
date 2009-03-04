@@ -34,27 +34,21 @@ nmapClass::nmapClass()
 
     init();
     this->setNmapsiSlot();
-
-    // Init function
     this->rootMode(uid); // send uid value
     this->checkProfile();
     this->optionListCreate();
 
-    logHistory *history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", 10);
-    history->updateBookMarks();
-    delete history;
+    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", 10);
+    historyScan_->updateBookMarks();
+    delete historyScan_;
+    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", 10);
+    historyVuln_->updateBookMarks();
+    delete historyVuln_;
 }
 
 void nmapClass::init()
 {
     setupUi(this);
-    //progressScan = new QProgressBar();
-    //progressScan->setMaximumHeight(18);
-    //progressWeb->setMaximumHeight(18);
-    //progressScan->setValue(0);
-    //progressScan->setLayoutDirection(Qt::LeftToRight);
-    //statusBar()->addPermanentWidget(progressScan, 2);
-
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
@@ -69,6 +63,7 @@ void nmapClass::init()
     listWscan->setColumnWidth(0, 500);
     treeLogH->setColumnWidth(0, 500);
     scanMonitor->setColumnWidth(0, 500);
+    treeBookVuln->setColumnWidth(0, 500);
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window/size", QSize(869, 605)).toSize();
@@ -157,3 +152,4 @@ nmapClass::~nmapClass()
     delete labelVersion;
     delete userMode;
 }
+

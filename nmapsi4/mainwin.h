@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,21 +20,17 @@
 #ifndef MAINWIN_H
 #define MAINWIN_H
 
-//#include <QProcess>
-#include <QMainWindow>
-#include <QtWebKit/QWebView>
 #include "ui_mainwin.h"
 #include "preference/profilemain.h"
 #include "../lib/history/loghistory.h"
-//#include "../lib/about/staticDefine.h"
+#include "core/nmapsi4Debug.h"
 #include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
-#include <QMutex>
-//
-// QSettings description:
-// * nmapsi4/cacheHost   --> host cache for comboBox search
-// * nmapsi4/urlList 	 --> bookmark cache
-//    - nmapsi4/urlListTime
+
+class QMainWindow;
+class QWebView;
+class QMutex;
+
 
 class nmapClass : public QMainWindow , private Ui::MainWindow
 {
@@ -132,12 +128,11 @@ private slots:
     void checkNmapVersion();
     void setNmapVersion();
 
-    //Resize UI
+    //update and log slots
     void startProfile_ui();
     void readProfile();
     void saveAsLog();
     void saveLog();
-    void searchVuln();
     void updateFontHost(QString hostName);
     void callSearchHistory();
     void saveBookMarks();
@@ -147,6 +142,11 @@ private slots:
     void optionListUpdate();
     void setProgress();
     void updateMainSlide();
+
+    // Vuln extension
+    void searchVuln();
+    void callSearchHistoryVuln();
+    void callVulnCheck();
 };
 
 #endif

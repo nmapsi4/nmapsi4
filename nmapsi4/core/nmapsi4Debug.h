@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                          	   *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,20 +17,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef ABOUT_H
-#define ABOUT_H
+#ifndef NMAPSI4DEBUG_H
+#define NMAPSI4DEBUG_H
 
-#include <QtGui>
-#include "ui_about.h"
-#include "staticDefine.h"
-
-class mainAbout : public QDialog, private Ui::AboutWin
-{
-//  Q_OBJECT
-  
-  public:
-     mainAbout();
-     ~mainAbout() {};
-};
+// vulnerabilities debug
+#define VULN_NO_DEBUG
 
 #endif

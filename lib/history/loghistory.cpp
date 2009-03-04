@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                               *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,8 +18,7 @@
  ***************************************************************************/
 
 #include "loghistory.h"
-// TODO: fix translation
-// history contructor
+
 logHistory::logHistory(QTreeWidget* treeLog,
                        QString ConfigTag,
                        QString ConfigTagTime,
@@ -70,7 +69,9 @@ void logHistory::addItemHistory(QString url, QString scanTime)
 void logHistory::deleteItemBookmark(QString item) 
 {
     Q_ASSERT(item != NULL);
+#ifndef HISTORY_NO_DEBUG
     qDebug() << "logHistory::deleteItemBookmark() -- call";
+#endif
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -80,8 +81,13 @@ void logHistory::deleteItemBookmark(QString item)
 	    int index = urlList.indexOf(item);
 	    urlList.removeAt(index);
 	    urlListTime.removeAt(index);
-	    settings.setValue(configTag, QVariant(urlList));
-	    settings.setValue(configTagTime, QVariant(urlListTime));
+	    if(urlList.size()) {
+	      settings.setValue(configTag, QVariant(urlList));
+	      settings.setValue(configTagTime, QVariant(urlListTime));
+	    } else {
+	      settings.setValue(configTag, "NULL");
+	      settings.setValue(configTagTime, "NULL");
+	    }
 	    break;
 	}
     }
@@ -90,8 +96,9 @@ void logHistory::deleteItemBookmark(QString item)
 
 void logHistory::updateLogHistory()
 {
-
+#ifndef HISTORY_NO_DEBUG
     qDebug() << "logHistory::updateTreeHistory() -- call";
+#endif
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -116,7 +123,9 @@ void logHistory::updateLogHistory()
                 index++;
             } else {
                 if (urlList.contains(item) && urlListTime.first().compare("NULL")) {
+#ifndef HISTORY_NO_DEBUG
                     qDebug() << "Remove Items...";
+#endif
                     int index = urlList.indexOf(item);
                     urlList.removeOne(item);
                     urlListTime.removeAt(index);
@@ -131,8 +140,6 @@ void logHistory::updateLogHistory()
                                      0, QApplication::UnicodeUTF8));
 
                 }
-                /*      if(urlList.isEmpty())
-                      history->setText(0, "No Url Cache");*/
             }
         }
     } else {
@@ -148,7 +155,10 @@ void logHistory::updateLogHistory()
 
 void logHistory::updateBookMarks()
 {
+
+#ifndef HISTORY_NO_DEBUG
     qDebug() << "logHistory::updateTH() -- call";
+#endif
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -159,6 +169,9 @@ void logHistory::updateBookMarks()
     logTree->setIconSize(QSize::QSize(22, 22));
 
     if (!urlList.isEmpty() && urlList.first().compare("NULL") && urlListTime.first().compare("NULL")) {
+#ifndef HISTORY_NO_DEBUG
+	qDebug() << "logHistory::updateTH() -- scope 1";
+#endif
         foreach(QString item, urlList) {
             historyItem = new QTreeWidgetItem(logTree);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
@@ -168,6 +181,9 @@ void logHistory::updateBookMarks()
             index++;
         }
     } else if (!urlListTime.first().compare("NULL") && urlList.first().compare("NULL")) {
+#ifndef HISTORY_NO_DEBUG
+	qDebug() << "logHistory::updateTH() -- scope 2";
+#endif
         history = new QTreeWidgetItem(logTree);
         history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
         ItemListHistory.push_front(historyItem);
@@ -179,15 +195,20 @@ void logHistory::updateBookMarks()
 
 void logHistory::searchHistory(QString tokenWord, QComboBox* lineHistory)
 {
-    //TODO works in progress
+
+#ifndef HISTORY_NO_DEBUG
     qDebug() << "Call --> history::searchHistory() ";
+#endif
+
     lineHistory->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark_toolbar.png")));
     QList<QString> urlList = historyReadUrl();
     lineHistory->setCompleter(0);
     
     foreach(QString item, urlList) {
         if (item.contains(tokenWord)) {
+#ifndef HISTORY_NO_DEBUG
             qDebug() << "History::Item:: " << item << "Token:: " << tokenWord;
+#endif
             if ((lineHistory->findText(item, Qt::MatchExactly) == -1) && !tokenWord.isEmpty()) {
                 lineHistory->insertItem(1, item);
                 lineHistory->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));

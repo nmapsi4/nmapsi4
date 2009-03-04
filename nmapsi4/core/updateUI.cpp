@@ -336,6 +336,7 @@ void nmapClass::updateFontHost(QString hostName)
 void nmapClass::activeBookTool() {
     scanBook->setEnabled(true);
     deleteBook->setEnabled(true);
+    deleteBookVuln->setEnabled(true);
 }
 
 void nmapClass::setProgress() {
@@ -348,13 +349,28 @@ void nmapClass::updateMainSlide() {
      
      switch(comboMain->currentIndex()) {
      case 0:
+	  // scan 
 	  stackedMain->setCurrentIndex(0);
+	  this->showMainToolBar();
+	  this->showActionToolBar();
 	  break;
      case 1:
+	  // log
 	  stackedMain->setCurrentIndex(1);
+	  // main and action bar only in scan index
+	  toolBar->setVisible(false);
+	  actionMain_Toolbars->setChecked(false);
+	  toolBar_2->setVisible(false);
+	  actionActions_Toolbar->setChecked(false);
 	  break;
      case 2:
+	  // Vuln
 	  stackedMain->setCurrentIndex(2);
+	  // main and action bar only in scan index
+	  toolBar->setVisible(false);
+	  actionMain_Toolbars->setChecked(false);
+	  toolBar_2->setVisible(false);
+	  actionActions_Toolbar->setChecked(false);
 	  break;
      }
 }

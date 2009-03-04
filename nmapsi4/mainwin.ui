@@ -1,11 +1,12 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <author>Francesco Cecconi</author>
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="windowModality" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
-  <property name="geometry" >
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -13,88 +14,88 @@
     <height>672</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>910</width>
     <height>672</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>9999999</width>
     <height>9999999</height>
    </size>
   </property>
-  <property name="baseSize" >
+  <property name="baseSize">
    <size>
     <width>760</width>
     <height>662</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>NmapSI4[*]</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../mainwin.qrc" >
+  <property name="windowIcon">
+   <iconset>
     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
   </property>
-  <property name="autoFillBackground" >
+  <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <property name="styleSheet" >
-   <string notr="true" />
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
-  <property name="iconSize" >
+  <property name="iconSize">
    <size>
     <width>32</width>
     <height>32</height>
    </size>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QGridLayout" name="gridLayout" >
-    <item row="1" column="0" >
-     <widget class="QFrame" name="frame" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>20</verstretch>
        </sizepolicy>
       </property>
-      <property name="minimumSize" >
+      <property name="minimumSize">
        <size>
         <width>0</width>
         <height>35</height>
        </size>
       </property>
-      <property name="layoutDirection" >
+      <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
-      <property name="styleSheet" >
-       <string notr="true" >background-color: rgb(75, 75, 75);
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(75, 75, 75);
 color: rgb(255, 255, 255);</string>
       </property>
-      <property name="frameShape" >
+      <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
-      <property name="frameShadow" >
+      <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
       </property>
-      <property name="lineWidth" >
+      <property name="lineWidth">
        <number>0</number>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" >
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <spacer name="horizontalSpacer" >
-         <property name="orientation" >
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" stdset="0">
           <size>
            <width>637</width>
            <height>20</height>
@@ -103,23 +104,23 @@ color: rgb(255, 255, 255);</string>
         </spacer>
        </item>
        <item>
-        <widget class="QComboBox" name="comboMain" >
-         <property name="minimumSize" >
+        <widget class="QComboBox" name="comboMain">
+         <property name="minimumSize">
           <size>
            <width>250</width>
            <height>30</height>
           </size>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>false</bool>
          </property>
          <item>
-          <property name="text" >
+          <property name="text">
            <string>Scan</string>
           </property>
          </item>
          <item>
-          <property name="text" >
+          <property name="text">
            <string>Log</string>
           </property>
          </item>
@@ -128,199 +129,199 @@ color: rgb(255, 255, 255);</string>
       </layout>
      </widget>
     </item>
-    <item row="0" column="0" >
-     <widget class="QStackedWidget" name="stackedMain" >
-      <property name="currentIndex" >
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedMain">
+      <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="page" >
-       <layout class="QGridLayout" name="gridLayout_6" >
-        <item row="1" column="0" >
-         <widget class="QTabWidget" name="tabWidget" >
-          <property name="autoFillBackground" >
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="1" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="autoFillBackground">
            <bool>false</bool>
           </property>
-          <property name="tabPosition" >
+          <property name="tabPosition">
            <enum>QTabWidget::North</enum>
           </property>
-          <property name="tabShape" >
+          <property name="tabShape">
            <enum>QTabWidget::Rounded</enum>
           </property>
-          <property name="currentIndex" >
+          <property name="currentIndex">
            <number>0</number>
           </property>
-          <property name="elideMode" >
+          <property name="elideMode">
            <enum>Qt::ElideNone</enum>
           </property>
-          <widget class="QWidget" name="tab_8" >
-           <attribute name="title" >
-            <string>Scan</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tab_8">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_4" >
-            <item row="0" column="0" >
-             <widget class="QPushButton" name="buttonHClear" >
-              <property name="text" >
+           <attribute name="title">
+            <string>Scan</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QPushButton" name="buttonHClear">
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
+              <property name="icon">
+               <iconset>
                 <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" >
-             <widget class="QComboBox" name="hostEdit" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+            <item row="0" column="1">
+             <widget class="QComboBox" name="hostEdit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="editable" >
+              <property name="editable">
                <bool>true</bool>
               </property>
-              <property name="currentIndex" >
+              <property name="currentIndex">
                <number>-1</number>
               </property>
-              <property name="insertPolicy" >
+              <property name="insertPolicy">
                <enum>QComboBox::InsertAfterCurrent</enum>
               </property>
-              <property name="sizeAdjustPolicy" >
+              <property name="sizeAdjustPolicy">
                <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
               </property>
              </widget>
             </item>
-            <item row="1" column="0" colspan="2" >
-             <widget class="QToolBox" name="toolBox" >
-              <property name="currentIndex" >
+            <item row="1" column="0" colspan="2">
+             <widget class="QToolBox" name="toolBox">
+              <property name="currentIndex">
                <number>0</number>
               </property>
-              <property name="tabSpacing" >
+              <property name="tabSpacing">
                <number>2</number>
               </property>
-              <widget class="QWidget" name="page_6" >
-               <property name="geometry" >
+              <widget class="QWidget" name="page_6">
+               <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>868</width>
-                 <height>347</height>
+                 <height>375</height>
                 </rect>
                </property>
-               <attribute name="label" >
-                <string>Host(s)</string>
-               </attribute>
-               <attribute name="icon" >
-                <iconset resource="../mainwin.qrc" >
+               <attribute name="icon">
+                <iconset>
                  <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
                </attribute>
-               <layout class="QVBoxLayout" name="verticalLayout_3" >
+               <attribute name="label">
+                <string>Host(s)</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
-                 <widget class="QTreeWidget" name="listWscan" >
-                  <property name="sizePolicy" >
-                   <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+                 <widget class="QTreeWidget" name="listWscan">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="minimumSize" >
+                  <property name="minimumSize">
                    <size>
                     <width>808</width>
                     <height>316</height>
                    </size>
                   </property>
-                  <property name="styleSheet" >
-                   <string notr="true" />
+                  <property name="styleSheet">
+                   <string notr="true"/>
                   </property>
-                  <property name="frameShape" >
+                  <property name="frameShape">
                    <enum>QFrame::Box</enum>
                   </property>
-                  <property name="frameShadow" >
+                  <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
                   </property>
-                  <property name="lineWidth" >
+                  <property name="lineWidth">
                    <number>1</number>
                   </property>
-                  <property name="midLineWidth" >
+                  <property name="midLineWidth">
                    <number>0</number>
                   </property>
-                  <property name="horizontalScrollBarPolicy" >
+                  <property name="horizontalScrollBarPolicy">
                    <enum>Qt::ScrollBarAsNeeded</enum>
                   </property>
-                  <property name="autoScroll" >
+                  <property name="autoScroll">
                    <bool>false</bool>
                   </property>
-                  <property name="editTriggers" >
+                  <property name="editTriggers">
                    <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
                   </property>
-                  <property name="tabKeyNavigation" >
+                  <property name="tabKeyNavigation">
                    <bool>false</bool>
                   </property>
-                  <property name="showDropIndicator" stdset="0" >
+                  <property name="showDropIndicator" stdset="0">
                    <bool>false</bool>
                   </property>
-                  <property name="alternatingRowColors" >
+                  <property name="alternatingRowColors">
                    <bool>true</bool>
                   </property>
-                  <property name="selectionMode" >
+                  <property name="selectionMode">
                    <enum>QAbstractItemView::NoSelection</enum>
                   </property>
-                  <property name="verticalScrollMode" >
+                  <property name="verticalScrollMode">
                    <enum>QAbstractItemView::ScrollPerPixel</enum>
                   </property>
-                  <property name="horizontalScrollMode" >
+                  <property name="horizontalScrollMode">
                    <enum>QAbstractItemView::ScrollPerPixel</enum>
                   </property>
-                  <property name="autoExpandDelay" >
+                  <property name="autoExpandDelay">
                    <number>-1</number>
                   </property>
-                  <property name="rootIsDecorated" >
+                  <property name="rootIsDecorated">
                    <bool>false</bool>
                   </property>
-                  <property name="uniformRowHeights" >
+                  <property name="uniformRowHeights">
                    <bool>false</bool>
                   </property>
-                  <property name="itemsExpandable" >
+                  <property name="itemsExpandable">
                    <bool>true</bool>
                   </property>
-                  <property name="animated" >
+                  <property name="animated">
                    <bool>true</bool>
                   </property>
-                  <property name="allColumnsShowFocus" >
+                  <property name="allColumnsShowFocus">
                    <bool>true</bool>
                   </property>
-                  <property name="wordWrap" >
+                  <property name="wordWrap">
                    <bool>false</bool>
                   </property>
-                  <property name="columnCount" >
+                  <property name="columnCount">
                    <number>5</number>
                   </property>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>List(s)</string>
                    </property>
                   </column>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>Open</string>
                    </property>
                   </column>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>Close</string>
                    </property>
                   </column>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>Fi/Unfiltered</string>
                    </property>
                   </column>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>Service</string>
                    </property>
                   </column>
@@ -328,60 +329,60 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_7" >
-               <property name="geometry" >
+              <widget class="QWidget" name="page_7">
+               <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>868</width>
-                 <height>347</height>
+                 <height>375</height>
                 </rect>
                </property>
-               <attribute name="label" >
-                <string>Host(s) Info</string>
-               </attribute>
-               <attribute name="icon" >
-                <iconset resource="../mainwin.qrc" >
+               <attribute name="icon">
+                <iconset>
                  <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
                </attribute>
-               <layout class="QVBoxLayout" name="verticalLayout_2" >
+               <attribute name="label">
+                <string>Host(s) Info</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <widget class="QTreeWidget" name="treeWinfo" >
-                  <property name="sizePolicy" >
-                   <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+                 <widget class="QTreeWidget" name="treeWinfo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>170</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="frameShape" >
+                  <property name="frameShape">
                    <enum>QFrame::Box</enum>
                   </property>
-                  <property name="frameShadow" >
+                  <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
                   </property>
-                  <property name="lineWidth" >
+                  <property name="lineWidth">
                    <number>1</number>
                   </property>
-                  <property name="autoScroll" >
+                  <property name="autoScroll">
                    <bool>false</bool>
                   </property>
-                  <property name="showDropIndicator" stdset="0" >
+                  <property name="showDropIndicator" stdset="0">
                    <bool>false</bool>
                   </property>
-                  <property name="alternatingRowColors" >
+                  <property name="alternatingRowColors">
                    <bool>true</bool>
                   </property>
-                  <property name="selectionMode" >
+                  <property name="selectionMode">
                    <enum>QAbstractItemView::NoSelection</enum>
                   </property>
-                  <property name="rootIsDecorated" >
+                  <property name="rootIsDecorated">
                    <bool>false</bool>
                   </property>
-                  <property name="uniformRowHeights" >
+                  <property name="uniformRowHeights">
                    <bool>false</bool>
                   </property>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>List(s)</string>
                    </property>
                   </column>
@@ -389,57 +390,57 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_8" >
-               <property name="geometry" >
+              <widget class="QWidget" name="page_8">
+               <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>851</width>
-                 <height>356</height>
+                 <width>868</width>
+                 <height>375</height>
                 </rect>
                </property>
-               <attribute name="label" >
-                <string>Bookmarks</string>
-               </attribute>
-               <attribute name="icon" >
-                <iconset resource="../mainwin.qrc" >
+               <attribute name="icon">
+                <iconset>
                  <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
                </attribute>
-               <layout class="QGridLayout" name="gridLayout_3" >
-                <item row="0" column="0" >
-                 <widget class="QPushButton" name="scanBook" >
-                  <property name="enabled" >
+               <attribute name="label">
+                <string>Bookmarks</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="scanBook">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Select</string>
                   </property>
-                  <property name="icon" >
-                   <iconset resource="../mainwin.qrc" >
+                  <property name="icon">
+                   <iconset>
                     <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="1" >
-                 <widget class="QPushButton" name="deleteBook" >
-                  <property name="enabled" >
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="deleteBook">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Delete</string>
                   </property>
-                  <property name="icon" >
-                   <iconset resource="../mainwin.qrc" >
+                  <property name="icon">
+                   <iconset>
                     <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="2" >
-                 <spacer name="horizontalSpacer_6" >
-                  <property name="orientation" >
+                <item row="0" column="2">
+                 <spacer name="horizontalSpacer_6">
+                  <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
-                  <property name="sizeHint" stdset="0" >
+                  <property name="sizeHint" stdset="0">
                    <size>
                     <width>40</width>
                     <height>20</height>
@@ -447,36 +448,36 @@ color: rgb(255, 255, 255);</string>
                   </property>
                  </spacer>
                 </item>
-                <item row="1" column="0" colspan="3" >
-                 <widget class="QTreeWidget" name="treeLogH" >
-                  <property name="minimumSize" >
+                <item row="1" column="0" colspan="3">
+                 <widget class="QTreeWidget" name="treeLogH">
+                  <property name="minimumSize">
                    <size>
                     <width>700</width>
                     <height>316</height>
                    </size>
                   </property>
-                  <property name="contextMenuPolicy" >
+                  <property name="contextMenuPolicy">
                    <enum>Qt::CustomContextMenu</enum>
                   </property>
-                  <property name="frameShape" >
+                  <property name="frameShape">
                    <enum>QFrame::Box</enum>
                   </property>
-                  <property name="frameShadow" >
+                  <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
                   </property>
-                  <property name="alternatingRowColors" >
+                  <property name="alternatingRowColors">
                    <bool>true</bool>
                   </property>
-                  <property name="rootIsDecorated" >
+                  <property name="rootIsDecorated">
                    <bool>false</bool>
                   </property>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>List(s)</string>
                    </property>
                   </column>
                   <column>
-                   <property name="text" >
+                   <property name="text">
                     <string>Date</string>
                    </property>
                   </column>
@@ -488,88 +489,88 @@ color: rgb(255, 255, 255);</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_4" >
-           <attribute name="title" >
-            <string>Scan Options</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tab_4">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_5" >
-            <item row="0" column="0" >
-             <widget class="QListWidget" name="optionsListScan" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
+           <attribute name="title">
+            <string>Scan Options</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QListWidget" name="optionsListScan">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="minimumSize" >
+              <property name="minimumSize">
                <size>
                 <width>131</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="maximumSize" >
+              <property name="maximumSize">
                <size>
                 <width>131</width>
                 <height>16777215</height>
                </size>
               </property>
-              <property name="autoScrollMargin" >
+              <property name="autoScrollMargin">
                <number>16</number>
               </property>
-              <property name="textElideMode" >
+              <property name="textElideMode">
                <enum>Qt::ElideMiddle</enum>
               </property>
-              <property name="movement" >
+              <property name="movement">
                <enum>QListView::Static</enum>
               </property>
-              <property name="resizeMode" >
+              <property name="resizeMode">
                <enum>QListView::Adjust</enum>
               </property>
-              <property name="spacing" >
+              <property name="spacing">
                <number>24</number>
               </property>
-              <property name="viewMode" >
+              <property name="viewMode">
                <enum>QListView::IconMode</enum>
               </property>
-              <property name="uniformItemSizes" >
+              <property name="uniformItemSizes">
                <bool>true</bool>
               </property>
              </widget>
             </item>
-            <item row="1" column="0" colspan="4" >
-             <widget class="Line" name="line" >
-              <property name="orientation" >
+            <item row="1" column="0" colspan="4">
+             <widget class="Line" name="line">
+              <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" >
-             <widget class="QStackedWidget" name="stackedOptions" >
-              <property name="autoFillBackground" >
+            <item row="0" column="1">
+             <widget class="QStackedWidget" name="stackedOptions">
+              <property name="autoFillBackground">
                <bool>false</bool>
               </property>
-              <property name="currentIndex" >
+              <property name="currentIndex">
                <number>0</number>
               </property>
-              <widget class="QWidget" name="ScanOptions" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="ScanOptions">
+               <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout" >
+               <layout class="QVBoxLayout" name="verticalLayout">
                 <item>
-                 <widget class="QGroupBox" name="groupBox" >
-                  <property name="autoFillBackground" >
+                 <widget class="QGroupBox" name="groupBox">
+                  <property name="autoFillBackground">
                    <bool>false</bool>
                   </property>
-                  <property name="title" >
+                  <property name="title">
                    <string/>
                   </property>
-                  <widget class="QCheckBox" name="rpcBox" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="rpcBox">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>30</y>
@@ -577,12 +578,12 @@ color: rgb(255, 255, 255);</string>
                      <height>21</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>RPC Scan</string>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_39" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_39">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>270</y>
@@ -590,15 +591,15 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Bounce Host</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="portEdit" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="portEdit">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>240</y>
@@ -607,8 +608,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QComboBox" name="comboScan" >
-                   <property name="geometry" >
+                  <widget class="QComboBox" name="comboScan">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>160</y>
@@ -616,35 +617,35 @@ color: rgb(255, 255, 255);</string>
                      <height>26</height>
                     </rect>
                    </property>
-                   <property name="mouseTracking" >
+                   <property name="mouseTracking">
                     <bool>true</bool>
                    </property>
-                   <property name="maxVisibleItems" >
+                   <property name="maxVisibleItems">
                     <number>20</number>
                    </property>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Connect Scan</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Ping Sweep</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Host List</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>FTP Bounce Attack</string>
                     </property>
                    </item>
                   </widget>
-                  <widget class="QLabel" name="label_38" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_38">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>240</y>
@@ -652,15 +653,15 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Ports</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="bounceEdit" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="bounceEdit">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>270</y>
@@ -669,8 +670,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="versionBox" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="versionBox">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>70</y>
@@ -678,12 +679,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Version Probe</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineOptions" >
-                   <property name="geometry" >
+                  <widget class="QLineEdit" name="lineOptions">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>200</y>
@@ -691,21 +692,21 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="focusPolicy" >
+                   <property name="focusPolicy">
                     <enum>Qt::NoFocus</enum>
                    </property>
-                   <property name="styleSheet" >
-                    <string notr="true" />
+                   <property name="styleSheet">
+                    <string notr="true"/>
                    </property>
-                   <property name="frame" >
+                   <property name="frame">
                     <bool>false</bool>
                    </property>
-                   <property name="readOnly" >
+                   <property name="readOnly">
                     <bool>true</bool>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="notpingBox" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="notpingBox">
+                   <property name="geometry">
                     <rect>
                      <x>210</x>
                      <y>30</y>
@@ -713,12 +714,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Don't Ping</string>
                    </property>
                   </widget>
-                  <widget class="QComboBox" name="portCombo" >
-                   <property name="geometry" >
+                  <widget class="QComboBox" name="portCombo">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>120</y>
@@ -727,28 +728,28 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Normal</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>All</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Most Important</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Range</string>
                     </property>
                    </item>
                   </widget>
-                  <widget class="QCheckBox" name="checkOS" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkOS">
+                   <property name="geometry">
                     <rect>
                      <x>210</x>
                      <y>70</y>
@@ -756,7 +757,7 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>OS Detection</string>
                    </property>
                   </widget>
@@ -764,18 +765,18 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_2" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="page_2">
+               <property name="autoFillBackground">
                 <bool>true</bool>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_5" >
+               <layout class="QVBoxLayout" name="verticalLayout_5">
                 <item>
-                 <widget class="QGroupBox" name="groupBox_4" >
-                  <property name="title" >
+                 <widget class="QGroupBox" name="groupBox_4">
+                  <property name="title">
                    <string/>
                   </property>
-                  <widget class="QCheckBox" name="checkIcmpEcho" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkIcmpEcho">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>280</y>
@@ -783,12 +784,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>ICMP Echo</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkIcmpTimestamp" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkIcmpTimestamp">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>220</y>
@@ -796,12 +797,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>ICMP TImestamp</string>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_5" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_5">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>50</y>
@@ -809,12 +810,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Port</string>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_7" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_7">
+                   <property name="geometry">
                     <rect>
                      <x>230</x>
                      <y>50</y>
@@ -822,15 +823,15 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Port</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineUdpPing" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineUdpPing">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>270</x>
                      <y>50</y>
@@ -839,8 +840,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_6" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_6">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>140</y>
@@ -848,12 +849,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Port</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkUdpPing" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkUdpPing">
+                   <property name="geometry">
                     <rect>
                      <x>300</x>
                      <y>20</y>
@@ -861,12 +862,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>UDP Ping</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkTcpSyn" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkTcpSyn">
+                   <property name="geometry">
                     <rect>
                      <x>70</x>
                      <y>110</y>
@@ -874,15 +875,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>TCP SYN Ping</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineSynPing" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineSynPing">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>60</x>
                      <y>140</y>
@@ -891,8 +892,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkTcpPing" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkTcpPing">
+                   <property name="geometry">
                     <rect>
                      <x>70</x>
                      <y>20</y>
@@ -900,15 +901,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>TCP ACK Ping</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineTcpPing" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineTcpPing">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>60</x>
                      <y>50</y>
@@ -917,8 +918,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkIcmpNetmask" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkIcmpNetmask">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>250</y>
@@ -926,7 +927,7 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>ICMP Netmask</string>
                    </property>
                   </widget>
@@ -934,21 +935,21 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_3" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="page_3">
+               <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_6" >
+               <layout class="QVBoxLayout" name="verticalLayout_6">
                 <item>
-                 <widget class="QGroupBox" name="groupBox_5" >
-                  <property name="title" >
+                 <widget class="QGroupBox" name="groupBox_5">
+                  <property name="title">
                    <string/>
                   </property>
-                  <widget class="QLineEdit" name="lineInputFile" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineInputFile">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>60</y>
@@ -957,8 +958,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkInputFile" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkInputFile">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>60</y>
@@ -966,15 +967,15 @@ color: rgb(255, 255, 255);</string>
                      <height>22</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Input File</string>
                    </property>
                   </widget>
-                  <widget class="QPushButton" name="buttonBrowser" >
-                   <property name="enabled" >
+                  <widget class="QPushButton" name="buttonBrowser">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>390</x>
                      <y>60</y>
@@ -982,16 +983,16 @@ color: rgb(255, 255, 255);</string>
                      <height>32</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Browser</string>
                    </property>
-                   <property name="icon" >
-                    <iconset resource="../mainwin.qrc" >
+                   <property name="icon">
+                    <iconset>
                      <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineProfile" >
-                   <property name="geometry" >
+                  <widget class="QLineEdit" name="lineProfile">
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>130</y>
@@ -999,12 +1000,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="readOnly" >
+                   <property name="readOnly">
                     <bool>true</bool>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_2" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_2">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>130</y>
@@ -1012,7 +1013,7 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Scan Profile</string>
                    </property>
                   </widget>
@@ -1020,21 +1021,21 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_5" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="page_5">
+               <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_7" >
+               <layout class="QVBoxLayout" name="verticalLayout_7">
                 <item>
-                 <widget class="QGroupBox" name="groupBox_6" >
-                  <property name="title" >
+                 <widget class="QGroupBox" name="groupBox_6">
+                  <property name="title">
                    <string/>
                   </property>
-                  <widget class="QSpinBox" name="spinBoxScanDelay" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxScanDelay">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>200</y>
@@ -1042,21 +1043,21 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>1</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>9999999</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>6000</number>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxMaxRtt" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxMaxRtt">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>320</x>
                      <y>80</y>
@@ -1064,18 +1065,18 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>6</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>9999999</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>6000</number>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckMaxRtt" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckMaxRtt">
+                   <property name="geometry">
                     <rect>
                      <x>220</x>
                      <y>80</y>
@@ -1083,15 +1084,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Max. RTT</string>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxMinRtt" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxMinRtt">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>320</x>
                      <y>50</y>
@@ -1099,18 +1100,18 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>1</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>9999999</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>6000</number>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckMaxPar" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckMaxPar">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>80</y>
@@ -1118,15 +1119,15 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Max. Parallel</string>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxIpv4ttl" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxIpv4ttl">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>130</x>
                      <y>20</y>
@@ -1134,15 +1135,15 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>255</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>127</number>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckMinRtt" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckMinRtt">
+                   <property name="geometry">
                     <rect>
                      <x>220</x>
                      <y>50</y>
@@ -1150,12 +1151,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Min, RTT</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckMinPar" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckMinPar">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>50</y>
@@ -1163,12 +1164,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Min. Parallel</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckScanDelay" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckScanDelay">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>200</y>
@@ -1176,15 +1177,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Scan Delay</string>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxMaxPar" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxMaxPar">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>130</x>
                      <y>80</y>
@@ -1192,15 +1193,15 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>1</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>150</number>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckInitRtt" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckInitRtt">
+                   <property name="geometry">
                     <rect>
                      <x>220</x>
                      <y>20</y>
@@ -1208,12 +1209,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Initial RTT</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckHostTime" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckHostTime">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>150</y>
@@ -1221,15 +1222,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Host Timeout</string>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxInitRtt" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxInitRtt">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>320</x>
                      <y>20</y>
@@ -1237,15 +1238,15 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>9999999</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>6000</number>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="TcheckIpv4ttl" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="TcheckIpv4ttl">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>20</y>
@@ -1253,12 +1254,12 @@ color: rgb(255, 255, 255);</string>
                      <height>31</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Ipv4 TTL</string>
                    </property>
                   </widget>
-                  <widget class="QComboBox" name="comboTiming" >
-                   <property name="geometry" >
+                  <widget class="QComboBox" name="comboTiming">
+                   <property name="geometry">
                     <rect>
                      <x>20</x>
                      <y>260</y>
@@ -1267,41 +1268,41 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Normal Throttling</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Paranoid Throttling</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Sneaky Throttling</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Polite Throttling</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Aggressive Throttling</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Insane Throttling</string>
                     </property>
                    </item>
                   </widget>
-                  <widget class="QSpinBox" name="spinBoxHostTime" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="spinBoxHostTime">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>180</x>
                      <y>150</y>
@@ -1309,21 +1310,21 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>201</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>9999999</number>
                    </property>
-                   <property name="value" >
+                   <property name="value">
                     <number>6000</number>
                    </property>
                   </widget>
-                  <widget class="QSpinBox" name="TspinBoxMinP" >
-                   <property name="enabled" >
+                  <widget class="QSpinBox" name="TspinBoxMinP">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>130</x>
                      <y>50</y>
@@ -1331,10 +1332,10 @@ color: rgb(255, 255, 255);</string>
                      <height>27</height>
                     </rect>
                    </property>
-                   <property name="minimum" >
+                   <property name="minimum">
                     <number>1</number>
                    </property>
-                   <property name="maximum" >
+                   <property name="maximum">
                     <number>150</number>
                    </property>
                   </widget>
@@ -1342,26 +1343,26 @@ color: rgb(255, 255, 255);</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_4" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="page_4">
+               <property name="autoFillBackground">
                 <bool>true</bool>
                </property>
               </widget>
-              <widget class="QWidget" name="Options" >
-               <property name="autoFillBackground" >
+              <widget class="QWidget" name="Options">
+               <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_8" >
+               <layout class="QVBoxLayout" name="verticalLayout_8">
                 <item>
-                 <widget class="QGroupBox" name="groupBox_2" >
-                  <property name="autoFillBackground" >
+                 <widget class="QGroupBox" name="groupBox_2">
+                  <property name="autoFillBackground">
                    <bool>false</bool>
                   </property>
-                  <property name="title" >
+                  <property name="title">
                    <string/>
                   </property>
-                  <widget class="QComboBox" name="comboVerbosity" >
-                   <property name="geometry" >
+                  <widget class="QComboBox" name="comboVerbosity">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>90</y>
@@ -1370,33 +1371,33 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Quiet</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Verbose</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Very Verbose</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Debug</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Verbose Debug</string>
                     </property>
                    </item>
                   </widget>
-                  <widget class="QComboBox" name="comboDNSResolv" >
-                   <property name="geometry" >
+                  <widget class="QComboBox" name="comboDNSResolv">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>30</y>
@@ -1405,23 +1406,23 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>When Required</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Always</string>
                     </property>
                    </item>
                    <item>
-                    <property name="text" >
+                    <property name="text">
                      <string>Never</string>
                     </property>
                    </item>
                   </widget>
-                  <widget class="QLabel" name="label_40" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_40">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>10</y>
@@ -1429,12 +1430,12 @@ color: rgb(255, 255, 255);</string>
                      <height>18</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>DNS Resolution</string>
                    </property>
                   </widget>
-                  <widget class="QLabel" name="label_41" >
-                   <property name="geometry" >
+                  <widget class="QLabel" name="label_41">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>70</y>
@@ -1442,15 +1443,15 @@ color: rgb(255, 255, 255);</string>
                      <height>18</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Verbosity</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineEditSpoof" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineEditSpoof">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>170</x>
                      <y>200</y>
@@ -1459,8 +1460,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkSpoof" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkSpoof">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>200</y>
@@ -1468,12 +1469,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Spoof Address</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkBoxDevice" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkBoxDevice">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>140</y>
@@ -1481,15 +1482,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Specific Device</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="OlineDevice" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="OlineDevice">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>170</x>
                      <y>140</y>
@@ -1498,8 +1499,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkDecoy" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkDecoy">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>260</y>
@@ -1507,12 +1508,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Decoy</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkSourcePort" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkSourcePort">
+                   <property name="geometry">
                     <rect>
                      <x>30</x>
                      <y>320</y>
@@ -1520,15 +1521,15 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Source Port</string>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineDecoy" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineDecoy">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>170</x>
                      <y>260</y>
@@ -1537,11 +1538,11 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QLineEdit" name="lineSourcePort" >
-                   <property name="enabled" >
+                  <widget class="QLineEdit" name="lineSourcePort">
+                   <property name="enabled">
                     <bool>false</bool>
                    </property>
-                   <property name="geometry" >
+                   <property name="geometry">
                     <rect>
                      <x>170</x>
                      <y>310</y>
@@ -1550,8 +1551,8 @@ color: rgb(255, 255, 255);</string>
                     </rect>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkIpv6" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkIpv6">
+                   <property name="geometry">
                     <rect>
                      <x>480</x>
                      <y>60</y>
@@ -1559,12 +1560,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Ipv6</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkOrdered" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkOrdered">
+                   <property name="geometry">
                     <rect>
                      <x>480</x>
                      <y>30</y>
@@ -1572,12 +1573,12 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Ordered Port</string>
                    </property>
                   </widget>
-                  <widget class="QCheckBox" name="checkFrag" >
-                   <property name="geometry" >
+                  <widget class="QCheckBox" name="checkFrag">
+                   <property name="geometry">
                     <rect>
                      <x>480</x>
                      <y>90</y>
@@ -1585,7 +1586,7 @@ color: rgb(255, 255, 255);</string>
                      <height>23</height>
                     </rect>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Fragmentation</string>
                    </property>
                   </widget>
@@ -1597,70 +1598,70 @@ color: rgb(255, 255, 255);</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tabMonitor" >
-           <attribute name="title" >
-            <string>Scan Monitor</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tabMonitor">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_4" >
+           <attribute name="title">
+            <string>Scan Monitor</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QProgressBar" name="progressScan" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+             <widget class="QProgressBar" name="progressScan">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>18</verstretch>
                </sizepolicy>
               </property>
-              <property name="minimumSize" >
+              <property name="minimumSize">
                <size>
                 <width>0</width>
                 <height>18</height>
                </size>
               </property>
-              <property name="maximumSize" >
+              <property name="maximumSize">
                <size>
                 <width>16777215</width>
                 <height>18</height>
                </size>
               </property>
-              <property name="value" >
+              <property name="value">
                <number>0</number>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QTreeWidget" name="scanMonitor" >
-              <property name="minimumSize" >
+             <widget class="QTreeWidget" name="scanMonitor">
+              <property name="minimumSize">
                <size>
                 <width>878</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="focusPolicy" >
+              <property name="focusPolicy">
                <enum>Qt::NoFocus</enum>
               </property>
-              <property name="alternatingRowColors" >
+              <property name="alternatingRowColors">
                <bool>true</bool>
               </property>
-              <property name="selectionMode" >
+              <property name="selectionMode">
                <enum>QAbstractItemView::NoSelection</enum>
               </property>
-              <property name="rootIsDecorated" >
+              <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
-              <property name="uniformRowHeights" >
+              <property name="uniformRowHeights">
                <bool>true</bool>
               </property>
               <column>
-               <property name="text" >
+               <property name="text">
                 <string>Host Thread</string>
                </property>
               </column>
               <column>
-               <property name="text" >
+               <property name="text">
                 <string>State</string>
                </property>
               </column>
@@ -1672,62 +1673,62 @@ color: rgb(255, 255, 255);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_9" >
-       <layout class="QHBoxLayout" name="horizontalLayout_3" >
+      <widget class="QWidget" name="page_9">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QTabWidget" name="tabWidget_2" >
-          <property name="currentIndex" >
+         <widget class="QTabWidget" name="tabWidget_2">
+          <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab_5" >
-           <attribute name="title" >
-            <string>Log(s)</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tab_5">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_7" >
-            <item row="0" column="0" >
-             <widget class="QTreeWidget" name="listScan" >
-              <property name="frameShape" >
-               <enum>QFrame::StyledPanel</enum>
+           <attribute name="title">
+            <string>Log(s)</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <widget class="QTreeWidget" name="listScan">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
               </property>
-              <property name="frameShadow" >
+              <property name="frameShadow">
                <enum>QFrame::Sunken</enum>
               </property>
-              <property name="lineWidth" >
+              <property name="lineWidth">
                <number>1</number>
               </property>
-              <property name="autoScroll" >
+              <property name="autoScroll">
                <bool>false</bool>
               </property>
-              <property name="showDropIndicator" stdset="0" >
+              <property name="showDropIndicator" stdset="0">
                <bool>false</bool>
               </property>
-              <property name="alternatingRowColors" >
+              <property name="alternatingRowColors">
                <bool>true</bool>
               </property>
-              <property name="selectionMode" >
+              <property name="selectionMode">
                <enum>QAbstractItemView::NoSelection</enum>
               </property>
-              <property name="indentation" >
+              <property name="indentation">
                <number>20</number>
               </property>
-              <property name="rootIsDecorated" >
+              <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
-              <property name="itemsExpandable" >
+              <property name="itemsExpandable">
                <bool>true</bool>
               </property>
-              <property name="animated" >
+              <property name="animated">
                <bool>true</bool>
               </property>
-              <property name="columnCount" >
+              <property name="columnCount">
                <number>1</number>
               </property>
               <column>
-               <property name="text" >
+               <property name="text">
                 <string>Log(s)</string>
                </property>
               </column>
@@ -1735,49 +1736,49 @@ color: rgb(255, 255, 255);</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_6" >
-           <attribute name="title" >
-            <string>Warning(s)</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tab_6">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_8" >
-            <item row="0" column="0" >
-             <widget class="QTreeWidget" name="listScanError" >
-              <property name="frameShape" >
+           <attribute name="title">
+            <string>Warning(s)</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QTreeWidget" name="listScanError">
+              <property name="frameShape">
                <enum>QFrame::Box</enum>
               </property>
-              <property name="frameShadow" >
+              <property name="frameShadow">
                <enum>QFrame::Sunken</enum>
               </property>
-              <property name="lineWidth" >
+              <property name="lineWidth">
                <number>1</number>
               </property>
-              <property name="autoScroll" >
+              <property name="autoScroll">
                <bool>false</bool>
               </property>
-              <property name="showDropIndicator" stdset="0" >
+              <property name="showDropIndicator" stdset="0">
                <bool>false</bool>
               </property>
-              <property name="alternatingRowColors" >
+              <property name="alternatingRowColors">
                <bool>true</bool>
               </property>
-              <property name="selectionMode" >
+              <property name="selectionMode">
                <enum>QAbstractItemView::NoSelection</enum>
               </property>
-              <property name="rootIsDecorated" >
+              <property name="rootIsDecorated">
                <bool>false</bool>
               </property>
-              <property name="uniformRowHeights" >
+              <property name="uniformRowHeights">
                <bool>false</bool>
               </property>
-              <property name="animated" >
+              <property name="animated">
                <bool>true</bool>
               </property>
               <column>
-               <property name="text" >
+               <property name="text">
                 <string>Error(s)</string>
                </property>
               </column>
@@ -1789,131 +1790,131 @@ color: rgb(255, 255, 255);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_10" >
-       <layout class="QGridLayout" name="gridLayout_9" >
-        <item row="0" column="0" >
-         <widget class="QTabWidget" name="tabWidget_3" >
-          <property name="currentIndex" >
+      <widget class="QWidget" name="page_10">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget_3">
+          <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab" >
-           <attribute name="title" >
-            <string>Vulnerabilities</string>
-           </attribute>
-           <attribute name="icon" >
-            <iconset resource="../mainwin.qrc" >
+          <widget class="QWidget" name="tab">
+           <attribute name="icon">
+            <iconset>
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_2" >
-            <item row="0" column="0" >
-             <widget class="QComboBox" name="comboVuln" >
-              <property name="minimumSize" >
+           <attribute name="title">
+            <string>Vulnerabilities</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QComboBox" name="comboVuln">
+              <property name="minimumSize">
                <size>
                 <width>281</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="duplicatesEnabled" >
+              <property name="duplicatesEnabled">
                <bool>false</bool>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" >
-             <widget class="QComboBox" name="comboWebV" >
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboWebV">
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>securityfocus.com</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>cve.miltre.org</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>secunia.com</string>
                </property>
               </item>
              </widget>
             </item>
-            <item row="0" column="2" >
-             <widget class="QPushButton" name="buttonVuln" >
-              <property name="minimumSize" >
+            <item row="0" column="2">
+             <widget class="QPushButton" name="buttonVuln">
+              <property name="minimumSize">
                <size>
                 <width>151</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="text" >
+              <property name="text">
                <string>Search</string>
               </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
+              <property name="icon">
+               <iconset>
                 <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
               </property>
              </widget>
             </item>
-            <item row="0" column="3" >
-             <widget class="QPushButton" name="Bleft" >
-              <property name="toolTip" >
+            <item row="0" column="3">
+             <widget class="QPushButton" name="Bleft">
+              <property name="toolTip">
                <string>Back</string>
               </property>
-              <property name="statusTip" >
+              <property name="statusTip">
                <string/>
               </property>
-              <property name="text" >
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
+              <property name="icon">
+               <iconset>
                 <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
               </property>
-              <property name="flat" >
+              <property name="flat">
                <bool>false</bool>
               </property>
              </widget>
             </item>
-            <item row="0" column="4" >
-             <widget class="QPushButton" name="Bright" >
-              <property name="toolTip" >
+            <item row="0" column="4">
+             <widget class="QPushButton" name="Bright">
+              <property name="toolTip">
                <string>Forward</string>
               </property>
-              <property name="statusTip" >
+              <property name="statusTip">
                <string/>
               </property>
-              <property name="text" >
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
+              <property name="icon">
+               <iconset>
                 <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
               </property>
              </widget>
             </item>
-            <item row="0" column="5" >
-             <widget class="QPushButton" name="Bstop" >
-              <property name="toolTip" >
+            <item row="0" column="5">
+             <widget class="QPushButton" name="Bstop">
+              <property name="toolTip">
                <string>Stop</string>
               </property>
-              <property name="statusTip" >
+              <property name="statusTip">
                <string/>
               </property>
-              <property name="text" >
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../mainwin.qrc" >
+              <property name="icon">
+               <iconset>
                 <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
               </property>
              </widget>
             </item>
-            <item row="0" column="6" >
-             <spacer name="horizontalSpacer_4" >
-              <property name="orientation" >
+            <item row="0" column="6">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
-              <property name="sizeHint" stdset="0" >
+              <property name="sizeHint" stdset="0">
                <size>
                 <width>128</width>
                 <height>20</height>
@@ -1921,37 +1922,105 @@ color: rgb(255, 255, 255);</string>
               </property>
              </spacer>
             </item>
-            <item row="1" column="0" >
-             <widget class="QProgressBar" name="progressWeb" >
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+            <item row="1" column="0">
+             <widget class="QProgressBar" name="progressWeb">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>18</verstretch>
                </sizepolicy>
               </property>
-              <property name="minimumSize" >
+              <property name="minimumSize">
                <size>
                 <width>0</width>
                 <height>18</height>
                </size>
               </property>
-              <property name="maximumSize" >
+              <property name="maximumSize">
                <size>
                 <width>16777215</width>
                 <height>18</height>
                </size>
               </property>
-              <property name="value" >
+              <property name="value">
                <number>0</number>
               </property>
              </widget>
             </item>
-            <item row="2" column="0" colspan="7" >
-             <widget class="QWebView" name="viewVuln" >
-              <property name="url" >
+            <item row="2" column="0" colspan="7">
+             <widget class="QWebView" name="viewVuln">
+              <property name="url">
                <url>
                 <string>about:blank</string>
                </url>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" colspan="5">
+             <widget class="QComboBox" name="comboVulnRis">
+              <property name="editable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="icon">
+            <iconset>
+             <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>Bookmarks</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0" colspan="2">
+             <widget class="QTreeWidget" name="treeBookVuln">
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
+              <property name="uniformRowHeights">
+               <bool>true</bool>
+              </property>
+              <column>
+               <property name="text">
+                <string>Service</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Data</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="deleteBookVuln">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Delete</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
               </property>
              </widget>
             </item>
@@ -1965,403 +2034,417 @@ color: rgb(255, 255, 255);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>910</width>
-     <height>27</height>
+     <height>24</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_Scan_2" />
-    <addaction name="separator" />
-    <addaction name="actionSave_Menu" />
-    <addaction name="actionSave_As_Menu" />
-    <addaction name="separator" />
-    <addaction name="action_Quit_2" />
+    <addaction name="action_Scan_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Menu"/>
+    <addaction name="actionSave_As_Menu"/>
+    <addaction name="separator"/>
+    <addaction name="action_Quit_2"/>
    </widget>
-   <widget class="QMenu" name="menu_Help" >
-    <property name="title" >
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="action_About" />
-    <addaction name="actionAbout_Qt" />
+    <addaction name="action_About"/>
+    <addaction name="actionAbout_Qt"/>
    </widget>
-   <widget class="QMenu" name="menu_Settings" >
-    <property name="title" >
+   <widget class="QMenu" name="menu_Settings">
+    <property name="title">
      <string>S&amp;ettings</string>
     </property>
-    <addaction name="actionProfile" />
+    <addaction name="actionProfile"/>
    </widget>
-   <widget class="QMenu" name="menu_View" >
-    <property name="title" >
+   <widget class="QMenu" name="menu_View">
+    <property name="title">
      <string>&amp;View</string>
     </property>
-    <widget class="QMenu" name="menuToolbars" >
-     <property name="title" >
+    <widget class="QMenu" name="menuToolbars">
+     <property name="title">
       <string>Toolbars</string>
      </property>
-     <addaction name="actionMain_Toolbars" />
-     <addaction name="actionActions_Toolbar" />
+     <addaction name="actionMain_Toolbars"/>
+     <addaction name="actionActions_Toolbar"/>
     </widget>
-    <addaction name="menuToolbars" />
-    <addaction name="separator" />
-    <addaction name="actionFullS" />
-    <addaction name="actionMenuBar" />
-    <addaction name="actionShow_Status_Bar" />
+    <addaction name="menuToolbars"/>
+    <addaction name="separator"/>
+    <addaction name="actionFullS"/>
+    <addaction name="actionMenuBar"/>
+    <addaction name="actionShow_Status_Bar"/>
    </widget>
-   <widget class="QMenu" name="menu_Bookmaks" >
-    <property name="title" >
+   <widget class="QMenu" name="menu_Bookmaks">
+    <property name="title">
      <string>&amp;Bookmarks</string>
     </property>
-    <addaction name="actionAdd_Bookmark" />
+    <addaction name="actionAdd_Bookmark"/>
    </widget>
-   <addaction name="menu_File" />
-   <addaction name="menu_View" />
-   <addaction name="menu_Bookmaks" />
-   <addaction name="menu_Settings" />
-   <addaction name="menu_Help" />
+   <addaction name="menu_File"/>
+   <addaction name="menu_View"/>
+   <addaction name="menu_Bookmaks"/>
+   <addaction name="menu_Settings"/>
+   <addaction name="menu_Help"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar" >
-   <property name="layoutDirection" >
+  <widget class="QStatusBar" name="statusbar">
+   <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
    </property>
   </widget>
-  <widget class="QToolBar" name="toolBar" >
-   <property name="enabled" >
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
     <bool>true</bool>
    </property>
-   <property name="windowTitle" >
+   <property name="windowTitle">
     <string>toolBar</string>
    </property>
-   <property name="iconSize" >
+   <property name="iconSize">
     <size>
      <width>22</width>
      <height>22</height>
     </size>
    </property>
-   <property name="toolButtonStyle" >
+   <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
-   <attribute name="toolBarArea" >
-    <enum>TopToolBarArea</enum>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_Scan_menu" />
-   <addaction name="actionStop_Scan" />
-   <addaction name="actionSave" />
-   <addaction name="action_Save_As" />
+   <addaction name="action_Scan_menu"/>
+   <addaction name="actionStop_Scan"/>
+   <addaction name="actionSave"/>
+   <addaction name="action_Save_As"/>
   </widget>
-  <widget class="QToolBar" name="toolBar_2" >
-   <property name="windowTitle" >
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
     <string>toolBar_2</string>
    </property>
-   <property name="iconSize" >
+   <property name="iconSize">
     <size>
      <width>22</width>
      <height>22</height>
     </size>
    </property>
-   <property name="toolButtonStyle" >
+   <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
-   <attribute name="toolBarArea" >
-    <enum>TopToolBarArea</enum>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionClear_History" />
-   <addaction name="actionClose_Tree" />
-   <addaction name="separator" />
-   <addaction name="action_Quit" />
+   <addaction name="actionClear_History"/>
+   <addaction name="actionClose_Tree"/>
+   <addaction name="separator"/>
   </widget>
-  <action name="action_Quit" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <widget class="QToolBar" name="toolBarTools">
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Quit"/>
+  </widget>
+  <action name="action_Quit">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Quit</string>
    </property>
-   <property name="iconText" >
+   <property name="iconText">
     <string>Quit</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Quit</string>
    </property>
-   <property name="shortcut" >
+   <property name="shortcut">
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="action_About" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="action_About">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;About</string>
    </property>
   </action>
-  <action name="action_Scan" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="action_Scan">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Scan</string>
    </property>
   </action>
-  <action name="action_Quit_bar" >
-   <property name="icon" >
+  <action name="action_Quit_bar">
+   <property name="icon">
     <iconset>
      <normaloff>../../../../../.designer/backup</normaloff>../../../../../.designer/backup</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Quit</string>
    </property>
   </action>
-  <action name="action_Scan_menu" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="action_Scan_menu">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Scan</string>
    </property>
-   <property name="iconText" >
+   <property name="iconText">
     <string>Scan</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Scan</string>
    </property>
-   <property name="shortcut" >
+   <property name="shortcut">
     <string>Ctrl+S</string>
    </property>
   </action>
-  <action name="actionAbout_Qt" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>About &amp;Qt</string>
    </property>
   </action>
-  <action name="actionProfile" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="actionProfile">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Preferences</string>
    </property>
   </action>
-  <action name="action_Scan_2" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="action_Scan_2">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Scan</string>
    </property>
   </action>
-  <action name="action_Quit_2" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="action_Quit_2">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Quit</string>
    </property>
   </action>
-  <action name="actionStop_Scan" >
-   <property name="enabled" >
+  <action name="actionStop_Scan">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Stop Scan</string>
    </property>
   </action>
-  <action name="actionClear_History" >
-   <property name="enabled" >
+  <action name="actionClear_History">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/window_new.png</normaloff>:/images/images/window_new.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Clear History</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string/>
    </property>
   </action>
-  <action name="actionClose_Tree" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="actionClose_Tree">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/view-tree.png</normaloff>:/images/images/view-tree.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Close Tree</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Close Scan Tree</string>
    </property>
   </action>
-  <action name="actionClear_Hostname" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="actionClear_Hostname">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Clear HostName</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Clear Hostname IP</string>
    </property>
   </action>
-  <action name="action_Save_As" >
-   <property name="enabled" >
+  <action name="action_Save_As">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Save As</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Save As</string>
    </property>
   </action>
-  <action name="actionSave" >
-   <property name="enabled" >
+  <action name="actionSave">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Save</string>
    </property>
-   <property name="whatsThis" >
+   <property name="whatsThis">
     <string>Save</string>
    </property>
   </action>
-  <action name="actionSave_Menu" >
-   <property name="enabled" >
+  <action name="actionSave_Menu">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>S&amp;ave</string>
    </property>
   </action>
-  <action name="actionSave_As_Menu" >
-   <property name="enabled" >
+  <action name="actionSave_As_Menu">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Save &amp;As</string>
    </property>
   </action>
-  <action name="actionFullS" >
-   <property name="checkable" >
+  <action name="actionFullS">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/view-fullscreen.png</normaloff>:/images/images/view-fullscreen.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>F&amp;ull Screen Mode</string>
    </property>
-   <property name="shortcut" >
+   <property name="shortcut">
     <string>Ctrl+Shift+F11</string>
    </property>
   </action>
-  <action name="actionMenuBar" >
-   <property name="checkable" >
+  <action name="actionMenuBar">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/show-menu.png</normaloff>:/images/images/show-menu.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Show &amp;Menu Bar</string>
    </property>
-   <property name="shortcut" >
+   <property name="shortcut">
     <string>Ctrl+M</string>
    </property>
   </action>
-  <action name="actionMain_Toolbars" >
-   <property name="checkable" >
+  <action name="actionMain_Toolbars">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Main Toolbar</string>
    </property>
   </action>
-  <action name="actionActions_Toolbar" >
-   <property name="checkable" >
+  <action name="actionActions_Toolbar">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Actions Toolbar</string>
    </property>
   </action>
-  <action name="actionShow_Status_Bar" >
-   <property name="checkable" >
+  <action name="actionShow_Status_Bar">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Show Status Bar</string>
    </property>
   </action>
-  <action name="actionAdd_Bookmark" >
-   <property name="icon" >
-    <iconset resource="../mainwin.qrc" >
+  <action name="actionAdd_Bookmark">
+   <property name="icon">
+    <iconset>
      <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Add Bookmark</string>
    </property>
   </action>
@@ -2373,9 +2456,7 @@ color: rgb(255, 255, 255);</string>
    <header>QtWebKit/QWebView</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../mainwin.qrc" />
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>action_Quit_bar</sender>
@@ -2383,11 +2464,11 @@ color: rgb(255, 255, 255);</string>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>424</x>
      <y>314</y>
     </hint>

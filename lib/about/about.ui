@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>AboutWin</class>
- <widget class="QDialog" name="AboutWin" >
-  <property name="geometry" >
+ <widget class="QDialog" name="AboutWin">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,76 +10,48 @@
     <height>395</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>457</width>
     <height>395</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>About Nmapsi4</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../../mainwin.qrc" >
+  <property name="windowIcon">
+   <iconset resource="../../mainwin.qrc">
     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item rowspan="2" row="0" column="0" >
-    <widget class="QGraphicsView" name="graphicsView" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
-       <horstretch>71</horstretch>
-       <verstretch>71</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize" >
-      <size>
-       <width>71</width>
-       <height>71</height>
-      </size>
-     </property>
-     <property name="maximumSize" >
-      <size>
-       <width>71</width>
-       <height>71</height>
-      </size>
-     </property>
-     <property name="styleSheet" >
-      <string notr="true" >background-image: url(:/images/icons/nmapsi4_mw.svg);</string>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::NoFrame</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" >
-    <widget class="QLabel" name="label" >
-     <property name="minimumSize" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>31</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>16777215</width>
        <height>31</height>
       </size>
      </property>
-     <property name="styleSheet" >
-      <string notr="true" >font: 75 14pt "Sans Serif";</string>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;Sans Serif&quot;;</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Nmapsi4</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="2" >
-    <spacer name="horizontalSpacer" >
-     <property name="orientation" >
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
        <height>20</height>
@@ -86,51 +59,51 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1" >
-    <widget class="QLabel" name="labelVersion" >
-     <property name="minimumSize" >
+   <item row="1" column="1">
+    <widget class="QLabel" name="labelVersion">
+     <property name="minimumSize">
       <size>
        <width>151</width>
        <height>31</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>16777215</width>
        <height>31</height>
       </size>
      </property>
-     <property name="sizeIncrement" >
+     <property name="sizeIncrement">
       <size>
        <width>0</width>
        <height>31</height>
       </size>
      </property>
-     <property name="styleSheet" >
-      <string notr="true" >font: 75 11pt "Sans Serif";</string>
+     <property name="styleSheet">
+      <string notr="true">font: 75 11pt &quot;Sans Serif&quot;;</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Version </string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3" >
-    <widget class="QTabWidget" name="tabInfo" >
-     <property name="minimumSize" >
+   <item row="2" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabInfo">
+     <property name="minimumSize">
       <size>
        <width>441</width>
        <height>254</height>
       </size>
      </property>
-     <property name="currentIndex" >
+     <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
        <string>&amp;About</string>
       </attribute>
-      <widget class="QLabel" name="label_3" >
-       <property name="geometry" >
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
         <rect>
          <x>10</x>
          <y>60</y>
@@ -138,12 +111,12 @@
          <height>31</height>
         </rect>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>Qt4 Graphical interface to nmap</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4" >
-       <property name="geometry" >
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
         <rect>
          <x>10</x>
          <y>90</y>
@@ -151,71 +124,71 @@
          <height>31</height>
         </rect>
        </property>
-       <property name="styleSheet" >
-        <string notr="true" >font: 75 "Sans Serif";</string>
+       <property name="styleSheet">
+        <string notr="true">font: 75 &quot;Sans Serif&quot;;</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>License: GNU General Public License Version 2</string>
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_2" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
        <string>A&amp;uthors</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2" >
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_5" >
-         <property name="text" >
-          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Francesco Cecconi&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     Core Developer&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     &lt;a href="mailto:francesco.cecconi@kdemail.net">&lt;span style=" text-decoration: underline; color:#0057ae;">francesco.cecconi@kdemail.net&lt;/span>&lt;/a>&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Francesco Cecconi&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     Core Developer&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     &lt;a href=&quot;mailto:francesco.cecconi@kdemail.net&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;francesco.cecconi@kdemail.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_6" >
-         <property name="text" >
-          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Innocenzo Ventre&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     MS Windows Packages&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">     &lt;a href="mailto:el.diabl09@gmail.com">&lt;span style=" text-decoration: underline; color:#0057ae;">el.diabl09@gmail.com&lt;/span>&lt;/a>&lt;/p>
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Innocenzo Ventre&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     MS Windows Packages&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;     &lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_3" >
-      <attribute name="title" >
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
        <string>&amp;Support</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout" >
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label_7" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+        <widget class="QLabel" name="label_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="text" >
-          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Website: 	&lt;a href="http://nmapsi4.netsons.org">&lt;span style=" text-decoration: underline; color:#0057ae;">http://nmapsi4.netsons.org&lt;/span>&lt;/a>&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="http://nmapsi4.netsons.org">&lt;span style=" text-decoration:none; color:#000000;">Issue:     	&lt;/span>&lt;/a>&lt;a href="http://code.google.com/p/nmapsi4/issues/list">http://code.google.com/p/nmapsi4/issues/list&lt;/a>&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="http://code.google.com/p/nmapsi4/issues/list">&lt;span style=" text-decoration:none; color:#000000;">Mailing-list:	&lt;/span>&lt;/a>&lt;a href="https://lists.sourceforge.net/lists/listinfo/nmapsi-release">https://lists.sourceforge.net/lists/listinfo/nmapsi-release&lt;/a>&lt;/p>
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;">&lt;a href="https://lists.sourceforge.net/lists/listinfo/nmapsi-release">&lt;span style=" text-decoration:none; color:#000000;">Source:	&lt;/span>&lt;/a>&lt;a href="http://code.google.com/p/nmapsi4/source/checkout">http://code.google.com/p/nmapsi4/source/checkout&lt;/a>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Website: 	&lt;a href=&quot;http://nmapsi4.netsons.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;http://nmapsi4.netsons.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;a href=&quot;http://nmapsi4.netsons.org&quot;&gt;&lt;span style=&quot; text-decoration:none; color:#000000;&quot;&gt;Issue:     	&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;http://code.google.com/p/nmapsi4/issues/list&quot;&gt;http://code.google.com/p/nmapsi4/issues/list&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;a href=&quot;http://code.google.com/p/nmapsi4/issues/list&quot;&gt;&lt;span style=&quot; text-decoration:none; color:#000000;&quot;&gt;Mailing-list:	&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;https://lists.sourceforge.net/lists/listinfo/nmapsi-release&quot;&gt;https://lists.sourceforge.net/lists/listinfo/nmapsi-release&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;a href=&quot;https://lists.sourceforge.net/lists/listinfo/nmapsi-release&quot;&gt;&lt;span style=&quot; text-decoration:none; color:#000000;&quot;&gt;Source:	&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;http://code.google.com/p/nmapsi4/source/checkout&quot;&gt;http://code.google.com/p/nmapsi4/source/checkout&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -223,12 +196,12 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
    </item>
-   <item row="3" column="1" >
-    <spacer name="horizontalSpacer_2" >
-     <property name="orientation" >
+   <item row="3" column="0" colspan="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
        <height>20</height>
@@ -236,21 +209,49 @@ p, li { white-space: pre-wrap; }
      </property>
     </spacer>
    </item>
-   <item row="3" column="2" >
-    <widget class="QPushButton" name="buttonExit" >
-     <property name="text" >
+   <item row="3" column="2">
+    <widget class="QPushButton" name="buttonExit">
+     <property name="text">
       <string>&amp;Close</string>
      </property>
-     <property name="icon" >
-      <iconset resource="../../mainwin.qrc" >
+     <property name="icon">
+      <iconset resource="../../mainwin.qrc">
        <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QGraphicsView" name="graphicsView">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>71</horstretch>
+       <verstretch>71</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>71</width>
+       <height>71</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>71</width>
+       <height>71</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/images/icons/nmapsi4_mw.svg);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
  <resources>
-  <include location="../../mainwin.qrc" />
+  <include location="../../mainwin.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -259,11 +260,11 @@ p, li { white-space: pre-wrap; }
    <receiver>AboutWin</receiver>
    <slot>close()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>399</x>
      <y>373</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>228</x>
      <y>196</y>
     </hint>

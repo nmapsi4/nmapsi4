@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                               *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -32,6 +32,8 @@
 #include <QComboBox>
 #include <QString>
 
+//#define HISTORY_NO_DEBUG
+
 class logHistory
 {
 
@@ -50,7 +52,7 @@ public:
                QString ConfigTagTime,
                int cacheSize);
     logHistory(QString ConfigTag, int cacheSize);
-    ~logHistory() { };
+    ~logHistory() {};
     void updateLogHistory();
     void updateBookMarks();
     virtual void addItemHistory(QString url);

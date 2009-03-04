@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                               *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -63,7 +63,9 @@ void logHistory::coreItemHistory(QString url, QString scanTime)
                 }
             } else {
                 if (!scanTime.isNull()) {
+#ifndef HISTORY_NO_DEBUG
                     qDebug() << "Update date row..";
+#endif
                     int index = urlList.indexOf(url);
                     urlListTime[index].clear();
                     urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
