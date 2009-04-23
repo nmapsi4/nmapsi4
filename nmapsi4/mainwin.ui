@@ -59,77 +59,14 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QFrame" name="frame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>20</verstretch>
-       </sizepolicy>
+    <item row="0" column="0">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>35</height>
-       </size>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(75, 75, 75);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>637</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QComboBox" name="comboMain">
-         <property name="minimumSize">
-          <size>
-           <width>250</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <item>
-          <property name="text">
-           <string>Scan</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Log</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
      </widget>
     </item>
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedMain">
       <property name="currentIndex">
        <number>0</number>
@@ -208,8 +145,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>868</width>
-                 <height>375</height>
+                 <width>768</width>
+                 <height>402</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -230,8 +167,8 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>808</width>
-                    <height>316</height>
+                    <width>0</width>
+                    <height>0</height>
                    </size>
                   </property>
                   <property name="styleSheet">
@@ -334,8 +271,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>868</width>
-                 <height>375</height>
+                 <width>768</width>
+                 <height>402</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -395,8 +332,8 @@ color: rgb(255, 255, 255);</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>868</width>
-                 <height>375</height>
+                 <width>768</width>
+                 <height>402</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -407,20 +344,6 @@ color: rgb(255, 255, 255);</string>
                 <string>Bookmarks</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_3">
-                <item row="0" column="0">
-                 <widget class="QPushButton" name="scanBook">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="text">
-                   <string>Select</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
-                  </property>
-                 </widget>
-                </item>
                 <item row="0" column="1">
                  <widget class="QPushButton" name="deleteBook">
                   <property name="enabled">
@@ -531,13 +454,13 @@ color: rgb(255, 255, 255);</string>
                <enum>QListView::Adjust</enum>
               </property>
               <property name="spacing">
-               <number>24</number>
+               <number>30</number>
               </property>
               <property name="viewMode">
                <enum>QListView::IconMode</enum>
               </property>
               <property name="uniformItemSizes">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -1636,7 +1559,7 @@ color: rgb(255, 255, 255);</string>
              <widget class="QTreeWidget" name="scanMonitor">
               <property name="minimumSize">
                <size>
-                <width>878</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -2032,6 +1955,29 @@ color: rgb(255, 255, 255);</string>
       </widget>
      </widget>
     </item>
+    <item row="2" column="0">
+     <widget class="QComboBox" name="comboMain">
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Scan</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Log</string>
+       </property>
+      </item>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2108,6 +2054,9 @@ color: rgb(255, 255, 255);</string>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
    <property name="iconSize">
     <size>
      <width>22</width>
@@ -2118,20 +2067,26 @@ color: rgb(255, 255, 255);</string>
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
+    <enum>RightToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
    <addaction name="action_Scan_menu"/>
    <addaction name="actionStop_Scan"/>
+   <addaction name="separator"/>
    <addaction name="actionSave"/>
    <addaction name="action_Save_As"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="windowTitle">
     <string>toolBar_2</string>
    </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
    <property name="iconSize">
     <size>
      <width>22</width>
@@ -2142,29 +2097,36 @@ color: rgb(255, 255, 255);</string>
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
+    <enum>RightToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
    <addaction name="actionClear_History"/>
    <addaction name="actionClose_Tree"/>
-   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBarTools">
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
    <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
+    <enum>RightToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
    <addaction name="action_Quit"/>
+   <addaction name="separator"/>
   </widget>
   <action name="action_Quit">
    <property name="icon">
@@ -2212,6 +2174,9 @@ color: rgb(255, 255, 255);</string>
    </property>
   </action>
   <action name="action_Scan_menu">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset>
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
@@ -2248,6 +2213,9 @@ color: rgb(255, 255, 255);</string>
    </property>
   </action>
   <action name="action_Scan_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset>
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
@@ -2446,6 +2414,21 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>&amp;Add Bookmark</string>
+   </property>
+  </action>
+  <action name="actionMain">
+   <property name="text">
+    <string>Main</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="text">
+    <string>Log</string>
+   </property>
+  </action>
+  <action name="actionVulnerabilities">
+   <property name="text">
+    <string>Vuln</string>
    </property>
   </action>
  </widget>

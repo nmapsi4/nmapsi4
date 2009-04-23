@@ -123,8 +123,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateIconsBox()));
 
     // BookMark signals
-    connect(scanBook, SIGNAL(clicked()),
-	    this, SLOT(callScanH()));
     connect(deleteBook, SIGNAL(clicked()),
 	    this, SLOT(deleteBookMark()));
     connect(treeLogH, SIGNAL( itemSelectionChanged()),
@@ -133,8 +131,6 @@ void nmapClass::setNmapsiSlot()
 	    this, SLOT(activeBookTool()));	    
     connect(treeLogH, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
 	    this, SLOT(callScanH()));
-    connect(treeBookVuln, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-            this, SLOT(callVulnCheck()));
 
     // Vuln signal
     connect(buttonVuln, SIGNAL(clicked()),
@@ -151,15 +147,15 @@ void nmapClass::setNmapsiSlot()
             comboVulnRis, SLOT(setEditText(const QString&)));
     connect(deleteBookVuln, SIGNAL(clicked()),
 	    this, SLOT(deleteBookMark()));
-
-    // FIXME
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
             this, SLOT(callSearchHistoryVuln()));
-
+    connect(treeBookVuln, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+            this, SLOT(callVulnCheck()));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
 
+    // combo session
     connect(comboMain, SIGNAL(activated(const QString&)),
-            this, SLOT(updateMainSlide()));  // portCombo slot
+            this, SLOT(updateMainSlide()));
 
 }

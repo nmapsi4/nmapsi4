@@ -20,12 +20,16 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
+     scanMonitor->setIconSize(QSize::QSize(32, 32));
+     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
+     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
      hostThread->setText(0, host);
      hostThread->setText(1, tr("Starting..."));
      monitorElem.push_front(hostThread);
      monitorElemHost.push_front(hostThread->text(0));
      monitorElemState.push_front(hostThread->text(1));
+     tabWidget->setCurrentIndex(2);
 }
 
 

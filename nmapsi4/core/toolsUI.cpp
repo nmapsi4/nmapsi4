@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -61,8 +61,8 @@ void nmapClass::exit()
     emit killScan();
     if(th && !th->isFinished()) {
 	 th->quit();
-	 th->wait();
-	 }
+         th->wait();
+     }
 
     if (FileName != NULL) {
 
@@ -83,7 +83,9 @@ void nmapClass::exit()
             if ((!checkLog) && (tmpFile->exists())) { // if log check is disable but the file exist
                 tmpFile->close();
                 tmpFile->remove();
+#ifndef TOOLS_NO_DEBUG
                 qDebug() << "nmapsi4/core --> deleteLog::true";
+#endif
             }
 
         delete tmpFile;
@@ -142,7 +144,9 @@ void nmapClass::isEmptyLog()
                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
         else {
             PFile->remove();
+#ifndef TOOLS_NO_DEBUG
             qDebug() << "nmapsi4/core --> deleteLog::newPath";
+#endif
         }
     }
 }
@@ -156,7 +160,9 @@ void nmapClass::fileSession()
 
         if (FLAGS) {
             QDir::setCurrent(firstPath);
+#ifndef TOOLS_NO_DEBUG
             qDebug() << "DEBUG::SESSION:: " << PFile << firstPath << logPath;
+#endif
             PFile->remove();
         }
 
@@ -197,8 +203,6 @@ void nmapClass::setNmapVersion()
     int uid = 0;
 
     // nmap CHECK
-    action_Scan_menu->setEnabled(true);
-    action_Scan_2->setEnabled(true);
     hostEdit->setEnabled(true);
 
 #ifndef Q_WS_WIN
@@ -225,6 +229,8 @@ void nmapClass::setNmapVersion()
         versionNmap.remove("Nmap version ");
         versionNmap.resize(4);
         versionNmap.prepend(tr("<b>Nmap Version:</b> "));
+        versionNmap.append(" - <b>Ui</b>: ");
+        versionNmap.append(_VERSION_);
         labelVersion->setText(versionNmap);
         statusBar()->addPermanentWidget(labelVersion, 1);
     } else {
@@ -247,15 +253,19 @@ void nmapClass::setNmapVersion()
     userMode->setText(userModeString);
     statusBar()->addPermanentWidget(userMode, 6);
 
+#ifndef TOOLS_NO_DEBUG
     qDebug() << "Nmapsi4/checkVersion --> nmapVersion::" << versionNmap;
     qDebug() << "Nmapsi4/checkVersion --> nmapsi4Mode::" << userModeString;
+#endif
     delete output;
     delete versionProc;
 }
 
 void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 {
+#ifndef TOOLS_NO_DEBUG
     qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
+#endif
     qDeleteAll(items);
     items.clear();
 }
@@ -263,7 +273,9 @@ void nmapClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 void nmapClass::callScanH()
 {
      if (treeLogH->currentItem()) {
+#ifndef TOOLS_NO_DEBUG
 	qDebug() << "Current Item::" << treeLogH->currentItem();
+#endif
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
         hostEdit->setItemText(0, treeLogH->currentItem()->text(0));
@@ -300,7 +312,8 @@ void nmapClass::saveBookMarks()
       default:
 	break;
     }
-    
+
+    toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     history_->updateBookMarks();
     delete history_;
 }

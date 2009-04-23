@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2009 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,7 +20,12 @@
 #ifndef NMAPSI4DEBUG_H
 #define NMAPSI4DEBUG_H
 
-// vulnerabilities debug
+// debug define (undefine for debug)
 #define VULN_NO_DEBUG
+#define TRANSL_NO_DEBUG
+#define MAIN_NO_DEBUG
+#define SAVELOG_NO_DEBUG
+#define TOOLS_NO_DEBUG
+#define PARSER_NO_DEBUG
 
 #endif

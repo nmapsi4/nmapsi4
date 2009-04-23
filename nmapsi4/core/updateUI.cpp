@@ -20,8 +20,7 @@
 #include "../mainwin.h"
 
 
-void nmapClass::update_portCombo()
-{
+void nmapClass::update_portCombo() {
     switch (portCombo->currentIndex()) {
     case 0:
 //    Normal
@@ -47,8 +46,7 @@ void nmapClass::update_portCombo()
 }
 
 
-void nmapClass::update_scanCombo()
-{
+void nmapClass::update_scanCombo() {
 
     switch (comboScan->currentIndex()) {
     case 0:
@@ -114,8 +112,7 @@ void nmapClass::update_scanCombo()
     }
 }
 
-void nmapClass::rootMode(int uid)
-{
+void nmapClass::rootMode(int uid) {
 
     if (!uid) { // if root
         comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
@@ -152,8 +149,7 @@ void nmapClass::rootMode(int uid)
 
 }
 
-void nmapClass::update_inputcheck() // control the input object update
-{
+void nmapClass::update_inputcheck() {
     if (checkInputFile->isChecked()) {
         lineInputFile->setEnabled(true);
         buttonBrowser->setEnabled(true);
@@ -169,8 +165,7 @@ void nmapClass::update_inputcheck() // control the input object update
     }
 }
 
-void nmapClass::update_discover()
-{
+void nmapClass::update_discover() {
     if (checkTcpPing->isChecked()) {
         lineTcpPing->setEnabled(true);
         lineTcpPing->clear();
@@ -196,8 +191,7 @@ void nmapClass::update_discover()
     }
 }
 
-void nmapClass::update_timing()
-{
+void nmapClass::update_timing() {
     if (TcheckIpv4ttl->isChecked())
         spinBoxIpv4ttl->setEnabled(true);
     else
@@ -239,8 +233,7 @@ void nmapClass::update_timing()
         spinBoxScanDelay->setEnabled(false);
 }
 
-void nmapClass::update_options()
-{
+void nmapClass::update_options() {
     if (checkBoxDevice->isChecked())
         OlineDevice->setEnabled(true);
     else {
@@ -276,8 +269,7 @@ void nmapClass::update_options()
     }
 }
 
-void nmapClass::update_comboVerbosity()
-{
+void nmapClass::update_comboVerbosity() {
 
     if (comboVerbosity->currentIndex() == 4)
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
@@ -285,8 +277,7 @@ void nmapClass::update_comboVerbosity()
 }
 
 
-void nmapClass::listClear()
-{
+void nmapClass::listClear() {
     listClearFlag = true;
     itemDeleteAll(itemList); //clear items list
     itemList.clear();
@@ -298,16 +289,14 @@ void nmapClass::listClear()
     action_Save_As->setEnabled(false);
 }
 
-void nmapClass::closeTree()
-{
+void nmapClass::closeTree() {
     listWscan->collapseAll();
     treeWinfo->collapseAll();
     listScanError->collapseAll();
     listScan->collapseAll();
 }
 
-void nmapClass::updateIconsBox()
-{
+void nmapClass::updateIconsBox() {
     int tmpBox = toolBox->currentIndex();
     switch (tmpBox) {
       case 0:
@@ -323,9 +312,10 @@ void nmapClass::updateIconsBox()
 
 }
 
-void nmapClass::updateFontHost(QString hostName)
-{
+void nmapClass::updateFontHost(QString hostName) {
     Q_UNUSED(hostName);
+    action_Scan_menu->setEnabled(true);
+    action_Scan_2->setEnabled(true);
     hostEdit->clear();
     hostEdit->setStyleSheet(QString::fromUtf8(""));
     hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
@@ -334,7 +324,6 @@ void nmapClass::updateFontHost(QString hostName)
 }
 
 void nmapClass::activeBookTool() {
-    scanBook->setEnabled(true);
     deleteBook->setEnabled(true);
     deleteBookVuln->setEnabled(true);
 }

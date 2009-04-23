@@ -82,24 +82,14 @@ void nmapClass::optionListUpdate() {
   
 
     if (scanW->isSelected()) {
-        //labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
-	 qDebug() << "scanw";
 	stackedOptions->setCurrentIndex(0);
     } else if (toolW->isSelected()) {
-        //labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
-	 qDebug() << "tool";
 	stackedOptions->setCurrentIndex(5);
     } else if (discoverW->isSelected()) {
-        //labelTitle->setText(tr("<h3>Size Options</h3>"));
-	 qDebug() << "discover";
 	stackedOptions->setCurrentIndex(1);
     } else if (fileW->isSelected()) {
-        //labelTitle->setText(tr("<h3>Extensions</h3>"));
-	 qDebug() << "file";
 	stackedOptions->setCurrentIndex(2);
     } else if (timingW->isSelected()) {
-	 qDebug() << "timing";
-        //labelTitle->setText(tr("<h3>Extensions</h3>"));
 	stackedOptions->setCurrentIndex(3);
     }
 }

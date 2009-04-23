@@ -39,8 +39,9 @@ void nmapClass::saveAsLog()
 
     newFile.append(FileName);
     tmpFile->setFileName(newFile);
-
+#ifndef SAVELOG_NO_DEBUG
     qDebug() << "File::" << newFile << tmpFile->exists();
+#endif
 
     if (!tmpFile || !tmpFile->size()) {
         QMessageBox::critical(this, tr("Save Log"),
@@ -62,13 +63,17 @@ void nmapClass::saveAsLog()
     url.append("-");
     url.append(hostEdit->currentText());
     url.append(".log");
+#ifndef SAVELOG_NO_DEBUG
     qDebug() << "Nmapsi4/saveLog::-->" << url;
+#endif
 
     QString FileNameTmp;
     FileNameTmp = QFileDialog::getSaveFileName(this, tr("Save Log"),
                   url, tr("Log (*.log)"));
 
+#ifndef SAVELOG_NO_DEBUG
     qDebug() << "Nmapsi4/saveLog::-->" << FileName;
+#endif
 
     if (FileNameTmp != "") {
 

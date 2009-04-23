@@ -60,10 +60,10 @@ void nmapClass::init()
     hostEdit->insertItem(0, tr("Insert HostName to scan"));
 
     checkNmapVersion();
-    listWscan->setColumnWidth(0, 500);
-    treeLogH->setColumnWidth(0, 500);
-    scanMonitor->setColumnWidth(0, 500);
-    treeBookVuln->setColumnWidth(0, 500);
+    listWscan->setColumnWidth(0, 400);
+    treeLogH->setColumnWidth(0, 400);
+    scanMonitor->setColumnWidth(0, 400);
+    treeBookVuln->setColumnWidth(0, 400);
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window/size", QSize(869, 605)).toSize();
@@ -101,9 +101,9 @@ void nmapClass::scan()
 
     title.append("NmapSI4 ");
 
-    action_Scan_menu->setEnabled(false);
-    action_Scan_2->setEnabled(false);
-//    hostEdit->setEnabled(false);
+    //action_Scan_menu->setEnabled(false);
+    //action_Scan_2->setEnabled(false);
+    //hostEdit->setEnabled(false);
     actionStop_Scan->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
@@ -141,8 +141,10 @@ void nmapClass::scan()
 
 nmapClass::~nmapClass()
 {
+#ifndef MAIN_NO_DEBUG
     qDebug() << "Nmapsi4/~nmapClass() -> Global";
     qDebug() << "Nmapsi4/~nmapClass() -> Size Item List::" << itemList.size();
+#endif
     if (dialog) dialog->close();
     itemDeleteAll(itemList);
     itemDeleteAll(monitorElem);

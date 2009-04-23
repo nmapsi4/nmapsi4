@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                               *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,6 +22,12 @@
 mainAbout::mainAbout() {
     setupUi(this);
     QString version = labelVersion->text();
+    QString versionV = labelVuln->text();
     version.append(_VERSION_);
+    versionV.append(_VERSION_VULN_);
     labelVersion->setText(version);
+    labelVuln->setText(versionV);
+}
+
+mainAbout::~mainAbout() {
 }
