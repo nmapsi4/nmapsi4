@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,8 +30,9 @@ void nmapClass::nmapParser(QString hostCheck)
     int error_count = 0;
     int ItemNumber = 0;
 
-    //qDebug() << "return...." << StdoutStr;
+#ifndef PARSER_NO_DEBUG
     qDebug() << "Host Checked:::: " << hostCheck;
+#endif
     delMonitorHost(scanMonitor, hostCheck);
 
     listClearFlag = false; // the listScan is not empty
@@ -127,11 +128,9 @@ void nmapClass::nmapParser(QString hostCheck)
     switch(tmpBox) {
       case 0:	
 	toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 1:
 	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 2:
 	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -239,7 +238,9 @@ void nmapClass::nmapParser(QString hostCheck)
             if (!b2_line.isEmpty()) {
                 QString tmpStr = b2_line;
                 QStringList lStr = tmpStr.split(" ", QString::SkipEmptyParts);
-                qDebug() << lStr;
+#ifndef PARSER_NO_DEBUG
+                qDebug() << "Nmapsi4/parser:: --> Token:: " << lStr;
+#endif
 
                 if (lStr[1].contains("open")) {
                     item2->setText(1, lStr[0]);
@@ -258,6 +259,12 @@ void nmapClass::nmapParser(QString hostCheck)
                 item2->setToolTip(4, lStr[2]);
                 int index = 3;
                 QString str;
+                for(int index=0; index < lStr.size(); index++) {
+                    if(lStr[index].contains("(") || lStr[index].contains(")")) {
+                        lStr.removeAt(index);
+                        index--;
+                    }
+                }
                 // Description
                 if (lStr.size() == 3)
                     item2->setText(0, tr("No description"));
@@ -404,5 +411,5 @@ void nmapClass::nmapParser(QString hostCheck)
 	actionSave_Menu->setEnabled(true);
     }
     this->setWindowModified(true);
-    listWscan->expandItem(root);
+    //listWscan->expandItem(root);
 }

@@ -39,6 +39,7 @@ class scanThread : public QThread
 signals:
      void threadEnd(QString);
      void upgradePR();
+     // TODO create a start scan signal
 
 private:
      QByteArray* pout;

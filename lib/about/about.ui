@@ -249,6 +249,24 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Plugins</string>
+      </attribute>
+      <widget class="QLabel" name="labelVuln">
+       <property name="geometry">
+        <rect>
+         <x>4</x>
+         <y>4</y>
+         <width>431</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Vulnerabilities Plugin: </string>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </item>
   </layout>

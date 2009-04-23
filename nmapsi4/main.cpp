@@ -1,5 +1,5 @@
-/**************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+/***************************************************************************
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -45,13 +45,17 @@ int main(int argc, char *argv[])
 
 #ifndef Q_WS_WIN // Gnu/Linux && Mac Os/x
     urlTranslate = __LinuxTranslateUrl__;
+#ifndef TRANSL_NO_DEBUG
     qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
+#endif
 
 #else // MS Windows
     //urlTranslate = QDir::homePath();
     urlTranslate = QDir::rootPath();
     urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
+#ifndef TRANSL_NO_DEBUG
     qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
+#endif
 
 #endif
 
@@ -61,9 +65,11 @@ int main(int argc, char *argv[])
         tmp_translator = translator.load(localeComplete, QDir::currentPath());
 
     // debug messages for Translation file
+#ifndef TRANSL_NO_DEBUG
     qDebug() << "Nmapsi4/core -> Locale::" << localeComplete;
     qDebug() << "Nmapsi4/core -> Translation file Load::" << tmp_translator;
     qDebug() << "Nmapsi4/core -> Traslation file is Empty::" << translator.isEmpty();
+#endif
 
     app.installTranslator(&translator);
 

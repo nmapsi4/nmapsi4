@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Francesco Cecconi                          	   *
+ *   Copyright (C) 2008-2009 by Francesco Cecconi                    	   *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,9 +20,9 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QtGui>
+#include <QDialog>
 #include "ui_about.h"
-#include "staticDefine.h"
+#include "../../nmapsi4/config.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
 {
@@ -30,7 +30,7 @@ class mainAbout : public QDialog, private Ui::AboutWin
   
   public:
      mainAbout();
-     ~mainAbout() {};
+     ~mainAbout();
 };
 
 #endif

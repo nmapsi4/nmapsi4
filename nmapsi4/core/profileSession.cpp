@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -106,7 +106,6 @@ void nmapClass::checkProfile()
     }
     
     verboseLog = settings.value("Vlog").toBool();
-    qDebug() << "nmapsi4/nmapParser --> verboseLog::" << verboseLog;
     
     QString pos = settings.value("savePos", "none").toString();
 
