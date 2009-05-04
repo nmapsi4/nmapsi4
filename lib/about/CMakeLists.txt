@@ -26,4 +26,7 @@ else(WIN32)
 	ADD_LIBRARY( nmapsi4_about SHARED ${SOURCES_CPP} ${SOURCES_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES})
 endif(WIN32)
 
+if (Q_WS_X11)
+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libnmapsi4_about.so" DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/)
+endif (Q_WS_X11)
 

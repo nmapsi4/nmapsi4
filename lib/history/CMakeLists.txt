@@ -14,4 +14,7 @@ else(WIN32)
 	ADD_LIBRARY( nmapsi4_history SHARED ${SOURCES_CPP})
 endif(WIN32)
 
+if (Q_WS_X11)
+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libnmapsi4_history.so" DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/)
+endif (Q_WS_X11)
 
