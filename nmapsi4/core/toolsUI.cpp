@@ -280,7 +280,7 @@ void nmapClass::callScanH()
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
         hostEdit->setItemText(0, treeLogH->currentItem()->text(0));
         toolBox->setCurrentIndex(0);
-        scan();
+        startScan();
     }
 }
 

@@ -26,6 +26,7 @@
 #include "core/nmapsi4Debug.h"
 #include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
+#include <QtNetwork/QHostInfo>
 
 class QMainWindow;
 class QWebView;
@@ -37,6 +38,8 @@ class nmapClass : public QMainWindow , private Ui::MainWindow
     Q_OBJECT
 
 private:
+    void scan(QString hostname);
+    void scanLookup(QString hostname);
     void rootMode(int uid);
     void show_browser(QLineEdit *location);
     void isEmptyLog();
@@ -96,7 +99,7 @@ protected:
 
 
 public slots:
-    void scan();
+    void startScan();
     void about();
     void about_qt();
     void stop_scan();

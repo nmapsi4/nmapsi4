@@ -50,13 +50,13 @@ void nmapClass::setNmapsiSlot()
     connect(actionAbout_Qt, SIGNAL(triggered()),
             this, SLOT(about_qt()));    // about action menu
     connect(action_Scan_menu, SIGNAL(triggered()),
-            this, SLOT(scan()));    // about action menu
+            this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
             this, SLOT(listClear()));
     connect(buttonHClear, SIGNAL(clicked()),
             hostEdit, SLOT(clearEditText()));
     connect(action_Scan_2, SIGNAL(triggered()),
-            this, SLOT(scan()));    // about action menu
+            this, SLOT(startScan()));    // about action menu
     connect(buttonBrowser, SIGNAL(clicked()),
             this, SLOT(input_browser()));    // Input file Browser slot
 
@@ -114,7 +114,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(showStatusBar()));
 
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
-            this, SLOT(scan()));
+            this, SLOT(startScan()));
 
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(updateFontHost(QString)));

@@ -7,6 +7,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
 		core/nmapParser.cpp
 		core/extensions.cpp
+		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp
@@ -28,6 +29,7 @@ else (WIN32)
 		core/resizeNmapsi4.cpp
 		core/nmapParser.cpp
 		core/extensions.cpp
+		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp

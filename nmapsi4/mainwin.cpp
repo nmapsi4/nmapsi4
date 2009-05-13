@@ -71,12 +71,63 @@ void nmapClass::init()
     move(pos);
 }
 
-void nmapClass::scan()
-{
+void nmapClass::startScan() {
+
+    // TODO: change with a preference option (insert a lookup session variable)
+    short tmpScan_ = -1;
     if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
     }
+
+    QString hostname = hostEdit->currentText();
+
+    if(hostname.contains("/")) {
+        // scan group es: 192.168.1.1/5
+        // TODO: split address class element
+
+        QStringList addrPart_ = hostname.split("/");
+        qDebug() << "nmapsi4::startScan()::addrPart --> " << addrPart_;
+        QStringList ipBase_ = addrPart_[0].split(".");
+        qDebug() << "nmapsi4::startScan()::ipBase --> " << ipBase_;
+
+        int ipLeft_ = ipBase_[3].toInt();
+        qDebug() << "nmapsi4::startScan()::ipLeft --> " << ipLeft_;
+        int ipRight_ = addrPart_[1].toInt();
+        qDebug() << "nmapsi4::startScan()::ipRight --> " << ipRight_;
+
+        for(int index = ipLeft_; index <= ipRight_; index++) {
+            ipBase_[3].setNum(index);
+            hostname = ipBase_.join(".");
+            qDebug() << "nmapsi4::startScan()::FullString --> " << hostname;
+
+            switch(tmpScan_) {
+                case 0:
+                    this->scanLookup(hostname);
+                    break;
+                case 1:
+                    this->scan(hostname);
+                    break;
+            }
+
+        }
+        return;
+    }
+
+    switch(tmpScan_) {
+        case -1:
+            // TODO: only for test set to 0
+            this->scanLookup(hostname);
+            break;
+        case 1:
+            this->scan(hostname);
+            break;
+    }
+
+}
+
+void nmapClass::scan(QString hostname)
+{
 
     if (checkLog) { // create a file log
         this->fileSession();
@@ -93,7 +144,6 @@ void nmapClass::scan()
 
 
     QStringList parametri; //parameters list declaration
-    QString hostname = hostEdit->currentText();
     QString title;
 
     history = new logHistory("nmapsi4/cacheHost", 10);
