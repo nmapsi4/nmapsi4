@@ -28,22 +28,22 @@
 #include <QMetaType>
 #include <QtDebug>
 
+
 class scanThread : public QThread
 {
  Q_OBJECT
 
  public:
-     scanThread(QByteArray* ProcB1, QByteArray* ProcB2, 
-		QStringList parametri, QObject *parent = 0);
+     scanThread(QByteArray& ProcB1, QByteArray& ProcB2, QStringList parametri, QObject *parent = 0);
 
 signals:
-     void threadEnd(QString);
+     void threadEnd(QString, QByteArray, QByteArray);
      void upgradePR();
      // TODO create a start scan signal
 
 private:
-     QByteArray* pout;
-     QByteArray* perr;
+     QByteArray pout;
+     QByteArray perr;
      QStringList ParList;
 
 private slots:

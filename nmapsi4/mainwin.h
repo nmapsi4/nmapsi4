@@ -32,7 +32,6 @@ class QMainWindow;
 class QWebView;
 class QMutex;
 
-
 class nmapClass : public QMainWindow , private Ui::MainWindow
 {
     Q_OBJECT
@@ -89,8 +88,6 @@ protected:
     QLabel *labelVersion;
     QLabel *userMode;
     mainProfile *dialog;
-    QByteArray Byte1;
-    QByteArray Byte2;
     logHistory *history;
     scanThread *th;
     QList<QString> monitorElemHost;
@@ -107,7 +104,7 @@ public slots:
 
 
 private slots:
-    void nmapParser(QString hostCheck);
+    void nmapParser(QString hostCheck, QByteArray Byte1,  QByteArray Byte2);
     void update_portCombo();
     void update_scanCombo();
     void update_inputcheck();

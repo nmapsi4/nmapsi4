@@ -56,6 +56,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
      for(int i=0; i < monitorElemHost.size(); i++) {
 	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
 	  item = new QTreeWidgetItem(monitor);
+          item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 	  item->setText(0, monitorElemHost[i]);
 	  item->setText(1, monitorElemState[i]);
 	  monitorElem.push_front(item);

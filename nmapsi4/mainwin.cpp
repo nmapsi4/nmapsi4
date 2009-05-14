@@ -74,7 +74,7 @@ void nmapClass::init()
 void nmapClass::startScan() {
 
     // TODO: change with a preference option (insert a lookup session variable)
-    short tmpScan_ = -1;
+    short tmpScan_ = 0;
     if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
@@ -83,40 +83,36 @@ void nmapClass::startScan() {
     QString hostname = hostEdit->currentText();
 
     if(hostname.contains("/")) {
-        // scan group es: 192.168.1.1/5
-        // TODO: split address class element
 
         QStringList addrPart_ = hostname.split("/");
-        qDebug() << "nmapsi4::startScan()::addrPart --> " << addrPart_;
         QStringList ipBase_ = addrPart_[0].split(".");
+#ifndef MAIN_NO_DEBUG
         qDebug() << "nmapsi4::startScan()::ipBase --> " << ipBase_;
+        qDebug() << "nmapsi4::startScan()::addrPart --> " << addrPart_;
+#endif
 
         int ipLeft_ = ipBase_[3].toInt();
-        qDebug() << "nmapsi4::startScan()::ipLeft --> " << ipLeft_;
         int ipRight_ = addrPart_[1].toInt();
+#ifndef MAIN_NO_DEBUG
         qDebug() << "nmapsi4::startScan()::ipRight --> " << ipRight_;
+        qDebug() << "nmapsi4::startScan()::ipLeft --> " << ipLeft_;
+#endif
 
         for(int index = ipLeft_; index <= ipRight_; index++) {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
+#ifndef MAIN_NO_DEBUG
             qDebug() << "nmapsi4::startScan()::FullString --> " << hostname;
+#endif
+            // lookup disabled for grup scan
+            this->scan(hostname);
+         }
+         return;
+     }
 
-            switch(tmpScan_) {
-                case 0:
-                    this->scanLookup(hostname);
-                    break;
-                case 1:
-                    this->scan(hostname);
-                    break;
-            }
-
-        }
-        return;
-    }
 
     switch(tmpScan_) {
-        case -1:
-            // TODO: only for test set to 0
+        case 0:
             this->scanLookup(hostname);
             break;
         case 1:
@@ -173,8 +169,9 @@ void nmapClass::scan(QString hostname)
     parametri << hostname; // parameters list
     
     QMutex mutex;
+    QByteArray buff1, buff2;
 
-    th = new scanThread(&Byte1, &Byte2, parametri, this);
+    th = new scanThread(buff1, buff2, parametri, this);
 
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress())); // nmapParser.cpp
@@ -183,8 +180,8 @@ void nmapClass::scan(QString hostname)
     
     mutex.lock();
     th->start();
-    connect(th, SIGNAL(threadEnd(QString)),
-      this, SLOT(nmapParser(QString))); // nmapParser.cpp
+    connect(th, SIGNAL(threadEnd(QString, QByteArray, QByteArray)),
+      this, SLOT(nmapParser(QString, QByteArray, QByteArray))); // nmapParser.cpp
     mutex.unlock();
     delete history;
 }

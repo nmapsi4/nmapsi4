@@ -19,7 +19,7 @@
 
 #include "../mainwin.h"
 
-void nmapClass::nmapParser(QString hostCheck)
+void nmapClass::nmapParser(QString hostCheck, QByteArray Byte1, QByteArray Byte2)
 {
     QString * StdoutStr;
     QString * StderrorStr;
@@ -148,22 +148,22 @@ void nmapClass::nmapParser(QString hostCheck)
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
-	root->setBackground(0, QColor::fromRgb(75, 75, 75));
-	root->setBackground(1, QColor::fromRgb(75, 75, 75));
-	root->setBackground(2, QColor::fromRgb(75, 75, 75));
-	root->setBackground(3, QColor::fromRgb(75, 75, 75));
-	root->setBackground(4, QColor::fromRgb(75, 75, 75));
+        root->setBackground(0, QColor::fromRgb(164, 164, 164));
+        root->setBackground(1, QColor::fromRgb(164, 164, 164));
+        root->setBackground(2, QColor::fromRgb(164, 164, 164));
+        root->setBackground(3, QColor::fromRgb(164, 164, 164));
+        root->setBackground(4, QColor::fromRgb(164, 164, 164));
 	root->setForeground(0, Qt::white);
 	root->setForeground(1, Qt::white);
 	root->setForeground(2, Qt::white);
 	root->setForeground(3, Qt::white);
-	root->setForeground(4, Qt::white);
-	infoItem->setBackground(0, QColor::fromRgb(75, 75, 75));
+        root->setForeground(4, Qt::white);
+        infoItem->setBackground(0, QColor::fromRgb(164, 164, 164));
 	infoItem->setForeground(0, Qt::white);
-	root2->setBackground(0, QColor::fromRgb(75, 75, 75));
+        root2->setBackground(0, QColor::fromRgb(164, 164, 164));
 	root2->setForeground(0, Qt::white);
-	error->setBackground(0, QColor::fromRgb(75, 75, 75));
-	error->setForeground(0, Qt::white);
+        error->setBackground(0, QColor::fromRgb(164, 164, 164));
+        error->setForeground(0, Qt::white);
 
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
@@ -174,22 +174,22 @@ void nmapClass::nmapParser(QString hostCheck)
         infoItem->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
-      	root->setBackground(0, QColor::fromRgb(75, 75, 75));
-	root->setBackground(1, QColor::fromRgb(75, 75, 75));
-	root->setBackground(2, QColor::fromRgb(75, 75, 75));
-	root->setBackground(3, QColor::fromRgb(75, 75, 75));
-	root->setBackground(4, QColor::fromRgb(75, 75, 75));
+        /*root->setBackground(0, QColor::fromRgb(164, 164, 164));
+        root->setBackground(1, QColor::fromRgb(164, 164, 164));
+        root->setBackground(2, QColor::fromRgb(164, 164, 164));
+        root->setBackground(3, QColor::fromRgb(164, 164, 164));
+        root->setBackground(4, QColor::fromRgb(164, 164, 164));
 	root->setForeground(0, Qt::white);
 	root->setForeground(1, Qt::white);
 	root->setForeground(2, Qt::white);
 	root->setForeground(3, Qt::white);
-	root->setForeground(4, Qt::white);
-	infoItem->setBackground(0, QColor::fromRgb(75, 75, 75));
+        root->setForeground(4, Qt::white);
+        infoItem->setBackground(0, QColor::fromRgb(164, 164, 164));
 	infoItem->setForeground(0, Qt::white);
-	root2->setBackground(0, QColor::fromRgb(75, 75, 75));
+        root2->setBackground(0, QColor::fromRgb(164, 164, 164));
 	root2->setForeground(0, Qt::white);
-	error->setBackground(0, QColor::fromRgb(75, 75, 75));
-	error->setForeground(0, Qt::white);
+        error->setBackground(0, QColor::fromRgb(164, 164, 164));
+        error->setForeground(0, Qt::white);*/
 
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
@@ -308,7 +308,7 @@ void nmapClass::nmapParser(QString hostCheck)
 
         }
     } else { // insert message for no info
-        tmp_mess.append(tr("\n(No scan informations)"));
+        tmp_mess.append(tr(" (No scan informations)"));
         root->setText(0, tmp_mess);
     }
 
