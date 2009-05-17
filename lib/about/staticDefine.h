@@ -20,6 +20,7 @@
 #ifndef STATICDEFINE_H
 #define STATICDEFINE_H
 
-#define _VERSION_                "0.1.95-svn"
+#define _VERSION_         "0.1.96~svn"
+#define _VERSION_VULN_    "0.1~svn"
 
 #endif

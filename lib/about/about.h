@@ -22,7 +22,7 @@
 
 #include <QDialog>
 #include "ui_about.h"
-#include "config_version.h"
+#include "staticDefine.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
 {
