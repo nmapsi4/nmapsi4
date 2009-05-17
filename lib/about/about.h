@@ -22,7 +22,7 @@
 
 #include <QDialog>
 #include "ui_about.h"
-#include "../../nmapsi4/config.h"
+#include "config_version.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
 {

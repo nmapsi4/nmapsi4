@@ -1,5 +1,7 @@
 PROJECT(nmapsi4_about)
 
+configure_file(config_version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config_version.h )
+
 SET( SOURCES_CPP about.cpp )
 MESSAGE( STATUS ${SOURCES_CPP} )
 
