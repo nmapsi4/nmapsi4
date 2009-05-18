@@ -168,7 +168,7 @@ void nmapClass::scan(QString hostname)
 
     parametri << hostname; // parameters list
     
-    QMutex mutex;
+    //QMutex mutex;
     QByteArray buff1, buff2;
 
     th = new scanThread(buff1, buff2, parametri, this);
@@ -178,11 +178,11 @@ void nmapClass::scan(QString hostname)
 
     addMonitorHost(scanMonitor, hostname);
     
-    mutex.lock();
+    //mutex.lock();
     th->start();
     connect(th, SIGNAL(threadEnd(QString, QByteArray, QByteArray)),
       this, SLOT(nmapParser(QString, QByteArray, QByteArray))); // nmapParser.cpp
-    mutex.unlock();
+    //mutex.unlock();
     delete history;
 }
 

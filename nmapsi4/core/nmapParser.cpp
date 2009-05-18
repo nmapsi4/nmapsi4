@@ -398,7 +398,7 @@ void nmapClass::nmapParser(QString hostCheck, QByteArray Byte1, QByteArray Byte2
     progressScan->setValue(100);
     this->setWindowTitle(title.replace("(85%)", "(100%) [*]"));
 
-    this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_endScan.svg")));
+    //this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_endScan.svg")));
 
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
