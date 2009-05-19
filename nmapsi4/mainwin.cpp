@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -57,7 +57,7 @@ void nmapClass::init()
 
 
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Insert HostName to scan"));
+    hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )"));
 
     checkNmapVersion();
     listWscan->setColumnWidth(0, 400);
@@ -105,6 +105,7 @@ void nmapClass::startScan() {
             qDebug() << "nmapsi4::startScan()::FullString --> " << hostname;
 #endif
             // lookup disabled for grup scan
+            addMonitorHost(scanMonitor, hostname);
             this->scan(hostname);
          }
          return;
@@ -113,9 +114,11 @@ void nmapClass::startScan() {
 
     switch(tmpScan_) {
         case 0:
+            addMonitorHost(scanMonitor, hostname);
             this->scanLookup(hostname);
             break;
         case 1:
+            addMonitorHost(scanMonitor, hostname);
             this->scan(hostname);
             break;
     }
@@ -146,10 +149,6 @@ void nmapClass::scan(QString hostname)
     history->addItemHistory(hostname);
 
     title.append("NmapSI4 ");
-
-    //action_Scan_menu->setEnabled(false);
-    //action_Scan_2->setEnabled(false);
-    //hostEdit->setEnabled(false);
     actionStop_Scan->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
@@ -168,21 +167,16 @@ void nmapClass::scan(QString hostname)
 
     parametri << hostname; // parameters list
     
-    //QMutex mutex;
     QByteArray buff1, buff2;
-
     th = new scanThread(buff1, buff2, parametri, this);
 
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress())); // nmapParser.cpp
-
-    addMonitorHost(scanMonitor, hostname);
     
-    //mutex.lock();
     th->start();
     connect(th, SIGNAL(threadEnd(QString, QByteArray, QByteArray)),
       this, SLOT(nmapParser(QString, QByteArray, QByteArray))); // nmapParser.cpp
-    //mutex.unlock();
+
     delete history;
 }
 

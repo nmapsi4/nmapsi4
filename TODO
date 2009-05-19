@@ -7,17 +7,8 @@ version x.2.x
 * support for theme (nmapsi4)		--> TODO
 * scan options view			--> TODO
 * log reader				--> IN PROGRESS
-* logreader hostory (five url)		--> IN PROGRESS
-* nmapsi4 hosts history 		--> IN PROGRESS
-  	+ clear button			--> TODO
-
-* vulnerabilities webkit check		--> IN PROGRESS
-	+ support for multiple host	--> TODO
-
 * scan type label on message bar 	--> NONE
-* new log files extension (x.ln4)	--> NONE
-
-* configuration file for bookmark	--> TODO
+* fix toolbar view in log and Vuln index --> TODO
 
 ---------------------------------------------------------------
 italian translation

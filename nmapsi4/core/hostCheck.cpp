@@ -21,17 +21,18 @@
 
 void nmapClass::scanLookup(QString hostname) {
     // TODO
-    // fix lookup scan and create a new free scan
     // create a user box for scan (lookup or not) type
     // create a function for check user preference
-    // create a group scan with check address in address the / character
     //
 
     QHostInfo info = QHostInfo::fromName(hostname);
 
     if(info.error() != QHostInfo::NoError && info.error() != QHostInfo::UnknownError) {
+#ifndef MAIN_NO_DEBUG
          qDebug() << "Lookup failed:" << info.errorString();
+#endif
          QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
+         this->delMonitorHost(scanMonitor,hostname);
          return;
      }
 
@@ -41,7 +42,7 @@ void nmapClass::scanLookup(QString hostname) {
          hostname = address.toString();
     }
 
-    // DEBUG List
+    // TODO::[DEBUG List] create a iplist
     foreach (QHostAddress address, info.addresses()) {
         qDebug() << "Found address:" << address.toString();
     }

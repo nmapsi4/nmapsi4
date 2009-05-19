@@ -36,7 +36,9 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
 void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
      for(int i=0; i < monitorElemHost.size(); i++) {
           if(monitorElemHost[i].endsWith(host)) {
+#ifndef MAIN_NO_DEBUG
                qDebug() << "Monitor delete Scan::" << host;
+#endif
                monitorElemHost.removeAt(i);
                monitorElemState.removeAt(i);
 	       delete monitorElem.takeAt(i);
@@ -54,7 +56,9 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
      QTreeWidgetItem* item;
 
      for(int i=0; i < monitorElemHost.size(); i++) {
+#ifndef MAIN_NO_DEBUG
 	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
+#endif
 	  item = new QTreeWidgetItem(monitor);
           item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 	  item->setText(0, monitorElemHost[i]);
