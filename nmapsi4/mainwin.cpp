@@ -111,18 +111,17 @@ void nmapClass::startScan() {
          return;
      }
 
+    if(!tmpScan_) {
+        addMonitorHost(scanMonitor, hostname);
+        lookUpT *lth = new lookUpT(hostname,this);
+        connect(lth, SIGNAL(threadEnd(QHostInfo,int,QString)),
+                       this, SLOT(scanLookup(QHostInfo,int,QString)));
 
-    switch(tmpScan_) {
-        case 0:
-            addMonitorHost(scanMonitor, hostname);
-            this->scanLookup(hostname);
-            break;
-        case 1:
-            addMonitorHost(scanMonitor, hostname);
-            this->scan(hostname);
-            break;
+        lth->start();
+    } else {
+        addMonitorHost(scanMonitor, hostname);
+        this->scan(hostname);
     }
-
 }
 
 void nmapClass::scan(QString hostname)
@@ -188,6 +187,7 @@ nmapClass::~nmapClass()
 #endif
     if (dialog) dialog->close();
     itemDeleteAll(itemList);
+    itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     
     delete progressScan;

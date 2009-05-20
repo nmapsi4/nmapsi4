@@ -26,7 +26,9 @@
 #include "core/nmapsi4Debug.h"
 #include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
+#include "core/lookup/lookUpT.h"
 #include <QtNetwork/QHostInfo>
+#include <QtNetwork/QHostAddress>
 
 class QMainWindow;
 class QWebView;
@@ -38,7 +40,6 @@ class nmapClass : public QMainWindow , private Ui::MainWindow
 
 private:
     void scan(QString hostname);
-    void scanLookup(QString hostname);
     void rootMode(int uid);
     void show_browser(QLineEdit *location);
     void isEmptyLog();
@@ -72,6 +73,7 @@ protected:
     QTreeWidgetItem *root2, *item_root2;
     QTreeWidgetItem *error, *item_error;
     QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
+    QTreeWidgetItem *rootLook, *itemLook;
     QFile *PFile;
     QString FileName;
     QString firstPath;
@@ -84,6 +86,7 @@ protected:
     bool listClearFlag;
     bool verboseLog;
     QList<QTreeWidgetItem*> itemList;
+    QList<QTreeWidgetItem*> itemListLook;
     QString logSessionFile;
     QLabel *labelVersion;
     QLabel *userMode;
@@ -123,6 +126,7 @@ private slots:
     void showStatusBar();
     void updateIconsBox();
     void callScanH();
+    void scanLookup(QHostInfo info, int state, QString hostname);
 
     // Check nmap version
     void checkNmapVersion();

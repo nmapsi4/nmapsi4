@@ -42,7 +42,7 @@
    <string>NmapSI4[*]</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../mainwin.qrc">
     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
   </property>
   <property name="autoFillBackground">
@@ -92,7 +92,7 @@
           </property>
           <widget class="QWidget" name="tab_8">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
            </attribute>
            <attribute name="title">
@@ -105,7 +105,7 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
               </property>
              </widget>
@@ -146,11 +146,11 @@
                  <x>0</x>
                  <y>0</y>
                  <width>768</width>
-                 <height>402</height>
+                 <height>403</height>
                 </rect>
                </property>
                <attribute name="icon">
-                <iconset>
+                <iconset resource="../mainwin.qrc">
                  <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
                </attribute>
                <attribute name="label">
@@ -271,12 +271,12 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>768</width>
-                 <height>402</height>
+                 <width>94</width>
+                 <height>70</height>
                 </rect>
                </property>
                <attribute name="icon">
-                <iconset>
+                <iconset resource="../mainwin.qrc">
                  <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
                </attribute>
                <attribute name="label">
@@ -332,12 +332,12 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>768</width>
-                 <height>402</height>
+                 <width>708</width>
+                 <height>355</height>
                 </rect>
                </property>
                <attribute name="icon">
-                <iconset>
+                <iconset resource="../mainwin.qrc">
                  <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
                </attribute>
                <attribute name="label">
@@ -353,7 +353,7 @@
                    <string>Delete</string>
                   </property>
                   <property name="icon">
-                   <iconset>
+                   <iconset resource="../mainwin.qrc">
                     <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
                   </property>
                  </widget>
@@ -414,7 +414,7 @@
           </widget>
           <widget class="QWidget" name="tab_4">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
            <attribute name="title">
@@ -910,7 +910,7 @@
                     <string>Browser</string>
                    </property>
                    <property name="icon">
-                    <iconset>
+                    <iconset resource="../mainwin.qrc">
                      <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
                    </property>
                   </widget>
@@ -1523,7 +1523,7 @@
           </widget>
           <widget class="QWidget" name="tabMonitor">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
            <attribute name="title">
@@ -1592,6 +1592,38 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="icon">
+            <iconset resource="../mainwin.qrc">
+             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>Lookup</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
+             <widget class="QTreeWidget" name="treeLookup">
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::NoSelection</enum>
+              </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
+              <column>
+               <property name="text">
+                <string>Host(s)</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -1605,7 +1637,7 @@
           </property>
           <widget class="QWidget" name="tab_5">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
            </attribute>
            <attribute name="title">
@@ -1661,7 +1693,7 @@
           </widget>
           <widget class="QWidget" name="tab_6">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
            </attribute>
            <attribute name="title">
@@ -1722,7 +1754,7 @@
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
            <attribute name="title">
@@ -1773,7 +1805,7 @@
                <string>Search</string>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
               </property>
              </widget>
@@ -1790,7 +1822,7 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
               </property>
               <property name="flat">
@@ -1810,7 +1842,7 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
               </property>
              </widget>
@@ -1827,7 +1859,7 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
               </property>
              </widget>
@@ -1890,7 +1922,7 @@
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="icon">
-            <iconset>
+            <iconset resource="../mainwin.qrc">
              <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
            </attribute>
            <attribute name="title">
@@ -1942,7 +1974,7 @@
                <string>Delete</string>
               </property>
               <property name="icon">
-               <iconset>
+               <iconset resource="../mainwin.qrc">
                 <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
               </property>
              </widget>
@@ -2130,7 +2162,7 @@
   </widget>
   <action name="action_Quit">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
    <property name="text">
@@ -2148,7 +2180,7 @@
   </action>
   <action name="action_About">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
    <property name="text">
@@ -2157,7 +2189,7 @@
   </action>
   <action name="action_Scan">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -2178,7 +2210,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -2196,7 +2228,7 @@
   </action>
   <action name="actionAbout_Qt">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
    <property name="text">
@@ -2205,7 +2237,7 @@
   </action>
   <action name="actionProfile">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
    </property>
    <property name="text">
@@ -2217,7 +2249,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -2226,7 +2258,7 @@
   </action>
   <action name="action_Quit_2">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
    <property name="text">
@@ -2238,7 +2270,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
    </property>
    <property name="text">
@@ -2250,7 +2282,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/window_new.png</normaloff>:/images/images/window_new.png</iconset>
    </property>
    <property name="text">
@@ -2262,7 +2294,7 @@
   </action>
   <action name="actionClose_Tree">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/view-tree.png</normaloff>:/images/images/view-tree.png</iconset>
    </property>
    <property name="text">
@@ -2274,7 +2306,7 @@
   </action>
   <action name="actionClear_Hostname">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
    </property>
    <property name="text">
@@ -2289,7 +2321,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -2304,7 +2336,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
    <property name="text">
@@ -2319,7 +2351,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
    <property name="text">
@@ -2331,7 +2363,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -2346,7 +2378,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/view-fullscreen.png</normaloff>:/images/images/view-fullscreen.png</iconset>
    </property>
    <property name="text">
@@ -2364,7 +2396,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/show-menu.png</normaloff>:/images/images/show-menu.png</iconset>
    </property>
    <property name="text">
@@ -2409,7 +2441,7 @@
   </action>
   <action name="actionAdd_Bookmark">
    <property name="icon">
-    <iconset>
+    <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
    </property>
    <property name="text">
@@ -2439,7 +2471,9 @@
    <header>QtWebKit/QWebView</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../mainwin.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>action_Quit_bar</sender>

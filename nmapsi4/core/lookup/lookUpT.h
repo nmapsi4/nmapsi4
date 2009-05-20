@@ -17,40 +17,36 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#ifndef LOOKUPT_H
+#define LOOKUPT_H
 
-void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
-    // TODO
-    // create a user box for scan (lookup or not) type
-    // create a function for check user preference
+#include <QThread>
+#include <QStringList>
+#include <QString>
+#include <QMetaType>
+#include <QtNetwork/QHostInfo>
 
-    qDebug() << "scanLookup::flag:: " << state;
-    if(state == -1) {
-        QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        this->delMonitorHost(scanMonitor,hostname);
-        return;
-    }
-    treeLookup->setIconSize(QSize::QSize(32, 32));
-    treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
 
-    rootLook = new QTreeWidgetItem(treeLookup);
-    itemListLook.push_front(rootLook);
-    rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
-    rootLook->setForeground(0, Qt::white);
-    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-    rootLook->setText(0, hostname);
+class lookUpT : public QThread
+{
+    Q_OBJECT
 
-    if(info.addresses().size() == 1) {
-         QHostAddress address = (info.addresses())[0];
-         hostname = address.toString();
-    }
+    public:
+        lookUpT(QString hostname, QObject *parent = 0);
 
-    foreach (QHostAddress address, info.addresses()) {
-        qDebug() << "scanLookup::Found address:: " << address.toString();
-        itemLook = new QTreeWidgetItem(rootLook);
-        itemListLook.push_front(itemLook);
-        itemLook->setText(0,address.toString());
-    }
+    signals:
+        void threadEnd(QHostInfo, int, QString);
 
-    this->scan(hostname);
-}
+    private:
+        QString host;
+        QHostInfo info;
+
+    private slots:
+        void killLookup();
+
+    protected:
+        void run();
+        QObject* par;
+};
+
+#endif

@@ -17,40 +17,29 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "lookUpT.h"
 
-void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
-    // TODO
-    // create a user box for scan (lookup or not) type
-    // create a function for check user preference
+lookUpT::lookUpT(QString hostname, QObject *parent) : host(hostname), par(parent)
+{
+}
 
-    qDebug() << "scanLookup::flag:: " << state;
-    if(state == -1) {
-        QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        this->delMonitorHost(scanMonitor,hostname);
-        return;
-    }
-    treeLookup->setIconSize(QSize::QSize(32, 32));
-    treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
+void lookUpT::run() {
 
-    rootLook = new QTreeWidgetItem(treeLookup);
-    itemListLook.push_front(rootLook);
-    rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
-    rootLook->setForeground(0, Qt::white);
-    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-    rootLook->setText(0, hostname);
+    qRegisterMetaType<QHostInfo>("QHostInfo");
+    info = QHostInfo::fromName(host);
 
-    if(info.addresses().size() == 1) {
-         QHostAddress address = (info.addresses())[0];
-         hostname = address.toString();
-    }
+     connect(par, SIGNAL(killScan()),
+             this, SLOT(killLookup()));
 
-    foreach (QHostAddress address, info.addresses()) {
-        qDebug() << "scanLookup::Found address:: " << address.toString();
-        itemLook = new QTreeWidgetItem(rootLook);
-        itemListLook.push_front(itemLook);
-        itemLook->setText(0,address.toString());
-    }
+    if(info.error() != QHostInfo::NoError && info.error() != QHostInfo::UnknownError) {
+         qDebug() << "Lookup failed:" << info.errorString();
+         emit threadEnd(info, -1, host);
+         return;
+     }
+    emit threadEnd(info, 1, host);
+}
 
-    this->scan(hostname);
+void lookUpT::killLookup() {
+    qDebug() << "Lookup::kill --> call";
+    info.abortHostLookup(info.lookupId());
 }
