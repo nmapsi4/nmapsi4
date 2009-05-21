@@ -203,19 +203,28 @@ void logHistory::searchHistory(QString tokenWord, QComboBox* lineHistory)
     lineHistory->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark_toolbar.png")));
     QList<QString> urlList = historyReadUrl();
     lineHistory->setCompleter(0);
+#ifndef HISTORY_NO_DEBUG
+    qDebug() << "logHistory::Pre::cout:: " << lineHistory->count();
+#endif
+    for(int index=0; index < lineHistory->count()+2; index++) {
+                    lineHistory->removeItem(1);
+    }
+    qDebug() << "logHistory::Post::cout:: " << lineHistory->count();
     
     foreach(QString item, urlList) {
-        if (item.contains(tokenWord)) {
+        if (/*item.contains(tokenWord)*/item.startsWith(tokenWord)) {
 #ifndef HISTORY_NO_DEBUG
             qDebug() << "History::Item:: " << item << "Token:: " << tokenWord;
 #endif
             if ((lineHistory->findText(item, Qt::MatchExactly) == -1) && !tokenWord.isEmpty()) {
                 lineHistory->insertItem(1, item);
                 lineHistory->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
-            } else if (tokenWord.isEmpty())
-                lineHistory->clear();
+            } else {
+                if (tokenWord.isEmpty())
+                    lineHistory->clear();
+            }
 	}
-	lineHistory->setItemText(0, tokenWord);
+        lineHistory->setItemText(0, tokenWord);
     }
     //TODO show popup
     //lineHistory->setItemText(-1, tokenWord);

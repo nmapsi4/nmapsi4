@@ -40,10 +40,10 @@ void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     rootLook->setText(0, hostname);
 
-    if(info.addresses().size() == 1) {
+    /*if(info.addresses().size() == 1) {
          QHostAddress address = (info.addresses())[0];
          hostname = address.toString();
-    }
+    }*/
 
     foreach (QHostAddress address, info.addresses()) {
         qDebug() << "scanLookup::Found address:: " << address.toString();
