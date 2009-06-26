@@ -25,6 +25,9 @@ void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
     // create a function for check user preference
 
     qDebug() << "scanLookup::flag:: " << state;
+
+    this->isDns(hostname);
+
     if(state == -1) {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         this->delMonitorHost(scanMonitor,hostname);
@@ -38,12 +41,14 @@ void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
     rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
     rootLook->setForeground(0, Qt::white);
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-    rootLook->setText(0, hostname);
 
-    /*if(info.addresses().size() == 1) {
-         QHostAddress address = (info.addresses())[0];
-         hostname = address.toString();
-    }*/
+    qDebug() << "scanLookup::Found address DNS:: " << info.hostName();
+
+    if(isDns(hostname)) {
+        rootLook->setText(0, hostname);
+    } else {
+        rootLook->setText(0, info.hostName());
+    }
 
     foreach (QHostAddress address, info.addresses()) {
         qDebug() << "scanLookup::Found address:: " << address.toString();
@@ -53,4 +58,13 @@ void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
     }
 
     this->scan(hostname);
+}
+
+bool nmapClass::isDns(QString hostname) {
+    bool state_;
+    QRegExp rx_("*.*.*.*");
+    rx_.setPatternSyntax(QRegExp::Wildcard);
+    (rx_.exactMatch(hostname) == true) ? state_=false : state_=true;
+    qDebug() << "nmapsi4/isDns():: " << hostname << state_;
+    return state_;
 }

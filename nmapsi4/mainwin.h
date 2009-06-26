@@ -53,6 +53,7 @@ private:
     void addMonitorHost(QTreeWidget* monitor, QString host);
     void delMonitorHost(QTreeWidget* monitor, QString host);
     void updateMonitorHost(QTreeWidget* monitor);
+    bool isDns(QString hostname);
 
 public:
     nmapClass();
