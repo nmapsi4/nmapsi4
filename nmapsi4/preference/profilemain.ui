@@ -1,10 +1,11 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ProfileMain</class>
- <widget class="QDialog" name="ProfileMain" >
-  <property name="windowModality" >
+ <widget class="QDialog" name="ProfileMain">
+  <property name="windowModality">
    <enum>Qt::ApplicationModal</enum>
   </property>
-  <property name="geometry" >
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -12,120 +13,120 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>515</width>
     <height>480</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>16777215</width>
     <height>16777215</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>NmapSI4 Preferences</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../../mainwin.qrc" >
+  <property name="windowIcon">
+   <iconset resource="../../mainwin.qrc">
     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
   </property>
-  <property name="modal" >
+  <property name="modal">
    <bool>true</bool>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item rowspan="2" row="0" column="0" >
-    <widget class="QListWidget" name="listViewOptions" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="2">
+    <widget class="QListWidget" name="listViewOptions">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize" >
+     <property name="minimumSize">
       <size>
        <width>121</width>
        <height>0</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>121</width>
        <height>16777215</height>
       </size>
      </property>
-     <property name="frameShape" >
+     <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
-     <property name="textElideMode" >
+     <property name="textElideMode">
       <enum>Qt::ElideMiddle</enum>
      </property>
-     <property name="movement" >
+     <property name="movement">
       <enum>QListView::Static</enum>
      </property>
-     <property name="flow" >
+     <property name="flow">
       <enum>QListView::LeftToRight</enum>
      </property>
-     <property name="resizeMode" >
+     <property name="resizeMode">
       <enum>QListView::Adjust</enum>
      </property>
-     <property name="spacing" >
+     <property name="spacing">
       <number>24</number>
      </property>
-     <property name="viewMode" >
+     <property name="viewMode">
       <enum>QListView::IconMode</enum>
      </property>
-     <property name="uniformItemSizes" >
+     <property name="uniformItemSizes">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="3" >
-    <widget class="QLabel" name="labelTitle" >
-     <property name="layoutDirection" >
+   <item row="0" column="1" colspan="3">
+    <widget class="QLabel" name="labelTitle">
+     <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="alignment" >
+     <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="3" >
-    <widget class="QStackedWidget" name="stackPref" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+   <item row="1" column="1" colspan="3">
+    <widget class="QStackedWidget" name="stackPref">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="currentIndex" >
+     <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="page" >
-      <layout class="QVBoxLayout" name="verticalLayout" >
+     <widget class="QWidget" name="page">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QGroupBox" name="groupUser" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+        <widget class="QGroupBox" name="groupUser">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="title" >
+         <property name="title">
           <string>User Profiles</string>
          </property>
-         <widget class="QCheckBox" name="checkQuickScan" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkQuickScan">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>60</y>
@@ -133,12 +134,12 @@
             <height>31</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Quick Scan</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkNormalScan" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkNormalScan">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>30</y>
@@ -146,25 +147,25 @@
             <height>31</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Normal Scan</string>
           </property>
          </widget>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupRoot" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+        <widget class="QGroupBox" name="groupRoot">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="title" >
+         <property name="title">
           <string>Root Profiles</string>
          </property>
-         <widget class="QCheckBox" name="checkFullVersion" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkFullVersion">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>30</y>
@@ -172,12 +173,12 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Full Version Detection</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkQuickVersion" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkQuickVersion">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>70</y>
@@ -185,7 +186,7 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Quick Version Detection</string>
           </property>
          </widget>
@@ -193,21 +194,21 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_2" >
-      <layout class="QGridLayout" name="gridLayout_2" >
-       <item row="0" column="0" >
-        <widget class="QGroupBox" name="groupBox_2" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+     <widget class="QWidget" name="page_2">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="title" >
+         <property name="title">
           <string>Log Preferences</string>
          </property>
-         <widget class="QPushButton" name="buttonLogB" >
-          <property name="geometry" >
+         <widget class="QPushButton" name="buttonLogB">
+          <property name="geometry">
            <rect>
             <x>250</x>
             <y>40</y>
@@ -215,16 +216,16 @@
             <height>32</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>&amp;Browse</string>
           </property>
-          <property name="icon" >
-           <iconset resource="../../mainwin.qrc" >
+          <property name="icon">
+           <iconset resource="../../mainwin.qrc">
             <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEditPath" >
-          <property name="geometry" >
+         <widget class="QLineEdit" name="lineEditPath">
+          <property name="geometry">
            <rect>
             <x>130</x>
             <y>80</y>
@@ -232,12 +233,12 @@
             <height>27</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string/>
           </property>
          </widget>
-         <widget class="QLabel" name="label_45" >
-          <property name="geometry" >
+         <widget class="QLabel" name="label_45">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>80</y>
@@ -245,12 +246,12 @@
             <height>31</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Log File Path</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkLogOn" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkLogOn">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>40</y>
@@ -258,12 +259,12 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Active Log</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkVerboseLog" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkVerboseLog">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>190</y>
@@ -271,29 +272,71 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Verbose Log</string>
+          </property>
+         </widget>
+         <widget class="Line" name="line">
+          <property name="geometry">
+           <rect>
+            <x>27</x>
+            <y>240</y>
+            <width>321</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxCache">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>280</y>
+            <width>71</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>5</number>
+          </property>
+          <property name="value">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>280</y>
+            <width>251</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>History Cache</string>
           </property>
          </widget>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_3" >
-      <layout class="QGridLayout" name="gridLayout_3" >
-       <item row="0" column="0" >
-        <widget class="QGroupBox" name="groupBox_4" >
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+     <widget class="QWidget" name="page_3">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="title" >
+         <property name="title">
           <string>Size Preferences</string>
          </property>
-         <widget class="QCheckBox" name="checkSize" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkSize">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>40</y>
@@ -301,12 +344,12 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Save Windows Resize</string>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkWinPos" >
-          <property name="geometry" >
+         <widget class="QCheckBox" name="checkWinPos">
+          <property name="geometry">
            <rect>
             <x>10</x>
             <y>80</y>
@@ -314,7 +357,7 @@
             <height>23</height>
            </rect>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Save Windows Positions</string>
           </property>
          </widget>
@@ -322,33 +365,33 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_4" >
-      <layout class="QVBoxLayout" name="verticalLayout_2" >
+     <widget class="QWidget" name="page_4">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QListWidget" name="extList" >
-         <property name="spacing" >
+        <widget class="QListWidget" name="extList">
+         <property name="spacing">
           <number>10</number>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="disableB" >
-         <property name="text" >
+        <widget class="QPushButton" name="disableB">
+         <property name="text">
           <string>Disable</string>
          </property>
-         <property name="icon" >
-          <iconset resource="../../mainwin.qrc" >
+         <property name="icon">
+          <iconset resource="../../mainwin.qrc">
            <normaloff>:/images/nmapsi4/preference/images/preferences-pluginD.png</normaloff>:/images/nmapsi4/preference/images/preferences-pluginD.png</iconset>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="activeB" >
-         <property name="text" >
+        <widget class="QPushButton" name="activeB">
+         <property name="text">
           <string>Enable</string>
          </property>
-         <property name="icon" >
-          <iconset resource="../../mainwin.qrc" >
+         <property name="icon">
+          <iconset resource="../../mainwin.qrc">
            <normaloff>:/images/nmapsi4/preference/images/preferences-pluginA.png</normaloff>:/images/nmapsi4/preference/images/preferences-pluginA.png</iconset>
          </property>
         </widget>
@@ -357,35 +400,35 @@
      </widget>
     </widget>
    </item>
-   <item row="2" column="1" >
-    <widget class="QPushButton" name="buttonDefault" >
-     <property name="text" >
+   <item row="2" column="1">
+    <widget class="QPushButton" name="buttonDefault">
+     <property name="text">
       <string>&amp;Defaults</string>
      </property>
-     <property name="icon" >
-      <iconset resource="../../mainwin.qrc" >
+     <property name="icon">
+      <iconset resource="../../mainwin.qrc">
        <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
      </property>
     </widget>
    </item>
-   <item row="2" column="2" >
-    <widget class="QPushButton" name="buttonSave" >
-     <property name="text" >
+   <item row="2" column="2">
+    <widget class="QPushButton" name="buttonSave">
+     <property name="text">
       <string>&amp;Ok</string>
      </property>
-     <property name="icon" >
-      <iconset resource="../../mainwin.qrc" >
+     <property name="icon">
+      <iconset resource="../../mainwin.qrc">
        <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
      </property>
     </widget>
    </item>
-   <item row="2" column="3" >
-    <widget class="QPushButton" name="ButtonQuit" >
-     <property name="text" >
+   <item row="2" column="3">
+    <widget class="QPushButton" name="ButtonQuit">
+     <property name="text">
       <string>&amp;Cancel</string>
      </property>
-     <property name="icon" >
-      <iconset resource="../../mainwin.qrc" >
+     <property name="icon">
+      <iconset resource="../../mainwin.qrc">
        <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
      </property>
     </widget>
@@ -393,7 +436,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../mainwin.qrc" />
+  <include location="../../mainwin.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -402,11 +445,11 @@
    <receiver>ProfileMain</receiver>
    <slot>close()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>456</x>
      <y>318</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>475</x>
      <y>276</y>
     </hint>

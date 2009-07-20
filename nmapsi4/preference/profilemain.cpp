@@ -67,6 +67,9 @@ mainProfile::mainProfile()
     else
         checkVerboseLog->setChecked(false);
 
+    QString cache = ptrFile.value("hostCache", "10").toString();
+    spinBoxCache->setValue(cache.toInt());
+
     // Create listview items
     // TODO insert history item and window setup
     listViewOptions->setIconSize(QSize::QSize(52, 52));
@@ -123,8 +126,9 @@ QString mainProfile::readProfile()
 void mainProfile::setScan()
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
-    ptrFile.setValue("configProfile", ScanActive); // default value
-    ptrFile.setValue("confPath", lineEditPath->text()); // default value
+    ptrFile.setValue("configProfile", ScanActive);
+    ptrFile.setValue("confPath", lineEditPath->text());
+    ptrFile.setValue("hostCache", spinBoxCache->value());
 
     if (checkLogOn->isChecked()) // update checklog from configuration file
         ptrFile.setValue("logCheck", "true");

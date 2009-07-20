@@ -288,7 +288,7 @@ void nmapClass::callSearchHistory()
 {
     if (!actionAdd_Bookmark->isEnabled())
         actionAdd_Bookmark->setEnabled(true);
-    logHistory *history = new logHistory("nmapsi4/cacheHost", 10);
+    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->searchHistory(hostEdit->currentText(), hostEdit);
     delete history;
 }

@@ -26,7 +26,7 @@ void nmapClass::searchVuln()
 
     QString url;
     QString tmp;
-    history = new logHistory("nmapsi4/cacheVuln", 10);
+    history = new logHistory("nmapsi4/cacheVuln", hostCache);
     history->addItemHistory(comboVulnRis->currentText());
     delete history;
     
@@ -70,7 +70,7 @@ void nmapClass::callSearchHistoryVuln() {
 
     if (!actionAdd_Bookmark->isEnabled())
         actionAdd_Bookmark->setEnabled(true);
-    logHistory *history = new logHistory("nmapsi4/cacheVuln", 10);
+    logHistory *history = new logHistory("nmapsi4/cacheVuln", hostCache);
     history->searchHistory(comboVulnRis->currentText(), comboVulnRis);
     delete history;
      

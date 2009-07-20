@@ -86,6 +86,7 @@ protected:
     bool saveSize;
     bool listClearFlag;
     bool verboseLog;
+    int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
     QString logSessionFile;

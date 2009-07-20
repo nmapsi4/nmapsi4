@@ -144,6 +144,14 @@ void nmapClass::checkProfile()
 	 
 	 comboMain->removeItem(2);
     }
+
+    QString cache = settings.value("hostCache", "none").toString();
+
+    if (!cache.compare("none")) {
+        settings.setValue("hostCache", "10"); // default value
+    }
+
+    hostCache = settings.value("hostCache").toInt();
 }
 
 void nmapClass::setQuickProfile()

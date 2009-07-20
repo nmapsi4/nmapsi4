@@ -38,10 +38,10 @@ nmapClass::nmapClass()
     this->checkProfile();
     this->optionListCreate();
 
-    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", 10);
+    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", hostCache);
     historyScan_->updateBookMarks();
     delete historyScan_;
-    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", 10);
+    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", hostCache);
     historyVuln_->updateBookMarks();
     delete historyVuln_;
 }
@@ -144,7 +144,7 @@ void nmapClass::scan(QString hostname)
     QStringList parametri; //parameters list declaration
     QString title;
 
-    history = new logHistory("nmapsi4/cacheHost", 10);
+    history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
 
     title.append("NmapSI4 ");
