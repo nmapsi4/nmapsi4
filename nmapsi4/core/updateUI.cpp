@@ -350,6 +350,7 @@ void nmapClass::updateMainSlide() {
 	  toolBar->setVisible(false);
 	  actionMain_Toolbars->setChecked(false);
 	  toolBar_2->setVisible(false);
+          toolBarBook->setVisible(false);
 	  actionActions_Toolbar->setChecked(false);
 	  break;
      case 2:
@@ -357,6 +358,7 @@ void nmapClass::updateMainSlide() {
 	  stackedMain->setCurrentIndex(2);
 	  // main and action bar only in scan index
 	  toolBar->setVisible(false);
+          toolBarBook->setVisible(true);
 	  actionMain_Toolbars->setChecked(false);
 	  toolBar_2->setVisible(false);
 	  actionActions_Toolbar->setChecked(false);

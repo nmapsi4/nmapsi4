@@ -145,7 +145,7 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>768</width>
+                 <width>756</width>
                  <height>403</height>
                 </rect>
                </property>
@@ -271,8 +271,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>94</width>
-                 <height>70</height>
+                 <width>756</width>
+                 <height>403</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -332,8 +332,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>708</width>
-                 <height>355</height>
+                 <width>756</width>
+                 <height>403</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -2137,7 +2137,29 @@
    <addaction name="actionClear_History"/>
    <addaction name="actionClose_Tree"/>
   </widget>
-  <widget class="QToolBar" name="toolBarTools">
+  <widget class="QToolBar" name="toolBarBook">
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="action_Add_BookmarkToolBar"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarQuit">
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>
@@ -2461,6 +2483,15 @@
   <action name="actionVulnerabilities">
    <property name="text">
     <string>Vuln</string>
+   </property>
+  </action>
+  <action name="action_Add_BookmarkToolBar">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Add Bookmark</string>
    </property>
   </action>
  </widget>

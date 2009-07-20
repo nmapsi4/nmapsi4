@@ -153,6 +153,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(callVulnCheck()));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
+    connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
+            this, SLOT(saveBookMarks()));
 
     // combo session
     connect(comboMain, SIGNAL(activated(const QString&)),

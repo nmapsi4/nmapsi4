@@ -54,6 +54,7 @@ void nmapClass::init()
     action_Scan_2->setEnabled(false);
     hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
+    action_Add_BookmarkToolBar->setEnabled(false);
 
 
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));

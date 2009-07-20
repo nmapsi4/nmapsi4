@@ -286,8 +286,10 @@ void nmapClass::callScanH()
 
 void nmapClass::callSearchHistory()
 {
-    if (!actionAdd_Bookmark->isEnabled())
+    if (!actionAdd_Bookmark->isEnabled()) {
         actionAdd_Bookmark->setEnabled(true);
+        action_Add_BookmarkToolBar->setEnabled(true);
+    }
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->searchHistory(hostEdit->currentText(), hostEdit);
     delete history;

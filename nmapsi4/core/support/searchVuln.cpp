@@ -68,8 +68,10 @@ void nmapClass::callSearchHistoryVuln() {
     qDebug() << "searchVuln:: call...";
 #endif
 
-    if (!actionAdd_Bookmark->isEnabled())
+    if (!actionAdd_Bookmark->isEnabled()) {
         actionAdd_Bookmark->setEnabled(true);
+        action_Add_BookmarkToolBar->setEnabled(true);
+    }
     logHistory *history = new logHistory("nmapsi4/cacheVuln", hostCache);
     history->searchHistory(comboVulnRis->currentText(), comboVulnRis);
     delete history;
