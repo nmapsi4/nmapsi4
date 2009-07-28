@@ -20,8 +20,8 @@
 #include "loghistory.h"
 
 logHistory::logHistory(QTreeWidget* treeLog,
-                       QString ConfigTag,
-                       QString ConfigTagTime,
+                       const QString ConfigTag,
+                       const QString ConfigTagTime,
                        int cacheSize)
 {
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
@@ -32,7 +32,7 @@ logHistory::logHistory(QTreeWidget* treeLog,
 }
 
 // cache host contructor
-logHistory::logHistory(QString ConfigTag, int cacheSize) :  logTree(NULL),
+logHistory::logHistory(const QString ConfigTag, int cacheSize) :  logTree(NULL),
         configTagTime(NULL)
 {
     configTag = ConfigTag;
@@ -56,17 +56,17 @@ QList<QString> logHistory::historyReadUrlTime()
     return urlListTime;
 }
 
-void logHistory::addItemHistory(QString url)
+void logHistory::addItemHistory(const QString url)
 {
     coreItemHistory(url, NULL);
 }
 
-void logHistory::addItemHistory(QString url, QString scanTime)
+void logHistory::addItemHistory(const QString url, const QString scanTime)
 {
     coreItemHistory(url, scanTime);
 }
 
-void logHistory::deleteItemBookmark(QString item) 
+void logHistory::deleteItemBookmark(const QString item)
 {
     Q_ASSERT(item != NULL);
 #ifndef HISTORY_NO_DEBUG
@@ -193,7 +193,7 @@ void logHistory::updateBookMarks()
     }
 }
 
-void logHistory::searchHistory(QString tokenWord, QComboBox* lineHistory)
+void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
 {
 
 #ifndef HISTORY_NO_DEBUG
