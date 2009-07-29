@@ -22,7 +22,7 @@
 //
 // @Developer: Francesco Cecconi
 //
-void logHistory::coreItemHistory(QString url, QString scanTime)
+void logHistory::coreItemHistory(const QString url, const QString scanTime)
 {
     Q_ASSERT(!url.isEmpty());
 

@@ -44,20 +44,20 @@ private:
     QTreeWidgetItem* history;
     QList<QTreeWidgetItem*> ItemListHistory;
     QTreeWidget* logTree;
-    void coreItemHistory(QString url, QString scanTime);
+    void coreItemHistory(const QString url, const QString scanTime);
 
 public:
     logHistory(QTreeWidget* treeLog,
-               QString ConfigTag,
-               QString ConfigTagTime,
+               const QString ConfigTag,
+               const QString ConfigTagTime,
                int cacheSize);
-    logHistory(QString ConfigTag, int cacheSize);
+    logHistory(const QString ConfigTag, int cacheSize);
     ~logHistory() {};
     void updateLogHistory();
     void updateBookMarks();
-    virtual void addItemHistory(QString url);
-    virtual void addItemHistory(QString url, QString scanTime);
-    void deleteItemBookmark(QString item);
+    virtual void addItemHistory(const QString url);
+    virtual void addItemHistory(const QString url, const QString scanTime);
+    void deleteItemBookmark(const QString item);
 
 protected:
     QString configTag;
@@ -65,7 +65,7 @@ protected:
     int __CACHE_SIZE__;
 
 public slots:
-    void searchHistory(QString tokenWord,  QComboBox* lineHistory);
+    void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
 };
 
 #endif
