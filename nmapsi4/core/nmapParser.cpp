@@ -19,7 +19,7 @@
 
 #include "../mainwin.h"
 
-void nmapClass::nmapParser(QString hostCheck, QByteArray Byte1, QByteArray Byte2)
+void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray Byte2)
 {
     QString * StdoutStr;
     QString * StderrorStr;

@@ -312,7 +312,7 @@ void nmapClass::updateIconsBox() {
 
 }
 
-void nmapClass::updateFontHost(QString hostName) {
+void nmapClass::updateFontHost(const QString hostName) {
     Q_UNUSED(hostName);
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);

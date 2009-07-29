@@ -25,9 +25,7 @@
 #include "staticDefine.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
-{
-//  Q_OBJECT
-  
+{ 
   public:
      mainAbout();
      ~mainAbout();

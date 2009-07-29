@@ -19,7 +19,7 @@
 
 #include "lookUpT.h"
 
-lookUpT::lookUpT(QString hostname, QObject *parent) : host(hostname), par(parent)
+lookUpT::lookUpT(const QString hostname, QObject *parent) : host(hostname), par(parent)
 {
 }
 

@@ -19,7 +19,7 @@
 
 #include "../mainwin.h"
 
-void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
+void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
      scanMonitor->setIconSize(QSize::QSize(32, 32));
      scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
@@ -33,7 +33,7 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, QString host) {
 }
 
 
-void nmapClass::delMonitorHost(QTreeWidget* monitor, QString host) {
+void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) {
      for(int i=0; i < monitorElemHost.size(); i++) {
           if(monitorElemHost[i].endsWith(host)) {
 #ifndef MAIN_NO_DEBUG

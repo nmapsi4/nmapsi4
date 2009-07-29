@@ -110,7 +110,7 @@ mainProfile::mainProfile()
 
 }
 
-void mainProfile::saveProfile(QString ProfileType)
+void mainProfile::saveProfile(const QString ProfileType)
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
     ptrFile.setValue("configProfile", ProfileType); // default value
