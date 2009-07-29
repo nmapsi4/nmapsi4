@@ -32,10 +32,10 @@ class lookUpT : public QThread
     Q_OBJECT
 
     public:
-        lookUpT(QString hostname, QObject *parent = 0);
+        lookUpT(const QString hostname, QObject *parent = 0);
 
     signals:
-        void threadEnd(QHostInfo, int, QString);
+        void threadEnd(QHostInfo, int, const QString);
 
     private:
         QString host;

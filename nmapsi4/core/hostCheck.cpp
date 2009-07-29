@@ -19,7 +19,7 @@
 
 #include "../mainwin.h"
 
-void nmapClass::scanLookup(QHostInfo info, int state, QString hostname) {
+void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     // TODO
     // create a user box for scan (lookup or not) type
     // create a function for check user preference

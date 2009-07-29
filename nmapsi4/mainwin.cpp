@@ -115,8 +115,8 @@ void nmapClass::startScan() {
     if(!tmpScan_) {
         addMonitorHost(scanMonitor, hostname);
         lookUpT *lth = new lookUpT(hostname,this);
-        connect(lth, SIGNAL(threadEnd(QHostInfo,int,QString)),
-                       this, SLOT(scanLookup(QHostInfo,int,QString)));
+        connect(lth, SIGNAL(threadEnd(QHostInfo,int,const QString)),
+                       this, SLOT(scanLookup(QHostInfo,int,const QString)));
 
         lth->start();
     } else {
@@ -125,7 +125,7 @@ void nmapClass::startScan() {
     }
 }
 
-void nmapClass::scan(QString hostname)
+void nmapClass::scan(const QString hostname)
 {
 
     if (checkLog) { // create a file log
@@ -174,8 +174,8 @@ void nmapClass::scan(QString hostname)
       this, SLOT(setProgress())); // nmapParser.cpp
     
     th->start();
-    connect(th, SIGNAL(threadEnd(QString, QByteArray, QByteArray)),
-      this, SLOT(nmapParser(QString, QByteArray, QByteArray))); // nmapParser.cpp
+    connect(th, SIGNAL(threadEnd(const QString, QByteArray, QByteArray)),
+      this, SLOT(nmapParser(const QString, QByteArray, QByteArray))); // nmapParser.cpp
 
     delete history;
 }

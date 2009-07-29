@@ -20,7 +20,7 @@
 #include "scanThread.h" 
 
 scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
-                       QStringList parametri, QObject *parent)
+                       const QStringList parametri, QObject *parent)
      : pout(ProcB1), 
        perr(ProcB2),
        ParList(parametri),
@@ -47,18 +47,18 @@ void scanThread::run() {
      exec();
      emit upgradePR();
      emit threadEnd(ParList[ParList.size()-1], pout, perr);
-     qDebug() << "THREAD:: Quit";
+     qDebug() << "scan() THREAD:: Quit";
  }
 
 void scanThread::setValue() {
-     qDebug() << "THREAD:: -> start";
+     qDebug() << "scan() THREAD:: -> start";
      pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
      exit(0);
 }
 
 void scanThread::stopProcess() {
-     qDebug() << "THREAD:: Stop Scan Process";
+     qDebug() << "scan() THREAD:: Stop Scan Process";
      if(proc) {
 	  proc->terminate();
      }

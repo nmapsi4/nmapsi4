@@ -39,26 +39,26 @@ class nmapClass : public QMainWindow , private Ui::MainWindow
     Q_OBJECT
 
 private:
-    void scan(QString hostname);
+    void scan(const QString hostname);
     void rootMode(int uid);
     void show_browser(QLineEdit *location);
     void isEmptyLog();
     void setNmapsiSlot();
-    QFile* create_logFile(QString Path);
+    QFile* create_logFile(const QString Path);
     QStringList check_extensions(QStringList parametri, QString& winTitle);
     void resetOptions();
     void checkProfile();
     void init();
     void itemDeleteAll(QList<QTreeWidgetItem*> items);
-    void addMonitorHost(QTreeWidget* monitor, QString host);
-    void delMonitorHost(QTreeWidget* monitor, QString host);
+    void addMonitorHost(QTreeWidget* monitor, const QString host);
+    void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
     bool isDns(QString hostname);
 
 public:
     nmapClass();
     ~nmapClass();
-    void show_log_browserUrl(QString url, QLineEdit *location);
+    void show_log_browserUrl(const QString url, QLineEdit *location);
     void setQuickProfile();
     void setNormalProfile();
     void setFullVersionProfile();
@@ -109,7 +109,7 @@ public slots:
 
 
 private slots:
-    void nmapParser(QString hostCheck, QByteArray Byte1,  QByteArray Byte2);
+    void nmapParser(const QString hostCheck, QByteArray Byte1,  QByteArray Byte2);
     void update_portCombo();
     void update_scanCombo();
     void update_inputcheck();
@@ -128,7 +128,7 @@ private slots:
     void showStatusBar();
     void updateIconsBox();
     void callScanH();
-    void scanLookup(QHostInfo info, int state, QString hostname);
+    void scanLookup(QHostInfo info, int state, const QString hostname);
 
     // Check nmap version
     void checkNmapVersion();
@@ -139,7 +139,7 @@ private slots:
     void readProfile();
     void saveAsLog();
     void saveLog();
-    void updateFontHost(QString hostName);
+    void updateFontHost(const QString hostName);
     void callSearchHistory();
     void saveBookMarks();
     void deleteBookMark();

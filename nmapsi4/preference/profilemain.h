@@ -28,7 +28,7 @@ class mainProfile : public QDialog, private Ui::ProfileMain
     Q_OBJECT
 
 private:
-    void saveProfile(QString ProfileType); // Create a enum for the profile
+    void saveProfile(const QString ProfileType); // Create a enum for the profile
     QString readProfile();
     void setProfile();
     void checkExtension();

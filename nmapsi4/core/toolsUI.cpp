@@ -41,7 +41,7 @@ void nmapClass::show_browser(QLineEdit *location)
 }
 
 
-void nmapClass::show_log_browserUrl(QString url, QLineEdit *location)
+void nmapClass::show_log_browserUrl(const QString url, QLineEdit *location)
 {
     QString FileName;
 
@@ -111,7 +111,7 @@ void nmapClass::stop_scan()
      }
 }
 
-QFile* nmapClass::create_logFile(QString Path)
+QFile* nmapClass::create_logFile(const QString Path)
 {
 
     QFile *Pfile = new QFile();
