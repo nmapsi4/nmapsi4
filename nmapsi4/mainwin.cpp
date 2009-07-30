@@ -74,8 +74,6 @@ void nmapClass::init()
 
 void nmapClass::startScan() {
 
-    // TODO: change with a preference option (insert a lookup session variable)
-    short tmpScan_ = 0;
     if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
@@ -105,14 +103,14 @@ void nmapClass::startScan() {
 #ifndef MAIN_NO_DEBUG
             qDebug() << "nmapsi4::startScan()::FullString --> " << hostname;
 #endif
-            // lookup disabled for grup scan
+            // lookup disabled for group scan
             addMonitorHost(scanMonitor, hostname);
             this->scan(hostname);
          }
          return;
      }
 
-    if(!tmpScan_) {
+    if(lookupInternal_) {
         addMonitorHost(scanMonitor, hostname);
         lookUpT *lth = new lookUpT(hostname,this);
         connect(lth, SIGNAL(threadEnd(QHostInfo,int,const QString)),

@@ -152,6 +152,22 @@ void nmapClass::checkProfile()
     }
 
     hostCache = settings.value("hostCache").toInt();
+
+    QString lookInt = settings.value("lookInternal", "none").toString();
+
+    if ((!lookInt.compare("none"))) {
+         settings.setValue("lookInternal", "true"); // default value
+    }
+
+    lookupInternal_ = settings.value("lookInternal").toBool();
+
+    QString lDig = settings.value("lookDig", "none").toString();
+
+    if ((!lDig.compare("none"))) {
+         settings.setValue("lookDig", "false"); // default value
+    }
+
+    lookupDig_ = settings.value("lookDig").toBool();
 }
 
 void nmapClass::setQuickProfile()

@@ -67,6 +67,19 @@ mainProfile::mainProfile()
     else
         checkVerboseLog->setChecked(false);
 
+    bool lookI = ptrFile.value("lookInternal").toBool();
+    if (lookI)
+        checkBoxlookup->setChecked(true);
+    else
+        checkBoxlookup->setChecked(false);
+
+    bool lookD = ptrFile.value("lookDig").toBool();
+    if (lookD)
+        checkBoxDig->setChecked(true);
+    else
+        checkBoxDig->setChecked(false);
+
+
     QString cache = ptrFile.value("hostCache", "10").toString();
     spinBoxCache->setValue(cache.toInt());
 
@@ -85,6 +98,10 @@ mainProfile::mainProfile()
     sizeItem = new QListWidgetItem(listViewOptions);
     sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
     sizeItem->setText(tr("Size"));
+
+    lookItem = new QListWidgetItem(listViewOptions);
+    lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    lookItem->setText(tr("Lookup"));
 
     extItem = new QListWidgetItem(listViewOptions);
     extItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-plugin.png")));
@@ -107,6 +124,9 @@ mainProfile::mainProfile()
             this, SLOT(activeExt()));
     connect(disableB, SIGNAL(clicked()),
             this, SLOT(disableExt()));
+
+    // FIXME disable dig support (many works)
+    checkBoxDig->setEnabled(false);
 
 }
 
@@ -149,6 +169,16 @@ void mainProfile::setScan()
         ptrFile.setValue("Vlog", "true");
     else
         ptrFile.setValue("Vlog", "false");
+
+    if (checkBoxlookup->isChecked())
+        ptrFile.setValue("lookInternal", "true");
+    else
+        ptrFile.setValue("lookInternal", "false");
+
+    if (checkBoxDig->isChecked())
+        ptrFile.setValue("lookDig", "true");
+    else
+        ptrFile.setValue("lookDig", "false");
 }
 
 
@@ -166,6 +196,9 @@ void mainProfile::updateItem()
     } else if (extItem->isSelected()) {
         labelTitle->setText(tr("<h3>Extensions</h3>"));
         stackPref->setCurrentIndex(3);
+    } else if (lookItem->isSelected()) {
+        labelTitle->setText(tr("<h3>Scan Lookup</h3>"));
+        stackPref->setCurrentIndex(4);
     }
 }
 
