@@ -38,8 +38,8 @@ class logHistory
 {
 
 private:
-    QList<QString> historyReadUrl();
-    QList<QString> historyReadUrlTime();
+    const QList<QString> historyReadUrl();
+    const QList<QString> historyReadUrlTime();
     QTreeWidgetItem* historyItem;
     QTreeWidgetItem* history;
     QList<QTreeWidgetItem*> ItemListHistory;

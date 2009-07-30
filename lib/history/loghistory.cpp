@@ -39,7 +39,7 @@ logHistory::logHistory(const QString ConfigTag, int cacheSize) :  logTree(NULL),
     __CACHE_SIZE__ = cacheSize;
 }
 
-QList<QString> logHistory::historyReadUrl()
+const QList<QString> logHistory::historyReadUrl()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList;
@@ -47,7 +47,7 @@ QList<QString> logHistory::historyReadUrl()
     return urlList;
 }
 
-QList<QString> logHistory::historyReadUrlTime()
+const QList<QString> logHistory::historyReadUrlTime()
 {
 
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
