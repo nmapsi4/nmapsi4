@@ -40,7 +40,7 @@ public:
 protected:
     QString ScanActive;
     QListWidgetItem *profileItem, *logItem, *sizeItem, *extItem;
-    QListWidgetItem *extPItem;
+    QListWidgetItem *extPItem, *lookItem;
     bool vulnExt;
 
 public slots:

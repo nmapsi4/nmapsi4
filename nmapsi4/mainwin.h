@@ -86,6 +86,8 @@ protected:
     bool saveSize;
     bool listClearFlag;
     bool verboseLog;
+    bool lookupInternal_;
+    bool lookupDig_;
     int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;

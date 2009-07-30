@@ -65,6 +65,9 @@
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="textElideMode">
       <enum>Qt::ElideMiddle</enum>
      </property>
@@ -78,7 +81,7 @@
       <enum>QListView::Adjust</enum>
      </property>
      <property name="spacing">
-      <number>24</number>
+      <number>12</number>
      </property>
      <property name="viewMode">
       <enum>QListView::IconMode</enum>
@@ -394,6 +397,43 @@
           <iconset resource="../../mainwin.qrc">
            <normaloff>:/images/nmapsi4/preference/images/preferences-pluginA.png</normaloff>:/images/nmapsi4/preference/images/preferences-pluginA.png</iconset>
          </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_5">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Scan Preferences</string>
+         </property>
+         <widget class="QCheckBox" name="checkBoxlookup">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>301</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Internal Lookup</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="checkBoxDig">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>351</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Dig Lookup</string>
+          </property>
+         </widget>
         </widget>
        </item>
       </layout>
