@@ -4,6 +4,9 @@ Required:
 * qt4
 * cmake >= 2.6
 
+Recommend:
+* dig package (debian: dnsutils)
+
 Build:
 
 # cd tools/
