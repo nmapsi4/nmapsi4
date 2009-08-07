@@ -17,55 +17,42 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef LOGHISTORY_H
-#define LOGHISTORY_H
+#ifndef DIGTHREAD_H
+#define DIGTHREAD_H
 
-#include <QList>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QSettings>
-#include <QFile>
-#include <QDebug>
-#include <QApplication>
-#include <QDateTime>
-#include <QFileInfo>
-#include <QComboBox>
-#include <QString>
+#include <QThread>
+#include <QByteArray>
+#include <QStringList>
+#include <QProcess>
+#include <QObject>
+#include <QMetaType>
+#include <QtDebug>
 
-#define HISTORY_NO_DEBUG
 
-class logHistory
+class digThread : public QThread
 {
+ Q_OBJECT
+
+ public:
+     digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
+
+signals:
+     void threadEnd(const QStringList, QByteArray);
+     // TODO create a start scan signal
 
 private:
-    const QList<QString> historyReadUrl();
-    const QList<QString> historyReadUrlTime();
-    QTreeWidgetItem* historyItem;
-    QTreeWidgetItem* history;
-    QList<QTreeWidgetItem*> ItemListHistory;
-    QTreeWidget* logTree;
-    void coreItemHistory(const QString url, const QString scanTime);
+     QByteArray pout;
+     QStringList host;
 
-public:
-    logHistory(QTreeWidget* treeLog,
-               const QString ConfigTag,
-               const QString ConfigTagTime,
-               int cacheSize);
-    logHistory(const QString ConfigTag, int cacheSize);
-    ~logHistory() {};
-    void updateLogHistory();
-    void updateBookMarks();
-    virtual void addItemHistory(const QString url);
-    virtual void addItemHistory(const QString url, const QString scanTime);
-    void deleteItemBookmark(const QString item);
+private slots:
+     void setValue();
+     void stopProcess();
 
-protected:
-    QString configTag;
-    QString configTagTime;
-    int __CACHE_SIZE__;
-
-public slots:
-    void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
+ protected:
+     QProcess *proc;
+     void run();
+     QObject* par;
 };
+
 
 #endif

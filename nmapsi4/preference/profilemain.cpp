@@ -35,6 +35,11 @@ mainProfile::mainProfile()
     connect(checkQuickVersion, SIGNAL(toggled(bool)),
             this, SLOT(updateQuickVersionCheck()));
 
+    connect(checkBoxlookup, SIGNAL(toggled(bool)),
+            this, SLOT(activeLookupInt()));
+    connect(checkBoxDig, SIGNAL(toggled(bool)),
+            this, SLOT(activeLookupDig()));
+
     this->setProfile(); // set profile preference
 
     // create a read log config
@@ -126,7 +131,7 @@ mainProfile::mainProfile()
             this, SLOT(disableExt()));
 
     // FIXME disable dig support (many works)
-    checkBoxDig->setEnabled(false);
+    //checkBoxDig->setEnabled(false);
 
 }
 
@@ -274,6 +279,8 @@ void mainProfile::setDefaults()
     checkSize->setChecked(false);
     checkWinPos->setChecked(false);
     checkVerboseLog->setChecked(false);
+    checkBoxlookup->setChecked(true);
+    checkBoxDig->setChecked(false);
 }
 
 mainProfile::~mainProfile()

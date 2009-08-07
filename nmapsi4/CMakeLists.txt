@@ -23,6 +23,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/scanMonitor.cpp
+		core/digSupport/digSupport.cpp
+		core/digSupport/digThread.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -43,15 +45,19 @@ else (WIN32)
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/scanMonitor.cpp
+		core/digSupport/digSupport.cpp
+		core/digSupport/digThread.cpp
 		main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 endif (WIN32)
 
 if(NOT WIN32)
-  SET(SOURCES_H mainwin.h preference/profilemain.h core/scanMT/scanThread.h core/lookup/lookUpT.h)
+  SET(SOURCES_H mainwin.h preference/profilemain.h 
+	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h)
   MESSAGE( STATUS ${SOURCES_H} )
 else (WIN32)
-  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h core/scanMT/scanThread.h core/lookup/lookUpT.h)
+  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h 
+	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h)
   MESSAGE( STATUS ${SOURCES_H} )
 endif (NOT WIN32)
 

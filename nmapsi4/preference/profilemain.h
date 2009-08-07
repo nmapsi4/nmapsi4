@@ -58,6 +58,8 @@ private slots:
     void setDefaults();
     void activeExt();
     void disableExt();
+    void activeLookupInt();
+    void activeLookupDig();
 
 };
 

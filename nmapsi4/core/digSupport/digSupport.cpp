@@ -1,0 +1,107 @@
+/***************************************************************************
+ *   Copyright (C) 2009 by Francesco Cecconi                               *
+ *   francesco.cecconi@gmail.com                                           *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License.        *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
+#include "digSupport.h"
+#include "digThread.h"
+
+digSupport::digSupport() {
+    state = false;
+}
+
+
+void digSupport::checkDigSupport() {
+    digProc = new QProcess();
+
+    QStringList parametri;
+    parametri << "-v";
+    digProc->start("dig", parametri);
+
+    connect(digProc, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(checkDig()));
+}
+
+void digSupport::checkDig() {
+
+    QString *output, *error;
+    output = new QString(digProc->readAllStandardOutput());
+    error = new QString(digProc->readAllStandardError());
+
+    QTextStream stream(output);
+    QTextStream stream2(error);
+    QString line, line2;
+
+    line = stream.readLine();
+    line2 = stream2.readLine();
+    qDebug() << "Dig::line:: " << line;
+    qDebug() << "Dig::error:: " << line2;
+    if (line2.startsWith("DiG") || line.startsWith("DiG")) {
+        state = true;
+        qDebug() << "Dig support enable";
+    }
+
+    delete output;
+    delete error;
+}
+
+bool digSupport::getDigSupport() {
+    return state;
+}
+
+void digSupport::digProcess(const QString hostname, QTreeWidget* view) {
+    Wview = view;
+    QByteArray buff1;
+    QStringList command;
+    command << hostname;
+    digThread *th = new digThread(buff1, command, this);
+
+    th->start();
+    connect(th, SIGNAL(threadEnd(const QStringList, QByteArray)),
+      this, SLOT(digReturn(const QStringList, QByteArray)));
+}
+
+void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
+    qDebug() << "############## digSupport():: start pars ######################";
+
+    QString* buff1 = new QString(buffer1);
+
+    QTextStream stream1(buff1);
+    QString line;
+
+    Wview->setIconSize(QSize::QSize(32, 32));
+    QTreeWidgetItem *rootLook = new QTreeWidgetItem(Wview);
+    QTreeWidgetItem *itemLook;
+    rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
+    rootLook->setForeground(0, Qt::white);
+    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    rootLook->setText(0, hostname[0]);
+
+    while(!stream1.atEnd()) {
+        line = stream1.readLine();
+        if(!line.startsWith(";;") && !line.startsWith(";") && !line.isEmpty()) {
+            qDebug() << "digSupport():: " << line;
+            itemLook = new QTreeWidgetItem(rootLook);
+            itemLook->setText(0,line);
+        }
+    }
+    delete buff1;
+}
+
+digSupport::~digSupport() {
+}
+

@@ -17,55 +17,45 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef LOGHISTORY_H
-#define LOGHISTORY_H
+#include "digThread.h"
 
-#include <QList>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QSettings>
-#include <QFile>
-#include <QDebug>
-#include <QApplication>
-#include <QDateTime>
-#include <QFileInfo>
-#include <QComboBox>
-#include <QString>
+digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
+     : pout(ProcB1), 
+       host(hostname),
+       par(parent)
 
-#define HISTORY_NO_DEBUG
-
-class logHistory
 {
 
-private:
-    const QList<QString> historyReadUrl();
-    const QList<QString> historyReadUrlTime();
-    QTreeWidgetItem* historyItem;
-    QTreeWidgetItem* history;
-    QList<QTreeWidgetItem*> ItemListHistory;
-    QTreeWidget* logTree;
-    void coreItemHistory(const QString url, const QString scanTime);
+}
 
-public:
-    logHistory(QTreeWidget* treeLog,
-               const QString ConfigTag,
-               const QString ConfigTagTime,
-               int cacheSize);
-    logHistory(const QString ConfigTag, int cacheSize);
-    ~logHistory() {};
-    void updateLogHistory();
-    void updateBookMarks();
-    virtual void addItemHistory(const QString url);
-    virtual void addItemHistory(const QString url, const QString scanTime);
-    void deleteItemBookmark(const QString item);
+void digThread::run() {
+     
+     // move to constructor
+     proc = new QProcess();
+     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+     connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
+	     this, SLOT(setValue()));
 
-protected:
-    QString configTag;
-    QString configTagTime;
-    int __CACHE_SIZE__;
+     // signal from parent
+     /*connect(par, SIGNAL(killScan()),
+             this, SLOT(stopProcess())); */
 
-public slots:
-    void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
-};
+     proc->start("dig", host);
+     
+     exec();
+     emit threadEnd(host, pout);
+     qDebug() << "dig() THREAD:: Quit";
+ }
 
-#endif
+void digThread::setValue() {
+     qDebug() << "dig() THREAD:: -> start";
+     pout  = proc->readAllStandardOutput(); // read std buffer
+     exit(0);
+}
+
+void digThread::stopProcess() {
+     qDebug() << "dig() THREAD:: Stop Scan Process";
+     if(proc) {
+	  proc->terminate();
+     }
+}
