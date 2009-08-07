@@ -49,6 +49,11 @@ nmapClass::nmapClass()
 void nmapClass::init()
 {
     setupUi(this);
+
+    //fixme dig support
+    digC  = new digSupport();
+    digC->checkDigSupport();
+
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
@@ -117,6 +122,10 @@ void nmapClass::startScan() {
                        this, SLOT(scanLookup(QHostInfo,int,const QString)));
 
         lth->start();
+    } else if(lookupDig_ && digC->getDigSupport()) {
+        digC->digProcess(hostname,treeLookup);
+        addMonitorHost(scanMonitor, hostname);
+        this->scan(hostname);
     } else {
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);
@@ -193,5 +202,6 @@ nmapClass::~nmapClass()
     delete PFile;
     delete labelVersion;
     delete userMode;
+    delete digC;
 }
 

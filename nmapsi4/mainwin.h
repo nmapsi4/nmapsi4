@@ -27,6 +27,8 @@
 #include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
 #include "core/lookup/lookUpT.h"
+// FIXME
+#include "core/digSupport/digSupport.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 
@@ -100,6 +102,7 @@ protected:
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;
+    digSupport *digC;
 
 
 public slots:

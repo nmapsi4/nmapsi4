@@ -209,7 +209,9 @@ void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
     for(int index=0; index < lineHistory->count()+2; index++) {
                     lineHistory->removeItem(1);
     }
+#ifndef HISTORY_NO_DEBUG
     qDebug() << "logHistory::Post::cout:: " << lineHistory->count();
+#endif
     
     foreach(QString item, urlList) {
         if (/*item.contains(tokenWord)*/item.startsWith(tokenWord)) {

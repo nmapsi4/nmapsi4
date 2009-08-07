@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2009 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,55 +17,37 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef LOGHISTORY_H
-#define LOGHISTORY_H
+#ifndef DIGSUPPORT_H
+#define DIGSUPPORT_H
 
-#include <QList>
+#include <QObject>
+#include <QProcess>
+#include <QTextStream>
+#include <QDebug>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QSettings>
-#include <QFile>
-#include <QDebug>
-#include <QApplication>
-#include <QDateTime>
-#include <QFileInfo>
-#include <QComboBox>
-#include <QString>
+#include <QTextStream>
 
-#define HISTORY_NO_DEBUG
-
-class logHistory
+class digSupport : public QObject
 {
+    Q_OBJECT
 
-private:
-    const QList<QString> historyReadUrl();
-    const QList<QString> historyReadUrlTime();
-    QTreeWidgetItem* historyItem;
-    QTreeWidgetItem* history;
-    QList<QTreeWidgetItem*> ItemListHistory;
-    QTreeWidget* logTree;
-    void coreItemHistory(const QString url, const QString scanTime);
+    public:
+        digSupport();
+        ~digSupport();
+        void checkDigSupport();
+        bool getDigSupport();
+        void digProcess(const QString hostname, QTreeWidget* view);
 
-public:
-    logHistory(QTreeWidget* treeLog,
-               const QString ConfigTag,
-               const QString ConfigTagTime,
-               int cacheSize);
-    logHistory(const QString ConfigTag, int cacheSize);
-    ~logHistory() {};
-    void updateLogHistory();
-    void updateBookMarks();
-    virtual void addItemHistory(const QString url);
-    virtual void addItemHistory(const QString url, const QString scanTime);
-    void deleteItemBookmark(const QString item);
+    private slots:
+        void checkDig();
+        void digReturn(const QStringList hostname, QByteArray buffer1);
 
-protected:
-    QString configTag;
-    QString configTagTime;
-    int __CACHE_SIZE__;
-
-public slots:
-    void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
+    protected:
+        QProcess *digProc;
+        bool state;
+        QTreeWidget *Wview;
+        
 };
 
 #endif

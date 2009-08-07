@@ -73,3 +73,15 @@ void mainProfile::update_saveButton()
         buttonLogB->setEnabled(false);
     }
 }
+
+void mainProfile::activeLookupInt() {
+
+    if(checkBoxlookup->isChecked())
+        checkBoxDig->setChecked(false);
+}
+
+void mainProfile::activeLookupDig() {
+    if(checkBoxDig->isChecked())
+        checkBoxlookup->setChecked(false);
+}
+
