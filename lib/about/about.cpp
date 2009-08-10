@@ -23,10 +23,18 @@ mainAbout::mainAbout() {
     setupUi(this);
     QString version = labelVersion->text();
     QString versionV = labelVuln->text();
+    QString versionDig_ = labelDig->text();
+
     version.append(_VERSION_);
     versionV.append(_VERSION_VULN_);
+    versionDig_.append(_VERSION_DIG_);
     labelVersion->setText(version);
     labelVuln->setText(versionV);
+    labelDig->setText(versionDig_);
+}
+
+void mainAbout::qt() {
+    QMessageBox::aboutQt(this, "Qt Version");
 }
 
 mainAbout::~mainAbout() {

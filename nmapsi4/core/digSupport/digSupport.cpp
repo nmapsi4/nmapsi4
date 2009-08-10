@@ -48,11 +48,15 @@ void digSupport::checkDig() {
 
     line = stream.readLine();
     line2 = stream2.readLine();
+#ifndef DIG_NO_DEBUG
     qDebug() << "Dig::line:: " << line;
     qDebug() << "Dig::error:: " << line2;
+#endif
     if (line2.startsWith("DiG") || line.startsWith("DiG")) {
         state = true;
+#ifndef DIG_NO_DEBUG
         qDebug() << "Dig support enable";
+#endif
     }
 
     delete output;
@@ -76,7 +80,9 @@ void digSupport::digProcess(const QString hostname, QTreeWidget* view) {
 }
 
 void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
+#ifndef DIG_NO_DEBUG
     qDebug() << "############## digSupport():: start pars ######################";
+#endif
 
     QString* buff1 = new QString(buffer1);
 
@@ -94,7 +100,9 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     while(!stream1.atEnd()) {
         line = stream1.readLine();
         if(!line.startsWith(";;") && !line.startsWith(";") && !line.isEmpty()) {
+#ifndef DIG_NO_DEBUG
             qDebug() << "digSupport():: " << line;
+#endif
             itemLook = new QTreeWidgetItem(rootLook);
             itemLook->setText(0,line);
         }

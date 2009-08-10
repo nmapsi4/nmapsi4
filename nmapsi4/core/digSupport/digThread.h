@@ -27,6 +27,7 @@
 #include <QObject>
 #include <QMetaType>
 #include <QtDebug>
+#include "../nmapsi4Debug.h"
 
 
 class digThread : public QThread
@@ -38,7 +39,6 @@ class digThread : public QThread
 
 signals:
      void threadEnd(const QStringList, QByteArray);
-     // TODO create a start scan signal
 
 private:
      QByteArray pout;

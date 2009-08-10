@@ -22,5 +22,6 @@
 
 #define _VERSION_         "0.1.97~svn"
 #define _VERSION_VULN_    "0.1~svn"
+#define _VERSION_DIG_     "0.1~svn"
 
 #endif

@@ -27,7 +27,8 @@ void nmapClass::about()
 
 void nmapClass::about_qt()
 {
-    QMessageBox::aboutQt(this, "Qt Version");
+    mainAbout about;
+    about.qt();
 }
 
 void nmapClass::show_browser(QLineEdit *location)
@@ -48,6 +49,9 @@ void nmapClass::show_log_browserUrl(const QString url, QLineEdit *location)
     FileName = QFileDialog::getExistingDirectory(this, "Open Directory",
                url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
+    if(FileName.isEmpty()) {
+        FileName.append(QDir::tempPath());
+    }
     location->setText(FileName);
 }
 
@@ -177,8 +181,9 @@ void nmapClass::fileSession()
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
-    dialog = new mainProfile();
-    dialog->show();
+    QPointer<mainProfile> dialog = new mainProfile();
+    if(dialog)
+        dialog->show();
     connect(dialog, SIGNAL(accepted()),
             this, SLOT(readProfile()));
 }

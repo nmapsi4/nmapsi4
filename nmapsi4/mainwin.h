@@ -27,10 +27,10 @@
 #include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
 #include "core/lookup/lookUpT.h"
-// FIXME
 #include "core/digSupport/digSupport.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
+#include <memory>
 
 class QMainWindow;
 class QWebView;
@@ -50,7 +50,7 @@ private:
     QStringList check_extensions(QStringList parametri, QString& winTitle);
     void resetOptions();
     void checkProfile();
-    void init();
+    void initGUI();
     void itemDeleteAll(QList<QTreeWidgetItem*> items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
@@ -96,7 +96,7 @@ protected:
     QString logSessionFile;
     QLabel *labelVersion;
     QLabel *userMode;
-    mainProfile *dialog;
+    //mainProfile *dialog;
     logHistory *history;
     scanThread *th;
     QList<QString> monitorElemHost;
@@ -114,6 +114,7 @@ public slots:
 
 
 private slots:
+    void initObject();
     void nmapParser(const QString hostCheck, QByteArray Byte1,  QByteArray Byte2);
     void update_portCombo();
     void update_scanCombo();
