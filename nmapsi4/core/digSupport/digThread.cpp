@@ -23,38 +23,38 @@ digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *pa
      : pout(ProcB1), 
        host(hostname),
        par(parent)
-
 {
 
 }
 
 void digThread::run() {
      
-     // move to constructor
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
      connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
 	     this, SLOT(setValue()));
 
-     // signal from parent
-     /*connect(par, SIGNAL(killScan()),
-             this, SLOT(stopProcess())); */
-
      proc->start("dig", host);
      
      exec();
      emit threadEnd(host, pout);
+#ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Quit";
+#endif
  }
 
 void digThread::setValue() {
+#ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: -> start";
+#endif
      pout  = proc->readAllStandardOutput(); // read std buffer
      exit(0);
 }
 
 void digThread::stopProcess() {
+#ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Stop Scan Process";
+#endif
      if(proc) {
 	  proc->terminate();
      }

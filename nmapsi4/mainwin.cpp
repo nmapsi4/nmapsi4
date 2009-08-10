@@ -23,36 +23,15 @@ nmapClass::nmapClass()
      : PFile(NULL),
        labelVersion(NULL),
        userMode(NULL),
-       dialog(0),
        th(NULL)
 {
-    int uid = 0;
-
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-
-    init();
-    this->setNmapsiSlot();
-    this->rootMode(uid); // send uid value
-    this->checkProfile();
-    this->optionListCreate();
-
-    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", hostCache);
-    historyScan_->updateBookMarks();
-    delete historyScan_;
-    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", hostCache);
-    historyVuln_->updateBookMarks();
-    delete historyVuln_;
+    initGUI();
+    QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
 
-void nmapClass::init()
+void nmapClass::initGUI()
 {
     setupUi(this);
-
-    //fixme dig support
-    digC  = new digSupport();
-    digC->checkDigSupport();
 
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
@@ -65,6 +44,22 @@ void nmapClass::init()
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )"));
 
+    setNmapsiSlot();
+    checkProfile();
+    optionListCreate();
+}
+
+void nmapClass::initObject() {
+
+    int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
+
+    digC  = new digSupport();
+    digC->checkDigSupport();
+
     checkNmapVersion();
     listWscan->setColumnWidth(0, 400);
     treeLogH->setColumnWidth(0, 400);
@@ -75,6 +70,14 @@ void nmapClass::init()
     QSize size = settings.value("window/size", QSize(869, 605)).toSize();
     resize(size);
     move(pos);
+
+    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", hostCache);
+    historyScan_->updateBookMarks();
+    delete historyScan_;
+    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", hostCache);
+    historyVuln_->updateBookMarks();
+    delete historyVuln_;
+    this->rootMode(uid); // send uid value
 }
 
 void nmapClass::startScan() {
@@ -193,7 +196,6 @@ nmapClass::~nmapClass()
     qDebug() << "Nmapsi4/~nmapClass() -> Global";
     qDebug() << "Nmapsi4/~nmapClass() -> Size Item List::" << itemList.size();
 #endif
-    if (dialog) dialog->close();
     itemDeleteAll(itemList);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);

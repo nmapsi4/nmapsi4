@@ -890,9 +890,9 @@
         <location filename="../core/saveLog.cpp" line="48"/>
         <location filename="../core/saveLog.cpp" line="88"/>
         <location filename="../core/saveLog.cpp" line="123"/>
-        <location filename="../core/toolsUI.cpp" line="144"/>
+        <location filename="../core/toolsUI.cpp" line="148"/>
         <location filename="../core/updateUI.cpp" line="275"/>
-        <location filename="../mainwin.cpp" line="83"/>
+        <location filename="../mainwin.cpp" line="86"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -908,12 +908,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="66"/>
+        <location filename="../mainwin.cpp" line="45"/>
         <source>Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="83"/>
+        <location filename="../mainwin.cpp" line="86"/>
         <source>No Host Target
 </source>
         <translation type="unfinished"></translation>
@@ -975,35 +975,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="37"/>
+        <location filename="../core/toolsUI.cpp" line="38"/>
         <source>Select the file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="88"/>
-        <location filename="../core/toolsUI.cpp" line="144"/>
+        <location filename="../core/toolsUI.cpp" line="148"/>
         <source>Save File permission Error (Log stored in /tmp)
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="231"/>
-        <location filename="../core/toolsUI.cpp" line="237"/>
+        <location filename="../core/toolsUI.cpp" line="236"/>
+        <location filename="../core/toolsUI.cpp" line="242"/>
         <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="238"/>
+        <location filename="../core/toolsUI.cpp" line="243"/>
         <source>Not Present</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="249"/>
+        <location filename="../core/toolsUI.cpp" line="254"/>
         <source>Full</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="251"/>
+        <location filename="../core/toolsUI.cpp" line="256"/>
         <source>User</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1039,7 +1039,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="247"/>
+        <location filename="../core/toolsUI.cpp" line="252"/>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>

@@ -27,6 +27,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QTextStream>
+#include "../nmapsi4Debug.h"
 
 class digSupport : public QObject
 {

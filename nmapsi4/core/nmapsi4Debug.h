@@ -27,5 +27,6 @@
 #define SAVELOG_NO_DEBUG
 #define TOOLS_NO_DEBUG
 #define PARSER_NO_DEBUG
+#define DIG_NO_DEBUG
 
 #endif

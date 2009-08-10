@@ -886,9 +886,9 @@
         <location filename="../core/saveLog.cpp" line="48"/>
         <location filename="../core/saveLog.cpp" line="88"/>
         <location filename="../core/saveLog.cpp" line="123"/>
-        <location filename="../core/toolsUI.cpp" line="144"/>
+        <location filename="../core/toolsUI.cpp" line="148"/>
         <location filename="../core/updateUI.cpp" line="275"/>
-        <location filename="../mainwin.cpp" line="83"/>
+        <location filename="../mainwin.cpp" line="86"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
@@ -986,7 +986,7 @@ Nessun errore o avvertimento</translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="88"/>
-        <location filename="../core/toolsUI.cpp" line="144"/>
+        <location filename="../core/toolsUI.cpp" line="148"/>
         <source>Save File permission Error (Log stored in /tmp)
 </source>
         <translation>Errore nei permessi del file (Log salvato in /tmp)
@@ -1032,7 +1032,7 @@ MS Windows Packages: el.diabl09@gmail.com
 </translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="37"/>
+        <location filename="../core/toolsUI.cpp" line="38"/>
         <source>Select the file</source>
         <translation>Scegli il file</translation>
     </message>
@@ -1044,12 +1044,12 @@ MS Windows Packages: el.diabl09@gmail.com
 </translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="66"/>
+        <location filename="../mainwin.cpp" line="45"/>
         <source>Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="83"/>
+        <location filename="../mainwin.cpp" line="86"/>
         <source>No Host Target
 </source>
         <translation>Nessun host specificato
@@ -1064,17 +1064,17 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="obsolete">Versione di Nmap: </translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="238"/>
+        <location filename="../core/toolsUI.cpp" line="243"/>
         <source>Not Present</source>
         <translation>Non presente</translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="249"/>
+        <location filename="../core/toolsUI.cpp" line="254"/>
         <source>Full</source>
         <translation>Completo</translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="251"/>
+        <location filename="../core/toolsUI.cpp" line="256"/>
         <source>User</source>
         <translation>Utente</translation>
     </message>
@@ -1084,8 +1084,8 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation>Log (*.log)</translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="231"/>
-        <location filename="../core/toolsUI.cpp" line="237"/>
+        <location filename="../core/toolsUI.cpp" line="236"/>
+        <location filename="../core/toolsUI.cpp" line="242"/>
         <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
         <translation></translation>
     </message>
@@ -1152,7 +1152,7 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/toolsUI.cpp" line="247"/>
+        <location filename="../core/toolsUI.cpp" line="252"/>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>
