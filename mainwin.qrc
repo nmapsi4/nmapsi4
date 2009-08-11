@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images" >
+    <file>images/view-web-browser-dom-tree.png</file>
     <file>nmapsi4/preference/images/preferences-pluginA.png</file>
     <file>nmapsi4/preference/images/preferences-pluginD.png</file>
     <file>images/preferences-plugin.png</file>

@@ -27,6 +27,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QTextStream>
+#include "digThread.h"
 #include "../nmapsi4Debug.h"
 
 class digSupport : public QObject
@@ -48,6 +49,7 @@ class digSupport : public QObject
         QProcess *digProc;
         bool state;
         QTreeWidget *Wview;
+        digThread *th;
         
 };
 

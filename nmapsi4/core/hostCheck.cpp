@@ -20,9 +20,6 @@
 #include "../mainwin.h"
 
 void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
-    // TODO
-    // create a user box for scan (lookup or not) type
-    // create a function for check user preference
 
     qDebug() << "scanLookup::flag:: " << state;
 
@@ -56,7 +53,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         itemListLook.push_front(itemLook);
         itemLook->setText(0,address.toString());
     }
-
+    delete lth;
     this->scan(hostname);
 }
 
