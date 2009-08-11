@@ -120,7 +120,7 @@ void nmapClass::startScan() {
 
     if(lookupInternal_) {
         addMonitorHost(scanMonitor, hostname);
-        lookUpT *lth = new lookUpT(hostname,this);
+        lth = new lookUpT(hostname,this);
         connect(lth, SIGNAL(threadEnd(QHostInfo,int,const QString)),
                        this, SLOT(scanLookup(QHostInfo,int,const QString)));
 

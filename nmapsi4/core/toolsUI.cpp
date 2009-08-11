@@ -63,7 +63,7 @@ void nmapClass::input_browser()
 void nmapClass::exit()
 {
     emit killScan();
-    if(th && !th->isFinished()) {
+    if(th) {
 	 th->quit();
          th->wait();
      }
@@ -181,9 +181,11 @@ void nmapClass::fileSession()
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
+    // FIXME clear memory
     QPointer<mainProfile> dialog = new mainProfile();
-    if(dialog)
-        dialog->show();
+    //std::auto_ptr<mainProfile> dialog(new mainProfile());
+    //if(dialog)
+    dialog->show();
     connect(dialog, SIGNAL(accepted()),
             this, SLOT(readProfile()));
 }

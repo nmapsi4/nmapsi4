@@ -48,6 +48,7 @@ void digThread::setValue() {
      qDebug() << "dig() THREAD:: -> start";
 #endif
      pout  = proc->readAllStandardOutput(); // read std buffer
+     delete proc;
      exit(0);
 }
 

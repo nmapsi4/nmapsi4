@@ -98,7 +98,8 @@ protected:
     QLabel *userMode;
     //mainProfile *dialog;
     logHistory *history;
-    scanThread *th;
+    QPointer<scanThread> th;
+    lookUpT *lth;
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;

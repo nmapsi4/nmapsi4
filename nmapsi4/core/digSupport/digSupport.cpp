@@ -18,7 +18,6 @@
  ***************************************************************************/
 
 #include "digSupport.h"
-#include "digThread.h"
 
 digSupport::digSupport() {
     state = false;
@@ -61,6 +60,7 @@ void digSupport::checkDig() {
 
     delete output;
     delete error;
+    delete digProc;
 }
 
 bool digSupport::getDigSupport() {
@@ -72,8 +72,9 @@ void digSupport::digProcess(const QString hostname, QTreeWidget* view) {
     QByteArray buff1;
     QStringList command;
     command << hostname;
-    digThread *th = new digThread(buff1, command, this);
-
+    th = new digThread(buff1, command, this);
+    //std::auto_ptr<digThread> th(new digThread(buff1, command, this));
+    //std::auto_ptr<digThread> th = new digThread(buff1, command, this);
     th->start();
     connect(th, SIGNAL(threadEnd(const QStringList, QByteArray)),
       this, SLOT(digReturn(const QStringList, QByteArray)));
@@ -104,12 +105,16 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
             qDebug() << "digSupport():: " << line;
 #endif
             itemLook = new QTreeWidgetItem(rootLook);
+            itemLook->setSizeHint(0, QSize::QSize(22, 22));
+            itemLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/view-web-browser-dom-tree.png")));
             itemLook->setText(0,line);
         }
     }
     delete buff1;
+    delete th;
 }
 
 digSupport::~digSupport() {
+
 }
 
