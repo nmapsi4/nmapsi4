@@ -112,6 +112,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     }
     delete buff1;
     delete th;
+    buffer1.clear();
 }
 
 digSupport::~digSupport() {

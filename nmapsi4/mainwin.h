@@ -96,7 +96,7 @@ protected:
     QString logSessionFile;
     QLabel *labelVersion;
     QLabel *userMode;
-    //mainProfile *dialog;
+    QPointer<mainProfile> dialog;
     logHistory *history;
     QPointer<scanThread> th;
     lookUpT *lth;
