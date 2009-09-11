@@ -32,21 +32,9 @@ nmapClass::nmapClass()
 void nmapClass::initGUI()
 {
     setupUi(this);
-
-    // Disable scan action (nmap check)
-    action_Scan_menu->setEnabled(false);
-    action_Scan_2->setEnabled(false);
-    hostEdit->setEnabled(false);
-    actionAdd_Bookmark->setEnabled(false);
-    action_Add_BookmarkToolBar->setEnabled(false);
-
-
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )"));
-
     setNmapsiSlot();
-    checkProfile();
-    optionListCreate();
 }
 
 void nmapClass::initObject() {
@@ -56,6 +44,16 @@ void nmapClass::initObject() {
 #ifndef Q_WS_WIN
     uid = getuid();
 #endif
+
+    // Disable scan action (nmap check)
+    action_Scan_menu->setEnabled(false);
+    action_Scan_2->setEnabled(false);
+    hostEdit->setEnabled(false);
+    actionAdd_Bookmark->setEnabled(false);
+    action_Add_BookmarkToolBar->setEnabled(false);
+
+    checkProfile();
+    optionListCreate();
 
     digC  = new digSupport();
     digC->checkDigSupport();
@@ -78,6 +76,7 @@ void nmapClass::initObject() {
     historyVuln_->updateBookMarks();
     delete historyVuln_;
     this->rootMode(uid); // send uid value
+    dialog = new mainProfile();
 }
 
 void nmapClass::startScan() {
@@ -196,6 +195,9 @@ nmapClass::~nmapClass()
     qDebug() << "Nmapsi4/~nmapClass() -> Global";
     qDebug() << "Nmapsi4/~nmapClass() -> Size Item List::" << itemList.size();
 #endif
+    if(dialog) {
+        dialog->close();
+    }
     itemDeleteAll(itemList);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);

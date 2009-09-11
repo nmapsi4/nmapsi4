@@ -393,6 +393,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     delete StdoutStr;
     delete StderrorStr;
     delete th;
+    Byte1.clear();
+    Byte2.clear();
 
     progressScan->setValue(85);
     this->setWindowTitle(title.replace("(75%)", "(85%)"));

@@ -181,10 +181,6 @@ void nmapClass::fileSession()
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
-    // FIXME clear memory
-    QPointer<mainProfile> dialog = new mainProfile();
-    //std::auto_ptr<mainProfile> dialog(new mainProfile());
-    //if(dialog)
     dialog->show();
     connect(dialog, SIGNAL(accepted()),
             this, SLOT(readProfile()));
