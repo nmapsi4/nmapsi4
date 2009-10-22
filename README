@@ -16,7 +16,7 @@ cd ../build/
 # make install (only root) || search or create a package for your disto ;)
 
 Packages:
-http://nmapsi4.netsons.org
+http://www.nmapsi4.org
 
 * Debian Package (not tested with kubuntu)
 * OpenSuse
@@ -60,7 +60,7 @@ start nmapsi4 in user mode. ;)
 ***********************************************************************************
 MS windows build:
 
-for build informations with MS windows OS visit: http://nmapsi4.netsons.org
+for build informations with MS windows OS visit: http://www.nmapsi4.org
 
 ***********************************************************************************
 Mac Os:
