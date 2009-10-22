@@ -13,9 +13,8 @@ QString mwClass::showBrowser()
 void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 {
     qDebug() << "nwClass/itemDeleteAll() -> Free List";
-    foreach(QTreeWidgetItem *item, items) {
-        delete item;
-    }
+    qDeleteAll(items);
+    items.clear();
 }
 
 void mwClass::exit()
