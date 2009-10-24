@@ -300,7 +300,17 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     item2->setToolTip(0, str);
                 }
 
-                if ((PFile) && (!verboseLog)) *out << item2->text(0) << endl;
+                if ((PFile) && (!verboseLog)) {
+                    *out << item2->text(0)
+                            << " ("
+                            << item2->text(4)
+                            << " - "
+                            << item2->text(1)
+                            << item2->text(2)
+                            << item2->text(3)
+                            << ")"
+                            << endl;
+                }
             } else
                 item2->setText(0, tr("No Ports"));
 
