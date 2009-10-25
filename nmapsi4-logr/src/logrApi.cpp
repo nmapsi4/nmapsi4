@@ -12,7 +12,9 @@ QString mwClass::showBrowser()
 
 void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 {
+#ifndef LOGR_NO_DEBUG
     qDebug() << "nwClass/itemDeleteAll() -> Free List";
+#endif
     qDeleteAll(items);
     items.clear();
 }
@@ -20,8 +22,8 @@ void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 void mwClass::exit()
 {
     QSettings settings("nmapsi4", "nmapsi4");
-    settings.setValue("window/pos", pos());
-    settings.setValue("window/size", size());
+    settings.setValue("window-logr/pos", pos());
+    settings.setValue("window-logr/size", size());
     close();
 }
 
@@ -34,4 +36,16 @@ void mwClass::logFromHistory()
         logReader();
         toolBoxMain->setCurrentIndex(0);
     }
+}
+
+void mwClass::about()
+{
+    mainAbout about;
+    about.exec();
+}
+
+void mwClass::about_qt()
+{
+    mainAbout about;
+    about.qt();
 }

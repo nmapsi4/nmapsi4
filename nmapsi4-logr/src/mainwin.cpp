@@ -22,6 +22,11 @@
 
 mwClass::mwClass() : logF(0), url(0)
 {
+    initGUI();
+    QTimer::singleShot(0, this, SLOT(initObject()));
+}
+
+void mwClass::initGUI() {
     setupUi(this);
 
     connect(actionOpen, SIGNAL(triggered()),
@@ -33,13 +38,21 @@ mwClass::mwClass() : logF(0), url(0)
     connect(actionQuit, SIGNAL(triggered()),
             this, SLOT(exit()));
 
+    connect(action_About, SIGNAL(triggered()),
+            this, SLOT(about()));
+
+    connect(actionAbout_Qt, SIGNAL(triggered()),
+            this, SLOT(about_qt()));
+
     connect(logTree, SIGNAL(itemSelectionChanged()),
             this, SLOT(logFromHistory()));
+}
 
+void mwClass::initObject() {
     // Take nmapsi4 geometry info
     QSettings settings("nmapsi4", "nmapsi4");
-    QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
-    QSize size = settings.value("window/size", QSize(869, 605)).toSize();
+    QPoint pos = settings.value("window-logr/pos", QPoint(200, 200)).toPoint();
+    QSize size = settings.value("window-logr/size", QSize(869, 605)).toSize();
     resize(size);
     move(pos);
 
@@ -65,17 +78,23 @@ void mwClass::logReader()
     if (url.isEmpty())
         return;
 
+#ifndef LOGR_NO_DEBUG
     qDebug() << "Path Current Item::" << url;
+#endif
 
     //logHistory *history = new logHistory(logTree,"logReader/urlList");
     logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
     history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
     if (!logF) logF = new QFile();
+#ifndef LOGR_NO_DEBUG
     qDebug() << "nmapsi4-logr:: --> url::" << url;
+#endif
     logF->setFileName(url);
     if (!logF->open(QIODevice::ReadOnly)) {
+#ifndef LOGR_NO_DEBUG
         qDebug() << "Log File open error." << endl;
+#endif
         return;
     }
 

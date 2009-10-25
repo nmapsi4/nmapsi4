@@ -17,58 +17,12 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MAINWIN_H
-#define MAINWIN_H
 
-#include <QString>
-#include <QTreeWidgetItem>
-#include <QList>
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
-#include <QSettings>
-#include <QDir>
-#include <QFileDialog>
-#include <QDateTime>
-#include <assert.h>
-#include <QTimer>
-#include "ui_mainwin.h"
-#include "../../lib/history/loghistory.h"
-#include "../../lib/about/about.h"
-#include "logr-debug.h"
+#ifndef LOGR_DEBUG_H
+#define LOGR_DEBUG_H
 
-
-class mwClass : public QMainWindow , private Ui::mWindow
-{
-    Q_OBJECT
-
-private:
-    void initGUI();
-    QString showBrowser();
-    void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
-
-    QTreeWidgetItem *root;
-    QTreeWidgetItem *item;
-    QFile *logF;
-    QList<QTreeWidgetItem*> ItemList;
-
-public:
-    mwClass();
-    ~mwClass();
-
-protected:
-    QString url;
-
-private slots:
-    void initObject();
-    void logReader();
-    void logFromHistory();
-    void Breader();
-    void exit();
-    void about();
-    void about_qt();
-
-
-};
+// debug define (undefine for debug)
+#define LOGR_NO_DEBUG
 
 #endif
+

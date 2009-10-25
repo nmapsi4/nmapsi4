@@ -46,7 +46,9 @@ int main(int argc, char *argv[])
 
 #ifndef Q_WS_WIN // Gnu/Linux && Mac Os/x
     urlTranslate = __LinuxTranslateUrl__;
+#ifndef LOGR_NO_DEBUG
     qDebug() << "Nmapsi4-logr/core -> url Translator::" << urlTranslate;
+#endif
 
 #else // MS Windows
     urlTranslate = QDir::homePath(); // Insert a url for MS Windows Translate ( FIXME check for local binary path)
@@ -60,9 +62,11 @@ int main(int argc, char *argv[])
         tmp_translator = translator.load(localeComplete, QDir::currentPath());
 
     // debug messages for Translation file
+#ifndef LOGR_NO_DEBUG
     qDebug() << "Nmapsi4-logr/core -> Locale::" << localeComplete;
     qDebug() << "Nmapsi4-logr/core -> Translation file Load::" << tmp_translator;
     qDebug() << "Nmapsi4-logr/core -> Traslation file is Empty::" << translator.isEmpty();
+#endif
 
     app.installTranslator(&translator);
 

@@ -44,10 +44,14 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>732</width>
-         <height>451</height>
+         <width>738</width>
+         <height>457</height>
         </rect>
        </property>
+       <attribute name="icon">
+        <iconset resource="../../mainwin.qrc">
+         <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
+       </attribute>
        <attribute name="label">
         <string>Host(s)</string>
        </attribute>
@@ -84,9 +88,13 @@
          <x>0</x>
          <y>0</y>
          <width>797</width>
-         <height>434</height>
+         <height>440</height>
         </rect>
        </property>
+       <attribute name="icon">
+        <iconset resource="../../mainwin.qrc">
+         <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
+       </attribute>
        <attribute name="label">
         <string>Log History</string>
        </attribute>
@@ -166,6 +174,8 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="action_About"/>
+    <addaction name="actionAbout_Qt"/>
    </widget>
    <addaction name="menu_FIle"/>
    <addaction name="menu_Help"/>
@@ -239,6 +249,24 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="icon">
+    <iconset resource="../../mainwin.qrc">
+     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="../../mainwin.qrc">
+     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Qt</string>
    </property>
   </action>
  </widget>

@@ -7,6 +7,7 @@ SET(SOURCES_CPP	src/mainwin.cpp
                 src/logrApi.cpp
 		../lib/history/loghistory.cpp
 		../lib/history/coreHistory.cpp
+		../lib/about/about.cpp
 		src/main.cpp)
 MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -17,11 +18,21 @@ MESSAGE( STATUS ${SOURCES_CPP} )
 
 endif(WIN32)
 
-SET(SOURCES_H src/mainwin.h)
-MESSAGE( STATUS ${SOURCES_H} )
+if(NOT WIN32)
+	SET(SOURCES_H src/mainwin.h)
+	MESSAGE( STATUS ${SOURCES_H} )
+else(WIN32)
+	SET(SOURCES_H src/mainwin.h ../lib/about/about.h)
+	MESSAGE( STATUS ${SOURCES_H} )
+endif(NOT WIN32)
 
-SET(SOURCES_UI src/mainwin.ui )
-MESSAGE( STATUS ${SOURCES_UI} )
+if(NOT WIN32)
+	SET(SOURCES_UI src/mainwin.ui )
+	MESSAGE( STATUS ${SOURCES_UI} )
+else(WIN32)
+	SET(SOURCES_UI src/mainwin.ui ../lib/about/mainwin.ui)
+	MESSAGE( STATUS ${SOURCES_UI} )
+endif(NOT WIN32)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
 MESSAGE( STATUS ${RESOURCES_QRC} )
@@ -46,10 +57,10 @@ if (WIN32)
   INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
   TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES})
-else (WIN32)
+else (NOT WIN32)
   INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/history/)
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-  TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} nmapsi4_history)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/about/)
+  TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} nmapsi4_history nmapsi4_about)
 endif (WIN32)
 
 
