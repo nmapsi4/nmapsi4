@@ -402,7 +402,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     delete StdoutStr;
     delete StderrorStr;
-    delete th;
+    //delete th;
     Byte1.clear();
     Byte2.clear();
 

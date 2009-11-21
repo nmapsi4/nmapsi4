@@ -54,7 +54,7 @@ void scanThread::setValue() {
      qDebug() << "scan() THREAD:: -> start";
      pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
-     delete proc;
+     //delete proc;
      exit(0);
 }
 
