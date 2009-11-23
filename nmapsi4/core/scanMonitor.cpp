@@ -65,6 +65,10 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 	  item->setText(1, monitorElemState[i]);
 	  monitorElem.push_front(item);
      }
+
+     if(monitorElemHost.size() == 0) {
+         actionStop_Scan->setEnabled(false);
+     }
      
 }
 
