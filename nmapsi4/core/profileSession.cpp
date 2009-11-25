@@ -161,6 +161,11 @@ void nmapClass::checkProfile()
 
     lookupInternal_ = settings.value("lookInternal").toBool();
 
+#ifdef Q_WS_WIN
+    // disable lookup in MS windows
+    lookupInternal_ = false;
+#endif
+
     QString lDig = settings.value("lookDig", "none").toString();
 
     if ((!lDig.compare("none"))) {
@@ -168,6 +173,11 @@ void nmapClass::checkProfile()
     }
 
     lookupDig_ = settings.value("lookDig").toBool();
+
+#ifdef Q_WS_WIN
+    // disable lookup in MS windows
+    lookupDig_ = false;
+#endif
 }
 
 void nmapClass::setQuickProfile()

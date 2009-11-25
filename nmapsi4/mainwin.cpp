@@ -45,6 +45,10 @@ void nmapClass::initObject() {
     uid = getuid();
 #endif
 
+#ifdef Q_WS_WIN
+    tabWidget->removeTab(3);
+#endif
+
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);

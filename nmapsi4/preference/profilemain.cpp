@@ -104,9 +104,11 @@ mainProfile::mainProfile()
     sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
     sizeItem->setText(tr("Size"));
 
+#ifndef Q_WS_WIN
     lookItem = new QListWidgetItem(listViewOptions);
     lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     lookItem->setText(tr("Lookup"));
+#endif
 
     extItem = new QListWidgetItem(listViewOptions);
     extItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-plugin.png")));
@@ -175,6 +177,7 @@ void mainProfile::setScan()
     else
         ptrFile.setValue("Vlog", "false");
 
+#ifndef Q_WS_WIN
     if (checkBoxlookup->isChecked())
         ptrFile.setValue("lookInternal", "true");
     else
@@ -184,6 +187,7 @@ void mainProfile::setScan()
         ptrFile.setValue("lookDig", "true");
     else
         ptrFile.setValue("lookDig", "false");
+#endif
 }
 
 

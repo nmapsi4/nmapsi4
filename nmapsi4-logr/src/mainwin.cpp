@@ -53,15 +53,13 @@ void mwClass::initObject() {
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window-logr/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window-logr/size", QSize(869, 605)).toSize();
+    int nHost = settings.value("hostCache").toInt();
     resize(size);
     move(pos);
 
-    // TEST
-    //historyReadUrl();
-    //logHistory *history = new logHistory(logTree,"logReader/urlList");
     logTree->setColumnWidth(0, 350);
     logTree->setColumnWidth(1, 200);
-    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
+    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", nHost);
     history->updateLogHistory();
     delete history;
 }

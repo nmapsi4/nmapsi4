@@ -1,5 +1,6 @@
 <RCC>
-  <qresource prefix="/images" >
+  <qresource prefix="/images">
+    <file>icons/nmapsi4_mw.svg</file>
     <file>images/view-web-browser-dom-tree.png</file>
     <file>nmapsi4/preference/images/preferences-pluginA.png</file>
     <file>nmapsi4/preference/images/preferences-pluginD.png</file>
@@ -13,7 +14,6 @@
     <file>images/right.png</file>
     <file>images/reload.png</file>
     <file>images/show-menu.png</file>
-    <file>icons/nmapsi4_mw.svg</file>
     <file>images/book.png</file>
     <file>images/book2.png</file>
     <file>images/button_cancel.png</file>
