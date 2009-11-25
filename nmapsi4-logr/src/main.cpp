@@ -19,7 +19,7 @@
 
 #include <QApplication>
 #include <QTranslator>
-#include "mainwin.h"
+#include "../mainwin.h"
 #include "config.h"
 
 

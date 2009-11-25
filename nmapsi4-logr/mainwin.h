@@ -33,9 +33,9 @@
 #include <assert.h>
 #include <QTimer>
 #include "ui_mainwin.h"
-#include "../../lib/history/loghistory.h"
-#include "../../lib/about/about.h"
-#include "logr-debug.h"
+#include "../lib/history/loghistory.h"
+#include "../lib/about/about.h"
+#include "src/logr-debug.h"
 
 
 class mwClass : public QMainWindow , private Ui::mWindow

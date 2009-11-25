@@ -1,4 +1,4 @@
-#include "mainwin.h"
+#include "../mainwin.h"
 
 
 QString mwClass::showBrowser()
