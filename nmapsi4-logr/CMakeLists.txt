@@ -30,7 +30,7 @@ if(NOT WIN32)
 	SET(SOURCES_UI src/mainwin.ui )
 	MESSAGE( STATUS ${SOURCES_UI} )
 else(WIN32)
-	SET(SOURCES_UI src/mainwin.ui ../lib/about/mainwin.ui)
+	SET(SOURCES_UI src/mainwin.ui ../lib/about/about.ui )
 	MESSAGE( STATUS ${SOURCES_UI} )
 endif(NOT WIN32)
 
