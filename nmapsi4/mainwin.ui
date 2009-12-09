@@ -145,8 +145,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>756</width>
-                 <height>403</height>
+                 <width>755</width>
+                 <height>408</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -271,8 +271,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>756</width>
-                 <height>403</height>
+                 <width>755</width>
+                 <height>408</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -332,8 +332,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>756</width>
-                 <height>403</height>
+                 <width>755</width>
+                 <height>408</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -1624,6 +1624,38 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="tab_7">
+           <attribute name="icon">
+            <iconset resource="../mainwin.qrc">
+             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>Traceroot</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QTreeWidget" name="treeTraceroot">
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::NoSelection</enum>
+              </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
+              <column>
+               <property name="text">
+                <string>Hop(s)</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -2018,7 +2050,7 @@
      <x>0</x>
      <y>0</y>
      <width>910</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

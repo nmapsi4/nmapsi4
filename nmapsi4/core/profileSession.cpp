@@ -184,7 +184,7 @@ void nmapClass::setQuickProfile()
 {
     this->resetOptions();
     comboTiming->setCurrentIndex(4);
-    comboDNSResolv->setCurrentIndex(2);
+    comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(1);
 }
 
@@ -192,7 +192,7 @@ void nmapClass::setNormalProfile()
 {
     this->resetOptions();
     comboTiming->setCurrentIndex(4);
-    comboDNSResolv->setCurrentIndex(2);
+    comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(1);
     versionBox->setChecked(true);
 }
@@ -204,7 +204,7 @@ void nmapClass::setFullVersionProfile()
     checkOS->setChecked(true);
     versionBox->setChecked(true);
     comboVerbosity->setCurrentIndex(1);
-    comboDNSResolv->setCurrentIndex(2);
+    comboDNSResolv->setCurrentIndex(0);
 }
 
 void nmapClass::setQuickVersionProfile()
@@ -212,5 +212,5 @@ void nmapClass::setQuickVersionProfile()
     this->resetOptions();
     comboTiming->setCurrentIndex(4);
     checkOS->setChecked(true);
-    comboDNSResolv->setCurrentIndex(2);
+    comboDNSResolv->setCurrentIndex(0);
 }

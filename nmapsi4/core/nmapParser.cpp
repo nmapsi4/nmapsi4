@@ -44,7 +44,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     this->setWindowTitle(title.append("(75%)"));
     
     QTextStream stream(StdoutStr);
-    QString tmp, buffer, buffer2, bufferInfo;
+    QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot;
 
     while (!stream.atEnd()) {
         tmp = stream.readLine();
@@ -63,6 +63,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             buffer.append(tmp);
         }
 
+        QString tmpClean;
+
         if (tmp.contains("MAC")
                 || tmp.contains("Running:")
                 || tmp.contains("Running")
@@ -79,10 +81,41 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 || tmp.contains("Network Distance:")
                 || tmp.contains("Note:")
                 || tmp.contains("Nmap done:")
+                || tmp.startsWith("|")
            ) {
+            tmpClean = tmp;
+            if(tmpClean.startsWith("|")) {
+                tmpClean.remove("|");
+            }
+            if(tmpClean.startsWith("_")) {
+                tmpClean.remove("_");
+            }
+            if(tmpClean.startsWith(" ")) {
+                tmpClean.remove(" ");
+            }
 
-            bufferInfo.append(tmp);
+            bufferInfo.append(tmpClean);
             bufferInfo.append("\n");
+        }
+
+        QRegExp rx_("*.*.*.*");
+        rx_.setPatternSyntax(QRegExp::Wildcard);
+
+        if(rx_.exactMatch(tmp) && !tmp.startsWith("Discovered")
+                                        && !tmp.startsWith("Scanning")
+                                        && !tmp.startsWith("Initiating")
+                                        && !tmp.startsWith("Interesting")
+                                        && !tmp.startsWith("NSE")
+                                        && !tmp.contains("open")
+                                        && !tmp.contains("closed")
+                                        && !tmp.startsWith("|")
+                                        && !tmp.startsWith("OS")
+                                        && !tmp.startsWith("Service")
+                                        && !tmp.startsWith("Host")
+
+        ){
+            bufferTraceroot.append(tmp);
+            bufferTraceroot.append("\n");
         }
 
     }
@@ -99,6 +132,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     infoItem = new QTreeWidgetItem(treeWinfo);
     itemList.push_front(infoItem);
+
+    infoTraceroot = new QTreeWidgetItem(treeTraceroot);
+    itemList.push_front(infoTraceroot);
 
     // check for log file
     QTextStream *out = NULL;
@@ -122,6 +158,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     listScan->header()->setResizeMode(0, QHeaderView::Interactive);
     treeWinfo->setIconSize(QSize::QSize(32, 32));
     treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeTraceroot->setIconSize(QSize::QSize(32, 32));
+    treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
 
     int tmpBox = toolBox->currentIndex();
  
@@ -146,6 +184,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    // TODO
+    infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
         root->setBackground(0, QColor::fromRgb(164, 164, 164));
@@ -160,6 +200,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         root->setForeground(4, Qt::white);
         infoItem->setBackground(0, QColor::fromRgb(164, 164, 164));
 	infoItem->setForeground(0, Qt::white);
+        infoTraceroot->setBackground(0, QColor::fromRgb(164, 164, 164));
+        infoTraceroot->setForeground(0, Qt::white);
         root2->setBackground(0, QColor::fromRgb(164, 164, 164));
 	root2->setForeground(0, Qt::white);
         error->setBackground(0, QColor::fromRgb(164, 164, 164));
@@ -172,6 +214,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         root2->setText(0, buffer);
         error->setText(0, buffer);
         infoItem->setText(0, buffer);
+        infoTraceroot->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
         /*root->setBackground(0, QColor::fromRgb(164, 164, 164));
@@ -202,6 +245,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         root2->setText(0, hostCheck);
         error->setText(0, hostCheck);
         infoItem->setText(0, hostCheck);
+        infoTraceroot->setText(0, hostCheck);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     }
 
@@ -344,6 +388,30 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         tmp_mess2.append(tr("\n(No Host Informations)"));
         infoItem->setText(0, tmp_mess2);
     }
+
+    QTextStream bT(&bufferTraceroot); // QString to QtextStrem (scan Tree)
+    QString bT_line;
+
+    if (!bT.atEnd()) { // check for scan informations
+        while (!bT.atEnd()) {
+            bT_line = bT.readLine();
+            infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
+            itemList.push_front(infoTracerootObj); // reference to address
+
+            if (!bT_line.isEmpty()) {
+                infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
+                infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+                infoTracerootObj->setText(0, bT_line);
+                infoTracerootObj->setToolTip(0, bT_line); // field information
+                if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
+            } else
+                infoTracerootObj->setText(0, tr("No Info"));
+        }
+    } else { // insert message for no info
+        tmp_mess2.append(tr("\n(No Hop Informations)"));
+        infoTraceroot->setText(0, tmp_mess2);
+    }
+
 
     if (ItemNumber) {
         QString tmp_buffer = root->text(0);

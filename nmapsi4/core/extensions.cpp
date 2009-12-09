@@ -25,6 +25,7 @@ QStringList nmapClass::check_extensions(QStringList parametri, QString& winTitle
 
     progressScan->setValue(10); // start progress bar
     this->setWindowTitle(winTitle.append("(10%)"));
+    parametri << "-A";
 
     switch (comboScan->currentIndex()) { //scan check
     case 0:
