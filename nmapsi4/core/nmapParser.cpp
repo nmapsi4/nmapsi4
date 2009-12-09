@@ -29,6 +29,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     int filtered_port = 0;
     int error_count = 0;
     int ItemNumber = 0;
+    int pos;
 
 #ifndef PARSER_NO_DEBUG
     qDebug() << "Host Checked:::: " << hostCheck;
@@ -91,7 +92,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 tmpClean.remove("_");
             }
             if(tmpClean.startsWith(" ")) {
-                tmpClean.remove(" ");
+                pos = tmpClean.indexOf(" ");
+                if(pos == 0) {
+                    tmpClean.remove(pos,1);
+                }
             }
 
             bufferInfo.append(tmpClean);
