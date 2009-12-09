@@ -271,8 +271,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>408</height>
+                 <width>83</width>
+                 <height>71</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -332,8 +332,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>408</height>
+                 <width>708</width>
+                 <height>354</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -1630,7 +1630,7 @@
              <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
            </attribute>
            <attribute name="title">
-            <string>Traceroot</string>
+            <string>Traceroute</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_12">
             <item row="0" column="0">
