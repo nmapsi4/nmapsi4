@@ -102,27 +102,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append("\n");
         }
 
-        /*QRegExp rx_("*.*.*.*");
-        rx_.setPatternSyntax(QRegExp::Wildcard);
-
-        if(rx_.exactMatch(tmp) && !tmp.startsWith("Discovered")
-                                        && !tmp.startsWith("Scanning")
-                                        && !tmp.startsWith("Initiating")
-                                        && !tmp.startsWith("Interesting")
-                                        && !tmp.startsWith("NSE")
-                                        && !tmp.contains("open")
-                                        && !tmp.contains("closed")
-                                        && !tmp.startsWith("|")
-                                        && !tmp.startsWith("OS")
-                                        && !tmp.startsWith("Service")
-                                        && !tmp.startsWith("Host")
-                                        && !tmp.startsWith("Retrying")
-                                        && !tmp.contains("http://www.insecure.org")
-
-        ){
-
-        }*/
-
         QRegExp rxT_("^\\d\\d?");
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
@@ -249,10 +228,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
         root->setFont(0, rootFont);
-/*        root->setText(0, hostEdit->currentText());
-        root2->setText(0, hostEdit->currentText());
-        error->setText(0, hostEdit->currentText());
-        infoItem->setText(0, hostEdit->currentText());*/
         root->setText(0, hostCheck);
         root2->setText(0, hostCheck);
         error->setText(0, hostCheck);
