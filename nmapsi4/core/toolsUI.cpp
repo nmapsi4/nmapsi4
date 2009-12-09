@@ -107,9 +107,6 @@ void nmapClass::stop_scan()
      emit killScan();
 
      if(!th->isFinished()) {
-	  QString tmp_line = hostEdit->currentText();
-	  tmp_line.append(" (Stopped)");
-	  hostEdit->setItemText(0, tmp_line);
 	  th->quit();
 	  th->wait();
      }

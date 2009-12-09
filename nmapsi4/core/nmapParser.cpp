@@ -116,6 +116,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                                         && !tmp.startsWith("OS")
                                         && !tmp.startsWith("Service")
                                         && !tmp.startsWith("Host")
+                                        && !tmp.startsWith("Retrying")
+                                        && !tmp.contains("http://www.insecure.org")
 
         ){
             bufferTraceroot.append(tmp);
@@ -180,19 +182,16 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	break;
     }
 
-    if (!hostEdit->currentText().contains("(Stopped)"))
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-    else
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
 
+    root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
-    infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     // TODO
-    infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
-        root->setBackground(0, QColor::fromRgb(164, 164, 164));
+        /*root->setBackground(0, QColor::fromRgb(164, 164, 164));
         root->setBackground(1, QColor::fromRgb(164, 164, 164));
         root->setBackground(2, QColor::fromRgb(164, 164, 164));
         root->setBackground(3, QColor::fromRgb(164, 164, 164));
@@ -209,7 +208,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         root2->setBackground(0, QColor::fromRgb(164, 164, 164));
 	root2->setForeground(0, Qt::white);
         error->setBackground(0, QColor::fromRgb(164, 164, 164));
-        error->setForeground(0, Qt::white);
+        error->setForeground(0, Qt::white);*/
 
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
@@ -368,6 +367,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     } else { // insert message for no info
         tmp_mess.append(tr(" (No scan informations)"));
         root->setText(0, tmp_mess);
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }
 
     QTextStream b3(&bufferInfo); // QString to QtextStrem (scan Tree)
@@ -391,6 +391,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     } else { // insert message for no info
         tmp_mess2.append(tr("\n(No Host Informations)"));
         infoItem->setText(0, tmp_mess2);
+        infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }
 
     QTextStream bT(&bufferTraceroot); // QString to QtextStrem (scan Tree)
@@ -414,6 +415,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     } else { // insert message for no info
         tmp_mess2.append(tr("\n(No Hop Informations)"));
         infoTraceroot->setText(0, tmp_mess2);
+        infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }
 
 
