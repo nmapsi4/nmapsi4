@@ -102,7 +102,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append("\n");
         }
 
-        QRegExp rx_("*.*.*.*");
+        /*QRegExp rx_("*.*.*.*");
         rx_.setPatternSyntax(QRegExp::Wildcard);
 
         if(rx_.exactMatch(tmp) && !tmp.startsWith("Discovered")
@@ -120,6 +120,15 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                                         && !tmp.contains("http://www.insecure.org")
 
         ){
+
+        }*/
+
+        QRegExp rxT_("^\\d\\d?");
+
+        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
+#ifndef PARSER_NO_DEBUG
+            qDebug() << "Match String:: " << tmp;
+#endif
             bufferTraceroot.append(tmp);
             bufferTraceroot.append("\n");
         }
