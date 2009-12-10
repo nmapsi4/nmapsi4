@@ -35,9 +35,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
 
     rootLook = new QTreeWidgetItem(treeLookup);
     itemListLook.push_front(rootLook);
-    rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
-    rootLook->setForeground(0, Qt::white);
-    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
     qDebug() << "scanLookup::Found address DNS:: " << info.hostName();
 

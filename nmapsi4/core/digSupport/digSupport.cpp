@@ -73,8 +73,6 @@ void digSupport::digProcess(const QString hostname, QTreeWidget* view) {
     QStringList command;
     command << hostname;
     th = new digThread(buff1, command, this);
-    //std::auto_ptr<digThread> th(new digThread(buff1, command, this));
-    //std::auto_ptr<digThread> th = new digThread(buff1, command, this);
     th->start();
     connect(th, SIGNAL(threadEnd(const QStringList, QByteArray)),
       this, SLOT(digReturn(const QStringList, QByteArray)));
@@ -93,9 +91,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     Wview->setIconSize(QSize::QSize(32, 32));
     QTreeWidgetItem *rootLook = new QTreeWidgetItem(Wview);
     QTreeWidgetItem *itemLook;
-    rootLook->setBackground(0, QColor::fromRgb(164, 164, 164));
-    rootLook->setForeground(0, Qt::white);
-    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     rootLook->setText(0, hostname[0]);
 
     while(!stream1.atEnd()) {

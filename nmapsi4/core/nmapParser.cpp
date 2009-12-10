@@ -389,7 +389,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
             if (!bT_line.isEmpty()) {
                 infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
-                infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+                infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
                 infoTracerootObj->setText(0, bT_line);
                 infoTracerootObj->setToolTip(0, bT_line); // field information
                 if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/traceroute.png</file>
     <file>images/viewmagfit_result.png</file>
     <file>icons/nmapsi4_mw.svg</file>
     <file>images/view-web-browser-dom-tree.png</file>
