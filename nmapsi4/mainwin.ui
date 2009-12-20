@@ -66,6 +66,29 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="0">
+     <widget class="QComboBox" name="comboMain">
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Scan</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Log</string>
+       </property>
+      </item>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedMain">
       <property name="currentIndex">
@@ -271,8 +294,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>408</height>
+                 <width>83</width>
+                 <height>71</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -332,8 +355,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>408</height>
+                 <width>708</width>
+                 <height>354</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -1806,110 +1829,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
-             <widget class="QComboBox" name="comboWebV">
-              <item>
-               <property name="text">
-                <string>securityfocus.com</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>cve.miltre.org</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>secunia.com</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="0" column="2">
-             <widget class="QPushButton" name="buttonVuln">
-              <property name="minimumSize">
-               <size>
-                <width>151</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Search</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../mainwin.qrc">
-                <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3">
-             <widget class="QPushButton" name="Bleft">
-              <property name="toolTip">
-               <string>Back</string>
-              </property>
-              <property name="statusTip">
-               <string/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../mainwin.qrc">
-                <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
-              </property>
-              <property name="flat">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4">
-             <widget class="QPushButton" name="Bright">
-              <property name="toolTip">
-               <string>Forward</string>
-              </property>
-              <property name="statusTip">
-               <string/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../mainwin.qrc">
-                <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="5">
-             <widget class="QPushButton" name="Bstop">
-              <property name="toolTip">
-               <string>Stop</string>
-              </property>
-              <property name="statusTip">
-               <string/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../mainwin.qrc">
-                <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="6">
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>128</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="1" column="0">
+            <item row="2" column="0">
              <widget class="QProgressBar" name="progressWeb">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1934,7 +1854,7 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="0" colspan="7">
+            <item row="3" column="0" colspan="8">
              <widget class="QWebView" name="viewVuln">
               <property name="url">
                <url>
@@ -1943,10 +1863,113 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1" colspan="5">
+            <item row="2" column="1" colspan="7">
              <widget class="QComboBox" name="comboVulnRis">
               <property name="editable">
                <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="Bleft">
+              <property name="toolTip">
+               <string>Back</string>
+              </property>
+              <property name="statusTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="7">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>100</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QComboBox" name="comboWebV">
+              <item>
+               <property name="text">
+                <string>securityfocus.com</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cve.miltre.org</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>secunia.com</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QPushButton" name="buttonVuln">
+              <property name="minimumSize">
+               <size>
+                <width>151</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Search</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <widget class="QPushButton" name="Bright">
+              <property name="toolTip">
+               <string>Forward</string>
+              </property>
+              <property name="statusTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="Bstop">
+              <property name="toolTip">
+               <string>Stop</string>
+              </property>
+              <property name="statusTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
               </property>
              </widget>
             </item>
@@ -2017,29 +2040,6 @@
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QComboBox" name="comboMain">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Scan</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Log</string>
-       </property>
-      </item>
      </widget>
     </item>
    </layout>
