@@ -282,7 +282,7 @@
                   </column>
                   <column>
                    <property name="text">
-                    <string>Service</string>
+                    <string>Service / Os</string>
                    </property>
                   </column>
                  </widget>

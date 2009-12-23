@@ -46,11 +46,14 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     
     QTextStream stream(StdoutStr);
     QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot;
+    QRegExp rxT_("^\\d\\d?");
 
     while (!stream.atEnd()) {
         tmp = stream.readLine();
 
-        if ((tmp.contains("open") || tmp.contains("closed")
+        if ((rxT_.indexIn(tmp) != -1) &&
+                (tmp.contains("open")
+                || tmp.contains("closed")
                 || tmp.contains("filtered")
                 || tmp.contains("unfiltered"))
                 && !tmp.contains("Not shown:")
@@ -102,7 +105,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append("\n");
         }
 
-        QRegExp rxT_("^\\d\\d?");
+//        QRegExp rxT_("^\\d\\d?");
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
 #ifndef PARSER_NO_DEBUG
@@ -172,6 +175,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
 
     root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
+    root->setTextAlignment(1, Qt::AlignCenter);
+    root->setTextAlignment(2, Qt::AlignCenter);
+    root->setTextAlignment(3, Qt::AlignCenter);
+    root->setTextAlignment(4, Qt::AlignCenter);
+
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
@@ -179,25 +187,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
-        /*root->setBackground(0, QColor::fromRgb(164, 164, 164));
-        root->setBackground(1, QColor::fromRgb(164, 164, 164));
-        root->setBackground(2, QColor::fromRgb(164, 164, 164));
-        root->setBackground(3, QColor::fromRgb(164, 164, 164));
-        root->setBackground(4, QColor::fromRgb(164, 164, 164));
-	root->setForeground(0, Qt::white);
-	root->setForeground(1, Qt::white);
-	root->setForeground(2, Qt::white);
-	root->setForeground(3, Qt::white);
-        root->setForeground(4, Qt::white);
-        infoItem->setBackground(0, QColor::fromRgb(164, 164, 164));
-	infoItem->setForeground(0, Qt::white);
-        infoTraceroot->setBackground(0, QColor::fromRgb(164, 164, 164));
-        infoTraceroot->setForeground(0, Qt::white);
-        root2->setBackground(0, QColor::fromRgb(164, 164, 164));
-	root2->setForeground(0, Qt::white);
-        error->setBackground(0, QColor::fromRgb(164, 164, 164));
-        error->setForeground(0, Qt::white);*/
-
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
         root->setFont(0, rootFont);
@@ -208,23 +197,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoTraceroot->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
-        /*root->setBackground(0, QColor::fromRgb(164, 164, 164));
-        root->setBackground(1, QColor::fromRgb(164, 164, 164));
-        root->setBackground(2, QColor::fromRgb(164, 164, 164));
-        root->setBackground(3, QColor::fromRgb(164, 164, 164));
-        root->setBackground(4, QColor::fromRgb(164, 164, 164));
-	root->setForeground(0, Qt::white);
-	root->setForeground(1, Qt::white);
-	root->setForeground(2, Qt::white);
-	root->setForeground(3, Qt::white);
-        root->setForeground(4, Qt::white);
-        infoItem->setBackground(0, QColor::fromRgb(164, 164, 164));
-	infoItem->setForeground(0, Qt::white);
-        root2->setBackground(0, QColor::fromRgb(164, 164, 164));
-	root2->setForeground(0, Qt::white);
-        error->setBackground(0, QColor::fromRgb(164, 164, 164));
-        error->setForeground(0, Qt::white);*/
-
         QFont rootFont = root->font(0);
         rootFont.setWeight(QFont::Normal);
         root->setFont(0, rootFont);
@@ -291,7 +263,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 int index = 3;
                 QString str;
                 for(int index=0; index < lStr.size(); index++) {
-                    if(lStr[index].contains("(") || lStr[index].contains(")")) {
+                    if(lStr[index].contains("(") || lStr[index].contains(")")
+                                                 || lStr[index].contains("version")) {
                         lStr.removeAt(index);
                         index--;
                     }
@@ -360,6 +333,27 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     if (!b3.atEnd()) { // check for scan informations
         while (!b3.atEnd()) {
             b3_line = b3.readLine();
+
+            if(b3_line.contains("OS")) {
+                QString tmp_os = b3_line;
+                if(b3_line.contains("Linux")) {
+                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
+                    root->setText(4, "Linux OS");
+                }
+                if(b3_line.contains("Windows")) {
+                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
+                    root->setText(4, "MS Windows OS");
+                }
+                if(b3_line.contains("FreeBSD")) {
+                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
+                    root->setText(4, "FreeBSD OS");
+                }
+                if(b3_line.contains("OpenBSD")) {
+                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
+                    root->setText(4, "OpenBSD OS");
+                }
+            }
+
             infoItemObj = new QTreeWidgetItem(infoItem);
             itemList.push_front(infoItemObj); // reference to address
 

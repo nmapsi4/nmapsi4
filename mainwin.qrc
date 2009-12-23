@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/os-logo/openbsd_logo.png</file>
+    <file>images/os-logo/freebsd_logo.png</file>
+    <file>images/os-logo/windows_logo.png</file>
+    <file>images/os-logo/linux_logo.png</file>
     <file>images/traceroute.png</file>
     <file>images/viewmagfit_result.png</file>
     <file>icons/nmapsi4_mw.svg</file>

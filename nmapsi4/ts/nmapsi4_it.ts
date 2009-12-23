@@ -374,6 +374,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1251"/>
+        <source>Service / Os</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1289"/>
         <source>ICMP TImestamp</source>
         <translation></translation>
@@ -606,7 +611,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1251"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1391"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
@@ -915,7 +919,7 @@
         <translation>Scan predefinito</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="346"/>
+        <location filename="../core/nmapParser.cpp" line="319"/>
         <source>No Ports</source>
         <translation>Nessuna porta</translation>
     </message>
@@ -926,31 +930,31 @@
 Nessuna informazione per la scansione</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="352"/>
+        <location filename="../core/nmapParser.cpp" line="325"/>
         <source> (No scan informations)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="373"/>
-        <location filename="../core/nmapParser.cpp" line="397"/>
+        <location filename="../core/nmapParser.cpp" line="367"/>
+        <location filename="../core/nmapParser.cpp" line="391"/>
         <source>No Info</source>
         <translation>Nessuna informazione</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="376"/>
+        <location filename="../core/nmapParser.cpp" line="370"/>
         <source>
 (No Host Informations)</source>
         <translation>
 Nessuna informazione per l&apos;host</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="400"/>
+        <location filename="../core/nmapParser.cpp" line="394"/>
         <source>
 (No Hop Informations)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="453"/>
+        <location filename="../core/nmapParser.cpp" line="447"/>
         <source>
 (Report: </source>
         <translation>
@@ -969,14 +973,14 @@ Rapporto:</translation>
         <translation type="obsolete">, Filtrato/Non filtrato: </translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="447"/>
+        <location filename="../core/nmapParser.cpp" line="441"/>
         <source>
 (No Errors or Warnings)</source>
         <translation>
 Nessun errore o avvertimento</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="454"/>
+        <location filename="../core/nmapParser.cpp" line="448"/>
         <source>Errors or Warnings: </source>
         <translation>Errori o avvertimenti:</translation>
     </message>
@@ -1174,7 +1178,7 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="301"/>
+        <location filename="../core/nmapParser.cpp" line="274"/>
         <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
