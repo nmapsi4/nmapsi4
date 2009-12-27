@@ -63,7 +63,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             buffer2.append("\n");
         }
 
-        if (tmp.contains("Hosts:") || tmp.contains("Host:")) {
+        //if (tmp.contains("Hosts") || tmp.contains("Host")) {
+        if (tmp.startsWith("Hosts") || tmp.startsWith("Host")) {
             buffer.append(tmp);
         }
 
@@ -371,7 +372,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoTracerootObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        tmp_mess2.append(tr("\n(No Hop Informations)"));
+        tmp_mess2.append(tr(" (No Hop Informations)"));
         infoTraceroot->setText(0, tmp_mess2);
         infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }

@@ -122,6 +122,9 @@ void nmapClass::setNmapsiSlot()
     connect(toolBox, SIGNAL(currentChanged(int)),
             this, SLOT(updateIconsBox()));
 
+    connect(showExtB, SIGNAL(clicked()),
+            this, SLOT(showExt()));
+
     // BookMark signals
     connect(deleteBook, SIGNAL(clicked()),
 	    this, SLOT(deleteBookMark()));

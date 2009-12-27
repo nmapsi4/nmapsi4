@@ -137,6 +137,7 @@ private slots:
     void updateIconsBox();
     void callScanH();
     void scanLookup(QHostInfo info, int state, const QString hostname);
+    void showExt();
 
     // Check nmap version
     void checkNmapVersion();
