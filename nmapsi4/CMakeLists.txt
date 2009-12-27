@@ -5,6 +5,7 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 if (WIN32)
 SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
+		core/parserUtils.cpp
 		core/nmapParser.cpp
 		core/extensions.cpp
 		core/hostCheck.cpp
@@ -30,6 +31,7 @@ MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
   SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
+		core/parserUtils.cpp
 		core/nmapParser.cpp
 		core/extensions.cpp
 		core/hostCheck.cpp

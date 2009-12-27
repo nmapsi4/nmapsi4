@@ -104,21 +104,21 @@ void mwClass::logReader()
     while (!buffer.atEnd()) {
         tmpLine = buffer.readLine();
 
-        if (tmpLine.contains("Log Start")) {
+        if (tmpLine.contains("==LogStart")) {
             tmpLine = buffer.readLine();
             if (!(treeLogView->findItems(tmpLine, Qt::MatchFixedString, 0)).size()) {
                 root = new QTreeWidgetItem(treeLogView);
                 ItemList.push_front(root);
                 root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
                 root->setText(0, tmpLine);
-                while (!tmpLine.contains("Log End")) {
-                    item = new QTreeWidgetItem(root);
-                    ItemList.push_front(item);
+                while (!tmpLine.contains("==LogEnd")) {
                     tmpLine = buffer.readLine();
 
-                    // FIXME Scan info
-                    if (!tmpLine.contains("Log End"))
+                    if (!tmpLine.contains("==LogEnd") && !tmpLine.isEmpty()) {
+                        item = new QTreeWidgetItem(root);
+                        ItemList.push_front(item);
                         item->setText(0, tmpLine);
+                    }
 
                 }
             }

@@ -94,7 +94,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             if(tmpClean.startsWith("_")) {
                 tmpClean.remove("_");
             }
-            if(tmpClean.startsWith(" ")) {
+
+            while(tmpClean.startsWith(" ")) {
                 pos = tmpClean.indexOf(" ");
                 if(pos == 0) {
                     tmpClean.remove(pos,1);
@@ -104,8 +105,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append(tmpClean);
             bufferInfo.append("\n");
         }
-
-//        QRegExp rxT_("^\\d\\d?");
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
 #ifndef PARSER_NO_DEBUG
@@ -139,8 +138,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     if (PFile) {
         out = new QTextStream(PFile);
         QString nmap_command;
-        *out << "--------------------------------------------------------------------" << endl;
-        nmap_command.append("\nLog Start: ");
+        nmap_command.append("\n==LogStart: ");
         nmap_command.append("\nnmap ");
         nmap_command.append(lineOptions->text());
         nmap_command.append(hostCheck); // write host target in the log
@@ -334,25 +332,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         while (!b3.atEnd()) {
             b3_line = b3.readLine();
 
-            if(b3_line.contains("OS")) {
-                QString tmp_os = b3_line;
-                if(b3_line.contains("Linux")) {
-                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
-                    root->setText(4, "Linux OS");
-                }
-                if(b3_line.contains("Windows")) {
-                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
-                    root->setText(4, "MS Windows OS");
-                }
-                if(b3_line.contains("FreeBSD")) {
-                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
-                    root->setText(4, "FreeBSD OS");
-                }
-                if(b3_line.contains("OpenBSD")) {
-                    root->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
-                    root->setText(4, "OpenBSD OS");
-                }
-            }
+            checkViewOS(b3_line,root);
 
             infoItemObj = new QTreeWidgetItem(infoItem);
             itemList.push_front(infoItemObj); // reference to address
@@ -420,8 +400,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             *out << blog_line << "\n";
         }
     }
-    *out << "Log End";
-    *out << "--------------------------------------------------------------------" << endl;
+    *out << "==LogEnd\n";
     if (PFile) delete out;
 
     QTextStream b_error(StderrorStr);
