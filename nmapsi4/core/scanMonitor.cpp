@@ -22,6 +22,7 @@
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
      scanMonitor->setIconSize(QSize::QSize(32, 32));
      scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
+     tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
      hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
      hostThread->setText(0, host);
@@ -30,7 +31,7 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
      monitorElem.push_front(hostThread);
      monitorElemHost.push_front(hostThread->text(0));
      monitorElemState.push_front(hostThread->text(1));
-     tabWidget->setCurrentIndex(2);
+     //tabWidget->setCurrentIndex(2);
 }
 
 
@@ -70,6 +71,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
      if(monitorElemHost.size() == 0) {
          actionStop_Scan->setEnabled(false);
+         tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/world.png")));
      }
      
 }
