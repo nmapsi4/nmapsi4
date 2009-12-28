@@ -20,8 +20,8 @@
 #ifndef STATICDEFINE_H
 #define STATICDEFINE_H
 
-#define _VERSION_         "0.2-alpha1"
-#define _VERSION_VULN_    "0.1~svn"
-#define _VERSION_DIG_     "0.1~svn"
+#define _VERSION_         "0.2-alpha2"
+#define _VERSION_VULN_    "0.1~git"
+#define _VERSION_DIG_     "0.1~git"
 
 #endif

@@ -31,7 +31,6 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
      monitorElem.push_front(hostThread);
      monitorElemHost.push_front(hostThread->text(0));
      monitorElemState.push_front(hostThread->text(1));
-     //tabWidget->setCurrentIndex(2);
 }
 
 
