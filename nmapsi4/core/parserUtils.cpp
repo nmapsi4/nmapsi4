@@ -40,5 +40,9 @@ void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
             itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
             itemOS->setText(4, "OpenBSD OS");
         }
+        if(OSline.contains("Mac OS X")) {
+            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
+            itemOS->setText(4, "Mac OS X");
+        }
     }
 }

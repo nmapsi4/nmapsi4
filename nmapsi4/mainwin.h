@@ -30,7 +30,6 @@
 #include "core/digSupport/digSupport.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
-#include <memory>
 
 class QMainWindow;
 class QWebView;

@@ -133,6 +133,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoTraceroot = new QTreeWidgetItem(treeTraceroot);
     itemList.push_front(infoTraceroot);
 
+    // TODO DEBUG for new parserOBJ type (ALPHA-X)
+    qDebug() << "DEBUG::ItemIndex:: " << listWscan->indexOfTopLevelItem(root);
+
     // check for log file
     QTextStream *out = NULL;
 
@@ -182,7 +185,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
-    // TODO
     infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
