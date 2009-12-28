@@ -124,6 +124,8 @@ void nmapClass::setNmapsiSlot()
 
     connect(showExtB, SIGNAL(clicked()),
             this, SLOT(showExt()));
+    connect(listWscan, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
+            this, SLOT(runtimePars(QTreeWidgetItem*, int)));
 
     // BookMark signals
     connect(deleteBook, SIGNAL(clicked()),
