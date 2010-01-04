@@ -73,7 +73,7 @@ signals:
 protected:
     QProcess *versionProc;
     QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj, *infoTraceroot, *infoTracerootObj;
-    QTreeWidgetItem *root2, *item_root2;
+    QTreeWidgetItem *root2, *item_root2, *infoNSS, *infoNSSObj;
     QTreeWidgetItem *error, *item_error;
     QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
     QTreeWidgetItem *rootLook, *itemLook;

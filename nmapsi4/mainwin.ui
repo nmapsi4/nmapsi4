@@ -161,7 +161,7 @@
                <number>0</number>
               </property>
               <property name="tabSpacing">
-               <number>2</number>
+               <number>-1</number>
               </property>
               <widget class="QWidget" name="page_6">
                <property name="geometry">
@@ -169,7 +169,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>755</width>
-                 <height>408</height>
+                 <height>373</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -289,13 +289,66 @@
                 </item>
                </layout>
               </widget>
+              <widget class="QWidget" name="page_11">
+               <attribute name="icon">
+                <iconset resource="../mainwin.qrc">
+                 <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+               </attribute>
+               <attribute name="label">
+                <string>NSS</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QTreeWidget" name="treeNSS">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>170</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Box</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Sunken</enum>
+                  </property>
+                  <property name="lineWidth">
+                   <number>1</number>
+                  </property>
+                  <property name="autoScroll">
+                   <bool>false</bool>
+                  </property>
+                  <property name="showDropIndicator" stdset="0">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::NoSelection</enum>
+                  </property>
+                  <property name="rootIsDecorated">
+                   <bool>false</bool>
+                  </property>
+                  <property name="uniformRowHeights">
+                   <bool>false</bool>
+                  </property>
+                  <column>
+                   <property name="text">
+                    <string>Nss script result</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
               <widget class="QWidget" name="page_7">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>755</width>
-                 <height>408</height>
+                 <height>373</height>
                 </rect>
                </property>
                <attribute name="icon">

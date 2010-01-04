@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -120,6 +120,27 @@ void nmapClass::startScan() {
          }
          return;
      }
+
+    //scan token DNS/IP parser
+    if(hostname.contains(" ")) { // space delimiter
+        QStringList addrPart_ = hostname.split(" ");
+        addrPart_.removeAll("");
+#ifndef MAIN_NO_DEBUG
+        qDebug() << "DEBUG::NewToken:: " << addrPart_.size();
+        for(int index=0; index < addrPart_.size(); index++) {
+            qDebug() << "DEBUG::NewToken::Part:: " << addrPart_[index];
+        }
+#endif
+
+        if(addrPart_.size() > 1) {// check for only one space in hostname
+            for(int index=0; index < addrPart_.size(); index++) {
+                addMonitorHost(scanMonitor, addrPart_[index]);
+                this->scan(addrPart_[index]);
+            }
+            return;
+        }
+        hostname.remove(" ");
+    }
 
     if(lookupInternal_) {
         addMonitorHost(scanMonitor, hostname);

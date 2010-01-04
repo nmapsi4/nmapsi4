@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2008-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,6 +42,7 @@ void scanThread::run() {
      connect(par, SIGNAL(killScan()),
 	     this, SLOT(stopProcess())); 
      //scanMonitor->setText(1, tr("In progress..."));
+     qDebug() << "DEBUG::ThreadString:: " << ParList;
      proc->start("nmap", ParList);
      
      exec();

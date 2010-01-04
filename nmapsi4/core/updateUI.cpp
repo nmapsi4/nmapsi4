@@ -303,9 +303,12 @@ void nmapClass::updateIconsBox() {
 	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 	break;
       case 1:
+          toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        break;
+      case 2:
 	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
 	break;
-      case 2:
+      case 3:
 	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
 	break;
     }

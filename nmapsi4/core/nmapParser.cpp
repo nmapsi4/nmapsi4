@@ -45,7 +45,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     this->setWindowTitle(title.append("(75%)"));
     
     QTextStream stream(StdoutStr);
-    QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot;
+    QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
     while (!stream.atEnd()) {
@@ -70,7 +70,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
         QString tmpClean;
 
-        if (tmp.contains("MAC")
+        if ((tmp.contains("MAC")
                 || tmp.contains("Running:")
                 || tmp.contains("Running")
                 || tmp.contains("OS details:")
@@ -85,9 +85,14 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 || tmp.contains("Completed Ping ")
                 || tmp.contains("Network Distance:")
                 || tmp.contains("Note:")
-                || tmp.contains("Nmap done:")
-                || tmp.startsWith("|")
+                || tmp.contains("Nmap done:"))
+                && !tmp.startsWith("|")
            ) {
+            bufferInfo.append(tmp);
+            bufferInfo.append("\n");
+        }
+
+        if(tmp.startsWith("|")) {
             tmpClean = tmp;
             if(tmpClean.startsWith("|")) {
                 tmpClean.remove("|");
@@ -103,8 +108,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 }
             }
 
-            bufferInfo.append(tmpClean);
-            bufferInfo.append("\n");
+            bufferNSS.append(tmpClean);
+            bufferNSS.append("\n");
         }
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
@@ -133,6 +138,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoTraceroot = new QTreeWidgetItem(treeTraceroot);
     itemList.push_front(infoTraceroot);
 
+    infoNSS = new QTreeWidgetItem(treeNSS);
+    itemList.push_front(infoNSS);
+
     // TODO DEBUG for new parserOBJ type (ALPHA-X)
     qDebug() << "DEBUG::ItemIndex:: " << listWscan->indexOfTopLevelItem(root);
 
@@ -159,19 +167,24 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
     treeTraceroot->setIconSize(QSize::QSize(32, 32));
     treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeNSS->setIconSize(QSize::QSize(32, 32));
+    treeNSS->header()->setResizeMode(0, QHeaderView::Interactive);
 
     int tmpBox = toolBox->currentIndex();
  
     switch(tmpBox) {
       case 0:	
 	toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 1:
 	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 2:
 	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
         toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
     }
 
@@ -186,6 +199,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
+    infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
         QFont rootFont = root->font(0);
@@ -196,6 +210,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         error->setText(0, buffer);
         infoItem->setText(0, buffer);
         infoTraceroot->setText(0, buffer);
+        infoNSS->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
         QFont rootFont = root->font(0);
@@ -206,6 +221,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         error->setText(0, hostCheck);
         infoItem->setText(0, hostCheck);
         infoTraceroot->setText(0, hostCheck);
+        infoNSS->setText(0, hostCheck);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     }
 
@@ -355,21 +371,37 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }
 
-    QTextStream bT(&bufferTraceroot); // QString to QtextStrem (scan Tree)
+    QTextStream bT(&bufferTraceroot); // Traceroute buffer
     QString bT_line;
 
     if (!bT.atEnd()) { // check for scan informations
         while (!bT.atEnd()) {
             bT_line = bT.readLine();
-            infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
-            itemList.push_front(infoTracerootObj); // reference to address
 
             if (!bT_line.isEmpty()) {
-                infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
-                infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-                infoTracerootObj->setText(0, bT_line);
-                infoTracerootObj->setToolTip(0, bT_line); // field information
-                if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
+                if(!bT_line.contains("guessing hop")) {
+                    infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
+                    itemList.push_front(infoTracerootObj);
+                    QStringList tmpToken = bT_line.split(" ");
+
+                    // DEBUG split traceroute -------------------------------------------------
+                    tmpToken.removeAll("");
+                    if(tmpToken.size() == 4) {
+                        tmpToken[3].remove("(");
+                        tmpToken[3].remove(")");
+                    }
+                    qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
+                    for(int index=0; index < tmpToken.size(); index++) {
+                        qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
+                    }
+                    // ------------------------------------------------------------------------
+
+                    infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
+                    infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+                    infoTracerootObj->setText(0, bT_line);
+                    infoTracerootObj->setToolTip(0, bT_line); // field information
+                    if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
+                }
             } else
                 infoTracerootObj->setText(0, tr("No Info"));
         }
@@ -378,6 +410,32 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoTraceroot->setText(0, tmp_mess2);
         infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }
+
+    QTextStream bNSS(&bufferNSS); // NSS
+    QString bNSS_line;
+
+    if (!bNSS.atEnd()) { //
+        while (!bNSS.atEnd()) {
+            bNSS_line = bNSS.readLine();
+
+            if (!bNSS_line.isEmpty()) {
+                    infoNSSObj = new QTreeWidgetItem(infoNSS);
+                    itemList.push_front(infoNSSObj);
+
+                    infoNSSObj->setSizeHint(0, QSize::QSize(22, 22));
+                    infoNSSObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+                    infoNSSObj->setText(0, bNSS_line);
+                    infoNSSObj->setToolTip(0, bNSS_line); // field information
+                    if ((PFile) && (!verboseLog)) *out << infoNSSObj->text(0) << endl;
+            } else
+                infoNSSObj->setText(0, tr("No Info"));
+        }
+    } else { // insert message for no info
+        tmp_mess2.append(tr(" (No Hop Informations)"));
+        infoNSS->setText(0, tmp_mess2);
+        infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    }
+
 
 
     if (ItemNumber) {
