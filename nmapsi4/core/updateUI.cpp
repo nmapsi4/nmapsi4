@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -337,34 +337,40 @@ void nmapClass::setProgress() {
     this->setWindowTitle("Nmapsi4 (60%)");
 }
 
-void nmapClass::updateMainSlide() {
-     
-     switch(comboMain->currentIndex()) {
-     case 0:
-	  // scan 
-	  stackedMain->setCurrentIndex(0);
-	  this->showMainToolBar();
-	  this->showActionToolBar();
-	  break;
-     case 1:
-	  // log
-	  stackedMain->setCurrentIndex(1);
-	  // main and action bar only in scan index
-	  toolBar->setVisible(false);
-	  actionMain_Toolbars->setChecked(false);
-	  toolBar_2->setVisible(false);
-          toolBarBook->setVisible(false);
-	  actionActions_Toolbar->setChecked(false);
-	  break;
-     case 2:
-	  // Vuln
-	  stackedMain->setCurrentIndex(2);
-	  // main and action bar only in scan index
-	  toolBar->setVisible(false);
-          toolBarBook->setVisible(true);
-	  actionMain_Toolbars->setChecked(false);
-	  toolBar_2->setVisible(false);
-	  actionActions_Toolbar->setChecked(false);
-	  break;
-     }
+void nmapClass::updateSezScan() { // SLOT
+
+    if(stackedMain->currentIndex() == 0)
+        return;
+
+    stackedMain->setCurrentIndex(0);
+    this->showMainToolBar();
+    this->showActionToolBar();
+}
+
+void nmapClass::updateSezLog() {  // SLOT
+
+    if(stackedMain->currentIndex() == 1)
+        return;
+
+    stackedMain->setCurrentIndex(1);
+    // main and action bar only in scan index
+    toolBar->setVisible(false);
+    actionMain_Toolbars->setChecked(false);
+    toolBar_2->setVisible(false);
+    toolBarBook->setVisible(false);
+    actionActions_Toolbar->setChecked(false);
+}
+
+void nmapClass::updateSezVuln() { // SLOT
+
+    if(stackedMain->currentIndex() == 2)
+        return;
+
+    stackedMain->setCurrentIndex(2);
+    // main and action bar only in scan index
+    toolBar->setVisible(false);
+    toolBarBook->setVisible(true);
+    actionMain_Toolbars->setChecked(false);
+    toolBar_2->setVisible(false);
+    actionActions_Toolbar->setChecked(false);
 }

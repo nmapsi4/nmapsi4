@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -104,6 +104,7 @@ protected:
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;
     digSupport *digC;
+    QAction *scanSez_, *logSez_, *vulnSez_;
 
 
 public slots:
@@ -156,7 +157,10 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
-    void updateMainSlide();
+
+    void updateSezScan();
+    void updateSezLog();
+    void updateSezVuln();
 
     // Vuln extension
     void searchVuln();

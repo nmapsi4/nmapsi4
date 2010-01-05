@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -302,7 +302,7 @@ void nmapClass::saveBookMarks()
     
     logHistory *history_ = NULL;
 
-    switch(comboMain->currentIndex()) {
+    switch(stackedMain->currentIndex()) {
       case 0:
 	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 	history_->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
@@ -327,7 +327,7 @@ void nmapClass::deleteBookMark()
     if(!treeLogH->currentItem() && !treeBookVuln->currentItem())
 	return;
     
-    switch(comboMain->currentIndex()) {
+    switch(stackedMain->currentIndex()) {
       case 0:
 	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 	history_->deleteItemBookmark(treeLogH->currentItem()->text(0));

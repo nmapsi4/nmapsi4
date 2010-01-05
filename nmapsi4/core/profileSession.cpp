@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -135,14 +135,12 @@ void nmapClass::checkProfile()
     if((!vulnExt.compare("none"))) {
 	 settings.setValue("vulnFlag", "true"); // default value
     } else if((vulnExt.compare("false"))) {
-	 comboMain->insertItem(2, tr("Vulnerabilities"));
+         vulnSez_->setEnabled(true);
     } else {
-	 if(comboMain->currentIndex() == 2) {
+         if(stackedMain->currentIndex() == 2) {
 	      stackedMain->setCurrentIndex(0);
-	      comboMain->setCurrentIndex(0);
 	 }
-	 
-	 comboMain->removeItem(2);
+         vulnSez_->setEnabled(false);
     }
 
     QString cache = settings.value("hostCache", "none").toString();

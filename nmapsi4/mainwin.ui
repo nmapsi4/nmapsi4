@@ -60,36 +60,6 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="Line" name="line_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QComboBox" name="comboMain">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>Scan</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Log</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedMain">
       <property name="currentIndex">
        <number>0</number>
@@ -168,8 +138,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>373</height>
+                 <width>860</width>
+                 <height>355</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -290,6 +260,14 @@
                </layout>
               </widget>
               <widget class="QWidget" name="page_11">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>860</width>
+                 <height>355</height>
+                </rect>
+               </property>
                <attribute name="icon">
                 <iconset resource="../mainwin.qrc">
                  <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
@@ -347,8 +325,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>373</height>
+                 <width>860</width>
+                 <height>355</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -408,8 +386,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>755</width>
-                 <height>408</height>
+                 <width>860</width>
+                 <height>355</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -2134,13 +2112,6 @@
     <addaction name="separator"/>
     <addaction name="action_Quit_2"/>
    </widget>
-   <widget class="QMenu" name="menu_Help">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="action_About"/>
-    <addaction name="actionAbout_Qt"/>
-   </widget>
    <widget class="QMenu" name="menu_Settings">
     <property name="title">
      <string>S&amp;ettings</string>
@@ -2169,6 +2140,13 @@
      <string>&amp;Bookmarks</string>
     </property>
     <addaction name="actionAdd_Bookmark"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_About"/>
+    <addaction name="actionAbout_Qt"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -2201,12 +2179,11 @@
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="separator"/>
    <addaction name="action_Scan_menu"/>
    <addaction name="actionStop_Scan"/>
    <addaction name="separator"/>
@@ -2231,7 +2208,7 @@
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
@@ -2253,7 +2230,7 @@
     <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
@@ -2275,7 +2252,7 @@
     <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
@@ -2283,6 +2260,32 @@
    <addaction name="separator"/>
    <addaction name="action_Quit"/>
    <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="sezBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
   </widget>
   <action name="action_Quit">
    <property name="icon">
@@ -2594,6 +2597,16 @@
    </property>
    <property name="text">
     <string>&amp;Add Bookmark</string>
+   </property>
+  </action>
+  <action name="actionScan">
+   <property name="text">
+    <string>Scan</string>
+   </property>
+  </action>
+  <action name="actionScan_2">
+   <property name="text">
+    <string>Scan</string>
    </property>
   </action>
  </widget>

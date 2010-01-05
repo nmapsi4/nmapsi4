@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2009 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -161,8 +161,12 @@ void nmapClass::setNmapsiSlot()
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
 
-    // combo session
-    connect(comboMain, SIGNAL(activated(const QString&)),
-            this, SLOT(updateMainSlide()));
+    // main session
+    connect(scanSez_, SIGNAL(triggered()),
+            this, SLOT(updateSezScan()));
+    connect(logSez_, SIGNAL(triggered()),
+            this, SLOT(updateSezLog()));
+    connect(vulnSez_, SIGNAL(triggered()),
+            this, SLOT(updateSezVuln()));
 
 }

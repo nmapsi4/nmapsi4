@@ -34,6 +34,26 @@ void nmapClass::initGUI()
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )"));
+    // Section QAction
+    scanSez_ = new QAction(this);
+    scanSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    scanSez_->setIconText(tr("Scan"));
+    scanSez_->setToolTip(tr("Scan host(s)"));
+
+    logSez_ = new QAction(this);
+    logSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
+    logSez_->setIconText(tr("Log"));
+    logSez_->setToolTip(tr("Scan Log"));
+
+    vulnSez_ = new QAction(this);
+    vulnSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    vulnSez_->setIconText(tr("Services"));
+    vulnSez_->setToolTip(tr("Check Vulnerabilities"));
+
+    sezBar->addAction(scanSez_);
+    sezBar->addAction(logSez_);
+    sezBar->addAction(vulnSez_);
+
     setNmapsiSlot();
 }
 
@@ -232,5 +252,8 @@ nmapClass::~nmapClass()
     delete labelVersion;
     delete userMode;
     delete digC;
+    delete scanSez_;
+    delete logSez_;
+    delete vulnSez_;
 }
 
