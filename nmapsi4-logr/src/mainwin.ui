@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>815</width>
-    <height>589</height>
+    <width>867</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -25,7 +25,10 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
      <widget class="QToolBox" name="toolBoxMain">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -44,8 +47,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>739</width>
-         <height>461</height>
+         <width>857</width>
+         <height>454</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -56,6 +59,9 @@
         <string>Host(s)</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QTreeWidget" name="treeLogView">
           <property name="frameShape">
@@ -93,8 +99,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>797</width>
-         <height>444</height>
+         <width>857</width>
+         <height>454</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -105,6 +111,9 @@
         <string>Log History</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QTreeWidget" name="logTree">
           <property name="sizePolicy">
@@ -152,13 +161,6 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -166,7 +168,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>815</width>
+     <width>867</width>
      <height>23</height>
     </rect>
    </property>
@@ -201,13 +203,13 @@
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>

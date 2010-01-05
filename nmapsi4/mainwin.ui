@@ -59,13 +59,25 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedMain">
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QGridLayout" name="gridLayout_6">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item row="1" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="autoFillBackground">
@@ -92,6 +104,9 @@
             <string>Scan</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_4">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QPushButton" name="buttonHClear">
               <property name="text">
@@ -138,8 +153,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>860</width>
-                 <height>355</height>
+                 <width>884</width>
+                 <height>395</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -150,6 +165,9 @@
                 <string>Host(s)</string>
                </attribute>
                <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QTreeWidget" name="listWscan">
                   <property name="sizePolicy">
@@ -264,8 +282,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>860</width>
-                 <height>355</height>
+                 <width>83</width>
+                 <height>63</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -276,6 +294,9 @@
                 <string>NSS</string>
                </attribute>
                <layout class="QVBoxLayout" name="verticalLayout_9">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QTreeWidget" name="treeNSS">
                   <property name="sizePolicy">
@@ -325,8 +346,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>860</width>
-                 <height>355</height>
+                 <width>83</width>
+                 <height>63</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -337,6 +358,9 @@
                 <string>Host(s) Info</string>
                </attribute>
                <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QTreeWidget" name="treeWinfo">
                   <property name="sizePolicy">
@@ -386,8 +410,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>860</width>
-                 <height>355</height>
+                 <width>700</width>
+                 <height>346</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -398,6 +422,9 @@
                 <string>Bookmarks</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_3">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item row="0" column="1">
                  <widget class="QPushButton" name="deleteBook">
                   <property name="enabled">
@@ -475,6 +502,9 @@
             <string>Scan Options</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_5">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QListWidget" name="optionsListScan">
               <property name="sizePolicy">
@@ -531,13 +561,16 @@
                <bool>false</bool>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>5</number>
               </property>
               <widget class="QWidget" name="ScanOptions">
                <property name="autoFillBackground">
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupBox">
                   <property name="autoFillBackground">
@@ -764,6 +797,9 @@
                 <bool>true</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupBox_4">
                   <property name="title">
@@ -934,6 +970,9 @@
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupBox_5">
                   <property name="title">
@@ -1020,6 +1059,9 @@
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupBox_6">
                   <property name="title">
@@ -1347,6 +1389,9 @@
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">
+                <property name="margin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupBox_2">
                   <property name="autoFillBackground">
@@ -1601,6 +1646,9 @@
             <string>Scan Monitor</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QProgressBar" name="progressScan">
               <property name="sizePolicy">
@@ -1672,6 +1720,9 @@
             <string>Lookup</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_11">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QTreeWidget" name="treeLookup">
               <property name="focusPolicy">
@@ -1704,6 +1755,9 @@
             <string>Traceroute</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_12">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QTreeWidget" name="treeTraceroot">
               <property name="focusPolicy">
@@ -1733,6 +1787,9 @@
       </widget>
       <widget class="QWidget" name="page_9">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QTabWidget" name="tabWidget_2">
           <property name="currentIndex">
@@ -1747,6 +1804,9 @@
             <string>Log(s)</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_7">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QTreeWidget" name="listScan">
               <property name="frameShape">
@@ -1803,6 +1863,9 @@
             <string>Warning(s)</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_8">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QTreeWidget" name="listScanError">
               <property name="frameShape">
@@ -1850,6 +1913,9 @@
       </widget>
       <widget class="QWidget" name="page_10">
        <layout class="QGridLayout" name="gridLayout_9">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget_3">
           <property name="currentIndex">
@@ -1864,6 +1930,9 @@
             <string>Vulnerabilities</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QComboBox" name="comboVuln">
               <property name="minimumSize">
@@ -2032,6 +2101,9 @@
             <string>Bookmarks</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_10">
+            <property name="margin">
+             <number>0</number>
+            </property>
             <item row="0" column="0" colspan="2">
              <widget class="QTreeWidget" name="treeBookVuln">
               <property name="alternatingRowColors">
@@ -2176,7 +2248,7 @@
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -2205,7 +2277,7 @@
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -2224,7 +2296,7 @@
     <bool>false</bool>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
@@ -2246,7 +2318,7 @@
     <bool>false</bool>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
