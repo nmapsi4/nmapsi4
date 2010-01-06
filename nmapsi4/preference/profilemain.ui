@@ -42,6 +42,9 @@
    <bool>true</bool>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item row="0" column="0" rowspan="2">
     <widget class="QListWidget" name="listViewOptions">
      <property name="sizePolicy">
@@ -117,6 +120,9 @@
      </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGroupBox" name="groupUser">
          <property name="sizePolicy">
@@ -199,6 +205,9 @@
      </widget>
      <widget class="QWidget" name="page_2">
       <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QGroupBox" name="groupBox_2">
          <property name="sizePolicy">
@@ -327,6 +336,9 @@
      </widget>
      <widget class="QWidget" name="page_3">
       <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QGroupBox" name="groupBox_4">
          <property name="sizePolicy">
@@ -370,6 +382,9 @@
      </widget>
      <widget class="QWidget" name="page_4">
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QListWidget" name="extList">
          <property name="spacing">
@@ -403,6 +418,9 @@
      </widget>
      <widget class="QWidget" name="page_5">
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
