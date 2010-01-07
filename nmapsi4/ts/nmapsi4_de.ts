@@ -551,6 +551,18 @@
         <source>NSS</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>DNS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RTT</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -967,10 +979,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan host(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -988,6 +996,10 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Check Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
