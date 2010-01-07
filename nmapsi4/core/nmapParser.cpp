@@ -100,7 +100,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             uptime.clear();
             uptime.append(tmp);
             uptime.remove("Uptime guess:");
-            uptime.remove(0,1);
+            //uptime.remove(0,1);
             uptime.prepend("\n");
         }
 

@@ -58,7 +58,10 @@ void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
 void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
 
+#ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
+#endif
+
     QStringList host = item->text(0).split(" ");
 
 #ifndef PARSER_NO_DEBUG
@@ -67,10 +70,24 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
 #endif
 
     if(hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
-        hostEdit->addItem(host[1]);
+        hostEdit->addItem(host[1].remove("\n"));
     } else
     if(item->parent() == NULL) {
-        hostEdit->setItemText(0, host[1]);
+        hostEdit->setItemText(0, host[1].remove("\n"));
     }
+}
 
+void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SLOT
+    Q_UNUSED(column);
+
+#ifndef PARSER_NO_DEBUG
+    qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
+#endif
+
+    if(hostEdit->itemText(0).isEmpty() && item->parent() != NULL && !item->text(2).isEmpty()) {
+        hostEdit->addItem(item->text(2));
+    } else
+    if(item->parent() != NULL && !item->text(2).isEmpty()) {
+        hostEdit->setItemText(0, item->text(2));
+    }
 }

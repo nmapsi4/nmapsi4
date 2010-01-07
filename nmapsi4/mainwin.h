@@ -139,6 +139,7 @@ private slots:
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void showExt();
     void runtimePars(QTreeWidgetItem *item, int column);
+    void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
 
     // Check nmap version
     void checkNmapVersion();
