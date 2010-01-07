@@ -353,9 +353,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
         }
     } else { // insert message for no info
-        tmp_mess.append(tr(" (No scan informations)"));
+        //tmp_mess.append(tr(" (No scan informations)"));
         root->setText(0, tmp_mess);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream b3(&bufferInfo); // QString to QtextStrem (scan Tree)
@@ -380,9 +380,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoItemObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        tmp_mess2.append(tr("\n(No Host Informations)"));
+        //tmp_mess2.append(tr("\n(No Host Informations)"));
         infoItem->setText(0, tmp_mess2);
-        infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+        infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream bT(&bufferTraceroot); // Traceroute buffer
@@ -438,9 +438,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoTracerootObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        tmp_mess2.append(tr(" (No Hop Informations)"));
+        //tmp_mess2.append(tr(" (No Hop Informations)"));
         infoTraceroot->setText(0, tmp_mess2);
-        infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+        infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream bNSS(&bufferNSS); // NSS
@@ -463,9 +463,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoNSSObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        tmp_mess2.append(tr(" (No NSS Informations)"));
+        //tmp_mess2.append(tr(" (No NSS Informations)"));
         infoNSS->setText(0, tmp_mess2);
-        infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+        infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
 

@@ -151,6 +151,7 @@ private slots:
     void saveAsLog();
     void saveLog();
     void updateFontHost(const QString hostName);
+    void updateFontHostVuln(const QString hostName);
     void callSearchHistory();
     void saveBookMarks();
     void deleteBookMark();

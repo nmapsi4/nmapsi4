@@ -34,6 +34,8 @@ void nmapClass::initGUI()
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
+    comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
     // Section QAction
     scanSez_ = new QAction(this);
     scanSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));

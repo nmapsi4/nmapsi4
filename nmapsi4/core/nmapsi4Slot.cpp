@@ -119,6 +119,9 @@ void nmapClass::setNmapsiSlot()
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(updateFontHost(const QString)));
 
+    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
+            this, SLOT(updateFontHostVuln(const QString)));
+
     connect(toolBox, SIGNAL(currentChanged(int)),
             this, SLOT(updateIconsBox()));
 

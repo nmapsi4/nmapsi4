@@ -326,6 +326,13 @@ void nmapClass::updateFontHost(const QString hostName) {
             this, SLOT(callSearchHistory()));
 }
 
+void nmapClass::updateFontHostVuln(const QString hostName) {
+    Q_UNUSED(hostName);
+    comboVulnRis->clear();
+    comboVulnRis->setStyleSheet(QString::fromUtf8(""));
+    comboVulnRis->disconnect(SIGNAL(editTextChanged(QString)));
+}
+
 void nmapClass::activeBookTool() {
     deleteBook->setEnabled(true);
     deleteBookVuln->setEnabled(true);
