@@ -63,7 +63,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             buffer2.append("\n");
         }
 
-        //if (tmp.contains("Hosts") || tmp.contains("Host")) {
         if (tmp.startsWith("Hosts") || tmp.startsWith("Host")) {
             buffer.append(tmp);
         }
@@ -384,22 +383,40 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     itemList.push_front(infoTracerootObj);
                     QStringList tmpToken = bT_line.split(" ");
 
-                    // DEBUG split traceroute -------------------------------------------------
+                    // split traceroute -------------------------------------------------
                     tmpToken.removeAll("");
                     if(tmpToken.size() == 4) {
                         tmpToken[3].remove("(");
                         tmpToken[3].remove(")");
                     }
+#ifndef PARSER_NO_DEBUG
                     qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
                     for(int index=0; index < tmpToken.size(); index++) {
                         qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
+
+                    }
+#endif
+
+                    if(tmpToken.size() == 4) {
+                        infoTracerootObj->setText(0, tmpToken[0]);
+                        infoTracerootObj->setText(1, tmpToken[1]);
+                        infoTracerootObj->setText(3, tmpToken[2]);
+                        infoTracerootObj->setText(2, tmpToken[3]);
+
+                    } else if(tmpToken.size() == 3) {
+                        infoTracerootObj->setText(0, tmpToken[0]);
+                        infoTracerootObj->setText(1, tmpToken[1]);
+                        infoTracerootObj->setText(2, tmpToken[2]);
+                        infoTracerootObj->setText(3, "no DNS");
+                        infoTracerootObj->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
+                    } else {
+                        infoTracerootObj->setText(0, bT_line);
+                        infoTracerootObj->setToolTip(0, bT_line);
                     }
                     // ------------------------------------------------------------------------
 
                     infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
                     infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-                    infoTracerootObj->setText(0, bT_line);
-                    infoTracerootObj->setToolTip(0, bT_line); // field information
                     if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
                 }
             } else

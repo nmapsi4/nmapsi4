@@ -40,6 +40,10 @@ void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
             itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
             itemOS->setText(4, "OpenBSD OS");
         } else
+        if(OSline.contains("Solaris")) {
+            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/solaris_logo.png")));
+            itemOS->setText(4, "Sun Solaris OS");
+        } else
         if(OSline.contains("Mac OS X")) {
             itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
             itemOS->setText(4, "Mac OS X");
@@ -55,8 +59,10 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
 
     QStringList host = item->text(0).split(" ");
+#ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::Runtime::Split:: " << host.size();
     qDebug() << "DEBUG::Runtime::Host:: " << host[1];
+#endif
     hostEdit->setItemText(0, host[1]);
 
 }

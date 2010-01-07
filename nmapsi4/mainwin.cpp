@@ -33,7 +33,7 @@ void nmapClass::initGUI()
 {
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] to scan (ip range ex. 192.168.1.10/20 )"));
+    hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
     // Section QAction
     scanSez_ = new QAction(this);
     scanSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
@@ -86,6 +86,10 @@ void nmapClass::initObject() {
     listWscan->setColumnWidth(0, 400);
     treeLogH->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 400);
+    treeTraceroot->setColumnWidth(0, 300);
+    treeTraceroot->setColumnWidth(1, 100);
+    treeTraceroot->setColumnWidth(2, 200);
+    treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();

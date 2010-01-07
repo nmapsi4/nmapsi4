@@ -282,8 +282,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>83</width>
-                 <height>63</height>
+                 <width>884</width>
+                 <height>395</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -346,8 +346,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>83</width>
-                 <height>63</height>
+                 <width>884</width>
+                 <height>395</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -410,8 +410,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>700</width>
-                 <height>346</height>
+                 <width>884</width>
+                 <height>395</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -1760,6 +1760,12 @@
             </property>
             <item row="0" column="0">
              <widget class="QTreeWidget" name="treeTraceroot">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="focusPolicy">
                <enum>Qt::NoFocus</enum>
               </property>
@@ -1775,6 +1781,21 @@
               <column>
                <property name="text">
                 <string>Hop(s)</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>RTT</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>IP</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>DNS</string>
                </property>
               </column>
              </widget>

@@ -32,7 +32,6 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
 
 void scanThread::run() {
      
-     // move to constructor
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
      connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
@@ -41,7 +40,7 @@ void scanThread::run() {
      // signal from parent
      connect(par, SIGNAL(killScan()),
 	     this, SLOT(stopProcess())); 
-     //scanMonitor->setText(1, tr("In progress..."));
+
      qDebug() << "DEBUG::ThreadString:: " << ParList;
      proc->start("nmap", ParList);
      
