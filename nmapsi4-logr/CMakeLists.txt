@@ -9,33 +9,33 @@ SET(SOURCES_CPP	mainwin.cpp
 		../lib/history/coreHistory.cpp
 		../lib/about/about.cpp
 		src/main.cpp)
-MESSAGE( STATUS ${SOURCES_CPP} )
+#MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
 SET(SOURCES_CPP mainwin.cpp 
                 src/logrApi.cpp	
 		src/main.cpp)
-MESSAGE( STATUS ${SOURCES_CPP} )
+#MESSAGE( STATUS ${SOURCES_CPP} )
 
 endif(WIN32)
 
 if(NOT WIN32)
 	SET(SOURCES_H mainwin.h)
-	MESSAGE( STATUS ${SOURCES_H} )
+	#MESSAGE( STATUS ${SOURCES_H} )
 else(WIN32)
 	SET(SOURCES_H mainwin.h ../lib/about/about.h)
-	MESSAGE( STATUS ${SOURCES_H} )
+	#MESSAGE( STATUS ${SOURCES_H} )
 endif(NOT WIN32)
 
 if(NOT WIN32)
 	SET(SOURCES_UI src/mainwin.ui )
-	MESSAGE( STATUS ${SOURCES_UI} )
+	#MESSAGE( STATUS ${SOURCES_UI} )
 else(WIN32)
 	SET(SOURCES_UI src/mainwin.ui ../lib/about/about.ui )
-	MESSAGE( STATUS ${SOURCES_UI} )
+	#MESSAGE( STATUS ${SOURCES_UI} )
 endif(NOT WIN32)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
-MESSAGE( STATUS ${RESOURCES_QRC} )
+#MESSAGE( STATUS ${RESOURCES_QRC} )
 
 qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})

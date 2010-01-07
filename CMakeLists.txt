@@ -20,3 +20,9 @@ CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
 ADD_CUSTOM_TARGET( uninstall
   "${CMAKE_COMMAND}" -P "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake" )
 
+message("------------------------------------------------")
+message(" Required for build:   qt4-dev (>> 4.5.3) ")
+message(" Required for runtime: nmap ( >> 5.0 ) ")
+message(" Recommends: dig ")
+message("------------------------------------------------")
+

@@ -48,6 +48,13 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
+    // hostname for TreeItem
+    QString hostRoot;
+    QString uptime;
+    hostRoot.append("Host ");
+    hostRoot.append(hostCheck);
+    buffer.append(hostRoot);
+
     while (!stream.atEnd()) {
         tmp = stream.readLine();
 
@@ -61,10 +68,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
             buffer2.append(tmp);
             buffer2.append("\n");
-        }
-
-        if (tmp.startsWith("Hosts") || tmp.startsWith("Host")) {
-            buffer.append(tmp);
         }
 
         QString tmpClean;
@@ -84,11 +87,21 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 || tmp.contains("Completed Ping ")
                 || tmp.contains("Network Distance:")
                 || tmp.contains("Note:")
-                || tmp.contains("Nmap done:"))
+                || tmp.contains("Nmap done:")
+                || tmp.startsWith("Hosts")
+                || tmp.startsWith("Host"))
                 && !tmp.startsWith("|")
            ) {
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
+        }
+
+        if(tmp.startsWith("Uptime")) {
+            uptime.clear();
+            uptime.append(tmp);
+            uptime.remove("Uptime guess:");
+            uptime.remove(0,1);
+            uptime.prepend("\n");
         }
 
         if(tmp.startsWith("|")) {
@@ -121,6 +134,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     }
 
+    //buffer.append(" ");
+    buffer.append(uptime);
 
     root = new QTreeWidgetItem(listWscan);
     itemList.push_front(root);

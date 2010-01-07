@@ -2,7 +2,7 @@ PROJECT(nmapsi4_history)
 
 SET( SOURCES_CPP coreHistory.cpp 
 		 loghistory.cpp)
-MESSAGE( STATUS ${SOURCES_CPP} )
+#MESSAGE( STATUS ${SOURCES_CPP} )
 
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 

@@ -59,10 +59,16 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
 
     QStringList host = item->text(0).split(" ");
+
 #ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::Runtime::Split:: " << host.size();
     qDebug() << "DEBUG::Runtime::Host:: " << host[1];
 #endif
-    hostEdit->setItemText(0, host[1]);
+
+    if(hostEdit->itemText(0).isEmpty()) {
+        hostEdit->addItem(host[1]);
+    } else {
+        hostEdit->setItemText(0, host[1]);
+    }
 
 }

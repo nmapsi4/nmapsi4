@@ -86,7 +86,7 @@ void nmapClass::initObject() {
     listWscan->setColumnWidth(0, 400);
     treeLogH->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 400);
-    treeTraceroot->setColumnWidth(0, 300);
+    treeTraceroot->setColumnWidth(0, 400);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
