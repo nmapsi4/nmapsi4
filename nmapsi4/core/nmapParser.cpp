@@ -463,7 +463,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoNSSObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        tmp_mess2.append(tr(" (No Hop Informations)"));
+        tmp_mess2.append(tr(" (No NSS Informations)"));
         infoNSS->setText(0, tmp_mess2);
         infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     }

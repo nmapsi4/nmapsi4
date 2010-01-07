@@ -58,6 +58,7 @@ void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
 void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
 
+    qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
     QStringList host = item->text(0).split(" ");
 
 #ifndef PARSER_NO_DEBUG
@@ -65,9 +66,10 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     qDebug() << "DEBUG::Runtime::Host:: " << host[1];
 #endif
 
-    if(hostEdit->itemText(0).isEmpty()) {
+    if(hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
         hostEdit->addItem(host[1]);
-    } else {
+    } else
+    if(item->parent() == NULL) {
         hostEdit->setItemText(0, host[1]);
     }
 
