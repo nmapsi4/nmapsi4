@@ -95,10 +95,11 @@ void nmapClass::exit()
         delete tmpFile;
     }
 
-    // Save window size and position
+    // Save window size and position and NSS info
     QSettings settings("nmapsi4", "nmapsi4");
     if (savePos) settings.setValue("window/pos", pos());
     if (saveSize) settings.setValue("window/size", size());
+    settings.setValue("NSSsupport", NSSsupport_);
     this->close();
 }
 

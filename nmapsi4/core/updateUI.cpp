@@ -381,3 +381,12 @@ void nmapClass::updateSezVuln() { // SLOT
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
 }
+
+void nmapClass::NSSCheck() { // SLOT
+
+    if(nssAct_->isChecked()) {
+       NSSsupport_ = true;
+   } else {
+       NSSsupport_ = false;
+   }
+}

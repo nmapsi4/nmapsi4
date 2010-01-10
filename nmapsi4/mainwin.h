@@ -90,6 +90,7 @@ protected:
     bool verboseLog;
     bool lookupInternal_;
     bool lookupDig_;
+    bool NSSsupport_;
     int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
@@ -104,7 +105,7 @@ protected:
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;
     digSupport *digC;
-    QAction *scanSez_, *logSez_, *vulnSez_;
+    QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
 
 
 public slots:
@@ -163,6 +164,7 @@ private slots:
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
+    void NSSCheck();
 
     // Vuln extension
     void searchVuln();

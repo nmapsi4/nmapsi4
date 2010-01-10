@@ -176,6 +176,15 @@ void nmapClass::checkProfile()
     // disable lookup in MS windows
     lookupDig_ = false;
 #endif
+
+    QString nss_ = settings.value("NSSsupport", "none").toString();
+
+    if ((!nss_.compare("none"))) {
+         settings.setValue("NSSsupport", "true"); // default value
+    }
+
+    NSSsupport_ = settings.value("NSSsupport").toBool();
+
 }
 
 void nmapClass::setQuickProfile()

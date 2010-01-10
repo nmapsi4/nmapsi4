@@ -25,6 +25,11 @@ nmapClass::nmapClass()
        userMode(NULL),
        th(NULL)
 {
+    scanSez_ = new QAction(this);
+    logSez_ = new QAction(this);
+    vulnSez_ = new QAction(this);
+    nssAct_ = new QAction(this);
+
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
@@ -37,24 +42,28 @@ void nmapClass::initGUI()
     comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
     // Section QAction
-    scanSez_ = new QAction(this);
     scanSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     scanSez_->setIconText(tr("Scan"));
     scanSez_->setToolTip(tr("Scan host(s)"));
 
-    logSez_ = new QAction(this);
     logSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
     logSez_->setIconText(tr("Log"));
     logSez_->setToolTip(tr("Scan Log"));
 
-    vulnSez_ = new QAction(this);
     vulnSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     vulnSez_->setIconText(tr("Services"));
     vulnSez_->setToolTip(tr("Check Vulnerabilities"));
 
+    nssAct_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    nssAct_->setIconText(tr("Nss Script"));
+    nssAct_->setToolTip(tr("Enable/Disable NSS script"));
+    nssAct_->setCheckable(true);
+
     sezBar->addAction(scanSez_);
     sezBar->addAction(logSez_);
     sezBar->addAction(vulnSez_);
+    sezBar->addSeparator();
+    sezBar->addAction(nssAct_);
 
     setNmapsiSlot();
 }
@@ -85,6 +94,7 @@ void nmapClass::initObject() {
     digC->checkDigSupport();
 
     checkNmapVersion();
+    nssAct_->setChecked(NSSsupport_); // set NSS support
     listWscan->setColumnWidth(0, 400);
     treeLogH->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 400);
@@ -261,5 +271,6 @@ nmapClass::~nmapClass()
     delete scanSez_;
     delete logSez_;
     delete vulnSez_;
+    delete nssAct_;
 }
 

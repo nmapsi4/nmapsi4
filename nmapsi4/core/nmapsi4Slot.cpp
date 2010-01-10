@@ -173,5 +173,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateSezLog()));
     connect(vulnSez_, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
+    connect(nssAct_, SIGNAL(triggered()),
+            this, SLOT(NSSCheck()));
 
 }
