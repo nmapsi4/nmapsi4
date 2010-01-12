@@ -81,7 +81,7 @@ void mwClass::logReader()
 #endif
 
     //logHistory *history = new logHistory(logTree,"logReader/urlList");
-    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", 10);
+    logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", nHost);
     history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
     if (!logF) logF = new QFile();
