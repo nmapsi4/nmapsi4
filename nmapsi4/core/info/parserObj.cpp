@@ -53,20 +53,20 @@ QStringList parserObj::getServices() {
 
 // Setters
 void parserObj::setUptime(const QString uptime) {
-    uptime_ = uptime;
+    uptime_.append(uptime);
 
 }
 
 void parserObj::setTcpSequence(const QString tcpSequence) {
-    tcp_sequence_ = tcpSequence;
+    tcp_sequence_.append(tcpSequence);
 }
 
 void parserObj::setDeviceType(const QString deviceType) {
-    deviceType_ = deviceType;
+    deviceType_.append(deviceType);
 }
 
 void parserObj::setRunning(const QString running) {
-    running_ = running;
+    running_.append(running);
 }
 
 void parserObj::setServices(const QString service) {
