@@ -755,7 +755,7 @@
     <message>
         <source>
 (No Host Informations)</source>
-        <translation>
+        <translation type="obsolete">
 (Keine Server Informationen)</translation>
     </message>
     <message>
@@ -943,14 +943,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> (No scan informations)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> (No Hop Informations)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1000,6 +992,18 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nss Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable/Disable NSS script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

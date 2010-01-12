@@ -51,9 +51,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QRegExp rxT_("^\\d\\d?");
 
     // hostname for TreeItem
-    QString hostRoot;
+    // FIX uptime declaration
     QString uptime;
-    hostRoot.append("Host ");
+    QString hostRoot("Host ");
     hostRoot.append(hostCheck);
     buffer.append(hostRoot);
 
@@ -71,8 +71,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             buffer2.append(tmp);
             buffer2.append("\n");
         }
-
-        QString tmpClean;
 
         if ((tmp.contains("MAC")
                 || tmp.contains("Running:")
@@ -108,25 +106,25 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         }
 
         if(tmp.startsWith("TCP Sequence Prediction:")) {
-            QString sequence_ = tmp;
+            QString sequence_(tmp);
             sequence_.remove("TCP Sequence Prediction: ");
             elemObj->setTcpSequence(sequence_);
         }
 
         if(tmp.startsWith("Running:")) {
-            QString running_ = tmp;
+            QString running_(tmp);
             running_.remove("Running: ");
             elemObj->setRunning(running_);
         }
 
         if(tmp.startsWith("Device type:")) {
-            QString device_ = tmp;
+            QString device_(tmp);
             device_.remove("Device type: ");
             elemObj->setDeviceType(device_);
         }
 
         if(tmp.startsWith("|")) {
-            tmpClean = tmp;
+            QString tmpClean(tmp);
             if(tmpClean.startsWith("|")) {
                 tmpClean.remove("|");
             }
