@@ -26,6 +26,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/scanMonitor.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
+		core/info/parserObj.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
@@ -49,6 +50,7 @@ else (WIN32)
 		core/scanMonitor.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
+		core/info/parserObj.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (WIN32)

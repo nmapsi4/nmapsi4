@@ -83,17 +83,22 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     qDebug() << "############## digSupport():: start pars ######################";
 #endif
 
-    QString* buff1 = new QString(buffer1);
+    QString buff1(buffer1);
 
-    QTextStream stream1(buff1);
+    QTextStream stream1(&buff1);
     QString line;
 
     Wview->setIconSize(QSize::QSize(32, 32));
     QTreeWidgetItem *rootLook = new QTreeWidgetItem(Wview);
+    itemList.push_front(rootLook);
+
+
     QTreeWidgetItem *itemLook;
+
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     rootLook->setText(0, hostname[0]);
 
+    bool resultFlag = false;
     while(!stream1.atEnd()) {
         line = stream1.readLine();
         if(!line.startsWith(";;") && !line.startsWith(";") && !line.isEmpty()) {
@@ -101,17 +106,26 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
             qDebug() << "digSupport():: " << line;
 #endif
             itemLook = new QTreeWidgetItem(rootLook);
+            itemList.push_front(itemLook);
             itemLook->setSizeHint(0, QSize::QSize(22, 22));
             itemLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/view-web-browser-dom-tree.png")));
             itemLook->setText(0,line);
+            if(!resultFlag) {
+                resultFlag = true;
+            }
+
         }
     }
-    delete buff1;
+
+    if(!resultFlag) {
+        rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+    }
+
     delete th;
     buffer1.clear();
 }
 
 digSupport::~digSupport() {
-
+    qDeleteAll(itemList);
 }
 

@@ -262,6 +262,7 @@ nmapClass::~nmapClass()
     itemDeleteAll(itemList);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
+    qDeleteAll(parserObjList_);
     
     delete progressScan;
     delete PFile;

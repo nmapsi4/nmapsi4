@@ -280,10 +280,13 @@ void nmapClass::update_comboVerbosity() {
 void nmapClass::listClear() {
     listClearFlag = true;
     itemDeleteAll(itemList); //clear items list
+    qDeleteAll(parserObjList_);
+    parserObjList_.clear();
     itemList.clear();
 
     listWscan->clear();
     treeWinfo->clear();
+    treeLookup->clear();
     listScanError->clear();
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);

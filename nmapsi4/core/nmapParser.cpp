@@ -24,6 +24,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString * StdoutStr;
     QString * StderrorStr;
     QString title = "NmapSI4 ";
+    parserObj *elemObj = new parserObj();
+
     int open_port = 0;
     int close_port = 0;
     int filtered_port = 0;
@@ -102,6 +104,25 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             uptime.remove("Uptime guess:");
             //uptime.remove(0,1);
             uptime.prepend("\n");
+            elemObj->setUptime(uptime);
+        }
+
+        if(tmp.startsWith("TCP Sequence Prediction:")) {
+            QString sequence_ = tmp;
+            sequence_.remove("TCP Sequence Prediction: ");
+            elemObj->setTcpSequence(sequence_);
+        }
+
+        if(tmp.startsWith("Running:")) {
+            QString running_ = tmp;
+            running_.remove("Running: ");
+            elemObj->setRunning(running_);
+        }
+
+        if(tmp.startsWith("Device type:")) {
+            QString device_ = tmp;
+            device_.remove("Device type: ");
+            elemObj->setDeviceType(device_);
         }
 
         if(tmp.startsWith("|")) {
@@ -154,9 +175,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     infoNSS = new QTreeWidgetItem(treeNSS);
     itemList.push_front(infoNSS);
-
-    // TODO DEBUG for new parserOBJ type (ALPHA-X)
-    qDebug() << "DEBUG::ItemIndex:: " << listWscan->indexOfTopLevelItem(root);
 
     // check for log file
     QTextStream *out = NULL;
@@ -301,8 +319,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     }
                 }
                 // Description
+                QString noDes = tr("No description");
                 if (lStr.size() == 3)
-                    item2->setText(0, tr("No description"));
+                    item2->setText(0, noDes);
                 else {
                     while (index < lStr.size()) {
                         str.append(lStr[index]);
@@ -333,6 +352,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                     item2->setText(0, str);
                     item2->setToolTip(0, str);
+
+                    if(!str.contains(noDes)) {
+                        elemObj->setServices(str);
+                    }
                 }
 
                 if ((PFile) && (!verboseLog)) {
@@ -545,4 +568,5 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	actionSave_Menu->setEnabled(true);
     }
     this->setWindowModified(true);
+    parserObjList_.append(elemObj);
 }

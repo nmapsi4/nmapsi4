@@ -75,6 +75,14 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     if(item->parent() == NULL) {
         hostEdit->setItemText(0, host[1].remove("\n"));
     }
+
+    // TODO DEBUG for new parserOBJ type (ALPHA-X)
+    int indexObj = listWscan->indexOfTopLevelItem(item);
+    qDebug() << "DEBUG::ItemIndex:: " << indexObj;
+
+    if(indexObj != -1) {
+        showParserObj(indexObj);
+    }
 }
 
 void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SLOT
@@ -90,4 +98,16 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
     if(item->parent() != NULL && !item->text(2).isEmpty()) {
         hostEdit->setItemText(0, item->text(2));
     }
+}
+
+void nmapClass::showParserObj(int indexObj) {
+    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getUptime();
+    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getTcpSequence();
+    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getRunning();
+    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getDeviceType();
+
+    for(int index=0; index < parserObjList_[indexObj]->getServices().size(); index++) {
+        qDebug() << "DEBUG::showParserObj::List:: " << parserObjList_[indexObj]->getServices()[index];
+    }
+
 }

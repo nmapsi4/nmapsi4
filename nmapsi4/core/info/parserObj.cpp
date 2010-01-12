@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Francesco Cecconi                          *
+ *   Copyright (C) 2010 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,42 +17,58 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGSUPPORT_H
-#define DIGSUPPORT_H
+#include "parserObj.h"
 
-#include <QObject>
-#include <QProcess>
-#include <QTextStream>
-#include <QDebug>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QTextStream>
-#include <QList>
-#include "digThread.h"
-#include "../nmapsi4Debug.h"
+parserObj::parserObj() {
 
-class digSupport : public QObject
-{
-    Q_OBJECT
+}
 
-    public:
-        digSupport();
-        ~digSupport();
-        void checkDigSupport();
-        bool getDigSupport();
-        void digProcess(const QString hostname, QTreeWidget* view);
+parserObj::~parserObj() {
 
-    private slots:
-        void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1);
+}
 
-    protected:
-        QProcess *digProc;
-        bool state;
-        QTreeWidget *Wview;
-        digThread *th;
-        QList<QTreeWidgetItem*> itemList;
-        
-};
+// Getters
+QString parserObj::getUptime() {
+    uptime_.remove("\n");
+    uptime_.remove(0,1);
+    return this->uptime_;
 
-#endif
+}
+
+QString parserObj::getTcpSequence() {
+    return this->tcp_sequence_;
+}
+
+QString parserObj::getDeviceType() {
+    return this->deviceType_;
+}
+
+QString parserObj::getRunning() {
+    return this->running_;
+}
+
+QStringList parserObj::getServices() {
+    return this->services_;
+}
+
+// Setters
+void parserObj::setUptime(const QString uptime) {
+    uptime_ = uptime;
+
+}
+
+void parserObj::setTcpSequence(const QString tcpSequence) {
+    tcp_sequence_ = tcpSequence;
+}
+
+void parserObj::setDeviceType(const QString deviceType) {
+    deviceType_ = deviceType;
+}
+
+void parserObj::setRunning(const QString running) {
+    running_ = running;
+}
+
+void parserObj::setServices(const QString service) {
+    services_.push_back(service);
+}

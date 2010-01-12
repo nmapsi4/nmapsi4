@@ -28,6 +28,7 @@
 #include "core/scanMT/scanThread.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
+#include "core/info/parserObj.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 
@@ -56,6 +57,7 @@ private:
     void updateMonitorHost(QTreeWidget* monitor);
     bool isDns(QString hostname);
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
+    void showParserObj(int indexObj);
 
 public:
     nmapClass();
@@ -106,6 +108,7 @@ protected:
     QList<QTreeWidgetItem*> monitorElem;
     digSupport *digC;
     QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
+    QList<parserObj*> parserObjList_;
 
 
 public slots:

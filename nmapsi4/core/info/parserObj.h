@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2010 by Francesco Cecconi                          *
+ *   Copyright (C) 2010 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,42 +17,39 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGSUPPORT_H
-#define DIGSUPPORT_H
+#ifndef PARSEROBJ_H
+#define PARSEROBJ_H
 
-#include <QObject>
-#include <QProcess>
-#include <QTextStream>
-#include <QDebug>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QTextStream>
-#include <QList>
-#include "digThread.h"
-#include "../nmapsi4Debug.h"
+#include <QString>
+#include <QStringList>
 
-class digSupport : public QObject
+class parserObj
 {
-    Q_OBJECT
-
     public:
-        digSupport();
-        ~digSupport();
-        void checkDigSupport();
-        bool getDigSupport();
-        void digProcess(const QString hostname, QTreeWidget* view);
+        parserObj();
+        ~parserObj();
 
-    private slots:
-        void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1);
+        // Getters
+        QString getUptime();
+        QString getTcpSequence();
+        QString getDeviceType();
+        QString getRunning();
+        QStringList getServices();
+
+        // Setters
+        void setUptime(const QString uptime);
+        void setTcpSequence(const QString tcpSequence);
+        void setDeviceType(const QString deviceType);
+        void setRunning(const QString Running);
+        void setServices(const QString Service);
 
     protected:
-        QProcess *digProc;
-        bool state;
-        QTreeWidget *Wview;
-        digThread *th;
-        QList<QTreeWidgetItem*> itemList;
-        
+        QString uptime_;
+        QString tcp_sequence_;
+        QString deviceType_;
+        QString running_;
+        QStringList services_;
 };
+
 
 #endif
