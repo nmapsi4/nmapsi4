@@ -53,7 +53,7 @@ void mwClass::initObject() {
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window-logr/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window-logr/size", QSize(869, 605)).toSize();
-    int nHost = settings.value("hostCache").toInt();
+    nHost = settings.value("hostCache").toInt();
     resize(size);
     move(pos);
 

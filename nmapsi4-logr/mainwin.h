@@ -58,6 +58,7 @@ public:
 
 protected:
     QString url;
+    int nHost;
 
 private slots:
     void initObject();
