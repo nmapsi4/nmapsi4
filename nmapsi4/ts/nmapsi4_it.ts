@@ -624,7 +624,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1336"/>
         <source>Date</source>
-        <translation></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1325"/>
