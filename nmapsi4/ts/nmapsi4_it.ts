@@ -99,12 +99,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1375"/>
         <source>Scan Profile</source>
-        <translation>Profilo Scansione</translation>
+        <translation>Profilo di scansione</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1381"/>
         <source>Scan Delay</source>
-        <translation>Ritardo Scan</translation>
+        <translation>Ritardo di scansione</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1382"/>
@@ -221,19 +221,19 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1271"/>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>&amp;Informazioni</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1272"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1274"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1282"/>
         <source>&amp;Scan</source>
-        <translation>&amp;Scan</translation>
+        <translation>&amp;Scansione</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1280"/>
         <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <translation>&amp;Informazioni su &amp;Qt</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1281"/>
@@ -243,7 +243,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1284"/>
         <source>Stop Scan</source>
-        <translation>Ferma Scan</translation>
+        <translation>Ferma Scansione</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1285"/>
@@ -309,7 +309,7 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1320"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1339"/>
         <source>Scan</source>
-        <translation></translation>
+        <translation>Scansione</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1327"/>
@@ -386,7 +386,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1330"/>
         <source>NSS</source>
-        <translation></translation>
+        <translation>NSS</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1361"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1425"/>
         <source>Lookup</source>
-        <translation></translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1427"/>
@@ -587,7 +587,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1438"/>
         <source>Warning(s)</source>
-        <translation>Avvertimento</translation>
+        <translation>Errori</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1469"/>
@@ -619,7 +619,7 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1332"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1337"/>
         <source>List(s)</source>
-        <translation></translation>
+        <translation>Elenco</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1336"/>
@@ -702,7 +702,7 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1334"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1471"/>
         <source>Delete</source>
-        <translation>Cancella</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1418"/>
@@ -735,7 +735,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="335"/>
         <source>&amp;Cancel</source>
-        <translation>&amp;Cancella</translation>
+        <translation>&amp;Annulla</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="334"/>
@@ -750,12 +750,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="313"/>
         <source>Quick Scan</source>
-        <translation>Scan Veloce</translation>
+        <translation>Scansione Veloce</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="314"/>
         <source>Normal Scan</source>
-        <translation>Scan Predefinito</translation>
+        <translation>Scansione Predefinita</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="315"/>
@@ -820,22 +820,22 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="331"/>
         <source>Internal Lookup</source>
-        <translation>Lookup interno</translation>
+        <translation>Ricerca interna</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="332"/>
         <source>Dig Lookup</source>
-        <translation></translation>
+        <translation>Ricerca con Dig</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="333"/>
         <source>&amp;Defaults</source>
-        <translation>&amp;Defaults</translation>
+        <translation>&amp;Predefinito</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="323"/>
         <source>Verbose Log</source>
-        <translation></translation>
+        <translation>Log dettagliato</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="328"/>
@@ -1016,7 +1016,7 @@ Nessun errore o avvertimento</translation>
         <location filename="../core/saveLog.cpp" line="48"/>
         <source>No Scan found
 </source>
-        <translation>Nessuno scan trovato
+        <translation>Nessuna scansione trovata
 </translation>
     </message>
     <message>
@@ -1097,7 +1097,7 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../mainwin.cpp" line="47"/>
         <source>Scan host(s)</source>
-        <translation></translation>
+        <translation>Scansione Host</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="50"/>
@@ -1251,7 +1251,7 @@ MS Windows Packages: el.diabl09@gmail.com
         <location filename="../core/resizeNmapsi4.cpp" line="103"/>
         <location filename="../mainwin.cpp" line="46"/>
         <source>Scan</source>
-        <translation></translation>
+        <translation>Scansione</translation>
     </message>
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="107"/>
@@ -1261,7 +1261,7 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="111"/>
         <source>Discover</source>
-        <translation></translation>
+        <translation>Ricerca</translation>
     </message>
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="115"/>
