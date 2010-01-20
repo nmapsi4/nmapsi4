@@ -43,11 +43,12 @@ QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
 if (RELOAD_TRANSLATIONS)
   QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4-logr_it.ts 
-    ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+    ts/nmapsi4-logr_fr.ts ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts
+    ts/nmapsi4-logr_cs.ts)
   message( "nmapsi4-logr:: update and rebuild translation " )  
 else (NOT RELOAD_TRANSLATIONS)
   QT4_ADD_TRANSLATION(qms ts/nmapsi4-logr_it.ts	ts/nmapsi4-logr_fr.ts 
-    ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts)
+    ts/nmapsi4-logr_es.ts ts/nmapsi4-logr_de.ts ts/nmapsi4-logr_pl.ts ts/nmapsi4-logr_cs.ts)
   message( "nmapsi4-logr:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
