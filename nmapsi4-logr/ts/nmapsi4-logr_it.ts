@@ -73,7 +73,7 @@
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="199"/>
         <source>Date</source>
-        <translation></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="200"/>
