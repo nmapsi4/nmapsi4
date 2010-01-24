@@ -101,10 +101,37 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
 }
 
 void nmapClass::showParserObj(int indexObj) {
-    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getUptime();
-    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getTcpSequence();
-    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getRunning();
-    qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getDeviceType();
+    QString noInfo("not Discovered");
+
+    if(!parserObjList_[indexObj]->getUptime().isEmpty()) {
+        qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getUptime();
+        lineInfouptime->clear();
+        lineInfouptime->setText(parserObjList_[indexObj]->getUptime());
+    } else {
+        lineInfouptime->setText(noInfo);
+    }
+
+    if(!parserObjList_[indexObj]->getTcpSequence().isEmpty()) {
+        qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getTcpSequence();
+        lineInfotcpsequence->setText(parserObjList_[indexObj]->getTcpSequence());
+    } else {
+        lineInfotcpsequence->setText(noInfo);
+    }
+
+    if(!parserObjList_[indexObj]->getRunning().isEmpty()) {
+        qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getRunning();
+        lineInforunning->setText(parserObjList_[indexObj]->getRunning());
+    } else {
+        lineInforunning->setText(noInfo);
+    }
+
+    if(!parserObjList_[indexObj]->getDeviceType().isEmpty()) {
+        qDebug() << "DEBUG::showParserObj:: " << parserObjList_[indexObj]->getDeviceType();
+        lineInfodevice->setText(parserObjList_[indexObj]->getDeviceType());
+    } else {
+        lineInfodevice->setText(noInfo);
+    }
+
 
     for(int index=0; index < parserObjList_[indexObj]->getServices().size(); index++) {
         qDebug() << "DEBUG::showParserObj::List:: " << parserObjList_[indexObj]->getServices()[index];

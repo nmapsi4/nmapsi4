@@ -30,7 +30,10 @@ parserObj::~parserObj() {
 // Getters
 QString parserObj::getUptime() {
     uptime_.remove("\n");
+
+    if(uptime_.startsWith(" ")) {
     uptime_.remove(0,1);
+    }
     return this->uptime_;
 
 }
