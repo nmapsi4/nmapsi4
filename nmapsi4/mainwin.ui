@@ -1777,33 +1777,17 @@
            <attribute name="title">
             <string>Host general Info</string>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_10">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <spacer name="verticalSpacer_5">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>10</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <item>
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="1" column="0">
                <widget class="QLabel" name="label">
                 <property name="text">
                  <string>&lt;b&gt;Uptime:&lt;/b&gt;</string>
                 </property>
                </widget>
               </item>
-              <item>
+              <item row="1" column="1">
                <widget class="QLineEdit" name="lineInfouptime">
                 <property name="autoFillBackground">
                  <bool>false</bool>
@@ -1819,34 +1803,14 @@
                 </property>
                </widget>
               </item>
-             </layout>
-            </item>
-            <item>
-             <spacer name="verticalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>10</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
-              <item>
+              <item row="2" column="0">
                <widget class="QLabel" name="label_3">
                 <property name="text">
                  <string>&lt;b&gt;TcpSequence:&lt;/b&gt;</string>
                 </property>
                </widget>
               </item>
-              <item>
+              <item row="2" column="1">
                <widget class="QLineEdit" name="lineInfotcpsequence">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(222, 221, 221);</string>
@@ -1859,34 +1823,14 @@
                 </property>
                </widget>
               </item>
-             </layout>
-            </item>
-            <item>
-             <spacer name="verticalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>10</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_5">
-              <item>
+              <item row="3" column="0">
                <widget class="QLabel" name="label_4">
                 <property name="text">
                  <string>&lt;b&gt;Running:&lt;/b&gt;</string>
                 </property>
                </widget>
               </item>
-              <item>
+              <item row="3" column="1">
                <widget class="QLineEdit" name="lineInforunning">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(222, 221, 221);</string>
@@ -1899,10 +1843,59 @@
                 </property>
                </widget>
               </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>&lt;b&gt;DeviceType:&lt;/b&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="lineInfodevice">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(222, 221, 221);</string>
+                </property>
+                <property name="frame">
+                 <bool>false</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>10</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
              </layout>
             </item>
             <item>
-             <spacer name="verticalSpacer_4">
+             <spacer name="verticalSpacer_5">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -1916,30 +1909,6 @@
                </size>
               </property>
              </spacer>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_6">
-              <item>
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>&lt;b&gt;DeviceType:&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineInfodevice">
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(222, 221, 221);</string>
-                </property>
-                <property name="frame">
-                 <bool>false</bool>
-                </property>
-                <property name="readOnly">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
             </item>
             <item>
              <spacer name="verticalSpacer">
