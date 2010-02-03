@@ -63,3 +63,30 @@ bool nmapClass::isDns(QString hostname) {
     qDebug() << "nmapsi4/isDns():: " << hostname << state_;
     return state_;
 }
+
+QString nmapClass::clearHost(const QString hostname) {
+    // check for wrong dns address
+    // (http:// ftp:// sftp:// https://)[dns/ip]
+    QString hostNew_(hostname);
+    if(hostname.startsWith("http://")) {
+        hostNew_.remove("http://");
+        return hostNew_;
+    }
+
+    if(hostname.startsWith("https://")) {
+        hostNew_.remove("https://");
+        return hostNew_;
+    }
+
+    if(hostname.startsWith("ftp://")) {
+        hostNew_.remove("ftp://");
+        return hostNew_;
+    }
+
+    if(hostname.startsWith("sftp://")) {
+        hostNew_.remove("sftp://");
+        return hostNew_;
+    }
+
+    return hostname;
+}

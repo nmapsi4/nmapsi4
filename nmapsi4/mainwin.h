@@ -56,6 +56,7 @@ private:
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
     bool isDns(QString hostname);
+    QString clearHost(const QString hostname);
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
     void showParserObj(int indexObj);
 

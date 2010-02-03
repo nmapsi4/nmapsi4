@@ -127,8 +127,10 @@ void nmapClass::startScan() {
     }
 
     QString hostname = hostEdit->currentText();
+    // check wrong address
+    hostname = clearHost(hostname);
 
-    if(hostname.contains("/")) {
+    if(hostname.contains("/") && !hostname.contains("//")) {
 
         QStringList addrPart_ = hostname.split("/");
         QStringList ipBase_ = addrPart_[0].split(".");
@@ -170,6 +172,7 @@ void nmapClass::startScan() {
 
         if(addrPart_.size() > 1) {// check for only one space in hostname
             for(int index=0; index < addrPart_.size(); index++) {
+                addrPart_[index] = clearHost(addrPart_[index]);
                 addMonitorHost(scanMonitor, addrPart_[index]);
                 this->scan(addrPart_[index]);
             }
