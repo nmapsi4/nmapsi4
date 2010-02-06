@@ -100,9 +100,9 @@ protected:
     QString logSessionFile;
     QLabel *labelVersion;
     QLabel *userMode;
-    QPointer<mainProfile> dialog;
     logHistory *history;
     QPointer<scanThread> th;
+    QPointer<mainProfile> dialog;
     lookUpT *lth;
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
