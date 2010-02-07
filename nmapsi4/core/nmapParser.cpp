@@ -314,7 +314,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 QString str;
                 for(int index=0; index < lStr.size(); index++) {
                     if(lStr[index].contains("(") || lStr[index].contains(")")
-                                                 || lStr[index].contains("version")) {
+                                                 || lStr[index].contains("version")
+                                                 || lStr[index].contains("protocol")) {
                         lStr.removeAt(index);
                         index--;
                     }
@@ -331,7 +332,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                         index++;
 
                     }
-                    elemObj->setDescriptionServices(str);
+
                     QStringList tmpToken = str.split(" ");
                     QString token;
                     if (tmpToken.size() <= 2) {
@@ -354,10 +355,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                     item2->setText(0, str);
                     item2->setToolTip(0, str);
+                    elemObj->setDescriptionServices(str);
 
-                    //if(!str.contains(noDes)) {
-
-                    //}
                 }
 
                 if ((PFile) && (!verboseLog)) {

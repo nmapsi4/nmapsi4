@@ -131,6 +131,10 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(runtimePars(QTreeWidgetItem*, int)));
     connect(treeTraceroot, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(runtimeTraceroutePars(QTreeWidgetItem*, int)));
+    connect(GItree, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
+            this, SLOT(showObjServData(QTreeWidgetItem*, int)));
+    connect(buttonVulnObj, SIGNAL(clicked()),
+            this, SLOT(objVulnButton()));
 
     // BookMark signals
     connect(deleteBook, SIGNAL(clicked()),

@@ -87,6 +87,16 @@ void nmapClass::initObject() {
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
 
+    QString noHost(tr("no Host selected"));
+    lineInfouptime->setText(noHost);
+    lineInfotcpsequence->setText(noHost);
+    lineInforunning->setText(noHost);
+    lineInfodevice->setText(noHost);
+
+    QString noService(tr("no Service selected"));
+    servDesLabel->setText(noService);
+    servPortLabel->setText(noService);
+
     checkProfile();
     optionListCreate();
 

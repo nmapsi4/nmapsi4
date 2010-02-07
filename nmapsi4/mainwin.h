@@ -146,6 +146,8 @@ private slots:
     void showExt();
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
+    void showObjServData(QTreeWidgetItem *item, int column);
+    void objVulnButton();
 
     // Check nmap version
     void checkNmapVersion();
