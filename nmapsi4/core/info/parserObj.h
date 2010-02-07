@@ -35,6 +35,8 @@ class parserObj
         QString getDeviceType();
         QString getRunning();
         QStringList getServices();
+        QStringList getDescriptionServices();
+        QStringList getPortServices();
 
         // Setters
         void setUptime(const QString uptime);
@@ -42,6 +44,8 @@ class parserObj
         void setDeviceType(const QString deviceType);
         void setRunning(const QString Running);
         void setServices(const QString Service);
+        void setDescriptionServices(const QString desService);
+        void setPortServices(const QString portService);
 
     protected:
         QString uptime_;
@@ -49,6 +53,8 @@ class parserObj
         QString deviceType_;
         QString running_;
         QStringList services_;
+        QStringList descriptionServices_;
+        QStringList portServices_;
 };
 
 

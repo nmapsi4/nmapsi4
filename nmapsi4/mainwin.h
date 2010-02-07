@@ -79,7 +79,7 @@ protected:
     QTreeWidgetItem *root2, *item_root2, *infoNSS, *infoNSSObj;
     QTreeWidgetItem *error, *item_error;
     QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
-    QTreeWidgetItem *rootLook, *itemLook;
+    QTreeWidgetItem *rootLook, *itemLook, *objItem;
     QFile *PFile;
     QString FileName;
     QString firstPath;
@@ -107,6 +107,7 @@ protected:
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;
+    QList<QTreeWidgetItem*> objElem;
     digSupport *digC;
     QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
     QList<parserObj*> parserObjList_;

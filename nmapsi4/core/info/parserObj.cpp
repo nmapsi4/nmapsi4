@@ -54,6 +54,14 @@ QStringList parserObj::getServices() {
     return this->services_;
 }
 
+QStringList parserObj::getDescriptionServices() {
+    return this->descriptionServices_;
+}
+
+QStringList parserObj::getPortServices() {
+    return this->portServices_;
+}
+
 // Setters
 void parserObj::setUptime(const QString uptime) {
     uptime_.append(uptime);
@@ -74,4 +82,12 @@ void parserObj::setRunning(const QString running) {
 
 void parserObj::setServices(const QString service) {
     services_.push_back(service);
+}
+
+void parserObj::setDescriptionServices(const QString desService) {
+    descriptionServices_.push_back(desService);
+}
+
+void parserObj::setPortServices(const QString portService) {
+    portServices_.push_back(portService);
 }

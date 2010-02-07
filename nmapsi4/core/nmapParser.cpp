@@ -307,6 +307,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                 item2->setText(4, lStr[2]);
                 item2->setToolTip(4, lStr[2]);
+                elemObj->setServices(lStr[2]); // Obj Services
+                elemObj->setPortServices(lStr[0]);
+
                 int index = 3;
                 QString str;
                 for(int index=0; index < lStr.size(); index++) {
@@ -318,16 +321,17 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 }
                 // Description
                 QString noDes = tr("No description");
-                if (lStr.size() == 3)
+                if (lStr.size() == 3) {
                     item2->setText(0, noDes);
-                else {
+                    elemObj->setDescriptionServices(noDes);
+                } else {
                     while (index < lStr.size()) {
                         str.append(lStr[index]);
                         str.append(" ");
                         index++;
 
                     }
-
+                    elemObj->setDescriptionServices(str);
                     QStringList tmpToken = str.split(" ");
                     QString token;
                     if (tmpToken.size() <= 2) {
@@ -351,9 +355,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     item2->setText(0, str);
                     item2->setToolTip(0, str);
 
-                    if(!str.contains(noDes)) {
-                        elemObj->setServices(str);
-                    }
+                    //if(!str.contains(noDes)) {
+
+                    //}
                 }
 
                 if ((PFile) && (!verboseLog)) {

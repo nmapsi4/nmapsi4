@@ -132,9 +132,23 @@ void nmapClass::showParserObj(int indexObj) {
         lineInfodevice->setText(noInfo);
     }
 
+    qDeleteAll(objElem);
+    GItree->clear();
+    objElem.clear();
 
     for(int index=0; index < parserObjList_[indexObj]->getServices().size(); index++) {
-        qDebug() << "DEBUG::showParserObj::List:: " << parserObjList_[indexObj]->getServices()[index];
+        //qDebug() << "DEBUG::showParserObj::List:: " << parserObjList_[indexObj]->getServices()[index];
+        objItem = new QTreeWidgetItem(GItree);
+        objElem.push_front(objItem);
+        objItem->setText(0,parserObjList_[indexObj]->getServices()[index]);
+    }
+
+    for(int index=0; index < parserObjList_[indexObj]->getDescriptionServices().size(); index++) {
+        qDebug() << "DEBUG::showParserObj::Description List:: " << parserObjList_[indexObj]->getDescriptionServices()[index];
+    }
+
+    for(int index=0; index < parserObjList_[indexObj]->getPortServices().size(); index++) {
+        qDebug() << "DEBUG::showParserObj::Port List:: " << parserObjList_[indexObj]->getPortServices()[index];
     }
 
 }
