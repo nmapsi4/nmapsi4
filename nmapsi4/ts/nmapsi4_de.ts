@@ -428,16 +428,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Service / Os</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fi/Unfiltered</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Schließen</translation>
     </message>
     <message>
         <source>Open</source>
@@ -561,6 +557,46 @@
     </message>
     <message>
         <source>RTT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Service / OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Running:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Service(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host general Info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -944,7 +980,7 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Scan</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scannen</translation>
     </message>
     <message>
         <source>Options</source>
@@ -976,7 +1012,7 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Log</translation>
     </message>
     <message>
         <source>Scan Log</source>
@@ -1004,6 +1040,14 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Enable/Disable NSS script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no Host selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no Service selected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

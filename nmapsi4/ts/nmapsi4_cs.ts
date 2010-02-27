@@ -430,7 +430,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Service / Os</source>
-        <translation>Služba/OS</translation>
+        <translation type="obsolete">Služba/OS</translation>
     </message>
     <message>
         <source>Fi/Unfiltered</source>
@@ -563,6 +563,46 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>RTT</source>
         <translation>RTT</translation>
+    </message>
+    <message>
+        <source>Service / OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Running:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Service(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host general Info</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1009,6 +1049,14 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source>Enable/Disable NSS script</source>
         <translation>Povolit/Zakázat skript NSS</translation>
+    </message>
+    <message>
+        <source>no Host selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no Service selected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

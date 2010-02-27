@@ -4,7 +4,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1264"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1423"/>
         <source>NmapSI4[*]</source>
         <translation type="unfinished">NmapSI4[*]</translation>
     </message>
@@ -17,22 +17,22 @@
         <translation type="obsolete">127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1275"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1277"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1319"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1320"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1339"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1434"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1436"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1478"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1479"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1499"/>
         <source>Scan</source>
         <translation type="unfinished">Varrer</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1327"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1424"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1487"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1584"/>
         <source>Host(s)</source>
         <translation type="unfinished">Máquina(s)</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1333"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1493"/>
         <source>Host(s) Info</source>
         <translation type="unfinished">Info da(s) máquina(s)</translation>
     </message>
@@ -41,362 +41,407 @@
         <translation type="obsolete">Erro</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1437"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1612"/>
         <source>Error(s)</source>
         <translation type="unfinished">Erro(s)</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1316"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1475"/>
         <source>Log</source>
         <translation type="unfinished">Log</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1434"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1435"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1609"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1610"/>
         <source>Log(s)</source>
         <translation type="unfinished">Log(s)</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1341"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1501"/>
         <source>RPC Scan</source>
         <translation type="unfinished">Varrer RPC</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1342"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1482"/>
+        <source>Service / OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1502"/>
         <source>Bounce Host</source>
         <translation type="unfinished">Retornar máquina</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1345"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1505"/>
         <source>Connect Scan</source>
         <translation type="unfinished">Varrer ao conectar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1346"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1506"/>
         <source>Ping Sweep</source>
         <translation type="unfinished">Pingar ao varrer</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1347"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1507"/>
         <source>Host List</source>
         <translation type="unfinished">Listar máquina</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1348"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1508"/>
         <source>FTP Bounce Attack</source>
         <translation type="unfinished">Retornar ataque FTP</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1350"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1510"/>
         <source>Ports</source>
         <translation type="unfinished">Portas</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1351"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1511"/>
         <source>Version Probe</source>
         <translation type="unfinished">Sondar versão</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1352"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1512"/>
         <source>Don&apos;t Ping</source>
         <translation type="unfinished">Não pingar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1355"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1515"/>
         <source>Normal</source>
         <translation type="unfinished">Normal</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1356"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1516"/>
         <source>All</source>
         <translation type="unfinished">Todos</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1357"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1517"/>
         <source>Most Important</source>
         <translation type="unfinished">Mais importante</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1358"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1518"/>
         <source>Range</source>
         <translation type="unfinished">Intervalo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1360"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1520"/>
         <source>OS Detection</source>
         <translation type="unfinished">Detecção OS</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1417"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1577"/>
         <source>Fragmentation</source>
         <translation type="unfinished">Fragmentação</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1415"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1575"/>
         <source>Ipv6</source>
         <translation type="unfinished">Ipv6</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1416"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1576"/>
         <source>Ordered Port</source>
         <translation type="unfinished">Porta ordenada</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1363"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1523"/>
         <source>ICMP Echo</source>
         <translation type="unfinished">ICMP Echo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1315"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1474"/>
         <source>Main</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1317"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1476"/>
         <source>Vuln</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1322"/>
-        <source>Service / Os</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1329"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1489"/>
         <source>Nss script result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1330"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1490"/>
         <source>NSS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1361"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1521"/>
         <source>Show Scan Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1364"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1524"/>
         <source>ICMP TImestamp</source>
         <translation type="unfinished">ICMP Timestamp</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1365"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1366"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1367"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1525"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1526"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1527"/>
         <source>Port</source>
         <translation type="unfinished">Porta</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1368"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1528"/>
         <source>UDP Ping</source>
         <translation type="unfinished">Pingar UDP</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1369"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1529"/>
         <source>TCP SYN Ping</source>
         <translation type="unfinished">Pingar TCP SYNC</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1370"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1530"/>
         <source>TCP ACK Ping</source>
         <translation type="unfinished">Pingar TCP ACK</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1371"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1531"/>
         <source>ICMP Netmask</source>
         <translation type="unfinished">Máscara de Rede ICMP</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1373"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1533"/>
         <source>Input File</source>
         <translation type="unfinished">Arquivo de entrada</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1374"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1534"/>
         <source>Browser</source>
         <translation type="unfinished">Navegar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1375"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1535"/>
         <source>Scan Profile</source>
         <translation type="unfinished">Varrer perfil</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1377"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1537"/>
         <source>Max. RTT</source>
         <translation type="unfinished">Máx. RTT</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1378"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1538"/>
         <source>Max. Parallel</source>
         <translation type="unfinished">Máx. paralelo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1379"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1539"/>
         <source>Min, RTT</source>
         <translation type="unfinished">Mín. RTT</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1380"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1540"/>
         <source>Min. Parallel</source>
         <translation type="unfinished">Mín. paralelo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1381"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1541"/>
         <source>Scan Delay</source>
         <translation type="unfinished">Retardar varredura</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1382"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1542"/>
         <source>Initial RTT</source>
         <translation type="unfinished">RTT inicial</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1383"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1543"/>
         <source>Host Timeout</source>
         <translation type="unfinished">Tempo esgotado da máquina</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1384"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1544"/>
         <source>Ipv4 TTL</source>
         <translation type="unfinished">Ipv4 TTL</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1387"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1547"/>
         <source>Normal Throttling</source>
         <translation type="unfinished">Estrangulação normal</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1388"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1548"/>
         <source>Paranoid Throttling</source>
         <translation type="unfinished">Estrangulação paranódica</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1389"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1549"/>
         <source>Sneaky Throttling</source>
         <translation type="unfinished">Estrangulação sorrateria</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1390"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1550"/>
         <source>Polite Throttling</source>
         <translation type="unfinished">Estrangulação cortês</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1391"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1551"/>
         <source>Aggressive Throttling</source>
         <translation type="unfinished">Estrangulação agressiva</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1392"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1552"/>
         <source>Insane Throttling</source>
         <translation type="unfinished">Estrangulação insana</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1397"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1557"/>
         <source>Quiet</source>
         <translation type="unfinished">Silencioso</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1398"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1558"/>
         <source>Verbose</source>
         <translation type="unfinished">Detalhado</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1399"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1559"/>
         <source>Very Verbose</source>
         <translation type="unfinished">Muito detalhado</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1400"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1560"/>
         <source>Debug</source>
         <translation type="unfinished">Depurar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1401"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1561"/>
         <source>Verbose Debug</source>
         <translation type="unfinished">Detalhar depuração</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1405"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1565"/>
         <source>When Required</source>
         <translation type="unfinished">Quando necessário</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1406"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1566"/>
         <source>Always</source>
         <translation type="unfinished">Sempre</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1407"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1567"/>
         <source>Never</source>
         <translation type="unfinished">Nunca</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1409"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1569"/>
         <source>DNS Resolution</source>
         <translation type="unfinished">Resolver DNS</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1410"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1570"/>
         <source>Verbosity</source>
         <translation type="unfinished">Detalhamento</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1411"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1571"/>
         <source>Spoof Address</source>
         <translation type="unfinished">Endereçar spoof</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1412"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1572"/>
         <source>Specific Device</source>
         <translation type="unfinished">Especificar dispostitivo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1413"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1573"/>
         <source>Decoy</source>
         <translation type="unfinished">Isca</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1414"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1574"/>
         <source>Source Port</source>
         <translation type="unfinished">Fonte da porta</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1425"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1585"/>
         <source>Lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1427"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1587"/>
         <source>DNS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1428"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1588"/>
         <source>IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1429"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1589"/>
         <source>RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1430"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1590"/>
         <source>Hop(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1431"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1591"/>
         <source>Traceroute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1481"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1482"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1483"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1592"/>
+        <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1593"/>
+        <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1594"/>
+        <source>&lt;b&gt;Running:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1595"/>
+        <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1600"/>
+        <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1602"/>
+        <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1604"/>
+        <source>Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1606"/>
+        <source>Service(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1607"/>
+        <source>Host general Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1656"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1657"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1658"/>
         <source>toolBar_3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -421,124 +466,124 @@
         <translation type="obsolete">&amp;Cronometragem</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1473"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1648"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Arquivo</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1478"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1653"/>
         <source>&amp;Help</source>
         <translation type="unfinished">Aj&amp;uda</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1474"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1649"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;Configurações</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1479"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1654"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1480"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1655"/>
         <source>toolBar_2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1265"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1273"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1283"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1424"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1432"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1442"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Sair</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1266"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1268"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1425"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1427"/>
         <source>Quit</source>
         <translation type="unfinished">Sair</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1270"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1429"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1271"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1430"/>
         <source>&amp;About</source>
         <translation type="unfinished">&amp;Sobre</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1272"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1274"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1282"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1431"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1433"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1441"/>
         <source>&amp;Scan</source>
         <translation type="unfinished">&amp;Varrer</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1279"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1438"/>
         <source>Ctrl+S</source>
         <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1280"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1439"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">Sobre &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1281"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1440"/>
         <source>&amp;Preferences</source>
         <translation type="unfinished">&amp;Preferências</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1284"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1443"/>
         <source>Stop Scan</source>
         <translation type="unfinished">Parar varredura</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1285"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1444"/>
         <source>Clear History</source>
         <translation type="unfinished">Limpar histórico</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1289"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1448"/>
         <source>Close Tree</source>
         <translation type="unfinished">Fechar árvore</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1291"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1450"/>
         <source>Close Scan Tree</source>
         <translation type="unfinished">Fechar árvore da varredura</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1293"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1452"/>
         <source>Clear HostName</source>
         <translation type="unfinished">Limpar nome da máquina</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1295"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1454"/>
         <source>Clear Hostname IP</source>
         <translation type="unfinished">Limpar IP da nome da máquina</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1297"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1299"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1456"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1458"/>
         <source>Save As</source>
         <translation type="unfinished">Salvar como</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1301"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1303"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1460"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1462"/>
         <source>Save</source>
         <translation type="unfinished">Salvar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1305"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1464"/>
         <source>S&amp;ave</source>
         <translation type="unfinished">S&amp;alvar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1306"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1465"/>
         <source>Save &amp;As</source>
         <translation type="unfinished">Salvar &amp;como</translation>
     </message>
@@ -547,52 +592,52 @@
         <translation type="obsolete">Mais opçõ&amp;es</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1475"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1650"/>
         <source>&amp;View</source>
         <translation type="unfinished">Ver</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1307"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1466"/>
         <source>F&amp;ull Screen Mode</source>
         <translation type="unfinished">Modo &amp;tela cheia</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1308"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1467"/>
         <source>Ctrl+Shift+F11</source>
         <translation type="unfinished">Ctrl+Shift+F11</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1309"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1468"/>
         <source>Show &amp;Menu Bar</source>
         <translation type="unfinished">Mostrar barra de menu</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1310"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1469"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1469"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1644"/>
         <source>Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1476"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1651"/>
         <source>Toolbars</source>
         <translation type="unfinished">Barra de ferramentas</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1311"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1470"/>
         <source>Main Toolbar</source>
         <translation type="unfinished">Barra de ferramentas principal</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1312"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1471"/>
         <source>Actions Toolbar</source>
         <translation type="unfinished">Ações da barra de ferramentas</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1313"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1472"/>
         <source>Show Status Bar</source>
         <translation type="unfinished">Mostra barra de status</translation>
     </message>
@@ -605,122 +650,122 @@
         <translation type="obsolete">Info do(s) alvo(s)</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1467"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1642"/>
         <source>Vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1338"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1472"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1498"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1647"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1314"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1318"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1473"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1477"/>
         <source>&amp;Add Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1326"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1332"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1337"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1486"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1492"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1497"/>
         <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1325"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1485"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1324"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1484"/>
         <source>Close</source>
         <translation type="unfinished">Fechar</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1323"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1483"/>
         <source>Fi/Unfiltered</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1470"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1645"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1334"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1471"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1494"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1646"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1336"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1496"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1420"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1580"/>
         <source>State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1438"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1613"/>
         <source>Warning(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1448"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1623"/>
         <source>securityfocus.com</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1449"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1624"/>
         <source>cve.miltre.org</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1450"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1625"/>
         <source>secunia.com</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1459"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1634"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1440"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1615"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1453"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1628"/>
         <source>Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1461"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1636"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1418"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1578"/>
         <source>Scan Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1421"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1581"/>
         <source>Host Thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1422"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1582"/>
         <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1477"/>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1652"/>
         <source>&amp;Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -932,7 +977,7 @@
         <location filename="../core/saveLog.cpp" line="123"/>
         <location filename="../core/toolsUI.cpp" line="146"/>
         <location filename="../core/updateUI.cpp" line="275"/>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="135"/>
         <source>Close</source>
         <translation type="unfinished">Fechar</translation>
     </message>
@@ -948,7 +993,7 @@
         <translation type="unfinished">Varrer normal</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="373"/>
+        <location filename="../core/nmapParser.cpp" line="374"/>
         <source>No Ports</source>
         <translation type="unfinished">Sem portas</translation>
     </message>
@@ -958,9 +1003,9 @@
         <translation type="obsolete">(Sem informações de varredura)</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="403"/>
-        <location filename="../core/nmapParser.cpp" line="461"/>
-        <location filename="../core/nmapParser.cpp" line="486"/>
+        <location filename="../core/nmapParser.cpp" line="404"/>
+        <location filename="../core/nmapParser.cpp" line="462"/>
+        <location filename="../core/nmapParser.cpp" line="487"/>
         <source>No Info</source>
         <translation type="unfinished">Nenhuma informação</translation>
     </message>
@@ -970,7 +1015,7 @@
         <translation type="obsolete">(Sem informações da máquina)</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="542"/>
+        <location filename="../core/nmapParser.cpp" line="543"/>
         <source>
 (Report: </source>
         <translation type="unfinished">(Relatar: </translation>
@@ -988,13 +1033,13 @@
         <translation type="obsolete">,  Fi/Não filtrado:</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="536"/>
+        <location filename="../core/nmapParser.cpp" line="537"/>
         <source>
 (No Errors or Warnings)</source>
         <translation type="unfinished">(Nenhum erro ou aviso)</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="543"/>
+        <location filename="../core/nmapParser.cpp" line="544"/>
         <source>Errors or Warnings: </source>
         <translation type="unfinished">Erro ou aviso: </translation>
     </message>
@@ -1171,7 +1216,7 @@ Pacotes MS Windows: el.diabl09@gmail.com
     <message>
         <location filename="../mainwin.cpp" line="50"/>
         <source>Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Log</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="51"/>
@@ -1199,7 +1244,17 @@ Pacotes MS Windows: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="90"/>
+        <source>no Host selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwin.cpp" line="96"/>
+        <source>no Service selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwin.cpp" line="135"/>
         <source>No Host Target
 </source>
         <translation type="unfinished">Nenhuma máquina alvo</translation>
@@ -1247,7 +1302,7 @@ Pacotes MS Windows: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="322"/>
+        <location filename="../core/nmapParser.cpp" line="324"/>
         <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
