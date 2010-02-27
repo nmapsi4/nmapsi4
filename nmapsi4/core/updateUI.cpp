@@ -281,12 +281,15 @@ void nmapClass::listClear() {
     listClearFlag = true;
     itemDeleteAll(itemList); //clear items list
     qDeleteAll(parserObjList_);
+    itemDeleteAll(mainTreeElem);
     parserObjList_.clear();
     itemList.clear();
+    mainTreeElem.clear();
 
     listWscan->clear();
     treeWinfo->clear();
     treeLookup->clear();
+    treeMain->clear();
     listScanError->clear();
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);
@@ -392,4 +395,23 @@ void nmapClass::NSSCheck() { // SLOT
    } else {
        NSSsupport_ = false;
    }
+}
+
+void nmapClass::setTreeWidgetValues() {
+    listWscan->setIconSize(QSize::QSize(22, 22));
+    listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
+    listScanError->setIconSize(QSize::QSize(22, 22));
+    listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
+    listScan->setIconSize(QSize::QSize(22, 22));
+    listScan->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeWinfo->setIconSize(QSize::QSize(22, 22));
+    treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeTraceroot->setIconSize(QSize::QSize(22, 22));
+    treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeNSS->setIconSize(QSize::QSize(22, 22));
+    treeNSS->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeMain->setIconSize(QSize::QSize(22, 22));
+    treeMain->header()->setResizeMode(0, QHeaderView::Interactive);
+    treeLookup->setIconSize(QSize::QSize(22, 22));
+    treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
 }

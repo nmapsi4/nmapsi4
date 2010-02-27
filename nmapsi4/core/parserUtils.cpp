@@ -62,22 +62,16 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
 #endif
 
-    QStringList host = item->text(0).split(" ");
-
-#ifndef PARSER_NO_DEBUG
-    qDebug() << "DEBUG::Runtime::Split:: " << host.size();
-    qDebug() << "DEBUG::Runtime::Host:: " << host[1];
-#endif
 
     if(hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
-        hostEdit->addItem(host[1].remove("\n"));
+        hostEdit->addItem(item->text(0));
     } else
     if(item->parent() == NULL) {
-        hostEdit->setItemText(0, host[1].remove("\n"));
+        hostEdit->setItemText(0, item->text(0));
     }
 
-    // TODO DEBUG for new parserOBJ type (ALPHA-X)
-    int indexObj = listWscan->indexOfTopLevelItem(item);
+
+    int indexObj = treeMain->indexOfTopLevelItem(item);
     qDebug() << "DEBUG::ItemIndex:: " << indexObj;
 
     if(indexObj != -1) {
@@ -143,7 +137,7 @@ void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
     buttonVulnObj->setEnabled(true);
 
-    int indexHost = listWscan->indexOfTopLevelItem(listWscan->currentItem());
+    int indexHost = treeMain->indexOfTopLevelItem(treeMain->currentItem());
     int indexObj_ = GItree->indexOfTopLevelItem(item);
 
     if(indexObj_ != -1) {

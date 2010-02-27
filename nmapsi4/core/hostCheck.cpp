@@ -30,8 +30,6 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         this->delMonitorHost(scanMonitor,hostname);
         return;
     }
-    treeLookup->setIconSize(QSize::QSize(32, 32));
-    treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
 
     rootLook = new QTreeWidgetItem(treeLookup);
     itemListLook.push_front(rootLook);

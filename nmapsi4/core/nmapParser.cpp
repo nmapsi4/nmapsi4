@@ -50,10 +50,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
-    // hostname for TreeItem
-    QString hostRoot("Host ");
-    hostRoot.append(hostCheck);
-    buffer.append(hostRoot);
+    buffer.append(hostCheck);
 
     while (!stream.atEnd()) {
         tmp = stream.readLine();
@@ -168,6 +165,9 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoNSS = new QTreeWidgetItem(treeNSS);
     itemList.push_front(infoNSS);
 
+    mainTreeE = new QTreeWidgetItem(treeMain);
+    mainTreeElem.push_front(mainTreeE);
+
     // check for log file
     QTextStream *out = NULL;
 
@@ -180,19 +180,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         nmap_command.append(hostCheck); // write host target in the log
         *out << nmap_command << endl << endl;
     }
-
-    listWscan->setIconSize(QSize::QSize(32, 32));
-    listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScanError->setIconSize(QSize::QSize(32, 32));
-    listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScan->setIconSize(QSize::QSize(32, 32));
-    listScan->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeWinfo->setIconSize(QSize::QSize(32, 32));
-    treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeTraceroot->setIconSize(QSize::QSize(32, 32));
-    treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeNSS->setIconSize(QSize::QSize(32, 32));
-    treeNSS->header()->setResizeMode(0, QHeaderView::Interactive);
 
     int tmpBox = toolBox->currentIndex();
  
@@ -224,6 +211,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
+    mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
     if (!buffer.isEmpty()) { // Host line scan
         QFont rootFont = root->font(0);
@@ -232,9 +220,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         root->setText(0, buffer);
         root2->setText(0, buffer);
         error->setText(0, buffer);
+        //buffer.remove("Host ");
         infoItem->setText(0, buffer);
         infoTraceroot->setText(0, buffer);
         infoNSS->setText(0, buffer);
+        mainTreeE->setText(0, buffer);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
         QFont rootFont = root->font(0);
@@ -246,6 +236,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoItem->setText(0, hostCheck);
         infoTraceroot->setText(0, hostCheck);
         infoNSS->setText(0, hostCheck);
+        mainTreeE->setText(0, hostCheck);
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     }
 

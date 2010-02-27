@@ -59,6 +59,7 @@ private:
     QString clearHost(const QString hostname);
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
     void showParserObj(int indexObj);
+    void setTreeWidgetValues();
 
 public:
     nmapClass();
@@ -79,7 +80,7 @@ protected:
     QTreeWidgetItem *root2, *item_root2, *infoNSS, *infoNSSObj;
     QTreeWidgetItem *error, *item_error;
     QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
-    QTreeWidgetItem *rootLook, *itemLook, *objItem;
+    QTreeWidgetItem *rootLook, *itemLook, *objItem, *mainTreeE;
     QFile *PFile;
     QString FileName;
     QString firstPath;
@@ -108,6 +109,7 @@ protected:
     QList<QString> monitorElemState;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
+    QList<QTreeWidgetItem*> mainTreeElem;
     digSupport *digC;
     QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
     QList<parserObj*> parserObjList_;

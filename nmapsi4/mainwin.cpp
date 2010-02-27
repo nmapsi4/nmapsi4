@@ -97,6 +97,7 @@ void nmapClass::initObject() {
     servDesLabel->setText(noService);
     servPortLabel->setText(noService);
 
+    setTreeWidgetValues();
     checkProfile();
     optionListCreate();
 
@@ -105,7 +106,7 @@ void nmapClass::initObject() {
 
     checkNmapVersion();
     nssAct_->setChecked(NSSsupport_); // set NSS support
-    listWscan->setColumnWidth(0, 400);
+    listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 400);
     treeTraceroot->setColumnWidth(0, 400);
@@ -275,6 +276,7 @@ nmapClass::~nmapClass()
     itemDeleteAll(itemList);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
+    itemDeleteAll(mainTreeElem);
     qDeleteAll(parserObjList_);
     
     delete progressScan;
