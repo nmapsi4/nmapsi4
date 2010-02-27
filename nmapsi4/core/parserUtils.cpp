@@ -162,4 +162,9 @@ void nmapClass::objVulnButton() { // SLOT
     }
 
     stackedMain->setCurrentIndex(2);
+    toolBar->setVisible(false);
+    toolBarBook->setVisible(true);
+    actionMain_Toolbars->setChecked(false);
+    toolBar_2->setVisible(false);
+    actionActions_Toolbar->setChecked(false);
 }
