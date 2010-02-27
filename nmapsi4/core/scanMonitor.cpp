@@ -20,8 +20,6 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
-     scanMonitor->setIconSize(QSize::QSize(32, 32));
-     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
      tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
      hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));

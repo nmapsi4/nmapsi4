@@ -414,4 +414,6 @@ void nmapClass::setTreeWidgetValues() {
     treeMain->header()->setResizeMode(0, QHeaderView::Interactive);
     treeLookup->setIconSize(QSize::QSize(22, 22));
     treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
+    scanMonitor->setIconSize(QSize::QSize(22, 22));
+    scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
