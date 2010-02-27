@@ -51,8 +51,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QRegExp rxT_("^\\d\\d?");
 
     // hostname for TreeItem
-    // FIX uptime declaration
-    QString uptime;
     QString hostRoot("Host ");
     hostRoot.append(hostCheck);
     buffer.append(hostRoot);
@@ -97,11 +95,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         }
 
         if(tmp.startsWith("Uptime")) {
+            QString uptime;
             uptime.clear();
             uptime.append(tmp);
             uptime.remove("Uptime guess:");
-            //uptime.remove(0,1);
-            uptime.prepend("\n");
             elemObj->setUptime(uptime);
         }
 
@@ -152,9 +149,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         }
 
     }
-
-    //buffer.append(" ");
-    buffer.append(uptime);
 
     root = new QTreeWidgetItem(listWscan);
     itemList.push_front(root);
@@ -377,7 +371,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
         }
     } else { // insert message for no info
-        //tmp_mess.append(tr(" (No scan informations)"));
         root->setText(0, tmp_mess);
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
@@ -404,7 +397,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoItemObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        //tmp_mess2.append(tr("\n(No Host Informations)"));
         infoItem->setText(0, tmp_mess2);
         infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
@@ -462,7 +454,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoTracerootObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        //tmp_mess2.append(tr(" (No Hop Informations)"));
         infoTraceroot->setText(0, tmp_mess2);
         infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
@@ -487,7 +478,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoNSSObj->setText(0, tr("No Info"));
         }
     } else { // insert message for no info
-        //tmp_mess2.append(tr(" (No NSS Informations)"));
         infoNSS->setText(0, tmp_mess2);
         infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
