@@ -2663,7 +2663,7 @@
      <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
    <property name="text">
-    <string>&amp;About</string>
+    <string>&amp;About nmapsi4</string>
    </property>
   </action>
   <action name="action_Scan">

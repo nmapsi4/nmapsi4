@@ -21,15 +21,15 @@
 
 lookUpT::lookUpT(const QString hostname, QObject *parent) : host(hostname), par(parent)
 {
+    connect(par, SIGNAL(killScan()),
+            this, SLOT(killLookup()));
+
 }
 
 void lookUpT::run() {
 
     qRegisterMetaType<QHostInfo>("QHostInfo");
     info = QHostInfo::fromName(host);
-
-     connect(par, SIGNAL(killScan()),
-             this, SLOT(killLookup()));
 
     if(info.error() != QHostInfo::NoError && info.error() != QHostInfo::UnknownError) {
          qDebug() << "Lookup failed:" << info.errorString();

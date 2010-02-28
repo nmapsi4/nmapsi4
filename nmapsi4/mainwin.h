@@ -36,7 +36,7 @@ class QMainWindow;
 class QWebView;
 class QMutex;
 
-class nmapClass : public QMainWindow , private Ui::MainWindow
+class nmapClass : public QMainWindow, private Ui::MainWindow
 {
     Q_OBJECT
 
@@ -110,6 +110,7 @@ protected:
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
+    QList<scanThread*> scanPointerList;
     digSupport *digC;
     QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
     QList<parserObj*> parserObjList_;

@@ -24,6 +24,8 @@ digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *pa
        host(hostname),
        par(parent)
 {
+    connect(par, SIGNAL(killScan()),
+            this, SLOT(stopProcess()));
 
 }
 

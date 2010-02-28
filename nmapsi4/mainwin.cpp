@@ -253,6 +253,7 @@ void nmapClass::scan(const QString hostname)
     
     QByteArray buff1, buff2;
     th = new scanThread(buff1, buff2, parametri, this);
+    scanPointerList.push_front(th);
 
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress())); // nmapParser.cpp
@@ -273,12 +274,13 @@ nmapClass::~nmapClass()
     if(dialog) {
         dialog->close();
     }
+
     itemDeleteAll(itemList);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
     qDeleteAll(parserObjList_);
-    
+
     delete progressScan;
     delete PFile;
     delete labelVersion;

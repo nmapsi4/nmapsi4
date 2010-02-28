@@ -25,8 +25,10 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
        perr(ProcB2),
        ParList(parametri),
        par(parent)
-
 {
+
+    connect(par, SIGNAL(killScan()),
+            this, SLOT(stopProcess()));
 
 }
 
@@ -34,12 +36,9 @@ void scanThread::run() {
      
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
-     connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
-	     this, SLOT(setValue()));
 
-     // signal from parent
-     connect(par, SIGNAL(killScan()),
-	     this, SLOT(stopProcess())); 
+     connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
+             this, SLOT(setValue()));
 
      qDebug() << "DEBUG::ThreadString:: " << ParList;
      proc->start("nmap", ParList);

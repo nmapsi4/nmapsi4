@@ -531,7 +531,13 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     delete StdoutStr;
     delete StderrorStr;
-    //delete th;
+
+    if(!monitorElemHost.size()) {
+        emit killScan();
+        qDeleteAll(scanPointerList);
+        scanPointerList.clear();
+    }
+
     Byte1.clear();
     Byte2.clear();
 

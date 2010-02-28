@@ -21,7 +21,9 @@
 
 void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
 
+#ifndef MAIN_NO_DEBUG
     qDebug() << "scanLookup::flag:: " << state;
+#endif
 
     this->isDns(hostname);
 
@@ -35,7 +37,9 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     itemListLook.push_front(rootLook);
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
+#ifndef MAIN_NO_DEBUG
     qDebug() << "scanLookup::Found address DNS:: " << info.hostName();
+#endif
 
     if(isDns(hostname)) {
         rootLook->setText(0, hostname);
@@ -44,7 +48,9 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     }
 
     foreach (QHostAddress address, info.addresses()) {
+#ifndef MAIN_NO_DEBUG
         qDebug() << "scanLookup::Found address:: " << address.toString();
+#endif
         itemLook = new QTreeWidgetItem(rootLook);
         itemListLook.push_front(itemLook);
         itemLook->setText(0,address.toString());
@@ -58,7 +64,10 @@ bool nmapClass::isDns(QString hostname) {
     QRegExp rx_("*.*.*.*");
     rx_.setPatternSyntax(QRegExp::Wildcard);
     (rx_.exactMatch(hostname) == true) ? state_=false : state_=true;
+
+#ifndef MAIN_NO_DEBUG
     qDebug() << "nmapsi4/isDns():: " << hostname << state_;
+#endif
     return state_;
 }
 

@@ -46,6 +46,9 @@ class digSupport : public QObject
         void checkDig();
         void digReturn(const QStringList hostname, QByteArray buffer1);
 
+    signals:
+        void killScan();
+
     protected:
         QProcess *digProc;
         bool state;
