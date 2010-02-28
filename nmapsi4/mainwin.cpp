@@ -116,7 +116,7 @@ void nmapClass::initObject() {
     treeBookVuln->setColumnWidth(0, 400);
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
-    QSize size = settings.value("window/size", QSize(869, 605)).toSize();
+    QSize size = settings.value("window/size", QSize(910, 672)).toSize();
     resize(size);
     move(pos);
 
