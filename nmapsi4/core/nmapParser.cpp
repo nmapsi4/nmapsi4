@@ -489,13 +489,15 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     while (!b_log.atEnd()) {
         blog_line = b_log.readLine();
-        item_root2 = new QTreeWidgetItem(root2); // append scan log
-        itemList.push_front(item_root2); // reference to address
+        if(!blog_line.isEmpty()) {
+           item_root2 = new QTreeWidgetItem(root2); // append scan log
+           itemList.push_front(item_root2); // reference to address
 
-        item_root2->setText(0, blog_line);
+           item_root2->setText(0, blog_line);
 
-        if ((PFile) && (verboseLog)) {
+           if ((PFile) && (verboseLog)) {
             *out << blog_line << "\n";
+           }
         }
     }
     *out << "==LogEnd\n";
