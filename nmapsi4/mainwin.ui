@@ -77,7 +77,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Sunken</enum>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
@@ -109,6 +109,11 @@
          <widget class="QTabWidget" name="tabWidget">
           <property name="autoFillBackground">
            <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTabWidget:pane {
+	border: 0px;
+}</string>
           </property>
           <property name="tabPosition">
            <enum>QTabWidget::North</enum>
@@ -147,8 +152,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>692</width>
-                 <height>387</height>
+                 <width>700</width>
+                 <height>388</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -180,7 +185,7 @@
                    <string notr="true"/>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::Box</enum>
+                   <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
@@ -276,8 +281,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>83</width>
-                 <height>63</height>
+                 <width>700</width>
+                 <height>388</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -300,7 +305,7 @@
                    </sizepolicy>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::Box</enum>
+                   <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
@@ -340,8 +345,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>83</width>
-                 <height>63</height>
+                 <width>700</width>
+                 <height>388</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -364,7 +369,7 @@
                    </sizepolicy>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::Box</enum>
+                   <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
@@ -405,7 +410,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>700</width>
-                 <height>346</height>
+                 <height>388</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -458,7 +463,7 @@
                    <enum>Qt::CustomContextMenu</enum>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::Box</enum>
+                   <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Sunken</enum>
@@ -2021,6 +2026,11 @@
         </property>
         <item>
          <widget class="QTabWidget" name="tabWidget_2">
+          <property name="styleSheet">
+           <string notr="true">QTabWidget:pane {
+	border: 0px;
+}</string>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -2039,7 +2049,7 @@
             <item row="0" column="0">
              <widget class="QTreeWidget" name="listScan">
               <property name="frameShape">
-               <enum>QFrame::Box</enum>
+               <enum>QFrame::StyledPanel</enum>
               </property>
               <property name="frameShadow">
                <enum>QFrame::Sunken</enum>
@@ -2098,7 +2108,7 @@
             <item row="0" column="0">
              <widget class="QTreeWidget" name="listScanError">
               <property name="frameShape">
-               <enum>QFrame::Box</enum>
+               <enum>QFrame::StyledPanel</enum>
               </property>
               <property name="frameShadow">
                <enum>QFrame::Sunken</enum>
@@ -2147,6 +2157,11 @@
         </property>
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget_3">
+          <property name="styleSheet">
+           <string notr="true">QTabWidget:pane {
+	border: 0px;
+}</string>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>

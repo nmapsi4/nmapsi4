@@ -31,7 +31,7 @@
     <item row="0" column="0">
      <widget class="QToolBox" name="toolBoxMain">
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Plain</enum>
@@ -47,8 +47,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>857</width>
-         <height>454</height>
+         <width>863</width>
+         <height>460</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -265,7 +265,7 @@
      <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
    <property name="text">
-    <string>&amp;About</string>
+    <string>&amp;About nmapsi4</string>
    </property>
   </action>
   <action name="actionAbout_Qt">
