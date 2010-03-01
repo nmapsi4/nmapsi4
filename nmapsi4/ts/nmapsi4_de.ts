@@ -317,7 +317,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Über</translation>
+        <translation type="obsolete">&amp;Über</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
@@ -597,6 +597,14 @@
     </message>
     <message>
         <source>Host general Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

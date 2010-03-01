@@ -40,11 +40,6 @@
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="193"/>
-        <source>&amp;About</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="194"/>
         <source>About &amp;Qt</source>
         <translation></translation>
@@ -74,6 +69,11 @@
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="199"/>
         <source>Date</source>
         <translation>Data</translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="193"/>
+        <source>&amp;About nmapsi4</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="200"/>

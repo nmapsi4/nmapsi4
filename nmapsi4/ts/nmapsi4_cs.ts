@@ -317,7 +317,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;O programu</translation>
+        <translation type="obsolete">&amp;O programu</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
@@ -602,6 +602,14 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Host general Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
