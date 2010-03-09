@@ -537,7 +537,7 @@
     </message>
     <message>
         <source>toolBar_3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Werkzeugleiste_3</translation>
     </message>
     <message>
         <source>Nss script result</source>
@@ -596,15 +596,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Host general Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;About nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

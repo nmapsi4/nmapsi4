@@ -133,7 +133,7 @@
              <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
            </attribute>
            <attribute name="title">
-            <string>Scan</string>
+            <string>Scan Details</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_4">
             <property name="margin">
@@ -281,8 +281,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>700</width>
-                 <height>388</height>
+                 <width>83</width>
+                 <height>67</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -345,8 +345,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>700</width>
-                 <height>388</height>
+                 <width>83</width>
+                 <height>67</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -410,7 +410,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>700</width>
-                 <height>388</height>
+                 <height>346</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -1778,7 +1778,7 @@
              <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
            </attribute>
            <attribute name="title">
-            <string>Host general Info</string>
+            <string>Host Details</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_14">
             <item row="0" column="0">

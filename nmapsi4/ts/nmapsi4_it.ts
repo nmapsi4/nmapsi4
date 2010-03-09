@@ -311,7 +311,6 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1508"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1550"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1551"/>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1572"/>
         <source>Scan</source>
         <translation>Scansione</translation>
     </message>
@@ -396,6 +395,11 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1563"/>
         <source>NSS</source>
         <translation>NSS</translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1572"/>
+        <source>Scan Details</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1590"/>
@@ -578,11 +582,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1680"/>
-        <source>Host general Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1730"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1731"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1732"/>
@@ -637,6 +636,11 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1653"/>
         <source>State</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1680"/>
+        <source>Host Details</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1686"/>

@@ -601,15 +601,19 @@ Zavřít strom s prohledáváním</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Host general Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;About nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
