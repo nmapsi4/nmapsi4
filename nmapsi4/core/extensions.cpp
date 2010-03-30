@@ -19,9 +19,16 @@
 
 #include "../mainwin.h"
 
+QStringList nmapClass::check_extensions() {
+    QString empty;
+    return check_extensions(empty);
+}
 
-QStringList nmapClass::check_extensions(QStringList parametri, QString& winTitle)
+
+QStringList nmapClass::check_extensions(QString& winTitle)
 {
+    QStringList parametri;
+
     if(!winTitle.isEmpty()) {
         progressScan->setValue(10); // start progress bar
         this->setWindowTitle(winTitle.append("(10%)"));

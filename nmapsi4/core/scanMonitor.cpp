@@ -24,11 +24,14 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
      QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
      hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
      hostThread->setText(0, host);
-     hostThread->setIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-     hostThread->setText(1, "Scanning");
+     //hostThread->setIcon(1, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+     hostThread->setText(1,check_extensions().join(" "));
+     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+     hostThread->setText(2, "Scanning");
      monitorElem.push_front(hostThread);
      monitorElemHost.push_front(hostThread->text(0));
-     monitorElemState.push_front(hostThread->text(1));
+     monitorElemOptions.push_front(hostThread->text(1));
+     monitorElemState.push_front(hostThread->text(2));
 }
 
 
@@ -40,6 +43,7 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) {
 #endif
                monitorElemHost.removeAt(i);
                monitorElemState.removeAt(i);
+               monitorElemOptions.removeAt(i);
 	       delete monitorElem.takeAt(i);
 	       break; // remove only first elem
 	  }
@@ -61,8 +65,9 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 	  item = new QTreeWidgetItem(monitor);
           item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
 	  item->setText(0, monitorElemHost[i]);
-          item->setIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-          item->setText(1, monitorElemState[i]);
+          item->setText(1, monitorElemOptions[i]);
+          item->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+          item->setText(2, monitorElemState[i]);
 	  monitorElem.push_front(item);
      }
 

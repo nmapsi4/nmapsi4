@@ -47,7 +47,8 @@ private:
     void isEmptyLog();
     void setNmapsiSlot();
     QFile* create_logFile(const QString Path);
-    QStringList check_extensions(QStringList parametri, QString& winTitle);
+    QStringList check_extensions(QString& winTitle);
+    QStringList check_extensions();
     void resetOptions();
     void checkProfile();
     void initGUI();
@@ -107,6 +108,7 @@ protected:
     lookUpT *lth;
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
+    QList<QString> monitorElemOptions;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;

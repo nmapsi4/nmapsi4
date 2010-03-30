@@ -1674,6 +1674,11 @@
               </column>
               <column>
                <property name="text">
+                <string>Scan Options</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>State</string>
                </property>
               </column>

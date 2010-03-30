@@ -345,15 +345,5 @@ void nmapClass::deleteBookMark()
 }
 
 void nmapClass::showExt() {
-    QStringList parametri;
-    QString empty;
-    parametri = this->check_extensions(parametri, empty);
-
-    QString tmp_token;
-    foreach(QString token, parametri) {
-        tmp_token.append(token);
-        tmp_token.append(" ");
-    }
-
-    lineOptions->setText(tmp_token);
+    lineOptions->setText(check_extensions().join(" "));
 }

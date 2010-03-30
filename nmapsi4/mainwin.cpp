@@ -108,7 +108,8 @@ void nmapClass::initObject() {
     nssAct_->setChecked(NSSsupport_); // set NSS support
     listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
-    scanMonitor->setColumnWidth(0, 400);
+    scanMonitor->setColumnWidth(0, 300);
+    scanMonitor->setColumnWidth(1, 200);
     treeTraceroot->setColumnWidth(0, 400);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
@@ -239,7 +240,7 @@ void nmapClass::scan(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    parametri = this->check_extensions(parametri, title); // extensions.cpp
+    parametri = this->check_extensions(title); // extensions.cpp
 
     QString tmp_token;
     foreach(QString token, parametri) { // print scan options
