@@ -106,11 +106,6 @@ void nmapClass::exit()
 void nmapClass::stop_scan()
 {
      emit killScan();
-
-     if(!th->isFinished()) {
-	  th->quit();
-	  th->wait();
-     }
 }
 
 QFile* nmapClass::create_logFile(const QString Path)

@@ -158,9 +158,9 @@ void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
 void nmapClass::objVulnButton() { // SLOT
 
     if(comboVulnRis->itemText(0).isEmpty()) {
-        comboVulnRis->addItem(servDesLabel->text());
+        comboVulnRis->addItem(servDesLabel->toPlainText());
     } else {
-        comboVulnRis->setItemText(0, servDesLabel->text());
+        comboVulnRis->setItemText(0, servDesLabel->toPlainText());
     }
 
     stackedMain->setCurrentIndex(2);

@@ -58,7 +58,7 @@ void scanThread::setValue() {
 }
 
 void scanThread::stopProcess() {
-     qDebug() << "scan() THREAD:: Stop Scan Process";
+     qDebug() << "scan() THREAD:: Clear Process";
      if(proc) {
 	  proc->terminate();
      }
