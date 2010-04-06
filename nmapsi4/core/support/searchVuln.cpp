@@ -35,9 +35,8 @@ void nmapClass::searchVuln()
 
     switch (comboWebV->currentIndex()) {
     case 0:
-        url = "http://www.securityfocus.com/swsearch?query=";
+        url = "http://www.securityfocus.com/swsearch?sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank&query=";
         url.append(tmp);
-        url.append("&sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank");
 
 #ifndef VULN_NO_DEBUG
         qDebug() << "Call webSearch()..." << url;
