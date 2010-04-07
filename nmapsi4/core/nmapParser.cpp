@@ -181,21 +181,21 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         *out << nmap_command << endl << endl;
     }
 
-    int tmpBox = toolBox->currentIndex();
+    int tmpBox = SWscan->currentIndex();
  
     switch(tmpBox) {
       case 0:	
-	toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 1:
-	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 2:
-	toolBox->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
     }
 

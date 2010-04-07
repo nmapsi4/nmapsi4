@@ -302,20 +302,41 @@ void nmapClass::closeTree() {
     listScan->collapseAll();
 }
 
+void nmapClass::detailsOptions() {
+    SWscan->setCurrentIndex(0);
+    updateIconsBox();
+}
+
+void nmapClass::nssOptions() {
+    SWscan->setCurrentIndex(1);
+    updateIconsBox();
+}
+
+void nmapClass::infoOptions() {
+    SWscan->setCurrentIndex(2);
+    updateIconsBox();
+}
+
+void nmapClass::bookOptions() {
+    SWscan->setCurrentIndex(3);
+    updateIconsBox();
+}
+
 void nmapClass::updateIconsBox() {
-    int tmpBox = toolBox->currentIndex();
+
+    int tmpBox = SWscan->currentIndex();
     switch (tmpBox) {
       case 0:
-	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 	break;
       case 1:
-          toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
         break;
       case 2:
-	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
 	break;
       case 3:
-	toolBox->setItemIcon(tmpBox, QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+        Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
 	break;
     }
 

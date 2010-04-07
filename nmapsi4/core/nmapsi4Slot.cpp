@@ -122,8 +122,15 @@ void nmapClass::setNmapsiSlot()
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
             this, SLOT(updateFontHostVuln(const QString)));
 
-    connect(toolBox, SIGNAL(currentChanged(int)),
-            this, SLOT(updateIconsBox()));
+
+    connect(Bdetails, SIGNAL(clicked()),
+            this, SLOT(detailsOptions()));
+    connect(Bnss, SIGNAL(clicked()),
+            this, SLOT(nssOptions()));
+    connect(Binfo, SIGNAL(clicked()),
+            this, SLOT(infoOptions()));
+    connect(Bbook, SIGNAL(clicked()),
+            this, SLOT(bookOptions()));
 
     connect(showExtB, SIGNAL(clicked()),
             this, SLOT(showExt()));

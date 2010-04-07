@@ -177,6 +177,10 @@ private slots:
     void updateSezLog();
     void updateSezVuln();
     void NSSCheck();
+    void detailsOptions();
+    void nssOptions();
+    void infoOptions();
+    void bookOptions();
 
     // Vuln extension
     void searchVuln();

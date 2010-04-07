@@ -275,7 +275,7 @@ void nmapClass::callScanH()
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
         hostEdit->setItemText(0, treeLogH->currentItem()->text(0));
-        toolBox->setCurrentIndex(0);
+        SWscan->setCurrentIndex(0);
         startScan();
     }
 }
@@ -311,7 +311,7 @@ void nmapClass::saveBookMarks()
 	break;
     }
 
-    toolBox->setItemIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
     history_->updateBookMarks();
     delete history_;
 }
