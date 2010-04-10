@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
-    <height>672</height>
+    <width>956</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -58,10 +58,61 @@
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <property name="margin">
-     <number>0</number>
+   <layout class="QFormLayout" name="formLayout">
+    <property name="fieldGrowthPolicy">
+     <enum>QFormLayout::ExpandingFieldsGrow</enum>
     </property>
+    <item row="0" column="0" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="buttonHClear">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../mainwin.qrc">
+           <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="hostEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="currentIndex">
+          <number>-1</number>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAfterCurrent</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QTreeWidget" name="treeMain">
       <property name="sizePolicy">
@@ -138,133 +189,18 @@
            <attribute name="title">
             <string>Scan Details</string>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <item>
-             <spacer name="verticalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>10</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_2">
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <property name="lineWidth">
-               <number>0</number>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <property name="margin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QPushButton" name="Bdetails">
-                 <property name="focusPolicy">
-                  <enum>Qt::StrongFocus</enum>
-                 </property>
-                 <property name="text">
-                  <string>Details</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
-                 </property>
-                 <property name="autoDefault">
-                  <bool>false</bool>
-                 </property>
-                 <property name="default">
-                  <bool>false</bool>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="Bnss">
-                 <property name="text">
-                  <string>NSS</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="Binfo">
-                 <property name="text">
-                  <string>Host(s) Info</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="Bbook">
-                 <property name="text">
-                  <string>Bookmarks</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>263</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </widget>
-            </item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
              <widget class="QStackedWidget" name="SWscan">
               <property name="currentIndex">
                <number>0</number>
               </property>
               <widget class="QWidget" name="page_12">
-               <layout class="QGridLayout" name="gridLayout_4">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
                 <property name="margin">
                  <number>0</number>
                 </property>
-                <item row="0" column="0">
+                <item>
                  <widget class="QTreeWidget" name="listWscan">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -514,6 +450,102 @@
                 </item>
                </layout>
               </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="Bdetails">
+                 <property name="focusPolicy">
+                  <enum>Qt::StrongFocus</enum>
+                 </property>
+                 <property name="text">
+                  <string>Details</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
+                 </property>
+                 <property name="autoDefault">
+                  <bool>false</bool>
+                 </property>
+                 <property name="default">
+                  <bool>false</bool>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Bnss">
+                 <property name="text">
+                  <string>NSS</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Binfo">
+                 <property name="text">
+                  <string>Host(s) Info</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Bbook">
+                 <property name="text">
+                  <string>Bookmarks</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>263</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -2442,57 +2474,6 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QFrame" name="frame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="margin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="buttonHClear">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="../mainwin.qrc">
-           <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="hostEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="editable">
-          <bool>true</bool>
-         </property>
-         <property name="currentIndex">
-          <number>-1</number>
-         </property>
-         <property name="insertPolicy">
-          <enum>QComboBox::InsertAfterCurrent</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2500,7 +2481,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>910</width>
+     <width>956</width>
      <height>23</height>
     </rect>
    </property>
