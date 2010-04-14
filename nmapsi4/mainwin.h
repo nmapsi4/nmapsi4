@@ -96,6 +96,7 @@ protected:
     bool lookupInternal_;
     bool lookupDig_;
     bool NSSsupport_;
+    bool ADVSupport_;
     int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
@@ -114,7 +115,7 @@ protected:
     QList<QTreeWidgetItem*> mainTreeElem;
     QList<scanThread*> scanPointerList;
     digSupport *digC;
-    QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_;
+    QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_, *parAct_;
     QList<parserObj*> parserObjList_;
 
 
@@ -148,7 +149,6 @@ private slots:
     void updateIconsBox();
     void callScanH();
     void scanLookup(QHostInfo info, int state, const QString hostname);
-    void showExt();
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
     void showObjServData(QTreeWidgetItem *item, int column);
@@ -177,6 +177,8 @@ private slots:
     void updateSezLog();
     void updateSezVuln();
     void NSSCheck();
+    void parAdv();
+    void resetPar();
     void detailsOptions();
     void nssOptions();
     void infoOptions();

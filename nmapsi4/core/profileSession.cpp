@@ -185,6 +185,14 @@ void nmapClass::checkProfile()
 
     NSSsupport_ = settings.value("NSSsupport").toBool();
 
+    QString adv_ = settings.value("ADVSupport", "none").toString();
+
+    if ((!adv_.compare("none"))) {
+         settings.setValue("ADVSupport", "false"); // default value
+    }
+
+    ADVSupport_ = settings.value("ADVSupport").toBool();
+
 }
 
 void nmapClass::setQuickProfile()

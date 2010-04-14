@@ -132,9 +132,6 @@ void nmapClass::setNmapsiSlot()
     connect(Bbook, SIGNAL(clicked()),
             this, SLOT(bookOptions()));
 
-    connect(showExtB, SIGNAL(clicked()),
-            this, SLOT(showExt()));
-
     // Obj parser runtime
     connect(treeMain, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(runtimePars(QTreeWidgetItem*, int)));
@@ -188,5 +185,10 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateSezVuln()));
     connect(nssAct_, SIGNAL(triggered()),
             this, SLOT(NSSCheck()));
+
+    connect(parAct_, SIGNAL(triggered()),
+            this, SLOT(parAdv()));
+    connect(buttonReset, SIGNAL(clicked()),
+            this, SLOT(resetPar()));
 
 }

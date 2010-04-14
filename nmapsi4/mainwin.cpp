@@ -29,6 +29,7 @@ nmapClass::nmapClass()
     logSez_ = new QAction(this);
     vulnSez_ = new QAction(this);
     nssAct_ = new QAction(this);
+    parAct_ = new QAction(this);
 
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
@@ -39,6 +40,7 @@ void nmapClass::initGUI()
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
+
     comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
     // Section QAction
@@ -59,10 +61,16 @@ void nmapClass::initGUI()
     nssAct_->setToolTip(tr("Enable/Disable NSS script"));
     nssAct_->setCheckable(true);
 
+    parAct_->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
+    //parAct_->setIconText(tr("Nss Script"));
+    parAct_->setToolTip(tr("Enable/Disable Manual Parameters"));
+    parAct_->setCheckable(true);
+
     sezBar->addAction(scanSez_);
     sezBar->addAction(logSez_);
     sezBar->addAction(vulnSez_);
     sezBar->addSeparator();
+    sezBar->addAction(parAct_);
     sezBar->addAction(nssAct_);
 
     setNmapsiSlot();
@@ -87,6 +95,12 @@ void nmapClass::initObject() {
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
 
+/*    if(ADVSupport_) {
+        frame_3->setVisible(true);
+    } else {
+        frame_3->setVisible(false);
+    }*/
+
     QString noHost(tr("no Host selected"));
     lineInfouptime->setText(noHost);
     lineInfotcpsequence->setText(noHost);
@@ -106,6 +120,9 @@ void nmapClass::initObject() {
 
     checkNmapVersion();
     nssAct_->setChecked(NSSsupport_); // set NSS support
+    parAct_->setChecked(ADVSupport_); // set ADV support
+    parAdv();
+
     listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
@@ -126,6 +143,7 @@ void nmapClass::initObject() {
     delete historyScan_;
     logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", hostCache);
     historyVuln_->updateBookMarks();
+
     delete historyVuln_;
     this->rootMode(uid); // send uid value
     dialog = new mainProfile();
@@ -240,15 +258,17 @@ void nmapClass::scan(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    parametri = this->check_extensions(title); // extensions.cpp
+    if(!frameAdv->isVisible()) {
+        parametri = this->check_extensions(title); // extensions.cpp
+    } else {
+        parametri = comboAdv->lineEdit()->text().split(" ");
+    }
 
     QString tmp_token;
     foreach(QString token, parametri) { // print scan options
         tmp_token.append(token);
         tmp_token.append(" "); // add simple space in option string
     }
-
-    lineOptions->setText(tmp_token);
 
     parametri << hostname; // parameters list
     
@@ -291,5 +311,6 @@ nmapClass::~nmapClass()
     delete logSez_;
     delete vulnSez_;
     delete nssAct_;
+    delete parAct_;
 }
 

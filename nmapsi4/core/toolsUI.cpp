@@ -100,6 +100,7 @@ void nmapClass::exit()
     if (savePos) settings.setValue("window/pos", pos());
     if (saveSize) settings.setValue("window/size", size());
     settings.setValue("NSSsupport", NSSsupport_);
+    settings.setValue("ADVSupport", ADVSupport_);
     this->close();
 }
 
@@ -339,6 +340,3 @@ void nmapClass::deleteBookMark()
     delete history_;
 }
 
-void nmapClass::showExt() {
-    lineOptions->setText(check_extensions().join(" "));
-}

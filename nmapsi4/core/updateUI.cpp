@@ -438,3 +438,21 @@ void nmapClass::setTreeWidgetValues() {
     scanMonitor->setIconSize(QSize::QSize(22, 22));
     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
+
+void nmapClass::parAdv() {
+    if(parAct_->isChecked()) {
+        frameAdv->setVisible(true);
+        ADVSupport_ = true;
+        comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        comboAdv->insertItem(0, check_extensions().join(" "));
+    } else {
+        frameAdv->setVisible(false);
+        ADVSupport_ = false;
+    }
+}
+
+void nmapClass::resetPar() {
+    comboAdv->clear();
+    comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    comboAdv->insertItem(0, check_extensions().join(" "));
+}

@@ -20,18 +20,22 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
-     tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
-     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
-     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-     hostThread->setText(0, host);
-     //hostThread->setIcon(1, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-     hostThread->setText(1,check_extensions().join(" "));
-     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-     hostThread->setText(2, "Scanning");
-     monitorElem.push_front(hostThread);
-     monitorElemHost.push_front(hostThread->text(0));
-     monitorElemOptions.push_front(hostThread->text(1));
-     monitorElemState.push_front(hostThread->text(2));
+    tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
+    hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    hostThread->setText(0, host);
+    //hostThread->setIcon(1, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+    if(!frameAdv->isVisible()) {
+        hostThread->setText(1,check_extensions().join(" "));
+    } else {
+        hostThread->setText(1,comboAdv->lineEdit()->text());
+    }
+    hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    hostThread->setText(2, "Scanning");
+    monitorElem.push_front(hostThread);
+    monitorElemHost.push_front(hostThread->text(0));
+    monitorElemOptions.push_front(hostThread->text(1));
+    monitorElemState.push_front(hostThread->text(2));
 }
 
 

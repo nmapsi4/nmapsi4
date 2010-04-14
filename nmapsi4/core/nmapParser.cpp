@@ -176,7 +176,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         QString nmap_command;
         nmap_command.append("\n==LogStart: ");
         nmap_command.append("\nnmap ");
-        nmap_command.append(lineOptions->text());
+        if(!frameAdv-isVisible()) {
+            nmap_command.append(check_extensions().join(" "));
+        } else {
+            nmap_command.append(comboAdv->lineEdit()->text());
+        }
         nmap_command.append(hostCheck); // write host target in the log
         *out << nmap_command << endl << endl;
     }

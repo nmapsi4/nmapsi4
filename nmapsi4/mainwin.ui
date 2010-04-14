@@ -58,10 +58,7 @@
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QFormLayout" name="formLayout">
-    <property name="fieldGrowthPolicy">
-     <enum>QFormLayout::ExpandingFieldsGrow</enum>
-    </property>
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0" colspan="2">
      <widget class="QFrame" name="frame">
       <property name="frameShape">
@@ -79,12 +76,36 @@
        </property>
        <item>
         <widget class="QPushButton" name="buttonHClear">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Clear</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset resource="../mainwin.qrc">
            <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -113,7 +134,70 @@
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="1" column="0" colspan="2">
+     <widget class="QFrame" name="frameAdv">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="buttonReset">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reset to base parameters</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../mainwin.qrc">
+           <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboAdv">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
      <widget class="QTreeWidget" name="treeMain">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -146,7 +230,7 @@
       </column>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item row="2" column="1">
      <widget class="QStackedWidget" name="stackedMain">
       <property name="lineWidth">
        <number>0</number>
@@ -365,6 +449,9 @@
                 </property>
                 <item>
                  <widget class="QTreeWidget" name="treeWinfo">
+                  <property name="rootIsDecorated">
+                   <bool>false</bool>
+                  </property>
                   <column>
                    <property name="text">
                     <string>List(s)</string>
@@ -698,79 +785,28 @@
                      </item>
                     </widget>
                    </item>
-                   <item row="6" column="0" colspan="2">
-                    <widget class="QLineEdit" name="lineOptions">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="focusPolicy">
-                      <enum>Qt::NoFocus</enum>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frame">
-                      <bool>false</bool>
-                     </property>
-                     <property name="readOnly">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="6" column="2">
-                    <widget class="QPushButton" name="showExtB">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                       <horstretch>200</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>240</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>240</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Show Scan Parameters</string>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="../mainwin.qrc">
-                       <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="7" column="0">
+                   <item row="6" column="0">
                     <widget class="QLabel" name="label_38">
                      <property name="text">
                       <string>Ports</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="7" column="1">
+                   <item row="6" column="1">
                     <widget class="QLineEdit" name="portEdit">
                      <property name="enabled">
                       <bool>false</bool>
                      </property>
                     </widget>
                    </item>
-                   <item row="8" column="0">
+                   <item row="7" column="0">
                     <widget class="QLabel" name="label_39">
                      <property name="text">
                       <string>Bounce Host</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="8" column="1">
+                   <item row="7" column="1">
                     <widget class="QLineEdit" name="bounceEdit">
                      <property name="enabled">
                       <bool>false</bool>

@@ -462,7 +462,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Show Scan Parameters</source>
-        <translation>Ukázat pomocné proměnné prohledávání</translation>
+        <translation type="obsolete">Ukázat pomocné proměnné prohledávání</translation>
     </message>
     <message>
         <source>Scan Options</source>
@@ -614,6 +614,14 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Host Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to base parameters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1068,6 +1076,10 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>no Service selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable/Disable Manual Parameters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
