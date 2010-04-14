@@ -414,9 +414,11 @@ void nmapClass::NSSCheck() { // SLOT
     if(nssAct_->isChecked()) {
        NSSsupport_ = true;
        Bnss->setVisible(true);
+       resetPar();
    } else {
        NSSsupport_ = false;
        Bnss->setVisible(false);
+       resetPar();
    }
 }
 
