@@ -612,7 +612,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reset to base parameters</source>
+        <source>Reset/Update to automatic parameters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

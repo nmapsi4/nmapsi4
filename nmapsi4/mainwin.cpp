@@ -66,6 +66,13 @@ void nmapClass::initGUI()
     parAct_->setToolTip(tr("Enable/Disable Manual Parameters"));
     parAct_->setCheckable(true);
 
+    //frameScan->setBackgroundRole(QPalette::Highlight);
+    //frameScan->setAutoFillBackground(true);
+
+    frameAdv->setBackgroundRole(QPalette::Highlight);
+    frameAdv->setAutoFillBackground(true);
+
+
     sezBar->addAction(scanSez_);
     sezBar->addAction(logSez_);
     sezBar->addAction(vulnSez_);
@@ -95,12 +102,6 @@ void nmapClass::initObject() {
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
 
-/*    if(ADVSupport_) {
-        frame_3->setVisible(true);
-    } else {
-        frame_3->setVisible(false);
-    }*/
-
     QString noHost(tr("no Host selected"));
     lineInfouptime->setText(noHost);
     lineInfotcpsequence->setText(noHost);
@@ -122,6 +123,7 @@ void nmapClass::initObject() {
     nssAct_->setChecked(NSSsupport_); // set NSS support
     parAct_->setChecked(ADVSupport_); // set ADV support
     parAdv();
+    NSSCheck();
 
     listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
