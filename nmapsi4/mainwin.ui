@@ -2677,6 +2677,11 @@
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
+   </property>
    <property name="movable">
     <bool>false</bool>
    </property>
@@ -2702,6 +2707,11 @@
    </property>
    <property name="windowTitle">
     <string>toolBar_3</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
    </property>
    <property name="movable">
     <bool>false</bool>

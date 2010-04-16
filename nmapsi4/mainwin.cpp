@@ -120,10 +120,6 @@ void nmapClass::initObject() {
     digC->checkDigSupport();
 
     checkNmapVersion();
-    nssAct_->setChecked(NSSsupport_); // set NSS support
-    parAct_->setChecked(ADVSupport_); // set ADV support
-    parAdv();
-    NSSCheck();
 
     listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
@@ -149,6 +145,11 @@ void nmapClass::initObject() {
     delete historyVuln_;
     this->rootMode(uid); // send uid value
     dialog = new mainProfile();
+
+    nssAct_->setChecked(NSSsupport_); // set NSS support
+    parAct_->setChecked(ADVSupport_); // set ADV support
+    parAdv();
+    NSSCheck();
 }
 
 void nmapClass::startScan() {
