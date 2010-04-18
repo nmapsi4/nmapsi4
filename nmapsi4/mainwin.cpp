@@ -267,13 +267,8 @@ void nmapClass::scan(const QString hostname)
         parametri = comboAdv->lineEdit()->text().split(" ");
     }
 
-    QString tmp_token;
-    foreach(QString token, parametri) { // print scan options
-        tmp_token.append(token);
-        tmp_token.append(" "); // add simple space in option string
-    }
 
-    parametri << hostname; // parameters list
+    parametri << hostname; // add hostname
     
     QByteArray buff1, buff2;
     th = new scanThread(buff1, buff2, parametri, this);

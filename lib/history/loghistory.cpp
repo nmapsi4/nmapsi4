@@ -76,20 +76,20 @@ void logHistory::deleteItemBookmark(const QString item)
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     
-    foreach(QString itemToken, urlList) {
-	if (itemToken.contains(item)) {
-	    int index = urlList.indexOf(item);
-	    urlList.removeAt(index);
-	    urlListTime.removeAt(index);
-	    if(urlList.size()) {
-	      settings.setValue(configTag, QVariant(urlList));
-	      settings.setValue(configTagTime, QVariant(urlListTime));
-	    } else {
-	      settings.setValue(configTag, "NULL");
-	      settings.setValue(configTagTime, "NULL");
-	    }
-	    break;
-	}
+    for(int index=0; index < urlList.size(); index++) {
+        if (urlList[index].contains(item)) {
+            int index = urlList.indexOf(item);
+            urlList.removeAt(index);
+            urlListTime.removeAt(index);
+            if(urlList.size()) {
+                settings.setValue(configTag, QVariant(urlList));
+                settings.setValue(configTagTime, QVariant(urlListTime));
+            } else {
+                settings.setValue(configTag, "NULL");
+                settings.setValue(configTagTime, "NULL");
+            }
+            break;
+        }
     }
     updateBookMarks();
 }

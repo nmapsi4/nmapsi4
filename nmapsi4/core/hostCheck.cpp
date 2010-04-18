@@ -47,14 +47,16 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         rootLook->setText(0, info.hostName());
     }
 
-    foreach (QHostAddress address, info.addresses()) {
+
+    for(int index=0; index < info.addresses().size(); index++) {
 #ifndef MAIN_NO_DEBUG
-        qDebug() << "scanLookup::Found address:: " << address.toString();
+        qDebug() << "scanLookup::Found address:: " << info.addresses()[index].toString();
 #endif
         itemLook = new QTreeWidgetItem(rootLook);
         itemListLook.push_front(itemLook);
-        itemLook->setText(0,address.toString());
+        itemLook->setText(0,info.addresses()[index].toString());
     }
+
     delete lth;
     this->scan(hostname);
 }
