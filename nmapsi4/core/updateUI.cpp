@@ -288,7 +288,6 @@ void nmapClass::listClear() {
     listWscan->clear();
     treeWinfo->clear();
 
-    // FIX seg FAULT with digsupport
     itemDeleteAll(digC->digList);
     digC->digList.clear();
     treeLookup->clear();
