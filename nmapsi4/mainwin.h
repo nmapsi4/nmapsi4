@@ -32,6 +32,8 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 
+
+
 class QMainWindow;
 class QWebView;
 class QMutex;

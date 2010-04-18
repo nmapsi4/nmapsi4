@@ -31,9 +31,11 @@
 #include "digThread.h"
 #include "../nmapsi4Debug.h"
 
+
 class digSupport : public QObject
 {
     Q_OBJECT
+    friend class nmapClass;
 
     public:
         digSupport();
@@ -54,8 +56,8 @@ class digSupport : public QObject
         bool state;
         QTreeWidget *Wview;
         digThread *th;
-        QList<QTreeWidgetItem*> itemList;
-        
+        QList<QTreeWidgetItem*> digList;
+
 };
 
 #endif

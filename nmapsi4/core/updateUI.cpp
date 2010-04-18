@@ -19,7 +19,6 @@
 
 #include "../mainwin.h"
 
-
 void nmapClass::update_portCombo() {
     switch (portCombo->currentIndex()) {
     case 0:
@@ -288,7 +287,12 @@ void nmapClass::listClear() {
 
     listWscan->clear();
     treeWinfo->clear();
+
+    // FIX seg FAULT with digsupport
+    itemDeleteAll(digC->digList);
+    digC->digList.clear();
     treeLookup->clear();
+
     treeMain->clear();
     listScanError->clear();
     actionClear_History->setEnabled(false);

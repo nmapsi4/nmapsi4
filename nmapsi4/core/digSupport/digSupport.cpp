@@ -90,7 +90,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
 
     Wview->setIconSize(QSize::QSize(32, 32));
     QTreeWidgetItem *rootLook = new QTreeWidgetItem(Wview);
-    itemList.push_front(rootLook);
+    digList.push_front(rootLook);
 
 
     QTreeWidgetItem *itemLook;
@@ -106,7 +106,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
             qDebug() << "digSupport():: " << line;
 #endif
             itemLook = new QTreeWidgetItem(rootLook);
-            itemList.push_front(itemLook);
+            digList.push_front(itemLook);
             itemLook->setSizeHint(0, QSize::QSize(22, 22));
             itemLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/view-web-browser-dom-tree.png")));
             itemLook->setText(0,line);
@@ -125,7 +125,9 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     buffer1.clear();
 }
 
+
 digSupport::~digSupport() {
-    qDeleteAll(itemList);
+    qDeleteAll(digList);
+    digList.clear();
 }
 

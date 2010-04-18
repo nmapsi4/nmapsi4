@@ -19,6 +19,7 @@
 
 #include "../mainwin.h"
 
+
 void nmapClass::about()
 {
     mainAbout about;
