@@ -416,40 +416,6 @@
                  <number>0</number>
                 </property>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <item>
-                   <widget class="QPushButton" name="deleteBook">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="text">
-                     <string>Delete</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../mainwin.qrc">
-                      <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-                <item>
                  <widget class="QTreeWidget" name="treeLogH">
                   <property name="minimumSize">
                    <size>

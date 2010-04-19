@@ -143,14 +143,12 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(objVulnButton()));
 
     // BookMark signals
-    connect(deleteBook, SIGNAL(clicked()),
-	    this, SLOT(deleteBookMark()));
-    connect(treeLogH, SIGNAL( itemSelectionChanged()),
-	    this, SLOT(activeBookTool()));
     connect(treeBookVuln, SIGNAL( itemSelectionChanged()),
-	    this, SLOT(activeBookTool()));	    
-    connect(treeLogH, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-	    this, SLOT(callScanH()));
+            this, SLOT(activeBookTool()));
+    connect(treeLogH, SIGNAL( itemSelectionChanged()),
+            this, SLOT(activeBookTool()));
+    connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuScanBook()));
 
     // Vuln signal
     connect(buttonVuln, SIGNAL(clicked()),

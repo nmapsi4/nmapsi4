@@ -364,7 +364,6 @@ void nmapClass::updateFontHostVuln(const QString hostName) {
 }
 
 void nmapClass::activeBookTool() {
-    deleteBook->setEnabled(true);
     deleteBookVuln->setEnabled(true);
 }
 

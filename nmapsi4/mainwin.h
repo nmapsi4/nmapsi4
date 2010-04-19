@@ -190,6 +190,9 @@ private slots:
     void searchVuln();
     void callSearchHistoryVuln();
     void callVulnCheck();
+
+    //contest Menu
+    void menuScanBook();
 };
 
 #endif
