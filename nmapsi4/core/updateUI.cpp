@@ -363,10 +363,6 @@ void nmapClass::updateFontHostVuln(const QString hostName) {
     comboVulnRis->disconnect(SIGNAL(editTextChanged(QString)));
 }
 
-void nmapClass::activeBookTool() {
-    deleteBookVuln->setEnabled(true);
-}
-
 void nmapClass::setProgress() {
     //this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
     progressScan->setValue(60);

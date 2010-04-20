@@ -143,12 +143,10 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(objVulnButton()));
 
     // BookMark signals
-    connect(treeBookVuln, SIGNAL( itemSelectionChanged()),
-            this, SLOT(activeBookTool()));
-    connect(treeLogH, SIGNAL( itemSelectionChanged()),
-            this, SLOT(activeBookTool()));
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuScanBook()));
+    connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuVulnBook()));
 
     // Vuln signal
     connect(buttonVuln, SIGNAL(clicked()),
@@ -163,12 +161,8 @@ void nmapClass::setNmapsiSlot()
             viewVuln, SLOT(stop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
             comboVulnRis, SLOT(setEditText(const QString&)));
-    connect(deleteBookVuln, SIGNAL(clicked()),
-	    this, SLOT(deleteBookMark()));
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
             this, SLOT(callSearchHistoryVuln()));
-    connect(treeBookVuln, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-            this, SLOT(callVulnCheck()));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),

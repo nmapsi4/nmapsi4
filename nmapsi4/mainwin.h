@@ -33,7 +33,6 @@
 #include <QtNetwork/QHostAddress>
 
 
-
 class QMainWindow;
 class QWebView;
 class QMutex;
@@ -170,7 +169,6 @@ private slots:
     void callSearchHistory();
     void saveBookMarks();
     void deleteBookMark();
-    void activeBookTool();
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
@@ -193,6 +191,7 @@ private slots:
 
     //contest Menu
     void menuScanBook();
+    void menuVulnBook();
 };
 
 #endif

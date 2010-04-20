@@ -40,3 +40,24 @@ void nmapClass::menuScanBook() {
 
     menuBook.exec(QCursor::pos());
 }
+
+void nmapClass::menuVulnBook() {
+    QAction removeBook(this);
+    removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
+    removeBook.setIconText(tr("Remove Service"));
+
+    QAction addBook(this);
+    addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    addBook.setIconText(tr("Search for vulnerabilities"));
+
+    connect(&addBook, SIGNAL(triggered()),
+                this, SLOT(callVulnCheck()));
+    connect(&removeBook, SIGNAL(triggered()),
+            this, SLOT(deleteBookMark()));
+
+    QMenu menuBook(this);
+    menuBook.addAction(&addBook);
+    menuBook.addAction(&removeBook);
+
+    menuBook.exec(QCursor::pos());
+}
