@@ -135,7 +135,7 @@ void nmapClass::showParserObj(int indexObj) {
     objElem.clear();
 
     for(int index=0; index < parserObjList_[indexObj]->getServices().size(); index++) {
-        objItem = new QTreeWidgetItem(GItree);
+        QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
         objElem.push_front(objItem);
         objItem->setText(0,parserObjList_[indexObj]->getServices()[index]);
     }

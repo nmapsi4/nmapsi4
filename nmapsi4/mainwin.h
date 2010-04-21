@@ -78,16 +78,17 @@ signals:
 
 protected:
     QProcess *versionProc;
-    QTreeWidgetItem *root, *item2, *infoItem, *infoItemObj, *infoTraceroot, *infoTracerootObj;
-    QTreeWidgetItem *root2, *item_root2, *infoNSS, *infoNSSObj;
-    QTreeWidgetItem *error, *item_error;
-    QListWidgetItem *scanW, *toolW, *discoverW, *fileW, * timingW;
-    QTreeWidgetItem *rootLook, *itemLook, *objItem, *mainTreeE;
     QFile *PFile;
+    QListWidgetItem *scanW;
+    QListWidgetItem *toolW;
+    QListWidgetItem *discoverW;
+    QListWidgetItem *fileW;
+    QListWidgetItem *timingW;
     QString FileName;
     QString firstPath;
     QString Profile;
     QString logPath;
+    QString logSessionFile;
     bool checkLog;
     bool flag_state;
     bool savePos;
@@ -101,23 +102,26 @@ protected:
     int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
-    QString logSessionFile;
-    QLabel *labelVersion;
-    QLabel *userMode;
-    logHistory *history;
-    QPointer<scanThread> th;
-    QPointer<mainProfile> dialog;
-    lookUpT *lth;
-    QList<QString> monitorElemHost;
-    QList<QString> monitorElemState;
-    QList<QString> monitorElemOptions;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
+    QList<QString> monitorElemHost;
+    QList<QString> monitorElemState;
+    QList<QString> monitorElemOptions;
     QList<scanThread*> scanPointerList;
-    digSupport *digC;
-    QAction *scanSez_, *logSez_, *vulnSez_, *nssAct_, *parAct_;
     QList<parserObj*> parserObjList_;
+    QLabel *labelVersion;
+    QLabel *userMode;
+    QPointer<scanThread> th;
+    QPointer<mainProfile> dialog;
+    QAction *scanSez_;
+    QAction *logSez_;
+    QAction *vulnSez_;
+    QAction *nssAct_;
+    QAction *parAct_;
+    lookUpT *lth;
+    digSupport *digC;
+    logHistory *history;
 
 
 public slots:

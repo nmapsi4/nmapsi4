@@ -33,7 +33,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         return;
     }
 
-    rootLook = new QTreeWidgetItem(treeLookup);
+    QTreeWidgetItem *rootLook = new QTreeWidgetItem(treeLookup);
     itemListLook.push_front(rootLook);
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
 
@@ -52,7 +52,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
 #ifndef MAIN_NO_DEBUG
         qDebug() << "scanLookup::Found address:: " << info.addresses()[index].toString();
 #endif
-        itemLook = new QTreeWidgetItem(rootLook);
+        QTreeWidgetItem *itemLook = new QTreeWidgetItem(rootLook);
         itemListLook.push_front(itemLook);
         itemLook->setText(0,info.addresses()[index].toString());
     }

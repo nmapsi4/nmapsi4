@@ -147,25 +147,25 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     }
 
-    root = new QTreeWidgetItem(listWscan);
+    QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
     itemList.push_front(root);
 
-    root2 = new QTreeWidgetItem(listScan);
+    QTreeWidgetItem *root2 = new QTreeWidgetItem(listScan);
     itemList.push_front(root2);
 
-    error = new QTreeWidgetItem(listScanError);
+    QTreeWidgetItem *error = new QTreeWidgetItem(listScanError);
     itemList.push_front(error);
 
-    infoItem = new QTreeWidgetItem(treeWinfo);
+    QTreeWidgetItem *infoItem = new QTreeWidgetItem(treeWinfo);
     itemList.push_front(infoItem);
 
-    infoTraceroot = new QTreeWidgetItem(treeTraceroot);
+    QTreeWidgetItem *infoTraceroot = new QTreeWidgetItem(treeTraceroot);
     itemList.push_front(infoTraceroot);
 
-    infoNSS = new QTreeWidgetItem(treeNSS);
+    QTreeWidgetItem *infoNSS = new QTreeWidgetItem(treeNSS);
     itemList.push_front(infoNSS);
 
-    mainTreeE = new QTreeWidgetItem(treeMain);
+    QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
 
     // check for log file
@@ -251,7 +251,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     if (!b2.atEnd()) { // check for scan informations
         while (!b2.atEnd()) {
             b2_line = b2.readLine();
-            item2 = new QTreeWidgetItem(root);
+            QTreeWidgetItem *item2 = new QTreeWidgetItem(root);
             itemList.push_front(item2); // save item address in QList
 
             if (b2_line.contains("open") || b2_line.contains("filtered")
@@ -378,7 +378,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
             checkViewOS(b3_line,root);
 
-            infoItemObj = new QTreeWidgetItem(infoItem);
+            QTreeWidgetItem *infoItemObj = new QTreeWidgetItem(infoItem);
             itemList.push_front(infoItemObj); // reference to address
 
             if (!b3_line.isEmpty()) {
@@ -397,6 +397,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     QTextStream bT(&bufferTraceroot); // Traceroute buffer
     QString bT_line;
+    QTreeWidgetItem *infoTracerootObj = NULL;
 
     if (!bT.atEnd()) { // check for scan informations
         while (!bT.atEnd()) {
@@ -444,8 +445,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
                     if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
                 }
-            } else
-                infoTracerootObj->setText(0, tr("No Info"));
+            } else {
+                if(infoTracerootObj) {
+                   infoTracerootObj->setText(0, tr("No Info"));
+               }
+            }
         }
     } else { // insert message for no info
         infoTraceroot->setText(0, tmp_mess2);
@@ -454,22 +458,26 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     QTextStream bNSS(&bufferNSS); // NSS
     QString bNSS_line;
+    QTreeWidgetItem *infoNSSObj = NULL;
 
     if (!bNSS.atEnd()) { //
         while (!bNSS.atEnd()) {
             bNSS_line = bNSS.readLine();
 
             if (!bNSS_line.isEmpty()) {
-                    infoNSSObj = new QTreeWidgetItem(infoNSS);
-                    itemList.push_front(infoNSSObj);
+                infoNSSObj = new QTreeWidgetItem(infoNSS);
+                itemList.push_front(infoNSSObj);
 
-                    infoNSSObj->setSizeHint(0, QSize::QSize(22, 22));
-                    infoNSSObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-                    infoNSSObj->setText(0, bNSS_line);
-                    infoNSSObj->setToolTip(0, bNSS_line); // field information
-                    if ((PFile) && (!verboseLog)) *out << infoNSSObj->text(0) << endl;
-            } else
-                infoNSSObj->setText(0, tr("No Info"));
+                infoNSSObj->setSizeHint(0, QSize::QSize(22, 22));
+                infoNSSObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+                infoNSSObj->setText(0, bNSS_line);
+                infoNSSObj->setToolTip(0, bNSS_line); // field information
+                if ((PFile) && (!verboseLog)) *out << infoNSSObj->text(0) << endl;
+            } else {
+                if(infoNSSObj) {
+                   infoNSSObj->setText(0, tr("No Info"));
+                }
+            }
         }
     } else { // insert message for no info
         infoNSS->setText(0, tmp_mess2);
@@ -493,7 +501,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     while (!b_log.atEnd()) {
         blog_line = b_log.readLine();
         if(!blog_line.isEmpty()) {
-           item_root2 = new QTreeWidgetItem(root2); // append scan log
+           QTreeWidgetItem *item_root2 = new QTreeWidgetItem(root2); // append scan log
            itemList.push_front(item_root2); // reference to address
 
            item_root2->setText(0, blog_line);
@@ -511,7 +519,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     if (!b_error.atEnd()) { // check for no error
         while (!b_error.atEnd()) { // print error buffer informations
-            item_error = new QTreeWidgetItem(error); // item_error memory allocation
+            QTreeWidgetItem *item_error = new QTreeWidgetItem(error); // item_error memory allocation
             itemList.push_front(item_error); // reference to address
             error_line = b_error.readLine();
             item_error->setText(0, error_line);
