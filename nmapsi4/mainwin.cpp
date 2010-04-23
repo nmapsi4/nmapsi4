@@ -131,11 +131,6 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
 
-    nssAct_->setChecked(NSSsupport_); // set NSS support
-    parAct_->setChecked(ADVSupport_); // set ADV support
-    parAdv();
-    NSSCheck();
-
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window/size", QSize(910, 672)).toSize();
@@ -151,6 +146,11 @@ void nmapClass::initObject() {
     delete historyVuln_;
     this->rootMode(uid); // send uid value
     dialog = new mainProfile();
+
+    nssAct_->setChecked(NSSsupport_); // set NSS support
+    parAct_->setChecked(ADVSupport_); // set ADV support
+    parAdv();
+    NSSCheck();
 }
 
 void nmapClass::startScan() {

@@ -95,10 +95,18 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
 #endif
 
     if(hostEdit->itemText(0).isEmpty() && item->parent() != NULL && !item->text(2).isEmpty()) {
-        hostEdit->addItem(item->text(2));
+        if(!item->text(3).contains("no DNS")) {
+            hostEdit->addItem(item->text(3));
+        } else {
+            hostEdit->addItem(item->text(2));
+        }
     } else
     if(item->parent() != NULL && !item->text(2).isEmpty()) {
-        hostEdit->setItemText(0, item->text(2));
+        if(!item->text(3).contains("no DNS")) {
+            hostEdit->setItemText(0, item->text(3));
+        } else {
+            hostEdit->setItemText(0, item->text(3));
+        }
     }
 }
 
