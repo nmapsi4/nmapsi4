@@ -207,7 +207,7 @@ void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
     qDebug() << "logHistory::Pre::cout:: " << lineHistory->count();
 #endif
     // FIXME:: check bug on MS windows
-#ifndef Q_WS_WIN
+#ifdef Q_WS_X11
     for(int index=1; index <= lineHistory->count(); index++) {
                     lineHistory->removeItem(index);
     }

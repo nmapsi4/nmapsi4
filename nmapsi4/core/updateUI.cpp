@@ -377,6 +377,9 @@ void nmapClass::updateSezScan() { // SLOT
     stackedMain->setCurrentIndex(0);
     this->showMainToolBar();
     this->showActionToolBar();
+    if(!frameScan->isVisible()) {
+        frameScan->setVisible(true);
+    }
 }
 
 void nmapClass::updateSezLog() {  // SLOT
@@ -405,6 +408,9 @@ void nmapClass::updateSezVuln() { // SLOT
     actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+    if(frameScan->isVisible()) {
+        frameScan->setVisible(false);
+    }
 }
 
 void nmapClass::NSSCheck() { // SLOT

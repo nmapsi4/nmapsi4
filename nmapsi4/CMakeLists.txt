@@ -28,6 +28,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/digSupport/digThread.cpp
 		core/info/parserObj.cpp
 		core/actionMenu.cpp
+                core/bookCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -53,6 +54,7 @@ else (NOT Q_WS_X11)
 		core/digSupport/digThread.cpp
 		core/info/parserObj.cpp
 		core/actionMenu.cpp
+                core/bookCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)

@@ -169,4 +169,7 @@ void nmapClass::objVulnButton() { // SLOT
     actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+    if(frameScan->isVisible()) {
+        frameScan->setVisible(false);
+    }
 }
