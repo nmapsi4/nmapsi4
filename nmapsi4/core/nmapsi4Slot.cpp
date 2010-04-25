@@ -112,6 +112,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(showActionToolBar()));
     connect(actionShow_Status_Bar, SIGNAL(triggered()),
             this, SLOT(showStatusBar()));
+    connect(optionAccept, SIGNAL(clicked()),
+            this, SLOT(resetPar()));
 
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
@@ -180,7 +182,5 @@ void nmapClass::setNmapsiSlot()
 
     connect(parAct_, SIGNAL(triggered()),
             this, SLOT(parAdv()));
-    connect(buttonReset, SIGNAL(clicked()),
-            this, SLOT(resetPar()));
 
 }

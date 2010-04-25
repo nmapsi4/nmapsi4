@@ -449,11 +449,13 @@ void nmapClass::setTreeWidgetValues() {
 
 void nmapClass::parAdv() {
     if(parAct_->isChecked()) {
+        optionAccept->setVisible(true);
         frameAdv->setVisible(true);
         ADVSupport_ = true;
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
         comboAdv->insertItem(0, check_extensions().join(" "));
     } else {
+        optionAccept->setVisible(false);
         frameAdv->setVisible(false);
         ADVSupport_ = false;
     }
