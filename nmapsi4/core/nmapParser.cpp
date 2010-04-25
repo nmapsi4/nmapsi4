@@ -410,8 +410,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     QStringList tmpToken = bT_line.split(" ");
 
                     if(tmpToken.size() == 4) {
-                        if(tmpToken[3].size() < 4) { // minimun dns lenght
-                            tmpToken.removeAt(3);
+                        if(tmpToken[2].size() < 4) { // minimun dns lenght
+                            tmpToken.removeAt(2);
                         }
                     }
 
