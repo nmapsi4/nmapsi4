@@ -399,7 +399,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString bT_line;
     QTreeWidgetItem *infoTracerootObj = NULL;
 
-    if (!bT.atEnd()) { // check for scan informations
+    if (!bT.atEnd()) { // check for traceroute scan informations
         while (!bT.atEnd()) {
             bT_line = bT.readLine();
 
@@ -408,6 +408,12 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
                     itemList.push_front(infoTracerootObj);
                     QStringList tmpToken = bT_line.split(" ");
+
+                    if(tmpToken.size() == 4) {
+                        if(tmpToken[3].size() < 4) { // minimun dns lenght
+                            tmpToken.removeAt(3);
+                        }
+                    }
 
                     // split traceroute -------------------------------------------------
                     tmpToken.removeAll("");
