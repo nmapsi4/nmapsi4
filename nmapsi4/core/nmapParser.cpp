@@ -409,17 +409,16 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     itemList.push_front(infoTracerootObj);
                     QStringList tmpToken = bT_line.split(" ");
 
+                    // split traceroute -------------------------------------------------
+                    tmpToken.removeAll("");
+
                     if(tmpToken.size() == 4) {
                         if(tmpToken[2].size() < 4) { // minimun dns lenght
                             tmpToken.removeAt(2);
+                        } else {
+                            tmpToken[3].remove("(");
+                            tmpToken[3].remove(")");
                         }
-                    }
-
-                    // split traceroute -------------------------------------------------
-                    tmpToken.removeAll("");
-                    if(tmpToken.size() == 4) {
-                        tmpToken[3].remove("(");
-                        tmpToken[3].remove(")");
                     }
 #ifndef PARSER_NO_DEBUG
                     qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
