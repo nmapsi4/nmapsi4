@@ -412,6 +412,13 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     // split traceroute -------------------------------------------------
                     tmpToken.removeAll("");
 
+                    // MS windows check for ms string
+                    if(tmpToken.size() == 5) {
+                        if(tmpToken[2].size() < 4) { // minimun dns lenght
+                            tmpToken.removeAt(2);
+                        }
+                    }
+
                     if(tmpToken.size() == 4) {
                         if(tmpToken[2].size() < 4) { // minimun dns lenght
                             tmpToken.removeAt(2);
