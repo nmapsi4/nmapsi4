@@ -105,7 +105,7 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
         if(!item->text(3).contains("DNS")) {
             hostEdit->setItemText(0, item->text(3));
         } else {
-            hostEdit->setItemText(0, item->text(3));
+            hostEdit->setItemText(0, item->text(2));
         }
     }
 }
