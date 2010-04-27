@@ -279,10 +279,12 @@ void nmapClass::update_comboVerbosity() {
 void nmapClass::listClear() {
     listClearFlag = true;
     itemDeleteAll(itemList); //clear items list
-    qDeleteAll(parserObjList_);
-    itemDeleteAll(mainTreeElem);
-    parserObjList_.clear();
     itemList.clear();
+
+    qDeleteAll(parserObjList);
+    parserObjList.clear();
+
+    itemDeleteAll(mainTreeElem);
     mainTreeElem.clear();
 
     listWscan->clear();
@@ -290,10 +292,11 @@ void nmapClass::listClear() {
 
     itemDeleteAll(digC->digList);
     digC->digList.clear();
-    treeLookup->clear();
 
+    treeLookup->clear();
     treeMain->clear();
     listScanError->clear();
+
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);
 }
@@ -377,6 +380,7 @@ void nmapClass::updateSezScan() { // SLOT
     stackedMain->setCurrentIndex(0);
     this->showMainToolBar();
     this->showActionToolBar();
+    toolBarSearch->setVisible(false);
     if(!frameScan->isVisible()) {
         frameScan->setVisible(true);
     }
@@ -393,6 +397,7 @@ void nmapClass::updateSezLog() {  // SLOT
     actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
     toolBarBook->setVisible(false);
+    toolBarSearch->setVisible(false);
     actionActions_Toolbar->setChecked(false);
 }
 
@@ -408,6 +413,7 @@ void nmapClass::updateSezVuln() { // SLOT
     actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+    toolBarSearch->setVisible(true);
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
     }
@@ -415,12 +421,12 @@ void nmapClass::updateSezVuln() { // SLOT
 
 void nmapClass::NSSCheck() { // SLOT
 
-    if(nssAct_->isChecked()) {
-       NSSsupport_ = true;
+    if(nssAct->isChecked()) {
+       NSSsupport = true;
        Bnss->setVisible(true);
        resetPar();
    } else {
-       NSSsupport_ = false;
+       NSSsupport = false;
        Bnss->setVisible(false);
        resetPar();
    }
@@ -448,16 +454,16 @@ void nmapClass::setTreeWidgetValues() {
 }
 
 void nmapClass::parAdv() {
-    if(parAct_->isChecked()) {
+    if(parAct->isChecked()) {
         optionAccept->setVisible(true);
         frameAdv->setVisible(true);
-        ADVSupport_ = true;
+        ADVSupport = true;
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
         comboAdv->insertItem(0, check_extensions().join(" "));
     } else {
         optionAccept->setVisible(false);
         frameAdv->setVisible(false);
-        ADVSupport_ = false;
+        ADVSupport = false;
     }
 }
 

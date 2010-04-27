@@ -62,6 +62,7 @@ private:
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
     void showParserObj(int indexObj);
     void setTreeWidgetValues();
+    void createBar();
 
 public:
     nmapClass();
@@ -95,10 +96,10 @@ protected:
     bool saveSize;
     bool listClearFlag;
     bool verboseLog;
-    bool lookupInternal_;
-    bool lookupDig_;
-    bool NSSsupport_;
-    bool ADVSupport_;
+    bool lookupInternal;
+    bool lookupDig;
+    bool NSSsupport;
+    bool ADVSupport;
     int hostCache;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
@@ -109,16 +110,20 @@ protected:
     QList<QString> monitorElemState;
     QList<QString> monitorElemOptions;
     QList<scanThread*> scanPointerList;
-    QList<parserObj*> parserObjList_;
+    QList<parserObj*> parserObjList;
     QLabel *labelVersion;
     QLabel *userMode;
     QPointer<scanThread> th;
     QPointer<mainProfile> dialog;
-    QAction *scanSez_;
-    QAction *logSez_;
-    QAction *vulnSez_;
-    QAction *nssAct_;
-    QAction *parAct_;
+    QAction *scanSez;
+    QAction *logSez;
+    QAction *vulnSez;
+    QAction *nssAct;
+    QAction *parAct;
+    QAction *actSearch;
+    QAction *actBack;
+    QAction *actForward;
+    QAction *actStop;
     lookUpT *lth;
     digSupport *digC;
     logHistory *history;

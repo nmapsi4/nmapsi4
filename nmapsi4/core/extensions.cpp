@@ -34,7 +34,7 @@ QStringList nmapClass::check_extensions(QString& winTitle)
         this->setWindowTitle(winTitle.append("(10%)"));
     }
 
-    if(NSSsupport_) {
+    if(NSSsupport) {
         parametri << "-A";
     } else {
         parametri << "--traceroute";

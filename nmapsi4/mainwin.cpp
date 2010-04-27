@@ -25,12 +25,6 @@ nmapClass::nmapClass()
        userMode(NULL),
        th(NULL)
 {
-    scanSez_ = new QAction(this);
-    logSez_ = new QAction(this);
-    vulnSez_ = new QAction(this);
-    nssAct_ = new QAction(this);
-    parAct_ = new QAction(this);
-
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
@@ -43,44 +37,6 @@ void nmapClass::initGUI()
 
     comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
-    // Section QAction
-    scanSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    scanSez_->setIconText(tr("Scan"));
-    scanSez_->setToolTip(tr("Scan host(s)"));
-
-    logSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
-    logSez_->setIconText(tr("Log"));
-    logSez_->setToolTip(tr("Scan Log"));
-
-    vulnSez_->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    vulnSez_->setIconText(tr("Services"));
-    vulnSez_->setToolTip(tr("Check Vulnerabilities"));
-
-    nssAct_->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    nssAct_->setIconText(tr("Nss Script"));
-    nssAct_->setToolTip(tr("Enable/Disable NSS script"));
-    nssAct_->setCheckable(true);
-
-    parAct_->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
-    //parAct_->setIconText(tr("Nss Script"));
-    parAct_->setToolTip(tr("Enable/Disable Manual Parameters"));
-    parAct_->setCheckable(true);
-
-    //frameScan->setBackgroundRole(QPalette::Highlight);
-    //frameScan->setAutoFillBackground(true);
-
-    frameAdv->setBackgroundRole(QPalette::Highlight);
-    frameAdv->setAutoFillBackground(true);
-
-
-    sezBar->addAction(scanSez_);
-    sezBar->addAction(logSez_);
-    sezBar->addAction(vulnSez_);
-    sezBar->addSeparator();
-    sezBar->addAction(parAct_);
-    sezBar->addAction(nssAct_);
-
-    setNmapsiSlot();
 }
 
 void nmapClass::initObject() {
@@ -95,12 +51,16 @@ void nmapClass::initObject() {
     tabWidget->removeTab(3);
 #endif
 
+    createBar();
+    setNmapsiSlot();
+
     // Disable scan action (nmap check)
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
     hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
+    toolBarSearch->setVisible(false);
 
     QString noHost(tr("no Host selected"));
     lineInfouptime->setText(noHost);
@@ -147,8 +107,8 @@ void nmapClass::initObject() {
     this->rootMode(uid); // send uid value
     dialog = new mainProfile();
 
-    nssAct_->setChecked(NSSsupport_); // set NSS support
-    parAct_->setChecked(ADVSupport_); // set ADV support
+    nssAct->setChecked(NSSsupport); // set NSS support
+    parAct->setChecked(ADVSupport); // set ADV support
     parAdv();
     NSSCheck();
 }
@@ -215,14 +175,14 @@ void nmapClass::startScan() {
         hostname.remove(" ");
     }
 
-    if(lookupInternal_) {
+    if(lookupInternal) {
         addMonitorHost(scanMonitor, hostname);
         lth = new lookUpT(hostname,this);
         connect(lth, SIGNAL(threadEnd(QHostInfo,int,const QString)),
                        this, SLOT(scanLookup(QHostInfo,int,const QString)));
 
         lth->start();
-    } else if(lookupDig_ && digC->getDigSupport()) {
+    } else if(lookupDig && digC->getDigSupport()) {
         digC->digProcess(hostname,treeLookup);
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);
@@ -299,17 +259,20 @@ nmapClass::~nmapClass()
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
-    qDeleteAll(parserObjList_);
+    qDeleteAll(parserObjList);
 
     delete progressScan;
     delete PFile;
     delete labelVersion;
     delete userMode;
     delete digC;
-    delete scanSez_;
-    delete logSez_;
-    delete vulnSez_;
-    delete nssAct_;
-    delete parAct_;
+    delete scanSez;
+    delete logSez;
+    delete vulnSez;
+    delete nssAct;
+    delete parAct;
+    delete actBack;
+    delete actForward;
+    delete actStop;
 }
 

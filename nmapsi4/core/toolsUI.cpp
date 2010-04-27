@@ -100,8 +100,8 @@ void nmapClass::exit()
     QSettings settings("nmapsi4", "nmapsi4");
     if (savePos) settings.setValue("window/pos", pos());
     if (saveSize) settings.setValue("window/size", size());
-    settings.setValue("NSSsupport", NSSsupport_);
-    settings.setValue("ADVSupport", ADVSupport_);
+    settings.setValue("NSSsupport", NSSsupport);
+    settings.setValue("ADVSupport", ADVSupport);
     this->close();
 }
 
@@ -282,3 +282,66 @@ void nmapClass::callScanH()
     }
 }
 
+void nmapClass::createBar() {
+    // QToolBar asction
+    scanSez = new QAction(this);
+    logSez = new QAction(this);
+    vulnSez = new QAction(this);
+    nssAct = new QAction(this);
+    parAct = new QAction(this);
+
+    actSearch = new QAction(this);
+    actBack = new QAction(this);
+    actForward = new QAction(this);
+    actStop = new QAction(this);
+
+    // Section QAction
+    scanSez->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    scanSez->setIconText(tr("Scan"));
+    scanSez->setToolTip(tr("Scan host(s)"));
+
+    logSez->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
+    logSez->setIconText(tr("Log"));
+    logSez->setToolTip(tr("Scan Log"));
+
+    vulnSez->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    vulnSez->setIconText(tr("Services"));
+    vulnSez->setToolTip(tr("Check Vulnerabilities"));
+
+    nssAct->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    nssAct->setIconText(tr("Nss Script"));
+    nssAct->setToolTip(tr("Enable/Disable NSS script"));
+    nssAct->setCheckable(true);
+
+    parAct->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
+    parAct->setToolTip(tr("Enable/Disable Manual Parameters"));
+    parAct->setCheckable(true);
+
+    frameAdv->setBackgroundRole(QPalette::Highlight);
+    frameAdv->setAutoFillBackground(true);
+
+
+    sezBar->addAction(scanSez);
+    sezBar->addAction(logSez);
+    sezBar->addAction(vulnSez);
+    sezBar->addSeparator();
+    sezBar->addAction(parAct);
+    sezBar->addAction(nssAct);
+
+    actSearch->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    actSearch->setIconText(tr("Search"));
+
+    actBack->setIcon(QIcon(QString::fromUtf8(":/images/images/left.png")));
+    actBack->setIconText(tr("Back"));
+
+    actForward->setIcon(QIcon(QString::fromUtf8(":/images/images/right.png")));
+    actForward->setIconText(tr("Forward"));
+
+    actStop->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
+    actStop->setIconText(tr("Stop"));
+
+    toolBarSearch->addAction(actSearch);
+    toolBarSearch->addAction(actBack);
+    toolBarSearch->addAction(actForward);
+    toolBarSearch->addAction(actStop);
+}

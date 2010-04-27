@@ -113,27 +113,27 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
 void nmapClass::showParserObj(int indexObj) {
     QString noInfo("not Discovered");
 
-    if(!parserObjList_[indexObj]->getUptime().isEmpty()) {
+    if(!parserObjList[indexObj]->getUptime().isEmpty()) {
         lineInfouptime->clear();
-        lineInfouptime->setText(parserObjList_[indexObj]->getUptime());
+        lineInfouptime->setText(parserObjList[indexObj]->getUptime());
     } else {
         lineInfouptime->setText(noInfo);
     }
 
-    if(!parserObjList_[indexObj]->getTcpSequence().isEmpty()) {
-        lineInfotcpsequence->setText(parserObjList_[indexObj]->getTcpSequence());
+    if(!parserObjList[indexObj]->getTcpSequence().isEmpty()) {
+        lineInfotcpsequence->setText(parserObjList[indexObj]->getTcpSequence());
     } else {
         lineInfotcpsequence->setText(noInfo);
     }
 
-    if(!parserObjList_[indexObj]->getRunning().isEmpty()) {
-        lineInforunning->setText(parserObjList_[indexObj]->getRunning());
+    if(!parserObjList[indexObj]->getRunning().isEmpty()) {
+        lineInforunning->setText(parserObjList[indexObj]->getRunning());
     } else {
         lineInforunning->setText(noInfo);
     }
 
-    if(!parserObjList_[indexObj]->getDeviceType().isEmpty()) {
-        lineInfodevice->setText(parserObjList_[indexObj]->getDeviceType());
+    if(!parserObjList[indexObj]->getDeviceType().isEmpty()) {
+        lineInfodevice->setText(parserObjList[indexObj]->getDeviceType());
     } else {
         lineInfodevice->setText(noInfo);
     }
@@ -142,10 +142,10 @@ void nmapClass::showParserObj(int indexObj) {
     GItree->clear();
     objElem.clear();
 
-    for(int index=0; index < parserObjList_[indexObj]->getServices().size(); index++) {
+    for(int index=0; index < parserObjList[indexObj]->getServices().size(); index++) {
         QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
         objElem.push_front(objItem);
-        objItem->setText(0,parserObjList_[indexObj]->getServices()[index]);
+        objItem->setText(0,parserObjList[indexObj]->getServices()[index]);
     }
 }
 
@@ -157,8 +157,8 @@ void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
     int indexObj_ = GItree->indexOfTopLevelItem(item);
 
     if(indexObj_ != -1) {
-        servDesLabel->setText(parserObjList_[indexHost]->getDescriptionServices()[indexObj_]);
-        servPortLabel->setText(parserObjList_[indexHost]->getPortServices()[indexObj_]);
+        servDesLabel->setText(parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
+        servPortLabel->setText(parserObjList[indexHost]->getPortServices()[indexObj_]);
 
     }
 }
@@ -177,6 +177,7 @@ void nmapClass::objVulnButton() { // SLOT
     actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+    toolBarSearch->setVisible(true);
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
     }

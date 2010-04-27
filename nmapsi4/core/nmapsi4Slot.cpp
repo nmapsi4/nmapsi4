@@ -151,15 +151,15 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(menuVulnBook()));
 
     // Vuln signal
-    connect(buttonVuln, SIGNAL(clicked()),
+    connect(actSearch, SIGNAL(triggered()),
             this, SLOT(searchVuln()));
     connect(viewVuln, SIGNAL(loadProgress(int)),
             progressWeb, SLOT(setValue(int)));
-    connect(Bleft, SIGNAL(clicked()),
+    connect(actBack, SIGNAL(triggered()),
             viewVuln, SLOT(back()));
-    connect(Bright, SIGNAL(clicked()),
+    connect(actForward, SIGNAL(triggered()),
             viewVuln, SLOT(forward()));
-    connect(Bstop, SIGNAL(clicked()),
+    connect(actStop, SIGNAL(triggered()),
             viewVuln, SLOT(stop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
             comboVulnRis, SLOT(setEditText(const QString&)));
@@ -171,16 +171,15 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveBookMarks()));
 
     // main session
-    connect(scanSez_, SIGNAL(triggered()),
+    connect(scanSez, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
-    connect(logSez_, SIGNAL(triggered()),
+    connect(logSez, SIGNAL(triggered()),
             this, SLOT(updateSezLog()));
-    connect(vulnSez_, SIGNAL(triggered()),
+    connect(vulnSez, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
-    connect(nssAct_, SIGNAL(triggered()),
+    connect(nssAct, SIGNAL(triggered()),
             this, SLOT(NSSCheck()));
 
-    connect(parAct_, SIGNAL(triggered()),
+    connect(parAct, SIGNAL(triggered()),
             this, SLOT(parAdv()));
-
 }

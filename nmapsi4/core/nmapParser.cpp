@@ -581,5 +581,5 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	actionSave_Menu->setEnabled(true);
     }
     setWindowModified(true);
-    parserObjList_.append(elemObj);
+    parserObjList.append(elemObj);
 }

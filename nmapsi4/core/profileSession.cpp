@@ -24,8 +24,9 @@ void nmapClass::readProfile()
 
     this->checkProfile();
 
-    if (checkLog)
+    if (checkLog) {
         this->fileSession();
+    }
 
 }
 
@@ -67,14 +68,15 @@ void nmapClass::checkProfile()
     }
 
     
-    if (Profile.contains("quick"))
-	 this->setQuickProfile();
-    else if (Profile.contains("normal"))
-	 this->setNormalProfile();
-    else if (Profile.contains("fullversion"))
+    if (Profile.contains("quick")) {
+        this->setQuickProfile();
+    } else if (Profile.contains("normal")) {
+        this->setNormalProfile();
+    } else if (Profile.contains("fullversion")) {
         this->setFullVersionProfile();
-    else if (Profile.contains("quickversion"))
-	 this->setQuickVersionProfile();
+    } else if (Profile.contains("quickversion")) {
+        this->setQuickVersionProfile();
+    }
     
     
     logPath = settings.value("confPath", "none").toString();
@@ -93,11 +95,12 @@ void nmapClass::checkProfile()
     }
     
     if (!log.compare("true")) {
-	 checkLog = true;
-	 action_Save_As->setEnabled(false);
-	 actionSave->setEnabled(false);
-    } else
-	 checkLog = false;
+        checkLog = true;
+        action_Save_As->setEnabled(false);
+        actionSave->setEnabled(false);
+    } else {
+        checkLog = false;
+    }
     
     QString Vlog = settings.value("Vlog", "none").toString();
 
@@ -114,10 +117,11 @@ void nmapClass::checkProfile()
         pos = "true";
     }
     
-    if (!pos.compare("true"))
-	 savePos = true;
-    else
-	 savePos = false;
+    if (!pos.compare("true")) {
+        savePos = true;
+    } else {
+        savePos = false;
+    }
 
     QString size = settings.value("saveSize", "none").toString();
     
@@ -126,21 +130,22 @@ void nmapClass::checkProfile()
         size = "true";
     }
     
-    if (!size.compare("true"))
+    if (!size.compare("true")) {
         saveSize = true;
-    else
-	 saveSize = false;
+    } else {
+        saveSize = false;
+    }
 
     QString vulnExt = settings.value("vulnFlag", "none").toString();
     if((!vulnExt.compare("none"))) {
 	 settings.setValue("vulnFlag", "true"); // default value
     } else if((vulnExt.compare("false"))) {
-         vulnSez_->setEnabled(true);
+         vulnSez->setEnabled(true);
     } else {
          if(stackedMain->currentIndex() == 2) {
 	      stackedMain->setCurrentIndex(0);
 	 }
-         vulnSez_->setEnabled(false);
+         vulnSez->setEnabled(false);
     }
 
     QString cache = settings.value("hostCache", "none").toString();
@@ -157,11 +162,11 @@ void nmapClass::checkProfile()
          settings.setValue("lookInternal", "true"); // default value
     }
 
-    lookupInternal_ = settings.value("lookInternal").toBool();
+    lookupInternal = settings.value("lookInternal").toBool();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
-    lookupInternal_ = false;
+    lookupInternal = false;
 #endif
 
     QString lDig = settings.value("lookDig", "none").toString();
@@ -170,11 +175,11 @@ void nmapClass::checkProfile()
          settings.setValue("lookDig", "false"); // default value
     }
 
-    lookupDig_ = settings.value("lookDig").toBool();
+    lookupDig = settings.value("lookDig").toBool();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
-    lookupDig_ = false;
+    lookupDig = false;
 #endif
 
     QString nss_ = settings.value("NSSsupport", "none").toString();
@@ -183,7 +188,7 @@ void nmapClass::checkProfile()
          settings.setValue("NSSsupport", "true"); // default value
     }
 
-    NSSsupport_ = settings.value("NSSsupport").toBool();
+    NSSsupport = settings.value("NSSsupport").toBool();
 
     QString adv_ = settings.value("ADVSupport", "none").toString();
 
@@ -191,8 +196,7 @@ void nmapClass::checkProfile()
          settings.setValue("ADVSupport", "false"); // default value
     }
 
-    ADVSupport_ = settings.value("ADVSupport").toBool();
-
+    ADVSupport = settings.value("ADVSupport").toBool();
 }
 
 void nmapClass::setQuickProfile()
