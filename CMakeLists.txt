@@ -11,6 +11,7 @@ endif (Q_WS_WIN)
 
 if(Q_WS_MAC)
     SET( CMAKE_OSX_ARCHITECTURES ppc;i386 )
+    SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
 endif(Q_WS_MAC)
 
 
