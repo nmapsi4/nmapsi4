@@ -9,6 +9,11 @@ if (Q_WS_WIN)
   include(CMakeMinGWFindMake)
 endif (Q_WS_WIN)
 
+if(Q_WS_MAC)
+    SET( CMAKE_OSX_ARCHITECTURES ppc;i386 )
+endif(Q_WS_MAC)
+
+
 add_subdirectory( lib )
 add_subdirectory( nmapsi4 )
 add_subdirectory( nmapsi4-logr )
