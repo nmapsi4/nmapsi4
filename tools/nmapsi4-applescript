@@ -1,0 +1,3 @@
+#!/usr/bin/osascript
+
+do shell script "/Applications/nmapsi4.app/Contents/MacOS/nmapsi4-core" with administrator privileges
