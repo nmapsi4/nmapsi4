@@ -181,4 +181,7 @@ void nmapClass::objVulnButton() { // SLOT
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
     }
+    if(treeMain->isVisible()) {
+        treeMain->setVisible(false);
+    }
 }
