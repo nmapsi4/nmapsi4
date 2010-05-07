@@ -384,6 +384,10 @@ void nmapClass::updateSezScan() { // SLOT
     if(!frameScan->isVisible()) {
         frameScan->setVisible(true);
     }
+
+    if(!treeMain->isVisible()) {
+        treeMain->setVisible(true);
+    }
 }
 
 void nmapClass::updateSezLog() {  // SLOT
@@ -399,6 +403,10 @@ void nmapClass::updateSezLog() {  // SLOT
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+
+    if(treeMain->isVisible()) {
+        treeMain->setVisible(false);
+    }
 }
 
 void nmapClass::updateSezVuln() { // SLOT
@@ -414,8 +422,13 @@ void nmapClass::updateSezVuln() { // SLOT
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
+
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
+    }
+
+    if(treeMain->isVisible()) {
+        treeMain->setVisible(false);
     }
 }
 
