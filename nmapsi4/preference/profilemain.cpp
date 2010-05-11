@@ -90,7 +90,7 @@ mainProfile::mainProfile()
 
     // Create listview items
     // TODO insert history item and window setup
-    listViewOptions->setIconSize(QSize::QSize(52, 52));
+    listViewOptions->setIconSize(QSize(52, 52));
 
     profileItem = new QListWidgetItem(listViewOptions);
     profileItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-system-windows.png")));

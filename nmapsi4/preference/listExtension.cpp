@@ -26,7 +26,7 @@ void mainProfile::checkExtension() {
     vulnExt = extension.value("vulnFlag", "false").toBool();
     extList->clear(); // clear listWidget for reload use
     
-    extList->setIconSize(QSize::QSize(48, 48));
+    extList->setIconSize(QSize(48, 48));
     QIcon imgA = QIcon(QString::fromUtf8(":/images/nmapsi4/preference/images/preferences-pluginA.png"));
     QIcon imgD = QIcon(QString::fromUtf8(":/images/nmapsi4/preference/images/preferences-pluginD.png"));
     

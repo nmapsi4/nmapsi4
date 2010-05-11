@@ -96,7 +96,7 @@ void nmapClass::optionListUpdate() {
 
 void nmapClass::optionListCreate() {
   
-    optionsListScan->setIconSize(QSize::QSize(52, 52));
+    optionsListScan->setIconSize(QSize(52, 52));
   
     scanW = new QListWidgetItem(optionsListScan);
     scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));

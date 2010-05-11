@@ -258,16 +258,16 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     || b2_line.contains("unfiltered")) {
 
                 if (b2_line.contains("filtered") || b2_line.contains("unfiltered")) {
-                    item2->setSizeHint(0, QSize::QSize(22, 22));
+                    item2->setSizeHint(0, QSize(22, 22));
                     item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
                     filtered_port++;
                 } else {
-                    item2->setSizeHint(0, QSize::QSize(22, 22));
+                    item2->setSizeHint(0, QSize(22, 22));
                     item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
                     open_port++;
                 }
             } else {
-                item2->setSizeHint(0, QSize::QSize(22, 22));
+                item2->setSizeHint(0, QSize(22, 22));
                 item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
                 close_port++;
             }
@@ -382,7 +382,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             itemList.push_front(infoItemObj); // reference to address
 
             if (!b3_line.isEmpty()) {
-                infoItemObj->setSizeHint(0, QSize::QSize(22, 22));
+                infoItemObj->setSizeHint(0, QSize(22, 22));
                 infoItemObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
                 infoItemObj->setText(0, b3_line);
                 infoItemObj->setToolTip(0, b3_line); // field information
@@ -453,7 +453,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     }
                     // ------------------------------------------------------------------------
 
-                    infoTracerootObj->setSizeHint(0, QSize::QSize(22, 22));
+                    infoTracerootObj->setSizeHint(0, QSize(22, 22));
                     infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
                     if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
                 }
@@ -480,7 +480,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 infoNSSObj = new QTreeWidgetItem(infoNSS);
                 itemList.push_front(infoNSSObj);
 
-                infoNSSObj->setSizeHint(0, QSize::QSize(22, 22));
+                infoNSSObj->setSizeHint(0, QSize(22, 22));
                 infoNSSObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
                 infoNSSObj->setText(0, bNSS_line);
                 infoNSSObj->setToolTip(0, bNSS_line); // field information

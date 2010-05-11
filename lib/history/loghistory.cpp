@@ -105,7 +105,7 @@ void logHistory::updateLogHistory()
     qDeleteAll(ItemListHistory);
     ItemListHistory.clear();
     logTree->clear();
-    logTree->setIconSize(QSize::QSize(32, 32));
+    logTree->setIconSize(QSize(32, 32));
 
     QFile *tmpFile = new QFile();
     short index = 0;
@@ -166,7 +166,7 @@ void logHistory::updateBookMarks()
     qDeleteAll(ItemListHistory);
     ItemListHistory.clear();
     logTree->clear();
-    logTree->setIconSize(QSize::QSize(22, 22));
+    logTree->setIconSize(QSize(22, 22));
 
     if (!urlList.isEmpty() && urlList.first().compare("NULL") && urlListTime.first().compare("NULL")) {
 #ifndef HISTORY_NO_DEBUG

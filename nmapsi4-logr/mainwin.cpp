@@ -99,7 +99,7 @@ void mwClass::logReader()
     QTextStream buffer(logF);
     QString tmpLine;
 
-    treeLogView->setIconSize(QSize::QSize(32, 32));
+    treeLogView->setIconSize(QSize(32, 32));
 
     while (!buffer.atEnd()) {
         tmpLine = buffer.readLine();

@@ -446,23 +446,23 @@ void nmapClass::NSSCheck() { // SLOT
 }
 
 void nmapClass::setTreeWidgetValues() {
-    listWscan->setIconSize(QSize::QSize(22, 22));
+    listWscan->setIconSize(QSize(22, 22));
     listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScanError->setIconSize(QSize::QSize(22, 22));
+    listScanError->setIconSize(QSize(22, 22));
     listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScan->setIconSize(QSize::QSize(22, 22));
+    listScan->setIconSize(QSize(22, 22));
     listScan->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeWinfo->setIconSize(QSize::QSize(22, 22));
+    treeWinfo->setIconSize(QSize(22, 22));
     treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeTraceroot->setIconSize(QSize::QSize(22, 22));
+    treeTraceroot->setIconSize(QSize(22, 22));
     treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeNSS->setIconSize(QSize::QSize(22, 22));
+    treeNSS->setIconSize(QSize(22, 22));
     treeNSS->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeMain->setIconSize(QSize::QSize(22, 22));
+    treeMain->setIconSize(QSize(22, 22));
     treeMain->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeLookup->setIconSize(QSize::QSize(22, 22));
+    treeLookup->setIconSize(QSize(22, 22));
     treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
-    scanMonitor->setIconSize(QSize::QSize(22, 22));
+    scanMonitor->setIconSize(QSize(22, 22));
     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
 
