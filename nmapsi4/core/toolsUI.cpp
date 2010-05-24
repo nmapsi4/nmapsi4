@@ -317,8 +317,8 @@ void nmapClass::createBar() {
     parAct->setToolTip(tr("Enable/Disable Manual Parameters"));
     parAct->setCheckable(true);
 
-    frameAdv->setBackgroundRole(QPalette::Highlight);
-    frameAdv->setAutoFillBackground(true);
+    //frameAdv->setBackgroundRole(QPalette::Highlight);
+    //frameAdv->setAutoFillBackground(true);
 
 
     sezBar->addAction(scanSez);

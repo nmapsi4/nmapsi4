@@ -20,7 +20,7 @@
 #include "mainwin.h"
 
 
-mwClass::mwClass() : logF(0), url(0)
+mwClass::mwClass() : logF(0)
 {
     initGUI();
     QTimer::singleShot(0, this, SLOT(initObject()));
