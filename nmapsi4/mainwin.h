@@ -185,6 +185,8 @@ private slots:
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
+    void vulnPostScan();
+    void updateComboVuln(const QString& value);
     void NSSCheck();
     void parAdv();
     void resetPar();

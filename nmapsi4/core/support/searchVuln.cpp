@@ -29,6 +29,11 @@ void nmapClass::searchVuln()
     history = new logHistory("nmapsi4/cacheVuln", hostCache);
     history->addItemHistory(comboVulnRis->currentText());
     delete history;
+
+    actSearch->setEnabled(false);
+    actStop->setEnabled(true);
+    actBack->setEnabled(true);
+    actForward->setEnabled(true);
     
     tmp = comboVulnRis->currentText();
     tmp.replace(QString(" "), QString("+"));
@@ -80,4 +85,21 @@ void nmapClass::callSearchHistoryVuln() {
 void nmapClass::callVulnCheck() {
     comboVulnRis->insertItem(0,treeBookVuln->currentItem()->text(0));
     searchVuln();
+}
+
+void nmapClass::vulnPostScan() {
+    actSearch->setEnabled(true);
+    actStop->setEnabled(false);
+}
+
+void nmapClass::updateComboVuln(const QString& value) {
+
+    comboVulnRis->clear();
+
+    if(comboVuln->currentIndex()) {
+        comboVulnRis->insertItem(0,value);
+    } else {
+        comboVulnRis->lineEdit()->clear();
+    }
+
 }

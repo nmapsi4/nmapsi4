@@ -2344,6 +2344,11 @@
                 <property name="duplicatesEnabled">
                  <bool>false</bool>
                 </property>
+                <item>
+                 <property name="text">
+                  <string>Services</string>
+                 </property>
+                </item>
                </widget>
               </item>
               <item>

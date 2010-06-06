@@ -330,15 +330,19 @@ void nmapClass::createBar() {
 
     actSearch->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     actSearch->setIconText(tr("Search"));
+    actSearch->setEnabled(false);
 
     actBack->setIcon(QIcon(QString::fromUtf8(":/images/images/left.png")));
     actBack->setIconText(tr("Back"));
+    actBack->setEnabled(false);
 
     actForward->setIcon(QIcon(QString::fromUtf8(":/images/images/right.png")));
     actForward->setIconText(tr("Forward"));
+    actForward->setEnabled(false);
 
     actStop->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
     actStop->setIconText(tr("Stop"));
+    actStop->setEnabled(false);
 
     toolBarSearch->addAction(actSearch);
     toolBarSearch->addAction(actBack);

@@ -155,6 +155,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(searchVuln()));
     connect(viewVuln, SIGNAL(loadProgress(int)),
             progressWeb, SLOT(setValue(int)));
+    connect(viewVuln, SIGNAL(loadFinished(bool)),
+            this, SLOT(vulnPostScan()));
     connect(actBack, SIGNAL(triggered()),
             viewVuln, SLOT(back()));
     connect(actForward, SIGNAL(triggered()),
@@ -162,7 +164,7 @@ void nmapClass::setNmapsiSlot()
     connect(actStop, SIGNAL(triggered()),
             viewVuln, SLOT(stop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
-            comboVulnRis, SLOT(setEditText(const QString&)));
+            this, SLOT(updateComboVuln(const QString&)));
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
             this, SLOT(callSearchHistoryVuln()));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),

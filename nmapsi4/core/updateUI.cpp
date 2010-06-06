@@ -362,6 +362,7 @@ void nmapClass::updateFontHost(const QString hostName) {
 void nmapClass::updateFontHostVuln(const QString hostName) {
     Q_UNUSED(hostName);
     comboVulnRis->clear();
+    actSearch->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
     comboVulnRis->disconnect(SIGNAL(editTextChanged(QString)));
 }
@@ -388,6 +389,10 @@ void nmapClass::updateSezScan() { // SLOT
     if(!treeMain->isVisible()) {
         treeMain->setVisible(true);
     }
+
+    if(!frameAdv->isVisible() && parAct->isChecked()) {
+        frameAdv->setVisible(true);
+    }
 }
 
 void nmapClass::updateSezLog() {  // SLOT
@@ -404,8 +409,16 @@ void nmapClass::updateSezLog() {  // SLOT
     toolBarSearch->setVisible(false);
     actionActions_Toolbar->setChecked(false);
 
+    if(frameScan->isVisible()) {
+        frameScan->setVisible(false);
+    }
+
     if(treeMain->isVisible()) {
         treeMain->setVisible(false);
+    }
+
+    if(frameAdv->isVisible()) {
+        frameAdv->setVisible(false);
     }
 }
 
@@ -429,6 +442,10 @@ void nmapClass::updateSezVuln() { // SLOT
 
     if(treeMain->isVisible()) {
         treeMain->setVisible(false);
+    }
+
+    if(frameAdv->isVisible()) {
+        frameAdv->setVisible(false);
     }
 }
 
