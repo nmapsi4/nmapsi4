@@ -29,6 +29,6 @@ ADD_CUSTOM_TARGET( uninstall
 message("------------------------------------------------")
 message(" Required for build:   qt4-dev (>> 4.5.3) ")
 message(" Required for runtime: nmap ( >> 5.0 ) ")
-message(" Recommends: dig ")
+message(" Recommends for runtime: dig ")
 message("------------------------------------------------")
 
