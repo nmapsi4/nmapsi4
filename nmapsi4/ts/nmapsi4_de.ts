@@ -444,10 +444,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
@@ -488,10 +484,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>securityfocus.com</source>
         <translation type="unfinished"></translation>
     </message>
@@ -501,18 +493,6 @@
     </message>
     <message>
         <source>secunia.com</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -612,7 +592,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reset/Update to automatic parameters</source>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1068,6 +1052,38 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Enable/Disable Manual Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

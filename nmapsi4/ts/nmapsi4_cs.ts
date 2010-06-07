@@ -450,7 +450,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Smazat</translation>
+        <translation type="obsolete">Smazat</translation>
     </message>
     <message>
         <source>Date</source>
@@ -498,7 +498,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation type="obsolete">Zpět</translation>
     </message>
     <message>
         <source>securityfocus.com</source>
@@ -514,15 +514,15 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Hledat</translation>
+        <translation type="obsolete">Hledat</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation>Vpřed</translation>
+        <translation type="obsolete">Vpřed</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation type="obsolete">Zastavit</translation>
     </message>
     <message>
         <source>Vulnerabilities</source>
@@ -621,8 +621,12 @@ Zavřít strom s prohledáváním</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reset/Update to automatic parameters</source>
+        <source>Apply</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Services</source>
+        <translation type="unfinished">Služby</translation>
     </message>
 </context>
 <context>
@@ -1081,6 +1085,38 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source>Enable/Disable Manual Parameters</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Hledat</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished">Vpřed</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Zastavit</translation>
     </message>
 </context>
 </TS>
