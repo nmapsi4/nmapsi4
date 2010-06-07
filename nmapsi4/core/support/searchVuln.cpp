@@ -83,7 +83,9 @@ void nmapClass::callSearchHistoryVuln() {
 }
 
 void nmapClass::callVulnCheck() {
+    comboVulnRis->clear();
     comboVulnRis->insertItem(0,treeBookVuln->currentItem()->text(0));
+    tabVuln->setCurrentIndex(0);
     searchVuln();
 }
 

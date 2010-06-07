@@ -2313,7 +2313,7 @@
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_3">
+         <widget class="QTabWidget" name="tabVuln">
           <property name="styleSheet">
            <string notr="true">QTabWidget:pane {
 	border: 0px;

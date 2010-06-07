@@ -165,6 +165,8 @@ void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
 
 void nmapClass::objVulnButton() { // SLOT
 
+    comboVulnRis->clear();
+
     if(comboVulnRis->itemText(0).isEmpty()) {
         comboVulnRis->addItem(servDesLabel->toPlainText());
     } else {
@@ -183,5 +185,9 @@ void nmapClass::objVulnButton() { // SLOT
     }
     if(treeMain->isVisible()) {
         treeMain->setVisible(false);
+    }
+
+    if(frameAdv->isVisible()) {
+        frameAdv->setVisible(false);
     }
 }
