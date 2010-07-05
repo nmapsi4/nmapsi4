@@ -95,7 +95,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1541"/>
         <source>Clear Hostname IP</source>
-        <translation type="unfinished">Limpiar Hostname sde IP</translation>
+        <translation type="unfinished">Limpiar IP de Hostname</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1543"/>
@@ -117,12 +117,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1552"/>
         <source>Save &amp;As</source>
-        <translation type="unfinished">Guardar &amp;Como</translation>
+        <translation>Guardar &amp;Como</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1553"/>
         <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished">&amp;Pantalla completa</translation>
+        <translation>&amp;Pantalla completa</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1554"/>
@@ -152,12 +152,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1559"/>
         <source>Show Status Bar</source>
-        <translation type="unfinished">Mostrar Barra de Estado</translation>
+        <translation>Mostrar Barra de Estado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1574"/>
         <source>Service / OS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Servicios / OS</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1578"/>
@@ -185,7 +185,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1562"/>
         <source>Log</source>
-        <translation type="unfinished">Log</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1592"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1610"/>
         <source>Version Probe</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Versión sonda</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1593"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1666"/>
         <source>Ordered Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Puertos Ordenados</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1613"/>
@@ -300,7 +300,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1580"/>
         <source>Nss script result</source>
-        <translation type="unfinished">Resultado del Nss script</translation>
+        <translation>Resultado del script NSS </translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1568"/>
@@ -407,47 +407,47 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1637"/>
         <source>Normal Throttling</source>
-        <translation type="unfinished">Throttling Normal</translation>
+        <translation type="unfinished">Limitación Normal</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1638"/>
         <source>Paranoid Throttling</source>
-        <translation type="unfinished">Throttling Paranoico</translation>
+        <translation type="unfinished">Limitación Paranoica</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1639"/>
         <source>Sneaky Throttling</source>
-        <translation type="unfinished">Throttling Sigiloso</translation>
+        <translation type="unfinished">Limitación Sigiloso</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1640"/>
         <source>Polite Throttling</source>
-        <translation type="unfinished">Throttling Cortés</translation>
+        <translation type="unfinished">Limitación Cortés</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1641"/>
         <source>Aggressive Throttling</source>
-        <translation type="unfinished">Throttling Agresivo</translation>
+        <translation type="unfinished">Limitación  Agresiva</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1642"/>
         <source>Insane Throttling</source>
-        <translation type="unfinished">Throttling Peligroso</translation>
+        <translation type="unfinished">Limitación Exagerada</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1647"/>
         <source>Quiet</source>
-        <translation type="unfinished"></translation>
+        <translation>Silencioso</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1648"/>
         <source>Verbose</source>
-        <translation type="unfinished"></translation>
+        <translation>Detallado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1649"/>
         <source>Very Verbose</source>
-        <translation type="unfinished"></translation>
+        <translation>Muy Detallado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1650"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1662"/>
         <source>Specific Device</source>
-        <translation type="unfinished">Dispositivo esècífico</translation>
+        <translation>Dispositivo Específico</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1663"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1664"/>
         <source>Source Port</source>
-        <translation type="unfinished">Puerto recurso</translation>
+        <translation type="unfinished">Puerto de Recurso</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1668"/>
@@ -512,12 +512,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1671"/>
         <source>State</source>
-        <translation>Stado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1677"/>
         <source>Lookup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Búsqueda</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1679"/>
@@ -557,7 +557,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1688"/>
         <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation type="unfinished">Corriendo</translation>
+        <translation type="unfinished">&lt;b&gt;Corriendo:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1689"/>
@@ -577,7 +577,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1697"/>
         <source>Vulnerability</source>
-        <translation type="unfinished">Vulnerabilidad</translation>
+        <translation>Vulnerabilidad</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1685"/>
@@ -650,17 +650,17 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1577"/>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Abiertos</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1576"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>Cerrados</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1575"/>
         <source>Fi/Unfiltered</source>
-        <translation type="unfinished"></translation>
+        <translation>Fi/Sin filtrar</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1718"/>
@@ -697,7 +697,7 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1560"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1564"/>
         <source>&amp;Add Bookmark</source>
-        <translation type="unfinished">&amp;Agregar Favoritos</translation>
+        <translation type="unfinished">&amp;Agregar a Favoritos</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1669"/>
@@ -858,37 +858,37 @@
     <message>
         <location filename="../preference/profilemain.cpp" line="97"/>
         <source>Profiles</source>
-        <translation type="unfinished">Perfiles</translation>
+        <translation>Perfiles</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="101"/>
         <source>Log</source>
-        <translation type="unfinished">Log</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="105"/>
         <source>Size</source>
-        <translation type="unfinished">Tamaño</translation>
+        <translation>Tamaño</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="110"/>
         <source>Lookup</source>
-        <translation type="unfinished"></translation>
+        <translation>Búsqueda</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="197"/>
         <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Perfiles de scaneo&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Perfiles de scaneo&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="200"/>
         <source>&lt;h3&gt;Automatic Logs Options&lt;/h3&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Opciones para logs automáticos&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Opciones para logs automáticos&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="203"/>
         <source>&lt;h3&gt;Size Options&lt;/h3&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Opciones de tamaño&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Opciones de tamaño&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="209"/>
@@ -898,12 +898,12 @@
     <message>
         <location filename="../preference/profilemain.cpp" line="115"/>
         <source>Extensions</source>
-        <translation type="unfinished">Extensiones</translation>
+        <translation>Extensiones</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="206"/>
         <source>&lt;h3&gt;Extensions&lt;/h3&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Extensiones&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Extensiones&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../preference/listExtension.cpp" line="39"/>
@@ -988,7 +988,7 @@
     <message>
         <location filename="../mainwin.cpp" line="36"/>
         <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
-        <translation type="unfinished">Ingrese una [ip] o [dns] o [un rango de ip] o [una lista de ip/dns usando como separador un espacio] para scanear (ejemplo de rango ip. 192.168.1.10/20)</translation>
+        <translation type="unfinished">Para scanear ingrese una [ip] o [dns] o [un rango de ip] o [lista de ip/dns con espacios como separadores] (ejemplo de rango ip. 192.168.1.10/20)</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="39"/>
@@ -1003,7 +1003,7 @@
     <message>
         <location filename="../core/toolsUI.cpp" line="304"/>
         <source>Log</source>
-        <translation type="unfinished">Log</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="305"/>
@@ -1053,7 +1053,7 @@
     <message>
         <location filename="../core/toolsUI.cpp" line="344"/>
         <source>Stop</source>
-        <translation type="unfinished">Detener</translation>
+        <translation>Detener</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="65"/>
@@ -1148,7 +1148,7 @@
     <message>
         <location filename="../core/toolsUI.cpp" line="236"/>
         <source>Not Present</source>
-        <translation type="unfinished">No está pPresente</translation>
+        <translation type="unfinished">No está presente</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="247"/>
