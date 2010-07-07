@@ -158,6 +158,7 @@ private slots:
     void showStatusBar();
     void updateIconsBox();
     void callScanH();
+    void callParFromBook();
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
@@ -177,7 +178,9 @@ private slots:
     void updateFontHostVuln(const QString hostName);
     void callSearchHistory();
     void saveBookMarks();
+    void saveBookMarksPar();
     void deleteBookMark();
+    void deleteBookMarkPar();
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
@@ -194,6 +197,7 @@ private slots:
     void nssOptions();
     void infoOptions();
     void bookOptions();
+    void bookOptionsPar();
 
     // Vuln extension
     void searchVuln();
@@ -203,6 +207,7 @@ private slots:
     //contest Menu
     void menuScanBook();
     void menuVulnBook();
+    void menuParBook();
 };
 
 #endif

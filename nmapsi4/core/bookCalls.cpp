@@ -32,19 +32,22 @@ void nmapClass::callSearchHistory()
 
 void nmapClass::saveBookMarks()
 {
-    if (hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty())
+    if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty()) {
         return;
+    }
 
     logHistory *history_ = NULL;
 
     switch(stackedMain->currentIndex()) {
       case 0:
         history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-        history_->addItemHistory(hostEdit->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+        history_->addItemHistory(hostEdit->currentText(),
+                                 QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
         break;
       case 2:
         history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-        history_->addItemHistory(comboVulnRis->currentText(), QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+        history_->addItemHistory(comboVulnRis->currentText(),
+                                 QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
         break;
       default:
         break;
@@ -55,12 +58,30 @@ void nmapClass::saveBookMarks()
     delete history_;
 }
 
-void nmapClass::deleteBookMark()
+void nmapClass::saveBookMarksPar()
 {
+    if(comboAdv->currentText().isEmpty()) {
+        return;
+    }
+
     logHistory *history_ = NULL;
 
-    if(!treeLogH->currentItem() && !treeBookVuln->currentItem())
+    history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+    history_->addItemHistory(comboAdv->currentText(),
+                             QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+
+    BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    history_->updateBookMarks();
+    delete history_;
+}
+
+void nmapClass::deleteBookMark()
+{
+    if(!treeLogH->currentItem() && !treeBookVuln->currentItem()) {
         return;
+    }
+
+    logHistory *history_ = NULL;
 
     switch(stackedMain->currentIndex()) {
       case 0:
@@ -74,6 +95,20 @@ void nmapClass::deleteBookMark()
       default:
         break;
     }
+
+    delete history_;
+}
+
+void nmapClass::deleteBookMarkPar()
+{
+    if(!treeBookPar->currentItem()) {
+        return;
+    }
+
+    logHistory *history_ = NULL;
+
+    history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+    history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
 
     delete history_;
 }

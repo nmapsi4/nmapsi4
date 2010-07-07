@@ -61,3 +61,24 @@ void nmapClass::menuVulnBook() {
 
     menuBook.exec(QCursor::pos());
 }
+
+void nmapClass::menuParBook() {
+    QAction removeBook(this);
+    removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
+    removeBook.setIconText(tr("Remove Scan Paramenters"));
+
+    QAction addBook(this);
+    addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    addBook.setIconText(tr("Use Parameters"));
+
+    connect(&addBook, SIGNAL(triggered()),
+                this, SLOT(callParFromBook()));
+    connect(&removeBook, SIGNAL(triggered()),
+            this, SLOT(deleteBookMarkPar()));
+
+    QMenu menuBook(this);
+    menuBook.addAction(&addBook);
+    menuBook.addAction(&removeBook);
+
+    menuBook.exec(QCursor::pos());
+}

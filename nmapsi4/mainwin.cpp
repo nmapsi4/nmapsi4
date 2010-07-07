@@ -83,6 +83,7 @@ void nmapClass::initObject() {
 
     listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
+    treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
     scanMonitor->setColumnWidth(1, 200);
     treeTraceroot->setColumnWidth(0, 250);
@@ -97,13 +98,18 @@ void nmapClass::initObject() {
     resize(size);
     move(pos);
 
-    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", hostCache);
+    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     historyScan_->updateBookMarks();
     delete historyScan_;
-    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", hostCache);
-    historyVuln_->updateBookMarks();
 
+    logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+    historyPar_->updateBookMarks();
+    delete historyScan_;
+
+    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    historyVuln_->updateBookMarks();
     delete historyVuln_;
+
     this->rootMode(uid); // send uid value
     dialog = new mainProfile();
 

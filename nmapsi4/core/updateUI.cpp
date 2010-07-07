@@ -328,22 +328,30 @@ void nmapClass::bookOptions() {
     updateIconsBox();
 }
 
+void nmapClass::bookOptionsPar() {
+    SWscan->setCurrentIndex(4);
+    updateIconsBox();
+}
+
 void nmapClass::updateIconsBox() {
 
     int tmpBox = SWscan->currentIndex();
     switch (tmpBox) {
-      case 0:
+    case 0:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 	break;
-      case 1:
+    case 1:
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
         break;
-      case 2:
+    case 2:
         Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
 	break;
-      case 3:
+    case 3:
         Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
 	break;
+    case 4:
+        BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+        break;
     }
 
 }

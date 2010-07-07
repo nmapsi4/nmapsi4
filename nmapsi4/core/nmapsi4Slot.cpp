@@ -133,6 +133,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(infoOptions()));
     connect(Bbook, SIGNAL(clicked()),
             this, SLOT(bookOptions()));
+    connect(BBPar, SIGNAL(clicked()),
+            this, SLOT(bookOptionsPar()));
 
     // Obj parser runtime
     connect(treeMain, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
@@ -149,6 +151,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(menuScanBook()));
     connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuVulnBook()));
+    connect(treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuParBook()));
 
     // Vuln signal
     connect(actSearch, SIGNAL(triggered()),
@@ -171,6 +175,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveBookMarks()));
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
+    connect(addBookPar, SIGNAL(clicked()),
+            this, SLOT(saveBookMarksPar()));
 
     // main session
     connect(scanSez, SIGNAL(triggered()),
