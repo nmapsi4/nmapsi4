@@ -27,9 +27,6 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
        par(parent)
 {
 
-    connect(par, SIGNAL(killScan()),
-            this, SLOT(stopProcess()));
-
 }
 
 void scanThread::run() {
@@ -39,6 +36,9 @@ void scanThread::run() {
 
      connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
              this, SLOT(setValue()));
+
+     connect(par, SIGNAL(killScan()),
+             this, SLOT(stopProcess()));
 
      qDebug() << "DEBUG::ThreadString:: " << ParList;
      proc->start("nmap", ParList);
