@@ -58,7 +58,7 @@ void digThread::stopProcess() {
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Stop Scan Process";
 #endif
-     if(proc) {
+     if(proc->state() == QProcess::Running) {
 	  proc->terminate();
      }
 }

@@ -26,7 +26,6 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
        ParList(parametri),
        par(parent)
 {
-
 }
 
 void scanThread::run() {
@@ -38,7 +37,7 @@ void scanThread::run() {
              this, SLOT(setValue()));
 
      connect(par, SIGNAL(killScan()),
-             this, SLOT(stopProcess()));
+             this, SLOT(stopProcess()),Qt::QueuedConnection);
 
      qDebug() << "DEBUG::ThreadString:: " << ParList;
      proc->start("nmap", ParList);
@@ -59,7 +58,10 @@ void scanThread::setValue() {
 
 void scanThread::stopProcess() {
      qDebug() << "scan() THREAD:: Clear Process";
-     if(proc) {
+     if(proc->state() == QProcess::Running) {
 	  proc->terminate();
+#ifdef Q_WS_WIN
+          proc->kill();
+#endif
      }
 }
