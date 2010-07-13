@@ -17,7 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "scanThread.h" 
+#include "scanThread.h"
+
+#ifdef Q_WS_WIN
+#include <windows.h>
+#endif
 
 scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
                        const QStringList parametri, QObject *parent)
@@ -61,7 +65,10 @@ void scanThread::stopProcess() {
      if(proc->state() == QProcess::Running) {
 	  proc->terminate();
 #ifdef Q_WS_WIN
-          proc->kill();
+          QString abort_cmd;
+          PROCESS_INFORMATION *pinfo = (PROCESS_INFORMATION)proc->pid();
+          abort_cmd = QString("cmd /c taskkill /PID %1 /F").arg(pinfo->dwProcessId);
+          QProcess::execute(abort_cmd);
 #endif
      }
 }
