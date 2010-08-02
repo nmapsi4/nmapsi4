@@ -566,67 +566,83 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Service / OS</source>
-        <translation type="unfinished"></translation>
+        <translation>Služba/OS</translation>
     </message>
     <message>
         <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Užitná doba:&lt;/b&gt; </translation>
     </message>
     <message>
         <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Sekvence Tcp:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Spuštění:&lt;/b&gt; </translation>
     </message>
     <message>
         <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Typ zařízení:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Popis služby:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Přípojka pro službu:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Vulnerability</source>
-        <translation type="unfinished"></translation>
+        <translation>Zranitelnost</translation>
     </message>
     <message>
         <source>Service(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Služba(y)</translation>
     </message>
     <message>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;O programu Nmapsi4</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrobnosti</translation>
     </message>
     <message>
         <source>Scan Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledat podrobnosti</translation>
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrobnosti hostitele</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít</translation>
     </message>
     <message>
         <source>Services</source>
-        <translation type="unfinished">Služby</translation>
+        <translation>Služby</translation>
+    </message>
+    <message>
+        <source>Scan parameters bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks parameters</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1076,47 +1092,55 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>no Host selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nevybrán žádný hostitelský počítač (server)</translation>
     </message>
     <message>
         <source>no Service selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nevybrána žádná služba</translation>
     </message>
     <message>
         <source>Enable/Disable Manual Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit/Zakázat ruční parametry</translation>
     </message>
     <message>
         <source>Remove Host</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit hostitelský počítač (server)</translation>
     </message>
     <message>
         <source>Scan Host</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledat hostitelský počítač - (server)</translation>
     </message>
     <message>
         <source>Remove Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit službu</translation>
     </message>
     <message>
         <source>Search for vulnerabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat zranitelnosti</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Hledat</translation>
+        <translation>Hledat</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished">Vpřed</translation>
+        <translation>Vpřed</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Zastavit</translation>
+        <translation>Zastavit</translation>
+    </message>
+    <message>
+        <source>Remove Scan Paramenters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Parameters</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

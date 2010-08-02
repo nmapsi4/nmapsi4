@@ -599,6 +599,22 @@
         <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scan parameters bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -1084,6 +1100,14 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Scan Paramenters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Parameters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
