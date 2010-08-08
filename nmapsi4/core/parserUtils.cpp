@@ -71,7 +71,9 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     }
 
     int indexObj = treeMain->indexOfTopLevelItem(item);
+#ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::ItemIndex:: " << indexObj;
+#endif
 
     listWscan->collapseAll();
     listWscan->topLevelItem(indexObj)->setExpanded(true);

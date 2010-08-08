@@ -27,6 +27,7 @@
 #include <QObject>
 #include <QMetaType>
 #include <QtDebug>
+#include "../nmapsi4Debug.h"
 
 
 class scanThread : public QThread

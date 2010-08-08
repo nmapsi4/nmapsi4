@@ -25,6 +25,7 @@
 #include <QString>
 #include <QMetaType>
 #include <QtNetwork/QHostInfo>
+#include "../nmapsi4Debug.h"
 
 
 class lookUpT : public QThread

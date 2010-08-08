@@ -32,7 +32,9 @@ void lookUpT::run() {
     info = QHostInfo::fromName(host);
 
     if(info.error() != QHostInfo::NoError && info.error() != QHostInfo::UnknownError) {
+#ifdef LOOKUP_NO_THREAD
          qDebug() << "Lookup failed:" << info.errorString();
+#endif
          emit threadEnd(info, -1, host);
          return;
      }
@@ -40,6 +42,8 @@ void lookUpT::run() {
 }
 
 void lookUpT::killLookup() {
+#ifdef LOOKUP_NO_THREAD
     qDebug() << "Lookup::kill --> call";
+#endif
     info.abortHostLookup(info.lookupId());
 }

@@ -43,25 +43,35 @@ void scanThread::run() {
      connect(par, SIGNAL(killScan()),
              this, SLOT(stopProcess()),Qt::QueuedConnection);
 
+#ifndef THREAD_NO_DEBUG
      qDebug() << "DEBUG::ThreadString:: " << ParList;
+#endif
+
      proc->start("nmap", ParList);
      
      exec();
      emit upgradePR();
      emit threadEnd(ParList[ParList.size()-1], pout, perr);
+
+#ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Quit";
+#endif
  }
 
 void scanThread::setValue() {
+
+#ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: -> start";
+#endif
      pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
-     //delete proc;
      exit(0);
 }
 
 void scanThread::stopProcess() {
+#ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Clear Process";
+#endif
      if(proc->state() == QProcess::Running) {
 	  proc->terminate();
 #ifdef Q_WS_WIN
