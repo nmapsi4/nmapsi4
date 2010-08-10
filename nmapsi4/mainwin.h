@@ -48,7 +48,6 @@ private:
     void isEmptyLog();
     void setNmapsiSlot();
     QFile* create_logFile(const QString Path);
-    QStringList check_extensions(QString& winTitle);
     QStringList check_extensions();
     void resetOptions();
     void checkProfile();
@@ -57,6 +56,7 @@ private:
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
+    void updateScanCounter(int type);
     bool isDns(QString hostname);
     QString clearHost(const QString hostname);
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
@@ -101,6 +101,7 @@ protected:
     bool NSSsupport;
     bool ADVSupport;
     int hostCache;
+    int scanCounter;
     QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListLook;
     QList<QTreeWidgetItem*> monitorElem;

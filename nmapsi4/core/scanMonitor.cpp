@@ -36,6 +36,7 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
     monitorElemHost.push_front(hostThread->text(0));
     monitorElemOptions.push_front(hostThread->text(1));
     monitorElemState.push_front(hostThread->text(2));
+    updateScanCounter(1);
 }
 
 
@@ -75,10 +76,34 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 	  monitorElem.push_front(item);
      }
 
+     QString title("Nmapsi4 ");
+
      if(monitorElemHost.size() == 0) {
          actionStop_Scan->setEnabled(false);
          tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/world.png")));
      }
+
+     updateScanCounter(0);
      
+}
+
+void nmapClass::updateScanCounter(int type) {
+    /*
+     *   type 1: scan counter ++
+     *   type 0: scan counter --
+     */
+    QString title("Nmapsi4 -");
+    title.append(tr(" Active Scan "));
+    title.append("(");
+
+    if(type) {
+        scanCounter++;
+    } else {
+        scanCounter--;
+    }
+
+    title.append(QString("%1").arg(scanCounter));
+    title.append(")");
+    setWindowTitle(title);
 }
 

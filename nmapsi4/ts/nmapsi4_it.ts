@@ -80,6 +80,11 @@
         <translation>Porte ordinate</translation>
     </message>
     <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1539"/>
+        <source>Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1597"/>
         <source>Scan parameters bookmark</source>
         <translation type="unfinished"></translation>
@@ -320,11 +325,6 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1581"/>
         <source>Save &amp;As</source>
         <translation>Salva &amp;come</translation>
-    </message>
-    <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1539"/>
-        <source>NmapSI4[*]</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1550"/>
@@ -1006,39 +1006,39 @@
 <context>
     <name>nmapClass</name>
     <message>
-        <location filename="../core/extensions.cpp" line="154"/>
+        <location filename="../core/extensions.cpp" line="141"/>
         <source>No Ports Range (ex: 20-80)
 </source>
         <translation>Manca l&apos;intervallo delle porte (es: 20-80)
 </translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="154"/>
+        <location filename="../core/extensions.cpp" line="141"/>
         <location filename="../core/hostCheck.cpp" line="31"/>
         <location filename="../core/saveLog.cpp" line="27"/>
         <location filename="../core/saveLog.cpp" line="48"/>
         <location filename="../core/saveLog.cpp" line="88"/>
-        <location filename="../core/saveLog.cpp" line="123"/>
+        <location filename="../core/saveLog.cpp" line="122"/>
         <location filename="../core/toolsUI.cpp" line="143"/>
         <location filename="../core/updateUI.cpp" line="274"/>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="126"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="169"/>
+        <location filename="../core/extensions.cpp" line="153"/>
         <source>no input file
 </source>
         <translation>Nessun file in ingresso
 </translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="169"/>
+        <location filename="../core/extensions.cpp" line="153"/>
         <source>Normal Scan</source>
         <translation>Scan predefinito</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="362"/>
+        <location filename="../core/nmapParser.cpp" line="361"/>
         <source>No Ports</source>
         <translation>Nessuna porta</translation>
     </message>
@@ -1049,9 +1049,9 @@
 Nessuna informazione per la scansione</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="391"/>
-        <location filename="../core/nmapParser.cpp" line="462"/>
-        <location filename="../core/nmapParser.cpp" line="490"/>
+        <location filename="../core/nmapParser.cpp" line="390"/>
+        <location filename="../core/nmapParser.cpp" line="461"/>
+        <location filename="../core/nmapParser.cpp" line="489"/>
         <source>No Info</source>
         <translation>Nessuna informazione</translation>
     </message>
@@ -1062,7 +1062,7 @@ Nessuna informazione per la scansione</translation>
 Nessuna informazione per l&apos;host</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="549"/>
+        <location filename="../core/nmapParser.cpp" line="548"/>
         <source>
 (Report: </source>
         <translation>
@@ -1081,14 +1081,14 @@ Rapporto:</translation>
         <translation type="obsolete">, Filtrato/Non filtrato: </translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="543"/>
+        <location filename="../core/nmapParser.cpp" line="542"/>
         <source>
 (No Errors or Warnings)</source>
         <translation>
 Nessun errore o avvertimento</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="550"/>
+        <location filename="../core/nmapParser.cpp" line="549"/>
         <source>Errors or Warnings: </source>
         <translation>Errori o avvertimenti:</translation>
     </message>
@@ -1109,7 +1109,7 @@ Nessun errore o avvertimento</translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="87"/>
-        <location filename="../core/saveLog.cpp" line="122"/>
+        <location filename="../core/saveLog.cpp" line="121"/>
         <source>Information</source>
         <translation>Informazioni</translation>
     </message>
@@ -1122,7 +1122,7 @@ Nessun errore o avvertimento</translation>
 </translation>
     </message>
     <message>
-        <location filename="../core/saveLog.cpp" line="123"/>
+        <location filename="../core/saveLog.cpp" line="122"/>
         <source>Save File permission Error
 </source>
         <translation>Errore nei permessi del file
@@ -1173,12 +1173,12 @@ MS Windows Packages: el.diabl09@gmail.com
 </translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="36"/>
+        <location filename="../mainwin.cpp" line="37"/>
         <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
         <translation>Inserisci [ip] o [dns] o [gruppo di ip] o [lista di ip/dns separata da spazi] per la scansione (es. 192.168.1.10/20)</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="39"/>
+        <location filename="../mainwin.cpp" line="40"/>
         <source>Search Vulnerabilities</source>
         <translation>Cerca vulnerabilità</translation>
     </message>
@@ -1243,17 +1243,17 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation type="unfinished">Ferma</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="65"/>
+        <location filename="../mainwin.cpp" line="66"/>
         <source>no Host selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="71"/>
+        <location filename="../mainwin.cpp" line="72"/>
         <source>no Service selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="126"/>
         <source>No Host Target
 </source>
         <translation>Nessun host specificato
@@ -1339,14 +1339,14 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation></translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="59"/>
+        <location filename="../core/extensions.cpp" line="50"/>
         <source>No Ftp Address 
 </source>
         <translation>Manca l&apos;indirizzo ftp
 </translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="59"/>
+        <location filename="../core/extensions.cpp" line="50"/>
         <source>Disable Ftp bounce</source>
         <translation>Disabilita FTP Bounce</translation>
     </message>
@@ -1361,7 +1361,7 @@ MS Windows Packages: el.diabl09@gmail.com
         <translation>&lt;b&gt;Mode:&lt;/b&gt; </translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="312"/>
+        <location filename="../core/nmapParser.cpp" line="311"/>
         <source>No description</source>
         <translation></translation>
     </message>
@@ -1430,6 +1430,11 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../core/actionMenu.cpp" line="72"/>
         <source>Use Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/scanMonitor.cpp" line="96"/>
+        <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

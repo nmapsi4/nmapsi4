@@ -5,7 +5,7 @@
     <name>MainWindow</name>
     <message>
         <source>NmapSI4[*]</source>
-        <translation>NmapSI4[*]</translation>
+        <translation type="obsolete">NmapSI4[*]</translation>
     </message>
     <message>
         <source>HostName:</source>
@@ -615,6 +615,10 @@
         <source>Bookmarks parameters</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -1108,6 +1112,10 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Use Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

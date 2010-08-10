@@ -88,7 +88,6 @@ void nmapClass::saveAsLog()
                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
 
         logSessionFile = FileNameTmp;
-        this->setWindowModified(false);
     }
 
     delete tmpFile;
@@ -122,6 +121,5 @@ void nmapClass::saveLog()
         QMessageBox::critical(this, tr("Information"),
                               tr("Save File permission Error\n"), tr("Close"));
 
-    this->setWindowModified(false);
     delete tmpFile;
 }

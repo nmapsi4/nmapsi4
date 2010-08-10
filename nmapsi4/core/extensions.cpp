@@ -19,20 +19,11 @@
 
 #include "../mainwin.h"
 
-QStringList nmapClass::check_extensions() {
-    QString empty;
-    return check_extensions(empty);
-}
-
-
-QStringList nmapClass::check_extensions(QString& winTitle)
+QStringList nmapClass::check_extensions()
 {
     QStringList parametri;
 
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(10); // start progress bar
-        this->setWindowTitle(winTitle.append("(10%)"));
-    }
+    progressScan->setValue(10); // start progress bar
 
     if(NSSsupport) {
         parametri << "-A";
@@ -112,10 +103,9 @@ QStringList nmapClass::check_extensions(QString& winTitle)
         break;
 
     }
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(15);
-        this->setWindowTitle(winTitle.replace("(10%)", "(15%)"));
-    }
+
+    progressScan->setValue(15);
+
 
     // start option scan
     if (rpcBox->isChecked())
@@ -131,10 +121,7 @@ QStringList nmapClass::check_extensions(QString& winTitle)
         parametri << "-O";
     //end Extension
 
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(20);
-        this->setWindowTitle(winTitle.replace("(15%)", "(20%)"));
-    }
+    progressScan->setValue(20);
 
     switch (portCombo->currentIndex()) { // port combo check
     case 1:
@@ -156,10 +143,7 @@ QStringList nmapClass::check_extensions(QString& winTitle)
         break;
     }
 
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(30);
-        this->setWindowTitle(winTitle.replace("(20%)", "(30%)"));
-    }
+    progressScan->setValue(30);
 
     if (checkInputFile->isChecked()) { // File options
         if (!lineInputFile->text().isEmpty()) {
@@ -275,10 +259,7 @@ QStringList nmapClass::check_extensions(QString& winTitle)
     if (checkFrag->isChecked())
         parametri << "-f"; // Ipv6
 
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(50);
-        this->setWindowTitle(winTitle.replace("(30%)", "(50%)"));
-    }
+    progressScan->setValue(50);
 
     // Timing options
     if (TcheckIpv4ttl->isChecked()) {
@@ -366,11 +347,7 @@ QStringList nmapClass::check_extensions(QString& winTitle)
         }
     }
 
-    if(!winTitle.isEmpty()) {
-        progressScan->setValue(55);
-        this->setWindowTitle(winTitle.replace("(50%)", "(55%)"));
-    }
-
+    progressScan->setValue(55);
 
     return parametri;
 }

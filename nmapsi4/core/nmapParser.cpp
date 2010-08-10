@@ -44,7 +44,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     StderrorStr = new QString(Byte2); // read error buffer
 
     progressScan->setValue(75);
-    this->setWindowTitle(title.append("(75%)"));
     
     QTextStream stream(StdoutStr);
     QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot,bufferNSS;
@@ -567,9 +566,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     Byte2.clear();
 
     progressScan->setValue(85);
-    setWindowTitle(title.replace("(75%)", "(85%)"));
-    progressScan->setValue(100);
-    setWindowTitle(title.replace("(85%)", "(100%) [*]"));
+    if(!scanCounter) {
+        progressScan->setValue(100);
+    } else {
+        progressScan->setValue(55);
+    }
 
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
@@ -580,6 +581,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	actionSave->setEnabled(true);
 	actionSave_Menu->setEnabled(true);
     }
-    setWindowModified(true);
+
     parserObjList.append(elemObj);
 }

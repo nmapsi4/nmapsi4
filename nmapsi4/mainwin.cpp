@@ -21,6 +21,7 @@
 
 nmapClass::nmapClass()
      : PFile(NULL),
+       scanCounter(0),
        labelVersion(NULL),
        userMode(NULL),
        th(NULL)
@@ -216,12 +217,10 @@ void nmapClass::scan(const QString hostname)
 
 
     QStringList parametri; //parameters list declaration
-    QString title;
 
     history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
 
-    title.append("NmapSI4 ");
     actionStop_Scan->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
@@ -229,7 +228,7 @@ void nmapClass::scan(const QString hostname)
     actionSave_Menu->setEnabled(false);
 
     if(!frameAdv->isVisible()) {
-        parametri = this->check_extensions(title); // extensions.cpp
+        parametri = this->check_extensions(); // extensions.cpp
     } else {
         parametri = comboAdv->lineEdit()->text().split(" ");
     }

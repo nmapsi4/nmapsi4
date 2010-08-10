@@ -15,11 +15,6 @@
         <translation>Información de Host(s)</translation>
     </message>
     <message>
-        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1539"/>
-        <source>NmapSI4[*]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1540"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1548"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1558"/>
@@ -300,6 +295,11 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1613"/>
         <source>Nss script result</source>
         <translation>Resultado del script NSS </translation>
+    </message>
+    <message>
+        <location filename="../../build/nmapsi4/ui_mainwin.h" line="1539"/>
+        <source>Nmapsi4</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1597"/>
@@ -934,84 +934,84 @@
 <context>
     <name>nmapClass</name>
     <message>
-        <location filename="../core/nmapParser.cpp" line="362"/>
+        <location filename="../core/nmapParser.cpp" line="361"/>
         <source>No Ports</source>
         <translation type="unfinished">Sin Puertos</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="391"/>
-        <location filename="../core/nmapParser.cpp" line="462"/>
-        <location filename="../core/nmapParser.cpp" line="490"/>
+        <location filename="../core/nmapParser.cpp" line="390"/>
+        <location filename="../core/nmapParser.cpp" line="461"/>
+        <location filename="../core/nmapParser.cpp" line="489"/>
         <source>No Info</source>
         <translation type="unfinished">Sin información</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="549"/>
+        <location filename="../core/nmapParser.cpp" line="548"/>
         <source>
 (Report: </source>
         <translation type="unfinished">
 (Reporte: </translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="543"/>
+        <location filename="../core/nmapParser.cpp" line="542"/>
         <source>
 (No Errors or Warnings)</source>
         <translation type="unfinished">
 (No hay errores ni peligros)</translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="550"/>
+        <location filename="../core/nmapParser.cpp" line="549"/>
         <source>Errors or Warnings: </source>
         <translation>Errores o Peligros:</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="59"/>
+        <location filename="../core/extensions.cpp" line="50"/>
         <source>No Ftp Address 
 </source>
         <translation type="unfinished">No hay una Dirección FTP</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="59"/>
+        <location filename="../core/extensions.cpp" line="50"/>
         <source>Disable Ftp bounce</source>
         <translation type="unfinished">Desactivar FTP bounce</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="154"/>
+        <location filename="../core/extensions.cpp" line="141"/>
         <source>No Ports Range (ex: 20-80)
 </source>
         <translation type="unfinished">No hay un Rango de Puertos (ex: 20-80)</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="154"/>
+        <location filename="../core/extensions.cpp" line="141"/>
         <location filename="../core/hostCheck.cpp" line="31"/>
         <location filename="../core/saveLog.cpp" line="27"/>
         <location filename="../core/saveLog.cpp" line="48"/>
         <location filename="../core/saveLog.cpp" line="88"/>
-        <location filename="../core/saveLog.cpp" line="123"/>
+        <location filename="../core/saveLog.cpp" line="122"/>
         <location filename="../core/toolsUI.cpp" line="143"/>
         <location filename="../core/updateUI.cpp" line="274"/>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="126"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="169"/>
+        <location filename="../core/extensions.cpp" line="153"/>
         <source>no input file
 </source>
         <translation type="unfinished">No hay un fichero de entrada</translation>
     </message>
     <message>
-        <location filename="../core/extensions.cpp" line="169"/>
+        <location filename="../core/extensions.cpp" line="153"/>
         <source>Normal Scan</source>
         <translation type="unfinished">Scaneo Normal</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="36"/>
+        <location filename="../mainwin.cpp" line="37"/>
         <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
         <translation type="unfinished">Para scanear ingrese una [ip] o [dns] o [un rango de ip] o [lista de ip/dns con espacios como separadores] (ejemplo de rango ip. 192.168.1.10/20)</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="39"/>
+        <location filename="../mainwin.cpp" line="40"/>
         <source>Search Vulnerabilities</source>
         <translation type="unfinished">Buscar Vulnerabilidades</translation>
     </message>
@@ -1076,17 +1076,17 @@
         <translation>Detener</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="65"/>
+        <location filename="../mainwin.cpp" line="66"/>
         <source>no Host selected</source>
         <translation type="unfinished">No se ha seleccionado un Host</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="71"/>
+        <location filename="../mainwin.cpp" line="72"/>
         <source>no Service selected</source>
         <translation type="unfinished">No se ha seleccionado un Servicio</translation>
     </message>
     <message>
-        <location filename="../mainwin.cpp" line="125"/>
+        <location filename="../mainwin.cpp" line="126"/>
         <source>No Host Target
 </source>
         <translation type="unfinished">No se ha seleccionado un Host como objetivo</translation>
@@ -1201,12 +1201,12 @@
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="87"/>
-        <location filename="../core/saveLog.cpp" line="122"/>
+        <location filename="../core/saveLog.cpp" line="121"/>
         <source>Information</source>
         <translation type="unfinished">Información</translation>
     </message>
     <message>
-        <location filename="../core/saveLog.cpp" line="123"/>
+        <location filename="../core/saveLog.cpp" line="122"/>
         <source>Save File permission Error
 </source>
         <translation type="unfinished">Guardar el archivo de Errores de Permisos</translation>
@@ -1217,7 +1217,7 @@
         <translation type="unfinished">&lt;b&gt;Modo:&lt;/b&gt; </translation>
     </message>
     <message>
-        <location filename="../core/nmapParser.cpp" line="312"/>
+        <location filename="../core/nmapParser.cpp" line="311"/>
         <source>No description</source>
         <translation type="unfinished">No hay descripción</translation>
     </message>
@@ -1287,6 +1287,11 @@
     <message>
         <location filename="../core/actionMenu.cpp" line="72"/>
         <source>Use Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/scanMonitor.cpp" line="96"/>
+        <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

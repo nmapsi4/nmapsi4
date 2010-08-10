@@ -39,7 +39,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>NmapSI4[*]</string>
+   <string>Nmapsi4</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../mainwin.qrc">
