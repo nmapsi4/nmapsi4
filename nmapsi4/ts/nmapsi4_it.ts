@@ -939,8 +939,8 @@
 <context>
     <name>logHistory</name>
     <message>
-        <location filename="../../lib/history/loghistory.cpp" line="137"/>
-        <location filename="../../lib/history/loghistory.cpp" line="189"/>
+        <location filename="../../lib/history/loghistory.cpp" line="139"/>
+        <location filename="../../lib/history/loghistory.cpp" line="191"/>
         <source>Your configuration file is too old, please delete it</source>
         <translation>Il file di configurazione è troppo vecchio, si prega di eliminarlo</translation>
     </message>

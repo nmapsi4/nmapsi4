@@ -23,7 +23,9 @@ QStringList nmapClass::check_extensions()
 {
     QStringList parametri;
 
-    progressScan->setValue(10); // start progress bar
+    if(scanCounter) {
+        progressScan->setValue(10); // start progress bar
+    }
 
     if(NSSsupport) {
         parametri << "-A";
@@ -104,7 +106,9 @@ QStringList nmapClass::check_extensions()
 
     }
 
-    progressScan->setValue(15);
+    if(scanCounter) {
+        progressScan->setValue(15);
+    }
 
 
     // start option scan
@@ -121,7 +125,9 @@ QStringList nmapClass::check_extensions()
         parametri << "-O";
     //end Extension
 
-    progressScan->setValue(20);
+    if(scanCounter) {
+        progressScan->setValue(20);
+    }
 
     switch (portCombo->currentIndex()) { // port combo check
     case 1:
@@ -143,7 +149,9 @@ QStringList nmapClass::check_extensions()
         break;
     }
 
-    progressScan->setValue(30);
+    if(scanCounter) {
+        progressScan->setValue(30);
+    }
 
     if (checkInputFile->isChecked()) { // File options
         if (!lineInputFile->text().isEmpty()) {
@@ -259,7 +267,9 @@ QStringList nmapClass::check_extensions()
     if (checkFrag->isChecked())
         parametri << "-f"; // Ipv6
 
-    progressScan->setValue(50);
+    if(scanCounter) {
+        progressScan->setValue(50);
+    }
 
     // Timing options
     if (TcheckIpv4ttl->isChecked()) {
@@ -346,8 +356,9 @@ QStringList nmapClass::check_extensions()
             checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }
-
-    progressScan->setValue(55);
+    if(scanCounter) {
+        progressScan->setValue(55);
+    }
 
     return parametri;
 }
