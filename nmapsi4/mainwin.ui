@@ -127,7 +127,7 @@
           </size>
          </property>
          <property name="toolTip">
-          <string>Scan parameters bookmark</string>
+          <string>Save Profile</string>
          </property>
          <property name="text">
           <string/>
@@ -152,11 +152,6 @@
          <property name="insertPolicy">
           <enum>QComboBox::InsertAfterCurrent</enum>
          </property>
-         <item>
-          <property name="text">
-           <string>Select Saved Profile</string>
-          </property>
-         </item>
         </widget>
        </item>
       </layout>
