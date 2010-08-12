@@ -600,10 +600,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Scan parameters bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>IP List</source>
         <translation type="unfinished"></translation>
     </message>
@@ -617,6 +613,10 @@
     </message>
     <message>
         <source>Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Profile</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
