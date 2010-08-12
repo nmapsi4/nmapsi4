@@ -177,6 +177,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveBookMarks()));
     connect(addBookPar, SIGNAL(clicked()),
             this, SLOT(saveBookMarksPar()));
+    connect(comboPar, SIGNAL(currentIndexChanged(const QString&)),
+            this, SLOT(slotParSelected()));
 
     // main session
     connect(scanSez, SIGNAL(triggered()),

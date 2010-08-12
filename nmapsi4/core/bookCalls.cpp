@@ -73,6 +73,7 @@ void nmapClass::saveBookMarksPar()
     BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
     history_->updateBookMarks();
     delete history_;
+    updateComboPar();
 }
 
 void nmapClass::deleteBookMark()
@@ -111,5 +112,24 @@ void nmapClass::deleteBookMarkPar()
     history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
 
     delete history_;
+    updateComboPar();
 }
 
+void nmapClass::callParFromBook()
+{
+    if(!frameAdv->isVisible()) {
+        frameAdv->setVisible(true);
+    }
+
+     if(treeBookPar->currentItem()) {
+        comboAdv->setItemText(0, treeBookPar->currentItem()->text(0));
+    }
+}
+
+void nmapClass::slotParSelected() {
+    if(comboPar->currentIndex()) {
+       comboAdv->setItemText(0, comboPar->currentText());
+   } else {
+       comboAdv->setItemText(0, check_extensions().join(" "));
+   }
+}

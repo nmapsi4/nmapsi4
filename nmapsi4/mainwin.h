@@ -63,6 +63,8 @@ private:
     void showParserObj(int indexObj);
     void setTreeWidgetValues();
     void createBar();
+    void updateComboPar();
+
 
 public:
     nmapClass();
@@ -209,6 +211,7 @@ private slots:
     void menuScanBook();
     void menuVulnBook();
     void menuParBook();
+    void slotParSelected();
 };
 
 #endif

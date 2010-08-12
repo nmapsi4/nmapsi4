@@ -102,7 +102,7 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
+       <item row="0" column="3">
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -139,6 +139,24 @@
          <property name="flat">
           <bool>true</bool>
          </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QComboBox" name="comboPar">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAfterCurrent</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string>Select Saved Profile</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>

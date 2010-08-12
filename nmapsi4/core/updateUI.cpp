@@ -510,3 +510,15 @@ void nmapClass::resetPar() {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboAdv->insertItem(0, check_extensions().join(" "));
 }
+
+void nmapClass::updateComboPar() {
+
+    comboPar->clear();
+    comboPar->insertItem(0, "Select Saved Profile");
+
+    for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
+        qDebug() << "DEBUG::Tree Par Elem:: " << treeBookPar->topLevelItem(index)->text(0);
+        comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(0));
+    }
+
+}

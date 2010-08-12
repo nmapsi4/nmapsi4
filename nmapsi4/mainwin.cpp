@@ -118,6 +118,7 @@ void nmapClass::initObject() {
     parAct->setChecked(ADVSupport); // set ADV support
     parAdv();
     NSSCheck();
+    updateComboPar();
 }
 
 void nmapClass::startScan() {

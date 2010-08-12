@@ -282,17 +282,6 @@ void nmapClass::callScanH()
     }
 }
 
-void nmapClass::callParFromBook()
-{
-    if(!frameAdv->isVisible()) {
-        frameAdv->setVisible(true);
-    }
-
-     if(treeBookPar->currentItem()) {
-        comboAdv->setItemText(0, treeBookPar->currentItem()->text(0));
-    }
-}
-
 void nmapClass::createBar() {
     // QToolBar asction
     scanSez = new QAction(this);
