@@ -82,27 +82,27 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1547"/>
         <source>Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1615"/>
         <source>Service / OS</source>
-        <translation type="unfinished"></translation>
+        <translation>Servizio / OS</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1626"/>
         <source>IP List</source>
-        <translation type="unfinished"></translation>
+        <translation>Elenco IP</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1629"/>
         <source>Parameters List</source>
-        <translation type="unfinished"></translation>
+        <translation>Elenco parametri</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1634"/>
         <source>Bookmarks parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Segnalibro parametri</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1660"/>
@@ -384,7 +384,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1554"/>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1598"/>
@@ -399,7 +399,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1630"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Dettagli</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1621"/>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1609"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulisci</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1631"/>
@@ -419,7 +419,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1635"/>
         <source>Scan Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Dettagli di scansione</translation>
     </message>
     <message>
         <source>Show Scan Parameters</source>
@@ -533,7 +533,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1713"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Applica</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1722"/>
@@ -568,42 +568,42 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1731"/>
         <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1732"/>
         <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1733"/>
         <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;In esecuzione: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1734"/>
         <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Tipo del dispositivo: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1740"/>
         <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Descrizione Servizio: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1741"/>
         <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Porta del Servizio: &lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1742"/>
         <source>Vulnerability</source>
-        <translation type="unfinished"></translation>
+        <translation>Vulnerabilità</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1730"/>
         <source>Service(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Servizi</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1773"/>
@@ -660,7 +660,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1605"/>
         <source>Save Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva profilo</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1716"/>
@@ -670,7 +670,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1743"/>
         <source>Host Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Dettagli host</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1749"/>
@@ -680,7 +680,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1752"/>
         <source>Services</source>
-        <translation type="unfinished">Servizi</translation>
+        <translation>Servizi</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1762"/>
@@ -1220,37 +1220,37 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../core/toolsUI.cpp" line="317"/>
         <source>Enable/Disable Manual Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita / Disabilita parametri manuali</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="332"/>
         <source>Search</source>
-        <translation type="unfinished">Cerca</translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="336"/>
         <source>Back</source>
-        <translation type="unfinished">Indietro</translation>
+        <translation>Indietro</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="340"/>
         <source>Forward</source>
-        <translation type="unfinished">Avanti</translation>
+        <translation>Avanti</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="344"/>
         <source>Stop</source>
-        <translation type="unfinished">Ferma</translation>
+        <translation>Ferma</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="66"/>
         <source>no Host selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun host selezionato</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="72"/>
         <source>no Service selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun servizio selezionato</translation>
     </message>
     <message>
         <location filename="../mainwin.cpp" line="127"/>
@@ -1405,37 +1405,37 @@ MS Windows Packages: el.diabl09@gmail.com
     <message>
         <location filename="../core/actionMenu.cpp" line="26"/>
         <source>Remove Host</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi host</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="30"/>
         <source>Scan Host</source>
-        <translation type="unfinished"></translation>
+        <translation>Scansione host</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="47"/>
         <source>Remove Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi servizio</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="51"/>
         <source>Search for vulnerabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca vulnerabilità</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="68"/>
         <source>Remove Scan Paramenters</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi parametro di scansione</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="72"/>
         <source>Use Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa parametri</translation>
     </message>
     <message>
         <location filename="../core/scanMonitor.cpp" line="96"/>
         <source> Active Scan </source>
-        <translation type="unfinished"></translation>
+        <translation>Scan in esecuzione</translation>
     </message>
 </context>
 </TS>

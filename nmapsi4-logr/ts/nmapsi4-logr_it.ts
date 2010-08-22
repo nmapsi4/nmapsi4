@@ -73,7 +73,7 @@
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="193"/>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="200"/>
