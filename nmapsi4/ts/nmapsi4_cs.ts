@@ -21,11 +21,11 @@
     </message>
     <message>
         <source>Host(s)</source>
-        <translation>Hostitelský(é) počítač(e) - server(y)</translation>
+        <translation>Server</translation>
     </message>
     <message>
         <source>Host(s) Info</source>
-        <translation>Informace o hostitelském(ých) počítači(ích) - serveru(ech)</translation>
+        <translation>Informace o serveru(ech)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Bounce Host</source>
-        <translation>Odmítnout hostitelský počítač (server)</translation>
+        <translation>Odmítnout server</translation>
     </message>
     <message>
         <source>Connect Scan</source>
@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Host List</source>
-        <translation>Seznam hostitelských počítačů (serverů)</translation>
+        <translation>Seznam serverů</translation>
     </message>
     <message>
         <source>FTP Bounce Attack</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Host Timeout</source>
-        <translation>Překročení času u hostitelského počítače (serveru)</translation>
+        <translation>Překročení času u serveru</translation>
     </message>
     <message>
         <source>Ipv4 TTL</source>
@@ -354,11 +354,11 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Clear HostName</source>
-        <translation>Smazat název hostitelského počítače (serveru)</translation>
+        <translation>Smazat název serveru</translation>
     </message>
     <message>
         <source>Clear Hostname IP</source>
-        <translation>Smazat IP u názvu hostitelského počítače (serveru)</translation>
+        <translation>Smazat IP u názvu serveru</translation>
     </message>
     <message>
         <source>Save As</source>
@@ -474,7 +474,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Host Thread</source>
-        <translation>Vlákno hostitelského počítače (serveru)</translation>
+        <translation>Vlákno serveru</translation>
     </message>
     <message>
         <source>Scan Monitor</source>
@@ -614,7 +614,7 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Host Details</source>
-        <translation>Podrobnosti hostitele</translation>
+        <translation>Podrobnosti o serveru</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -630,23 +630,23 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>IP List</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam IP</translation>
     </message>
     <message>
         <source>Parameters List</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam pomocných proměnných</translation>
     </message>
     <message>
         <source>Bookmarks parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomocné proměnné záložek</translation>
     </message>
     <message>
         <source>Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Nmapsi4</translation>
     </message>
     <message>
         <source>Save Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit profil</translation>
     </message>
 </context>
 <context>
@@ -1006,7 +1006,7 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source>No Host Target
 </source>
-        <translation>Žádný cíl s hostitelským počítačem (serverem)</translation>
+        <translation>Žádný cíl se serverem</translation>
     </message>
     <message>
         <source>No Ftp Address 
@@ -1056,11 +1056,11 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Insert HostName to scan</source>
-        <translation>Vložit název hostitelského počítače (serveru) k prohledání</translation>
+        <translation>Vložit název serveru k prohledání</translation>
     </message>
     <message>
         <source>Scan host(s)</source>
-        <translation>Prohledat hostitelský(é) počítač(e) - server(y)</translation>
+        <translation>Prohledat server(y)</translation>
     </message>
     <message>
         <source>Log</source>
@@ -1096,7 +1096,7 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>no Host selected</source>
-        <translation>Nevybrán žádný hostitelský počítač (server)</translation>
+        <translation>Nevybrán žádný server</translation>
     </message>
     <message>
         <source>no Service selected</source>
@@ -1108,11 +1108,11 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Remove Host</source>
-        <translation>Odstranit hostitelský počítač (server)</translation>
+        <translation>Odstranit server</translation>
     </message>
     <message>
         <source>Scan Host</source>
-        <translation>Prohledat hostitelský počítač - (server)</translation>
+        <translation>Prohledat server</translation>
     </message>
     <message>
         <source>Remove Service</source>
@@ -1140,15 +1140,15 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source>Remove Scan Paramenters</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit pomocné proměnné prohledávání</translation>
     </message>
     <message>
         <source>Use Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít pomocné proměnné</translation>
     </message>
     <message>
         <source> Active Scan </source>
-        <translation type="unfinished"></translation>
+        <translation> Činné prohledávání </translation>
     </message>
 </context>
 </TS>
