@@ -26,7 +26,7 @@
 #define MAIN_NO_DEBUG
 #define SAVELOG_NO_DEBUG
 #define TOOLS_NO_DEBUG
-#define PARSER_NO_DEBUG
+//define PARSER_NO_DEBUG
 #define DIG_NO_DEBUG
 //#define THREAD_NO_DEBUG
 #define LOOKUP_NO_DEBUG
