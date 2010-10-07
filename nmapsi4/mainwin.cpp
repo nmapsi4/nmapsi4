@@ -105,7 +105,7 @@ void nmapClass::initObject() {
 
     logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
     historyPar_->updateBookMarks();
-    delete historyScan_;
+    delete historyPar_;
 
     logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     historyVuln_->updateBookMarks();
