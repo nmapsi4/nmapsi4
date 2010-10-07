@@ -90,7 +90,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1578"/>
         <source>Clear Hostname IP</source>
-        <translation type="unfinished">Limpiar IP de Hostname</translation>
+        <translation type="unfinished">Limpiar IP del Hostname</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1580"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1605"/>
         <source>Save Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar Perfil</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1615"/>
@@ -179,12 +179,12 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1745"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1746"/>
         <source>Log(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Log(s)</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1599"/>
         <source>Log</source>
-        <translation type="unfinished">Log</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1637"/>
@@ -209,7 +209,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1650"/>
         <source>Host List</source>
-        <translation type="unfinished">Lista de hosts</translation>
+        <translation>Lista de Hosts</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1651"/>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1655"/>
         <source>Version Probe</source>
-        <translation type="unfinished">Versión sonda</translation>
+        <translation>Versión Sonda</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1638"/>
@@ -314,12 +314,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1626"/>
         <source>IP List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de IP</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1629"/>
         <source>Parameters List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de Parámetros</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1631"/>
@@ -329,7 +329,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1634"/>
         <source>Bookmarks parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parámetros de marcadores</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1635"/>
@@ -416,7 +416,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1678"/>
         <source>Host Timeout</source>
-        <translation type="unfinished">Tiempo de espera para el Host</translation>
+        <translation>Tiempo de espera para el Host</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1679"/>
@@ -426,17 +426,17 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1682"/>
         <source>Normal Throttling</source>
-        <translation type="unfinished">Limitación Normal</translation>
+        <translation>Limitación Normal</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1683"/>
         <source>Paranoid Throttling</source>
-        <translation type="unfinished">Limitación Paranoica</translation>
+        <translation>Limitación Paranoica</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1684"/>
         <source>Sneaky Throttling</source>
-        <translation type="unfinished">Limitación Sigiloso</translation>
+        <translation>Limitación Sigilosa</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1685"/>
@@ -446,12 +446,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1686"/>
         <source>Aggressive Throttling</source>
-        <translation type="unfinished">Limitación  Agresiva</translation>
+        <translation>Limitación  Agresiva</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1687"/>
         <source>Insane Throttling</source>
-        <translation type="unfinished">Limitación Exagerada</translation>
+        <translation>Limitación Exagerada</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1692"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1705"/>
         <source>Verbosity</source>
-        <translation type="unfinished">Detallado</translation>
+        <translation>Detallado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1706"/>
@@ -561,7 +561,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1728"/>
         <source>Traceroute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Trazado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1731"/>
@@ -576,7 +576,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1733"/>
         <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Corriendo:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Corriendo:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1734"/>
@@ -711,13 +711,13 @@
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1633"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1764"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Favoritos</translation>
+        <translation type="unfinished">Marcadores</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1597"/>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1601"/>
         <source>&amp;Add Bookmark</source>
-        <translation type="unfinished">&amp;Agregar a Favoritos</translation>
+        <translation type="unfinished">&amp;Agregar Marcador</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1714"/>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1718"/>
         <source>Host Thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilo de Host</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_mainwin.h" line="1719"/>
@@ -776,7 +776,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="315"/>
         <source>Root Profiles</source>
-        <translation type="unfinished">Perfiles Principales</translation>
+        <translation>Perfiles Principales</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="316"/>
@@ -806,12 +806,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="322"/>
         <source>Active Log</source>
-        <translation type="unfinished">Log activo</translation>
+        <translation>Log Activo</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="323"/>
         <source>Verbose Log</source>
-        <translation type="unfinished">Log Detallado</translation>
+        <translation>Log Detallado</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="324"/>
@@ -821,12 +821,12 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="325"/>
         <source>Size Preferences</source>
-        <translation type="unfinished">Preferencias de Tamaño</translation>
+        <translation>Preferencias de Tamaño</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="326"/>
         <source>Save Windows Resize</source>
-        <translation type="unfinished">Guardar el Tamaño de las Ventanas</translation>
+        <translation>Guardar el Cambio de Tamaño de las Ventanas</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="327"/>
@@ -856,7 +856,7 @@
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="328"/>
         <source>Disable</source>
-        <translation type="unfinished">Desactivar</translation>
+        <translation>Desactivar</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4/ui_profilemain.h" line="329"/>
@@ -913,7 +913,7 @@
     <message>
         <location filename="../preference/profilemain.cpp" line="209"/>
         <source>&lt;h3&gt;Scan Lookup&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;Búsqueda de Escaneo&lt;/h3&gt;</translation>
     </message>
     <message>
         <location filename="../preference/profilemain.cpp" line="115"/>
@@ -943,7 +943,7 @@
         <location filename="../core/nmapParser.cpp" line="461"/>
         <location filename="../core/nmapParser.cpp" line="489"/>
         <source>No Info</source>
-        <translation type="unfinished">Sin información</translation>
+        <translation>Sin información</translation>
     </message>
     <message>
         <location filename="../core/nmapParser.cpp" line="548"/>
@@ -1163,12 +1163,12 @@
         <location filename="../core/toolsUI.cpp" line="229"/>
         <location filename="../core/toolsUI.cpp" line="235"/>
         <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
-        <translation type="unfinished">&lt;b&gt;Versión de Nmap:&lt;/b&gt; </translation>
+        <translation>&lt;b&gt;Versión de Nmap:&lt;/b&gt; </translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="236"/>
         <source>Not Present</source>
-        <translation type="unfinished">No está presente</translation>
+        <translation>No está presente</translation>
     </message>
     <message>
         <location filename="../core/toolsUI.cpp" line="247"/>
@@ -1178,21 +1178,21 @@
     <message>
         <location filename="../core/toolsUI.cpp" line="249"/>
         <source>User</source>
-        <translation type="unfinished">Usuario</translation>
+        <translation>Usuario</translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="26"/>
         <location filename="../core/saveLog.cpp" line="47"/>
         <location filename="../core/saveLog.cpp" line="71"/>
         <source>Save Log</source>
-        <translation type="unfinished">Guardar log</translation>
+        <translation>Guardar log</translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="27"/>
         <location filename="../core/saveLog.cpp" line="48"/>
         <source>No Scan found
 </source>
-        <translation type="unfinished">No se encontró ningún scaneo</translation>
+        <translation>No se encontró ningún escaneo</translation>
     </message>
     <message>
         <location filename="../core/saveLog.cpp" line="72"/>
@@ -1235,7 +1235,7 @@
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="107"/>
         <source>Options</source>
-        <translation type="unfinished">Opciones</translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="111"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="115"/>
         <source>File</source>
-        <translation type="unfinished">Archivo</translation>
+        <translation>Archivo</translation>
     </message>
     <message>
         <location filename="../core/resizeNmapsi4.cpp" line="119"/>
@@ -1256,7 +1256,7 @@
         <location filename="../core/hostCheck.cpp" line="31"/>
         <source>Wrong Address
 </source>
-        <translation type="unfinished">Dirección Errónea
+        <translation>Dirección Errónea
 </translation>
     </message>
     <message>
@@ -1267,32 +1267,32 @@
     <message>
         <location filename="../core/actionMenu.cpp" line="30"/>
         <source>Scan Host</source>
-        <translation type="unfinished">Host de Scaneo</translation>
+        <translation>Escanear Host</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="47"/>
         <source>Remove Service</source>
-        <translation type="unfinished">Eliminar Servicio</translation>
+        <translation>Quitar Servicio</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="51"/>
         <source>Search for vulnerabilities</source>
-        <translation type="unfinished">Buscar vulnerabilidades</translation>
+        <translation>Buscar vulnerabilidades</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="68"/>
         <source>Remove Scan Paramenters</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar Parámetros de Escaneo</translation>
     </message>
     <message>
         <location filename="../core/actionMenu.cpp" line="72"/>
         <source>Use Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar Parámetros</translation>
     </message>
     <message>
         <location filename="../core/scanMonitor.cpp" line="96"/>
         <source> Active Scan </source>
-        <translation type="unfinished"></translation>
+        <translation>Escaneo Activo</translation>
     </message>
 </context>
 </TS>
