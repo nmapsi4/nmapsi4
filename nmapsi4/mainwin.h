@@ -130,6 +130,7 @@ protected:
     lookUpT *lth;
     digSupport *digC;
     logHistory *history;
+    QSplitter *cW;
 
 
 public slots:

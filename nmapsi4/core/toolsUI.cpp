@@ -102,6 +102,7 @@ void nmapClass::exit()
     if (saveSize) settings.setValue("window/size", size());
     settings.setValue("NSSsupport", NSSsupport);
     settings.setValue("ADVSupport", ADVSupport);
+    settings.setValue("splitterSizes", cW->saveState());
     this->close();
 }
 
