@@ -285,5 +285,6 @@ nmapClass::~nmapClass()
     delete actBack;
     delete actForward;
     delete actStop;
+    delete cW;
 }
 
