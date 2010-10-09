@@ -156,11 +156,12 @@ void nmapClass::setNmapsiSlot()
 
     // Vuln signal
     connect(actSearch, SIGNAL(triggered()),
-            this, SLOT(searchVuln()));
+            this, SLOT(searchVulnNG()));
     connect(viewVuln, SIGNAL(loadProgress(int)),
             progressWeb, SLOT(setValue(int)));
     connect(viewVuln, SIGNAL(loadFinished(bool)),
             this, SLOT(vulnPostScan()));
+    // TODO:: support for multiple tab
     connect(actBack, SIGNAL(triggered()),
             viewVuln, SLOT(back()));
     connect(actForward, SIGNAL(triggered()),
@@ -180,6 +181,9 @@ void nmapClass::setNmapsiSlot()
     connect(comboPar, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(slotParSelected()));
 
+    connect(tWresult, SIGNAL(tabCloseRequested(int)),
+            this,SLOT(closeVulnTab(int)));
+
     // main session
     connect(scanSez, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
@@ -192,4 +196,11 @@ void nmapClass::setNmapsiSlot()
 
     connect(parAct, SIGNAL(triggered()),
             this, SLOT(parAdv()));
+
+    connect(actTabLook, SIGNAL(triggered()),
+            this, SLOT(updateTabLook()));
+    connect(actTabTrace, SIGNAL(triggered()),
+            this, SLOT(updateTabTrace()));
+    connect(actTabHost, SIGNAL(triggered()),
+            this, SLOT(updateTabHost()));
 }

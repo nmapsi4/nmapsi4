@@ -67,6 +67,76 @@ void nmapClass::searchVuln()
     viewVuln->load(urlFinal);
 }
 
+void nmapClass::searchVulnNG()
+{
+    if (comboVulnRis->currentText().isEmpty())
+        return;
+
+    QString url;
+    QString tmp;
+    history = new logHistory("nmapsi4/cacheVuln", hostCache);
+    history->addItemHistory(comboVulnRis->currentText());
+    delete history;
+
+    actSearch->setEnabled(false);
+    actStop->setEnabled(true);
+    actBack->setEnabled(true);
+    actForward->setEnabled(true);
+
+    tmp = comboVulnRis->currentText();
+    tmp.replace(QString(" "), QString("+"));
+
+    switch (comboWebV->currentIndex()) {
+    case 0:
+        url = "http://www.securityfocus.com/swsearch?sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank&query=";
+        url.append(tmp);
+
+#ifndef VULN_NO_DEBUG
+        qDebug() << "Call webSearch()..." << url;
+#endif
+        break;
+    case 1:
+        url = "http://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=";
+        url.append(tmp);
+#ifndef VULN_NO_DEBUG
+        qDebug() << "Call webSearch()..." << url;
+#endif
+        break;
+    case 2:
+        url = "http://secunia.com/advisories/search/?search=";
+        url.append(tmp);
+#ifndef VULN_NO_DEBUG
+        qDebug() << "Call webSearch()..." << url;
+#endif
+        break;
+    }
+
+
+    QUrl urlFinal(url);
+    QWebView *result_;
+
+    //qDebug() << "DEBUG page pointer:: " << viewVuln->url();
+
+    if(viewVuln->url().toString().contains("about:blank")) {
+        viewVuln->load(urlFinal);
+        tWresult->setTabText(0,comboVulnRis->currentText());
+    } else {
+        result_ = new QWebView();
+        result_->load(urlFinal);
+        tWresult->addTab(result_,comboVulnRis->currentText());
+        connect(result_, SIGNAL(loadProgress(int)),
+                progressWeb, SLOT(setValue(int)));
+        connect(result_, SIGNAL(loadFinished(bool)),
+                this, SLOT(vulnPostScan()));
+    }
+
+    // TODO:: Test risultati su tab
+    //QWebView *result_ = new QWebView();
+    //result_->load(urlFinal);
+    //tWresult->addTab(result_,comboVulnRis->currentText());
+    //viewVuln->load(urlFinal);
+}
+
 void nmapClass::callSearchHistoryVuln() {
 #ifndef VULN_NO_DEBUG
     qDebug() << "searchVuln:: call...";
@@ -104,4 +174,13 @@ void nmapClass::updateComboVuln(const QString& value) {
         comboVulnRis->lineEdit()->clear();
     }
 
+}
+
+void nmapClass::closeVulnTab(int index) {
+    if(!index) {
+        return;
+    }
+
+    // TODO:: check for leak
+    tWresult->removeTab(index);
 }

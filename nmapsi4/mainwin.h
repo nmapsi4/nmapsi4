@@ -127,6 +127,9 @@ protected:
     QAction *actBack;
     QAction *actForward;
     QAction *actStop;
+    QAction *actTabLook;
+    QAction *actTabTrace;
+    QAction *actTabHost;
     lookUpT *lth;
     digSupport *digC;
     logHistory *history;
@@ -205,8 +208,10 @@ private slots:
 
     // Vuln extension
     void searchVuln();
+    void searchVulnNG();
     void callSearchHistoryVuln();
     void callVulnCheck();
+    void closeVulnTab(int index);
 
     //contest Menu
     void menuScanBook();

@@ -51,6 +51,8 @@ void nmapClass::initObject() {
 #ifdef Q_WS_WIN
     tabWidget->removeTab(3);
 #endif
+    tWresult->setTabsClosable(true);
+    //tWresult->tabBar()->setCurrentIndex(0)
 
     createBar();
     setNmapsiSlot();

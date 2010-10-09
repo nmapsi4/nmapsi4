@@ -296,6 +296,10 @@ void nmapClass::createBar() {
     actForward = new QAction(this);
     actStop = new QAction(this);
 
+    actTabLook = new QAction(this);
+    actTabTrace = new QAction(this);
+    actTabHost = new QAction(this);
+
     // Section QAction
     scanSez->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     scanSez->setIconText(tr("Scan"));
@@ -349,4 +353,20 @@ void nmapClass::createBar() {
     toolBarSearch->addAction(actBack);
     toolBarSearch->addAction(actForward);
     toolBarSearch->addAction(actStop);
+
+    actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabLook->setToolTip(tr("Enable/Disable Lookup"));
+    actTabLook->setCheckable(true);
+
+    actTabTrace->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabTrace->setToolTip(tr("Enable/Disable Traceroot"));
+    actTabTrace->setCheckable(true);
+
+    actTabHost->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabHost->setToolTip(tr("Enable/Disable Host Details"));
+    actTabHost->setCheckable(true);
+
+    toolBarTab->addAction(actTabLook);
+    toolBarTab->addAction(actTabTrace);
+    toolBarTab->addAction(actTabHost);
 }
