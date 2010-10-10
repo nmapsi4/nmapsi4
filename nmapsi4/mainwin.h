@@ -31,6 +31,7 @@
 #include "core/info/parserObj.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
+#include <QtWebKit/QWebPage>
 
 
 class QMainWindow;
@@ -114,6 +115,7 @@ protected:
     QList<QString> monitorElemOptions;
     QList<scanThread*> scanPointerList;
     QList<parserObj*> parserObjList;
+    QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
     QPointer<scanThread> th;
@@ -207,11 +209,11 @@ private slots:
     void bookOptionsPar();
 
     // Vuln extension
-    void searchVuln();
     void searchVulnNG();
     void callSearchHistoryVuln();
     void callVulnCheck();
     void closeVulnTab(int index);
+    void tabWebBack();
 
     //contest Menu
     void menuScanBook();

@@ -19,54 +19,6 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::searchVuln()
-{
-    if (comboVulnRis->currentText().isEmpty())
-        return;
-
-    QString url;
-    QString tmp;
-    history = new logHistory("nmapsi4/cacheVuln", hostCache);
-    history->addItemHistory(comboVulnRis->currentText());
-    delete history;
-
-    actSearch->setEnabled(false);
-    actStop->setEnabled(true);
-    actBack->setEnabled(true);
-    actForward->setEnabled(true);
-    
-    tmp = comboVulnRis->currentText();
-    tmp.replace(QString(" "), QString("+"));
-
-    switch (comboWebV->currentIndex()) {
-    case 0:
-        url = "http://www.securityfocus.com/swsearch?sbm=bid&submit=Search%21&metaname=alldoc&sort=swishrank&query=";
-        url.append(tmp);
-
-#ifndef VULN_NO_DEBUG
-        qDebug() << "Call webSearch()..." << url;
-#endif
-        break;
-    case 1:
-        url = "http://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=";
-        url.append(tmp);
-#ifndef VULN_NO_DEBUG
-        qDebug() << "Call webSearch()..." << url;
-#endif
-        break;
-    case 2:
-        url = "http://secunia.com/advisories/search/?search=";
-        url.append(tmp);
-#ifndef VULN_NO_DEBUG
-        qDebug() << "Call webSearch()..." << url;
-#endif
-        break;
-    }
-
-    QUrl urlFinal(url);
-    viewVuln->load(urlFinal);
-}
-
 void nmapClass::searchVulnNG()
 {
     if (comboVulnRis->currentText().isEmpty())
@@ -115,13 +67,12 @@ void nmapClass::searchVulnNG()
     QUrl urlFinal(url);
     QWebView *result_;
 
-    //qDebug() << "DEBUG page pointer:: " << viewVuln->url();
-
     if(viewVuln->url().toString().contains("about:blank")) {
         viewVuln->load(urlFinal);
         tWresult->setTabText(0,comboVulnRis->currentText());
     } else {
         result_ = new QWebView();
+        webViewList.push_back(result_);
         result_->load(urlFinal);
         tWresult->addTab(result_,comboVulnRis->currentText());
         connect(result_, SIGNAL(loadProgress(int)),
@@ -129,12 +80,6 @@ void nmapClass::searchVulnNG()
         connect(result_, SIGNAL(loadFinished(bool)),
                 this, SLOT(vulnPostScan()));
     }
-
-    // TODO:: Test risultati su tab
-    //QWebView *result_ = new QWebView();
-    //result_->load(urlFinal);
-    //tWresult->addTab(result_,comboVulnRis->currentText());
-    //viewVuln->load(urlFinal);
 }
 
 void nmapClass::callSearchHistoryVuln() {
@@ -156,7 +101,7 @@ void nmapClass::callVulnCheck() {
     comboVulnRis->clear();
     comboVulnRis->insertItem(0,treeBookVuln->currentItem()->text(0));
     tabVuln->setCurrentIndex(0);
-    searchVuln();
+    searchVulnNG();
 }
 
 void nmapClass::vulnPostScan() {
@@ -178,9 +123,17 @@ void nmapClass::updateComboVuln(const QString& value) {
 
 void nmapClass::closeVulnTab(int index) {
     if(!index) {
+        // TODO:: first page
         return;
     }
 
-    // TODO:: check for leak
+    QWebView *tmp = webViewList.takeAt(tWresult->currentIndex());
+    qDebug() << "WebView pointer:: " << tmp << " Index:: " << tWresult->currentIndex();
     tWresult->removeTab(index);
+    delete tmp;
+}
+
+void nmapClass::tabWebBack() {
+    qDebug() << "tab Back()";
+    webViewList[tWresult->currentIndex()]->triggerPageAction(QWebPage::Back);
 }

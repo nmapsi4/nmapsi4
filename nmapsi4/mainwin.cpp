@@ -53,7 +53,7 @@ void nmapClass::initObject() {
 #endif
     tWresult->setTabsClosable(true);
     //tWresult->tabBar()->setCurrentIndex(0)
-
+    webViewList.push_back(viewVuln);
     createBar();
     setNmapsiSlot();
 

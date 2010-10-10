@@ -163,7 +163,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(vulnPostScan()));
     // TODO:: support for multiple tab
     connect(actBack, SIGNAL(triggered()),
-            viewVuln, SLOT(back()));
+            this, SLOT(tabWebBack()));
     connect(actForward, SIGNAL(triggered()),
             viewVuln, SLOT(forward()));
     connect(actStop, SIGNAL(triggered()),
