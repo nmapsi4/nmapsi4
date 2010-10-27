@@ -57,7 +57,10 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         itemLook->setText(0,info.addresses()[index].toString());
     }
 
-    delete lth;
+    if(lth->wait() && !lth) {
+        delete lth;
+    }
+    
     this->scan(hostname);
 }
 

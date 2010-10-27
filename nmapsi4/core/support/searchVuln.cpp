@@ -24,8 +24,8 @@ void nmapClass::searchVulnNG()
     if (comboVulnRis->currentText().isEmpty())
         return;
 
-    QString url;
-    QString tmp;
+    QString url("");
+    QString tmp("");
     history = new logHistory("nmapsi4/cacheVuln", hostCache);
     history->addItemHistory(comboVulnRis->currentText());
     delete history;
@@ -136,4 +136,14 @@ void nmapClass::closeVulnTab(int index) {
 void nmapClass::tabWebBack() {
     qDebug() << "tab Back()";
     webViewList[tWresult->currentIndex()]->triggerPageAction(QWebPage::Back);
+}
+
+void nmapClass::tabWebForward() {
+    qDebug() << "tab Forward()";
+    webViewList[tWresult->currentIndex()]->triggerPageAction(QWebPage::Forward);
+}
+
+void nmapClass::tabWebStop() {
+    qDebug() << "tab Stop()";
+    webViewList[tWresult->currentIndex()]->triggerPageAction(QWebPage::Stop);
 }

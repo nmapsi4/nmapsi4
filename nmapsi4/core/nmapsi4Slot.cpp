@@ -165,9 +165,9 @@ void nmapClass::setNmapsiSlot()
     connect(actBack, SIGNAL(triggered()),
             this, SLOT(tabWebBack()));
     connect(actForward, SIGNAL(triggered()),
-            viewVuln, SLOT(forward()));
+            this, SLOT(tabWebForward()));
     connect(actStop, SIGNAL(triggered()),
-            viewVuln, SLOT(stop()));
+            this, SLOT(tabWebStop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(updateComboVuln(const QString&)));
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),

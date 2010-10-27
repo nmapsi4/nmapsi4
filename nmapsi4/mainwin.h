@@ -214,6 +214,8 @@ private slots:
     void callVulnCheck();
     void closeVulnTab(int index);
     void tabWebBack();
+    void tabWebForward();
+    void tabWebStop();
 
     //contest Menu
     void menuScanBook();
