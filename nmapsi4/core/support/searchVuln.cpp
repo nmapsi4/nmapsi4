@@ -63,7 +63,6 @@ void nmapClass::searchVulnNG()
         break;
     }
 
-
     QUrl urlFinal(url);
     QWebView *result_;
 
@@ -71,6 +70,7 @@ void nmapClass::searchVulnNG()
         viewVuln->load(urlFinal);
         tWresult->setTabText(0,comboVulnRis->currentText());
     } else {
+
         result_ = new QWebView();
         webViewList.push_back(result_);
         result_->load(urlFinal);
@@ -80,6 +80,7 @@ void nmapClass::searchVulnNG()
         connect(result_, SIGNAL(loadFinished(bool)),
                 this, SLOT(vulnPostScan()));
     }
+
 }
 
 void nmapClass::callSearchHistoryVuln() {
@@ -123,7 +124,9 @@ void nmapClass::updateComboVuln(const QString& value) {
 
 void nmapClass::closeVulnTab(int index) {
     if(!index) {
-        // TODO:: first page
+        /*if(!webViewList.isEmpty()) {
+            tWresult->setTabText(0, "Vulnerabilities Search");
+        }*/
         return;
     }
 

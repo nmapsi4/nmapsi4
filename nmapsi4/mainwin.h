@@ -104,6 +104,9 @@ protected:
     bool NSSsupport;
     bool ADVSupport;
     bool HostDetEnabled;
+    bool MonitorEnabled;
+    bool TraceEnabled;
+    bool LookupEnabled;
     int hostCache;
     int scanCounter;
     QList<QTreeWidgetItem*> itemList;
@@ -133,6 +136,7 @@ protected:
     QAction *actTabLook;
     QAction *actTabTrace;
     QAction *actTabHost;
+    QAction *actTabMonitor;
     lookUpT *lth;
     digSupport *digC;
     logHistory *history;
@@ -201,6 +205,7 @@ private slots:
     void updateTabLook();
     void updateTabTrace();
     void updateTabHost();
+    void updateTabMonitor();
     void vulnPostScan();
     void updateComboVuln(const QString& value);
     void NSSCheck();
@@ -227,6 +232,7 @@ private slots:
     void menuParBook();
     void menuServiceMain();
     void slotParSelected();
+    void saveUiSettings();
 };
 
 #endif

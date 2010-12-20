@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2008 by Francesco Cecconi                          *
+ *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,11 +17,22 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef STATICDEFINE_H
-#define STATICDEFINE_H
+#include "../mainwin.h"
 
-#define _VERSION_         "0.2.82"
-#define _VERSION_VULN_    "0.1.82"
-#define _VERSION_DIG_     "0.1.82"
 
-#endif
+void nmapClass::saveUiSettings() {
+    QSettings settings("nmapsi4", "nmapsi4");
+    if(savePos) {
+        settings.setValue("window/pos", pos());
+    }
+    if(saveSize) {
+        settings.setValue("window/size", size());
+    }
+    settings.setValue("NSSsupport", NSSsupport);
+    settings.setValue("ADVSupport", ADVSupport);
+    settings.setValue("HostEnabled", HostDetEnabled);
+    settings.setValue("MonitorEnabled", MonitorEnabled);
+    settings.setValue("LookupEnabled", LookupEnabled);
+    settings.setValue("TraceEnabled", TraceEnabled);
+    settings.setValue("splitterSizes", cW->saveState());
+}

@@ -206,4 +206,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateTabTrace()));
     connect(actTabHost, SIGNAL(triggered()),
             this, SLOT(updateTabHost()));
+    connect(actTabMonitor, SIGNAL(triggered()),
+            this, SLOT(updateTabMonitor()));
 }

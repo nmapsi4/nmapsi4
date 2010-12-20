@@ -205,6 +205,35 @@ void nmapClass::checkProfile()
     }
 
     HostDetEnabled = settings.value("HostEnabled").toBool();
+
+    QString MonitorEnabled_ = settings.value("MonitorEnabled", "none").toString();
+
+    if ((!MonitorEnabled_.compare("none"))) {
+         settings.setValue("MonitorEnabled", "true"); // default value
+    }
+
+    MonitorEnabled = settings.value("MonitorEnabled").toBool();
+
+    QString LookupEnabled_ = settings.value("LookupEnabled", "none").toString();
+
+    if ((!LookupEnabled_.compare("none"))) {
+         settings.setValue("LookupEnabled", "true"); // default value
+    }
+
+#ifdef Q_WS_WIN
+    // disable lookup in MS windows
+    LookupEnabled = false;
+#else
+    LookupEnabled = settings.value("LookupEnabled").toBool();
+#endif
+
+    QString TracerouteEnabled_ = settings.value("TraceEnabled", "none").toString();
+
+    if ((!TracerouteEnabled_.compare("none"))) {
+         settings.setValue("TraceEnabled", "true"); // default value
+    }
+
+    TraceEnabled = settings.value("TraceEnabled").toBool();
 }
 
 void nmapClass::setQuickProfile()

@@ -94,6 +94,8 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
+    treeMain->setColumnWidth(0, 160);
+    treeMain->setColumnWidth(1, 240);
     cW = new QSplitter();
     cW->addWidget(treeMain);
     cW->addWidget(stackedMain);
@@ -130,6 +132,15 @@ void nmapClass::initObject() {
 
     actTabHost->setChecked(HostDetEnabled);
     updateTabHost();
+
+    actTabMonitor->setChecked(MonitorEnabled);
+    updateTabMonitor();
+
+    actTabLook->setChecked(LookupEnabled);
+    updateTabLook();
+
+    actTabTrace->setChecked(TraceEnabled);
+    updateTabTrace();
 
     updateComboPar();
 }

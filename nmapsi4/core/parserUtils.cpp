@@ -153,7 +153,6 @@ void nmapClass::showParserObj(int indexObj) {
 
 void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
     Q_UNUSED(column);
-    buttonVulnObj->setEnabled(true);
 
     int indexHost = treeMain->indexOfTopLevelItem(treeMain->currentItem());
     int indexObj_ = GItree->indexOfTopLevelItem(item);

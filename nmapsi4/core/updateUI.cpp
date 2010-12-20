@@ -530,7 +530,9 @@ void nmapClass::updateTabLook() {
     if(actTabLook->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        LookupEnabled = true;
     } else {
+        LookupEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_3));
     }
 
@@ -541,10 +543,11 @@ void nmapClass::updateTabTrace() {
     if(actTabTrace->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        TraceEnabled = true;
     } else {
+        TraceEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
     }
-
     // TODO:: Disable Traceroute
 }
 
@@ -556,5 +559,16 @@ void nmapClass::updateTabHost() {
     } else {
         tabWidget->removeTab(tabWidget->indexOf(tab_9));
         HostDetEnabled = false;
+    }
+}
+
+void nmapClass::updateTabMonitor() {
+    if(actTabMonitor->isChecked()) {
+        tabWidget->insertTab(tabWidget->count(),tabMonitor,tr("Scan Monitor"));
+        tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        MonitorEnabled = true;
+    } else {
+        tabWidget->removeTab(tabWidget->indexOf(tabMonitor));
+        MonitorEnabled = false;
     }
 }

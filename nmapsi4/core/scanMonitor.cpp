@@ -20,7 +20,7 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
-    tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, host);

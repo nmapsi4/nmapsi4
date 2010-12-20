@@ -23,7 +23,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 {
     QString * StdoutStr;
     QString * StderrorStr;
-    QString title = "NmapSI4 ";
     parserObj *elemObj = new parserObj();
 
     int open_port = 0;
@@ -227,6 +226,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoTraceroot->setText(0, buffer);
         infoNSS->setText(0, buffer);
         mainTreeE->setText(0, buffer);
+        mainTreeE->setText(1, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss"));
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     } else {
         QFont rootFont = root->font(0);
@@ -239,6 +239,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoTraceroot->setText(0, hostCheck);
         infoNSS->setText(0, hostCheck);
         mainTreeE->setText(0, hostCheck);
+        mainTreeE->setText(1, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss"));
         if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
     }
 
@@ -311,7 +312,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 QString noDes = tr("No description");
                 if (lStr.size() == 3) {
                     item2->setText(0, noDes);
-                    elemObj->setDescriptionServices(noDes);
+                    //elemObj->setDescriptionServices(noDes);
+                    elemObj->setDescriptionServices(tmpStr);
                 } else {
                     while (index < lStr.size()) {
                         str.append(lStr[index]);

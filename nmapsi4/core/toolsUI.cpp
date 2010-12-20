@@ -97,13 +97,7 @@ void nmapClass::exit()
     }
 
     // Save window size and position and NSS info
-    QSettings settings("nmapsi4", "nmapsi4");
-    if (savePos) settings.setValue("window/pos", pos());
-    if (saveSize) settings.setValue("window/size", size());
-    settings.setValue("NSSsupport", NSSsupport);
-    settings.setValue("ADVSupport", ADVSupport);
-    settings.setValue("HostEnabled", HostDetEnabled);
-    settings.setValue("splitterSizes", cW->saveState());
+    saveUiSettings();
     this->close();
 }
 
@@ -300,6 +294,7 @@ void nmapClass::createBar() {
     actTabLook = new QAction(this);
     actTabTrace = new QAction(this);
     actTabHost = new QAction(this);
+    actTabMonitor = new QAction(this);
 
     // Section QAction
     scanSez->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
@@ -356,18 +351,23 @@ void nmapClass::createBar() {
     toolBarSearch->addAction(actStop);
 
     actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
-    actTabLook->setToolTip(tr("Enable/Disable Lookup"));
+    actTabLook->setToolTip(tr("Show/Hide Lookup"));
     actTabLook->setCheckable(true);
 
     actTabTrace->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
-    actTabTrace->setToolTip(tr("Enable/Disable Traceroot"));
+    actTabTrace->setToolTip(tr("Show/Hide Traceroot"));
     actTabTrace->setCheckable(true);
 
     actTabHost->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-    actTabHost->setToolTip(tr("Enable/Disable Host Details"));
+    actTabHost->setToolTip(tr("Show/Hide Host Details"));
     actTabHost->setCheckable(true);
+
+    actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabMonitor->setToolTip(tr("Show/Hide Scan Monitor"));
+    actTabMonitor->setCheckable(true);
 
     toolBarTab->addAction(actTabLook);
     toolBarTab->addAction(actTabTrace);
     toolBarTab->addAction(actTabHost);
+    toolBarTab->addAction(actTabMonitor);
 }
