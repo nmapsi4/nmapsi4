@@ -97,6 +97,7 @@ void nmapClass::initObject() {
     cW = new QSplitter();
     cW->addWidget(treeMain);
     cW->addWidget(stackedMain);
+    cW->addWidget(GItree);
     this->centralWidget()->layout()->addWidget(cW);
 
     QSettings settings("nmapsi4", "nmapsi4");
@@ -122,9 +123,14 @@ void nmapClass::initObject() {
     dialog = new mainProfile();
 
     nssAct->setChecked(NSSsupport); // set NSS support
+    NSSCheck();
+
     parAct->setChecked(ADVSupport); // set ADV support
     parAdv();
-    NSSCheck();
+
+    actTabHost->setChecked(HostDetEnabled);
+    updateTabHost();
+
     updateComboPar();
 }
 

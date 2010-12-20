@@ -197,6 +197,14 @@ void nmapClass::checkProfile()
     }
 
     ADVSupport = settings.value("ADVSupport").toBool();
+
+    QString HostEnabled_ = settings.value("HostEnabled", "none").toString();
+
+    if ((!HostEnabled_.compare("none"))) {
+         settings.setValue("HostEnabled", "true"); // default value
+    }
+
+    HostDetEnabled = settings.value("HostEnabled").toBool();
 }
 
 void nmapClass::setQuickProfile()

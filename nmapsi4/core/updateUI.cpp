@@ -390,6 +390,8 @@ void nmapClass::updateSezScan() { // SLOT
     this->showMainToolBar();
     this->showActionToolBar();
     toolBarSearch->setVisible(false);
+    GItree->setVisible(true);
+
     if(!frameScan->isVisible()) {
         frameScan->setVisible(true);
     }
@@ -416,6 +418,7 @@ void nmapClass::updateSezLog() {  // SLOT
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
     actionActions_Toolbar->setChecked(false);
+    GItree->setVisible(false);
 
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
@@ -443,6 +446,7 @@ void nmapClass::updateSezVuln() { // SLOT
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
+    GItree->setVisible(false);
 
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
@@ -520,4 +524,37 @@ void nmapClass::updateComboPar() {
         comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(0));
     }
 
+}
+
+void nmapClass::updateTabLook() {
+    if(actTabLook->isChecked()) {
+        tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
+        tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/world.png")));
+    } else {
+        tabWidget->removeTab(tabWidget->indexOf(tab_3));
+    }
+
+    // TODO:: Disable Lookup
+}
+
+void nmapClass::updateTabTrace() {
+    if(actTabTrace->isChecked()) {
+        tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
+        tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/world.png")));
+    } else {
+        tabWidget->removeTab(tabWidget->indexOf(tab_7));
+    }
+
+    // TODO:: Disable Traceroute
+}
+
+void nmapClass::updateTabHost() {
+    if(actTabHost->isChecked()) {
+        tabWidget->insertTab(tabWidget->count(),tab_9,tr("Host Details"));
+        tabWidget->setTabIcon(tabWidget->indexOf(tab_9),QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+        HostDetEnabled = true;
+    } else {
+        tabWidget->removeTab(tabWidget->indexOf(tab_9));
+        HostDetEnabled = false;
+    }
 }

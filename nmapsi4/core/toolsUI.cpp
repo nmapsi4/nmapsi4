@@ -102,6 +102,7 @@ void nmapClass::exit()
     if (saveSize) settings.setValue("window/size", size());
     settings.setValue("NSSsupport", NSSsupport);
     settings.setValue("ADVSupport", ADVSupport);
+    settings.setValue("HostEnabled", HostDetEnabled);
     settings.setValue("splitterSizes", cW->saveState());
     this->close();
 }
@@ -362,7 +363,7 @@ void nmapClass::createBar() {
     actTabTrace->setToolTip(tr("Enable/Disable Traceroot"));
     actTabTrace->setCheckable(true);
 
-    actTabHost->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabHost->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
     actTabHost->setToolTip(tr("Enable/Disable Host Details"));
     actTabHost->setCheckable(true);
 

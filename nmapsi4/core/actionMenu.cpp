@@ -82,3 +82,25 @@ void nmapClass::menuParBook() {
 
     menuBook.exec(QCursor::pos());
 }
+
+void nmapClass::menuServiceMain() {
+    QAction checkVuln(this);
+    checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    checkVuln.setIconText(tr("Check Vulnerability"));
+
+    //QAction addBook(this);
+    //addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    //addBook.setIconText(tr("Use Parameters"));
+
+    connect(&checkVuln, SIGNAL(triggered()),
+                this, SLOT(objVulnButton()));
+    //connect(&removeBook, SIGNAL(triggered()),
+      //      this, SLOT(deleteBookMarkPar()));
+
+    QMenu menuVulnMain(this);
+    menuVulnMain.addAction(&checkVuln);
+    //menuBook.addAction(&removeBook);
+
+    menuVulnMain.exec(QCursor::pos());
+}
+

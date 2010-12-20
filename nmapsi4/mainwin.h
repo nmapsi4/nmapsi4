@@ -103,6 +103,7 @@ protected:
     bool lookupDig;
     bool NSSsupport;
     bool ADVSupport;
+    bool HostDetEnabled;
     int hostCache;
     int scanCounter;
     QList<QTreeWidgetItem*> itemList;
@@ -197,6 +198,9 @@ private slots:
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
+    void updateTabLook();
+    void updateTabTrace();
+    void updateTabHost();
     void vulnPostScan();
     void updateComboVuln(const QString& value);
     void NSSCheck();
@@ -221,6 +225,7 @@ private slots:
     void menuScanBook();
     void menuVulnBook();
     void menuParBook();
+    void menuServiceMain();
     void slotParSelected();
 };
 

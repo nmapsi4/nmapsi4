@@ -163,6 +163,8 @@ void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
         servPortLabel->setText(parserObjList[indexHost]->getPortServices()[indexObj_]);
 
     }
+
+    menuServiceMain();
 }
 
 void nmapClass::objVulnButton() { // SLOT
@@ -182,6 +184,8 @@ void nmapClass::objVulnButton() { // SLOT
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
+    GItree->setVisible(false);
+
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
     }
