@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2010 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -233,6 +233,7 @@ private slots:
     void menuServiceMain();
     void slotParSelected();
     void saveUiSettings();
+    void actDetails();
 };
 
 #endif

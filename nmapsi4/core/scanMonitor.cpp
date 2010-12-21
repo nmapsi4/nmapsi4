@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Francesco Cecconi                          *
+ *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -80,7 +80,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
      if(monitorElemHost.size() == 0) {
          actionStop_Scan->setEnabled(false);
-         tabWidget->setTabIcon(2,QIcon(QString::fromUtf8(":/images/images/world.png")));
+         tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/world.png")));
      }
 
      updateScanCounter(0);
