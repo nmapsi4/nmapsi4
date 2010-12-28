@@ -2,4 +2,4 @@ build/*
 build-c/*
 .kdev4/*
 astyle-nmapsi4
-*.user
+*.user*
