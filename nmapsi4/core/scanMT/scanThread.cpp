@@ -76,7 +76,7 @@ void scanThread::stopProcess() {
 	  proc->terminate();
 #ifdef Q_WS_WIN
           QString abort_cmd;
-          PROCESS_INFORMATION *pinfo = (PROCESS_INFORMATION)proc->pid();
+          PROCESS_INFORMATION *pinfo = (PROCESS_INFORMATION*)proc->pid();
           abort_cmd = QString("cmd /c taskkill /PID %1 /F").arg(pinfo->dwProcessId);
           QProcess::execute(abort_cmd);
 #endif
