@@ -277,7 +277,9 @@ void nmapClass::update_comboVerbosity() {
 
 
 void nmapClass::listClear() {
+    // TODO change on full objElem support
     listClearFlag = true;
+    // traceRoot & infoItem & nssItem & error pointer
     itemDeleteAll(itemList); //clear items list
     itemList.clear();
 
@@ -287,7 +289,8 @@ void nmapClass::listClear() {
     itemDeleteAll(mainTreeElem);
     mainTreeElem.clear();
 
-    listWscan->clear();
+    // Not necessary anymore
+    //listWscan->clear();
     treeWinfo->clear();
 
     itemDeleteAll(digC->digList);
@@ -302,7 +305,7 @@ void nmapClass::listClear() {
 }
 
 void nmapClass::closeTree() {
-    listWscan->collapseAll();
+    //listWscan->collapseAll();
     treeWinfo->collapseAll();
     listScanError->collapseAll();
     listScan->collapseAll();

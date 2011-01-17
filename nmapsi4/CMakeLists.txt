@@ -5,8 +5,9 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 if (NOT Q_WS_X11)
 SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
-		core/parserUtils.cpp
-		core/nmapParser.cpp
+                core/parser/parserUtils.cpp
+		core/parser/nmapParser.cpp
+                core/parser/scanParser.cpp
 		core/extensions.cpp
 		core/hostCheck.cpp
 		mainwin.cpp
@@ -35,8 +36,9 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 else (NOT Q_WS_X11)
   SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/resizeNmapsi4.cpp
-		core/parserUtils.cpp
-		core/nmapParser.cpp
+		core/parser/parserUtils.cpp
+		core/parser/nmapParser.cpp
+                core/parser/scanParser.cpp
 		core/extensions.cpp
 		core/hostCheck.cpp
 		mainwin.cpp

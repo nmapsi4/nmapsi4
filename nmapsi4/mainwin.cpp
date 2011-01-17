@@ -84,7 +84,6 @@ void nmapClass::initObject() {
 
     checkNmapVersion();
 
-    listWscan->setColumnWidth(0, 300);
     treeLogH->setColumnWidth(0, 400);
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
@@ -94,13 +93,16 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
-    treeMain->setColumnWidth(0, 160);
-    treeMain->setColumnWidth(1, 240);
     cW = new QSplitter();
+    rW = new QSplitter();
     cW->addWidget(treeMain);
     cW->addWidget(stackedMain);
-    cW->addWidget(GItree);
+    cW->addWidget(frameRight);
+    rW->setOrientation(Qt::Vertical);
+    rW->addWidget(GItree);
+    rW->addWidget(treeHostDet);
     this->centralWidget()->layout()->addWidget(cW);
+    frameRight->layout()->addWidget(rW);
 
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
@@ -108,6 +110,7 @@ void nmapClass::initObject() {
     resize(size);
     move(pos);
     cW->restoreState(settings.value("splitterSizes").toByteArray());
+    rW->restoreState(settings.value("splitterSizesRight").toByteArray());
 
     logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     historyScan_->updateBookMarks();
@@ -286,6 +289,7 @@ nmapClass::~nmapClass()
     }
 
     itemDeleteAll(itemList);
+    itemDeleteAll(itemListScan);
     itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
@@ -305,5 +309,6 @@ nmapClass::~nmapClass()
     delete actForward;
     delete actStop;
     delete cW;
+    delete rW;
 }
 

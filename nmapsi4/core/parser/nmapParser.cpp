@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray Byte2)
 {
@@ -45,10 +45,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     progressScan->setValue(75);
     
     QTextStream stream(StdoutStr);
-    QString tmp, buffer, buffer2, bufferInfo,bufferTraceroot,bufferNSS;
+    QString tmp, generalBuffer_, scanBuffer, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
-    buffer.append(hostCheck);
+    generalBuffer_.append(hostCheck);
 
     while (!stream.atEnd()) {
         tmp = stream.readLine();
@@ -61,8 +61,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 && !tmp.contains("Not shown:")
                 && !tmp.contains("Discovered")) {
 
-            buffer2.append(tmp);
-            buffer2.append("\n");
+            scanBuffer.append(tmp);
+            scanBuffer.append("\n");
         }
 
         if ((tmp.contains("MAC")
@@ -75,7 +75,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 || tmp.contains("TCP Sequence Prediction:")
                 || tmp.contains("IPID Sequence Generation:")
                 || tmp.contains("IP ID Sequence Generation:")
-                || (tmp.contains("Service Info:") && tmp.compare(buffer))
+                || (tmp.contains("Service Info:") && tmp.compare(generalBuffer_))
                 || tmp.contains("Initiating Ping ")
                 || tmp.contains("Completed Ping ")
                 || tmp.contains("Network Distance:")
@@ -145,9 +145,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     }
 
-    QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
-    itemList.push_front(root);
-
     QTreeWidgetItem *root2 = new QTreeWidgetItem(listScan);
     itemList.push_front(root2);
 
@@ -201,13 +198,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	break;
     }
 
-
-    root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
-    root->setTextAlignment(1, Qt::AlignCenter);
-    root->setTextAlignment(2, Qt::AlignCenter);
-    root->setTextAlignment(3, Qt::AlignCenter);
-    root->setTextAlignment(4, Qt::AlignCenter);
-
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
@@ -215,86 +205,69 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
-    if (!buffer.isEmpty()) { // Host line scan
-        QFont rootFont = root->font(0);
-        rootFont.setWeight(QFont::Normal);
-        root->setFont(0, rootFont);
-        root->setText(0, buffer);
-        root2->setText(0, buffer);
-        error->setText(0, buffer);
-        infoItem->setText(0, buffer);
-        infoTraceroot->setText(0, buffer);
-        infoNSS->setText(0, buffer);
-        mainTreeE->setText(0, buffer);
-        mainTreeE->setText(1, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss"));
-        if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
+    QString tmp_mess("");
+    QString tmp_mess2("");
+    QString tmp_host("");
+
+    if (!generalBuffer_.isEmpty()) { // Host line scan
+        root2->setText(0, generalBuffer_);
+        error->setText(0, generalBuffer_);
+        infoItem->setText(0, generalBuffer_);
+        infoTraceroot->setText(0, generalBuffer_);
+        infoNSS->setText(0, generalBuffer_);
+        //QFont rootFont = root->font(0);
+        //rootFont.setWeight(QFont::Normal);
+        tmp_host.append(generalBuffer_);
+        tmp_host.append("\n");
+        tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        mainTreeE->setText(0, tmp_host);
+        tmp_mess.append(generalBuffer_);
+        tmp_mess2.append(generalBuffer_);
+        if ((PFile) && (!verboseLog)) *out << generalBuffer_ << endl;
     } else {
-        QFont rootFont = root->font(0);
-        rootFont.setWeight(QFont::Normal);
-        root->setFont(0, rootFont);
-        root->setText(0, hostCheck);
         root2->setText(0, hostCheck);
         error->setText(0, hostCheck);
         infoItem->setText(0, hostCheck);
         infoTraceroot->setText(0, hostCheck);
         infoNSS->setText(0, hostCheck);
-        mainTreeE->setText(0, hostCheck);
-        mainTreeE->setText(1, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss"));
-        if ((PFile) && (!verboseLog)) *out << root->text(0) << endl;
+        tmp_host.append(hostCheck);
+        tmp_host.append("\n");
+        tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        mainTreeE->setText(0, tmp_host);
+        tmp_mess.append(hostCheck);
+        tmp_mess2.append(hostCheck);
+        if ((PFile) && (!verboseLog)) *out << hostCheck << endl;
     }
 
-    QTextStream b2(&buffer2); // QString to QtextStream (scan Tree)
-    QString b2_line;
-    QString tmp_mess = root->text(0);
-    QString tmp_mess2 = root->text(0);
+    QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
+    QString scanBufferToStream_line;
 
-    if (!b2.atEnd()) { // check for scan informations
-        while (!b2.atEnd()) {
-            b2_line = b2.readLine();
-            QTreeWidgetItem *item2 = new QTreeWidgetItem(root);
-            itemList.push_front(item2); // save item address in QList
+    if (!scanBufferToStream_.atEnd()) { // check for scan informations
+        while (!scanBufferToStream_.atEnd()) {
+            scanBufferToStream_line = scanBufferToStream_.readLine();
+            if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
+                    || scanBufferToStream_line.contains("unfiltered")) {
 
-            if (b2_line.contains("open") || b2_line.contains("filtered")
-                    || b2_line.contains("unfiltered")) {
-
-                if (b2_line.contains("filtered") || b2_line.contains("unfiltered")) {
-                    item2->setSizeHint(0, QSize(22, 22));
-                    item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
+                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) {
+                    elemObj->setPortFiltered(scanBufferToStream_line);
                     filtered_port++;
                 } else {
-                    item2->setSizeHint(0, QSize(22, 22));
-                    item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
+                    elemObj->setPortOpen(scanBufferToStream_line);
                     open_port++;
                 }
             } else {
-                item2->setSizeHint(0, QSize(22, 22));
-                item2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
+                elemObj->setPortClose(scanBufferToStream_line);
                 close_port++;
             }
 
 
-            if (!b2_line.isEmpty()) {
-                QString tmpStr = b2_line;
+            if (!scanBufferToStream_line.isEmpty()) {
+                QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(" ", QString::SkipEmptyParts);
 #ifndef PARSER_NO_DEBUG
                 qDebug() << "Nmapsi4/parser:: --> Token:: " << lStr;
 #endif
 
-                if (lStr[1].contains("open")) {
-                    item2->setText(1, lStr[0]);
-                    item2->setToolTip(1, lStr[0]);
-                    item2->setForeground(1, QBrush(QColor(0, 0, 255, 127)));
-                } else if (lStr[1].contains("filtered") || lStr[1].contains("unfiltered")) {
-                    item2->setText(3, lStr[0]);
-                    item2->setToolTip(3, lStr[0]);
-                } else {
-                    item2->setText(2, lStr[0]);
-                    item2->setToolTip(2, lStr[0]);
-                    item2->setForeground(2, QBrush(QColor(255, 0, 0, 127)));
-                }
-
-                item2->setText(4, lStr[2]);
-                item2->setToolTip(4, lStr[2]);
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
@@ -309,10 +282,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     }
                 }
                 // Description
-                QString noDes = tr("No description");
                 if (lStr.size() == 3) {
-                    item2->setText(0, noDes);
-                    //elemObj->setDescriptionServices(noDes);
                     elemObj->setDescriptionServices(tmpStr);
                 } else {
                     while (index < lStr.size()) {
@@ -336,38 +306,35 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                         token.append(tmpToken[2]);
                     }
 
+                    // loading services for vulnerability plugin
                     if (token.contains("-")) {
-                        if (comboVuln->findText(token.leftRef(token.indexOf("-")).toString(), Qt::MatchExactly) == -1)
+                        if (comboVuln->findText(token.leftRef(token.indexOf("-")).toString(),
+                                                Qt::MatchExactly) == -1) {
                             comboVuln->addItem(token.leftRef(token.indexOf("-")).toString());
-                    } else if (comboVuln->findText(token, Qt::MatchExactly) == -1)
+                        }
+                    } else if (comboVuln->findText(token, Qt::MatchExactly) == -1) {
                         comboVuln->addItem(token);
+                    }
 
-                    item2->setText(0, str);
-                    item2->setToolTip(0, str);
                     elemObj->setDescriptionServices(str);
 
                 }
 
+                // FIX log
                 if ((PFile) && (!verboseLog)) {
-                    *out << item2->text(0)
+                    *out << str
                             << " ("
-                            << item2->text(4)
+                            << lStr[2]
                             << " - "
-                            << item2->text(1)
-                            << item2->text(2)
-                            << item2->text(3)
+                            << lStr[0]
                             << ")"
                             << endl;
                 }
-            } else
-                item2->setText(0, tr("No Ports"));
-
+            }
             ItemNumber++;
-
         }
-    } else { // insert message for no info
-        root->setText(0, tmp_mess);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+    } else {
+        mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream b3(&bufferInfo); // QString to QtextStrem (scan Tree)
@@ -377,7 +344,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         while (!b3.atEnd()) {
             b3_line = b3.readLine();
 
-            checkViewOS(b3_line,root);
+            // TODO:: FIX call
+            //checkViewOS(b3_line,root);
 
             QTreeWidgetItem *infoItemObj = new QTreeWidgetItem(infoItem);
             itemList.push_front(infoItemObj); // reference to address
@@ -500,10 +468,11 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
 
     if (ItemNumber) {
-        QString tmp_buffer = root->text(0);
-        root->setText(1, QString("%1").arg(open_port));
-        root->setText(2, QString("%1").arg(close_port));
-        root->setText(3, QString("%1").arg(filtered_port));
+        // TODO:: FIX counter
+        //QString tmp_buffer = root->text(0);
+        //root->setText(1, QString("%1").arg(open_port));
+        //root->setText(2, QString("%1").arg(close_port));
+        //root->setText(3, QString("%1").arg(filtered_port));
     }
 
     actionClear_History->setEnabled(true);

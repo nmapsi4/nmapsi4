@@ -60,6 +60,18 @@ QStringList parserObj::getPortServices() {
     return this->portServices_;
 }
 
+QStringList parserObj::getPortOpen() {
+    return this->portOpened_;
+}
+
+QStringList parserObj::getPortClose() {
+    return this->portClosed_;
+}
+
+QStringList parserObj::getPortFiltered() {
+    return this->portFiltered_;
+}
+
 // Setters
 void parserObj::setUptime(const QString uptime) {
     uptime_.append(uptime);
@@ -88,4 +100,16 @@ void parserObj::setDescriptionServices(const QString desService) {
 
 void parserObj::setPortServices(const QString portService) {
     portServices_.push_back(portService);
+}
+
+void parserObj::setPortOpen(const QString portOpen) {
+    portOpened_.push_back(portOpen);
+}
+
+void parserObj::setPortClose(const QString portClose) {
+    portClosed_.push_back(portClose);
+}
+
+void parserObj::setPortFiltered(const QString portFiltered) {
+    portFiltered_.push_back(portFiltered);
 }

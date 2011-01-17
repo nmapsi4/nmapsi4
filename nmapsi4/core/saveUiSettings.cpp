@@ -35,4 +35,5 @@ void nmapClass::saveUiSettings() {
     settings.setValue("LookupEnabled", LookupEnabled);
     settings.setValue("TraceEnabled", TraceEnabled);
     settings.setValue("splitterSizes", cW->saveState());
+    settings.setValue("splitterSizesRight", rW->saveState());
 }

@@ -110,6 +110,7 @@ protected:
     int hostCache;
     int scanCounter;
     QList<QTreeWidgetItem*> itemList;
+    QList<QTreeWidgetItem*> itemListScan;
     QList<QTreeWidgetItem*> itemListLook;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
@@ -141,6 +142,7 @@ protected:
     digSupport *digC;
     logHistory *history;
     QSplitter *cW;
+    QSplitter *rW;
 
 
 public slots:

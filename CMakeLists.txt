@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6.0)
 
-FIND_PACKAGE(Qt4 REQUIRED)
+FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
 
 include(${QT_USE_FILE})
 ADD_DEFINITIONS(-O2 -Wall -Wextra -g)

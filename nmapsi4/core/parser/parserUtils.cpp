@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 
 void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
@@ -61,22 +61,20 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
 #ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
 #endif
-
+    QString hostName_ = item->text(0);
+    hostName_  = hostName_.left(hostName_.indexOf("\n"));
 
     if(hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
-        hostEdit->addItem(item->text(0));
+        hostEdit->addItem(hostName_);
     } else
     if(item->parent() == NULL) {
-        hostEdit->setItemText(0, item->text(0));
+        hostEdit->setItemText(0, hostName_);
     }
 
     int indexObj = treeMain->indexOfTopLevelItem(item);
 #ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::ItemIndex:: " << indexObj;
 #endif
-
-    listWscan->collapseAll();
-    listWscan->topLevelItem(indexObj)->setExpanded(true);
 
     treeNSS->collapseAll();
     treeNSS->topLevelItem(indexObj)->setExpanded(true);
@@ -109,45 +107,6 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
         } else {
             hostEdit->setItemText(0, item->text(2));
         }
-    }
-}
-
-void nmapClass::showParserObj(int indexObj) {
-    QString noInfo("not Discovered");
-
-    if(!parserObjList[indexObj]->getUptime().isEmpty()) {
-        lineInfouptime->clear();
-        lineInfouptime->setText(parserObjList[indexObj]->getUptime());
-    } else {
-        lineInfouptime->setText(noInfo);
-    }
-
-    if(!parserObjList[indexObj]->getTcpSequence().isEmpty()) {
-        lineInfotcpsequence->setText(parserObjList[indexObj]->getTcpSequence());
-    } else {
-        lineInfotcpsequence->setText(noInfo);
-    }
-
-    if(!parserObjList[indexObj]->getRunning().isEmpty()) {
-        lineInforunning->setText(parserObjList[indexObj]->getRunning());
-    } else {
-        lineInforunning->setText(noInfo);
-    }
-
-    if(!parserObjList[indexObj]->getDeviceType().isEmpty()) {
-        lineInfodevice->setText(parserObjList[indexObj]->getDeviceType());
-    } else {
-        lineInfodevice->setText(noInfo);
-    }
-
-    qDeleteAll(objElem);
-    GItree->clear();
-    objElem.clear();
-
-    for(int index=0; index < parserObjList[indexObj]->getServices().size(); index++) {
-        QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
-        objElem.push_front(objItem);
-        objItem->setText(0,parserObjList[indexObj]->getServices()[index]);
     }
 }
 
