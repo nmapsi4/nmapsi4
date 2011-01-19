@@ -151,14 +151,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QTreeWidgetItem *error = new QTreeWidgetItem(listScanError);
     itemList.push_front(error);
 
-    QTreeWidgetItem *infoItem = new QTreeWidgetItem(treeWinfo);
-    itemList.push_front(infoItem);
-
     QTreeWidgetItem *infoTraceroot = new QTreeWidgetItem(treeTraceroot);
     itemList.push_front(infoTraceroot);
-
-    QTreeWidgetItem *infoNSS = new QTreeWidgetItem(treeNSS);
-    itemList.push_front(infoNSS);
 
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
@@ -200,9 +194,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
-    infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
-    infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
     QString tmp_mess("");
@@ -212,9 +204,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     if (!generalBuffer_.isEmpty()) { // Host line scan
         root2->setText(0, generalBuffer_);
         error->setText(0, generalBuffer_);
-        infoItem->setText(0, generalBuffer_);
         infoTraceroot->setText(0, generalBuffer_);
-        infoNSS->setText(0, generalBuffer_);
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_);
@@ -227,9 +217,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     } else {
         root2->setText(0, hostCheck);
         error->setText(0, hostCheck);
-        infoItem->setText(0, hostCheck);
         infoTraceroot->setText(0, hostCheck);
-        infoNSS->setText(0, hostCheck);
         tmp_host.append(hostCheck);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
@@ -242,7 +230,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
     QString scanBufferToStream_line;
 
-    if (!scanBufferToStream_.atEnd()) { // check for scan informations
+    // check for scan result
+    if (!scanBufferToStream_.atEnd()) {
         while (!scanBufferToStream_.atEnd()) {
             scanBufferToStream_line = scanBufferToStream_.readLine();
             if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
@@ -337,46 +326,43 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
-    QTextStream b3(&bufferInfo); // QString to QtextStrem (scan Tree)
-    QString b3_line;
+    QTextStream bufferInfoStream(&bufferInfo); // QString to QtextStrem (scan Tree)
+    QString bufferInfoStream_line;
 
-    if (!b3.atEnd()) { // check for scan informations
-        while (!b3.atEnd()) {
-            b3_line = b3.readLine();
+    // check for Host informations
+    if (!bufferInfoStream.atEnd()) {
+        while (!bufferInfoStream.atEnd()) {
+            bufferInfoStream_line = bufferInfoStream.readLine();
+            // Check OS String
+            if (bufferInfoStream_line.contains("OS")) {
+                checkViewOS(bufferInfoStream_line,mainTreeE);
+            }
 
-            // TODO:: FIX call
-            //checkViewOS(b3_line,root);
-
-            QTreeWidgetItem *infoItemObj = new QTreeWidgetItem(infoItem);
-            itemList.push_front(infoItemObj); // reference to address
-
-            if (!b3_line.isEmpty()) {
-                infoItemObj->setSizeHint(0, QSize(22, 22));
-                infoItemObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-                infoItemObj->setText(0, b3_line);
-                infoItemObj->setToolTip(0, b3_line); // field information
-                if ((PFile) && (!verboseLog)) *out << infoItemObj->text(0) << endl;
-            } else
-                infoItemObj->setText(0, tr("No Info"));
+            if (!bufferInfoStream_line.isEmpty()) {
+                elemObj->setScanInfo(bufferInfoStream_line);
+                if (PFile && !verboseLog)
+                    *out << bufferInfoStream_line << endl;
+            }
         }
     } else { // insert message for no info
-        infoItem->setText(0, tmp_mess2);
-        infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+        //infoItem->setText(0, tmp_mess2);
+        //infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
-    QTextStream bT(&bufferTraceroot); // Traceroute buffer
-    QString bT_line;
+    QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
+    QString bufferTraceStream_line;
     QTreeWidgetItem *infoTracerootObj = NULL;
 
-    if (!bT.atEnd()) { // check for traceroute scan informations
-        while (!bT.atEnd()) {
-            bT_line = bT.readLine();
+    // check for traceroute scan informations
+    if (!bufferTraceStream.atEnd()) {
+        while (!bufferTraceStream.atEnd()) {
+            bufferTraceStream_line = bufferTraceStream.readLine();
 
-            if (!bT_line.isEmpty()) {
-                if(!bT_line.contains("guessing hop")) {
+            if (!bufferTraceStream_line.isEmpty()) {
+                if(!bufferTraceStream_line.contains("guessing hop")) {
                     infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
                     itemList.push_front(infoTracerootObj);
-                    QStringList tmpToken = bT_line.split(" ");
+                    QStringList tmpToken = bufferTraceStream_line.split(" ");
 
                     // split traceroute -------------------------------------------------
                     tmpToken.removeAll("");
@@ -417,8 +403,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                         infoTracerootObj->setText(3, "no DNS");
                         infoTracerootObj->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
                     } else {
-                        infoTracerootObj->setText(0, bT_line);
-                        infoTracerootObj->setToolTip(0, bT_line);
+                        infoTracerootObj->setText(0, bufferTraceStream_line);
+                        infoTracerootObj->setToolTip(0, bufferTraceStream_line);
                     }
                     // ------------------------------------------------------------------------
 
@@ -437,32 +423,24 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
-    QTextStream bNSS(&bufferNSS); // NSS
-    QString bNSS_line;
-    QTreeWidgetItem *infoNSSObj = NULL;
+    QTextStream bufferNssStream(&bufferNSS); // NSS
+    QString bufferNssStream_line("");
 
-    if (!bNSS.atEnd()) { //
-        while (!bNSS.atEnd()) {
-            bNSS_line = bNSS.readLine();
+    // check for NSS scan informations
+    if (!bufferNssStream.atEnd()) {
+        while (!bufferNssStream.atEnd()) {
+            bufferNssStream_line = bufferNssStream.readLine();
 
-            if (!bNSS_line.isEmpty()) {
-                infoNSSObj = new QTreeWidgetItem(infoNSS);
-                itemList.push_front(infoNSSObj);
-
-                infoNSSObj->setSizeHint(0, QSize(22, 22));
-                infoNSSObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-                infoNSSObj->setText(0, bNSS_line);
-                infoNSSObj->setToolTip(0, bNSS_line); // field information
-                if ((PFile) && (!verboseLog)) *out << infoNSSObj->text(0) << endl;
-            } else {
-                if(infoNSSObj) {
-                   infoNSSObj->setText(0, tr("No Info"));
+            if (!bufferNssStream_line.isEmpty()) {
+                elemObj->setNssInfo(bufferNssStream_line);
+                if (PFile && !verboseLog) {
+                    *out << bufferNssStream_line << endl;
                 }
             }
         }
     } else { // insert message for no info
-        infoNSS->setText(0, tmp_mess2);
-        infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+        //infoNSS->setText(0, tmp_mess2);
+        //infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
 

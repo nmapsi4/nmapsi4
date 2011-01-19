@@ -65,12 +65,6 @@ void nmapClass::initObject() {
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
 
-    QString noHost(tr("no Host selected"));
-    lineInfouptime->setText(noHost);
-    lineInfotcpsequence->setText(noHost);
-    lineInforunning->setText(noHost);
-    lineInfodevice->setText(noHost);
-
     QString noService(tr("no Service selected"));
     servDesLabel->setText(noService);
     servPortLabel->setText(noService);
@@ -99,8 +93,8 @@ void nmapClass::initObject() {
     cW->addWidget(stackedMain);
     cW->addWidget(frameRight);
     rW->setOrientation(Qt::Vertical);
-    rW->addWidget(GItree);
     rW->addWidget(treeHostDet);
+    rW->addWidget(GItree);
     this->centralWidget()->layout()->addWidget(cW);
     frameRight->layout()->addWidget(rW);
 
@@ -308,7 +302,7 @@ nmapClass::~nmapClass()
     delete actBack;
     delete actForward;
     delete actStop;
-    delete cW;
     delete rW;
+    delete cW;
 }
 

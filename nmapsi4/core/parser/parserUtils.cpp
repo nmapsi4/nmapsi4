@@ -22,36 +22,26 @@
 
 void nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) {
 
-    if(OSline.contains("OS")) {
-        QString tmp_os = OSline;
-        if(OSline.contains("Linux")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
-            itemOS->setText(4, "Linux OS");
-        } else
-        if(OSline.contains("Windows")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
-            itemOS->setText(4, "MS Windows OS");
-        } else
-        if(OSline.contains("FreeBSD")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
-            itemOS->setText(4, "FreeBSD OS");
-        } else
-        if(OSline.contains("OpenBSD")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
-            itemOS->setText(4, "OpenBSD OS");
-        } else
-        if(OSline.contains("Solaris")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/solaris_logo.png")));
-            itemOS->setText(4, "Sun Solaris OS");
-        } else
-        if(OSline.contains("Mac OS X")) {
-            itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
-            itemOS->setText(4, "Mac OS X");
-        } else {
-            if(itemOS->text(4).isEmpty()) { // double check
-                itemOS->setIcon(4, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
-            }
-        }
+    if(OSline.contains("Linux")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
+        //itemOS->setText(0, "Linux OS");
+    } else if(OSline.contains("Windows")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
+        //itemOS->setText(0, "MS Windows OS");
+    } else if(OSline.contains("FreeBSD")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
+        //itemOS->setText(0, "FreeBSD OS");
+    } else if(OSline.contains("OpenBSD")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
+        //itemOS->setText(0, "OpenBSD OS");
+    } else if(OSline.contains("Solaris")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/solaris_logo.png")));
+        //itemOS->setText(0, "Sun Solaris OS");
+    } else if(OSline.contains("Mac OS X")) {
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
+        //itemOS->setText(0, "Mac OS X");
+    } else if(itemOS->text(0).isEmpty()) { // double check
+        itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
     }
 }
 
@@ -75,12 +65,6 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
 #ifndef PARSER_NO_DEBUG
     qDebug() << "DEBUG::ItemIndex:: " << indexObj;
 #endif
-
-    treeNSS->collapseAll();
-    treeNSS->topLevelItem(indexObj)->setExpanded(true);
-
-    treeWinfo->collapseAll();
-    treeWinfo->topLevelItem(indexObj)->setExpanded(true);
 
     if(indexObj != -1) {
         showParserObj(indexObj);
