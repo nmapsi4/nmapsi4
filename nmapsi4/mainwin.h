@@ -62,6 +62,7 @@ private:
     QString clearHost(const QString hostname);
     void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
     void showParserObj(int indexObj);
+    void showParserObjPlugins(int indexObj);
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();

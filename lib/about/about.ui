@@ -46,63 +46,6 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="labelVersion">
-     <property name="minimumSize">
-      <size>
-       <width>151</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="sizeIncrement">
-      <size>
-       <width>0</width>
-       <height>31</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 75 11pt &quot;Sans Serif&quot;;</string>
-     </property>
-     <property name="text">
-      <string>Version </string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" rowspan="2">
-    <widget class="QGraphicsView" name="graphicsView">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>65</horstretch>
-       <verstretch>65</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>65</width>
-       <height>65</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>65</width>
-       <height>65</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-image: url(:/images/icons/nmapsi4_mw.svg);
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="3">
     <spacer name="horizontalSpacer">
      <property name="orientation">
@@ -345,6 +288,63 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="labelVersion">
+     <property name="minimumSize">
+      <size>
+       <width>151</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="sizeIncrement">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 11pt &quot;Sans Serif&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Version </string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QGraphicsView" name="graphicsView">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>65</horstretch>
+       <verstretch>65</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>65</width>
+       <height>65</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>65</width>
+       <height>65</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/images/icons/nmapsi4_mw.svg);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
     </widget>
    </item>
   </layout>

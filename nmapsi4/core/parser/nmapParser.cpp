@@ -151,9 +151,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QTreeWidgetItem *error = new QTreeWidgetItem(listScanError);
     itemList.push_front(error);
 
-    QTreeWidgetItem *infoTraceroot = new QTreeWidgetItem(treeTraceroot);
-    itemList.push_front(infoTraceroot);
-
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
 
@@ -194,7 +191,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
     error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
-    infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
     mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
     QString tmp_mess("");
@@ -204,7 +200,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     if (!generalBuffer_.isEmpty()) { // Host line scan
         root2->setText(0, generalBuffer_);
         error->setText(0, generalBuffer_);
-        infoTraceroot->setText(0, generalBuffer_);
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_);
@@ -217,7 +212,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     } else {
         root2->setText(0, hostCheck);
         error->setText(0, hostCheck);
-        infoTraceroot->setText(0, hostCheck);
         tmp_host.append(hostCheck);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
@@ -351,7 +345,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
     QString bufferTraceStream_line;
-    QTreeWidgetItem *infoTracerootObj = NULL;
 
     // check for traceroute scan informations
     if (!bufferTraceStream.atEnd()) {
@@ -360,67 +353,18 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
             if (!bufferTraceStream_line.isEmpty()) {
                 if(!bufferTraceStream_line.contains("guessing hop")) {
-                    infoTracerootObj = new QTreeWidgetItem(infoTraceroot);
-                    itemList.push_front(infoTracerootObj);
-                    QStringList tmpToken = bufferTraceStream_line.split(" ");
 
-                    // split traceroute -------------------------------------------------
-                    tmpToken.removeAll("");
+                    elemObj->setTraceRouteInfo(bufferTraceStream_line);
 
-                    // MS windows check for ms string
-                    if(tmpToken.size() == 5) {
-                        if(tmpToken[2].size() < 4) { // minimun dns lenght
-                            tmpToken.removeAt(2);
-                        }
+                    if (PFile && !verboseLog) {
+                        *out << bufferTraceStream_line << endl;
                     }
-
-                    if(tmpToken.size() == 4) {
-                        if(tmpToken[2].size() < 4) { // minimun dns lenght
-                            tmpToken.removeAt(2);
-                        } else {
-                            tmpToken[3].remove("(");
-                            tmpToken[3].remove(")");
-                        }
-                    }
-#ifndef PARSER_NO_DEBUG
-                    qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
-                    for(int index=0; index < tmpToken.size(); index++) {
-                        qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
-
-                    }
-#endif
-
-                    if(tmpToken.size() == 4) {
-                        infoTracerootObj->setText(0, tmpToken[0]);
-                        infoTracerootObj->setText(1, tmpToken[1]);
-                        infoTracerootObj->setText(3, tmpToken[2]);
-                        infoTracerootObj->setText(2, tmpToken[3]);
-
-                    } else if(tmpToken.size() == 3) {
-                        infoTracerootObj->setText(0, tmpToken[0]);
-                        infoTracerootObj->setText(1, tmpToken[1]);
-                        infoTracerootObj->setText(2, tmpToken[2]);
-                        infoTracerootObj->setText(3, "no DNS");
-                        infoTracerootObj->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
-                    } else {
-                        infoTracerootObj->setText(0, bufferTraceStream_line);
-                        infoTracerootObj->setToolTip(0, bufferTraceStream_line);
-                    }
-                    // ------------------------------------------------------------------------
-
-                    infoTracerootObj->setSizeHint(0, QSize(22, 22));
-                    infoTracerootObj->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-                    if ((PFile) && (!verboseLog)) *out << infoTracerootObj->text(0) << endl;
                 }
-            } else {
-                if(infoTracerootObj) {
-                   infoTracerootObj->setText(0, tr("No Info"));
-               }
             }
         }
     } else { // insert message for no info
-        infoTraceroot->setText(0, tmp_mess2);
-        infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+        //infoTraceroot->setText(0, tmp_mess2);
+        //infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream bufferNssStream(&bufferNSS); // NSS

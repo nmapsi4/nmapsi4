@@ -40,6 +40,7 @@ class parserObj
         QStringList getPortFiltered();
         QStringList getScanInfo();
         QStringList getNssInfo();
+        QStringList getTraceRouteInfo();
         void setUptime(const QString uptime);
         void setTcpSequence(const QString tcpSequence);
         void setDeviceType(const QString deviceType);
@@ -52,6 +53,7 @@ class parserObj
         void setPortFiltered(const QString portFiltered);
         void setScanInfo(const QString infoElem);
         void setNssInfo(const QString nssElem);
+        void setTraceRouteInfo(const QString traceElem);
 
     protected:
         QString uptime_;
@@ -66,6 +68,7 @@ class parserObj
         QStringList portClosed_;
         QStringList scanInfo_;
         QStringList scanNss_;
+        QStringList scanTraceRoute_;
 };
 
 
