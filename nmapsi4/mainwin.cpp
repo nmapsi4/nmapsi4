@@ -82,7 +82,7 @@ void nmapClass::initObject() {
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
     scanMonitor->setColumnWidth(1, 200);
-    treeTraceroot->setColumnWidth(0, 250);
+    //treeTraceroot->setColumnWidth(0, 250);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);

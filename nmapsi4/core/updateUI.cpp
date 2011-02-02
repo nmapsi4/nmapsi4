@@ -282,23 +282,25 @@ void nmapClass::listClear() {
     // traceRoot & infoItem & nssItem & error pointer
     itemDeleteAll(itemList); //clear items list
     itemList.clear();
+    listScanError->clear();
 
+    // parserObj list
     qDeleteAll(parserObjList);
     parserObjList.clear();
 
+    // Host list
     itemDeleteAll(mainTreeElem);
     mainTreeElem.clear();
+    treeMain->clear();
 
     // Not necessary anymore
     //listWscan->clear();
-    treeWinfo->clear();
+    //treeWinfo->clear();
 
+    //Lookup list
     itemDeleteAll(digC->digList);
     digC->digList.clear();
-
     treeLookup->clear();
-    treeMain->clear();
-    listScanError->clear();
 
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);
@@ -306,7 +308,7 @@ void nmapClass::listClear() {
 
 void nmapClass::closeTree() {
     //listWscan->collapseAll();
-    treeWinfo->collapseAll();
+    //treeWinfo->collapseAll();
     listScanError->collapseAll();
     listScan->collapseAll();
 }

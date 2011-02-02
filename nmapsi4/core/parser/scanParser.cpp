@@ -227,5 +227,8 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, listNssInfo_[index]);
         root->setToolTip(0, listNssInfo_[index]);
     }
+
+    // call plugins parser
+    showParserObjPlugins(indexObj);
 }
 
