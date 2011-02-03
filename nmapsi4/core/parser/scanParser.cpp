@@ -110,6 +110,7 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listServices_ = parserObjList[indexObj]->getServices();
     const int listServicesSize_ = listServices_.size();
 
+    // show services
     for(int index=0; index < listServicesSize_; index++) {
         QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
         objElem.push_front(objItem);

@@ -153,6 +153,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
+    mainTreeE->setSizeHint(0, QSize(32, 32));
 
     // check for log file
     QTextStream *out = NULL;
