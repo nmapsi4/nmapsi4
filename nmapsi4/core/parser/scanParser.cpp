@@ -126,6 +126,8 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listFilterd_ = parserObjList[indexObj]->getPortFiltered();
     QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
     QStringList listNssInfo_ = parserObjList[indexObj]->getNssInfo();
+    QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
+    QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();
     QString noDes = tr("No description");
 
     // Show open ports
@@ -228,6 +230,29 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, listNssInfo_[index]);
         root->setToolTip(0, listNssInfo_[index]);
     }
+
+    // Show full scan log
+    const int listLogSize = listLogInfo_.size();
+    for(int index=0; index < listLogSize; index++) {
+        QTreeWidgetItem *root = new QTreeWidgetItem(listScan);
+        itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+        root->setText(0, listLogInfo_[index]);
+        root->setToolTip(0, listLogInfo_[index]);
+    }
+
+    // Show scan error
+    const int listErrorSize = listErrorInfo_.size();
+    for(int index=0; index < listErrorSize; index++) {
+        QTreeWidgetItem *root = new QTreeWidgetItem(listScanError);
+        itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
+        root->setText(0, listErrorInfo_[index]);
+        root->setToolTip(0, listErrorInfo_[index]);
+    }
+
 
     // call plugins parser
     showParserObjPlugins(indexObj);

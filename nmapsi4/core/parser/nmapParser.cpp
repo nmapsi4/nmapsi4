@@ -28,7 +28,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     int open_port = 0;
     int close_port = 0;
     int filtered_port = 0;
-    int error_count = 0;
     int ItemNumber = 0;
     int pos;
 
@@ -145,12 +144,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     }
 
-    QTreeWidgetItem *root2 = new QTreeWidgetItem(listScan);
-    itemList.push_front(root2);
-
-    QTreeWidgetItem *error = new QTreeWidgetItem(listScanError);
-    itemList.push_front(error);
-
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
     mainTreeE->setSizeHint(0, QSize(32, 32));
@@ -190,8 +183,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 	break;
     }
 
-    root2->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-    error->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
     mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
     QString tmp_mess("");
@@ -199,8 +190,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString tmp_host("");
 
     if (!generalBuffer_.isEmpty()) { // Host line scan
-        root2->setText(0, generalBuffer_);
-        error->setText(0, generalBuffer_);
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_);
@@ -211,8 +200,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         tmp_mess2.append(generalBuffer_);
         if ((PFile) && (!verboseLog)) *out << generalBuffer_ << endl;
     } else {
-        root2->setText(0, hostCheck);
-        error->setText(0, hostCheck);
         tmp_host.append(hostCheck);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
@@ -339,9 +326,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                     *out << bufferInfoStream_line << endl;
             }
         }
-    } else { // insert message for no info
-        //infoItem->setText(0, tmp_mess2);
-        //infoItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
@@ -363,9 +347,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 }
             }
         }
-    } else { // insert message for no info
-        //infoTraceroot->setText(0, tmp_mess2);
-        //infoTraceroot->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     QTextStream bufferNssStream(&bufferNSS); // NSS
@@ -383,12 +364,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 }
             }
         }
-    } else { // insert message for no info
-        //infoNSS->setText(0, tmp_mess2);
-        //infoNSS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
-
-
 
     if (ItemNumber) {
         // TODO:: FIX counter
@@ -400,52 +376,35 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     actionClear_History->setEnabled(true);
 
-    QTextStream b_log(StdoutStr);
-    QString blog_line;
+    QTextStream bufferLogStream(StdoutStr);
+    QString bufferLogStream_line;
 
-    while (!b_log.atEnd()) {
-        blog_line = b_log.readLine();
-        if(!blog_line.isEmpty()) {
-           QTreeWidgetItem *item_root2 = new QTreeWidgetItem(root2); // append scan log
-           itemList.push_front(item_root2); // reference to address
-
-           item_root2->setText(0, blog_line);
-
+    // check for full log scan
+    while (!bufferLogStream.atEnd()) {
+        bufferLogStream_line = bufferLogStream.readLine();
+        if(!bufferLogStream_line.isEmpty()) {
+           elemObj->setFullScanLog(bufferLogStream_line);
            if ((PFile) && (verboseLog)) {
-            *out << blog_line << "\n";
+            *out << bufferLogStream_line << "\n";
            }
         }
     }
+
     *out << "==LogEnd\n";
-    if (PFile) delete out;
+    if (PFile) {
+        delete out;
+    }
 
-    QTextStream b_error(StderrorStr);
-    QString error_line;
+    QTextStream bufferErrorStream(StderrorStr);
+    QString bufferErrorStream_line;
 
-    if (!b_error.atEnd()) { // check for no error
-        while (!b_error.atEnd()) { // print error buffer informations
-            QTreeWidgetItem *item_error = new QTreeWidgetItem(error); // item_error memory allocation
-            itemList.push_front(item_error); // reference to address
-            error_line = b_error.readLine();
-            item_error->setText(0, error_line);
-            error_count++;
+    // check for scan error
+    if (!bufferErrorStream.atEnd()) {
+        while (!bufferErrorStream.atEnd()) {
+            bufferErrorStream_line = bufferErrorStream.readLine();
+            elemObj->setErrorScan(bufferErrorStream_line);
         }
-
-    } else {
-        QString tmp_mess = error->text(0);
-        tmp_mess.append(tr("\n(No Errors or Warnings)"));
-        error->setText(0, tmp_mess);
     }
-
-    if (error_count) {
-        QString tmp_buffer_error = error->text(0);
-        tmp_buffer_error.append(tr("\n(Report: "));
-        tmp_buffer_error.append(tr("Errors or Warnings: "));
-        tmp_buffer_error.append(QString("%1").arg(error_count));
-        tmp_buffer_error.append(" )");
-        error->setText(0, tmp_buffer_error);
-    }
-
 
     delete StdoutStr;
     delete StderrorStr;

@@ -84,6 +84,14 @@ QStringList parserObj::getTraceRouteInfo() {
     return this->scanTraceRoute_;
 }
 
+QStringList parserObj::getFullScanLog() {
+    return this->fullLogScan_;
+}
+
+QStringList parserObj::getErrorScan() {
+    return this->errorScan_;
+}
+
 // Setters
 void parserObj::setUptime(const QString uptime) {
     uptime_.append(uptime);
@@ -136,4 +144,12 @@ void parserObj::setNssInfo(const QString nssElem) {
 
 void parserObj::setTraceRouteInfo(const QString traceElem) {
     scanTraceRoute_.push_back(traceElem);
+}
+
+void parserObj::setFullScanLog(const QString logElem) {
+    fullLogScan_.push_back(logElem);
+}
+
+void parserObj::setErrorScan(const QString errorElem) {
+    errorScan_.push_back(errorElem);
 }

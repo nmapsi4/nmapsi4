@@ -41,6 +41,8 @@ class parserObj
         QStringList getScanInfo();
         QStringList getNssInfo();
         QStringList getTraceRouteInfo();
+        QStringList getFullScanLog();
+        QStringList getErrorScan();
         void setUptime(const QString uptime);
         void setTcpSequence(const QString tcpSequence);
         void setDeviceType(const QString deviceType);
@@ -54,6 +56,8 @@ class parserObj
         void setScanInfo(const QString infoElem);
         void setNssInfo(const QString nssElem);
         void setTraceRouteInfo(const QString traceElem);
+        void setFullScanLog(const QString logElem);
+        void setErrorScan(const QString errorElem);
 
     protected:
         QString uptime_;
@@ -69,6 +73,8 @@ class parserObj
         QStringList scanInfo_;
         QStringList scanNss_;
         QStringList scanTraceRoute_;
+        QStringList fullLogScan_;
+        QStringList errorScan_;
 };
 
 
