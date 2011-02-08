@@ -491,28 +491,6 @@
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_6">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <property name="margin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QTreeWidget" name="treeWinfo">
-                  <property name="alternatingRowColors">
-                   <bool>true</bool>
-                  </property>
-                  <property name="rootIsDecorated">
-                   <bool>false</bool>
-                  </property>
-                  <column>
-                   <property name="text">
-                    <string>List(s)</string>
-                   </property>
-                  </column>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
               <widget class="QWidget" name="page_14">
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <property name="margin">
@@ -640,20 +618,6 @@
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="Binfo">
-                 <property name="text">
-                  <string>Host(s) Info</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
                 <spacer name="horizontalSpacer">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -702,7 +666,7 @@
           <widget class="QWidget" name="tab_4">
            <attribute name="icon">
             <iconset resource="../mainwin.qrc">
-             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+             <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
            </attribute>
            <attribute name="title">
             <string>Scan Options</string>
@@ -1779,7 +1743,7 @@
           <widget class="QWidget" name="tabMonitor">
            <attribute name="icon">
             <iconset resource="../mainwin.qrc">
-             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+             <normaloff>:/images/images/utilities-system-monitor.png</normaloff>:/images/images/utilities-system-monitor.png</iconset>
            </attribute>
            <attribute name="title">
             <string>Scan Monitor</string>
@@ -1961,124 +1925,6 @@
                </property>
               </column>
              </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_9">
-           <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
-             <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
-           </attribute>
-           <attribute name="title">
-            <string>Host Details</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_14">
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_13">
-              <item row="3" column="1">
-               <widget class="QLabel" name="servPortLabel">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="label_10">
-                <property name="text">
-                 <string>&lt;b&gt;Service Description:&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>&lt;b&gt;Service Port:&lt;/b&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <spacer name="verticalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Preferred</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>15</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="0" column="0">
-               <spacer name="verticalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Preferred</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>10</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="8" column="1">
-               <spacer name="verticalSpacer_2">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="4" column="1">
-               <widget class="QTextEdit" name="servDesLabel">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>100</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>100</height>
-                 </size>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Plain</enum>
-                </property>
-                <property name="textInteractionFlags">
-                 <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
             </item>
            </layout>
           </widget>
@@ -2400,6 +2246,12 @@
     </item>
     <item row="2" column="2">
      <widget class="QFrame" name="frameRight">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -2588,7 +2440,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionClear_History"/>
-   <addaction name="actionClose_Tree"/>
   </widget>
   <widget class="QToolBar" name="toolBarBook">
    <property name="windowTitle">

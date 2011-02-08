@@ -87,33 +87,8 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
-
-        if(tmp.startsWith("Uptime")) {
-            QString uptime;
-            uptime.clear();
-            uptime.append(tmp);
-            uptime.remove("Uptime guess:");
-            elemObj->setUptime(uptime);
-        }
-
-        if(tmp.startsWith("TCP Sequence Prediction:")) {
-            QString sequence_(tmp);
-            sequence_.remove("TCP Sequence Prediction: ");
-            elemObj->setTcpSequence(sequence_);
-        }
-
-        if(tmp.startsWith("Running:")) {
-            QString running_(tmp);
-            running_.remove("Running: ");
-            elemObj->setRunning(running_);
-        }
-
-        if(tmp.startsWith("Device type:")) {
-            QString device_(tmp);
-            device_.remove("Device type: ");
-            elemObj->setDeviceType(device_);
-        }
-
+          
+	// pars for subtree service
         if(tmp.startsWith("|")) {
             QString tmpClean(tmp);
             if(tmpClean.startsWith("|")) {
@@ -170,16 +145,13 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     switch(tmpBox) {
       case 0:	
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 1:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 2:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
     }
 
@@ -321,7 +293,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             }
 
             if (!bufferInfoStream_line.isEmpty()) {
-                elemObj->setScanInfo(bufferInfoStream_line);
+                elemObj->setMainInfo(bufferInfoStream_line);
                 if (PFile && !verboseLog)
                     *out << bufferInfoStream_line << endl;
             }

@@ -27,25 +27,8 @@ parserObj::~parserObj() {
 
 }
 
-// Getters
-QString parserObj::getUptime() {
-    if(uptime_.startsWith(" ")) {
-        uptime_.remove(0,1);
-    }
-    return this->uptime_;
-
-}
-
-QString parserObj::getTcpSequence() {
-    return this->tcp_sequence_;
-}
-
-QString parserObj::getDeviceType() {
-    return this->deviceType_;
-}
-
-QString parserObj::getRunning() {
-    return this->running_;
+QStringList parserObj::getMainInfo() {
+    return this->mainInfo_;
 }
 
 QStringList parserObj::getServices() {
@@ -72,10 +55,6 @@ QStringList parserObj::getPortFiltered() {
     return this->portFiltered_;
 }
 
-QStringList parserObj::getScanInfo() {
-    return this->scanInfo_;
-}
-
 QStringList parserObj::getNssInfo() {
     return this->scanNss_;
 }
@@ -92,22 +71,8 @@ QStringList parserObj::getErrorScan() {
     return this->errorScan_;
 }
 
-// Setters
-void parserObj::setUptime(const QString uptime) {
-    uptime_.append(uptime);
-
-}
-
-void parserObj::setTcpSequence(const QString tcpSequence) {
-    tcp_sequence_.append(tcpSequence);
-}
-
-void parserObj::setDeviceType(const QString deviceType) {
-    deviceType_.append(deviceType);
-}
-
-void parserObj::setRunning(const QString running) {
-    running_.append(running);
+void parserObj::setMainInfo(const QString elemMainInfo) {
+    mainInfo_.append(elemMainInfo);
 }
 
 void parserObj::setServices(const QString service) {
@@ -132,10 +97,6 @@ void parserObj::setPortClose(const QString portClose) {
 
 void parserObj::setPortFiltered(const QString portFiltered) {
     portFiltered_.push_back(portFiltered);
-}
-
-void parserObj::setScanInfo(const QString infoElem) {
-    scanInfo_.push_back(infoElem);
 }
 
 void parserObj::setNssInfo(const QString nssElem) {

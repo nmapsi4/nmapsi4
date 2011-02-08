@@ -26,81 +26,17 @@ void nmapClass::showParserObj(int indexObj) {
     itemListScan.clear();
 
     QString noInfo("not Discovered");
-
-    if (!parserObjList[indexObj]->getUptime().isEmpty()) {
+    QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
+    
+    // Show Main Info
+    const int listMainInfoSize = listMainInfo_.size();
+    for(int index=0; index < listMainInfoSize; index++) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
         itemListScan.push_front(root);
-        QString tmpElem_ = parserObjList[indexObj]->getUptime();
-        tmpElem_.prepend("Uptime: ");
-        root->setText(0, tmpElem_);
-        root->setToolTip(0, tmpElem_);
-    } else {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
         root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_("Uptime: ");
-        tmpElem_.append(noInfo);
-        root->setText(0, tmpElem_);
-    }
-
-    if (!parserObjList[indexObj]->getTcpSequence().isEmpty()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_ = parserObjList[indexObj]->getTcpSequence();
-        tmpElem_.prepend("TcpSequence: ");
-        root->setText(0, tmpElem_);
-        root->setToolTip(0, tmpElem_);
-    } else {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_("TcpSequence: ");
-        tmpElem_.append(noInfo);
-        root->setText(0, tmpElem_);
-    }
-
-    if (!parserObjList[indexObj]->getRunning().isEmpty()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_ = parserObjList[indexObj]->getRunning();
-        tmpElem_.prepend("Running: ");
-        root->setText(0, tmpElem_);
-        root->setToolTip(0, tmpElem_);
-    } else {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_("Running: ");
-        tmpElem_.append(noInfo);
-        root->setText(0, tmpElem_);
-    }
-
-    if (!parserObjList[indexObj]->getDeviceType().isEmpty()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_ = parserObjList[indexObj]->getDeviceType();
-        tmpElem_.prepend("DeviceType: ");
-        root->setText(0, tmpElem_);
-        root->setToolTip(0, tmpElem_);
-    } else {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setSizeHint(0, QSize(22, 22));
-        itemListScan.push_front(root);
-        QString tmpElem_("DeviceType: ");
-        tmpElem_.append(noInfo);
-        root->setText(0, tmpElem_);
+        root->setText(0, listMainInfo_[index]);
+        root->setToolTip(0, listMainInfo_[index]);
     }
 
     qDeleteAll(objElem);
@@ -113,8 +49,9 @@ void nmapClass::showParserObj(int indexObj) {
     // show services
     for(int index=0; index < listServicesSize_; index++) {
         QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
+	objItem->setSizeHint(0, QSize(22, 22));
+	objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
         objElem.push_front(objItem);
-        objItem->setSizeHint(0, QSize(22, 22));
         objItem->setText(0,listServices_[index]);
     }
 
@@ -124,7 +61,7 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
     QStringList listClose_ = parserObjList[indexObj]->getPortClose();
     QStringList listFilterd_ = parserObjList[indexObj]->getPortFiltered();
-    QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
+    //QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
     QStringList listNssInfo_ = parserObjList[indexObj]->getNssInfo();
     QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
     QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();
@@ -209,17 +146,6 @@ void nmapClass::showParserObj(int indexObj) {
         }
     }
 
-    // Show scan Info
-    const int listScanInfoSize = listScanInfo_.size();
-    for(int index=0; index < listScanInfoSize; index++) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeWinfo);
-        itemListScan.push_front(root);
-        root->setSizeHint(0, QSize(22, 22));
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setText(0, listScanInfo_[index]);
-        root->setToolTip(0, listScanInfo_[index]);
-    }
-
     // Show Nss Info
     const int listNssSize = listNssInfo_.size();
     for(int index=0; index < listNssSize; index++) {
@@ -252,7 +178,6 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, listErrorInfo_[index]);
         root->setToolTip(0, listErrorInfo_[index]);
     }
-
 
     // call plugins parser
     showParserObjPlugins(indexObj);

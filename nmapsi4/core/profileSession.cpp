@@ -204,16 +204,6 @@ void nmapClass::checkProfile()
          settings.setValue("HostEnabled", "true"); // default value
     }
 
-    HostDetEnabled = settings.value("HostEnabled").toBool();
-
-    QString MonitorEnabled_ = settings.value("MonitorEnabled", "none").toString();
-
-    if ((!MonitorEnabled_.compare("none"))) {
-         settings.setValue("MonitorEnabled", "true"); // default value
-    }
-
-    MonitorEnabled = settings.value("MonitorEnabled").toBool();
-
     QString LookupEnabled_ = settings.value("LookupEnabled", "none").toString();
 
     if ((!LookupEnabled_.compare("none"))) {

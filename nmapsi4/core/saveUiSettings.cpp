@@ -30,7 +30,6 @@ void nmapClass::saveUiSettings() {
     }
     settings.setValue("NSSsupport", NSSsupport);
     settings.setValue("ADVSupport", ADVSupport);
-    settings.setValue("HostEnabled", HostDetEnabled);
     settings.setValue("MonitorEnabled", MonitorEnabled);
     settings.setValue("LookupEnabled", LookupEnabled);
     settings.setValue("TraceEnabled", TraceEnabled);
