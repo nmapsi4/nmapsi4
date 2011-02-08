@@ -1,0 +1,36 @@
+
+body { margin: 0; padding: 20px; }
+
+/* FONTS */
+
+body { 
+  font: normal 16px/1.3em arial, helvetica, sans-serif; 
+  font-size: 85%;
+}
+
+/* SITE STYLES */
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    line-height: 1.1em;
+    margin: 0 0 16px 0;
+    padding: 0:
+}
+
+h1 { font-size: 300%; }
+h2 { font-size: 200%; }
+h3 { font-size: 170%; }
+h4 { font-size: 130%; }
+
+
+a {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: underline; 
+}
+
+a:hover { text-decoration: none; }
+
+b, strong { letter-spacing: 1px; }
+
+img { border: 0; }

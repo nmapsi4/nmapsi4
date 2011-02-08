@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>Documentazione</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+
+
+  <h2>NmapSI4</h2>
+  <ul class="borderedlist">
+    <li><a href="index_it.html#get_started">Introduzione</a></li>
+    <li><a href="index_it.html#principale">Schermata principale</a></li>
+    <li><a href="index_it.html#scansione">Scansione</a></li>
+      <ul>
+	<li><a href="index_it.html#dettagli">Dettagli</a></li>
+	<li><a href="index_it.html#nss">(*)NSS</a></li>
+	<li><a href="index_it.html#host_info">(*)Host info</a></li>
+	<li><a href="index_it.html#bookmarks">Preferiti</a></li>
+	<li><a href="index_it.html#bm_parameters">Parametri dei preferiti</a></li>
+      </ul>
+    <li><a href="index_it.html#scan_options">Opzioni di scansione</a></li>
+      <ul>
+	<li><a href="index_it.html#so_scan">Scansione</a></li>
+	<li><a href="index_it.html#so_options">(*)Options</a></li>
+	<li><a href="index_it.html#so_discover">(*)Discover</a></li>
+	<li><a href="index_it.html#so_file">File</a></li>
+	<li><a href="index_it.html#so_timing">(*)Timing</a></li>
+      </ul>
+    <li><a href="index_it.html#scan_monitor">Monitor della scansione</a></li>
+    <li><a href="index_it.html#lookup">(*)Lookup</a></li>
+    <li><a href="index_it.html#traceroute">(*)Traceroute</a></li>
+    <li><a href="index_it.html#host_details">(*)Host details</a></li>
+  </ul>
+
+  <br /><h2>Motore di ricerca vulnerabilit&agrave;</h2>
+  <ul>
+    <li><a href="index_it.html#vuln_main">Schermata principale</a></li>
+    <li><a href="index_it.html#vuln_bookmarks">Preferiti</a></li>
+  </ul>
+
+  <br /><h2>Log reader</h2>
+  <ul>
+    <li><a href="index_it.html#logr_main">Schermata principale</a></li>
+  </ul>
+
+<br /><hr />
+
+<br /><br /><a name="get_started">Introduzione</a><br />NmapSI4 &egrave; una GUI completa, realizzata in Qt, per Nmap, con l'obiettivo di dare maggiore padronanza agli utenti di questo potente strumento di analisi.
+
+<!-- NmapSI4 -->
+<br /><br /><a name="principale">Schermata principale</a><br /><img  src="images/main.png" width="50%" /><br />
+Questa &egrave; la schermata principale di NmapSI4, possiamo notare alcuni elementi:
+  <ul>
+    <li>Barra dei menu</li>
+    <li>Barra di strumenti</li>
+    <li>Form di inserimento host, ip o dns per la scansione</li>
+    <li>Form di inserimento per i parametri di scansione</li>
+    <li>Schermata dei risultati</li>
+    <li>Barra di stato</li>
+  </ul>
+Per iniziare una scansione inserire un host, ip o dns e cliccare sul pulsante "Scan". 
+Al termine della scansione, vengono visualizzati i risultati nella schermata dei risultati.
+Sulla barra di stato &egrave; possibile vedere con quali diritti &egrave; in esecuzione NmapSI4 insieme alla sua versione software ed insieme alla versione software per Nmap.
+
+<br /><br /><a name="scansione">Scansione</a><br /><br />
+Questa sezione riguarda i pulsanti presenti sotto la schermata dei risultati.
+
+<br /><a name="dettagli">Dettagli di scansione</a><br /><img  src="images/1.1.scan_details.png" width="50%" /><br />
+Qui vengono elencati i risultati della scansione, e nello specifico: la porta del servizio, lo stato della porta, il tipo di servizio ed una breve descrizione.
+
+<br /><br /><a name="nss">Nmap script</a><br /><img  src="images/1.2.nss_result.png" width="50%" /><br />
+Qui vengono mostrati dei risultati in base a degli script presenti nella suite Nmap.
+Per ulteriori informazioni rimandiamo al capitolo specifico della <a href="http://nmap.org/book/nse.html" target="_blank">guida Nmap</a>.
+
+<br /><br /><a name="host_info">Host info</a><br /><img  src="images/1.3.host_info.png" width="50%" /><br />
+Qui sono presenti dettagli relativi alla scansione, come l'ora di inizio, la durata della scansione ed altre informazioni utili.
+
+<br /><br /><a name="bookmarks">Preferiti</a><br /><img  src="images/1.4.bookmarks.png" width="50%" /><br />
+Qui possiamo mantenere i nostri bersagli preferiti. La schermata ci mostra l'ip o il nome host e la data di memorizzazione.
+
+<br /><br /><a name="bm_parameters">Parametri dei preferiti</a><br /><img  src="images/1.5.bookmarks_parameters.png" width="50%" /><br />
+Qui possiamo visualizzare i parametri di scansione dei preferiti memorizzati.
+
+<br /><br /><a name="scan_options">Opzioni di scansione</a><br />
+In questa sezione &egrave; possibile cambiare i parametri di scansione. Per applicare i cambiamenti &egrave; necessario usare il pulsante in basso "Applica".
+
+<br /><br /><a name="so_scan">(*)Scan </a><br /><img  src="images/2.1.scan_options.png" width="50%" /><br />
+In questa sezione &egrave; relativa ai parametri strettamente della scansione, ad esempio profili di scansione, tipologia e numero di porte.
+
+<br /><br /><a name="so_options">(*)Options</a><br /><img  src="images/2.2.scan_options.png" width="50%" /><br />
+In questa sezione &egrave; possibile cambiare il livello di dettaglio, ed utilizzare parametri specifici come Ipv6 e frammentazione.
+
+<br /><br /><a name="so_discover">(*)Discover</a><br /><img  src="images/2.3.discover_scan_options.png" width="50%" /><br />
+In questa sezione &egrave; possibile cambiare i parametri relativi alle tipologie di pacchetti da usare nella scansione.
+
+<br /><br /><a name="so_file">File</a><br /><img  src="images/2.4.file_scan_options1.png" width="50%" /><br />
+In questa sezione &egrave; possibile specificare un file di input ed un profilo di scansione specifico.
+
+<br /><br /><a name="so_timing">(*)Timing</a><br /><img  src="images/2.5.timing_scan_options2.png" width="50%" /><br />
+In questa sezione &egrave; possibile cambiare i parametri riguardo al tempo di scansione ed al TTL dei pacchetti inviati.
+
+<br /><br /><a name="scan_monitor">Monitor della scansione</a><br /><img  src="images/scan_monitor.png" width="50%" /><br />
+Questa sezione elenca i vari bersagli delle scansioni attive, non ancora completate.
+
+<br /><br /><a name="lookup">(*)Lookup</a><br /><img  src="images/4.scan_lookup.png" width="50%" /><br />
+Questa sezione mostra le corrispondenze tra bersagli, ip e servizi connessi.
+
+<br /><br /><a name="traceroute">(*)Traceroute<br /></a><img  src="images/5.traceroute.png" width="50%" /><br />
+Questa sezione mostra la "strada" percorsa dai pacchetti della scansione.
+
+<br /><br /><a name="host_details">(*)Host details</a><br /><img  src="images/6.host_details.png" width="50%" /><br />
+(* QUESTA SEZIONE DOVREBBE SPARIRE *)
+
+<br /><br /><hr />
+
+<!-- Vulnerabilities -->
+<br /><br /><a name="vuln_main">Schermata principale</a><br /><img  src="images/vulnerabilities.png" width="50%" /><br />
+Questa sezione mette a disposizione un motore di ricerca per cercare eventuali vulnerabilit&agrave; dei servizi tracciati nella scansione all'interno dei maggiori siti di riferimento per le vulnerabilit&agrave;.
+&Egrave; possibile cercare in base al servizio specifico riconosciuto tramite la scansione, oppure indicando un altro termine di ricerca.
+
+<br /><br /><a name="vuln_bookmarks">Preferiti</a><br /><img  src="images/vuln_bookmarks.png" width="50%" /><br />
+Qui possiamo memorizzare i nostri risultati preferiti.
+
+<br /><br /><hr />
+
+<!-- Log reader -->
+<br /><br /><a name="logr_main">Schermata principale</a><br /><img  src="images/log_reader.png" width="50%" /><br />
+Questa sezione permette di leggere l'output completo della scansione effettuata da Nmap.
+
+
+</body>
+</html>
