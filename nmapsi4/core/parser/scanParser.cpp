@@ -61,7 +61,7 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
     QStringList listClose_ = parserObjList[indexObj]->getPortClose();
     QStringList listFilterd_ = parserObjList[indexObj]->getPortFiltered();
-    QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
+    //QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
     QStringList listNssInfo_ = parserObjList[indexObj]->getNssInfo();
     QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
     QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();
@@ -144,17 +144,6 @@ void nmapClass::showParserObj(int indexObj) {
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
         }
-    }
-
-    // Show scan Info
-    const int listScanInfoSize = listScanInfo_.size();
-    for(int index=0; index < listScanInfoSize; index++) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeWinfo);
-        itemListScan.push_front(root);
-        root->setSizeHint(0, QSize(22, 22));
-        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setText(0, listScanInfo_[index]);
-        root->setToolTip(0, listScanInfo_[index]);
     }
 
     // Show Nss Info

@@ -35,7 +35,6 @@ class parserObj
         QStringList getPortOpen();
         QStringList getPortClose();
         QStringList getPortFiltered();
-        QStringList getScanInfo();
         QStringList getNssInfo();
         QStringList getTraceRouteInfo();
         QStringList getFullScanLog();
@@ -47,7 +46,6 @@ class parserObj
         void setPortOpen(const QString portOpen);
         void setPortClose(const QString portClose);
         void setPortFiltered(const QString portFiltered);
-        void setScanInfo(const QString infoElem);
         void setNssInfo(const QString nssElem);
         void setTraceRouteInfo(const QString traceElem);
         void setFullScanLog(const QString logElem);
@@ -61,7 +59,6 @@ class parserObj
         QStringList portOpened_;
         QStringList portFiltered_;
         QStringList portClosed_;
-        QStringList scanInfo_;
         QStringList scanNss_;
         QStringList scanTraceRoute_;
         QStringList fullLogScan_;

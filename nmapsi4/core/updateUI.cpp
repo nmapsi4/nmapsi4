@@ -293,10 +293,6 @@ void nmapClass::listClear() {
     mainTreeElem.clear();
     treeMain->clear();
 
-    // Not necessary anymore
-    //listWscan->clear();
-    //treeWinfo->clear();
-
     //Lookup list
     itemDeleteAll(digC->digList);
     digC->digList.clear();
@@ -304,13 +300,6 @@ void nmapClass::listClear() {
 
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);
-}
-
-void nmapClass::closeTree() {
-    //listWscan->collapseAll();
-    //treeWinfo->collapseAll();
-    listScanError->collapseAll();
-    listScan->collapseAll();
 }
 
 void nmapClass::detailsOptions() {
@@ -323,18 +312,13 @@ void nmapClass::nssOptions() {
     updateIconsBox();
 }
 
-void nmapClass::infoOptions() {
+void nmapClass::bookOptions() {
     SWscan->setCurrentIndex(2);
     updateIconsBox();
 }
 
-void nmapClass::bookOptions() {
-    SWscan->setCurrentIndex(3);
-    updateIconsBox();
-}
-
 void nmapClass::bookOptionsPar() {
-    SWscan->setCurrentIndex(4);
+    SWscan->setCurrentIndex(3);
     updateIconsBox();
 }
 
@@ -349,14 +333,11 @@ void nmapClass::updateIconsBox() {
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
         break;
     case 2:
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-	break;
-    case 3:
         Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
 	break;
-    case 4:
-        BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-        break;
+    case 3:
+        BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));        
+	break;
     }
 
 }
@@ -494,8 +475,8 @@ void nmapClass::setTreeWidgetValues() {
     listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
     listScan->setIconSize(QSize(22, 22));
     listScan->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeWinfo->setIconSize(QSize(22, 22));
-    treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
+    //treeWinfo->setIconSize(QSize(22, 22));
+    //treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
     treeTraceroot->setIconSize(QSize(22, 22));
     treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
     treeNSS->setIconSize(QSize(22, 22));
@@ -567,7 +548,7 @@ void nmapClass::updateTabTrace() {
 void nmapClass::updateTabMonitor() {
     if(actTabMonitor->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tabMonitor,tr("Scan Monitor"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
         MonitorEnabled = true;
     } else {
         tabWidget->removeTab(tabWidget->indexOf(tabMonitor));

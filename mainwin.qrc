@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/utilities-system-monitor.png</file>
     <file>images/os-logo/solaris_logo.png</file>
     <file>images/os-logo/mac-os-x_logo.png</file>
     <file>images/os-logo/openbsd_logo.png</file>

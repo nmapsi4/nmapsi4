@@ -55,10 +55,6 @@ QStringList parserObj::getPortFiltered() {
     return this->portFiltered_;
 }
 
-QStringList parserObj::getScanInfo() {
-    return this->scanInfo_;
-}
-
 QStringList parserObj::getNssInfo() {
     return this->scanNss_;
 }
@@ -101,10 +97,6 @@ void parserObj::setPortClose(const QString portClose) {
 
 void parserObj::setPortFiltered(const QString portFiltered) {
     portFiltered_.push_back(portFiltered);
-}
-
-void parserObj::setScanInfo(const QString infoElem) {
-    scanInfo_.push_back(infoElem);
 }
 
 void parserObj::setNssInfo(const QString nssElem) {

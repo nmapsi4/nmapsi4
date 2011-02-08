@@ -163,7 +163,6 @@ private slots:
     void input_browser();
     void fileSession();
     void listClear();
-    void closeTree();
     void checkFullScreen();
     void updateMenuBar();
     void showMainToolBar();
@@ -210,7 +209,6 @@ private slots:
     void resetPar();
     void detailsOptions();
     void nssOptions();
-    void infoOptions();
     void bookOptions();
     void bookOptionsPar();
 

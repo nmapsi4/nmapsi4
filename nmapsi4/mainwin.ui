@@ -491,28 +491,6 @@
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_6">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <property name="margin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QTreeWidget" name="treeWinfo">
-                  <property name="alternatingRowColors">
-                   <bool>true</bool>
-                  </property>
-                  <property name="rootIsDecorated">
-                   <bool>false</bool>
-                  </property>
-                  <column>
-                   <property name="text">
-                    <string>List(s)</string>
-                   </property>
-                  </column>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
               <widget class="QWidget" name="page_14">
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <property name="margin">
@@ -640,20 +618,6 @@
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="Binfo">
-                 <property name="text">
-                  <string>Host(s) Info</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
                 <spacer name="horizontalSpacer">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -702,7 +666,7 @@
           <widget class="QWidget" name="tab_4">
            <attribute name="icon">
             <iconset resource="../mainwin.qrc">
-             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+             <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
            </attribute>
            <attribute name="title">
             <string>Scan Options</string>
@@ -1779,7 +1743,7 @@
           <widget class="QWidget" name="tabMonitor">
            <attribute name="icon">
             <iconset resource="../mainwin.qrc">
-             <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+             <normaloff>:/images/images/utilities-system-monitor.png</normaloff>:/images/images/utilities-system-monitor.png</iconset>
            </attribute>
            <attribute name="title">
             <string>Scan Monitor</string>
@@ -2282,6 +2246,12 @@
     </item>
     <item row="2" column="2">
      <widget class="QFrame" name="frameRight">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -2470,7 +2440,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionClear_History"/>
-   <addaction name="actionClose_Tree"/>
   </widget>
   <widget class="QToolBar" name="toolBarBook">
    <property name="windowTitle">

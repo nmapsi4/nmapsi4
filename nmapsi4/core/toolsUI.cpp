@@ -353,7 +353,7 @@ void nmapClass::createBar() {
     actTabTrace->setToolTip(tr("Show/Hide Traceroot"));
     actTabTrace->setCheckable(true);
 
-    actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     actTabMonitor->setToolTip(tr("Show/Hide Scan Monitor"));
     actTabMonitor->setCheckable(true);
 

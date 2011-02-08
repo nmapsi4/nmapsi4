@@ -87,18 +87,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
-        
-        // pars for mainwindow info box
-        if (tmp.startsWith("Uptime") 
-	  || tmp.startsWith("TCP Sequence Prediction:")
-	  || tmp.startsWith("Running:")
-	  || tmp.startsWith("OS details:")
-	  || tmp.startsWith("Running (JUST GUESSING):")
-	  || tmp.startsWith("Aggressive OS guesses:")
-	  || tmp.startsWith("Device type:")) {
-	  elemObj->setMainInfo(tmp);
-	}
-	  
+          
 	// pars for subtree service
         if(tmp.startsWith("|")) {
             QString tmpClean(tmp);
@@ -156,16 +145,13 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     switch(tmpBox) {
       case 0:	
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 1:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
       case 2:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Binfo->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
 	break;
     }
 
@@ -307,7 +293,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             }
 
             if (!bufferInfoStream_line.isEmpty()) {
-                elemObj->setScanInfo(bufferInfoStream_line);
+                elemObj->setMainInfo(bufferInfoStream_line);
                 if (PFile && !verboseLog)
                     *out << bufferInfoStream_line << endl;
             }

@@ -100,8 +100,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveAsLog()));
     connect(actionSave_Menu, SIGNAL(triggered()),
             this, SLOT(saveLog()));
-    connect(actionClose_Tree, SIGNAL(triggered()),
-            this, SLOT(closeTree()));
     connect(actionFullS, SIGNAL(triggered()),
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
@@ -129,8 +127,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(detailsOptions()));
     connect(Bnss, SIGNAL(clicked()),
             this, SLOT(nssOptions()));
-    connect(Binfo, SIGNAL(clicked()),
-            this, SLOT(infoOptions()));
     connect(Bbook, SIGNAL(clicked()),
             this, SLOT(bookOptions()));
     connect(BBPar, SIGNAL(clicked()),
