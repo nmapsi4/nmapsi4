@@ -104,7 +104,6 @@ protected:
     bool lookupDig;
     bool NSSsupport;
     bool ADVSupport;
-    bool HostDetEnabled;
     bool MonitorEnabled;
     bool TraceEnabled;
     bool LookupEnabled;
@@ -137,7 +136,6 @@ protected:
     QAction *actStop;
     QAction *actTabLook;
     QAction *actTabTrace;
-    QAction *actTabHost;
     QAction *actTabMonitor;
     lookUpT *lth;
     digSupport *digC;
@@ -145,14 +143,12 @@ protected:
     QSplitter *cW;
     QSplitter *rW;
 
-
 public slots:
     void startScan();
     void about();
     void about_qt();
     void stop_scan();
     void exit();
-
 
 private slots:
     void initObject();
@@ -179,7 +175,6 @@ private slots:
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
-    void showObjServData(QTreeWidgetItem *item, int column);
     void objVulnButton();
 
     // Check nmap version
@@ -207,7 +202,6 @@ private slots:
     void updateSezVuln();
     void updateTabLook();
     void updateTabTrace();
-    void updateTabHost();
     void updateTabMonitor();
     void vulnPostScan();
     void updateComboVuln(const QString& value);
@@ -236,7 +230,6 @@ private slots:
     void menuServiceMain();
     void slotParSelected();
     void saveUiSettings();
-    void actDetails();
 };
 
 #endif

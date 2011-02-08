@@ -25,7 +25,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     qDebug() << "scanLookup::flag:: " << state;
 #endif
 
-    this->isDns(hostname);
+    //this->isDns(hostname);
 
     if(state == -1) {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
@@ -33,6 +33,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         return;
     }
 
+    // TODO port to paserObj
     QTreeWidgetItem *rootLook = new QTreeWidgetItem(treeLookup);
     itemListLook.push_front(rootLook);
     rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
@@ -47,11 +48,12 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
         rootLook->setText(0, info.hostName());
     }
 
-
-    for(int index=0; index < info.addresses().size(); index++) {
+    const int infoSize_ = info.addresses().size();
+    for(int index=0; index < infoSize_; index++) {
 #ifndef MAIN_NO_DEBUG
         qDebug() << "scanLookup::Found address:: " << info.addresses()[index].toString();
 #endif
+	// TODO port to parserObj
         QTreeWidgetItem *itemLook = new QTreeWidgetItem(rootLook);
         itemListLook.push_front(itemLook);
         itemLook->setText(0,info.addresses()[index].toString());

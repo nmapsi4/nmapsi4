@@ -28,10 +28,7 @@ class parserObj
     public:
         parserObj();
         ~parserObj();
-        QString getUptime();
-        QString getTcpSequence();
-        QString getDeviceType();
-        QString getRunning();
+	QStringList getMainInfo();
         QStringList getServices();
         QStringList getDescriptionServices();
         QStringList getPortServices();
@@ -43,10 +40,7 @@ class parserObj
         QStringList getTraceRouteInfo();
         QStringList getFullScanLog();
         QStringList getErrorScan();
-        void setUptime(const QString uptime);
-        void setTcpSequence(const QString tcpSequence);
-        void setDeviceType(const QString deviceType);
-        void setRunning(const QString Running);
+	void setMainInfo(const QString infoMainElem);
         void setServices(const QString Service);
         void setDescriptionServices(const QString desService);
         void setPortServices(const QString portService);
@@ -60,10 +54,7 @@ class parserObj
         void setErrorScan(const QString errorElem);
 
     protected:
-        QString uptime_;
-        QString tcp_sequence_;
-        QString deviceType_;
-        QString running_;
+        QStringList mainInfo_;
         QStringList services_;
         QStringList descriptionServices_;
         QStringList portServices_;

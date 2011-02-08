@@ -94,29 +94,17 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
     }
 }
 
-void nmapClass::showObjServData(QTreeWidgetItem *item, int column) { // SLOT
-    Q_UNUSED(column);
-
-    int indexHost = treeMain->indexOfTopLevelItem(treeMain->currentItem());
-    int indexObj_ = GItree->indexOfTopLevelItem(item);
-
-    if(indexObj_ != -1) {
-        servDesLabel->setText(parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
-        servPortLabel->setText(parserObjList[indexHost]->getPortServices()[indexObj_]);
-
-    }
-
-    menuServiceMain();
-}
-
 void nmapClass::objVulnButton() { // SLOT
 
     comboVulnRis->clear();
+    
+    int indexHost = treeMain->indexOfTopLevelItem(treeMain->currentItem());
+    int indexObj_ = GItree->indexOfTopLevelItem(GItree->currentItem());
 
     if(comboVulnRis->itemText(0).isEmpty()) {
-        comboVulnRis->addItem(servDesLabel->toPlainText());
+        comboVulnRis->addItem(parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
     } else {
-        comboVulnRis->setItemText(0, servDesLabel->toPlainText());
+        comboVulnRis->setItemText(0,parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
     }
 
     stackedMain->setCurrentIndex(2);
@@ -126,7 +114,6 @@ void nmapClass::objVulnButton() { // SLOT
     toolBar_2->setVisible(false);
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
-    GItree->setVisible(false);
 
     if(frameScan->isVisible()) {
         frameScan->setVisible(false);
@@ -137,5 +124,9 @@ void nmapClass::objVulnButton() { // SLOT
 
     if(frameAdv->isVisible()) {
         frameAdv->setVisible(false);
+    }
+    
+    if(frameRight->isVisible()) {
+        frameRight->setVisible(false);
     }
 }

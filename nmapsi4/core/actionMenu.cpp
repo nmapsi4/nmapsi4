@@ -88,30 +88,11 @@ void nmapClass::menuServiceMain() {
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     checkVuln.setIconText(tr("Check Vulnerability"));
 
-    QAction showDetails(this);
-    showDetails.setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-    showDetails.setIconText(tr("Show Details"));
-
-
     connect(&checkVuln, SIGNAL(triggered()),
                 this, SLOT(objVulnButton()));
-    connect(&showDetails, SIGNAL(triggered()),
-            this, SLOT(actDetails()));
 
     QMenu menuVulnMain(this);
-    menuVulnMain.addAction(&showDetails);
     menuVulnMain.addAction(&checkVuln);
-
     menuVulnMain.exec(QCursor::pos());
-}
-
-void nmapClass::actDetails() {
-    if(actTabHost->isChecked()) {
-        tabWidget->setCurrentIndex(tabWidget->indexOf(tab_9));
-    } else {
-        actTabHost->setChecked(true);
-        updateTabHost();
-        tabWidget->setCurrentIndex(tabWidget->indexOf(tab_9));
-    }
 }
 

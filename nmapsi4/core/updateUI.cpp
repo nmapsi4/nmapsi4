@@ -408,6 +408,10 @@ void nmapClass::updateSezScan() { // SLOT
     if(!frameAdv->isVisible() && parAct->isChecked()) {
         frameAdv->setVisible(true);
     }
+    
+    if(!frameRight->isVisible()) {
+        frameRight->setVisible(true);
+    }
 }
 
 void nmapClass::updateSezLog() {  // SLOT
@@ -435,6 +439,10 @@ void nmapClass::updateSezLog() {  // SLOT
 
     if(frameAdv->isVisible()) {
         frameAdv->setVisible(false);
+    }
+    
+    if(frameRight->isVisible()) {
+        frameRight->setVisible(false);
     }
 }
 
@@ -554,17 +562,6 @@ void nmapClass::updateTabTrace() {
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
     }
     // TODO:: Disable Traceroute
-}
-
-void nmapClass::updateTabHost() {
-    if(actTabHost->isChecked()) {
-        tabWidget->insertTab(tabWidget->count(),tab_9,tr("Host Details"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tab_9),QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        HostDetEnabled = true;
-    } else {
-        tabWidget->removeTab(tabWidget->indexOf(tab_9));
-        HostDetEnabled = false;
-    }
 }
 
 void nmapClass::updateTabMonitor() {

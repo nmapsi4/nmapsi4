@@ -141,12 +141,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(runtimePars(QTreeWidgetItem*, int)));
     connect(treeTraceroot, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(runtimeTraceroutePars(QTreeWidgetItem*, int)));
-    connect(GItree, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
-            this, SLOT(showObjServData(QTreeWidgetItem*, int)));
-    //connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-    //        this, SLOT(menuServiceMain()));
-    //connect(buttonVulnObj, SIGNAL(clicked()),
-    //        this, SLOT(objVulnButton()));
+    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuServiceMain()));
 
     // BookMark signals
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
@@ -204,8 +200,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateTabLook()));
     connect(actTabTrace, SIGNAL(triggered()),
             this, SLOT(updateTabTrace()));
-    connect(actTabHost, SIGNAL(triggered()),
-            this, SLOT(updateTabHost()));
     connect(actTabMonitor, SIGNAL(triggered()),
             this, SLOT(updateTabMonitor()));
 }

@@ -87,33 +87,19 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
-
-        if(tmp.startsWith("Uptime")) {
-            QString uptime;
-            uptime.clear();
-            uptime.append(tmp);
-            uptime.remove("Uptime guess:");
-            elemObj->setUptime(uptime);
-        }
-
-        if(tmp.startsWith("TCP Sequence Prediction:")) {
-            QString sequence_(tmp);
-            sequence_.remove("TCP Sequence Prediction: ");
-            elemObj->setTcpSequence(sequence_);
-        }
-
-        if(tmp.startsWith("Running:")) {
-            QString running_(tmp);
-            running_.remove("Running: ");
-            elemObj->setRunning(running_);
-        }
-
-        if(tmp.startsWith("Device type:")) {
-            QString device_(tmp);
-            device_.remove("Device type: ");
-            elemObj->setDeviceType(device_);
-        }
-
+        
+        // pars for mainwindow info box
+        if (tmp.startsWith("Uptime") 
+	  || tmp.startsWith("TCP Sequence Prediction:")
+	  || tmp.startsWith("Running:")
+	  || tmp.startsWith("OS details:")
+	  || tmp.startsWith("Running (JUST GUESSING):")
+	  || tmp.startsWith("Aggressive OS guesses:")
+	  || tmp.startsWith("Device type:")) {
+	  elemObj->setMainInfo(tmp);
+	}
+	  
+	// pars for subtree service
         if(tmp.startsWith("|")) {
             QString tmpClean(tmp);
             if(tmpClean.startsWith("|")) {

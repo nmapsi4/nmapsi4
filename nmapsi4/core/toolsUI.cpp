@@ -293,7 +293,6 @@ void nmapClass::createBar() {
 
     actTabLook = new QAction(this);
     actTabTrace = new QAction(this);
-    actTabHost = new QAction(this);
     actTabMonitor = new QAction(this);
 
     // Section QAction
@@ -317,10 +316,6 @@ void nmapClass::createBar() {
     parAct->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
     parAct->setToolTip(tr("Enable/Disable Manual Parameters"));
     parAct->setCheckable(true);
-
-    //frameAdv->setBackgroundRole(QPalette::Highlight);
-    //frameAdv->setAutoFillBackground(true);
-
 
     sezBar->addAction(scanSez);
     sezBar->addAction(logSez);
@@ -358,16 +353,11 @@ void nmapClass::createBar() {
     actTabTrace->setToolTip(tr("Show/Hide Traceroot"));
     actTabTrace->setCheckable(true);
 
-    actTabHost->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-    actTabHost->setToolTip(tr("Show/Hide Host Details"));
-    actTabHost->setCheckable(true);
-
     actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
     actTabMonitor->setToolTip(tr("Show/Hide Scan Monitor"));
     actTabMonitor->setCheckable(true);
 
     toolBarTab->addAction(actTabLook);
     toolBarTab->addAction(actTabTrace);
-    toolBarTab->addAction(actTabHost);
     toolBarTab->addAction(actTabMonitor);
 }

@@ -35,7 +35,6 @@ void nmapClass::initGUI()
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
-
     comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
 }
@@ -65,14 +64,10 @@ void nmapClass::initObject() {
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
 
-    QString noService(tr("no Service selected"));
-    servDesLabel->setText(noService);
-    servPortLabel->setText(noService);
-
     setTreeWidgetValues();
     checkProfile();
     optionListCreate();
-
+    
     digC  = new digSupport();
     digC->checkDigSupport();
 
@@ -126,9 +121,6 @@ void nmapClass::initObject() {
 
     parAct->setChecked(ADVSupport); // set ADV support
     parAdv();
-
-    actTabHost->setChecked(HostDetEnabled);
-    updateTabHost();
 
     actTabMonitor->setChecked(MonitorEnabled);
     updateTabMonitor();
@@ -204,6 +196,7 @@ void nmapClass::startScan() {
         hostname.remove(" ");
     }
 
+    // TODO call parserObj
     if(lookupInternal) {
         addMonitorHost(scanMonitor, hostname);
         lth = new lookUpT(hostname,this);
