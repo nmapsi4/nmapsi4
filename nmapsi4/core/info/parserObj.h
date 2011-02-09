@@ -28,6 +28,7 @@ class parserObj
     public:
         parserObj();
         ~parserObj();
+	QString getHostName();
 	QStringList getMainInfo();
         QStringList getServices();
         QStringList getDescriptionServices();
@@ -39,6 +40,7 @@ class parserObj
         QStringList getTraceRouteInfo();
         QStringList getFullScanLog();
         QStringList getErrorScan();
+	void setHostName(const QString hostName);
 	void setMainInfo(const QString infoMainElem);
         void setServices(const QString Service);
         void setDescriptionServices(const QString desService);
@@ -52,6 +54,7 @@ class parserObj
         void setErrorScan(const QString errorElem);
 
     protected:
+	QString hostName_;
         QStringList mainInfo_;
         QStringList services_;
         QStringList descriptionServices_;

@@ -184,8 +184,9 @@ void nmapClass::startScan() {
             qDebug() << "DEBUG::NewToken::Part:: " << addrPart_[index];
         }
 #endif
-
-        if(addrPart_.size() > 1) {// check for only one space in hostname
+	// check for only one space in hostname
+        if(addrPart_.size() > 1) {
+	    // multiple ip or dns to scan
             for(int index=0; index < addrPart_.size(); index++) {
                 addrPart_[index] = clearHost(addrPart_[index]);
                 addMonitorHost(scanMonitor, addrPart_[index]);
@@ -196,7 +197,6 @@ void nmapClass::startScan() {
         hostname.remove(" ");
     }
 
-    // TODO call parserObj
     if(lookupInternal) {
         addMonitorHost(scanMonitor, hostname);
         lth = new lookUpT(hostname,this);
@@ -205,7 +205,9 @@ void nmapClass::startScan() {
 
         lth->start();
     } else if(lookupDig && digC->getDigSupport()) {
-        digC->digProcess(hostname,treeLookup);
+	parserObjUtil* tmp = new parserObjUtil();
+        digC->digProcess(hostname,treeLookup,tmp);
+	parserObjUtilList.append(tmp);
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);
     } else {
@@ -275,12 +277,13 @@ nmapClass::~nmapClass()
         dialog->close();
     }
 
-    itemDeleteAll(itemList);
+    //itemDeleteAll(itemList);
     itemDeleteAll(itemListScan);
-    itemDeleteAll(itemListLook);
+    //itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
     qDeleteAll(parserObjList);
+    qDeleteAll(parserObjUtilList);
 
     delete progressScan;
     delete PFile;

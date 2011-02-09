@@ -277,27 +277,26 @@ void nmapClass::update_comboVerbosity() {
 
 
 void nmapClass::listClear() {
-    // TODO change on full objElem support
     listClearFlag = true;
-    // traceRoot & infoItem & nssItem & error pointer
-    itemDeleteAll(itemList); //clear items list
-    itemList.clear();
-    listScanError->clear();
-
+    itemDeleteAll(itemListScan); //clear items list
+    itemListScan.clear();
     // parserObj list
     qDeleteAll(parserObjList);
     parserObjList.clear();
-
+    qDeleteAll(parserObjUtilList);
+    parserObjUtilList.clear();
     // Host list
     itemDeleteAll(mainTreeElem);
-    mainTreeElem.clear();
+    mainTreeElem.clear();    
+    listScanError->clear();
     treeMain->clear();
-
-    //Lookup list
-    itemDeleteAll(digC->digList);
-    digC->digList.clear();
     treeLookup->clear();
-
+    treeTraceroot->clear();
+    treeHostDet->clear();
+    GItree->clear();
+    listWscan->clear();
+    treeNSS->clear();
+    listScan->clear();
     actionClear_History->setEnabled(false);
     action_Save_As->setEnabled(false);
 }
@@ -453,6 +452,10 @@ void nmapClass::updateSezVuln() { // SLOT
     if(frameAdv->isVisible()) {
         frameAdv->setVisible(false);
     }
+    
+    if(frameRight->isVisible()) {
+        frameRight->setVisible(false);
+    }
 }
 
 void nmapClass::NSSCheck() { // SLOT
@@ -475,8 +478,6 @@ void nmapClass::setTreeWidgetValues() {
     listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
     listScan->setIconSize(QSize(22, 22));
     listScan->header()->setResizeMode(0, QHeaderView::Interactive);
-    //treeWinfo->setIconSize(QSize(22, 22));
-    //treeWinfo->header()->setResizeMode(0, QHeaderView::Interactive);
     treeTraceroot->setIconSize(QSize(22, 22));
     treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
     treeNSS->setIconSize(QSize(22, 22));

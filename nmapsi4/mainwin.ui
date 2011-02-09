@@ -721,7 +721,18 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1" rowspan="2">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="optionAccept">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
              <widget class="QStackedWidget" name="stackedOptions">
               <property name="currentIndex">
                <number>0</number>
@@ -869,7 +880,7 @@
               </widget>
               <widget class="QWidget" name="page_2">
                <property name="autoFillBackground">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
                 <property name="margin">
@@ -884,7 +895,7 @@
                    <property name="geometry">
                     <rect>
                      <x>20</x>
-                     <y>280</y>
+                     <y>350</y>
                      <width>171</width>
                      <height>23</height>
                     </rect>
@@ -897,7 +908,7 @@
                    <property name="geometry">
                     <rect>
                      <x>20</x>
-                     <y>220</y>
+                     <y>290</y>
                      <width>161</width>
                      <height>23</height>
                     </rect>
@@ -922,8 +933,8 @@
                   <widget class="QLabel" name="label_7">
                    <property name="geometry">
                     <rect>
-                     <x>230</x>
-                     <y>50</y>
+                     <x>20</x>
+                     <y>200</y>
                      <width>41</width>
                      <height>31</height>
                     </rect>
@@ -938,8 +949,8 @@
                    </property>
                    <property name="geometry">
                     <rect>
-                     <x>270</x>
-                     <y>50</y>
+                     <x>60</x>
+                     <y>200</y>
                      <width>141</width>
                      <height>27</height>
                     </rect>
@@ -949,7 +960,7 @@
                    <property name="geometry">
                     <rect>
                      <x>20</x>
-                     <y>140</y>
+                     <y>130</y>
                      <width>41</width>
                      <height>31</height>
                     </rect>
@@ -961,8 +972,8 @@
                   <widget class="QCheckBox" name="checkUdpPing">
                    <property name="geometry">
                     <rect>
-                     <x>300</x>
-                     <y>20</y>
+                     <x>70</x>
+                     <y>170</y>
                      <width>101</width>
                      <height>23</height>
                     </rect>
@@ -975,7 +986,7 @@
                    <property name="geometry">
                     <rect>
                      <x>70</x>
-                     <y>110</y>
+                     <y>90</y>
                      <width>121</width>
                      <height>23</height>
                     </rect>
@@ -991,7 +1002,7 @@
                    <property name="geometry">
                     <rect>
                      <x>60</x>
-                     <y>140</y>
+                     <y>130</y>
                      <width>141</width>
                      <height>27</height>
                     </rect>
@@ -1027,7 +1038,7 @@
                    <property name="geometry">
                     <rect>
                      <x>20</x>
-                     <y>250</y>
+                     <y>320</y>
                      <width>151</width>
                      <height>23</height>
                     </rect>
@@ -1725,17 +1736,6 @@
                 </item>
                </layout>
               </widget>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="optionAccept">
-              <property name="text">
-               <string>Apply</string>
-              </property>
-              <property name="icon">
-               <iconset resource="../mainwin.qrc">
-                <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
-              </property>
              </widget>
             </item>
            </layout>

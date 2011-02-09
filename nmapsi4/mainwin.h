@@ -29,10 +29,10 @@
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
 #include "core/info/parserObj.h"
+#include "core/info/parserObjUtil.h"
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>
-
 
 class QMainWindow;
 class QWebView;
@@ -109,9 +109,9 @@ protected:
     bool LookupEnabled;
     int hostCache;
     int scanCounter;
-    QList<QTreeWidgetItem*> itemList;
+    //QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListScan;
-    QList<QTreeWidgetItem*> itemListLook;
+    //QList<QTreeWidgetItem*> itemListLook;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
@@ -120,6 +120,7 @@ protected:
     QList<QString> monitorElemOptions;
     QList<scanThread*> scanPointerList;
     QList<parserObj*> parserObjList;
+    QList<parserObjUtil*> parserObjUtilList;
     QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;

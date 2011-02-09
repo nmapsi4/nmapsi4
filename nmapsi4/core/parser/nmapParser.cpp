@@ -35,6 +35,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     qDebug() << "Host Checked:::: " << hostCheck;
 #endif
     delMonitorHost(scanMonitor, hostCheck);
+    elemObj->setHostName(hostCheck);
 
     listClearFlag = false; // the listScan is not empty
 

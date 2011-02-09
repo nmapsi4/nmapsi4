@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,49 +17,29 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGSUPPORT_H
-#define DIGSUPPORT_H
+#include "parserObjUtil.h"
 
-#include <QObject>
-#include <QProcess>
-#include <QTextStream>
-#include <QDebug>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QTextStream>
-#include <QList>
-#include "digThread.h"
-#include "../nmapsi4Debug.h"
-#include "../info/parserObjUtil.h"
+parserObjUtil::parserObjUtil() {
 
+}
 
-class digSupport : public QObject
-{
-    Q_OBJECT
-    friend class nmapClass;
+parserObjUtil::~parserObjUtil() {
 
-    public:
-        digSupport();
-        ~digSupport();
-        void checkDigSupport();
-        bool getDigSupport();
-        void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
+}
 
-    private slots:
-        void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1);
+QStringList parserObjUtil::getInfoLookup() {
+    return mainLookup_;
+}
 
-    signals:
-        void killScan();
+QString parserObjUtil::getHostName() {
+    return hostName_;
+}
 
-    protected:
-        QProcess *digProc;
-        bool state;
-        QTreeWidget *Wview;
-        digThread *th;
-	parserObjUtil* elemObjUtil;
-	QString hostNameLocal;
+void parserObjUtil::setInfoLookup(const QString lookupElem) {
+    mainLookup_.push_back(lookupElem);
+}
 
-};
+void parserObjUtil::setHostName(const QString hostName) {
+    hostName_.append(hostName);
+}
 
-#endif

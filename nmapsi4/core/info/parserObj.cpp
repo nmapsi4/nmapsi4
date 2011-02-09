@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010.2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,6 +25,10 @@ parserObj::parserObj() {
 
 parserObj::~parserObj() {
 
+}
+
+QString parserObj::getHostName() {
+    return this->hostName_;
 }
 
 QStringList parserObj::getMainInfo() {
@@ -69,6 +73,10 @@ QStringList parserObj::getFullScanLog() {
 
 QStringList parserObj::getErrorScan() {
     return this->errorScan_;
+}
+
+void parserObj::setHostName(const QString hostName) {
+    hostName_.append(hostName);
 }
 
 void parserObj::setMainInfo(const QString elemMainInfo) {

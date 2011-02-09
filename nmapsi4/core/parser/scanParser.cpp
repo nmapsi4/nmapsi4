@@ -54,14 +54,10 @@ void nmapClass::showParserObj(int indexObj) {
         objElem.push_front(objItem);
         objItem->setText(0,listServices_[index]);
     }
-
-    // TODO FIX check for stop scan
-    // TODO FIX check for clear History
-
+    
     QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
     QStringList listClose_ = parserObjList[indexObj]->getPortClose();
     QStringList listFilterd_ = parserObjList[indexObj]->getPortFiltered();
-    //QStringList listScanInfo_ = parserObjList[indexObj]->getScanInfo();
     QStringList listNssInfo_ = parserObjList[indexObj]->getNssInfo();
     QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
     QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();

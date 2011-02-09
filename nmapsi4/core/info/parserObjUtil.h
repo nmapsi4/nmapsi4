@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,49 +17,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGSUPPORT_H
-#define DIGSUPPORT_H
+#ifndef PARSEROBJUTIL_H
+#define PARSEROBJUTIL_H
 
-#include <QObject>
-#include <QProcess>
-#include <QTextStream>
-#include <QDebug>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QTextStream>
-#include <QList>
-#include "digThread.h"
-#include "../nmapsi4Debug.h"
-#include "../info/parserObjUtil.h"
+#include <QString>
+#include <QStringList>
 
-
-class digSupport : public QObject
+class parserObjUtil
 {
-    Q_OBJECT
-    friend class nmapClass;
-
     public:
-        digSupport();
-        ~digSupport();
-        void checkDigSupport();
-        bool getDigSupport();
-        void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
-
-    private slots:
-        void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1);
-
-    signals:
-        void killScan();
+        parserObjUtil();
+        ~parserObjUtil();
+	QStringList getInfoLookup();
+	QString getHostName();
+	void setInfoLookup(const QString lookupElem);
+	void setHostName(const QString hostName);
 
     protected:
-        QProcess *digProc;
-        bool state;
-        QTreeWidget *Wview;
-        digThread *th;
-	parserObjUtil* elemObjUtil;
-	QString hostNameLocal;
-
+        QStringList mainLookup_;
+	QString hostName_;
 };
+
 
 #endif

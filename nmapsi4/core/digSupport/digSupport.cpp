@@ -67,11 +67,13 @@ bool digSupport::getDigSupport() {
     return state;
 }
 
-void digSupport::digProcess(const QString hostname, QTreeWidget* view) {
+void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) {
     Wview = view;
     QByteArray buff1;
     QStringList command;
+    hostNameLocal = hostname;
     command << hostname;
+    elemObjUtil = objElem;
     th = new digThread(buff1, command, this);
     th->start();
     connect(th, SIGNAL(threadEnd(const QStringList, QByteArray)),
@@ -82,52 +84,27 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
 #ifndef DIG_NO_DEBUG
     qDebug() << "############## digSupport():: start pars ######################";
 #endif
-
+    Q_UNUSED(hostname);
     QString buff1(buffer1);
-
     QTextStream stream1(&buff1);
     QString line;
+    
+    elemObjUtil->setHostName(hostNameLocal);
 
-    Wview->setIconSize(QSize(32, 32));
-    QTreeWidgetItem *rootLook = new QTreeWidgetItem(Wview);
-    digList.push_front(rootLook);
-
-
-    QTreeWidgetItem *itemLook;
-
-    rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_result.png")));
-    rootLook->setText(0, hostname[0]);
-
-    bool resultFlag = false;
     while(!stream1.atEnd()) {
         line = stream1.readLine();
         if(!line.startsWith(";;") && !line.startsWith(";") && !line.isEmpty()) {
 #ifndef DIG_NO_DEBUG
             qDebug() << "digSupport():: " << line;
 #endif
-            itemLook = new QTreeWidgetItem(rootLook);
-            digList.push_front(itemLook);
-            itemLook->setSizeHint(0, QSize(22, 22));
-            itemLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/view-web-browser-dom-tree.png")));
-            itemLook->setText(0,line);
-            if(!resultFlag) {
-                resultFlag = true;
-            }
-
+	    elemObjUtil->setInfoLookup(line);
         }
-    }
-
-    if(!resultFlag) {
-        rootLook->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
     delete th;
     buffer1.clear();
 }
 
-
 digSupport::~digSupport() {
-    qDeleteAll(digList);
-    digList.clear();
 }
 
