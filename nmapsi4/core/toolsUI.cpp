@@ -280,6 +280,7 @@ void nmapClass::callScanH()
 
 void nmapClass::createBar() {
     // QToolBar asction
+    //sezBar->contextMenuPolicy(Qt::NoContextMenu);
     scanSez = new QAction(this);
     logSez = new QAction(this);
     vulnSez = new QAction(this);
@@ -323,6 +324,7 @@ void nmapClass::createBar() {
     sezBar->addSeparator();
     sezBar->addAction(parAct);
     sezBar->addAction(nssAct);
+    sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
     actSearch->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     actSearch->setIconText(tr("Search"));
@@ -344,6 +346,7 @@ void nmapClass::createBar() {
     toolBarSearch->addAction(actBack);
     toolBarSearch->addAction(actForward);
     toolBarSearch->addAction(actStop);
+    toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);
 
     actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
     actTabLook->setToolTip(tr("Show/Hide Lookup"));
@@ -360,4 +363,5 @@ void nmapClass::createBar() {
     toolBarTab->addAction(actTabLook);
     toolBarTab->addAction(actTabTrace);
     toolBarTab->addAction(actTabMonitor);
+    toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 }

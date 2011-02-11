@@ -392,6 +392,15 @@ void nmapClass::updateSezScan() { // SLOT
     if(!frameRight->isVisible()) {
         frameRight->setVisible(true);
     }
+    
+    if(!frame_2->isVisible()) {
+        frame_2->setVisible(true);
+    }
+    
+    tabUi->insertTab(tabUi->count(),tabSOpt,tr("Scan Options"));
+    tabUi->setTabIcon(tabUi->indexOf(tabSOpt),QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    tabUi->setTabText(0, "Scan");
 }
 
 void nmapClass::updateSezLog() {  // SLOT
@@ -424,6 +433,14 @@ void nmapClass::updateSezLog() {  // SLOT
     if(frameRight->isVisible()) {
         frameRight->setVisible(false);
     }
+    
+    if(frame_2->isVisible()) {
+        frame_2->setVisible(false);
+    }
+    
+    tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/book.png")));
+    tabUi->setTabText(0, "Log");
 }
 
 void nmapClass::updateSezVuln() { // SLOT
@@ -456,6 +473,14 @@ void nmapClass::updateSezVuln() { // SLOT
     if(frameRight->isVisible()) {
         frameRight->setVisible(false);
     }
+    
+    if(frame_2->isVisible()) {
+        frame_2->setVisible(false);
+    }
+    
+    tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    tabUi->setTabText(0, "Vulnerabilities");
 }
 
 void nmapClass::NSSCheck() { // SLOT

@@ -51,7 +51,6 @@ void nmapClass::initObject() {
     tabWidget->removeTab(3);
 #endif
     tWresult->setTabsClosable(true);
-    //tWresult->tabBar()->setCurrentIndex(0)
     webViewList.push_back(viewVuln);
     createBar();
     setNmapsiSlot();
@@ -82,16 +81,28 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
+    
+    //rW = new QSplitter();
     cW = new QSplitter();
-    rW = new QSplitter();
+    bW = new QSplitter();
+    
+    cW->setOrientation(Qt::Horizontal);
     cW->addWidget(treeMain);
-    cW->addWidget(stackedMain);
-    cW->addWidget(frameRight);
-    rW->setOrientation(Qt::Vertical);
-    rW->addWidget(treeHostDet);
-    rW->addWidget(GItree);
-    this->centralWidget()->layout()->addWidget(cW);
-    frameRight->layout()->addWidget(rW);
+    cW->addWidget(frameCenter);
+    
+    // frameRight layout
+    //rW->setOrientation(Qt::Horizontal);
+    //rW->addWidget(treeHostDet);
+    //rW->addWidget(GItree);
+    
+    //frameCenter
+    bW->setOrientation(Qt::Vertical);
+    bW->addWidget(stackedMain);
+    bW->addWidget(frameRight);
+    
+    tabUi->widget(0)->layout()->addWidget(cW);
+    frameCenter->layout()->addWidget(bW);
+    frameCenter->layout()->addWidget(frame_2);
 
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
@@ -99,7 +110,7 @@ void nmapClass::initObject() {
     resize(size);
     move(pos);
     cW->restoreState(settings.value("splitterSizes").toByteArray());
-    rW->restoreState(settings.value("splitterSizesRight").toByteArray());
+    bW->restoreState(settings.value("splitterSizesRight").toByteArray());
 
     logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     historyScan_->updateBookMarks();
@@ -298,7 +309,7 @@ nmapClass::~nmapClass()
     delete actBack;
     delete actForward;
     delete actStop;
-    delete rW;
+    delete bW;
     delete cW;
 }
 

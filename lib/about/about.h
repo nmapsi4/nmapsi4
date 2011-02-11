@@ -23,7 +23,8 @@
 #include <QDialog>
 #include <QMessageBox>
 #include "ui_about.h"
-#include "staticDefine.h"
+//#include "staticDefine.h"
+#include "version.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
 { 

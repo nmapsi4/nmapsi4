@@ -36,8 +36,6 @@
 class digSupport : public QObject
 {
     Q_OBJECT
-    friend class nmapClass;
-
     public:
         digSupport();
         ~digSupport();

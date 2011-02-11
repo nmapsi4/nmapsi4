@@ -1,5 +1,12 @@
 PROJECT(nmapsi4_about)
 
+# set nmapsi4 version
+SET( NMAPSI4_VERSION "0.2.84" )
+SET( VULN_VERSION "0.1.82" )
+SET( DIG_VERSION "0.1.82" )
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h )
+
 SET( SOURCES_CPP about.cpp )
 #MESSAGE( STATUS ${SOURCES_CPP} )
 
@@ -25,8 +32,4 @@ if(WIN32)
 else(WIN32)
 	ADD_LIBRARY( nmapsi4_about STATIC ${SOURCES_CPP} ${SOURCES_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES})
 endif(WIN32)
-
-#if (Q_WS_X11)
-#  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libnmapsi4_about.so" DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/)
-#endif (Q_WS_X11)
 

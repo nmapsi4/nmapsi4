@@ -142,7 +142,8 @@ protected:
     digSupport *digC;
     logHistory *history;
     QSplitter *cW;
-    QSplitter *rW;
+    //QSplitter *rW;
+    QSplitter *bW;
 
 public slots:
     void startScan();

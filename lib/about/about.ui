@@ -75,7 +75,7 @@
        <string>&amp;About</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+       <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
@@ -90,7 +90,9 @@
           </size>
          </property>
          <property name="text">
-          <string>Qt4 Graphical interface to nmap</string>
+          <string>NmapSi4 is a complete Qt4-based Gui with the design
+goals to provide a complete nmap interface for Users,
+in order to menage all option of this power security net scanner.</string>
          </property>
         </widget>
        </item>
@@ -103,12 +105,12 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 75 &quot;Sans Serif&quot;;</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>
-(c) 2007-2010 Francesco Cecconi
 
+(c) 2007-2011 Francesco Cecconi
 
 License: GNU General Public License Version 2</string>
          </property>

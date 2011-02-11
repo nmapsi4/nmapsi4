@@ -1,0 +1,3 @@
+#define _VERSION_	"${NMAPSI4_VERSION}"
+#define _VERSION_VULN_	"${VULN_VERSION}"
+#define _VERSION_DIG_	"${DIG_VERSION}"

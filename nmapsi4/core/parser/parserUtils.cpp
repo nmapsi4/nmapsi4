@@ -129,4 +129,8 @@ void nmapClass::objVulnButton() { // SLOT
     if(frameRight->isVisible()) {
         frameRight->setVisible(false);
     }
+    
+    if(frame_2->isVisible()) {
+        frame_2->setVisible(false);
+    }
 }
