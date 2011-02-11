@@ -31,7 +31,6 @@ private:
     void saveProfile(const QString ProfileType); // Create a enum for the profile
     QString readProfile();
     void setProfile();
-    void checkExtension();
 
 public:
     mainProfile();
@@ -39,9 +38,8 @@ public:
 
 protected:
     QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem, *extItem;
-    QListWidgetItem *extPItem, *lookItem;
-    bool vulnExt;
+    QListWidgetItem *profileItem, *logItem, *sizeItem;
+    QListWidgetItem *lookItem;
 
 public slots:
     void setScan();
@@ -56,8 +54,6 @@ private slots:
     void update_saveButton();
     void quit();
     void setDefaults();
-    void activeExt();
-    void disableExt();
     void activeLookupInt();
     void activeLookupDig();
 

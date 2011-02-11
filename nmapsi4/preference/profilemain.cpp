@@ -110,12 +110,6 @@ mainProfile::mainProfile()
     lookItem->setText(tr("Lookup"));
 #endif
 
-    extItem = new QListWidgetItem(listViewOptions);
-    extItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-plugin.png")));
-    extItem->setText(tr("Extensions"));
-    
-    checkExtension(); // update extension list
-
     connect(checkLogOn, SIGNAL(pressed()),
             this, SLOT(update_saveButton()));
     connect(listViewOptions, SIGNAL(itemSelectionChanged()),
@@ -127,10 +121,6 @@ mainProfile::mainProfile()
             this, SLOT(log_browser()));
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
-    connect(activeB, SIGNAL(clicked()),
-            this, SLOT(activeExt()));
-    connect(disableB, SIGNAL(clicked()),
-            this, SLOT(disableExt()));
 
     // FIXME disable dig support (many works)
     //checkBoxDig->setEnabled(false);
@@ -202,12 +192,9 @@ void mainProfile::updateItem()
     } else if (sizeItem->isSelected()) {
         labelTitle->setText(tr("<h3>Size Options</h3>"));
         stackPref->setCurrentIndex(2);
-    } else if (extItem->isSelected()) {
-        labelTitle->setText(tr("<h3>Extensions</h3>"));
-        stackPref->setCurrentIndex(3);
     } else if (lookItem->isSelected()) {
         labelTitle->setText(tr("<h3>Scan Lookup</h3>"));
-        stackPref->setCurrentIndex(4);
+        stackPref->setCurrentIndex(3);
     }
 }
 

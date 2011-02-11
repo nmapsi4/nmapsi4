@@ -136,17 +136,6 @@ void nmapClass::checkProfile()
         saveSize = false;
     }
 
-    QString vulnExt = settings.value("vulnFlag", "none").toString();
-    if((!vulnExt.compare("none"))) {
-	 settings.setValue("vulnFlag", "true"); // default value
-    } else if((vulnExt.compare("false"))) {
-         vulnSez->setEnabled(true);
-    } else {
-         if(stackedMain->currentIndex() == 2) {
-	      stackedMain->setCurrentIndex(0);
-	 }
-         vulnSez->setEnabled(false);
-    }
 
     QString cache = settings.value("hostCache", "none").toString();
 
