@@ -1192,6 +1192,9 @@
                 <property name="focusPolicy">
                  <enum>Qt::StrongFocus</enum>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="text">
                  <string>Details</string>
                 </property>
@@ -2446,7 +2449,7 @@
     <bool>true</bool>
    </property>
    <property name="contextMenuPolicy">
-    <enum>Qt::NoContextMenu</enum>
+    <enum>Qt::PreventContextMenu</enum>
    </property>
    <property name="windowTitle">
     <string>toolBar</string>
@@ -2478,7 +2481,7 @@
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="contextMenuPolicy">
-    <enum>Qt::NoContextMenu</enum>
+    <enum>Qt::PreventContextMenu</enum>
    </property>
    <property name="windowTitle">
     <string>toolBar_2</string>
@@ -2505,7 +2508,7 @@
   </widget>
   <widget class="QToolBar" name="toolBarBook">
    <property name="contextMenuPolicy">
-    <enum>Qt::NoContextMenu</enum>
+    <enum>Qt::PreventContextMenu</enum>
    </property>
    <property name="windowTitle">
     <string>toolBar_3</string>
@@ -2530,7 +2533,7 @@
   </widget>
   <widget class="QToolBar" name="toolBarQuit">
    <property name="contextMenuPolicy">
-    <enum>Qt::NoContextMenu</enum>
+    <enum>Qt::PreventContextMenu</enum>
    </property>
    <property name="windowTitle">
     <string>toolBar_3</string>
@@ -2586,6 +2589,9 @@
    </attribute>
   </widget>
   <widget class="QToolBar" name="toolBarSearch">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>

@@ -236,35 +236,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                     }
 
-                    QStringList tmpToken = str.split(" ");
-                    QString token;
-                    if (tmpToken.size() <= 2) {
-                        token.append(tmpToken[0]);
-                        token.append(" ");
-                        token.append(tmpToken[1]);
-                    } else {
-                        token.append(tmpToken[0]);
-                        token.append(" ");
-                        token.append(tmpToken[1]);
-                        token.append(" ");
-                        token.append(tmpToken[2]);
-                    }
-
-                    // loading services for vulnerability plugin
-                    if (token.contains("-")) {
-                        if (comboVuln->findText(token.leftRef(token.indexOf("-")).toString(),
-                                                Qt::MatchExactly) == -1) {
-                            comboVuln->addItem(token.leftRef(token.indexOf("-")).toString());
-                        }
-                    } else if (comboVuln->findText(token, Qt::MatchExactly) == -1) {
-                        comboVuln->addItem(token);
-                    }
-
                     elemObj->setDescriptionServices(str);
-
                 }
 
-                // FIX log
+                // FIXME log
                 if ((PFile) && (!verboseLog)) {
                     *out << str
                             << " ("

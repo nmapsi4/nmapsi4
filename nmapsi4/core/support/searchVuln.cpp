@@ -124,14 +124,17 @@ void nmapClass::updateComboVuln(const QString& value) {
 
 void nmapClass::closeVulnTab(int index) {
     if(!index) {
-        /*if(!webViewList.isEmpty()) {
-            tWresult->setTabText(0, "Vulnerabilities Search");
-        }*/
+	//TODO [index = 0] load default page
+	if (!webViewList[0]->url().toString().contains("about:blank")) {
+	    // isn't empty, load default page
+	    webViewList[0]->load(QUrl("about:blank"));
+	    tWresult->setTabText(index, "");
+	}
         return;
     }
 
-    QWebView *tmp = webViewList.takeAt(tWresult->currentIndex());
-    qDebug() << "WebView pointer:: " << tmp << " Index:: " << tWresult->currentIndex();
+    QWebView *tmp = webViewList.takeAt(index);
+    qDebug() << "WebView pointer:: " << tmp << " Index:: " << index;
     tWresult->removeTab(index);
     delete tmp;
 }

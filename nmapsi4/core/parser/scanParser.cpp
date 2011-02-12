@@ -62,6 +62,9 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
     QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();
     QString noDes = tr("No description");
+    // clear combo Vulnerabilities
+    comboVuln->clear();
+    comboVuln->insertItem(0,"Services");
 
     // Show open ports
     const int listOpenSize = listOpen_.size();
@@ -86,6 +89,10 @@ void nmapClass::showParserObj(int indexObj) {
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
+	    //load comboVuln
+	    if (!lineDescription_.isEmpty()) {
+		comboVuln->addItem(lineDescription_);
+	    }
         } else {
             root->setText(3, noDes);
         }
@@ -113,6 +120,10 @@ void nmapClass::showParserObj(int indexObj) {
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
+	    //load comboVuln
+	    if (!lineDescription_.isEmpty()) {
+		comboVuln->addItem(lineDescription_);
+	    }
         }
     }
 
@@ -139,6 +150,10 @@ void nmapClass::showParserObj(int indexObj) {
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
+	    //load comboVuln
+	    if (!lineDescription_.isEmpty()) {
+		comboVuln->addItem(lineDescription_);
+	    }
         }
     }
 

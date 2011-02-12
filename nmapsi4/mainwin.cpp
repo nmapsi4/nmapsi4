@@ -62,6 +62,7 @@ void nmapClass::initObject() {
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
+    menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
 
     setTreeWidgetValues();
     checkProfile();
@@ -143,6 +144,7 @@ void nmapClass::initObject() {
     updateTabTrace();
 
     updateComboPar();
+    
 }
 
 void nmapClass::startScan() {
@@ -208,6 +210,7 @@ void nmapClass::startScan() {
         hostname.remove(" ");
     }
 
+    // check for scan lookup
     if(lookupInternal) {
         addMonitorHost(scanMonitor, hostname);
         lth = new lookUpT(hostname,this);
@@ -261,10 +264,10 @@ void nmapClass::scan(const QString hostname)
         parametri = comboAdv->lineEdit()->text().split(" ");
     }
 
-
     parametri << hostname; // add hostname
     
     QByteArray buff1, buff2;
+    // start scan Thread
     th = new scanThread(buff1, buff2, parametri, this);
     scanPointerList.push_front(th);
 
@@ -288,13 +291,15 @@ nmapClass::~nmapClass()
         dialog->close();
     }
 
-    //itemDeleteAll(itemList);
     itemDeleteAll(itemListScan);
-    //itemDeleteAll(itemListLook);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
     qDeleteAll(parserObjList);
     qDeleteAll(parserObjUtilList);
+    qDeleteAll(webViewList);
+    parserObjUtilList.clear();
+    parserObjList.clear();
+    webViewList.clear();
 
     delete progressScan;
     delete PFile;
