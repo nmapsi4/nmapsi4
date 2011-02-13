@@ -4,32 +4,12 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>NmapSI4[*]</source>
-        <translation type="obsolete">NmapSI4[*]</translation>
-    </message>
-    <message>
-        <source>HostName:</source>
-        <translation type="obsolete">Servername:</translation>
-    </message>
-    <message>
-        <source>127.0.0.1</source>
-        <translation type="obsolete">127.0.0.1</translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation>Prohledat</translation>
     </message>
     <message>
         <source>Host(s)</source>
         <translation>Server</translation>
-    </message>
-    <message>
-        <source>Host(s) Info</source>
-        <translation>Informace o serveru(ech)</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Fehler</translation>
     </message>
     <message>
         <source>Error(s)</source>
@@ -264,26 +244,6 @@
         <translation>Zdrojová přípojka</translation>
     </message>
     <message>
-        <source>S&amp;can Options</source>
-        <translation type="obsolete">S&amp;an Optionen</translation>
-    </message>
-    <message>
-        <source>&amp;Options</source>
-        <translation type="obsolete">&amp;Optionen</translation>
-    </message>
-    <message>
-        <source>&amp;Discover</source>
-        <translation type="obsolete">&amp;Entdecken</translation>
-    </message>
-    <message>
-        <source>F&amp;ile</source>
-        <translation type="obsolete">D&amp;atei</translation>
-    </message>
-    <message>
-        <source>&amp;Timing</source>
-        <translation type="obsolete">&amp;Zeitablauf</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>&amp;Soubor</translation>
     </message>
@@ -314,10 +274,6 @@
     <message>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>&amp;About</source>
-        <translation type="obsolete">&amp;O programu</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
@@ -377,10 +333,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Uložit &amp;jako</translation>
     </message>
     <message>
-        <source>M. Optio&amp;ns</source>
-        <translation type="obsolete">M. Optio&amp;nen</translation>
-    </message>
-    <message>
         <source>&amp;View</source>
         <translation>&amp;Pohled</translation>
     </message>
@@ -429,40 +381,12 @@ Zavřít strom s prohledáváním</translation>
         <translation>Zranitelnost</translation>
     </message>
     <message>
-        <source>Service / Os</source>
-        <translation type="obsolete">Služba/OS</translation>
-    </message>
-    <message>
-        <source>Fi/Unfiltered</source>
-        <translation>Zpracováno/Nezpracováno</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Zavřít</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Otevřít</translation>
-    </message>
-    <message>
-        <source>List(s)</source>
-        <translation>Seznam(y)</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Smazat</translation>
-    </message>
-    <message>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
-    </message>
-    <message>
-        <source>Show Scan Parameters</source>
-        <translation type="obsolete">Ukázat pomocné proměnné prohledávání</translation>
     </message>
     <message>
         <source>Scan Options</source>
@@ -497,10 +421,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="obsolete">Zpět</translation>
-    </message>
-    <message>
         <source>securityfocus.com</source>
         <translation>securityfocus.com</translation>
     </message>
@@ -511,18 +431,6 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>secunia.com</source>
         <translation>secunia.com</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">Hledat</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation type="obsolete">Vpřed</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="obsolete">Zastavit</translation>
     </message>
     <message>
         <source>Vulnerabilities</source>
@@ -549,10 +457,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Výsledek skriptu NSS</translation>
     </message>
     <message>
-        <source>NSS</source>
-        <translation>NSS</translation>
-    </message>
-    <message>
         <source>DNS</source>
         <translation>DNS</translation>
     </message>
@@ -563,38 +467,6 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>RTT</source>
         <translation>RTT</translation>
-    </message>
-    <message>
-        <source>Service / OS</source>
-        <translation>Služba/OS</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Užitná doba:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Sekvence Tcp:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Spuštění:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Typ zařízení:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Popis služby:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Přípojka pro službu:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Vulnerability</source>
-        <translation>Zranitelnost</translation>
     </message>
     <message>
         <source>Service(s)</source>
@@ -647,6 +519,14 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>Save Profile</source>
         <translation>Uložit profil</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NSE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -728,14 +608,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Vyrovnávací paměť s historií</translation>
     </message>
     <message>
-        <source>Disable</source>
-        <translation>Zakázat</translation>
-    </message>
-    <message>
-        <source>Enable</source>
-        <translation>Povolit</translation>
-    </message>
-    <message>
         <source>Scan Preferences</source>
         <translation>Nastavení prohledávání</translation>
     </message>
@@ -782,20 +654,8 @@ Zavřít strom s prohledáváním</translation>
         <translation>&lt;h3&gt;Volby pro velikost&lt;/h3&gt;</translation>
     </message>
     <message>
-        <source>Check Vulnerabilities browser extension</source>
-        <translation>Rozšíření prohlížeče o prověření zranitelností</translation>
-    </message>
-    <message>
         <source>Lookup</source>
         <translation>Vyhledávání</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Rozšíření</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Extensions&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Rozšíření&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan Lookup&lt;/h3&gt;</source>
@@ -823,54 +683,6 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>Normal Scan</source>
         <translation>Obvyklé prohledávání</translation>
-    </message>
-    <message>
-        <source>No Ports</source>
-        <translation>Žádné přípojky</translation>
-    </message>
-    <message>
-        <source>
-(No scan informations)</source>
-        <translation type="obsolete">
-(Keine Scan Informationen)</translation>
-    </message>
-    <message>
-        <source>No Info</source>
-        <translation>Žádné informace</translation>
-    </message>
-    <message>
-        <source>
-(No Host Informations)</source>
-        <translation type="obsolete">
-(Keine Server Informationen)</translation>
-    </message>
-    <message>
-        <source>
-(Report: </source>
-        <translation>
-(Zpráva: </translation>
-    </message>
-    <message>
-        <source>Open: </source>
-        <translation type="obsolete">Öffnen: </translation>
-    </message>
-    <message>
-        <source>, Close: </source>
-        <translation type="obsolete">, Schließen: </translation>
-    </message>
-    <message>
-        <source>, Fi/Unfiltered: </source>
-        <translation type="obsolete">, Fi/ungefiltert: </translation>
-    </message>
-    <message>
-        <source>
-(No Errors or Warnings)</source>
-        <translation>
-(Žádné chyby nebo varování)</translation>
-    </message>
-    <message>
-        <source>Errors or Warnings: </source>
-        <translation>Chyby nebo varování: </translation>
     </message>
     <message>
         <source>Save Log</source>
@@ -903,42 +715,6 @@ Zavřít strom s prohledáváním</translation>
 </translation>
     </message>
     <message>
-        <source>About Nmapsi4 </source>
-        <translation type="obsolete">Über Nmapsi4</translation>
-    </message>
-    <message>
-        <source>NmapSI4 is a qt4 interface for nmap scanner
-
-
-Website: http://nmapsi4.netsons.org
-Issues: http://code.google.com/p/nmapsi4/issues/list
-Mailing-list: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
-Source: http://code.google.com/p/nmapsi4/source/checkout
-
-NmapSI4 is published under the terms of the GPL v2
-
-
-Core Developer:  francesco.cecconi@kdemail.net
-MS Windows Packages: el.diabl09@gmail.com
-
-</source>
-        <translation type="obsolete">NmapSI4 is eine Qt4 Schnittstelle für den nmap Scanner
-
-
-Webseite: http://nmapsi4.netsons.org
-Ausgaben: http://code.google.com/p/nmapsi4/issues/list
-Mail-Liste: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
-Quelle: http://code.google.com/p/nmapsi4/source/checkout
-
-NmapSI4 ist unter der GPL v2 veröffentlicht
-
-
-Kernentwickler:  francesco.cecconi@kdemail.net
-MS Windows Paket Ersteller: el.diabl09@gmail.com
-
-</translation>
-    </message>
-    <message>
         <source>Select the file</source>
         <translation>Vyberte soubor</translation>
     </message>
@@ -949,10 +725,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source>Not Present</source>
         <translation>Nepřítomný</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
-        <translation type="obsolete">&lt;b&gt;Nmapsi4 Modus:&lt;/b&gt; </translation>
     </message>
     <message>
         <source>Full</source>
@@ -1095,14 +867,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
         <translation>Povolit/Zakázat skript NSS</translation>
     </message>
     <message>
-        <source>no Host selected</source>
-        <translation>Nevybrán žádný server</translation>
-    </message>
-    <message>
-        <source>no Service selected</source>
-        <translation>Nevybrána žádná služba</translation>
-    </message>
-    <message>
         <source>Enable/Disable Manual Parameters</source>
         <translation>Povolit/Zakázat ruční parametry</translation>
     </message>
@@ -1149,6 +913,38 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source> Active Scan </source>
         <translation> Činné prohledávání </translation>
+    </message>
+    <message>
+        <source>Check Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Traceroot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Scan Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Options</source>
+        <translation type="unfinished">Volby prohledávání</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished">Vyhledávání</translation>
+    </message>
+    <message>
+        <source>Traceroute</source>
+        <translation type="unfinished">Vysledovat cestu</translation>
+    </message>
+    <message>
+        <source>Scan Monitor</source>
+        <translation type="unfinished">Dohled nad prohledáváním</translation>
     </message>
 </context>
 </TS>

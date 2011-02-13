@@ -4,32 +4,12 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>NmapSI4[*]</source>
-        <translation type="obsolete">NmapSI4[*]</translation>
-    </message>
-    <message>
-        <source>HostName:</source>
-        <translation type="obsolete">Servername:</translation>
-    </message>
-    <message>
-        <source>127.0.0.1</source>
-        <translation type="obsolete">127.0.0.1</translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation>Scannen</translation>
     </message>
     <message>
         <source>Host(s)</source>
         <translation>Server</translation>
-    </message>
-    <message>
-        <source>Host(s) Info</source>
-        <translation>Server Info</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Fehler</translation>
     </message>
     <message>
         <source>Error(s)</source>
@@ -264,26 +244,6 @@
         <translation>Quell-Port</translation>
     </message>
     <message>
-        <source>S&amp;can Options</source>
-        <translation type="obsolete">S&amp;an Optionen</translation>
-    </message>
-    <message>
-        <source>&amp;Options</source>
-        <translation type="obsolete">&amp;Optionen</translation>
-    </message>
-    <message>
-        <source>&amp;Discover</source>
-        <translation type="obsolete">&amp;Entdecken</translation>
-    </message>
-    <message>
-        <source>F&amp;ile</source>
-        <translation type="obsolete">D&amp;atei</translation>
-    </message>
-    <message>
-        <source>&amp;Timing</source>
-        <translation type="obsolete">&amp;Zeitablauf</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
@@ -314,10 +274,6 @@
     <message>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>&amp;About</source>
-        <translation type="obsolete">&amp;Über</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
@@ -376,10 +332,6 @@
         <translation>Speichern &amp;unter</translation>
     </message>
     <message>
-        <source>M. Optio&amp;ns</source>
-        <translation type="obsolete">M. Optio&amp;nen</translation>
-    </message>
-    <message>
         <source>&amp;View</source>
         <translation>&amp;Ansicht</translation>
     </message>
@@ -425,22 +377,6 @@
     </message>
     <message>
         <source>Vuln</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fi/Unfiltered</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished">Schließen</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>List(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -520,10 +456,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>NSS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>DNS</source>
         <translation type="unfinished"></translation>
     </message>
@@ -533,38 +465,6 @@
     </message>
     <message>
         <source>RTT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Service / OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Uptime:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;TcpSequence:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Running:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;DeviceType:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Service Description:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Service Port:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vulnerability</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -617,6 +517,14 @@
     </message>
     <message>
         <source>Save Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NSE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -699,14 +607,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan Preferences</source>
         <translation type="unfinished"></translation>
     </message>
@@ -753,19 +653,7 @@
         <translation>&lt;h3&gt;Größen Optionen&lt;/h3&gt;</translation>
     </message>
     <message>
-        <source>Check Vulnerabilities browser extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Extensions&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -793,53 +681,6 @@
     <message>
         <source>Normal Scan</source>
         <translation>Normaler Scan</translation>
-    </message>
-    <message>
-        <source>No Ports</source>
-        <translation>Keine Ports</translation>
-    </message>
-    <message>
-        <source>
-(No scan informations)</source>
-        <translation type="obsolete">
-(Keine Scan Informationen)</translation>
-    </message>
-    <message>
-        <source>No Info</source>
-        <translation>Keine Info</translation>
-    </message>
-    <message>
-        <source>
-(No Host Informations)</source>
-        <translation type="obsolete">
-(Keine Server Informationen)</translation>
-    </message>
-    <message>
-        <source>
-(Report: </source>
-        <translation>(Bericht: </translation>
-    </message>
-    <message>
-        <source>Open: </source>
-        <translation type="obsolete">Öffnen: </translation>
-    </message>
-    <message>
-        <source>, Close: </source>
-        <translation type="obsolete">, Schließen: </translation>
-    </message>
-    <message>
-        <source>, Fi/Unfiltered: </source>
-        <translation type="obsolete">, Fi/ungefiltert: </translation>
-    </message>
-    <message>
-        <source>
-(No Errors or Warnings)</source>
-        <translation>
-(Keine Fehler oder Warnungen)</translation>
-    </message>
-    <message>
-        <source>Errors or Warnings: </source>
-        <translation>Fehler oder Warnungen: </translation>
     </message>
     <message>
         <source>Save Log</source>
@@ -871,42 +712,6 @@
 </translation>
     </message>
     <message>
-        <source>About Nmapsi4 </source>
-        <translation type="obsolete">Über Nmapsi4</translation>
-    </message>
-    <message>
-        <source>NmapSI4 is a qt4 interface for nmap scanner
-
-
-Website: http://nmapsi4.netsons.org
-Issues: http://code.google.com/p/nmapsi4/issues/list
-Mailing-list: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
-Source: http://code.google.com/p/nmapsi4/source/checkout
-
-NmapSI4 is published under the terms of the GPL v2
-
-
-Core Developer:  francesco.cecconi@kdemail.net
-MS Windows Packages: el.diabl09@gmail.com
-
-</source>
-        <translation type="obsolete">NmapSI4 is eine Qt4 Schnittstelle für den nmap Scanner
-
-
-Webseite: http://nmapsi4.netsons.org
-Ausgaben: http://code.google.com/p/nmapsi4/issues/list
-Mail-Liste: https://lists.sourceforge.net/lists/listinfo/nmapsi-release
-Quelle: http://code.google.com/p/nmapsi4/source/checkout
-
-NmapSI4 ist unter der GPL v2 veröffentlicht
-
-
-Kernentwickler:  francesco.cecconi@kdemail.net
-MS Windows Paket Ersteller: el.diabl09@gmail.com
-
-</translation>
-    </message>
-    <message>
         <source>Select the file</source>
         <translation>Wählen Sie die Datei</translation>
     </message>
@@ -917,10 +722,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     <message>
         <source>Not Present</source>
         <translation>Nicht anwesend</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Nmapsi4 Mode:&lt;/b&gt; </source>
-        <translation type="obsolete">&lt;b&gt;Nmapsi4 Modus:&lt;/b&gt; </translation>
     </message>
     <message>
         <source>Full</source>
@@ -1063,14 +864,6 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>no Host selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>no Service selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enable/Disable Manual Parameters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1116,6 +909,38 @@ MS Windows Paket Ersteller: el.diabl09@gmail.com
     </message>
     <message>
         <source> Active Scan </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Traceroot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Scan Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Traceroute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

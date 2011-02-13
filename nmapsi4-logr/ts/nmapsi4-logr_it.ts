@@ -84,12 +84,12 @@
 <context>
     <name>mwClass</name>
     <message>
-        <location filename="../src/logrApi.cpp" line="7"/>
+        <location filename="../src/logrApi.cpp" line="26"/>
         <source>Open Log</source>
         <translation>Apri log</translation>
     </message>
     <message>
-        <location filename="../src/logrApi.cpp" line="8"/>
+        <location filename="../src/logrApi.cpp" line="27"/>
         <source>Log (*.log)</source>
         <translation>Log (*.log)</translation>
     </message>

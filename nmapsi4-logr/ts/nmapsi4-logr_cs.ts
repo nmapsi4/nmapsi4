@@ -40,10 +40,6 @@
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <source>&amp;About</source>
-        <translation type="obsolete">&amp;O</translation>
-    </message>
-    <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="194"/>
         <source>About &amp;Qt</source>
         <translation>O &amp;Qt</translation>
@@ -88,12 +84,12 @@
 <context>
     <name>mwClass</name>
     <message>
-        <location filename="../src/logrApi.cpp" line="7"/>
+        <location filename="../src/logrApi.cpp" line="26"/>
         <source>Open Log</source>
         <translation>Otevřít zápis</translation>
     </message>
     <message>
-        <location filename="../src/logrApi.cpp" line="8"/>
+        <location filename="../src/logrApi.cpp" line="27"/>
         <source>Log (*.log)</source>
         <translation>Zápis (*.log)</translation>
     </message>
