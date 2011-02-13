@@ -42,18 +42,6 @@ void nmapClass::showParserObj(int indexObj) {
     qDeleteAll(objElem);
     GItree->clear();
     objElem.clear();
-
-    QStringList listServices_ = parserObjList[indexObj]->getServices();
-    const int listServicesSize_ = listServices_.size();
-
-    // show services
-    for(int index=0; index < listServicesSize_; index++) {
-        QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
-	objItem->setSizeHint(0, QSize(22, 22));
-	objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-        objElem.push_front(objItem);
-        objItem->setText(0,listServices_[index]);
-    }
     
     QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
     QStringList listClose_ = parserObjList[indexObj]->getPortClose();
@@ -78,9 +66,12 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if(split.size() == 4) {
+        if (split.size() == 4) {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
+	    if (!split[3].isEmpty()) {
+		comboVuln->addItem(split[3]);
+	    }
         } else if (split.size() > 4) {
             QString lineDescription_("");
             for(int index=3; index < split.size(); index++) {
@@ -109,9 +100,12 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if(split.size() == 4) {
+        if (split.size() == 4) {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
+	    if (!split[3].isEmpty()) {
+		comboVuln->addItem(split[3]);
+	    }
         } else if (split.size() > 4) {
             QString lineDescription_("");
             for(int index=3; index < split.size(); index++) {
@@ -124,7 +118,9 @@ void nmapClass::showParserObj(int indexObj) {
 	    if (!lineDescription_.isEmpty()) {
 		comboVuln->addItem(lineDescription_);
 	    }
-        }
+        } else {
+	    root->setText(3, noDes);
+	}
     }
 
     // Show Filtered ports
@@ -139,9 +135,12 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if(split.size() == 4) {
+        if (split.size() == 4) {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
+	    if (!split[3].isEmpty()) {
+		comboVuln->addItem(split[3]);
+	    }
         } else if (split.size() > 4) {
             QString lineDescription_("");
             for(int index=3; index < split.size(); index++) {
@@ -154,7 +153,25 @@ void nmapClass::showParserObj(int indexObj) {
 	    if (!lineDescription_.isEmpty()) {
 		comboVuln->addItem(lineDescription_);
 	    }
-        }
+        } else {
+	    root->setText(3, noDes);
+	}
+    }
+    
+    QStringList listServices_ = parserObjList[indexObj]->getServices();
+    QStringList listServicesDescriptions_  = parserObjList[indexObj]->getDescriptionServices();
+    
+    // show services
+    const int listServicesSize_ = listServices_.size();
+    for(int index=0; index < listServicesSize_; index++) {
+	if (!listWscan->findItems(listServices_[index], Qt::MatchExactly, 2)[0]->text(3).contains(noDes)
+	) {
+	    QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
+	    objItem->setSizeHint(0, QSize(22, 22));
+	    objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+	    objElem.push_front(objItem);
+	    objItem->setText(0,listServices_[index]);
+	}
     }
 
     // Show Nss Info

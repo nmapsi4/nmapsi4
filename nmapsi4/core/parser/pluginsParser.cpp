@@ -76,7 +76,8 @@ void nmapClass::showParserObjPlugins(int indexObj) {
     }
     
     // show lookUp info
-    if(parserObjUtilList.size() && parserObjUtilList.size() >= indexObj) {	
+    const int parserObjUtilList_size = parserObjUtilList.size();
+    if(parserObjUtilList_size && parserObjUtilList_size >= indexObj) {	
 	if(parserObjList[indexObj]->getHostName() == parserObjUtilList[indexObj]->getHostName()) {
 	    QStringList listLookupInfo_ = parserObjUtilList[indexObj]->getInfoLookup();
 	    const int listLookupSize = listLookupInfo_.size();
@@ -88,7 +89,7 @@ void nmapClass::showParserObjPlugins(int indexObj) {
 		root->setText(0, listLookupInfo_[index]);
 	    }
 	} else {
-	    	for(int indexObjList=0; indexObjList < parserObjUtilList.size(); indexObjList++) {
+	    	for(int indexObjList=0; indexObjList < parserObjUtilList_size; indexObjList++) {
 		    if(parserObjList[indexObj]->getHostName() == parserObjUtilList[indexObjList]->getHostName()) {
 			QStringList listLookupInfo_ = parserObjUtilList[indexObjList]->getInfoLookup();
 			const int listLookupSize = listLookupInfo_.size();

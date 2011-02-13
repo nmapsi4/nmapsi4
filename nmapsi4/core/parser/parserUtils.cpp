@@ -98,13 +98,13 @@ void nmapClass::objVulnButton() { // SLOT
 
     comboVulnRis->clear();
     
-    int indexHost = treeMain->indexOfTopLevelItem(treeMain->currentItem());
-    int indexObj_ = GItree->indexOfTopLevelItem(GItree->currentItem());
+    QString tmpServices_ = GItree->currentItem()->text(0);
+    QList<QTreeWidgetItem*> itemList = listWscan->findItems(tmpServices_, Qt::MatchExactly, 2);
 
     if(comboVulnRis->itemText(0).isEmpty()) {
-        comboVulnRis->addItem(parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
+        comboVulnRis->addItem(itemList[0]->text(3));
     } else {
-        comboVulnRis->setItemText(0,parserObjList[indexHost]->getDescriptionServices()[indexObj_]);
+        comboVulnRis->setItemText(0,itemList[0]->text(3));
     }
 
     stackedMain->setCurrentIndex(2);
