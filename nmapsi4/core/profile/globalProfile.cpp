@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,23 +17,22 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 
-void nmapClass::saveUiSettings() {
-    QSettings settings("nmapsi4", "nmapsi4");
-    if(savePos) {
-        settings.setValue("window/pos", pos());
-    }
-    if(saveSize) {
-        settings.setValue("window/size", size());
-    }
-    settings.setValue("NSSsupport", NSSsupport);
-    settings.setValue("ADVSupport", ADVSupport);
-    settings.setValue("MonitorEnabled", MonitorEnabled);
-    settings.setValue("LookupEnabled", LookupEnabled);
-    settings.setValue("TraceEnabled", TraceEnabled);
-    settings.setValue("splitterSizes", cW->saveState());
-    settings.setValue("splitterSizesRight", bW->saveState());
-    settings.setValue("globalProfile", globalProfile); // default value
+void nmapClass::restoreGlobalProfile() {
+    // TODO restore global profile
+    // TODO check for user or admin mode
+    
+    // global profile options
+    QSettings settings("nmapsi4", "nmapsi4_gprofile");
+}
+
+void nmapClass::saveGlobalProfile() {
+    // TODO save global profile
+    // TODO check for user or admin mode
+    globalProfile = true;
+    
+    // global profile options
+    QSettings settings("nmapsi4", "nmapsi4_gprofile");
 }

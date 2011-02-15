@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 void nmapClass::readProfile()
 {
@@ -49,35 +49,45 @@ void nmapClass::checkProfile()
 #endif
 
     QSettings settings("nmapsi4", "nmapsi4");
-
-    Profile = settings.value("configProfile", "none").toString();
-
-    if (!Profile.compare("none")) {
-        settings.setValue("configProfile", "normal"); // default value
-        Profile = settings.value("configProfile", "none").toString();
-    }
     
-    if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
-	 Profile = "normal"; // reset profile
-	 settings.setValue("configProfile", Profile);
-	 lineProfile->setText(Profile);
-    } else if (!Profile.contains("fullversion") && !Profile.contains("quickversion") && !uid) {
-	 Profile = "fullversion"; // reset profile
-	 settings.setValue("configProfile", Profile);
-	 lineProfile->setText(Profile);
-    }
+    // TODO saved blobal profile
+    globalProfile = settings.value("globalProfile", false).toBool();
+    if (globalProfile) {
+	// FIXME
+	// call restore global profile
+	restoreGlobalProfile();
+    } else {
+	qDebug() << "DEBUG:: Set local profile";
+	settings.setValue("globalProfile", false); // default value
+
+	Profile = settings.value("configProfile", "none").toString();
+
+	if (!Profile.compare("none")) {
+	    settings.setValue("configProfile", "normal"); // default value
+	    Profile = settings.value("configProfile", "none").toString();
+	}
+    
+	if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
+	    Profile = "normal"; // reset profile
+	    settings.setValue("configProfile", Profile);
+	    lineProfile->setText(Profile);
+	} else if (!Profile.contains("fullversion") && !Profile.contains("quickversion") && !uid) {
+	    Profile = "fullversion"; // reset profile
+	    settings.setValue("configProfile", Profile);
+	    lineProfile->setText(Profile);
+	}
 
     
-    if (Profile.contains("quick")) {
-        this->setQuickProfile();
-    } else if (Profile.contains("normal")) {
-        this->setNormalProfile();
-    } else if (Profile.contains("fullversion")) {
-        this->setFullVersionProfile();
-    } else if (Profile.contains("quickversion")) {
-        this->setQuickVersionProfile();
+	if (Profile.contains("quick")) {
+	    this->setQuickProfile();
+	} else if (Profile.contains("normal")) {
+	    this->setNormalProfile();
+	} else if (Profile.contains("fullversion")) {
+	    this->setFullVersionProfile();
+	} else if (Profile.contains("quickversion")) {
+	    this->setQuickVersionProfile();
+	}
     }
-    
     
     logPath = settings.value("confPath", "none").toString();
     if (!logPath.compare("none")) {

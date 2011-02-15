@@ -66,6 +66,8 @@ private:
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();
+    void restoreGlobalProfile();
+    void saveGlobalProfile();
 
 
 public:
@@ -94,6 +96,7 @@ protected:
     QString Profile;
     QString logPath;
     QString logSessionFile;
+    bool globalProfile;
     bool checkLog;
     bool flag_state;
     bool savePos;
