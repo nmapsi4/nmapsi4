@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-15 01:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+
+#: mWindow#1
+msgid "Host(s)"
+msgstr "Host(s)"
+
+#: mWindow#2
+msgid "Log History"
+msgstr "Historial del Log"
+
+#: mWindow#3
+msgid "Nmapsi4 log reader"
+msgstr "Visor de log Nmapsi4 "
+
+#: mWindow#4
+msgid "Clear"
+msgstr "Limpiar"
+
+#: mWindow#5
+msgid "&Quit"
+msgstr "&Salir"
+
+#: mWindow#6
+msgid "Open"
+msgstr "Abrir"
+
+#: mWindow#7
+msgid "Ctrl+Q"
+msgstr ""
+
+#: mWindow#8
+msgid "About &Qt"
+msgstr "Acerca de &Qt"
+
+#: mWindow#9
+#, fuzzy
+msgid "List(s)"
+msgstr "Lista(s)"
+
+#: mWindow#10
+msgid "&FIle"
+msgstr "&Archivo"
+
+#: mWindow#11
+msgid "&Help"
+msgstr "A&yuda"
+
+#: mWindow#12
+msgid "toolBar"
+msgstr ""
+
+#: mWindow#13
+msgid "Date"
+msgstr "Fecha"
+
+#: mWindow#14
+msgid "&About nmapsi4"
+msgstr "A&cerca de nmpsi4"
+
+#: mWindow#15
+msgid "Path"
+msgstr "Ruta"
+
+#: mwClass#1
+msgid "Open Log"
+msgstr "Abrir log"
+
+#: mwClass#2
+msgid "Log (*.log)"
+msgstr ""
