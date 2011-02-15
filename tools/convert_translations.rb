@@ -47,7 +47,7 @@ if __FILE__ == $0
     else if ARGV.first == "convert"
 	    ts = Tools.new
 	    ts.ts2PoNmapsi4
-	    ts.ts2PoNmapsi4_logr
+	    #ts.ts2PoNmapsi4_logr
 	else if ARGV.first == "revert"
 	    ts = Tools.new
 	    # revert metod
