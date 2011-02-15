@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 01:11+0200\n"
+"POT-Creation-Date: 2011-02-15 02:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,48 +13,47 @@ msgstr ""
 
 #: mWindow#1
 msgid "Host(s)"
-msgstr "Host(s)"
+msgstr ""
 
 #: mWindow#2
 msgid "Log History"
-msgstr "Historial del Log"
+msgstr "Cronologia Log"
 
 #: mWindow#3
 msgid "Nmapsi4 log reader"
-msgstr "Visor de log Nmapsi4 "
+msgstr "Lettore log Nmapsi4"
 
 #: mWindow#4
 msgid "Clear"
-msgstr "Limpiar"
+msgstr "Pulisci"
 
 #: mWindow#5
 msgid "&Quit"
-msgstr "&Salir"
+msgstr "&Esci"
 
 #: mWindow#6
 msgid "Open"
-msgstr "Abrir"
+msgstr "Apri"
 
 #: mWindow#7
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
 #: mWindow#8
 msgid "About &Qt"
-msgstr "Acerca de &Qt"
+msgstr ""
 
 #: mWindow#9
-#, fuzzy
 msgid "List(s)"
-msgstr "Lista(s)"
+msgstr ""
 
 #: mWindow#10
 msgid "&FIle"
-msgstr "&Archivo"
+msgstr "&FIle"
 
 #: mWindow#11
 msgid "&Help"
-msgstr "A&yuda"
+msgstr "&Aiuto"
 
 #: mWindow#12
 msgid "toolBar"
@@ -62,20 +61,20 @@ msgstr ""
 
 #: mWindow#13
 msgid "Date"
-msgstr "Fecha"
+msgstr "Data"
 
 #: mWindow#14
 msgid "&About nmapsi4"
-msgstr "A&cerca de nmpsi4"
+msgstr ""
 
 #: mWindow#15
 msgid "Path"
-msgstr "Ruta"
+msgstr "Percorso"
 
 #: mwClass#1
 msgid "Open Log"
-msgstr "Abrir log"
+msgstr "Apri log"
 
 #: mwClass#2
 msgid "Log (*.log)"
-msgstr ""
+msgstr "Log (*.log)"
