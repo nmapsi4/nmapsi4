@@ -131,6 +131,11 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(bookOptions()));
     connect(BBPar, SIGNAL(clicked()),
             this, SLOT(bookOptionsPar()));
+    
+    connect(globalButton, SIGNAL(clicked()),
+            this, SLOT(saveGlobalProfile()));
+    connect(removeGlobalButton, SIGNAL(clicked()),
+            this, SLOT(removeGlobalProfile()));
 
     // Obj parser runtime
     connect(treeMain, SIGNAL( itemActivated(QTreeWidgetItem*, int)),

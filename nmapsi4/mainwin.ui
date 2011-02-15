@@ -1285,7 +1285,7 @@
         <string>Scan Options</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
+        <item row="0" column="0" rowspan="8">
          <widget class="QListWidget" name="optionsListScan">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
@@ -1295,7 +1295,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>131</width>
+            <width>160</width>
             <height>0</height>
            </size>
           </property>
@@ -1322,7 +1322,7 @@
           </property>
           <property name="gridSize">
            <size>
-            <width>118</width>
+            <width>140</width>
             <height>85</height>
            </size>
           </property>
@@ -1334,7 +1334,7 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="1" rowspan="2">
+        <item row="0" column="1" rowspan="8">
          <widget class="QStackedWidget" name="stackedOptions">
           <property name="currentIndex">
            <number>0</number>
@@ -2360,14 +2360,36 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="optionAccept">
+        <item row="6" column="2">
+         <widget class="QPushButton" name="globalButton">
           <property name="text">
-           <string>Apply</string>
+           <string>Save Global Profile</string>
           </property>
           <property name="icon">
            <iconset resource="../mainwin.qrc">
             <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QPushButton" name="optionAccept">
+          <property name="text">
+           <string>Apply Quick Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../mainwin.qrc">
+            <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QPushButton" name="removeGlobalButton">
+          <property name="text">
+           <string>Remove Global Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../mainwin.qrc">
+            <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
           </property>
          </widget>
         </item>

@@ -67,8 +67,6 @@ private:
     void createBar();
     void updateComboPar();
     void restoreGlobalProfile();
-    void saveGlobalProfile();
-
 
 public:
     nmapClass();
@@ -233,6 +231,9 @@ private slots:
     void menuServiceMain();
     void slotParSelected();
     void saveUiSettings();
+    // global profile
+    void saveGlobalProfile();
+    void removeGlobalProfile();
 };
 
 #endif
