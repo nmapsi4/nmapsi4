@@ -669,7 +669,7 @@
                  <widget class="QWidget" name="tab_3">
                   <attribute name="icon">
                    <iconset resource="../mainwin.qrc">
-                    <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+                    <normaloff>:/images/images/network-workgroup.png</normaloff>:/images/images/network-workgroup.png</iconset>
                   </attribute>
                   <attribute name="title">
                    <string>Lookup</string>
@@ -713,7 +713,7 @@
                  <widget class="QWidget" name="tab_7">
                   <attribute name="icon">
                    <iconset resource="../mainwin.qrc">
-                    <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+                    <normaloff>:/images/images/network-wired.png</normaloff>:/images/images/network-wired.png</iconset>
                   </attribute>
                   <attribute name="title">
                    <string>Traceroute</string>

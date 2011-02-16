@@ -549,7 +549,7 @@ void nmapClass::updateComboPar() {
 void nmapClass::updateTabLook() {
     if(actTabLook->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
         LookupEnabled = true;
     } else {
         LookupEnabled = false;
@@ -562,7 +562,7 @@ void nmapClass::updateTabLook() {
 void nmapClass::updateTabTrace() {
     if(actTabTrace->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/world.png")));
+        tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
         TraceEnabled = true;
     } else {
         TraceEnabled = false;

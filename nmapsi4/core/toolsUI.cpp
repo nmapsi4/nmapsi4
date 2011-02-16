@@ -349,11 +349,11 @@ void nmapClass::createBar() {
     toolBarSearch->addAction(actStop);
     toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
     actTabLook->setToolTip(tr("Show/Hide Lookup"));
     actTabLook->setCheckable(true);
 
-    actTabTrace->setIcon(QIcon(QString::fromUtf8(":/images/images/world.png")));
+    actTabTrace->setIcon(QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
     actTabTrace->setToolTip(tr("Show/Hide Traceroot"));
     actTabTrace->setCheckable(true);
 
