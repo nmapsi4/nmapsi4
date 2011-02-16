@@ -122,7 +122,8 @@ void nmapClass::callParFromBook()
     }
 
      if(treeBookPar->currentItem()) {
-        comboAdv->setItemText(0, treeBookPar->currentItem()->text(0));
+	comboAdv->clear();
+        comboAdv->insertItem(0, treeBookPar->currentItem()->text(0));
     }
 }
 

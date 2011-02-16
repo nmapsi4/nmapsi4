@@ -272,7 +272,9 @@ void nmapClass::callScanH()
 #endif
         hostEdit->setStyleSheet(QString::fromUtf8(""));
         hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
-        hostEdit->setItemText(0, treeLogH->currentItem()->text(0));
+	// clear history setItemText fails
+	hostEdit->clear();
+	hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         SWscan->setCurrentIndex(0);
         startScan();
     }
@@ -280,7 +282,6 @@ void nmapClass::callScanH()
 
 void nmapClass::createBar() {
     // QToolBar asction
-    //sezBar->contextMenuPolicy(Qt::NoContextMenu);
     scanSez = new QAction(this);
     logSez = new QAction(this);
     vulnSez = new QAction(this);

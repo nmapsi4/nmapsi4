@@ -21,7 +21,6 @@
 
 
 void nmapClass::restoreGlobalProfile() {
-    // TODO restore global profile
     int uid = 0;
 
 #ifndef Q_WS_WIN
@@ -113,7 +112,6 @@ void nmapClass::restoreGlobalProfile() {
 }
 
 void nmapClass::saveGlobalProfile() {
-    // TODO save global profile
     int uid = 0;
 
 #ifndef Q_WS_WIN
