@@ -35,8 +35,12 @@ QStringList nmapClass::check_extensions()
     
     if (nseComboScript->currentIndex() && nseScriptActiveList.size()) {
 	//set -sC and --script "xx,xx"
-	parametri.removeAll("-A");
-	QString tmpListComplete_ = ("-sC --script=");
+	if (parametri.contains("-A")) {
+	    parametri.removeAll("-A");
+	    parametri << "--traceroute";
+	}
+	//QString tmpListComplete_ = ("-sC --script=");
+	QString tmpListComplete_ = ("--script=");
 	QString tmpList_ = ("");
 	foreach (const QString token, nseScriptActiveList) {
 	    tmpList_.append(token);
