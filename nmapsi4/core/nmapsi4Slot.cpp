@@ -203,4 +203,12 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateTabTrace()));
     connect(actTabMonitor, SIGNAL(triggered()),
             this, SLOT(updateTabMonitor()));
+    
+    // nse category
+    connect(nseComboScript, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(updateNseOptionScript(int)));
+    connect(nseActiveBut, SIGNAL(clicked()),
+            this, SLOT(nseTreeActiveItem()));
+    connect(nseResetBut, SIGNAL(clicked()),
+            this, SLOT(nseTreeResetItem()));
 }

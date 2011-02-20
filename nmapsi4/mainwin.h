@@ -89,6 +89,7 @@ protected:
     QListWidgetItem *discoverW;
     QListWidgetItem *fileW;
     QListWidgetItem *timingW;
+    QListWidgetItem *nseW;
     QString FileName;
     QString firstPath;
     QString Profile;
@@ -112,13 +113,16 @@ protected:
     int scanCounter;
     //QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListScan;
-    //QList<QTreeWidgetItem*> itemListLook;
+    QList<QTreeWidgetItem*> itemNseAvail;
+    QList<QTreeWidgetItem*> itemNseActive;
     QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
     QList<QString> monitorElemHost;
     QList<QString> monitorElemState;
     QList<QString> monitorElemOptions;
+    QList<QString> nseScriptAvailList;
+    QList<QString> nseScriptActiveList;
     QList<scanThread*> scanPointerList;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
@@ -234,6 +238,12 @@ private slots:
     // global profile
     void saveGlobalProfile();
     void removeGlobalProfile();
+    void updateNseOptionScript(int index);
+    void nseTreeDefaultValue();
+    void nseTreeAvailRestoreValues();
+    void nseTreeActiveRestoreValues();
+    void nseTreeActiveItem();
+    void nseTreeResetItem();
 };
 
 #endif

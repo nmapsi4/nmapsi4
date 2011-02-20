@@ -225,6 +225,20 @@ void nmapClass::checkProfile()
     }
 
     TraceEnabled = settings.value("TraceEnabled").toBool();
+    
+    // restore nse Combo script
+    int nseComboScriptTmp_ = settings.value("nseComboScript", 0).toInt();
+    updateNseOptionScript(nseComboScriptTmp_);
+    
+    nseScriptActiveList = settings.value("nseScriptActiveList","none").toStringList();
+    nseScriptAvailList = settings.value("nseScriptAvailList","none").toStringList();
+    
+    if (!nseScriptAvailList.first().compare("none")) {
+	nseTreeDefaultValue();
+    } else {
+	nseTreeAvailRestoreValues();
+	nseTreeActiveRestoreValues();
+    }
 }
 
 void nmapClass::setQuickProfile()

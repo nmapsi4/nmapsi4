@@ -32,6 +32,21 @@ QStringList nmapClass::check_extensions()
     } else {
         parametri << "--traceroute";
     }
+    
+    if (nseComboScript->currentIndex() && nseScriptActiveList.size()) {
+	//set -sC and --script "xx,xx"
+	parametri.removeAll("-A");
+	QString tmpListComplete_ = ("-sC --script=");
+	QString tmpList_ = ("");
+	foreach (const QString token, nseScriptActiveList) {
+	    tmpList_.append(token);
+	    tmpList_.append(",");
+	}
+	tmpList_.replace(" ", "");
+	tmpList_.resize(tmpList_.size()-1);
+	tmpListComplete_.append(tmpList_);
+	parametri << tmpListComplete_;
+    }
 
     switch (comboScan->currentIndex()) { //scan check
     case 0:
@@ -359,6 +374,6 @@ QStringList nmapClass::check_extensions()
     if(scanCounter) {
         progressScan->setValue(55);
     }
-
+    
     return parametri;
 }

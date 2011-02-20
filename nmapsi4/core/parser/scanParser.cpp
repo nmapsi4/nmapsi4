@@ -28,15 +28,13 @@ void nmapClass::showParserObj(int indexObj) {
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
     
-    // Show Main Info
-    const int listMainInfoSize = listMainInfo_.size();
-    for(int index=0; index < listMainInfoSize; index++) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
+    foreach (const QString token, listMainInfo_) {
+	QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setText(0, listMainInfo_[index]);
-        root->setToolTip(0, listMainInfo_[index]);
+        root->setText(0, token);
+        root->setToolTip(0, token);
     }
 
     qDeleteAll(objElem);
@@ -55,14 +53,13 @@ void nmapClass::showParserObj(int indexObj) {
     comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    const int listOpenSize = listOpen_.size();
-    for(int index=0; index < listOpenSize; index++) {
+    foreach (const QString token, listOpen_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-        QStringList split = listOpen_[index].split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(" ", QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -90,13 +87,12 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show Close ports
-    const int listCloseSize = listClose_.size();
-    for(int index=0; index < listCloseSize; index++) {
+    foreach (const QString token, listClose_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
-        QStringList split = listClose_[index].split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(" ", QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -124,14 +120,13 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show Filtered ports
-    const int listFilteredSize = listFilterd_.size();
-    for(int index=0; index < listFilteredSize; index++) {
+    foreach (const QString token, listFilterd_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
         root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
-        QStringList split = listFilterd_[index].split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(" ", QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -162,49 +157,45 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listServicesDescriptions_  = parserObjList[indexObj]->getDescriptionServices();
     
     // show services
-    const int listServicesSize_ = listServices_.size();
-    for(int index=0; index < listServicesSize_; index++) {
-	if (!listWscan->findItems(listServices_[index], Qt::MatchExactly, 2)[0]->text(3).contains(noDes)
+    foreach (const QString token, listServices_) {
+	if (!listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)
 	) {
 	    QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
 	    objItem->setSizeHint(0, QSize(22, 22));
 	    objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 	    objElem.push_front(objItem);
-	    objItem->setText(0,listServices_[index]);
+	    objItem->setText(0,token);
 	}
     }
 
     // Show Nss Info
-    const int listNssSize = listNssInfo_.size();
-    for(int index=0; index < listNssSize; index++) {
+    foreach (const QString token, listNssInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeNSS);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        root->setText(0, listNssInfo_[index]);
-        root->setToolTip(0, listNssInfo_[index]);
+        root->setText(0, token);
+        root->setToolTip(0, token);
     }
 
     // Show full scan log
-    const int listLogSize = listLogInfo_.size();
-    for(int index=0; index < listLogSize; index++) {
+    foreach (const QString token, listLogInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-        root->setText(0, listLogInfo_[index]);
-        root->setToolTip(0, listLogInfo_[index]);
+        root->setText(0, token);
+        root->setToolTip(0, token);
     }
 
     // Show scan error
-    const int listErrorSize = listErrorInfo_.size();
-    for(int index=0; index < listErrorSize; index++) {
+    foreach (const QString token, listErrorInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScanError);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
-        root->setText(0, listErrorInfo_[index]);
-        root->setToolTip(0, listErrorInfo_[index]);
+        root->setText(0, token);
+        root->setToolTip(0, token);
     }
 
     // call plugins parser

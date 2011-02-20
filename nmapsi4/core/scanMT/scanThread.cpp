@@ -46,7 +46,7 @@ void scanThread::run() {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "DEBUG::ThreadString:: " << ParList;
 #endif
-
+     ParList.replaceInStrings("\"", "\"");
      proc->start("nmap", ParList);
      
      exec();

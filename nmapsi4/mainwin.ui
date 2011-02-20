@@ -2342,6 +2342,101 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="page_6">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QComboBox" name="nseComboScript">
+                 <item>
+                  <property name="text">
+                   <string>All nse script</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Custom nse script</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="1" colspan="2">
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>330</width>
+                   <height>21</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <widget class="QTreeWidget" name="nseTreeAvail">
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="rootIsDecorated">
+                  <bool>false</bool>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string>Nse categories script available</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="nseActiveBut">
+                 <property name="text">
+                  <string>Active</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QTreeWidget" name="nseTreeActive">
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="rootIsDecorated">
+                  <bool>false</bool>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string>Nse categories Script Active</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="nseResetBut">
+                 <property name="text">
+                  <string>Restore Default Categories</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
         <item row="0" column="2">

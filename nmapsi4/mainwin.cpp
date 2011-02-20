@@ -294,6 +294,8 @@ nmapClass::~nmapClass()
     itemDeleteAll(itemListScan);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
+    itemDeleteAll(itemNseActive);
+    itemDeleteAll(itemNseAvail);
     qDeleteAll(parserObjList);
     qDeleteAll(parserObjUtilList);
     qDeleteAll(webViewList);
