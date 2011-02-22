@@ -22,8 +22,11 @@
 void nmapClass::showParserObj(int indexObj) {
     // Clear widget
     qDeleteAll(itemListScan);
+    qDeleteAll(objElem);
     listWscan->clear();
     itemListScan.clear();
+    GItree->clear();
+    objElem.clear();
 
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
@@ -36,10 +39,6 @@ void nmapClass::showParserObj(int indexObj) {
         root->setText(0, token);
         root->setToolTip(0, token);
     }
-
-    qDeleteAll(objElem);
-    GItree->clear();
-    objElem.clear();
     
     QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
     QStringList listClose_ = parserObjList[indexObj]->getPortClose();
