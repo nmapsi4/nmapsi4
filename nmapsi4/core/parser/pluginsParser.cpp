@@ -24,13 +24,12 @@ void nmapClass::showParserObjPlugins(int indexObj) {
 
     QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
 
-    const int listTraceRouteSize = listTraceRouteInfo_.size();
-    for(int index=0; index < listTraceRouteSize; index++) {
+    foreach (const QString token, listTraceRouteInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeTraceroot);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        QStringList tmpToken = listTraceRouteInfo_[index].split(" ");
+        QStringList tmpToken = token.split(" ");
 
         tmpToken.removeAll("");
 
@@ -51,8 +50,8 @@ void nmapClass::showParserObjPlugins(int indexObj) {
         }
 #ifndef PARSER_NO_DEBUG
         qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
-        for(int indexD=0; indexD < tmpToken.size(); indexD++) {
-            qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[indexD];
+        for(int index=0; index < tmpToken.size(); index++) {
+            qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
 
         }
 #endif
@@ -70,39 +69,24 @@ void nmapClass::showParserObjPlugins(int indexObj) {
             root->setText(3, "no DNS");
             root->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
         } else {
-            root->setText(0, listTraceRouteInfo_[index]);
-            root->setToolTip(0, listTraceRouteInfo_[index]);
+            root->setText(0, token);
+            root->setToolTip(0, token);
         }
     }
     
     // show lookUp info
-    const int parserObjUtilList_size = parserObjUtilList.size();
-    if(parserObjUtilList_size && parserObjUtilList_size >= indexObj) {	
-	if(parserObjList[indexObj]->getHostName() == parserObjUtilList[indexObj]->getHostName()) {
-	    QStringList listLookupInfo_ = parserObjUtilList[indexObj]->getInfoLookup();
-	    const int listLookupSize = listLookupInfo_.size();
-	    for(int index=0; index < listLookupSize; index++) {
+    foreach (parserObjUtil* elem, parserObjUtilList) {
+	if(parserObjList[indexObj]->getHostName() == elem->getHostName()) {
+	    QStringList listLookupInfo_ = elem->getInfoLookup();
+	    foreach (const QString token, listLookupInfo_) {
 		QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
 		itemListScan.push_front(root);
 		root->setSizeHint(0, QSize(22, 22));
 		root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-		root->setText(0, listLookupInfo_[index]);
+		root->setText(0, token);
 	    }
-	} else {
-	    	for(int indexObjList=0; indexObjList < parserObjUtilList_size; indexObjList++) {
-		    if(parserObjList[indexObj]->getHostName() == parserObjUtilList[indexObjList]->getHostName()) {
-			QStringList listLookupInfo_ = parserObjUtilList[indexObjList]->getInfoLookup();
-			const int listLookupSize = listLookupInfo_.size();
-			for(int index=0; index < listLookupSize; index++) {
-			    QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
-			    itemListScan.push_front(root);
-			    root->setSizeHint(0, QSize(22, 22));
-			    root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-			    root->setText(0, listLookupInfo_[index]);
-			}
-			break;
-		    }
-		}
+	    break;
 	}
     }
+
 }
