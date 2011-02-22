@@ -583,6 +583,15 @@ void nmapClass::updateTabMonitor() {
 }
 
 void nmapClass::updateNseOptionScript(int index) {
+    int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
+    
+    if (index && uid) {
+	index = 0;
+    }
     
     nseComboScript->setCurrentIndex(index);
     
@@ -590,7 +599,6 @@ void nmapClass::updateNseOptionScript(int index) {
 	nseTreeActive->setEnabled(true);
 	nseTreeAvail->setEnabled(true);
 	nseActiveBut->setEnabled(true);
-	// TODO restore script Tree
     } else {
 	nseTreeActive->setEnabled(false);
 	nseTreeAvail->setEnabled(false);
@@ -599,7 +607,6 @@ void nmapClass::updateNseOptionScript(int index) {
 }
 
 void nmapClass::nseTreeDefaultValue() {
-    // TODO default script category
     nseScriptActiveList.clear();
     nseScriptAvailList.clear();
     nseScriptAvailList.append("auth");

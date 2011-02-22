@@ -128,9 +128,5 @@ void nmapClass::callParFromBook()
 }
 
 void nmapClass::slotParSelected() {
-    if(comboPar->currentIndex()) {
-       comboAdv->setItemText(0, comboPar->currentText());
-   } else {
-       comboAdv->setItemText(0, check_extensions().join(" "));
-   }
+   resetPar();
 }
