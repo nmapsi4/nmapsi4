@@ -27,7 +27,7 @@ QStringList nmapClass::check_extensions()
 #ifndef Q_WS_WIN
     uid = getuid();
 #endif
-
+    
     if(scanCounter) {
         progressScan->setValue(10); // start progress bar
     }
@@ -40,12 +40,13 @@ QStringList nmapClass::check_extensions()
     
     if (nseComboScript->currentIndex() 
 	&& nseScriptActiveList.size()
-	&& !uid
     ) {
 	//set -sC and --script "xx,xx"
 	if (parametri.contains("-A")) {
 	    parametri.removeAll("-A");
-	    parametri << "--traceroute";
+	    if (!uid) {
+		parametri << "--traceroute";
+	    }
 	}
 	//QString tmpListComplete_ = ("-sC --script=");
 	QString tmpListComplete_ = ("--script=");

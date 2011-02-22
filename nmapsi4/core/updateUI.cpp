@@ -583,16 +583,7 @@ void nmapClass::updateTabMonitor() {
 }
 
 void nmapClass::updateNseOptionScript(int index) {
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
-    if (index && uid) {
-	index = 0;
-    }
-    
     nseComboScript->setCurrentIndex(index);
     
     if(index) {

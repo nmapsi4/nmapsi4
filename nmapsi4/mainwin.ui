@@ -2359,7 +2359,7 @@
                  </item>
                  <item>
                   <property name="text">
-                   <string>Custom nse script (only admin)</string>
+                   <string>Custom nse script</string>
                   </property>
                  </item>
                 </widget>
