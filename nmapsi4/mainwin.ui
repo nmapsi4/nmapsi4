@@ -43,7 +43,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../mainwin.qrc">
-    <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+    <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -3135,7 +3135,7 @@
   <action name="actionVisit_Website">
    <property name="icon">
     <iconset resource="../mainwin.qrc">
-     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+     <normaloff>:/images/icons/64x64/nmapsi4.png</normaloff>:/images/icons/64x64/nmapsi4.png</iconset>
    </property>
    <property name="text">
     <string>Visit Website</string>

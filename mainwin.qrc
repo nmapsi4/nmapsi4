@@ -15,7 +15,8 @@
     <file>images/no-os.png</file>
     <file>images/viewmagfit_result.png</file>
     <file>images/viewmagfit_noresult.png</file>
-    <file>icons/nmapsi4_mw.svg</file>
+    <file>icons/64x64/nmapsi4.png</file>
+    <file>icons/128x128/nmapsi4.png</file>
     <file>images/view-web-browser-dom-tree.png</file>
     <file>images/bookmark_folder.png</file>
     <file>images/bookmark_toolbar.png</file>

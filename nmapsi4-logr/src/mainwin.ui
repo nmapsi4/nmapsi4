@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../mainwin.qrc">
-    <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+    <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -47,8 +47,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>863</width>
-         <height>460</height>
+         <width>857</width>
+         <height>461</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -99,8 +99,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>857</width>
-         <height>454</height>
+         <width>789</width>
+         <height>64</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -169,7 +169,7 @@
      <x>0</x>
      <y>0</y>
      <width>867</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_FIle">
@@ -261,7 +261,7 @@
   </action>
   <action name="action_About">
    <property name="icon">
-    <iconset resource="../../mainwin.qrc">
+    <iconset>
      <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
    </property>
    <property name="text">

@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../mainwin.qrc">
-    <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+    <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>

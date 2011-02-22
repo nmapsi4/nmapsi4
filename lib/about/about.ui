@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../mainwin.qrc">
-    <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+    <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
@@ -341,7 +341,7 @@ p, li { white-space: pre-wrap; }
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/images/icons/nmapsi4_mw.svg);
+      <string notr="true">background-image: url(:/images/icons/64x64/nmapsi4.png);
 </string>
      </property>
      <property name="frameShape">
