@@ -308,6 +308,7 @@ void nmapClass::detailsOptions() {
 
 void nmapClass::nssOptions() {
     SWscan->setCurrentIndex(1);
+    tabWidget->setCurrentIndex(0);
     updateIconsBox();
 }
 
