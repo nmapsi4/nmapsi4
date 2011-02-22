@@ -2354,7 +2354,7 @@
                 <widget class="QComboBox" name="nseComboScript">
                  <item>
                   <property name="text">
-                   <string>All nse script</string>
+                   <string>Auto nse script</string>
                   </property>
                  </item>
                  <item>

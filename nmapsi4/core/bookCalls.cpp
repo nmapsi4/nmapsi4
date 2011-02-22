@@ -58,24 +58,6 @@ void nmapClass::saveBookMarks()
     delete history_;
 }
 
-void nmapClass::saveBookMarksPar()
-{
-    if(comboAdv->currentText().isEmpty()) {
-        return;
-    }
-
-    logHistory *history_ = NULL;
-
-    history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-    history_->addItemHistory(comboAdv->currentText(),
-                             QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-
-    BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-    history_->updateBookMarks();
-    delete history_;
-    updateComboPar();
-}
-
 void nmapClass::deleteBookMark()
 {
     if(!treeLogH->currentItem() && !treeBookVuln->currentItem()) {
@@ -102,15 +84,58 @@ void nmapClass::deleteBookMark()
 
 void nmapClass::deleteBookMarkPar()
 {
+    int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
+    
+    // FIXME double list for user and admin
     if(!treeBookPar->currentItem()) {
         return;
     }
 
     logHistory *history_ = NULL;
 
-    history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-    history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
+    if (!uid) {
+	history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+	history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
+    } else {
+	history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+	history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
+    }
 
+    delete history_;
+    updateComboPar();
+}
+
+void nmapClass::saveBookMarksPar()
+{
+    int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
+    
+    // FIXME double list for user and admin
+    if(comboAdv->currentText().isEmpty()) {
+        return;
+    }
+
+    logHistory *history_ = NULL;
+
+    if (!uid) {
+	history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+	history_->addItemHistory(comboAdv->currentText(),
+				QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+    } else {
+	history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+	history_->addItemHistory(comboAdv->currentText(),
+				QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+    }
+
+    BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    history_->updateBookMarks();
     delete history_;
     updateComboPar();
 }

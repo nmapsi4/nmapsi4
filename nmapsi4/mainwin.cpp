@@ -117,9 +117,16 @@ void nmapClass::initObject() {
     historyScan_->updateBookMarks();
     delete historyScan_;
 
-    logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-    historyPar_->updateBookMarks();
-    delete historyPar_;
+    // FIXME double list for user and admin
+    if (!uid) {
+	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+	historyPar_->updateBookMarks();
+	delete historyPar_;
+    } else {
+	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+	historyPar_->updateBookMarks();
+	delete historyPar_;
+    }
 
     logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     historyVuln_->updateBookMarks();
