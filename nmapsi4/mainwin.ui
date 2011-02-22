@@ -2541,6 +2541,11 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="actionReport_Bug"/>
+    <addaction name="actionVisit_Website"/>
+    <addaction name="actionDocumentation"/>
+    <addaction name="actionDonate_Money"/>
+    <addaction name="separator"/>
     <addaction name="action_About"/>
     <addaction name="actionAbout_Qt"/>
    </widget>
@@ -2550,9 +2555,18 @@
     </property>
     <addaction name="actionProfile"/>
    </widget>
+   <widget class="QMenu" name="menu_Tools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="actionScan_section"/>
+    <addaction name="actionLog_secition"/>
+    <addaction name="actionVulnerabilities_section"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
    <addaction name="menu_Bookmaks"/>
+   <addaction name="menu_Tools"/>
    <addaction name="menu_Settings"/>
    <addaction name="menu_Help"/>
   </widget>
@@ -2772,7 +2786,7 @@
   <action name="action_About">
    <property name="icon">
     <iconset resource="../mainwin.qrc">
-     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
    <property name="text">
     <string>&amp;About nmapsi4</string>
@@ -3071,6 +3085,69 @@
   <action name="actionScan_2">
    <property name="text">
     <string>Scan</string>
+   </property>
+  </action>
+  <action name="actionScan_section">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scan section</string>
+   </property>
+  </action>
+  <action name="actionLog_secition">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
+   </property>
+   <property name="text">
+    <string>Log secition</string>
+   </property>
+  </action>
+  <action name="actionVulnerabilities_section">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+   </property>
+   <property name="text">
+    <string>Vulnerabilities section</string>
+   </property>
+  </action>
+  <action name="actionDonate_Money">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/kwalletmanager.png</normaloff>:/images/images/kwalletmanager.png</iconset>
+   </property>
+   <property name="text">
+    <string>Donate Money</string>
+   </property>
+  </action>
+  <action name="actionDocumentation">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="actionVisit_Website">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/icons/nmapsi4_mw.svg</normaloff>:/images/icons/nmapsi4_mw.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Visit Website</string>
+   </property>
+  </action>
+  <action name="actionReport_Bug">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/tools-report-bug.png</normaloff>:/images/images/tools-report-bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>Report a bug</string>
    </property>
   </action>
  </widget>

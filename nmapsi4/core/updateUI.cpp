@@ -661,6 +661,9 @@ void nmapClass::nseTreeActiveItem() {
 	nseScriptActiveList.append(tmpElem_);
 	nseTreeAvailRestoreValues();
 	nseTreeActiveRestoreValues();
+	if (!nseScriptActiveList.size()) {
+	    nseScriptAvailList.clear();
+	}
     }
     
     qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/tools-report-bug.png</file>
+    <file>images/kwalletmanager.png</file>
     <file>images/network-workgroup.png</file>
     <file>images/network-wired.png</file>
     <file>images/utilities-system-monitor.png</file>

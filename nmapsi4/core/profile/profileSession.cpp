@@ -236,6 +236,13 @@ void nmapClass::checkProfile()
     if (!nseScriptAvailList.first().compare("none")) {
 	nseTreeDefaultValue();
     } else {
+	if (!nseScriptAvailList.first().compare("")) {
+	    nseScriptAvailList.removeFirst();
+	}
+	
+	if (!nseScriptActiveList.first().compare("")) {
+	    nseScriptActiveList.removeFirst();
+	}
 	nseTreeAvailRestoreValues();
 	nseTreeActiveRestoreValues();
     }

@@ -37,6 +37,16 @@ void nmapClass::saveUiSettings() {
     settings.setValue("splitterSizesRight", bW->saveState());
     settings.setValue("globalProfile", globalProfile); // default value
     settings.setValue("nseComboScript", nseComboScript->currentIndex()); // default value
-    settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
-    settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
+    if (nseScriptActiveList.isEmpty()) {
+	settings.setValue("nseScriptActiveList","");
+    } else {
+	settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
+    }
+    
+    if (nseScriptAvailList.isEmpty()) {
+	settings.setValue("nseScriptAvailList", "");
+    } else {
+	settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
+    }
+    
 }
