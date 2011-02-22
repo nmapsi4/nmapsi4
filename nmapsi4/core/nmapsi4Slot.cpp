@@ -187,9 +187,15 @@ void nmapClass::setNmapsiSlot()
     // main session
     connect(scanSez, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
+    connect(actionScan_section, SIGNAL(triggered()),
+            this, SLOT(updateSezScan()));
     connect(logSez, SIGNAL(triggered()),
             this, SLOT(updateSezLog()));
+    connect(actionLog_section, SIGNAL(triggered()),
+            this, SLOT(updateSezLog()));
     connect(vulnSez, SIGNAL(triggered()),
+            this, SLOT(updateSezVuln()));
+    connect(actionVulnerabilities_section, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
     connect(nssAct, SIGNAL(triggered()),
             this, SLOT(NSSCheck()));

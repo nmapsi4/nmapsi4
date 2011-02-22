@@ -2560,7 +2560,7 @@
      <string>&amp;Tools</string>
     </property>
     <addaction name="actionScan_section"/>
-    <addaction name="actionLog_secition"/>
+    <addaction name="actionLog_section"/>
     <addaction name="actionVulnerabilities_section"/>
    </widget>
    <addaction name="menu_File"/>
@@ -3096,7 +3096,7 @@
     <string>Scan section</string>
    </property>
   </action>
-  <action name="actionLog_secition">
+  <action name="actionLog_section">
    <property name="icon">
     <iconset resource="../mainwin.qrc">
      <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>

@@ -90,7 +90,6 @@ void nmapClass::deleteBookMarkPar()
     uid = getuid();
 #endif
     
-    // FIXME double list for user and admin
     if(!treeBookPar->currentItem()) {
         return;
     }
@@ -117,7 +116,6 @@ void nmapClass::saveBookMarksPar()
     uid = getuid();
 #endif
     
-    // FIXME double list for user and admin
     if(comboAdv->currentText().isEmpty()) {
         return;
     }

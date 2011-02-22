@@ -117,7 +117,6 @@ void nmapClass::initObject() {
     historyScan_->updateBookMarks();
     delete historyScan_;
 
-    // FIXME double list for user and admin
     if (!uid) {
 	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 	historyPar_->updateBookMarks();
