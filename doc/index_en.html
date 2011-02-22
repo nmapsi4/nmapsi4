@@ -1,0 +1,193 @@
+<html>
+<head>
+<title>Documentation/title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+
+<div class="border"><h1>NmapSI4: manuale d'uso</h1></div>
+
+  <h2>Index of contents</h2>
+  <ul>
+    <li><a href="index_en.html#get_started">Introduction</a></li>
+    <li><a href="index_en.html#principale">Main screen</a></li>
+    <li><a href="index_en.html#scansione">Scanning</a></li>
+      <ul>
+	<li><a href="index_en.html#dettagli">Details</a></li>
+	<li><a href="index_en.html#nss">NSS</a></li>
+	<li><a href="index_en.html#host_info">Host info</a></li>
+	<li><a href="index_en.html#bookmarks">Bookmarks</a></li>
+	<li><a href="index_en.html#bm_parameters">Bookmarks parameters</a></li>
+      </ul>
+    <li><a href="index_en.html#scan_options">Scan options</a></li>
+      <ul>
+	<li><a href="index_en.html#so_scan">Scanning</a></li>
+	<li><a href="index_en.html#so_options">Options</a></li>
+	<li><a href="index_en.html#so_discover">Discover</a></li>
+	<li><a href="index_en.html#so_file">File</a></li>
+	<li><a href="index_en.html#so_timing">Timing</a></li>
+      </ul>
+    <li><a href="index_en.html#scan_monitor">Scan monitor</a></li>
+    <li><a href="index_en.html#lookup">Lookup</a></li>
+    <li><a href="index_en.html#traceroute">Traceroute</a></li>
+  </ul>
+
+  <br /><h2>Preferences</h2>
+  <ul>
+    <li><a href="index_en.html#profiles">Profiles</a></li>
+    <li><a href="index_en.html#log">Log</a></li>
+    <li><a href="index_en.html#size">Sizes</a></li>
+    <li><a href="index_en.html#lookup">Lookup</a></li>
+    <li><a href="index_en.html#extension">Extensions</a></li>
+  </ul>
+
+  <br /><h2>Vulnerabilities search engine</h2>
+  <ul>
+    <li><a href="index_en.html#vuln_main">Main screen</a></li>
+    <li><a href="index_en.html#vuln_bookmarks">Bookmarks</a></li>
+  </ul>
+
+  <br /><h2>Log reader</h2>
+  <ul>
+    <li><a href="index_en.html#logr_main">Main screen</a></li>
+  </ul>
+
+  <br /><h2>Some examples...</h2>
+  <ul>
+    <li><a href="index_en.html#multiple_scan">Multiple scans</a></li>
+    <li><a href="index_en.html#bookmark_usage">Using bookmarks</a></li>
+  </ul>
+
+  <br /><h2>Useful links</h2>
+  <ul>
+    <li><a href="index_en.html#">NmapSI4 home page</a></li>
+    <li><a href="index_en.html#">Bug report</a></li>
+    <li><a href="index_en.html#">Nmap home page</a></li>
+    <li><a href="index_en.html#">Conditions of use</a></li>
+  </ul>
+
+<br /><br /><hr /><br />
+
+<div align="center"><h2>NmapSI4</h2></div>
+
+<br /><br /><a name="get_started">Introduction</a><br />NmapSI4 is a complete GUI, realized in Qt for Nmap; our goal is giving a better control to the users of this powerful analysis tool.
+
+<!-- NmapSI4 -->
+<br /><br /><a name="principale">Main screen</a><br /><img  src="images/main.png" width="50%" /><br />
+This is NmapSI4 main screen, we can notice some elements:
+  <ul>
+    <li>Menu bar</li>
+    <li>Toolbar</li>
+    <li>Form for the inclusion of host, ip or dns for scan</li>
+    <li>Form for the inclusion of scan parameters</li>
+    <li>Result screen</li>
+    <li>Statusbar</li>
+  </ul>
+To start a scan you must insert an host, ip or dns then click on the button "Scan".
+At the end of the scan, in the screen of results are visualized the scansion results.
+On the statusbar you can see with which rights NmapSI4 is working together with its software version, and Nmap software version.
+
+<br /><br /><a name="scansione">Scanning</a><br /><br />
+This section is about the buttons that you can find under the result screen.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="dettagli">Scan details</a><br /><img  src="images/1.1.scan_details.png" width="50%" /><br />
+Here there are listed the scan results, and more specifically: service port, port status, the kind of service and a brief description.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="nss">Nmap script</a><br /><img  src="images/1.2.nss_result.png" width="50%" /><br />
+Here are showed results based on scripts that are part of Nmap Suite. 
+For further informations we invite you to look the specific chapter in <a href="http://nmap.org/book/nse.html" target="_blank">Nmap guide</a>.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="host_info">Host info</a><br /><img  src="images/1.3.host_info.png" width="50%" /><br />
+Here are showed scan details, as the starting time, the duration of scanning and other useful informations.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="bookmarks">Bookmarks</a><br /><img  src="images/1.4.bookmarks.png" width="50%" /><br />
+Here we can keep our favourite targets. The screen shows us the ip or the host name and the storage date.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="bm_parameters">Bookmarks parameters</a><br /><img  src="images/1.5.bookmarks_parameters.png" width="50%" /><br />
+Here we can see the scan parameters of the stored bookmarks.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="scan_options">Scan options</a><br />
+In this section you can change scan parameters. To apply changes push the "Apply" button that you find down.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="so_scan">Scan </a><br /><img  src="images/2.1.scan_options.png" width="50%" /><br />
+This section is focused on parameters that stricly concern the scan, just like scan profiles, type and number of ports.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="so_options">Options</a><br /><img  src="images/2.2.scan_options.png" width="50%" /><br />
+In this section you can change the detail level, and the use of specific parameters as Ipv6 and fragmentation.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="so_discover">Discover</a><br /><img  src="images/2.3.discover_scan_options.png" width="50%" /><br />
+In this section you can change parameters that concern the type of packets that are used in the scan.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="so_file">File</a><br /><img  src="images/2.4.file_scan_options1.png" width="50%" /><br />
+In this section you can specify an input file and a specific scan profile.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="so_timing">Timing</a><br /><img  src="images/2.5.timing_scan_options2.png" width="50%" /><br />
+In this section you can change the parameters that concern the scan time and the TTL of sent packets.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="scan_monitor">Scan monitor</a><br /><img  src="images/scan_monitor.png" width="50%" /><br />
+In this section are listed the several targets of scannings that are active and still running.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="lookup">Lookup</a><br /><img  src="images/4.scan_lookup.png" width="50%" /><br />
+This section shows matches between targets, ip and related services.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="traceroute">Traceroute<br /></a><img  src="images/5.traceroute.png" width="50%" /><br />
+This section shows the "route" followed by scanning packets.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><div align="center"><h2>Preferences</h2></div>
+
+<br /><br /><a name="profiles">Profiles</a><br /><img  src="images/preferences/1.preferences_profiles.png" width="50%" /><br />
+In this section you can change the predefined scan profile.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="log">Log</a><br /><img  src="images/preferences/2.preferences_log.png" width="50%" /><br />
+In this section you can change the settings of scannings log.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="size">Sizes</a><br /><img  src="images/preferences/3.preferences_size.png" width="50%" /><br />
+In this section you can change settings of NmapSI4 main window.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="lookup">Lookup</a><br /><img  src="images/preferences/4.preferences_lookup.png" width="50%" /><br />
+In this section you can change lookup settings.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="extension">Extensions</a><br /><img  src="images/preferences/5.preferences_extensions.png" width="50%" /><br />
+In this section you can enable or disable NmapSI4 extensions.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><hr /><br />
+
+<div align="center"><h2>Vulnerabilities search engine;</h2></div>
+
+<br /><br /><a name="vuln_main">Main screen</a><br /><img  src="images/vulnerabilities.png" width="50%" /><br />
+This section provides a search engine to look for possible vulnerabilities of services traced during the scan, within the best reference sites about vulnerabilities.
+You can plan the research depending on the specific service recognized during the scanning, or you can choose another search key.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="vuln_bookmarks">Bookmarks</a><br /><img  src="images/vuln_bookmarks.png" width="50%" /><br />
+Here you can memorize your favourite results.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><hr /><br />
+
+<div align="center"><h2>Log reader</h2></div>
+<br /><br /><a name="logr_main">Main screen</a><br /><img  src="images/log_reader.png" width="50%" /><br />
+This section allowes you to read the complete output of Nmap scan.<div align="right"><a href="#">Back</a></div>
+
+<br /><br /><hr /><br />
+
+<div align="center"><h2>Some examples</h2></div>
+<br /><br /><a name="multiple_scan">Multiple scannings</a><br /><br />
+You can use scannings in different ways:
+<ul>
+  <li>single scanning: <i>ip (e.g. 192.168.1.1) or dns (es. www.kernel.org)</i></li>
+  <li>multiple scanning: <i>ip range (e.g. 192.168.1.10/20) to scan from 192.168.1.10 to 192.168.1.20</i></li>
+  <li>ip and dns mixed scanning: <i>e.g. 192.168.1.1 www.kernel.org</i></li>
+  <li>scan on a ip list or a dns list: <i>e.g. 192.168.1.10 192.168.1.15, or www.kernel.org www.google.com</i></li>
+</ul>
+<strong>It's preferable not to insert an high hosts number to scan.</strong><div align="right"><a href="#">Back</a></div>
+
+<br /><br /><a name="bookmark_usage">Using bookmarks</a><br /><br />
+For using bookmarks, just push the button in alto to add it to the list.<br />
+In the same way to save the scanning profile there's the button placed near the parameters input form.<br />
+To reuse later an host or a saved profile, just select it in the related screen and choose "Scanning" for hosts or "Use parameters" for profiles.<br />
+To remove an entry from the list, repeat the reuse procedure, choosing the clearing entry.<div align="right"><a href="#">Back</a></div>
+
+<br /><br />
+</body>
+</html>
+”M7€û{Înûq›⁄Ôç8ı«∫—ß_
