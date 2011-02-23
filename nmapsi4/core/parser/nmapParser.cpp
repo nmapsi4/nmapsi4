@@ -204,7 +204,6 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 close_port++;
             }
 
-
             if (!scanBufferToStream_line.isEmpty()) {
                 QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(" ", QString::SkipEmptyParts);
@@ -215,31 +214,12 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
-                int index = 3;
-                QString str;
-		QString noDes = (tr("No Description"));
-                // Description
-                if (lStr.size() == 3) {
-                    elemObj->setDescriptionServices(noDes);
-                } else {
-                    while (index < lStr.size()) {
-                        str.append(lStr[index]);
-                        str.append(" ");
-                        index++;
-
-                    }
-
-                    elemObj->setDescriptionServices(str);
-                }
-                
-                qDebug() << "DEBUG:: service description:: " << str;
-
 		if ((PFile) && (!verboseLog)) {
 		    *out << scanBufferToStream_line << endl;
 		}
             }
             ItemNumber++;
-        }
+        } // end while
     } else {
         mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }

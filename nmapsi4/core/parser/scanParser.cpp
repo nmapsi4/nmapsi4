@@ -153,7 +153,6 @@ void nmapClass::showParserObj(int indexObj) {
     }
     
     QStringList listServices_ = parserObjList[indexObj]->getServices();
-    QStringList listServicesDescriptions_  = parserObjList[indexObj]->getDescriptionServices();
     
     // show services
     foreach (const QString token, listServices_) {

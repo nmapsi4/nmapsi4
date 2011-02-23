@@ -31,7 +31,6 @@ class parserObj
 	QString getHostName();
 	QStringList getMainInfo();
         QStringList getServices();
-        QStringList getDescriptionServices();
         QStringList getPortServices();
         QStringList getPortOpen();
         QStringList getPortClose();
@@ -43,7 +42,6 @@ class parserObj
 	void setHostName(const QString hostName);
 	void setMainInfo(const QString infoMainElem);
         void setServices(const QString Service);
-        void setDescriptionServices(const QString desService);
         void setPortServices(const QString portService);
         void setPortOpen(const QString portOpen);
         void setPortClose(const QString portClose);
@@ -57,7 +55,6 @@ class parserObj
 	QString hostName_;
         QStringList mainInfo_;
         QStringList services_;
-        QStringList descriptionServices_;
         QStringList portServices_;
         QStringList portOpened_;
         QStringList portFiltered_;

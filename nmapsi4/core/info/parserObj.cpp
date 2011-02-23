@@ -39,10 +39,6 @@ QStringList parserObj::getServices() {
     return this->services_;
 }
 
-QStringList parserObj::getDescriptionServices() {
-    return this->descriptionServices_;
-}
-
 QStringList parserObj::getPortServices() {
     return this->portServices_;
 }
@@ -85,10 +81,6 @@ void parserObj::setMainInfo(const QString elemMainInfo) {
 
 void parserObj::setServices(const QString service) {
     services_.push_back(service);
-}
-
-void parserObj::setDescriptionServices(const QString desService) {
-    descriptionServices_.push_back(desService);
 }
 
 void parserObj::setPortServices(const QString portService) {
