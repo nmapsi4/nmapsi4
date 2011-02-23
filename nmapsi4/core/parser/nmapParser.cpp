@@ -217,17 +217,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                 int index = 3;
                 QString str;
-                for(int index=0; index < lStr.size(); index++) {
-                    if(lStr[index].contains("(") || lStr[index].contains(")")
-                                                 || lStr[index].contains("version")
-                                                 || lStr[index].contains("protocol")) {
-                        lStr.removeAt(index);
-                        index--;
-                    }
-                }
+		QString noDes = (tr("No Description"));
                 // Description
                 if (lStr.size() == 3) {
-                    elemObj->setDescriptionServices(tmpStr);
+                    elemObj->setDescriptionServices(noDes);
                 } else {
                     while (index < lStr.size()) {
                         str.append(lStr[index]);
@@ -238,17 +231,12 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
                     elemObj->setDescriptionServices(str);
                 }
+                
+                qDebug() << "DEBUG:: service description:: " << str;
 
-                // FIXME log
-                if ((PFile) && (!verboseLog)) {
-                    *out << str
-                            << " ("
-                            << lStr[2]
-                            << " - "
-                            << lStr[0]
-                            << ")"
-                            << endl;
-                }
+		if ((PFile) && (!verboseLog)) {
+		    *out << scanBufferToStream_line << endl;
+		}
             }
             ItemNumber++;
         }

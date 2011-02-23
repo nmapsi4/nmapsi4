@@ -215,6 +215,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateNseOptionScript(int)));
     connect(nseActiveBut, SIGNAL(clicked()),
             this, SLOT(nseTreeActiveItem()));
+    connect(nseRemoveBut, SIGNAL(clicked()),
+            this, SLOT(nseTreeRemoveItem()));
     connect(nseResetBut, SIGNAL(clicked()),
             this, SLOT(nseTreeResetItem()));
 }

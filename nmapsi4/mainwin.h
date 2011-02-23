@@ -243,6 +243,7 @@ private slots:
     void nseTreeAvailRestoreValues();
     void nseTreeActiveRestoreValues();
     void nseTreeActiveItem();
+    void nseTreeRemoveItem();
     void nseTreeResetItem();
 };
 

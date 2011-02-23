@@ -1164,7 +1164,7 @@
                 </property>
                 <column>
                  <property name="text">
-                  <string>Service(s)</string>
+                  <string>Service(s) with info</string>
                  </property>
                 </column>
                </widget>
@@ -1331,6 +1331,55 @@
           </property>
           <property name="uniformItemSizes">
            <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>200</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="2">
+         <widget class="QPushButton" name="globalButton">
+          <property name="text">
+           <string>Save Global Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../mainwin.qrc">
+            <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QPushButton" name="optionAccept">
+          <property name="text">
+           <string>Apply Quick Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../mainwin.qrc">
+            <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QPushButton" name="removeGlobalButton">
+          <property name="text">
+           <string>Remove Global Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../mainwin.qrc">
+            <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
           </property>
          </widget>
         </item>
@@ -2364,19 +2413,6 @@
                  </item>
                 </widget>
                </item>
-               <item row="0" column="1" colspan="2">
-                <spacer name="horizontalSpacer_5">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>330</width>
-                   <height>21</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
                <item row="1" column="0">
                 <widget class="QTreeWidget" name="nseTreeAvail">
                  <property name="alternatingRowColors">
@@ -2393,20 +2429,6 @@
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QPushButton" name="nseActiveBut">
-                 <property name="text">
-                  <string>Active</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="../mainwin.qrc">
-                   <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
                 <widget class="QTreeWidget" name="nseTreeActive">
                  <property name="alternatingRowColors">
                   <bool>true</bool>
@@ -2421,7 +2443,21 @@
                  </column>
                 </widget>
                </item>
-               <item row="2" column="2">
+               <item row="2" column="0">
+                <widget class="QPushButton" name="nseActiveBut">
+                 <property name="text">
+                  <string>Active</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/right.png</normaloff>:/images/images/right.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
                 <widget class="QPushButton" name="nseResetBut">
                  <property name="text">
                   <string>Restore Default Categories</string>
@@ -2432,60 +2468,22 @@
                  </property>
                 </widget>
                </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="nseRemoveBut">
+                 <property name="text">
+                  <string>Disable</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../mainwin.qrc">
+                   <normaloff>:/images/images/left.png</normaloff>:/images/images/left.png</iconset>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
            </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>200</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="6" column="2">
-         <widget class="QPushButton" name="globalButton">
-          <property name="text">
-           <string>Save Global Profile</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../mainwin.qrc">
-            <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="2">
-         <widget class="QPushButton" name="optionAccept">
-          <property name="text">
-           <string>Apply Quick Profile</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../mainwin.qrc">
-            <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <widget class="QPushButton" name="removeGlobalButton">
-          <property name="text">
-           <string>Remove Global Profile</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../mainwin.qrc">
-            <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
-          </property>
          </widget>
         </item>
        </layout>

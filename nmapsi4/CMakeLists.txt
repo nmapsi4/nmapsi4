@@ -33,6 +33,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/actionMenu.cpp
                 core/bookCalls.cpp
                 core/saveUiSettings.cpp
+		core/nseCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -63,6 +64,7 @@ else (NOT Q_WS_X11)
 		core/actionMenu.cpp
                 core/bookCalls.cpp
                 core/saveUiSettings.cpp
+		core/nseCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)

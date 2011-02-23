@@ -1,7 +1,7 @@
 PROJECT(nmapsi4_about)
 
 # set nmapsi4 version
-SET( NMAPSI4_VERSION "0.2.84" )
+SET( NMAPSI4_VERSION "0.2.85" )
 SET( VULN_VERSION "0.1.83" )
 SET( DIG_VERSION "0.1.83" )
 
