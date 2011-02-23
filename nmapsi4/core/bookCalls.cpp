@@ -30,6 +30,22 @@ void nmapClass::callSearchHistory()
     delete history;
 }
 
+void nmapClass::callScanH()
+{
+     if(treeLogH->currentItem()) {
+#ifndef TOOLS_NO_DEBUG
+	qDebug() << "Current Item::" << treeLogH->currentItem();
+#endif
+        hostEdit->setStyleSheet(QString::fromUtf8(""));
+        hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+	// clear history setItemText fails
+	hostEdit->clear();
+	hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
+        SWscan->setCurrentIndex(0);
+        startScan();
+    }
+}
+
 void nmapClass::saveBookMarks()
 {
     if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty()) {

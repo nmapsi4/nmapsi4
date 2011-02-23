@@ -57,8 +57,7 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) {
 
 void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
-     qDeleteAll(monitorElem);
-     monitorElem.clear();
+     itemDeleteAll(monitorElem);
      monitor->clear();
      QTreeWidgetItem* item;
 

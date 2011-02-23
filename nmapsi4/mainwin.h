@@ -53,7 +53,11 @@ private:
     void resetOptions();
     void checkProfile();
     void initGUI();
-    void itemDeleteAll(QList<QTreeWidgetItem*> items);
+    void itemDeleteAll(QList<QTreeWidgetItem*>& items);
+    void itemDeleteAll(QList<parserObj*>& items);
+    void itemDeleteAll(QList<parserObjUtil*>& items);
+    void itemDeleteAll(QList<QWebView*>& items);
+    void itemDeleteAll(QList<scanThread*>& items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);

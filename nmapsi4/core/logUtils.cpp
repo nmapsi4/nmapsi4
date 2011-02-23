@@ -19,6 +19,69 @@
 
 #include "../mainwin.h"
 
+QFile* nmapClass::create_logFile(const QString Path)
+{
+
+    QFile *Pfile = new QFile();
+    QDir::setCurrent(Path);
+    Pfile->setFileName(FileName);
+    return Pfile;
+}
+
+void nmapClass::fileSession()
+{
+    int FLAGS = 0;
+
+    if ((!PFile) || (PFile && (firstPath != logPath) && (FLAGS = 1))) {
+
+        if (FLAGS) {
+            QDir::setCurrent(firstPath);
+#ifndef TOOLS_NO_DEBUG
+            qDebug() << "DEBUG::SESSION:: " << PFile << firstPath << logPath;
+#endif
+            PFile->remove();
+        }
+
+        FileName = QDate::currentDate().toString("[dd-MM-yyyy]");
+        FileName.append(QTime::currentTime().toString("[h-m-s]"));
+        FileName.append("-nmapsi4.log");
+        firstPath = logPath;
+        PFile = create_logFile(logPath);
+        PFile->open(QIODevice::WriteOnly | QIODevice::Text);
+    }
+}
+
+void nmapClass::isEmptyLog()
+{
+
+    qint64 tmp = PFile->size();
+
+    if (!tmp) {
+        QDir::setCurrent(logPath);
+        PFile->setFileName(FileName);
+        PFile->remove();
+        qDebug() << "nmapsi4/core --> deleteLog::empty";
+    } else if (firstPath.compare(logPath)) {
+        QString pathTmp = logPath;
+#ifndef Q_WS_WIN
+        pathTmp.append("/");
+#else
+        pathTmp.append("\\");
+#endif
+        pathTmp.append(FileName);
+
+        if (!PFile->copy(FileName, pathTmp))
+            QMessageBox::critical(this, "NmapSI4",
+                                  tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
+        else {
+            PFile->remove();
+#ifndef TOOLS_NO_DEBUG
+            qDebug() << "nmapsi4/core --> deleteLog::newPath";
+#endif
+        }
+    }
+}
+
 void nmapClass::saveAsLog()
 {
 

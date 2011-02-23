@@ -275,32 +275,6 @@ void nmapClass::update_comboVerbosity() {
 
 }
 
-
-void nmapClass::listClear() {
-    listClearFlag = true;
-    itemDeleteAll(itemListScan); //clear items list
-    itemListScan.clear();
-    // parserObj list
-    qDeleteAll(parserObjList);
-    parserObjList.clear();
-    qDeleteAll(parserObjUtilList);
-    parserObjUtilList.clear();
-    // Host list
-    itemDeleteAll(mainTreeElem);
-    mainTreeElem.clear();    
-    listScanError->clear();
-    treeMain->clear();
-    treeLookup->clear();
-    treeTraceroot->clear();
-    treeHostDet->clear();
-    GItree->clear();
-    listWscan->clear();
-    treeNSS->clear();
-    listScan->clear();
-    actionClear_History->setEnabled(false);
-    action_Save_As->setEnabled(false);
-}
-
 void nmapClass::detailsOptions() {
     SWscan->setCurrentIndex(0);
     updateIconsBox();

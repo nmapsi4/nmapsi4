@@ -302,12 +302,9 @@ nmapClass::~nmapClass()
     itemDeleteAll(mainTreeElem);
     itemDeleteAll(itemNseActive);
     itemDeleteAll(itemNseAvail);
-    qDeleteAll(parserObjList);
-    qDeleteAll(parserObjUtilList);
-    qDeleteAll(webViewList);
-    parserObjUtilList.clear();
-    parserObjList.clear();
-    webViewList.clear();
+    itemDeleteAll(parserObjList);
+    itemDeleteAll(parserObjUtilList);
+    itemDeleteAll(webViewList);
 
     delete progressScan;
     delete PFile;

@@ -96,3 +96,91 @@ void nmapClass::menuServiceMain() {
     menuVulnMain.exec(QCursor::pos());
 }
 
+void nmapClass::createBar() {
+    // QToolBar asction
+    scanSez = new QAction(this);
+    logSez = new QAction(this);
+    vulnSez = new QAction(this);
+    nssAct = new QAction(this);
+    parAct = new QAction(this);
+
+    actSearch = new QAction(this);
+    actBack = new QAction(this);
+    actForward = new QAction(this);
+    actStop = new QAction(this);
+
+    actTabLook = new QAction(this);
+    actTabTrace = new QAction(this);
+    actTabMonitor = new QAction(this);
+
+    // Section QAction
+    scanSez->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    scanSez->setIconText(tr("Scan"));
+    scanSez->setToolTip(tr("Scan host(s)"));
+
+    logSez->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
+    logSez->setIconText(tr("Log"));
+    logSez->setToolTip(tr("Scan Log"));
+
+    vulnSez->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    vulnSez->setIconText(tr("Services"));
+    vulnSez->setToolTip(tr("Check Vulnerabilities"));
+
+    nssAct->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    nssAct->setIconText(tr("Nss Script"));
+    nssAct->setToolTip(tr("Enable/Disable NSS script"));
+    nssAct->setCheckable(true);
+
+    parAct->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
+    parAct->setToolTip(tr("Enable/Disable Manual Parameters"));
+    parAct->setCheckable(true);
+
+    sezBar->addAction(scanSez);
+    sezBar->addAction(logSez);
+    sezBar->addAction(vulnSez);
+    sezBar->addSeparator();
+    sezBar->addAction(parAct);
+    sezBar->addAction(nssAct);
+    sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
+
+    actSearch->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    actSearch->setIconText(tr("Search"));
+    actSearch->setEnabled(false);
+
+    actBack->setIcon(QIcon(QString::fromUtf8(":/images/images/left.png")));
+    actBack->setIconText(tr("Back"));
+    actBack->setEnabled(false);
+
+    actForward->setIcon(QIcon(QString::fromUtf8(":/images/images/right.png")));
+    actForward->setIconText(tr("Forward"));
+    actForward->setEnabled(false);
+
+    actStop->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
+    actStop->setIconText(tr("Stop"));
+    actStop->setEnabled(false);
+
+    toolBarSearch->addAction(actSearch);
+    toolBarSearch->addAction(actBack);
+    toolBarSearch->addAction(actForward);
+    toolBarSearch->addAction(actStop);
+    toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);
+
+    actTabLook->setIcon(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
+    actTabLook->setToolTip(tr("Show/Hide Lookup"));
+    actTabLook->setCheckable(true);
+
+    actTabTrace->setIcon(QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
+    actTabTrace->setToolTip(tr("Show/Hide Traceroot"));
+    actTabTrace->setCheckable(true);
+
+    actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
+    actTabMonitor->setToolTip(tr("Show/Hide Scan Monitor"));
+    actTabMonitor->setCheckable(true);
+
+    toolBarTab->addAction(actTabLook);
+    toolBarTab->addAction(actTabTrace);
+    toolBarTab->addAction(actTabMonitor);
+    toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
+}
+
+

@@ -21,12 +21,11 @@
 
 void nmapClass::showParserObj(int indexObj) {
     // Clear widget
-    qDeleteAll(itemListScan);
-    qDeleteAll(objElem);
+    itemDeleteAll(itemListScan);
+    itemDeleteAll(objElem);
     listWscan->clear();
-    itemListScan.clear();
     GItree->clear();
-    objElem.clear();
+    treeNSS->clear();
 
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
