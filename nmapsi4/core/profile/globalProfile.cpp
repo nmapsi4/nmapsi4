@@ -109,6 +109,7 @@ void nmapClass::restoreGlobalProfile() {
     spinBoxScanDelay->setValue(settings.value("timing/scandelay_spinbox").toInt());
     comboTiming->setCurrentIndex(settings.value("timing/timing_combo").toInt());
     // **************** End Timing section **********************************
+
 }
 
 void nmapClass::saveGlobalProfile() {
@@ -122,6 +123,7 @@ void nmapClass::saveGlobalProfile() {
     
     // global profile options
     QSettings settings("nmapsi4", "nmapsi4_gprofile");
+    removeGlobalButton->setEnabled(true);
     
     // **************** Start Scan section ********************************
     //  user mode 
@@ -198,6 +200,7 @@ void nmapClass::saveGlobalProfile() {
 
 void nmapClass::removeGlobalProfile() {
     QSettings settings("nmapsi4", "nmapsi4");
+    removeGlobalButton->setEnabled(false);
     globalProfile = false;
     settings.setValue("globalProfile",globalProfile);
     readProfile();

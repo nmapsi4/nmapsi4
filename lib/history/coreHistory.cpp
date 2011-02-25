@@ -27,6 +27,7 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
     Q_ASSERT(!url.isEmpty());
 
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
+
     QList<QString> urlList;
     QList<QString> urlListTime;
 

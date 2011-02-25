@@ -21,6 +21,13 @@
 
 
 void nmapClass::saveUiSettings() {
+    
+    int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
+    
     QSettings settings("nmapsi4", "nmapsi4");
     if(savePos) {
         settings.setValue("window/pos", pos());
@@ -48,5 +55,39 @@ void nmapClass::saveUiSettings() {
     } else {
 	settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
     }
+    
+// check and reset for settings file permission
+#ifndef Q_WS_WIN
+    if (!uid) {
+	QString settingsFile_ = settings.fileName();
+	QFileInfo fiS_(settingsFile_);
+	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
+	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+	}
+    }
+#endif
+    
+#ifndef Q_WS_WIN
+    if (!uid) {
+	QSettings settings2("nmapsi4", "nmapsi4_bookmark");
+	QString settingsFile_ = settings2.fileName();
+	QFileInfo fiS_(settingsFile_);
+	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
+	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+	}
+    }
+
+    if (!uid) {
+	QSettings settings3("nmapsi4", "nmapsi4_gprofile");
+	QString settingsFile_ = settings3.fileName();
+	QFileInfo fiS_(settingsFile_);
+	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
+	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+	}
+    }
+#endif
     
 }

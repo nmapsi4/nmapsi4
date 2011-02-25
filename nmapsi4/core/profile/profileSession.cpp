@@ -50,15 +50,16 @@ void nmapClass::checkProfile()
 
     QSettings settings("nmapsi4", "nmapsi4");
     
-    // TODO saved blobal profile
+    // saved global profile
     globalProfile = settings.value("globalProfile", false).toBool();
     if (globalProfile) {
-	// FIXME
 	// call restore global profile
+	qDebug() << "DEBUG:: Set global profile";
 	restoreGlobalProfile();
     } else {
 	qDebug() << "DEBUG:: Set local profile";
 	settings.setValue("globalProfile", false); // default value
+	removeGlobalButton->setEnabled(false);
 
 	Profile = settings.value("configProfile", "none").toString();
 
