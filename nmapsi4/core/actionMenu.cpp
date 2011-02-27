@@ -103,6 +103,10 @@ void nmapClass::createBar() {
     vulnSez = new QAction(this);
     nssAct = new QAction(this);
     parAct = new QAction(this);
+    
+    vulnSez->setCheckable(true);
+    scanSez->setCheckable(true);
+    logSez->setCheckable(true);
 
     actSearch = new QAction(this);
     actBack = new QAction(this);

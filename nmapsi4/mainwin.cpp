@@ -55,13 +55,15 @@ void nmapClass::initObject() {
     createBar();
     setNmapsiSlot();
 
-    // Disable scan action (nmap check)
+    // Set default properties
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
     hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
+    scanSez->setChecked(true);
+    Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
 
     setTreeWidgetValues();
@@ -83,18 +85,12 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
     
-    //rW = new QSplitter();
     cW = new QSplitter();
     bW = new QSplitter();
     
     cW->setOrientation(Qt::Horizontal);
     cW->addWidget(treeMain);
     cW->addWidget(frameCenter);
-    
-    // frameRight layout
-    //rW->setOrientation(Qt::Horizontal);
-    //rW->addWidget(treeHostDet);
-    //rW->addWidget(GItree);
     
     //frameCenter
     bW->setOrientation(Qt::Vertical);

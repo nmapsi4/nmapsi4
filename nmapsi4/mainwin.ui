@@ -73,8 +73,17 @@
         <string>Scan</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <property name="margin">
+        <property name="leftMargin">
          <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>2</number>
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QFrame" name="frameScan">
@@ -1202,6 +1211,9 @@
                  <iconset resource="../mainwin.qrc">
                   <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
                 </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
                 <property name="autoDefault">
                  <bool>false</bool>
                 </property>
@@ -1221,6 +1233,9 @@
                 <property name="icon">
                  <iconset resource="../mainwin.qrc">
                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -1249,6 +1264,9 @@
                  <iconset resource="../mainwin.qrc">
                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
                 </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
                 <property name="flat">
                  <bool>true</bool>
                 </property>
@@ -1262,6 +1280,9 @@
                 <property name="icon">
                  <iconset resource="../mainwin.qrc">
                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -2746,6 +2767,11 @@
   <widget class="QToolBar" name="toolBarTab">
    <property name="windowTitle">
     <string>toolBar_3</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
    </property>
    <property name="movable">
     <bool>false</bool>

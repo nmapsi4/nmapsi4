@@ -276,22 +276,38 @@ void nmapClass::update_comboVerbosity() {
 }
 
 void nmapClass::detailsOptions() {
+    Bdetails->setChecked(true);
+    Bnss->setChecked(false);
+    Bbook->setChecked(false);
+    BBPar->setChecked(false);
     SWscan->setCurrentIndex(0);
     updateIconsBox();
 }
 
 void nmapClass::nssOptions() {
+    Bdetails->setChecked(false);
+    Bnss->setChecked(true);
+    Bbook->setChecked(false);
+    BBPar->setChecked(false);
     SWscan->setCurrentIndex(1);
     tabWidget->setCurrentIndex(0);
     updateIconsBox();
 }
 
 void nmapClass::bookOptions() {
+    Bdetails->setChecked(false);
+    Bnss->setChecked(false);
+    Bbook->setChecked(true);
+    BBPar->setChecked(false);
     SWscan->setCurrentIndex(2);
     updateIconsBox();
 }
 
 void nmapClass::bookOptionsPar() {
+    Bdetails->setChecked(false);
+    Bnss->setChecked(false);
+    Bbook->setChecked(false);
+    BBPar->setChecked(true);
     SWscan->setCurrentIndex(3);
     updateIconsBox();
 }
@@ -346,6 +362,9 @@ void nmapClass::updateSezScan() { // SLOT
     if(stackedMain->currentIndex() == 0)
         return;
 
+    scanSez->setChecked(true);
+    logSez->setChecked(false);
+    vulnSez->setChecked(false);
     stackedMain->setCurrentIndex(0);
     this->showMainToolBar();
     this->showActionToolBar();
@@ -383,6 +402,9 @@ void nmapClass::updateSezLog() {  // SLOT
     if(stackedMain->currentIndex() == 1)
         return;
 
+    scanSez->setChecked(false);
+    logSez->setChecked(true);
+    vulnSez->setChecked(false);
     stackedMain->setCurrentIndex(1);
     // main and action bar only in scan index
     toolBar->setVisible(false);
@@ -423,6 +445,9 @@ void nmapClass::updateSezVuln() { // SLOT
     if(stackedMain->currentIndex() == 2)
         return;
 
+    scanSez->setChecked(false);
+    logSez->setChecked(false);
+    vulnSez->setChecked(true);
     stackedMain->setCurrentIndex(2);
     // main and action bar only in scan index
     toolBar->setVisible(false);

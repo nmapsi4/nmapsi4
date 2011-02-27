@@ -107,6 +107,9 @@ void nmapClass::objVulnButton() { // SLOT
         comboVulnRis->setItemText(0,itemList[0]->text(3));
     }
 
+    scanSez->setChecked(false);
+    logSez->setChecked(false);
+    vulnSez->setChecked(true);
     stackedMain->setCurrentIndex(2);
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
