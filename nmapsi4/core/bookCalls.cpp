@@ -36,10 +36,8 @@ void nmapClass::callScanH()
 #ifndef TOOLS_NO_DEBUG
 	qDebug() << "Current Item::" << treeLogH->currentItem();
 #endif
-        hostEdit->setStyleSheet(QString::fromUtf8(""));
-        hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+        updateFontHost();
 	// clear history setItemText fails
-	hostEdit->clear();
 	hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         SWscan->setCurrentIndex(0);
         startScan();
@@ -72,6 +70,7 @@ void nmapClass::saveBookMarks()
     Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
     history_->updateBookMarks();
     delete history_;
+    updateComboBook();
 }
 
 void nmapClass::deleteBookMark()
@@ -96,6 +95,7 @@ void nmapClass::deleteBookMark()
     }
 
     delete history_;
+    updateComboBook();
 }
 
 void nmapClass::deleteBookMarkPar()
@@ -167,10 +167,19 @@ void nmapClass::callParFromBook()
 }
 
 void nmapClass::slotParSelected() {
+    
    if(comboPar->currentIndex()) {
 	comboAdv->clear();
-       comboAdv->insertItem(0, comboPar->currentText());
+	comboAdv->insertItem(0, comboPar->currentText());
    } else {
-       comboAdv->insertItem(0, check_extensions().join(" "));
+	comboAdv->insertItem(0, check_extensions().join(" "));
    }
+}
+
+void nmapClass::slotHostSelected() {
+    
+    if(comboHostBook->currentIndex()) {
+	updateFontHost();
+	hostEdit->insertItem(0, comboHostBook->currentText());
+    }
 }

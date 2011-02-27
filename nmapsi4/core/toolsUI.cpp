@@ -60,3 +60,19 @@ void nmapClass::input_browser()
 {
     this->show_browser(lineInputFile);
 }
+
+void nmapClass::show_bugUrl() {
+    QDesktopServices::openUrl(QUrl("https://launchpad.net/nmapsi4"));
+}
+
+void nmapClass::show_homepageUrl() {
+    QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
+}
+
+void nmapClass::show_documentationUrl() {
+    QDesktopServices::openUrl(QUrl(""));
+}
+
+void nmapClass::show_donateUrl() {
+    QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
+}

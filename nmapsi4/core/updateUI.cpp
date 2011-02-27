@@ -332,19 +332,20 @@ void nmapClass::updateIconsBox() {
 
 }
 
-void nmapClass::updateFontHost(const QString hostName) {
-    Q_UNUSED(hostName);
+void nmapClass::updateFontHost() {
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
     hostEdit->clear();
     hostEdit->setStyleSheet(QString::fromUtf8(""));
-    hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+    bool signalState = hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+    
+    if(!signalState)
+	return;
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(callSearchHistory()));
 }
 
-void nmapClass::updateFontHostVuln(const QString hostName) {
-    Q_UNUSED(hostName);
+void nmapClass::updateFontHostVuln() {
     comboVulnRis->clear();
     actSearch->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
@@ -538,10 +539,21 @@ void nmapClass::resetPar() {
 void nmapClass::updateComboPar() {
 
     comboPar->clear();
-    comboPar->insertItem(0, "Select Profile");
+    comboPar->insertItem(0, "Select Saved Profile");
 
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
         comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(0));
+    }
+
+}
+
+void nmapClass::updateComboBook() {
+    
+    comboHostBook->clear();
+    comboHostBook->insertItem(0, "Select Saved Host");
+
+    for(int index=0; index < treeLogH->topLevelItemCount(); index++) {
+        comboHostBook->insertItem(1, treeLogH->topLevelItem(index)->text(0));
     }
 
 }

@@ -70,6 +70,7 @@ private:
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();
+    void updateComboBook();
     void restoreGlobalProfile();
 
 public:
@@ -83,7 +84,6 @@ public:
 
 signals:
     void killScan();
-
 
 protected:
     QProcess *versionProc;
@@ -115,7 +115,6 @@ protected:
     bool LookupEnabled;
     int hostCache;
     int scanCounter;
-    //QList<QTreeWidgetItem*> itemList;
     QList<QTreeWidgetItem*> itemListScan;
     QList<QTreeWidgetItem*> itemNseAvail;
     QList<QTreeWidgetItem*> itemNseActive;
@@ -151,7 +150,6 @@ protected:
     digSupport *digC;
     logHistory *history;
     QSplitter *cW;
-    //QSplitter *rW;
     QSplitter *bW;
 
 public slots:
@@ -179,6 +177,10 @@ private slots:
     void showMainToolBar();
     void showActionToolBar();
     void showStatusBar();
+    void show_bugUrl();
+    void show_homepageUrl();
+    void show_documentationUrl();
+    void show_donateUrl();
     void updateIconsBox();
     void callScanH();
     void callParFromBook();
@@ -186,18 +188,16 @@ private slots:
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
     void objVulnButton();
-
     // Check nmap version
     void checkNmapVersion();
     void setNmapVersion();
-
     //update and log slots
     void startProfile_ui();
     void readProfile();
     void saveAsLog();
     void saveLog();
-    void updateFontHost(const QString hostName);
-    void updateFontHostVuln(const QString hostName);
+    void updateFontHost();
+    void updateFontHostVuln();
     void callSearchHistory();
     void saveBookMarks();
     void saveBookMarksPar();
@@ -206,7 +206,6 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
-
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
@@ -222,7 +221,6 @@ private slots:
     void nssOptions();
     void bookOptions();
     void bookOptionsPar();
-
     // Vuln extension
     void searchVulnNG();
     void callSearchHistoryVuln();
@@ -231,13 +229,13 @@ private slots:
     void tabWebBack();
     void tabWebForward();
     void tabWebStop();
-
     //contest Menu
     void menuScanBook();
     void menuVulnBook();
     void menuParBook();
     void menuServiceMain();
     void slotParSelected();
+    void slotHostSelected();
     void saveUiSettings();
     // global profile
     void saveGlobalProfile();

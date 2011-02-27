@@ -146,6 +146,7 @@ void nmapClass::initObject() {
     updateTabTrace();
 
     updateComboPar();
+    updateComboBook();
     
 }
 

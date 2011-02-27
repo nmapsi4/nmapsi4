@@ -193,7 +193,7 @@ void nmapClass::checkProfile()
     QString adv_ = settings.value("ADVSupport", "none").toString();
 
     if ((!adv_.compare("none"))) {
-         settings.setValue("ADVSupport", "false"); // default value
+         settings.setValue("ADVSupport", "true"); // default value
     }
 
     ADVSupport = settings.value("ADVSupport").toBool();

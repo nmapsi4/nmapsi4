@@ -87,6 +87,12 @@
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QFrame" name="frameScan">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
@@ -158,6 +164,28 @@
             </widget>
            </item>
            <item>
+            <widget class="QComboBox" name="comboHostBook">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="horizontalSpacer_3">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -196,18 +224,11 @@
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <layout class="QGridLayout" name="gridLayout_3">
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
            <property name="margin">
             <number>0</number>
            </property>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="comboAdv">
-             <property name="editable">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
+           <item>
             <widget class="QPushButton" name="addBookPar">
              <property name="maximumSize">
               <size>
@@ -230,7 +251,14 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
+           <item>
+            <widget class="QComboBox" name="comboAdv">
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboPar">
              <property name="maximumSize">
               <size>
@@ -243,7 +271,7 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="4">
+           <item>
             <spacer name="horizontalSpacer_2">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>

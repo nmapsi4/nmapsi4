@@ -117,10 +117,10 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(startScan()));
 
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
-            this, SLOT(updateFontHost(const QString)));
+            this, SLOT(updateFontHost()));
 
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
-            this, SLOT(updateFontHostVuln(const QString)));
+            this, SLOT(updateFontHostVuln()));
 
 
     connect(Bdetails, SIGNAL(clicked()),
@@ -180,6 +180,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveBookMarksPar()));
     connect(comboPar, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(slotParSelected()));
+    connect(comboHostBook, SIGNAL(currentIndexChanged(const QString&)),
+            this, SLOT(slotHostSelected()));
 
     connect(tWresult, SIGNAL(tabCloseRequested(int)),
             this,SLOT(closeVulnTab(int)));
@@ -219,4 +221,14 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(nseTreeRemoveItem()));
     connect(nseResetBut, SIGNAL(clicked()),
             this, SLOT(nseTreeResetItem()));
+    
+    // action help menu (browser call)
+    connect(actionReport_Bug, SIGNAL(triggered()),
+            this, SLOT(show_bugUrl()));
+    connect(actionVisit_Website, SIGNAL(triggered()),
+            this, SLOT(show_homepageUrl()));
+    connect(actionDocumentation, SIGNAL(triggered()),
+            this, SLOT(show_documentationUrl()));
+    connect(actionDonate_Money, SIGNAL(triggered()),
+            this, SLOT(show_donateUrl()));
 }
