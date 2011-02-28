@@ -21,6 +21,8 @@
 #define MAINWIN_H
 
 #include "ui_mainwin.h"
+
+// local include
 #include "preference/profilemain.h"
 #include "../lib/history/loghistory.h"
 #include "core/nmapsi4Debug.h"
@@ -28,8 +30,10 @@
 #include "core/scanMT/scanThread.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
-#include "core/info/parserObj.h"
-#include "core/info/parserObjUtil.h"
+#include "core/parserObj/parserObj.h"
+#include "core/parserObj/parserObjUtil.h"
+
+// Qt4 include
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>

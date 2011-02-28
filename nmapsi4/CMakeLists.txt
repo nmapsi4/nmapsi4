@@ -28,8 +28,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/scanMonitor.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
-		core/info/parserObj.cpp
-		core/info/parserObjUtil.cpp
+		core/parserObj/parserObj.cpp
+		core/parserObj/parserObjUtil.cpp
 		core/actionMenu.cpp
                 core/bookCalls.cpp
                 core/saveUiSettings.cpp
@@ -61,8 +61,8 @@ else (NOT Q_WS_X11)
 		core/scanMonitor.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
-		core/info/parserObj.cpp
-		core/info/parserObjUtil.cpp
+		core/parserObj/parserObj.cpp
+		core/parserObj/parserObjUtil.cpp
 		core/actionMenu.cpp
                 core/bookCalls.cpp
                 core/saveUiSettings.cpp

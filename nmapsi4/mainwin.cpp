@@ -54,7 +54,6 @@ void nmapClass::initObject() {
     webViewList.push_back(viewVuln);
     createBar();
     setNmapsiSlot();
-
     // Set default properties
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
@@ -65,16 +64,16 @@ void nmapClass::initObject() {
     scanSez->setChecked(true);
     Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-
+    // preload mainwindow info 
     setTreeWidgetValues();
     checkProfile();
     optionListCreate();
-    
+    // check dig support
     digC  = new digSupport();
     digC->checkDigSupport();
-
+    // check nmap version
     checkNmapVersion();
-
+    // set TreeWidget properties
     treeLogH->setColumnWidth(0, 400);
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
@@ -83,24 +82,22 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
-    treeBookVuln->setColumnWidth(0, 400);
-    
+    treeBookVuln->setColumnWidth(0, 400);   
+    // create mainwindow Qsplitter
     cW = new QSplitter();
-    bW = new QSplitter();
-    
+    bW = new QSplitter();    
     cW->setOrientation(Qt::Horizontal);
     cW->addWidget(treeMain);
     cW->addWidget(frameCenter);
-    
     //frameCenter
     bW->setOrientation(Qt::Vertical);
     bW->addWidget(stackedMain);
     bW->addWidget(frameRight);
-    
+    // insert splitter
     tabUi->widget(0)->layout()->addWidget(cW);
     frameCenter->layout()->addWidget(bW);
     frameCenter->layout()->addWidget(frame_2);
-
+    // restore window position
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("window/size", QSize(910, 672)).toSize();
@@ -112,7 +109,7 @@ void nmapClass::initObject() {
     logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     historyScan_->updateBookMarks();
     delete historyScan_;
-
+    // check for user or admin parameters bookmarks
     if (!uid) {
 	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 	historyPar_->updateBookMarks();
@@ -132,19 +129,15 @@ void nmapClass::initObject() {
 
     nssAct->setChecked(NSSsupport); // set NSS support
     NSSCheck();
-
     parAct->setChecked(ADVSupport); // set ADV support
     parAdv();
-
     actTabMonitor->setChecked(MonitorEnabled);
     updateTabMonitor();
-
     actTabLook->setChecked(LookupEnabled);
     updateTabLook();
-
     actTabTrace->setChecked(TraceEnabled);
     updateTabTrace();
-
+    // load quick combo items
     updateComboPar();
     updateComboBook();
     
@@ -302,7 +295,6 @@ nmapClass::~nmapClass()
     itemDeleteAll(parserObjList);
     itemDeleteAll(parserObjUtilList);
     itemDeleteAll(webViewList);
-
     delete progressScan;
     delete PFile;
     delete labelVersion;

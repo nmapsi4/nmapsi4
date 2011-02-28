@@ -30,7 +30,7 @@
 #include <QList>
 #include "digThread.h"
 #include "../nmapsi4Debug.h"
-#include "../info/parserObjUtil.h"
+#include "../parserObj/parserObjUtil.h"
 
 
 class digSupport : public QObject
