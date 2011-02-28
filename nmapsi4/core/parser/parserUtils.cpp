@@ -78,14 +78,13 @@ void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SL
     qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
 #endif
 
-    if(hostEdit->itemText(0).isEmpty() && item->parent() != NULL && !item->text(2).isEmpty()) {
+    if(hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty()) {
         if(!item->text(3).contains("DNS")) {
             hostEdit->addItem(item->text(3));
         } else {
             hostEdit->addItem(item->text(2));
         }
-    } else
-    if(item->parent() != NULL && !item->text(2).isEmpty()) {
+    } else if(!item->parent() && !item->text(2).isEmpty()) {
         if(!item->text(3).contains("DNS")) {
             hostEdit->setItemText(0, item->text(3));
         } else {
