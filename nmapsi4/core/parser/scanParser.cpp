@@ -171,6 +171,10 @@ void nmapClass::showParserObj(int indexObj) {
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+	if (token.contains(":") && !token.contains("=") 
+		&& !token.contains("//")) {
+	    root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+	}
         root->setText(0, token);
         root->setToolTip(0, token);
     }

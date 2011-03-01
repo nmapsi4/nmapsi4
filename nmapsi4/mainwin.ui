@@ -1344,13 +1344,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>160</width>
+            <width>130</width>
             <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>131</width>
+            <width>130</width>
             <height>16777215</height>
            </size>
           </property>
@@ -1371,7 +1371,7 @@
           </property>
           <property name="gridSize">
            <size>
-            <width>140</width>
+            <width>120</width>
             <height>85</height>
            </size>
           </property>

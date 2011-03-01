@@ -23,7 +23,7 @@
 void nmapClass::showParserObjPlugins(int indexObj) {
 
     QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
-
+    // show traceroute
     foreach (const QString token, listTraceRouteInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeTraceroot);
         itemListScan.push_front(root);
