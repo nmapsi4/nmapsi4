@@ -140,7 +140,6 @@ void nmapClass::initObject() {
     // load quick combo items
     updateComboPar();
     updateComboBook();
-    
 }
 
 void nmapClass::startScan() {

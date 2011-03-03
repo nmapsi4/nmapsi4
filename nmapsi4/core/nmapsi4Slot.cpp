@@ -211,7 +211,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateTabTrace()));
     connect(actTabMonitor, SIGNAL(triggered()),
             this, SLOT(updateTabMonitor()));
-    
+
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),
             this, SLOT(updateNseOptionScript(int)));

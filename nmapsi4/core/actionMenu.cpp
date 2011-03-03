@@ -180,7 +180,7 @@ void nmapClass::createBar() {
     actTabMonitor->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     actTabMonitor->setToolTip(tr("Show/Hide Scan Monitor"));
     actTabMonitor->setCheckable(true);
-
+    
     toolBarTab->addAction(actTabLook);
     toolBarTab->addAction(actTabTrace);
     toolBarTab->addAction(actTabMonitor);
