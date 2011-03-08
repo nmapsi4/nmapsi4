@@ -22,8 +22,9 @@
 logHistory::logHistory(QTreeWidget* treeLog,
                        const QString ConfigTag,
                        const QString ConfigTagTime,
-                       int cacheSize)
-{
+                       int cacheSize) : historyItem(NULL),
+					history(NULL),      
+					logTree(NULL) {
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
     logTree = treeLog;
     configTag = ConfigTag;
@@ -32,8 +33,10 @@ logHistory::logHistory(QTreeWidget* treeLog,
 }
 
 // cache host contructor
-logHistory::logHistory(const QString ConfigTag, int cacheSize) :  logTree(NULL)
-{
+logHistory::logHistory(const QString ConfigTag, int cacheSize) 
+    : historyItem(NULL),
+      history(NULL),      
+      logTree(NULL) {
     configTag = ConfigTag;
     __CACHE_SIZE__ = cacheSize;
 }
