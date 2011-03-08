@@ -42,12 +42,6 @@ void nmapClass::resetOptions()
 void nmapClass::checkProfile()
 {
 
-    int uid = 0;
-
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-
     QSettings settings("nmapsi4", "nmapsi4");
     
     // saved global profile
@@ -67,6 +61,12 @@ void nmapClass::checkProfile()
 	    settings.setValue("configProfile", "normal"); // default value
 	    Profile = settings.value("configProfile", "none").toString();
 	}
+	
+	int uid = 0;
+
+#ifndef Q_WS_WIN
+    uid = getuid();
+#endif
     
 	if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
 	    Profile = "normal"; // reset profile

@@ -28,8 +28,8 @@ class parserObjUtil
     public:
         parserObjUtil();
         ~parserObjUtil();
-	QStringList getInfoLookup();
-	QString getHostName();
+	QStringList getInfoLookup() const;
+	QString getHostName() const;
 	void setInfoLookup(const QString lookupElem);
 	void setHostName(const QString hostName);
 
