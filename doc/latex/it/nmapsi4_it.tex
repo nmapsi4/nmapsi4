@@ -1,0 +1,65 @@
+\documentclass[11.5pt,a4paper]{book}
+
+% Inizia il preambolo.
+
+\setlength{\textheight}     {20.0  cm}
+\setlength{\textwidth}      {15.0  cm}
+\setlength{\baselineskip}   { 1.0  cm}
+\setlength{\oddsidemargin}  { 0.4  cm}
+\setlength{\evensidemargin} { 0.4  cm}
+\setlength{\topmargin}      { 0.4  cm}
+\setlength{\parskip}        { 4.0  pt}
+\setlength{\arrayrulewidth} { 0.5  pt}
+\setlength{\doublerulesep}  { 0.0  pt}
+\setlength{\footskip}       {60.0  pt}
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\footnotesize} 
+\renewcommand{\bfseries}
+\usepackage[dvips]{graphicx}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+\fancyhead[R]{}
+\usepackage[usenames]{color}
+\usepackage[hang,small,bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Antonio Salvucci},%
+  pdftitle={NmapSi4 - Documentazione}}
+\usepackage{listings}
+\lstset{language=Python,%
+  basicstyle=\small}
+% Fine del preambolo.
+
+\begin{document}
+
+\pagestyle{empty}
+\include{title}
+\pagenumbering{roman}
+\pagestyle{plain}
+\unboldmath
+\tableofcontents
+\include{introd}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\include{lhc-atlas}
+\include{zprime-theory}
+\include{alignments}
+\include{misalign-effects}
+\include{discovery}
+\include{concl}
+\include{appendix}
+\include{thanks}
+\include{biblio}
+%
+\end{document}
