@@ -19,7 +19,11 @@
 
 #include "digSupport.h"
 
-digSupport::digSupport() {
+digSupport::digSupport() 
+    : digProc(NULL),
+      Wview(NULL),
+      th(NULL),
+      elemObjUtil(NULL) {
     state = false;
 }
 

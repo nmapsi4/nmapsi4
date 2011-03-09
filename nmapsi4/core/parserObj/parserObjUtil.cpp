@@ -27,11 +27,11 @@ parserObjUtil::~parserObjUtil() {
 
 }
 
-QStringList parserObjUtil::getInfoLookup() {
+QStringList parserObjUtil::getInfoLookup() const {
     return mainLookup_;
 }
 
-QString parserObjUtil::getHostName() {
+QString parserObjUtil::getHostName() const {
     return hostName_;
 }
 

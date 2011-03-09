@@ -28,6 +28,7 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
      : pout(ProcB1), 
        perr(ProcB2),
        ParList(parametri),
+       proc(NULL),
        par(parent)
 {
 }

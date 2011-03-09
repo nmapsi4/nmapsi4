@@ -27,47 +27,47 @@ parserObj::~parserObj() {
 
 }
 
-QString parserObj::getHostName() {
+QString parserObj::getHostName() const {
     return this->hostName_;
 }
 
-QStringList parserObj::getMainInfo() {
+QStringList parserObj::getMainInfo() const {
     return this->mainInfo_;
 }
 
-QStringList parserObj::getServices() {
+QStringList parserObj::getServices() const {
     return this->services_;
 }
 
-QStringList parserObj::getPortServices() {
+QStringList parserObj::getPortServices() const {
     return this->portServices_;
 }
 
-QStringList parserObj::getPortOpen() {
+QStringList parserObj::getPortOpen() const {
     return this->portOpened_;
 }
 
-QStringList parserObj::getPortClose() {
+QStringList parserObj::getPortClose() const {
     return this->portClosed_;
 }
 
-QStringList parserObj::getPortFiltered() {
+QStringList parserObj::getPortFiltered() const {
     return this->portFiltered_;
 }
 
-QStringList parserObj::getNssInfo() {
+QStringList parserObj::getNssInfo() const {
     return this->scanNss_;
 }
 
-QStringList parserObj::getTraceRouteInfo() {
+QStringList parserObj::getTraceRouteInfo() const {
     return this->scanTraceRoute_;
 }
 
-QStringList parserObj::getFullScanLog() {
+QStringList parserObj::getFullScanLog() const {
     return this->fullLogScan_;
 }
 
-QStringList parserObj::getErrorScan() {
+QStringList parserObj::getErrorScan() const {
     return this->errorScan_;
 }
 

@@ -28,17 +28,17 @@ class parserObj
     public:
         parserObj();
         ~parserObj();
-	QString getHostName();
-	QStringList getMainInfo();
-        QStringList getServices();
-        QStringList getPortServices();
-        QStringList getPortOpen();
-        QStringList getPortClose();
-        QStringList getPortFiltered();
-        QStringList getNssInfo();
-        QStringList getTraceRouteInfo();
-        QStringList getFullScanLog();
-        QStringList getErrorScan();
+	QString getHostName() const;
+	QStringList getMainInfo() const;
+        QStringList getServices() const;
+        QStringList getPortServices() const;
+        QStringList getPortOpen() const;
+        QStringList getPortClose() const;
+        QStringList getPortFiltered() const;
+        QStringList getNssInfo() const;
+        QStringList getTraceRouteInfo() const;
+        QStringList getFullScanLog() const;
+        QStringList getErrorScan() const;
 	void setHostName(const QString hostName);
 	void setMainInfo(const QString infoMainElem);
         void setServices(const QString Service);
