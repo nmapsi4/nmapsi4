@@ -16,6 +16,7 @@
 \renewcommand{\footnotesize} 
 \renewcommand{\bfseries}
 \usepackage[dvips]{graphicx}
+\graphicspath{{../../images/},{../../images/preferences/}}
 \usepackage[italian]{babel}
 \usepackage{fancyhdr}
 \fancyhead[R]{}
@@ -35,7 +36,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{hyperref}
 \hypersetup{pdfauthor={Antonio Salvucci},%
-  pdftitle={NmapSi4 - Documentation}}
+  pdftitle={NmapSI4 - Documentation}}
 \usepackage{listings}
 \lstset{language=Python,%
   basicstyle=\small}
@@ -49,17 +50,11 @@
 \pagestyle{plain}
 \unboldmath
 \tableofcontents
-\include{introd}
+%\include{preface}
 \pagenumbering{arabic}
 \pagestyle{fancy}
-\include{lhc-atlas}
-\include{zprime-theory}
-\include{alignments}
-\include{misalign-effects}
-\include{discovery}
-\include{concl}
-\include{appendix}
-\include{thanks}
-\include{biblio}
+\include{guide}
+%\include{appendix}
+%\include{reference}
 %
 \end{document}
