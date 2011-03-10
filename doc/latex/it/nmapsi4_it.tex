@@ -1,17 +1,17 @@
-\documentclass[11.5pt,a4paper]{book}
+\documentclass[a4paper,10pt,twoside,openright]{book}
 
-% Inizia il preambolo.
-
-\setlength{\textheight}     {20.0  cm}
-\setlength{\textwidth}      {15.0  cm}
-\setlength{\baselineskip}   { 1.0  cm}
-\setlength{\oddsidemargin}  { 0.4  cm}
-\setlength{\evensidemargin} { 0.4  cm}
-\setlength{\topmargin}      { 0.4  cm}
-\setlength{\parskip}        { 4.0  pt}
-\setlength{\arrayrulewidth} { 0.5  pt}
-\setlength{\doublerulesep}  { 0.0  pt}
-\setlength{\footskip}       {60.0  pt}
+% Start of configuration options
+%\setlength{\textheight}     {20.0  cm}
+%\setlength{\textwidth}      {15.0  cm}
+%\setlength{\baselineskip}   { 1.0  cm}
+%\setlength{\oddsidemargin}  { 0.4  cm}
+%\setlength{\evensidemargin} { 0.4  cm}
+%\setlength{\topmargin}      { 0.4  cm}
+%\setlength{\parskip}        { 4.0  pt}
+%\setlength{\arrayrulewidth} { 0.5  pt}
+%\setlength{\doublerulesep}  { 0.0  pt}
+%\setlength{\footskip}       {60.0  pt}
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
 \renewcommand{\baselinestretch}{1.25}
 \renewcommand{\footnotesize} 
 \renewcommand{\bfseries}
@@ -34,27 +34,25 @@
 \usepackage{booktabs}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
-\usepackage{hyperref}
+\usepackage[bookmarks,colorlinks]{hyperref}
 \hypersetup{pdfauthor={Antonio Salvucci},%
   pdftitle={NmapSI4 - Documentazione}}
 \usepackage{listings}
-\lstset{language=Python,%
-  basicstyle=\small}
-% Fine del preambolo.
+\lstset{language=Python,basicstyle=\small}
+\lstset{language=C++,basicstyle=\small}
+% End of configuration option
 
+% Start of document
 \begin{document}
-
 \pagestyle{empty}
 \include{title}
+\titlepage
 \pagenumbering{roman}
 \pagestyle{plain}
-\unboldmath
 \tableofcontents
-%\include{preface}
+\include{preface}
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{guide}
-%\include{appendix}
-%\include{reference}
-%
 \end{document}
+% End of document
