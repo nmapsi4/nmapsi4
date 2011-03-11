@@ -47,6 +47,7 @@ void nmapClass::initObject() {
 #endif
 
 #ifdef Q_WS_WIN
+    // lookup fails on MS Windows
     tabWidget->removeTab(3);
 #endif
     tWresult->setTabsClosable(true);

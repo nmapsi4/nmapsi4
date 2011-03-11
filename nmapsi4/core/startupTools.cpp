@@ -109,11 +109,8 @@ void nmapClass::exit()
 
         QFile *tmpFile = new QFile();
         QString newFile = logPath;
-#ifndef Q_WS_WIN
         newFile.append("/");
-#else
-        newFile.append("\\");
-#endif
+	newFile = QDir::toNativeSeparators(newFile);
         newFile.append(FileName);
         tmpFile->setFileName(newFile);
 

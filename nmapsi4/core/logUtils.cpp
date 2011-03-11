@@ -21,7 +21,6 @@
 
 QFile* nmapClass::create_logFile(const QString Path)
 {
-
     QFile *Pfile = new QFile();
     QDir::setCurrent(Path);
     Pfile->setFileName(FileName);
@@ -63,11 +62,8 @@ void nmapClass::isEmptyLog()
         qDebug() << "nmapsi4/core --> deleteLog::empty";
     } else if (firstPath.compare(logPath)) {
         QString pathTmp = logPath;
-#ifndef Q_WS_WIN
         pathTmp.append("/");
-#else
-        pathTmp.append("\\");
-#endif
+	pathTmp = QDir::toNativeSeparators(pathTmp);
         pathTmp.append(FileName);
 
         if (!PFile->copy(FileName, pathTmp))
@@ -93,13 +89,8 @@ void nmapClass::saveAsLog()
 
     QFile *tmpFile = new QFile();
     QString newFile = logPath;
-
-#ifndef Q_WS_WIN
     newFile.append("/");
-#else
-    newFile.append("\\");
-#endif
-
+    newFile = QDir::toNativeSeparators(newFile);
     newFile.append(FileName);
     tmpFile->setFileName(newFile);
 #ifndef SAVELOG_NO_DEBUG
@@ -115,12 +106,8 @@ void nmapClass::saveAsLog()
 
     QString url;
     url = QDir::homePath();
-
-#ifndef Q_WS_WIN
     url.append("/");
-#else
-    url.append("\\");
-#endif
+    url = QDir::toNativeSeparators(url);
     url.append("Si4");
     url.append(_VERSION_);
     url.append("-");
@@ -164,13 +151,8 @@ void nmapClass::saveLog()
 
     QFile *tmpFile = new QFile();
     QString newFile = logPath;
-
-#ifndef Q_WS_WIN
     newFile.append("/");
-#else
-    newFile.append("\\");
-#endif
-
+    newFile = QDir::toNativeSeparators(newFile);
     newFile.append(FileName);
     tmpFile->setFileName(newFile);
 
