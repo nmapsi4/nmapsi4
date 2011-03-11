@@ -111,7 +111,7 @@ void nmapClass::update_scanCombo() {
     }
 }
 
-void nmapClass::rootMode(int uid) {
+void nmapClass::rootMode() {
 
     if (!uid) { // if root
         comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));

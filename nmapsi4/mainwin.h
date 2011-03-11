@@ -48,7 +48,7 @@ class nmapClass : public QMainWindow, private Ui::MainWindow
 
 private:
     void scan(const QString hostname);
-    void rootMode(int uid);
+    void rootMode();
     void show_browser(QLineEdit *location);
     void isEmptyLog();
     void setNmapsiSlot();
@@ -90,6 +90,7 @@ signals:
     void killScan();
 
 protected:
+    int uid;
     QProcess *versionProc;
     QFile *PFile;
     QListWidgetItem *scanW;

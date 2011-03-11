@@ -22,12 +22,6 @@
 
 void nmapClass::saveUiSettings() {
     
-    int uid = 0;
-
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     QSettings settings("nmapsi4", "nmapsi4");
     if(savePos) {
         settings.setValue("window/pos", pos());

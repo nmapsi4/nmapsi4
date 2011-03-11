@@ -22,12 +22,7 @@
 QStringList nmapClass::check_extensions()
 {
     QStringList parametri;
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     if(scanCounter) {
         progressScan->setValue(10); // start progress bar
     }

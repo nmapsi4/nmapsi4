@@ -43,15 +43,8 @@ void nmapClass::checkNmapVersion()
 void nmapClass::setNmapVersion()
 {
     QString* output;
-    int uid = 0;
-
     // nmap CHECK
     hostEdit->setEnabled(true);
-
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-
     output = new QString(versionProc->readAllStandardOutput());
 
     QTextStream stream(output);

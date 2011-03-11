@@ -20,7 +20,8 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass()
-     : PFile(NULL),
+     : uid(0),
+       PFile(NULL),
        scanCounter(0),
        labelVersion(NULL),
        userMode(NULL),
@@ -40,8 +41,6 @@ void nmapClass::initGUI()
 }
 
 void nmapClass::initObject() {
-
-    int uid = 0;
 
 #ifndef Q_WS_WIN
     uid = getuid();
@@ -124,7 +123,7 @@ void nmapClass::initObject() {
     historyVuln_->updateBookMarks();
     delete historyVuln_;
 
-    this->rootMode(uid); // send uid value
+    this->rootMode(); // send uid value
     dialog = new mainProfile();
 
     nssAct->setChecked(NSSsupport); // set NSS support

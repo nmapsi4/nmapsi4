@@ -100,12 +100,7 @@ void nmapClass::deleteBookMark()
 
 void nmapClass::deleteBookMarkPar()
 {
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     if(!treeBookPar->currentItem()) {
         return;
     }
@@ -126,12 +121,7 @@ void nmapClass::deleteBookMarkPar()
 
 void nmapClass::saveBookMarksPar()
 {
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     if(comboAdv->currentText().isEmpty()) {
         return;
     }

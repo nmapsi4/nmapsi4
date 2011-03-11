@@ -21,12 +21,7 @@
 
 
 void nmapClass::restoreGlobalProfile() {
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     // global profile options
     QSettings settings("nmapsi4", "nmapsi4_gprofile");
     
@@ -113,12 +108,7 @@ void nmapClass::restoreGlobalProfile() {
 }
 
 void nmapClass::saveGlobalProfile() {
-    int uid = 0;
 
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
     globalProfile = true;
     
     // global profile options

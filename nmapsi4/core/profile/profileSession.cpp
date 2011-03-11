@@ -62,12 +62,6 @@ void nmapClass::checkProfile()
 	    Profile = settings.value("configProfile", "none").toString();
 	}
 	
-	int uid = 0;
-
-#ifndef Q_WS_WIN
-    uid = getuid();
-#endif
-    
 	if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
 	    Profile = "normal"; // reset profile
 	    settings.setValue("configProfile", Profile);
