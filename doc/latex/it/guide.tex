@@ -24,14 +24,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduzione}
-\label{sec:ContentsIntro}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%NmapSI4 \`e una GUI completa, realizzata in Qt, per Nmap, con l'obiettivo di 
-%dare maggiore padronanza agli utenti di questo potente strumento di analisi.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Schermata Principale}
 \label{sec:ContentsMain}
@@ -40,8 +32,8 @@
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.65\textwidth]{main}
-  \caption{Dettagli di scansione}
-  \label{fig:ContentsMainScanDetails}
+  \caption{NmapSI4: Schermata Principale.}
+  \label{fig:ContentsMain}
 \end{figure}
 Questa \`e la schermata principale di NmapSI4, possiamo notare alcuni elementi:
 \begin{itemize}
@@ -66,172 +58,172 @@ insieme alla versione software per Nmap.
 Questa sezione riguarda i pulsanti presenti sotto la schermata dei risultati.
 
 \subsection{Dettagli di scansione}
-\label{sec:ContentsScanDetails}
+\label{sec:ContentsScanScanDetails}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.65\textwidth]{11scan_details}
-  \caption{Dettagli di scansione}
-  \label{fig:ScanDetails}
+  \caption{Scansione: Dettagli di scansione.}
+  \label{fig:ContentsScanScanDetails}
 \end{figure}
 Qui vengono elencati i risultati della scansione, e nello specifico: la porta 
 del servizio, lo stato della porta, il tipo di servizio ed una breve descrizione.
 
 \subsection{Nmap script}
-\label{sec:NmapScript}
+\label{sec:ContentsScanNmapScript}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.65\textwidth]{12nss_result}
-  \caption{Nmap script}
-  \label{fig:NmapScript}
+  \caption{Scansione: Nmap script.}
+  \label{fig:ContentsScanNmapScript}
 \end{figure}
 Qui vengono mostrati dei risultati in base a degli script presenti nella suite 
 Nmap. Per ulteriori informazioni rimandiamo al capitolo specifico della 
 \href{http://nmap.org/book/nse.html}{guida Nmap}.
 
 \subsection{Host info}
-\label{sec:HostInfo}
+\label{sec:ContentsScanHostInfo}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{13host_info}
-  \caption{Host info}
-  \label{fig:HostInfo}
+  \caption{Scansione: Host info.}
+  \label{fig:ContentsScanHostInfo}
 \end{figure}
 Qui sono presenti dettagli relativi alla scansione, come l'ora di inizio, la 
 durata della scansione ed altre informazioni utili.
 
 \subsection{Preferiti}
-\label{sec:Bookmarks}
+\label{sec:ContentsScanBookmarks}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{14bookmarks}
-  \caption{Preferiti}
-  \label{fig:Bookmarks}
+  \caption{Scansione: preferiti.}
+  \label{fig:ContentsScanBookmarks}
 \end{figure}
 Qui possiamo mantenere i nostri bersagli preferiti. La schermata ci mostra l'ip 
 o il nome host e la data di memorizzazione.
 
 \subsection{Parametri dei preferiti}
-\label{sec:BookmarksParameters}
+\label{sec:ContentsScanBookmarksParameters}
 
 Qui possiamo visualizzare i parametri di scansione dei preferiti memorizzati.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{15bookmarks_parameters}
-  \caption{Parametri dei preferiti}
-  \label{fig:BookmarksParameters}
+  \caption{Scansione: Parametri dei preferiti.}
+  \label{fig:ContentsScanBookmarksParameters}
 \end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Opzioni di scansione}
-\label{sec:ScanOptions}
+\label{sec:ContentsScanOptions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In questa sezione \`e possibile cambiare i parametri di scansione. Per applicare 
 i cambiamenti \`e necessario usare il pulsante in basso ``Applica''.
 
 \subsection{Scansione}
-\label{sec:ScanParameters}
+\label{sec:ContentsScanOptionsScanParameters}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{21scan_options}
-  \caption{Scansione}
-  \label{fig:ScanParameters}
+  \caption{Opzioni di scansione: scansione.}
+  \label{fig:ContentsScanOptionsScanParameters}
 \end{figure}
 Questa sezione \`e strettamente relativa ai parametri della scansione, ad 
 esempio profili di scansione, tipologia e numero di porte.
 
 \subsection{Opzioni}
-\label{sec:ScanParamOptions}
+\label{sec:ContentsScanOptionsScanParamOptions}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{22scan_options}
-  \caption{Opzioni}
-  \label{fig:ScanParamOptions}
+  \caption{Opzioni di scanzione: opzioni.}
+  \label{fig:ContentsScanOptionsScanParamOptions}
 \end{figure}
 In questa sezione \`e possibile cambiare il livello di dettaglio, ed utilizzare 
 parametri specifici come Ipv6 e frammentazione.
 
 \subsection{Discover}
-\label{sec:ScanDiscover}
+\label{sec:ContentsScanOptionsScanDiscover}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{23discover_scan_options}
-  \caption{Discover}
-  \label{fig:ScanDiscover}
+  \caption{Opzioni di scansione: discover.}
+  \label{fig:ContentsScanOptionsScanDiscover}
 \end{figure}
 In questa sezione \`e possibile cambiare i parametri relativi alle tipologie di 
 pacchetti da usare nella scansione.
 
 \subsection{File}
-\label{sec:ScanFile}
+\label{sec:ContentsScanOptionsScanFile}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{24file_scan_options1}
-  \caption{File}
-  \label{fig:ScanFile}
+  \caption{Opzioni di scansione: file.}
+  \label{fig:ContentsScanOptionsScanFile}
 \end{figure}
 In questa sezione \`e possibile specificare un file di input ed un profilo 
 di scansione specifico.
 
 \subsection{Timing}
-\label{sec:ScanTiming}
+\label{sec:ContentsScanOptionsScanTiming}
 
 In questa sezione \`e possibile cambiare i parametri riguardo al tempo di 
 scansione ed al TTL dei pacchetti inviati.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{25timing_scan_options2}
-  \caption{Timing}
-  \label{fig:ScanTiming}
+  \caption{Opzioni di scansione: timing.}
+  \label{fig:ConentsScanOptionsScanTiming}
 \end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Monitor della Scansione}
-\label{sec:ScanMonitor}
+\label{sec:ContentsScanMonitor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{scan_monitor}
   \caption{Monitor della scansione}
-  \label{fig:ScanMonitor}
+  \label{fig:ContentsScanMonitor}
 \end{figure}
 Questa sezione elenca i vari bersagli delle scansioni attive, non ancora 
 completate.
 
 %%%%%%%%%%%%%%%%%%%%%
 \section{Lookup}
-\label{sec:Lookup}
+\label{sec:ContentsScanMonitorLookup}
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{4scan_lookup}
-  \caption{Lookup}
-  \label{fig:Lookup}
+  \caption{Lookup.}
+  \label{fig:ContentsScanMonitorLookup}
 \end{figure}
 Questa sezione mostra le corrispondenze tra bersagli, ip e servizi connessi.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Traceroute}
-\label{sec:Traceroute}
+\label{sec:ContentsScanMonitorTraceroute}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{5traceroute}
-  \caption{Traceroute}
-  \label{fig:Traceroute}
+  \caption{Traceroute.}
+  \label{fig:ContentsScanMonitorTraceroute}
 \end{figure}
 Questa sezione mostra la ``strada'' percorsa dai pacchetti della scansione.
 
@@ -244,54 +236,54 @@ Questa sezione mostra la ``strada'' percorsa dai pacchetti della scansione.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Profili}
-\label{sec:profiles}
+\label{sec:Preferencesprofiles}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{1preferences_profiles}
-  \caption{Profili}
-  \label{fig:Profili}
+  \caption{Preferenze: profili.}
+  \label{fig:PreferencesProfili}
 \end{figure}
 In questa sezione \`e possibile cambiare il profilo di scansione predefinito.
 
 %%%%%%%%%%%%%%%%%%%
 \section{Log}
-\label{sec:Log}
+\label{sec:PreferencesLog}
 %%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{2preferences_log}
-  \caption{Log}
-  \label{fig:Log}
+  \caption{Preferenze: log.}
+  \label{fig:PreferencesLog}
 \end{figure}
 In questa sezione \`e possibile cambiare le impostazioni riguardanti il log 
 delle scansioni.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dimensioni}
-\label{sec:Dimensions}
+\label{sec:PreferencesDimensions}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{3preferences_size}
-  \caption{Profili}
-  \label{fig:Profili}
+  \caption{Preferenze: dimensioni.}
+  \label{fig:PreferencesDimensions}
 \end{figure}
 In questa sezione \`e possibile cambiare le impostazioni della finestra 
 principale di NmapSI4.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lookup}
-\label{sec_PreferencesLookup}
+\label{sec:PreferencesLookup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{4preferences_lookup}
-  \caption{Lookup}
+  \caption{Preferenze: lookup.}
   \label{fig:PreferencesLookup}
 \end{figure}
 In questa sezione \`e possibile cambiare le impostazioni per il lookup.
@@ -324,7 +316,7 @@ In questa sezione \`e possibile attivare o disattivare le estensioni di NmapSI4.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{vulnerabilities}
-  \caption{Motore di ricerca vulnerabilit\`a}
+  \caption{Motore di ricerca vulnerabilit\`a: schermata principale.}
   \label{fig:VulnerabilityMain}
 \end{figure}
 Questa sezione mette a disposizione un motore di ricerca per cercare eventuali 
@@ -341,7 +333,7 @@ termine di ricerca.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{vuln_bookmarks}
-  \caption{Preferiti}
+  \caption{Motore di ricerca vulnerabilit\`a: preferiti.}
   \label{fig:VulnerabilityBookmarks}
 \end{figure}
 Qui possiamo memorizzare i nostri risultati preferiti.
@@ -353,10 +345,15 @@ Qui possiamo memorizzare i nostri risultati preferiti.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Schermata principale}
+\label{sec:LogReaderMainScreen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{log_reader}
-  \caption{Log reader}
+  \caption{Log reader: schermata principale.}
   \label{fig:LodReader}
 \end{figure}
 Questa sezione permette di leggere l'output completo della scansione 

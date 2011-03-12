@@ -1,332 +1,393 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       NmapSI4 Latex Documentation                          %
-%              copyright: Antonio Salvucci <s4lb04@gmail.com>                %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Copyright (C) 2011 by Antonio Salvucci                                %
+%   s4lb04@gmail.com                                                      %
+%                                                                         %
+%   This program is free software; you can redistribute it and/or modify  %
+%   it under the terms of the GNU General Public License as published by  %
+%   the Free Software Foundation; either version 2 of the License.        %
+%                                                                         %
+%   This program is distributed in the hope that it will be useful,       %
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of        %
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         %
+%   GNU General Public License for more details.                          %
+%                                                                         %
+%   You should have received a copy of the GNU General Public License     %
+%   along with this program; if not, write to the                         %
+%   Free Software Foundation, Inc.,                                       %
+%   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Indice dei contenuti}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Index of contents}
 \label{ch:Contents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduzione}
-\label{sec:ContentsIntro}
-
-NmapSI4 \`e una GUI completa, realizzata in Qt, per Nmap, con l'obiettivo di 
-dare maggiore padronanza agli utenti di questo potente strumento di analisi.
-
-\section{Schermata Principale}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Main Screen}
 \label{sec:ContentsMain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{main}
-  \caption{Dettagli di scansione}
-  \label{fig:ContentsMainScanDetails}
+  \includegraphics[width=0.65\textwidth]{main}
+  \caption{NmapSI4: main screen.}
+  \label{fig:ContentsMain}
 \end{figure}
-Questa \`e la schermata principale di NmapSI4, possiamo notare alcuni elementi:
+This is NmapSI4 main screen, we can notice some elements:
 \begin{itemize}
-\item Barra dei menu
-\item Barra di strumenti
-\item Form di inserimento host, ip o dns per la scansione
-\item Form di inserimento per i parametri di scansione
-\item Schermata dei risultati
-\item Barra di stato
+\item Menu bar
+\item Toolbar
+\item Form for the inclusion of host, ip or dns for scan
+\item Form for the inclusion of scan parameters
+\item Results screen
+\item Statusbar
 \end{itemize}
-Per iniziare una scansione inserire un host, ip o dns e cliccare sul pulsante 
-``Scan''. Al termine della scansione, vengono visualizzati i risultati nella 
-schermata dei risultati. Sulla barra di stato \`e possibile vedere con quali 
-diritti \`e in esecuzione NmapSI4 insieme alla sua versione software ed 
-insieme alla versione software per Nmap.
+To start a scan you must insert an host, ip or dns, then click on the button
+``Scan''. At the end of the scan, in the results screen are visualized scan 
+results. On the statusbar you can see with which rights NmapSI4 is working 
+together its software version and Nmap software version.
 
-\section{Scansione}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scanning}
 \label{sec:ContentsScan}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Questa sezione riguarda i pulsanti presenti sotto la schermata dei risultati.
+This section is about the buttons that you can find under the results screen.
 
-\subsection{Dettagli di scansione}
-\label{sec:ContentsScanDetails}
+\subsection{Scan details}
+\label{sec:ContentsScanScanDetails}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{11scan_details}
-  \caption{Dettagli di scansione}
-  \label{fig:ScanDetails}
+  \includegraphics[width=0.65\textwidth]{11scan_details}
+  \caption{Scanning: scan details.}
+  \label{fig:ContentsScanScanDetails}
 \end{figure}
-Qui vengono elencati i risultati della scansione, e nello specifico: la porta 
-del servizio, lo stato della porta, il tipo di servizio ed una breve descrizione.
+Here there are listed the scan results, and more specifically: service port,
+port status, the kind of service and a brief description.
 
 \subsection{Nmap script}
-\label{sec:NmapScript}
+\label{sec:ContentsScanNmapScript}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{12nss_result}
-  \caption{Nmap script}
-  \label{fig:NmapScript}
+  \includegraphics[width=0.65\textwidth]{12nss_result}
+  \caption{Scanning: Nmap script.}
+  \label{fig:ContentsScanNmapScript}
 \end{figure}
-Qui vengono mostrati dei risultati in base a degli script presenti nella suite 
-Nmap. Per ulteriori informazioni rimandiamo al capitolo specifico della 
-\url{http://nmap.org/book/nse.html}{guida Nmap}.
+Here are showed based on scripts that are part of Nmap Suite. For further 
+informations we invite you to look the specific chapter in 
+\href{http://nmap.org/book/nse.html}{Nmap}.
 
 \subsection{Host info}
-\label{sec:HostInfo}
+\label{sec:ContentsScanHostInfo}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{13host_info}
-  \caption{Host info}
-  \label{fig:HostInfo}
+  \includegraphics[width=0.7\textwidth]{13host_info}
+  \caption{Scanning: host info.}
+  \label{fig:ContentsScanHostInfo}
 \end{figure}
-Qui sono presenti dettagli relativi alla scansione, come l'ora di inizio, la 
-durata della scansione ed altre informazioni utili.
+Here are showed scan details, as the starting time, the duration of scanning 
+and other useful informations.
 
-\subsection{Preferiti}
-\label{sec:Bookmarks}
+\subsection{Bookmarks}
+\label{sec:ContentsScanBookmarks}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{14bookmarks}
-  \caption{Preferiti}
-  \label{fig:Bookmarks}
+  \includegraphics[width=0.7\textwidth]{14bookmarks}
+  \caption{Scanning: bookmarks.}
+  \label{fig:ContentsScanBookmarks}
 \end{figure}
-Qui possiamo mantenere i nostri bersagli preferiti. La schermata ci mostra l'ip 
-o il nome host e la data di memorizzazione.
+Here we can keep our favourite targets. The screen shows us the ip or the host 
+name and the storage date.
 
-\subsection{Parametri dei preferiti}
-\label{sec:BookmarksParameters}
+\subsection{Bookmarks parameters}
+\label{sec:ContentsScanBookmarksParameters}
+
+Here we can see the scan parameters of the stored bookmarks.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{15bookmarks_parameters}
+  \caption{Scanning: bookmarks parameters.}
+  \label{fig:ContentsScanBookmarksParameters}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scan options}
+\label{sec:ContentsScanOptions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section you can change scan parameters. To apply changes push the 
+``Apply'' button that you find down.
+
+\subsection{Scan}
+\label{sec:ContentsScanOptionsScanParameters}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{15bookmarks_parameters}
-  \caption{Preferiti}
-  \label{fig:BookmarksParameters}
+  \includegraphics[width=0.7\textwidth]{21scan_options}
+  \caption{Scan options: scanning.}
+  \label{fig:ContentsScanOptionsScanParameters}
 \end{figure}
-Qui possiamo visualizzare i parametri di scansione dei preferiti memorizzati.
+This section is focused on parameters that stricly concern the scan, just like
+profiles, type and number of ports.
 
-\section{Opzioni di scansione}
-\label{sec:ScanOptions}
-
-In questa sezione \`e possibile cambiare i parametri di scansione. Per applicare 
-i cambiamenti \`e necessario usare il pulsante in basso ``Applica''.
-
-\subsection{Scansione}
-\label{sec:ScanParameters}
+\subsection{Options}
+\label{sec:ContentsScanOptionsScanParamOptions}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{21scan_options}
-  \caption{Scansione}
-  \label{fig:ScanParameters}
+  \includegraphics[width=0.7\textwidth]{22scan_options}
+  \caption{Scan options: options.}
+  \label{fig:ContentsScanOptionsScanParamOptions}
 \end{figure}
-Questa sezione \`e strettamente relativa ai parametri della scansione, ad 
-esempio profili di scansione, tipologia e numero di porte.
-
-\subsection{Opzioni}
-\label{sec:ScanParamOptions}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\textwidth]{22scan_options}
-  \caption{Opzioni}
-  \label{fig:ScanParamOptions}
-\end{figure}
-In questa sezione \`e possibile cambiare il livello di dettaglio, ed utilizzare 
-parametri specifici come Ipv6 e frammentazione.
+In this section you can change the detail level and the use of specific
+parameters as Ipv6 and fragmentation.
 
 \subsection{Discover}
-\label{sec:ScanDiscover}
+\label{sec:ContentsScanOptionsScanDiscover}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{23discover_scan_options}
-  \caption{Opzioni}
-  \label{fig:ScanDiscover}
+  \includegraphics[width=0.7\textwidth]{23discover_scan_options}
+  \caption{Scan options: discover.}
+  \label{fig:ContentsScanOptionsScanDiscover}
 \end{figure}
-In questa sezione \`e possibile cambiare i parametri relativi alle tipologie di 
-pacchetti da usare nella scansione.
+In this section you can change parameters that concern the type of packets 
+that are used in the scan.
 
 \subsection{File}
-\label{sec:ScanFile}
+\label{sec:ContentsScanOptionsScanFile}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{24file_scan_options1}
-  \caption{File}
-  \label{fig:ScanFile}
+  \includegraphics[width=0.7\textwidth]{24file_scan_options1}
+  \caption{Scan options: file.}
+  \label{fig:ContentsScanOptionsScanFile}
 \end{figure}
-In questa sezione \`e possibile specificare un file di input ed un profilo 
-di scansione specifico.
+In this section you can specify an iput file and a specific scan profile.
 
 \subsection{Timing}
-\label{sec:ScanTiming}
+\label{sec:ContentsScanOptionsScanTiming}
+
+In this section you can change the parameters that concern the scan time and 
+the TTL of send packets.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{25timing_scan_options2}
+  \caption{Scan options: timing.}
+  \label{fig:ConentsScanOptionsScanTiming}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scan monitor}
+\label{sec:ContentsScanMonitor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{25timing_scan_options2}
-  \caption{Timing}
-  \label{fig:ScanTiming}
+  \includegraphics[width=0.7\textwidth]{scan_monitor}
+  \caption{Scan monitor.}
+  \label{fig:ContentsScanMonitor}
 \end{figure}
-In questa sezione \`e possibile cambiare i parametri riguardo al tempo di 
-scansione ed al TTL dei pacchetti inviati.
+In this section are listed the several targets of scannings that are active 
+and still running.
 
-\section{Monitor della Scansione}
-\label{sec:ScanMonitor}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\textwidth]{scan_monitor}
-  \caption{Monitor della scansione}
-  \label{fig:ScanMonitor}
-\end{figure}
-Questa sezione elenca i vari bersagli delle scansioni attive, non ancora 
-completate.
-
+%%%%%%%%%%%%%%%%%%%%%
 \section{Lookup}
-\label{sec:Lookup}
+\label{sec:ContentsScanMonitorLookup}
+%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{4scan_lookup}
-  \caption{Lookup}
-  \label{fig:Lookup}
+  \includegraphics[width=0.7\textwidth]{4scan_lookup}
+  \caption{Lookup.}
+  \label{fig:ContentsScanMonitorLookup}
 \end{figure}
-Questa sezione mostra le corrispondenze tra bersagli, ip e servizi connessi.
+This section shows matches between targets, ip and relates services.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Traceroute}
-\label{sec:Traceroute}
+\label{sec:ContentsScanMonitorTraceroute}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{5traceroute}
-  \caption{Traceroute}
-  \label{fig:Traceroute}
+  \includegraphics[width=0.7\textwidth]{5traceroute}
+  \caption{Traceroute.}
+  \label{fig:ContentsScanMonitorTraceroute}
 \end{figure}
-Questa sezione mostra la ``strada'' percorsa dai pacchetti della scansione.
+This section shows the ``route'' followed by scanning packets.
 
-\chapter{Preferenze}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Preferences}
 \label{ch:Preferences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Profili}
-\label{sec:profiles}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Profiles}
+\label{sec:Preferencesprofiles}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{1preferences_profiles}
-  \caption{Profili}
-  \label{fig:Profili}
+  \includegraphics[width=0.6\textwidth]{1preferences_profiles}
+  \caption{Preferences: profiles.}
+  \label{fig:PreferencesProfili}
 \end{figure}
-In questa sezione \`e possibile cambiare il profilo di scansione predefinito.
+In this section you can change the predefined scan profile.
 
+%%%%%%%%%%%%%%%%%%%
 \section{Log}
-\label{sec:Log}
+\label{sec:PreferencesLog}
+%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{2preferences_log}
-  \caption{Log}
-  \label{fig:Log}
+  \includegraphics[width=0.6\textwidth]{2preferences_log}
+  \caption{Preferences: log.}
+  \label{fig:PreferencesLog}
 \end{figure}
-In questa sezione \`e possibile cambiare le impostazioni riguardanti il log 
-delle scansioni.
+In this section you can change the settings of scannings log.
 
-\section{Dimensioni}
-\label{sec:Dimensions}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sizes}
+\label{sec:PreferencesDimensions}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{3preferences_size}
-  \caption{Profili}
-  \label{fig:Profili}
+  \includegraphics[width=0.6\textwidth]{3preferences_size}
+  \caption{Preferences: sizes.}
+  \label{fig:PreferencesDimensions}
 \end{figure}
-In questa sezione \`e possibile cambiare le impostazioni della finestra 
-principale di NmapSI4.
+In this section you can change settings of NmapSI4 main window.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lookup}
-\label{sec_PreferencesLookup}
+\label{sec:PreferencesLookup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{4preferences_lookup}
-  \caption{Lookup}
+  \includegraphics[width=0.6\textwidth]{4preferences_lookup}
+  \caption{Preferences: lookup.}
   \label{fig:PreferencesLookup}
 \end{figure}
-In questa sezione \`e possibile cambiare le impostazioni per il lookup.
+In this section you can change lookup settings.
 
-\section{Estensioni}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extensions}
 \label{sec:PreferencesExtensions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{5preferences_extensions}
-  \caption{Estensioni}
+  \includegraphics[width=0.6\textwidth]{5preferences_extensions}
+  \caption{Preferences: extensions.}
   \label{fig:PreferencesExtensions}
 \end{figure}
-In questa sezione \`e possibile attivare o disattivare le estensioni di NmapSI4.
+In this section you can enable or disable NmapSI4 extensions.
 
-\chapter{Motore di ricerca vulnerabilit\`a}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Vulnerabilities search engine}
 \label{ch:Vulnerability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Schermata principale}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Main screen}
 \label{sec:VulnerabilityMain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{vulnerabilities}
-  \caption{Motore di ricerca vulnerabilit\`a}
+  \includegraphics[width=0.7\textwidth]{vulnerabilities}
+  \caption{Vulnerabilities search engine: main screen.}
   \label{fig:VulnerabilityMain}
 \end{figure}
-Questa sezione mette a disposizione un motore di ricerca per cercare eventuali 
-vulnerabilit\`a dei servizi tracciati nella scansione all'interno dei maggiori 
-siti di riferimento per le vulnerabilit\`a. \`E possibile cercare in base al 
-servizio specifico riconosciuto tramite la scansione, oppure indicando un altro 
-termine di ricerca.
+This section provides a search engine to look for possible vulnerabilities of 
+services traced during the scan, within the best reference sites about 
+vulnerabilities. You can plan the research depending on the specific service 
+recognized during the scanning, or you can choose another search key.
 
-\section{Preferiti}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bookmarks}
 \label{sec:VulnerabilityBookmarks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{vuln_bookmarks}
-  \caption{Preferiti}
+  \includegraphics[width=0.7\textwidth]{vuln_bookmarks}
+  \caption{Vulnerabilities search engine: bookmarks.}
   \label{fig:VulnerabilityBookmarks}
 \end{figure}
-Qui possiamo memorizzare i nostri risultati preferiti.
+Here you can memorize your favourite results.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Log reader}
 \label{ch:LogReader}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Main screen}
+\label{sec:LogReaderMainScreen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{log_reader}
-  \caption{Log reader}
+  \includegraphics[width=0.7\textwidth]{log_reader}
+  \caption{Log reader: main screen.}
   \label{fig:LodReader}
 \end{figure}
-Questa sezione permette di leggere l'output completo della scansione 
-effettuata da Nmap.
+This section allowes you to read the complete output of Nmap scan.
 
-\chapter{Qualche esempio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Some examples}
 \label{ch:Examples}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Scansioni multiple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Multiple scannings}
 \label{sec:ExamplesMultipleScan}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\`E possibile usare le scansioni in diversi modi:
+You can use scannings in different ways:
 \begin{itemize}
-\item scansione singola: \emph{ip (es. 192.168.1.1) o dns (es. www.kernel.org)}
-\item scansione multipla: \emph{range di ip (es. 192.168.1.10/20) per scansionare 
-  da 192.168.1.10 a 192.168.1.20}
-\item scansione mista di ip e dns: \emph{es. 192.168.1.1 www.kernel.org}
-\item scansione su una lista di ip o di dns: \emph{es 192.168.1.10 192.168.1.15, 
-  oppure www.kernel.org www.google.com}
+\item single scanning: \emph{ip (e.g. 192.168.1.1) or dns (es. www.kernel.org)}
+\item multiple scanning: \emph{range di ip (e.g. 192.168.1.10/20) to scan from
+  192.168.1.10 to 192.168.1.20}
+\item ip and dns mixed scanning: \emph{e.g. 192.168.1.1 www.kernel.org}
+\item scan on an ip or dns list: \emph{e.g. 192.168.1.10 192.168.1.15,
+  or www.kernel.org www.google.com}
 \end{itemize}
-\textbf{\`E consigliabile non inserire un numero elevato di host da scansionare}.
+\textbf{It's preferable not to insert and high hosts number to scan}.
 
-\section{Utilizzo dei preferiti}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Using bookmarks}
 \label{sec:ExamplesUseBookmarks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Per usare i preferiti basta sfruttare il pulsante in alto per aggiungerlo in lista.\\
-Allo stesso modo per salvare il profilo di scansione c'\`e il pulsante posto vicino 
-al form per l'inserimento dei parametri.\\
-Per riusare in seguito un host o un profilo salvato, basta selezionarlo nella relativa 
-schermata e selezionare ``Scansione'' per gli host o ``Usa parametri'' per i profili.\\ 
-Per eliminare una voce dalla lista ripetere la procedura di riuso, scegliendo la voce di 
-rimozione.
+For using bookmarks, just push the button up to add it to the list.\\
+In the same way to save the scanning profile there's the button placed near 
+the parameters input form.\\
+To reuse later an host or a saved profile, just select it in the related 
+screen and choose ``Scanning'' for hosts or ``Use parameters'' for profiles.\\
+To remove an entry from the list, repeat the reuse procedure, choosing the 
+clearing entry.

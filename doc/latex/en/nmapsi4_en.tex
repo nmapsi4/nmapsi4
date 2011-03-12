@@ -1,23 +1,42 @@
-\documentclass[11.5pt,a4paper]{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Copyright (C) 2011 by Antonio Salvucci                                %
+%   s4lb04@gmail.com                                                      %
+%                                                                         %
+%   This program is free software; you can redistribute it and/or modify  %
+%   it under the terms of the GNU General Public License as published by  %
+%   the Free Software Foundation; either version 2 of the License.        %
+%                                                                         %
+%   This program is distributed in the hope that it will be useful,       %
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of        %
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         %
+%   GNU General Public License for more details.                          %
+%                                                                         %
+%   You should have received a copy of the GNU General Public License     %
+%   along with this program; if not, write to the                         %
+%   Free Software Foundation, Inc.,                                       %
+%   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Inizia il preambolo.
+\documentclass[a4paper,10pt,twoside,openright]{book}
 
-\setlength{\textheight}     {20.0  cm}
-\setlength{\textwidth}      {15.0  cm}
-\setlength{\baselineskip}   { 1.0  cm}
-\setlength{\oddsidemargin}  { 0.4  cm}
-\setlength{\evensidemargin} { 0.4  cm}
-\setlength{\topmargin}      { 0.4  cm}
-\setlength{\parskip}        { 4.0  pt}
-\setlength{\arrayrulewidth} { 0.5  pt}
-\setlength{\doublerulesep}  { 0.0  pt}
-\setlength{\footskip}       {60.0  pt}
+% Start of configuration options
+%\setlength{\textheight}     {20.0  cm}
+%\setlength{\textwidth}      {15.0  cm}
+%\setlength{\baselineskip}   { 1.0  cm}
+%\setlength{\oddsidemargin}  { 0.4  cm}
+%\setlength{\evensidemargin} { 0.4  cm}
+%\setlength{\topmargin}      { 0.4  cm}
+%\setlength{\parskip}        { 4.0  pt}
+%\setlength{\arrayrulewidth} { 0.5  pt}
+%\setlength{\doublerulesep}  { 0.0  pt}
+%\setlength{\footskip}       {60.0  pt}
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
 \renewcommand{\baselinestretch}{1.25}
 \renewcommand{\footnotesize} 
 \renewcommand{\bfseries}
 \usepackage[dvips]{graphicx}
 \graphicspath{{../../images/},{../../images/preferences/}}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage{fancyhdr}
 \fancyhead[R]{}
 \usepackage[usenames]{color}
@@ -34,27 +53,25 @@
 \usepackage{booktabs}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
-\usepackage{hyperref}
+\usepackage[bookmarks,colorlinks]{hyperref}
 \hypersetup{pdfauthor={Antonio Salvucci},%
   pdftitle={NmapSI4 - Documentation}}
 \usepackage{listings}
-\lstset{language=Python,%
-  basicstyle=\small}
-% Fine del preambolo.
+\lstset{language=Python,basicstyle=\small}
+\lstset{language=C++,basicstyle=\small}
+% End of configuration option
 
+% Start of document
 \begin{document}
-
 \pagestyle{empty}
 \include{title}
+\titlepage
 \pagenumbering{roman}
 \pagestyle{plain}
-\unboldmath
 \tableofcontents
-%\include{preface}
+\include{preface}
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{guide}
-%\include{appendix}
-%\include{reference}
-%
 \end{document}
+% End of document
