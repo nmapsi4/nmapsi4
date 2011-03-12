@@ -37,6 +37,7 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>
+#include <QMap>
 
 class QMainWindow;
 class QWebView;
@@ -76,6 +77,7 @@ private:
     void updateComboPar();
     void updateComboBook();
     void restoreGlobalProfile();
+    QMap<QString, QString> defaultScanProfile() const;
 
 public:
     nmapClass();

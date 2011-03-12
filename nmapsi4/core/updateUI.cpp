@@ -540,11 +540,18 @@ void nmapClass::updateComboPar() {
 
     comboPar->clear();
     comboPar->insertItem(0, "Select Saved Profile");
-
+    
+    // value from treeWidget parameters
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
         comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(0));
     }
-
+    
+    comboPar->insertSeparator(1);
+    // insert default static profile
+    QMap<QString, QString> tmpStaticProfile_ = defaultScanProfile();
+    foreach (const QString key, tmpStaticProfile_.keys()) {
+	comboPar->insertItem(1, key);
+    }
 }
 
 void nmapClass::updateComboBook() {

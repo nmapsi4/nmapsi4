@@ -30,15 +30,6 @@ void nmapClass::readProfile()
 
 }
 
-void nmapClass::resetOptions()
-{
-    versionBox->setChecked(false);
-    checkOS->setChecked(false);
-    comboTiming->setCurrentIndex(0);
-    comboDNSResolv->setCurrentIndex(0);
-    comboVerbosity->setCurrentIndex(0);
-}
-
 void nmapClass::checkProfile()
 {
 
@@ -241,39 +232,4 @@ void nmapClass::checkProfile()
 	nseTreeAvailRestoreValues();
 	nseTreeActiveRestoreValues();
     }
-}
-
-void nmapClass::setQuickProfile()
-{
-    this->resetOptions();
-    comboTiming->setCurrentIndex(4);
-    comboDNSResolv->setCurrentIndex(0);
-    comboVerbosity->setCurrentIndex(1);
-}
-
-void nmapClass::setNormalProfile()
-{
-    this->resetOptions();
-    comboTiming->setCurrentIndex(4);
-    comboDNSResolv->setCurrentIndex(0);
-    comboVerbosity->setCurrentIndex(1);
-    versionBox->setChecked(true);
-}
-
-void nmapClass::setFullVersionProfile()
-{
-    this->resetOptions();
-    comboTiming->setCurrentIndex(4);
-    checkOS->setChecked(true);
-    versionBox->setChecked(true);
-    comboVerbosity->setCurrentIndex(1);
-    comboDNSResolv->setCurrentIndex(0);
-}
-
-void nmapClass::setQuickVersionProfile()
-{
-    this->resetOptions();
-    comboTiming->setCurrentIndex(4);
-    checkOS->setChecked(true);
-    comboDNSResolv->setCurrentIndex(0);
 }

@@ -18,6 +18,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
 		core/profile/profileSession.cpp
+		core/profile/defaultProfile.cpp
 		core/logUtils.cpp
 		core/support/searchVuln.cpp
 		../lib/history/loghistory.cpp
@@ -54,6 +55,7 @@ else (NOT Q_WS_X11)
 		preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
 		core/profile/profileSession.cpp
+		core/profile/defaultProfile.cpp
 		core/logUtils.cpp
 		core/support/searchVuln.cpp
 		core/scanMT/scanThread.cpp

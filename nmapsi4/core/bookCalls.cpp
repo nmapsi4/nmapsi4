@@ -157,11 +157,24 @@ void nmapClass::callParFromBook()
 }
 
 void nmapClass::slotParSelected() {
-    
-   if(comboPar->currentIndex()) {
+   // insert profile from comboPar to comboAdv
+   int parIndex = comboPar->currentIndex();
+   qDebug() << "index test:: " << parIndex;
+   
+   if(parIndex) {
+        // if not 0
+        QMap<QString, QString> tmpMap_ = defaultScanProfile();
 	comboAdv->clear();
-	comboAdv->insertItem(0, comboPar->currentText());
+	if (parIndex <= tmpMap_.size()) {
+	    // call static default profile for check
+	    comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
+	} else {
+	    // saved user profile
+	    comboAdv->insertItem(0, comboPar->currentText());
+	}
    } else {
+        // if 0 no action, reload extension
+        comboAdv->clear();
 	comboAdv->insertItem(0, check_extensions().join(" "));
    }
 }
