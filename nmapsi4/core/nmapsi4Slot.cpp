@@ -115,11 +115,9 @@ void nmapClass::setNmapsiSlot()
 
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
-
-    connect(hostEdit, SIGNAL(editTextChanged(QString)),
+    connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateFontHost()));
-
-    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
+    connect(comboVulnRis->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateFontHostVuln()));
 
 

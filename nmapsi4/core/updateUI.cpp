@@ -337,7 +337,7 @@ void nmapClass::updateFontHost() {
     action_Scan_2->setEnabled(true);
     hostEdit->clear();
     hostEdit->setStyleSheet(QString::fromUtf8(""));
-    bool signalState = hostEdit->disconnect(SIGNAL(editTextChanged(QString)));
+    bool signalState = hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
     
     if(!signalState)
 	return;
@@ -349,11 +349,10 @@ void nmapClass::updateFontHostVuln() {
     comboVulnRis->clear();
     actSearch->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
-    comboVulnRis->disconnect(SIGNAL(editTextChanged(QString)));
+    comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
 }
 
 void nmapClass::setProgress() {
-    //this->setWindowIcon(QIcon(QString::fromUtf8(":/images/icons/nmapsi4_scan.svg")));
     progressScan->setValue(60);
     this->setWindowTitle("Nmapsi4 (60%)");
 }
