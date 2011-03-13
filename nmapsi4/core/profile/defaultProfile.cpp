@@ -34,7 +34,7 @@ QMap<QString, QString> nmapClass::defaultScanProfile() const {
 	// profile for full mode
 	tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -A -v");
 	tmpStaticProfileMap_.insert(tr("Slow comprehensive scan"),
-				   "-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroot");
+				   "-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53");
     }
 
     return tmpStaticProfileMap_;

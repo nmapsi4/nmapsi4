@@ -159,7 +159,6 @@ void nmapClass::callParFromBook()
 void nmapClass::slotParSelected() {
    // insert profile from comboPar to comboAdv
    int parIndex = comboPar->currentIndex();
-   qDebug() << "index test:: " << parIndex;
    
    if(parIndex) {
         // if not 0
