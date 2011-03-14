@@ -34,8 +34,8 @@ class parserObjUtil
 	void setHostName(const QString hostName);
 
     protected:
-        QStringList mainLookup_;
-	QString hostName_;
+        QStringList m_mainLookup;
+	QString m_hostName;
 };
 
 

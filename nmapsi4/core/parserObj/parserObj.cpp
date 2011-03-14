@@ -28,89 +28,89 @@ parserObj::~parserObj() {
 }
 
 QString parserObj::getHostName() const {
-    return this->hostName_;
+    return this->m_hostName;
 }
 
 QStringList parserObj::getMainInfo() const {
-    return this->mainInfo_;
+    return this->m_mainInfo;
 }
 
 QStringList parserObj::getServices() const {
-    return this->services_;
+    return this->m_services;
 }
 
 QStringList parserObj::getPortServices() const {
-    return this->portServices_;
+    return this->m_portServices;
 }
 
 QStringList parserObj::getPortOpen() const {
-    return this->portOpened_;
+    return this->m_portOpened;
 }
 
 QStringList parserObj::getPortClose() const {
-    return this->portClosed_;
+    return this->m_portClosed;
 }
 
 QStringList parserObj::getPortFiltered() const {
-    return this->portFiltered_;
+    return this->m_portFiltered;
 }
 
 QStringList parserObj::getNssInfo() const {
-    return this->scanNss_;
+    return this->m_scanNss;
 }
 
 QStringList parserObj::getTraceRouteInfo() const {
-    return this->scanTraceRoute_;
+    return this->m_scanTraceRoute;
 }
 
 QStringList parserObj::getFullScanLog() const {
-    return this->fullLogScan_;
+    return this->m_fullLogScan;
 }
 
 QStringList parserObj::getErrorScan() const {
-    return this->errorScan_;
+    return this->m_errorScan;
 }
 
 void parserObj::setHostName(const QString hostName) {
-    hostName_.append(hostName);
+    m_hostName.append(hostName);
 }
 
 void parserObj::setMainInfo(const QString elemMainInfo) {
-    mainInfo_.append(elemMainInfo);
+    m_mainInfo.append(elemMainInfo);
 }
 
 void parserObj::setServices(const QString service) {
-    services_.push_back(service);
+    m_services.push_back(service);
 }
 
 void parserObj::setPortServices(const QString portService) {
-    portServices_.push_back(portService);
+    m_portServices.push_back(portService);
 }
 
 void parserObj::setPortOpen(const QString portOpen) {
-    portOpened_.push_back(portOpen);
+    m_portOpened.push_back(portOpen);
 }
 
 void parserObj::setPortClose(const QString portClose) {
-    portClosed_.push_back(portClose);
+    m_portClosed.push_back(portClose);
 }
 
 void parserObj::setPortFiltered(const QString portFiltered) {
-    portFiltered_.push_back(portFiltered);
+    m_portFiltered.push_back(portFiltered);
 }
 
 void parserObj::setNssInfo(const QString nssElem) {
-    scanNss_.push_back(nssElem);
+    m_scanNss.push_back(nssElem);
 }
 
 void parserObj::setTraceRouteInfo(const QString traceElem) {
-    scanTraceRoute_.push_back(traceElem);
+    m_scanTraceRoute.push_back(traceElem);
 }
 
 void parserObj::setFullScanLog(const QString logElem) {
-    fullLogScan_.push_back(logElem);
+    m_fullLogScan.push_back(logElem);
 }
 
 void parserObj::setErrorScan(const QString errorElem) {
-    errorScan_.push_back(errorElem);
+    m_errorScan.push_back(errorElem);
 }

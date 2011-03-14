@@ -52,17 +52,17 @@ class parserObj
         void setErrorScan(const QString errorElem);
 
     protected:
-	QString hostName_;
-        QStringList mainInfo_;
-        QStringList services_;
-        QStringList portServices_;
-        QStringList portOpened_;
-        QStringList portFiltered_;
-        QStringList portClosed_;
-        QStringList scanNss_;
-        QStringList scanTraceRoute_;
-        QStringList fullLogScan_;
-        QStringList errorScan_;
+	QString m_hostName;
+        QStringList m_mainInfo;
+        QStringList m_services;
+        QStringList m_portServices;
+        QStringList m_portOpened;
+        QStringList m_portFiltered;
+        QStringList m_portClosed;
+        QStringList m_scanNss;
+        QStringList m_scanTraceRoute;
+        QStringList m_fullLogScan;
+        QStringList m_errorScan;
 };
 
 

@@ -28,18 +28,18 @@ parserObjUtil::~parserObjUtil() {
 }
 
 QStringList parserObjUtil::getInfoLookup() const {
-    return mainLookup_;
+    return m_mainLookup;
 }
 
 QString parserObjUtil::getHostName() const {
-    return hostName_;
+    return m_hostName;
 }
 
 void parserObjUtil::setInfoLookup(const QString lookupElem) {
-    mainLookup_.push_back(lookupElem);
+    m_mainLookup.push_back(lookupElem);
 }
 
 void parserObjUtil::setHostName(const QString hostName) {
-    hostName_.append(hostName);
+    m_hostName.append(hostName);
 }
 
