@@ -168,8 +168,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(tabWebStop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(updateComboVuln(const QString&)));
-    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
-            this, SLOT(callSearchHistoryVuln()));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),

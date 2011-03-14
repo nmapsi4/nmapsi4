@@ -341,6 +341,7 @@ void nmapClass::updateFontHost() {
     
     if(!signalState)
 	return;
+    
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(callSearchHistory()));
 }
@@ -349,7 +350,13 @@ void nmapClass::updateFontHostVuln() {
     comboVulnRis->clear();
     actSearch->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
-    comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
+    bool signalState = comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
+    
+    if(!signalState)
+	return;
+    
+    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
+            this, SLOT(callSearchHistoryVuln()));
 }
 
 void nmapClass::setProgress() {
