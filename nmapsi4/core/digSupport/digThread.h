@@ -41,17 +41,17 @@ signals:
      void threadEnd(const QStringList, QByteArray);
 
 private:
-     QByteArray pout;
-     QStringList host;
+     QByteArray m_pout;
+     QStringList m_host;
 
 private slots:
      void setValue();
      void stopProcess();
 
  protected:
-     QProcess *proc;
+     QProcess* m_proc;
      void run();
-     QObject* par;
+     QObject* m_par;
 };
 
 

@@ -39,15 +39,15 @@ class lookUpT : public QThread
         void threadEnd(QHostInfo, int, const QString);
 
     private:
-        QString host;
-        QHostInfo info;
+        QString m_host;
+        QHostInfo m_info;
 
     private slots:
         void killLookup();
 
     protected:
         void run();
-        QObject* par;
+        QObject* m_par;
 };
 
 #endif

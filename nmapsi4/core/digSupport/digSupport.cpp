@@ -20,30 +20,30 @@
 #include "digSupport.h"
 
 digSupport::digSupport() 
-    : digProc(NULL),
-      Wview(NULL),
-      th(NULL),
-      elemObjUtil(NULL) {
+    : m_digProc(NULL),
+      m_Wview(NULL),
+      m_th(NULL),
+      m_elemObjUtil(NULL) {
     state = false;
 }
 
 
 void digSupport::checkDigSupport() {
-    digProc = new QProcess();
+    m_digProc = new QProcess();
 
     QStringList parametri;
     parametri << "-v";
-    digProc->start("dig", parametri);
+    m_digProc->start("dig", parametri);
 
-    connect(digProc, SIGNAL(finished(int, QProcess::ExitStatus)),
+    connect(m_digProc, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(checkDig()));
 }
 
 void digSupport::checkDig() {
 
     QString *output, *error;
-    output = new QString(digProc->readAllStandardOutput());
-    error = new QString(digProc->readAllStandardError());
+    output = new QString(m_digProc->readAllStandardOutput());
+    error = new QString(m_digProc->readAllStandardError());
 
     QTextStream stream(output);
     QTextStream stream2(error);
@@ -64,7 +64,7 @@ void digSupport::checkDig() {
 
     delete output;
     delete error;
-    delete digProc;
+    delete m_digProc;
 }
 
 bool digSupport::getDigSupport() {
@@ -72,15 +72,15 @@ bool digSupport::getDigSupport() {
 }
 
 void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) {
-    Wview = view;
+    m_Wview = view;
     QByteArray buff1;
     QStringList command;
-    hostNameLocal = hostname;
+    m_hostNameLocal = hostname;
     command << hostname;
-    elemObjUtil = objElem;
-    th = new digThread(buff1, command, this);
-    th->start();
-    connect(th, SIGNAL(threadEnd(const QStringList, QByteArray)),
+    m_elemObjUtil = objElem;
+    m_th = new digThread(buff1, command, this);
+    m_th->start();
+    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray)),
       this, SLOT(digReturn(const QStringList, QByteArray)));
 }
 
@@ -93,7 +93,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
     QTextStream stream1(&buff1);
     QString line;
     
-    elemObjUtil->setHostName(hostNameLocal);
+    m_elemObjUtil->setHostName(m_hostNameLocal);
 
     while(!stream1.atEnd()) {
         line = stream1.readLine();
@@ -101,11 +101,11 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
 #ifndef DIG_NO_DEBUG
             qDebug() << "digSupport():: " << line;
 #endif
-	    elemObjUtil->setInfoLookup(line);
+	    m_elemObjUtil->setInfoLookup(line);
         }
     }
 
-    delete th;
+    delete m_th;
     buffer1.clear();
 }
 

@@ -19,9 +19,9 @@
 
 #include "lookUpT.h"
 
-lookUpT::lookUpT(const QString hostname, QObject *parent) : host(hostname), par(parent)
+lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
 {
-    connect(par, SIGNAL(killScan()),
+    connect(m_par, SIGNAL(killScan()),
             this, SLOT(killLookup()));
 
 }
@@ -29,21 +29,21 @@ lookUpT::lookUpT(const QString hostname, QObject *parent) : host(hostname), par(
 void lookUpT::run() {
 
     qRegisterMetaType<QHostInfo>("QHostInfo");
-    info = QHostInfo::fromName(host);
+    m_info = QHostInfo::fromName(m_host);
 
-    if(info.error() != QHostInfo::NoError && info.error() != QHostInfo::UnknownError) {
+    if(m_info.error() != QHostInfo::NoError && m_info.error() != QHostInfo::UnknownError) {
 #ifdef LOOKUP_NO_THREAD
          qDebug() << "Lookup failed:" << info.errorString();
 #endif
-         emit threadEnd(info, -1, host);
+         emit threadEnd(m_info, -1, m_host);
          return;
      }
-    emit threadEnd(info, 1, host);
+    emit threadEnd(m_info, 1, m_host);
 }
 
 void lookUpT::killLookup() {
 #ifdef LOOKUP_NO_THREAD
     qDebug() << "Lookup::kill --> call";
 #endif
-    info.abortHostLookup(info.lookupId());
+    m_info.abortHostLookup(m_info.lookupId());
 }

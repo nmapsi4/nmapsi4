@@ -51,12 +51,12 @@ class digSupport : public QObject
         void killScan();
 
     protected:
-        QProcess *digProc;
+        QProcess* m_digProc;
         bool state;
-        QTreeWidget *Wview;
-        digThread *th;
-	parserObjUtil* elemObjUtil;
-	QString hostNameLocal;
+        QTreeWidget* m_Wview;
+        digThread* m_th;
+	parserObjUtil* m_elemObjUtil;
+	QString m_hostNameLocal;
 
 };
 

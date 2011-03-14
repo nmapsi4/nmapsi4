@@ -339,7 +339,7 @@ void nmapClass::updateFontHost() {
     hostEdit->setStyleSheet(QString::fromUtf8(""));
     bool signalState = hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
     
-    if(!signalState)
+    if (!signalState)
 	return;
     
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
@@ -352,7 +352,7 @@ void nmapClass::updateFontHostVuln() {
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
     bool signalState = comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
     
-    if(!signalState)
+    if (!signalState)
 	return;
     
     connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
@@ -366,7 +366,7 @@ void nmapClass::setProgress() {
 
 void nmapClass::updateSezScan() { // SLOT
 
-    if(stackedMain->currentIndex() == 0)
+    if (stackedMain->currentIndex() == 0)
         return;
 
     scanSez->setChecked(true);
@@ -378,23 +378,23 @@ void nmapClass::updateSezScan() { // SLOT
     toolBarSearch->setVisible(false);
     GItree->setVisible(true);
 
-    if(!frameScan->isVisible()) {
+    if (!frameScan->isVisible()) {
         frameScan->setVisible(true);
     }
 
-    if(!treeMain->isVisible()) {
+    if (!treeMain->isVisible()) {
         treeMain->setVisible(true);
     }
 
-    if(!frameAdv->isVisible() && parAct->isChecked()) {
+    if (!frameAdv->isVisible() && parAct->isChecked()) {
         frameAdv->setVisible(true);
     }
     
-    if(!frameRight->isVisible()) {
+    if (!frameRight->isVisible()) {
         frameRight->setVisible(true);
     }
     
-    if(!frame_2->isVisible()) {
+    if (!frame_2->isVisible()) {
         frame_2->setVisible(true);
     }
     
@@ -406,7 +406,7 @@ void nmapClass::updateSezScan() { // SLOT
 
 void nmapClass::updateSezLog() {  // SLOT
 
-    if(stackedMain->currentIndex() == 1)
+    if (stackedMain->currentIndex() == 1)
         return;
 
     scanSez->setChecked(false);
@@ -422,23 +422,23 @@ void nmapClass::updateSezLog() {  // SLOT
     actionActions_Toolbar->setChecked(false);
     GItree->setVisible(false);
 
-    if(frameScan->isVisible()) {
+    if (frameScan->isVisible()) {
         frameScan->setVisible(false);
     }
 
-    if(treeMain->isVisible()) {
+    if (treeMain->isVisible()) {
         treeMain->setVisible(false);
     }
 
-    if(frameAdv->isVisible()) {
+    if (frameAdv->isVisible()) {
         frameAdv->setVisible(false);
     }
     
-    if(frameRight->isVisible()) {
+    if (frameRight->isVisible()) {
         frameRight->setVisible(false);
     }
     
-    if(frame_2->isVisible()) {
+    if (frame_2->isVisible()) {
         frame_2->setVisible(false);
     }
     
@@ -449,7 +449,7 @@ void nmapClass::updateSezLog() {  // SLOT
 
 void nmapClass::updateSezVuln() { // SLOT
 
-    if(stackedMain->currentIndex() == 2)
+    if (stackedMain->currentIndex() == 2)
         return;
 
     scanSez->setChecked(false);
@@ -465,23 +465,23 @@ void nmapClass::updateSezVuln() { // SLOT
     toolBarSearch->setVisible(true);
     GItree->setVisible(false);
 
-    if(frameScan->isVisible()) {
+    if (frameScan->isVisible()) {
         frameScan->setVisible(false);
     }
 
-    if(treeMain->isVisible()) {
+    if (treeMain->isVisible()) {
         treeMain->setVisible(false);
     }
 
-    if(frameAdv->isVisible()) {
+    if (frameAdv->isVisible()) {
         frameAdv->setVisible(false);
     }
     
-    if(frameRight->isVisible()) {
+    if (frameRight->isVisible()) {
         frameRight->setVisible(false);
     }
     
-    if(frame_2->isVisible()) {
+    if (frame_2->isVisible()) {
         frame_2->setVisible(false);
     }
     
@@ -492,7 +492,7 @@ void nmapClass::updateSezVuln() { // SLOT
 
 void nmapClass::NSSCheck() { // SLOT
 
-    if(nssAct->isChecked()) {
+   if (nssAct->isChecked()) {
        NSSsupport = true;
        Bnss->setVisible(true);
        resetPar();
@@ -523,7 +523,7 @@ void nmapClass::setTreeWidgetValues() {
 }
 
 void nmapClass::parAdv() {
-    if(parAct->isChecked()) {
+    if (parAct->isChecked()) {
         optionAccept->setVisible(true);
         frameAdv->setVisible(true);
         ADVSupport = true;
@@ -572,7 +572,7 @@ void nmapClass::updateComboBook() {
 }
 
 void nmapClass::updateTabLook() {
-    if(actTabLook->isChecked()) {
+    if (actTabLook->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
         LookupEnabled = true;
@@ -585,7 +585,7 @@ void nmapClass::updateTabLook() {
 }
 
 void nmapClass::updateTabTrace() {
-    if(actTabTrace->isChecked()) {
+    if (actTabTrace->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
         TraceEnabled = true;
@@ -597,7 +597,7 @@ void nmapClass::updateTabTrace() {
 }
 
 void nmapClass::updateTabMonitor() {
-    if(actTabMonitor->isChecked()) {
+    if (actTabMonitor->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tabMonitor,tr("Scan Monitor"));
         tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
         MonitorEnabled = true;

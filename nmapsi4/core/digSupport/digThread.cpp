@@ -20,26 +20,26 @@
 #include "digThread.h"
 
 digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
-     : pout(ProcB1), 
-       host(hostname),
-       par(parent)
+     : m_pout(ProcB1), 
+       m_host(hostname),
+       m_par(parent)
 {
-    connect(par, SIGNAL(killScan()),
+    connect(m_par, SIGNAL(killScan()),
             this, SLOT(stopProcess()));
 
 }
 
 void digThread::run() {
      
-     proc = new QProcess();
+     m_proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
-     connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
+     connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)),
 	     this, SLOT(setValue()));
 
-     proc->start("dig", host);
+     m_proc->start("dig", m_host);
      
      exec();
-     emit threadEnd(host, pout);
+     emit threadEnd(m_host, m_pout);
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Quit";
 #endif
@@ -49,8 +49,8 @@ void digThread::setValue() {
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: -> start";
 #endif
-     pout  = proc->readAllStandardOutput(); // read std buffer
-     delete proc;
+     m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+     delete m_proc;
      exit(0);
 }
 
@@ -58,7 +58,7 @@ void digThread::stopProcess() {
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Stop Scan Process";
 #endif
-     if(proc->state() == QProcess::Running) {
-	  proc->terminate();
+     if(m_proc->state() == QProcess::Running) {
+	  m_proc->terminate();
      }
 }
