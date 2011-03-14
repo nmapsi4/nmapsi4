@@ -69,7 +69,7 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
 #endif
                     int index = urlList.indexOf(url);
                     urlListTime[index].clear();
-                    urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+		    urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
                     settings.setValue(configTagTime, QVariant(urlListTime));
                 }
             }

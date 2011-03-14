@@ -55,8 +55,8 @@ public:
     ~logHistory() {};
     void updateLogHistory();
     void updateBookMarks();
-    void addItemHistory(const QString url);
-    void addItemHistory(const QString url, const QString scanTime);
+    void addItemHistory(const QString name);
+    void addItemHistory(const QString name, const QString value);
     void deleteItemBookmark(const QString item);
 
 protected:

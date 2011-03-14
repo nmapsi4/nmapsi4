@@ -58,14 +58,14 @@ const QList<QString> logHistory::historyReadUrlTime()
     return urlListTime;
 }
 
-void logHistory::addItemHistory(const QString url)
+void logHistory::addItemHistory(const QString name)
 {
-    coreItemHistory(url, NULL);
+    coreItemHistory(name, NULL);
 }
 
-void logHistory::addItemHistory(const QString url, const QString scanTime)
+void logHistory::addItemHistory(const QString name, const QString value)
 {
-    coreItemHistory(url, scanTime);
+    coreItemHistory(name, value);
 }
 
 void logHistory::deleteItemBookmark(const QString item)
