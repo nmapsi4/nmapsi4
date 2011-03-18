@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1011</width>
-    <height>741</height>
+    <width>965</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -840,7 +840,7 @@
                     <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
                   </attribute>
                   <attribute name="title">
-                   <string>Log(s)</string>
+                   <string>Main</string>
                   </attribute>
                   <layout class="QGridLayout" name="gridLayout_7">
                    <property name="margin">
@@ -971,10 +971,10 @@
                  <widget class="QWidget" name="tab">
                   <attribute name="icon">
                    <iconset resource="../mainwin.qrc">
-                    <normaloff>:/images/images/world.png</normaloff>:/images/images/world.png</iconset>
+                    <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
                   </attribute>
                   <attribute name="title">
-                   <string>Vulnerabilities</string>
+                   <string>Main</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
@@ -2530,7 +2530,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1011</width>
+     <width>965</width>
      <height>21</height>
     </rect>
    </property>

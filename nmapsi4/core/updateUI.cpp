@@ -545,7 +545,7 @@ void nmapClass::resetPar() {
 void nmapClass::updateComboPar() {
 
     comboPar->clear();
-    comboPar->insertItem(0, "Select Saved Profile");
+    comboPar->insertItem(0, "Select Profile");
     
     // value from treeWidget parameters
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
