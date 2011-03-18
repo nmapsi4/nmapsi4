@@ -998,23 +998,7 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="comboWebV">
-                       <item>
-                        <property name="text">
-                         <string>securityfocus.com</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>cve.miltre.org</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>secunia.com</string>
-                        </property>
-                       </item>
-                      </widget>
+                      <widget class="QComboBox" name="comboWebV"/>
                      </item>
                     </layout>
                    </item>

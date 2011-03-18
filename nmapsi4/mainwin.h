@@ -75,9 +75,11 @@ private:
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();
+    void updateComboWebV();
     void updateComboBook();
     void restoreGlobalProfile();
     QMap<QString, QString> defaultScanProfile() const;
+    QMap<QString, QString> defaultUrlVuln() const;
 
 public:
     nmapClass();
