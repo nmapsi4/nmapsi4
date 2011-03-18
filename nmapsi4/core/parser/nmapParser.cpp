@@ -228,20 +228,20 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString bufferInfoStream_line;
 
     // check for Host informations
-    if (!bufferInfoStream.atEnd()) {
-        while (!bufferInfoStream.atEnd()) {
-            bufferInfoStream_line = bufferInfoStream.readLine();
-            // Check OS String
-            if (bufferInfoStream_line.contains("OS")) {
-                checkViewOS(bufferInfoStream_line,mainTreeE);
-            }
+    // OS not detected
+    bool state_ = false;
+    while (!bufferInfoStream.atEnd()) {
+         bufferInfoStream_line = bufferInfoStream.readLine();
+         // Check OS String
+         if (bufferInfoStream_line.contains("OS") && !state_) {
+	    // OS was found ?
+	    state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
+         }
 
-            if (!bufferInfoStream_line.isEmpty()) {
-                elemObj->setMainInfo(bufferInfoStream_line);
-                if (PFile && !verboseLog)
-                    *out << bufferInfoStream_line << endl;
-            }
-        }
+         elemObj->setMainInfo(bufferInfoStream_line);
+         if (PFile && !verboseLog) {
+	    *out << bufferInfoStream_line << endl;
+	 }
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer

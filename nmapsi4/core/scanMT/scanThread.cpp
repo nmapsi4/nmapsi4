@@ -47,10 +47,10 @@ void scanThread::run() {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "DEBUG::ThreadString:: " << ParList;
 #endif
-     ParList.replaceInStrings("\"", "\"");
      proc->start("nmap", ParList);
      
      exec();
+     // emit signal, scan is end
      emit upgradePR();
      emit threadEnd(ParList[ParList.size()-1], pout, perr);
 
@@ -64,6 +64,7 @@ void scanThread::setValue() {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: -> start";
 #endif
+     // set scan return buffer
      pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
      exit(0);
@@ -73,9 +74,11 @@ void scanThread::stopProcess() {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Clear Process";
 #endif
+     // stop scan process (Slot)
      if(proc->state() == QProcess::Running) {
 	  proc->terminate();
 #ifdef Q_WS_WIN
+	  // kill process scan process in MS windows
           QString abort_cmd;
           PROCESS_INFORMATION *pinfo = (PROCESS_INFORMATION*)proc->pid();
           abort_cmd = QString("cmd /c taskkill /PID %1 /F").arg(pinfo->dwProcessId);

@@ -69,7 +69,7 @@ private:
     void updateScanCounter(int type);
     bool isDns(QString hostname);
     QString clearHost(const QString hostname);
-    void checkViewOS(const QString OSline, QTreeWidgetItem *itemOS);
+    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     void showParserObj(int indexObj);
     void showParserObjPlugins(int indexObj);
     void setTreeWidgetValues();
