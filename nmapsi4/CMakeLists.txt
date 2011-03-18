@@ -20,10 +20,10 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/profile/profileSession.cpp
 		core/profile/defaultProfile.cpp
 		core/logUtils.cpp
-		core/vulnerabily/searchVuln.cpp
-		core/vulnerabily/defaultUrlVuln.cpp
-		core/vulnerabily/tabVuln.cpp
-		core/vulnerabily/utilsVuln.cpp
+		core/vulnerability/searchVuln.cpp
+		core/vulnerability/defaultUrlVuln.cpp
+		core/vulnerability/tabVuln.cpp
+		core/vulnerability/utilsVuln.cpp
 		../lib/history/loghistory.cpp
 		../lib/history/coreHistory.cpp
 		../lib/about/about.cpp
@@ -60,10 +60,10 @@ else (NOT Q_WS_X11)
 		core/profile/profileSession.cpp
 		core/profile/defaultProfile.cpp
 		core/logUtils.cpp
-		core/vulnerabily/searchVuln.cpp
-		core/vulnerabily/defaultUrlVuln.cpp
-		core/vulnerabily/tabVuln.cpp
-		core/vulnerabily/utilsVuln.cpp
+		core/vulnerability/searchVuln.cpp
+		core/vulnerability/defaultUrlVuln.cpp
+		core/vulnerability/tabVuln.cpp
+		core/vulnerability/utilsVuln.cpp
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/scanMonitor.cpp
