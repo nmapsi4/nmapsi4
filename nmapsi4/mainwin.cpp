@@ -266,9 +266,12 @@ void nmapClass::scan(const QString hostname)
     // start scan Thread
     th = new scanThread(buff1, buff2, parametri, this);
     scanPointerList.push_front(th);
-
+    // update progressbar for scan
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress())); // nmapParser.cpp
+    // read current data scan from the thread
+    connect(th, SIGNAL(flowFromThread(const QString, const QString)),
+      this, SLOT(readFlowFromThread(const QString, const QString))); // nmapParser.cpp
     
     th->start();
     connect(th, SIGNAL(threadEnd(const QString, QByteArray, QByteArray)),

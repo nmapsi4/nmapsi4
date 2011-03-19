@@ -39,8 +39,8 @@ class scanThread : public QThread
 
 signals:
      void threadEnd(const QString, QByteArray, QByteArray);
+     void flowFromThread(const QString, const QString);
      void upgradePR();
-     // TODO create a start scan signal
 
 private:
      QByteArray pout;
@@ -50,6 +50,7 @@ private:
 private slots:
      void setValue();
      void stopProcess();
+     void realtimeData();
 
  protected:
      QProcess *proc;

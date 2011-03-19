@@ -85,6 +85,13 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
      
 }
 
+void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) {
+    // TODO read data line form thread
+    // search hostname on treeWidget and update data rows (index = 2)
+    qDebug() << "DEBUG:: fromThread hostname:: " << hostname;
+    qDebug() << "DEBUG:: fromThread lineData:: " << lineData; 
+}
+
 void nmapClass::updateScanCounter(int type) {
     /*
      *   type 1: scan counter ++

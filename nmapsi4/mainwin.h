@@ -215,6 +215,7 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
+    void readFlowFromThread(const QString hostname, const QString lineData);
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();

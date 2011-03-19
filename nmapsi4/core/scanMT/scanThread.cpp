@@ -43,6 +43,9 @@ void scanThread::run() {
 
      connect(par, SIGNAL(killScan()),
              this, SLOT(stopProcess()),Qt::QueuedConnection);
+     
+     connect(proc, SIGNAL(readyReadStandardOutput()),
+             this, SLOT(realtimeData()));
 
 #ifndef THREAD_NO_DEBUG
      qDebug() << "DEBUG::ThreadString:: " << ParList;
@@ -86,3 +89,17 @@ void scanThread::stopProcess() {
 #endif
      }
 }
+
+void scanThread::realtimeData() {
+    // TODO read realtime data from process stdout
+    QByteArray realByte = proc->readLine(proc->bytesAvailable());
+    QString stream_(realByte);
+    // emit signal for data trasmission to parent
+    //qDebug() << "DEBUG:: thread qbyte:: " << realByte;
+    qDebug() << "DEBUG:: thread data:: " << stream_;
+    // TODO send only [remaining || ETA]
+    if (stream_.contains("remaining") || stream_.contains("ETA")) {
+	emit flowFromThread(ParList[ParList.size()-1], stream_);
+    }
+}
+
