@@ -92,13 +92,12 @@ void scanThread::stopProcess() {
 }
 
 void scanThread::realtimeData() {
-    // TODO read realtime data from process stdout
+    // read realtime data from process stdout
     QByteArray realByte = proc->readLine(proc->bytesAvailable());
     QString stream_(realByte);
     // emit signal for data trasmission to parent
-    qDebug() << "DEBUG:: thread data:: " << "hostip:: " << ParList[ParList.size()-1] << ":: " << stream_;
-    // TODO send only [remaining || ETA]
-    if (stream_.contains("remaining") || stream_.contains("ETA")) {
+    // send only [remaining || ETA]
+    if (stream_.contains("remaining") || stream_.contains("ETC")) {
 	emit flowFromThread(ParList[ParList.size()-1], stream_);
     }
 }

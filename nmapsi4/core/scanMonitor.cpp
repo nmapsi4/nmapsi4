@@ -86,10 +86,16 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 }
 
 void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) {
-    // TODO read data line form thread
+    // read data line form thread
     // search hostname on treeWidget and update data rows (index = 2)
-    qDebug() << "DEBUG:: fromThread hostname:: " << hostname;
-    qDebug() << "DEBUG:: fromThread lineData:: " << lineData; 
+    // take only remaining time and remove character unused
+    QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
+    infoTmp_ = infoTmp_.remove("(");
+    infoTmp_ = infoTmp_.remove(")");
+    infoTmp_ = infoTmp_.remove("\n");
+    // insert new information into monitor
+    monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
+    monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
 }
 
 void nmapClass::updateScanCounter(int type) {
