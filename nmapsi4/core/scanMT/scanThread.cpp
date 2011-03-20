@@ -55,6 +55,7 @@ void scanThread::run() {
      exec();
      // emit signal, scan is end
      emit upgradePR();
+     //FIXME return ParList
      emit threadEnd(ParList[ParList.size()-1], pout, perr);
 
 #ifndef THREAD_NO_DEBUG
@@ -95,8 +96,7 @@ void scanThread::realtimeData() {
     QByteArray realByte = proc->readLine(proc->bytesAvailable());
     QString stream_(realByte);
     // emit signal for data trasmission to parent
-    //qDebug() << "DEBUG:: thread qbyte:: " << realByte;
-    qDebug() << "DEBUG:: thread data:: " << stream_;
+    qDebug() << "DEBUG:: thread data:: " << "hostip:: " << ParList[ParList.size()-1] << ":: " << stream_;
     // TODO send only [remaining || ETA]
     if (stream_.contains("remaining") || stream_.contains("ETA")) {
 	emit flowFromThread(ParList[ParList.size()-1], stream_);
