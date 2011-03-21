@@ -3,74 +3,74 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 02:11+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-03-13 22:41+0000\n"
+"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Launchpad-Export-Date: 2011-03-21 17:52+0000\n"
+"X-Generator: Launchpad (build 12617)\n"
 
 #: mWindow#1
-msgid "Host(s)"
-msgstr "Host(s)"
+msgid "Nmapsi4 log reader"
+msgstr "Visor de log Nmapsi4"
 
 #: mWindow#2
-msgid "Log History"
-msgstr "Historial del Log"
-
-#: mWindow#3
-msgid "Nmapsi4 log reader"
-msgstr "Visor de log Nmapsi4 "
-
-#: mWindow#4
 msgid "Clear"
 msgstr "Limpiar"
 
-#: mWindow#5
+#: mWindow#3
 msgid "&Quit"
 msgstr "&Salir"
 
-#: mWindow#6
+#: mWindow#4
 msgid "Open"
 msgstr "Abrir"
 
-#: mWindow#7
+#: mWindow#5
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
-#: mWindow#8
-msgid "About &Qt"
-msgstr "Acerca de &Qt"
-
-#: mWindow#9
-#, fuzzy
-msgid "List(s)"
-msgstr "Lista(s)"
-
-#: mWindow#10
-msgid "&FIle"
-msgstr "&Archivo"
-
-#: mWindow#11
-msgid "&Help"
-msgstr "A&yuda"
-
-#: mWindow#12
-msgid "toolBar"
-msgstr ""
-
-#: mWindow#13
-msgid "Date"
-msgstr "Fecha"
-
-#: mWindow#14
+#: mWindow#6
 msgid "&About nmapsi4"
 msgstr "A&cerca de nmpsi4"
 
-#: mWindow#15
+#: mWindow#7
+msgid "About &Qt"
+msgstr "Acerca de &Qt"
+
+#: mWindow#8
+msgid "List(s)"
+msgstr "Lista(s)"
+
+#: mWindow#9
+msgid "Host(s)"
+msgstr "Host(s)"
+
+#: mWindow#10
+msgid "Date"
+msgstr "Fecha"
+
+#: mWindow#11
 msgid "Path"
 msgstr "Ruta"
+
+#: mWindow#12
+msgid "Log History"
+msgstr "Historial del Log"
+
+#: mWindow#13
+msgid "&FIle"
+msgstr "&Archivo"
+
+#: mWindow#14
+msgid "&Help"
+msgstr "Ay&uda"
+
+#: mWindow#15
+msgid "toolBar"
+msgstr "Barra de herramientas"
 
 #: mwClass#1
 msgid "Open Log"
@@ -78,4 +78,4 @@ msgstr "Abrir log"
 
 #: mwClass#2
 msgid "Log (*.log)"
-msgstr ""
+msgstr "Log (*.log)"
