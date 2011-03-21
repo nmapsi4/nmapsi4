@@ -19,13 +19,14 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray Byte2)
+void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArray Byte2)
 {
     // Create parser Obect
     parserObj *elemObj = new parserObj();
+    QString hostCheck_ = parList[parList.size()-1];
 
-    delMonitorHost(scanMonitor, hostCheck);
-    elemObj->setHostName(hostCheck);
+    delMonitorHost(scanMonitor, hostCheck_);
+    elemObj->setHostName(hostCheck_);
 
     listClearFlag = false; // the listScan is not empty
 
@@ -38,7 +39,7 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
     QString tmp, generalBuffer_, scanBuffer, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
-    generalBuffer_.append(hostCheck);
+    generalBuffer_.append(hostCheck_);
 
     while (!stream.atEnd()) {
         tmp = stream.readLine();
@@ -120,16 +121,10 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
 
     if (PFile) {
         out = new QTextStream(PFile);
-        QString nmap_command;
-        nmap_command.append("\n==LogStart: ");
+	// parameters list for log
+        QString nmap_command("\n==LogStart: ");
         nmap_command.append("\nnmap ");
-	// FIXME isn't real (take parameters list from thread)
-        if(!frameAdv->isVisible()) {
-            nmap_command.append(check_extensions().join(" "));
-        } else {
-            nmap_command.append(comboAdv->lineEdit()->text());
-        }
-        nmap_command.append(hostCheck); // write host target in the log
+	nmap_command.append(parList.join(" "));
         *out << nmap_command << endl << endl;
     }
 
@@ -162,12 +157,12 @@ void nmapClass::nmapParser(const QString hostCheck, QByteArray Byte1, QByteArray
         if ((PFile) && (!verboseLog)) 
 	    *out << generalBuffer_ << endl;
     } else {
-        tmp_host.append(hostCheck);
+        tmp_host.append(hostCheck_);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
         if ((PFile) && (!verboseLog)) 
-	    *out << hostCheck << endl;
+	    *out << hostCheck_ << endl;
     }
     
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)

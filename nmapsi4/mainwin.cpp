@@ -274,8 +274,8 @@ void nmapClass::scan(const QString hostname)
       this, SLOT(readFlowFromThread(const QString, const QString))); // nmapParser.cpp
     
     th->start();
-    connect(th, SIGNAL(threadEnd(const QString, QByteArray, QByteArray)),
-      this, SLOT(nmapParser(const QString, QByteArray, QByteArray))); // nmapParser.cpp
+    connect(th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
+      this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
 
     delete history;
 }

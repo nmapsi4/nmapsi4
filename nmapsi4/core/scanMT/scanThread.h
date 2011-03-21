@@ -38,7 +38,7 @@ class scanThread : public QThread
      scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parametri, QObject *parent = 0);
 
 signals:
-     void threadEnd(const QString, QByteArray, QByteArray);
+     void threadEnd(const QStringList, QByteArray, QByteArray);
      void flowFromThread(const QString, const QString);
      void upgradePR();
 
