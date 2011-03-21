@@ -174,7 +174,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveBookMarks()));
     connect(addBookPar, SIGNAL(clicked()),
             this, SLOT(saveBookMarksPar()));
-    connect(comboPar, SIGNAL(currentIndexChanged(const QString&)),
+    connect(comboPar, SIGNAL(activated(const QString&)),
             this, SLOT(slotParSelected()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(slotHostSelected()));
