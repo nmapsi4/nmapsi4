@@ -580,8 +580,6 @@ void nmapClass::updateTabLook() {
         LookupEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_3));
     }
-
-    // TODO:: Disable Lookup
 }
 
 void nmapClass::updateTabTrace() {
@@ -593,7 +591,6 @@ void nmapClass::updateTabTrace() {
         TraceEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
     }
-    // TODO:: Disable Traceroute
 }
 
 void nmapClass::updateTabMonitor() {

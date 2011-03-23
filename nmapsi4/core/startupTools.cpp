@@ -100,6 +100,7 @@ void nmapClass::setNmapVersion()
 void nmapClass::exit()
 {
     emit killScan();
+    //FIXME wait thread in list, dig List and internal lookup list
     if(th) {
 	 th->quit();
          th->wait();
