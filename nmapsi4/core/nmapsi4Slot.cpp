@@ -112,15 +112,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(showStatusBar()));
     connect(optionAccept, SIGNAL(clicked()),
             this, SLOT(resetPar()));
-
-    connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
-            this, SLOT(startScan()));
-    connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
-            this, SLOT(updateFontHost()));
-    connect(comboVulnRis->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
-            this, SLOT(updateFontHostVuln()));
-
-
     connect(Bdetails, SIGNAL(clicked()),
             this, SLOT(detailsOptions()));
     connect(Bnss, SIGNAL(clicked()),
@@ -159,7 +150,6 @@ void nmapClass::setNmapsiSlot()
             progressWeb, SLOT(setValue(int)));
     connect(viewVuln, SIGNAL(loadFinished(bool)),
             this, SLOT(vulnPostScan()));
-    // TODO:: support for multiple tab
     connect(actBack, SIGNAL(triggered()),
             this, SLOT(tabWebBack()));
     connect(actForward, SIGNAL(triggered()),
@@ -181,6 +171,10 @@ void nmapClass::setNmapsiSlot()
 
     connect(tWresult, SIGNAL(tabCloseRequested(int)),
             this,SLOT(closeVulnTab(int)));
+    connect(comboVulnRis->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
+            this, SLOT(updateFontHostVuln()));
+    connect(comboVulnRis->lineEdit(), SIGNAL(returnPressed()),
+            this, SLOT(searchVulnNG()));
 
     // main session
     connect(scanSez, SIGNAL(triggered()),
@@ -197,16 +191,18 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateSezVuln()));
     connect(nssAct, SIGNAL(triggered()),
             this, SLOT(NSSCheck()));
-
     connect(parAct, SIGNAL(triggered()),
             this, SLOT(parAdv()));
-
     connect(actTabLook, SIGNAL(triggered()),
             this, SLOT(updateTabLook()));
     connect(actTabTrace, SIGNAL(triggered()),
             this, SLOT(updateTabTrace()));
     connect(actTabMonitor, SIGNAL(triggered()),
             this, SLOT(updateTabMonitor()));
+    connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
+            this, SLOT(startScan()));
+    connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
+            this, SLOT(updateFontHost()));
 
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),
