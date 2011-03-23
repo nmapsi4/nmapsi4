@@ -49,6 +49,7 @@ class nmapClass : public QMainWindow, private Ui::MainWindow
 
 private:
     void scan(const QString hostname);
+    void preScanLookup(const QString hostname);
     void rootMode();
     void show_browser(QLineEdit *location);
     void isEmptyLog();
@@ -63,6 +64,8 @@ private:
     void itemDeleteAll(QList<parserObjUtil*>& items);
     void itemDeleteAll(QList<QWebView*>& items);
     void itemDeleteAll(QList<scanThread*>& items);
+    void itemDeleteAll(QList<lookUpT*>& items);
+    void itemDeleteAll(QList<digSupport*>& items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
@@ -122,6 +125,7 @@ protected:
     bool MonitorEnabled;
     bool TraceEnabled;
     bool LookupEnabled;
+    bool digSupported;
     int hostCache;
     int scanCounter;
     QList<QTreeWidgetItem*> itemListScan;
@@ -138,9 +142,12 @@ protected:
     QList<scanThread*> scanPointerList;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
+    QList<lookUpT*> internealLookupList;
+    QList<digSupport*> digLookupList;
     QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
+    //FIXME remove global pointer th
     QPointer<scanThread> th;
     QPointer<mainProfile> dialog;
     QAction *scanSez;
@@ -155,9 +162,6 @@ protected:
     QAction *actTabLook;
     QAction *actTabTrace;
     QAction *actTabMonitor;
-    lookUpT *lth;
-    digSupport *digC;
-    logHistory *history;
     QSplitter *cW;
     QSplitter *bW;
 

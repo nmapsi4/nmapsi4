@@ -25,14 +25,12 @@ nmapClass::nmapClass()
        scanCounter(0),
        labelVersion(NULL),
        userMode(NULL),
-       th(NULL)
-{
+       th(NULL) {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
 
-void nmapClass::initGUI()
-{
+void nmapClass::initGUI() {
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
@@ -69,8 +67,9 @@ void nmapClass::initObject() {
     checkProfile();
     optionListCreate();
     // check dig support
-    digC  = new digSupport();
-    digC->checkDigSupport();
+    digSupport *digC  = new digSupport();
+    digC->checkDigSupport(digSupported);
+    delete digC;
     // check nmap version
     checkNmapVersion();
     // set TreeWidget properties
@@ -154,29 +153,17 @@ void nmapClass::startScan() {
     // check wrong address
     hostname = clearHost(hostname);
 
+    // check for ip list
     if(hostname.contains("/") && !hostname.contains("//")) {
-
+	// not lookup, is a ip list
         QStringList addrPart_ = hostname.split("/");
         QStringList ipBase_ = addrPart_[0].split(".");
-#ifndef MAIN_NO_DEBUG
-        qDebug() << "nmapsi4::startScan()::ipBase --> " << ipBase_;
-        qDebug() << "nmapsi4::startScan()::addrPart --> " << addrPart_;
-#endif
-
         int ipLeft_ = ipBase_[3].toInt();
         int ipRight_ = addrPart_[1].toInt();
-#ifndef MAIN_NO_DEBUG
-        qDebug() << "nmapsi4::startScan()::ipRight --> " << ipRight_;
-        qDebug() << "nmapsi4::startScan()::ipLeft --> " << ipLeft_;
-#endif
 
         for(int index = ipLeft_; index <= ipRight_; index++) {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
-#ifndef MAIN_NO_DEBUG
-            qDebug() << "nmapsi4::startScan()::FullString --> " << hostname;
-#endif
-            // lookup disabled for group scan
             addMonitorHost(scanMonitor, hostname);
             this->scan(hostname);
          }
@@ -187,40 +174,49 @@ void nmapClass::startScan() {
     if(hostname.contains(" ")) { // space delimiter
         QStringList addrPart_ = hostname.split(" ");
         addrPart_.removeAll("");
-#ifndef MAIN_NO_DEBUG
-        qDebug() << "DEBUG::NewToken:: " << addrPart_.size();
-        for(int index=0; index < addrPart_.size(); index++) {
-            qDebug() << "DEBUG::NewToken::Part:: " << addrPart_[index];
-        }
-#endif
 	// check for only one space in hostname
         if(addrPart_.size() > 1) {
 	    // multiple ip or dns to scan
             for(int index=0; index < addrPart_.size(); index++) {
                 addrPart_[index] = clearHost(addrPart_[index]);
-                addMonitorHost(scanMonitor, addrPart_[index]);
-                this->scan(addrPart_[index]);
+		// dig lookup call
+		preScanLookup(addrPart_[index]);
             }
             return;
         }
+        // remove all space on hostname
         hostname.remove(" ");
     }
 
+    // single ip or dns after the move
+    preScanLookup(hostname);
+    
+}
+
+void nmapClass::preScanLookup(const QString hostname) {
     // check for scan lookup
     if(lookupInternal) {
+	// if internal lookUp is actived
         addMonitorHost(scanMonitor, hostname);
-        lth = new lookUpT(hostname,this);
-        connect(lth, SIGNAL(threadEnd(QHostInfo,int,const QString)),
+	// call internal lookup thread and save the pointer.
+        lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
+	internealLookupList.push_back(internalLookupTh_);
+	
+        connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,const QString)),
                        this, SLOT(scanLookup(QHostInfo,int,const QString)));
 
-        lth->start();
-    } else if(lookupDig && digC->getDigSupport()) {
-	parserObjUtil* tmp = new parserObjUtil();
-        digC->digProcess(hostname,treeLookup,tmp);
-	parserObjUtilList.append(tmp);
+        internalLookupTh_->start();
+    } else if(lookupDig && digSupported) {
+	// if dig support is actived
+	parserObjUtil* tmpParserObj_ = new parserObjUtil();
+	digSupport *digC = new digSupport();
+	digLookupList.push_back(digC);
+        digC->digProcess(hostname,treeLookup,tmpParserObj_);
+	parserObjUtilList.append(tmpParserObj_);
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);
     } else {
+	// lookup isn't actived or not supported
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);
     }
@@ -243,9 +239,9 @@ void nmapClass::scan(const QString hostname)
     }
 
 
-    QStringList parametri; //parameters list declaration
+    QStringList parameters_; //parameters list declaration
 
-    history = new logHistory("nmapsi4/cacheHost", hostCache);
+    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
 
     actionStop_Scan->setEnabled(true);
@@ -255,37 +251,33 @@ void nmapClass::scan(const QString hostname)
     actionSave_Menu->setEnabled(false);
 
     if(!frameAdv->isVisible()) {
-        parametri = this->check_extensions(); // extensions.cpp
+        parameters_ = this->check_extensions(); // extensions.cpp
     } else {
-        parametri = comboAdv->lineEdit()->text().split(" ");
+        parameters_ = comboAdv->lineEdit()->text().split(" ");
     }
 
-    parametri << hostname; // add hostname
+    parameters_ << hostname; // add hostname
     
     QByteArray buff1, buff2;
     // start scan Thread
-    th = new scanThread(buff1, buff2, parametri, this);
+    th = new scanThread(buff1, buff2, parameters_, this);
     scanPointerList.push_front(th);
     // update progressbar for scan
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress())); // nmapParser.cpp
     // read current data scan from the thread
     connect(th, SIGNAL(flowFromThread(const QString, const QString)),
-      this, SLOT(readFlowFromThread(const QString, const QString))); // nmapParser.cpp
-    
-    th->start();
+      this, SLOT(readFlowFromThread(const QString, const QString)));
+    // read scan data return
     connect(th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
       this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
+    // start scan
+    th->start();
 
     delete history;
 }
 
-nmapClass::~nmapClass()
-{
-#ifndef MAIN_NO_DEBUG
-    qDebug() << "Nmapsi4/~nmapClass() -> Global";
-    qDebug() << "Nmapsi4/~nmapClass() -> Size Item List::" << itemList.size();
-#endif
+nmapClass::~nmapClass() {
     if(dialog) {
         dialog->close();
     }
@@ -302,7 +294,6 @@ nmapClass::~nmapClass()
     delete PFile;
     delete labelVersion;
     delete userMode;
-    delete digC;
     delete scanSez;
     delete logSez;
     delete vulnSez;

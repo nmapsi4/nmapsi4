@@ -39,8 +39,7 @@ class digSupport : public QObject
     public:
         digSupport();
         ~digSupport();
-        void checkDigSupport();
-        bool getDigSupport();
+        void checkDigSupport(bool& digState);
         void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
 
     private slots:

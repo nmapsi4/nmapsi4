@@ -37,6 +37,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     qDebug() << "scanLookup::Found address DNS:: " << info.hostName();
 #endif
 
+    elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();
     for(int index=0; index < infoSize_; index++) {
 #ifndef MAIN_NO_DEBUG
@@ -45,10 +46,6 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
 	elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }
 
-    if(lth->wait() && !lth) {
-        delete lth;
-    }
-    
     parserObjUtilList.append(elemObjUtil);
     this->scan(hostname);
 }

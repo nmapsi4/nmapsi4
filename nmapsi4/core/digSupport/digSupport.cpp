@@ -24,13 +24,12 @@ digSupport::digSupport()
       m_Wview(NULL),
       m_th(NULL),
       m_elemObjUtil(NULL) {
-    state = false;
 }
 
 
-void digSupport::checkDigSupport() {
+void digSupport::checkDigSupport(bool& digState) {
     m_digProc = new QProcess();
-
+    state = digState;
     QStringList parametri;
     parametri << "-v";
     m_digProc->start("dig", parametri);
@@ -60,15 +59,13 @@ void digSupport::checkDig() {
 #ifndef DIG_NO_DEBUG
         qDebug() << "Dig support enable";
 #endif
+    } else {
+	state = false;
     }
 
     delete output;
     delete error;
     delete m_digProc;
-}
-
-bool digSupport::getDigSupport() {
-    return state;
 }
 
 void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) {
