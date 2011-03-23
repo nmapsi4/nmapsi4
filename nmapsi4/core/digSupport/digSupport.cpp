@@ -21,6 +21,7 @@
 
 digSupport::digSupport() 
     : m_digProc(NULL),
+      m_state(false),
       m_Wview(NULL),
       m_th(NULL),
       m_elemObjUtil(NULL) {
@@ -29,7 +30,7 @@ digSupport::digSupport()
 
 void digSupport::checkDigSupport(bool& digState) {
     m_digProc = new QProcess();
-    state = digState;
+    m_state = digState;
     QStringList parametri;
     parametri << "-v";
     m_digProc->start("dig", parametri);
@@ -55,12 +56,12 @@ void digSupport::checkDig() {
     qDebug() << "Dig::error:: " << line2;
 #endif
     if (line2.startsWith("DiG") || line.startsWith("DiG")) {
-        state = true;
+        m_state = true;
 #ifndef DIG_NO_DEBUG
         qDebug() << "Dig support enable";
 #endif
     } else {
-	state = false;
+	m_state = false;
     }
 
     delete output;

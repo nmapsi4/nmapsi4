@@ -51,7 +51,7 @@ class digSupport : public QObject
 
     protected:
         QProcess* m_digProc;
-        bool state;
+        bool m_state;
         QTreeWidget* m_Wview;
         digThread* m_th;
 	parserObjUtil* m_elemObjUtil;
