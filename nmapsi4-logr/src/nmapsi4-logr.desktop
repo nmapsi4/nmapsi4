@@ -6,4 +6,4 @@ Exec=nmapsi4-logr
 Icon=nmapsi4
 Terminal=false
 Type=Application
-Categories=Qt;Application;System;Security;
+Categories=Qt;System;Security;

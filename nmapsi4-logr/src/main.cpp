@@ -19,9 +19,8 @@
 
 #include <QApplication>
 #include <QTranslator>
+#include <config.h>
 #include "../mainwin.h"
-#include "config.h"
-
 
 int main(int argc, char *argv[])
 {
