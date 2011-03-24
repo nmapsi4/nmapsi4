@@ -11,4 +11,4 @@ Type=Application
 X-KDE-SubstituteUID=true
 X-KDE-Username=root
 X-GNOME-Username=root
-Categories=Qt;Application;System;Security;
+Categories=Qt;System;Security;

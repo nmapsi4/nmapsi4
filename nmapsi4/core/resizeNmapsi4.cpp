@@ -22,11 +22,11 @@
 void nmapClass::checkFullScreen()
 {
 
-    if (this->isFullScreen()) {
-        this->showNormal();
+    if (isFullScreen()) {
+        setWindowState(windowState() & ~Qt::WindowFullScreen );
         actionFullS->setChecked(false);
     } else {
-        this->showFullScreen();
+	setWindowState(windowState() | Qt::WindowFullScreen );
         actionFullS->setChecked(true);
     }
 }

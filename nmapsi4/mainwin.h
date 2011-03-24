@@ -38,6 +38,12 @@
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>
 #include <QMap>
+#include <QPointer>
+#include <QSplitter>
+#include <QTimer>
+#include <QDir>
+#include <QFileDialog>
+#include <QDesktopServices>
 
 class QMainWindow;
 class QWebView;

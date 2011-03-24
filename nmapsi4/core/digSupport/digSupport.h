@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include <QProcess>
-#include <QTextStream>
 #include <QDebug>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>

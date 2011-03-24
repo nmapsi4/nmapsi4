@@ -46,11 +46,11 @@ QStringList nmapClass::check_extensions()
 	//QString tmpListComplete_ = ("-sC --script=");
 	QString tmpListComplete_ = ("--script=");
 	QString tmpList_ = ("");
-	foreach (const QString token, nseScriptActiveList) {
+	foreach (const QString &token, nseScriptActiveList) {
 	    tmpList_.append(token);
 	    tmpList_.append(",");
 	}
-	tmpList_.replace(" ", "");
+	tmpList_.remove(' ');
 	tmpList_.resize(tmpList_.size()-1);
 	tmpListComplete_.append(tmpList_);
 	parametri << tmpListComplete_;

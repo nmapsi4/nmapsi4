@@ -125,7 +125,7 @@ void nmapClass::saveAsLog()
     qDebug() << "Nmapsi4/saveLog::-->" << FileName;
 #endif
 
-    if (FileNameTmp != "") {
+    if (!FileNameTmp.isEmpty()) {
 
         QFile *freeFile = new QFile();
         freeFile->setFileName(FileNameTmp);

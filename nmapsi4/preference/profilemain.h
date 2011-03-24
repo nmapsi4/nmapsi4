@@ -20,8 +20,11 @@
 #ifndef PROFILEMAIN_H
 #define PROFILEMAIN_H
 
-#include <QtGui>
-#include "ui_profilemain.h"
+#include <QtGui/QDialog>
+#include <QSettings>
+#include <QDir>
+#include <QFileDialog>
+#include <ui_profilemain.h>
 
 class mainProfile : public QDialog, private Ui::ProfileMain
 {

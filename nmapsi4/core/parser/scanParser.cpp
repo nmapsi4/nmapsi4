@@ -30,7 +30,7 @@ void nmapClass::showParserObj(int indexObj) {
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
     
-    foreach (const QString token, listMainInfo_) {
+    foreach (const QString &token, listMainInfo_) {
 	QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -51,13 +51,13 @@ void nmapClass::showParserObj(int indexObj) {
     comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    foreach (const QString token, listOpen_) {
+    foreach (const QString &token, listOpen_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-        QStringList split = token.split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -85,12 +85,12 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show Close ports
-    foreach (const QString token, listClose_) {
+    foreach (const QString &token, listClose_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
-        QStringList split = token.split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -118,13 +118,13 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show Filtered ports
-    foreach (const QString token, listFilterd_) {
+    foreach (const QString &token, listFilterd_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
         root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
-        QStringList split = token.split(" ", QString::SkipEmptyParts);
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
@@ -154,7 +154,7 @@ void nmapClass::showParserObj(int indexObj) {
     QStringList listServices_ = parserObjList[indexObj]->getServices();
     
     // show services
-    foreach (const QString token, listServices_) {
+    foreach (const QString &token, listServices_) {
 	if (!listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)
 	) {
 	    QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
@@ -166,7 +166,7 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show Nss Info
-    foreach (const QString token, listNssInfo_) {
+    foreach (const QString &token, listNssInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeNSS);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -185,7 +185,7 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show full scan log
-    foreach (const QString token, listLogInfo_) {
+    foreach (const QString &token, listLogInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -195,7 +195,7 @@ void nmapClass::showParserObj(int indexObj) {
     }
 
     // Show scan error
-    foreach (const QString token, listErrorInfo_) {
+    foreach (const QString &token, listErrorInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScanError);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));

@@ -156,8 +156,8 @@ void nmapClass::startScan() {
     // check for ip list
     if(hostname.contains("/") && !hostname.contains("//")) {
 	// not lookup, is a ip list
-        QStringList addrPart_ = hostname.split("/");
-        QStringList ipBase_ = addrPart_[0].split(".");
+        QStringList addrPart_ = hostname.split('/');
+        QStringList ipBase_ = addrPart_[0].split('.');
         int ipLeft_ = ipBase_[3].toInt();
         int ipRight_ = addrPart_[1].toInt();
 
@@ -172,7 +172,7 @@ void nmapClass::startScan() {
 
     //scan token DNS/IP parser
     if(hostname.contains(" ")) { // space delimiter
-        QStringList addrPart_ = hostname.split(" ");
+        QStringList addrPart_ = hostname.split(' ');
         addrPart_.removeAll("");
 	// check for only one space in hostname
         if(addrPart_.size() > 1) {
@@ -185,7 +185,7 @@ void nmapClass::startScan() {
             return;
         }
         // remove all space on hostname
-        hostname.remove(" ");
+        hostname.remove(' ');
     }
 
     // single ip or dns after the move
@@ -253,7 +253,7 @@ void nmapClass::scan(const QString hostname)
     if(!frameAdv->isVisible()) {
         parameters_ = this->check_extensions(); // extensions.cpp
     } else {
-        parameters_ = comboAdv->lineEdit()->text().split(" ");
+        parameters_ = comboAdv->lineEdit()->text().split(' ');
     }
 
     parameters_ << hostname; // add hostname

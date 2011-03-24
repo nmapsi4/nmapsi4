@@ -8,4 +8,4 @@ Exec=nmapsi4
 Icon=nmapsi4
 Terminal=false
 Type=Application
-Categories=Qt;Application;System;Security;
+Categories=Qt;System;Security;

@@ -24,28 +24,28 @@ void nmapClass::showParserObjPlugins(int indexObj) {
 
     QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
     // show traceroute
-    foreach (const QString token, listTraceRouteInfo_) {
+    foreach (const QString &token, listTraceRouteInfo_) {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeTraceroot);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        QStringList tmpToken = token.split(" ");
+        QStringList tmpToken = token.split(' ');
 
         tmpToken.removeAll("");
 
         // MS windows check for ms string
         if(tmpToken.size() == 5) {
-            if(tmpToken[2].size() < 4) { // minimun dns lenght
+            if(tmpToken[2].size() < 4) { // minimum dns length
                 tmpToken.removeAt(2);
             }
         }
 
         if(tmpToken.size() == 4) {
-            if(tmpToken[2].size() < 4) { // minimun dns lenght
+            if(tmpToken[2].size() < 4) { // minimum dns length
                 tmpToken.removeAt(2);
             } else {
-                tmpToken[3].remove("(");
-                tmpToken[3].remove(")");
+                tmpToken[3].remove('(');
+                tmpToken[3].remove(')');
             }
         }
 #ifndef PARSER_NO_DEBUG
@@ -78,7 +78,7 @@ void nmapClass::showParserObjPlugins(int indexObj) {
     foreach (parserObjUtil* elem, parserObjUtilList) {
 	if(parserObjList[indexObj]->getHostName() == elem->getHostName()) {
 	    QStringList listLookupInfo_ = elem->getInfoLookup();
-	    foreach (const QString token, listLookupInfo_) {
+	    foreach (const QString &token, listLookupInfo_) {
 		QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
 		itemListScan.push_front(root);
 		root->setSizeHint(0, QSize(22, 22));

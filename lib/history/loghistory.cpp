@@ -112,7 +112,7 @@ void logHistory::updateLogHistory()
     QFile *tmpFile = new QFile();
     if (!urlList.isEmpty() && urlList.first().compare("NULL")) {
 	short index = 0;
-        foreach(QString item, urlList) {
+        foreach(const QString& item, urlList) {
             tmpFile->setFileName(item);
             if (tmpFile->exists() && urlListTime.first().compare("NULL")) {
                 historyItem = new QTreeWidgetItem(logTree);
@@ -174,7 +174,7 @@ void logHistory::updateBookMarks()
 	qDebug() << "logHistory::updateTH() -- scope 1";
 #endif
 	short index = 0;
-        foreach(QString item, urlList) {
+        foreach(const QString& item, urlList) {
             historyItem = new QTreeWidgetItem(logTree);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);
@@ -219,7 +219,7 @@ void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
     qDebug() << "logHistory::Post::cout:: " << lineHistory->count();
 #endif
     
-    foreach(QString item, urlList) {
+    foreach(const QString& item, urlList) {
         if (item.startsWith(tokenWord)) {
 #ifndef HISTORY_NO_DEBUG
             qDebug() << "History::Item:: " << item << "Token:: " << tokenWord;

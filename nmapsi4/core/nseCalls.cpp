@@ -60,7 +60,7 @@ void nmapClass::nseTreeAvailRestoreValues() {
 	itemNseAvail.clear();
     }
     
-    foreach (const QString token, nseScriptAvailList) {
+    foreach (const QString &token, nseScriptAvailList) {
 	QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeAvail);
         itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -77,7 +77,7 @@ void nmapClass::nseTreeActiveRestoreValues() {
 	itemNseActive.clear();
     }
     
-    foreach (const QString token, nseScriptActiveList) {
+    foreach (const QString &token, nseScriptActiveList) {
 	QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeActive);
         itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -133,7 +133,7 @@ void nmapClass::nseTreeRemoveItem() {
 
 void nmapClass::nseTreeResetItem() {
 
-    foreach (const QString token, nseScriptActiveList) {
+    foreach (const QString &token, nseScriptActiveList) {
 	nseScriptAvailList.append(token);
     }
     nseScriptActiveList.clear();

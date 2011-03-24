@@ -72,26 +72,26 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
                 || tmp.contains("Network Distance:")
                 || tmp.contains("Note:")
                 || tmp.contains("Nmap done:")
-                || tmp.startsWith("Hosts")
-                || tmp.startsWith("Host"))
-                && !tmp.startsWith("|")
+                || tmp.startsWith(QLatin1String("Hosts"))
+                || tmp.startsWith(QLatin1String("Host")))
+                && !tmp.startsWith(QLatin1String("|"))
            ) {
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
           
 	// pars for subtree service
-        if(tmp.startsWith("|")) {
+        if(tmp.startsWith(QLatin1String("|"))) {
             QString tmpClean(tmp);
-            if(tmpClean.startsWith("|")) {
-                tmpClean.remove("|");
+            if(tmpClean.startsWith(QLatin1String("|"))) {
+                tmpClean.remove('|');
             }
-            if(tmpClean.startsWith("_")) {
-                tmpClean.remove("_");
+            if(tmpClean.startsWith(QLatin1String("_"))) {
+                tmpClean.remove('_');
             }
 
 	    int pos;
-            while(tmpClean.startsWith(" ")) {
+            while(tmpClean.startsWith(QLatin1String(" "))) {
                 pos = tmpClean.indexOf(" ");
                 if(pos == 0) {
                     tmpClean.remove(pos,1);
@@ -186,7 +186,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
             if (!scanBufferToStream_line.isEmpty()) {
                 QString tmpStr = scanBufferToStream_line;
-                QStringList lStr = tmpStr.split(" ", QString::SkipEmptyParts);
+                QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
 #ifndef PARSER_NO_DEBUG
                 qDebug() << "Nmapsi4/parser:: --> Token:: " << lStr;
 #endif
@@ -206,7 +206,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QTextStream bufferInfoStream(&bufferInfo); // QString to QtextStrem (scan Tree)
     QString bufferInfoStream_line;
 
-    // check for Host informations
+    // check for Host information
     // OS not detected
     bool state_ = false;
     while (!bufferInfoStream.atEnd()) {
@@ -226,7 +226,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
     QString bufferTraceStream_line;
 
-    // check for traceroute scan informations
+    // check for traceroute scan information
     while (!bufferTraceStream.atEnd()) {
 	bufferTraceStream_line = bufferTraceStream.readLine();
         if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) { 
@@ -240,7 +240,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QTextStream bufferNssStream(&bufferNSS); // NSS
     QString bufferNssStream_line("");
 
-    // check for NSS scan informations
+    // check for NSS scan information
     while (!bufferNssStream.atEnd()) {
 	bufferNssStream_line = bufferNssStream.readLine();
         if (!bufferNssStream_line.isEmpty()) {

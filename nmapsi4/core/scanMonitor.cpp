@@ -90,9 +90,9 @@ void nmapClass::readFlowFromThread(const QString hostname, const QString lineDat
     // search hostname on treeWidget and update data rows (index = 2)
     // take only remaining time and remove character unused
     QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
-    infoTmp_ = infoTmp_.remove("(");
-    infoTmp_ = infoTmp_.remove(")");
-    infoTmp_ = infoTmp_.remove("\n");
+    infoTmp_ = infoTmp_.remove('(');
+    infoTmp_ = infoTmp_.remove(')');
+    infoTmp_ = infoTmp_.remove('\n');
     // insert new information into monitor
     monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
     monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;

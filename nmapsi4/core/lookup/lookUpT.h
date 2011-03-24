@@ -33,7 +33,7 @@ class lookUpT : public QThread
     Q_OBJECT
 
     public:
-        lookUpT(const QString hostname, QObject *parent = 0);
+        lookUpT(const QString hostname, QObject *parent);
 
     signals:
         void threadEnd(QHostInfo, int, const QString);

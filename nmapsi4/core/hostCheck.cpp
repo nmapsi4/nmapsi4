@@ -66,22 +66,22 @@ QString nmapClass::clearHost(const QString hostname) {
     // check for wrong dns address
     // (http:// ftp:// sftp:// https://)[dns/ip]
     QString hostNew_(hostname);
-    if(hostname.startsWith("http://")) {
+    if(hostname.startsWith(QLatin1String("http://"))) {
         hostNew_.remove("http://");
         return hostNew_;
     }
 
-    if(hostname.startsWith("https://")) {
+    if(hostname.startsWith(QLatin1String("https://"))) {
         hostNew_.remove("https://");
         return hostNew_;
     }
 
-    if(hostname.startsWith("ftp://")) {
+    if(hostname.startsWith(QLatin1String("ftp://"))) {
         hostNew_.remove("ftp://");
         return hostNew_;
     }
 
-    if(hostname.startsWith("sftp://")) {
+    if(hostname.startsWith(QLatin1String("sftp://"))) {
         hostNew_.remove("sftp://");
         return hostNew_;
     }

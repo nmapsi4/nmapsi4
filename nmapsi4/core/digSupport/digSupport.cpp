@@ -55,7 +55,7 @@ void digSupport::checkDig() {
     qDebug() << "Dig::line:: " << line;
     qDebug() << "Dig::error:: " << line2;
 #endif
-    if (line2.startsWith("DiG") || line.startsWith("DiG")) {
+    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) {
         m_state = true;
 #ifndef DIG_NO_DEBUG
         qDebug() << "Dig support enable";
@@ -95,7 +95,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) {
 
     while(!stream1.atEnd()) {
         line = stream1.readLine();
-        if(!line.startsWith(";;") && !line.startsWith(";") && !line.isEmpty()) {
+        if(!line.startsWith(QLatin1String(";;")) && !line.startsWith(QLatin1String(";")) && !line.isEmpty()) {
 #ifndef DIG_NO_DEBUG
             qDebug() << "digSupport():: " << line;
 #endif
