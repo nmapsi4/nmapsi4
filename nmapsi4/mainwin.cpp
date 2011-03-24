@@ -76,12 +76,13 @@ void nmapClass::initObject() {
     treeLogH->setColumnWidth(0, 400);
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
-    scanMonitor->setColumnWidth(1, 200);
+    scanMonitor->setColumnWidth(1, 350);
     //treeTraceroot->setColumnWidth(0, 250);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
-    treeBookVuln->setColumnWidth(0, 400);   
+    treeBookVuln->setColumnWidth(0, 400);
+    treeWidgetVulnUrl->setColumnWidth(0, 400);
     // create mainwindow Qsplitter
     cW = new QSplitter();
     bW = new QSplitter();    
@@ -125,6 +126,7 @@ void nmapClass::initObject() {
 
     this->rootMode(); // send uid value
     dialog = new mainProfile();
+    m_dialogUrl = new mainUrlClass();
 
     nssAct->setChecked(NSSsupport); // set NSS support
     NSSCheck();
@@ -280,6 +282,10 @@ void nmapClass::scan(const QString hostname)
 nmapClass::~nmapClass() {
     if(dialog) {
         dialog->close();
+    }
+    
+    if(m_dialogUrl) {
+        m_dialogUrl->close();
     }
 
     itemDeleteAll(itemListScan);

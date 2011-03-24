@@ -175,6 +175,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateFontHostVuln()));
     connect(comboVulnRis->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(searchVulnNG()));
+    connect(addUrlButt, SIGNAL(clicked()),
+            this, SLOT(startAddUrl_ui()));
 
     // main session
     connect(scanSez, SIGNAL(triggered()),

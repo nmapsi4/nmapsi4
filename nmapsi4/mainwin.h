@@ -32,6 +32,7 @@
 #include "core/digSupport/digSupport.h"
 #include "core/parserObj/parserObj.h"
 #include "core/parserObj/parserObjUtil.h"
+#include "core/vulnerability/addurl.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -156,6 +157,7 @@ protected:
     //FIXME remove global pointer th
     QPointer<scanThread> th;
     QPointer<mainProfile> dialog;
+    QPointer<mainUrlClass> m_dialogUrl;
     QAction *scanSez;
     QAction *logSez;
     QAction *vulnSez;
@@ -249,6 +251,8 @@ private slots:
     void tabWebBack();
     void tabWebForward();
     void tabWebStop();
+    void addUrlToBookmarks(const QString urlName, const QString urlAddr);
+    void removeUrlToBookmarks();
     //contest Menu
     void menuScanBook();
     void menuVulnBook();
@@ -267,6 +271,7 @@ private slots:
     void nseTreeActiveItem();
     void nseTreeRemoveItem();
     void nseTreeResetItem();
+    void startAddUrl_ui();
 };
 
 #endif

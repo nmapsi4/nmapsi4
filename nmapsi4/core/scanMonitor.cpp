@@ -20,7 +20,7 @@
 #include "../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
-    tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, host);
@@ -78,7 +78,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
 
      if(monitorElemHost.size() == 0) {
          actionStop_Scan->setEnabled(false);
-         tabWidget->setTabIcon(tabWidget->indexOf(tabMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
+         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
      }
 
      updateScanCounter(0);
