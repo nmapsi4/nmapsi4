@@ -30,7 +30,9 @@ QStringList nmapClass::check_extensions()
     if(NSSsupport) {
         parametri << "-A";
     } else {
-        parametri << "--traceroute";
+	if (!uid) {
+	    parametri << "--traceroute";
+	}
     }
     
     if (nseComboScript->currentIndex() 

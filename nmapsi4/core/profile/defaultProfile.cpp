@@ -26,15 +26,21 @@ QMap<QString, QString> nmapClass::defaultScanProfile() const {
     QMap<QString, QString> tmpStaticProfileMap_;
     
     // for user mode
-    tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroot");
-    tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -A -v --traceroot");
-    tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -A -v --traceroot");
+    if (!uid) {
+	tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
+	tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -A -v --traceroute");
+	tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -A -v --traceroute");
+    } else {
+	tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
+	tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -A -v");
+	tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -A -v");
+    }
     
     if (!uid) {
 	// profile for full mode
-	tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -A -v");
+	tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -A -v --traceroute");
 	tmpStaticProfileMap_.insert(tr("Slow comprehensive scan"),
-				   "-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53");
+				   "-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute");
     }
 
     return tmpStaticProfileMap_;

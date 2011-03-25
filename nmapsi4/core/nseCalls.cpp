@@ -32,6 +32,8 @@ void nmapClass::updateNseOptionScript(int index) {
 	nseTreeAvail->setEnabled(false);
 	nseActiveBut->setEnabled(false);
     }
+    // reset parameters for change
+    resetPar();
 }
 
 void nmapClass::nseTreeDefaultValue() {
