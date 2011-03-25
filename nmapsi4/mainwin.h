@@ -154,8 +154,6 @@ protected:
     QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
-    //FIXME remove global pointer th
-    QPointer<scanThread> th;
     QPointer<mainProfile> dialog;
     QPointer<mainUrlClass> m_dialogUrl;
     QAction *scanSez;

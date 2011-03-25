@@ -24,8 +24,7 @@ nmapClass::nmapClass()
        PFile(NULL),
        scanCounter(0),
        labelVersion(NULL),
-       userMode(NULL),
-       th(NULL) {
+       userMode(NULL) {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
@@ -262,7 +261,7 @@ void nmapClass::scan(const QString hostname)
     
     QByteArray buff1, buff2;
     // start scan Thread
-    th = new scanThread(buff1, buff2, parameters_, this);
+    QPointer<scanThread> th = new scanThread(buff1, buff2, parameters_, this);
     scanPointerList.push_front(th);
     // update progressbar for scan
     connect(th, SIGNAL(upgradePR()),
@@ -289,6 +288,8 @@ nmapClass::~nmapClass() {
     }
 
     itemDeleteAll(itemListScan);
+    itemDeleteAll(digLookupList);
+    itemDeleteAll(internealLookupList);
     itemDeleteAll(monitorElem);
     itemDeleteAll(mainTreeElem);
     itemDeleteAll(itemNseActive);

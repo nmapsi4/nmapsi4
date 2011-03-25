@@ -56,11 +56,9 @@ void nmapClass::checkProfile()
 	if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid) {
 	    Profile = "normal"; // reset profile
 	    settings.setValue("configProfile", Profile);
-	    lineProfile->setText(Profile);
 	} else if (!Profile.contains("fullversion") && !Profile.contains("quickversion") && !uid) {
 	    Profile = "fullversion"; // reset profile
 	    settings.setValue("configProfile", Profile);
-	    lineProfile->setText(Profile);
 	}
 
     
