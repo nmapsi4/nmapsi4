@@ -122,6 +122,10 @@ void nmapClass::initObject() {
     logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     historyVuln_->updateBookMarks();
     delete historyVuln_;
+    
+    logHistory *historyVulnUrl_ = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
+    historyVulnUrl_->updateBookMarks();
+    delete historyVulnUrl_;
 
     this->rootMode(); // send uid value
     dialog = new mainProfile();
