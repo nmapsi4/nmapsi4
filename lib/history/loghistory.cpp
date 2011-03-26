@@ -41,10 +41,10 @@ logHistory::logHistory(const QString ConfigTag, int cacheSize)
     __CACHE_SIZE__ = cacheSize;
 }
 
-const QList<QString> logHistory::historyReadUrl()
+const QStringList logHistory::historyReadUrl()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
-    QList<QString> urlList;
+    QStringList urlList;
     urlList = settings.value(configTag, "NULL").toStringList();
     return urlList;
 }
@@ -197,46 +197,12 @@ void logHistory::updateBookMarks()
 
 void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
 {
-
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "Call --> history::searchHistory() ";
-#endif
-
-    lineHistory->setItemIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark_toolbar.png")));
-    QList<QString> urlList = historyReadUrl();
-    lineHistory->setCompleter(0);
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "logHistory::Pre::cout:: " << lineHistory->count();
-#endif
-    // FIXME:: check bug on MS windows
-#ifdef Q_WS_X11
-    for(int index=1; index <= lineHistory->count(); index++) {
-                    lineHistory->removeItem(index);
-    }
-#endif
-
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "logHistory::Post::cout:: " << lineHistory->count();
-#endif
+    Q_UNUSED(tokenWord);
+    QStringList urlList = historyReadUrl();
+    m_completer = new QCompleter(urlList);
+    m_completer->setCompletionMode(QCompleter::PopupCompletion);
+    m_completer->setWrapAround(true);
+    m_completer->setCaseSensitivity(Qt::CaseInsensitive);
+    lineHistory->setCompleter(m_completer);
     
-    foreach(const QString& item, urlList) {
-        if (item.startsWith(tokenWord)) {
-#ifndef HISTORY_NO_DEBUG
-            qDebug() << "History::Item:: " << item << "Token:: " << tokenWord;
-#endif
-            if ((lineHistory->findText(item, Qt::MatchExactly) == -1)
-                && !tokenWord.isEmpty()) {
-                lineHistory->insertItem(1, item);
-                lineHistory->setItemIcon(1, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
-            } else {
-                if (tokenWord.isEmpty())
-                    lineHistory->clear();
-            }
-	}
-        lineHistory->setItemText(0, tokenWord);
-    }
-    //TODO show popup
-    //lineHistory->setItemText(-1, tokenWord);
-    //lineHistory->setCurrentIndex(0);
-    //lineHistory->showPopup();
 }

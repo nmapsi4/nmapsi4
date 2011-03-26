@@ -31,6 +31,8 @@
 #include <QFileInfo>
 #include <QComboBox>
 #include <QString>
+#include <QCompleter>
+#include <QPointer>
 
 #define HISTORY_NO_DEBUG
 
@@ -38,7 +40,7 @@ class logHistory
 {
 
 private:
-    const QList<QString> historyReadUrl();
+    const QStringList historyReadUrl();
     const QList<QString> historyReadUrlTime();
     QTreeWidgetItem* historyItem;
     QTreeWidgetItem* history;
@@ -63,6 +65,7 @@ protected:
     QString configTag;
     QString configTagTime;
     int __CACHE_SIZE__;
+    QPointer<QCompleter> m_completer;
 
 public slots:
     void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
