@@ -1290,6 +1290,14 @@
                <string>Host(s)</string>
               </property>
              </column>
+             <column>
+              <property name="text">
+               <string>Os</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignLeft|AlignVCenter</set>
+              </property>
+             </column>
             </widget>
            </item>
            <item>

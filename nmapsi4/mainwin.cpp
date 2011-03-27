@@ -82,6 +82,7 @@ void nmapClass::initObject() {
     treeTraceroot->setColumnWidth(3, 200);
     treeBookVuln->setColumnWidth(0, 400);
     treeWidgetVulnUrl->setColumnWidth(0, 400);
+    treeMain->setColumnWidth(0, 200);
     // create mainwindow Qsplitter
     cW = new QSplitter();
     bW = new QSplitter();    
