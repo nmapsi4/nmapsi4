@@ -33,6 +33,7 @@
 #include "core/parserObj/parserObj.h"
 #include "core/parserObj/parserObjUtil.h"
 #include "core/vulnerability/addurl.h"
+#include "core/discover/maindiscover.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -90,6 +91,7 @@ private:
     void restoreGlobalProfile();
     QMap<QString, QString> defaultScanProfile() const;
     QMap<QString, QString> defaultUrlVuln() const;
+    void startDiscover();
 
 public:
     nmapClass();
@@ -270,6 +272,8 @@ private slots:
     void nseTreeRemoveItem();
     void nseTreeResetItem();
     void startAddUrl_ui();
+    //discover
+    void discoverIp(mainDiscover *discover, QNetworkInterface interface);
 };
 
 #endif

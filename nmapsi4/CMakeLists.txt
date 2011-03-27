@@ -41,6 +41,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/nseCalls.cpp
 		core/startupTools.cpp
 		core/memoryTools.cpp
+		core/discover/maindiscover.cpp
+		core/discover/discoverCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -79,6 +81,8 @@ else (NOT Q_WS_X11)
 		core/nseCalls.cpp
 		core/startupTools.cpp
 		core/memoryTools.cpp
+		core/discover/maindiscover.cpp
+		core/discover/discoverCalls.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)

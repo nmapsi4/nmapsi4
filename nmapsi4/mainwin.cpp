@@ -145,6 +145,8 @@ void nmapClass::initObject() {
     updateComboPar();
     updateComboBook();
     updateComboWebV();
+    // call discover startup
+    startDiscover();
 }
 
 void nmapClass::startScan() {
