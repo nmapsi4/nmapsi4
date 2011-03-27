@@ -86,7 +86,7 @@ void nmapClass::initObject() {
     cW = new QSplitter();
     bW = new QSplitter();    
     cW->setOrientation(Qt::Horizontal);
-    cW->addWidget(treeMain);
+    cW->addWidget(frameLeft);
     cW->addWidget(frameCenter);
     //frameCenter
     bW->setOrientation(Qt::Vertical);

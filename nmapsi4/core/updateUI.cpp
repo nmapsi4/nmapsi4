@@ -382,8 +382,8 @@ void nmapClass::updateSezScan() { // SLOT
         frameScan->setVisible(true);
     }
 
-    if (!treeMain->isVisible()) {
-        treeMain->setVisible(true);
+    if (!frameLeft->isVisible()) {
+        frameLeft->setVisible(true);
     }
 
     if (!frameAdv->isVisible() && parAct->isChecked()) {
@@ -432,8 +432,8 @@ void nmapClass::updateSezLog() {  // SLOT
         frameScan->setVisible(false);
     }
 
-    if (treeMain->isVisible()) {
-        treeMain->setVisible(false);
+    if (frameLeft->isVisible()) {
+        frameLeft->setVisible(false);
     }
 
     if (frameAdv->isVisible()) {
@@ -479,8 +479,8 @@ void nmapClass::updateSezVuln() { // SLOT
         frameScan->setVisible(false);
     }
 
-    if (treeMain->isVisible()) {
-        treeMain->setVisible(false);
+    if (frameLeft->isVisible()) {
+        frameLeft->setVisible(false);
     }
 
     if (frameAdv->isVisible()) {

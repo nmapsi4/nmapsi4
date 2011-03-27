@@ -21,7 +21,7 @@
 void nmapClass::startDiscover() {
     // TODO test for discover
     mainDiscover *discover = new mainDiscover();
-    foreach (QNetworkInterface interface, discover->getAllInterfaces()) {
+    foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
 	qDebug() << "DEBUG:: Discover Interfaces name:: " << interface.humanReadableName();
 	discoverIp(discover,interface);
     }
@@ -30,7 +30,7 @@ void nmapClass::startDiscover() {
 
 void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) { // SLOT
     // TODO remove input parameters, read and create combo Interfaces
-    foreach (QNetworkAddressEntry entry, discover->getAddressEntries(interface)) {
+    foreach (const QNetworkAddressEntry &entry, discover->getAddressEntries(interface)) {
 	qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry.ip();
 	// TODO write data in lineEdit ip
     }

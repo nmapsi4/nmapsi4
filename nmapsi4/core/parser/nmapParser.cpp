@@ -115,6 +115,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);
     mainTreeE->setSizeHint(0, QSize(32, 32));
+    comboScanLog->insertItem(3, parList.join(" "));
 
     // check for log file
     QTextStream *out = NULL;

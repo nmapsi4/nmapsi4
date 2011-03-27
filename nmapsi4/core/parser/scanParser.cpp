@@ -26,6 +26,8 @@ void nmapClass::showParserObj(int indexObj) {
     listWscan->clear();
     GItree->clear();
     treeNSS->clear();
+    int treeMainIndex_ = treeMain->indexOfTopLevelItem(treeMain->currentItem());
+    comboScanLog->setCurrentIndex(treeMainIndex_+1);
 
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
