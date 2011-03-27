@@ -27,27 +27,27 @@ bool nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const
     itemOS->setTextAlignment(1, Qt::AlignVCenter);
     if(OSline.contains("Linux")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
-	itemOS->setText(1, "GNU/Linux Os");
+	itemOS->setText(1, "GNU/Linux");
 	return true;
     } else if(OSline.contains("Windows")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
-	itemOS->setText(1, "MS Windows Os");
+	itemOS->setText(1, "MS Windows");
 	return true;
     } else if(OSline.contains("FreeBSD")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
-	itemOS->setText(1, "FreeBSD Os");
+	itemOS->setText(1, "FreeBSD");
 	return true;
     } else if(OSline.contains("OpenBSD")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
-	itemOS->setText(1, "OpenBSD Os");
+	itemOS->setText(1, "OpenBSD");
 	return true;
     } else if(OSline.contains("Solaris")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/solaris_logo.png")));
-	itemOS->setText(1, "Solaris Os");
+	itemOS->setText(1, "Solaris");
 	return true;
     } else if(OSline.contains("Mac OS X")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
-	itemOS->setText(1, "MacOsX Os");
+	itemOS->setText(1, "MacOsX");
 	return true;
     } else {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
