@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 void nmapClass::callSearchHistory()
 {
@@ -119,9 +119,18 @@ void nmapClass::deleteBookMarkPar()
     updateComboPar();
 }
 
-void nmapClass::saveBookMarksPar()
-{
+void nmapClass::startAddParBook_ui() {
+    
+    mainParamClass dialogParAdd_(comboAdv->currentText());
+    
+    connect(&dialogParAdd_, SIGNAL(doneParBook(const QString, const QString)),
+            this, SLOT(saveBookMarksPar(const QString, const QString)));
+    
+    dialogParAdd_.exec();
+}
 
+void nmapClass::saveBookMarksPar(const QString profileName, const QString profilePar)
+{
     if(comboAdv->currentText().isEmpty()) {
         return;
     }
@@ -130,12 +139,10 @@ void nmapClass::saveBookMarksPar()
 
     if (!uid) {
 	history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-	history_->addItemHistory(comboAdv->currentText(),
-				QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+	history_->addItemHistory(profilePar, profileName);
     } else {
 	history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-	history_->addItemHistory(comboAdv->currentText(),
-				QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+	history_->addItemHistory(profilePar, profileName);
     }
 
     BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -169,7 +176,8 @@ void nmapClass::slotParSelected() {
 	    comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
 	} else {
 	    // saved user profile
-	    comboAdv->insertItem(0, comboPar->currentText());
+	    QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
+	    comboAdv->insertItem(0, resultList_[0]->text(0));
 	}
    } else {
         // if 0 no action, reload extension

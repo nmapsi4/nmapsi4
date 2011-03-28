@@ -36,13 +36,14 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/parserObj/parserObj.cpp
 		core/parserObj/parserObjUtil.cpp
 		core/actionMenu.cpp
-                core/bookCalls.cpp
+                core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
 		core/nseCalls.cpp
 		core/startupTools.cpp
 		core/memoryTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
+		core/bookmarks/addparbook.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -76,13 +77,14 @@ else (NOT Q_WS_X11)
 		core/parserObj/parserObj.cpp
 		core/parserObj/parserObjUtil.cpp
 		core/actionMenu.cpp
-                core/bookCalls.cpp
+                core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
 		core/nseCalls.cpp
 		core/startupTools.cpp
 		core/memoryTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
+		core/bookmarks/addparbook.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)
@@ -90,20 +92,20 @@ endif (NOT Q_WS_X11)
 if(Q_WS_X11)
   SET(SOURCES_H mainwin.h preference/profilemain.h 
 	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h 
-	core/vulnerability/addurl.h)
+	core/vulnerability/addurl.h core/bookmarks/addparbook.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 else (Q_WS_X11)
   SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h 
 	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h 
-	core/vulnerability/addurl.h)
+	core/vulnerability/addurl.h core/bookmarks/addparbook.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 endif (Q_WS_X11)
 
 if(Q_WS_X11)
-  SET(SOURCES_UI mainwin.ui preference/profilemain.ui core/vulnerability/addurl.ui)
+  SET(SOURCES_UI mainwin.ui preference/profilemain.ui core/vulnerability/addurl.ui core/bookmarks/addparbook.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 else (Q_WS_X11)
-  SET(SOURCES_UI mainwin.ui preference/profilemain.ui ../lib/about/about.ui core/vulnerability/addurl.ui)
+  SET(SOURCES_UI mainwin.ui preference/profilemain.ui ../lib/about/about.ui core/vulnerability/addurl.ui core/bookmarks/addparbook.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 endif (Q_WS_X11)
 

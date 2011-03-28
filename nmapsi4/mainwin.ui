@@ -580,7 +580,7 @@
                          </column>
                          <column>
                           <property name="text">
-                           <string>Date</string>
+                           <string>Profile Name</string>
                           </property>
                          </column>
                         </widget>
@@ -881,13 +881,21 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="comboWebV">
+                      <widget class="QComboBox" name="comboVuln">
                        <property name="minimumSize">
                         <size>
                          <width>250</width>
                          <height>0</height>
                         </size>
                        </property>
+                       <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>Services</string>
+                        </property>
+                       </item>
                       </widget>
                      </item>
                     </layout>
@@ -934,21 +942,13 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="comboVuln">
+                      <widget class="QComboBox" name="comboWebV">
                        <property name="minimumSize">
                         <size>
                          <width>250</width>
                          <height>0</height>
                         </size>
                        </property>
-                       <property name="duplicatesEnabled">
-                        <bool>false</bool>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>Services</string>
-                        </property>
-                       </item>
                       </widget>
                      </item>
                     </layout>

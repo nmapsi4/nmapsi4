@@ -34,6 +34,7 @@
 #include "core/parserObj/parserObjUtil.h"
 #include "core/vulnerability/addurl.h"
 #include "core/discover/maindiscover.h"
+#include "core/bookmarks/addparbook.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -221,7 +222,7 @@ private slots:
     void updateFontHostVuln();
     void callSearchHistory();
     void saveBookMarks();
-    void saveBookMarksPar();
+    void saveBookMarksPar(const QString profileName, const QString profilePar);
     void deleteBookMark();
     void deleteBookMarkPar();
     void optionListCreate();
@@ -273,6 +274,7 @@ private slots:
     void nseTreeRemoveItem();
     void nseTreeResetItem();
     void startAddUrl_ui();
+    void startAddParBook_ui();
     //discover
     void discoverIp(mainDiscover *discover, QNetworkInterface interface);
 };

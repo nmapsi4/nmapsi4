@@ -565,7 +565,7 @@ void nmapClass::updateComboPar() {
     
     // value from treeWidget parameters
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
-        comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(0));
+        comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(1));
     }
     
     comboPar->insertSeparator(1);

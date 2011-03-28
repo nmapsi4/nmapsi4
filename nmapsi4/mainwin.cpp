@@ -293,7 +293,7 @@ nmapClass::~nmapClass() {
     if(m_dialogUrl) {
         m_dialogUrl->close();
     }
-
+    
     itemDeleteAll(itemListScan);
     itemDeleteAll(digLookupList);
     itemDeleteAll(internealLookupList);
