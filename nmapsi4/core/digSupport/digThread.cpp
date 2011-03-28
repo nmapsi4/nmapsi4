@@ -29,8 +29,8 @@ digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *pa
 
 }
 
-void digThread::run() {
-     
+void digThread::run() 
+{     
      m_proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
      connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)),
@@ -45,7 +45,8 @@ void digThread::run() {
 #endif
  }
 
-void digThread::setValue() {
+void digThread::setValue() 
+{
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: -> start";
 #endif
@@ -54,7 +55,8 @@ void digThread::setValue() {
      exit(0);
 }
 
-void digThread::stopProcess() {
+void digThread::stopProcess() 
+{
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Stop Scan Process";
 #endif

@@ -20,8 +20,8 @@
 #include "../../mainwin.h"
 
 
-void nmapClass::restoreGlobalProfile() {
-
+void nmapClass::restoreGlobalProfile() 
+{
     // global profile options
     QSettings settings("nmapsi4", "nmapsi4_gprofile");
     
@@ -107,8 +107,8 @@ void nmapClass::restoreGlobalProfile() {
 
 }
 
-void nmapClass::saveGlobalProfile() {
-
+void nmapClass::saveGlobalProfile() 
+{
     globalProfile = true;
     
     // global profile options
@@ -188,7 +188,8 @@ void nmapClass::saveGlobalProfile() {
     // **************** End Timing section **********************************
 }
 
-void nmapClass::removeGlobalProfile() {
+void nmapClass::removeGlobalProfile() 
+{
     QSettings settings("nmapsi4", "nmapsi4");
     removeGlobalButton->setEnabled(false);
     globalProfile = false;

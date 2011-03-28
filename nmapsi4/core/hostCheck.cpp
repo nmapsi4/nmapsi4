@@ -19,8 +19,8 @@
 
 #include "../mainwin.h"
 
-void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
-
+void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) 
+{
 #ifndef MAIN_NO_DEBUG
     qDebug() << "scanLookup::flag:: " << state;
 #endif
@@ -50,7 +50,8 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) {
     this->scan(hostname);
 }
 
-bool nmapClass::isDns(QString hostname) {
+bool nmapClass::isDns(QString hostname) 
+{
     bool state_;
     QRegExp rx_("*.*.*.*");
     rx_.setPatternSyntax(QRegExp::Wildcard);
@@ -62,7 +63,8 @@ bool nmapClass::isDns(QString hostname) {
     return state_;
 }
 
-QString nmapClass::clearHost(const QString hostname) {
+QString nmapClass::clearHost(const QString hostname) 
+{
     // check for wrong dns address
     // (http:// ftp:// sftp:// https://)[dns/ip]
     QString hostNew_(hostname);

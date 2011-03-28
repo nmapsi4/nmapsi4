@@ -21,7 +21,6 @@
 
 void mainProfile::updateNormalCheck()   // slot
 {
-
     if (checkNormalScan->isChecked()) {
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
@@ -32,7 +31,6 @@ void mainProfile::updateNormalCheck()   // slot
 
 void mainProfile::updateQuickCheck()   //slot
 {
-
     if (checkQuickScan->isChecked()) {
         checkNormalScan->setChecked(false);
         checkFullVersion->setChecked(false);
@@ -43,7 +41,6 @@ void mainProfile::updateQuickCheck()   //slot
 
 void mainProfile::updateFullVersionCheck()   // slot
 {
-
     if (checkFullVersion->isChecked()) {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
@@ -54,7 +51,6 @@ void mainProfile::updateFullVersionCheck()   // slot
 
 void mainProfile::updateQuickVersionCheck()   // slot
 {
-
     if (checkQuickVersion->isChecked()) {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
@@ -74,13 +70,14 @@ void mainProfile::update_saveButton()
     }
 }
 
-void mainProfile::activeLookupInt() {
-
+void mainProfile::activeLookupInt() 
+{
     if(checkBoxlookup->isChecked())
         checkBoxDig->setChecked(false);
 }
 
-void mainProfile::activeLookupDig() {
+void mainProfile::activeLookupDig() 
+{
     if(checkBoxDig->isChecked())
         checkBoxlookup->setChecked(false);
 }

@@ -82,7 +82,8 @@ void nmapClass::itemDeleteAll(QList<digSupport*>& items)
     items.clear();
 }
 
-void nmapClass::listClear() {
+void nmapClass::listClear() 
+{
     listClearFlag = true;
     itemDeleteAll(itemListScan); //clear items list
     // parserObj list

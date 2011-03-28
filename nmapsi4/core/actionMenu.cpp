@@ -20,7 +20,8 @@
 #include "../mainwin.h"
 
 
-void nmapClass::menuScanBook() {
+void nmapClass::menuScanBook() 
+{
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Host"));
@@ -41,7 +42,8 @@ void nmapClass::menuScanBook() {
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuVulnBook() {
+void nmapClass::menuVulnBook() 
+{
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Service"));
@@ -62,7 +64,8 @@ void nmapClass::menuVulnBook() {
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuParBook() {
+void nmapClass::menuParBook() 
+{
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Scan Paramenters"));
@@ -83,7 +86,8 @@ void nmapClass::menuParBook() {
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuServiceMain() {
+void nmapClass::menuServiceMain() 
+{
     QAction checkVuln(this);
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     checkVuln.setIconText(tr("Check Vulnerability"));
@@ -96,7 +100,8 @@ void nmapClass::menuServiceMain() {
     menuVulnMain.exec(QCursor::pos());
 }
 
-void nmapClass::createBar() {
+void nmapClass::createBar() 
+{
     // QToolBar asction
     scanSez = new QAction(this);
     logSez = new QAction(this);

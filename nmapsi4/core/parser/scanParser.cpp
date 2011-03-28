@@ -19,7 +19,8 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::showParserObj(int indexObj) {
+void nmapClass::showParserObj(int indexObj) 
+{
     // Clear widget
     itemDeleteAll(itemListScan);
     itemDeleteAll(objElem);

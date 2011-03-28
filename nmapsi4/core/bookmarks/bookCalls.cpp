@@ -119,7 +119,8 @@ void nmapClass::deleteBookMarkPar()
     updateComboPar();
 }
 
-void nmapClass::startAddParBook_ui() {
+void nmapClass::startAddParBook_ui() 
+{
     
     mainParamClass dialogParAdd_(comboAdv->currentText());
     
@@ -163,7 +164,8 @@ void nmapClass::callParFromBook()
     }
 }
 
-void nmapClass::slotParSelected() {
+void nmapClass::slotParSelected() 
+{
    // insert profile from comboPar to comboAdv
    int parIndex = comboPar->currentIndex();
    
@@ -186,8 +188,8 @@ void nmapClass::slotParSelected() {
    }
 }
 
-void nmapClass::slotHostSelected() {
-    
+void nmapClass::slotHostSelected() 
+{    
     if(comboHostBook->currentIndex()) {
 	updateFontHost();
 	hostEdit->insertItem(0, comboHostBook->currentText());

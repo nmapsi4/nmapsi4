@@ -19,8 +19,8 @@
 
 #include "../mainwin.h"
 
-void nmapClass::updateNseOptionScript(int index) {
-
+void nmapClass::updateNseOptionScript(int index) 
+{
     nseComboScript->setCurrentIndex(index);
     
     if(index) {
@@ -36,7 +36,8 @@ void nmapClass::updateNseOptionScript(int index) {
     resetPar();
 }
 
-void nmapClass::nseTreeDefaultValue() {
+void nmapClass::nseTreeDefaultValue() 
+{
     nseScriptActiveList.clear();
     nseScriptAvailList.clear();
     nseScriptAvailList.append("auth");
@@ -55,8 +56,8 @@ void nmapClass::nseTreeDefaultValue() {
     nseTreeAvailRestoreValues();
 }
 
-void nmapClass::nseTreeAvailRestoreValues() {
-
+void nmapClass::nseTreeAvailRestoreValues() 
+{
     if(itemNseAvail.size()) {
 	itemDeleteAll(itemNseAvail);
 	itemNseAvail.clear();
@@ -72,8 +73,8 @@ void nmapClass::nseTreeAvailRestoreValues() {
     }
 }
 
-void nmapClass::nseTreeActiveRestoreValues() {
-    
+void nmapClass::nseTreeActiveRestoreValues() 
+{    
     if(itemNseActive.size()) {
 	itemDeleteAll(itemNseActive);
 	itemNseActive.clear();
@@ -89,8 +90,8 @@ void nmapClass::nseTreeActiveRestoreValues() {
     }
 }
 
-void nmapClass::nseTreeActiveItem() {
-
+void nmapClass::nseTreeActiveItem() 
+{
     int indexNseItem = nseTreeAvail->indexOfTopLevelItem(nseTreeAvail->currentItem());
 
     if(indexNseItem != -1) {
@@ -111,8 +112,8 @@ void nmapClass::nseTreeActiveItem() {
     }
 }
 
-void nmapClass::nseTreeRemoveItem() {
-
+void nmapClass::nseTreeRemoveItem() 
+{
     int indexNseItem = nseTreeActive->indexOfTopLevelItem(nseTreeActive->currentItem());
 
     if(indexNseItem != -1) {
@@ -133,8 +134,8 @@ void nmapClass::nseTreeRemoveItem() {
     }
 }
 
-void nmapClass::nseTreeResetItem() {
-
+void nmapClass::nseTreeResetItem() 
+{
     foreach (const QString &token, nseScriptActiveList) {
 	nseScriptAvailList.append(token);
     }

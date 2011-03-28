@@ -20,8 +20,8 @@
 #include "../../mainwin.h"
 
 
-void nmapClass::showParserObjPlugins(int indexObj) {
-
+void nmapClass::showParserObjPlugins(int indexObj) 
+{
     QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
     // show traceroute
     foreach (const QString &token, listTraceRouteInfo_) {
@@ -88,5 +88,4 @@ void nmapClass::showParserObjPlugins(int indexObj) {
 	    break;
 	}
     }
-
 }

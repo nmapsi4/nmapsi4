@@ -20,8 +20,8 @@
 #include "../mainwin.h"
 
 
-void nmapClass::saveUiSettings() {
-    
+void nmapClass::saveUiSettings() 
+{    
     QSettings settings("nmapsi4", "nmapsi4");
     if(savePos) {
         settings.setValue("window/pos", pos());
@@ -83,5 +83,4 @@ void nmapClass::saveUiSettings() {
 	}
     }
 #endif
-    
 }

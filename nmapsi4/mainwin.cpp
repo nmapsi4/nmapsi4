@@ -24,12 +24,14 @@ nmapClass::nmapClass()
        PFile(NULL),
        scanCounter(0),
        labelVersion(NULL),
-       userMode(NULL) {
+       userMode(NULL) 
+{
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
 
-void nmapClass::initGUI() {
+void nmapClass::initGUI() 
+{
     setupUi(this);
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
@@ -37,8 +39,8 @@ void nmapClass::initGUI() {
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
 }
 
-void nmapClass::initObject() {
-
+void nmapClass::initObject() 
+{
 #ifndef Q_WS_WIN
     uid = getuid();
 #endif
@@ -130,7 +132,6 @@ void nmapClass::initObject() {
 
     this->rootMode(); // send uid value
     dialog = new mainProfile();
-    m_dialogUrl = new mainUrlClass();
 
     nssAct->setChecked(NSSsupport); // set NSS support
     NSSCheck();
@@ -150,8 +151,8 @@ void nmapClass::initObject() {
     startDiscover();
 }
 
-void nmapClass::startScan() {
-
+void nmapClass::startScan() 
+{
     if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
@@ -201,7 +202,8 @@ void nmapClass::startScan() {
     
 }
 
-void nmapClass::preScanLookup(const QString hostname) {
+void nmapClass::preScanLookup(const QString hostname) 
+{
     // check for scan lookup
     if(lookupInternal) {
 	// if internal lookUp is actived
@@ -285,13 +287,10 @@ void nmapClass::scan(const QString hostname)
     delete history;
 }
 
-nmapClass::~nmapClass() {
+nmapClass::~nmapClass() 
+{
     if(dialog) {
         dialog->close();
-    }
-    
-    if(m_dialogUrl) {
-        m_dialogUrl->close();
     }
     
     itemDeleteAll(itemListScan);

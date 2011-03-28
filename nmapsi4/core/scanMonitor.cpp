@@ -19,7 +19,8 @@
 
 #include "../mainwin.h"
 
-void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
+void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) 
+{
     tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
@@ -39,7 +40,8 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) {
 }
 
 
-void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) {
+void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) 
+{
      for(int i=0; i < monitorElemHost.size(); i++) {
           if(monitorElemHost[i].endsWith(host)) {
 #ifndef MAIN_NO_DEBUG
@@ -55,8 +57,8 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) {
      updateMonitorHost(monitor);
 }
 
-void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
-
+void nmapClass::updateMonitorHost(QTreeWidget* monitor) 
+{
      itemDeleteAll(monitorElem);
      monitor->clear();
      QTreeWidgetItem* item;
@@ -85,7 +87,8 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor) {
      
 }
 
-void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) {
+void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) 
+{
     // read data line form thread
     // search hostname on treeWidget and update data rows (index = 2)
     // take only remaining time and remove character unused
@@ -98,7 +101,8 @@ void nmapClass::readFlowFromThread(const QString hostname, const QString lineDat
     monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
 }
 
-void nmapClass::updateScanCounter(int type) {
+void nmapClass::updateScanCounter(int type) 
+{
     /*
      *   type 1: scan counter ++
      *   type 0: scan counter --

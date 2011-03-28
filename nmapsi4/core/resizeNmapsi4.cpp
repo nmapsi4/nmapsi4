@@ -78,9 +78,8 @@ void nmapClass::showStatusBar()
     }
 }
 
-void nmapClass::optionListUpdate() {
-  
-
+void nmapClass::optionListUpdate() 
+{
     if (scanW->isSelected()) {
 	stackedOptions->setCurrentIndex(0);
     } else if (toolW->isSelected()) {
@@ -96,8 +95,8 @@ void nmapClass::optionListUpdate() {
     }
 }
 
-void nmapClass::optionListCreate() {
-  
+void nmapClass::optionListCreate() 
+{  
     optionsListScan->setIconSize(QSize(52, 52));
   
     scanW = new QListWidgetItem(optionsListScan);

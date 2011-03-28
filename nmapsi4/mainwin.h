@@ -158,7 +158,6 @@ protected:
     QLabel *labelVersion;
     QLabel *userMode;
     QPointer<mainProfile> dialog;
-    QPointer<mainUrlClass> m_dialogUrl;
     QAction *scanSez;
     QAction *logSez;
     QAction *vulnSez;

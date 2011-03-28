@@ -37,5 +37,4 @@ private slots:
 signals:
     void doneParBook(const QString profileName, const QString profilePar);
 };
-
 #endif

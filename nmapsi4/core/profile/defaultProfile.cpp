@@ -19,7 +19,8 @@
 
 #include "../../mainwin.h"
 
-QMap<QString, QString> nmapClass::defaultScanProfile() const {
+QMap<QString, QString> nmapClass::defaultScanProfile() const 
+{
     // preload StringList with default static Scan profile
     // use QMap::insert(key,value) for new value
     // use QMap::value(key) for value from a key

@@ -26,8 +26,8 @@ lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_
 
 }
 
-void lookUpT::run() {
-
+void lookUpT::run() 
+{
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
 
@@ -41,7 +41,8 @@ void lookUpT::run() {
     emit threadEnd(m_info, 1, m_host);
 }
 
-void lookUpT::killLookup() {
+void lookUpT::killLookup() 
+{
 #ifdef LOOKUP_NO_THREAD
     qDebug() << "Lookup::kill --> call";
 #endif

@@ -20,8 +20,8 @@
 #include "../../mainwin.h"
 
 
-bool nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const {
-
+bool nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const 
+{
     // check string OS for Icon selection
     itemOS->setTextAlignment(1, Qt::AlignHCenter);
     itemOS->setTextAlignment(1, Qt::AlignVCenter);
@@ -56,7 +56,8 @@ bool nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const
     }
 }
 
-void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
+void nmapClass::runtimePars(QTreeWidgetItem *item, int column) 
+{ // SLOT
     Q_UNUSED(column);
 
 #ifndef PARSER_NO_DEBUG
@@ -82,7 +83,8 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column) { // SLOT
     }
 }
 
-void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) { // SLOT
+void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) 
+{ // SLOT
     Q_UNUSED(column);
 
 #ifndef PARSER_NO_DEBUG

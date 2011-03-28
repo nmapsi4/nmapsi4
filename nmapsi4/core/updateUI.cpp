@@ -19,7 +19,8 @@
 
 #include "../mainwin.h"
 
-void nmapClass::update_portCombo() {
+void nmapClass::update_portCombo() 
+{
     switch (portCombo->currentIndex()) {
     case 0:
 //    Normal
@@ -41,12 +42,11 @@ void nmapClass::update_portCombo() {
         portEdit->setEnabled(false);
         break;
     }
-
 }
 
 
-void nmapClass::update_scanCombo() {
-
+void nmapClass::update_scanCombo() 
+{
     switch (comboScan->currentIndex()) {
     case 0:
 //    Connect Scan
@@ -111,8 +111,8 @@ void nmapClass::update_scanCombo() {
     }
 }
 
-void nmapClass::rootMode() {
-
+void nmapClass::rootMode() 
+{
     if (!uid) { // if root
         comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
         comboScan->addItem(QApplication::translate("nmapClass", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
@@ -145,10 +145,10 @@ void nmapClass::rootMode() {
         checkSourcePort->setVisible(false);
         lineSourcePort->setVisible(false);
     }
-
 }
 
-void nmapClass::update_inputcheck() {
+void nmapClass::update_inputcheck() 
+{
     if (checkInputFile->isChecked()) {
         lineInputFile->setEnabled(true);
         buttonBrowser->setEnabled(true);
@@ -164,7 +164,8 @@ void nmapClass::update_inputcheck() {
     }
 }
 
-void nmapClass::update_discover() {
+void nmapClass::update_discover() 
+{
     if (checkTcpPing->isChecked()) {
         lineTcpPing->setEnabled(true);
         lineTcpPing->clear();
@@ -190,7 +191,8 @@ void nmapClass::update_discover() {
     }
 }
 
-void nmapClass::update_timing() {
+void nmapClass::update_timing() 
+{
     if (TcheckIpv4ttl->isChecked())
         spinBoxIpv4ttl->setEnabled(true);
     else
@@ -232,7 +234,8 @@ void nmapClass::update_timing() {
         spinBoxScanDelay->setEnabled(false);
 }
 
-void nmapClass::update_options() {
+void nmapClass::update_options() 
+{
     if (checkBoxDevice->isChecked())
         OlineDevice->setEnabled(true);
     else {
@@ -268,14 +271,14 @@ void nmapClass::update_options() {
     }
 }
 
-void nmapClass::update_comboVerbosity() {
-
+void nmapClass::update_comboVerbosity() 
+{
     if (comboVerbosity->currentIndex() == 4)
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
-
 }
 
-void nmapClass::detailsOptions() {
+void nmapClass::detailsOptions() 
+{
     Bdetails->setChecked(true);
     Bnss->setChecked(false);
     Bbook->setChecked(false);
@@ -284,7 +287,8 @@ void nmapClass::detailsOptions() {
     updateIconsBox();
 }
 
-void nmapClass::nssOptions() {
+void nmapClass::nssOptions() 
+{
     Bdetails->setChecked(false);
     Bnss->setChecked(true);
     Bbook->setChecked(false);
@@ -294,7 +298,8 @@ void nmapClass::nssOptions() {
     updateIconsBox();
 }
 
-void nmapClass::bookOptions() {
+void nmapClass::bookOptions() 
+{
     Bdetails->setChecked(false);
     Bnss->setChecked(false);
     Bbook->setChecked(true);
@@ -303,7 +308,8 @@ void nmapClass::bookOptions() {
     updateIconsBox();
 }
 
-void nmapClass::bookOptionsPar() {
+void nmapClass::bookOptionsPar() 
+{
     Bdetails->setChecked(false);
     Bnss->setChecked(false);
     Bbook->setChecked(false);
@@ -312,8 +318,8 @@ void nmapClass::bookOptionsPar() {
     updateIconsBox();
 }
 
-void nmapClass::updateIconsBox() {
-
+void nmapClass::updateIconsBox() 
+{
     int tmpBox = SWscan->currentIndex();
     switch (tmpBox) {
     case 0:
@@ -329,10 +335,10 @@ void nmapClass::updateIconsBox() {
         BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));        
 	break;
     }
-
 }
 
-void nmapClass::updateFontHost() {
+void nmapClass::updateFontHost() 
+{
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
     hostEdit->clear();
@@ -346,7 +352,8 @@ void nmapClass::updateFontHost() {
             this, SLOT(callSearchHistory()));
 }
 
-void nmapClass::updateFontHostVuln() {
+void nmapClass::updateFontHostVuln() 
+{
     comboVulnRis->clear();
     actSearch->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
@@ -359,13 +366,14 @@ void nmapClass::updateFontHostVuln() {
             this, SLOT(callSearchHistoryVuln()));
 }
 
-void nmapClass::setProgress() {
+void nmapClass::setProgress() 
+{
     progressScan->setValue(60);
     this->setWindowTitle("Nmapsi4 (60%)");
 }
 
-void nmapClass::updateSezScan() { // SLOT
-
+void nmapClass::updateSezScan() 
+{ // SLOT
     if (stackedMain->currentIndex() == 0)
         return;
 
@@ -410,8 +418,8 @@ void nmapClass::updateSezScan() { // SLOT
     }
 }
 
-void nmapClass::updateSezLog() {  // SLOT
-
+void nmapClass::updateSezLog() 
+{  // SLOT
     if (stackedMain->currentIndex() == 1)
         return;
 
@@ -457,8 +465,8 @@ void nmapClass::updateSezLog() {  // SLOT
     parAct->setVisible(false);
 }
 
-void nmapClass::updateSezVuln() { // SLOT
-
+void nmapClass::updateSezVuln() 
+{ // SLOT
     if (stackedMain->currentIndex() == 2)
         return;
 
@@ -504,8 +512,8 @@ void nmapClass::updateSezVuln() { // SLOT
     parAct->setVisible(false);
 }
 
-void nmapClass::NSSCheck() { // SLOT
-
+void nmapClass::NSSCheck() 
+{ // SLOT
    if (nssAct->isChecked()) {
        NSSsupport = true;
        Bnss->setVisible(true);
@@ -519,7 +527,8 @@ void nmapClass::NSSCheck() { // SLOT
    }
 }
 
-void nmapClass::setTreeWidgetValues() {
+void nmapClass::setTreeWidgetValues() 
+{
     listWscan->setIconSize(QSize(22, 22));
     listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
     listScanError->setIconSize(QSize(22, 22));
@@ -538,7 +547,8 @@ void nmapClass::setTreeWidgetValues() {
     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
 
-void nmapClass::parAdv() {
+void nmapClass::parAdv() 
+{
     if (parAct->isChecked()) {
         optionAccept->setVisible(true);
         frameAdv->setVisible(true);
@@ -552,14 +562,15 @@ void nmapClass::parAdv() {
     }
 }
 
-void nmapClass::resetPar() {
+void nmapClass::resetPar() 
+{
     comboAdv->clear();
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboAdv->insertItem(0, check_extensions().join(" "));
 }
 
-void nmapClass::updateComboPar() {
-
+void nmapClass::updateComboPar() 
+{
     comboPar->clear();
     comboPar->insertItem(0, "Select Profile");
     
@@ -577,18 +588,18 @@ void nmapClass::updateComboPar() {
     }
 }
 
-void nmapClass::updateComboBook() {
-    
+void nmapClass::updateComboBook() 
+{    
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
 
     for(int index=0; index < treeLogH->topLevelItemCount(); index++) {
         comboHostBook->insertItem(1, treeLogH->topLevelItem(index)->text(0));
     }
-
 }
 
-void nmapClass::updateTabLook() {
+void nmapClass::updateTabLook() 
+{
     if (actTabLook->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
@@ -599,7 +610,8 @@ void nmapClass::updateTabLook() {
     }
 }
 
-void nmapClass::updateTabTrace() {
+void nmapClass::updateTabTrace() 
+{
     if (actTabTrace->isChecked()) {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
@@ -610,7 +622,8 @@ void nmapClass::updateTabTrace() {
     }
 }
 
-void nmapClass::updateTabMonitor() {
+void nmapClass::updateTabMonitor() 
+{
     if (actTabMonitor->isChecked() && tabUi->count() < 3) {
         tabUi->insertTab(tabUi->count(),tabMainMonitor,tr("Scan Monitor"));
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));

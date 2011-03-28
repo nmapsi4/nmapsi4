@@ -31,10 +31,11 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
        proc(NULL),
        par(parent)
 {
+    
 }
 
-void scanThread::run() {
-     
+void scanThread::run() 
+{     
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
@@ -60,10 +61,10 @@ void scanThread::run() {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Quit";
 #endif
- }
+}
 
-void scanThread::setValue() {
-
+void scanThread::setValue() 
+{
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: -> start";
 #endif
@@ -73,7 +74,8 @@ void scanThread::setValue() {
      exit(0);
 }
 
-void scanThread::stopProcess() {
+void scanThread::stopProcess() 
+{
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Clear Process";
 #endif
@@ -90,7 +92,8 @@ void scanThread::stopProcess() {
      }
 }
 
-void scanThread::realtimeData() {
+void scanThread::realtimeData() 
+{
     // read realtime data from process stdout
     QByteArray realByte = proc->readLine(proc->bytesAvailable());
     QString stream_(realByte);

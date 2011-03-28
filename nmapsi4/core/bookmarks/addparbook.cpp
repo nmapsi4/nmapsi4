@@ -19,7 +19,8 @@
 
 #include "addparbook.h"
 
-mainParamClass::mainParamClass(const QString parameters) {
+mainParamClass::mainParamClass(const QString parameters) 
+{
     setupUi(this);
     
     connect(doneButt, SIGNAL(clicked(bool)),
@@ -29,10 +30,13 @@ mainParamClass::mainParamClass(const QString parameters) {
     lineProfilePar->setText(parameters);
 }
 
-mainParamClass::~mainParamClass() {
+mainParamClass::~mainParamClass() 
+{
+    
 }
 
-void mainParamClass::exit() {
+void mainParamClass::exit() 
+{
     if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) {
 	    emit doneParBook(lineProfileName->text(), lineProfilePar->text());
 	    close();
