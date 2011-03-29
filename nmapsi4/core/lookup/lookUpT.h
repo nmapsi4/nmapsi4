@@ -20,10 +20,10 @@
 #ifndef LOOKUPT_H
 #define LOOKUPT_H
 
-#include <QThread>
-#include <QStringList>
-#include <QString>
-#include <QMetaType>
+#include <QtCore/QThread>
+#include <QtCore/QStringList>
+#include <QtCore/QString>
+#include <QtCore/QMetaType>
 #include <QtNetwork/QHostInfo>
 #include "../nmapsi4Debug.h"
 

@@ -20,8 +20,8 @@
 #ifndef MAINDISCOVER_H
 #define MAINDISCOVER_H
 
-#include <QList>
-#include <QNetworkInterface>
+#include <QtCore/QList>
+#include <QtNetwork/QNetworkInterface>
 
 class mainDiscover
 {

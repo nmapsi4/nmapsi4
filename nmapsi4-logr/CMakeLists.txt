@@ -3,26 +3,26 @@ PROJECT(nmapsi4-logr)
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 if (WIN32)
-SET(SOURCES_CPP	mainwin.cpp 
+SET(SOURCES_CPP	src/mainwin.cpp 
                 src/logrApi.cpp
 		../lib/history/loghistory.cpp
 		../lib/history/coreHistory.cpp
 		../lib/about/about.cpp
-		src/main.cpp)
+		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (WIN32)
-SET(SOURCES_CPP mainwin.cpp 
+SET(SOURCES_CPP src/mainwin.cpp 
                 src/logrApi.cpp	
-		src/main.cpp)
+		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 
 endif(WIN32)
 
 if(NOT WIN32)
-	SET(SOURCES_H mainwin.h)
+	SET(SOURCES_H src/mainwin.h)
 	#MESSAGE( STATUS ${SOURCES_H} )
 else(WIN32)
-	SET(SOURCES_H mainwin.h ../lib/about/about.h)
+	SET(SOURCES_H src/mainwin.h ../lib/about/about.h)
 	#MESSAGE( STATUS ${SOURCES_H} )
 endif(NOT WIN32)
 

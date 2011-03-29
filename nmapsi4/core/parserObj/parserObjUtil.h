@@ -20,8 +20,8 @@
 #ifndef PARSEROBJUTIL_H
 #define PARSEROBJUTIL_H
 
-#include <QString>
-#include <QStringList>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 
 class parserObjUtil
 {

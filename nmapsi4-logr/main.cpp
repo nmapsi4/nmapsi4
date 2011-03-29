@@ -20,7 +20,7 @@
 #include <QApplication>
 #include <QTranslator>
 #include <config.h>
-#include "../mainwin.h"
+#include "src/mainwin.h"
 
 int main(int argc, char *argv[])
 {
@@ -50,7 +50,8 @@ int main(int argc, char *argv[])
 #endif
 
 #else // MS Windows
-    urlTranslate = QDir::homePath(); // Insert a url for MS Windows Translate ( FIXME check for local binary path)
+    urlTranslate = QDir::rootPath();
+    urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
     qDebug() << "Nmapsi4-logr/core -> url Translator::" << urlTranslate;
 
 #endif

@@ -19,36 +19,31 @@
 
 #include "mainwin.h"
 
-
 mwClass::mwClass() : logF(0)
 {
     initGUI();
     QTimer::singleShot(0, this, SLOT(initObject()));
 }
 
-void mwClass::initGUI() {
+void mwClass::initGUI() 
+{
     setupUi(this);
-
     connect(actionOpen, SIGNAL(triggered()),
             this, SLOT(Breader()));
-
     connect(actionClose, SIGNAL(triggered()),
             this, SLOT(exit()));
-
     connect(actionQuit, SIGNAL(triggered()),
             this, SLOT(exit()));
-
     connect(action_About, SIGNAL(triggered()),
             this, SLOT(about()));
-
     connect(actionAbout_Qt, SIGNAL(triggered()),
             this, SLOT(about_qt()));
-
     connect(logTree, SIGNAL(itemSelectionChanged()),
             this, SLOT(logFromHistory()));
 }
 
-void mwClass::initObject() {
+void mwClass::initObject() 
+{
     // Take nmapsi4 geometry info
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window-logr/pos", QPoint(200, 200)).toPoint();
@@ -56,12 +51,18 @@ void mwClass::initObject() {
     nHost = settings.value("hostCache").toInt();
     resize(size);
     move(pos);
-
-    logTree->setColumnWidth(0, 350);
-    logTree->setColumnWidth(1, 200);
+    logTree->setColumnWidth(0, 200);
+    logTree->setColumnWidth(1, 150);
     logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", nHost);
     history->updateLogHistory();
     delete history;
+    
+    cW = new QSplitter();
+    cW->setOrientation(Qt::Horizontal);
+    cW->addWidget(treeLogView);
+    cW->addWidget(logTree);
+    centralWidget()->layout()->addWidget(cW);
+    cW->restoreState(settings.value("splitterSizesLogr").toByteArray());
 }
 
 void mwClass::Breader()
@@ -128,11 +129,11 @@ void mwClass::logReader()
     history->updateLogHistory();
     logF->close();
     delete history;
-
 }
 
 mwClass::~mwClass()
 {
     itemDeleteAll(ItemList);
+    delete cW;
     //delete logF;
 }

@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "mainwin.h"
 
 
 QString mwClass::showBrowser()
@@ -43,17 +43,17 @@ void mwClass::exit()
     QSettings settings("nmapsi4", "nmapsi4");
     settings.setValue("window-logr/pos", pos());
     settings.setValue("window-logr/size", size());
+    settings.setValue("splitterSizesLogr", cW->saveState());
     close();
 }
 
 
 void mwClass::logFromHistory()
 {
-    if (toolBoxMain->currentIndex()) {
+    if (logTree->currentItem()) {
         url = logTree->currentItem()->text(1);
         url.append(logTree->currentItem()->text(0));
         logReader();
-        toolBoxMain->setCurrentIndex(0);
     }
 }
 

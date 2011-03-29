@@ -20,13 +20,13 @@
 #ifndef DIGSUPPORT_H
 #define DIGSUPPORT_H
 
-#include <QObject>
-#include <QProcess>
-#include <QDebug>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QTextStream>
-#include <QList>
+#include <QtCore/QObject>
+#include <QtCore/QProcess>
+#include <QtCore/QDebug>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QTextStream>
+#include <QtCore/QList>
 #include "digThread.h"
 #include "../nmapsi4Debug.h"
 #include "../parserObj/parserObjUtil.h"

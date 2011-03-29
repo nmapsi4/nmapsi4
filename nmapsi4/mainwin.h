@@ -23,7 +23,7 @@
 #include "ui_mainwin.h"
 
 // local include
-#include "preference/profilemain.h"
+#include "core/preference/profilemain.h"
 #include "../lib/history/loghistory.h"
 #include "core/nmapsi4Debug.h"
 #include "../lib/about/about.h"
@@ -40,13 +40,13 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>
-#include <QMap>
-#include <QPointer>
-#include <QSplitter>
-#include <QTimer>
-#include <QDir>
-#include <QFileDialog>
-#include <QDesktopServices>
+#include <QtCore/QMap>
+#include <QtCore/QPointer>
+#include <QtGui/QSplitter>
+#include <QtCore/QTimer>
+#include <QtCore/QDir>
+#include <QtGui/QFileDialog>
+#include <QtGui/QDesktopServices>
 
 class QMainWindow;
 class QWebView;

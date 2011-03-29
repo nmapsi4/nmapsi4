@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,50 +17,59 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PROFILEMAIN_H
-#define PROFILEMAIN_H
+#ifndef MAINWIN_H
+#define MAINWIN_H
 
-#include <QtGui/QDialog>
-#include <QSettings>
-#include <QDir>
-#include <QFileDialog>
-#include <ui_profilemain.h>
+#include <QtCore/QString>
+#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QList>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
+#include <QtCore/QDebug>
+#include <QtCore/QSettings>
+#include <QtCore/QDir>
+#include <QtGui/QFileDialog>
+#include <QtCore/QDateTime>
+#include <QtCore/QTimer>
+#include <QtGui/QSplitter>
+#include <QtGui/QLayout>
+#include <assert.h>
+#include <ui_mainwin.h>
+#include "../../lib/history/loghistory.h"
+#include "../../lib/about/about.h"
+#include "logr-debug.h"
 
-class mainProfile : public QDialog, private Ui::ProfileMain
+
+class mwClass : public QMainWindow , private Ui::mWindow
 {
     Q_OBJECT
 
 private:
-    void saveProfile(const QString ProfileType); // Create a enum for the profile
-    QString readProfile();
-    void setProfile();
+    void initGUI();
+    QString showBrowser();
+    void itemDeleteAll(QList<QTreeWidgetItem*> itemsList);
+
+    QTreeWidgetItem *root;
+    QTreeWidgetItem *item;
+    QFile *logF;
+    QList<QTreeWidgetItem*> ItemList;
 
 public:
-    mainProfile();
-    ~mainProfile();
+    mwClass();
+    ~mwClass();
 
 protected:
-    QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem;
-    QListWidgetItem *lookItem;
-
-public slots:
-    void setScan();
+    QString url;
+    int nHost;
+    QSplitter *cW;
 
 private slots:
-    void updateNormalCheck();
-    void updateQuickCheck();
-    void updateFullVersionCheck();
-    void updateQuickVersionCheck();
-    void updateItem();
-    void log_browser();
-    void update_saveButton();
-    void quit();
-    void setDefaults();
-    void activeLookupInt();
-    void activeLookupDig();
-
+    void initObject();
+    void logReader();
+    void logFromHistory();
+    void Breader();
+    void exit();
+    void about();
+    void about_qt();
 };
-
 #endif
-

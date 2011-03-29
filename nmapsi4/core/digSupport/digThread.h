@@ -20,13 +20,13 @@
 #ifndef DIGTHREAD_H
 #define DIGTHREAD_H
 
-#include <QThread>
-#include <QByteArray>
-#include <QStringList>
-#include <QProcess>
-#include <QObject>
-#include <QMetaType>
-#include <QtDebug>
+#include <QtCore/QThread>
+#include <QtCore/QByteArray>
+#include <QtCore/QStringList>
+#include <QtCore/QProcess>
+#include <QtCore/QObject>
+#include <QtCore/QMetaType>
+#include <QtCore/QtDebug>
 #include "../nmapsi4Debug.h"
 
 

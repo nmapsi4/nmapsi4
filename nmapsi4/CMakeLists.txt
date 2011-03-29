@@ -14,8 +14,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp
-		preference/profilemain.cpp
-		preference/profilemainupdate.cpp
+		core/preference/profilemain.cpp
+		core/preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
 		core/profile/profileSession.cpp
 		core/profile/defaultProfile.cpp
@@ -58,8 +58,8 @@ else (NOT Q_WS_X11)
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp
-		preference/profilemain.cpp
-		preference/profilemainupdate.cpp
+		core/preference/profilemain.cpp
+		core/preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
 		core/profile/profileSession.cpp
 		core/profile/defaultProfile.cpp
@@ -90,22 +90,40 @@ else (NOT Q_WS_X11)
 endif (NOT Q_WS_X11)
 
 if(Q_WS_X11)
-  SET(SOURCES_H mainwin.h preference/profilemain.h 
-	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h 
-	core/vulnerability/addurl.h core/bookmarks/addparbook.h)
+  SET(SOURCES_H mainwin.h 
+	core/preference/profilemain.h 
+	core/scanMT/scanThread.h 
+	core/lookup/lookUpT.h 
+	core/digSupport/digSupport.h 
+	core/digSupport/digThread.h 
+	core/vulnerability/addurl.h 
+	core/bookmarks/addparbook.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 else (Q_WS_X11)
-  SET(SOURCES_H mainwin.h preference/profilemain.h ../lib/about/about.h 
-	core/scanMT/scanThread.h core/lookup/lookUpT.h core/digSupport/digSupport.h core/digSupport/digThread.h 
-	core/vulnerability/addurl.h core/bookmarks/addparbook.h)
+  SET(SOURCES_H mainwin.h 
+	core/preference/profilemain.h 
+	../lib/about/about.h 
+	core/scanMT/scanThread.h 
+	core/lookup/lookUpT.h 
+	core/digSupport/digSupport.h 
+	core/digSupport/digThread.h 
+	core/vulnerability/addurl.h 
+	core/bookmarks/addparbook.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 endif (Q_WS_X11)
 
 if(Q_WS_X11)
-  SET(SOURCES_UI mainwin.ui preference/profilemain.ui core/vulnerability/addurl.ui core/bookmarks/addparbook.ui)
+  SET(SOURCES_UI mainwin.ui 
+	core/preference/profilemain.ui 
+	core/vulnerability/addurl.ui 
+	core/bookmarks/addparbook.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 else (Q_WS_X11)
-  SET(SOURCES_UI mainwin.ui preference/profilemain.ui ../lib/about/about.ui core/vulnerability/addurl.ui core/bookmarks/addparbook.ui)
+  SET(SOURCES_UI mainwin.ui 
+	preference/profilemain.ui 
+	../lib/about/about.ui 
+	core/vulnerability/addurl.ui 
+	core/bookmarks/addparbook.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 endif (Q_WS_X11)
 
