@@ -120,7 +120,7 @@ if(Q_WS_X11)
   #MESSAGE( STATUS ${SOURCES_UI} )
 else (Q_WS_X11)
   SET(SOURCES_UI mainwin.ui 
-	preference/profilemain.ui 
+	core/preference/profilemain.ui 
 	../lib/about/about.ui 
 	core/vulnerability/addurl.ui 
 	core/bookmarks/addparbook.ui)
