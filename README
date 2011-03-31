@@ -3,6 +3,7 @@ Build Information for Linux:
 Required:
 * qt4
 * cmake >= 2.6
+* nmap >= 5.51 with nping for discovery tool
 
 Recommend:
 * dig package (debian: dnsutils)
@@ -42,7 +43,7 @@ For sudo users:
 **********************************************************************
 
 * set X-KDE-SubstituteUID=true to X-KDE-SubstituteUID=false in /usr/share/applications/kde/nmapsi4-admin.desktop
-* change Exec=nmapsi4 with Exec=sudo nmapsi4
+* change Exec=nmapsi4 with Exec=kdesu/sudo/su-to-root nmapsi4
 
 insert this line in your /etc/sudoers:
 #cd /etc
