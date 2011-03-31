@@ -23,7 +23,8 @@ namespace varDiscover {
     int ipCounter = 0;
 }
 
-void nmapClass::startDiscover() {
+void nmapClass::startDiscover() 
+{
     // TODO test for discover, clear pointer
     mainDiscover *discover = new mainDiscover();
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
@@ -34,7 +35,8 @@ void nmapClass::startDiscover() {
     
 }
 
-void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) { // SLOT
+void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) 
+{ // SLOT
     // TODO remove input parameters, read and create combo Interfaces
     foreach (const QNetworkAddressEntry &entry, discover->getAddressEntries(interface)) {
 	qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry.ip();
@@ -48,14 +50,18 @@ void nmapClass::discoverIpState()
     QStringList ipList;
     ipList.append("192.168.1.4");
     ipList.append("192.168.1.2");
-    ipList.append("192.168.1.3");
     ipList.append("192.168.1.1");
+    ipList.append("192.168.1.10");
+    ipList.append("192.168.1.8");
+    ipList.append("192.168.1.7");
+    ipList.append("192.168.1.6");
+    ipList.append("192.168.1.3");
     mainDiscover *discover = new mainDiscover();
     varDiscover::listDiscover.push_back(discover);
+    connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
     
     foreach (const QString &token, ipList) {
-	discover->isUp(token);
-	connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
+	discover->isUp(token,this);
 	varDiscover::ipCounter++;
     }
 }

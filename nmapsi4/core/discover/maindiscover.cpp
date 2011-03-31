@@ -40,13 +40,14 @@ QList<QNetworkAddressEntry> mainDiscover::getAddressEntries(QNetworkInterface in
     return interface.addressEntries();
 }
 
-void mainDiscover::isUp(const QString networkIp) {
-    // FIXME:: fix parent for kill signal (use nping)
+void mainDiscover::isUp(const QString networkIp, QObject *parent) {
+    // start thread for discover ip state
     QByteArray pingBuffer_;
     QStringList listPar_;
+    // Create parameters list for npig
     listPar_.append("--tcp-connect");
     listPar_.append(networkIp);
-    QPointer<pingThread> pingTh = new pingThread(pingBuffer_, listPar_, this);
+    QPointer<pingThread> pingTh = new pingThread(pingBuffer_, listPar_, parent);
     pingTh->start();
     connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
             this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
@@ -54,6 +55,9 @@ void mainDiscover::isUp(const QString networkIp) {
 
 void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
 {
+    // clear thread
+    ptrThread->quit();
+    ptrThread->wait();
     delete ptrThread;
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
@@ -61,13 +65,11 @@ void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThr
     
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-	if (buffLine.contains("No route to host")) {
-	    //ipState = false;
-	    emit endPing(ipAddr, false);
+	if (buffLine.contains("completed")) {
+	    emit endPing(ipAddr, true);
 	    return;
 	}
     }
-    
-    emit endPing(ipAddr, true);
+    emit endPing(ipAddr, false);
 }
 
