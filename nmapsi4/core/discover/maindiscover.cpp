@@ -61,13 +61,11 @@ void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThr
     
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-	if (buffLine.contains("No route to host")) {
-	    //ipState = false;
-	    emit endPing(ipAddr, false);
+	if (buffLine.contains("completed")) {
+	    emit endPing(ipAddr, true);
 	    return;
 	}
     }
-    
-    emit endPing(ipAddr, true);
+    emit endPing(ipAddr, false);
 }
 

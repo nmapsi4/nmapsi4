@@ -52,10 +52,10 @@ void nmapClass::discoverIpState()
     ipList.append("192.168.1.1");
     mainDiscover *discover = new mainDiscover();
     varDiscover::listDiscover.push_back(discover);
+    connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
     
     foreach (const QString &token, ipList) {
 	discover->isUp(token);
-	connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
 	varDiscover::ipCounter++;
     }
 }
