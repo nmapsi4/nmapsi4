@@ -55,7 +55,7 @@ void nmapClass::discoverIpState()
     connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
     
     foreach (const QString &token, ipList) {
-	discover->isUp(token);
+	discover->isUp(token,this);
 	varDiscover::ipCounter++;
     }
 }

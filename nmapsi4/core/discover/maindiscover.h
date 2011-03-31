@@ -39,7 +39,7 @@ public:
     ~mainDiscover();
     QList<QNetworkInterface> getAllInterfaces() const;
     QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
-    void isUp(const QString networkIp);
+    void isUp(const QString networkIp, QObject *parent);
 
 protected:
     bool ipState;
