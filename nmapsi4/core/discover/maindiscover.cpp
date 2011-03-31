@@ -65,7 +65,7 @@ void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThr
     
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-	if (buffLine.contains("completed")) {
+	if (buffLine.contains("completed") || buffLine.contains("Connection refused")) {
 	    emit endPing(ipAddr, true);
 	    return;
 	}
