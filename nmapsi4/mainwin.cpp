@@ -131,7 +131,6 @@ void nmapClass::initObject()
     delete historyVulnUrl_;
 
     this->rootMode(); // send uid value
-    dialog = new mainProfile();
 
     nssAct->setChecked(NSSsupport); // set NSS support
     NSSCheck();
@@ -147,8 +146,9 @@ void nmapClass::initObject()
     updateComboPar();
     updateComboBook();
     updateComboWebV();
-    // call discover startup
+    // FIXME: call discover startup, NPING is REQUIRED
     startDiscover();
+    discoverIpState();
 }
 
 void nmapClass::startScan() 
@@ -289,10 +289,6 @@ void nmapClass::scan(const QString hostname)
 
 nmapClass::~nmapClass() 
 {
-    if(dialog) {
-        dialog->close();
-    }
-    
     itemDeleteAll(itemListScan);
     itemDeleteAll(digLookupList);
     itemDeleteAll(internealLookupList);

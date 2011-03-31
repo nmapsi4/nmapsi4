@@ -18,14 +18,20 @@
 
 #include "../../mainwin.h"
 
+namespace varDiscover {
+    QList<mainDiscover*> listDiscover;
+    int ipCounter = 0;
+}
+
 void nmapClass::startDiscover() {
-    // TODO test for discover
+    // TODO test for discover, clear pointer
     mainDiscover *discover = new mainDiscover();
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
 	qDebug() << "DEBUG:: Discover Interfaces name:: " << interface.humanReadableName();
 	discoverIp(discover,interface);
     }
     delete discover;
+    
 }
 
 void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) { // SLOT
@@ -33,5 +39,39 @@ void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) 
     foreach (const QNetworkAddressEntry &entry, discover->getAddressEntries(interface)) {
 	qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry.ip();
 	// TODO write data in lineEdit ip
+    }
+}
+
+void nmapClass::discoverIpState()
+{
+    //TODO: take values from QWidget
+    QStringList ipList;
+    ipList.append("192.168.1.4");
+    ipList.append("192.168.1.2");
+    ipList.append("192.168.1.3");
+    ipList.append("192.168.1.1");
+    mainDiscover *discover = new mainDiscover();
+    varDiscover::listDiscover.push_back(discover);
+    
+    foreach (const QString &token, ipList) {
+	discover->isUp(token);
+	connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
+	varDiscover::ipCounter++;
+    }
+}
+
+void nmapClass::pingResult(QStringList hostname, bool state)
+{
+    // decrement ping ip counter
+    --varDiscover::ipCounter;
+    
+    if (state) {
+	qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
+    } else {
+	qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
+    }
+    
+    if (!varDiscover::ipCounter) {
+	itemDeleteAll(varDiscover::listDiscover);
     }
 }

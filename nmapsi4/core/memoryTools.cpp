@@ -82,6 +82,15 @@ void nmapClass::itemDeleteAll(QList<digSupport*>& items)
     items.clear();
 }
 
+void nmapClass::itemDeleteAll(QList<mainDiscover*>& items)
+{
+#ifndef TOOLS_NO_DEBUG
+    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
+#endif
+    qDeleteAll(items);
+    items.clear();
+}
+
 void nmapClass::listClear() 
 {
     listClearFlag = true;

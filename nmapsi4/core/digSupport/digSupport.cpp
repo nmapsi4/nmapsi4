@@ -23,7 +23,6 @@ digSupport::digSupport()
     : m_digProc(NULL),
       m_state(false),
       m_Wview(NULL),
-      m_th(NULL),
       m_elemObjUtil(NULL) 
 {
     
@@ -80,13 +79,13 @@ void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObj
     m_hostNameLocal = hostname;
     command << hostname;
     m_elemObjUtil = objElem;
-    m_th = new digThread(buff1, command, this);
+    digThread* m_th = new digThread(buff1, command, this);
     m_th->start();
-    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray)),
-      this, SLOT(digReturn(const QStringList, QByteArray)));
+    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray, digThread*)),
+      this, SLOT(digReturn(const QStringList, QByteArray, digThread*)));
 }
 
-void digSupport::digReturn(const QStringList hostname, QByteArray buffer1) 
+void digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread) 
 {
 #ifndef DIG_NO_DEBUG
     qDebug() << "############## digSupport():: start pars ######################";
@@ -108,7 +107,7 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1)
         }
     }
 
-    delete m_th;
+    delete ptrThread;
     buffer1.clear();
 }
 

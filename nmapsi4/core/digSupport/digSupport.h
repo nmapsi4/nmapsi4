@@ -43,7 +43,7 @@ class digSupport : public QObject
 
     private slots:
         void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1);
+        void digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread);
 
     signals:
         void killScan();
@@ -52,7 +52,6 @@ class digSupport : public QObject
         QProcess* m_digProc;
         bool m_state;
         QTreeWidget* m_Wview;
-        digThread* m_th;
 	parserObjUtil* m_elemObjUtil;
 	QString m_hostNameLocal;
 

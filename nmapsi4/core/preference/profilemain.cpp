@@ -19,7 +19,7 @@
 
 #include "profilemain.h"
 
-mainProfile::mainProfile()
+mainProfile::mainProfile(QObject *parent) : par(parent)
 {
     setupUi(this);
     QSettings ptrFile("nmapsi4", "nmapsi4");

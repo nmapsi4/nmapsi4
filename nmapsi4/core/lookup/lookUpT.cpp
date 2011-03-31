@@ -31,7 +31,9 @@ void lookUpT::run()
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
 
-    if(m_info.error() != QHostInfo::NoError && m_info.error() != QHostInfo::UnknownError) {
+    if(m_info.error() != QHostInfo::NoError 
+	&& m_info.error() != QHostInfo::UnknownError
+	&& m_info.error() != QHostInfo::HostNotFound) {
 #ifdef LOOKUP_NO_THREAD
          qDebug() << "Lookup failed:" << info.errorString();
 #endif

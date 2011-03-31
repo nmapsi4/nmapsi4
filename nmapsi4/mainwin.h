@@ -75,6 +75,7 @@ private:
     void itemDeleteAll(QList<scanThread*>& items);
     void itemDeleteAll(QList<lookUpT*>& items);
     void itemDeleteAll(QList<digSupport*>& items);
+    void itemDeleteAll(QList<mainDiscover*>& items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
@@ -157,7 +158,6 @@ protected:
     QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
-    QPointer<mainProfile> dialog;
     QAction *scanSez;
     QAction *logSez;
     QAction *vulnSez;
@@ -276,6 +276,8 @@ private slots:
     void startAddParBook_ui();
     //discover
     void discoverIp(mainDiscover *discover, QNetworkInterface interface);
+    void pingResult(QStringList hostname, bool state);
+    void discoverIpState();
 };
 
 #endif

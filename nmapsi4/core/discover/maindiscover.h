@@ -22,15 +22,33 @@
 
 #include <QtCore/QList>
 #include <QtNetwork/QNetworkInterface>
+#include <QtNetwork/QHostInfo>
+#include <QtCore/QDebug>
+#include <QtCore/QStringList>
+#include <QtCore/QPointer>
 
-class mainDiscover
+// local include
+#include "pingThread.h"
+
+class mainDiscover : public QObject
 {
+    Q_OBJECT
 
 public:
     mainDiscover();
     ~mainDiscover();
     QList<QNetworkInterface> getAllInterfaces() const;
     QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
+    void isUp(const QString networkIp);
+
+protected:
+    bool ipState;
+    
+private slots:
+    void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
+
+signals:
+    void endPing(QStringList ipAddr, bool state);
 };
 
 #endif // MAINDISCOVER_H

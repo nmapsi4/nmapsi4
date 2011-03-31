@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,51 +17,42 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PROFILEMAIN_H
-#define PROFILEMAIN_H
+#include "pingThread.h"
 
-#include <QtGui/QDialog>
-#include <QtCore/QSettings>
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <ui_profilemain.h>
-
-class mainProfile : public QDialog, private Ui::ProfileMain
+pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
+     : m_pout(ProcB1), 
+       m_host(hostname),
+       m_par(parent)
 {
-    Q_OBJECT
+    // TODO: port parent
+    /*connect(m_par, SIGNAL(killScan()),
+            this, SLOT(stopProcess()));*/
 
-private:
-    void saveProfile(const QString ProfileType); // Create a enum for the profile
-    QString readProfile();
-    void setProfile();
+}
 
-public:
-    mainProfile(QObject *parent = 0);
-    ~mainProfile();
+void pingThread::run() 
+{
+    m_proc = new QProcess();
+    qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+    connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)), 
+	    this, SLOT(setValue()));
 
-protected:
-    QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem;
-    QListWidgetItem *lookItem;
-    QObject *par;
+    m_proc->start("nping", m_host);
+     
+    exec();
+    emit threadEnd(m_host, m_pout, this);
+ }
 
-public slots:
-    void setScan();
+void pingThread::setValue() 
+{
+    m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+    delete m_proc;
+    exit(0);
+}
 
-private slots:
-    void updateNormalCheck();
-    void updateQuickCheck();
-    void updateFullVersionCheck();
-    void updateQuickVersionCheck();
-    void updateItem();
-    void log_browser();
-    void update_saveButton();
-    void quit();
-    void setDefaults();
-    void activeLookupInt();
-    void activeLookupDig();
-
-};
-
-#endif
-
+void pingThread::stopProcess() 
+{
+     if(m_proc->state() == QProcess::Running) {
+	  m_proc->terminate();
+     }
+}

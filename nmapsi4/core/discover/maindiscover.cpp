@@ -19,14 +19,15 @@
 
 #include "maindiscover.h"
 
-mainDiscover::mainDiscover()
+mainDiscover::mainDiscover() 
+    : ipState(false)
 {
 
 }
 
 mainDiscover::~mainDiscover()
 {
-
+    
 }
 
 QList<QNetworkInterface> mainDiscover::getAllInterfaces() const
@@ -37,5 +38,36 @@ QList<QNetworkInterface> mainDiscover::getAllInterfaces() const
 QList<QNetworkAddressEntry> mainDiscover::getAddressEntries(QNetworkInterface interface) const
 {
     return interface.addressEntries();
-
 }
+
+void mainDiscover::isUp(const QString networkIp) {
+    // FIXME:: fix parent for kill signal (use nping)
+    QByteArray pingBuffer_;
+    QStringList listPar_;
+    listPar_.append("--tcp-connect");
+    listPar_.append(networkIp);
+    QPointer<pingThread> pingTh = new pingThread(pingBuffer_, listPar_, this);
+    pingTh->start();
+    connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
+            this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
+}
+
+void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
+{
+    delete ptrThread;
+    QString buffString(ipBuffer);
+    QTextStream buffStream(&buffString);
+    QString buffLine;
+    
+    while(!buffStream.atEnd()) {
+        buffLine = buffStream.readLine();
+	if (buffLine.contains("No route to host")) {
+	    //ipState = false;
+	    emit endPing(ipAddr, false);
+	    return;
+	}
+    }
+    
+    emit endPing(ipAddr, true);
+}
+

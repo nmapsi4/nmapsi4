@@ -39,7 +39,7 @@ void digThread::run()
      m_proc->start("dig", m_host);
      
      exec();
-     emit threadEnd(m_host, m_pout);
+     emit threadEnd(m_host, m_pout, this);
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Quit";
 #endif

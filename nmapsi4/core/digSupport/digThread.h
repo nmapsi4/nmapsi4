@@ -38,7 +38,7 @@ class digThread : public QThread
      digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
 
 signals:
-     void threadEnd(const QStringList, QByteArray);
+     void threadEnd(const QStringList, QByteArray, digThread*);
 
 private:
      QByteArray m_pout;

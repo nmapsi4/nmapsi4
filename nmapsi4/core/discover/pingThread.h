@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,51 +17,42 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PROFILEMAIN_H
-#define PROFILEMAIN_H
+#ifndef PINGTHREAD_H
+#define PINGTHREAD_H
 
-#include <QtGui/QDialog>
-#include <QtCore/QSettings>
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <ui_profilemain.h>
+#include <QtCore/QThread>
+#include <QtCore/QByteArray>
+#include <QtCore/QStringList>
+#include <QtCore/QProcess>
+#include <QtCore/QObject>
+#include <QtCore/QMetaType>
+#include <QtCore/QtDebug>
+#include "../nmapsi4Debug.h"
 
-class mainProfile : public QDialog, private Ui::ProfileMain
+
+class pingThread : public QThread
 {
-    Q_OBJECT
+ Q_OBJECT
+
+ public:
+     pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
+
+signals:
+     void threadEnd(const QStringList, QByteArray, pingThread*);
 
 private:
-    void saveProfile(const QString ProfileType); // Create a enum for the profile
-    QString readProfile();
-    void setProfile();
-
-public:
-    mainProfile(QObject *parent = 0);
-    ~mainProfile();
-
-protected:
-    QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem;
-    QListWidgetItem *lookItem;
-    QObject *par;
-
-public slots:
-    void setScan();
+     QByteArray m_pout;
+     QStringList m_host;
 
 private slots:
-    void updateNormalCheck();
-    void updateQuickCheck();
-    void updateFullVersionCheck();
-    void updateQuickVersionCheck();
-    void updateItem();
-    void log_browser();
-    void update_saveButton();
-    void quit();
-    void setDefaults();
-    void activeLookupInt();
-    void activeLookupDig();
+     void setValue();
+     void stopProcess();
 
+ protected:
+     QProcess *m_proc;
+     void run();
+     QObject *m_par;
 };
 
-#endif
 
+#endif

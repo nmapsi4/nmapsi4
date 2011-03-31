@@ -21,9 +21,11 @@
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
-    dialog->show();
-    connect(dialog, SIGNAL(accepted()),
+    mainProfile dialogPreference_(this);
+    connect(&dialogPreference_, SIGNAL(accepted()),
             this, SLOT(readProfile()));
+    
+    dialogPreference_.exec();
 }
 
 
