@@ -107,6 +107,9 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digTh
         }
     }
 
+    // clear thread
+    ptrThread->quit();
+    ptrThread->wait();
     delete ptrThread;
     buffer1.clear();
 }

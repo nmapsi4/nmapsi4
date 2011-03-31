@@ -55,6 +55,9 @@ void mainDiscover::isUp(const QString networkIp, QObject *parent) {
 
 void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
 {
+    // clear thread
+    ptrThread->quit();
+    ptrThread->wait();
     delete ptrThread;
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
