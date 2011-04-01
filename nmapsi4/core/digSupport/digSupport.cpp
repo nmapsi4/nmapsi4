@@ -19,7 +19,7 @@
 
 #include "digSupport.h"
 
-digSupport::digSupport() 
+digInterface::digSupport::digSupport() 
     : m_digProc(NULL),
       m_state(false),
       m_Wview(NULL),
@@ -29,7 +29,7 @@ digSupport::digSupport()
 }
 
 
-void digSupport::checkDigSupport(bool& digState) 
+void digInterface::digSupport::checkDigSupport(bool& digState) 
 {
     m_digProc = new QProcess();
     m_state = digState;
@@ -41,7 +41,7 @@ void digSupport::checkDigSupport(bool& digState)
             this, SLOT(checkDig()));
 }
 
-void digSupport::checkDig() 
+void digInterface::digSupport::checkDig() 
 {
     QString *output, *error;
     output = new QString(m_digProc->readAllStandardOutput());
@@ -71,7 +71,7 @@ void digSupport::checkDig()
     delete m_digProc;
 }
 
-void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) 
+void digInterface::digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) 
 {
     m_Wview = view;
     QByteArray buff1;
@@ -85,7 +85,7 @@ void digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObj
       this, SLOT(digReturn(const QStringList, QByteArray, digThread*)));
 }
 
-void digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread) 
+void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread) 
 {
 #ifndef DIG_NO_DEBUG
     qDebug() << "############## digSupport():: start pars ######################";
@@ -114,5 +114,5 @@ void digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digTh
     buffer1.clear();
 }
 
-digSupport::~digSupport() {
+digInterface::digSupport::~digSupport() {
 }

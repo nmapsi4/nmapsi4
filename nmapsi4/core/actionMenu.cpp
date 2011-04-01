@@ -106,12 +106,14 @@ void nmapClass::createBar()
     scanSez = new QAction(this);
     logSez = new QAction(this);
     vulnSez = new QAction(this);
+    discoverSez = new QAction(this);
     nssAct = new QAction(this);
     parAct = new QAction(this);
     
     vulnSez->setCheckable(true);
     scanSez->setCheckable(true);
     logSez->setCheckable(true);
+    discoverSez->setCheckable(true);
 
     actSearch = new QAction(this);
     actBack = new QAction(this);
@@ -134,6 +136,10 @@ void nmapClass::createBar()
     vulnSez->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     vulnSez->setIconText(tr("Services"));
     vulnSez->setToolTip(tr("Check Vulnerabilities"));
+    
+    discoverSez->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+    discoverSez->setIconText(tr("Discover"));
+    discoverSez->setToolTip(tr("Network Discover"));
 
     nssAct->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     nssAct->setIconText(tr("Nss Script"));
@@ -147,6 +153,7 @@ void nmapClass::createBar()
     sezBar->addAction(scanSez);
     sezBar->addAction(logSez);
     sezBar->addAction(vulnSez);
+    sezBar->addAction(discoverSez);
     sezBar->addSeparator();
     sezBar->addAction(parAct);
     sezBar->addAction(nssAct);

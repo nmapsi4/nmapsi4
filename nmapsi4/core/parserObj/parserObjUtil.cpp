@@ -19,33 +19,32 @@
 
 #include "parserObjUtil.h"
 
-parserObjUtil::parserObjUtil() 
+parserUtilObject::parserObjUtil::parserObjUtil() 
 {
 
 }
 
-parserObjUtil::~parserObjUtil() 
+parserUtilObject::parserObjUtil::~parserObjUtil() 
 {
 
 }
 
-QStringList parserObjUtil::getInfoLookup() const 
+QStringList parserUtilObject::parserObjUtil::getInfoLookup() const 
 {
     return m_mainLookup;
 }
 
-QString parserObjUtil::getHostName() const 
+QString parserUtilObject::parserObjUtil::getHostName() const 
 {
     return m_hostName;
 }
 
-void parserObjUtil::setInfoLookup(const QString lookupElem) 
+void parserUtilObject::parserObjUtil::setInfoLookup(const QString lookupElem) 
 {
     m_mainLookup.push_back(lookupElem);
 }
 
-void parserObjUtil::setHostName(const QString hostName) 
+void parserUtilObject::parserObjUtil::setHostName(const QString hostName) 
 {
     m_hostName.append(hostName);
 }
-

@@ -27,27 +27,27 @@
 #include <QtNetwork/QHostInfo>
 #include "../nmapsi4Debug.h"
 
+namespace internalLookup {
+    class lookUpT : public QThread
+    {
+	Q_OBJECT
 
-class lookUpT : public QThread
-{
-    Q_OBJECT
+	public:
+	    lookUpT(const QString hostname, QObject *parent);
 
-    public:
-        lookUpT(const QString hostname, QObject *parent);
+	signals:
+	    void threadEnd(QHostInfo, int, const QString);
 
-    signals:
-        void threadEnd(QHostInfo, int, const QString);
+	private:
+	    QString m_host;
+	    QHostInfo m_info;
 
-    private:
-        QString m_host;
-        QHostInfo m_info;
+	private slots:
+	    void killLookup();
 
-    private slots:
-        void killLookup();
-
-    protected:
-        void run();
-        QObject* m_par;
-};
-
+	protected:
+	    void run();
+	    QObject* m_par;
+    };
+}
 #endif

@@ -19,7 +19,7 @@
 
 #include "pingThread.h"
 
-pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
+pingCore::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
      : m_pout(ProcB1), 
        m_host(hostname),
        m_par(parent)
@@ -30,7 +30,7 @@ pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *
 
 }
 
-void pingThread::run() 
+void pingCore::pingThread::run() 
 {
     m_proc = new QProcess();
     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
@@ -43,14 +43,14 @@ void pingThread::run()
     emit threadEnd(m_host, m_pout, this);
  }
 
-void pingThread::setValue() 
+void pingCore::pingThread::setValue() 
 {
     m_pout  = m_proc->readAllStandardOutput(); // read std buffer
     delete m_proc;
     exit(0);
 }
 
-void pingThread::stopProcess() 
+void pingCore::pingThread::stopProcess() 
 {
      if(m_proc->state() == QProcess::Running) {
 	  m_proc->terminate();

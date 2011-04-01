@@ -23,10 +23,11 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-class parserObj
-{
+namespace parserObject {
+    class parserObj
+    {
     public:
-        parserObj();
+	parserObj();
         ~parserObj();
 	QString getHostName() const;
 	QStringList getMainInfo() const;
@@ -63,7 +64,7 @@ class parserObj
         QStringList m_scanTraceRoute;
         QStringList m_fullLogScan;
         QStringList m_errorScan;
-};
-
+    };
+}
 
 #endif

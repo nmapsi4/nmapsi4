@@ -19,28 +19,28 @@
 
 #include "maindiscover.h"
 
-mainDiscover::mainDiscover() 
+pingInterface::mainDiscover::mainDiscover() 
     : ipState(false)
 {
 
 }
 
-mainDiscover::~mainDiscover()
+pingInterface::mainDiscover::~mainDiscover()
 {
     
 }
 
-QList<QNetworkInterface> mainDiscover::getAllInterfaces() const
+QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces() const
 {
     return QNetworkInterface::allInterfaces();
 }
 
-QList<QNetworkAddressEntry> mainDiscover::getAddressEntries(QNetworkInterface interface) const
+QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetworkInterface interface) const
 {
     return interface.addressEntries();
 }
 
-void mainDiscover::isUp(const QString networkIp, QObject *parent) {
+void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent) {
     // start thread for discover ip state
     QByteArray pingBuffer_;
     QStringList listPar_;
@@ -53,7 +53,7 @@ void mainDiscover::isUp(const QString networkIp, QObject *parent) {
             this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
 }
 
-void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
+void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
 {
     // clear thread
     ptrThread->quit();
@@ -72,4 +72,3 @@ void mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThr
     }
     emit endPing(ipAddr, false);
 }
-

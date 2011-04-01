@@ -29,34 +29,34 @@
 #include <QtCore/QtDebug>
 #include "../nmapsi4Debug.h"
 
+namespace scanning {
+    class scanThread : public QThread
+    {
+	Q_OBJECT
 
-class scanThread : public QThread
-{
- Q_OBJECT
+    public:	
+	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parametri, QObject *parent = 0);
 
- public:
-     scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parametri, QObject *parent = 0);
+    signals:
+	void threadEnd(const QStringList, QByteArray, QByteArray);
+	void flowFromThread(const QString, const QString);
+	void upgradePR();
 
-signals:
-     void threadEnd(const QStringList, QByteArray, QByteArray);
-     void flowFromThread(const QString, const QString);
-     void upgradePR();
+    private:
+	QByteArray pout;
+	QByteArray perr;
+	QStringList ParList;
 
-private:
-     QByteArray pout;
-     QByteArray perr;
-     QStringList ParList;
+    private slots:
+	void setValue();
+	void stopProcess();
+	void realtimeData();
 
-private slots:
-     void setValue();
-     void stopProcess();
-     void realtimeData();
-
- protected:
-     QProcess *proc;
-     void run();
-     QObject* par;
-};
-
+    protected:
+	QProcess *proc;
+	void run();
+	QObject* par;
+    };
+}
 
 #endif

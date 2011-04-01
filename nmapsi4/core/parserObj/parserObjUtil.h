@@ -23,10 +23,11 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-class parserObjUtil
-{
+namespace parserUtilObject {
+    class parserObjUtil
+    {
     public:
-        parserObjUtil();
+	parserObjUtil();
         ~parserObjUtil();
 	QStringList getInfoLookup() const;
 	QString getHostName() const;
@@ -36,7 +37,7 @@ class parserObjUtil
     protected:
         QStringList m_mainLookup;
 	QString m_hostName;
-};
-
+    };
+}
 
 #endif

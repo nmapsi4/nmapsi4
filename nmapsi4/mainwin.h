@@ -48,6 +48,14 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QDesktopServices>
 
+// define class namespace
+using namespace internalLookup;
+using namespace scanning;
+using namespace digInterface;
+using namespace parserObject;
+using namespace parserUtilObject;
+using namespace pingInterface;
+
 class QMainWindow;
 class QWebView;
 class QMutex;
@@ -161,6 +169,7 @@ protected:
     QAction *scanSez;
     QAction *logSez;
     QAction *vulnSez;
+    QAction *discoverSez;
     QAction *nssAct;
     QAction *parAct;
     QAction *actSearch;

@@ -23,7 +23,7 @@
 #include <windows.h>
 #endif
 
-scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
+scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
                        const QStringList parametri, QObject *parent)
      : pout(ProcB1), 
        perr(ProcB2),
@@ -34,7 +34,7 @@ scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
     
 }
 
-void scanThread::run() 
+void scanning::scanThread::run() 
 {     
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
@@ -63,7 +63,7 @@ void scanThread::run()
 #endif
 }
 
-void scanThread::setValue() 
+void scanning::scanThread::setValue() 
 {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: -> start";
@@ -74,7 +74,7 @@ void scanThread::setValue()
      exit(0);
 }
 
-void scanThread::stopProcess() 
+void scanning::scanThread::stopProcess() 
 {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: Clear Process";
@@ -92,7 +92,7 @@ void scanThread::stopProcess()
      }
 }
 
-void scanThread::realtimeData() 
+void scanning::scanThread::realtimeData() 
 {
     // read realtime data from process stdout
     QByteArray realByte = proc->readLine(proc->bytesAvailable());
@@ -103,4 +103,3 @@ void scanThread::realtimeData()
 	emit flowFromThread(ParList[ParList.size()-1], stream_);
     }
 }
-

@@ -29,30 +29,30 @@
 #include <QtCore/QtDebug>
 #include "../nmapsi4Debug.h"
 
+namespace pingCore {
+    class pingThread : public QThread
+    {
+    Q_OBJECT
 
-class pingThread : public QThread
-{
- Q_OBJECT
+    public:
+	pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
 
- public:
-     pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
+    signals:
+	void threadEnd(const QStringList, QByteArray, pingThread*);
 
-signals:
-     void threadEnd(const QStringList, QByteArray, pingThread*);
+    private:
+	QByteArray m_pout;
+	QStringList m_host;
 
-private:
-     QByteArray m_pout;
-     QStringList m_host;
+    private slots:
+	void setValue();
+	void stopProcess();
 
-private slots:
-     void setValue();
-     void stopProcess();
-
- protected:
-     QProcess *m_proc;
-     void run();
-     QObject *m_par;
-};
-
+    protected:
+	QProcess *m_proc;
+	void run();
+	QObject *m_par;
+    };
+}
 
 #endif

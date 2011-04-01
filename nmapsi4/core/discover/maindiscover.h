@@ -26,29 +26,31 @@
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
 #include <QtCore/QPointer>
-
 // local include
 #include "pingThread.h"
 
-class mainDiscover : public QObject
-{
+using namespace pingCore;
+
+namespace pingInterface {
+    class mainDiscover : public QObject
+    {
     Q_OBJECT
 
-public:
-    mainDiscover();
-    ~mainDiscover();
-    QList<QNetworkInterface> getAllInterfaces() const;
-    QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
-    void isUp(const QString networkIp, QObject *parent);
+    public:
+	mainDiscover();
+	~mainDiscover();
+	QList<QNetworkInterface> getAllInterfaces() const;
+	QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
+	void isUp(const QString networkIp, QObject *parent);
 
-protected:
-    bool ipState;
+    protected:
+	bool ipState;
     
-private slots:
-    void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
+    private slots:
+	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
 
-signals:
-    void endPing(QStringList ipAddr, bool state);
-};
-
+    signals:
+	void endPing(QStringList ipAddr, bool state);
+    };
+}
 #endif // MAINDISCOVER_H

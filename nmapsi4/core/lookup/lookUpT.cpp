@@ -19,14 +19,15 @@
 
 #include "lookUpT.h"
 
-lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
+
+internalLookup::lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
 {
     connect(m_par, SIGNAL(killScan()),
             this, SLOT(killLookup()));
 
 }
 
-void lookUpT::run() 
+void internalLookup::lookUpT::run() 
 {
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
@@ -43,7 +44,7 @@ void lookUpT::run()
     emit threadEnd(m_info, 1, m_host);
 }
 
-void lookUpT::killLookup() 
+void internalLookup::lookUpT::killLookup() 
 {
 #ifdef LOOKUP_NO_THREAD
     qDebug() << "Lookup::kill --> call";

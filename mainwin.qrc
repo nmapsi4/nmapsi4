@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/document-preview-archive.png</file>
     <file>images/code-function.png</file>
     <file>images/code-typedef.png</file>
     <file>images/tools-report-bug.png</file>

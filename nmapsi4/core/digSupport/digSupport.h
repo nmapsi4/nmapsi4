@@ -31,30 +31,33 @@
 #include "../nmapsi4Debug.h"
 #include "../parserObj/parserObjUtil.h"
 
+using namespace digLookup;
+using namespace parserUtilObject;
 
-class digSupport : public QObject
-{
-    Q_OBJECT
+namespace digInterface {
+    class digSupport : public QObject
+    {
+	Q_OBJECT
     public:
-        digSupport();
-        ~digSupport();
-        void checkDigSupport(bool& digState);
-        void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
+	digSupport();
+	~digSupport();
+	void checkDigSupport(bool& digState);
+	void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
 
     private slots:
-        void checkDig();
-        void digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread);
+	void checkDig();
+	void digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread);
 
     signals:
-        void killScan();
+	void killScan();
 
     protected:
-        QProcess* m_digProc;
-        bool m_state;
-        QTreeWidget* m_Wview;
+	QProcess* m_digProc;
+	bool m_state;
+	QTreeWidget* m_Wview;
 	parserObjUtil* m_elemObjUtil;
 	QString m_hostNameLocal;
 
-};
-
+    };
+}
 #endif
