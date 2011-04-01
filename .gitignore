@@ -1,5 +1,6 @@
 build/*
 build-c/*
+doxygen/*
 .kdev4/*
 astyle-nmapsi4
 *.user*
