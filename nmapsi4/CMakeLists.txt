@@ -14,6 +14,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp
+		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
@@ -59,6 +60,7 @@ else (NOT Q_WS_X11)
 		mainwin.cpp
 		core/updateUI.cpp
 		core/toolsUI.cpp
+		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp

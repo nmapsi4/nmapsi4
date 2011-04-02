@@ -23,8 +23,8 @@
 bool nmapClass::checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const 
 {
     // check string OS for Icon selection
-    itemOS->setTextAlignment(1, Qt::AlignHCenter);
-    itemOS->setTextAlignment(1, Qt::AlignVCenter);
+    itemOS->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);
+    
     if(OSline.contains("Linux")) {
         itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
 	itemOS->setText(1, "GNU/Linux");

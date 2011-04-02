@@ -1283,7 +1283,7 @@
                <string>Os</string>
               </property>
               <property name="textAlignment">
-               <set>AlignLeft|AlignVCenter</set>
+               <set>AlignRight|AlignVCenter</set>
               </property>
              </column>
             </widget>

@@ -33,10 +33,8 @@ nmapClass::nmapClass()
 void nmapClass::initGUI() 
 {
     setupUi(this);
-    hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
-    comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
+    // set default value in combo editable
+    defaultComboValues();
 }
 
 void nmapClass::initObject() 
@@ -54,15 +52,7 @@ void nmapClass::initObject()
     createBar();
     setNmapsiSlot();
     // Set default properties
-    action_Scan_menu->setEnabled(false);
-    action_Scan_2->setEnabled(false);
-    hostEdit->setEnabled(false);
-    actionAdd_Bookmark->setEnabled(false);
-    action_Add_BookmarkToolBar->setEnabled(false);
-    toolBarSearch->setVisible(false);
-    scanSez->setChecked(true);
-    Bdetails->setChecked(true);
-    menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
+    setDefaultAction();
     // preload mainwindow info 
     setTreeWidgetValues();
     checkProfile();
@@ -73,65 +63,16 @@ void nmapClass::initObject()
     delete digC;
     // check nmap version
     checkNmapVersion();
-    // set TreeWidget properties
-    treeLogH->setColumnWidth(0, 400);
-    treeBookPar->setColumnWidth(0, 400);
-    scanMonitor->setColumnWidth(0, 300);
-    scanMonitor->setColumnWidth(1, 350);
-    //treeTraceroot->setColumnWidth(0, 250);
-    treeTraceroot->setColumnWidth(1, 100);
-    treeTraceroot->setColumnWidth(2, 200);
-    treeTraceroot->setColumnWidth(3, 200);
-    treeBookVuln->setColumnWidth(0, 400);
-    treeWidgetVulnUrl->setColumnWidth(0, 400);
-    treeMain->setColumnWidth(0, 200);
+    // set tree default settings
+    setTreeSettings();
     // create mainwindow Qsplitter
-    cW = new QSplitter();
-    bW = new QSplitter();    
-    cW->setOrientation(Qt::Horizontal);
-    cW->addWidget(frameLeft);
-    cW->addWidget(frameCenter);
-    //frameCenter
-    bW->setOrientation(Qt::Vertical);
-    bW->addWidget(stackedMain);
-    bW->addWidget(frameRight);
-    // insert splitter
-    tabUi->widget(0)->layout()->addWidget(cW);
-    frameCenter->layout()->addWidget(bW);
-    frameCenter->layout()->addWidget(frame_2);
-    // restore window position
-    QSettings settings("nmapsi4", "nmapsi4");
-    QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
-    QSize size = settings.value("window/size", QSize(910, 672)).toSize();
-    resize(size);
-    move(pos);
-    cW->restoreState(settings.value("splitterSizes").toByteArray());
-    bW->restoreState(settings.value("splitterSizesRight").toByteArray());
-
-    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    historyScan_->updateBookMarks();
-    delete historyScan_;
-    // check for user or admin parameters bookmarks
-    if (!uid) {
-	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-	historyPar_->updateBookMarks();
-	delete historyPar_;
-    } else {
-	logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-	historyPar_->updateBookMarks();
-	delete historyPar_;
-    }
-
-    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-    historyVuln_->updateBookMarks();
-    delete historyVuln_;
-    
-    logHistory *historyVulnUrl_ = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
-    historyVulnUrl_->updateBookMarks();
-    delete historyVulnUrl_;
-
-    this->rootMode(); // send uid value
-
+    setDefaultSplitter();
+    // restore saved settings
+    restoreSettings();
+    // load history items
+    loadHistoryDefault();
+    // restore value with uid check
+    rootMode();
     nssAct->setChecked(NSSsupport); // set NSS support
     NSSCheck();
     parAct->setChecked(ADVSupport); // set ADV support
@@ -188,7 +129,7 @@ void nmapClass::startScan()
 	    // multiple ip or dns to scan
             for(int index=0; index < addrPart_.size(); index++) {
                 addrPart_[index] = clearHost(addrPart_[index]);
-		// dig lookup call
+		// check for lookup support
 		preScanLookup(addrPart_[index]);
             }
             return;
@@ -196,7 +137,6 @@ void nmapClass::startScan()
         // remove all space on hostname
         hostname.remove(' ');
     }
-
     // single ip or dns after the move
     preScanLookup(hostname);
     
@@ -248,7 +188,6 @@ void nmapClass::scan(const QString hostname)
         this->fileSession();
     }
 
-
     QStringList parameters_; //parameters list declaration
 
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
@@ -274,7 +213,7 @@ void nmapClass::scan(const QString hostname)
     scanPointerList.push_front(th);
     // update progressbar for scan
     connect(th, SIGNAL(upgradePR()),
-      this, SLOT(setProgress())); // nmapParser.cpp
+      this, SLOT(setProgress()));
     // read current data scan from the thread
     connect(th, SIGNAL(flowFromThread(const QString, const QString)),
       this, SLOT(readFlowFromThread(const QString, const QString)));

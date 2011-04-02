@@ -102,6 +102,12 @@ private:
     QMap<QString, QString> defaultScanProfile() const;
     QMap<QString, QString> defaultUrlVuln() const;
     void startDiscover();
+    void loadHistoryDefault();
+    void restoreSettings();
+    void setTreeSettings();
+    void setDefaultAction();
+    void setDefaultSplitter();
+    void defaultComboValues();
 
 public:
     nmapClass();
