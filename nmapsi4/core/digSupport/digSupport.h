@@ -23,8 +23,6 @@
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
 #include <QtCore/QDebug>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
 #include <QtCore/QTextStream>
 #include <QtCore/QList>
 #include "digThread.h"
@@ -42,7 +40,7 @@ namespace digInterface {
 	digSupport();
 	~digSupport();
 	void checkDigSupport(bool& digState);
-	void digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem);
+	void digProcess(const QString hostname, parserObjUtil* objElem);
 
     private slots:
 	void checkDig();
@@ -54,7 +52,6 @@ namespace digInterface {
     protected:
 	QProcess* m_digProc;
 	bool m_state;
-	QTreeWidget* m_Wview;
 	parserObjUtil* m_elemObjUtil;
 	QString m_hostNameLocal;
 

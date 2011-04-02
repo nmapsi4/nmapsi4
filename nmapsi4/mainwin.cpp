@@ -221,7 +221,7 @@ void nmapClass::preScanLookup(const QString hostname)
 	parserObjUtil* tmpParserObj_ = new parserObjUtil();
 	digSupport *digC = new digSupport();
 	digLookupList.push_back(digC);
-        digC->digProcess(hostname,treeLookup,tmpParserObj_);
+        digC->digProcess(hostname,tmpParserObj_);
 	parserObjUtilList.append(tmpParserObj_);
         addMonitorHost(scanMonitor, hostname);
         this->scan(hostname);

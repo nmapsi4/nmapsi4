@@ -22,7 +22,6 @@
 digInterface::digSupport::digSupport() 
     : m_digProc(NULL),
       m_state(false),
-      m_Wview(NULL),
       m_elemObjUtil(NULL) 
 {
     
@@ -71,9 +70,8 @@ void digInterface::digSupport::checkDig()
     delete m_digProc;
 }
 
-void digInterface::digSupport::digProcess(const QString hostname, QTreeWidget* view, parserObjUtil* objElem) 
+void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil* objElem) 
 {
-    m_Wview = view;
     QByteArray buff1;
     QStringList command;
     m_hostNameLocal = hostname;
