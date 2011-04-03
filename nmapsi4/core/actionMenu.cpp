@@ -225,7 +225,8 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(action_Quit_2);
     
     menuSetup->setMenu(menu);
-    toolBarQuit->addWidget(menuSetup);
+    //toolBarQuit->addWidget(menuSetup);
+    toolMenuBar->addWidget(menuSetup);
 }
 
 
