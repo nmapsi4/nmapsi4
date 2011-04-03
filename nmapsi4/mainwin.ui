@@ -3204,7 +3204,7 @@
      <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
    </property>
    <property name="text">
-    <string>Log secition</string>
+    <string>Log section</string>
    </property>
   </action>
   <action name="actionVulnerabilities_section">

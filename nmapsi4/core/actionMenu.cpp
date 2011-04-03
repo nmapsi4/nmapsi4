@@ -203,6 +203,7 @@ void nmapClass::createToolButtonSetup()
 {
     // new QToolButton menu
     menuSetup = new QToolButton();
+    menuSetup->setPopupMode(QToolButton::MenuButtonPopup);
     menuSetup->setText(tr("Setup"));
     menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
     
