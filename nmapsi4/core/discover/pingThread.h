@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,14 +30,25 @@
 #include "../nmapsi4Debug.h"
 
 namespace pingCore {
+    /*!
+     * nping thread class, start nping with a QProcess and return
+     * QByteArray result with a signal.
+     */
     class pingThread : public QThread
     {
     Q_OBJECT
 
     public:
+	/*!
+	 * Create a nping QThread and start QProcess for nping
+	 * with hostname parameters.
+	 */
 	pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
 
     signals:
+	/*!
+	 * Return nping QThread output with a Signal.
+	 */
 	void threadEnd(const QStringList, QByteArray, pingThread*);
 
     private:
@@ -45,7 +56,13 @@ namespace pingCore {
 	QStringList m_host;
 
     private slots:
+	/*!
+	 * Load QProcess buffer return on QByteArray
+	 */
 	void setValue();
+	/*!
+	 * Stop QProcess immediately.
+	 */
 	void stopProcess();
 
     protected:

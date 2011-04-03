@@ -24,10 +24,8 @@ pingCore::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname,
        m_host(hostname),
        m_par(parent)
 {
-    // TODO: port parent
     connect(m_par, SIGNAL(killScan()),
             this, SLOT(stopProcess()));
-
 }
 
 void pingCore::pingThread::run() 
