@@ -41,7 +41,9 @@ public:
 
 protected:
     QString ScanActive;
-    QListWidgetItem *profileItem, *logItem, *sizeItem;
+    QListWidgetItem *profileItem;
+    QListWidgetItem *logItem;
+    QListWidgetItem *sizeItem;
     QListWidgetItem *lookItem;
     QObject *par;
 

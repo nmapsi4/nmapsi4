@@ -200,7 +200,6 @@ void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
     Q_UNUSED(tokenWord);
     QStringList urlList = historyReadUrl();
     m_completer = new QCompleter(urlList);
-    m_completer->setCompletionMode(QCompleter::PopupCompletion);
     m_completer->setWrapAround(true);
     m_completer->setCaseSensitivity(Qt::CaseInsensitive);
     lineHistory->setCompleter(m_completer);

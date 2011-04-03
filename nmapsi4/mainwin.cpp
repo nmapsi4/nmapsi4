@@ -50,6 +50,7 @@ void nmapClass::initObject()
     tWresult->setTabsClosable(true);
     webViewList.push_back(viewVuln);
     createBar();
+    createToolButtonSetup();
     setNmapsiSlot();
     // Set default properties
     setDefaultAction();
@@ -252,5 +253,7 @@ nmapClass::~nmapClass()
     delete actStop;
     delete bW;
     delete cW;
+    delete menuSetup->menu();
+    delete menuSetup;
 }
 

@@ -276,7 +276,4 @@ void mainProfile::setDefaults()
 
 mainProfile::~mainProfile()
 {
-    delete profileItem;
-    delete logItem;
-    delete sizeItem;
 }

@@ -47,6 +47,7 @@
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 #include <QtGui/QDesktopServices>
+#include <QtGui/QToolButton>
 
 // define class namespace
 using namespace internalLookup;
@@ -108,6 +109,7 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
+    void createToolButtonSetup();
 
 public:
     nmapClass();
@@ -187,6 +189,7 @@ protected:
     QAction *actTabMonitor;
     QSplitter *cW;
     QSplitter *bW;
+    QToolButton *menuSetup;
 
 public slots:
     void startScan();

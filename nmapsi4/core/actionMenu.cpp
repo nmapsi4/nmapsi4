@@ -199,4 +199,32 @@ void nmapClass::createBar()
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
+void nmapClass::createToolButtonSetup()
+{
+    // new QToolButton menu
+    menuSetup = new QToolButton();
+    menuSetup->setText(tr("Setup"));
+    menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    
+    QMenu *menu = new QMenu();
+    menu->addAction(action_Scan_2);
+    menu->addAction(actionSave);
+    menu->addAction(actionSave_As_Menu);
+    menu->addSeparator();
+    menu->addAction(actionAdd_Bookmark);
+    menu->addSeparator();
+    menu->addAction(actionScan_section);
+    menu->addAction(actionLog_section);
+    menu->addAction(actionVulnerabilities_section);
+    menu->addSeparator();
+    menu->addAction(actionProfile);
+    menu->addSeparator();
+    menu->addMenu(menu_Help);
+    menu->addSeparator();
+    menu->addAction(action_Quit_2);
+    
+    menuSetup->setMenu(menu);
+    toolBarQuit->addWidget(menuSetup);
+}
+
 
