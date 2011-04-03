@@ -24,10 +24,10 @@
 #endif
 
 scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
-                       const QStringList parametri, QObject *parent)
+                       const QStringList parameters, QObject *parent)
      : pout(ProcB1), 
        perr(ProcB2),
-       ParList(parametri),
+       ParList(parameters),
        proc(NULL),
        par(parent)
 {

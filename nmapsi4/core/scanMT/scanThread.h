@@ -30,16 +30,33 @@
 #include "../nmapsi4Debug.h"
 
 namespace scanning {
+    /*!
+     * nmap thread class, start nmap with a QProcess and return
+     * QByteArray result with a signal.
+     */
     class scanThread : public QThread
     {
 	Q_OBJECT
 
-    public:	
-	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parametri, QObject *parent = 0);
+    public:
+	/*!
+	 * Create a nmap QThread and start QProcess for nmap
+	 * with parameters.
+	 */
+	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters, QObject *parent = 0);
 
     signals:
+	/*!
+	 * Return nmap QThread output with a Signal.
+	 */
 	void threadEnd(const QStringList, QByteArray, QByteArray);
+	/*!
+	 * Return nmap QThread stdout for ETC and remaing scan time.
+	 */
 	void flowFromThread(const QString, const QString);
+	/*!
+	 * Update scan progess bar with a signal.
+	 */
 	void upgradePR();
 
     private:

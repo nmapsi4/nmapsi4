@@ -32,24 +32,45 @@
 using namespace pingCore;
 
 namespace pingInterface {
+    /*!
+     * nping interface, main method for discovery section
+     */
     class mainDiscover : public QObject
     {
     Q_OBJECT
 
     public:
+	/*!
+	 * Create a object for discovery Class
+	 */
 	mainDiscover();
 	~mainDiscover();
+	/*!
+	 * Return a QList of network interfaces
+	 */
 	QList<QNetworkInterface> getAllInterfaces() const;
+	/*!
+	 * Return ip address for a QNetworkInterface
+	 */
 	QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
+	/*!
+	 * Check state of ip on the network (up/down) with nping QThread
+	 */
 	void isUp(const QString networkIp, QObject *parent);
 
     protected:
 	bool ipState;
     
     private slots:
+	/*!
+	 * Emit signal with nping QThread ByteArray output
+	 */
 	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
 
     signals:
+	/*!
+	 * Return with a signal of ip state (up/down)
+	 */
 	void endPing(QStringList ipAddr, bool state);
     };
 }

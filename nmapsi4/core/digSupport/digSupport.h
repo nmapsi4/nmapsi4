@@ -33,20 +33,38 @@ using namespace digLookup;
 using namespace parserUtilObject;
 
 namespace digInterface {
+    /*!
+     * dig interface, main method for dig lookup.
+     */
     class digSupport : public QObject
     {
 	Q_OBJECT
     public:
+	/*!
+	 * Create a object for dig lookup Class.
+	 */
 	digSupport();
 	~digSupport();
+	/*!
+	 * Check for dig support (if installed) with QProcess.
+	 */
 	void checkDigSupport(bool& digState);
+	/*!
+	 * Start QThread dig for hostname.
+	 */
 	void digProcess(const QString hostname, parserObjUtil* objElem);
 
     private slots:
 	void checkDig();
+	/*!
+	 * Set dig result on parser Object utils (objElem)
+	 */
 	void digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread);
 
     signals:
+	/*!
+	 * Stop QProcess immediately.
+	 */
 	void killScan();
 
     protected:

@@ -85,9 +85,6 @@ void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil*
 
 void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread) 
 {
-#ifndef DIG_NO_DEBUG
-    qDebug() << "############## digSupport():: start pars ######################";
-#endif
     Q_UNUSED(hostname);
     QString buff1(buffer1);
     QTextStream stream1(&buff1);

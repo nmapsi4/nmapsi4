@@ -30,14 +30,25 @@
 #include "../nmapsi4Debug.h"
 
 namespace digLookup {
+    /*!
+     * dig thread class, start dig with a QProcess and return
+     * QByteArray result with a signal.
+     */
     class digThread : public QThread
     {
     Q_OBJECT
 
     public:
+	/*!
+	 * Create a dig QThread and start QProcess for dig
+	 * with hostname parameters.
+	 */
 	digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
 
     signals:
+	/*!
+	 * Return dig QThread output with a Signal.
+	 */
 	void threadEnd(const QStringList, QByteArray, digThread*);
 
     private:
@@ -45,7 +56,13 @@ namespace digLookup {
 	QStringList m_host;
 
     private slots:
+	/*!
+	 * Load QProcess buffer return on QByteArray
+	 */
 	void setValue();
+	/*!
+	 * Stop QProcess immediately.
+	 */
 	void stopProcess();
 
     protected:
