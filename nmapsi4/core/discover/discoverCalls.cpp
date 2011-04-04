@@ -20,47 +20,85 @@
 
 namespace varDiscover {
     QList<mainDiscover*> listDiscover;
+    QList<QTreeWidgetItem*> listTreeItemDiscover;
     int ipCounter = 0;
 }
 
 void nmapClass::startDiscover() 
 {
-    // TODO test for discover, clear pointer
+    // take local interfaces
+    comboDiscover->clear();
+    comboDiscover->insertItem(0, "Select Interface");
+    
     mainDiscover *discover = new mainDiscover();
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
-	qDebug() << "DEBUG:: Discover Interfaces name:: " << interface.humanReadableName();
-	discoverIp(discover,interface);
+	comboDiscover->insertItem(1, interface.humanReadableName());
     }
     delete discover;
     
 }
 
-void nmapClass::discoverIp(mainDiscover *discover, QNetworkInterface interface) 
-{ // SLOT
-    // TODO remove input parameters, read and create combo Interfaces
-    foreach (const QNetworkAddressEntry &entry, discover->getAddressEntries(interface)) {
-	qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry.ip();
-	// TODO write data in lineEdit ip
+void nmapClass::discoverIp(const QString& interface) 
+{
+    // ip from interface and discover ip range (FIXME unify the if)
+    mainDiscover *discover_ = new mainDiscover();
+    
+    QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
+    
+    if (!entryList_.isEmpty()) {
+	QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
+	
+	QString ipString_ = entry_.ip().toString();
+	
+	if (!ipString_.contains("127.0.0.1")) {
+	    // active discover buttton
+	    startDiscoverButt->setEnabled(true);
+	    QStringList ipSplit_ = ipString_.split(".");
+	    int ipStart = ipSplit_[3].toInt();
+	    ipSplit_.removeLast();
+	    QString ipClass_ = ipSplit_.join(".");
+	    ipClass_.append(".");
+	    lineIpDiscover->setText(ipClass_);
+	    spinBeginDiscover->setValue(ipStart);
+	    spinEndDiscover->setValue(ipStart+10);
+	    //qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry_.ip();
+	} else {
+ 	    // reset discover value
+	    lineIpDiscover->clear();
+	    startDiscoverButt->setEnabled(false);
+	    spinBeginDiscover->setValue(0);
+	    spinEndDiscover->setValue(0);
+	}
+    } else {
+	// reset discover value
+	lineIpDiscover->clear();
+	startDiscoverButt->setEnabled(false);
+	spinBeginDiscover->setValue(0);
+	spinEndDiscover->setValue(0);
     }
+    
+    delete discover_;
 }
 
 void nmapClass::discoverIpState()
 {
-    //TODO: take values from QWidget
-    QStringList ipList;
-    ipList.append("192.168.1.4");
-    ipList.append("192.168.1.2");
-    ipList.append("192.168.1.1");
-    ipList.append("192.168.1.10");
-    ipList.append("192.168.1.8");
-    ipList.append("192.168.1.7");
-    ipList.append("192.168.1.6");
-    ipList.append("192.168.1.3");
+    // start ip discover
+    // disable start discover button
+    startDiscoverButt->setEnabled(false);
+    // clear tree discover
+    cleanDiscovery();
+    
+    QStringList ipList_;
+    for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) {
+	QString tmpIp_ = lineIpDiscover->text().append(QString::number(index));
+	ipList_.append(tmpIp_);
+    }
+    
     mainDiscover *discover = new mainDiscover();
     varDiscover::listDiscover.push_back(discover);
     connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
     
-    foreach (const QString &token, ipList) {
+    foreach (const QString &token, ipList_) {
 	discover->isUp(token,this);
 	varDiscover::ipCounter++;
     }
@@ -70,14 +108,26 @@ void nmapClass::pingResult(QStringList hostname, bool state)
 {
     // decrement ping ip counter
     --varDiscover::ipCounter;
-    
+    // set values in treeDiscover widget
+    treeDiscover->setIconSize(QSize(24,24));
     if (state) {
-	qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
+	QTreeWidgetItem *item = new QTreeWidgetItem(treeDiscover);
+	item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+	item->setIcon(1, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
+	varDiscover::listTreeItemDiscover.push_back(item);
+	item->setText(0, hostname[1]);
+	item->setText(1, tr("is Up"));
     } else {
-	qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
+	//qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
     }
     
     if (!varDiscover::ipCounter) {
 	itemDeleteAll(varDiscover::listDiscover);
+	startDiscoverButt->setEnabled(true);
     }
+}
+
+void nmapClass::cleanDiscovery()
+{
+    itemDeleteAll(varDiscover::listTreeItemDiscover);
 }

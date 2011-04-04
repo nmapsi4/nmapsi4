@@ -191,6 +191,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateSezLog()));
     connect(vulnSez, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
+    connect(discoverSez, SIGNAL(triggered()),
+            this, SLOT(updateDiscoverVuln()));
     connect(actionVulnerabilities_section, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
     connect(nssAct, SIGNAL(triggered()),
@@ -227,4 +229,12 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(show_documentationUrl()));
     connect(actionDonate_Money, SIGNAL(triggered()),
             this, SLOT(show_donateUrl()));
+    
+    // Discover
+    connect(comboDiscover, SIGNAL(activated(const QString&)),
+            this, SLOT(discoverIp(const QString&)));
+    connect(startDiscoverButt, SIGNAL(clicked()),
+            this, SLOT(discoverIpState()));
+
+    
 }

@@ -54,6 +54,10 @@ namespace pingInterface {
 	 */
 	QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
 	/*!
+	 * Return ip address for a interface name
+	 */
+	QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
+	/*!
 	 * Check state of ip on the network (up/down) with nping QThread
 	 */
 	void isUp(const QString networkIp, QObject *parent);

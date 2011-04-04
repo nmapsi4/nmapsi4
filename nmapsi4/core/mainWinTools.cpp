@@ -71,6 +71,7 @@ void nmapClass::setTreeSettings()
     treeBookVuln->setColumnWidth(0, 400);
     treeWidgetVulnUrl->setColumnWidth(0, 400);
     treeMain->setColumnWidth(0, 200);
+    treeDiscover->setColumnWidth(0, 300);
 }
 
 void nmapClass::setDefaultAction()

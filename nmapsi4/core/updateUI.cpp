@@ -380,6 +380,7 @@ void nmapClass::updateSezScan()
     scanSez->setChecked(true);
     logSez->setChecked(false);
     vulnSez->setChecked(false);
+    discoverSez->setChecked(false);
     stackedMain->setCurrentIndex(0);
     this->showMainToolBar();
     this->showActionToolBar();
@@ -426,6 +427,7 @@ void nmapClass::updateSezLog()
     scanSez->setChecked(false);
     logSez->setChecked(true);
     vulnSez->setChecked(false);
+    discoverSez->setChecked(false);
     stackedMain->setCurrentIndex(1);
     // main and action bar only in scan index
     toolBar->setVisible(false);
@@ -473,6 +475,7 @@ void nmapClass::updateSezVuln()
     scanSez->setChecked(false);
     logSez->setChecked(false);
     vulnSez->setChecked(true);
+    discoverSez->setChecked(false);
     stackedMain->setCurrentIndex(2);
     // main and action bar only in scan index
     toolBar->setVisible(false);
@@ -506,6 +509,55 @@ void nmapClass::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     tabUi->setTabText(0, "Vulnerabilities");
+    
+    // disable scan action
+    nssAct->setVisible(false);
+    parAct->setVisible(false);
+}
+
+void nmapClass::updateDiscoverVuln() 
+{ // SLOT
+    // TODO:: discover section
+    if (stackedMain->currentIndex() == 3)
+        return;
+
+    scanSez->setChecked(false);
+    logSez->setChecked(false);
+    vulnSez->setChecked(false);
+    discoverSez->setChecked(true);
+    stackedMain->setCurrentIndex(3);
+    // main and action bar only in scan index
+    toolBar->setVisible(false);
+    toolBarBook->setVisible(false);
+    actionMain_Toolbars->setChecked(false);
+    toolBar_2->setVisible(false);
+    actionActions_Toolbar->setChecked(false);
+    toolBarSearch->setVisible(false);
+    GItree->setVisible(false);
+
+    if (frameScan->isVisible()) {
+        frameScan->setVisible(false);
+    }
+
+    if (frameLeft->isVisible()) {
+        frameLeft->setVisible(false);
+    }
+
+    if (frameAdv->isVisible()) {
+        frameAdv->setVisible(false);
+    }
+    
+    if (frameRight->isVisible()) {
+        frameRight->setVisible(false);
+    }
+    
+    if (frame_2->isVisible()) {
+        frame_2->setVisible(false);
+    }
+    
+    tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+    tabUi->setTabText(0, "Discover");
     
     // disable scan action
     nssAct->setVisible(false);

@@ -40,6 +40,19 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetw
     return interface.addressEntries();
 }
 
+QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const QString interfaceName) const
+{
+    QNetworkInterface interface_ = QNetworkInterface::interfaceFromName(interfaceName);
+    
+    QList<QNetworkAddressEntry> entryList_;
+    
+    if (interface_.isValid()) {
+	return interface_.addressEntries();
+    } else {
+	return entryList_;
+    }
+}
+
 void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent) {
     // start thread for discover ip state
     QByteArray pingBuffer_;

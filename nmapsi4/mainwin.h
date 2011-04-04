@@ -249,6 +249,7 @@ private slots:
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
+    void updateDiscoverVuln();
     void updateTabLook();
     void updateTabTrace();
     void updateTabMonitor();
@@ -293,9 +294,10 @@ private slots:
     void startAddUrl_ui();
     void startAddParBook_ui();
     //discover
-    void discoverIp(mainDiscover *discover, QNetworkInterface interface);
+    void discoverIp(const QString& interface);
     void pingResult(QStringList hostname, bool state);
     void discoverIpState();
+    void cleanDiscovery();
 };
 
 #endif

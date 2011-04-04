@@ -90,7 +90,7 @@ void nmapClass::initObject()
     updateComboWebV();
     // FIXME: call discover startup, NPING is REQUIRED
     startDiscover();
-    discoverIpState();
+    //discoverIpState();
 }
 
 void nmapClass::startScan() 
@@ -239,6 +239,7 @@ nmapClass::~nmapClass()
     itemDeleteAll(parserObjList);
     itemDeleteAll(parserObjUtilList);
     itemDeleteAll(webViewList);
+    cleanDiscovery();
     delete progressScan;
     delete PFile;
     delete labelVersion;
