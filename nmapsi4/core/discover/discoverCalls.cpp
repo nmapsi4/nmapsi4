@@ -53,7 +53,7 @@ void nmapClass::discoverIp(const QString& interface)
 	if (!ipString_.contains("127.0.0.1")) {
 	    // active discover buttton
 	    startDiscoverButt->setEnabled(true);
-	    QStringList ipSplit_ = ipString_.split(".");
+	    QStringList ipSplit_ = ipString_.split('.');
 	    int ipStart = ipSplit_[3].toInt();
 	    ipSplit_.removeLast();
 	    QString ipClass_ = ipSplit_.join(".");
