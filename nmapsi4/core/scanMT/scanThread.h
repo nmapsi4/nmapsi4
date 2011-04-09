@@ -49,7 +49,7 @@ namespace scanning {
 	/*!
 	 * Return nmap QThread output with a Signal.
 	 */
-	void threadEnd(const QStringList, QByteArray, QByteArray);
+	void threadEnd(const QStringList parameters, QByteArray bufferOut, QByteArray bufferError);
 	/*!
 	 * Return nmap QThread stdout for ETC and remaining scan time.
 	 */

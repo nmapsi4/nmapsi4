@@ -86,8 +86,6 @@ void nmapClass::setDefaultAction()
     scanSez->setChecked(true);
     Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    // test new menu
-    menuBar()->setVisible(false);
 }
 
 void nmapClass::setDefaultSplitter()

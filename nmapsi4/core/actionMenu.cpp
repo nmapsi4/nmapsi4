@@ -203,7 +203,7 @@ void nmapClass::createToolButtonSetup()
 {
     // new QToolButton menu
     menuSetup = new QToolButton();
-    menuSetup->setPopupMode(QToolButton::MenuButtonPopup);
+    menuSetup->setPopupMode(QToolButton::InstantPopup);
     menuSetup->setText(tr("Setup"));
     menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
     
@@ -221,6 +221,8 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionProfile);
     menu->addSeparator();
     menu->addMenu(menu_Help);
+    menu->addSeparator();
+    menu->addAction(actionMenuBar);
     menu->addSeparator();
     menu->addAction(action_Quit_2);
     

@@ -84,6 +84,7 @@ void nmapClass::initObject()
     updateTabLook();
     actTabTrace->setChecked(TraceEnabled);
     updateTabTrace();
+    updateMenuBar();
     // load quick combo items
     updateComboPar();
     updateComboBook();
