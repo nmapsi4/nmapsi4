@@ -1145,7 +1145,11 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSpinBox" name="spinBeginDiscover"/>
+                  <widget class="QSpinBox" name="spinBeginDiscover">
+                   <property name="maximum">
+                    <number>255</number>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QLabel" name="label_4">
@@ -1155,7 +1159,11 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSpinBox" name="spinEndDiscover"/>
+                  <widget class="QSpinBox" name="spinEndDiscover">
+                   <property name="maximum">
+                    <number>255</number>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>

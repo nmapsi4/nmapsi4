@@ -116,6 +116,7 @@ void nmapClass::startScan()
         for(int index = ipLeft_; index <= ipRight_; index++) {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
+	    // TODO active prescanLooup call
             addMonitorHost(scanMonitor, hostname);
             this->scan(hostname);
          }
@@ -176,7 +177,7 @@ void nmapClass::preScanLookup(const QString hostname)
 
 void nmapClass::scan(const QString hostname)
 {
-
+    // TODO move log, parameters a action on preScanLooup call for QSemaphore
     if (checkLog) { // create a file log
         this->fileSession();
     } else {
