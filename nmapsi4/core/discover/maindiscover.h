@@ -26,6 +26,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
 #include <QtCore/QPointer>
+#include <QtCore/QTimer>
 // local include
 #include "pingThread.h"
 
@@ -57,6 +58,8 @@ namespace pingInterface {
 	 * Return ip address for a interface name
 	 */
 	QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
+	
+    public slots:
 	/*!
 	 * Check state of ip on the network (up/down) with nping QThread
 	 */
@@ -70,6 +73,7 @@ namespace pingInterface {
 	 * Emit signal with nping QThread ByteArray output
 	 */
 	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
+	void repeatScanner();
 
     signals:
 	/*!
