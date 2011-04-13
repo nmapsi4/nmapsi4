@@ -3,7 +3,12 @@ cmake_minimum_required(VERSION 2.6.0)
 FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
 
 include(${QT_USE_FILE})
-ADD_DEFINITIONS(-O2 -Wall -Wextra -g -fno-var-tracking-assignments)
+
+if (Q_WS_X11)
+	ADD_DEFINITIONS(-O2 -Wall -Wextra -g -fno-var-tracking-assignments)
+else (Q_WS_X11)
+	ADD_DEFINITIONS(-O2 -Wall -Wextra -g)
+endif (Q_WS_X11)
 
 if (Q_WS_WIN)
   include(CMakeMinGWFindMake)

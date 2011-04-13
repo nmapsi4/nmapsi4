@@ -32,7 +32,7 @@ void nmapClass::startDiscover()
     
     mainDiscover *discover = new mainDiscover();
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
-	comboDiscover->insertItem(1, interface.humanReadableName());
+	comboDiscover->insertItem(1, interface.name());
     }
     delete discover;
     

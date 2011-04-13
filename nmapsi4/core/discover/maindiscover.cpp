@@ -31,7 +31,6 @@ namespace discoverLayer {
 pingInterface::mainDiscover::mainDiscover() 
     : ipState(false)
 {
-    //threadCout = new QSemaphore(20);
     discoverLayer::timer = new QTimer(this);
     discoverLayer::connectState = false;
     discoverLayer::threadLimit = 20;
@@ -88,6 +87,7 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent)
 	discoverLayer::m_ipSospended.append(networkIp);
     }
     
+    // check suspended discover ip
     if (discoverLayer::m_ipSospended.size() && !discoverLayer::connectState) {
 	discoverLayer::connectState = true;
 	connect(discoverLayer::timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
@@ -103,9 +103,10 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     ptrThread->quit();
     ptrThread->wait();
     delete ptrThread;
-    // release thread element
-    //threadCout->release(1);
+    
+    // increment thread limit, new ip discover is possible
     discoverLayer::threadLimit++;
+    // remove ip from counter
     discoverLayer::ScanCounter--;
     qDebug() << "DEBUG:: thread end:: " << ipAddr[1];
     QString buffString(ipBuffer);
@@ -124,6 +125,9 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
 
 void pingInterface::mainDiscover::repeatScanner()
 {
+    /*
+     * Recall discover for ip suspended 
+     */
     qDebug() << "DEBUG:: scan Counter timer:: " << discoverLayer::ScanCounter;
     if (!discoverLayer::ScanCounter) {
 	disconnect(this, SLOT(repeatScanner()));
