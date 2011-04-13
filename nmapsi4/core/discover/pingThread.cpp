@@ -24,7 +24,7 @@ pingCore::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname,
        m_host(hostname),
        m_par(parent)
 {
-    connect(m_par, SIGNAL(killScan()),
+    connect(m_par, SIGNAL(killPingScan()),
             this, SLOT(stopProcess()));
 }
 
@@ -44,6 +44,7 @@ void pingCore::pingThread::run()
 void pingCore::pingThread::setValue() 
 {
     m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+    m_proc->close();
     delete m_proc;
     exit(0);
 }

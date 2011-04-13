@@ -71,6 +71,8 @@ void scanning::scanThread::setValue()
      // set scan return buffer
      pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
+     proc->close();
+     delete proc;
      exit(0);
 }
 

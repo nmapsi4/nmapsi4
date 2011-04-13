@@ -122,6 +122,7 @@ public:
 
 signals:
     void killScan();
+    void killPingScan();
 
 protected:
     int uid;

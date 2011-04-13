@@ -51,6 +51,7 @@ void digLookup::digThread::setValue()
      qDebug() << "dig() THREAD:: -> start";
 #endif
      m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+     m_proc->close();
      delete m_proc;
      exit(0);
 }

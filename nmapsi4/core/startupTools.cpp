@@ -148,5 +148,14 @@ void nmapClass::exit()
 
 void nmapClass::stop_scan()
 {
-     emit killScan();
+    // call QProcess terminate signal
+    emit killScan();
+    // stop and clear clear thread
+    scanThread *thread;
+    for (int index = 0; index < scanPointerList.size(); ++index) {
+	thread = scanPointerList.takeFirst();
+	thread->quit();
+	thread->wait();
+	delete thread;
+    }
 }
