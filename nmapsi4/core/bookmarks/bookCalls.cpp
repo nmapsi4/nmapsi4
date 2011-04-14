@@ -171,7 +171,7 @@ void nmapClass::slotParSelected()
    
    if(parIndex) {
         // if not 0
-        QMap<QString, QString> tmpMap_ = defaultScanProfile();
+        QHash<QString, QString> tmpMap_ = defaultScanProfile();
 	comboAdv->clear();
 	if (parIndex <= tmpMap_.size()) {
 	    // call static default profile for check

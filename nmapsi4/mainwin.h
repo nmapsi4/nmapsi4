@@ -40,7 +40,7 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebPage>
-#include <QtCore/QMap>
+#include <QtCore/QHash>
 #include <QtCore/QPointer>
 #include <QtGui/QSplitter>
 #include <QtCore/QTimer>
@@ -100,8 +100,8 @@ private:
     void updateComboWebV();
     void updateComboBook();
     void restoreGlobalProfile();
-    QMap<QString, QString> defaultScanProfile() const;
-    QMap<QString, QString> defaultUrlVuln() const;
+    QHash<QString, QString> defaultScanProfile() const;
+    QHash<QString, QString> defaultUrlVuln() const;
     void startDiscover();
     void loadHistoryDefault();
     void restoreSettings();

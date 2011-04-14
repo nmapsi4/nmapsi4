@@ -633,8 +633,8 @@ void nmapClass::updateComboPar()
     
     comboPar->insertSeparator(1);
     // insert default static profile
-    QMap<QString, QString> tmpStaticProfile_ = defaultScanProfile(); 
-    QMap<QString, QString>::const_iterator i;
+    QHash<QString, QString> tmpStaticProfile_ = defaultScanProfile(); 
+    QHash<QString, QString>::const_iterator i;
     for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i) {
 	comboPar->insertItem(1, i.key());
     }
