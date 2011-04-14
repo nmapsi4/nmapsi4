@@ -34,6 +34,7 @@ void nmapClass::startDiscover()
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
 	comboDiscover->insertItem(1, interface.name());
     }
+
     delete discover;
     
 }
@@ -85,8 +86,10 @@ void nmapClass::discoverIpState()
     // start ip discover
     // disable start discover button
     startDiscoverButt->setEnabled(false);
+    stopDiscoverButt->setEnabled(true);
     // clear tree discover
     cleanDiscovery();
+    itemDeleteAll(varDiscover::listDiscover);
     
     QStringList ipList_;
     for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) {
@@ -124,10 +127,21 @@ void nmapClass::pingResult(QStringList hostname, bool state)
     if (!varDiscover::ipCounter) {
 	itemDeleteAll(varDiscover::listDiscover);
 	startDiscoverButt->setEnabled(true);
+	stopDiscoverButt->setEnabled(false);
     }
 }
 
 void nmapClass::cleanDiscovery()
 {
     itemDeleteAll(varDiscover::listTreeItemDiscover);
+}
+
+void nmapClass::stopDiscover()
+{
+    startDiscoverButt->setEnabled(true);
+    stopDiscoverButt->setEnabled(false);
+    varDiscover::ipCounter = 0;
+    // don't kill running QProcess is no necessary
+    //emit killPingScan();
+    emit killDiscover();
 }

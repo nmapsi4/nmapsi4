@@ -33,26 +33,37 @@ pingInterface::mainDiscover::mainDiscover()
 {
     discoverLayer::timer = new QTimer(this);
     discoverLayer::connectState = false;
+    discoverLayer::ScanCounter = 0;
     discoverLayer::threadLimit = 20;
 }
 
 pingInterface::mainDiscover::~mainDiscover()
 {
     delete discoverLayer::timer;
+    discoverLayer::m_ipSospended.clear();
 }
 
 QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces() const
 {
+    /*
+     * return all loca interfaces
+     */
     return QNetworkInterface::allInterfaces();
 }
 
 QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetworkInterface interface) const
 {
+    /*
+     * return all entries for a single QNeworkInterface
+     */
     return interface.addressEntries();
 }
 
 QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const QString interfaceName) const
 {
+    /*
+     * return all entries for a single interface name
+     */
     QNetworkInterface interface_ = QNetworkInterface::interfaceFromName(interfaceName);
     
     QList<QNetworkAddressEntry> entryList_;
@@ -65,7 +76,9 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
 }
 
 void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent) {
-    // start thread for discover ip state
+    /*
+     * start thread for discover ip state
+     */
     QByteArray pingBuffer_;
     QStringList listPar_;
     discoverLayer::m_parent = parent;
@@ -87,6 +100,10 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent)
 	discoverLayer::m_ipSospended.append(networkIp);
     }
     
+    if (!discoverLayer::connectState) {
+	connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
+    }
+    
     // check suspended discover ip
     if (discoverLayer::m_ipSospended.size() && !discoverLayer::connectState) {
 	discoverLayer::connectState = true;
@@ -99,6 +116,9 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent)
 
 void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
 {
+    /*
+     * Signal return, send data to discoverCalls
+     */
     // clear thread
     ptrThread->quit();
     ptrThread->wait();
@@ -147,3 +167,13 @@ void pingInterface::mainDiscover::repeatScanner()
 	}
     }
 }
+
+void pingInterface::mainDiscover::stopDiscover()
+{
+    /*
+     * disconnect timer slot and stop it
+     */
+    disconnect(this, SLOT(repeatScanner()));
+    discoverLayer::timer->stop();
+}
+

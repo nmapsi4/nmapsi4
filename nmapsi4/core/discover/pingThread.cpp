@@ -24,8 +24,9 @@ pingCore::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname,
        m_host(hostname),
        m_par(parent)
 {
-    connect(m_par, SIGNAL(killPingScan()),
-            this, SLOT(stopProcess()));
+    // not necessary, kill running qprocess
+    /*connect(m_par, SIGNAL(killPingScan()),
+            this, SLOT(stopProcess()));*/
 }
 
 void pingCore::pingThread::run() 
@@ -51,7 +52,11 @@ void pingCore::pingThread::setValue()
 
 void pingCore::pingThread::stopProcess() 
 {
-     if(m_proc->state() == QProcess::Running) {
-	  m_proc->terminate();
-     }
+    qDebug() << "DEBUG:: end nping thread";
+    if (!m_proc) {
+	return;
+    }
+    if(m_proc->state() == QProcess::Running) {
+	 m_proc->terminate();
+    }
 }

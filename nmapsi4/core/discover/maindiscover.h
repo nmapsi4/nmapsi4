@@ -74,6 +74,7 @@ namespace pingInterface {
 	 */
 	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
 	void repeatScanner();
+	void stopDiscover();
 
     signals:
 	/*!

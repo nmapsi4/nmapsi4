@@ -235,6 +235,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(discoverIp(const QString&)));
     connect(startDiscoverButt, SIGNAL(clicked()),
             this, SLOT(discoverIpState()));
-
-    
+    connect(stopDiscoverButt, SIGNAL(clicked()),
+            this, SLOT(stopDiscover()));
 }

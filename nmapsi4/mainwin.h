@@ -122,7 +122,8 @@ public:
 
 signals:
     void killScan();
-    void killPingScan();
+    //void killPingScan();
+    void killDiscover();
 
 protected:
     int uid;
@@ -299,6 +300,7 @@ private slots:
     void pingResult(QStringList hostname, bool state);
     void discoverIpState();
     void cleanDiscovery();
+    void stopDiscover();
 };
 
 #endif
