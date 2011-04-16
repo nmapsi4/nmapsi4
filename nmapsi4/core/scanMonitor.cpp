@@ -59,11 +59,13 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host)
 
 void nmapClass::updateMonitorHost(QTreeWidget* monitor) 
 {
-     itemDeleteAll(monitorElem);
-     monitor->clear();
-     QTreeWidgetItem* item;
+    memoryTools *memTools = new memoryTools();
+    memTools->itemDeleteAll(monitorElem);
+    delete memTools;
+    monitor->clear();
+    QTreeWidgetItem* item;
 
-     for(int i=0; i < monitorElemHost.size(); i++) {
+    for(int i=0; i < monitorElemHost.size(); i++) {
 #ifndef MAIN_NO_DEBUG
 	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
 #endif

@@ -156,5 +156,7 @@ void nmapClass::stop_scan()
 	ptrTmp->wait();
     }
     
-    itemDeleteAll(scanHashList);
+    memoryTools *memTools = new memoryTools();
+    memTools->itemDeleteAll(scanHashList);
+    delete memTools;
 }

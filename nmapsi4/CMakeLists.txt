@@ -41,11 +41,11 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
                 core/saveUiSettings.cpp
 		core/nseCalls.cpp
 		core/startupTools.cpp
-		core/memoryTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
+		core/lib/memorytools.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -84,11 +84,11 @@ else (NOT Q_WS_X11)
                 core/saveUiSettings.cpp
 		core/nseCalls.cpp
 		core/startupTools.cpp
-		core/memoryTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
+		core/lib/memorytools.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)

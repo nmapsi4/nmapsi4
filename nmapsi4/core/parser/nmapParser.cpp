@@ -287,9 +287,11 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     if(!monitorElemHost.size()) {
         emit killScan();
-	itemDeleteAll(scanHashList);
-	itemDeleteAll(internealLookupList);
-	itemDeleteAll(digLookupList);
+	memoryTools *memTools = new memoryTools();
+	memTools->itemDeleteAll(scanHashList);
+	memTools->itemDeleteAll(internealLookupList);
+	memTools->itemDeleteAll(digLookupList);
+	delete memTools;
     }
 
     Byte1.clear();

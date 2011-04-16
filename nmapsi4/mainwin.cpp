@@ -232,16 +232,18 @@ void nmapClass::scan(const QString hostname)
 
 nmapClass::~nmapClass() 
 {
-    itemDeleteAll(itemListScan);
-    itemDeleteAll(digLookupList);
-    itemDeleteAll(internealLookupList);
-    itemDeleteAll(monitorElem);
-    itemDeleteAll(mainTreeElem);
-    itemDeleteAll(itemNseActive);
-    itemDeleteAll(itemNseAvail);
-    itemDeleteAll(parserObjList);
-    itemDeleteAll(parserObjUtilList);
-    itemDeleteAll(webViewList);
+    memoryTools *memTools = new memoryTools();
+    memTools->itemDeleteAll(itemListScan);
+    memTools->itemDeleteAll(digLookupList);
+    memTools->itemDeleteAll(internealLookupList);
+    memTools->itemDeleteAll(monitorElem);
+    memTools->itemDeleteAll(mainTreeElem);
+    memTools->itemDeleteAll(itemNseActive);
+    memTools->itemDeleteAll(itemNseAvail);
+    memTools->itemDeleteAll(parserObjList);
+    memTools->itemDeleteAll(parserObjUtilList);
+    memTools->itemDeleteAll(webViewList);
+    delete memTools;
     cleanDiscovery();
     delete progressScan;
     delete PFile;

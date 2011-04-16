@@ -35,6 +35,7 @@
 #include "core/vulnerability/addurl.h"
 #include "core/discover/maindiscover.h"
 #include "core/bookmarks/addparbook.h"
+#include "core/lib/memorytools.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -56,6 +57,7 @@ using namespace digInterface;
 using namespace parserObject;
 using namespace parserUtilObject;
 using namespace pingInterface;
+using namespace memory;
 
 class QMainWindow;
 class QWebView;
@@ -77,14 +79,6 @@ private:
     void resetOptions();
     void checkProfile();
     void initGUI();
-    void itemDeleteAll(QList<QTreeWidgetItem*>& items);
-    void itemDeleteAll(QList<parserObj*>& items);
-    void itemDeleteAll(QList<parserObjUtil*>& items);
-    void itemDeleteAll(QList<QWebView*>& items);
-    void itemDeleteAll(QList<lookUpT*>& items);
-    void itemDeleteAll(QList<digSupport*>& items);
-    void itemDeleteAll(QList<mainDiscover*>& items);
-    void itemDeleteAll(QHash<QString, scanThread*>& items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);

@@ -685,3 +685,32 @@ void nmapClass::updateTabMonitor()
         MonitorEnabled = false;
     }
 }
+
+void nmapClass::listClear() 
+{
+    listClearFlag = true;
+    memoryTools *memTools = new memoryTools();
+    memTools->itemDeleteAll(itemListScan); //clear items list
+    // parserObj list
+    memTools->itemDeleteAll(parserObjList);
+    memTools->itemDeleteAll(parserObjUtilList);
+    // Host list
+    memTools->itemDeleteAll(mainTreeElem);
+    memTools->itemDeleteAll(objElem);
+    listScanError->clear();
+    treeMain->clear();
+    treeLookup->clear();
+    treeTraceroot->clear();
+    treeHostDet->clear();
+    GItree->clear();
+    listWscan->clear();
+    treeNSS->clear();
+    listScan->clear();
+    actionClear_History->setEnabled(false);
+    action_Save_As->setEnabled(false);
+    comboScanLog->clear();
+    comboScanLog->addItem(tr("Scan log parameters"));
+    
+    delete memTools;
+}
+
