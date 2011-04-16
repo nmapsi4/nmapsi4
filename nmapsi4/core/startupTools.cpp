@@ -103,10 +103,10 @@ void nmapClass::exit()
 {
     emit killScan();
     //wait thread in list, dig List and internal lookup list
-    if (scanPointerList.size()) {
-	foreach (scanThread *pointer, scanPointerList) {
-	    pointer->quit();
-	    pointer->wait();
+    if (scanHashList.size()) {
+	foreach (scanThread *ptrTmp, scanHashList) {
+	    ptrTmp->quit();
+	    ptrTmp->wait();
 	}
     }
     
@@ -151,11 +151,10 @@ void nmapClass::stop_scan()
     // call QProcess terminate signal
     emit killScan();
     // stop and clear clear thread
-    scanThread *thread;
-    for (int index = 0; index < scanPointerList.size(); ++index) {
-	thread = scanPointerList.takeFirst();
-	thread->quit();
-	thread->wait();
-	delete thread;
+    foreach (scanThread *ptrTmp, scanHashList) {
+	ptrTmp->quit();
+	ptrTmp->wait();
     }
+    
+    itemDeleteAll(scanHashList);
 }

@@ -55,15 +55,6 @@ void nmapClass::itemDeleteAll(QList<QWebView*>& items)
     items.clear();
 }
 
-void nmapClass::itemDeleteAll(QList<scanThread*>& items)
-{
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
-    qDeleteAll(items);
-    items.clear();
-}
-
 void nmapClass::itemDeleteAll(QList<lookUpT*>& items)
 {
 #ifndef TOOLS_NO_DEBUG
@@ -88,6 +79,18 @@ void nmapClass::itemDeleteAll(QList<mainDiscover*>& items)
     qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
 #endif
     qDeleteAll(items);
+    items.clear();
+}
+
+void nmapClass::itemDeleteAll(QHash<QString, scanThread*>& items)
+{
+#ifndef TOOLS_NO_DEBUG
+    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
+#endif
+    foreach (scanThread *ptrTmp, items) {
+	delete ptrTmp;
+    }
+    
     items.clear();
 }
 

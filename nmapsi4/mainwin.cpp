@@ -213,7 +213,8 @@ void nmapClass::scan(const QString hostname)
     QByteArray buff1, buff2;
     // start scan Thread
     QPointer<scanThread> th = new scanThread(buff1, buff2, parameters_, this);
-    scanPointerList.push_front(th);
+    //scanPointerList.push_front(th);
+    scanHashList.insert(hostname,th);
     // update progressbar for scan
     connect(th, SIGNAL(upgradePR()),
       this, SLOT(setProgress()));

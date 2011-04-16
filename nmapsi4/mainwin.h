@@ -81,10 +81,10 @@ private:
     void itemDeleteAll(QList<parserObj*>& items);
     void itemDeleteAll(QList<parserObjUtil*>& items);
     void itemDeleteAll(QList<QWebView*>& items);
-    void itemDeleteAll(QList<scanThread*>& items);
     void itemDeleteAll(QList<lookUpT*>& items);
     void itemDeleteAll(QList<digSupport*>& items);
     void itemDeleteAll(QList<mainDiscover*>& items);
+    void itemDeleteAll(QHash<QString, scanThread*>& items);
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
@@ -168,7 +168,7 @@ protected:
     QList<QString> monitorElemOptions;
     QList<QString> nseScriptAvailList;
     QList<QString> nseScriptActiveList;
-    QList<scanThread*> scanPointerList;
+    QHash<QString, scanThread*> scanHashList;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
     QList<lookUpT*> internealLookupList;
