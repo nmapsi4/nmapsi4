@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "../../mainwin.h"
 
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) 
 {
@@ -85,8 +85,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
          tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
      }
 
-     updateScanCounter(0);
-     
+     updateScanCounter(0);   
 }
 
 void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) 

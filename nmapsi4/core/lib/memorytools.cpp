@@ -106,3 +106,24 @@ void memory::memoryTools::itemDeleteAll(QHash<QString, scanThread*>& items)
     
     items.clear();
 }
+
+void memory::memoryTools::itemDeleteAllWithWait(QHash< QString, scanThread* >& items)
+{
+    // scan thread quit
+    foreach (scanThread *ptrTmp, items) {
+	ptrTmp->quit();
+	ptrTmp->wait();
+    }
+    
+    memory::memoryTools::itemDeleteAll(items);
+}
+
+void memory::memoryTools::itemDeleteAllWithWait(QList<lookUpT*>& items)
+{
+    foreach (lookUpT *pointer, items) {
+	    pointer->quit();
+	    pointer->wait();
+    }
+    
+    memory::memoryTools::itemDeleteAll(items);
+}

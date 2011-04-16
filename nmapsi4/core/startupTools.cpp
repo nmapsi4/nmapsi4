@@ -102,20 +102,10 @@ void nmapClass::setNmapVersion()
 void nmapClass::exit()
 {
     emit killScan();
-    //wait thread in list, dig List and internal lookup list
-    if (scanHashList.size()) {
-	foreach (scanThread *ptrTmp, scanHashList) {
-	    ptrTmp->quit();
-	    ptrTmp->wait();
-	}
-    }
-    
-    if (internealLookupList.size()) {
-	foreach (lookUpT *pointer, internealLookupList) {
-	    pointer->quit();
-	    pointer->wait();
-	}
-    }
+    memoryTools *memTools = new memoryTools();
+    memTools->itemDeleteAllWithWait(scanHashList);
+    memTools->itemDeleteAllWithWait(internealLookupList);
+    delete memTools;
     
     if (FileName != NULL) {
 
@@ -151,12 +141,7 @@ void nmapClass::stop_scan()
     // call QProcess terminate signal
     emit killScan();
     // stop and clear clear thread
-    foreach (scanThread *ptrTmp, scanHashList) {
-	ptrTmp->quit();
-	ptrTmp->wait();
-    }
-    
     memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(scanHashList);
+    memTools->itemDeleteAllWithWait(scanHashList);
     delete memTools;
 }

@@ -55,6 +55,12 @@ namespace memory {
 	void itemDeleteAll(QList<digSupport*>& items);
 	void itemDeleteAll(QList<mainDiscover*>& items);
 	void itemDeleteAll(QHash<QString, scanThread*>& items);
+	/*
+	 * Ovverride itemDeleteAll(QHash<QString, scanThread*>& items)
+	 * with thread quit() and wait()
+	 */
+	void itemDeleteAllWithWait(QHash<QString, scanThread*>& items);
+	void itemDeleteAllWithWait(QList<lookUpT*>& items);
     };
 }
 
