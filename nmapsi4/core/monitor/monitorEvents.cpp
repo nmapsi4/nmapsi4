@@ -68,6 +68,9 @@ void nmapClass::monitorRuntimeEvent()
 void nmapClass::monitorStopCurrentScan()
 {
     // Stop and wait thread fron QHash table
+    if (scanMonitor->selectedItems().isEmpty()) {
+	return;
+    }
     // TODO:: stop digSupport and internalLooup
     scanThread *ptrTmp = scanHashList.take(scanMonitor->selectedItems()[0]->text(0));
     
