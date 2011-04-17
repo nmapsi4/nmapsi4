@@ -89,13 +89,13 @@ void scanning::scanThread::stopProcess()
 #ifndef THREAD_NO_DEBUG
 	  qDebug() << "scan() THREAD:: Clear Process";
 #endif
-#ifdef Q_WS_WIN
+/*#ifdef Q_WS_WIN
 	  // kill process scan process in MS windows
           QString abort_cmd;
           PROCESS_INFORMATION *pinfo = (PROCESS_INFORMATION*)proc->pid();
           abort_cmd = QString("cmd /c taskkill /PID %1 /F").arg(pinfo->dwProcessId);
           QProcess::execute(abort_cmd);
-#endif
+#endif*/
 	  proc->close();
 	  delete proc;
      }
