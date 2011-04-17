@@ -697,6 +697,7 @@ void nmapClass::listClear()
     // Host list
     memTools->itemDeleteAll(mainTreeElem);
     memTools->itemDeleteAll(objElem);
+    scanHashListFlow.clear();
     listScanError->clear();
     treeMain->clear();
     treeLookup->clear();

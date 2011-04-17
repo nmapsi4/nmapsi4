@@ -99,9 +99,9 @@ void scanning::scanThread::realtimeData()
     // read realtime data from process stdout
     QByteArray realByte = proc->readLine(proc->bytesAvailable());
     QString stream_(realByte);
+    stream_ = stream_.remove('\n');
     // emit signal for data trasmission to parent
-    // send only [remaining || ETA]
-    if (stream_.contains("remaining") || stream_.contains("ETC")) {
+    if (!stream_.isEmpty()) {
 	emit flowFromThread(ParList[ParList.size()-1], stream_);
     }
 }

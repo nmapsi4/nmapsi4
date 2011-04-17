@@ -90,16 +90,41 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
 
 void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) 
 {
-    // read data line form thread
+    /*
+     * read data line form thread
+     */
+    QHash<QString, QStringList>::const_iterator i = scanHashListFlow.find(hostname);
+    
+    if (i == scanHashListFlow.end()) {
+	QStringList flowHistory;
+	flowHistory.append(lineData);
+	foreach (const QString &token, flowHistory) {
+	    qDebug() << "DEBUG:: scan CREATE:: " << token;
+	}
+	scanHashListFlow.insert(hostname,flowHistory);
+    } else {
+	// append scan flow values
+	while (i != scanHashListFlow.end() && i.key() == hostname) {
+	    QStringList flowHistory = i.value();
+	    flowHistory.append(lineData);
+	    foreach (const QString &token, flowHistory) {
+		qDebug() << "DEBUG:: scan RELOAD:: " << token;
+	    }
+	    scanHashListFlow.insert(i.key(),flowHistory);
+	    ++i;
+	}
+    }
+    
     // search hostname on treeWidget and update data rows (index = 2)
-    // take only remaining time and remove character unused
-    QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
-    infoTmp_ = infoTmp_.remove('(');
-    infoTmp_ = infoTmp_.remove(')');
-    infoTmp_ = infoTmp_.remove('\n');
-    // insert new information into monitor
-    monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
-    monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
+    // take only remaining time and remove character unused, only [remaining || ETA]
+    if (lineData.contains("remaining") || lineData.contains("ETC")) {
+	QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
+	infoTmp_ = infoTmp_.remove('(');
+	infoTmp_ = infoTmp_.remove(')');
+	// insert new information into monitor
+	monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
+	monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
+    }
 }
 
 void nmapClass::updateScanCounter(int type) 

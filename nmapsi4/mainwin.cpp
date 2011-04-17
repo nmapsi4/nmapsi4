@@ -244,6 +244,7 @@ nmapClass::~nmapClass()
     memTools->itemDeleteAll(parserObjUtilList);
     memTools->itemDeleteAll(webViewList);
     delete memTools;
+    scanHashListFlow.clear();
     cleanDiscovery();
     delete progressScan;
     delete PFile;
