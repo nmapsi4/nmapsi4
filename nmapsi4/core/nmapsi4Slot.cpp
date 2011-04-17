@@ -29,7 +29,7 @@ void nmapClass::setNmapsiSlot()
 
     connect(checkInputFile, SIGNAL(toggled(bool)),
             this, SLOT(update_inputcheck()));  // input check
-    connect(actionStop_Scan, SIGNAL(triggered()),
+    connect(monitorStopAllScanButt, SIGNAL(clicked()),
             this, SLOT(stop_scan()));    // stop scan button slot
 
     // discover

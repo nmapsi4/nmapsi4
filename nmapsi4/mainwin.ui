@@ -943,6 +943,12 @@
                    </item>
                    <item>
                     <widget class="QTabWidget" name="tWresult">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>160</height>
+                      </size>
+                     </property>
                      <property name="currentIndex">
                       <number>0</number>
                      </property>
@@ -1456,9 +1462,6 @@
         <string>Scan Monitor</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_14">
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
          <widget class="QProgressBar" name="progressScan">
           <property name="sizePolicy">
@@ -1483,6 +1486,65 @@
            <number>0</number>
           </property>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QPushButton" name="monitorStopAllScanButt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Stop All Scan</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../mainwin.qrc">
+              <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="monitorStopCurrentScanButt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Stop Current Scan</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../mainwin.qrc">
+              <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="monitorDetailsScanButt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Scan Details</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../mainwin.qrc">
+              <normaloff>:/images/images/traceroute.png</normaloff>:/images/images/traceroute.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QTreeWidget" name="scanMonitor">
@@ -2840,7 +2902,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="action_Scan_menu"/>
-   <addaction name="actionStop_Scan"/>
    <addaction name="separator"/>
    <addaction name="actionSave"/>
    <addaction name="action_Save_As"/>

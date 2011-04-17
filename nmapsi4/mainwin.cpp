@@ -196,7 +196,7 @@ void nmapClass::scan(const QString hostname)
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
 
-    actionStop_Scan->setEnabled(true);
+    monitorStopAllScanButt->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
     actionSave->setEnabled(false);
