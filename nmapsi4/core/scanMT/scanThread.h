@@ -27,6 +27,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QMetaType>
 #include <QtCore/QtDebug>
+#include <QtCore/QPointer>
 #include "../nmapsi4Debug.h"
 
 namespace scanning {
@@ -44,7 +45,7 @@ namespace scanning {
 	 * with parameters.
 	 */
 	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters, QObject *parent = 0);
-
+	~scanThread();
     signals:
 	/*!
 	 * Return nmap QThread output with a Signal.
@@ -70,7 +71,7 @@ namespace scanning {
 	void realtimeData();
 
     protected:
-	QProcess *proc;
+	QPointer<QProcess> proc;
 	void run();
 	QObject* par;
     };

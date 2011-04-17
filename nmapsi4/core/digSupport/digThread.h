@@ -27,6 +27,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QMetaType>
 #include <QtCore/QtDebug>
+#include <QtCore/QPointer>
 #include "../nmapsi4Debug.h"
 
 namespace digLookup {
@@ -49,7 +50,7 @@ namespace digLookup {
 	/*!
 	 * Return dig QThread output with a Signal.
 	 */
-	void threadEnd(const QStringList, QByteArray, digThread*);
+	void threadEnd(const QStringList, QByteArray);
 
     private:
 	QByteArray m_pout;
@@ -66,7 +67,7 @@ namespace digLookup {
 	void stopProcess();
 
     protected:
-	QProcess* m_proc;
+	QPointer<QProcess> m_proc;
 	void run();
 	QObject* m_par;
     };

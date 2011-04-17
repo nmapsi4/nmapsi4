@@ -101,10 +101,10 @@ void nmapClass::setNmapVersion()
 
 void nmapClass::exit()
 {
-    emit killScan();
     memoryTools *memTools = new memoryTools();
     memTools->itemDeleteAllWithWait(scanHashList);
     memTools->itemDeleteAllWithWait(internealLookupList);
+    memTools->itemDeleteAll(digLookupList);
     delete memTools;
     
     if (FileName != NULL) {
@@ -138,10 +138,10 @@ void nmapClass::exit()
 
 void nmapClass::stop_scan()
 {
-    // call QProcess terminate signal
-    emit killScan();
     // stop and clear clear thread
     memoryTools *memTools = new memoryTools();
     memTools->itemDeleteAllWithWait(scanHashList);
+    memTools->itemDeleteAllWithWait(internealLookupList);
+    memTools->itemDeleteAll(digLookupList);
     delete memTools;
 }

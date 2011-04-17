@@ -34,6 +34,12 @@ scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
     
 }
 
+scanning::scanThread::~scanThread()
+{
+    qDebug() << "DEBUG ~scanThread()";
+    stopProcess();
+}
+
 void scanning::scanThread::run() 
 {     
      proc = new QProcess();
@@ -41,10 +47,6 @@ void scanning::scanThread::run()
 
      connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
              this, SLOT(setValue()));
-
-     connect(par, SIGNAL(killScan()),
-             this, SLOT(stopProcess()),Qt::QueuedConnection);
-     
      connect(proc, SIGNAL(readyReadStandardOutput()),
              this, SLOT(realtimeData()));
 
@@ -76,14 +78,17 @@ void scanning::scanThread::setValue()
      exit(0);
 }
 
-void scanning::scanThread::stopProcess() 
+void scanning::scanThread::stopProcess()
 {
-#ifndef THREAD_NO_DEBUG
-     qDebug() << "scan() THREAD:: Clear Process";
-#endif
      // stop scan process (Slot)
+     if (!proc) {
+	 return;
+     }
+     
      if(proc->state() == QProcess::Running) {
-	  proc->terminate();
+#ifndef THREAD_NO_DEBUG
+	  qDebug() << "scan() THREAD:: Clear Process";
+#endif
 #ifdef Q_WS_WIN
 	  // kill process scan process in MS windows
           QString abort_cmd;
@@ -91,6 +96,8 @@ void scanning::scanThread::stopProcess()
           abort_cmd = QString("cmd /c taskkill /PID %1 /F").arg(pinfo->dwProcessId);
           QProcess::execute(abort_cmd);
 #endif
+	  proc->close();
+	  delete proc;
      }
 }
 

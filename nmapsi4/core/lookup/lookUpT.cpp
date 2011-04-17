@@ -22,9 +22,7 @@
 
 internalLookup::lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
 {
-    connect(m_par, SIGNAL(killScan()),
-            this, SLOT(killLookup()));
-
+    killLookup();
 }
 
 void internalLookup::lookUpT::run() 

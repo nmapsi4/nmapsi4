@@ -32,6 +32,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/scanMonitor.cpp
+		core/monitor/monitorEvents.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
 		core/parserObj/parserObj.cpp
@@ -75,6 +76,7 @@ else (NOT Q_WS_X11)
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/scanMonitor.cpp
+		core/monitor/monitorEvents.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
 		core/parserObj/parserObj.cpp

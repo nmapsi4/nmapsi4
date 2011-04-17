@@ -54,6 +54,7 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host)
 	       break; // remove only first elem
 	  }
      }
+     updateScanCounter(0);
      updateMonitorHost(monitor);
 }
 
@@ -82,49 +83,9 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
 
      if(monitorElemHost.size() == 0) {
          monitorStopAllScanButt->setEnabled(false);
+	 monitorStopCurrentScanButt->setEnabled(false);
          tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
      }
-
-     updateScanCounter(0);   
-}
-
-void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) 
-{
-    /*
-     * read data line form thread
-     */
-    QHash<QString, QStringList>::const_iterator i = scanHashListFlow.find(hostname);
-    
-    if (i == scanHashListFlow.end()) {
-	QStringList flowHistory;
-	flowHistory.append(lineData);
-	foreach (const QString &token, flowHistory) {
-	    qDebug() << "DEBUG:: scan CREATE:: " << token;
-	}
-	scanHashListFlow.insert(hostname,flowHistory);
-    } else {
-	// append scan flow values
-	while (i != scanHashListFlow.end() && i.key() == hostname) {
-	    QStringList flowHistory = i.value();
-	    flowHistory.append(lineData);
-	    foreach (const QString &token, flowHistory) {
-		qDebug() << "DEBUG:: scan RELOAD:: " << token;
-	    }
-	    scanHashListFlow.insert(i.key(),flowHistory);
-	    ++i;
-	}
-    }
-    
-    // search hostname on treeWidget and update data rows (index = 2)
-    // take only remaining time and remove character unused, only [remaining || ETA]
-    if (lineData.contains("remaining") || lineData.contains("ETC")) {
-	QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
-	infoTmp_ = infoTmp_.remove('(');
-	infoTmp_ = infoTmp_.remove(')');
-	// insert new information into monitor
-	monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
-	monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
-    }
 }
 
 void nmapClass::updateScanCounter(int type) 

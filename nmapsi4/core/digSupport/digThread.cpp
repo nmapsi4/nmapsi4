@@ -24,9 +24,7 @@ digLookup::digThread::digThread(QByteArray& ProcB1, const QStringList hostname, 
        m_host(hostname),
        m_par(parent)
 {
-    connect(m_par, SIGNAL(killScan()),
-            this, SLOT(stopProcess()));
-
+    stopProcess();
 }
 
 void digLookup::digThread::run() 
@@ -39,7 +37,7 @@ void digLookup::digThread::run()
      m_proc->start("dig", m_host);
      
      exec();
-     emit threadEnd(m_host, m_pout, this);
+     emit threadEnd(m_host, m_pout);
 #ifndef DIG_NO_DEBUG
      qDebug() << "dig() THREAD:: Quit";
 #endif
@@ -58,10 +56,16 @@ void digLookup::digThread::setValue()
 
 void digLookup::digThread::stopProcess() 
 {
-#ifndef DIG_NO_DEBUG
-     qDebug() << "dig() THREAD:: Stop Scan Process";
-#endif
+     if (!m_proc) {
+	return;
+     }
+     
      if(m_proc->state() == QProcess::Running) {
-	  m_proc->terminate();
+ #ifndef DIG_NO_DEBUG
+	qDebug() << "dig() THREAD:: Stop Scan Process";
+#endif
+	m_proc->terminate();
+	m_proc->close();
+	delete m_proc;
      }
 }

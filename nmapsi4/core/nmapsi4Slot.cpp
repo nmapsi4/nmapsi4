@@ -209,6 +209,11 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(startScan()));
     connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateFontHost()));
+    // monitor events
+    connect(scanMonitor, SIGNAL( itemSelectionChanged()),
+            this, SLOT(monitorRuntimeEvent()));
+    connect(monitorStopCurrentScanButt, SIGNAL(clicked()),
+            this, SLOT(monitorStopCurrentScan()));
 
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),

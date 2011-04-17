@@ -59,7 +59,7 @@ namespace digInterface {
 	/*!
 	 * Set dig result on parser Object utils (objElem)
 	 */
-	void digReturn(const QStringList hostname, QByteArray buffer1, digThread *ptrThread);
+	void digReturn(const QStringList hostname, QByteArray buffer1);
 
     signals:
 	/*!
@@ -72,6 +72,7 @@ namespace digInterface {
 	bool m_state;
 	parserObjUtil* m_elemObjUtil;
 	QString m_hostNameLocal;
+	QList<digThread*> threadList;
 
     };
 }

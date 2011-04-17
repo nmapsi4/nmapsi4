@@ -115,8 +115,6 @@ public:
     void setQuickVersionProfile();
 
 signals:
-    void killScan();
-    //void killPingScan();
     void killDiscover();
 
 protected:
@@ -223,6 +221,8 @@ private slots:
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
+    void monitorRuntimeEvent();
+    void monitorStopCurrentScan();
     void objVulnButton();
     // Check nmap version
     void checkNmapVersion();
