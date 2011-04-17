@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Francesco Cecconi                    	   *
+ *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,21 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef ABOUT_H
-#define ABOUT_H
+#ifndef STATICDEFINE_H
+#define STATICDEFINE_H
 
-#include <QDialog>
-#include <QMessageBox>
-#include <ui_about.h>
-
-#include "staticDefine.h"
-
-class mainAbout : public QDialog, private Ui::AboutWin
-{ 
-  public:
-     mainAbout();
-     ~mainAbout();
-     void qt();
-};
+#define _VERSION_         "0.2.85"
+#define _VERSION_VULN_    "0.1.85"
+#define _VERSION_DIG_     "0.1.85"
 
 #endif
