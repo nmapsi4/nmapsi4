@@ -64,7 +64,6 @@ void digLookup::digThread::stopProcess()
  #ifndef DIG_NO_DEBUG
 	qDebug() << "dig() THREAD:: Stop Scan Process";
 #endif
-	m_proc->terminate();
 	m_proc->close();
 	delete m_proc;
      }

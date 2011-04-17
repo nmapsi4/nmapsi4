@@ -24,11 +24,7 @@
 #include <QMessageBox>
 #include <ui_about.h>
 
-#ifndef Q_WS_WIN
-#include <version.h>
-#else
-#include "../lib/about/version.h"
-#endif
+#include "version.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
 { 

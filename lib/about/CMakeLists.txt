@@ -5,7 +5,7 @@ SET( NMAPSI4_VERSION "0.2.85" )
 SET( VULN_VERSION "0.1.84" )
 SET( DIG_VERSION "0.1.85" )
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h )
+configure_file(version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h )
 
 SET( SOURCES_CPP about.cpp )
 #MESSAGE( STATUS ${SOURCES_CPP} )
