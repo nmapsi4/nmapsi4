@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,11 +17,46 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef STATICDEFINE_H
-#define STATICDEFINE_H
+#ifndef DETAILS_H
+#define DETAILS_H
 
-#define _VERSION_         "0.2.86"
-#define _VERSION_VULN_    "0.1.85"
-#define _VERSION_DIG_     "0.1.86"
+#include <QtGui/QDialog>
+#include <QtCore/QList>
+#include <QtCore/QStringList>
+#include <QtCore/QObject>
+#include <QtCore/QTimer>
+#include <ui_details.h>
 
+// local include
+#include "../lib/memorytools.h"
+
+using namespace memory;
+
+class classDetails : public QDialog, private Ui::monitorDetails
+{
+    Q_OBJECT
+
+public:
+    classDetails(QStringList& processFlow, const QString hostname);
+    ~classDetails();
+    
+private:
+    /*
+     * Load scan realtime line to QListWidget
+     */
+    void loadFlow();
+    
+protected:
+    QStringList& scanLines;
+    QList<QListWidgetItem*> itemsList;
+    int m_itemsSize;
+    QTimer *m_timer;
+    
+private slots:
+    /*
+     * Reload scan realtime line, append to QListWidget
+     * only the new line.
+     */
+    void reloadFlow();
+};
 #endif

@@ -96,10 +96,9 @@ void scanning::scanThread::stopProcess()
 
 void scanning::scanThread::realtimeData() 
 {
-    // read realtime data from process stdout
-    QByteArray realByte = proc->readLine(proc->bytesAvailable());
+    // read realtime data from QProcess
+    QByteArray realByte = proc->readAllStandardOutput();
     QString stream_(realByte);
-    stream_ = stream_.remove('\n');
     // emit signal for data trasmission to parent
     if (!stream_.isEmpty()) {
 	emit flowFromThread(ParList[ParList.size()-1], stream_);

@@ -36,6 +36,7 @@
 #include "core/discover/maindiscover.h"
 #include "core/bookmarks/addparbook.h"
 #include "core/lib/memorytools.h"
+#include "core/monitor/details.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -223,6 +224,7 @@ private slots:
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
     void monitorRuntimeEvent();
     void monitorStopCurrentScan();
+    void monitorShowDetails();
     void objVulnButton();
     // Check nmap version
     void checkNmapVersion();
@@ -242,7 +244,7 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
-    void readFlowFromThread(const QString hostname, const QString lineData);
+    void readFlowFromThread(const QString hostname, QString lineData);
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();

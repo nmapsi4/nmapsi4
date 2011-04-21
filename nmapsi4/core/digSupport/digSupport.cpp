@@ -91,8 +91,8 @@ void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil*
     QPointer<digThread> m_th = new digThread(buff1, command, this);
     threadList.push_back(m_th);
     m_th->start();
-    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray, digThread*)),
-      this, SLOT(digReturn(const QStringList, QByteArray, digThread*)));
+    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray)),
+      this, SLOT(digReturn(const QStringList, QByteArray)));
 }
 
 void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray buffer1) 

@@ -33,6 +33,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/scanMonitor.cpp
 		core/monitor/monitorEvents.cpp
+		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
 		core/parserObj/parserObj.cpp
@@ -77,6 +78,7 @@ else (NOT Q_WS_X11)
 		core/lookup/lookUpT.cpp
 		core/monitor/scanMonitor.cpp
 		core/monitor/monitorEvents.cpp
+		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
 		core/parserObj/parserObj.cpp
@@ -105,7 +107,8 @@ if(Q_WS_X11)
 	core/vulnerability/addurl.h 
 	core/bookmarks/addparbook.h
 	core/discover/maindiscover.h
-	core/discover/pingThread.h)
+	core/discover/pingThread.h
+	core/monitor/details.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 else (Q_WS_X11)
   SET(SOURCES_H mainwin.h 
@@ -118,7 +121,8 @@ else (Q_WS_X11)
 	core/vulnerability/addurl.h 
 	core/bookmarks/addparbook.h
 	core/discover/maindiscover.h
-	core/discover/pingThread.h)
+	core/discover/pingThread.h
+	core/monitor/details.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 endif (Q_WS_X11)
 
@@ -126,14 +130,16 @@ if(Q_WS_X11)
   SET(SOURCES_UI mainwin.ui 
 	core/preference/profilemain.ui 
 	core/vulnerability/addurl.ui 
-	core/bookmarks/addparbook.ui)
+	core/bookmarks/addparbook.ui
+	core/monitor/details.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 else (Q_WS_X11)
   SET(SOURCES_UI mainwin.ui 
 	core/preference/profilemain.ui 
 	../lib/about/about.ui 
 	core/vulnerability/addurl.ui 
-	core/bookmarks/addparbook.ui)
+	core/bookmarks/addparbook.ui
+	core/monitor/details.ui)
   #MESSAGE( STATUS ${SOURCES_UI} )
 endif (Q_WS_X11)
 

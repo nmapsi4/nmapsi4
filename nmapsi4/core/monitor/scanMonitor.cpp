@@ -84,6 +84,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
      if(monitorElemHost.size() == 0) {
          monitorStopAllScanButt->setEnabled(false);
 	 monitorStopCurrentScanButt->setEnabled(false);
+	 monitorDetailsScanButt->setEnabled(false);
          tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
      }
 }

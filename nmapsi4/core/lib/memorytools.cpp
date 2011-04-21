@@ -31,63 +31,48 @@ memory::memoryTools::~memoryTools()
 
 void memory::memoryTools::itemDeleteAll(QList<QTreeWidgetItem*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
+    qDeleteAll(items);
+    items.clear();
+}
+
+void memory::memoryTools::itemDeleteAll(QList<QListWidgetItem*>& items)
+{
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<parserObj*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<parserObjUtil*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<QWebView*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<lookUpT*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<digSupport*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
 
 void memory::memoryTools::itemDeleteAll(QList<mainDiscover*>& items)
 {
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
@@ -97,9 +82,6 @@ void memory::memoryTools::itemDeleteAll(QHash<QString, scanThread*>& items)
     /*
      * Clear QHash for scan thread
      */
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/itemDeleteAll() -> Free List";
-#endif
     foreach (scanThread *ptrTmp, items) {
 	delete ptrTmp;
     }

@@ -25,6 +25,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QString>
 #include <QtGui/QTreeWidgetItem>
+#include <QtGui/QListWidgetItem>
 #include <QtWebKit/QWebView>
 #include "../discover/maindiscover.h"
 #include "../parserObj/parserObj.h"
@@ -48,6 +49,7 @@ namespace memory {
 	memoryTools();
 	virtual ~memoryTools();
 	void itemDeleteAll(QList<QTreeWidgetItem*>& items);
+	void itemDeleteAll(QList<QListWidgetItem*>& items);
 	void itemDeleteAll(QList<parserObj*>& items);
 	void itemDeleteAll(QList<parserObjUtil*>& items);
 	void itemDeleteAll(QList<QWebView*>& items);

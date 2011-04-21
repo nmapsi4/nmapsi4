@@ -19,27 +19,27 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::readFlowFromThread(const QString hostname, const QString lineData) 
+void nmapClass::readFlowFromThread(const QString hostname, QString lineData) 
 {
     /*
      * read data line form thread
      */
     QHash<QString, QStringList>::const_iterator i = scanHashListFlow.find(hostname);
+    QTextStream stream(&lineData);
     
     if (i == scanHashListFlow.end()) {
 	QStringList flowHistory;
-	flowHistory.append(lineData);
-	foreach (const QString &token, flowHistory) {
-	    qDebug() << "DEBUG:: scan CREATE:: " << token;
+	while (!stream.atEnd()) {
+	    flowHistory.append(stream.readLine());
 	}
 	scanHashListFlow.insert(hostname,flowHistory);
     } else {
 	// append scan flow values
 	while (i != scanHashListFlow.end() && i.key() == hostname) {
 	    QStringList flowHistory = i.value();
-	    flowHistory.append(lineData);
-	    foreach (const QString &token, flowHistory) {
-		qDebug() << "DEBUG:: scan RELOAD:: " << token;
+	    //flowHistory.append(lineData);
+	    while (!stream.atEnd()) {
+		flowHistory.append(stream.readLine());
 	    }
 	    scanHashListFlow.insert(i.key(),flowHistory);
 	    ++i;
@@ -63,6 +63,10 @@ void nmapClass::monitorRuntimeEvent()
     if (!monitorStopCurrentScanButt->isEnabled()) {
 	monitorStopCurrentScanButt->setEnabled(true);
     }
+    
+    if (!monitorDetailsScanButt->isEnabled()) {
+	monitorDetailsScanButt->setEnabled(true);
+    }
 }
 
 void nmapClass::monitorStopCurrentScan()
@@ -82,4 +86,15 @@ void nmapClass::monitorStopCurrentScan()
     
     // Remove Qhash entry for flow
     scanHashListFlow.take(scanMonitor->selectedItems()[0]->text(0));
+}
+
+void nmapClass::monitorShowDetails()
+{
+    if (scanMonitor->selectedItems().isEmpty()) {
+	return;
+    }
+    // start details UI
+    classDetails details(scanHashListFlow.operator[](scanMonitor->selectedItems()[0]->text(0)),
+			 scanMonitor->selectedItems()[0]->text(0));
+    details.exec();
 }
