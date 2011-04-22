@@ -437,26 +437,12 @@ void nmapClass::updateSezLog()
     toolBarSearch->setVisible(false);
     actionActions_Toolbar->setChecked(false);
     GItree->setVisible(false);
-
-    if (frameScan->isVisible()) {
-        frameScan->setVisible(false);
-    }
-
-    if (frameLeft->isVisible()) {
-        frameLeft->setVisible(false);
-    }
-
-    if (frameAdv->isVisible()) {
-        frameAdv->setVisible(false);
-    }
-    
-    if (frameRight->isVisible()) {
-        frameRight->setVisible(false);
-    }
-    
-    if (frame_2->isVisible()) {
-        frame_2->setVisible(false);
-    }
+    // unshow frame not necessary
+    frameScan->setVisible(false);
+    frameLeft->setVisible(false);
+    frameAdv->setVisible(false);
+    frameRight->setVisible(false);
+    frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/book.png")));
@@ -485,26 +471,12 @@ void nmapClass::updateSezVuln()
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
     GItree->setVisible(false);
-
-    if (frameScan->isVisible()) {
-        frameScan->setVisible(false);
-    }
-
-    if (frameLeft->isVisible()) {
-        frameLeft->setVisible(false);
-    }
-
-    if (frameAdv->isVisible()) {
-        frameAdv->setVisible(false);
-    }
-    
-    if (frameRight->isVisible()) {
-        frameRight->setVisible(false);
-    }
-    
-    if (frame_2->isVisible()) {
-        frame_2->setVisible(false);
-    }
+    // unshow frame not necessary
+    frameScan->setVisible(false);
+    frameLeft->setVisible(false);
+    frameAdv->setVisible(false);
+    frameRight->setVisible(false);
+    frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
@@ -517,7 +489,7 @@ void nmapClass::updateSezVuln()
 
 void nmapClass::updateDiscoverVuln() 
 { // SLOT
-    // TODO:: discover section
+    // discover section
     if (stackedMain->currentIndex() == 3)
         return;
 
@@ -534,26 +506,12 @@ void nmapClass::updateDiscoverVuln()
     actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(false);
     GItree->setVisible(false);
-
-    if (frameScan->isVisible()) {
-        frameScan->setVisible(false);
-    }
-
-    if (frameLeft->isVisible()) {
-        frameLeft->setVisible(false);
-    }
-
-    if (frameAdv->isVisible()) {
-        frameAdv->setVisible(false);
-    }
-    
-    if (frameRight->isVisible()) {
-        frameRight->setVisible(false);
-    }
-    
-    if (frame_2->isVisible()) {
-        frame_2->setVisible(false);
-    }
+    // unshow frame not necessary
+    frameScan->setVisible(false);
+    frameLeft->setVisible(false);
+    frameAdv->setVisible(false);
+    frameRight->setVisible(false);
+    frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
