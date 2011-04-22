@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 02:11+0200\n"
+"POT-Creation-Date: 2011-04-23 00:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,62 +12,58 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: mWindow#1
-msgid "Host(s)"
-msgstr "Hostitelský počítač(e)"
-
-#: mWindow#2
-msgid "Log History"
-msgstr "Historie zápisů"
-
-#: mWindow#3
 msgid "Nmapsi4 log reader"
 msgstr "Čtečka zápisů pro Nmapsi4"
 
-#: mWindow#4
+#: mWindow#2
 msgid "Clear"
 msgstr "Smazat"
 
-#: mWindow#5
+#: mWindow#3
 msgid "&Quit"
 msgstr "&Ukončit"
 
-#: mWindow#6
+#: mWindow#4
 msgid "Open"
 msgstr "Otevřít"
 
-#: mWindow#7
+#: mWindow#5
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: mWindow#8
+#: mWindow#6
 msgid "About &Qt"
 msgstr "O &Qt"
 
-#: mWindow#9
+#: mWindow#7
 msgid "List(s)"
 msgstr "Seznam(y)"
 
-#: mWindow#10
+#: mWindow#8
+msgid "Log(s) name"
+msgstr ""
+
+#: mWindow#9
 msgid "&FIle"
 msgstr "&Soubor"
 
-#: mWindow#11
+#: mWindow#10
 msgid "&Help"
 msgstr "&Nápověda"
 
-#: mWindow#12
+#: mWindow#11
 msgid "toolBar"
 msgstr "Nástrojový pruh"
 
-#: mWindow#13
+#: mWindow#12
 msgid "Date"
 msgstr "Datum"
 
-#: mWindow#14
+#: mWindow#13
 msgid "&About nmapsi4"
 msgstr ""
 
-#: mWindow#15
+#: mWindow#14
 msgid "Path"
 msgstr "Cesta"
 

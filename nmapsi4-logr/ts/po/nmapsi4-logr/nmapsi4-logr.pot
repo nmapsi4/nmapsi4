@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 02:11+0200\n"
+"POT-Creation-Date: 2011-04-23 00:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgid "List(s)"
 msgstr ""
 
 #: mWindow#9
-msgid "Host(s)"
+msgid "Log(s) name"
 msgstr ""
 
 #: mWindow#10
@@ -56,18 +56,14 @@ msgid "Path"
 msgstr ""
 
 #: mWindow#12
-msgid "Log History"
-msgstr ""
-
-#: mWindow#13
 msgid "&FIle"
 msgstr ""
 
-#: mWindow#14
+#: mWindow#13
 msgid "&Help"
 msgstr ""
 
-#: mWindow#15
+#: mWindow#14
 msgid "toolBar"
 msgstr ""
 

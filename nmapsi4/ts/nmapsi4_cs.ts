@@ -128,10 +128,6 @@
         <translation>Prohlížeč</translation>
     </message>
     <message>
-        <source>Scan Profile</source>
-        <translation>Profil prohledávání</translation>
-    </message>
-    <message>
         <source>Max. RTT</source>
         <translation>Max. RTT</translation>
     </message>
@@ -353,18 +349,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <source>Toolbars</source>
-        <translation>Nástrojové pruhy</translation>
-    </message>
-    <message>
-        <source>Main Toolbar</source>
-        <translation>Hlavní nástrojový pruh</translation>
-    </message>
-    <message>
-        <source>Actions Toolbar</source>
-        <translation>Nástrojový pruh s činnostmi</translation>
-    </message>
-    <message>
         <source>Show Status Bar</source>
         <translation>Ukázat stavový pruh</translation>
     </message>
@@ -421,22 +405,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>securityfocus.com</source>
-        <translation>securityfocus.com</translation>
-    </message>
-    <message>
-        <source>cve.miltre.org</source>
-        <translation>cve.miltre.org</translation>
-    </message>
-    <message>
-        <source>secunia.com</source>
-        <translation>secunia.com</translation>
-    </message>
-    <message>
-        <source>Vulnerabilities</source>
-        <translation>Zranitelnosti</translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation>Data</translation>
     </message>
@@ -469,10 +437,6 @@ Zavřít strom s prohledáváním</translation>
         <translation>RTT</translation>
     </message>
     <message>
-        <source>Service(s)</source>
-        <translation>Služba(y)</translation>
-    </message>
-    <message>
         <source>&amp;About nmapsi4</source>
         <translation>&amp;O programu Nmapsi4</translation>
     </message>
@@ -491,10 +455,6 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>Clear</source>
         <translation>Smazat</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation>Použít</translation>
     </message>
     <message>
         <source>Services</source>
@@ -526,6 +486,146 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>NSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vulnerabilities section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url(s) name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Interfaces:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start DIscover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discover Group:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start Ip:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End Ip:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Service(s) with info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Os</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop All Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Current Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Global Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply Quick Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Global Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto nse script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom nse script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse categories script available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse categories Script Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore Default Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -621,6 +721,64 @@ Zavřít strom s prohledáváním</translation>
     </message>
 </context>
 <context>
+    <name>addParBook</name>
+    <message>
+        <source>Add Parameters Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>addUrl</name>
+    <message>
+        <source>Add Vulnerability Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>logHistory</name>
     <message>
         <source>Your configuration file is too old, please delete it</source>
@@ -660,6 +818,25 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>&lt;h3&gt;Scan Lookup&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Prohledat vyhledávání&lt;/h3&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>monitorDetails</name>
+    <message>
+        <source>Scan Process Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hostname:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
     </message>
 </context>
 <context>
@@ -945,6 +1122,50 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>Scan Monitor</source>
         <translation type="unfinished">Dohled nad prohledáváním</translation>
+    </message>
+    <message>
+        <source>Network Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>is Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick Scan</source>
+        <translation type="unfinished">Rychlé prohledávání</translation>
+    </message>
+    <message>
+        <source>Intense Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intense Scan, all TCP ports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intense scan plus UDP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slow comprehensive scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Url</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

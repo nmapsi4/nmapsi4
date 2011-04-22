@@ -2,15 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 02:11+0200\n"
-"PO-Revision-Date: 2011-03-13 22:41+0000\n"
-"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
+"POT-Creation-Date: 2011-04-23 00:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-03-21 17:52+0000\n"
-"X-Generator: Launchpad (build 12617)\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
 
 #: mWindow#1
 msgid "Nmapsi4 log reader"
@@ -45,32 +44,28 @@ msgid "List(s)"
 msgstr "Lista(s)"
 
 #: mWindow#9
-msgid "Host(s)"
-msgstr "Host(s)"
-
-#: mWindow#10
 msgid "Date"
 msgstr "Fecha"
 
-#: mWindow#11
+#: mWindow#10
 msgid "Path"
 msgstr "Ruta"
 
-#: mWindow#12
-msgid "Log History"
-msgstr "Historial del Log"
-
-#: mWindow#13
+#: mWindow#11
 msgid "&FIle"
 msgstr "&Archivo"
 
-#: mWindow#14
+#: mWindow#12
 msgid "&Help"
 msgstr "Ay&uda"
 
-#: mWindow#15
+#: mWindow#13
 msgid "toolBar"
 msgstr "Barra de herramientas"
+
+#: mWindow#14
+msgid "Log(s) name"
+msgstr ""
 
 #: mwClass#1
 msgid "Open Log"

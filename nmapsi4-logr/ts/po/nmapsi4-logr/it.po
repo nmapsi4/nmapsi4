@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 02:11+0200\n"
+"POT-Creation-Date: 2011-04-23 00:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,62 +12,58 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: mWindow#1
-msgid "Host(s)"
-msgstr ""
-
-#: mWindow#2
-msgid "Log History"
-msgstr "Cronologia Log"
-
-#: mWindow#3
 msgid "Nmapsi4 log reader"
 msgstr "Lettore log Nmapsi4"
 
-#: mWindow#4
+#: mWindow#2
 msgid "Clear"
 msgstr "Pulisci"
 
-#: mWindow#5
+#: mWindow#3
 msgid "&Quit"
 msgstr "&Esci"
 
-#: mWindow#6
+#: mWindow#4
 msgid "Open"
 msgstr "Apri"
 
-#: mWindow#7
+#: mWindow#5
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: mWindow#8
+#: mWindow#6
 msgid "About &Qt"
 msgstr ""
 
-#: mWindow#9
+#: mWindow#7
 msgid "List(s)"
 msgstr ""
 
-#: mWindow#10
+#: mWindow#8
+msgid "Log(s) name"
+msgstr ""
+
+#: mWindow#9
 msgid "&FIle"
 msgstr "&FIle"
 
-#: mWindow#11
+#: mWindow#10
 msgid "&Help"
 msgstr "&Aiuto"
 
-#: mWindow#12
+#: mWindow#11
 msgid "toolBar"
 msgstr ""
 
-#: mWindow#13
+#: mWindow#12
 msgid "Date"
 msgstr "Data"
 
-#: mWindow#14
+#: mWindow#13
 msgid "&About nmapsi4"
 msgstr ""
 
-#: mWindow#15
+#: mWindow#14
 msgid "Path"
 msgstr "Percorso"
 
