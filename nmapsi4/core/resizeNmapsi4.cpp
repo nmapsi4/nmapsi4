@@ -33,39 +33,12 @@ void nmapClass::checkFullScreen()
 
 void nmapClass::updateMenuBar()
 {
-
-    if (menubar->isVisible()) {
-        menubar->setVisible(false);
-        actionMenuBar->setChecked(false);
+    if (actionMenuBar->isChecked()) {
+	menuBar()->setVisible(true);
     } else {
-        menubar->setVisible(true);
-        actionMenuBar->setChecked(true);
+	menuBar()->setVisible(false);
     }
 }
-
-
-void nmapClass::showMainToolBar()
-{
-    if (toolBar->isVisible()) {
-        toolBar->setVisible(false);
-        actionMain_Toolbars->setChecked(false);
-    } else {
-        toolBar->setVisible(true);
-        actionMain_Toolbars->setChecked(true);
-    }
-}
-
-void nmapClass::showActionToolBar()
-{
-    if (toolBar_2->isVisible()) {
-        toolBar_2->setVisible(false);
-        actionActions_Toolbar->setChecked(false);
-    } else {
-        toolBar_2->setVisible(true);
-        actionActions_Toolbar->setChecked(true);
-    }
-}
-
 
 void nmapClass::showStatusBar()
 {

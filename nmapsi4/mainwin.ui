@@ -2816,15 +2816,6 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
-    <widget class="QMenu" name="menuToolbars">
-     <property name="title">
-      <string>Toolbars</string>
-     </property>
-     <addaction name="actionMain_Toolbars"/>
-     <addaction name="actionActions_Toolbar"/>
-    </widget>
-    <addaction name="menuToolbars"/>
-    <addaction name="separator"/>
     <addaction name="actionFullS"/>
     <addaction name="actionMenuBar"/>
     <addaction name="actionShow_Status_Bar"/>
@@ -3349,28 +3340,6 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+M</string>
-   </property>
-  </action>
-  <action name="actionMain_Toolbars">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Main Toolbar</string>
-   </property>
-  </action>
-  <action name="actionActions_Toolbar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Actions Toolbar</string>
    </property>
   </action>
   <action name="actionShow_Status_Bar">

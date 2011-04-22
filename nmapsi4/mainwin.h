@@ -209,8 +209,6 @@ private slots:
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
-    void showMainToolBar();
-    void showActionToolBar();
     void showStatusBar();
     void show_bugUrl();
     void show_homepageUrl();

@@ -210,6 +210,16 @@ void nmapClass::checkProfile()
 
     TraceEnabled = settings.value("TraceEnabled").toBool();
     
+    // restore actionMenuBar
+    
+    bool actionMB = settings.value("showMenuBar", false).toBool();
+    
+    if (actionMB) {
+	actionMenuBar->setChecked(true);
+    } else {
+	actionMenuBar->setChecked(false);
+    }
+    
     // restore nse Combo script
     int nseComboScriptTmp_ = settings.value("nseComboScript", 0).toInt();
     updateNseOptionScript(nseComboScriptTmp_);

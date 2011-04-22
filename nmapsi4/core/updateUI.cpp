@@ -382,9 +382,10 @@ void nmapClass::updateSezScan()
     vulnSez->setChecked(false);
     discoverSez->setChecked(false);
     stackedMain->setCurrentIndex(0);
-    this->showMainToolBar();
-    this->showActionToolBar();
+    toolBar->setVisible(true);
+    toolBar_2->setVisible(true);
     toolBarSearch->setVisible(false);
+    toolBarBook->setVisible(true);
     GItree->setVisible(true);
 
     if (!frameScan->isVisible()) {
@@ -430,12 +431,10 @@ void nmapClass::updateSezLog()
     discoverSez->setChecked(false);
     stackedMain->setCurrentIndex(1);
     // main and action bar only in scan index
-    toolBar->setVisible(false);
-    actionMain_Toolbars->setChecked(false);
+    toolBar->setVisible(false);	
     toolBar_2->setVisible(false);
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
-    actionActions_Toolbar->setChecked(false);
     GItree->setVisible(false);
     // unshow frame not necessary
     frameScan->setVisible(false);
@@ -466,9 +465,7 @@ void nmapClass::updateSezVuln()
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
-    actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
-    actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(true);
     GItree->setVisible(false);
     // unshow frame not necessary
@@ -501,9 +498,7 @@ void nmapClass::updateDiscoverVuln()
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(false);
-    actionMain_Toolbars->setChecked(false);
     toolBar_2->setVisible(false);
-    actionActions_Toolbar->setChecked(false);
     toolBarSearch->setVisible(false);
     GItree->setVisible(false);
     // unshow frame not necessary
