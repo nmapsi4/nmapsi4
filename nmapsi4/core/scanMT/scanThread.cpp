@@ -19,10 +19,6 @@
 
 #include "scanThread.h"
 
-#ifdef Q_WS_WIN
-#include <windows.h>
-#endif
-
 scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
                        const QStringList parameters, QObject *parent)
      : pout(ProcB1), 
@@ -30,8 +26,7 @@ scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
        ParList(parameters),
        proc(NULL),
        par(parent)
-{
-    
+{ 
 }
 
 scanning::scanThread::~scanThread()
@@ -71,7 +66,6 @@ void scanning::scanThread::setValue()
      qDebug() << "scan() THREAD:: -> start";
 #endif
      // set scan return buffer
-     pout  = proc->readAllStandardOutput(); // read std buffer
      perr  = proc->readAllStandardError(); // read error buffer
      proc->close();
      delete proc;
@@ -98,6 +92,7 @@ void scanning::scanThread::realtimeData()
 {
     // read realtime data from QProcess
     QByteArray realByte = proc->readAllStandardOutput();
+    pout.append(realByte);
     QString stream_(realByte);
     // emit signal for data trasmission to parent
     if (!stream_.isEmpty()) {
