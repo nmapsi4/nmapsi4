@@ -35,7 +35,7 @@
    <string>NmapSI4 Preferences</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../mainwin.qrc">
+   <iconset resource="../../../mainwin.qrc">
     <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <property name="modal">

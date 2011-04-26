@@ -29,7 +29,7 @@
    <string>Add Parameters Profile</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../../../dati_locali/progetti/nmapsi4/nmapsi4_exp/mainwin.qrc">
+   <iconset resource="../../../mainwin.qrc">
     <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
