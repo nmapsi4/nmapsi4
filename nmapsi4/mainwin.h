@@ -163,6 +163,7 @@ protected:
     QList<QString> nseScriptActiveList;
     QHash<QString, scanThread*> scanHashList;
     QHash<QString, QStringList> scanHashListFlow;
+    QHash<QString, QTextDocument*> nseHelpCache;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
     QList<lookUpT*> internealLookupList;
