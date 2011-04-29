@@ -408,8 +408,15 @@ void nmapClass::updateSezScan()
         frame_2->setVisible(true);
     }
     
-    tabUi->insertTab(tabUi->count(),tabSOpt,tr("Scan Options"));
-    tabUi->setTabIcon(tabUi->indexOf(tabSOpt),QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    if (!tabSOpt->isVisible()) {
+	tabUi->insertTab(tabUi->count(),tabSOpt,tr("Scan Options"));
+	tabUi->setTabIcon(tabUi->indexOf(tabSOpt),QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    }
+    
+    if (!tabNseOpt->isVisible()) {
+	tabUi->insertTab(tabUi->count(),tabNseOpt,tr("Nse Options"));
+	tabUi->setTabIcon(tabUi->indexOf(tabNseOpt),QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    }
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
     
@@ -444,6 +451,7 @@ void nmapClass::updateSezLog()
     frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/book.png")));
     tabUi->setTabText(0, "Log");
     
@@ -476,6 +484,7 @@ void nmapClass::updateSezVuln()
     frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     tabUi->setTabText(0, "Vulnerabilities");
     
@@ -509,6 +518,7 @@ void nmapClass::updateDiscoverVuln()
     frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
+    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     tabUi->setTabText(0, "Discover");
     

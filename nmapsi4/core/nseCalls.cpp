@@ -19,24 +19,29 @@
 
 #include "../mainwin.h"
 
-void nmapClass::updateNseOptionScript(int index) 
+namespace localCall {
+    QPointer<scanThread> th;
+    QTextDocument *oldDoc = NULL;
+}
+
+void nmapClass::updateNseOptionScript(int index)
 {
     nseComboScript->setCurrentIndex(index);
-    
-    if(index) {
-	nseTreeActive->setEnabled(true);
-	nseTreeAvail->setEnabled(true);
-	nseActiveBut->setEnabled(true);
+
+    if (index) {
+        nseTreeActive->setEnabled(true);
+        nseTreeAvail->setEnabled(true);
+        nseActiveBut->setEnabled(true);
     } else {
-	nseTreeActive->setEnabled(false);
-	nseTreeAvail->setEnabled(false);
-	nseActiveBut->setEnabled(false);
+        nseTreeActive->setEnabled(false);
+        nseTreeAvail->setEnabled(false);
+        nseActiveBut->setEnabled(false);
     }
     // reset parameters for change
     resetPar();
 }
 
-void nmapClass::nseTreeDefaultValue() 
+void nmapClass::nseTreeDefaultValue()
 {
     nseScriptActiveList.clear();
     nseScriptAvailList.clear();
@@ -52,21 +57,21 @@ void nmapClass::nseTreeDefaultValue()
     nseScriptAvailList.append("safe");
     nseScriptAvailList.append("version");
     nseScriptAvailList.append("vuln");
-    
+
     nseTreeAvailRestoreValues();
 }
 
-void nmapClass::nseTreeAvailRestoreValues() 
+void nmapClass::nseTreeAvailRestoreValues()
 {
-    if(itemNseAvail.size()) {
-	memoryTools *memTools = new memoryTools();
-	memTools->itemDeleteAll(itemNseAvail);
-	delete memTools;
-	itemNseAvail.clear();
+    if (itemNseAvail.size()) {
+        memoryTools *memTools = new memoryTools();
+        memTools->itemDeleteAll(itemNseAvail);
+        delete memTools;
+        itemNseAvail.clear();
     }
-    
+
     foreach (const QString &token, nseScriptAvailList) {
-	QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeAvail);
+        QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeAvail);
         itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-typedef.png")));
@@ -75,17 +80,17 @@ void nmapClass::nseTreeAvailRestoreValues()
     }
 }
 
-void nmapClass::nseTreeActiveRestoreValues() 
-{    
-    if(itemNseActive.size()) {
-	memoryTools *memTools = new memoryTools();
-	memTools->itemDeleteAll(itemNseActive);
-	delete memTools;
-	itemNseActive.clear();
+void nmapClass::nseTreeActiveRestoreValues()
+{
+    if (itemNseActive.size()) {
+        memoryTools *memTools = new memoryTools();
+        memTools->itemDeleteAll(itemNseActive);
+        delete memTools;
+        itemNseActive.clear();
     }
-    
+
     foreach (const QString &token, nseScriptActiveList) {
-	QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeActive);
+        QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeActive);
         itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-function.png")));
@@ -94,56 +99,91 @@ void nmapClass::nseTreeActiveRestoreValues()
     }
 }
 
-void nmapClass::nseTreeActiveItem() 
+void nmapClass::nseTreeActiveItem()
 {
     int indexNseItem = nseTreeAvail->indexOfTopLevelItem(nseTreeAvail->currentItem());
 
-    if(indexNseItem != -1) {
-	QString tmpElem_ = nseScriptAvailList.takeAt(indexNseItem);
-	nseScriptActiveList.append(tmpElem_);
-	nseTreeAvailRestoreValues();
-	nseTreeActiveRestoreValues();
-	if (!nseScriptActiveList.size()) {
-	    nseScriptActiveList.clear();
-	}
+    if (indexNseItem != -1) {
+        QString tmpElem_ = nseScriptAvailList.takeAt(indexNseItem);
+        nseScriptActiveList.append(tmpElem_);
+        nseTreeAvailRestoreValues();
+        nseTreeActiveRestoreValues();
+        if (!nseScriptActiveList.size()) {
+            nseScriptActiveList.clear();
+        }
     }
-    
+
     qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
     if (nssAct->isChecked()) {
-	comboAdv->clear();
-	comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-	comboAdv->insertItem(0, check_extensions().join(" "));
+        comboAdv->clear();
+        comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        comboAdv->insertItem(0, check_extensions().join(" "));
     }
 }
 
-void nmapClass::nseTreeRemoveItem() 
+void nmapClass::nseTreeRemoveItem()
 {
     int indexNseItem = nseTreeActive->indexOfTopLevelItem(nseTreeActive->currentItem());
 
-    if(indexNseItem != -1) {
-	QString tmpElem_ = nseScriptActiveList.takeAt(indexNseItem);
-	nseScriptAvailList.append(tmpElem_);
-	nseTreeAvailRestoreValues();
-	nseTreeActiveRestoreValues();
-	if (!nseScriptAvailList.size()) {
-	    nseScriptAvailList.clear();
-	}
+    if (indexNseItem != -1) {
+        QString tmpElem_ = nseScriptActiveList.takeAt(indexNseItem);
+        nseScriptAvailList.append(tmpElem_);
+        nseTreeAvailRestoreValues();
+        nseTreeActiveRestoreValues();
+        if (!nseScriptAvailList.size()) {
+            nseScriptAvailList.clear();
+        }
     }
-    
+
     qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
     if (nssAct->isChecked()) {
-	comboAdv->clear();
-	comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-	comboAdv->insertItem(0, check_extensions().join(" "));
+        comboAdv->clear();
+        comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        comboAdv->insertItem(0, check_extensions().join(" "));
     }
 }
 
-void nmapClass::nseTreeResetItem() 
+void nmapClass::nseTreeResetItem()
 {
     foreach (const QString &token, nseScriptActiveList) {
-	nseScriptAvailList.append(token);
+        nseScriptAvailList.append(token);
     }
     nseScriptActiveList.clear();
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
+}
+
+void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
+{
+    Q_UNUSED(column);
+    // start help thread for nse
+    QByteArray buff1;
+    QByteArray buff2;
+    
+    QStringList parameters_;
+    parameters_.append("--script-help");
+    parameters_.append(item->text(0));
+    
+    localCall::th = new scanThread(buff1, buff2, parameters_, this);
+    
+    connect(localCall::th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
+      this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
+    
+    localCall::th->start();
+}
+
+void nmapClass::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
+{
+    Q_UNUSED(parameters);
+    Q_UNUSED(errors);
+    // show help result for nse
+    localCall::th->quit();
+    localCall::th->wait();
+    delete localCall::th;
+    
+    QString result_(result);
+    QTextDocument *document = new QTextDocument(result_);
+    nseTextHelp->setDocument(document);
+    delete localCall::oldDoc;
+    localCall::oldDoc = document;
 }

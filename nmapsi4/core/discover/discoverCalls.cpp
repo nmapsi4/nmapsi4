@@ -121,7 +121,7 @@ void nmapClass::pingResult(QStringList hostname, bool state)
 	item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
 	item->setIcon(1, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
 	varDiscover::listTreeItemDiscover.push_back(item);
-	item->setText(0, hostname[1]);
+	item->setText(0, hostname[hostname.size()-1]);
 	item->setText(1, tr("is Up"));
     } else {
 	//qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;

@@ -84,6 +84,7 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent)
     discoverLayer::m_parent = parent;
     // Create parameters list for npig
     listPar_.append("--tcp-connect");
+    listPar_.append("-c 1");
     listPar_.append(networkIp);
     
     if (discoverLayer::threadLimit) {
@@ -128,7 +129,7 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     discoverLayer::threadLimit++;
     // remove ip from counter
     discoverLayer::ScanCounter--;
-    qDebug() << "DEBUG:: thread end:: " << ipAddr[1];
+    qDebug() << "DEBUG:: thread end:: " << ipAddr[ipAddr.size()-1];
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
     QString buffLine;

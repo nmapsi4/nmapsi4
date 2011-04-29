@@ -50,6 +50,7 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QDesktopServices>
 #include <QtGui/QToolButton>
+#include <QtGui/QTextDocument>
 
 // define class namespace
 using namespace internalLookup;
@@ -127,7 +128,6 @@ protected:
     QListWidgetItem *discoverW;
     QListWidgetItem *fileW;
     QListWidgetItem *timingW;
-    QListWidgetItem *nseW;
     QString FileName;
     QString firstPath;
     QString Profile;
@@ -296,6 +296,8 @@ private slots:
     void discoverIpState();
     void cleanDiscovery();
     void stopDiscover();
+    void requestNseHelp(QTreeWidgetItem *item, int column);
+    void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
 };
 
 #endif

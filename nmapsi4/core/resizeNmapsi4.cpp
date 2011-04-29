@@ -63,8 +63,6 @@ void nmapClass::optionListUpdate()
 	stackedOptions->setCurrentIndex(2);
     } else if (timingW->isSelected()) {
 	stackedOptions->setCurrentIndex(3);
-    } else if (nseW->isSelected()) {
-	stackedOptions->setCurrentIndex(6);
     }
 }
 
@@ -91,10 +89,6 @@ void nmapClass::optionListCreate()
     timingW = new QListWidgetItem(optionsListScan);
     timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
     timingW->setText(tr("Timing"));
-    
-    nseW = new QListWidgetItem(optionsListScan);
-    nseW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    nseW->setText(tr("Nse"));
     
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
 	  this, SLOT(optionListUpdate()));

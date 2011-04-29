@@ -210,7 +210,8 @@ void nmapClass::scan(const QString hostname)
 
     parameters_ << hostname; // add hostname
     
-    QByteArray buff1, buff2;
+    QByteArray buff1;
+    QByteArray buff2;
     // start scan Thread
     QPointer<scanThread> th = new scanThread(buff1, buff2, parameters_, this);
     //scanPointerList.push_front(th);
