@@ -2599,6 +2599,9 @@
           </item>
           <item>
            <widget class="QPushButton" name="nseActiveBut">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="text">
              <string>Active Script</string>
             </property>
@@ -2613,6 +2616,9 @@
           </item>
           <item>
            <widget class="QPushButton" name="nseRemoveBut">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="text">
              <string>Disable Script</string>
             </property>

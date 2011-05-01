@@ -22,6 +22,7 @@
 pingCore::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
      : m_pout(ProcB1), 
        m_host(hostname),
+       m_proc(NULL),
        m_par(parent)
 {
     // not necessary, kill running qprocess

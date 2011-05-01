@@ -30,11 +30,13 @@ void nmapClass::updateNseOptionScript(int index)
     if (index) {
         nseTreeActive->setEnabled(true);
         nseTreeAvail->setEnabled(true);
-        nseActiveBut->setEnabled(true);
+	nseResetBut->setEnabled(true);
     } else {
         nseTreeActive->setEnabled(false);
         nseTreeAvail->setEnabled(false);
-        nseActiveBut->setEnabled(false);
+	nseResetBut->setEnabled(false);
+	nseActiveBut->setEnabled(false);
+	nseRemoveBut->setEnabled(false);
     }
     // reset parameters for change
     resetPar();
@@ -155,7 +157,15 @@ void nmapClass::nseTreeResetItem()
 void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
 {
     Q_UNUSED(column);
+    qDebug() << "DEBUG:: item: " << item->text(0);
 
+    if (nseScriptAvailList.indexOf(item->text(0)) != -1) {
+	nseActiveBut->setEnabled(true);
+	nseRemoveBut->setEnabled(false);
+    } else {
+	nseActiveBut->setEnabled(false);
+	nseRemoveBut->setEnabled(true);
+    }
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
     
@@ -194,7 +204,7 @@ void nmapClass::showNseHelp(const QStringList parameters, QByteArray result, QBy
 
     QString result_(result);
     QTextDocument *document = new QTextDocument(result_);
-    // insert document on chache
+    // insert document on cache
     nseHelpCache.insert(parameters[parameters.size()-1],document);
     // load document
     nseTextHelp->setDocument(document);
