@@ -105,6 +105,7 @@ void nmapClass::discoverIpState()
     foreach (const QString &token, ipList_) {
 	discover->isUp(token,this);
 	varDiscover::ipCounter++;
+	nseNumber->display(varDiscover::ipCounter);
     }
     
     delete memTools;
@@ -114,6 +115,7 @@ void nmapClass::pingResult(QStringList hostname, bool state)
 {
     // decrement ping ip counter
     --varDiscover::ipCounter;
+    nseNumber->display(varDiscover::ipCounter);
     // set values in treeDiscover widget
     treeDiscover->setIconSize(QSize(24,24));
     if (state) {
@@ -148,6 +150,7 @@ void nmapClass::stopDiscover()
     startDiscoverButt->setEnabled(true);
     stopDiscoverButt->setEnabled(false);
     varDiscover::ipCounter = 0;
+    nseNumber->display(varDiscover::ipCounter);
     // don't kill running QProcess is no necessary
     //emit killPingScan();
     emit killDiscover();

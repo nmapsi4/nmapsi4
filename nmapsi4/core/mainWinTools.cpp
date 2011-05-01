@@ -86,6 +86,7 @@ void nmapClass::setDefaultAction()
     scanSez->setChecked(true);
     Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
+    nseNumber->setSegmentStyle(QLCDNumber::Flat);
 }
 
 void nmapClass::setDefaultSplitter()
