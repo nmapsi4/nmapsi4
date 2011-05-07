@@ -31,72 +31,27 @@ void nmapClass::startProfile_ui()   // start preference UI
 
 void nmapClass::checkNmapVersion()
 {
-    versionProc = new QProcess();
-
-    connect(versionProc, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(setNmapVersion()));
-
-    QStringList parametri;
-    parametri << "--version";
-    versionProc->start("nmap", parametri);
-
-}
-
-void nmapClass::setNmapVersion()
-{
-    QString* output;
-    // nmap CHECK
     hostEdit->setEnabled(true);
-    output = new QString(versionProc->readAllStandardOutput());
-
-    QTextStream stream(output);
-    QString tmp, versionNmap;
-
-    while (!stream.atEnd()) {
-        tmp = stream.readLine();
-
-        if (tmp.contains("Nmap version")) {
-            versionNmap.append(tmp);
-        }
-    }
-
+    
     labelVersion = new QLabel();
-
-    if (!versionNmap.isEmpty()) {
-
-        versionNmap.remove("Nmap version ");
-        versionNmap.resize(4);
-        versionNmap.prepend(tr("<b>Nmap Version:</b> "));
-        versionNmap.append(" - <b>Ui</b>: ");
-        versionNmap.append(_VERSION_);
-        labelVersion->setText(versionNmap);
-        statusBar()->addPermanentWidget(labelVersion, 1);
-    } else {
-        versionNmap.prepend(tr("<b>Nmap Version:</b> "));
-        versionNmap.append(tr("Not Present"));
-        action_Scan_menu->setEnabled(false);
-        action_Scan_2->setEnabled(false);
-        labelVersion->setText(versionNmap);
-        statusBar()->addPermanentWidget(labelVersion, 6);
-    }
-
+    QString versionNmap_;
+    versionNmap_.append("<b>Ui</b>: ");
+    versionNmap_.append(_VERSION_);
+    labelVersion->setText(versionNmap_);
+    
     userMode = new QLabel();
     QString userModeString;
     userModeString.prepend(tr("<b>Mode:</b> "));
-    if (!uid)
+    if (!uid) {
         userModeString.append(tr("Full"));
-    else
+    } else {
         userModeString.append(tr("User"));
-
+    }
     userMode->setText(userModeString);
-    statusBar()->addPermanentWidget(userMode, 6);
-
-#ifndef TOOLS_NO_DEBUG
-    qDebug() << "Nmapsi4/checkVersion --> nmapVersion::" << versionNmap;
-    qDebug() << "Nmapsi4/checkVersion --> nmapsi4Mode::" << userModeString;
-#endif
-    delete output;
-    delete versionProc;
+    
+    statusBar()->setLayoutDirection(Qt::RightToLeft);
+    statusBar()->addPermanentWidget(labelVersion, 0);
+    statusBar()->addPermanentWidget(userMode, 0);
 }
 
 void nmapClass::exit()

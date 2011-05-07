@@ -2855,7 +2855,7 @@
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
+    <enum>Qt::LeftToRight</enum>
    </property>
   </widget>
   <widget class="QToolBar" name="toolBar">

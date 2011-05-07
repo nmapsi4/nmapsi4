@@ -21,6 +21,11 @@
 
 void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArray Byte2)
 {
+    // check nmap error
+    if(!Byte1.size() && Byte2.size()) {
+	QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
+	return;
+    }
     // Create parser Obect
     parserObj *elemObj = new parserObj();
     QString hostCheck_ = parList[parList.size()-1];

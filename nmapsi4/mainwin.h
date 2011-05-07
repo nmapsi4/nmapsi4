@@ -121,7 +121,6 @@ signals:
 
 protected:
     int uid;
-    QProcess *versionProc;
     QFile *PFile;
     QListWidgetItem *scanW;
     QListWidgetItem *toolW;
@@ -227,7 +226,6 @@ private slots:
     void objVulnButton();
     // Check nmap version
     void checkNmapVersion();
-    void setNmapVersion();
     //update and log slots
     void startProfile_ui();
     void readProfile();
