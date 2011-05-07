@@ -89,9 +89,8 @@ void nmapClass::initObject()
     updateComboPar();
     updateComboBook();
     updateComboWebV();
-    // FIXME: call discover startup, NPING is REQUIRED
+    // call discover startup, NPING is REQUIRED
     startDiscover();
-    //discoverIpState();
 }
 
 void nmapClass::startScan() 
@@ -107,7 +106,7 @@ void nmapClass::startScan()
 
     // check for ip list
     if(hostname.contains("/") && !hostname.contains("//")) {
-	// not lookup, is a ip list
+	// is a ip list
         QStringList addrPart_ = hostname.split('/');
         QStringList ipBase_ = addrPart_[0].split('.');
         int ipLeft_ = ipBase_[3].toInt();
@@ -116,9 +115,7 @@ void nmapClass::startScan()
         for(int index = ipLeft_; index <= ipRight_; index++) {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
-	    // TODO active prescanLooup call
-            addMonitorHost(scanMonitor, hostname);
-            this->scan(hostname);
+	    preScanLookup(hostname);
          }
          return;
      }
@@ -147,6 +144,32 @@ void nmapClass::startScan()
 
 void nmapClass::preScanLookup(const QString hostname) 
 {
+    // log check
+    if (checkLog) { // create a file log
+        this->fileSession();
+    } else {
+        if (!logPath.contains(QDir::tempPath())) {
+            QSettings ptr("nmapsi4", "nmapsi4");
+            ptr.setValue("confPath", QDir::tempPath());
+            logPath = QDir::tempPath();
+            this->checkProfile();
+        }
+
+        this->fileSession();
+    }
+    
+    // save ip or dns to history
+    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
+    history->addItemHistory(hostname);
+    delete history;
+    
+    // default action
+    monitorStopAllScanButt->setEnabled(true);
+    action_Save_As->setEnabled(false);
+    actionSave_As_Menu->setEnabled(false);
+    actionSave->setEnabled(false);
+    actionSave_Menu->setEnabled(false);
+    
     // check for scan lookup
     if(lookupInternal) {
 	// if internal lookUp is actived
@@ -177,30 +200,8 @@ void nmapClass::preScanLookup(const QString hostname)
 
 void nmapClass::scan(const QString hostname)
 {
-    // TODO move log, parameters a action on preScanLooup call for QSemaphore
-    if (checkLog) { // create a file log
-        this->fileSession();
-    } else {
-        if (!logPath.contains(QDir::tempPath())) {
-            QSettings ptr("nmapsi4", "nmapsi4");
-            ptr.setValue("confPath", QDir::tempPath());
-            logPath = QDir::tempPath();
-            this->checkProfile();
-        }
-
-        this->fileSession();
-    }
 
     QStringList parameters_; //parameters list declaration
-
-    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
-    history->addItemHistory(hostname);
-
-    monitorStopAllScanButt->setEnabled(true);
-    action_Save_As->setEnabled(false);
-    actionSave_As_Menu->setEnabled(false);
-    actionSave->setEnabled(false);
-    actionSave_Menu->setEnabled(false);
 
     if(!frameAdv->isVisible()) {
         parameters_ = this->check_extensions(); // extensions.cpp
@@ -208,7 +209,7 @@ void nmapClass::scan(const QString hostname)
         parameters_ = comboAdv->lineEdit()->text().split(' ');
     }
 
-    parameters_ << hostname; // add hostname
+    parameters_.append(hostname); // add hostname
     
     QByteArray buff1;
     QByteArray buff2;
@@ -227,8 +228,6 @@ void nmapClass::scan(const QString hostname)
       this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
     // start scan
     th->start();
-
-    delete history;
 }
 
 nmapClass::~nmapClass() 
