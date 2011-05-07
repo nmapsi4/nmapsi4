@@ -87,6 +87,7 @@ void nmapClass::setDefaultAction()
     Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     nseNumber->setSegmentStyle(QLCDNumber::Flat);
+    tWresult->setVisible(false);
 }
 
 void nmapClass::setDefaultSplitter()
