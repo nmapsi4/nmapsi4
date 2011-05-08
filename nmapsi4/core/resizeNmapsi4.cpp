@@ -56,7 +56,7 @@ void nmapClass::optionListUpdate()
     if (scanW->isSelected()) {
 	stackedOptions->setCurrentIndex(0);
     } else if (toolW->isSelected()) {
-	stackedOptions->setCurrentIndex(5);
+	stackedOptions->setCurrentIndex(4);
     } else if (discoverW->isSelected()) {
 	stackedOptions->setCurrentIndex(1);
     } else if (fileW->isSelected()) {
