@@ -48,6 +48,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
 		core/lib/memorytools.cpp
+		core/mainScan.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
@@ -93,6 +94,7 @@ else (NOT Q_WS_X11)
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
 		core/lib/memorytools.cpp
+		core/mainScan.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)

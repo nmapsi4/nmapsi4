@@ -20,24 +20,24 @@
 #include "mainwin.h"
 
 nmapClass::nmapClass()
-     : uid(0),
-       PFile(NULL),
-       scanCounter(0),
-       labelVersion(NULL),
-       userMode(NULL) 
+    : uid(0),
+      PFile(NULL),
+      scanCounter(0),
+      labelVersion(NULL),
+      userMode(NULL)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
 
-void nmapClass::initGUI() 
+void nmapClass::initGUI()
 {
     setupUi(this);
     // set default value in combo editable
     defaultComboValues();
 }
 
-void nmapClass::initObject() 
+void nmapClass::initObject()
 {
 #ifndef Q_WS_WIN
     uid = getuid();
@@ -54,7 +54,7 @@ void nmapClass::initObject()
     setNmapsiSlot();
     // Set default properties
     setDefaultAction();
-    // preload mainwindow info 
+    // preload mainwindow info
     setTreeWidgetValues();
     checkProfile();
     optionListCreate();
@@ -93,144 +93,7 @@ void nmapClass::initObject()
     startDiscover();
 }
 
-void nmapClass::startScan() 
-{
-    if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) {
-        QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
-        return;
-    }
-
-    QString hostname = hostEdit->currentText();
-    // check wrong address
-    hostname = clearHost(hostname);
-
-    // check for ip list
-    if(hostname.contains("/") && !hostname.contains("//")) {
-	// is a ip list
-        QStringList addrPart_ = hostname.split('/');
-        QStringList ipBase_ = addrPart_[0].split('.');
-        int ipLeft_ = ipBase_[3].toInt();
-        int ipRight_ = addrPart_[1].toInt();
-
-        for(int index = ipLeft_; index <= ipRight_; index++) {
-            ipBase_[3].setNum(index);
-            hostname = ipBase_.join(".");
-	    preScanLookup(hostname);
-         }
-         return;
-     }
-
-    //scan token DNS/IP parser
-    if(hostname.contains(" ")) { // space delimiter
-        QStringList addrPart_ = hostname.split(' ');
-        addrPart_.removeAll("");
-	// check for only one space in hostname
-        if(addrPart_.size() > 1) {
-	    // multiple ip or dns to scan
-            for(int index=0; index < addrPart_.size(); index++) {
-                addrPart_[index] = clearHost(addrPart_[index]);
-		// check for lookup support
-		preScanLookup(addrPart_[index]);
-            }
-            return;
-        }
-        // remove all space on hostname
-        hostname.remove(' ');
-    }
-    // single ip or dns after the move
-    preScanLookup(hostname);
-    
-}
-
-void nmapClass::preScanLookup(const QString hostname) 
-{
-    // log check
-    if (checkLog) { // create a file log
-        this->fileSession();
-    } else {
-        if (!logPath.contains(QDir::tempPath())) {
-            QSettings ptr("nmapsi4", "nmapsi4");
-            ptr.setValue("confPath", QDir::tempPath());
-            logPath = QDir::tempPath();
-            this->checkProfile();
-        }
-
-        this->fileSession();
-    }
-    
-    // save ip or dns to history
-    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
-    history->addItemHistory(hostname);
-    delete history;
-    
-    // default action
-    monitorStopAllScanButt->setEnabled(true);
-    action_Save_As->setEnabled(false);
-    actionSave_As_Menu->setEnabled(false);
-    actionSave->setEnabled(false);
-    actionSave_Menu->setEnabled(false);
-    
-    // check for scan lookup
-    if(lookupInternal) {
-	// if internal lookUp is actived
-        addMonitorHost(scanMonitor, hostname);
-	// call internal lookup thread and save the pointer.
-        lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
-	internealLookupList.push_back(internalLookupTh_);
-	
-        connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,const QString)),
-                       this, SLOT(scanLookup(QHostInfo,int,const QString)));
-
-        internalLookupTh_->start();
-    } else if(lookupDig && digSupported) {
-	// if dig support is actived
-	parserObjUtil* tmpParserObj_ = new parserObjUtil();
-	digSupport *digC = new digSupport();
-	digLookupList.push_back(digC);
-        digC->digProcess(hostname,tmpParserObj_);
-	parserObjUtilList.append(tmpParserObj_);
-        addMonitorHost(scanMonitor, hostname);
-        this->scan(hostname);
-    } else {
-	// lookup isn't actived or not supported
-        addMonitorHost(scanMonitor, hostname);
-        this->scan(hostname);
-    }
-}
-
-void nmapClass::scan(const QString hostname)
-{
-
-    QStringList parameters_; //parameters list declaration
-
-    if(!frameAdv->isVisible()) {
-        parameters_ = this->check_extensions(); // extensions.cpp
-    } else {
-        parameters_ = comboAdv->lineEdit()->text().split(' ');
-    }
-
-    parameters_.append(hostname); // add hostname
-    
-    QByteArray buff1;
-    QByteArray buff2;
-    // start scan Thread
-    QPointer<scanThread> th = new scanThread(buff1, buff2, parameters_, this);
-    //scanPointerList.push_front(th);
-    scanHashList.insert(hostname,th);
-    // update progressbar for scan
-    connect(th, SIGNAL(upgradePR()),
-      this, SLOT(setProgress()));
-    // read current data scan from the thread
-    connect(th, SIGNAL(flowFromThread(const QString, const QString)),
-      this, SLOT(readFlowFromThread(const QString, const QString)));
-    // read scan data return
-    connect(th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
-      this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
-    // start scan
-    th->start();
-}
-
-nmapClass::~nmapClass() 
+nmapClass::~nmapClass()
 {
     memoryTools *memTools = new memoryTools();
     memTools->itemDeleteAll(itemListScan);
