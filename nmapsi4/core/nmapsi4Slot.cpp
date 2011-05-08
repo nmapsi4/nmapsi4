@@ -173,8 +173,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(searchVulnNG()));
     connect(addUrlButt, SIGNAL(clicked()),
             this, SLOT(startAddUrl_ui()));
-    connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuUrlBook()));
+    connect(removeUrlButt, SIGNAL(clicked()),
+            this, SLOT(removeUrlToBookmarks()));
 
     // main session
     connect(scanSez, SIGNAL(triggered()),

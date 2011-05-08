@@ -1065,6 +1065,17 @@
                       </widget>
                      </item>
                      <item>
+                      <widget class="QPushButton" name="removeUrlButt">
+                       <property name="text">
+                        <string>Remove Url</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="../mainwin.qrc">
+                         <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
                       <spacer name="verticalSpacer_7">
                        <property name="orientation">
                         <enum>Qt::Vertical</enum>

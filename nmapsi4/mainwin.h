@@ -268,7 +268,6 @@ private slots:
     void tabWebStop();
     void addUrlToBookmarks(const QString urlName, const QString urlAddr);
     void removeUrlToBookmarks();
-    void menuUrlBook();
     //contest Menu
     void menuScanBook();
     void menuVulnBook();
