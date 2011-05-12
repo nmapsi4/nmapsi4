@@ -52,19 +52,14 @@ void nmapClass::saveBookMarks()
 
     logHistory *history_ = NULL;
 
-    switch(stackedMain->currentIndex()) {
-      case 0:
-        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    if (tabScan->isVisible()) {
+	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->addItemHistory(hostEdit->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-        break;
-      case 2:
-        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    } else {
+	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-        break;
-      default:
-        break;
     }
 
     Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -81,17 +76,12 @@ void nmapClass::deleteBookMark()
 
     logHistory *history_ = NULL;
 
-    switch(stackedMain->currentIndex()) {
-      case 0:
-        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    if (tabScan->isVisible()) {
+	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(treeLogH->currentItem()->text(0));
-        break;
-      case 2:
-        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    } else {
+	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
-        break;
-      default:
-        break;
     }
 
     delete history_;

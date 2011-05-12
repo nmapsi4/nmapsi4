@@ -374,38 +374,18 @@ void nmapClass::setProgress()
 
 void nmapClass::updateSezScan() 
 { // SLOT
-    if (stackedMain->currentIndex() == 0)
-        return;
-
     scanSez->setChecked(true);
     logSez->setChecked(false);
     vulnSez->setChecked(false);
     discoverSez->setChecked(false);
-    stackedMain->setCurrentIndex(0);
     toolBar->setVisible(true);
     toolBar_2->setVisible(true);
     toolBarSearch->setVisible(false);
     toolBarBook->setVisible(true);
-    GItree->setVisible(true);
-
-    if (!frameScan->isVisible()) {
-        frameScan->setVisible(true);
-    }
-
-    if (!frameLeft->isVisible()) {
-        frameLeft->setVisible(true);
-    }
-
-    if (!frameAdv->isVisible() && parAct->isChecked()) {
-        frameAdv->setVisible(true);
-    }
     
-    if (!frameRight->isVisible()) {
-        frameRight->setVisible(true);
-    }
-    
-    if (!frame_2->isVisible()) {
-        frame_2->setVisible(true);
+    if (!tabScan->isVisible()) {
+	tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
+	tabUi->setCurrentIndex(0);
     }
     
     if (!tabSOpt->isVisible()) {
@@ -420,6 +400,9 @@ void nmapClass::updateSezScan()
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
     
+    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(tabLog));
+    tabUi->removeTab(tabUi->indexOf(tabDiscover));
     // enable scan action
     if (!nssAct->isVisible()) {
 	parAct->setVisible(true);
@@ -429,31 +412,23 @@ void nmapClass::updateSezScan()
 
 void nmapClass::updateSezLog() 
 {  // SLOT
-    if (stackedMain->currentIndex() == 1)
-        return;
-
     scanSez->setChecked(false);
     logSez->setChecked(true);
     vulnSez->setChecked(false);
     discoverSez->setChecked(false);
-    stackedMain->setCurrentIndex(1);
     // main and action bar only in scan index
     toolBar->setVisible(false);	
     toolBar_2->setVisible(false);
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
-    GItree->setVisible(false);
-    // unshow frame not necessary
-    frameScan->setVisible(false);
-    frameLeft->setVisible(false);
-    frameAdv->setVisible(false);
-    frameRight->setVisible(false);
-    frame_2->setVisible(false);
     
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
-    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/book.png")));
-    tabUi->setTabText(0, "Log");
+    tabUi->removeTab(tabUi->indexOf(tabScan));
+    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(tabDiscover));
+    tabUi->insertTab(0,tabLog,QIcon(QString::fromUtf8(":/images/images/book.png")),"Scan Log");
+    tabUi->setCurrentIndex(0);
     
     // disable scan action
     nssAct->setVisible(false);
@@ -462,31 +437,23 @@ void nmapClass::updateSezLog()
 
 void nmapClass::updateSezVuln() 
 { // SLOT
-    if (stackedMain->currentIndex() == 2)
-        return;
-
     scanSez->setChecked(false);
     logSez->setChecked(false);
     vulnSez->setChecked(true);
     discoverSez->setChecked(false);
-    stackedMain->setCurrentIndex(2);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(true);
-    GItree->setVisible(false);
-    // unshow frame not necessary
-    frameScan->setVisible(false);
-    frameLeft->setVisible(false);
-    frameAdv->setVisible(false);
-    frameRight->setVisible(false);
-    frame_2->setVisible(false);
-    
+
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
-    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    tabUi->setTabText(0, "Vulnerabilities");
+    tabUi->removeTab(tabUi->indexOf(tabScan));
+    tabUi->removeTab(tabUi->indexOf(tabLog));
+    tabUi->removeTab(tabUi->indexOf(tabDiscover));
+    tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
+    tabUi->setCurrentIndex(0);
     
     // disable scan action
     nssAct->setVisible(false);
@@ -496,31 +463,23 @@ void nmapClass::updateSezVuln()
 void nmapClass::updateDiscoverVuln() 
 { // SLOT
     // discover section
-    if (stackedMain->currentIndex() == 3)
-        return;
-
     scanSez->setChecked(false);
     logSez->setChecked(false);
     vulnSez->setChecked(false);
     discoverSez->setChecked(true);
-    stackedMain->setCurrentIndex(3);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(false);
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(false);
-    GItree->setVisible(false);
-    // unshow frame not necessary
-    frameScan->setVisible(false);
-    frameLeft->setVisible(false);
-    frameAdv->setVisible(false);
-    frameRight->setVisible(false);
-    frame_2->setVisible(false);
-    
+
     tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
-    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
-    tabUi->setTabText(0, "Discover");
+    tabUi->removeTab(tabUi->indexOf(tabScan));
+    tabUi->removeTab(tabUi->indexOf(tabLog));
+    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->insertTab(0,tabDiscover,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Discover");
+    tabUi->setCurrentIndex(0);
     
     // disable scan action
     nssAct->setVisible(false);

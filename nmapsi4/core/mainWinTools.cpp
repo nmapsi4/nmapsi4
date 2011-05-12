@@ -88,6 +88,9 @@ void nmapClass::setDefaultAction()
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     nseNumber->setSegmentStyle(QLCDNumber::Flat);
     tWresult->setVisible(false);
+    tabUi->removeTab(tabUi->indexOf(tabLog));
+    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(tabDiscover));
 }
 
 void nmapClass::setDefaultSplitter()
@@ -100,7 +103,7 @@ void nmapClass::setDefaultSplitter()
     cW->addWidget(frameCenter);
     //frameCenter
     bW->setOrientation(Qt::Vertical);
-    bW->addWidget(stackedMain);
+    bW->addWidget(tabWidget);
     bW->addWidget(frameRight);
     // insert splitter
     tabUi->widget(0)->layout()->addWidget(cW);
