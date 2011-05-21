@@ -10,7 +10,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>941</width>
+    <width>873</width>
     <height>698</height>
    </rect>
   </property>
@@ -2798,7 +2798,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>941</width>
+     <width>873</width>
      <height>21</height>
     </rect>
    </property>
@@ -3403,7 +3403,7 @@
      <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
    </property>
    <property name="text">
-    <string>Scan section</string>
+    <string>Section Scan</string>
    </property>
   </action>
   <action name="actionLog_section">
@@ -3412,7 +3412,7 @@
      <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
    </property>
    <property name="text">
-    <string>Log section</string>
+    <string>Section Log</string>
    </property>
   </action>
   <action name="actionVulnerabilities_section">
@@ -3421,7 +3421,7 @@
      <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
    </property>
    <property name="text">
-    <string>Vulnerabilities section</string>
+    <string> Section Vulnerabilities</string>
    </property>
   </action>
   <action name="actionDonate_Money">
