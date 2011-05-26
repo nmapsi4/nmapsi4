@@ -100,6 +100,20 @@ void nmapClass::menuServiceMain()
     menuVulnMain.exec(QCursor::pos());
 }
 
+void nmapClass::menuScanDiscover() 
+{
+    QAction scanDiscover(this);
+    scanDiscover.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    scanDiscover.setIconText(tr("Scan Ip"));
+
+    connect(&scanDiscover, SIGNAL(triggered()),
+                this, SLOT(callScanDiscover()));
+
+    QMenu menuScanDiscover(this);
+    menuScanDiscover.addAction(&scanDiscover);
+    menuScanDiscover.exec(QCursor::pos());
+}
+
 void nmapClass::createBar() 
 {
     // QToolBar asction
@@ -225,7 +239,7 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionMenuBar);
     menu->addSeparator();
     menu->addAction(action_Quit_2);
-    
+    menu->setLayoutDirection(Qt::LeftToRight);
     menuSetup->setMenu(menu);
     //toolBarQuit->addWidget(menuSetup);
     toolMenuBar->addWidget(menuSetup);

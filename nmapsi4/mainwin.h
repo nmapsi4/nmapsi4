@@ -216,6 +216,7 @@ private slots:
     void show_donateUrl();
     void updateIconsBox();
     void callScanH();
+    void callScanDiscover();
     void callParFromBook();
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void runtimePars(QTreeWidgetItem *item, int column);
@@ -273,6 +274,7 @@ private slots:
     void menuVulnBook();
     void menuParBook();
     void menuServiceMain();
+    void menuScanDiscover();
     void slotParSelected();
     void slotHostSelected();
     void saveUiSettings();
