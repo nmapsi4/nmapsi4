@@ -2195,7 +2195,7 @@
          </widget>
         </item>
         <item row="2" column="0" colspan="3">
-         <layout class="QVBoxLayout" name="verticalLayout_20">
+         <layout class="QVBoxLayout" name="verticalLayout_15">
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">
@@ -2204,11 +2204,32 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboNseInv">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QComboBox" name="comboNseInv">
+              <property name="editable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="nseFixedSButt">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Done</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../mainwin.qrc">
+                <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>

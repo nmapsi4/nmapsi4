@@ -226,6 +226,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+    connect(nseFixedSButt, SIGNAL(clicked()),
+            this, SLOT(resetPar()));
     
     // action help menu (browser call)
     connect(actionReport_Bug, SIGNAL(triggered()),

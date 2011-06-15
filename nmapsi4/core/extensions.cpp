@@ -52,6 +52,13 @@ QStringList nmapClass::check_extensions()
 	    tmpList_.append(token);
 	    tmpList_.append(",");
 	}
+	// load nse manual script
+	QStringList manualNse_ = comboNseInv->lineEdit()->text().split(",");
+	foreach (const QString &token, manualNse_) {
+	  tmpList_.append(token);
+	  tmpList_.append(",");
+	}
+	
 	tmpList_.remove(' ');
 	tmpList_.resize(tmpList_.size()-1);
 	tmpListComplete_.append(tmpList_);
