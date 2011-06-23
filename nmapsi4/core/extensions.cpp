@@ -35,34 +35,61 @@ QStringList nmapClass::check_extensions()
 	}
     }
     
-    if (nseComboScript->currentIndex() 
-	&& nseScriptActiveList.size()
-    ) {
-	//set -sC and --script "xx,xx"
+    if (nseComboScript->currentIndex()) {
+	//set --script "xx,xx"
 	if (parametri.contains("-A")) {
 	    parametri.removeAll("-A");
 	    if (!uid) {
 		parametri << "--traceroute";
 	    }
 	}
-	//QString tmpListComplete_ = ("-sC --script=");
-	QString tmpListComplete_ = ("--script=");
-	QString tmpList_ = ("");
-	foreach (const QString &token, nseScriptActiveList) {
-	    tmpList_.append(token);
-	    tmpList_.append(",");
+	QString tmpListScript_ = ("--script=");
+	QString tmpListParam_ = ("--script-args=");
+	QString tmpList_("");
+	QString tmpListArgs_("");
+
+	if (nseScriptActiveList.size()) {
+	  foreach (const QString &token, nseScriptActiveList) {
+	      tmpList_.append(token);
+	      tmpList_.append(",");
+	  }
 	}
 	// load nse manual script
-	QStringList manualNse_ = comboNseInv->lineEdit()->text().split(",");
-	foreach (const QString &token, manualNse_) {
-	  tmpList_.append(token);
-	  tmpList_.append(",");
+	if (!comboNseInv->lineEdit()->text().isEmpty()) {
+	  QStringList manualNse_ = comboNseInv->lineEdit()->text().split(',');
+	  foreach (const QString &token, manualNse_) {
+	    tmpList_.append(token);
+	    tmpList_.append(",");
+	  }
 	}
 	
-	tmpList_.remove(' ');
-	tmpList_.resize(tmpList_.size()-1);
-	tmpListComplete_.append(tmpList_);
-	parametri << tmpListComplete_;
+	if (tmpList_.size()) {
+	  tmpList_.remove(' ');
+	  tmpList_.resize(tmpList_.size()-1);
+	  tmpListScript_.append(tmpList_);
+	} else {
+	  tmpListScript_.clear();
+	  tmpListScript_.append("-sC");
+	}
+	
+	if (!comboNsePar->lineEdit()->text().isEmpty()) {
+	  QString argsClean_ = comboNsePar->lineEdit()->text().remove('"');
+	  argsClean_ = argsClean_.remove('\'');
+	  QStringList argsNse_ = argsClean_.split(',');
+	  foreach (const QString &token, argsNse_) {
+	    tmpListArgs_.append(token);
+	    tmpListArgs_.append(",");
+	  }
+	}
+	
+	if (tmpListArgs_.size()) {
+	  tmpListArgs_.remove(' ');
+	  tmpListArgs_.resize(tmpListArgs_.size()-1);
+	  tmpListParam_.append(tmpListArgs_);
+	  parametri << tmpListParam_;
+	}
+	
+	parametri << tmpListScript_;
     }
 
     switch (comboScan->currentIndex()) { //scan check

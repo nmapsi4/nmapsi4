@@ -2195,11 +2195,29 @@
          </widget>
         </item>
         <item row="2" column="0" colspan="3">
+         <layout class="QVBoxLayout" name="verticalLayout_19">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboNsePar">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0" colspan="3">
          <layout class="QVBoxLayout" name="verticalLayout_15">
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>Nse manual script invocation:</string>
+             <string>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</string>
             </property>
            </widget>
           </item>

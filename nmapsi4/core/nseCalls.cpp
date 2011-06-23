@@ -31,12 +31,18 @@ void nmapClass::updateNseOptionScript(int index)
         nseTreeActive->setEnabled(true);
         nseTreeAvail->setEnabled(true);
 	nseResetBut->setEnabled(true);
+	comboNseInv->setEnabled(true);
+	comboNsePar->setEnabled(true);
+	nseFixedSButt->setEnabled(true);
     } else {
         nseTreeActive->setEnabled(false);
         nseTreeAvail->setEnabled(false);
 	nseResetBut->setEnabled(false);
 	nseActiveBut->setEnabled(false);
 	nseRemoveBut->setEnabled(false);
+	comboNseInv->setEnabled(false);
+	comboNsePar->setEnabled(false);
+	nseFixedSButt->setEnabled(false);
     }
     // reset parameters for change
     resetPar();
