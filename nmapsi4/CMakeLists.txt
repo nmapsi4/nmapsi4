@@ -41,7 +41,8 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		core/actionMenu.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
-		core/nseCalls.cpp
+		core/nse/nseCalls.cpp
+		core/nse/nseUpdateCalls.cpp
 		core/startupTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
@@ -87,7 +88,8 @@ else (NOT Q_WS_X11)
 		core/actionMenu.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
-		core/nseCalls.cpp
+		core/nse/nseCalls.cpp
+		core/nse/nseUpdateCalls.cpp
 		core/startupTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp

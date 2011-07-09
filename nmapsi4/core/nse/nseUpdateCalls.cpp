@@ -17,11 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
-
-namespace localCall {   
-    QPointer<scanThread> th;
-}
+#include "../../mainwin.h"
 
 void nmapClass::updateNseOptionScript(int index)
 {
@@ -158,60 +154,4 @@ void nmapClass::nseTreeResetItem()
     nseScriptActiveList.clear();
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
-}
-
-void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
-{
-    Q_UNUSED(column);
-    qDebug() << "DEBUG:: item: " << item->text(0);
-
-    if (nseScriptAvailList.indexOf(item->text(0)) != -1) {
-	nseActiveBut->setEnabled(true);
-	nseRemoveBut->setEnabled(false);
-    } else {
-	nseActiveBut->setEnabled(false);
-	nseRemoveBut->setEnabled(true);
-    }
-    // search nse category on nse Cache
-    QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
-    
-    if (i == nseHelpCache.end()) {
-	/*
-	 * not category on cache
-	 * start help thread for nse
-	 */
-	QByteArray buff1;
-	QByteArray buff2;
-
-	QStringList parameters_;
-	parameters_.append("--script-help");
-	parameters_.append(item->text(0));
-
-	localCall::th = new scanThread(buff1, buff2, parameters_, this);
-
-	connect(localCall::th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
-		this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
-
-	localCall::th->start();
-    } else {
-	// category on cache
-	qDebug() << "DEBUG:: load help from cache";
-	nseTextHelp->setDocument(i.value());
-    }
-}
-
-void nmapClass::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
-{
-    Q_UNUSED(errors);
-    // show help result for nse
-    localCall::th->quit();
-    localCall::th->wait();
-    delete localCall::th;
-
-    QString result_(result);
-    QTextDocument *document = new QTextDocument(result_);
-    // insert document on cache
-    nseHelpCache.insert(parameters[parameters.size()-1],document);
-    // load document
-    nseTextHelp->setDocument(document);
 }

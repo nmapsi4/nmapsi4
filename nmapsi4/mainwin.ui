@@ -2192,6 +2192,54 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="tab_10">
+           <attribute name="icon">
+            <iconset resource="../mainwin.qrc">
+             <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>Nse Script Search</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_20">
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <item>
+               <widget class="QComboBox" name="comboScriptHelp">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="searchButtHelp">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Search</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../mainwin.qrc">
+                  <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTextBrowser" name="textScriptHelp"/>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
         <item row="2" column="0" colspan="3">

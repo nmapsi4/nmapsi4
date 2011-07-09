@@ -298,6 +298,8 @@ private slots:
     void stopDiscover();
     void requestNseHelp(QTreeWidgetItem *item, int column);
     void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
+    void requestNseScriptHelp();
+    void showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors);
 };
 
 #endif
