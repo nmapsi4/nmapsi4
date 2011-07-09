@@ -598,7 +598,7 @@ void nmapClass::updateTabTrace()
 
 void nmapClass::updateTabMonitor() 
 {
-    if (actTabMonitor->isChecked() && tabUi->count() < 3) {
+    if (actTabMonitor->isChecked() && tabUi->count() < 4) {
         tabUi->insertTab(tabUi->count(),tabMainMonitor,tr("Scan Monitor"));
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
         MonitorEnabled = true;
