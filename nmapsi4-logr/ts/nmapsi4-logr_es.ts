@@ -36,6 +36,10 @@
         <translation>Lista(s)</translation>
     </message>
     <message>
+        <source>Log(s) name</source>
+        <translation>Nombre del registro(s)</translation>
+    </message>
+    <message>
         <source>Date</source>
         <translation>Fecha</translation>
     </message>
@@ -54,10 +58,6 @@
     <message>
         <source>toolBar</source>
         <translation>Barra de herramientas</translation>
-    </message>
-    <message>
-        <source>Log(s) name</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

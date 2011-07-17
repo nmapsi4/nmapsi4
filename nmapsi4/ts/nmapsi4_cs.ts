@@ -28,10 +28,6 @@
         <translation>Prohledávání RPC</translation>
     </message>
     <message>
-        <source>Bounce Host</source>
-        <translation>Odmítnout server</translation>
-    </message>
-    <message>
         <source>Connect Scan</source>
         <translation>Prohledávání spojení</translation>
     </message>
@@ -46,10 +42,6 @@
     <message>
         <source>FTP Bounce Attack</source>
         <translation>FTP útok vrácení</translation>
-    </message>
-    <message>
-        <source>Ports</source>
-        <translation>Přípojky</translation>
     </message>
     <message>
         <source>Version Probe</source>
@@ -82,10 +74,6 @@
     <message>
         <source>Fragmentation</source>
         <translation>Rozkouskovanost</translation>
-    </message>
-    <message>
-        <source>Ipv6</source>
-        <translation>Ipv6</translation>
     </message>
     <message>
         <source>Ordered Port</source>
@@ -128,32 +116,8 @@
         <translation>Prohlížeč</translation>
     </message>
     <message>
-        <source>Max. RTT</source>
-        <translation>Max. RTT</translation>
-    </message>
-    <message>
-        <source>Max. Parallel</source>
-        <translation>Max. spojitost</translation>
-    </message>
-    <message>
-        <source>Min, RTT</source>
-        <translation>Min. RTT</translation>
-    </message>
-    <message>
-        <source>Min. Parallel</source>
-        <translation>Min. spojitost</translation>
-    </message>
-    <message>
         <source>Scan Delay</source>
         <translation>Zpoždění prohlédnutí</translation>
-    </message>
-    <message>
-        <source>Initial RTT</source>
-        <translation>Začáteční RTT</translation>
-    </message>
-    <message>
-        <source>Host Timeout</source>
-        <translation>Překročení času u serveru</translation>
     </message>
     <message>
         <source>Ipv4 TTL</source>
@@ -489,18 +453,6 @@ Zavřít strom s prohledáváním</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Scan section</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Log section</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vulnerabilities section</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Donate Money</source>
         <translation type="unfinished"></translation>
     </message>
@@ -613,20 +565,128 @@ Zavřít strom s prohledáváním</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Restore Default Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ipv6 support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Techniques:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bounce Host:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing Template:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Min outstanding probes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max outstanding probes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max time to scan a target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Initial probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Min probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Categories Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Hledat</translation>
+    </message>
+    <message>
+        <source>Nse Script Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Log</source>
+        <translation type="unfinished">Prohledat zápis</translation>
+    </message>
+    <message>
+        <source>Remove Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remaining Ip:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discover</source>
+        <translation type="unfinished">Objevit</translation>
     </message>
 </context>
 <context>
@@ -896,14 +956,6 @@ p, li { white-space: pre-wrap; }
         <translation>Vyberte soubor</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
-        <translation>&lt;b&gt;Verze Nmap:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>Not Present</source>
-        <translation>Nepřítomný</translation>
-    </message>
-    <message>
         <source>Full</source>
         <translation>Úplný</translation>
     </message>
@@ -1156,15 +1208,20 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove Url</source>
+        <source>Scan Ip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Options</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

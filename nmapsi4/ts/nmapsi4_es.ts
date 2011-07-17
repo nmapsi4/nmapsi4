@@ -300,15 +300,6 @@
             </translation>
     </message>
     <message>
-        <source>Ports</source>
-        <translation>Puertos</translation>
-    </message>
-    <message>
-        <source>Bounce Host</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Version Probe</source>
         <translation>Versión Sonda</translation>
     </message>
@@ -356,38 +347,9 @@
             </translation>
     </message>
     <message>
-        <source>Max. RTT</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Max. Parallel</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Min, RTT</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Min. Parallel</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Scan Delay</source>
         <translation type="unfinished">
             </translation>
-    </message>
-    <message>
-        <source>Initial RTT</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Host Timeout</source>
-        <translation>Tiempo de espera para el Host</translation>
     </message>
     <message>
         <source>Ipv4 TTL</source>
@@ -480,11 +442,6 @@
             </translation>
     </message>
     <message>
-        <source>Ipv6</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Ordered Port</source>
         <translation type="unfinished">
             </translation>
@@ -531,18 +488,6 @@
         <source>toolBar_3</source>
         <translation type="unfinished">
             </translation>
-    </message>
-    <message>
-        <source>Scan section</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Log section</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vulnerabilities section</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Donate Money</source>
@@ -657,20 +602,129 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Restore Default Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ipv6 support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Techniques:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bounce Host:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing Template:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Min outstanding probes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max outstanding probes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max time to scan a target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Initial probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Min probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max probe timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Categories Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse Script Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Log</source>
+        <translation type="unfinished">Log de Scaneo</translation>
+    </message>
+    <message>
+        <source>Remove Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vulnerability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remaining Ip:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discover</source>
+        <translation type="unfinished">Decubrir</translation>
     </message>
 </context>
 <context>
@@ -1032,14 +1086,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>&lt;b&gt;Nmap Version:&lt;/b&gt; </source>
-        <translation>&lt;b&gt;Versión de Nmap:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>Not Present</source>
-        <translation>No está presente</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation type="unfinished">
             </translation>
@@ -1254,15 +1300,20 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove Url</source>
+        <source>Scan Ip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nse Options</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
