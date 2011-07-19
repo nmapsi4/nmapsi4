@@ -30,7 +30,7 @@ void nmapClass::startDiscover()
     comboDiscover->clear();
     comboDiscover->insertItem(0, "Select Interface");
     
-    mainDiscover *discover = new mainDiscover();
+    mainDiscover *discover = new mainDiscover(uid);
     foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) {
 	comboDiscover->insertItem(1, interface.name());
     }
@@ -42,13 +42,12 @@ void nmapClass::startDiscover()
 void nmapClass::discoverIp(const QString& interface) 
 {
     // ip from interface and discover ip range (FIXME unify the if)
-    mainDiscover *discover_ = new mainDiscover();
+    mainDiscover *discover_ = new mainDiscover(uid);
     
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
     
     if (!entryList_.isEmpty()) {
 	QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
-	
 	QString ipString_ = entry_.ip().toString();
 	
 	if (!ipString_.contains("127.0.0.1")) {
@@ -98,7 +97,7 @@ void nmapClass::discoverIpState()
 	ipList_.append(tmpIp_);
     }
     
-    mainDiscover *discover = new mainDiscover();
+    mainDiscover *discover = new mainDiscover(uid);
     varDiscover::listDiscover.push_back(discover);
     connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
     

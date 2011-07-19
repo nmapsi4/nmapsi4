@@ -28,8 +28,9 @@ namespace discoverLayer {
     bool connectState;
 }
 
-pingInterface::mainDiscover::mainDiscover() 
-    : ipState(false)
+pingInterface::mainDiscover::mainDiscover(int uid) 
+    : ipState(false),
+      uid_(uid)
 {
     discoverLayer::timer = new QTimer(this);
     discoverLayer::connectState = false;
@@ -83,7 +84,20 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent)
     QStringList listPar_;
     discoverLayer::m_parent = parent;
     // Create parameters list for npig
-    listPar_.append("--tcp-connect");
+    if (!uid_) {
+      listPar_.append("--icmp");
+      /*listPar_.append("--flags");
+      listPar_.append("SYN");*/
+      /*
+       * Support
+       * --tcp
+       * --udp
+       * --arp
+       * --tr
+       */
+    } else {
+      listPar_.append("--tcp-connect");
+    }
     listPar_.append("-c 1");
     listPar_.append(networkIp);
     
@@ -136,9 +150,9 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-	if (buffLine.contains("completed") || buffLine.contains("Connection refused")) {
-	    emit endPing(ipAddr, true);
-	    return;
+	if (buffLine.startsWith("RCVD") || buffLine.startsWith("RECV")) {
+	      emit endPing(ipAddr, true);
+	      return;
 	}
     }
     emit endPing(ipAddr, false);

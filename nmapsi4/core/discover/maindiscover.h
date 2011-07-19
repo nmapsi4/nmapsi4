@@ -44,7 +44,7 @@ namespace pingInterface {
 	/*!
 	 * Create a object for discovery Class
 	 */
-	mainDiscover();
+	mainDiscover(int uid);
 	~mainDiscover();
 	/*!
 	 * Return a QList of network interfaces
@@ -67,6 +67,7 @@ namespace pingInterface {
 
     protected:
 	bool ipState;
+	int uid_;
     
     private slots:
 	/*!
