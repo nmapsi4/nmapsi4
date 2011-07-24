@@ -102,6 +102,9 @@ void nmapClass::menuServiceMain()
 
 void nmapClass::menuScanDiscover() 
 {
+    // show discover data
+    updateSRdata();
+    
     QAction scanDiscover(this);
     scanDiscover.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     scanDiscover.setIconText(tr("Scan Ip"));

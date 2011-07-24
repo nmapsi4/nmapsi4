@@ -2718,7 +2718,7 @@
        <attribute name="title">
         <string>Discover</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_26">
+       <layout class="QVBoxLayout" name="verticalLayout_24">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <property name="leftMargin">
@@ -2786,6 +2786,9 @@
               <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboDisType"/>
           </item>
          </layout>
         </item>
@@ -2856,6 +2859,56 @@
            </property>
           </column>
          </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="1" column="0">
+           <widget class="QTextEdit" name="textDiscoverSend">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>150</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QTextEdit" name="textDiscoverRec">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>150</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Send</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Received</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_22">

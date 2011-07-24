@@ -26,6 +26,7 @@ namespace discoverLayer {
     int threadLimit;
     QTimer *timer;
     bool connectState;
+    QStringList parameters_;
 }
 
 pingInterface::mainDiscover::mainDiscover(int uid) 
@@ -42,6 +43,7 @@ pingInterface::mainDiscover::~mainDiscover()
 {
     delete discoverLayer::timer;
     discoverLayer::m_ipSospended.clear();
+    discoverLayer::parameters_.clear();
 }
 
 QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces() const
@@ -76,36 +78,27 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
     }
 }
 
-void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent) {
+void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent, QStringList parameters) 
+{
     /*
      * start thread for discover ip state
      */
     QByteArray pingBuffer_;
-    QStringList listPar_;
+    //QStringList listPar_;
     discoverLayer::m_parent = parent;
     // Create parameters list for npig
-    if (!uid_) {
-      listPar_.append("--icmp");
-      /*listPar_.append("--flags");
-      listPar_.append("SYN");*/
-      /*
-       * Support
-       * --tcp
-       * --udp
-       * --arp
-       * --tr
-       */
-    } else {
-      listPar_.append("--tcp-connect");
-    }
-    listPar_.append("-c 1");
-    listPar_.append(networkIp);
+    parameters.append("-c 1");
+    parameters.append("-v4");
+    //listPar_.append("-c 1");
+    parameters.append(networkIp);
+    discoverLayer::parameters_ = parameters;
+    //listPar_.append(networkIp);
     
     if (discoverLayer::threadLimit) {
 	// acquire one element from thread counter
 	discoverLayer::threadLimit--;
 	discoverLayer::ScanCounter++;
-	QPointer<pingThread> pingTh = new pingThread(pingBuffer_, listPar_, parent);
+	QPointer<pingThread> pingTh = new pingThread(pingBuffer_, parameters, parent);
 	pingTh->start();
 	connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
 		this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
@@ -143,7 +136,7 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     discoverLayer::threadLimit++;
     // remove ip from counter
     discoverLayer::ScanCounter--;
-    qDebug() << "DEBUG:: thread end:: " << ipAddr[ipAddr.size()-1];
+    //qDebug() << "DEBUG:: thread end:: " << ipAddr[ipAddr.size()-1];
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
     QString buffLine;
@@ -151,11 +144,11 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
 	if (buffLine.startsWith("RCVD") || buffLine.startsWith("RECV")) {
-	      emit endPing(ipAddr, true);
+	      emit endPing(ipAddr, true, ipBuffer);
 	      return;
 	}
     }
-    emit endPing(ipAddr, false);
+    emit endPing(ipAddr, false, ipBuffer);
 }
 
 void pingInterface::mainDiscover::repeatScanner()
@@ -173,11 +166,11 @@ void pingInterface::mainDiscover::repeatScanner()
 	if (lengthMin_ > discoverLayer::m_ipSospended.size()) {
 	    lengthMin_ = discoverLayer::m_ipSospended.size();
 	    for (int index = 0; index < lengthMin_; index++) {
-		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent);
+		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
 	    }
 	} else {
 	    for (int index = 0; index < lengthMin_; index++) {
-		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent);
+		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
 	    }
 	}
     }

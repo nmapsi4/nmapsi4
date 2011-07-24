@@ -292,10 +292,11 @@ private slots:
     void startAddParBook_ui();
     //discover
     void discoverIp(const QString& interface);
-    void pingResult(QStringList hostname, bool state);
+    void pingResult(QStringList hostname, bool state, const QByteArray callBuff);
     void discoverIpState();
     void cleanDiscovery();
     void stopDiscover();
+    void updateSRdata();
     void requestNseHelp(QTreeWidgetItem *item, int column);
     void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
     void requestNseScriptHelp();

@@ -63,7 +63,7 @@ namespace pingInterface {
 	/*!
 	 * Check state of ip on the network (up/down) with nping QThread
 	 */
-	void isUp(const QString networkIp, QObject *parent);
+	void isUp(const QString networkIp, QObject *parent, QStringList parameters);
 
     protected:
 	bool ipState;
@@ -81,7 +81,7 @@ namespace pingInterface {
 	/*!
 	 * Return with a signal of ip state (up/down)
 	 */
-	void endPing(QStringList ipAddr, bool state);
+	void endPing(QStringList ipAddr, bool state, const QByteArray callBuff);
     };
 }
 #endif // MAINDISCOVER_H

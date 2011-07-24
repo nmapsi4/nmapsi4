@@ -22,6 +22,8 @@ namespace varDiscover {
     QList<mainDiscover*> listDiscover;
     QList<QTreeWidgetItem*> listTreeItemDiscover;
     int ipCounter = 0;
+    QStringList sendList;
+    QStringList recvList;
 }
 
 void nmapClass::startDiscover() 
@@ -41,7 +43,7 @@ void nmapClass::startDiscover()
 
 void nmapClass::discoverIp(const QString& interface) 
 {
-    // ip from interface and discover ip range (FIXME unify the if)
+    // ip from interface and discover ip range
     mainDiscover *discover_ = new mainDiscover(uid);
     
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
@@ -97,12 +99,27 @@ void nmapClass::discoverIpState()
 	ipList_.append(tmpIp_);
     }
     
+    QStringList parameters;
+    if (!uid) {
+	parameters.append("--tcp");
+      /*
+       * Support
+       * --tcp
+       * --udp
+       * --arp
+       * --tr
+       */
+    } else {
+	parameters.append("--tcp-connect");
+    }
+    
     mainDiscover *discover = new mainDiscover(uid);
     varDiscover::listDiscover.push_back(discover);
-    connect(discover, SIGNAL(endPing(QStringList,bool)), this, SLOT(pingResult(QStringList,bool)));
+    connect(discover, SIGNAL(endPing(QStringList,bool,const QByteArray)), 
+	    this, SLOT(pingResult(QStringList,bool, const QByteArray)));
     
     foreach (const QString &token, ipList_) {
-	discover->isUp(token,this);
+	discover->isUp(token,this,parameters);
 	varDiscover::ipCounter++;
 	nseNumber->display(varDiscover::ipCounter);
     }
@@ -110,13 +127,15 @@ void nmapClass::discoverIpState()
     delete memTools;
 }
 
-void nmapClass::pingResult(QStringList hostname, bool state)
+void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray callBuff)
 {
     // decrement ping ip counter
     --varDiscover::ipCounter;
     nseNumber->display(varDiscover::ipCounter);
     // set values in treeDiscover widget
     treeDiscover->setIconSize(QSize(24,24));
+    QTextStream stream(callBuff);
+
     if (state) {
 	QTreeWidgetItem *item = new QTreeWidgetItem(treeDiscover);
 	item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
@@ -124,6 +143,17 @@ void nmapClass::pingResult(QStringList hostname, bool state)
 	varDiscover::listTreeItemDiscover.push_back(item);
 	item->setText(0, hostname[hostname.size()-1]);
 	item->setText(1, tr("is Up"));
+
+	while (!stream.atEnd()) {
+	  QString line = stream.readLine();
+	  if (line.startsWith("RCVD") || line.startsWith("RECV")) {
+	      //qDebug() << "DEBUG:: received line:: " << line;
+	      varDiscover::recvList.push_back(line);
+	  } else if (line.startsWith("SENT")) {
+	      //qDebug() << "DEBUG:: sent line:: " << line;
+	      varDiscover::sendList.push_back(line);
+	  }
+	}
     } else {
 	//qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
     }
@@ -141,6 +171,8 @@ void nmapClass::cleanDiscovery()
 {
     memoryTools *memTools = new memoryTools();
     memTools->itemDeleteAll(varDiscover::listTreeItemDiscover);
+    varDiscover::recvList.clear();
+    varDiscover::sendList.clear();
     delete memTools;
 }
 
@@ -153,4 +185,11 @@ void nmapClass::stopDiscover()
     // don't kill running QProcess is no necessary
     //emit killPingScan();
     emit killDiscover();
+}
+
+void nmapClass::updateSRdata()
+{
+    int index = treeDiscover->indexOfTopLevelItem(treeDiscover->currentItem());
+    textDiscoverRec->setText(varDiscover::recvList[index]);
+    textDiscoverSend->setText(varDiscover::sendList[index]);
 }
