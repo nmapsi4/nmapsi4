@@ -101,7 +101,7 @@ void nmapClass::discoverIpState()
     
     QStringList parameters;
     if (!uid) {
-	parameters.append("--tcp");
+	parameters.append("--icmp");
       /*
        * Support
        * --tcp
