@@ -86,12 +86,12 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     QByteArray pingBuffer_;
     //QStringList listPar_;
     discoverLayer::m_parent = parent;
+    discoverLayer::parameters_ = parameters;
     // Create parameters list for npig
     parameters.append("-c 1");
     parameters.append("-v4");
     //listPar_.append("-c 1");
     parameters.append(networkIp);
-    discoverLayer::parameters_ = parameters;
     //listPar_.append(networkIp);
     
     if (discoverLayer::threadLimit) {
