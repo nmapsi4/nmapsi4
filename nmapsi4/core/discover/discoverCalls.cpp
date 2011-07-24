@@ -146,10 +146,11 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 
 	while (!stream.atEnd()) {
 	  QString line = stream.readLine();
-	  if (line.startsWith("RCVD") || line.startsWith("RECV")) {
+	  if ((line.startsWith("RCVD") || line.startsWith("RECV"))
+	      && line.contains(hostname[hostname.size()-1])) {
 	      //qDebug() << "DEBUG:: received line:: " << line;
 	      varDiscover::recvList.push_back(line);
-	  } else if (line.startsWith("SENT")) {
+	  } else if (line.startsWith("SENT") && line.contains(hostname[hostname.size()-1])) {
 	      //qDebug() << "DEBUG:: sent line:: " << line;
 	      varDiscover::sendList.push_back(line);
 	  }
