@@ -2246,6 +2246,9 @@
          <layout class="QVBoxLayout" name="verticalLayout_19">
           <item>
            <widget class="QLabel" name="label_13">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</string>
             </property>
@@ -2264,6 +2267,9 @@
          <layout class="QVBoxLayout" name="verticalLayout_15">
           <item>
            <widget class="QLabel" name="label_11">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</string>
             </property>
