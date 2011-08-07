@@ -143,7 +143,7 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     
     while(!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-	if (buffLine.startsWith("RCVD") || buffLine.startsWith("RECV")) {
+	if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) {
 	      emit endPing(ipAddr, true, ipBuffer);
 	      return;
 	}
