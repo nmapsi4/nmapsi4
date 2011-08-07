@@ -91,6 +91,8 @@ void nmapClass::initObject()
     updateComboWebV();
     // call discover startup, NPING is REQUIRED
     startDiscover();
+    // set modes probe in discover
+    defaultDiscoverProbes();
 }
 
 nmapClass::~nmapClass()

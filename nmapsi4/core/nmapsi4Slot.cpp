@@ -249,5 +249,5 @@ void nmapClass::setNmapsiSlot()
     connect(stopDiscoverButt, SIGNAL(clicked()),
             this, SLOT(stopDiscover()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuScanDiscover()));
+            this, SLOT(runtimeScanDiscover()));
 }

@@ -1154,7 +1154,7 @@
         <item row="7" column="2">
          <widget class="QPushButton" name="globalButton">
           <property name="text">
-           <string>Save Global Profile</string>
+           <string>Save Default Options</string>
           </property>
           <property name="icon">
            <iconset resource="../mainwin.qrc">
@@ -1176,7 +1176,7 @@
         <item row="8" column="2">
          <widget class="QPushButton" name="removeGlobalButton">
           <property name="text">
-           <string>Remove Global Profile</string>
+           <string>Remove Default Options</string>
           </property>
           <property name="icon">
            <iconset resource="../mainwin.qrc">
@@ -2718,8 +2718,8 @@
        <attribute name="title">
         <string>Discover</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_24">
-        <item>
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <property name="leftMargin">
            <number>4</number>
@@ -2787,12 +2787,9 @@
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QComboBox" name="comboDisType"/>
-          </item>
          </layout>
         </item>
-        <item>
+        <item row="1" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_9">
           <property name="leftMargin">
            <number>4</number>
@@ -2840,7 +2837,7 @@
           </item>
          </layout>
         </item>
-        <item>
+        <item row="2" column="0">
          <widget class="QTreeWidget" name="treeDiscover">
           <property name="alternatingRowColors">
            <bool>true</bool>
@@ -2860,7 +2857,67 @@
           </column>
          </widget>
         </item>
-        <item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_25">
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="discoverScanButt">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Scan Host</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../mainwin.qrc">
+              <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Probes Modes:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="discoverProbesCombo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
          <layout class="QGridLayout" name="gridLayout_9">
           <item row="1" column="0">
            <widget class="QTextEdit" name="textDiscoverSend">
@@ -2910,7 +2967,7 @@
           </item>
          </layout>
         </item>
-        <item>
+        <item row="5" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_22">
           <item>
            <spacer name="horizontalSpacer_7">

@@ -100,23 +100,6 @@ void nmapClass::menuServiceMain()
     menuVulnMain.exec(QCursor::pos());
 }
 
-void nmapClass::menuScanDiscover() 
-{
-    // show discover data
-    updateSRdata();
-    
-    QAction scanDiscover(this);
-    scanDiscover.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
-    scanDiscover.setIconText(tr("Scan Ip"));
-
-    connect(&scanDiscover, SIGNAL(triggered()),
-                this, SLOT(callScanDiscover()));
-
-    QMenu menuScanDiscover(this);
-    menuScanDiscover.addAction(&scanDiscover);
-    menuScanDiscover.exec(QCursor::pos());
-}
-
 void nmapClass::createBar() 
 {
     // QToolBar asction

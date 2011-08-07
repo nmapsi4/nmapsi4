@@ -101,14 +101,7 @@ void nmapClass::discoverIpState()
     
     QStringList parameters;
     if (!uid) {
-	parameters.append("--icmp");
-      /*
-       * Support
-       * --tcp
-       * --udp
-       * --arp
-       * --tr
-       */
+	parameters.append(discoverProbesCombo->currentText());
     } else {
 	parameters.append("--tcp-connect");
     }
@@ -175,6 +168,7 @@ void nmapClass::cleanDiscovery()
     varDiscover::recvList.clear();
     varDiscover::sendList.clear();
     delete memTools;
+    discoverScanButt->setEnabled(false);
 }
 
 void nmapClass::stopDiscover()
@@ -193,4 +187,39 @@ void nmapClass::updateSRdata()
     int index = treeDiscover->indexOfTopLevelItem(treeDiscover->currentItem());
     textDiscoverRec->setText(varDiscover::recvList[index]);
     textDiscoverSend->setText(varDiscover::sendList[index]);
+}
+
+void nmapClass::runtimeScanDiscover() 
+{
+    // show discover send/recv data
+    updateSRdata();
+    
+    if (!discoverScanButt->isEnabled()) {
+	discoverScanButt->setEnabled(true);
+    }
+    
+    connect(discoverScanButt, SIGNAL(clicked()),
+                this, SLOT(callScanDiscover()));
+}
+
+void nmapClass::defaultDiscoverProbes()
+{
+    /* Modes Probe
+    * --tcp
+    * --udp
+    * --arp
+    * --tr
+    */
+    if (!uid) {
+	if (!discoverProbesCombo->isVisible()) {
+	    discoverProbesCombo->setVisible(true);
+	}
+        discoverProbesCombo->insertItem(0, "--icmp");
+        discoverProbesCombo->insertItem(1, "--tcp");
+        discoverProbesCombo->insertItem(2, "--udp");
+        discoverProbesCombo->insertItem(3, "--arp");
+        discoverProbesCombo->insertItem(4, "--tr");
+    } else {
+	discoverProbesCombo->setVisible(false);
+    }
 }

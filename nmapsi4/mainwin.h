@@ -105,6 +105,7 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
+    void defaultDiscoverProbes();
     void createToolButtonSetup();
 
 public:
@@ -274,7 +275,7 @@ private slots:
     void menuVulnBook();
     void menuParBook();
     void menuServiceMain();
-    void menuScanDiscover();
+    void runtimeScanDiscover();
     void slotParSelected();
     void slotHostSelected();
     void saveUiSettings();
