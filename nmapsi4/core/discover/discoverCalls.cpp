@@ -63,7 +63,6 @@ void nmapClass::discoverIp(const QString& interface)
 	    lineIpDiscover->setText(ipClass_);
 	    spinBeginDiscover->setValue(ipStart);
 	    spinEndDiscover->setValue(ipStart+10);
-	    //qDebug() << "DEBUG:: Discover Interfaces addr:: " << entry_.ip();
 	} else {
  	    // reset discover value
 	    lineIpDiscover->clear();
@@ -141,16 +140,14 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 	  QString line = stream.readLine();
 	  if ((line.startsWith(QLatin1String("RCVD")) || line.startsWith(QLatin1String("RECV")))
 	      && line.contains(hostname[hostname.size()-1])) {
-	      //qDebug() << "DEBUG:: received line:: " << line;
 	      varDiscover::recvList.push_back(line);
 	  } else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1])) {
-	      //qDebug() << "DEBUG:: sent line:: " << line;
 	      varDiscover::sendList.push_back(line);
 	  }
 	}
-    } else {
+    } /*else {
 	//qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
-    }
+    }*/
     
     if (!varDiscover::ipCounter) {
 	memoryTools *memTools = new memoryTools();
@@ -177,8 +174,7 @@ void nmapClass::stopDiscover()
     stopDiscoverButt->setEnabled(false);
     varDiscover::ipCounter = 0;
     nseNumber->display(varDiscover::ipCounter);
-    // don't kill running QProcess is no necessary
-    //emit killPingScan();
+    //emit signal
     emit killDiscover();
 }
 
@@ -189,6 +185,17 @@ void nmapClass::updateSRdata()
     textDiscoverSend->setText(varDiscover::sendList[index]);
 }
 
+void nmapClass::callScanDiscover()
+{
+     if(treeDiscover->currentItem()) {
+        updateFontHost();
+	// clear history setItemText fails
+	hostEdit->insertItem(0, treeDiscover->currentItem()->text(0));
+        SWscan->setCurrentIndex(0);
+        startScan();
+    }
+}
+
 void nmapClass::runtimeScanDiscover() 
 {
     // show discover send/recv data
@@ -197,18 +204,12 @@ void nmapClass::runtimeScanDiscover()
     if (!discoverScanButt->isEnabled()) {
 	discoverScanButt->setEnabled(true);
     }
-    
-    connect(discoverScanButt, SIGNAL(clicked()),
-                this, SLOT(callScanDiscover()));
 }
 
 void nmapClass::defaultDiscoverProbes()
 {
     /* Modes Probe
-    * --tcp
-    * --udp
-    * --arp
-    * --tr
+    * --tcp,--udp,--arp,--tr
     */
     if (!uid) {
 	if (!discoverProbesCombo->isVisible()) {

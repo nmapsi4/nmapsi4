@@ -44,20 +44,6 @@ void nmapClass::callScanH()
     }
 }
 
-void nmapClass::callScanDiscover()
-{
-     if(treeDiscover->currentItem()) {
-#ifndef TOOLS_NO_DEBUG
-	qDebug() << "Current Item::" << treeDiscover->currentItem();
-#endif
-        updateFontHost();
-	// clear history setItemText fails
-	hostEdit->insertItem(0, treeDiscover->currentItem()->text(0));
-        SWscan->setCurrentIndex(0);
-        startScan();
-    }
-}
-
 void nmapClass::saveBookMarks()
 {
     if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty()) {
