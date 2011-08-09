@@ -3,7 +3,7 @@ PROJECT(nmapsi4)
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 if (NOT Q_WS_X11)
-SET(SOURCES_CPP core/nmapsi4Slot.cpp
+SET(SOURCES_CPP core/slots.cpp
 		core/resizeNmapsi4.cpp
                 core/parser/parserUtils.cpp
 		core/parser/nmapParser.cpp
@@ -53,7 +53,7 @@ SET(SOURCES_CPP core/nmapsi4Slot.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
-  SET(SOURCES_CPP core/nmapsi4Slot.cpp
+  SET(SOURCES_CPP core/slots.cpp
 		core/resizeNmapsi4.cpp
 		core/parser/parserUtils.cpp
 		core/parser/nmapParser.cpp

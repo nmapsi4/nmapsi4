@@ -52,28 +52,23 @@ void nmapClass::fileSession()
 
 void nmapClass::isEmptyLog()
 {
-
     qint64 tmp = PFile->size();
 
     if (!tmp) {
         QDir::setCurrent(logPath);
         PFile->setFileName(FileName);
         PFile->remove();
-        qDebug() << "nmapsi4/core --> deleteLog::empty";
     } else if (firstPath.compare(logPath)) {
         QString pathTmp = logPath;
         pathTmp.append("/");
 	pathTmp = QDir::toNativeSeparators(pathTmp);
         pathTmp.append(FileName);
 
-        if (!PFile->copy(FileName, pathTmp))
+        if (!PFile->copy(FileName, pathTmp)) {
             QMessageBox::critical(this, "NmapSI4",
                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
-        else {
+	} else {
             PFile->remove();
-#ifndef TOOLS_NO_DEBUG
-            qDebug() << "nmapsi4/core --> deleteLog::newPath";
-#endif
         }
     }
 }
@@ -82,8 +77,7 @@ void nmapClass::saveAsLog()
 {
 
     if ((FileName == NULL) || (listClearFlag)) {
-        QMessageBox::critical(this, tr("Save Log"),
-                              tr("No Scan found\n"), tr("Close"));
+        QMessageBox::critical(this, tr("Save Log"), tr("No Scan found\n"), tr("Close"));
         return;
     }
 
@@ -93,13 +87,9 @@ void nmapClass::saveAsLog()
     newFile = QDir::toNativeSeparators(newFile);
     newFile.append(FileName);
     tmpFile->setFileName(newFile);
-#ifndef SAVELOG_NO_DEBUG
-    qDebug() << "File::" << newFile << tmpFile->exists();
-#endif
 
     if (!tmpFile || !tmpFile->size()) {
-        QMessageBox::critical(this, tr("Save Log"),
-                              tr("No Scan found\n"), tr("Close"));
+        QMessageBox::critical(this, tr("Save Log"),tr("No Scan found\n"), tr("Close"));
         delete tmpFile;
         return;
     }
@@ -108,22 +98,14 @@ void nmapClass::saveAsLog()
     url = QDir::homePath();
     url.append("/");
     url = QDir::toNativeSeparators(url);
-    url.append("Si4");
+    url.append("si4");
     url.append(_VERSION_);
     url.append("-");
     url.append(hostEdit->currentText());
     url.append(".log");
-#ifndef SAVELOG_NO_DEBUG
-    qDebug() << "Nmapsi4/saveLog::-->" << url;
-#endif
 
     QString FileNameTmp;
-    FileNameTmp = QFileDialog::getSaveFileName(this, tr("Save Log"),
-                  url, tr("Log (*.log)"));
-
-#ifndef SAVELOG_NO_DEBUG
-    qDebug() << "Nmapsi4/saveLog::-->" << FileName;
-#endif
+    FileNameTmp = QFileDialog::getSaveFileName(this, tr("Save Log"), url, tr("Log (*.log)"));
 
     if (!FileNameTmp.isEmpty()) {
 
@@ -146,8 +128,9 @@ void nmapClass::saveAsLog()
 void nmapClass::saveLog()
 {
 
-    if (logSessionFile.isEmpty())
+    if (logSessionFile.isEmpty()) {
         return;
+    }
 
     QFile *tmpFile = new QFile();
     QString newFile = logPath;
@@ -158,13 +141,15 @@ void nmapClass::saveLog()
 
     QFile *freeFile = new QFile();
     freeFile->setFileName(logSessionFile);
-    if (freeFile->exists())
+    if (freeFile->exists()) {
         freeFile->remove();
+    }
     delete freeFile;
 
-    if (!tmpFile->copy(logSessionFile))
+    if (!tmpFile->copy(logSessionFile)) {
         QMessageBox::critical(this, tr("Information"),
                               tr("Save File permission Error\n"), tr("Close"));
+    }
 
     delete tmpFile;
 }
