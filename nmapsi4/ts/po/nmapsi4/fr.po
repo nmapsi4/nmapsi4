@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-17 02:20+0200\n"
+"POT-Creation-Date: 2011-08-16 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,829 +12,863 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.9.0\n"
 
 #: MainWindow#1
-msgid "Host(s)"
-msgstr ""
+msgid "Nmapsi4"
+msgstr "Nmapsi4"
 
 #: MainWindow#2
 msgid "&Quit"
-msgstr ""
+msgstr "&Quitter"
 
 #: MainWindow#3
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: MainWindow#4
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
 #: MainWindow#5
-msgid "&Scan"
-msgstr ""
+msgid "&About nmapsi4"
+msgstr "&A propos de nmapsi4"
 
 #: MainWindow#6
-msgctxt "MainWindow#6"
-msgid "Scan"
-msgstr ""
+msgid "&Scan"
+msgstr "&Numériser"
 
 #: MainWindow#7
-msgid "Ctrl+S"
-msgstr ""
+msgctxt "MainWindow#7"
+msgid "Scan"
+msgstr "Numériser"
 
 #: MainWindow#8
-msgid "About &Qt"
-msgstr ""
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
 
 #: MainWindow#9
-msgid "&Preferences"
-msgstr ""
+msgid "About &Qt"
+msgstr "A propos de &Qt"
 
 #: MainWindow#10
-msgid "Stop Scan"
-msgstr ""
+msgid "&Preferences"
+msgstr "&Préférences"
 
 #: MainWindow#11
-msgid "Clear History"
-msgstr ""
+msgid "Stop Scan"
+msgstr "Arrêter la numérisation"
 
 #: MainWindow#12
-msgid "Close Tree"
-msgstr ""
+msgid "Clear History"
+msgstr "Effacer l'historique"
 
 #: MainWindow#13
-msgid "Close Scan Tree"
-msgstr ""
+msgid "Close Tree"
+msgstr "Fermer l'arborescence"
 
 #: MainWindow#14
-msgid "Clear HostName"
-msgstr ""
+msgid "Close Scan Tree"
+msgstr "Fermer l'arborescence de la numérisation"
 
 #: MainWindow#15
-msgid "Clear Hostname IP"
-msgstr ""
+msgid "Clear HostName"
+msgstr "Effacer Le nom d'hôte"
 
 #: MainWindow#16
-msgid "Save As"
-msgstr ""
+msgid "Clear Hostname IP"
+msgstr "Effacer l'IP du nom d'hôte"
 
 #: MainWindow#17
-msgid "Save"
-msgstr ""
+msgid "Save As"
+msgstr "Enregistrer sous"
 
 #: MainWindow#18
-msgid "S&ave"
-msgstr ""
+msgid "Save"
+msgstr "Enregistrer"
 
 #: MainWindow#19
-msgid "Save &As"
-msgstr ""
+msgid "S&ave"
+msgstr "E&nregistrer"
 
 #: MainWindow#20
-msgid "F&ull Screen Mode"
-msgstr ""
+msgid "Save &As"
+msgstr "Enregistrer &Sous"
 
 #: MainWindow#21
-msgid "Ctrl+Shift+F11"
-msgstr ""
+msgid "F&ull Screen Mode"
+msgstr "Mode P&lein Ecran"
 
 #: MainWindow#22
-msgid "Show &Menu Bar"
-msgstr ""
+msgid "Ctrl+Shift+F11"
+msgstr "Ctrl+Shift+F11"
 
 #: MainWindow#23
-msgid "Ctrl+M"
-msgstr ""
+msgid "Show &Menu Bar"
+msgstr "Afficher La Barre de &Menu"
 
 #: MainWindow#24
-msgid "Show Status Bar"
-msgstr ""
+msgid "Ctrl+M"
+msgstr "Ctrl+M"
 
 #: MainWindow#25
-msgid "Section Scan"
-msgstr ""
+msgid "Show Status Bar"
+msgstr "Afficher La Barre d'Etat"
 
 #: MainWindow#26
-msgid "Section Log"
-msgstr ""
+msgid "&Add Bookmark"
+msgstr "&Ajouter un Signet"
 
 #: MainWindow#27
-msgid " Section Vulnerabilities"
-msgstr ""
+msgid "Main"
+msgstr "Principal"
 
 #: MainWindow#28
-msgid "Save Profile"
-msgstr ""
+msgctxt "MainWindow#28"
+"MainWindow#28"
+msgid "Log"
+msgstr "Se connecter"
 
 #: MainWindow#29
-msgid "Host Details"
-msgstr ""
+msgid "Vuln"
+msgstr "Vuln"
 
 #: MainWindow#30
-msgid "Ipv6 support"
-msgstr ""
+msgid "Section Scan"
+msgstr "Section de numérisation"
 
 #: MainWindow#31
-msgid "Port Range:"
-msgstr ""
+msgid "Section Log"
+msgstr "Se connecter Section"
 
 #: MainWindow#32
-msgid "Scan Techniques:"
-msgstr ""
+msgid " Section Vulnerabilities"
+msgstr " Vulnérabilités de la Section"
 
 #: MainWindow#33
-msgid "Ports:"
-msgstr ""
+msgid "Clear"
+msgstr "Effacer"
 
 #: MainWindow#34
-msgid "Bounce Host:"
-msgstr ""
+msgid "Save Profile"
+msgstr "Enregistrer le Profil"
 
 #: MainWindow#35
-msgid "Timing Template:"
-msgstr ""
+msgid "Host(s)"
+msgstr "Hôte(s)"
 
 #: MainWindow#36
-msgid "Min outstanding probes"
-msgstr ""
+msgid "Description"
+msgstr "Descriptif"
 
 #: MainWindow#37
-msgid "Max outstanding probes"
-msgstr ""
+msgid "Donate Money"
+msgstr "Don en Argent"
 
 #: MainWindow#38
-msgid "Max time to scan a target"
-msgstr ""
+msgid "Documentation"
+msgstr "Documentation"
 
 #: MainWindow#39
-msgid "Initial probe timeout"
-msgstr ""
+msgid "Visit Website"
+msgstr "Visiter le site Web"
 
 #: MainWindow#40
-msgid "Min probe timeout"
-msgstr ""
+msgid "Report a bug"
+msgstr "Signaler un bug"
 
 #: MainWindow#41
-msgid "Max probe timeout"
-msgstr ""
+msgid "Service"
+msgstr "Service"
 
 #: MainWindow#42
-msgid "Active Script"
-msgstr ""
+msgid "State"
+msgstr "Etat"
 
 #: MainWindow#43
-msgid "Disable Script"
-msgstr ""
+msgid "Port"
+msgstr "Port"
 
 #: MainWindow#44
-msgid "Nse Categories Help"
-msgstr ""
+msgid "Nss script result"
+msgstr "Résultat du script Nss"
 
 #: MainWindow#45
-msgctxt "MainWindow#45"
-msgid "Search"
-msgstr ""
+msgid "Date"
+msgstr "Date"
 
 #: MainWindow#46
-msgid "Nse Script Search"
-msgstr ""
+msgid "IP List"
+msgstr "Liste IP"
 
 #: MainWindow#47
+msgctxt "MainWindow#47"
+msgid "Profile Name"
+msgstr "Nom du profil"
+
+#: MainWindow#48
+msgid "Parameters List"
+msgstr "Liste des paramètres"
+
+#: MainWindow#49
+msgid "Scan Details"
+msgstr "Détails de numérisation"
+
+#: MainWindow#50
+msgid "Ipv6 support"
+msgstr "Supporte Ipv6"
+
+#: MainWindow#51
+msgid "Port Range:"
+msgstr "Plage de Port:"
+
+#: MainWindow#52
+msgid "Scan Techniques:"
+msgstr "Techniques de Numérisation:"
+
+#: MainWindow#53
+msgid "Ports:"
+msgstr "Ports:"
+
+#: MainWindow#54
+#, fuzzy
+msgid "Bounce Host:"
+msgstr ""
+"\n"
+"            "
+
+#: MainWindow#55
+msgid "Timing Template:"
+msgstr "Modèle de Temporisation:"
+
+#: MainWindow#56
+#, fuzzy
+msgid "Min outstanding probes"
+msgstr ""
+"\n"
+"            "
+
+#: MainWindow#57
+#, fuzzy
+msgid "Max outstanding probes"
+msgstr ""
+"\n"
+"            "
+
+#: MainWindow#58
+msgid "Max time to scan a target"
+msgstr "Temps maximum pour numériser une cible"
+
+#: MainWindow#59
+msgid "Initial probe timeout"
+msgstr "Délai d'expiration initial de la sonde"
+
+#: MainWindow#60
+msgid "Min probe timeout"
+msgstr "Délai d'expiration de la sonde minimum"
+
+#: MainWindow#61
+msgid "Max probe timeout"
+msgstr "Délai d'expiration de la sonde maximum"
+
+#: MainWindow#62
+msgid "Active Script"
+msgstr "Activer le Script"
+
+#: MainWindow#63
+msgid "Disable Script"
+msgstr "Désactiver le Script"
+
+#: MainWindow#64
+msgid "Nse Categories Help"
+msgstr "Catégories d'aide Nse"
+
+#: MainWindow#65
+msgctxt "MainWindow#65"
+msgid "Search"
+msgstr "Rechercher"
+
+#: MainWindow#66
+msgid "Nse Script Search"
+msgstr "Script de recherche Nse"
+
+#: MainWindow#67
+#, fuzzy
 msgid ""
 "Nse script parameters (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 msgstr ""
-
-#: MainWindow#48
-msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
-msgstr ""
-
-#: MainWindow#49
-msgctxt "MainWindow#49"
-msgid "Done"
-msgstr ""
-
-#: MainWindow#50
-msgctxt "MainWindow#50"
-msgid "Nse Options"
-msgstr ""
-
-#: MainWindow#51
-msgid "Error(s)"
-msgstr ""
-
-#: MainWindow#52
-msgid "Log(s)"
-msgstr ""
-
-#: MainWindow#53
-msgctxt "MainWindow#53"
-msgid "Log"
-msgstr ""
-
-#: MainWindow#54
-msgid "RPC Scan"
-msgstr ""
-
-#: MainWindow#55
-msgid "Connect Scan"
-msgstr ""
-
-#: MainWindow#56
-msgid "Ping Sweep"
-msgstr ""
-
-#: MainWindow#57
-msgid "Host List"
-msgstr ""
-
-#: MainWindow#58
-msgid "FTP Bounce Attack"
-msgstr ""
-
-#: MainWindow#59
-msgid "Version Probe"
-msgstr ""
-
-#: MainWindow#60
-msgid "Don't Ping"
-msgstr ""
-
-#: MainWindow#61
-msgid "Normal"
-msgstr ""
-
-#: MainWindow#62
-msgid "All"
-msgstr ""
-
-#: MainWindow#63
-msgid "Most Important"
-msgstr ""
-
-#: MainWindow#64
-msgid "Range"
-msgstr ""
-
-#: MainWindow#65
-msgid "OS Detection"
-msgstr ""
-
-#: MainWindow#66
-msgid "Fragmentation"
-msgstr ""
-
-#: MainWindow#67
-msgid "Ordered Port"
-msgstr ""
+"\n"
+"            "
 
 #: MainWindow#68
-msgid "ICMP Echo"
-msgstr ""
+msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
+msgstr "appel de script Nse manuel: (Ex. snmp-sysdescr,smb-os-découverte)"
 
 #: MainWindow#69
-msgid "&About nmapsi4"
-msgstr ""
+msgctxt "MainWindow#69"
+msgid "Done"
+msgstr "Effectué"
 
 #: MainWindow#70
-msgid "Main"
-msgstr ""
+msgctxt "MainWindow#70"
+msgid "Nse Options"
+msgstr "Options de Nse"
 
 #: MainWindow#71
-msgid "Vuln"
+#, fuzzy
+msgctxt "MainWindow#71"
+msgid "Scan Log"
 msgstr ""
+"\n"
+"            "
 
 #: MainWindow#72
-msgid "Details"
-msgstr ""
+msgid "Add Url"
+msgstr "Ajouter Url"
 
 #: MainWindow#73
-msgid "Nss script result"
-msgstr ""
+msgid "Url(s)"
+msgstr "Url(s)"
 
 #: MainWindow#74
-msgid "Nmapsi4"
-msgstr ""
+msgid "Url(s) name"
+msgstr "Url(s) nom"
 
 #: MainWindow#75
-msgid "Clear"
-msgstr ""
+msgid "Bookmarks Url"
+msgstr "Favoris Url"
 
 #: MainWindow#76
-msgid "IP List"
-msgstr ""
+msgid "Local Interfaces:"
+msgstr "Interfaces locales:"
 
 #: MainWindow#77
-msgid "Parameters List"
-msgstr ""
+msgid "Start DIscover"
+msgstr "Démarrage Découvrir"
 
 #: MainWindow#78
-msgid "Bookmarks parameters"
-msgstr ""
+msgid "Stop Discover"
+msgstr "Arrêter Découvrir"
 
 #: MainWindow#79
-msgid "Scan Details"
-msgstr ""
+msgid "Discover Group:"
+msgstr "Découvrir Groupe:"
 
 #: MainWindow#80
-msgid "ICMP TImestamp"
-msgstr ""
+msgid "Start Ip:"
+msgstr "Ip De début:"
 
 #: MainWindow#81
-msgid "Port"
-msgstr ""
+msgid "End Ip:"
+msgstr "Démarrer Ip:"
 
 #: MainWindow#82
-msgid "Donate Money"
-msgstr ""
+msgid "Ip"
+msgstr "Ip"
 
 #: MainWindow#83
-msgid "Documentation"
-msgstr ""
+msgid "Service(s) with info"
+msgstr "Service(s) avec info"
 
 #: MainWindow#84
-msgid "Visit Website"
-msgstr ""
+msgid "Os"
+msgstr "Os"
 
 #: MainWindow#85
-msgid "Report a bug"
-msgstr ""
+msgctxt "MainWindow#85"
+msgid "Scan log parameters"
+msgstr "Scan des paramètres log"
 
 #: MainWindow#86
-msgid "Description"
-msgstr ""
+msgid "Stop All Scan"
+msgstr "Arrêter tout Scan"
 
 #: MainWindow#87
-msgctxt "MainWindow#87"
-msgid "Profile Name"
-msgstr ""
+msgid "Stop Current Scan"
+msgstr "Arrêter le Scan en Cours"
 
 #: MainWindow#88
-msgid "Add Url"
-msgstr ""
+msgctxt "MainWindow#88"
+msgid "Scan Options"
+msgstr "Options de Scan"
 
 #: MainWindow#89
-msgid "Url(s)"
-msgstr ""
+msgid "Host Thread"
+msgstr "Thread hôte"
 
 #: MainWindow#90
 msgctxt "MainWindow#90"
-msgid "Scan Log"
-msgstr ""
+msgid "Scan Monitor"
+msgstr "Moniteur de Scan"
 
 #: MainWindow#91
-msgid "Url(s) name"
-msgstr ""
+msgid "Auto nse script"
+msgstr "script nse Auto"
 
 #: MainWindow#92
-msgid "Remove Url"
-msgstr ""
+msgid "Custom nse script"
+msgstr "script nse Personnalisé"
 
 #: MainWindow#93
-msgid "Bookmarks Url"
-msgstr ""
+msgid "Nse categories script available"
+msgstr "catégories de script Nse disponibles"
 
 #: MainWindow#94
-msgid "Vulnerability"
-msgstr ""
+msgid "Nse categories Script Active"
+msgstr "catégories  de Script Nse actif"
 
 #: MainWindow#95
-msgid "Local Interfaces:"
-msgstr ""
+msgid "Restore Default Categories"
+msgstr "Restaurer les Catégories par Défaut"
 
 #: MainWindow#96
-msgid "Start DIscover"
-msgstr ""
+msgctxt "MainWindow#96"
+msgid "Lookup"
+msgstr "Recherche"
 
 #: MainWindow#97
-msgid "Stop Discover"
-msgstr ""
+msgid "DNS"
+msgstr "DNS"
 
 #: MainWindow#98
-msgid "Discover Group:"
-msgstr ""
+msgid "IP"
+msgstr "IP"
 
 #: MainWindow#99
-msgid "Start Ip:"
-msgstr ""
+msgid "RTT"
+msgstr "RTT"
 
 #: MainWindow#100
-msgid "End Ip:"
-msgstr ""
+msgid "Hop(s)"
+msgstr "Saut(s)"
 
 #: MainWindow#101
-msgid "Ip"
-msgstr ""
+msgctxt "MainWindow#101"
+msgid "Traceroute"
+msgstr "Traceroute"
 
 #: MainWindow#102
-msgid "Service(s) with info"
-msgstr ""
+msgid "Log(s)"
+msgstr "Log(s)"
 
 #: MainWindow#103
-msgid "NSE"
-msgstr ""
+msgid "Error(s)"
+msgstr "Erreur(s)"
 
 #: MainWindow#104
-msgid "Os"
-msgstr ""
+msgid "Warning(s)"
+msgstr "Avertissement(s)"
 
 #: MainWindow#105
 msgctxt "MainWindow#105"
-msgid "Scan log parameters"
-msgstr ""
+msgid "Services"
+msgstr "Services"
 
 #: MainWindow#106
-msgid "Stop All Scan"
-msgstr ""
+msgid "Data"
+msgstr "Donnée"
 
 #: MainWindow#107
-msgid "Stop Current Scan"
-msgstr ""
+msgid "Bookmarks"
+msgstr "Favoris"
 
 #: MainWindow#108
-msgid "Save Global Profile"
-msgstr ""
+msgid "Host Details"
+msgstr "Détails de l'hôte"
 
 #: MainWindow#109
-msgid "Apply Quick Profile"
-msgstr ""
+msgid "Details"
+msgstr "Détails"
 
 #: MainWindow#110
-msgid "Remove Global Profile"
-msgstr ""
+msgid "NSE"
+msgstr "NSE"
 
 #: MainWindow#111
-msgid "UDP Ping"
-msgstr ""
+msgid "Bookmarks parameters"
+msgstr "Paramètres de Favoris"
 
 #: MainWindow#112
-msgid "TCP SYN Ping"
-msgstr ""
+msgid "Apply Quick Profile"
+msgstr "Appliquer le profil rapide"
 
 #: MainWindow#113
-msgid "TCP ACK Ping"
-msgstr ""
+msgid "RPC Scan"
+msgstr "Scan RPC"
 
 #: MainWindow#114
-msgid "ICMP Netmask"
-msgstr ""
+msgid "Don't Ping"
+msgstr "Ne pas Ping"
 
 #: MainWindow#115
-msgid "Input File"
-msgstr ""
+msgid "Normal"
+msgstr "Normal"
 
 #: MainWindow#116
-msgid "Browser"
-msgstr ""
+msgid "All"
+msgstr "Tous"
 
 #: MainWindow#117
-msgid "Remaining Ip:"
-msgstr ""
+msgid "Most Important"
+msgstr "le Plus Important"
 
 #: MainWindow#118
-msgctxt "MainWindow#118"
-msgid "Discover"
-msgstr ""
+msgid "Range"
+msgstr "Gamme"
 
 #: MainWindow#119
-msgid "&Tools"
-msgstr ""
+msgid "Connect Scan"
+msgstr "Connecter scan"
 
 #: MainWindow#120
-msgid "Scan Delay"
-msgstr ""
+msgid "Ping Sweep"
+msgstr "Balayer Ping"
 
 #: MainWindow#121
-msgid "Ipv4 TTL"
-msgstr ""
+msgid "Host List"
+msgstr "Liste des Hôtes"
 
 #: MainWindow#122
-msgid "Normal Throttling"
-msgstr ""
+msgid "FTP Bounce Attack"
+msgstr "Attaque de Rebond FTP"
 
 #: MainWindow#123
-msgid "Paranoid Throttling"
-msgstr ""
+msgid "Version Probe"
+msgstr "Sonde de version"
 
 #: MainWindow#124
-msgid "Sneaky Throttling"
-msgstr ""
+msgid "OS Detection"
+msgstr "Détection d'OS"
 
 #: MainWindow#125
-msgid "Polite Throttling"
-msgstr ""
+msgid "ICMP Echo"
+msgstr "Echo ICMP"
 
 #: MainWindow#126
-msgid "Aggressive Throttling"
-msgstr ""
+msgid "ICMP TImestamp"
+msgstr "Horodatage ICMP"
 
 #: MainWindow#127
-msgid "Insane Throttling"
-msgstr ""
+msgid "UDP Ping"
+msgstr "Ping UDP"
 
 #: MainWindow#128
-msgid "Quiet"
-msgstr ""
+msgid "TCP SYN Ping"
+msgstr "Ping TCP SYN"
 
 #: MainWindow#129
-msgid "Verbose"
-msgstr ""
+msgid "TCP ACK Ping"
+msgstr "Ping TCP ACK"
 
 #: MainWindow#130
-msgid "Very Verbose"
-msgstr ""
+msgid "ICMP Netmask"
+msgstr "Masque de réseau ICMP"
 
 #: MainWindow#131
-msgid "Debug"
-msgstr ""
+msgid "Input File"
+msgstr "Fichier d'Entrée"
 
 #: MainWindow#132
-msgid "Verbose Debug"
-msgstr ""
+msgid "Browser"
+msgstr "Navigateur"
 
 #: MainWindow#133
-msgid "When Required"
-msgstr ""
+msgid "Scan Delay"
+msgstr "Délai de scan"
 
 #: MainWindow#134
-msgid "Always"
-msgstr ""
+msgid "Ipv4 TTL"
+msgstr "TTL Ipv4"
 
 #: MainWindow#135
-msgid "Never"
-msgstr ""
+msgid "Normal Throttling"
+msgstr "Limitation Normale"
 
 #: MainWindow#136
-msgid "DNS Resolution"
-msgstr ""
+msgid "Paranoid Throttling"
+msgstr "Limitation Paranoïaque"
 
 #: MainWindow#137
-msgid "Verbosity"
-msgstr ""
+msgid "Sneaky Throttling"
+msgstr "Limitation Sournoise"
 
 #: MainWindow#138
-msgid "Spoof Address"
-msgstr ""
+msgid "Polite Throttling"
+msgstr "Limitation Polie"
 
 #: MainWindow#139
-msgid "Specific Device"
-msgstr ""
+msgid "Aggressive Throttling"
+msgstr "Limitation Agressive"
 
 #: MainWindow#140
-msgid "Decoy"
-msgstr ""
+msgid "Insane Throttling"
+msgstr "Limitation Folle"
 
 #: MainWindow#141
-msgid "Source Port"
-msgstr ""
+msgid "Quiet"
+msgstr "Tranquille"
 
 #: MainWindow#142
-msgid "State"
-msgstr ""
+msgid "Verbose"
+msgstr "Bavard"
 
 #: MainWindow#143
-msgctxt "MainWindow#143"
-msgid "Lookup"
-msgstr ""
+msgid "Very Verbose"
+msgstr "Très Bavard"
 
 #: MainWindow#144
-msgid "DNS"
-msgstr ""
+msgid "Debug"
+msgstr "Débogage"
 
 #: MainWindow#145
-msgid "IP"
-msgstr ""
+msgid "Verbose Debug"
+msgstr "Débogage Bavard"
 
 #: MainWindow#146
-msgid "RTT"
-msgstr ""
+msgid "When Required"
+msgstr "Lorsque Requis"
 
 #: MainWindow#147
-msgid "Hop(s)"
-msgstr ""
+msgid "Always"
+msgstr "Toujours"
 
 #: MainWindow#148
-msgctxt "MainWindow#148"
-msgid "Traceroute"
-msgstr ""
+msgid "Never"
+msgstr "Jamais"
 
 #: MainWindow#149
-msgid "Warning(s)"
-msgstr ""
+msgid "DNS Resolution"
+msgstr "Résolution DNS"
 
 #: MainWindow#150
-msgctxt "MainWindow#150"
-msgid "Services"
-msgstr ""
+msgid "Verbosity"
+msgstr "Verbosité"
 
 #: MainWindow#151
-msgid "Data"
-msgstr ""
+msgid "Spoof Address"
+msgstr "Adresse Frauduleuses"
 
 #: MainWindow#152
-msgid "Auto nse script"
-msgstr ""
+msgid "Specific Device"
+msgstr "Périphérique Spécifique"
 
 #: MainWindow#153
-msgid "Custom nse script"
-msgstr ""
+msgid "Decoy"
+msgstr "Leurre"
 
 #: MainWindow#154
-msgid "Nse categories script available"
-msgstr ""
+msgid "Source Port"
+msgstr "Port Source"
 
 #: MainWindow#155
-msgid "Nse categories Script Active"
-msgstr ""
+msgid "Ordered Port"
+msgstr "Port Ordonné"
 
 #: MainWindow#156
-msgid "Restore Default Categories"
-msgstr ""
+msgid "Fragmentation"
+msgstr "Fragmentation"
 
 #: MainWindow#157
-msgid "&File"
-msgstr ""
+msgid "Remove Url"
+msgstr "Retirer Url"
 
 #: MainWindow#158
-msgid "&Help"
-msgstr ""
+msgid "Vulnerability"
+msgstr "Vulnérabilité"
 
 #: MainWindow#159
-msgid "S&ettings"
-msgstr ""
+msgid "Remaining Ip:"
+msgstr "Ip Restantes:"
 
 #: MainWindow#160
-msgid "&View"
-msgstr ""
+msgctxt "MainWindow#160"
+msgid "Discover"
+msgstr "Découvrir"
 
 #: MainWindow#161
-msgid "toolBar"
-msgstr ""
+msgid "&File"
+msgstr "&Fichier"
 
 #: MainWindow#162
-msgid "toolBar_2"
-msgstr ""
+msgid "&View"
+msgstr "&Afficher"
 
 #: MainWindow#163
-msgid "toolBar_3"
-msgstr ""
+msgid "&Bookmarks"
+msgstr "&Favoris"
 
 #: MainWindow#164
-msgid "Date"
-msgstr ""
+msgid "&Help"
+msgstr "&Aide"
 
 #: MainWindow#165
-msgid "Service"
-msgstr ""
+msgid "S&ettings"
+msgstr "P&aramètres"
 
 #: MainWindow#166
-msgid "Bookmarks"
-msgstr ""
+msgid "&Tools"
+msgstr "&Outils"
 
 #: MainWindow#167
-msgid "&Add Bookmark"
-msgstr ""
+msgid "toolBar"
+msgstr "Barre d'outils"
 
 #: MainWindow#168
-msgctxt "MainWindow#168"
-msgid "Scan Options"
-msgstr ""
+msgid "toolBar_2"
+msgstr "Barre d'outils_2"
 
 #: MainWindow#169
-msgid "Host Thread"
-msgstr ""
+msgid "toolBar_3"
+msgstr "Barre d'outils_3"
 
 #: MainWindow#170
-msgctxt "MainWindow#170"
-msgid "Scan Monitor"
+msgid "Save Default Options"
 msgstr ""
 
 #: MainWindow#171
-msgid "&Bookmarks"
+msgid "Remove Default Options"
+msgstr ""
+
+#: MainWindow#172
+#, fuzzy
+msgctxt "MainWindow#172"
+msgid "Scan Host"
+msgstr "Scan de l'Hôte"
+
+#: MainWindow#173
+msgid "Probes Modes:"
+msgstr ""
+
+#: MainWindow#174
+msgid "Send"
+msgstr ""
+
+#: MainWindow#175
+msgid "Received"
 msgstr ""
 
 #: ProfileMain#1
 msgid "NmapSI4 Preferences"
-msgstr ""
+msgstr "Préférences de nmapsi4"
 
 #: ProfileMain#2
-msgid "&Cancel"
-msgstr ""
+msgid "User Profiles"
+msgstr "Profils Utilisateur"
 
 #: ProfileMain#3
-msgid "&Ok"
-msgstr ""
+msgctxt "ProfileMain#3"
+msgid "Quick Scan"
+msgstr "Scan Rapide"
 
 #: ProfileMain#4
-msgid "User Profiles"
-msgstr ""
+msgctxt "ProfileMain#4"
+msgid "Normal Scan"
+msgstr "Scan Normal"
 
 #: ProfileMain#5
-msgctxt "ProfileMain#5"
-msgid "Quick Scan"
-msgstr ""
+msgid "Root Profiles"
+msgstr "Profils Root"
 
 #: ProfileMain#6
-msgctxt "ProfileMain#6"
-msgid "Normal Scan"
-msgstr ""
+msgid "Full Version Detection"
+msgstr "Détection de la Version Complète"
 
 #: ProfileMain#7
-msgid "Root Profiles"
-msgstr ""
+msgid "Quick Version Detection"
+msgstr "Détection de la Version Rapide"
 
 #: ProfileMain#8
-msgid "Full Version Detection"
-msgstr ""
+msgid "Log Preferences"
+msgstr "Préférences de Connexion"
 
 #: ProfileMain#9
-msgid "Quick Version Detection"
-msgstr ""
+msgid "&Browse"
+msgstr "&Parcourir"
 
 #: ProfileMain#10
-msgid "Log Preferences"
-msgstr ""
+msgid "Log File Path"
+msgstr "Chemin du Fichier Journal"
 
 #: ProfileMain#11
-msgid "&Browse"
-msgstr ""
+msgid "Active Log"
+msgstr "Journal Actif"
 
 #: ProfileMain#12
-msgid "Log File Path"
-msgstr ""
+msgid "Verbose Log"
+msgstr "Journal Détaillé"
 
 #: ProfileMain#13
-msgid "Active Log"
-msgstr ""
+msgid "History Cache"
+msgstr "Historique du Cache"
 
 #: ProfileMain#14
-msgid "Verbose Log"
-msgstr ""
+msgid "Size Preferences"
+msgstr "Préférences de Dimensions"
 
 #: ProfileMain#15
-msgid "History Cache"
-msgstr ""
+msgid "Save Windows Resize"
+msgstr "Enregistrer Redimensionnement de Fenêtres"
 
 #: ProfileMain#16
-msgid "Size Preferences"
-msgstr ""
+msgid "Save Windows Positions"
+msgstr "Sauvegarde les positions des Fenêtres"
 
 #: ProfileMain#17
-msgid "Save Windows Resize"
-msgstr ""
+msgid "Scan Preferences"
+msgstr "Préférences de Scan"
 
 #: ProfileMain#18
-msgid "Save Windows Positions"
-msgstr ""
+msgid "Internal Lookup"
+msgstr "Recherche Interne"
 
 #: ProfileMain#19
-msgid "Scan Preferences"
-msgstr ""
+msgid "Dig Lookup"
+msgstr "Creuser Recherche"
 
 #: ProfileMain#20
-msgid "Internal Lookup"
-msgstr ""
+msgid "&Defaults"
+msgstr "&Par défaut"
 
 #: ProfileMain#21
-msgid "Dig Lookup"
-msgstr ""
+msgid "&Ok"
+msgstr "&Ok"
 
 #: ProfileMain#22
-msgid "&Defaults"
-msgstr ""
+msgid "&Cancel"
+msgstr "&Annuler"
 
 #: addParBook#1
 msgid "Add Parameters Profile"
-msgstr ""
+msgstr "Ajouter un profil de paramètres"
 
 #: addParBook#2
 msgctxt "addParBook#2"
 msgid "Profile Name"
-msgstr ""
+msgstr "Nom de Profil"
 
 #: addParBook#3
 msgid "Parameters"
-msgstr ""
+msgstr "Paramètres"
 
 #: addParBook#4
 msgctxt "addParBook#4"
 msgid "Done"
-msgstr ""
+msgstr "Effectué"
 
 #: addParBook#5
 msgctxt "addParBook#5"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: addUrl#1
 msgid "Add Vulnerability Url"
-msgstr ""
+msgstr "Ajouter la vulnérabilité Url"
 
 #: addUrl#2
 msgid "Url Name"
-msgstr ""
+msgstr "Nom Url"
 
 #: addUrl#3
 msgid "Url address"
-msgstr ""
+msgstr "Adresse URL"
 
 #: addUrl#4
 msgid ""
@@ -860,393 +894,444 @@ msgid ""
 "weight:600;\">Note: </span>search variable at the and of "
 "url</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Example:</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Url Name: cve.mitre.org</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Url Address: "
+"http://cve.mitre.org/cgi-bin/cvekey.cgi?<span style=\" font-weight:600; font-"
+"style:italic;\">keyword=</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Note: </span>search variable at the and of "
+"url</p></body></html>"
 
 #: addUrl#5
 msgctxt "addUrl#5"
 msgid "Done"
-msgstr ""
+msgstr "Effectué"
 
 #: addUrl#6
 msgctxt "addUrl#6"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: logHistory#1
 msgid "Your configuration file is too old, please delete it"
 msgstr ""
+"Votre fichier de configuration est trop ancien, s'il vous plaît supprimer le"
 
 #: mainProfile#1
 msgid "Profiles"
-msgstr ""
+msgstr "Profils"
 
 #: mainProfile#2
 msgctxt "mainProfile#2"
 msgid "Log"
-msgstr ""
+msgstr "Connexion"
 
 #: mainProfile#3
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #: mainProfile#4
 msgctxt "mainProfile#4"
 msgid "Lookup"
-msgstr ""
+msgstr "Recherche"
 
 #: mainProfile#5
 msgid "<h3>Profiles Scan</h3>"
-msgstr ""
+msgstr "<h3>Scande de Profiles</h3>"
 
 #: mainProfile#6
 msgid "<h3>Automatic Logs Options</h3>"
-msgstr ""
+msgstr "<h3>Options de journaux automatique</h3>"
 
 #: mainProfile#7
 msgid "<h3>Size Options</h3>"
-msgstr ""
+msgstr "<h3>Options de taille</h3>"
 
 #: mainProfile#8
 msgid "<h3>Scan Lookup</h3>"
-msgstr ""
+msgstr "<h3>Recherche de scan</h3>"
 
 #: monitorDetails#1
 msgid "Scan Process Details"
-msgstr ""
+msgstr "Détails du Processus de Scan"
 
 #: monitorDetails#2
 msgid "Hostname:"
-msgstr ""
+msgstr "Nom d'hôte:"
 
 #: monitorDetails#3
 msgid "Reload"
-msgstr ""
+msgstr "Actualiser"
 
 #: monitorDetails#4
 msgctxt "monitorDetails#4"
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: nmapClass#1
-msgid "No Ftp Address \n"
-msgstr ""
+msgid "Remove Host"
+msgstr "Supprimer l'Hôte"
 
 #: nmapClass#2
-msgid "Disable Ftp bounce"
-msgstr ""
+msgctxt "nmapClass#2"
+msgid "Scan Host"
+msgstr "Scan de l'Hôte"
 
 #: nmapClass#3
-msgid "No Ports Range (ex: 20-80)\n"
-msgstr ""
+msgid "Remove Service"
+msgstr "Supprimer le Service"
 
 #: nmapClass#4
-msgctxt "nmapClass#4"
-msgid "Close"
-msgstr ""
+msgid "Search for vulnerabilities"
+msgstr "Recherche de vulnérabilités"
 
 #: nmapClass#5
-msgid "no input file\n"
-msgstr ""
+msgid "Remove Scan Paramenters"
+msgstr "Suppression des Paramètres de Scan"
 
 #: nmapClass#6
-msgctxt "nmapClass#6"
-msgid "Normal Scan"
-msgstr ""
+msgid "Use Parameters"
+msgstr "Suppression des Paramètres de Scan"
 
 #: nmapClass#7
+msgid "Check Vulnerability"
+msgstr "Vérifier la Vulnérabilité"
+
+#: nmapClass#8
+msgid "No Ftp Address \n"
+msgstr "Aucune Adresse Ftp \n"
+
+#: nmapClass#9
+msgid "Disable Ftp bounce"
+msgstr "Désactiver rebond FTP"
+
+#: nmapClass#10
+msgid "No Ports Range (ex: 20-80)\n"
+msgstr "Aucune Plage de Ports (ex: 20-80)\n"
+
+#: nmapClass#11
+msgctxt "nmapClass#11"
+msgid "Close"
+msgstr "Fermer"
+
+#: nmapClass#12
+msgid "no input file\n"
+msgstr "aucun fichier d'entrée\n"
+
+#: nmapClass#13
+msgctxt "nmapClass#13"
+msgid "Normal Scan"
+msgstr "Scan Normal"
+
+#: nmapClass#14
+msgid "Wrong Address\n"
+msgstr "Mauvaise Adresse\n"
+
+#: nmapClass#15
+msgid "No description"
+msgstr "Aucune description"
+
+#: nmapClass#16
+msgctxt "nmapClass#16"
+msgid "Scan"
+msgstr "Scan"
+
+#: nmapClass#17
+msgid "Options"
+msgstr "Options"
+
+#: nmapClass#18
+msgctxt "nmapClass#18"
+msgid "Discover"
+msgstr "Découvrir"
+
+#: nmapClass#19
+msgid "File"
+msgstr "Fichier"
+
+#: nmapClass#20
+msgid "Timing"
+msgstr "Timing"
+
+#: nmapClass#21
+msgid "Save Log"
+msgstr "Enregistrer le journal"
+
+#: nmapClass#22
+msgid "No Scan found\n"
+msgstr "Aucun Scan trouvé\n"
+
+#: nmapClass#23
+msgid "Log (*.log)"
+msgstr "Journal (*.log)"
+
+#: nmapClass#24
+msgid "Information"
+msgstr "Information"
+
+#: nmapClass#25
+msgid "Save File permission Error (Log stored in /tmp)\n"
+msgstr "Enregistrer le Fichier Erreur d'autorisation (log stockés dans /tmp)\n"
+
+#: nmapClass#26
+msgid "Save File permission Error\n"
+msgstr "Enregistrer le Fichier Erreur d'autorisation\n"
+
+#: nmapClass#27
+msgid " Active Scan "
+msgstr " Scan Actif "
+
+#: nmapClass#28
+msgid "Select the file"
+msgstr "Sélectionner le fichier"
+
+#: nmapClass#29
+msgid "<b>Mode:</b> "
+msgstr "<b>Mode:</b> "
+
+#: nmapClass#30
+msgid "Full"
+msgstr "Complet"
+
+#: nmapClass#31
+msgid "User"
+msgstr "Utilisateur"
+
+#: nmapClass#32
+msgid "Scan host(s)"
+msgstr "Scan hôte(s)"
+
+#: nmapClass#33
+msgctxt "nmapClass#33"
+msgid "Log"
+msgstr "Connexion"
+
+#: nmapClass#34
+msgctxt "nmapClass#34"
+msgid "Scan Log"
+msgstr "Journal de Scan"
+
+#: nmapClass#35
+#, fuzzy
+msgctxt "nmapClass#35"
+msgid "Services"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#36
+msgid "Check Vulnerabilities"
+msgstr "Vérifier Vulnérabilités"
+
+#: nmapClass#37
+msgid "Network Discover"
+msgstr "Découvrir Réseau"
+
+#: nmapClass#38
+msgid "Nss Script"
+msgstr "Script Nss"
+
+#: nmapClass#39
+msgid "Enable/Disable NSS script"
+msgstr "Activer/Désactiver script NSS"
+
+#: nmapClass#40
+msgid "Enable/Disable Manual Parameters"
+msgstr "Activer/Désactiver Paramètres Manuel"
+
+#: nmapClass#41
+msgctxt "nmapClass#41"
+msgid "Search"
+msgstr "Chercher"
+
+#: nmapClass#42
+msgid "Back"
+msgstr "Retour"
+
+#: nmapClass#43
+msgid "Forward"
+msgstr "En avant"
+
+#: nmapClass#44
+msgid "Stop"
+msgstr "Arrêter"
+
+#: nmapClass#45
+msgid "Show/Hide Lookup"
+msgstr "Afficher/Masquer Recherche"
+
+#: nmapClass#46
+msgid "Show/Hide Traceroot"
+msgstr "Afficher/Masquer Traceroot"
+
+#: nmapClass#47
+msgid "Show/Hide Scan Monitor"
+msgstr "Afficher/Masquer Moniteur de Scan"
+
+#: nmapClass#48
+msgid "Setup"
+msgstr "Configuration"
+
+#: nmapClass#49
+msgid "Idle Scan"
+msgstr "Scan Idle"
+
+#: nmapClass#50
+msgid "SYN Stealth Scan"
+msgstr "SYN Scan Furtif"
+
+#: nmapClass#51
+msgid "ACK Stealth Scan"
+msgstr "ACK Scan Furtif"
+
+#: nmapClass#52
+msgid "FIN|ACK Stealth Scan"
+msgstr "FIN|ACK Scan Furtif"
+
+#: nmapClass#53
+msgid "FIN Stealth Scan"
+msgstr "FIN Scan Furtif"
+
+#: nmapClass#54
+msgid "NULL Stealth Scan"
+msgstr "NULL Scan Furtif"
+
+#: nmapClass#55
+#, fuzzy
+msgid "XMAS Tree Stealth Scan"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#56
+msgid "TCP Window Scan"
+msgstr "Fenêtre de Scan TCP"
+
+#: nmapClass#57
+msgid "UDP Ports Scan"
+msgstr "Scan de Ports UDP"
+
+#: nmapClass#58
+msgid "IP Protocol Scan"
+msgstr "Protocol de Scan IP"
+
+#: nmapClass#59
+msgid "Insert HostName to scan"
+msgstr "Insérez Nom d'hôte à scanner"
+
+#: nmapClass#60
+msgid "Warning: Operation more expansive.\n"
+msgstr "Avertissement : Opération plus large.\n"
+
+#: nmapClass#61
+#, fuzzy
+msgctxt "nmapClass#61"
+msgid "Scan Options"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#62
+#, fuzzy
+msgctxt "nmapClass#62"
+msgid "Nse Options"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#63
+#, fuzzy
+msgctxt "nmapClass#63"
+msgid "Lookup"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#64
+#, fuzzy
+msgctxt "nmapClass#64"
+msgid "Traceroute"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#65
+#, fuzzy
+msgctxt "nmapClass#65"
+msgid "Scan Monitor"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#66
+#, fuzzy
+msgctxt "nmapClass#66"
+msgid "Scan log parameters"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#67
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
 msgstr ""
-
-#: nmapClass#8
-msgid "Search Vulnerabilities"
-msgstr ""
-
-#: nmapClass#9
-msgid "Scan Ip"
-msgstr ""
-
-#: nmapClass#10
-msgid "Scan host(s)"
-msgstr ""
-
-#: nmapClass#11
-msgctxt "nmapClass#11"
-msgid "Log"
-msgstr ""
-
-#: nmapClass#12
-msgctxt "nmapClass#12"
-msgid "Scan Log"
-msgstr ""
-
-#: nmapClass#13
-msgctxt "nmapClass#13"
-msgid "Services"
-msgstr ""
-
-#: nmapClass#14
-msgid "Check Vulnerabilities"
-msgstr ""
-
-#: nmapClass#15
-msgid "Network Discover"
-msgstr ""
-
-#: nmapClass#16
-msgid "Nss Script"
-msgstr ""
-
-#: nmapClass#17
-msgid "Enable/Disable NSS script"
-msgstr ""
-
-#: nmapClass#18
-msgid "Enable/Disable Manual Parameters"
-msgstr ""
-
-#: nmapClass#19
-msgctxt "nmapClass#19"
-msgid "Search"
-msgstr ""
-
-#: nmapClass#20
-msgid "Back"
-msgstr ""
-
-#: nmapClass#21
-msgid "Forward"
-msgstr ""
-
-#: nmapClass#22
-msgid "Stop"
-msgstr ""
-
-#: nmapClass#23
-msgid "Show/Hide Lookup"
-msgstr ""
-
-#: nmapClass#24
-msgid "Show/Hide Traceroot"
-msgstr ""
-
-#: nmapClass#25
-msgid "Show/Hide Scan Monitor"
-msgstr ""
-
-#: nmapClass#26
-msgid "Setup"
-msgstr ""
-
-#: nmapClass#27
-msgid "No Host Target\n"
-msgstr ""
-
-#: nmapClass#28
-msgid "Idle Scan"
-msgstr ""
-
-#: nmapClass#29
-msgid "SYN Stealth Scan"
-msgstr ""
-
-#: nmapClass#30
-msgid "ACK Stealth Scan"
-msgstr ""
-
-#: nmapClass#31
-msgid "FIN|ACK Stealth Scan"
-msgstr ""
-
-#: nmapClass#32
-msgid "FIN Stealth Scan"
-msgstr ""
-
-#: nmapClass#33
-msgid "NULL Stealth Scan"
-msgstr ""
-
-#: nmapClass#34
-msgid "XMAS Tree Stealth Scan"
-msgstr ""
-
-#: nmapClass#35
-msgid "TCP Window Scan"
-msgstr ""
-
-#: nmapClass#36
-msgid "UDP Ports Scan"
-msgstr ""
-
-#: nmapClass#37
-msgid "IP Protocol Scan"
-msgstr ""
-
-#: nmapClass#38
-msgid "Warning: Operation more expansive.\n"
-msgstr ""
-
-#: nmapClass#39
-msgctxt "nmapClass#39"
-msgid "Scan Options"
-msgstr ""
-
-#: nmapClass#40
-msgctxt "nmapClass#40"
-msgid "Nse Options"
-msgstr ""
-
-#: nmapClass#41
-msgctxt "nmapClass#41"
-msgid "Lookup"
-msgstr ""
-
-#: nmapClass#42
-msgctxt "nmapClass#42"
-msgid "Traceroute"
-msgstr ""
-
-#: nmapClass#43
-msgctxt "nmapClass#43"
-msgid "Scan Monitor"
-msgstr ""
-
-#: nmapClass#44
-msgctxt "nmapClass#44"
-msgid "Scan log parameters"
-msgstr ""
-
-#: nmapClass#45
-msgid "Select the file"
-msgstr ""
-
-#: nmapClass#46
-msgid "Save File permission Error (Log stored in /tmp)\n"
-msgstr ""
-
-#: nmapClass#47
-msgid "Full"
-msgstr ""
-
-#: nmapClass#48
-msgid "User"
-msgstr ""
-
-#: nmapClass#49
-msgid "Save Log"
-msgstr ""
-
-#: nmapClass#50
-msgid "No Scan found\n"
-msgstr ""
-
-#: nmapClass#51
-msgid "Log (*.log)"
-msgstr ""
-
-#: nmapClass#52
-msgid "Information"
-msgstr ""
-
-#: nmapClass#53
-msgid "Save File permission Error\n"
-msgstr ""
-
-#: nmapClass#54
-msgid "<b>Mode:</b> "
-msgstr ""
-
-#: nmapClass#55
-msgid "No description"
-msgstr ""
-
-#: nmapClass#56
-msgid "Insert HostName to scan"
-msgstr ""
-
-#: nmapClass#57
-msgctxt "nmapClass#57"
-msgid "Scan"
-msgstr ""
-
-#: nmapClass#58
-msgid "Options"
-msgstr ""
-
-#: nmapClass#59
-msgctxt "nmapClass#59"
-msgid "Discover"
-msgstr ""
-
-#: nmapClass#60
-msgid "File"
-msgstr ""
-
-#: nmapClass#61
-msgid "Timing"
-msgstr ""
-
-#: nmapClass#62
-msgid "Wrong Address\n"
-msgstr ""
-
-#: nmapClass#63
-msgid "Remove Host"
-msgstr ""
-
-#: nmapClass#64
-msgid "Scan Host"
-msgstr ""
-
-#: nmapClass#65
-msgid "Remove Service"
-msgstr ""
-
-#: nmapClass#66
-msgid "Search for vulnerabilities"
-msgstr ""
-
-#: nmapClass#67
-msgid "Remove Scan Paramenters"
-msgstr ""
+"Insérer [ip] ou [dns] ou [plage d'adresses ip] ou [liste ip/dns avec un "
+"espace séparateur] pour le scan (ex. plage d'adresses ip. 192.168.1.10/20)"
 
 #: nmapClass#68
-msgid "Use Parameters"
-msgstr ""
+msgid "Search Vulnerabilities"
+msgstr "Recherche Vulnérabilités"
 
 #: nmapClass#69
-msgid "Check Vulnerability"
-msgstr ""
+msgid "No Host Target\n"
+msgstr "Aucun Hôte Cible\n"
 
 #: nmapClass#70
-msgid " Active Scan "
-msgstr ""
-
-#: nmapClass#71
+#, fuzzy
 msgid "is Up"
 msgstr ""
+"\n"
+"            "
 
-#: nmapClass#72
-msgctxt "nmapClass#72"
+#: nmapClass#71
+#, fuzzy
+msgctxt "nmapClass#71"
 msgid "Quick Scan"
 msgstr ""
+"\n"
+"            "
+
+#: nmapClass#72
+msgid "Intense Scan"
+msgstr "Scan Intense"
 
 #: nmapClass#73
-msgid "Intense Scan"
-msgstr ""
+msgid "Intense Scan, all TCP ports"
+msgstr "Scan Intense,tous les ports TCP"
 
 #: nmapClass#74
-msgid "Intense Scan, all TCP ports"
-msgstr ""
+msgid "Intense scan plus UDP"
+msgstr "Scan Intense plus UDP"
 
 #: nmapClass#75
-msgid "Intense scan plus UDP"
-msgstr ""
+msgid "Slow comprehensive scan"
+msgstr "scan complet Lent"
 
 #: nmapClass#76
-msgid "Slow comprehensive scan"
-msgstr ""
-
-#: nmapClass#77
 msgid "Error: check nmap Installation.\n"
-msgstr ""
+msgstr "Erreur: vérifiez l'installation de nmap.\n"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-17 02:20+0200\n"
+"POT-Creation-Date: 2011-08-16 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,275 +211,275 @@ msgid "Scan Details"
 msgstr ""
 
 #: MainWindow#50
-msgid "Ipv6 support"
+msgid "Save Default Options"
 msgstr ""
 
 #: MainWindow#51
-msgid "Port Range:"
+msgid "Remove Default Options"
 msgstr ""
 
 #: MainWindow#52
-msgid "Scan Techniques:"
+msgid "Ipv6 support"
 msgstr ""
 
 #: MainWindow#53
-msgid "Ports:"
+msgid "Port Range:"
 msgstr ""
 
 #: MainWindow#54
-msgid "Bounce Host:"
+msgid "Scan Techniques:"
 msgstr ""
 
 #: MainWindow#55
-msgid "Timing Template:"
+msgid "Ports:"
 msgstr ""
 
 #: MainWindow#56
-msgid "Min outstanding probes"
+msgid "Bounce Host:"
 msgstr ""
 
 #: MainWindow#57
-msgid "Max outstanding probes"
+msgid "Timing Template:"
 msgstr ""
 
 #: MainWindow#58
-msgid "Max time to scan a target"
+msgid "Min outstanding probes"
 msgstr ""
 
 #: MainWindow#59
-msgid "Initial probe timeout"
+msgid "Max outstanding probes"
 msgstr ""
 
 #: MainWindow#60
-msgid "Min probe timeout"
+msgid "Max time to scan a target"
 msgstr ""
 
 #: MainWindow#61
-msgid "Max probe timeout"
+msgid "Initial probe timeout"
 msgstr ""
 
 #: MainWindow#62
-msgid "Active Script"
+msgid "Min probe timeout"
 msgstr ""
 
 #: MainWindow#63
-msgid "Disable Script"
+msgid "Max probe timeout"
 msgstr ""
 
 #: MainWindow#64
-msgid "Nse Categories Help"
+msgid "Active Script"
 msgstr ""
 
 #: MainWindow#65
-msgctxt "MainWindow#65"
-msgid "Search"
+msgid "Disable Script"
 msgstr ""
 
 #: MainWindow#66
-msgid "Nse Script Search"
+msgid "Nse Categories Help"
 msgstr ""
 
 #: MainWindow#67
+msgctxt "MainWindow#67"
+msgid "Search"
+msgstr ""
+
+#: MainWindow#68
+msgid "Nse Script Search"
+msgstr ""
+
+#: MainWindow#69
 msgid ""
 "Nse script parameters (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 msgstr ""
 
-#: MainWindow#68
-msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
-msgstr ""
-
-#: MainWindow#69
-msgctxt "MainWindow#69"
-msgid "Done"
-msgstr ""
-
 #: MainWindow#70
-msgctxt "MainWindow#70"
-msgid "Nse Options"
+msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
 
 #: MainWindow#71
 msgctxt "MainWindow#71"
-msgid "Scan Log"
+msgid "Done"
 msgstr ""
 
 #: MainWindow#72
-msgid "Add Url"
+msgctxt "MainWindow#72"
+msgid "Nse Options"
 msgstr ""
 
 #: MainWindow#73
-msgid "Url(s)"
+msgctxt "MainWindow#73"
+msgid "Scan Log"
 msgstr ""
 
 #: MainWindow#74
-msgid "Url(s) name"
+msgid "Add Url"
 msgstr ""
 
 #: MainWindow#75
-msgid "Bookmarks Url"
+msgid "Url(s)"
 msgstr ""
 
 #: MainWindow#76
-msgid "Local Interfaces:"
+msgid "Url(s) name"
 msgstr ""
 
 #: MainWindow#77
-msgid "Start DIscover"
+msgid "Bookmarks Url"
 msgstr ""
 
 #: MainWindow#78
-msgid "Stop Discover"
+msgid "Local Interfaces:"
 msgstr ""
 
 #: MainWindow#79
-msgid "Discover Group:"
+msgid "Start DIscover"
 msgstr ""
 
 #: MainWindow#80
-msgid "Start Ip:"
+msgid "Stop Discover"
 msgstr ""
 
 #: MainWindow#81
-msgid "End Ip:"
+msgid "Discover Group:"
 msgstr ""
 
 #: MainWindow#82
-msgid "Ip"
+msgid "Start Ip:"
 msgstr ""
 
 #: MainWindow#83
-msgid "Service(s) with info"
+msgid "End Ip:"
 msgstr ""
 
 #: MainWindow#84
-msgid "Os"
+msgid "Ip"
 msgstr ""
 
 #: MainWindow#85
-msgctxt "MainWindow#85"
-msgid "Scan log parameters"
+msgid "Service(s) with info"
 msgstr ""
 
 #: MainWindow#86
-msgid "Stop All Scan"
+msgid "Os"
 msgstr ""
 
 #: MainWindow#87
-msgid "Stop Current Scan"
+msgctxt "MainWindow#87"
+msgid "Scan log parameters"
 msgstr ""
 
 #: MainWindow#88
-msgctxt "MainWindow#88"
-msgid "Scan Options"
+msgid "Stop All Scan"
 msgstr ""
 
 #: MainWindow#89
-msgid "Host Thread"
+msgid "Stop Current Scan"
 msgstr ""
 
 #: MainWindow#90
 msgctxt "MainWindow#90"
-msgid "Scan Monitor"
+msgid "Scan Options"
 msgstr ""
 
 #: MainWindow#91
-msgid "Auto nse script"
+msgid "Host Thread"
 msgstr ""
 
 #: MainWindow#92
-msgid "Custom nse script"
+msgctxt "MainWindow#92"
+msgid "Scan Monitor"
 msgstr ""
 
 #: MainWindow#93
-msgid "Nse categories script available"
+msgid "Auto nse script"
 msgstr ""
 
 #: MainWindow#94
-msgid "Nse categories Script Active"
+msgid "Custom nse script"
 msgstr ""
 
 #: MainWindow#95
-msgid "Restore Default Categories"
+msgid "Nse categories script available"
 msgstr ""
 
 #: MainWindow#96
-msgctxt "MainWindow#96"
-msgid "Lookup"
+msgid "Nse categories Script Active"
 msgstr ""
 
 #: MainWindow#97
-msgid "DNS"
+msgid "Restore Default Categories"
 msgstr ""
 
 #: MainWindow#98
-msgid "IP"
+msgctxt "MainWindow#98"
+msgid "Lookup"
 msgstr ""
 
 #: MainWindow#99
-msgid "RTT"
+msgid "DNS"
 msgstr ""
 
 #: MainWindow#100
-msgid "Hop(s)"
+msgid "IP"
 msgstr ""
 
 #: MainWindow#101
-msgctxt "MainWindow#101"
-msgid "Traceroute"
+msgid "RTT"
 msgstr ""
 
 #: MainWindow#102
-msgid "Log(s)"
+msgid "Hop(s)"
 msgstr ""
 
 #: MainWindow#103
-msgid "Error(s)"
+msgctxt "MainWindow#103"
+msgid "Traceroute"
 msgstr ""
 
 #: MainWindow#104
-msgid "Warning(s)"
+msgid "Log(s)"
 msgstr ""
 
 #: MainWindow#105
-msgctxt "MainWindow#105"
-msgid "Services"
+msgid "Error(s)"
 msgstr ""
 
 #: MainWindow#106
-msgid "Data"
+msgid "Warning(s)"
 msgstr ""
 
 #: MainWindow#107
-msgid "Bookmarks"
+msgctxt "MainWindow#107"
+msgid "Services"
 msgstr ""
 
 #: MainWindow#108
-msgid "Host Details"
+msgid "Data"
 msgstr ""
 
 #: MainWindow#109
-msgid "Details"
+msgid "Bookmarks"
 msgstr ""
 
 #: MainWindow#110
-msgid "NSE"
+msgid "Host Details"
 msgstr ""
 
 #: MainWindow#111
-msgid "Bookmarks parameters"
+msgid "Details"
 msgstr ""
 
 #: MainWindow#112
-msgid "Save Global Profile"
+msgid "NSE"
 msgstr ""
 
 #: MainWindow#113
-msgid "Apply Quick Profile"
+msgid "Bookmarks parameters"
 msgstr ""
 
 #: MainWindow#114
-msgid "Remove Global Profile"
+msgid "Apply Quick Profile"
 msgstr ""
 
 #: MainWindow#115
@@ -667,47 +667,64 @@ msgid "Vulnerability"
 msgstr ""
 
 #: MainWindow#161
-msgid "Remaining Ip:"
+msgctxt "MainWindow#161"
+msgid "Scan Host"
 msgstr ""
 
 #: MainWindow#162
-msgctxt "MainWindow#162"
-msgid "Discover"
+msgid "Probes Modes:"
 msgstr ""
 
 #: MainWindow#163
-msgid "&File"
+msgid "Send"
 msgstr ""
 
 #: MainWindow#164
-msgid "&View"
+msgid "Received"
 msgstr ""
 
 #: MainWindow#165
-msgid "&Bookmarks"
+msgid "Remaining Ip:"
 msgstr ""
 
 #: MainWindow#166
-msgid "&Help"
+msgctxt "MainWindow#166"
+msgid "Discover"
 msgstr ""
 
 #: MainWindow#167
-msgid "S&ettings"
+msgid "&File"
 msgstr ""
 
 #: MainWindow#168
-msgid "&Tools"
+msgid "&View"
 msgstr ""
 
 #: MainWindow#169
-msgid "toolBar"
+msgid "&Bookmarks"
 msgstr ""
 
 #: MainWindow#170
-msgid "toolBar_2"
+msgid "&Help"
 msgstr ""
 
 #: MainWindow#171
+msgid "S&ettings"
+msgstr ""
+
+#: MainWindow#172
+msgid "&Tools"
+msgstr ""
+
+#: MainWindow#173
+msgid "toolBar"
+msgstr ""
+
+#: MainWindow#174
+msgid "toolBar_2"
+msgstr ""
+
+#: MainWindow#175
 msgid "toolBar_3"
 msgstr ""
 
@@ -931,6 +948,7 @@ msgid "Remove Host"
 msgstr ""
 
 #: nmapClass#2
+msgctxt "nmapClass#2"
 msgid "Scan Host"
 msgstr ""
 
@@ -1055,198 +1073,194 @@ msgid "User"
 msgstr ""
 
 #: nmapClass#32
-msgid "Scan Ip"
+msgid "Scan host(s)"
 msgstr ""
 
 #: nmapClass#33
-msgid "Scan host(s)"
+msgctxt "nmapClass#33"
+msgid "Log"
 msgstr ""
 
 #: nmapClass#34
 msgctxt "nmapClass#34"
-msgid "Log"
+msgid "Scan Log"
 msgstr ""
 
 #: nmapClass#35
 msgctxt "nmapClass#35"
-msgid "Scan Log"
-msgstr ""
-
-#: nmapClass#36
-msgctxt "nmapClass#36"
 msgid "Services"
 msgstr ""
 
-#: nmapClass#37
+#: nmapClass#36
 msgid "Check Vulnerabilities"
 msgstr ""
 
-#: nmapClass#38
+#: nmapClass#37
 msgid "Network Discover"
 msgstr ""
 
-#: nmapClass#39
+#: nmapClass#38
 msgid "Nss Script"
 msgstr ""
 
-#: nmapClass#40
+#: nmapClass#39
 msgid "Enable/Disable NSS script"
 msgstr ""
 
-#: nmapClass#41
+#: nmapClass#40
 msgid "Enable/Disable Manual Parameters"
 msgstr ""
 
-#: nmapClass#42
-msgctxt "nmapClass#42"
+#: nmapClass#41
+msgctxt "nmapClass#41"
 msgid "Search"
 msgstr ""
 
-#: nmapClass#43
+#: nmapClass#42
 msgid "Back"
 msgstr ""
 
-#: nmapClass#44
+#: nmapClass#43
 msgid "Forward"
 msgstr ""
 
-#: nmapClass#45
+#: nmapClass#44
 msgid "Stop"
 msgstr ""
 
-#: nmapClass#46
+#: nmapClass#45
 msgid "Show/Hide Lookup"
 msgstr ""
 
-#: nmapClass#47
+#: nmapClass#46
 msgid "Show/Hide Traceroot"
 msgstr ""
 
-#: nmapClass#48
+#: nmapClass#47
 msgid "Show/Hide Scan Monitor"
 msgstr ""
 
-#: nmapClass#49
+#: nmapClass#48
 msgid "Setup"
 msgstr ""
 
-#: nmapClass#50
+#: nmapClass#49
 msgid "Idle Scan"
 msgstr ""
 
-#: nmapClass#51
+#: nmapClass#50
 msgid "SYN Stealth Scan"
 msgstr ""
 
-#: nmapClass#52
+#: nmapClass#51
 msgid "ACK Stealth Scan"
 msgstr ""
 
-#: nmapClass#53
+#: nmapClass#52
 msgid "FIN|ACK Stealth Scan"
 msgstr ""
 
-#: nmapClass#54
+#: nmapClass#53
 msgid "FIN Stealth Scan"
 msgstr ""
 
-#: nmapClass#55
+#: nmapClass#54
 msgid "NULL Stealth Scan"
 msgstr ""
 
-#: nmapClass#56
+#: nmapClass#55
 msgid "XMAS Tree Stealth Scan"
 msgstr ""
 
-#: nmapClass#57
+#: nmapClass#56
 msgid "TCP Window Scan"
 msgstr ""
 
-#: nmapClass#58
+#: nmapClass#57
 msgid "UDP Ports Scan"
 msgstr ""
 
-#: nmapClass#59
+#: nmapClass#58
 msgid "IP Protocol Scan"
 msgstr ""
 
-#: nmapClass#60
+#: nmapClass#59
 msgid "Insert HostName to scan"
 msgstr ""
 
-#: nmapClass#61
+#: nmapClass#60
 msgid "Warning: Operation more expansive.\n"
+msgstr ""
+
+#: nmapClass#61
+msgctxt "nmapClass#61"
+msgid "Scan Options"
 msgstr ""
 
 #: nmapClass#62
 msgctxt "nmapClass#62"
-msgid "Scan Options"
+msgid "Nse Options"
 msgstr ""
 
 #: nmapClass#63
 msgctxt "nmapClass#63"
-msgid "Nse Options"
+msgid "Lookup"
 msgstr ""
 
 #: nmapClass#64
 msgctxt "nmapClass#64"
-msgid "Lookup"
+msgid "Traceroute"
 msgstr ""
 
 #: nmapClass#65
 msgctxt "nmapClass#65"
-msgid "Traceroute"
+msgid "Scan Monitor"
 msgstr ""
 
 #: nmapClass#66
 msgctxt "nmapClass#66"
-msgid "Scan Monitor"
-msgstr ""
-
-#: nmapClass#67
-msgctxt "nmapClass#67"
 msgid "Scan log parameters"
 msgstr ""
 
-#: nmapClass#68
+#: nmapClass#67
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
 msgstr ""
 
-#: nmapClass#69
+#: nmapClass#68
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: nmapClass#70
+#: nmapClass#69
 msgid "No Host Target\n"
 msgstr ""
 
-#: nmapClass#71
+#: nmapClass#70
 msgid "is Up"
 msgstr ""
 
-#: nmapClass#72
-msgctxt "nmapClass#72"
+#: nmapClass#71
+msgctxt "nmapClass#71"
 msgid "Quick Scan"
 msgstr ""
 
-#: nmapClass#73
+#: nmapClass#72
 msgid "Intense Scan"
 msgstr ""
 
-#: nmapClass#74
+#: nmapClass#73
 msgid "Intense Scan, all TCP ports"
 msgstr ""
 
-#: nmapClass#75
+#: nmapClass#74
 msgid "Intense scan plus UDP"
 msgstr ""
 
-#: nmapClass#76
+#: nmapClass#75
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: nmapClass#77
+#: nmapClass#76
 msgid "Error: check nmap Installation.\n"
 msgstr ""

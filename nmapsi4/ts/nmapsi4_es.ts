@@ -574,15 +574,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save Global Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Apply Quick Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove Global Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -725,6 +717,30 @@
     <message>
         <source>Discover</source>
         <translation type="unfinished">Decubrir</translation>
+    </message>
+    <message>
+        <source>Save Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished">Escanear Host</translation>
+    </message>
+    <message>
+        <source>Probes Modes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1301,10 +1317,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan Ip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

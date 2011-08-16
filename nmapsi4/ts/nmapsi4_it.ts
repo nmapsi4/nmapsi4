@@ -384,17 +384,7 @@
         <translation>Segnalibro parametri</translation>
     </message>
     <message>
-        <source>Save Global Profile</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Apply Quick Profile</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Remove Global Profile</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -753,6 +743,30 @@
     <message>
         <source>Discover</source>
         <translation type="unfinished">Ricerca</translation>
+    </message>
+    <message>
+        <source>Save Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished">Scansione host</translation>
+    </message>
+    <message>
+        <source>Probes Modes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1332,10 +1346,6 @@ p, li { white-space: pre-wrap; }
         <source>Slow comprehensive scan</source>
         <translation type="unfinished">
             </translation>
-    </message>
-    <message>
-        <source>Scan Ip</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error: check nmap Installation.

@@ -42,7 +42,7 @@
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="164"/>
         <source>Log(s) name</source>
-        <translation type="unfinished"></translation>
+        <translation>Název zápisu</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="165"/>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="157"/>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;O programu nmapsi4</translation>
     </message>
     <message>
         <location filename="../../build/nmapsi4-logr/ui_mainwin.h" line="163"/>

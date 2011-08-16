@@ -537,16 +537,8 @@ Zavřít strom s prohledáváním</translation>
         <translation>Zastavit nynější prohledávání</translation>
     </message>
     <message>
-        <source>Save Global Profile</source>
-        <translation>Uložit celkový profil</translation>
-    </message>
-    <message>
         <source>Apply Quick Profile</source>
         <translation>Použít rychlý profil</translation>
-    </message>
-    <message>
-        <source>Remove Global Profile</source>
-        <translation>Odstranit celkový profil</translation>
     </message>
     <message>
         <source>Auto nse script</source>
@@ -687,6 +679,30 @@ Zavřít strom s prohledáváním</translation>
     <message>
         <source>Discover</source>
         <translation>Objevit</translation>
+    </message>
+    <message>
+        <source>Save Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Default Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished">Prohledat server</translation>
+    </message>
+    <message>
+        <source>Probes Modes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1218,10 +1234,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Scan log parameters</source>
         <translation>Prohlédnout parametry zápisů</translation>
-    </message>
-    <message>
-        <source>Scan Ip</source>
-        <translation>Prohledat IP</translation>
     </message>
     <message>
         <source>Error: check nmap Installation.

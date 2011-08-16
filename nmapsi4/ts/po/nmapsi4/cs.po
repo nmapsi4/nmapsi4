@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-18 20:03+0200\n"
+"POT-Creation-Date: 2011-08-16 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -555,123 +555,115 @@ msgid "Stop Current Scan"
 msgstr "Zastavit nynější prohledávání"
 
 #: MainWindow#134
-msgid "Save Global Profile"
-msgstr "Uložit celkový profil"
-
-#: MainWindow#135
 msgid "Apply Quick Profile"
 msgstr "Použít rychlý profil"
 
-#: MainWindow#136
-msgid "Remove Global Profile"
-msgstr "Odstranit celkový profil"
-
-#: MainWindow#137
+#: MainWindow#135
 msgid "Auto nse script"
 msgstr "Automatický skript nse"
 
-#: MainWindow#138
+#: MainWindow#136
 msgid "Custom nse script"
 msgstr "Vlastní skript nse"
 
-#: MainWindow#139
+#: MainWindow#137
 msgid "Nse categories script available"
 msgstr "Skript pro skupiny nse dostupný"
 
-#: MainWindow#140
+#: MainWindow#138
 msgid "Nse categories Script Active"
 msgstr "Skript pro skupiny nse v činnosti"
 
-#: MainWindow#141
+#: MainWindow#139
 msgid "Restore Default Categories"
 msgstr "Obnovit výchozí skupiny"
 
-#: MainWindow#142
+#: MainWindow#140
 msgid "&Tools"
 msgstr "&Nástroje"
 
-#: MainWindow#143
+#: MainWindow#141
 msgid "Section Scan"
 msgstr "Prohledávání části"
 
-#: MainWindow#144
+#: MainWindow#142
 msgid "Section Log"
 msgstr "Zápis k části"
 
-#: MainWindow#145
+#: MainWindow#143
 msgid " Section Vulnerabilities"
 msgstr "Zranitelnosti části"
 
-#: MainWindow#146
+#: MainWindow#144
 msgid "Ipv6 support"
 msgstr "Podpora pro Ipv6"
 
-#: MainWindow#147
+#: MainWindow#145
 msgid "Port Range:"
 msgstr "Rozsah přípojky:"
 
-#: MainWindow#148
+#: MainWindow#146
 msgid "Scan Techniques:"
 msgstr "Postupy prohledávání:"
 
-#: MainWindow#149
+#: MainWindow#147
 msgid "Ports:"
 msgstr "Přípojky:"
 
-#: MainWindow#150
+#: MainWindow#148
 msgid "Bounce Host:"
 msgstr "Server odrazu:"
 
-#: MainWindow#151
+#: MainWindow#149
 msgid "Timing Template:"
 msgstr "Předloha načasování:"
 
-#: MainWindow#152
+#: MainWindow#150
 msgid "Min outstanding probes"
 msgstr "Nejméně mimořádných pátrání"
 
-#: MainWindow#153
+#: MainWindow#151
 msgid "Max outstanding probes"
 msgstr "Nejvíce mimořádných pátrání"
 
-#: MainWindow#154
+#: MainWindow#152
 msgid "Max time to scan a target"
 msgstr "Nejvíce času na prohlížení cíle"
 
-#: MainWindow#155
+#: MainWindow#153
 msgid "Initial probe timeout"
 msgstr "Přerušení počátečního pátrání"
 
-#: MainWindow#156
+#: MainWindow#154
 msgid "Min probe timeout"
 msgstr "Nejmenší přerušení pátrání"
 
-#: MainWindow#157
+#: MainWindow#155
 msgid "Max probe timeout"
 msgstr "Největší přerušení pátrání"
 
-#: MainWindow#158
+#: MainWindow#156
 msgid "Active Script"
 msgstr "Skript v činnosti"
 
-#: MainWindow#159
+#: MainWindow#157
 msgid "Disable Script"
 msgstr "Zakázat skript"
 
-#: MainWindow#160
+#: MainWindow#158
 msgid "Nse Categories Help"
 msgstr "Nápověda ke skupinám nse"
 
-#: MainWindow#161
-msgctxt "MainWindow#161"
+#: MainWindow#159
+msgctxt "MainWindow#159"
 msgid "Search"
 msgstr "Hledat"
 
-#: MainWindow#162
+#: MainWindow#160
 msgid "Nse Script Search"
 msgstr "Hledání skriptu nse"
 
-#: MainWindow#163
+#: MainWindow#161
 msgid ""
 "Nse script parameters (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
@@ -679,41 +671,67 @@ msgstr ""
 "Parametry skriptu nse (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 
-#: MainWindow#164
+#: MainWindow#162
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr "Ruční vyvolání skriptu nse: (Ex. snmp-sysdescr,smb-os-discovery )"
 
-#: MainWindow#165
-msgctxt "MainWindow#165"
+#: MainWindow#163
+msgctxt "MainWindow#163"
 msgid "Done"
 msgstr "Hotovo"
 
-#: MainWindow#166
-msgctxt "MainWindow#166"
+#: MainWindow#164
+msgctxt "MainWindow#164"
 msgid "Nse Options"
 msgstr "Volby pro nse"
 
-#: MainWindow#167
-msgctxt "MainWindow#167"
+#: MainWindow#165
+msgctxt "MainWindow#165"
 msgid "Scan Log"
 msgstr "Zápis o prohledávání"
 
-#: MainWindow#168
+#: MainWindow#166
 msgid "Remove Url"
 msgstr "Odstranit adresu (URL)"
 
-#: MainWindow#169
+#: MainWindow#167
 msgid "Vulnerability"
 msgstr "Zranitelnost"
 
-#: MainWindow#170
+#: MainWindow#168
 msgid "Remaining Ip:"
 msgstr "Zbývající IP:"
 
-#: MainWindow#171
-msgctxt "MainWindow#171"
+#: MainWindow#169
+msgctxt "MainWindow#169"
 msgid "Discover"
 msgstr "Objevit"
+
+#: MainWindow#170
+msgid "Save Default Options"
+msgstr ""
+
+#: MainWindow#171
+msgid "Remove Default Options"
+msgstr ""
+
+#: MainWindow#172
+#, fuzzy
+msgctxt "MainWindow#172"
+msgid "Scan Host"
+msgstr "Prohledat server"
+
+#: MainWindow#173
+msgid "Probes Modes:"
+msgstr ""
+
+#: MainWindow#174
+msgid "Send"
+msgstr ""
+
+#: MainWindow#175
+msgid "Received"
+msgstr ""
 
 #: ProfileMain#1
 msgid "NmapSI4 Preferences"
@@ -1152,6 +1170,7 @@ msgid "Remove Host"
 msgstr "Odstranit server"
 
 #: nmapClass#48
+msgctxt "nmapClass#48"
 msgid "Scan Host"
 msgstr "Prohledat server"
 
@@ -1267,14 +1286,10 @@ msgid "Scan log parameters"
 msgstr "Prohlédnout parametry zápisů"
 
 #: nmapClass#75
-msgid "Scan Ip"
-msgstr "Prohledat IP"
-
-#: nmapClass#76
 msgid "Error: check nmap Installation.\n"
 msgstr "Chyba: prověřte instalaci nmap.\n"
 
-#: nmapClass#77
-msgctxt "nmapClass#77"
+#: nmapClass#76
+msgctxt "nmapClass#76"
 msgid "Nse Options"
 msgstr "Volby pro nse"

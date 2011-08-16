@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-17 02:20+0200\n"
+"POT-Creation-Date: 2011-08-16 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -475,446 +475,458 @@ msgstr "Segnalibro parametri"
 
 #: MainWindow#87
 #, fuzzy
-msgid "Save Global Profile"
+msgid "Apply Quick Profile"
 msgstr ""
 "\n"
 "            "
 
 #: MainWindow#88
 #, fuzzy
-msgid "Apply Quick Profile"
-msgstr ""
-"\n"
-"            "
-
-#: MainWindow#89
-#, fuzzy
-msgid "Remove Global Profile"
-msgstr ""
-"\n"
-"            "
-
-#: MainWindow#90
-#, fuzzy
 msgid "RPC Scan"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#91
+#: MainWindow#89
 msgid "Don't Ping"
 msgstr "No Ping"
 
-#: MainWindow#92
+#: MainWindow#90
 msgid "Normal"
 msgstr "Predefinito"
 
-#: MainWindow#93
+#: MainWindow#91
 msgid "All"
 msgstr "Tutti"
 
-#: MainWindow#94
+#: MainWindow#92
 msgid "Most Important"
 msgstr "Rilevanti"
 
-#: MainWindow#95
+#: MainWindow#93
 msgid "Range"
 msgstr "Intervallo"
 
-#: MainWindow#96
+#: MainWindow#94
 #, fuzzy
 msgid "Connect Scan"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#97
+#: MainWindow#95
 #, fuzzy
 msgid "Ping Sweep"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#98
+#: MainWindow#96
 #, fuzzy
 msgid "Host List"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#99
+#: MainWindow#97
 #, fuzzy
 msgid "FTP Bounce Attack"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#100
+#: MainWindow#98
 msgid "Version Probe"
 msgstr "Cerca Versione"
 
-#: MainWindow#101
+#: MainWindow#99
 msgid "OS Detection"
 msgstr "Scopri OS"
 
-#: MainWindow#102
+#: MainWindow#100
 #, fuzzy
 msgid "ICMP Echo"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#103
+#: MainWindow#101
 #, fuzzy
 msgid "ICMP TImestamp"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#104
+#: MainWindow#102
 #, fuzzy
 msgid "UDP Ping"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#105
+#: MainWindow#103
 #, fuzzy
 msgid "TCP SYN Ping"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#106
+#: MainWindow#104
 #, fuzzy
 msgid "TCP ACK Ping"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#107
+#: MainWindow#105
 #, fuzzy
 msgid "ICMP Netmask"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#108
+#: MainWindow#106
 msgid "Input File"
 msgstr "File in Ingresso"
 
-#: MainWindow#109
+#: MainWindow#107
 msgid "Browser"
 msgstr "Sfoglia"
 
-#: MainWindow#110
+#: MainWindow#108
 msgid "Scan Delay"
 msgstr "Ritardo di scansione"
 
-#: MainWindow#111
+#: MainWindow#109
 #, fuzzy
 msgid "Ipv4 TTL"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#112
+#: MainWindow#110
 #, fuzzy
 msgid "Normal Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#113
+#: MainWindow#111
 #, fuzzy
 msgid "Paranoid Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#114
+#: MainWindow#112
 #, fuzzy
 msgid "Sneaky Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#115
+#: MainWindow#113
 #, fuzzy
 msgid "Polite Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#116
+#: MainWindow#114
 #, fuzzy
 msgid "Aggressive Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#117
+#: MainWindow#115
 #, fuzzy
 msgid "Insane Throttling"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#118
+#: MainWindow#116
 msgid "Quiet"
 msgstr "Sintetico"
 
-#: MainWindow#119
+#: MainWindow#117
 msgid "Verbose"
 msgstr "Dettagliato"
 
-#: MainWindow#120
+#: MainWindow#118
 msgid "Very Verbose"
 msgstr "Completo"
 
-#: MainWindow#121
+#: MainWindow#119
 msgid "Debug"
 msgstr "Debug"
 
-#: MainWindow#122
+#: MainWindow#120
 msgid "Verbose Debug"
 msgstr "Debug completo"
 
-#: MainWindow#123
+#: MainWindow#121
 msgid "When Required"
 msgstr "Se richiesto"
 
-#: MainWindow#124
+#: MainWindow#122
 msgid "Always"
 msgstr "Sempre"
 
-#: MainWindow#125
+#: MainWindow#123
 msgid "Never"
 msgstr "Mai"
 
-#: MainWindow#126
+#: MainWindow#124
 msgid "DNS Resolution"
 msgstr "Risoluzione DNS"
 
-#: MainWindow#127
+#: MainWindow#125
 msgid "Verbosity"
 msgstr "Livello dettaglio"
 
-#: MainWindow#128
+#: MainWindow#126
 #, fuzzy
 msgid "Spoof Address"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#129
+#: MainWindow#127
 #, fuzzy
 msgid "Specific Device"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#130
+#: MainWindow#128
 #, fuzzy
 msgid "Decoy"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#131
+#: MainWindow#129
 #, fuzzy
 msgid "Source Port"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#132
+#: MainWindow#130
 msgid "Ordered Port"
 msgstr "Porte ordinate"
 
-#: MainWindow#133
+#: MainWindow#131
 msgid "Fragmentation"
 msgstr "Frammentazione"
 
-#: MainWindow#134
+#: MainWindow#132
 msgid "&File"
 msgstr "&File"
 
-#: MainWindow#135
+#: MainWindow#133
 msgid "&View"
 msgstr "&Visualizza"
 
-#: MainWindow#136
+#: MainWindow#134
 msgid "&Bookmarks"
 msgstr "&Segnalibri"
 
-#: MainWindow#137
+#: MainWindow#135
 msgid "&Help"
 msgstr "&Aiuto"
 
-#: MainWindow#138
+#: MainWindow#136
 msgid "S&ettings"
 msgstr "I&mpostazioni"
 
-#: MainWindow#139
+#: MainWindow#137
 #, fuzzy
 msgid "&Tools"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#140
+#: MainWindow#138
 #, fuzzy
 msgid "toolBar"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#141
+#: MainWindow#139
 #, fuzzy
 msgid "toolBar_2"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#142
+#: MainWindow#140
 #, fuzzy
 msgid "toolBar_3"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#143
+#: MainWindow#141
 msgid "Section Scan"
 msgstr ""
 
-#: MainWindow#144
+#: MainWindow#142
 msgid "Section Log"
 msgstr ""
 
-#: MainWindow#145
+#: MainWindow#143
 msgid " Section Vulnerabilities"
 msgstr ""
 
-#: MainWindow#146
+#: MainWindow#144
 msgid "Ipv6 support"
 msgstr ""
 
-#: MainWindow#147
+#: MainWindow#145
 msgid "Port Range:"
 msgstr ""
 
-#: MainWindow#148
+#: MainWindow#146
 msgid "Scan Techniques:"
 msgstr ""
 
-#: MainWindow#149
+#: MainWindow#147
 msgid "Ports:"
 msgstr ""
 
-#: MainWindow#150
+#: MainWindow#148
 msgid "Bounce Host:"
 msgstr ""
 
-#: MainWindow#151
+#: MainWindow#149
 msgid "Timing Template:"
 msgstr ""
 
-#: MainWindow#152
+#: MainWindow#150
 msgid "Min outstanding probes"
 msgstr ""
 
-#: MainWindow#153
+#: MainWindow#151
 msgid "Max outstanding probes"
 msgstr ""
 
-#: MainWindow#154
+#: MainWindow#152
 msgid "Max time to scan a target"
 msgstr ""
 
-#: MainWindow#155
+#: MainWindow#153
 msgid "Initial probe timeout"
 msgstr ""
 
-#: MainWindow#156
+#: MainWindow#154
 msgid "Min probe timeout"
 msgstr ""
 
-#: MainWindow#157
+#: MainWindow#155
 msgid "Max probe timeout"
 msgstr ""
 
-#: MainWindow#158
+#: MainWindow#156
 msgid "Active Script"
 msgstr ""
 
-#: MainWindow#159
+#: MainWindow#157
 msgid "Disable Script"
 msgstr ""
 
-#: MainWindow#160
+#: MainWindow#158
 msgid "Nse Categories Help"
 msgstr ""
 
-#: MainWindow#161
+#: MainWindow#159
 #, fuzzy
-msgctxt "MainWindow#161"
+msgctxt "MainWindow#159"
 msgid "Search"
 msgstr "Cerca"
 
-#: MainWindow#162
+#: MainWindow#160
 msgid "Nse Script Search"
 msgstr ""
 
-#: MainWindow#163
+#: MainWindow#161
 msgid ""
 "Nse script parameters (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 msgstr ""
 
-#: MainWindow#164
+#: MainWindow#162
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
 
-#: MainWindow#165
+#: MainWindow#163
 #, fuzzy
-msgctxt "MainWindow#165"
+msgctxt "MainWindow#163"
 msgid "Done"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#166
-msgctxt "MainWindow#166"
+#: MainWindow#164
+msgctxt "MainWindow#164"
 msgid "Nse Options"
 msgstr ""
 
-#: MainWindow#167
+#: MainWindow#165
 #, fuzzy
-msgctxt "MainWindow#167"
+msgctxt "MainWindow#165"
 msgid "Scan Log"
 msgstr "Log delle scansioni"
 
-#: MainWindow#168
+#: MainWindow#166
 #, fuzzy
 msgid "Remove Url"
 msgstr ""
 "\n"
 "            "
 
-#: MainWindow#169
+#: MainWindow#167
 msgid "Vulnerability"
 msgstr ""
 
-#: MainWindow#170
+#: MainWindow#168
 msgid "Remaining Ip:"
 msgstr ""
 
-#: MainWindow#171
+#: MainWindow#169
 #, fuzzy
-msgctxt "MainWindow#171"
+msgctxt "MainWindow#169"
 msgid "Discover"
 msgstr "Ricerca"
+
+#: MainWindow#170
+msgid "Save Default Options"
+msgstr ""
+
+#: MainWindow#171
+msgid "Remove Default Options"
+msgstr ""
+
+#: MainWindow#172
+#, fuzzy
+msgctxt "MainWindow#172"
+msgid "Scan Host"
+msgstr "Scansione host"
+
+#: MainWindow#173
+msgid "Probes Modes:"
+msgstr ""
+
+#: MainWindow#174
+msgid "Send"
+msgstr ""
+
+#: MainWindow#175
+msgid "Received"
+msgstr ""
 
 #: ProfileMain#1
 msgid "NmapSI4 Preferences"
@@ -1193,6 +1205,7 @@ msgid "Remove Host"
 msgstr "Rimuovi host"
 
 #: nmapClass#2
+msgctxt "nmapClass#2"
 msgid "Scan Host"
 msgstr "Scansione host"
 
@@ -1602,14 +1615,10 @@ msgstr ""
 "            "
 
 #: nmapClass#75
-msgid "Scan Ip"
-msgstr ""
-
-#: nmapClass#76
 msgid "Error: check nmap Installation.\n"
 msgstr ""
 
-#: nmapClass#77
-msgctxt "nmapClass#77"
+#: nmapClass#76
+msgctxt "nmapClass#76"
 msgid "Nse Options"
 msgstr ""
