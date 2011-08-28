@@ -67,7 +67,7 @@ endif (WIN32)
 
 if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
-  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/nmapsi4-logr" DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+  install(TARGETS nmapsi4-logr DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
   install(FILES "src/nmapsi4-logr.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
 endif (Q_WS_X11)
 
