@@ -5,9 +5,9 @@ FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
 include(${QT_USE_FILE})
 
 if (Q_WS_X11)
-	ADD_DEFINITIONS(-O2 -Wall -Wextra -g -fno-var-tracking-assignments)
+	ADD_DEFINITIONS(-O2 -Wall -Wextra -g -fno-var-tracking-assignments -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 else (Q_WS_X11)
-	ADD_DEFINITIONS(-O2 -Wall -Wextra -g)
+	ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 endif (Q_WS_X11)
 
 if (Q_WS_WIN)
