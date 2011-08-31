@@ -21,7 +21,5 @@
 #define STATICDEFINE_H
 
 #define _VERSION_         "0.3-beta1"
-#define _VERSION_VULN_    "0.2-beta1"
-#define _VERSION_DIG_     "0.2-beta1"
 
 #endif
