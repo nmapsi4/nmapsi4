@@ -217,6 +217,7 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionScan_section);
     menu->addAction(actionLog_section);
     menu->addAction(actionVulnerabilities_section);
+    menu->addAction(actionSection_Discover);
     menu->addSeparator();
     menu->addAction(actionProfile);
     menu->addSeparator();

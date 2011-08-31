@@ -191,6 +191,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateDiscoverVuln()));
     connect(actionVulnerabilities_section, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
+    connect(actionSection_Discover, SIGNAL(triggered()),
+            this, SLOT(updateDiscoverVuln()));
     connect(nssAct, SIGNAL(triggered()),
             this, SLOT(NSSCheck()));
     connect(parAct, SIGNAL(triggered()),

@@ -3025,7 +3025,7 @@
      <x>0</x>
      <y>0</y>
      <width>873</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -3078,6 +3078,7 @@
     <addaction name="actionScan_section"/>
     <addaction name="actionLog_section"/>
     <addaction name="actionVulnerabilities_section"/>
+    <addaction name="actionSection_Discover"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
@@ -3684,6 +3685,15 @@
    </property>
    <property name="text">
     <string>Report a bug</string>
+   </property>
+  </action>
+  <action name="actionSection_Discover">
+   <property name="icon">
+    <iconset resource="../mainwin.qrc">
+     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Section Discover</string>
    </property>
   </action>
  </widget>
