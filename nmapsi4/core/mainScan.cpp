@@ -25,6 +25,11 @@ void nmapClass::startScan()
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
     }
+    
+    if(!monitorElemHost.size()) {
+	// clear details QHash
+	scanHashListFlow.clear();
+    }
 
     QString hostname = hostEdit->currentText();
     // check wrong address
