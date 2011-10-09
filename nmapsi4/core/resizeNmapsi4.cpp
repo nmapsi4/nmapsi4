@@ -22,30 +22,39 @@
 void nmapClass::checkFullScreen()
 {
 
-    if (isFullScreen()) {
+    if (isFullScreen()) 
+    {
         setWindowState(windowState() & ~Qt::WindowFullScreen );
         actionFullS->setChecked(false);
-    } else {
-	setWindowState(windowState() | Qt::WindowFullScreen );
+    } 
+    else 
+    {
+        setWindowState(windowState() | Qt::WindowFullScreen );
         actionFullS->setChecked(true);
     }
 }
 
 void nmapClass::updateMenuBar()
 {
-    if (actionMenuBar->isChecked()) {
-	menuBar()->setVisible(true);
-    } else {
-	menuBar()->setVisible(false);
+    if (actionMenuBar->isChecked()) 
+    {
+        menuBar()->setVisible(true);
+    } 
+    else 
+    {
+        menuBar()->setVisible(false);
     }
 }
 
 void nmapClass::showStatusBar()
 {
-    if (statusbar->isVisible()) {
+    if (statusbar->isVisible()) 
+    {
         statusbar->setVisible(false);
         actionShow_Status_Bar->setChecked(false);
-    } else {
+    } 
+    else 
+    {
         statusbar->setVisible(true);
         actionShow_Status_Bar->setChecked(true);
     }
@@ -53,16 +62,25 @@ void nmapClass::showStatusBar()
 
 void nmapClass::optionListUpdate() 
 {
-    if (scanW->isSelected()) {
-	stackedOptions->setCurrentIndex(0);
-    } else if (toolW->isSelected()) {
-	stackedOptions->setCurrentIndex(4);
-    } else if (discoverW->isSelected()) {
-	stackedOptions->setCurrentIndex(1);
-    } else if (fileW->isSelected()) {
-	stackedOptions->setCurrentIndex(2);
-    } else if (timingW->isSelected()) {
-	stackedOptions->setCurrentIndex(3);
+    if (scanW->isSelected()) 
+    {
+        stackedOptions->setCurrentIndex(0);
+    } 
+    else if (toolW->isSelected()) 
+    {
+        stackedOptions->setCurrentIndex(4);
+    } 
+    else if (discoverW->isSelected()) 
+    {
+        stackedOptions->setCurrentIndex(1);
+    } 
+    else if (fileW->isSelected()) 
+    {
+        stackedOptions->setCurrentIndex(2);
+    } 
+    else if (timingW->isSelected()) 
+    {
+        stackedOptions->setCurrentIndex(3);
     }
 }
 
@@ -91,7 +109,7 @@ void nmapClass::optionListCreate()
     timingW->setText(tr("Timing"));
     
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
-	  this, SLOT(optionListUpdate()));
-	
+         this, SLOT(optionListUpdate()));
+
     scanW->setSelected(true);
 }

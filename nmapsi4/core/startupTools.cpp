@@ -34,19 +34,26 @@ void nmapClass::checkNmapVersion()
     hostEdit->setEnabled(true);
     
     labelVersion = new QLabel();
+    // FIXME
     QString versionNmap_;
     versionNmap_.append("<b>Ui</b>: ");
     versionNmap_.append(_VERSION_);
     labelVersion->setText(versionNmap_);
     
     userMode = new QLabel();
+    // FIXME
     QString userModeString;
     userModeString.prepend(tr("<b>Mode:</b> "));
-    if (!uid) {
+    
+    if (!uid) 
+    {
         userModeString.append(tr("Full"));
-    } else {
+    } 
+    else 
+    {
         userModeString.append(tr("User"));
     }
+    
     userMode->setText(userModeString);
     
     statusBar()->setLayoutDirection(Qt::RightToLeft);
@@ -62,7 +69,8 @@ void nmapClass::exit()
     memTools->itemDeleteAll(digLookupList);
     delete memTools;
     
-    if (FileName != NULL) {
+    if (FileName != NULL) 
+    {
 
         QFile *tmpFile = new QFile();
         QString newFile = logPath;
@@ -71,24 +79,23 @@ void nmapClass::exit()
         newFile.append(FileName);
         tmpFile->setFileName(newFile);
 
-        if ((checkLog) && (tmpFile->exists())) {
+        if ((checkLog) && (tmpFile->exists())) 
+	{
             tmpFile->close();
             this->isEmptyLog();
-        } else
-            if ((!checkLog) && (tmpFile->exists())) { // if log check is disable but the file exist
+        } 
+        else if ((!checkLog) && (tmpFile->exists())) 
+	{ // if log check is disable but the file exist
                 tmpFile->close();
                 tmpFile->remove();
-#ifndef TOOLS_NO_DEBUG
-                qDebug() << "nmapsi4/core --> deleteLog::true";
-#endif
-            }
+        }
 
         delete tmpFile;
     }
 
     // Save window size and position and NSS info
     saveUiSettings();
-    this->close();
+    close();
 }
 
 void nmapClass::stop_scan()

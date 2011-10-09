@@ -25,7 +25,8 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
     qDebug() << "scanLookup::flag:: " << state;
 #endif
 
-    if(state == -1) {
+    if(state == -1) 
+    {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         this->delMonitorHost(scanMonitor,hostname);
         return;
@@ -39,7 +40,8 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
 
     elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();
-    for(int index=0; index < infoSize_; index++) {
+    for(int index=0; index < infoSize_; index++) 
+    {
 #ifndef MAIN_NO_DEBUG
         qDebug() << "scanLookup::Found address:: " << info.addresses()[index].toString();
 #endif
@@ -68,22 +70,26 @@ QString nmapClass::clearHost(const QString hostname)
     // check for wrong dns address
     // (http:// ftp:// sftp:// https://)[dns/ip]
     QString hostNew_(hostname);
-    if(hostname.startsWith(QLatin1String("http://"))) {
+    if(hostname.startsWith(QLatin1String("http://"))) 
+    {
         hostNew_.remove("http://");
         return hostNew_;
     }
 
-    if(hostname.startsWith(QLatin1String("https://"))) {
+    if(hostname.startsWith(QLatin1String("https://"))) 
+    {
         hostNew_.remove("https://");
         return hostNew_;
     }
 
-    if(hostname.startsWith(QLatin1String("ftp://"))) {
+    if(hostname.startsWith(QLatin1String("ftp://"))) 
+    {
         hostNew_.remove("ftp://");
         return hostNew_;
     }
 
-    if(hostname.startsWith(QLatin1String("sftp://"))) {
+    if(hostname.startsWith(QLatin1String("sftp://"))) 
+    {
         hostNew_.remove("sftp://");
         return hostNew_;
     }

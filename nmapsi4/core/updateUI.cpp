@@ -21,7 +21,8 @@
 
 void nmapClass::update_portCombo() 
 {
-    switch (portCombo->currentIndex()) {
+    switch (portCombo->currentIndex()) 
+    {
     case 0:
 //    Normal
         portEdit->setEnabled(false);
@@ -47,7 +48,8 @@ void nmapClass::update_portCombo()
 
 void nmapClass::update_scanCombo() 
 {
-    switch (comboScan->currentIndex()) {
+    switch (comboScan->currentIndex()) 
+    {
     case 0:
 //    Connect Scan
         bounceEdit->setEnabled(false);
@@ -113,7 +115,8 @@ void nmapClass::update_scanCombo()
 
 void nmapClass::rootMode() 
 {
-    if (!uid) { // if root
+    if (!uid) 
+    { // if root
         comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
         comboScan->addItem(QApplication::translate("nmapClass", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
         comboScan->addItem(QApplication::translate("nmapClass", "ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
@@ -127,7 +130,9 @@ void nmapClass::rootMode()
 
         comboScan->setCurrentIndex(5);
 
-    } else {
+    } 
+    else 
+    {
         checkIcmpEcho->setVisible(false);
         checkIcmpTimestamp->setVisible(false);
         checkIcmpNetmask->setVisible(false);
@@ -149,12 +154,15 @@ void nmapClass::rootMode()
 
 void nmapClass::update_inputcheck() 
 {
-    if (checkInputFile->isChecked()) {
+    if (checkInputFile->isChecked()) 
+    {
         lineInputFile->setEnabled(true);
         buttonBrowser->setEnabled(true);
         lineInputFile->clear();
         hostEdit->clear();
-    } else {
+    } 
+    else 
+    {
         lineInputFile->setEnabled(false);
         buttonBrowser->setEnabled(false);
         lineInputFile->clear();
@@ -166,26 +174,35 @@ void nmapClass::update_inputcheck()
 
 void nmapClass::update_discover() 
 {
-    if (checkTcpPing->isChecked()) {
+    if (checkTcpPing->isChecked()) 
+    {
         lineTcpPing->setEnabled(true);
         lineTcpPing->clear();
-    } else {
+    } 
+    else 
+    {
         lineTcpPing->setEnabled(false);
         lineTcpPing->clear();
     }
 
-    if (checkTcpSyn->isChecked()) {
+    if (checkTcpSyn->isChecked()) 
+    {
         lineSynPing->setEnabled(true);
         lineSynPing->clear();
-    } else {
+    } 
+    else 
+    {
         lineSynPing->setEnabled(false);
         lineSynPing->clear();
     }
 
-    if (checkUdpPing->isChecked()) {
+    if (checkUdpPing->isChecked()) 
+    {
         lineUdpPing->setEnabled(true);
         lineUdpPing->clear();
-    } else {
+    } 
+    else 
+    {
         lineUdpPing->setEnabled(false);
         lineUdpPing->clear();
     }
@@ -237,35 +254,47 @@ void nmapClass::update_timing()
 void nmapClass::update_options() 
 {
     if (checkBoxDevice->isChecked())
+    {
         OlineDevice->setEnabled(true);
-    else {
+    }
+    else 
+    {
         OlineDevice->setEnabled(false);
         OlineDevice->clear();
     }
 
     if (checkDecoy->isChecked())
+    {
         lineDecoy->setEnabled(true);
-    else {
+    }
+    else 
+    {
         lineDecoy->setEnabled(false);
         lineDecoy->clear();
     }
 
-    if (checkSpoof->isChecked()) {
+    if (checkSpoof->isChecked()) 
+    {
         lineEditSpoof->setEnabled(true);
         comboScan->setCurrentIndex(0);
         notpingBox->setChecked(true);
         checkBoxDevice->setChecked(true);
-    } else {
+    } 
+    else 
+    {
         lineEditSpoof->setEnabled(false);
         lineEditSpoof->clear();
         checkBoxDevice->setCheckState(Qt::Unchecked);
         notpingBox->setChecked(false);
     }
 
-    if (checkSourcePort->isChecked()) {
+    if (checkSourcePort->isChecked()) 
+    {
         lineSourcePort->setEnabled(true);
         comboScan->setCurrentIndex(5);
-    } else {
+    } 
+    else 
+    {
         lineSourcePort->setEnabled(false);
         lineSourcePort->clear();
     }
@@ -321,7 +350,8 @@ void nmapClass::bookOptionsPar()
 void nmapClass::updateIconsBox() 
 {
     int tmpBox = SWscan->currentIndex();
-    switch (tmpBox) {
+    switch (tmpBox) 
+    {
     case 0:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 	break;
@@ -383,17 +413,20 @@ void nmapClass::updateSezScan()
     toolBarSearch->setVisible(false);
     toolBarBook->setVisible(true);
     
-    if (!tabScan->isVisible()) {
+    if (!tabScan->isVisible()) 
+    {
 	tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
 	tabUi->setCurrentIndex(0);
     }
     
-    if (!tabSOpt->isVisible()) {
+    if (!tabSOpt->isVisible()) 
+    {
 	tabUi->insertTab(tabUi->count(),tabSOpt,tr("Scan Options"));
 	tabUi->setTabIcon(tabUi->indexOf(tabSOpt),QIcon(QString::fromUtf8(":/images/images/tool.png")));
     }
     
-    if (!tabNseOpt->isVisible()) {
+    if (!tabNseOpt->isVisible()) 
+    {
 	tabUi->insertTab(tabUi->count(),tabNseOpt,tr("Nse Options"));
 	tabUi->setTabIcon(tabUi->indexOf(tabNseOpt),QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     }
@@ -404,7 +437,8 @@ void nmapClass::updateSezScan()
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     // enable scan action
-    if (!nssAct->isVisible()) {
+    if (!nssAct->isVisible()) 
+    {
 	parAct->setVisible(true);
 	nssAct->setVisible(true);
     }
@@ -417,7 +451,7 @@ void nmapClass::updateSezLog()
     vulnSez->setChecked(false);
     discoverSez->setChecked(false);
     // main and action bar only in scan index
-    toolBar->setVisible(false);	
+    toolBar->setVisible(false);
     toolBar_2->setVisible(false);
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
@@ -488,11 +522,14 @@ void nmapClass::updateDiscoverVuln()
 
 void nmapClass::NSSCheck() 
 { // SLOT
-   if (nssAct->isChecked()) {
+   if (nssAct->isChecked()) 
+   {
        NSSsupport = true;
        Bnss->setVisible(true);
        resetPar();
-   } else {
+   } 
+   else 
+   {
        // check for nse combo
        nseComboScript->setCurrentIndex(0);
        NSSsupport = false;
@@ -523,13 +560,16 @@ void nmapClass::setTreeWidgetValues()
 
 void nmapClass::parAdv() 
 {
-    if (parAct->isChecked()) {
+    if (parAct->isChecked()) 
+    {
         optionAccept->setVisible(true);
         frameAdv->setVisible(true);
         ADVSupport = true;
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
         comboAdv->insertItem(0, check_extensions().join(" "));
-    } else {
+    } 
+    else 
+    {
         optionAccept->setVisible(false);
         frameAdv->setVisible(false);
         ADVSupport = false;
@@ -549,7 +589,8 @@ void nmapClass::updateComboPar()
     comboPar->insertItem(0, "Select Profile");
     
     // value from treeWidget parameters
-    for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
+    for(int index=0; index < treeBookPar->topLevelItemCount(); index++) 
+    {
         comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(1));
     }
     
@@ -557,7 +598,8 @@ void nmapClass::updateComboPar()
     // insert default static profile
     QHash<QString, QString> tmpStaticProfile_ = defaultScanProfile(); 
     QHash<QString, QString>::const_iterator i;
-    for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i) {
+    for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i) 
+    {
 	comboPar->insertItem(1, i.key());
     }
 }
@@ -567,18 +609,22 @@ void nmapClass::updateComboBook()
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
 
-    for(int index=0; index < treeLogH->topLevelItemCount(); index++) {
+    for(int index=0; index < treeLogH->topLevelItemCount(); index++) 
+    {
         comboHostBook->insertItem(1, treeLogH->topLevelItem(index)->text(0));
     }
 }
 
 void nmapClass::updateTabLook() 
 {
-    if (actTabLook->isChecked()) {
+    if (actTabLook->isChecked()) 
+    {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
         LookupEnabled = true;
-    } else {
+    } 
+    else 
+    {
         LookupEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_3));
     }
@@ -586,11 +632,14 @@ void nmapClass::updateTabLook()
 
 void nmapClass::updateTabTrace() 
 {
-    if (actTabTrace->isChecked()) {
+    if (actTabTrace->isChecked()) 
+    {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
         TraceEnabled = true;
-    } else {
+    } 
+    else 
+    {
         TraceEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
     }
@@ -598,11 +647,14 @@ void nmapClass::updateTabTrace()
 
 void nmapClass::updateTabMonitor() 
 {
-    if (actTabMonitor->isChecked() && tabUi->count() < 4) {
+    if (actTabMonitor->isChecked() && tabUi->count() < 4) 
+    {
         tabUi->insertTab(tabUi->count(),tabMainMonitor,tr("Scan Monitor"));
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
         MonitorEnabled = true;
-    } else if (!actTabMonitor->isChecked()) {
+    } 
+    else if (!actTabMonitor->isChecked()) 
+    {
         tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
         MonitorEnabled = false;
     }

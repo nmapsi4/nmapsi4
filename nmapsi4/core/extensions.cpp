@@ -23,73 +23,92 @@ QStringList nmapClass::check_extensions()
 {
     QStringList parametri;
 
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(10); // start progress bar
     }
 
-    if(NSSsupport) {
+    if(NSSsupport) 
+    {
         parametri << "-A";
-    } else {
-	if (!uid) {
-	    parametri << "--traceroute";
-	}
+    } 
+    else 
+    {
+        if (!uid) 
+        {
+            parametri << "--traceroute";
+        }
     }
     
-    if (nseComboScript->currentIndex()) {
-	//set --script "xx,xx"
-	if (parametri.contains("-A")) {
-	    parametri.removeAll("-A");
-	    if (!uid) {
-		parametri << "--traceroute";
-	    }
-	}
-	QString tmpListScript_ = ("--script=");
-	QString tmpListParam_ = ("--script-args=");
-	QString tmpList_("");
-	QString tmpListArgs_("");
+    if (nseComboScript->currentIndex()) 
+    {
+        //set --script "xx,xx"
+        if (parametri.contains("-A")) 
+        {
+            parametri.removeAll("-A");
+            if (!uid) 
+            {
+                parametri << "--traceroute";
+            }
+        }
+        QString tmpListScript_("--script=");
+        QString tmpListParam_("--script-args=");
+        QString tmpList_;
+        QString tmpListArgs_;
 
-	if (nseScriptActiveList.size()) {
-	  foreach (const QString &token, nseScriptActiveList) {
-	      tmpList_.append(token);
-	      tmpList_.append(",");
-	  }
-	}
-	// load nse manual script
-	if (!comboNseInv->lineEdit()->text().isEmpty()) {
-	  QStringList manualNse_ = comboNseInv->lineEdit()->text().split(',');
-	  foreach (const QString &token, manualNse_) {
-	    tmpList_.append(token);
-	    tmpList_.append(",");
-	  }
-	}
-	
-	if (tmpList_.size()) {
-	  tmpList_.remove(' ');
-	  tmpList_.resize(tmpList_.size()-1);
-	  tmpListScript_.append(tmpList_);
-	} else {
-	  tmpListScript_.clear();
-	  tmpListScript_.append("-sC");
-	}
-	
-	if (!comboNsePar->lineEdit()->text().isEmpty()) {
-	  QString argsClean_ = comboNsePar->lineEdit()->text().remove('"');
-	  argsClean_ = argsClean_.remove('\'');
-	  QStringList argsNse_ = argsClean_.split(',');
-	  foreach (const QString &token, argsNse_) {
-	    tmpListArgs_.append(token);
-	    tmpListArgs_.append(",");
-	  }
-	}
-	
-	if (tmpListArgs_.size()) {
-	  tmpListArgs_.remove(' ');
-	  tmpListArgs_.resize(tmpListArgs_.size()-1);
-	  tmpListParam_.append(tmpListArgs_);
-	  parametri << tmpListParam_;
-	}
-	
-	parametri << tmpListScript_;
+        if (nseScriptActiveList.size())
+        {
+            foreach (const QString &token, nseScriptActiveList)
+            {
+                tmpList_.append(token);
+                tmpList_.append(",");
+            }
+        }
+        
+        // load nse manual script
+        if (!comboNseInv->lineEdit()->text().isEmpty())
+        {
+            QStringList manualNse_ = comboNseInv->lineEdit()->text().split(',');
+            foreach (const QString &token, manualNse_)
+            {
+                tmpList_.append(token);
+                tmpList_.append(",");
+            }
+        }
+
+        if (tmpList_.size())
+        {
+            tmpList_.remove(' ');
+            tmpList_.resize(tmpList_.size()-1);
+            tmpListScript_.append(tmpList_);
+        }
+        else
+        {
+            tmpListScript_.clear();
+            tmpListScript_.append("-sC");
+        }
+
+        if (!comboNsePar->lineEdit()->text().isEmpty())
+        {
+            QString argsClean_ = comboNsePar->lineEdit()->text().remove('"');
+            argsClean_ = argsClean_.remove('\'');
+            QStringList argsNse_ = argsClean_.split(',');
+            foreach (const QString &token, argsNse_)
+            {
+                tmpListArgs_.append(token);
+                tmpListArgs_.append(",");
+            }
+        }
+
+        if (tmpListArgs_.size())
+        {
+            tmpListArgs_.remove(' ');
+            tmpListArgs_.resize(tmpListArgs_.size()-1);
+            tmpListParam_.append(tmpListArgs_);
+            parametri << tmpListParam_;
+        }
+
+        parametri << tmpListScript_;
     }
 
     switch (comboScan->currentIndex()) { //scan check
@@ -107,12 +126,15 @@ QStringList nmapClass::check_extensions()
         break;
     case 3:
 //    FTP Bounce Attack
-        if ((bounceEdit->text()).isEmpty()) {
+        if ((bounceEdit->text()).isEmpty()) 
+        {
             QMessageBox::warning(this, "NmapSI4", tr("No Ftp Address \n"), tr("Disable Ftp bounce"));
             comboScan->setCurrentIndex(0);
             bounceEdit->setEnabled(false);
             parametri << "-sT";
-        } else {
+        } 
+        else 
+        {
             parametri << "-b";
             parametri << bounceEdit->text();
         }
@@ -165,7 +187,8 @@ QStringList nmapClass::check_extensions()
 
     }
 
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(15);
     }
 
@@ -184,11 +207,13 @@ QStringList nmapClass::check_extensions()
         parametri << "-O";
     //end Extension
 
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(20);
     }
 
-    switch (portCombo->currentIndex()) { // port combo check
+    switch (portCombo->currentIndex()) 
+    { // port combo check
     case 1:
 //    All
         parametri << "-p-";
@@ -199,58 +224,83 @@ QStringList nmapClass::check_extensions()
         break;
     case 3:
 //    Range
-        if (!portEdit->text().isEmpty()) {
+        if (!portEdit->text().isEmpty()) 
+        {
             parametri << "-p";
             parametri << portEdit->text();
-        } else
+        } 
+        else
+        {
             QMessageBox::warning(this, "NmapSI4", tr("No Ports Range (ex: 20-80)\n"), tr("Close"));
+        }
     default:
         break;
     }
 
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(30);
     }
 
-    if (checkInputFile->isChecked()) { // File options
-        if (!lineInputFile->text().isEmpty()) {
+    if (checkInputFile->isChecked()) 
+    { // File options
+        if (!lineInputFile->text().isEmpty()) 
+        {
             parametri << "-iL";
             parametri << lineInputFile->text();
-        } else
+        } 
+        else
+        {
             QMessageBox::warning(this, "NmapSI4", tr("no input file\n"), tr("Normal Scan"));
+        }
     }
 
-    if (checkTcpPing->isChecked()) { // Discover options (tcp ack)
-        if (!lineTcpPing->text().isEmpty()) {
+    if (checkTcpPing->isChecked()) 
+    { // Discover options (tcp ack)
+        if (!lineTcpPing->text().isEmpty()) 
+        {
             QString tmpCommand;
             tmpCommand.append("-PT");
             tmpCommand.append(lineTcpPing->text());
             parametri << tmpCommand;
 
-        } else
+        } 
+        else
+        {
             QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
+        }
     }
 
-    if (checkTcpSyn->isChecked()) { // Discover options (tcp syn)
-        if (!lineSynPing->text().isEmpty()) {
+    if (checkTcpSyn->isChecked()) 
+    { // Discover options (tcp syn)
+        if (!lineSynPing->text().isEmpty()) 
+        {
             QString tmpCommand;
             tmpCommand.append("-PS");
             tmpCommand.append(lineSynPing->text());
             parametri << tmpCommand;
 
-        } else
+        } 
+        else
+        {
             QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
+        }
     }
 
-    if (checkUdpPing->isChecked()) { // Discover options (tcp syn)
-        if (!lineUdpPing->text().isEmpty()) {
+    if (checkUdpPing->isChecked()) 
+    { // Discover options (tcp syn)
+        if (!lineUdpPing->text().isEmpty()) 
+        {
             QString tmpCommand;
             tmpCommand.append("-PU");
             tmpCommand.append(lineUdpPing->text());
             parametri << tmpCommand;
 
-        } else
+        } 
+        else
+        {
             QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
+        }
     }
 
     if (checkIcmpEcho->isChecked()) // Discover option
@@ -260,7 +310,8 @@ QStringList nmapClass::check_extensions()
     if (checkIcmpNetmask->isChecked()) // Discover option
         parametri << "-PM";
 
-    switch (comboTiming->currentIndex()) { // port combo Timing
+    switch (comboTiming->currentIndex()) 
+    { // port combo Timing
     case 1:
 //    Paranoid
         parametri << "-T0";
@@ -285,7 +336,8 @@ QStringList nmapClass::check_extensions()
         break;
     }
 
-    switch (comboDNSResolv->currentIndex()) { // port DNS resolv
+    switch (comboDNSResolv->currentIndex()) 
+    { // port DNS resolv
     case 1:
 //    Always
         parametri << "-R";
@@ -298,7 +350,8 @@ QStringList nmapClass::check_extensions()
         break;
     }
 
-    switch (comboVerbosity->currentIndex()) { // port DNS resolv
+    switch (comboVerbosity->currentIndex()) 
+    { // port DNS resolv
     case 1:
 //    Verbose
         parametri << "-v";
@@ -326,96 +379,122 @@ QStringList nmapClass::check_extensions()
     if (checkFrag->isChecked())
         parametri << "-f"; // Ipv6
 
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(50);
     }
 
     // Timing options
-    if (TcheckIpv4ttl->isChecked()) {
+    if (TcheckIpv4ttl->isChecked()) 
+    {
         parametri << "--ttl";
         parametri << spinBoxIpv4ttl->text();
     }
 
-    if (TcheckMinPar->isChecked()) {
+    if (TcheckMinPar->isChecked()) 
+    {
         parametri << "--min_parallelism";
         parametri << TspinBoxMinP->text();
     }
 
-    if (TcheckMaxPar->isChecked()) {
+    if (TcheckMaxPar->isChecked()) 
+    {
         parametri << "--max_parallelism";
         parametri << spinBoxMaxPar->text();
     }
 
-    if (TcheckInitRtt->isChecked()) {
+    if (TcheckInitRtt->isChecked()) 
+    {
         parametri << "--initial_rtt_timeout";
         parametri << spinBoxInitRtt->text();
     }
 
-    if (TcheckMinRtt->isChecked()) {
+    if (TcheckMinRtt->isChecked()) 
+    {
         parametri << "--min_rtt_timeout";
         parametri << spinBoxMinRtt->text();
     }
 
-    if (TcheckMaxRtt->isChecked()) {
+    if (TcheckMaxRtt->isChecked()) 
+    {
         parametri << "--max_rtt_timeout";
         parametri << spinBoxMaxRtt->text();
     }
 
-    if (TcheckHostTime->isChecked()) {
+    if (TcheckHostTime->isChecked()) 
+    {
         parametri << "--host_timeout";
         parametri << spinBoxHostTime->text();
     }
 
-    if (TcheckScanDelay->isChecked()) {
+    if (TcheckScanDelay->isChecked()) 
+    {
         parametri << "--scan_delay";
         parametri << spinBoxScanDelay->text();
     }
 
     //Options
-    if (checkBoxDevice->isChecked()) { // Discover options (tcp syn)
-        if (!OlineDevice->text().isEmpty()) {
+    if (checkBoxDevice->isChecked()) 
+    { // Discover options (tcp syn)
+        if (!OlineDevice->text().isEmpty()) 
+        {
             parametri << "-e";
             parametri << OlineDevice->text();
 
-        } else {
+        } 
+        else 
+        {
             QMessageBox::warning(this, "NmapSI4", "Please, first insert a Device\n", "Disable Option");
             checkBoxDevice->setCheckState(Qt::Unchecked);
         }
     }
 
-    if (checkDecoy->isChecked()) { // Discover options (tcp syn)
-        if (!lineDecoy->text().isEmpty()) {
+    if (checkDecoy->isChecked()) 
+    { // Discover options (tcp syn)
+        if (!lineDecoy->text().isEmpty()) 
+        {
             parametri << "-D";
             parametri << lineDecoy->text();
 
-        } else {
+        } 
+        else 
+        {
             QMessageBox::warning(this, "NmapSI4", "Please, first insert a Decoy\n", "Disable Option");
             checkDecoy->setCheckState(Qt::Unchecked);
         }
     }
 
-    if (checkSpoof->isChecked()) { // Spoof options
-        if (!lineEditSpoof->text().isEmpty()) {
+    if (checkSpoof->isChecked()) 
+    { // Spoof options
+        if (!lineEditSpoof->text().isEmpty()) 
+        {
             parametri << "-S";
             parametri << lineEditSpoof->text();
 
-        } else {
+        } 
+        else 
+        {
             QMessageBox::warning(this, "NmapSI4", "Please, insert spoof address\n", "Disable Option");
             checkSpoof->setCheckState(Qt::Unchecked);
         }
     }
 
-    if (checkSourcePort->isChecked()) { // Spoof options
-        if (!lineSourcePort->text().isEmpty()) {
+    if (checkSourcePort->isChecked()) 
+    { // Spoof options
+        if (!lineSourcePort->text().isEmpty()) 
+        {
             parametri << "-g";
             parametri << lineSourcePort->text();
 
-        } else {
+        } 
+        else 
+        {
             QMessageBox::warning(this, "NmapSI4", "Please, insert port address\n", "Disable Option");
             checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }
-    if(scanCounter) {
+    if(scanCounter) 
+    {
         progressScan->setValue(55);
     }
     

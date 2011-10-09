@@ -50,15 +50,17 @@ void nmapClass::show_log_browserUrl(const QString url, QLineEdit *location)
     FileName = QFileDialog::getExistingDirectory(this, "Open Directory",
                url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-    if(FileName.isEmpty()) {
+    if(FileName.isEmpty()) 
+    {
         FileName.append(QDir::tempPath());
     }
+    
     location->setText(FileName);
 }
 
 void nmapClass::input_browser()
 {
-    this->show_browser(lineInputFile);
+    show_browser(lineInputFile);
 }
 
 void nmapClass::show_bugUrl() 

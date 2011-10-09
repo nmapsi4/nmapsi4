@@ -23,12 +23,17 @@
 void nmapClass::saveUiSettings() 
 {    
     QSettings settings("nmapsi4", "nmapsi4");
-    if(savePos) {
+
+    if(savePos) 
+    {
         settings.setValue("window/pos", pos());
     }
-    if(saveSize) {
+    
+    if(saveSize) 
+    {
         settings.setValue("window/size", size());
     }
+    
     settings.setValue("NSSsupport", NSSsupport);
     settings.setValue("ADVSupport", ADVSupport);
     settings.setValue("MonitorEnabled", MonitorEnabled);
@@ -39,49 +44,64 @@ void nmapClass::saveUiSettings()
     settings.setValue("globalProfile", globalProfile); // default value
     settings.setValue("nseComboScript", nseComboScript->currentIndex()); // default value
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
-    if (nseScriptActiveList.isEmpty()) {
-	settings.setValue("nseScriptActiveList","");
-    } else {
-	settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
+    
+    if (nseScriptActiveList.isEmpty()) 
+    {
+        settings.setValue("nseScriptActiveList","");
+    } 
+    else 
+    {
+        settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
     }
     
-    if (nseScriptAvailList.isEmpty()) {
-	settings.setValue("nseScriptAvailList", "");
-    } else {
-	settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
+    if (nseScriptAvailList.isEmpty()) 
+    {
+        settings.setValue("nseScriptAvailList", "");
+    } 
+    else 
+    {
+        settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
     }
     
 // check and reset for settings file permission
 #ifndef Q_WS_WIN
-    if (!uid) {
-	QString settingsFile_ = settings.fileName();
-	QFileInfo fiS_(settingsFile_);
-	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
-	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
-		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
-	}
+    if (!uid) 
+    {
+        QString settingsFile_ = settings.fileName();
+        QFileInfo fiS_(settingsFile_);
+        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) 
+        {
+             QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+                QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+        }
     }
 #endif
     
 #ifndef Q_WS_WIN
-    if (!uid) {
-	QSettings settings2("nmapsi4", "nmapsi4_bookmark");
-	QString settingsFile_ = settings2.fileName();
-	QFileInfo fiS_(settingsFile_);
-	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
-	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
-		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
-	}
+    if (!uid) 
+    {
+        QSettings settings2("nmapsi4", "nmapsi4_bookmark");
+        QString settingsFile_ = settings2.fileName();
+        QFileInfo fiS_(settingsFile_);
+	
+        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) 
+        {
+            QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+                QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+        }
     }
 
-    if (!uid) {
-	QSettings settings3("nmapsi4", "nmapsi4_gprofile");
-	QString settingsFile_ = settings3.fileName();
-	QFileInfo fiS_(settingsFile_);
-	if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) {
-	    QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
-		QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
-	}
+    if (!uid) 
+    {
+        QSettings settings3("nmapsi4", "nmapsi4_gprofile");
+        QString settingsFile_ = settings3.fileName();
+        QFileInfo fiS_(settingsFile_);
+	
+        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId())) 
+        {
+           QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther | 
+               QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+        }
     }
 #endif
 }
