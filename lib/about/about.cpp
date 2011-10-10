@@ -19,14 +19,16 @@
 
 #include "about.h"
 
-mainAbout::mainAbout() {
+mainAbout::mainAbout() 
+{
     setupUi(this);
     QString version = labelVersion->text();
     version.append(_VERSION_);
     labelVersion->setText(version);
 }
 
-void mainAbout::qt() {
+void mainAbout::qt() 
+{
     QMessageBox::aboutQt(this, "Qt Version");
 }
 

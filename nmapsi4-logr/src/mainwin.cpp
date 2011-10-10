@@ -75,25 +75,21 @@ void mwClass::logReader()
 {
 
     if (url.isEmpty())
+    {
         return;
+    }
 
-#ifndef LOGR_NO_DEBUG
-    qDebug() << "Path Current Item::" << url;
-#endif
-
-    //logHistory *history = new logHistory(logTree,"logReader/urlList");
     logHistory *history = new logHistory(logTree, "logReader/urlList", "logReader/urlListTime", nHost);
     history->addItemHistory(url, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
-    if (!logF) logF = new QFile();
-#ifndef LOGR_NO_DEBUG
-    qDebug() << "nmapsi4-logr:: --> url::" << url;
-#endif
+    if (!logF) 
+    { 
+        logF = new QFile();
+    }
+    
     logF->setFileName(url);
-    if (!logF->open(QIODevice::ReadOnly)) {
-#ifndef LOGR_NO_DEBUG
-        qDebug() << "Log File open error." << endl;
-#endif
+    if (!logF->open(QIODevice::ReadOnly)) 
+    {
         return;
     }
 
@@ -102,20 +98,25 @@ void mwClass::logReader()
 
     treeLogView->setIconSize(QSize(32, 32));
 
-    while (!buffer.atEnd()) {
+    while (!buffer.atEnd()) 
+    {
         tmpLine = buffer.readLine();
 
-        if (tmpLine.contains("==LogStart")) {
+        if (tmpLine.contains("==LogStart"))
+        {
             tmpLine = buffer.readLine();
-            if (!(treeLogView->findItems(tmpLine, Qt::MatchFixedString, 0)).size()) {
+            if (!(treeLogView->findItems(tmpLine, Qt::MatchFixedString, 0)).size())
+            {
                 root = new QTreeWidgetItem(treeLogView);
                 ItemList.push_front(root);
                 root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
                 root->setText(0, tmpLine);
-                while (!tmpLine.contains("==LogEnd")) {
+                while (!tmpLine.contains("==LogEnd"))
+                {
                     tmpLine = buffer.readLine();
 
-                    if (!tmpLine.contains("==LogEnd") && !tmpLine.isEmpty()) {
+                    if (!tmpLine.contains("==LogEnd") && !tmpLine.isEmpty())
+                    {
                         item = new QTreeWidgetItem(root);
                         ItemList.push_front(item);
                         item->setText(0, tmpLine);
@@ -135,5 +136,4 @@ mwClass::~mwClass()
 {
     itemDeleteAll(ItemList);
     delete cW;
-    //delete logF;
 }

@@ -33,47 +33,54 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
 
     urlList = historyReadUrl();
     if (!scanTime.isNull())
+    {
         urlListTime = historyReadUrlTime();
+    }
 
-    if (urlList.contains("NULL") /*&& urlListTime.contains("NULL")*/) {
+    if (urlList.contains("NULL")) 
+    {
         urlList.removeFirst();
         urlList.append(url);
         settings.setValue(configTag, QVariant(urlList));
-        if (!scanTime.isNull()) {
+        if (!scanTime.isNull()) 
+        {
             urlListTime.removeFirst();
             urlListTime.append(scanTime);
             settings.setValue(configTagTime, QVariant(urlListTime));
         }
-    } else {
-        if (((urlList.size() == __CACHE_SIZE__) && (__CACHE_SIZE__ != -1)) && (!urlList.contains(url)))  {
-            urlList.removeLast();
-            urlList.push_front(url);
-            settings.setValue(configTag, QVariant(urlList));
-            if (!scanTime.isNull()) {
-                urlListTime.removeLast();
-                urlListTime.push_front(scanTime);
-                settings.setValue(configTagTime, QVariant(urlListTime));
-            }
-        } else {
-            if (!urlList.contains(url)) {
-                urlList.push_front(url);
-                settings.setValue(configTag, QVariant(urlList));
-                if (!scanTime.isNull()) {
-                    urlListTime.push_front(scanTime);
-                    settings.setValue(configTagTime, QVariant(urlListTime));
-                }
-            } else {
-                if (!scanTime.isNull()) {
-#ifndef HISTORY_NO_DEBUG
-                    qDebug() << "Update date row..";
-#endif
-                    int index = urlList.indexOf(url);
-                    urlListTime[index].clear();
-		    urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-                    settings.setValue(configTagTime, QVariant(urlListTime));
-                }
-            }
+    } 
+    else if (((urlList.size() == __CACHE_SIZE__)
+              && (__CACHE_SIZE__ != -1))
+             && (!urlList.contains(url)))
+    {
+        urlList.removeLast();
+        urlList.push_front(url);
+        settings.setValue(configTag, QVariant(urlList));
+
+        if (!scanTime.isNull())
+        {
+            urlListTime.removeLast();
+            urlListTime.push_front(scanTime);
+            settings.setValue(configTagTime, QVariant(urlListTime));
         }
+    }
+    else if (!urlList.contains(url)) 
+    {
+        urlList.push_front(url);
+        settings.setValue(configTag, QVariant(urlList));
+
+        if (!scanTime.isNull())
+        {
+            urlListTime.push_front(scanTime);
+            settings.setValue(configTagTime, QVariant(urlListTime));
+        }
+    } 
+    else if (!scanTime.isNull())
+    {
+        int index = urlList.indexOf(url);
+        urlListTime[index].clear();
+        urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+        settings.setValue(configTagTime, QVariant(urlListTime));
     }
 }
 

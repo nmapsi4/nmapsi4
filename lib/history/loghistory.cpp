@@ -19,12 +19,11 @@
 
 #include "loghistory.h"
 
-logHistory::logHistory(QTreeWidget* treeLog,
+logHistory::logHistory(QTreeWidget* treeLog, 
                        const QString ConfigTag,
                        const QString ConfigTagTime,
-                       int cacheSize) : historyItem(NULL),
-					history(NULL),      
-					logTree(NULL) {
+                       int cacheSize) : historyItem(NULL),history(NULL),logTree(NULL) 
+{
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
     logTree = treeLog;
     configTag = ConfigTag;
@@ -36,7 +35,8 @@ logHistory::logHistory(QTreeWidget* treeLog,
 logHistory::logHistory(const QString ConfigTag, int cacheSize) 
     : historyItem(NULL),
       history(NULL),      
-      logTree(NULL) {
+      logTree(NULL) 
+{
     configTag = ConfigTag;
     __CACHE_SIZE__ = cacheSize;
 }
@@ -71,22 +71,25 @@ void logHistory::addItemHistory(const QString name, const QString value)
 void logHistory::deleteItemBookmark(const QString item)
 {
     Q_ASSERT(item != NULL);
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "logHistory::deleteItemBookmark() -- call";
-#endif
+    
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
     
-    for(int index=0; index < urlList.size(); index++) {
-        if (urlList[index].contains(item)) {
+    for(int index=0; index < urlList.size(); index++) 
+    {
+        if (urlList[index].contains(item)) 
+        {
             int index = urlList.indexOf(item);
             urlList.removeAt(index);
             urlListTime.removeAt(index);
-            if(urlList.size()) {
+            if(urlList.size()) 
+            {
                 settings.setValue(configTag, QVariant(urlList));
                 settings.setValue(configTagTime, QVariant(urlListTime));
-            } else {
+            } 
+            else 
+            {
                 settings.setValue(configTag, "NULL");
                 settings.setValue(configTagTime, "NULL");
             }
@@ -98,9 +101,6 @@ void logHistory::deleteItemBookmark(const QString item)
 
 void logHistory::updateLogHistory()
 {
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "logHistory::updateTreeHistory() -- call";
-#endif
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -110,11 +110,14 @@ void logHistory::updateLogHistory()
     logTree->setIconSize(QSize(32, 32));
 
     QFile *tmpFile = new QFile();
-    if (!urlList.isEmpty() && urlList.first().compare("NULL")) {
-	short index = 0;
-        foreach(const QString& item, urlList) {
+    if (!urlList.isEmpty() && urlList.first().compare("NULL")) 
+    {
+        short index = 0;
+        foreach(const QString& item, urlList) 
+        {
             tmpFile->setFileName(item);
-            if (tmpFile->exists() && urlListTime.first().compare("NULL")) {
+            if (tmpFile->exists() && urlListTime.first().compare("NULL")) 
+            {
                 historyItem = new QTreeWidgetItem(logTree);
                 historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
                 ItemListHistory.push_front(historyItem);
@@ -123,44 +126,41 @@ void logHistory::updateLogHistory()
                 historyItem->setText(1, fInfo.filePath().remove(fInfo.fileName()));
                 historyItem->setText(2, urlListTime[index]);
                 index++;
-            } else {
-                if (urlList.contains(item) && urlListTime.first().compare("NULL")) {
-#ifndef HISTORY_NO_DEBUG
-                    qDebug() << "Remove Items...";
-#endif
-                    int index = urlList.indexOf(item);
-                    urlList.removeOne(item);
-                    urlListTime.removeAt(index);
-                    settings.setValue(configTag, QVariant(urlList));
-                    settings.setValue(configTagTime, QVariant(urlListTime));
-                } else {
-                    history = new QTreeWidgetItem(logTree);
-                    history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-                    ItemListHistory.push_front(historyItem);
-                    history->setText(0, QApplication::translate("logHistory",
-                                     "Your configuration file is too old, please delete it",
-                                     0, QApplication::UnicodeUTF8));
+            } 
+            else if (urlList.contains(item) && urlListTime.first().compare("NULL")) 
+            {
+                int index = urlList.indexOf(item);
+                urlList.removeOne(item);
+                urlListTime.removeAt(index);
+                settings.setValue(configTag, QVariant(urlList));
+                settings.setValue(configTagTime, QVariant(urlListTime));
+            } 
+            else 
+            {
+                history = new QTreeWidgetItem(logTree);
+                history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+                ItemListHistory.push_front(historyItem);
+                history->setText(0, QApplication::translate("logHistory",
+                                 "Your configuration file is too old, please delete it",
+                                 0, QApplication::UnicodeUTF8));
 
-                }
             }
         }
-    } else {
+    } 
+    else 
+    {
         history = new QTreeWidgetItem(logTree);
         history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
         ItemListHistory.push_front(historyItem);
         history->setText(0, "No Log Cache");
     }
+    
     delete tmpFile;
-
 }
 
 
 void logHistory::updateBookMarks()
 {
-
-#ifndef HISTORY_NO_DEBUG
-    qDebug() << "logHistory::updateTH() -- call";
-#endif
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -169,12 +169,12 @@ void logHistory::updateBookMarks()
     logTree->clear();
     logTree->setIconSize(QSize(22, 22));
 
-    if (!urlList.isEmpty() && urlList.first().compare("NULL") && urlListTime.first().compare("NULL")) {
-#ifndef HISTORY_NO_DEBUG
-	qDebug() << "logHistory::updateTH() -- scope 1";
-#endif
-	short index = 0;
-        foreach(const QString& item, urlList) {
+    if (!urlList.isEmpty() && urlList.first().compare("NULL") 
+        && urlListTime.first().compare("NULL")) 
+    {
+        short index = 0;
+        foreach(const QString& item, urlList) 
+        {
             historyItem = new QTreeWidgetItem(logTree);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);
@@ -182,10 +182,9 @@ void logHistory::updateBookMarks()
             historyItem->setText(1, urlListTime[index]);
             index++;
         }
-    } else if (!urlListTime.first().compare("NULL") && urlList.first().compare("NULL")) {
-#ifndef HISTORY_NO_DEBUG
-	qDebug() << "logHistory::updateTH() -- scope 2";
-#endif
+    } 
+    else if (!urlListTime.first().compare("NULL") && urlList.first().compare("NULL")) 
+    {
         history = new QTreeWidgetItem(logTree);
         history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
         ItemListHistory.push_front(historyItem);

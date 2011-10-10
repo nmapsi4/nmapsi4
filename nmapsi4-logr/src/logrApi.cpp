@@ -31,9 +31,6 @@ QString mwClass::showBrowser()
 
 void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
 {
-#ifndef LOGR_NO_DEBUG
-    qDebug() << "nwClass/itemDeleteAll() -> Free List";
-#endif
     qDeleteAll(items);
     items.clear();
 }
@@ -50,7 +47,8 @@ void mwClass::exit()
 
 void mwClass::logFromHistory()
 {
-    if (logTree->currentItem()) {
+    if (logTree->currentItem()) 
+    {
         url = logTree->currentItem()->text(1);
         url.append(logTree->currentItem()->text(0));
         logReader();

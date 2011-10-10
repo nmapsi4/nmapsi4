@@ -31,10 +31,13 @@ int main(int argc, char *argv[])
     QString localeComplete;
     localeComplete.append("nmapsi4-logr_");
 
-    if(locale.contains("pt")) {
-	 locale.resize(5);
-    } else {
-	 locale.resize(2);
+    if(locale.contains("pt")) 
+    {
+        locale.resize(5);
+    } 
+    else 
+    {
+        locale.resize(2);
     }
 
     localeComplete.append(locale);
@@ -45,28 +48,15 @@ int main(int argc, char *argv[])
 
 #ifndef Q_WS_WIN // Gnu/Linux && Mac Os/x
     urlTranslate = __LinuxTranslateUrl__;
-#ifndef LOGR_NO_DEBUG
-    qDebug() << "Nmapsi4-logr/core -> url Translator::" << urlTranslate;
-#endif
-
 #else // MS Windows
     urlTranslate = QDir::rootPath();
     urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
-    qDebug() << "Nmapsi4-logr/core -> url Translator::" << urlTranslate;
-
 #endif
 
     tmp_translator = translator.load(localeComplete, urlTranslate);
 
     if (tmp_translator == false)
         tmp_translator = translator.load(localeComplete, QDir::currentPath());
-
-    // debug messages for Translation file
-#ifndef LOGR_NO_DEBUG
-    qDebug() << "Nmapsi4-logr/core -> Locale::" << localeComplete;
-    qDebug() << "Nmapsi4-logr/core -> Translation file Load::" << tmp_translator;
-    qDebug() << "Nmapsi4-logr/core -> Traslation file is Empty::" << translator.isEmpty();
-#endif
 
     app.installTranslator(&translator);
 
