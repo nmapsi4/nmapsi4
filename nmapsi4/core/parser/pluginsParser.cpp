@@ -24,7 +24,8 @@ void nmapClass::showParserObjPlugins(int indexObj)
 {
     QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
     // show traceroute
-    foreach (const QString &token, listTraceRouteInfo_) {
+    foreach (const QString &token, listTraceRouteInfo_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeTraceroot);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -34,58 +35,73 @@ void nmapClass::showParserObjPlugins(int indexObj)
         tmpToken.removeAll("");
 
         // MS windows check for ms string
-        if(tmpToken.size() == 5) {
-            if(tmpToken[2].size() < 4) { // minimum dns length
+        if(tmpToken.size() == 5) 
+        {
+            if(tmpToken[2].size() < 4) 
+            { // minimum dns length
                 tmpToken.removeAt(2);
             }
         }
 
-        if(tmpToken.size() == 4) {
-            if(tmpToken[2].size() < 4) { // minimum dns length
+        if(tmpToken.size() == 4) 
+        {
+            if(tmpToken[2].size() < 4) 
+            { // minimum dns length
                 tmpToken.removeAt(2);
-            } else {
+            } 
+            else 
+            {
                 tmpToken[3].remove('(');
                 tmpToken[3].remove(')');
             }
         }
 #ifndef PARSER_NO_DEBUG
         qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
-        for(int index=0; index < tmpToken.size(); index++) {
+        for(int index=0; index < tmpToken.size(); index++) 
+        {
             qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
 
         }
 #endif
 
-        if(tmpToken.size() == 4) {
+        if(tmpToken.size() == 4) 
+        {
             root->setText(0, tmpToken[0]);
             root->setText(1, tmpToken[1]);
             root->setText(3, tmpToken[2]);
             root->setText(2, tmpToken[3]);
 
-        } else if(tmpToken.size() == 3) {
+        } 
+        else if(tmpToken.size() == 3) 
+        {
             root->setText(0, tmpToken[0]);
             root->setText(1, tmpToken[1]);
             root->setText(2, tmpToken[2]);
             root->setText(3, "no DNS");
             root->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
-        } else {
+        } 
+        else 
+        {
             root->setText(0, token);
             root->setToolTip(0, token);
         }
     }
     
     // show lookUp info
-    foreach (parserObjUtil* elem, parserObjUtilList) {
-	if(parserObjList[indexObj]->getHostName() == elem->getHostName()) {
-	    QStringList listLookupInfo_ = elem->getInfoLookup();
-	    foreach (const QString &token, listLookupInfo_) {
-		QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
-		itemListScan.push_front(root);
-		root->setSizeHint(0, QSize(22, 22));
-		root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-		root->setText(0, token);
-	    }
-	    break;
-	}
+    foreach (parserObjUtil* elem, parserObjUtilList) 
+    {
+        if(parserObjList[indexObj]->getHostName() == elem->getHostName()) 
+        {
+            QStringList listLookupInfo_ = elem->getInfoLookup();
+            foreach (const QString &token, listLookupInfo_) 
+            {
+                QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
+                itemListScan.push_front(root);
+                root->setSizeHint(0, QSize(22, 22));
+                root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+                root->setText(0, token);
+            }
+            break;
+        }
     }
 }

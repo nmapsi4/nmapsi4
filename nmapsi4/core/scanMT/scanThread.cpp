@@ -75,16 +75,18 @@ void scanning::scanThread::setValue()
 void scanning::scanThread::stopProcess()
 {
      // stop scan process (Slot)
-     if (!proc) {
-	 return;
-     }
+    if (!proc)
+    {
+        return;
+    }
      
-     if(proc->state() == QProcess::Running) {
+     if(proc->state() == QProcess::Running) 
+     {
 #ifndef THREAD_NO_DEBUG
-	  qDebug() << "scan() THREAD:: Clear Process";
+        qDebug() << "scan() THREAD:: Clear Process";
 #endif
-	  proc->close();
-	  delete proc;
+        proc->close();
+        delete proc;
      }
 }
 
@@ -95,7 +97,8 @@ void scanning::scanThread::realtimeData()
     pout.append(realByte);
     QString stream_(realByte);
     // emit signal for data trasmission to parent
-    if (!stream_.isEmpty()) {
-	emit flowFromThread(ParList[ParList.size()-1], stream_);
+    if (!stream_.isEmpty()) 
+    {
+        emit flowFromThread(ParList[ParList.size()-1], stream_);
     }
 }

@@ -40,49 +40,73 @@ mainProfile::mainProfile(QObject *parent) : par(parent)
     connect(checkBoxDig, SIGNAL(toggled(bool)),
             this, SLOT(activeLookupDig()));
 
-    this->setProfile(); // set profile preference
+    setProfile(); // set profile preference
 
     // create a read log config
     QString path = ptrFile.value("confPath", "none").toString();
     QString logCheck = ptrFile.value("logCheck", "none").toString();
     lineEditPath->setText(path);
 
-    if (logCheck.contains("false")) {
+    if (logCheck.contains("false")) 
+    {
         checkLogOn->setChecked(false);
         lineEditPath->setDisabled(true);
         buttonLogB->setDisabled(true);
-    } else
+    } 
+    else
+    {
         checkLogOn->setChecked(true);
+    }
 
     QString tmpSavePos = ptrFile.value("savePos", "none").toString();
     if (tmpSavePos.contains("true"))
+    {
         checkWinPos->setChecked(true);
+    }
     else
+    {
         checkWinPos->setChecked(false);
+    }
 
     QString tmpSize = ptrFile.value("saveSize", "none").toString();
     if (tmpSize.contains("true"))
+    {
         checkSize->setChecked(true);
+    }
     else
+    {
         checkSize->setChecked(false);
+    }
 
     bool Vlog = ptrFile.value("Vlog").toBool();
     if (Vlog)
+    {
         checkVerboseLog->setChecked(true);
+    }
     else
+    {
         checkVerboseLog->setChecked(false);
+    }
 
     bool lookI = ptrFile.value("lookInternal").toBool();
     if (lookI)
+    {
         checkBoxlookup->setChecked(true);
+    }
     else
+    {
         checkBoxlookup->setChecked(false);
+    }
 
     bool lookD = ptrFile.value("lookDig").toBool();
     if (lookD)
+    {
         checkBoxDig->setChecked(true);
+    }
     else
+    {
         checkBoxDig->setChecked(false);
+    }
 
 
     QString cache = ptrFile.value("hostCache", "10").toString();
@@ -183,16 +207,23 @@ void mainProfile::setScan()
 
 void mainProfile::updateItem()
 {
-    if (profileItem->isSelected()) {
+    if (profileItem->isSelected()) 
+    {
         labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
         stackPref->setCurrentIndex(0);
-    } else if (logItem->isSelected()) {
+    } 
+    else if (logItem->isSelected()) 
+    {
         labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
         stackPref->setCurrentIndex(1);
-    } else if (sizeItem->isSelected()) {
+    } 
+    else if (sizeItem->isSelected()) 
+    {
         labelTitle->setText(tr("<h3>Size Options</h3>"));
         stackPref->setCurrentIndex(2);
-    } else if (lookItem->isSelected()) {
+    } 
+    else if (lookItem->isSelected()) 
+    {
         labelTitle->setText(tr("<h3>Scan Lookup</h3>"));
         stackPref->setCurrentIndex(3);
     }
@@ -223,40 +254,53 @@ void mainProfile::setProfile()
     QString tmpProfile = readProfile();
 
     if (uid)
+    {
         groupRoot->setVisible(false);
-    else {
+    }
+    else 
+    {
         checkNormalScan->setEnabled(false);
         checkQuickScan->setEnabled(false);
     }
 
-    if (!tmpProfile.compare("normal")) {
+    if (!tmpProfile.compare("normal")) 
+    {
         checkNormalScan->setChecked(true);
         ScanActive = "normal";
     }
 
-    if (!tmpProfile.compare("quick")) {
+    if (!tmpProfile.compare("quick")) 
+    {
         checkQuickScan->setChecked(true);
         ScanActive = "quick";
     }
 
 
-    if (!tmpProfile.compare("fullversion") && !uid) {
+    if (!tmpProfile.compare("fullversion") && !uid) 
+    {
         checkFullVersion->setChecked(true);
         ScanActive = "fullversion";
-    } else if (uid)
+    } 
+    else if (uid)
+    {
         checkFullVersion->setEnabled(false);
+    }
 
-    if (!tmpProfile.compare("quickversion") && !uid) {
+    if (!tmpProfile.compare("quickversion") && !uid) 
+    {
         checkQuickVersion->setChecked(true);
         ScanActive = "quickversion";
-    } else if (uid)
+    } 
+    else if (uid)
+    {
         checkQuickVersion->setEnabled(false);
+    }
 
 }
 
 void mainProfile::quit()
 {
-    this->setScan(); // save Options
+    setScan(); // save Options
     emit accept();   // send accept signal and exit
 }
 

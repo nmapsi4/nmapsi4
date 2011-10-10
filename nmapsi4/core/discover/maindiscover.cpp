@@ -71,10 +71,13 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
     
     QList<QNetworkAddressEntry> entryList_;
     
-    if (interface_.isValid()) {
-	return interface_.addressEntries();
-    } else {
-	return entryList_;
+    if (interface_.isValid()) 
+    {
+        return interface_.addressEntries();
+    } 
+    else 
+    {
+        return entryList_;
     }
 }
 
@@ -91,31 +94,37 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     parameters.append("-v4");
     parameters.append(networkIp);
     
-    if (discoverLayer::threadLimit) {
-	// acquire one element from thread counter
-	discoverLayer::threadLimit--;
-	discoverLayer::ScanCounter++;
-	QPointer<pingThread> pingTh = new pingThread(pingBuffer_, parameters, parent);
-	pingTh->start();
-	connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
-		this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
-    } else {
-	qDebug() << "DEBUG:: thread suspended:: " << networkIp;
-	// create a QStringlist with address suspended
-	discoverLayer::m_ipSospended.append(networkIp);
+    if (discoverLayer::threadLimit) 
+    {
+        // acquire one element from thread counter
+        discoverLayer::threadLimit--;
+        discoverLayer::ScanCounter++;
+        QPointer<pingThread> pingTh = new pingThread(pingBuffer_, parameters, parent);
+        pingTh->start();
+        connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
+            this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
+    } 
+    else 
+    {
+        qDebug() << "DEBUG:: thread suspended:: " << networkIp;
+        // create a QStringlist with address suspended
+        discoverLayer::m_ipSospended.append(networkIp);
     }
     
-    if (!discoverLayer::connectState) {
-	connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
+    if (!discoverLayer::connectState) 
+    {
+        connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
     }
     
     // check suspended discover ip
-    if (discoverLayer::m_ipSospended.size() && !discoverLayer::connectState) {
-	discoverLayer::connectState = true;
-	connect(discoverLayer::timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
-	if (!discoverLayer::timer->isActive()) {
-	    discoverLayer::timer->start(5000);
-	}
+    if (discoverLayer::m_ipSospended.size() && !discoverLayer::connectState) 
+    {
+        discoverLayer::connectState = true;
+        connect(discoverLayer::timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
+        if (!discoverLayer::timer->isActive()) 
+        {
+            discoverLayer::timer->start(5000);
+        }
     }
 }
 
@@ -137,12 +146,14 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     QTextStream buffStream(&buffString);
     QString buffLine;
     
-    while(!buffStream.atEnd()) {
+    while(!buffStream.atEnd()) 
+    {
         buffLine = buffStream.readLine();
-	if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) {
-	      emit endPing(ipAddr, true, ipBuffer);
-	      return;
-	}
+        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) 
+        {
+            emit endPing(ipAddr, true, ipBuffer);
+            return;
+        }
     }
     emit endPing(ipAddr, false, ipBuffer);
 }
@@ -153,22 +164,28 @@ void pingInterface::mainDiscover::repeatScanner()
      * Recall discover for ip suspended 
      */
     qDebug() << "DEBUG:: scan Counter timer:: " << discoverLayer::ScanCounter;
-    if (!discoverLayer::ScanCounter) {
-	disconnect(this, SLOT(repeatScanner()));
-	discoverLayer::connectState = false;
-	discoverLayer::timer->stop();
-	int lengthMin_ = discoverLayer::threadLimit;
+    if (!discoverLayer::ScanCounter) 
+    {
+        disconnect(this, SLOT(repeatScanner()));        
+        discoverLayer::connectState = false;
+        discoverLayer::timer->stop();
+        int lengthMin_ = discoverLayer::threadLimit;
     
-	if (lengthMin_ > discoverLayer::m_ipSospended.size()) {
-	    lengthMin_ = discoverLayer::m_ipSospended.size();
-	    for (int index = 0; index < lengthMin_; index++) {
-		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
-	    }
-	} else {
-	    for (int index = 0; index < lengthMin_; index++) {
-		isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
-	    }
-	}
+        if (lengthMin_ > discoverLayer::m_ipSospended.size()) 
+        {
+            lengthMin_ = discoverLayer::m_ipSospended.size();
+            for (int index = 0; index < lengthMin_; index++) 
+            {
+                isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
+            }
+        } 
+        else 
+        {
+            for (int index = 0; index < lengthMin_; index++) 
+            {
+                isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
+            }
+        }
     }
 }
 

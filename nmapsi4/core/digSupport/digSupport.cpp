@@ -30,12 +30,14 @@ digInterface::digSupport::digSupport()
 digInterface::digSupport::~digSupport()
 {
     qDebug() << "DEBUG:: ~digSupport()";
-    foreach (digThread *ptr, threadList) {
-	if (ptr) {
-	    ptr->quit();
-	    ptr->wait();
-	    delete ptr;
-	}
+    foreach (digThread *ptr, threadList) 
+    {
+        if (ptr) 
+        {
+            ptr->quit();
+            ptr->wait();
+            delete ptr;
+        }
     }
 }
 
@@ -67,13 +69,16 @@ void digInterface::digSupport::checkDig()
     qDebug() << "Dig::line:: " << line;
     qDebug() << "Dig::error:: " << line2;
 #endif
-    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) {
+    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) 
+    {
         m_state = true;
 #ifndef DIG_NO_DEBUG
         qDebug() << "Dig support enable";
 #endif
-    } else {
-	m_state = false;
+    } 
+    else 
+    {
+        m_state = false;
     }
 
     delete output;
@@ -104,13 +109,17 @@ void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray 
     
     m_elemObjUtil->setHostName(m_hostNameLocal);
 
-    while(!stream1.atEnd()) {
+    while(!stream1.atEnd()) 
+    {
         line = stream1.readLine();
-        if(!line.startsWith(QLatin1String(";;")) && !line.startsWith(QLatin1String(";")) && !line.isEmpty()) {
+        if(!line.startsWith(QLatin1String(";;")) 
+            && !line.startsWith(QLatin1String(";")) 
+            && !line.isEmpty()) 
+        {
 #ifndef DIG_NO_DEBUG
             qDebug() << "digSupport():: " << line;
 #endif
-	    m_elemObjUtil->setInfoLookup(line);
+            m_elemObjUtil->setInfoLookup(line);
         }
     }
 

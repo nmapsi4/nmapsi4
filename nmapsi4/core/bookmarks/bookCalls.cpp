@@ -21,7 +21,8 @@
 
 void nmapClass::callSearchHistory()
 {
-    if (!actionAdd_Bookmark->isEnabled()) {
+    if (!actionAdd_Bookmark->isEnabled()) 
+    {
         actionAdd_Bookmark->setEnabled(true);
         action_Add_BookmarkToolBar->setEnabled(true);
     }
@@ -32,13 +33,11 @@ void nmapClass::callSearchHistory()
 
 void nmapClass::callScanH()
 {
-     if(treeLogH->currentItem()) {
-#ifndef TOOLS_NO_DEBUG
-	qDebug() << "Current Item::" << treeLogH->currentItem();
-#endif
+     if(treeLogH->currentItem()) 
+     {
         updateFontHost();
-	// clear history setItemText fails
-	hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
+        // clear history setItemText fails
+        hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         SWscan->setCurrentIndex(0);
         startScan();
     }
@@ -46,18 +45,22 @@ void nmapClass::callScanH()
 
 void nmapClass::saveBookMarks()
 {
-    if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty()) {
+    if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty()) 
+    {
         return;
     }
 
     logHistory *history_ = NULL;
 
-    if (tabScan->isVisible()) {
-	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    if (tabScan->isVisible()) 
+    {
+        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->addItemHistory(hostEdit->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
-    } else {
-	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    } 
+    else 
+    {
+        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
     }
@@ -70,17 +73,21 @@ void nmapClass::saveBookMarks()
 
 void nmapClass::deleteBookMark()
 {
-    if(!treeLogH->currentItem() && !treeBookVuln->currentItem()) {
+    if(!treeLogH->currentItem() && !treeBookVuln->currentItem()) 
+    {
         return;
     }
 
     logHistory *history_ = NULL;
 
-    if (tabScan->isVisible()) {
-	history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    if (tabScan->isVisible()) 
+    {
+        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(treeLogH->currentItem()->text(0));
-    } else {
-	history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    } 
+    else 
+    {
+        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
     }
 
@@ -91,18 +98,22 @@ void nmapClass::deleteBookMark()
 void nmapClass::deleteBookMarkPar()
 {
 
-    if(!treeBookPar->currentItem()) {
+    if(!treeBookPar->currentItem()) 
+    {
         return;
     }
 
     logHistory *history_ = NULL;
 
-    if (!uid) {
-	history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-	history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
-    } else {
-	history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-	history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
+    if (!uid) 
+    {
+        history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
+    } 
+    else 
+    {
+        history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
     }
 
     delete history_;
@@ -122,18 +133,22 @@ void nmapClass::startAddParBook_ui()
 
 void nmapClass::saveBookMarksPar(const QString profileName, const QString profilePar)
 {
-    if(comboAdv->currentText().isEmpty()) {
+    if(comboAdv->currentText().isEmpty()) 
+    {
         return;
     }
 
     logHistory *history_ = NULL;
 
-    if (!uid) {
-	history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-	history_->addItemHistory(profilePar, profileName);
-    } else {
-	history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-	history_->addItemHistory(profilePar, profileName);
+    if (!uid) 
+    {
+        history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_->addItemHistory(profilePar, profileName);
+    } 
+    else 
+    {
+        history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_->addItemHistory(profilePar, profileName);
     }
 
     BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -144,12 +159,14 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
 
 void nmapClass::callParFromBook()
 {
-    if(!frameAdv->isVisible()) {
+    if(!frameAdv->isVisible()) 
+    {
         frameAdv->setVisible(true);
     }
 
-     if(treeBookPar->currentItem()) {
-	comboAdv->clear();
+     if(treeBookPar->currentItem()) 
+     {
+        comboAdv->clear();
         comboAdv->insertItem(0, treeBookPar->currentItem()->text(0));
     }
 }
@@ -159,29 +176,36 @@ void nmapClass::slotParSelected()
    // insert profile from comboPar to comboAdv
    int parIndex = comboPar->currentIndex();
    
-   if(parIndex) {
+   if(parIndex) 
+   {
         // if not 0
         QHash<QString, QString> tmpMap_ = defaultScanProfile();
-	comboAdv->clear();
-	if (parIndex <= tmpMap_.size()) {
-	    // call static default profile for check
-	    comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
-	} else {
-	    // saved user profile
-	    QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
-	    comboAdv->insertItem(0, resultList_[0]->text(0));
-	}
-   } else {
+        comboAdv->clear();
+        if (parIndex <= tmpMap_.size()) 
+        {
+            // call static default profile for check
+            comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
+        } 
+        else 
+        {
+            // saved user profile
+            QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
+            comboAdv->insertItem(0, resultList_[0]->text(0));
+        }
+   } 
+   else 
+   {
         // if 0 no action, reload extension
         comboAdv->clear();
-	comboAdv->insertItem(0, check_extensions().join(" "));
+        comboAdv->insertItem(0, check_extensions().join(" "));
    }
 }
 
 void nmapClass::slotHostSelected() 
 {    
-    if(comboHostBook->currentIndex()) {
-	updateFontHost();
-	hostEdit->insertItem(0, comboHostBook->currentText());
+    if(comboHostBook->currentIndex()) 
+    {
+        updateFontHost();
+        hostEdit->insertItem(0, comboHostBook->currentText());
     }
 }

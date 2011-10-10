@@ -37,10 +37,13 @@ mainParamClass::~mainParamClass()
 
 void mainParamClass::exit() 
 {
-    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) {
-	    emit doneParBook(lineProfileName->text(), lineProfilePar->text());
-	    close();
-    } else {
-	// TODO lineEdit is Empty
+    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) 
+    {
+        emit doneParBook(lineProfileName->text(), lineProfilePar->text());
+        close();
+    } 
+    else 
+    {
+        // TODO lineEdit is Empty
     }
 }

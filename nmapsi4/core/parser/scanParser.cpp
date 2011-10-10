@@ -35,8 +35,9 @@ void nmapClass::showParserObj(int indexObj)
     QString noInfo("not Discovered");
     QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
     
-    foreach (const QString &token, listMainInfo_) {
-	QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
+    foreach (const QString &token, listMainInfo_) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
@@ -56,7 +57,8 @@ void nmapClass::showParserObj(int indexObj)
     comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    foreach (const QString &token, listOpen_) {
+    foreach (const QString &token, listOpen_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -66,31 +68,40 @@ void nmapClass::showParserObj(int indexObj)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) {
+        if (split.size() == 4) 
+        {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-	    if (!split[3].isEmpty()) {
-		comboVuln->addItem(split[3]);
-	    }
-        } else if (split.size() > 4) {
+            if (!split[3].isEmpty()) 
+            {
+                comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) {
+            for(int index=3; index < split.size(); index++) 
+            {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
-	    //load comboVuln
-	    if (!lineDescription_.isEmpty()) {
-		comboVuln->addItem(lineDescription_);
-	    }
-        } else {
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
             root->setText(3, noDes);
         }
     }
 
     // Show Close ports
-    foreach (const QString &token, listClose_) {
+    foreach (const QString &token, listClose_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -99,31 +110,40 @@ void nmapClass::showParserObj(int indexObj)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) {
+        if (split.size() == 4) 
+        {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-	    if (!split[3].isEmpty()) {
-		comboVuln->addItem(split[3]);
-	    }
-        } else if (split.size() > 4) {
+            if (!split[3].isEmpty()) 
+            {
+                comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) {
+            for(int index=3; index < split.size(); index++) 
+            {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
-	    //load comboVuln
-	    if (!lineDescription_.isEmpty()) {
-		comboVuln->addItem(lineDescription_);
-	    }
-        } else {
-	    root->setText(3, noDes);
-	}
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
+            root->setText(3, noDes);
+        }
     }
 
     // Show Filtered ports
-    foreach (const QString &token, listFilterd_) {
+    foreach (const QString &token, listFilterd_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -133,64 +153,77 @@ void nmapClass::showParserObj(int indexObj)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) {
+        if (split.size() == 4) 
+        {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-	    if (!split[3].isEmpty()) {
-		comboVuln->addItem(split[3]);
-	    }
-        } else if (split.size() > 4) {
+            if (!split[3].isEmpty()) 
+            {
+                comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) {
+            for(int index=3; index < split.size(); index++) 
+            {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
             }
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
-	    //load comboVuln
-	    if (!lineDescription_.isEmpty()) {
-		comboVuln->addItem(lineDescription_);
-	    }
-        } else {
-	    root->setText(3, noDes);
-	}
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
+            root->setText(3, noDes);
+        }
     }
     
     QStringList listServices_ = parserObjList[indexObj]->getServices();
     
     // show services
-    foreach (const QString &token, listServices_) {
-	if (!listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)
-	) {
-	    QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
-	    objItem->setSizeHint(0, QSize(22, 22));
-	    objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-	    objElem.push_front(objItem);
-	    objItem->setText(0,token);
-	}
+    foreach (const QString &token, listServices_) 
+    {
+        if (!listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) 
+        {
+            QTreeWidgetItem *objItem = new QTreeWidgetItem(GItree);
+            objItem->setSizeHint(0, QSize(22, 22));
+            objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+            objElem.push_front(objItem);
+            objItem->setText(0,token);
+        }
     }
 
     // Show Nss Info
-    foreach (const QString &token, listNssInfo_) {
+    foreach (const QString &token, listNssInfo_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeNSS);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-	if (token.contains(":") && !token.contains("=") 
-		&& !token.contains("//")
-		&& !token.contains("ERROR")) {
-	    root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-	}
+        if (token.contains(":") && !token.contains("=") 
+                && !token.contains("//")
+                && !token.contains("ERROR")) 
+        {
+            root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+        }
 
-	if (token.contains("ERROR")) {
-	    root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
-	}
+        if (token.contains("ERROR")) 
+        {
+            root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+        }
         root->setText(0, token);
         root->setToolTip(0, token);
     }
 
     // Show full scan log
-    foreach (const QString &token, listLogInfo_) {
+    foreach (const QString &token, listLogInfo_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScan);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -200,7 +233,8 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show scan error
-    foreach (const QString &token, listErrorInfo_) {
+    foreach (const QString &token, listErrorInfo_) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScanError);
         itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -212,4 +246,3 @@ void nmapClass::showParserObj(int indexObj)
     // call plugins parser
     showParserObjPlugins(indexObj);
 }
-

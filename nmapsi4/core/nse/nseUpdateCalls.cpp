@@ -23,22 +23,25 @@ void nmapClass::updateNseOptionScript(int index)
 {
     nseComboScript->setCurrentIndex(index);
 
-    if (index) {
+    if (index) 
+    {
         nseTreeActive->setEnabled(true);
         nseTreeAvail->setEnabled(true);
-	nseResetBut->setEnabled(true);
-	comboNseInv->setEnabled(true);
-	comboNsePar->setEnabled(true);
-	nseFixedSButt->setEnabled(true);
-    } else {
+        nseResetBut->setEnabled(true);
+        comboNseInv->setEnabled(true);
+        comboNsePar->setEnabled(true);
+        nseFixedSButt->setEnabled(true);
+    } 
+    else 
+    {
         nseTreeActive->setEnabled(false);
         nseTreeAvail->setEnabled(false);
-	nseResetBut->setEnabled(false);
-	nseActiveBut->setEnabled(false);
-	nseRemoveBut->setEnabled(false);
-	comboNseInv->setEnabled(false);
-	comboNsePar->setEnabled(false);
-	nseFixedSButt->setEnabled(false);
+        nseResetBut->setEnabled(false);
+        nseActiveBut->setEnabled(false);
+        nseRemoveBut->setEnabled(false);
+        comboNseInv->setEnabled(false);
+        comboNsePar->setEnabled(false);
+        nseFixedSButt->setEnabled(false);
     }
     // reset parameters for change
     resetPar();
@@ -66,14 +69,16 @@ void nmapClass::nseTreeDefaultValue()
 
 void nmapClass::nseTreeAvailRestoreValues()
 {
-    if (itemNseAvail.size()) {
+    if (itemNseAvail.size()) 
+    {
         memoryTools *memTools = new memoryTools();
         memTools->itemDeleteAll(itemNseAvail);
         delete memTools;
         itemNseAvail.clear();
     }
 
-    foreach (const QString &token, nseScriptAvailList) {
+    foreach (const QString &token, nseScriptAvailList) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeAvail);
         itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -85,14 +90,16 @@ void nmapClass::nseTreeAvailRestoreValues()
 
 void nmapClass::nseTreeActiveRestoreValues()
 {
-    if (itemNseActive.size()) {
+    if (itemNseActive.size()) 
+    {
         memoryTools *memTools = new memoryTools();
         memTools->itemDeleteAll(itemNseActive);
         delete memTools;
         itemNseActive.clear();
     }
 
-    foreach (const QString &token, nseScriptActiveList) {
+    foreach (const QString &token, nseScriptActiveList) 
+    {
         QTreeWidgetItem *root = new QTreeWidgetItem(nseTreeActive);
         itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -106,18 +113,21 @@ void nmapClass::nseTreeActiveItem()
 {
     int indexNseItem = nseTreeAvail->indexOfTopLevelItem(nseTreeAvail->currentItem());
 
-    if (indexNseItem != -1) {
+    if (indexNseItem != -1) 
+    {
         QString tmpElem_ = nseScriptAvailList.takeAt(indexNseItem);
         nseScriptActiveList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!nseScriptActiveList.size()) {
+        if (!nseScriptActiveList.size()) 
+        {
             nseScriptActiveList.clear();
         }
     }
 
     qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
-    if (nssAct->isChecked()) {
+    if (nssAct->isChecked()) 
+    {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
         comboAdv->insertItem(0, check_extensions().join(" "));
@@ -128,18 +138,21 @@ void nmapClass::nseTreeRemoveItem()
 {
     int indexNseItem = nseTreeActive->indexOfTopLevelItem(nseTreeActive->currentItem());
 
-    if (indexNseItem != -1) {
+    if (indexNseItem != -1) 
+    {
         QString tmpElem_ = nseScriptActiveList.takeAt(indexNseItem);
         nseScriptAvailList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!nseScriptAvailList.size()) {
+        if (!nseScriptAvailList.size()) 
+        {
             nseScriptAvailList.clear();
         }
     }
 
     qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
-    if (nssAct->isChecked()) {
+    if (nssAct->isChecked()) 
+    {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
         comboAdv->insertItem(0, check_extensions().join(" "));
@@ -148,7 +161,8 @@ void nmapClass::nseTreeRemoveItem()
 
 void nmapClass::nseTreeResetItem()
 {
-    foreach (const QString &token, nseScriptActiveList) {
+    foreach (const QString &token, nseScriptActiveList) 
+    {
         nseScriptAvailList.append(token);
     }
     nseScriptActiveList.clear();

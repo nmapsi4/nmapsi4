@@ -27,62 +27,73 @@ void nmapClass::readFlowFromThread(const QString hostname, QString lineData)
     QHash<QString, QStringList>::const_iterator i = scanHashListFlow.find(hostname);
     QTextStream stream(&lineData);
     
-    if (i == scanHashListFlow.end()) {
-	QStringList flowHistory;
-	while (!stream.atEnd()) {
-	    flowHistory.append(stream.readLine());
-	}
-	scanHashListFlow.insert(hostname,flowHistory);
-    } else {
-	// append scan flow values
-	while (i != scanHashListFlow.end() && i.key() == hostname) {
-	    QStringList flowHistory = i.value();
-	    //flowHistory.append(lineData);
-	    while (!stream.atEnd()) {
-		flowHistory.append(stream.readLine());
-	    }
-	    scanHashListFlow.insert(i.key(),flowHistory);
-	    ++i;
-	}
+    if (i == scanHashListFlow.end()) 
+    {
+        QStringList flowHistory;
+        while (!stream.atEnd()) 
+        {
+            flowHistory.append(stream.readLine());
+        }
+        scanHashListFlow.insert(hostname,flowHistory);
+    } 
+    else 
+    {
+        // append scan flow values
+        while (i != scanHashListFlow.end() && i.key() == hostname) 
+        {
+            QStringList flowHistory = i.value();
+            //flowHistory.append(lineData);
+            while (!stream.atEnd()) 
+            {
+                flowHistory.append(stream.readLine());
+            }
+            scanHashListFlow.insert(i.key(),flowHistory);
+            ++i;
+        }
     }
     
     // search hostname on treeWidget and update data rows (index = 2)
     // take only remaining time and remove character unused, only [remaining || ETA]
-    if (lineData.contains("remaining") || lineData.contains("ETC")) {
-	QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
-	infoTmp_ = infoTmp_.remove('(');
-	infoTmp_ = infoTmp_.remove(')');
-	infoTmp_.remove('\n');
-	// insert new information into monitor
-	monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
-	monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
+    if (lineData.contains("remaining") || lineData.contains("ETC")) 
+    {
+        QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
+        infoTmp_ = infoTmp_.remove('(');
+        infoTmp_ = infoTmp_.remove(')');
+        infoTmp_.remove('\n');
+        // insert new information into monitor
+        monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
+        monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
     }
 }
 
 void nmapClass::monitorRuntimeEvent()
 {
-    if (!monitorStopCurrentScanButt->isEnabled()) {
-	monitorStopCurrentScanButt->setEnabled(true);
+    if (!monitorStopCurrentScanButt->isEnabled()) 
+    {
+        monitorStopCurrentScanButt->setEnabled(true);
     }
     
-    if (!monitorDetailsScanButt->isEnabled()) {
-	monitorDetailsScanButt->setEnabled(true);
+    if (!monitorDetailsScanButt->isEnabled()) 
+    {
+        monitorDetailsScanButt->setEnabled(true);
     }
 }
 
 void nmapClass::monitorStopCurrentScan()
 {
-    // Stop and wait thread fron QHash table
-    if (scanMonitor->selectedItems().isEmpty()) {
-	return;
+    // Stop and wait thread from QHash table
+    if (scanMonitor->selectedItems().isEmpty()) 
+    {
+        return;
     }
     // TODO:: stop digSupport and internalLooup
     scanThread *ptrTmp = scanHashList.take(scanMonitor->selectedItems()[0]->text(0));
     
-    if (ptrTmp) {
-	ptrTmp->quit();
-	ptrTmp->wait();
-	delete ptrTmp;
+    if (ptrTmp) 
+    {
+        ptrTmp->quit();
+        ptrTmp->wait();
+        delete ptrTmp;
     }
     
     // Remove Qhash entry for flow
@@ -91,11 +102,12 @@ void nmapClass::monitorStopCurrentScan()
 
 void nmapClass::monitorShowDetails()
 {
-    if (scanMonitor->selectedItems().isEmpty()) {
-	return;
+    if (scanMonitor->selectedItems().isEmpty()) 
+    {
+        return;
     }
     // start details UI
     classDetails details(scanHashListFlow.operator[](scanMonitor->selectedItems()[0]->text(0)),
-			 scanMonitor->selectedItems()[0]->text(0));
+                         scanMonitor->selectedItems()[0]->text(0));
     details.exec();
 }

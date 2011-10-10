@@ -21,7 +21,8 @@
 
 void mainProfile::updateNormalCheck()   // slot
 {
-    if (checkNormalScan->isChecked()) {
+    if (checkNormalScan->isChecked()) 
+    {
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
         checkQuickVersion->setChecked(false);
@@ -31,7 +32,8 @@ void mainProfile::updateNormalCheck()   // slot
 
 void mainProfile::updateQuickCheck()   //slot
 {
-    if (checkQuickScan->isChecked()) {
+    if (checkQuickScan->isChecked()) 
+    {
         checkNormalScan->setChecked(false);
         checkFullVersion->setChecked(false);
         checkQuickVersion->setChecked(false);
@@ -41,7 +43,8 @@ void mainProfile::updateQuickCheck()   //slot
 
 void mainProfile::updateFullVersionCheck()   // slot
 {
-    if (checkFullVersion->isChecked()) {
+    if (checkFullVersion->isChecked()) 
+    {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
         checkQuickVersion->setChecked(false);
@@ -51,7 +54,8 @@ void mainProfile::updateFullVersionCheck()   // slot
 
 void mainProfile::updateQuickVersionCheck()   // slot
 {
-    if (checkQuickVersion->isChecked()) {
+    if (checkQuickVersion->isChecked()) 
+    {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
@@ -61,10 +65,13 @@ void mainProfile::updateQuickVersionCheck()   // slot
 
 void mainProfile::update_saveButton()
 {
-    if (!checkLogOn->isChecked()) {
+    if (!checkLogOn->isChecked()) 
+    {
         lineEditPath->setEnabled(true);
         buttonLogB->setEnabled(true);
-    } else {
+    } 
+    else 
+    {
         lineEditPath->setEnabled(false);
         buttonLogB->setEnabled(false);
     }

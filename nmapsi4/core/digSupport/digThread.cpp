@@ -32,7 +32,7 @@ void digLookup::digThread::run()
      m_proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
      connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)),
-	     this, SLOT(setValue()));
+             this, SLOT(setValue()));
 
      m_proc->start("dig", m_host);
      
@@ -56,15 +56,14 @@ void digLookup::digThread::setValue()
 
 void digLookup::digThread::stopProcess() 
 {
-     if (!m_proc) {
-	return;
+     if (!m_proc) 
+     {
+        return;
      }
      
-     if(m_proc->state() == QProcess::Running) {
- #ifndef DIG_NO_DEBUG
-	qDebug() << "dig() THREAD:: Stop Scan Process";
-#endif
-	m_proc->close();
-	delete m_proc;
+     if(m_proc->state() == QProcess::Running) 
+     {
+        m_proc->close();
+        delete m_proc;
      }
 }

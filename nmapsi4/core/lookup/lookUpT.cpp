@@ -31,14 +31,15 @@ void internalLookup::lookUpT::run()
     m_info = QHostInfo::fromName(m_host);
 
     if(m_info.error() != QHostInfo::NoError 
-	&& m_info.error() != QHostInfo::UnknownError
-	&& m_info.error() != QHostInfo::HostNotFound) {
+        && m_info.error() != QHostInfo::UnknownError
+        && m_info.error() != QHostInfo::HostNotFound) 
+    {
 #ifdef LOOKUP_NO_THREAD
          qDebug() << "Lookup failed:" << info.errorString();
 #endif
          emit threadEnd(m_info, -1, m_host);
          return;
-     }
+    }
     emit threadEnd(m_info, 1, m_host);
 }
 

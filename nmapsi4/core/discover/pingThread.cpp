@@ -33,7 +33,7 @@ void pingCore::pingThread::run()
     m_proc = new QProcess();
     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
     connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)), 
-	    this, SLOT(setValue()));
+        this, SLOT(setValue()));
 
     m_proc->start("nping", m_host);
      
@@ -51,10 +51,13 @@ void pingCore::pingThread::setValue()
 
 void pingCore::pingThread::stopProcess() 
 {
-    if (!m_proc) {
-	return;
+    if (!m_proc) 
+    {
+        return;
     }
-    if(m_proc->state() == QProcess::Running) {
-	 m_proc->terminate();
+    
+    if(m_proc->state() == QProcess::Running) 
+    {
+        m_proc->terminate();
     }
 }

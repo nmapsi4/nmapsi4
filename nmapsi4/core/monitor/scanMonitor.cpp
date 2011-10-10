@@ -25,11 +25,16 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host)
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, host);
-    if(!frameAdv->isVisible()) {
+    
+    if(!frameAdv->isVisible()) 
+    {
         hostThread->setText(1,check_extensions().join(" "));
-    } else {
+    } 
+    else 
+    {
         hostThread->setText(1,comboAdv->lineEdit()->text());
     }
+    
     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     hostThread->setText(2, "Scanning");
     monitorElem.push_front(hostThread);
@@ -42,23 +47,25 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host)
 
 void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) 
 {
-     for(int i=0; i < monitorElemHost.size(); i++) {
-          if(monitorElemHost[i].endsWith(host)) {
+     for(int i=0; i < monitorElemHost.size(); i++) 
+     {
+          if(monitorElemHost[i].endsWith(host)) 
+          {
 #ifndef MAIN_NO_DEBUG
-               qDebug() << "Monitor delete Scan::" << host;
+              qDebug() << "Monitor delete Scan::" << host;
 #endif
-               monitorElemHost.removeAt(i);
-               monitorElemState.removeAt(i);
-               monitorElemOptions.removeAt(i);
-	       delete monitorElem.takeAt(i);
-	       break; // remove only first elem
-	  }
+              monitorElemHost.removeAt(i);
+              monitorElemState.removeAt(i);
+              monitorElemOptions.removeAt(i);
+              delete monitorElem.takeAt(i);
+              break; // remove only first elem
+           }
      }
      updateScanCounter(0);
      updateMonitorHost(monitor);
 }
 
-void nmapClass::updateMonitorHost(QTreeWidget* monitor) 
+void nmapClass::updateMonitorHost(QTreeWidget* monitor)
 {
     memoryTools *memTools = new memoryTools();
     memTools->itemDeleteAll(monitorElem);
@@ -66,27 +73,29 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
     monitor->clear();
     QTreeWidgetItem* item;
 
-    for(int i=0; i < monitorElemHost.size(); i++) {
+    for (int i=0; i < monitorElemHost.size(); i++)
+    {
 #ifndef MAIN_NO_DEBUG
-	  qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
+        qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
 #endif
-	  item = new QTreeWidgetItem(monitor);
-          item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-	  item->setText(0, monitorElemHost[i]);
-          item->setText(1, monitorElemOptions[i]);
-          item->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-          item->setText(2, monitorElemState[i]);
-	  monitorElem.push_front(item);
-     }
+        item = new QTreeWidgetItem(monitor);
+        item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+        item->setText(0, monitorElemHost[i]);
+        item->setText(1, monitorElemOptions[i]);
+        item->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        item->setText(2, monitorElemState[i]);
+        monitorElem.push_front(item);
+    }
 
-     QString title("Nmapsi4 ");
+    QString title("Nmapsi4 ");
 
-     if(monitorElemHost.size() == 0) {
-         monitorStopAllScanButt->setEnabled(false);
-	 monitorStopCurrentScanButt->setEnabled(false);
-	 monitorDetailsScanButt->setEnabled(false);
-         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-     }
+    if (monitorElemHost.size() == 0)
+    {
+        monitorStopAllScanButt->setEnabled(false);
+        monitorStopCurrentScanButt->setEnabled(false);
+        monitorDetailsScanButt->setEnabled(false);
+        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
+    }
 }
 
 void nmapClass::updateScanCounter(int type) 
@@ -99,9 +108,12 @@ void nmapClass::updateScanCounter(int type)
     title.append(tr(" Active Scan "));
     title.append("(");
 
-    if(type) {
+    if(type) 
+    {
         scanCounter++;
-    } else {
+    } 
+    else 
+    {
         scanCounter--;
     }
 

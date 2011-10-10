@@ -30,45 +30,52 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
     Q_UNUSED(column);
     qDebug() << "DEBUG:: item: " << item->text(0);
 
-    if (nseScriptAvailList.indexOf(item->text(0)) != -1) {
-	nseActiveBut->setEnabled(true);
-	nseRemoveBut->setEnabled(false);
-    } else {
-	nseActiveBut->setEnabled(false);
-	nseRemoveBut->setEnabled(true);
+    if (nseScriptAvailList.indexOf(item->text(0)) != -1) 
+    {
+        nseActiveBut->setEnabled(true);
+        nseRemoveBut->setEnabled(false);
+    } 
+    else 
+    {
+        nseActiveBut->setEnabled(false);
+        nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
     
-    if (i == nseHelpCache.end()) {
-	/*
-	 * not category on cache
-	 * start help thread for nse
-	 */
-	QByteArray buff1;
-	QByteArray buff2;
+    if (i == nseHelpCache.end()) 
+    {
+        /*
+        * not category on cache
+        * start help thread for nse
+        */
+        QByteArray buff1;
+        QByteArray buff2;
 
-	QStringList parameters_;
-	parameters_.append("--script-help");
-	parameters_.append(item->text(0));
+        QStringList parameters_;
+        parameters_.append("--script-help");
+        parameters_.append(item->text(0));
 
-	localCall::th = new scanThread(buff1, buff2, parameters_, this);
+        localCall::th = new scanThread(buff1, buff2, parameters_, this);
 
-	connect(localCall::th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
-		this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
+        connect(localCall::th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
+                this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
-	localCall::th->start();
-    } else {
-	// category on cache
-	qDebug() << "DEBUG:: load help from cache";
-	nseTextHelp->setDocument(i.value());
+        localCall::th->start();
+    } 
+    else 
+    {
+        // category on cache
+        qDebug() << "DEBUG:: load help from cache";
+        nseTextHelp->setDocument(i.value());
     }
 }
 
 void nmapClass::requestNseScriptHelp()
 {
     QString searchString_ = comboScriptHelp->currentText();
-    if (searchString_.isEmpty()) {
+    if (searchString_.isEmpty()) 
+    {
         return;
     }
 
@@ -115,9 +122,10 @@ void nmapClass::showNseScriptHelp(const QStringList parameters, QByteArray resul
 
     QString result_(result);
     
-    if (localCall::documentScript != NULL) {
-	qDebug() << "DEBUG::ScriptNse delete document";
-	delete localCall::documentScript;
+    if (localCall::documentScript != NULL) 
+    {
+        qDebug() << "DEBUG::ScriptNse delete document";
+        delete localCall::documentScript;
     }
     
     localCall::documentScript = new QTextDocument(result_);

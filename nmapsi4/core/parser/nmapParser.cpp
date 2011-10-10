@@ -22,9 +22,10 @@
 void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArray Byte2)
 {
     // check nmap error
-    if(!Byte1.size() && Byte2.size()) {
-	QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
-	return;
+    if(!Byte1.size() && Byte2.size()) 
+    {
+        QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
+        return;
     }
     // Create parser Obect
     parserObj *elemObj = new parserObj();
@@ -46,7 +47,8 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     generalBuffer_.append(hostCheck_);
 
-    while (!stream.atEnd()) {
+    while (!stream.atEnd()) 
+    {
         tmp = stream.readLine();
 
         if ((rxT_.indexIn(tmp) != -1) &&
@@ -55,7 +57,8 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
                 || tmp.contains("filtered")
                 || tmp.contains("unfiltered"))
                 && !tmp.contains("Not shown:")
-                && !tmp.contains("Discovered")) {
+                && !tmp.contains("Discovered")) 
+        {
 
             scanBuffer.append(tmp);
             scanBuffer.append("\n");
@@ -79,26 +82,32 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
                 || tmp.contains("Nmap done:")
                 || tmp.startsWith(QLatin1String("Hosts"))
                 || tmp.startsWith(QLatin1String("Host")))
-                && !tmp.startsWith(QLatin1String("|"))
-           ) {
+                && !tmp.startsWith(QLatin1String("|"))) 
+        {
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
           
-	// pars for subtree service
-        if(tmp.startsWith(QLatin1String("|"))) {
+        // pars for subtree service
+        if(tmp.startsWith(QLatin1String("|"))) 
+        {
             QString tmpClean(tmp);
-            if(tmpClean.startsWith(QLatin1String("|"))) {
+            if(tmpClean.startsWith(QLatin1String("|"))) 
+            {
                 tmpClean.remove('|');
             }
-            if(tmpClean.startsWith(QLatin1String("_"))) {
+            
+            if(tmpClean.startsWith(QLatin1String("_"))) 
+            {
                 tmpClean.remove('_');
             }
 
-	    int pos;
-            while(tmpClean.startsWith(QLatin1String(" "))) {
+            int pos;
+            while(tmpClean.startsWith(QLatin1String(" "))) 
+            {
                 pos = tmpClean.indexOf(" ");
-                if(pos == 0) {
+                if(pos == 0) 
+                {
                     tmpClean.remove(pos,1);
                 }
             }
@@ -107,7 +116,8 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
             bufferNSS.append("\n");
         }
 
-        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
+        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) 
+        {
 #ifndef PARSER_NO_DEBUG
             qDebug() << "Match String:: " << tmp;
 #endif
@@ -125,72 +135,92 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     // check for log file
     QTextStream *out = NULL;
 
-    if (PFile) {
+    if (PFile) 
+    {
         out = new QTextStream(PFile);
-	// parameters list for log
+        // parameters list for log
         QString nmap_command("\n==LogStart: ");
         nmap_command.append("\nnmap ");
-	nmap_command.append(parList.join(" "));
+        nmap_command.append(parList.join(" "));
         *out << nmap_command << endl << endl;
     }
 
     int tmpBox = SWscan->currentIndex();
  
-    switch(tmpBox) {
-      case 0:	
+    switch(tmpBox) 
+    {
+      case 0:
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-	break;
+        break;
       case 1:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-	break;
+        break;
       case 2:
         Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-	break;
+        break;
     }
 
     mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
 
     QString tmp_host("");
 
-    if (!generalBuffer_.isEmpty()) { // Host line scan
+    if (!generalBuffer_.isEmpty()) 
+    {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-        if ((PFile) && (!verboseLog)) 
-	    *out << generalBuffer_ << endl;
-    } else {
+        
+        if ((PFile) && (!verboseLog))
+        {
+            *out << generalBuffer_ << endl;
+        }
+    } 
+    else 
+    {
         tmp_host.append(hostCheck_);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-        if ((PFile) && (!verboseLog)) 
-	    *out << hostCheck_ << endl;
+        
+        if ((PFile) && (!verboseLog))
+        {
+            *out << hostCheck_ << endl;
+        }
     }
     
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
     QString scanBufferToStream_line;
 
     // check for scan result
-    if (!scanBufferToStream_.atEnd()) {
-        while (!scanBufferToStream_.atEnd()) {
+    if (!scanBufferToStream_.atEnd()) 
+    {
+        while (!scanBufferToStream_.atEnd()) 
+        {
             scanBufferToStream_line = scanBufferToStream_.readLine();
             if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
-                    || scanBufferToStream_line.contains("unfiltered")) {
+                    || scanBufferToStream_line.contains("unfiltered")) 
+            {
 
-                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) {
+                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) 
+                {
                     elemObj->setPortFiltered(scanBufferToStream_line);
-                } else {
+                } 
+                else 
+                {
                     elemObj->setPortOpen(scanBufferToStream_line);
                 }
-            } else {
+            } 
+            else 
+            {
                 elemObj->setPortClose(scanBufferToStream_line);
             }
 
-            if (!scanBufferToStream_line.isEmpty()) {
+            if (!scanBufferToStream_line.isEmpty()) 
+            {
                 QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
 #ifndef PARSER_NO_DEBUG
@@ -200,12 +230,15 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
-		if ((PFile) && (!verboseLog)) {
-		    *out << scanBufferToStream_line << endl;
-		}
+                if ((PFile) && (!verboseLog)) 
+                {
+                    *out << scanBufferToStream_line << endl;
+                }
             }
         } // end while
-    } else {
+    } 
+    else 
+    {
         mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
@@ -215,30 +248,36 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     // check for Host information
     // OS not detected
     bool state_ = false;
-    while (!bufferInfoStream.atEnd()) {
+    while (!bufferInfoStream.atEnd()) 
+    {
          bufferInfoStream_line = bufferInfoStream.readLine();
          // Check OS String
-         if (bufferInfoStream_line.contains("OS") && !state_) {
-	    // OS was found ?
-	    state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
+         if (bufferInfoStream_line.contains("OS") && !state_) 
+         {
+            // OS was found ?
+            state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
          }
 
          elemObj->setMainInfo(bufferInfoStream_line);
-         if (PFile && !verboseLog) {
-	    *out << bufferInfoStream_line << endl;
-	 }
+         if (PFile && !verboseLog) 
+         {
+            *out << bufferInfoStream_line << endl;
+         }
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
     QString bufferTraceStream_line;
 
     // check for traceroute scan information
-    while (!bufferTraceStream.atEnd()) {
-	bufferTraceStream_line = bufferTraceStream.readLine();
-        if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) { 
-	    elemObj->setTraceRouteInfo(bufferTraceStream_line);
-            if (PFile && !verboseLog) {
-		*out << bufferTraceStream_line << endl;
+    while (!bufferTraceStream.atEnd()) 
+    {
+        bufferTraceStream_line = bufferTraceStream.readLine();
+        if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) 
+        {
+            elemObj->setTraceRouteInfo(bufferTraceStream_line);
+            if (PFile && !verboseLog) 
+            {
+                *out << bufferTraceStream_line << endl;
             }
         }
     }
@@ -247,12 +286,15 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QString bufferNssStream_line("");
 
     // check for NSS scan information
-    while (!bufferNssStream.atEnd()) {
-	bufferNssStream_line = bufferNssStream.readLine();
-        if (!bufferNssStream_line.isEmpty()) {
-	    elemObj->setNssInfo(bufferNssStream_line);
-            if (PFile && !verboseLog) {
-		*out << bufferNssStream_line << endl;
+    while (!bufferNssStream.atEnd()) 
+    {
+        bufferNssStream_line = bufferNssStream.readLine();
+        if (!bufferNssStream_line.isEmpty()) 
+        {
+            elemObj->setNssInfo(bufferNssStream_line);
+            if (PFile && !verboseLog) 
+            {
+                *out << bufferNssStream_line << endl;
             }
         }
     }
@@ -263,18 +305,22 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QString bufferLogStream_line;
 
     // check for full log scan
-    while (!bufferLogStream.atEnd()) {
+    while (!bufferLogStream.atEnd()) 
+    {
         bufferLogStream_line = bufferLogStream.readLine();
-        if(!bufferLogStream_line.isEmpty()) {
-           elemObj->setFullScanLog(bufferLogStream_line);
-           if ((PFile) && (verboseLog)) {
-            *out << bufferLogStream_line << "\n";
-           }
+        if (!bufferLogStream_line.isEmpty())
+        {
+            elemObj->setFullScanLog(bufferLogStream_line);
+            if ((PFile) && (verboseLog))
+            {
+                *out << bufferLogStream_line << "\n";
+            }
         }
     }
 
     *out << "==LogEnd\n";
-    if (PFile) {
+    if (PFile) 
+    {
         delete out;
     }
 
@@ -282,29 +328,34 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QString bufferErrorStream_line;
 
     // check for scan error
-    while (!bufferErrorStream.atEnd()) {
-	bufferErrorStream_line = bufferErrorStream.readLine();
+    while (!bufferErrorStream.atEnd()) 
+    {
+        bufferErrorStream_line = bufferErrorStream.readLine();
         elemObj->setErrorScan(bufferErrorStream_line);
     }
 
     delete StdoutStr;
     delete StderrorStr;
 
-    if(!monitorElemHost.size()) {
-	memoryTools *memTools = new memoryTools();
-	memTools->itemDeleteAll(scanHashList);
-	memTools->itemDeleteAll(internealLookupList);
-	memTools->itemDeleteAll(digLookupList);
-	delete memTools;
+    if(!monitorElemHost.size()) 
+        {
+        memoryTools *memTools = new memoryTools();
+        memTools->itemDeleteAll(scanHashList);
+        memTools->itemDeleteAll(internealLookupList);
+        memTools->itemDeleteAll(digLookupList);
+        delete memTools;
     }
 
     Byte1.clear();
     Byte2.clear();
 
     progressScan->setValue(85);
-    if(!scanCounter) {
+    if(!scanCounter) 
+    {
         progressScan->setValue(100);
-    } else {
+    } 
+    else 
+    {
         progressScan->setValue(55);
     }
 
@@ -313,9 +364,11 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     hostEdit->setEnabled(true);
     action_Save_As->setEnabled(true);
     actionSave_As_Menu->setEnabled(true);
-    if (!logSessionFile.isEmpty()) {
-	actionSave->setEnabled(true);
-	actionSave_Menu->setEnabled(true);
+    
+    if (!logSessionFile.isEmpty()) 
+    {
+        actionSave->setEnabled(true);
+        actionSave_Menu->setEnabled(true);
     }
 
     parserObjList.append(elemObj);

@@ -32,19 +32,28 @@ void nmapClass::restoreGlobalProfile()
     versionBox->setChecked(settings.value("scan/version_probe").toBool());
     portCombo->setCurrentIndex(settings.value("scan/port_range").toInt());
     int comboScanIndex_ = settings.value("scan/scan_type").toInt();
-    if (!uid) {
-	comboScan->setCurrentIndex(comboScanIndex_);
-    } else if (comboScanIndex_ < 4) {
-	comboScan->setCurrentIndex(comboScanIndex_);
-    } else {
-	// isn't admin and not valid profile
-	comboScan->setCurrentIndex(0);
+    
+    if (!uid) 
+    {
+        comboScan->setCurrentIndex(comboScanIndex_);
+    } 
+    else if (comboScanIndex_ < 4) 
+    {
+        comboScan->setCurrentIndex(comboScanIndex_);
+    } 
+    else 
+    {
+        // isn't admin and not valid profile
+        comboScan->setCurrentIndex(0);
     }
+    
     portEdit->setText(settings.value("scan/ports_value").toString());
     bounceEdit->setText(settings.value("scan/bounce_host").toString());
+    
     //  admin mode
-    if (!uid) {
-	checkOS->setChecked(settings.value("scan/os_detection").toBool());
+    if (!uid) 
+    {
+        checkOS->setChecked(settings.value("scan/os_detection").toBool());
     }
     // **************** End Scan section **********************************
     
@@ -59,12 +68,13 @@ void nmapClass::restoreGlobalProfile()
     OlineDevice->setText(settings.value("options/specificdevice_line").toString());
     lineEditSpoof->setText(settings.value("options/spoofaddress_line").toString());
     //  admin mode
-    if (!uid) {
-	checkFrag->setChecked(settings.value("options/fragmentation").toBool());
-	checkDecoy->setChecked(settings.value("options/decoy_check").toBool());
-	checkSourcePort->setChecked(settings.value("options/sourceport_check").toBool());
-	lineDecoy->setText(settings.value("options/decoy_line").toString());
-	lineSourcePort->setText(settings.value("options/sourceport_line").toString());
+    if (!uid) 
+    {
+        checkFrag->setChecked(settings.value("options/fragmentation").toBool());
+        checkDecoy->setChecked(settings.value("options/decoy_check").toBool());
+        checkSourcePort->setChecked(settings.value("options/sourceport_check").toBool());
+        lineDecoy->setText(settings.value("options/decoy_line").toString());
+        lineSourcePort->setText(settings.value("options/sourceport_line").toString());
     }
     // **************** End Options section **********************************
     
@@ -75,12 +85,13 @@ void nmapClass::restoreGlobalProfile()
     checkTcpSyn->setChecked(settings.value("discover/tcpsyn_ping").toBool());
     lineSynPing->setText(settings.value("discover/tcpsyn_line").toString());
     //  admin mode
-    if (!uid) {
-	checkIcmpTimestamp->setChecked(settings.value("discover/icmp_timestamp").toBool());
-	checkIcmpNetmask->setChecked(settings.value("discover/icmp_netmask").toBool());
-	checkIcmpEcho->setChecked(settings.value("discover/icmp_echo").toBool());
-	checkUdpPing->setChecked(settings.value("discover/udp_ping").toBool());
-	lineUdpPing->setText(settings.value("discover/udpping_line").toString());
+    if (!uid) 
+    {
+        checkIcmpTimestamp->setChecked(settings.value("discover/icmp_timestamp").toBool());
+        checkIcmpNetmask->setChecked(settings.value("discover/icmp_netmask").toBool());
+        checkIcmpEcho->setChecked(settings.value("discover/icmp_echo").toBool());
+        checkUdpPing->setChecked(settings.value("discover/udp_ping").toBool());
+        lineUdpPing->setText(settings.value("discover/udpping_line").toString());
     }
     // **************** End Discover section **********************************
     
@@ -125,8 +136,9 @@ void nmapClass::saveGlobalProfile()
     settings.setValue("scan/ports_value", portEdit->text());
     settings.setValue("scan/bounce_host", bounceEdit->text());
     //  admin mode
-    if (!uid) {
-	settings.setValue("scan/os_detection", checkOS->isChecked());
+    if (!uid) 
+    {
+        settings.setValue("scan/os_detection", checkOS->isChecked());
     }
     // **************** End Scan section **********************************
     
@@ -141,12 +153,13 @@ void nmapClass::saveGlobalProfile()
     settings.setValue("options/specificdevice_line", OlineDevice->text());
     settings.setValue("options/spoofaddress_line", lineEditSpoof->text());
     //  admin mode
-    if (!uid) {
-	settings.setValue("options/fragmentation", checkFrag->isChecked());
-	settings.setValue("options/decoy_check", checkDecoy->isChecked());
-	settings.setValue("options/sourceport_check", checkSourcePort->isChecked());
-	settings.setValue("options/decoy_line", lineDecoy->text());
-	settings.setValue("options/sourceport_line", lineSourcePort->text());
+    if (!uid) 
+    {
+        settings.setValue("options/fragmentation", checkFrag->isChecked());
+        settings.setValue("options/decoy_check", checkDecoy->isChecked());
+        settings.setValue("options/sourceport_check", checkSourcePort->isChecked());
+        settings.setValue("options/decoy_line", lineDecoy->text());
+        settings.setValue("options/sourceport_line", lineSourcePort->text());
     }
     // **************** End Options section **********************************
     
@@ -157,12 +170,13 @@ void nmapClass::saveGlobalProfile()
     settings.setValue("discover/tcpsyn_ping", checkTcpSyn->isChecked());
     settings.setValue("discover/tcpsyn_line", lineSynPing->text());
     //  admin mode
-    if (!uid) {
-	settings.setValue("discover/icmp_timestamp", checkIcmpTimestamp->isChecked());
-	settings.setValue("discover/icmp_netmask", checkIcmpNetmask->isChecked());
-	settings.setValue("discover/icmp_echo", checkIcmpEcho->isChecked());
-	settings.setValue("discover/udp_ping", checkUdpPing->isChecked());
-	settings.setValue("discover/udpping_line", lineUdpPing->text());
+    if (!uid) 
+    {
+        settings.setValue("discover/icmp_timestamp", checkIcmpTimestamp->isChecked());
+        settings.setValue("discover/icmp_netmask", checkIcmpNetmask->isChecked());
+        settings.setValue("discover/icmp_echo", checkIcmpEcho->isChecked());
+        settings.setValue("discover/udp_ping", checkUdpPing->isChecked());
+        settings.setValue("discover/udpping_line", lineUdpPing->text());
     }
     // **************** End Discover section **********************************
     
