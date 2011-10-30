@@ -48,7 +48,6 @@ SET(SOURCES_CPP core/slots.cpp
 		core/discover/discoverCalls.cpp
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
-		core/lib/memorytools.cpp
 		core/mainScan.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
@@ -95,7 +94,6 @@ else (NOT Q_WS_X11)
 		core/discover/discoverCalls.cpp
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
-		core/lib/memorytools.cpp
 		core/mainScan.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )

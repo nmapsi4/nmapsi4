@@ -98,18 +98,16 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(itemListScan);
-    memTools->itemDeleteAll(digLookupList);
-    memTools->itemDeleteAll(internealLookupList);
-    memTools->itemDeleteAll(monitorElem);
-    memTools->itemDeleteAll(mainTreeElem);
-    memTools->itemDeleteAll(itemNseActive);
-    memTools->itemDeleteAll(itemNseAvail);
-    memTools->itemDeleteAll(parserObjList);
-    memTools->itemDeleteAll(parserObjUtilList);
-    memTools->itemDeleteAll(webViewList);
-    delete memTools;
+    memoryTools::itemDeleteAll(itemListScan);
+    memoryTools::itemDeleteAll(digLookupList);
+    memoryTools::itemDeleteAll(internealLookupList);
+    memoryTools::itemDeleteAll(monitorElem);
+    memoryTools::itemDeleteAll(mainTreeElem);
+    memoryTools::itemDeleteAll(itemNseActive);
+    memoryTools::itemDeleteAll(itemNseAvail);
+    memoryTools::itemDeleteAll(parserObjList);
+    memoryTools::itemDeleteAll(parserObjUtilList);
+    memoryTools::itemDeleteAll(webViewList);
     scanHashListFlow.clear();
     cleanDiscovery();
     delete progressScan;

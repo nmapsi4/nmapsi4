@@ -96,8 +96,7 @@ void nmapClass::discoverIpState()
     stopDiscoverButt->setEnabled(true);
     // clear tree discover
     cleanDiscovery();
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(varDiscover::listDiscover);
+    memoryTools::itemDeleteAll(varDiscover::listDiscover);
     
     QStringList ipList_;
     for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) 
@@ -127,8 +126,6 @@ void nmapClass::discoverIpState()
         varDiscover::ipCounter++;
         nseNumber->display(varDiscover::ipCounter);
     }
-    
-    delete memTools;
 }
 
 void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray callBuff)
@@ -168,9 +165,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
     
     if (!varDiscover::ipCounter) 
     {
-        memoryTools *memTools = new memoryTools();
-        memTools->itemDeleteAll(varDiscover::listDiscover);
-        delete memTools;
+        memoryTools::itemDeleteAll(varDiscover::listDiscover);
         startDiscoverButt->setEnabled(true);
         stopDiscoverButt->setEnabled(false);
     }
@@ -178,11 +173,9 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 
 void nmapClass::cleanDiscovery()
 {
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(varDiscover::listTreeItemDiscover);
+    memoryTools::itemDeleteAll(varDiscover::listTreeItemDiscover);
     varDiscover::recvList.clear();
     varDiscover::sendList.clear();
-    delete memTools;
     discoverScanButt->setEnabled(false);
 }
 

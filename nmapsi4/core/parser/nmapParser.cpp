@@ -338,12 +338,10 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     delete StderrorStr;
 
     if(!monitorElemHost.size()) 
-        {
-        memoryTools *memTools = new memoryTools();
-        memTools->itemDeleteAll(scanHashList);
-        memTools->itemDeleteAll(internealLookupList);
-        memTools->itemDeleteAll(digLookupList);
-        delete memTools;
+    {
+        memoryTools::itemDeleteAll(scanHashList);
+        memoryTools::itemDeleteAll(internealLookupList);
+        memoryTools::itemDeleteAll(digLookupList);
     }
 
     Byte1.clear();

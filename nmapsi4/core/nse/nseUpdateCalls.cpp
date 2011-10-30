@@ -71,9 +71,7 @@ void nmapClass::nseTreeAvailRestoreValues()
 {
     if (itemNseAvail.size()) 
     {
-        memoryTools *memTools = new memoryTools();
-        memTools->itemDeleteAll(itemNseAvail);
-        delete memTools;
+        memoryTools::itemDeleteAll(itemNseAvail);
         itemNseAvail.clear();
     }
 
@@ -92,9 +90,7 @@ void nmapClass::nseTreeActiveRestoreValues()
 {
     if (itemNseActive.size()) 
     {
-        memoryTools *memTools = new memoryTools();
-        memTools->itemDeleteAll(itemNseActive);
-        delete memTools;
+        memoryTools::itemDeleteAll(itemNseActive);
         itemNseActive.clear();
     }
 

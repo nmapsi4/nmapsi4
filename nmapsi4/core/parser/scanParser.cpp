@@ -22,10 +22,8 @@
 void nmapClass::showParserObj(int indexObj) 
 {
     // Clear widget
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(itemListScan);
-    memTools->itemDeleteAll(objElem);
-    delete memTools;
+    memoryTools::itemDeleteAll(itemListScan);
+    memoryTools::itemDeleteAll(objElem);
     listWscan->clear();
     GItree->clear();
     treeNSS->clear();

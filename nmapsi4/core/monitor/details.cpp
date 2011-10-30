@@ -33,9 +33,7 @@ classDetails::classDetails(QStringList& processFlow, const QString hostname): sc
 
 classDetails::~classDetails()
 {
-    memoryTools *mem_ = new memoryTools();
-    mem_->itemDeleteAll(itemsList);
-    delete mem_;
+    memoryTools::itemDeleteAll(itemsList);
     m_timer->stop();
     delete m_timer;
 }

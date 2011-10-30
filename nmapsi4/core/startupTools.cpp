@@ -63,11 +63,9 @@ void nmapClass::checkNmapVersion()
 
 void nmapClass::exit()
 {
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAllWithWait(scanHashList);
-    memTools->itemDeleteAllWithWait(internealLookupList);
-    memTools->itemDeleteAll(digLookupList);
-    delete memTools;
+    memoryTools::itemDeleteAllWithWait(scanHashList);
+    memoryTools::itemDeleteAllWithWait(internealLookupList);
+    memoryTools::itemDeleteAll(digLookupList);
     
     if (FileName != NULL) 
     {
@@ -101,9 +99,7 @@ void nmapClass::exit()
 void nmapClass::stop_scan()
 {
     // stop and clear clear thread
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAllWithWait(scanHashList);
-    memTools->itemDeleteAllWithWait(internealLookupList);
-    memTools->itemDeleteAll(digLookupList);
-    delete memTools;
+    memoryTools::itemDeleteAllWithWait(scanHashList);
+    memoryTools::itemDeleteAllWithWait(internealLookupList);
+    memoryTools::itemDeleteAll(digLookupList);
 }

@@ -663,14 +663,13 @@ void nmapClass::updateTabMonitor()
 void nmapClass::listClear() 
 {
     listClearFlag = true;
-    memoryTools *memTools = new memoryTools();
-    memTools->itemDeleteAll(itemListScan); //clear items list
+    memoryTools::itemDeleteAll(itemListScan); //clear items list
     // parserObj list
-    memTools->itemDeleteAll(parserObjList);
-    memTools->itemDeleteAll(parserObjUtilList);
+    memoryTools::itemDeleteAll(parserObjList);
+    memoryTools::itemDeleteAll(parserObjUtilList);
     // Host list
-    memTools->itemDeleteAll(mainTreeElem);
-    memTools->itemDeleteAll(objElem);
+    memoryTools::itemDeleteAll(mainTreeElem);
+    memoryTools::itemDeleteAll(objElem);
     scanHashListFlow.clear();
     listScanError->clear();
     treeMain->clear();
@@ -685,7 +684,5 @@ void nmapClass::listClear()
     action_Save_As->setEnabled(false);
     comboScanLog->clear();
     comboScanLog->addItem(tr("Scan log parameters"));
-    
-    delete memTools;
 }
 

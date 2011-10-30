@@ -29,7 +29,7 @@ QString mwClass::showBrowser()
     return url;
 }
 
-void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> items)
+void mwClass::itemDeleteAll(QList<QTreeWidgetItem*> &items)
 {
     qDeleteAll(items);
     items.clear();
