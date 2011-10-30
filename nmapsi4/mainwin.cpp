@@ -48,7 +48,8 @@ void nmapClass::initObject()
     tabWidget->removeTab(3);
 #endif
     tWresult->setTabsClosable(true);
-    webViewList.push_back(viewVuln);
+    tWresult->removeTab(0);
+
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();

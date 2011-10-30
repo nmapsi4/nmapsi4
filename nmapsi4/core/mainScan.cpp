@@ -27,15 +27,23 @@ void nmapClass::startScan()
         return;
     }
     
+    QString hostname = hostEdit->currentText();
+    // check wrong address
+    hostname = clearHost(hostname);
+    
+    // check for duplicate hostname in the monitor 
+    if (searchMonitorElem(hostname))
+    {
+        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
+        return;
+    }
+    
     if(!monitorElemHost.size()) 
     {
         // clear details QHash
         scanHashListFlow.clear();
     }
 
-    QString hostname = hostEdit->currentText();
-    // check wrong address
-    hostname = clearHost(hostname);
 
     // check for ip list
     if(hostname.contains("/") && !hostname.contains("//")) 
@@ -85,7 +93,7 @@ void nmapClass::preScanLookup(const QString hostname)
     // log check
     if (checkLog) 
     { // create a file log
-        this->fileSession();
+        fileSession();
     } 
     else 
     {
@@ -94,10 +102,10 @@ void nmapClass::preScanLookup(const QString hostname)
             QSettings ptr("nmapsi4", "nmapsi4");
             ptr.setValue("confPath", QDir::tempPath());
             logPath = QDir::tempPath();
-            this->checkProfile();
+            checkProfile();
         }
 
-        this->fileSession();
+        fileSession();
     }
 
     // save ip or dns to history
@@ -135,7 +143,7 @@ void nmapClass::preScanLookup(const QString hostname)
         digC->digProcess(hostname,tmpParserObj_);
         parserObjUtilList.append(tmpParserObj_);
         addMonitorHost(scanMonitor, hostname);
-        this->scan(hostname);
+        scan(hostname);
     } 
     else 
     {
@@ -152,7 +160,7 @@ void nmapClass::scan(const QString hostname)
 
     if(!frameAdv->isVisible()) 
     {
-        parameters_ = this->check_extensions(); // extensions.cpp
+        parameters_ = check_extensions(); // extensions.cpp
     } 
     else 
     {
@@ -164,18 +172,18 @@ void nmapClass::scan(const QString hostname)
     QByteArray buff1;
     QByteArray buff2;
     // start scan Thread
-    QPointer<scanThread> th = new scanThread(buff1, buff2, parameters_, this);
+    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters_, this);
     //scanPointerList.push_front(th);
-    scanHashList.insert(hostname,th);
+    scanHashList.insert(hostname,thread);
     // update progressbar for scan
-    connect(th, SIGNAL(upgradePR()),
+    connect(thread, SIGNAL(upgradePR()),
             this, SLOT(setProgress()));
     // read current data scan from the thread
-    connect(th, SIGNAL(flowFromThread(const QString, const QString)),
+    connect(thread, SIGNAL(flowFromThread(const QString, const QString)),
             this, SLOT(readFlowFromThread(const QString, const QString)));
     // read scan data return
-    connect(th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
+    connect(thread, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
             this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
     // start scan
-    th->start();
+    thread->start();
 }

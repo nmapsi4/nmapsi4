@@ -30,10 +30,12 @@ void nmapClass::readFlowFromThread(const QString hostname, QString lineData)
     if (i == scanHashListFlow.end()) 
     {
         QStringList flowHistory;
+
         while (!stream.atEnd()) 
         {
             flowHistory.append(stream.readLine());
         }
+
         scanHashListFlow.insert(hostname,flowHistory);
     } 
     else 
@@ -42,11 +44,12 @@ void nmapClass::readFlowFromThread(const QString hostname, QString lineData)
         while (i != scanHashListFlow.end() && i.key() == hostname) 
         {
             QStringList flowHistory = i.value();
-            //flowHistory.append(lineData);
+
             while (!stream.atEnd()) 
             {
                 flowHistory.append(stream.readLine());
             }
+
             scanHashListFlow.insert(i.key(),flowHistory);
             ++i;
         }
@@ -96,7 +99,7 @@ void nmapClass::monitorStopCurrentScan()
         delete ptrTmp;
     }
     
-    // Remove Qhash entry for flow
+    // Remove Qhash entry for stopped scan
     scanHashListFlow.take(scanMonitor->selectedItems()[0]->text(0));
 }
 

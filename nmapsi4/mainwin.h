@@ -63,7 +63,6 @@ using namespace memory;
 
 class QMainWindow;
 class QWebView;
-class QMutex;
 
 class nmapClass : public QMainWindow, private Ui::MainWindow
 {
@@ -84,7 +83,8 @@ private:
     void addMonitorHost(QTreeWidget* monitor, const QString host);
     void delMonitorHost(QTreeWidget* monitor, const QString host);
     void updateMonitorHost(QTreeWidget* monitor);
-    void updateScanCounter(int type);
+    void updateMonitorScanCounter(int type);
+    bool searchMonitorElem(const QString hostname);
     bool isDns(QString hostname);
     QString clearHost(const QString hostname);
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;

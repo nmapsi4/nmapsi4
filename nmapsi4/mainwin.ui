@@ -2586,17 +2586,7 @@
                   <attribute name="title">
                    <string/>
                   </attribute>
-                  <layout class="QVBoxLayout" name="verticalLayout_10">
-                   <item>
-                    <widget class="QWebView" name="viewVuln" native="true">
-                     <property name="url" stdset="0">
-                      <url>
-                       <string>about:blank</string>
-                      </url>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                  <layout class="QVBoxLayout" name="verticalLayout_10"/>
                  </widget>
                 </widget>
                </item>
@@ -3697,13 +3687,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="../mainwin.qrc"/>
  </resources>

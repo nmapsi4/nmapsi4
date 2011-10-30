@@ -142,10 +142,6 @@ void nmapClass::setNmapsiSlot()
     // Vuln signal
     connect(actSearch, SIGNAL(triggered()),
             this, SLOT(searchVulnNG()));
-    connect(viewVuln, SIGNAL(loadProgress(int)),
-            progressWeb, SLOT(setValue(int)));
-    connect(viewVuln, SIGNAL(loadFinished(bool)),
-            this, SLOT(vulnPostScan()));
     connect(actBack, SIGNAL(triggered()),
             this, SLOT(tabWebBack()));
     connect(actForward, SIGNAL(triggered()),

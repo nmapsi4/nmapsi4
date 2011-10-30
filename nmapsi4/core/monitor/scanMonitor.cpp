@@ -19,6 +19,11 @@
 
 #include "../../mainwin.h"
 
+bool nmapClass::searchMonitorElem(const QString hostname)
+{
+    return monitorElemHost.contains(hostname) ? true : false;
+}
+
 void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) 
 {
     tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -41,7 +46,7 @@ void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host)
     monitorElemHost.push_front(hostThread->text(0));
     monitorElemOptions.push_front(hostThread->text(1));
     monitorElemState.push_front(hostThread->text(2));
-    updateScanCounter(1);
+    updateMonitorScanCounter(1);
 }
 
 
@@ -58,10 +63,11 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host)
               monitorElemState.removeAt(i);
               monitorElemOptions.removeAt(i);
               delete monitorElem.takeAt(i);
+              // FIXME:: remove break with duplicate check
               break; // remove only first elem
            }
      }
-     updateScanCounter(0);
+     updateMonitorScanCounter(0);
      updateMonitorHost(monitor);
 }
 
@@ -75,9 +81,6 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
 
     for (int i=0; i < monitorElemHost.size(); i++)
     {
-#ifndef MAIN_NO_DEBUG
-        qDebug() << "MONITOR::Elem Numeber:: " << monitorElemHost.size();
-#endif
         item = new QTreeWidgetItem(monitor);
         item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
         item->setText(0, monitorElemHost[i]);
@@ -98,7 +101,7 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
     }
 }
 
-void nmapClass::updateScanCounter(int type) 
+void nmapClass::updateMonitorScanCounter(int type) 
 {
     /*
      *   type 1: scan counter ++
