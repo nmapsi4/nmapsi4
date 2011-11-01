@@ -71,7 +71,7 @@ void nmapClass::nseTreeAvailRestoreValues()
 {
     if (itemNseAvail.size()) 
     {
-        memoryTools::itemDeleteAll(itemNseAvail);
+        freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
         itemNseAvail.clear();
     }
 
@@ -90,7 +90,7 @@ void nmapClass::nseTreeActiveRestoreValues()
 {
     if (itemNseActive.size()) 
     {
-        memoryTools::itemDeleteAll(itemNseActive);
+        freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
         itemNseActive.clear();
     }
 

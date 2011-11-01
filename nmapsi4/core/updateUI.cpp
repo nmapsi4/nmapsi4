@@ -663,13 +663,13 @@ void nmapClass::updateTabMonitor()
 void nmapClass::listClear() 
 {
     listClearFlag = true;
-    memoryTools::itemDeleteAll(itemListScan); //clear items list
+    freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan); //clear items list
     // parserObj list
-    memoryTools::itemDeleteAll(parserObjList);
-    memoryTools::itemDeleteAll(parserObjUtilList);
+    freelist<parserObj*>::itemDeleteAll(parserObjList);
+    freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     // Host list
-    memoryTools::itemDeleteAll(mainTreeElem);
-    memoryTools::itemDeleteAll(objElem);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(objElem);
     scanHashListFlow.clear();
     listScanError->clear();
     treeMain->clear();

@@ -339,9 +339,9 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     if(!monitorElemHost.size()) 
     {
-        memoryTools::itemDeleteAll(scanHashList);
-        memoryTools::itemDeleteAll(internealLookupList);
-        memoryTools::itemDeleteAll(digLookupList);
+        freemap<QString,scanThread*>::itemDeleteAll(scanHashList);
+        freelist<lookUpT*>::itemDeleteAll(internealLookupList);
+        freelist<digSupport*>::itemDeleteAll(digLookupList);
     }
 
     Byte1.clear();

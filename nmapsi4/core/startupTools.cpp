@@ -63,9 +63,9 @@ void nmapClass::checkNmapVersion()
 
 void nmapClass::exit()
 {
-    memoryTools::itemDeleteAllWithWait(scanHashList);
-    memoryTools::itemDeleteAllWithWait(internealLookupList);
-    memoryTools::itemDeleteAll(digLookupList);
+    freemap<QString,scanThread*>::itemDeleteAllWithWait(scanHashList);
+    freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<digSupport*>::itemDeleteAll(digLookupList);
     
     if (FileName != NULL) 
     {
@@ -99,7 +99,7 @@ void nmapClass::exit()
 void nmapClass::stop_scan()
 {
     // stop and clear clear thread
-    memoryTools::itemDeleteAllWithWait(scanHashList);
-    memoryTools::itemDeleteAllWithWait(internealLookupList);
-    memoryTools::itemDeleteAll(digLookupList);
+    freemap<QString,scanThread*>::itemDeleteAllWithWait(scanHashList);
+    freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<digSupport*>::itemDeleteAll(digLookupList);
 }

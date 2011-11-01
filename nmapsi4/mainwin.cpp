@@ -98,16 +98,16 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    memoryTools::itemDeleteAll(itemListScan);
-    memoryTools::itemDeleteAll(digLookupList);
-    memoryTools::itemDeleteAll(internealLookupList);
-    memoryTools::itemDeleteAll(monitorElem);
-    memoryTools::itemDeleteAll(mainTreeElem);
-    memoryTools::itemDeleteAll(itemNseActive);
-    memoryTools::itemDeleteAll(itemNseAvail);
-    memoryTools::itemDeleteAll(parserObjList);
-    memoryTools::itemDeleteAll(parserObjUtilList);
-    memoryTools::itemDeleteAll(webViewList);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan);
+    freelist<digSupport*>::itemDeleteAll(digLookupList);
+    freelist<lookUpT*>::itemDeleteAll(internealLookupList);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
+    freelist<parserObj*>::itemDeleteAll(parserObjList);
+    freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
+    freelist<QWebView*>::itemDeleteAll(webViewList);
     scanHashListFlow.clear();
     cleanDiscovery();
     delete progressScan;

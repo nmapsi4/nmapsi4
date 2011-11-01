@@ -43,100 +43,40 @@ using namespace scanning;
 
 namespace memory
 {
-class memoryTools
-{
 
+template <class T>
+class freelist
+{
 public:
-    static void itemDeleteAll(QList<QTreeWidgetItem*>& items);
-    static void itemDeleteAll(QList<QListWidgetItem*>& items);
-    static void itemDeleteAll(QList<parserObj*>& items);
-    static void itemDeleteAll(QList<parserObjUtil*>& items);
-    static void itemDeleteAll(QList<QWebView*>& items);
-    static void itemDeleteAll(QList<lookUpT*>& items);
-    static void itemDeleteAll(QList<digSupport*>& items);
-    static void itemDeleteAll(QList<mainDiscover*>& items);
-    static void itemDeleteAll(QHash<QString, scanThread*>& items);
+    static void itemDeleteAll(QList<T>& items);
     /*
-     * Ovverride itemDeleteAll(QHash<QString, scanThread*>& items)
+     * list itemDeleteAll(QHash<QString, scanThread*>& items)
      * with thread quit() and wait()
      */
-    static void itemDeleteAllWithWait(QHash<QString, scanThread*>& items);
-    static void itemDeleteAllWithWait(QList<lookUpT*>& items);
+    static void itemDeleteAllWithWait(QList<T>& items);
 };
 
-inline void memory::memoryTools::itemDeleteAll(QList<QTreeWidgetItem*>& items)
+template <class T, class U>
+class freemap
 {
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<QListWidgetItem*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<parserObj*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<parserObjUtil*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<QWebView*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<lookUpT*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<digSupport*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QList<mainDiscover*>& items)
-{
-    qDeleteAll(items);
-    items.clear();
-}
-
-inline void memory::memoryTools::itemDeleteAll(QHash<QString, scanThread*>& items)
-{
+public:
+    static void itemDeleteAll(QHash<T,U>& items);
     /*
-     * Clear QHash for scan thread
+     * map itemDeleteAll(QHash<QString, scanThread*>& items)
+     * with thread quit() and wait()
      */
-    foreach (scanThread *ptrTmp, items) {
-        delete ptrTmp;
-    }
+    static void itemDeleteAllWithWait(QHash<T,U>& items);
+};
 
+template <class T>
+inline void memory::freelist<T>::itemDeleteAll(QList<T>& items)
+{
+    qDeleteAll(items);
     items.clear();
 }
 
-inline void memory::memoryTools::itemDeleteAllWithWait(QHash< QString, scanThread* >& items)
-{
-    // scan thread quit
-    foreach (scanThread *ptrTmp, items)
-    {
-        ptrTmp->quit();
-        ptrTmp->wait();
-    }
-
-    memory::memoryTools::itemDeleteAll(items);
-}
-
-inline void memory::memoryTools::itemDeleteAllWithWait(QList<lookUpT*>& items)
+template <class T>
+inline void memory::freelist<T>::itemDeleteAllWithWait(QList<T>& items)
 {
     foreach (lookUpT *pointer, items)
     {
@@ -144,7 +84,33 @@ inline void memory::memoryTools::itemDeleteAllWithWait(QList<lookUpT*>& items)
         pointer->wait();
     }
 
-    memory::memoryTools::itemDeleteAll(items);
+    memory::freelist<T>::itemDeleteAll(items);
+}
+
+template <class T, class U>
+inline void memory::freemap<T,U>::itemDeleteAll(QHash<T,U>& items)
+{
+    /*
+     * Clear QHash
+     */
+    foreach (U ptrTmp, items) {
+        delete ptrTmp;
+    }
+
+    items.clear();
+}
+
+template <class T, class U>
+inline void memory::freemap<T,U>::itemDeleteAllWithWait(QHash<T,U>& items)
+{
+    // scan thread quit
+    foreach (U ptrTmp, items)
+    {
+        ptrTmp->quit();
+        ptrTmp->wait();
+    }
+
+    memory::freemap<T,U>::itemDeleteAll(items);
 }
 
 } // end namespace

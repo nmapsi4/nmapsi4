@@ -96,7 +96,7 @@ void nmapClass::discoverIpState()
     stopDiscoverButt->setEnabled(true);
     // clear tree discover
     cleanDiscovery();
-    memoryTools::itemDeleteAll(varDiscover::listDiscover);
+    freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
     
     QStringList ipList_;
     for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) 
@@ -165,7 +165,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
     
     if (!varDiscover::ipCounter) 
     {
-        memoryTools::itemDeleteAll(varDiscover::listDiscover);
+        freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
         startDiscoverButt->setEnabled(true);
         stopDiscoverButt->setEnabled(false);
     }
@@ -173,7 +173,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 
 void nmapClass::cleanDiscovery()
 {
-    memoryTools::itemDeleteAll(varDiscover::listTreeItemDiscover);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(varDiscover::listTreeItemDiscover);
     varDiscover::recvList.clear();
     varDiscover::sendList.clear();
     discoverScanButt->setEnabled(false);

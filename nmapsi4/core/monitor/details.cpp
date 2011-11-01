@@ -33,7 +33,7 @@ classDetails::classDetails(QStringList& processFlow, const QString hostname): sc
 
 classDetails::~classDetails()
 {
-    memoryTools::itemDeleteAll(itemsList);
+    freelist<QListWidgetItem*>::itemDeleteAll(itemsList);
     m_timer->stop();
     delete m_timer;
 }

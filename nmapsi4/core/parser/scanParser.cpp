@@ -22,8 +22,8 @@
 void nmapClass::showParserObj(int indexObj) 
 {
     // Clear widget
-    memoryTools::itemDeleteAll(itemListScan);
-    memoryTools::itemDeleteAll(objElem);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(objElem);
     listWscan->clear();
     GItree->clear();
     treeNSS->clear();
