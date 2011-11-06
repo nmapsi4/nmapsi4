@@ -64,8 +64,8 @@ void nmapClass::readFlowFromThread(const QString hostname, QString lineData)
         infoTmp_ = infoTmp_.remove(')');
         infoTmp_.remove('\n');
         // insert new information into monitor
-        monitorElem[monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
-        monitorElemState[monitorElemHost.indexOf(hostname)] = infoTmp_;
+        _monitor->monitorElem[_monitor->monitorElemHost.indexOf(hostname)]->setText(2,infoTmp_);
+        _monitor->monitorElemState[_monitor->monitorElemHost.indexOf(hostname)] = infoTmp_;
     }
 }
 

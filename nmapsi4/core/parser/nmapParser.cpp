@@ -31,7 +31,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     parserObj *elemObj = new parserObj();
     QString hostCheck_ = parList[parList.size()-1];
 
-    delMonitorHost(scanMonitor, hostCheck_);
+    _monitor->delMonitorHost(scanMonitor, hostCheck_);
     elemObj->setHostName(hostCheck_);
 
     listClearFlag = false; // the listScan is not empty
@@ -337,7 +337,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     delete StdoutStr;
     delete StderrorStr;
 
-    if(!monitorElemHost.size()) 
+    if(!_monitor->monitorHostNumber()) 
     {
         freemap<QString,scanThread*>::itemDeleteAll(scanHashList);
         freelist<lookUpT*>::itemDeleteAll(internealLookupList);
@@ -348,9 +348,14 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     Byte2.clear();
 
     progressScan->setValue(85);
-    if(!scanCounter) 
+    if(!_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(100);
+        monitorStopAllScanButt->setEnabled(false);
+        monitorStopCurrentScanButt->setEnabled(false);
+        monitorDetailsScanButt->setEnabled(false);
+        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),
+                          QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     } 
     else 
     {

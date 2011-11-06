@@ -399,7 +399,6 @@ void nmapClass::updateFontHostVuln()
 void nmapClass::setProgress() 
 {
     progressScan->setValue(60);
-    this->setWindowTitle("Nmapsi4 (60%)");
 }
 
 void nmapClass::updateSezScan() 
@@ -685,4 +684,22 @@ void nmapClass::listClear()
     comboScanLog->clear();
     comboScanLog->addItem(tr("Scan log parameters"));
 }
+
+void nmapClass::updateScanCounter()
+{
+    // FIXME
+//     qDebug() << "DEBUG:: imageName:: " << tabUi->tabIcon(tabUi->indexOf(tabMainMonitor)).name();
+//     if (tabUi->tabIcon(tabUi->indexOf(tabMainMonitor)).name() == "reload.png")
+//     {
+//         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+//     }
+    
+    QString title("Nmapsi4 -");
+    title.append(tr(" Active Scan "));
+    title.append("(");
+    title.append(QString("%1").arg(_monitor->monitorHostNumber()));
+    title.append(")");
+    setWindowTitle(title);
+}
+
 

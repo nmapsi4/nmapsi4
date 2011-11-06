@@ -32,13 +32,13 @@ void nmapClass::startScan()
     hostname = clearHost(hostname);
     
     // check for duplicate hostname in the monitor 
-    if (searchMonitorElem(hostname))
+    if (_monitor->searchMonitorElem(hostname))
     {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
     }
     
-    if(!monitorElemHost.size()) 
+    if(!_monitor->monitorHostNumber()) 
     {
         // clear details QHash
         scanHashListFlow.clear();
@@ -119,12 +119,23 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave_As_Menu->setEnabled(false);
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
+    
+    // FIXME: function is better solution
+    QString parameter;
+    if(!frameAdv->isVisible()) 
+    {
+        parameter = check_extensions().join(" ");
+    } 
+    else 
+    {
+        parameter = comboAdv->lineEdit()->text();
+    }
 
     // check for scan lookup
     if(lookupInternal) 
     {
         // if internal lookUp is actived
-        addMonitorHost(scanMonitor, hostname);
+        _monitor->addMonitorHost(scanMonitor, hostname, parameter);
         // call internal lookup thread and save the pointer.
         lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
         internealLookupList.push_back(internalLookupTh_);
@@ -142,13 +153,13 @@ void nmapClass::preScanLookup(const QString hostname)
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
         parserObjUtilList.append(tmpParserObj_);
-        addMonitorHost(scanMonitor, hostname);
+        _monitor->addMonitorHost(scanMonitor, hostname, parameter);
         scan(hostname);
     } 
     else 
     {
         // lookup isn't actived or not supported
-        addMonitorHost(scanMonitor, hostname);
+        _monitor->addMonitorHost(scanMonitor, hostname, parameter);
         this->scan(hostname);
     }
 }

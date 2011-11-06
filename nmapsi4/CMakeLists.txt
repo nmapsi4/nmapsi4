@@ -31,7 +31,7 @@ SET(SOURCES_CPP core/slots.cpp
 		../lib/about/about.cpp
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
-		core/monitor/scanMonitor.cpp
+		core/monitor/monitor.cpp
 		core/monitor/monitorEvents.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
@@ -77,7 +77,7 @@ else (NOT Q_WS_X11)
 		core/vulnerability/addurl.cpp
 		core/scanMT/scanThread.cpp
 		core/lookup/lookUpT.cpp
-		core/monitor/scanMonitor.cpp
+		core/monitor/monitor.cpp
 		core/monitor/monitorEvents.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
@@ -110,7 +110,8 @@ if(Q_WS_X11)
 	core/bookmarks/addparbook.h
 	core/discover/maindiscover.h
 	core/discover/pingThread.h
-	core/monitor/details.h)
+	core/monitor/details.h
+        core/monitor/monitor.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 else (Q_WS_X11)
   SET(SOURCES_H mainwin.h 
@@ -124,7 +125,8 @@ else (Q_WS_X11)
 	core/bookmarks/addparbook.h
 	core/discover/maindiscover.h
 	core/discover/pingThread.h
-	core/monitor/details.h)
+	core/monitor/details.h
+        core/monitor/monitor.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 endif (Q_WS_X11)
 

@@ -22,7 +22,6 @@
 nmapClass::nmapClass()
     : uid(0),
       PFile(NULL),
-      scanCounter(0),
       labelVersion(NULL),
       userMode(NULL)
 {
@@ -49,7 +48,7 @@ void nmapClass::initObject()
 #endif
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
-
+    _monitor = new monitor();
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();
@@ -101,15 +100,14 @@ nmapClass::~nmapClass()
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan);
     freelist<digSupport*>::itemDeleteAll(digLookupList);
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
     freelist<parserObj*>::itemDeleteAll(parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     freelist<QWebView*>::itemDeleteAll(webViewList);
-    scanHashListFlow.clear();
     cleanDiscovery();
+    delete _monitor;
     delete progressScan;
     delete PFile;
     delete labelVersion;

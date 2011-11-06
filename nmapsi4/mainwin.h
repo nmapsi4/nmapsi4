@@ -37,6 +37,7 @@
 #include "core/bookmarks/addparbook.h"
 #include "core/lib/memorytools.h"
 #include "core/monitor/details.h"
+#include "core/monitor/monitor.h"
 
 // Qt4 include
 #include <QtNetwork/QHostInfo>
@@ -80,11 +81,6 @@ private:
     void resetOptions();
     void checkProfile();
     void initGUI();
-    void addMonitorHost(QTreeWidget* monitor, const QString host);
-    void delMonitorHost(QTreeWidget* monitor, const QString host);
-    void updateMonitorHost(QTreeWidget* monitor);
-    void updateMonitorScanCounter(int type);
-    bool searchMonitorElem(const QString hostname);
     bool isDns(QString hostname);
     QString clearHost(const QString hostname);
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
@@ -149,16 +145,11 @@ protected:
     bool LookupEnabled;
     bool digSupported;
     int hostCache;
-    int scanCounter;
     QList<QTreeWidgetItem*> itemListScan;
     QList<QTreeWidgetItem*> itemNseAvail;
     QList<QTreeWidgetItem*> itemNseActive;
-    QList<QTreeWidgetItem*> monitorElem;
     QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
-    QList<QString> monitorElemHost;
-    QList<QString> monitorElemState;
-    QList<QString> monitorElemOptions;
     QList<QString> nseScriptAvailList;
     QList<QString> nseScriptActiveList;
     QHash<QString, scanThread*> scanHashList;
@@ -187,6 +178,7 @@ protected:
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;
+    monitor *_monitor;
 
 public slots:
     void startScan();
@@ -225,6 +217,7 @@ private slots:
     void monitorRuntimeEvent();
     void monitorStopCurrentScan();
     void monitorShowDetails();
+    void updateScanCounter();
     void objVulnButton();
     // Check nmap version
     void checkNmapVersion();

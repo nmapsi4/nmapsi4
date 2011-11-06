@@ -23,7 +23,7 @@ QStringList nmapClass::check_extensions()
 {
     QStringList parametri;
 
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(10); // start progress bar
     }
@@ -187,7 +187,7 @@ QStringList nmapClass::check_extensions()
 
     }
 
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(15);
     }
@@ -207,7 +207,7 @@ QStringList nmapClass::check_extensions()
         parametri << "-O";
     //end Extension
 
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(20);
     }
@@ -237,7 +237,7 @@ QStringList nmapClass::check_extensions()
         break;
     }
 
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(30);
     }
@@ -379,7 +379,7 @@ QStringList nmapClass::check_extensions()
     if (checkFrag->isChecked())
         parametri << "-f"; // Ipv6
 
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(50);
     }
@@ -493,7 +493,7 @@ QStringList nmapClass::check_extensions()
             checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }
-    if(scanCounter) 
+    if(_monitor->monitorHostNumber()) 
     {
         progressScan->setValue(55);
     }

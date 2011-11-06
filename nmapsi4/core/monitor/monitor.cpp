@@ -17,48 +17,50 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../../mainwin.h"
+#include "monitor.h"
 
-bool nmapClass::searchMonitorElem(const QString hostname)
+monitor::monitor()
+{
+}
+
+monitor::~monitor()
+{
+    freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
+}
+
+bool monitor::searchMonitorElem(const QString hostname)
 {
     return monitorElemHost.contains(hostname) ? true : false;
 }
 
-void nmapClass::addMonitorHost(QTreeWidget* monitor, const QString host) 
+int monitor::monitorHostNumber()
 {
-    tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    return monitorElemHost.size();
+}
+
+void monitor::addMonitorHost(QTreeWidget* monitor, const QString host, const QString paramter) 
+{
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, host);
-    
-    if(!frameAdv->isVisible()) 
-    {
-        hostThread->setText(1,check_extensions().join(" "));
-    } 
-    else 
-    {
-        hostThread->setText(1,comboAdv->lineEdit()->text());
-    }
-    
+    hostThread->setText(1,paramter);
     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     hostThread->setText(2, "Scanning");
     monitorElem.push_front(hostThread);
     monitorElemHost.push_front(hostThread->text(0));
     monitorElemOptions.push_front(hostThread->text(1));
     monitorElemState.push_front(hostThread->text(2));
-    updateMonitorScanCounter(1);
+
+    emit monitorUpdated();
 }
 
 
-void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host) 
+void monitor::delMonitorHost(QTreeWidget* monitor, const QString host) 
 {
      for(int i=0; i < monitorElemHost.size(); i++) 
      {
           if(monitorElemHost[i].endsWith(host)) 
           {
-#ifndef MAIN_NO_DEBUG
-              qDebug() << "Monitor delete Scan::" << host;
-#endif
               monitorElemHost.removeAt(i);
               monitorElemState.removeAt(i);
               monitorElemOptions.removeAt(i);
@@ -67,11 +69,12 @@ void nmapClass::delMonitorHost(QTreeWidget* monitor, const QString host)
               break; // remove only first elem
            }
      }
-     updateMonitorScanCounter(0);
+     
      updateMonitorHost(monitor);
+     emit monitorUpdated();
 }
 
-void nmapClass::updateMonitorHost(QTreeWidget* monitor)
+void monitor::updateMonitorHost(QTreeWidget* monitor)
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
     monitor->clear();
@@ -87,39 +90,4 @@ void nmapClass::updateMonitorHost(QTreeWidget* monitor)
         item->setText(2, monitorElemState[i]);
         monitorElem.push_front(item);
     }
-
-    QString title("Nmapsi4 ");
-
-    if (monitorElemHost.size() == 0)
-    {
-        monitorStopAllScanButt->setEnabled(false);
-        monitorStopCurrentScanButt->setEnabled(false);
-        monitorDetailsScanButt->setEnabled(false);
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-    }
 }
-
-void nmapClass::updateMonitorScanCounter(int type) 
-{
-    /*
-     *   type 1: scan counter ++
-     *   type 0: scan counter --
-     */
-    QString title("Nmapsi4 -");
-    title.append(tr(" Active Scan "));
-    title.append("(");
-
-    if(type) 
-    {
-        scanCounter++;
-    } 
-    else 
-    {
-        scanCounter--;
-    }
-
-    title.append(QString("%1").arg(scanCounter));
-    title.append(")");
-    setWindowTitle(title);
-}
-
