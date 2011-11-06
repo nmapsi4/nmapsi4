@@ -120,12 +120,9 @@ void nmapClass::discoverIpState()
     connect(discover, SIGNAL(endPing(QStringList,bool,const QByteArray)), 
             this, SLOT(pingResult(QStringList,bool, const QByteArray)));
     
-    foreach (const QString &token, ipList_) 
-    {
-        discover->isUp(token,this,parameters);
-        varDiscover::ipCounter++;
-        nseNumber->display(varDiscover::ipCounter);
-    }
+    discover->isUp(ipList_,this,parameters);
+    varDiscover::ipCounter = ipList_.size();
+    nseNumber->display(varDiscover::ipCounter);
 }
 
 void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray callBuff)

@@ -81,6 +81,14 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
     }
 }
 
+void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters) 
+{
+    foreach (const QString& host, networkIpList)
+    {
+        isUp(host, parent, parameters);
+    }
+}
+
 void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent, QStringList parameters) 
 {
     /*

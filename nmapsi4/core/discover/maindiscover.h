@@ -64,6 +64,7 @@ namespace pingInterface {
 	 * Check state of ip on the network (up/down) with nping QThread
 	 */
 	void isUp(const QString networkIp, QObject *parent, QStringList parameters);
+        void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
 
     protected:
 	bool ipState;

@@ -35,10 +35,10 @@ void nmapClass::checkNmapVersion()
     
     labelVersion = new QLabel();
     // FIXME
-    QString versionNmap_;
-    versionNmap_.append("<b>Ui</b>: ");
-    versionNmap_.append(_VERSION_);
-    labelVersion->setText(versionNmap_);
+    QString uiVersion;
+    uiVersion.append("<b>Ui</b>: ");
+    uiVersion.append(_VERSION_);
+    labelVersion->setText(uiVersion);
     
     userMode = new QLabel();
     // FIXME
