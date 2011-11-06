@@ -210,8 +210,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(monitorStopCurrentScan()));
     connect(monitorDetailsScanButt, SIGNAL(clicked()),
             this, SLOT(monitorShowDetails()));
-    connect(_monitor, SIGNAL(monitorUpdated()),
-            this, SLOT(updateScanCounter()));
+    connect(_monitor, SIGNAL(monitorUpdated(int)),
+            this, SLOT(updateScanCounter(int)));
 
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),

@@ -217,7 +217,7 @@ private slots:
     void monitorRuntimeEvent();
     void monitorStopCurrentScan();
     void monitorShowDetails();
-    void updateScanCounter();
+    void updateScanCounter(int hostNumber);
     void objVulnButton();
     // Check nmap version
     void checkNmapVersion();

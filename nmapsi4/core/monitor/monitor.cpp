@@ -51,7 +51,7 @@ void monitor::addMonitorHost(QTreeWidget* monitor, const QString host, const QSt
     monitorElemOptions.push_front(hostThread->text(1));
     monitorElemState.push_front(hostThread->text(2));
 
-    emit monitorUpdated();
+    emit monitorUpdated(monitorHostNumber());
 }
 
 
@@ -71,7 +71,7 @@ void monitor::delMonitorHost(QTreeWidget* monitor, const QString host)
      }
      
      updateMonitorHost(monitor);
-     emit monitorUpdated();
+     emit monitorUpdated(monitorHostNumber());
 }
 
 void monitor::updateMonitorHost(QTreeWidget* monitor)

@@ -685,14 +685,12 @@ void nmapClass::listClear()
     comboScanLog->addItem(tr("Scan log parameters"));
 }
 
-void nmapClass::updateScanCounter()
+void nmapClass::updateScanCounter(int hostNumber)
 {
-    // FIXME
-//     qDebug() << "DEBUG:: imageName:: " << tabUi->tabIcon(tabUi->indexOf(tabMainMonitor)).name();
-//     if (tabUi->tabIcon(tabUi->indexOf(tabMainMonitor)).name() == "reload.png")
-//     {
-//         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
-//     }
+    if (hostNumber == 1)
+    {
+        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    }
     
     QString title("Nmapsi4 -");
     title.append(tr(" Active Scan "));
