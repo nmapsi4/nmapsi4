@@ -29,10 +29,10 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     }
     // Create parser Obect
     parserObj *elemObj = new parserObj();
-    QString hostCheck_ = parList[parList.size()-1];
+    QString hostCheck = parList[parList.size()-1];
 
-    _monitor->delMonitorHost(scanMonitor, hostCheck_);
-    elemObj->setHostName(hostCheck_);
+    _monitor->delMonitorHost(hostCheck);
+    elemObj->setHostName(hostCheck);
 
     listClearFlag = false; // the listScan is not empty
 
@@ -45,7 +45,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     QString tmp, generalBuffer_, scanBuffer, bufferInfo,bufferTraceroot,bufferNSS;
     QRegExp rxT_("^\\d\\d?");
 
-    generalBuffer_.append(hostCheck_);
+    generalBuffer_.append(hostCheck);
 
     while (!stream.atEnd()) 
     {
@@ -181,14 +181,14 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
     } 
     else 
     {
-        tmp_host.append(hostCheck_);
+        tmp_host.append(hostCheck);
         tmp_host.append("\n");
         tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
         
         if ((PFile) && (!verboseLog))
         {
-            *out << hostCheck_ << endl;
+            *out << hostCheck << endl;
         }
     }
     

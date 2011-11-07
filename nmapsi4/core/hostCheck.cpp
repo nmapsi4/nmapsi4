@@ -28,7 +28,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
     if(state == -1) 
     {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        _monitor->delMonitorHost(scanMonitor,hostname);
+        _monitor->delMonitorHost(hostname);
         return;
     }
     

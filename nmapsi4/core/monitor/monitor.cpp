@@ -19,7 +19,7 @@
 
 #include "monitor.h"
 
-monitor::monitor()
+monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 {
 }
 
@@ -30,64 +30,64 @@ monitor::~monitor()
 
 bool monitor::searchMonitorElem(const QString hostname)
 {
-    return monitorElemHost.contains(hostname) ? true : false;
+    QList<QTreeWidgetItem*>::const_iterator i;
+    for (i = monitorElem.begin(); i != monitorElem.end(); ++i)
+    {
+        if ((*i)->text(0) == hostname)
+        {
+            return true;
+        }
+    }
+    
+    return false;
 }
 
 int monitor::monitorHostNumber()
 {
-    return monitorElemHost.size();
+    return monitorElem.size();
 }
 
-void monitor::addMonitorHost(QTreeWidget* monitor, const QString host, const QString paramter) 
+void monitor::addMonitorHost(const QString hostName, const QString parameter) 
 {
-    QTreeWidgetItem *hostThread = new QTreeWidgetItem(monitor);
+    QTreeWidgetItem *hostThread = new QTreeWidgetItem(_monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-    hostThread->setText(0, host);
-    hostThread->setText(1,paramter);
+    hostThread->setText(0, hostName);
+    hostThread->setText(1,parameter);
     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     hostThread->setText(2, "Scanning");
     monitorElem.push_front(hostThread);
-    monitorElemHost.push_front(hostThread->text(0));
-    monitorElemOptions.push_front(hostThread->text(1));
-    monitorElemState.push_front(hostThread->text(2));
 
     emit monitorUpdated(monitorHostNumber());
 }
 
 
-void monitor::delMonitorHost(QTreeWidget* monitor, const QString host) 
+void monitor::delMonitorHost(const QString hostName) 
 {
-     for(int i=0; i < monitorElemHost.size(); i++) 
+     for(int i=0; i < monitorElem.size(); i++) 
      {
-          if(monitorElemHost[i].endsWith(host)) 
+          if(monitorElem[i]->text(0) == hostName) 
           {
-              monitorElemHost.removeAt(i);
-              monitorElemState.removeAt(i);
-              monitorElemOptions.removeAt(i);
               delete monitorElem.takeAt(i);
               // FIXME:: remove break with duplicate check
               break; // remove only first elem
            }
      }
      
-     updateMonitorHost(monitor);
      emit monitorUpdated(monitorHostNumber());
 }
 
-void monitor::updateMonitorHost(QTreeWidget* monitor)
+void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
-    monitor->clear();
-    QTreeWidgetItem* item;
-
-    for (int i=0; i < monitorElemHost.size(); i++)
+    Q_ASSERT(valueIndex < _monitor->columnCount());
+    
+    QList<QTreeWidgetItem*>::const_iterator i;
+    for (i = monitorElem.begin(); i != monitorElem.end(); ++i)
     {
-        item = new QTreeWidgetItem(monitor);
-        item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
-        item->setText(0, monitorElemHost[i]);
-        item->setText(1, monitorElemOptions[i]);
-        item->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        item->setText(2, monitorElemState[i]);
-        monitorElem.push_front(item);
+        if ((*i)->text(0) == hostName)
+        {
+            (*i)->setText(valueIndex,newData);
+        }
+        
+        break;
     }
 }

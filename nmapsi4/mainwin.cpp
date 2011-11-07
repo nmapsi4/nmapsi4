@@ -48,7 +48,7 @@ void nmapClass::initObject()
 #endif
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
-    _monitor = new monitor();
+    _monitor = new monitor(scanMonitor);
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();

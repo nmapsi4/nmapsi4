@@ -34,24 +34,18 @@ class monitor : public QObject
 {
     Q_OBJECT
     
-    friend class nmapClass;
-    
 public:
-    monitor();
+    monitor(QTreeWidget* monitor);
     ~monitor();
-    void addMonitorHost(QTreeWidget* monitor, const QString host,const QString paramter);
-    void delMonitorHost(QTreeWidget* monitor, const QString host);
+    void addMonitorHost(const QString hostName,const QString parameter);
+    void delMonitorHost(const QString hostName);
+    void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
     bool searchMonitorElem(const QString hostname);
     int monitorHostNumber();
-    
-private:
-    void updateMonitorHost(QTreeWidget* monitor);
-    
+        
 protected:
     QList<QTreeWidgetItem*> monitorElem;
-    QList<QString> monitorElemHost;
-    QList<QString> monitorElemState;
-    QList<QString> monitorElemOptions;
+    QTreeWidget* _monitor;
     
 signals:
     void monitorUpdated(int hostNumber);
