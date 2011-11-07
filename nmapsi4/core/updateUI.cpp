@@ -691,13 +691,14 @@ void nmapClass::updateScanCounter(int hostNumber)
     {
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
-    
-    QString title("Nmapsi4 -");
-    title.append(tr(" Active Scan "));
-    title.append("(");
-    title.append(QString("%1").arg(_monitor->monitorHostNumber()));
-    title.append(")");
+
+    QString title("Nmapsi4 -" + tr(" Active Scan ")
+                  + QLatin1String("(")
+                  + QString("%1").arg(_monitor->monitorHostNumber())
+                  + QLatin1String(")"));
+
     setWindowTitle(title);
+
 }
 
 
