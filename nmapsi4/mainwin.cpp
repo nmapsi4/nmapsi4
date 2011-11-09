@@ -43,7 +43,7 @@ void nmapClass::initObject()
 #endif
 
 #ifdef Q_WS_WIN
-    // lookup fails on MS Windows
+    // FIXME: lookup fails on MS Windows
     tabWidget->removeTab(3);
 #endif
     tWresult->setTabsClosable(true);
@@ -74,15 +74,15 @@ void nmapClass::initObject()
     loadHistoryDefault();
     // restore value with uid check
     rootMode();
-    nssAct->setChecked(NSSsupport); // set NSS support
+    _collections.value("nss-act")->setChecked(NSSsupport);
     NSSCheck();
-    parAct->setChecked(ADVSupport); // set ADV support
+    _collections.value("par-act")->setChecked(ADVSupport);
     parAdv();
-    actTabMonitor->setChecked(MonitorEnabled);
+    _collections.value("tab-monitor-act")->setChecked(MonitorEnabled);
     updateTabMonitor();
-    actTabLook->setChecked(LookupEnabled);
+    _collections.value("tab-look-act")->setChecked(LookupEnabled);
     updateTabLook();
-    actTabTrace->setChecked(TraceEnabled);
+    _collections.value("tab-trace-act")->setChecked(TraceEnabled);
     updateTabTrace();
     updateMenuBar();
     // load quick combo items
@@ -106,20 +106,13 @@ nmapClass::~nmapClass()
     freelist<parserObj*>::itemDeleteAll(parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     freelist<QWebView*>::itemDeleteAll(webViewList);
-    cleanDiscovery();
+    freemap<QString,QAction*>::itemDeleteAll(_collections);
+    discoveryClear();
     delete _monitor;
     delete progressScan;
     delete PFile;
     delete labelVersion;
     delete userMode;
-    delete scanSez;
-    delete logSez;
-    delete vulnSez;
-    delete nssAct;
-    delete parAct;
-    delete actBack;
-    delete actForward;
-    delete actStop;
     delete bW;
     delete cW;
     delete menuSetup->menu();

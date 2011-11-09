@@ -385,7 +385,7 @@ void nmapClass::updateFontHost()
 void nmapClass::updateFontHostVuln() 
 {
     comboVulnRis->clear();
-    actSearch->setEnabled(true);
+    _collections.value("search-act")->setEnabled(true);
     comboVulnRis->setStyleSheet(QString::fromUtf8(""));
     bool signalState = comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
     
@@ -403,10 +403,10 @@ void nmapClass::setProgress()
 
 void nmapClass::updateSezScan() 
 { // SLOT
-    scanSez->setChecked(true);
-    logSez->setChecked(false);
-    vulnSez->setChecked(false);
-    discoverSez->setChecked(false);
+    _collections.value("scan-sez")->setChecked(true);
+    _collections.value("log-sez")->setChecked(false);
+    _collections.value("vuln-sez")->setChecked(false);
+    _collections.value("discover-sez")->setChecked(false);
     toolBar->setVisible(true);
     toolBar_2->setVisible(true);
     toolBarSearch->setVisible(false);
@@ -436,19 +436,19 @@ void nmapClass::updateSezScan()
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     // enable scan action
-    if (!nssAct->isVisible()) 
+    if (!_collections.value("nss-act")->isVisible())
     {
-	parAct->setVisible(true);
-	nssAct->setVisible(true);
+	_collections.value("par-act")->setVisible(true);
+	_collections.value("nss-act")->setVisible(true);
     }
 }
 
 void nmapClass::updateSezLog() 
 {  // SLOT
-    scanSez->setChecked(false);
-    logSez->setChecked(true);
-    vulnSez->setChecked(false);
-    discoverSez->setChecked(false);
+    _collections.value("scan-sez")->setChecked(false);
+    _collections.value("log-sez")->setChecked(true);
+    _collections.value("vuln-sez")->setChecked(false);
+    _collections.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBar_2->setVisible(false);
@@ -464,16 +464,16 @@ void nmapClass::updateSezLog()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    nssAct->setVisible(false);
-    parAct->setVisible(false);
+    _collections.value("nss-act")->setVisible(false);
+    _collections.value("par-act")->setVisible(false);
 }
 
 void nmapClass::updateSezVuln() 
 { // SLOT
-    scanSez->setChecked(false);
-    logSez->setChecked(false);
-    vulnSez->setChecked(true);
-    discoverSez->setChecked(false);
+    _collections.value("scan-sez")->setChecked(false);
+    _collections.value("log-sez")->setChecked(false);
+    _collections.value("vuln-sez")->setChecked(true);
+    _collections.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
@@ -489,17 +489,17 @@ void nmapClass::updateSezVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    nssAct->setVisible(false);
-    parAct->setVisible(false);
+    _collections.value("nss-act")->setVisible(false);
+    _collections.value("par-act")->setVisible(false);
 }
 
 void nmapClass::updateDiscoverVuln() 
 { // SLOT
     // discover section
-    scanSez->setChecked(false);
-    logSez->setChecked(false);
-    vulnSez->setChecked(false);
-    discoverSez->setChecked(true);
+    _collections.value("scan-sez")->setChecked(false);
+    _collections.value("log-sez")->setChecked(false);
+    _collections.value("vuln-sez")->setChecked(false);
+    _collections.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(false);
@@ -515,13 +515,13 @@ void nmapClass::updateDiscoverVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    nssAct->setVisible(false);
-    parAct->setVisible(false);
+    _collections.value("nss-act")->setVisible(false);
+    _collections.value("par-act")->setVisible(false);
 }
 
 void nmapClass::NSSCheck() 
 { // SLOT
-   if (nssAct->isChecked()) 
+   if (_collections.value("nss-act")->isChecked())
    {
        NSSsupport = true;
        Bnss->setVisible(true);
@@ -559,7 +559,7 @@ void nmapClass::setTreeWidgetValues()
 
 void nmapClass::parAdv() 
 {
-    if (parAct->isChecked()) 
+    if (_collections.value("par-act")->isChecked())
     {
         optionAccept->setVisible(true);
         frameAdv->setVisible(true);
@@ -616,7 +616,7 @@ void nmapClass::updateComboBook()
 
 void nmapClass::updateTabLook() 
 {
-    if (actTabLook->isChecked()) 
+    if (_collections.value("tab-look-act")->isChecked())
     {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
@@ -631,7 +631,7 @@ void nmapClass::updateTabLook()
 
 void nmapClass::updateTabTrace() 
 {
-    if (actTabTrace->isChecked()) 
+    if (_collections.value("tab-trace-act")->isChecked())
     {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
@@ -646,13 +646,13 @@ void nmapClass::updateTabTrace()
 
 void nmapClass::updateTabMonitor() 
 {
-    if (actTabMonitor->isChecked() && tabUi->count() < 4) 
+    if (_collections.value("tab-monitor-act")->isChecked() && tabUi->count() < 4)
     {
         tabUi->insertTab(tabUi->count(),tabMainMonitor,tr("Scan Monitor"));
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
         MonitorEnabled = true;
     } 
-    else if (!actTabMonitor->isChecked()) 
+    else if (!_collections.value("tab-monitor-act")->isChecked())
     {
         tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
         MonitorEnabled = false;

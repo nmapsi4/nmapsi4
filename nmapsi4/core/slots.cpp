@@ -26,7 +26,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(update_portCombo()));  // portCombo slot
     connect(comboScan, SIGNAL(activated(const QString&)),
             this, SLOT(update_scanCombo()));  // comboScan slot
-
     connect(checkInputFile, SIGNAL(toggled(bool)),
             this, SLOT(update_inputcheck()));  // input check
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
@@ -138,16 +137,7 @@ void nmapClass::setNmapsiSlot()
     connect(treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuParBook()));
 
-
     // Vuln signal
-    connect(actSearch, SIGNAL(triggered()),
-            this, SLOT(searchVulnNG()));
-    connect(actBack, SIGNAL(triggered()),
-            this, SLOT(tabWebBack()));
-    connect(actForward, SIGNAL(triggered()),
-            this, SLOT(tabWebForward()));
-    connect(actStop, SIGNAL(triggered()),
-            this, SLOT(tabWebStop()));
     connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
             this, SLOT(updateComboVuln(const QString&)));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
@@ -173,36 +163,19 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(removeUrlToBookmarks()));
 
     // main session
-    connect(scanSez, SIGNAL(triggered()),
-            this, SLOT(updateSezScan()));
     connect(actionScan_section, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
-    connect(logSez, SIGNAL(triggered()),
-            this, SLOT(updateSezLog()));
     connect(actionLog_section, SIGNAL(triggered()),
             this, SLOT(updateSezLog()));
-    connect(vulnSez, SIGNAL(triggered()),
-            this, SLOT(updateSezVuln()));
-    connect(discoverSez, SIGNAL(triggered()),
-            this, SLOT(updateDiscoverVuln()));
     connect(actionVulnerabilities_section, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
     connect(actionSection_Discover, SIGNAL(triggered()),
             this, SLOT(updateDiscoverVuln()));
-    connect(nssAct, SIGNAL(triggered()),
-            this, SLOT(NSSCheck()));
-    connect(parAct, SIGNAL(triggered()),
-            this, SLOT(parAdv()));
-    connect(actTabLook, SIGNAL(triggered()),
-            this, SLOT(updateTabLook()));
-    connect(actTabTrace, SIGNAL(triggered()),
-            this, SLOT(updateTabTrace()));
-    connect(actTabMonitor, SIGNAL(triggered()),
-            this, SLOT(updateTabMonitor()));
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
     connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateFontHost()));
+
     // monitor events
     connect(scanMonitor, SIGNAL( itemSelectionChanged()),
             this, SLOT(monitorRuntimeEvent()));

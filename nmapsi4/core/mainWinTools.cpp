@@ -86,7 +86,7 @@ void nmapClass::setDefaultAction()
     actionAdd_Bookmark->setEnabled(false);
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
-    scanSez->setChecked(true);
+    _collections.value("scan-sez")->setChecked(true);
     Bdetails->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     nseNumber->setSegmentStyle(QLCDNumber::Flat);

@@ -69,6 +69,10 @@ class nmapClass : public QMainWindow, private Ui::MainWindow
 {
     Q_OBJECT
 
+public:
+    nmapClass();
+    ~nmapClass();
+
 private:
     void scan(const QString hostname);
     void preScanLookup(const QString hostname);
@@ -103,10 +107,6 @@ private:
     void defaultComboValues();
     void defaultDiscoverProbes();
     void createToolButtonSetup();
-
-public:
-    nmapClass();
-    ~nmapClass();
     void show_log_browserUrl(const QString url, QLineEdit *location);
     void setQuickProfile();
     void setNormalProfile();
@@ -155,6 +155,7 @@ protected:
     QHash<QString, scanThread*> scanHashList;
     QHash<QString, QStringList> scanHashListFlow;
     QHash<QString, QTextDocument*> nseHelpCache;
+    QHash<QString, QAction*> _collections;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
     QList<lookUpT*> internealLookupList;
@@ -162,19 +163,6 @@ protected:
     QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
-    QAction *scanSez;
-    QAction *logSez;
-    QAction *vulnSez;
-    QAction *discoverSez;
-    QAction *nssAct;
-    QAction *parAct;
-    QAction *actSearch;
-    QAction *actBack;
-    QAction *actForward;
-    QAction *actStop;
-    QAction *actTabLook;
-    QAction *actTabTrace;
-    QAction *actTabMonitor;
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;
@@ -288,7 +276,7 @@ private slots:
     void discoverIp(const QString& interface);
     void pingResult(QStringList hostname, bool state, const QByteArray callBuff);
     void discoverIpState();
-    void cleanDiscovery();
+    void discoveryClear();
     void stopDiscover();
     void updateSRdata();
     void requestNseHelp(QTreeWidgetItem *item, int column);

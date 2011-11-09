@@ -121,8 +121,7 @@ void nmapClass::nseTreeActiveItem()
         }
     }
 
-    qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
-    if (nssAct->isChecked()) 
+    if (_collections.value("nss-act")->isChecked())
     {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
@@ -146,8 +145,7 @@ void nmapClass::nseTreeRemoveItem()
         }
     }
 
-    qDebug() << "DEBUG:: nss act:: " << nssAct->isChecked();
-    if (nssAct->isChecked()) 
+    if (_collections.value("nss-act")->isChecked())
     {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
