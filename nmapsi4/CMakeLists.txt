@@ -2,6 +2,11 @@ PROJECT(nmapsi4)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
+QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
+                     core/dbus/org.nmapsi4.Nmapsi4.xml
+                     nmapsi4/core/monitor/monitor.h
+                     monitor)
+
 if (NOT Q_WS_X11)
 SET(SOURCES_CPP core/slots.cpp
 		core/resizeNmapsi4.cpp
@@ -52,7 +57,8 @@ SET(SOURCES_CPP core/slots.cpp
 		main.cpp)
 #MESSAGE( STATUS ${SOURCES_CPP} )
 else (NOT Q_WS_X11)
-  SET(SOURCES_CPP core/slots.cpp
+  SET(SOURCES_CPP  ${nmapsi4adaptor_SRCS}
+                core/slots.cpp
 		core/resizeNmapsi4.cpp
 		core/parser/parserUtils.cpp
 		core/parser/nmapParser.cpp
@@ -96,6 +102,7 @@ else (NOT Q_WS_X11)
 		core/bookmarks/addparbook.cpp
 		core/mainScan.cpp
 		main.cpp)
+
 #MESSAGE( STATUS ${SOURCES_CPP} )
 endif (NOT Q_WS_X11)
 
@@ -171,16 +178,16 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
 if (Q_WS_X11)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY}  nmapsi4_history nmapsi4_about)
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY} nmapsi4_history nmapsi4_about)
 elseif(WIN32)
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR})			
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY})
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY})
 elseif(Q_WS_MAC)
   MESSAGE( STATUS MAC Osx)
   ADD_EXECUTABLE(nmapsi4 MACOSX_BUNDLE ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR})
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY})
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY})
   ADD_CUSTOM_COMMAND( TARGET nmapsi4 POST_BUILD
         COMMAND mkdir ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS ${MACOSX_BUNDLE_ICON_FILE} ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
@@ -195,6 +202,7 @@ if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
   install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
   install(FILES "kde/nmapsi4.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
+  install(FILES "core/dbus/org.nmapsi4.Nmapsi4.xml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces/)
   install(FILES "kde/nmapsi4-admin.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
   install(FILES "../icons/32x32/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
   install(FILES "../icons/64x64/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)

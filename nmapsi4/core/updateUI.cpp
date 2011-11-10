@@ -698,7 +698,6 @@ void nmapClass::updateScanCounter(int hostNumber)
                   + QLatin1String(")"));
 
     setWindowTitle(title);
-
 }
 
 

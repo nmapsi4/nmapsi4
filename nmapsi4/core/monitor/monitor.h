@@ -24,6 +24,7 @@
 #include <QtCore/QObject>
 #include <QtGui/QTreeWidget>
 #include <QtCore/QList>
+#include <QtDBus/QDBusConnection>
 
 // local include
 #include "../lib/memorytools.h"
@@ -33,6 +34,7 @@ using namespace memory;
 class monitor : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
     
 public:
     monitor(QTreeWidget* monitor);

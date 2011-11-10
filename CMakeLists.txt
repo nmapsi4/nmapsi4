@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6.0)
 
-FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
+FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus REQUIRED)
 
 include(${QT_USE_FILE})
 
@@ -18,6 +18,8 @@ if(Q_WS_MAC)
     SET( CMAKE_OSX_ARCHITECTURES i386;x86_64 )
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
 endif(Q_WS_MAC)
+
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 
 add_subdirectory( lib )

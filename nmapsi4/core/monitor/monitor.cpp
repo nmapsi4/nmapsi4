@@ -18,9 +18,24 @@
  ***************************************************************************/
 
 #include "monitor.h"
+#include "nmapsi4adaptor.h"
 
 monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 {
+    new Nmapsi4Adaptor(this);
+    // FIXME: with full mode It is registred into root dbus session
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+//     if (!dbus.isConnected())
+//     {
+//         dbus = QDBusConnection::systemBus();
+//     }
+    dbus.registerObject("/Nmapsi4",this);
+    bool value = dbus.registerService("org.nmapsi4.Nmapsi4");
+
+    if (!value)
+    {
+        qDebug() << "DBUS:: error with dbus connection";
+    }
 }
 
 monitor::~monitor()

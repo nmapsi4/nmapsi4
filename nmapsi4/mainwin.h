@@ -168,13 +168,6 @@ protected:
     QToolButton *menuSetup;
     monitor *_monitor;
 
-public slots:
-    void startScan();
-    void about();
-    void about_qt();
-    void stop_scan();
-    void exit();
-
 private slots:
     void initObject();
     void nmapParser(const QStringList parList, QByteArray Byte1,  QByteArray Byte2);
@@ -283,6 +276,11 @@ private slots:
     void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
     void requestNseScriptHelp();
     void showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors);
+    void startScan();
+    void about();
+    void about_qt();
+    void stop_scan();
+    void exit();
 };
 
 #endif
