@@ -82,6 +82,7 @@ private:
     void setNmapsiSlot();
     QFile* create_logFile(const QString Path);
     QStringList check_extensions();
+    QStringList loadExtensions();
     void resetOptions();
     void checkProfile();
     void initGUI();

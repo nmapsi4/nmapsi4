@@ -19,9 +19,25 @@
 
 #include "../mainwin.h"
 
+QStringList nmapClass::loadExtensions()
+{
+    QStringList parameters;
+
+    if(!frameAdv->isVisible())
+    {
+        parameters = check_extensions();
+    }
+    else
+    {
+        parameters = comboAdv->lineEdit()->text().split(' ');
+    }
+
+    return parameters;
+}
+
 QStringList nmapClass::check_extensions()
 {
-    QStringList parametri;
+    QStringList parameters;
 
     if(_monitor->monitorHostNumber()) 
     {
@@ -30,25 +46,25 @@ QStringList nmapClass::check_extensions()
 
     if(NSSsupport) 
     {
-        parametri << "-A";
+        parameters << "-A";
     } 
     else 
     {
         if (!uid) 
         {
-            parametri << "--traceroute";
+            parameters << "--traceroute";
         }
     }
     
     if (nseComboScript->currentIndex()) 
     {
         //set --script "xx,xx"
-        if (parametri.contains("-A")) 
+        if (parameters.contains("-A"))
         {
-            parametri.removeAll("-A");
+            parameters.removeAll("-A");
             if (!uid) 
             {
-                parametri << "--traceroute";
+                parameters << "--traceroute";
             }
         }
         QString tmpListScript_("--script=");
@@ -105,24 +121,24 @@ QStringList nmapClass::check_extensions()
             tmpListArgs_.remove(' ');
             tmpListArgs_.resize(tmpListArgs_.size()-1);
             tmpListParam_.append(tmpListArgs_);
-            parametri << tmpListParam_;
+            parameters << tmpListParam_;
         }
 
-        parametri << tmpListScript_;
+        parameters << tmpListScript_;
     }
 
     switch (comboScan->currentIndex()) { //scan check
     case 0:
 //    Connect Scan
-        parametri << "-sT";
+        parameters << "-sT";
         break;
     case 1:
 //    Ping Sweep
-        parametri << "-sP";
+        parameters << "-sP";
         break;
     case 2:
 //    Host List
-        parametri << "-sL";
+        parameters << "-sL";
         break;
     case 3:
 //    FTP Bounce Attack
@@ -131,58 +147,58 @@ QStringList nmapClass::check_extensions()
             QMessageBox::warning(this, "NmapSI4", tr("No Ftp Address \n"), tr("Disable Ftp bounce"));
             comboScan->setCurrentIndex(0);
             bounceEdit->setEnabled(false);
-            parametri << "-sT";
+            parameters << "-sT";
         } 
         else 
         {
-            parametri << "-b";
-            parametri << bounceEdit->text();
+            parameters << "-b";
+            parameters << bounceEdit->text();
         }
         break;
     case 4:
 //    Idle Scan
-        parametri << "-sI";
-        parametri << bounceEdit->text();
+        parameters << "-sI";
+        parameters << bounceEdit->text();
         break;
     case 5:
 //    SYN Stealth Scan (rootMode)
-        parametri << "-sS";
+        parameters << "-sS";
         break;
     case 6:
 //    ACK Stealth Scan (rootMode)
-        parametri << "-sA";
+        parameters << "-sA";
         break;
     case 7:
 //    FIN|ACK Stealth Scan (rootMode)
-        parametri << "-sM";
+        parameters << "-sM";
         break;
     case 8:
 //    FIN Stealth Scan (rootMode)
-        parametri << "-sF";
+        parameters << "-sF";
         break;
     case 9:
 //    NULL Stealth Scan (rootMode)
-        parametri << "-sN";
+        parameters << "-sN";
         break;
     case 10:
 //    XMAS Tree Stealth Scan (rootMode)
-        parametri << "-sX";
+        parameters << "-sX";
         break;
     case 11:
 //    TCP Window Scan (rootMode)
-        parametri << "-sW";
+        parameters << "-sW";
         break;
     case 12:
 //    UDP Ports Scan (rootMode)
-        parametri << "-sU";
+        parameters << "-sU";
         break;
     case 13:
 //    IP Protocol Scan (rootMode)
-        parametri << "-sO";
+        parameters << "-sO";
         break;
     default:
         comboScan->setCurrentIndex(0);
-        parametri << "-sT";
+        parameters << "-sT";
         break;
 
     }
@@ -195,16 +211,16 @@ QStringList nmapClass::check_extensions()
 
     // start option scan
     if (rpcBox->isChecked())
-        parametri << "-sR";
+        parameters << "-sR";
 
     if (versionBox->isChecked())
-        parametri << "-sV";
+        parameters << "-sV";
 
     if (notpingBox->isChecked())
-        parametri << "-P0";
+        parameters << "-P0";
 
     if (checkOS->isChecked())
-        parametri << "-O";
+        parameters << "-O";
     //end Extension
 
     if(_monitor->monitorHostNumber()) 
@@ -216,18 +232,18 @@ QStringList nmapClass::check_extensions()
     { // port combo check
     case 1:
 //    All
-        parametri << "-p-";
+        parameters << "-p-";
         break;
     case 2:
 //    Most Important
-        parametri << "-F";
+        parameters << "-F";
         break;
     case 3:
 //    Range
         if (!portEdit->text().isEmpty()) 
         {
-            parametri << "-p";
-            parametri << portEdit->text();
+            parameters << "-p";
+            parameters << portEdit->text();
         } 
         else
         {
@@ -246,8 +262,8 @@ QStringList nmapClass::check_extensions()
     { // File options
         if (!lineInputFile->text().isEmpty()) 
         {
-            parametri << "-iL";
-            parametri << lineInputFile->text();
+            parameters << "-iL";
+            parameters << lineInputFile->text();
         } 
         else
         {
@@ -262,7 +278,7 @@ QStringList nmapClass::check_extensions()
             QString tmpCommand;
             tmpCommand.append("-PT");
             tmpCommand.append(lineTcpPing->text());
-            parametri << tmpCommand;
+            parameters << tmpCommand;
 
         } 
         else
@@ -278,7 +294,7 @@ QStringList nmapClass::check_extensions()
             QString tmpCommand;
             tmpCommand.append("-PS");
             tmpCommand.append(lineSynPing->text());
-            parametri << tmpCommand;
+            parameters << tmpCommand;
 
         } 
         else
@@ -294,7 +310,7 @@ QStringList nmapClass::check_extensions()
             QString tmpCommand;
             tmpCommand.append("-PU");
             tmpCommand.append(lineUdpPing->text());
-            parametri << tmpCommand;
+            parameters << tmpCommand;
 
         } 
         else
@@ -304,33 +320,33 @@ QStringList nmapClass::check_extensions()
     }
 
     if (checkIcmpEcho->isChecked()) // Discover option
-        parametri << "-PI";
+        parameters << "-PI";
     if (checkIcmpTimestamp->isChecked()) // Discover option
-        parametri << "-PP";
+        parameters << "-PP";
     if (checkIcmpNetmask->isChecked()) // Discover option
-        parametri << "-PM";
+        parameters << "-PM";
 
     switch (comboTiming->currentIndex()) 
     { // port combo Timing
     case 1:
 //    Paranoid
-        parametri << "-T0";
+        parameters << "-T0";
         break;
     case 2:
 //    Sneaky
-        parametri << "-T1";
+        parameters << "-T1";
         break;
     case 3:
 //    Polite
-        parametri << "-T2";
+        parameters << "-T2";
         break;
     case 4:
 //    Aggressive
-        parametri << "-T4";
+        parameters << "-T4";
         break;
     case 5:
 //    Insane
-        parametri << "-T5";
+        parameters << "-T5";
         break;
     default:
         break;
@@ -340,11 +356,11 @@ QStringList nmapClass::check_extensions()
     { // port DNS resolv
     case 1:
 //    Always
-        parametri << "-R";
+        parameters << "-R";
         break;
     case 2:
 //    Never
-        parametri << "-n";
+        parameters << "-n";
         break;
     default:
         break;
@@ -354,30 +370,30 @@ QStringList nmapClass::check_extensions()
     { // port DNS resolv
     case 1:
 //    Verbose
-        parametri << "-v";
+        parameters << "-v";
         break;
     case 2:
 //    Very Verbose
-        parametri << "-vv";
+        parameters << "-vv";
         break;
     case 3:
 //    Debug
-        parametri << "-d";
+        parameters << "-d";
         break;
     case 4:
 //    Verbose Debug
-        parametri << "-d2";
+        parameters << "-d2";
         break;
     default:
         break;
     }
 
     if (checkOrdered->isChecked()) // Misc Options
-        parametri << "-r"; // Ordered Port
+        parameters << "-r"; // Ordered Port
     if (checkIpv6->isChecked())
-        parametri << "-6"; // Ipv6
+        parameters << "-6"; // Ipv6
     if (checkFrag->isChecked())
-        parametri << "-f"; // Ipv6
+        parameters << "-f"; // Ipv6
 
     if(_monitor->monitorHostNumber()) 
     {
@@ -387,50 +403,50 @@ QStringList nmapClass::check_extensions()
     // Timing options
     if (TcheckIpv4ttl->isChecked()) 
     {
-        parametri << "--ttl";
-        parametri << spinBoxIpv4ttl->text();
+        parameters << "--ttl";
+        parameters << spinBoxIpv4ttl->text();
     }
 
     if (TcheckMinPar->isChecked()) 
     {
-        parametri << "--min_parallelism";
-        parametri << TspinBoxMinP->text();
+        parameters << "--min_parallelism";
+        parameters << TspinBoxMinP->text();
     }
 
     if (TcheckMaxPar->isChecked()) 
     {
-        parametri << "--max_parallelism";
-        parametri << spinBoxMaxPar->text();
+        parameters << "--max_parallelism";
+        parameters << spinBoxMaxPar->text();
     }
 
     if (TcheckInitRtt->isChecked()) 
     {
-        parametri << "--initial_rtt_timeout";
-        parametri << spinBoxInitRtt->text();
+        parameters << "--initial_rtt_timeout";
+        parameters << spinBoxInitRtt->text();
     }
 
     if (TcheckMinRtt->isChecked()) 
     {
-        parametri << "--min_rtt_timeout";
-        parametri << spinBoxMinRtt->text();
+        parameters << "--min_rtt_timeout";
+        parameters << spinBoxMinRtt->text();
     }
 
     if (TcheckMaxRtt->isChecked()) 
     {
-        parametri << "--max_rtt_timeout";
-        parametri << spinBoxMaxRtt->text();
+        parameters << "--max_rtt_timeout";
+        parameters << spinBoxMaxRtt->text();
     }
 
     if (TcheckHostTime->isChecked()) 
     {
-        parametri << "--host_timeout";
-        parametri << spinBoxHostTime->text();
+        parameters << "--host_timeout";
+        parameters << spinBoxHostTime->text();
     }
 
     if (TcheckScanDelay->isChecked()) 
     {
-        parametri << "--scan_delay";
-        parametri << spinBoxScanDelay->text();
+        parameters << "--scan_delay";
+        parameters << spinBoxScanDelay->text();
     }
 
     //Options
@@ -438,8 +454,8 @@ QStringList nmapClass::check_extensions()
     { // Discover options (tcp syn)
         if (!OlineDevice->text().isEmpty()) 
         {
-            parametri << "-e";
-            parametri << OlineDevice->text();
+            parameters << "-e";
+            parameters << OlineDevice->text();
 
         } 
         else 
@@ -453,8 +469,8 @@ QStringList nmapClass::check_extensions()
     { // Discover options (tcp syn)
         if (!lineDecoy->text().isEmpty()) 
         {
-            parametri << "-D";
-            parametri << lineDecoy->text();
+            parameters << "-D";
+            parameters << lineDecoy->text();
 
         } 
         else 
@@ -468,8 +484,8 @@ QStringList nmapClass::check_extensions()
     { // Spoof options
         if (!lineEditSpoof->text().isEmpty()) 
         {
-            parametri << "-S";
-            parametri << lineEditSpoof->text();
+            parameters << "-S";
+            parameters << lineEditSpoof->text();
 
         } 
         else 
@@ -483,8 +499,8 @@ QStringList nmapClass::check_extensions()
     { // Spoof options
         if (!lineSourcePort->text().isEmpty()) 
         {
-            parametri << "-g";
-            parametri << lineSourcePort->text();
+            parameters << "-g";
+            parameters << lineSourcePort->text();
 
         } 
         else 
@@ -498,5 +514,5 @@ QStringList nmapClass::check_extensions()
         progressScan->setValue(55);
     }
     
-    return parametri;
+    return parameters;
 }

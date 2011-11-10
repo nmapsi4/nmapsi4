@@ -120,22 +120,13 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
     
-    // FIXME: function is better solution
-    QString parameter;
-    if(!frameAdv->isVisible()) 
-    {
-        parameter = check_extensions().join(" ");
-    } 
-    else 
-    {
-        parameter = comboAdv->lineEdit()->text();
-    }
+    QStringList parameters = loadExtensions();
 
     // check for scan lookup
     if(lookupInternal) 
     {
         // if internal lookUp is actived
-        _monitor->addMonitorHost(hostname, parameter);
+        _monitor->addMonitorHost(hostname, parameters);
         // call internal lookup thread and save the pointer.
         lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
         internealLookupList.push_back(internalLookupTh_);
@@ -153,13 +144,13 @@ void nmapClass::preScanLookup(const QString hostname)
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
         parserObjUtilList.append(tmpParserObj_);
-        _monitor->addMonitorHost(hostname, parameter);
+        _monitor->addMonitorHost(hostname, parameters);
         scan(hostname);
     } 
     else 
     {
         // lookup isn't actived or not supported
-        _monitor->addMonitorHost(hostname, parameter);
+        _monitor->addMonitorHost(hostname, parameters);
         this->scan(hostname);
     }
 }
@@ -167,23 +158,15 @@ void nmapClass::preScanLookup(const QString hostname)
 void nmapClass::scan(const QString hostname)
 {
 
-    QStringList parameters_; //parameters list declaration
+    QStringList parameters; //parameters list declaration
 
-    if(!frameAdv->isVisible()) 
-    {
-        parameters_ = check_extensions(); // extensions.cpp
-    } 
-    else 
-    {
-        parameters_ = comboAdv->lineEdit()->text().split(' ');
-    }
-
-    parameters_.append(hostname); // add hostname
+    parameters = loadExtensions();
+    parameters.append(hostname); // add hostname
 
     QByteArray buff1;
     QByteArray buff2;
     // start scan Thread
-    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters_, this);
+    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters, this);
     //scanPointerList.push_front(th);
     scanHashList.insert(hostname,thread);
     // update progressbar for scan

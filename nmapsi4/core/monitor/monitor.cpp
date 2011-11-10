@@ -62,12 +62,12 @@ int monitor::monitorHostNumber()
     return monitorElem.size();
 }
 
-void monitor::addMonitorHost(const QString hostName, const QString parameter) 
+void monitor::addMonitorHost(const QString hostName, const QStringList parameters)
 {
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(_monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, hostName);
-    hostThread->setText(1,parameter);
+    hostThread->setText(1, parameters.join(" "));
     hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
     hostThread->setText(2, "Scanning");
     monitorElem.push_front(hostThread);

@@ -39,7 +39,7 @@ class monitor : public QObject
 public:
     monitor(QTreeWidget* monitor);
     ~monitor();
-    void addMonitorHost(const QString hostName,const QString parameter);
+    void addMonitorHost(const QString hostName,const QStringList parameters);
     void delMonitorHost(const QString hostName);
     void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
     bool searchMonitorElem(const QString hostname);
