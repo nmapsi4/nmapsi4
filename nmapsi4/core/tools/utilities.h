@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               * 
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,40 +17,44 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MONITOR_H
-#define MONITOR_H
-
-// Qt include
-#include <QtCore/QObject>
-#include <QtGui/QTreeWidget>
-#include <QtCore/QList>
-#include <QtDBus/QDBusConnection>
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
 // local include
-#include "../tools/memorytools.h"
+#include "../../lib/about/about.h"
 
-using namespace memory;
+// QT include
+#include <QtCore/QObject>
+#include <QtGui/QFileDialog>
+#include <QtGui/QLineEdit>
+#include <QtCore/QDir>
+#include <QtGui/QDesktopServices>
+#include <QtCore/QUrl>
+#include <QtGui/QWidget>
 
-class monitor : public QObject
+class utilities : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
-    
+
 public:
-    monitor(QTreeWidget* monitor);
-    ~monitor();
-    void addMonitorHost(const QString hostName,const QStringList parameters);
-    void delMonitorHost(const QString hostName);
-    void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
-    bool searchMonitorElem(const QString hostname);
-    int monitorHostNumber();
-        
-protected:
-    QList<QTreeWidgetItem*> monitorElem;
-    QTreeWidget* _monitor;
+    utilities(QWidget* parent);
+    ~utilities();
+    void openDirectoryDialog(QLineEdit *destination);
+    void openFileBrowser(QLineEdit *destination);
     
-signals:
-    void monitorUpdated(int hostNumber);
+private:
+    void showBrowser(QLineEdit *destination);
+    
+public slots:
+    void about();
+    void aboutQt();
+    void showBugUrl();
+    void showHomepageUrl();
+    void showDocumentationUrl();
+    void showDonateUrl();
+    
+protected:
+    QWidget* _parent;
 };
 
-#endif
+#endif // UTILITIES_H

@@ -231,15 +231,9 @@ void mainProfile::updateItem()
 
 void mainProfile::log_browser()
 {
-    QString FileName;
-    QString url = QDir::homePath();
-
-    FileName = QFileDialog::getExistingDirectory(
-                   this, "Open Directory",
-                   url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
-               );
-
-    lineEditPath->setText(FileName);
+    utilities *util = new utilities(this);
+    util->openDirectoryDialog(lineEditPath);
+    delete util;
 }
 
 void mainProfile::setProfile()

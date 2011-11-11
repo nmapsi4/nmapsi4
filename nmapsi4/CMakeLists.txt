@@ -18,7 +18,7 @@ SET(SOURCES_CPP core/slots.cpp
 		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
-		core/toolsUI.cpp
+		core/tools/utilities.cpp
 		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
@@ -68,7 +68,7 @@ else (NOT Q_WS_X11)
 		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
-		core/toolsUI.cpp
+		core/tools/utilities.cpp
 		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
@@ -118,7 +118,8 @@ if(Q_WS_X11)
 	core/discover/maindiscover.h
 	core/discover/pingThread.h
 	core/monitor/details.h
-        core/monitor/monitor.h)
+        core/monitor/monitor.h
+        core/tools/utilities.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 else (Q_WS_X11)
   SET(SOURCES_H mainwin.h 
@@ -133,7 +134,8 @@ else (Q_WS_X11)
 	core/discover/maindiscover.h
 	core/discover/pingThread.h
 	core/monitor/details.h
-        core/monitor/monitor.h)
+        core/monitor/monitor.h
+        core/tools/utilities.h)
   #MESSAGE( STATUS ${SOURCES_H} )
 endif (Q_WS_X11)
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,37 +17,33 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "utilities.h"
 
-
-void nmapClass::about()
+utilities::utilities(QWidget* parent) : _parent(parent)
 {
-    mainAbout about;
-    about.exec();
 }
 
-void nmapClass::about_qt()
+utilities::~utilities()
 {
-    mainAbout about;
-    about.qt();
 }
 
-void nmapClass::show_browser(QLineEdit *location)
+void utilities::openFileBrowser(QLineEdit *destination)
 {
-    QString FileName;
-
-    FileName = QFileDialog::getOpenFileName(this, QApplication::translate("nmapClass", "Select the file",
-                                            0, QApplication::UnicodeUTF8), "/home", "");
-
-    location->setText(FileName);
+    showBrowser(destination);
 }
 
-
-void nmapClass::show_log_browserUrl(const QString url, QLineEdit *location)
+void utilities::showBrowser(QLineEdit *destination) // private
 {
-    QString FileName;
+    QString FileName = QFileDialog::getOpenFileName(_parent, tr("Select the file"), "/home", "");
 
-    FileName = QFileDialog::getExistingDirectory(this, "Open Directory",
+    destination->setText(FileName);
+}
+
+void utilities::openDirectoryDialog(QLineEdit *destination)
+{
+    QString url = QDir::homePath();
+
+    QString FileName = QFileDialog::getExistingDirectory(_parent, "Open Directory",
                url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
     if(FileName.isEmpty()) 
@@ -55,30 +51,37 @@ void nmapClass::show_log_browserUrl(const QString url, QLineEdit *location)
         FileName.append(QDir::tempPath());
     }
     
-    location->setText(FileName);
+    destination->setText(FileName);
 }
 
-void nmapClass::input_browser()
+void utilities::about()
 {
-    show_browser(lineInputFile);
+    mainAbout about;
+    about.exec();
 }
 
-void nmapClass::show_bugUrl() 
+void utilities::aboutQt()
+{
+    mainAbout about;
+    about.qt();
+}
+
+void utilities::showBugUrl()
 {
     QDesktopServices::openUrl(QUrl("https://launchpad.net/nmapsi4"));
 }
 
-void nmapClass::show_homepageUrl() 
+void utilities::showHomepageUrl()
 {
     QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
 }
 
-void nmapClass::show_documentationUrl() 
+void utilities::showDocumentationUrl()
 {
     QDesktopServices::openUrl(QUrl(""));
 }
 
-void nmapClass::show_donateUrl() 
+void utilities::showDonateUrl()
 {
     QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
 }

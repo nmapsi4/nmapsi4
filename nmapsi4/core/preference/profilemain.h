@@ -24,6 +24,9 @@
 #include <QtCore/QSettings>
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
+
+// local include
+#include "../tools/utilities.h"
 #include <ui_profilemain.h>
 
 class mainProfile : public QDialog, private Ui::ProfileMain

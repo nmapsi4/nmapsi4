@@ -45,9 +45,9 @@ void nmapClass::setNmapsiSlot()
     connect(action_Quit_2, SIGNAL(triggered()),
             this, SLOT(exit()));    // file action menu
     connect(action_About, SIGNAL(triggered()),
-            this, SLOT(about()));    // about action menu
+            _utilities, SLOT(about()));    // about action menu
     connect(actionAbout_Qt, SIGNAL(triggered()),
-            this, SLOT(about_qt()));    // about action menu
+            _utilities, SLOT(aboutQt()));    // about action menu
     connect(action_Scan_menu, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
@@ -57,7 +57,7 @@ void nmapClass::setNmapsiSlot()
     connect(action_Scan_2, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
     connect(buttonBrowser, SIGNAL(clicked()),
-            this, SLOT(input_browser()));    // Input file Browser slot
+            this, SLOT(openBrowser()));    // Input file Browser slot
 
     // Timing Slot (Enable and Disable spinBox)
     connect(TcheckIpv4ttl, SIGNAL(toggled(bool)),
@@ -206,13 +206,13 @@ void nmapClass::setNmapsiSlot()
     
     // action help menu (browser call)
     connect(actionReport_Bug, SIGNAL(triggered()),
-            this, SLOT(show_bugUrl()));
+            _utilities, SLOT(showBugUrl()));
     connect(actionVisit_Website, SIGNAL(triggered()),
-            this, SLOT(show_homepageUrl()));
+            _utilities, SLOT(showHomepageUrl()));
     connect(actionDocumentation, SIGNAL(triggered()),
-            this, SLOT(show_documentationUrl()));
+            _utilities, SLOT(showDocumentationUrl()));
     connect(actionDonate_Money, SIGNAL(triggered()),
-            this, SLOT(show_donateUrl()));
+            _utilities, SLOT(showDonateUrl()));
     
     // Discover
     connect(comboDiscover, SIGNAL(activated(const QString&)),

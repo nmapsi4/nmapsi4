@@ -19,6 +19,11 @@
 
 #include "../mainwin.h"
 
+void nmapClass::openBrowser()
+{
+    _utilities->openFileBrowser(lineInputFile);
+}
+
 QFile* nmapClass::create_logFile(const QString Path)
 {
     QFile *Pfile = new QFile();

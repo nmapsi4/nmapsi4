@@ -49,6 +49,7 @@ void nmapClass::initObject()
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
     _monitor = new monitor(scanMonitor);
+    _utilities = new utilities(this);
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();
@@ -109,6 +110,7 @@ nmapClass::~nmapClass()
     freemap<QString,QAction*>::itemDeleteAll(_collections);
     discoveryClear();
     delete _monitor;
+    delete _utilities;
     delete progressScan;
     delete PFile;
     delete labelVersion;

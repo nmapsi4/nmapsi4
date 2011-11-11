@@ -25,8 +25,8 @@
 // local include
 #include "core/preference/profilemain.h"
 #include "../lib/history/loghistory.h"
+#include "../lib/about/staticDefine.h"
 #include "core/nmapsi4Debug.h"
-#include "../lib/about/about.h"
 #include "core/scanMT/scanThread.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
@@ -35,21 +35,22 @@
 #include "core/vulnerability/addurl.h"
 #include "core/discover/maindiscover.h"
 #include "core/bookmarks/addparbook.h"
-#include "core/lib/memorytools.h"
+#include "core/tools/memorytools.h"
 #include "core/monitor/details.h"
 #include "core/monitor/monitor.h"
+#include "core/tools/utilities.h"
 
 // Qt4 include
+#include <QtGui/QMainWindow>
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
-#include <QtWebKit/QWebPage>
+#include <QtWebKit/QWebView>
 #include <QtCore/QHash>
 #include <QtCore/QPointer>
 #include <QtGui/QSplitter>
 #include <QtCore/QTimer>
 #include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <QtGui/QDesktopServices>
+#include <QtGui/QMessageBox>
 #include <QtGui/QToolButton>
 #include <QtGui/QTextDocument>
 
@@ -61,9 +62,6 @@ using namespace parserObject;
 using namespace parserUtilObject;
 using namespace pingInterface;
 using namespace memory;
-
-class QMainWindow;
-class QWebView;
 
 class nmapClass : public QMainWindow, private Ui::MainWindow
 {
@@ -77,7 +75,6 @@ private:
     void scan(const QString hostname);
     void preScanLookup(const QString hostname);
     void rootMode();
-    void show_browser(QLineEdit *location);
     void isEmptyLog();
     void setNmapsiSlot();
     QFile* create_logFile(const QString Path);
@@ -108,7 +105,6 @@ private:
     void defaultComboValues();
     void defaultDiscoverProbes();
     void createToolButtonSetup();
-    void show_log_browserUrl(const QString url, QLineEdit *location);
     void setQuickProfile();
     void setNormalProfile();
     void setFullVersionProfile();
@@ -168,9 +164,13 @@ protected:
     QSplitter *bW;
     QToolButton *menuSetup;
     monitor *_monitor;
+    utilities *_utilities;
 
 private slots:
     void initObject();
+    void startScan();
+    void stop_scan();
+    void exit();
     void nmapParser(const QStringList parList, QByteArray Byte1,  QByteArray Byte2);
     void update_portCombo();
     void update_scanCombo();
@@ -179,16 +179,12 @@ private slots:
     void update_timing();
     void update_options();
     void update_comboVerbosity();
-    void input_browser();
+    void openBrowser();
     void fileSession();
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
     void showStatusBar();
-    void show_bugUrl();
-    void show_homepageUrl();
-    void show_documentationUrl();
-    void show_donateUrl();
     void updateIconsBox();
     void callScanH();
     void callScanDiscover();
@@ -277,11 +273,6 @@ private slots:
     void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
     void requestNseScriptHelp();
     void showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors);
-    void startScan();
-    void about();
-    void about_qt();
-    void stop_scan();
-    void exit();
 };
 
 #endif
