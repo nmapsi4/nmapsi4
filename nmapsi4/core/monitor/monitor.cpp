@@ -23,7 +23,7 @@
 monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 {
     new Nmapsi4Adaptor(this);
-    // FIXME: with full mode It is registred into root dbus session
+    // FIXME: with full mode It is registrered into root dbus session
     QDBusConnection dbus = QDBusConnection::sessionBus();
 //     if (!dbus.isConnected())
 //     {
