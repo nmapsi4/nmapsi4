@@ -37,6 +37,7 @@
 #include "core/tools/memorytools.h"
 #include "core/monitor/monitor.h"
 #include "core/tools/utilities.h"
+#include "core/tools/hostTools.h"
 
 // Qt4 include
 #include <QtGui/QMainWindow>
@@ -80,8 +81,6 @@ private:
     void resetOptions();
     void checkProfile();
     void initGUI();
-    bool isDns(QString hostname);
-    QString clearHost(const QString hostname);
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     void showParserObj(int indexObj);
     void showParserObjPlugins(int indexObj);

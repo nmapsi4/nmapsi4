@@ -29,7 +29,7 @@ void nmapClass::startScan()
     
     QString hostname = hostEdit->currentText();
     // check wrong address
-    hostname = clearHost(hostname);
+    hostname = hostTools::clearHost(hostname);
     
     // check for duplicate hostname in the monitor 
     if (_monitor->searchMonitorElem(hostname))
@@ -74,7 +74,7 @@ void nmapClass::startScan()
             // multiple ip or dns to scan
             for(int index=0; index < addrPart_.size(); index++) 
             {
-                addrPart_[index] = clearHost(addrPart_[index]);
+                addrPart_[index] = hostTools::clearHost(addrPart_[index]);
                 // check for lookup support
                 preScanLookup(addrPart_[index]);
             }

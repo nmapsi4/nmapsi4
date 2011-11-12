@@ -15,7 +15,6 @@ SET(SOURCES_CPP core/slots.cpp
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
 		core/extensions.cpp
-		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/tools/utilities.cpp
@@ -65,7 +64,6 @@ else (NOT Q_WS_X11)
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
 		core/extensions.cpp
-		core/hostCheck.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/tools/utilities.cpp
