@@ -63,7 +63,7 @@ void nmapClass::checkNmapVersion()
 
 void nmapClass::exit()
 {
-    freemap<QString,scanThread*>::itemDeleteAllWithWait(scanHashList);
+    _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digSupport*>::itemDeleteAll(digLookupList);
     
@@ -99,7 +99,7 @@ void nmapClass::exit()
 void nmapClass::stop_scan()
 {
     // stop and clear clear thread
-    freemap<QString,scanThread*>::itemDeleteAllWithWait(scanHashList);
+    _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digSupport*>::itemDeleteAll(digLookupList);
 }

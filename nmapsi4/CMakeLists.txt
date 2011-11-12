@@ -37,7 +37,7 @@ SET(SOURCES_CPP core/slots.cpp
 		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/monitor.cpp
-		core/monitor/monitorEvents.cpp
+		core/monitorSlotsDefinition.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
@@ -84,7 +84,7 @@ else (NOT Q_WS_X11)
 		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/monitor.cpp
-		core/monitor/monitorEvents.cpp
+		core/monitorSlotsDefinition.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp

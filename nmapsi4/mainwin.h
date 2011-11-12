@@ -27,7 +27,6 @@
 #include "../lib/history/loghistory.h"
 #include "../lib/about/staticDefine.h"
 #include "core/nmapsi4Debug.h"
-#include "core/monitor/scanThread/scanThread.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
 #include "core/parserObj/parserObj.h"
@@ -36,7 +35,6 @@
 #include "core/discover/maindiscover.h"
 #include "core/bookmarks/addparbook.h"
 #include "core/tools/memorytools.h"
-#include "core/monitor/details.h"
 #include "core/monitor/monitor.h"
 #include "core/tools/utilities.h"
 
@@ -72,7 +70,6 @@ public:
     ~nmapClass();
 
 private:
-    void scan(const QString hostname);
     void preScanLookup(const QString hostname);
     void rootMode();
     void isEmptyLog();
@@ -149,8 +146,6 @@ protected:
     QList<QTreeWidgetItem*> mainTreeElem;
     QList<QString> nseScriptAvailList;
     QList<QString> nseScriptActiveList;
-    QHash<QString, scanThread*> scanHashList;
-    QHash<QString, QStringList> scanHashListFlow;
     QHash<QString, QTextDocument*> nseHelpCache;
     QHash<QString, QAction*> _collections;
     QList<parserObj*> parserObjList;
@@ -214,7 +209,6 @@ private slots:
     void optionListCreate();
     void optionListUpdate();
     void setProgress();
-    void readFlowFromThread(const QString hostname, QString lineData);
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();

@@ -38,11 +38,10 @@ void nmapClass::startScan()
         return;
     }
     
-    // FIXME: to monitor
     if(!_monitor->monitorHostNumber()) 
     {
         // clear details QHash
-        scanHashListFlow.clear();
+       _monitor->clearHostMonitorDetails();
     }
 
 
@@ -126,13 +125,11 @@ void nmapClass::preScanLookup(const QString hostname)
     // check for scan lookup
     if(lookupInternal) 
     {
-        // FIXME: if internal lookUp is actived
-        _monitor->addMonitorHost(hostname, parameters);
+        // if internal lookUp is actived
         // call internal lookup thread and save the pointer.
         lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
         internealLookupList.push_back(internalLookupTh_);
 
-        // TODO: move addmonitor into scanLookup
         connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,const QString)),
                 this, SLOT(scanLookup(QHostInfo,int,const QString)));
 
@@ -146,32 +143,21 @@ void nmapClass::preScanLookup(const QString hostname)
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
         parserObjUtilList.append(tmpParserObj_);
-        // TODO: scan to monitor
+        
         _monitor->addMonitorHost(hostname, parameters);
-        scan(hostname);
     } 
     else 
     {
         // lookup isn't actived or not supported
-        // TODO: scan to monitor
         _monitor->addMonitorHost(hostname, parameters);
-        scan(hostname);
     }
 }
 
 void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) 
 {
-    /*
-     * Internal lookup
-     * TODO: if state -1 return and stop scan
-     *       if state != -1 addMonitor
-     */
-
     if(state == -1) 
     {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        // FIXME: remove 
-        _monitor->delMonitorHost(hostname);
         return;
     }
     
@@ -185,33 +171,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
     }
 
     parserObjUtilList.append(elemObjUtil);
-    // TODO: addMonitorHost for start the scan
-    scan(hostname);
+
+    _monitor->addMonitorHost(hostname, loadExtensions());
 }
 
-void nmapClass::scan(const QString hostname)
-{
-
-    QStringList parameters; //parameters list declaration
-
-    parameters = loadExtensions();
-    parameters.append(hostname); // add hostname
-
-    QByteArray buff1;
-    QByteArray buff2;
-    // start scan Thread
-    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters);
-    //scanPointerList.push_front(th);
-    scanHashList.insert(hostname,thread);
-    // update progressbar for scan
-    connect(thread, SIGNAL(upgradePR()),
-            this, SLOT(setProgress()));
-    // read current data scan from the thread
-    connect(thread, SIGNAL(flowFromThread(const QString, const QString)),
-            this, SLOT(readFlowFromThread(const QString, const QString)));
-    // read scan data return
-    connect(thread, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
-            this, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
-    // start scan
-    thread->start();
-}

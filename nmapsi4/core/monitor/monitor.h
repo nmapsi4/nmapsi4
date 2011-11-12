@@ -25,9 +25,12 @@
 #include <QtGui/QTreeWidget>
 #include <QtCore/QList>
 #include <QtDBus/QDBusConnection>
+#include <QtCore/QHash>
 
 // local include
 #include "../tools/memorytools.h"
+#include "scanThread/scanThread.h"
+#include "details.h"
 
 using namespace memory;
 
@@ -37,20 +40,46 @@ class monitor : public QObject
     Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
     
 public:
-    monitor(QTreeWidget* monitor);
+    monitor(QTreeWidget* monitor, QObject* parent);
     ~monitor();
     void addMonitorHost(const QString hostName,const QStringList parameters);
     void delMonitorHost(const QString hostName);
-    void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
     bool searchMonitorElem(const QString hostname);
     int monitorHostNumber();
+    /*
+     * Clear all host in monitor
+     */
+    void clearHostMonitor();
+    /*
+     * Clear all scan host details
+     */
+    void clearHostMonitorDetails();
+    void stopSelectedScan();
+    void showSelectedScanDetails();
+    
+private:
+    void startScan(const QString hostname, QStringList parameters);
+    void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
+    /*
+     * This method remove scanThread elem from scan hashTable
+     */
+    scanThread* takeMonitorElem(const QString hostName);
         
 protected:
     QList<QTreeWidgetItem*> monitorElem;
+    QHash<QString, scanThread*> _scanHashList;
+    QHash<QString, QStringList> _scanHashListFlow;
     QTreeWidget* _monitor;
+    QObject* _parent;
     
 signals:
+    /*
+     * Exported with dbus
+     */
     void monitorUpdated(int hostNumber);
+    
+private slots:
+    void readFlowFromThread(const QString hostname, QString lineData);
 };
 
 #endif

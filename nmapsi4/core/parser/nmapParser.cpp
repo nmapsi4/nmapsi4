@@ -339,7 +339,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     if(!_monitor->monitorHostNumber()) 
     {
-        freemap<QString,scanThread*>::itemDeleteAll(scanHashList);
+        _monitor->clearHostMonitor();
         freelist<lookUpT*>::itemDeleteAll(internealLookupList);
         freelist<digSupport*>::itemDeleteAll(digLookupList);
     }

@@ -20,7 +20,7 @@
 #include "monitor.h"
 #include "nmapsi4adaptor.h"
 
-monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
+monitor::monitor(QTreeWidget* monitor, QObject* parent) : _monitor(monitor), _parent(parent)
 {
     new Nmapsi4Adaptor(this);
     // FIXME: with full mode It is registrered into root dbus session
@@ -41,6 +41,7 @@ monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 monitor::~monitor()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
+    _scanHashListFlow.clear();
 }
 
 bool monitor::searchMonitorElem(const QString hostname)
@@ -73,6 +74,7 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
     monitorElem.push_front(hostThread);
 
     emit monitorUpdated(monitorHostNumber());
+    startScan(hostName,parameters);
 }
 
 
@@ -82,9 +84,9 @@ void monitor::delMonitorHost(const QString hostName)
      {
           if(monitorElem[i]->text(0) == hostName) 
           {
+              // remove host from monitor and list
               delete monitorElem.takeAt(i);
-              // FIXME:: remove break with duplicate check
-              break; // remove only first elem
+              break;
            }
      }
      
@@ -104,5 +106,124 @@ void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
         }
         
         break;
+    }
+}
+
+void monitor::startScan(const QString hostname, QStringList parameters)
+{
+    parameters.append(hostname); // add hostname
+
+    QByteArray buff1;
+    QByteArray buff2;
+    // start scan Thread
+    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters);
+    _scanHashList.insert(hostname,thread);
+    // update progressbar for scan
+    connect(thread, SIGNAL(upgradePR()),
+            _parent, SLOT(setProgress()));
+    // read current data scan from the thread
+    connect(thread, SIGNAL(flowFromThread(const QString, const QString)),
+            this, SLOT(readFlowFromThread(const QString, const QString)));
+    // read scan data return
+    connect(thread, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
+            _parent, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
+    // start scan
+    thread->start();
+}
+
+void monitor::clearHostMonitor()
+{
+    freemap<QString,scanThread*>::itemDeleteAll(_scanHashList);
+}
+
+void monitor::clearHostMonitorDetails()
+{
+    _scanHashListFlow.clear();
+}
+
+scanThread* monitor::takeMonitorElem(const QString hostName)
+{
+    return _scanHashList.take(hostName);
+}
+
+void monitor::stopSelectedScan()
+{
+        // Stop and wait thread from QHash table
+    if (_monitor->selectedItems().isEmpty()) 
+    {
+        return;
+    }
+
+    scanThread *ptrTmp = takeMonitorElem(_monitor->selectedItems()[0]->text(0));
+    
+    if (ptrTmp) 
+    {
+        ptrTmp->quit();
+        ptrTmp->wait();
+        delete ptrTmp;
+    }
+    
+    // Remove Qhash entry for stopped scan
+    _scanHashListFlow.take(_monitor->selectedItems()[0]->text(0));
+}
+
+void monitor::showSelectedScanDetails()
+{
+    if (_monitor->selectedItems().isEmpty()) 
+    {
+        return;
+    }
+    // start details UI
+    classDetails details(_scanHashListFlow.operator[](_monitor->selectedItems()[0]->text(0)),
+                         _monitor->selectedItems()[0]->text(0));
+    details.exec();
+}
+
+void monitor::readFlowFromThread(const QString hostname, QString lineData) 
+{
+    /*
+     * read data line form thread
+     */
+    QHash<QString, QStringList>::const_iterator i = _scanHashListFlow.find(hostname);
+    QTextStream stream(&lineData);
+    
+    if (i == _scanHashListFlow.end()) 
+    {
+        QStringList flowHistory;
+
+        while (!stream.atEnd()) 
+        {
+            flowHistory.append(stream.readLine());
+        }
+
+        _scanHashListFlow.insert(hostname,flowHistory);
+    } 
+    else 
+    {
+        // append scan flow values
+        while (i != _scanHashListFlow.end() && i.key() == hostname) 
+        {
+            QStringList flowHistory = i.value();
+
+            while (!stream.atEnd()) 
+            {
+                flowHistory.append(stream.readLine());
+            }
+
+            _scanHashListFlow.insert(i.key(),flowHistory);
+            ++i;
+        }
+    }
+    
+    // search hostname on treeWidget and update data rows (index = 2)
+    // take only remaining time and remove character unused, only [remaining || ETA]
+    if (lineData.contains("remaining") || lineData.contains("ETC")) 
+    {
+        QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
+        infoTmp_ = infoTmp_.remove('(');
+        infoTmp_ = infoTmp_.remove(')');
+        infoTmp_.remove('\n');
+        // insert new information into monitor
+        updateMonitorHost(hostname,2,infoTmp_);
     }
 }

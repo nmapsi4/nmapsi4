@@ -669,7 +669,6 @@ void nmapClass::listClear()
     // Host list
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(objElem);
-    scanHashListFlow.clear();
     listScanError->clear();
     treeMain->clear();
     treeLookup->clear();
