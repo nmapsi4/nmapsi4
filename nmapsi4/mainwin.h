@@ -27,7 +27,7 @@
 #include "../lib/history/loghistory.h"
 #include "../lib/about/staticDefine.h"
 #include "core/nmapsi4Debug.h"
-#include "core/scanMT/scanThread.h"
+#include "core/monitor/scanThread/scanThread.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
 #include "core/parserObj/parserObj.h"

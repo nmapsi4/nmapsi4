@@ -34,7 +34,7 @@ SET(SOURCES_CPP core/slots.cpp
 		../lib/history/loghistory.cpp
 		../lib/history/coreHistory.cpp
 		../lib/about/about.cpp
-		core/scanMT/scanThread.cpp
+		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/monitor.cpp
 		core/monitor/monitorEvents.cpp
@@ -81,7 +81,7 @@ else (NOT Q_WS_X11)
 		core/vulnerability/tabVuln.cpp
 		core/vulnerability/utilsVuln.cpp
 		core/vulnerability/addurl.cpp
-		core/scanMT/scanThread.cpp
+		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/monitor.cpp
 		core/monitor/monitorEvents.cpp
@@ -109,7 +109,7 @@ endif (NOT Q_WS_X11)
 if(Q_WS_X11)
   SET(SOURCES_H mainwin.h 
 	core/preference/profilemain.h 
-	core/scanMT/scanThread.h 
+	core/monitor/scanThread/scanThread.h 
 	core/lookup/lookUpT.h 
 	core/digSupport/digSupport.h 
 	core/digSupport/digThread.h 

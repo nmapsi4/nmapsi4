@@ -27,12 +27,14 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QListWidgetItem>
 #include <QtWebKit/QWebView>
+
+// local include
 #include "../discover/maindiscover.h"
 #include "../parserObj/parserObj.h"
 #include "../parserObj/parserObjUtil.h"
 #include "../lookup/lookUpT.h"
 #include "../digSupport/digSupport.h"
-#include "../scanMT/scanThread.h"
+#include "../monitor/scanThread/scanThread.h"
 
 using namespace pingInterface;
 using namespace parserObject;

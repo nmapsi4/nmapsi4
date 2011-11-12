@@ -56,7 +56,7 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        localCall::th = new scanThread(buff1, buff2, parameters_, this);
+        localCall::th = new scanThread(buff1, buff2, parameters_);
 
         connect(localCall::th, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
@@ -86,7 +86,7 @@ void nmapClass::requestNseScriptHelp()
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    localCall::thScript = new scanThread(buff1, buff2, parameters_, this);
+    localCall::thScript = new scanThread(buff1, buff2, parameters_);
 
     connect(localCall::thScript, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));

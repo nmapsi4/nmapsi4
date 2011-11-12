@@ -20,12 +20,11 @@
 #include "scanThread.h"
 
 scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
-                       const QStringList parameters, QObject *parent)
+                       const QStringList parameters)
      : pout(ProcB1), 
        perr(ProcB2),
        ParList(parameters),
-       proc(NULL),
-       par(parent)
+       proc(NULL)
 { 
 }
 

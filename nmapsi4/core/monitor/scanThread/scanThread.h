@@ -28,7 +28,7 @@
 #include <QtCore/QMetaType>
 #include <QtCore/QtDebug>
 #include <QtCore/QPointer>
-#include "../nmapsi4Debug.h"
+#include "../../nmapsi4Debug.h"
 
 namespace scanning {
     /*!
@@ -44,7 +44,7 @@ namespace scanning {
 	 * Create a nmap QThread and start QProcess for nmap
 	 * with parameters.
 	 */
-	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters, QObject *parent = 0);
+	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters);
 	~scanThread();
     signals:
 	/*!
@@ -73,7 +73,6 @@ namespace scanning {
     protected:
 	QPointer<QProcess> proc;
 	void run();
-	QObject* par;
     };
 }
 

@@ -19,39 +19,6 @@
 
 #include "../mainwin.h"
 
-void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) 
-{
-#ifndef MAIN_NO_DEBUG
-    qDebug() << "scanLookup::flag:: " << state;
-#endif
-
-    if(state == -1) 
-    {
-        QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        _monitor->delMonitorHost(hostname);
-        return;
-    }
-    
-    parserObjUtil* elemObjUtil = new parserObjUtil();
-
-#ifndef MAIN_NO_DEBUG
-    qDebug() << "scanLookup::Found address DNS:: " << info.hostName();
-#endif
-
-    elemObjUtil->setHostName(hostname);
-    const int infoSize_ = info.addresses().size();
-    for(int index=0; index < infoSize_; index++) 
-    {
-#ifndef MAIN_NO_DEBUG
-        qDebug() << "scanLookup::Found address:: " << info.addresses()[index].toString();
-#endif
-	elemObjUtil->setInfoLookup(info.addresses()[index].toString());
-    }
-
-    parserObjUtilList.append(elemObjUtil);
-    this->scan(hostname);
-}
-
 bool nmapClass::isDns(QString hostname) 
 {
     bool state_;
