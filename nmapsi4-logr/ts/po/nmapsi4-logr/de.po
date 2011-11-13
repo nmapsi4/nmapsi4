@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-16 19:27+0200\n"
+"POT-Creation-Date: 2011-11-13 20:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,64 +13,64 @@ msgstr ""
 
 #: mWindow#1
 msgid "Nmapsi4 log reader"
-msgstr ""
+msgstr "Nmapsi4 Protokollbetrachter"
 
 #: mWindow#2
 msgid "Clear"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: mWindow#3
 msgid "&Quit"
-msgstr ""
+msgstr "&Beenden"
 
 #: mWindow#4
 msgid "Open"
-msgstr ""
+msgstr "Öffnen"
 
 #: mWindow#5
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Strg+Q"
 
 #: mWindow#6
-msgid "About &Qt"
-msgstr ""
+msgid "&About nmapsi4"
+msgstr "&Über nmapsi4"
 
 #: mWindow#7
-msgid "List(s)"
-msgstr ""
+msgid "About &Qt"
+msgstr "Ü&ber Qt"
 
 #: mWindow#8
-msgid "Log(s) name"
-msgstr ""
+msgid "List(s)"
+msgstr "Liste(n)"
 
 #: mWindow#9
-msgid "&FIle"
-msgstr ""
+msgid "Log(s) name"
+msgstr "Protokollname"
 
 #: mWindow#10
-msgid "&Help"
-msgstr ""
+msgid "Date"
+msgstr "Datum"
 
 #: mWindow#11
-msgid "toolBar"
-msgstr ""
+msgid "Path"
+msgstr "Verzeichnis"
 
 #: mWindow#12
-msgid "Date"
-msgstr ""
+msgid "&FIle"
+msgstr "&Datei"
 
 #: mWindow#13
-msgid "&About nmapsi4"
-msgstr ""
+msgid "&Help"
+msgstr "&Hilfe"
 
 #: mWindow#14
-msgid "Path"
-msgstr ""
+msgid "toolBar"
+msgstr "Werkzeugleiste"
 
 #: mwClass#1
 msgid "Open Log"
-msgstr ""
+msgstr "Protokoll öffnen"
 
 #: mwClass#2
 msgid "Log (*.log)"
-msgstr ""
+msgstr "Log (*.log)"

@@ -704,6 +704,10 @@ Zavřít strom s prohledáváním</translation>
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -976,10 +980,6 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <source>Select the file</source>
-        <translation>Vyberte soubor</translation>
-    </message>
-    <message>
         <source>Full</source>
         <translation>Úplný</translation>
     </message>
@@ -1244,6 +1244,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Nse Options</source>
         <translation>Volby pro nse</translation>
+    </message>
+    <message>
+        <source>Hostname already scanning
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Vyberte soubor</translation>
     </message>
 </context>
 </TS>

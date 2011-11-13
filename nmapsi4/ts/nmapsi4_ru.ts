@@ -18,8 +18,7 @@
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;About nmapsi4</source>
@@ -67,8 +66,7 @@
     </message>
     <message>
         <source>Clear HostName</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Очистить ИмяХоста</translation>
     </message>
     <message>
         <source>Clear Hostname IP</source>
@@ -92,8 +90,7 @@
     </message>
     <message>
         <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>П_олноэкранный режим</translation>
     </message>
     <message>
         <source>Ctrl+Shift+F11</source>
@@ -123,10 +120,26 @@
     </message>
     <message>
         <source>Log</source>
-        <translation>Журнал</translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Vuln</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Section Log</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source> Section Vulnerabilities</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -145,6 +158,25 @@
     <message>
         <source>Description</source>
         <translation>Описание</translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation>Пожертвовать средства</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Service</source>
@@ -171,9 +203,13 @@
         <translation>Список IP</translation>
     </message>
     <message>
-        <source>Parameters List</source>
+        <source>Profile Name</source>
         <translation type="unfinished">
             </translation>
+    </message>
+    <message>
+        <source>Parameters List</source>
+        <translation>Список параметров</translation>
     </message>
     <message>
         <source>Scan Details</source>
@@ -181,8 +217,205 @@
             </translation>
     </message>
     <message>
+        <source>Save Default Options</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Remove Default Options</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Ipv6 support</source>
+        <translation>Поддержка Ipv6</translation>
+    </message>
+    <message>
+        <source>Port Range:</source>
+        <translation>Диапазон портов:</translation>
+    </message>
+    <message>
+        <source>Scan Techniques:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Bounce Host:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Timing Template:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Min outstanding probes</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Max outstanding probes</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Max time to scan a target</source>
+        <translation>Максимальное время сканирования объекта</translation>
+    </message>
+    <message>
+        <source>Initial probe timeout</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Min probe timeout</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Max probe timeout</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Active Script</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Disable Script</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse Categories Help</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse Script Search</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse Options</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Scan Log</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Add Url</source>
+        <translation>Добавить ссылку</translation>
+    </message>
+    <message>
+        <source>Url(s)</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Url(s) name</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Bookmarks Url</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Local Interfaces:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Start DIscover</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Stop Discover</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Discover Group:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Start Ip:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>End Ip:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Ip</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Service(s) with info</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Os</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Stop All Scan</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Stop Current Scan</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
         <source>Scan Options</source>
-        <translation>Параметры сканирования</translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Host Thread</source>
@@ -190,11 +423,38 @@
     </message>
     <message>
         <source>Scan Monitor</source>
-        <translation>Монитор сканирования</translation>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Auto nse script</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Custom nse script</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse categories script available</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Nse categories Script Active</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Restore Default Categories</source>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Lookup</source>
-        <translation>Обзор</translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>DNS</source>
@@ -218,7 +478,8 @@
     </message>
     <message>
         <source>Traceroute</source>
-        <translation>Трассировка маршрута</translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Log(s)</source>
@@ -234,7 +495,8 @@
     </message>
     <message>
         <source>Services</source>
-        <translation>Службы</translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Data</source>
@@ -260,6 +522,10 @@
     </message>
     <message>
         <source>Bookmarks parameters</source>
+        <translation>Параметры закладок</translation>
+    </message>
+    <message>
+        <source>Apply Quick Profile</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -407,8 +673,7 @@
     </message>
     <message>
         <source>Very Verbose</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Очень подробно</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -476,6 +741,45 @@
             </translation>
     </message>
     <message>
+        <source>Remove Url</source>
+        <translation>Удалить ссылку</translation>
+    </message>
+    <message>
+        <source>Vulnerability</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Scan Host</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Probes Modes:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Remaining Ip:</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Discover</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
         <source>&amp;File</source>
         <translation type="unfinished">
             </translation>
@@ -501,274 +805,25 @@
             </translation>
     </message>
     <message>
+        <source>&amp;Tools</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
         <source>toolBar</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
         <source>toolBar_2</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Панель инструментов 2</translation>
     </message>
     <message>
         <source>toolBar_3</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Панель инструментов 3</translation>
     </message>
     <message>
-        <source>Donate Money</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Documentation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Visit Website</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Report a bug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Profile Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Url(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Url(s) name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bookmarks Url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Local Interfaces:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start DIscover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Discover Group:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start Ip:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End Ip:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Service(s) with info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Os</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan log parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop All Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop Current Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Apply Quick Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auto nse script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom nse script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse categories script available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse categories Script Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore Default Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ipv6 support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port Range:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan Techniques:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ports:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bounce Host:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timing Template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Min outstanding probes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max outstanding probes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max time to scan a target</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Initial probe timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Min probe timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max probe timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Active Script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse Categories Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Nse Script Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse script parameters (Ex. user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan Log</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Remove Url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vulnerability</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remaining Ip:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Discover</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Save Default Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove Default Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan Host</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Probes Modes:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Received</source>
+        <source>Section Discover</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -786,13 +841,11 @@
     </message>
     <message>
         <source>Quick Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Быстрое сканирование</translation>
     </message>
     <message>
         <source>Normal Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Нормальное сканирование</translation>
     </message>
     <message>
         <source>Root Profiles</source>
@@ -851,8 +904,7 @@
     </message>
     <message>
         <source>Save Windows Positions</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Сохранить расположение окон</translation>
     </message>
     <message>
         <source>Scan Preferences</source>
@@ -889,38 +941,44 @@
     <name>addParBook</name>
     <message>
         <source>Add Parameters Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 <context>
     <name>addUrl</name>
     <message>
         <source>Add Vulnerability Url</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Url Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя ссылки</translation>
     </message>
     <message>
         <source>Url address</source>
-        <translation type="unfinished"></translation>
+        <translation>Адрес ссылки</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -932,23 +990,25 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 <context>
     <name>logHistory</name>
     <message>
         <source>Your configuration file is too old, please delete it</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ваш конфигурационный файл слишком старый, пожалуйста, удалите его</translation>
     </message>
 </context>
 <context>
@@ -998,15 +1058,18 @@ p, li { white-space: pre-wrap; }
     <name>monitorDetails</name>
     <message>
         <source>Scan Process Details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Hostname:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Close</source>
@@ -1043,8 +1106,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Use Parameters</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Использовать параметры</translation>
     </message>
     <message>
         <source>Check Vulnerability</source>
@@ -1159,11 +1221,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Select the file</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation type="unfinished">
             </translation>
@@ -1200,6 +1257,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Check Vulnerabilities</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Network Discover</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1250,6 +1312,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show/Hide Scan Monitor</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Setup</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1320,6 +1387,11 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
+        <source>Nse Options</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
         <source>Lookup</source>
         <translation type="unfinished">
             </translation>
@@ -1331,6 +1403,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Monitor</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1351,16 +1428,9 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Network Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Setup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>is Up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Quick Scan</source>
@@ -1369,32 +1439,41 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intense Scan</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Intense Scan, all TCP ports</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Intense scan plus UDP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Slow comprehensive scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan log parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
         <source>Error: check nmap Installation.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+            </translation>
     </message>
     <message>
-        <source>Nse Options</source>
+        <source>Hostname already scanning
+</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Выбрать файл</translation>
     </message>
 </context>
 </TS>

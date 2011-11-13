@@ -708,6 +708,10 @@
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -1052,10 +1056,6 @@ p, li { white-space: pre-wrap; }
         <translation> Scan Actif </translation>
     </message>
     <message>
-        <source>Select the file</source>
-        <translation>Sélectionner le fichier</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation>&lt;b&gt;Mode:&lt;/b&gt; </translation>
     </message>
@@ -1262,6 +1262,18 @@ p, li { white-space: pre-wrap; }
 </source>
         <translation>Erreur: vérifiez l&apos;installation de nmap.
 </translation>
+    </message>
+    <message>
+        <source>Hostname already scanning
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Sélectionner le fichier</translation>
     </message>
 </context>
 </TS>

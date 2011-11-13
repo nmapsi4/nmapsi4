@@ -703,6 +703,10 @@
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -963,10 +967,6 @@ p, li { white-space: pre-wrap; }
 </source>
         <translation>Dateiberechtigungesfehler
 </translation>
-    </message>
-    <message>
-        <source>Select the file</source>
-        <translation>Wählen Sie die Datei</translation>
     </message>
     <message>
         <source>Full</source>
@@ -1232,6 +1232,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Nse Options</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hostname already scanning
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Wählen Sie die Datei</translation>
     </message>
 </context>
 </TS>

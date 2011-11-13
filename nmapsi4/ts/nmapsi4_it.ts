@@ -768,6 +768,10 @@
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
@@ -1128,10 +1132,6 @@ p, li { white-space: pre-wrap; }
         <translation> Scan in esecuzione </translation>
     </message>
     <message>
-        <source>Select the file</source>
-        <translation>Scegli il file</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation>&lt;b&gt;Mode:&lt;/b&gt; </translation>
     </message>
@@ -1355,6 +1355,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Nse Options</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hostname already scanning
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Scegli il file</translation>
     </message>
 </context>
 </TS>
