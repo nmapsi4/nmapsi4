@@ -73,9 +73,6 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
-#ifndef PARSER_NO_DEBUG
-    qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
-#endif
     QString hostName_ = item->text(0);
     hostName_  = hostName_.left(hostName_.indexOf("\n"));
 
@@ -89,9 +86,6 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column)
     }
 
     int indexObj = treeMain->indexOfTopLevelItem(item);
-#ifndef PARSER_NO_DEBUG
-    qDebug() << "DEBUG::ItemIndex:: " << indexObj;
-#endif
 
     if(indexObj != -1) 
     {
@@ -102,10 +96,6 @@ void nmapClass::runtimePars(QTreeWidgetItem *item, int column)
 void nmapClass::runtimeTraceroutePars(QTreeWidgetItem *item, int column) 
 { // SLOT
     Q_UNUSED(column);
-
-#ifndef PARSER_NO_DEBUG
-    qDebug() << "DEBUG::Runtime::Parent:: " << item->parent();
-#endif
 
     if(hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty()) 
     {

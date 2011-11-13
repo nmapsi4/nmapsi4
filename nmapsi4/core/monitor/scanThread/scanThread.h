@@ -50,11 +50,11 @@ namespace scanning {
 	/*!
 	 * Return nmap QThread output with a Signal.
 	 */
-	void threadEnd(const QStringList parameters, QByteArray bufferOut, QByteArray bufferError);
+	void threadEnd(const QStringList parameters, QByteArray dataBuffer, QByteArray errorBuffer);
 	/*!
 	 * Return nmap QThread stdout for ETC and remaining scan time.
 	 */
-	void flowFromThread(const QString, const QString);
+	void flowFromThread(const QString parameters, const QString data);
 	/*!
 	 * Update scan progress bar with a signal.
 	 */

@@ -165,7 +165,7 @@ private slots:
     void startScan();
     void stop_scan();
     void exit();
-    void nmapParser(const QStringList parList, QByteArray Byte1,  QByteArray Byte2);
+    void nmapParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer);
     void update_portCombo();
     void update_scanCombo();
     void update_inputcheck();

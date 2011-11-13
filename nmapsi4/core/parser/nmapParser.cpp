@@ -19,10 +19,10 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArray Byte2)
+void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     // check nmap error
-    if(!Byte1.size() && Byte2.size()) 
+    if(!dataBuffer.size() && errorBuffer.size())
     {
         QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
         return;
@@ -36,16 +36,19 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     listClearFlag = false; // the listScan is not empty
 
-    QString* StdoutStr = new QString(Byte1); // read std buffer
-    QString* StderrorStr = new QString(Byte2); // read error buffer
-
     progressScan->setValue(75);
     
-    QTextStream stream(StdoutStr);
-    QString tmp, generalBuffer_, scanBuffer, bufferInfo,bufferTraceroot,bufferNSS;
+    QString StdoutStr(dataBuffer);
+    QString StderrorStr(errorBuffer);
     QRegExp rxT_("^\\d\\d?");
+    QString generalBuffer_(hostCheck);
+    QString tmp;
+    QString scanBuffer;
+    QString bufferInfo;
+    QString bufferTraceroot;
+    QString bufferNSS;
 
-    generalBuffer_.append(hostCheck);
+    QTextStream stream(&StdoutStr);
 
     while (!stream.atEnd()) 
     {
@@ -301,7 +304,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
 
     actionClear_History->setEnabled(true);
 
-    QTextStream bufferLogStream(StdoutStr);
+    QTextStream bufferLogStream(&StdoutStr);
     QString bufferLogStream_line;
 
     // check for full log scan
@@ -324,7 +327,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
         delete out;
     }
 
-    QTextStream bufferErrorStream(StderrorStr);
+    QTextStream bufferErrorStream(&StderrorStr);
     QString bufferErrorStream_line;
 
     // check for scan error
@@ -334,9 +337,6 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
         elemObj->setErrorScan(bufferErrorStream_line);
     }
 
-    delete StdoutStr;
-    delete StderrorStr;
-
     if(!_monitor->monitorHostNumber()) 
     {
         _monitor->clearHostMonitor();
@@ -344,8 +344,8 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray Byte1, QByteArr
         freelist<digSupport*>::itemDeleteAll(digLookupList);
     }
 
-    Byte1.clear();
-    Byte2.clear();
+    dataBuffer.clear();
+    errorBuffer.clear();
 
     progressScan->setValue(85);
     if(!_monitor->monitorHostNumber()) 
