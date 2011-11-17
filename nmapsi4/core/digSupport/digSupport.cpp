@@ -55,34 +55,26 @@ void digInterface::digSupport::checkDigSupport(bool& digState)
 
 void digInterface::digSupport::checkDig() 
 {
-    QString *output, *error;
-    output = new QString(m_digProc->readAllStandardOutput());
-    error = new QString(m_digProc->readAllStandardError());
+    QString output(m_digProc->readAllStandardOutput());
+    QString error(m_digProc->readAllStandardError());
+    qDebug() << "DEBUG::DIG:: " << output;
 
-    QTextStream stream(output);
-    QTextStream stream2(error);
-    QString line, line2;
+    QTextStream stream(&output);
+    QTextStream stream2(&error);
 
-    line = stream.readLine();
-    line2 = stream2.readLine();
-#ifndef DIG_NO_DEBUG
-    qDebug() << "Dig::line:: " << line;
-    qDebug() << "Dig::error:: " << line2;
-#endif
+    QString line(stream.readLine());
+    QString line2(stream2.readLine());
+    qDebug() << "DEBUG::DIG::LINE:: " << line;
+
     if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) 
     {
         m_state = true;
-#ifndef DIG_NO_DEBUG
-        qDebug() << "Dig support enable";
-#endif
     } 
     else 
     {
         m_state = false;
     }
 
-    delete output;
-    delete error;
     delete m_digProc;
 }
 

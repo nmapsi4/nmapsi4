@@ -120,7 +120,7 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
     
-    QStringList parameters = loadExtensions();
+    QStringList parameters = loadExtensions();   
 
     // check for scan lookup
     if(lookupInternal) 

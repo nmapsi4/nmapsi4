@@ -133,7 +133,7 @@ void monitor::startScan(const QString hostname, QStringList parameters)
 
 void monitor::clearHostMonitor()
 {
-    freemap<QString,scanThread*>::itemDeleteAll(_scanHashList);
+    freemap<QString,scanThread*>::itemDeleteAllWithWait(_scanHashList);
 }
 
 void monitor::clearHostMonitorDetails()
