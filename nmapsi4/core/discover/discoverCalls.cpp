@@ -117,8 +117,8 @@ void nmapClass::discoverIpState()
     
     mainDiscover *discover = new mainDiscover(uid);
     varDiscover::listDiscover.push_back(discover);
-    connect(discover, SIGNAL(endPing(QStringList,bool,const QByteArray)), 
-            this, SLOT(pingResult(QStringList,bool, const QByteArray)));
+    connect(discover, SIGNAL(endPing(QStringList,bool,QByteArray)), 
+            this, SLOT(pingResult(QStringList,bool,QByteArray)));
     
     discover->isUp(ipList_,this,parameters);
     varDiscover::ipCounter = ipList_.size();

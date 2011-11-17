@@ -49,7 +49,7 @@ void digInterface::digSupport::checkDigSupport(bool& digState)
     parametri << "-v";
     m_digProc->start("dig", parametri);
 
-    connect(m_digProc, SIGNAL(finished(int, QProcess::ExitStatus)),
+    connect(m_digProc, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(checkDig()));
 }
 
@@ -96,8 +96,8 @@ void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil*
     QPointer<digThread> m_th = new digThread(buff1, command, this);
     threadList.push_back(m_th);
     m_th->start();
-    connect(m_th, SIGNAL(threadEnd(const QStringList, QByteArray)),
-      this, SLOT(digReturn(const QStringList, QByteArray)));
+    connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray)),
+      this, SLOT(digReturn(QStringList,QByteArray)));
 }
 
 void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray buffer1) 

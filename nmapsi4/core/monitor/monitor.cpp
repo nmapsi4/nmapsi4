@@ -122,11 +122,11 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     connect(thread, SIGNAL(upgradePR()),
             _parent, SLOT(setProgress()));
     // read current data scan from the thread
-    connect(thread, SIGNAL(flowFromThread(const QString, const QString)),
-            this, SLOT(readFlowFromThread(const QString, const QString)));
+    connect(thread, SIGNAL(flowFromThread(QString,QString)),
+            this, SLOT(readFlowFromThread(QString,QString)));
     // read scan data return
-    connect(thread, SIGNAL(threadEnd(const QStringList, QByteArray, QByteArray)),
-            _parent, SLOT(nmapParser(const QStringList, QByteArray, QByteArray))); // nmapParser.cpp
+    connect(thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+            _parent, SLOT(nmapParser(QStringList,QByteArray,QByteArray))); // nmapParser.cpp
     // start scan
     thread->start();
 }

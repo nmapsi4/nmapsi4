@@ -22,9 +22,9 @@
 void nmapClass::setNmapsiSlot()
 {
 
-    connect(portCombo, SIGNAL(activated(const QString&)),
+    connect(portCombo, SIGNAL(activated(QString)),
             this, SLOT(update_portCombo()));  // portCombo slot
-    connect(comboScan, SIGNAL(activated(const QString&)),
+    connect(comboScan, SIGNAL(activated(QString)),
             this, SLOT(update_scanCombo()));  // comboScan slot
     connect(checkInputFile, SIGNAL(toggled(bool)),
             this, SLOT(update_inputcheck()));  // input check
@@ -86,7 +86,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(update_options()));
     connect(checkSourcePort, SIGNAL(toggled(bool)),
             this, SLOT(update_options()));
-    connect(comboVerbosity, SIGNAL(activated(const QString&)),
+    connect(comboVerbosity, SIGNAL(activated(QString)),
             this, SLOT(update_comboVerbosity()));
 
     connect(actionProfile, SIGNAL(triggered()),
@@ -122,9 +122,9 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(removeGlobalProfile()));
 
     // Obj parser runtime
-    connect(treeMain, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
+    connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(runtimePars(QTreeWidgetItem*, int)));
-    connect(treeTraceroot, SIGNAL( itemActivated(QTreeWidgetItem*, int)),
+    connect(treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(runtimeTraceroutePars(QTreeWidgetItem*, int)));
     connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuServiceMain()));
@@ -138,17 +138,17 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(menuParBook()));
 
     // Vuln signal
-    connect(comboVuln, SIGNAL(currentIndexChanged(const QString&)),
-            this, SLOT(updateComboVuln(const QString&)));
+    connect(comboVuln, SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(updateComboVuln(QString)));
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
     connect(addBookPar, SIGNAL(clicked()),
             this, SLOT(startAddParBook_ui()));
-    connect(comboPar, SIGNAL(activated(const QString&)),
+    connect(comboPar, SIGNAL(activated(QString)),
             this, SLOT(slotParSelected()));
-    connect(comboHostBook, SIGNAL(currentIndexChanged(const QString&)),
+    connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(slotHostSelected()));
 
     connect(tWresult, SIGNAL(tabCloseRequested(int)),
@@ -177,7 +177,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateFontHost()));
 
     // monitor events
-    connect(scanMonitor, SIGNAL( itemSelectionChanged()),
+    connect(scanMonitor, SIGNAL(itemSelectionChanged()),
             this, SLOT(monitorRuntimeEvent()));
     connect(monitorStopCurrentScanButt, SIGNAL(clicked()),
             this, SLOT(monitorStopCurrentScan()));
@@ -215,8 +215,8 @@ void nmapClass::setNmapsiSlot()
             _utilities, SLOT(showDonateUrl()));
     
     // Discover
-    connect(comboDiscover, SIGNAL(activated(const QString&)),
-            this, SLOT(discoverIp(const QString&)));
+    connect(comboDiscover, SIGNAL(activated(QString)),
+            this, SLOT(discoverIp(QString)));
     connect(startDiscoverButt, SIGNAL(clicked()),
             this, SLOT(discoverIpState()));
     connect(stopDiscoverButt, SIGNAL(clicked()),

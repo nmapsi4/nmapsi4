@@ -125,8 +125,8 @@ void nmapClass::startAddParBook_ui()
     
     mainParamClass dialogParAdd_(comboAdv->currentText());
     
-    connect(&dialogParAdd_, SIGNAL(doneParBook(const QString, const QString)),
-            this, SLOT(saveBookMarksPar(const QString, const QString)));
+    connect(&dialogParAdd_, SIGNAL(doneParBook(QString,QString)),
+            this, SLOT(saveBookMarksPar(QString,QString)));
     
     dialogParAdd_.exec();
 }

@@ -130,8 +130,8 @@ void nmapClass::preScanLookup(const QString hostname)
         lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
         internealLookupList.push_back(internalLookupTh_);
 
-        connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,const QString)),
-                this, SLOT(scanLookup(QHostInfo,int,const QString)));
+        connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,QString)),
+                this, SLOT(scanLookup(QHostInfo,int,QString)));
 
         internalLookupTh_->start();
     } 

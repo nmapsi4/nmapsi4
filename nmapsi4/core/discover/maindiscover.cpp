@@ -109,8 +109,8 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
         discoverLayer::ScanCounter++;
         QPointer<pingThread> pingTh = new pingThread(pingBuffer_, parameters, parent);
         pingTh->start();
-        connect(pingTh, SIGNAL(threadEnd(QStringList, QByteArray, pingThread*)),
-            this, SLOT(threadReturn(QStringList, QByteArray, pingThread*)));
+        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,pingThread*)),
+            this, SLOT(threadReturn(QStringList,QByteArray,pingThread*)));
     } 
     else 
     {

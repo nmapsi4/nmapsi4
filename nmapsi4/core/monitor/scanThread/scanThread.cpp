@@ -39,7 +39,7 @@ void scanning::scanThread::run()
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
-     connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)),
+     connect(proc, SIGNAL(finished(int,QProcess::ExitStatus)),
              this, SLOT(setValue()));
      connect(proc, SIGNAL(readyReadStandardOutput()),
              this, SLOT(realtimeData()));

@@ -31,7 +31,7 @@ void digLookup::digThread::run()
 {     
      m_proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
-     connect(m_proc, SIGNAL(finished(int, QProcess::ExitStatus)),
+     connect(m_proc, SIGNAL(finished(int,QProcess::ExitStatus)),
              this, SLOT(setValue()));
 
      m_proc->start("dig", m_host);
