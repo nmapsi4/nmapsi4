@@ -57,14 +57,12 @@ void digInterface::digSupport::checkDig()
 {
     QString output(m_digProc->readAllStandardOutput());
     QString error(m_digProc->readAllStandardError());
-    qDebug() << "DEBUG::DIG:: " << output;
 
     QTextStream stream(&output);
     QTextStream stream2(&error);
 
     QString line(stream.readLine());
     QString line2(stream2.readLine());
-    qDebug() << "DEBUG::DIG::LINE:: " << line;
 
     if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) 
     {
@@ -108,9 +106,6 @@ void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray 
             && !line.startsWith(QLatin1String(";")) 
             && !line.isEmpty()) 
         {
-#ifndef DIG_NO_DEBUG
-            qDebug() << "digSupport():: " << line;
-#endif
             m_elemObjUtil->setInfoLookup(line);
         }
     }
