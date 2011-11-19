@@ -103,63 +103,106 @@ void nmapClass::menuServiceMain()
 void nmapClass::createBar() 
 {
     QAction* action;
+    QPushButtonOrientated* actionButt;
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    action->setIconText(tr("Scan"));
-    action->setToolTip(tr("Scan host(s)"));
-    action->setCheckable(true);
-    _collections.insert("scan-sez",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateSezScan()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan"));
+    actionButt->setToolTip(tr("Scan host(s)"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("scan-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezScan()));
+    sezBar->addWidget(actionButt);
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/book.png")));
-    action->setIconText(tr("Log"));
-    action->setToolTip(tr("Scan Log"));
-    action->setCheckable(true);
-    _collections.insert("log-sez",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateSezLog()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/book.png")),tr("Log"));
+    actionButt->setToolTip(tr("Scan Log"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("log-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezLog()));
+    sezBar->addWidget(actionButt);
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    action->setIconText(tr("Services"));
-    action->setToolTip(tr("Check Vulnerabilities"));
-    action->setCheckable(true);
-    _collections.insert("vuln-sez",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateSezVuln()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Services"));
+    actionButt->setToolTip(tr("Check Vulnerabilities"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("vuln-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
+    sezBar->addWidget(actionButt);
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
-    action->setIconText(tr("Discover"));
-    action->setToolTip(tr("Network Discover"));
-    action->setCheckable(true);
-    _collections.insert("discover-sez",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateDiscoverVuln()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Discover"));
+    actionButt->setToolTip(tr("Network Discover"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("discover-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
+    sezBar->addWidget(actionButt);
 
     sezBar->addSeparator();
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
-    action->setToolTip(tr("Enable/Disable Manual Parameters"));
-    action->setCheckable(true);
-    _collections.insert("par-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(parAdv()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/show-menu.png")),tr("Paramenters"));
+    actionButt->setToolTip(tr("Enable/Disable Manual Parameters"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("par-act",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(parAdv()));
+    sezBar->addWidget(actionButt);
 
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    action->setIconText(tr("Nss Script"));
-    action->setToolTip(tr("Enable/Disable NSS script"));
-    action->setCheckable(true);
-    _collections.insert("nss-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(NSSCheck()));
-    sezBar->addAction(action);
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("NSS Script"));
+    actionButt->setToolTip(tr("Enable/Disable NSS script"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("nss-act",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(NSSCheck()));
+    sezBar->addWidget(actionButt);
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
+    actionButt->setToolTip(tr("Show/Hide Lookup"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setMirrored(true);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("tab-look-act",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabLook()));
+    toolBarTab->addWidget(actionButt);
+
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-wired.png")),tr("Show Traceroute"));
+    actionButt->setToolTip(tr("Show/Hide Traceroute"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setMirrored(true);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("tab-trace-act",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
+    toolBarTab->addWidget(actionButt);
+
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")),tr("Show Monitor"));
+    actionButt->setToolTip(tr("Show/Hide Scan Monitor"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setMirrored(true);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(30);
+    actionButt->setCheckable(true);
+    _collectionsButton.insert("tab-monitor-act",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabMonitor()));
+    toolBarTab->addWidget(actionButt);
+    
+    toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 
     action = new QAction(this);
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
@@ -194,33 +237,6 @@ void nmapClass::createBar()
     toolBarSearch->addAction(action);
 
     toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);
-
-    action = new QAction(this);
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
-    action->setToolTip(tr("Show/Hide Lookup"));
-    action->setCheckable(true);
-    _collections.insert("tab-look-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateTabLook()));
-    toolBarTab->addAction(action);
-
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
-    action->setToolTip(tr("Show/Hide Traceroot"));
-    action->setCheckable(true);
-    _collections.insert("tab-trace-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateTabTrace()));
-    toolBarTab->addAction(action);
-
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-    action->setToolTip(tr("Show/Hide Scan Monitor"));
-    action->setCheckable(true);
-    _collections.insert("tab-monitor-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(updateTabMonitor()));
-    toolBarTab->addAction(action);
-    
-    toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
 void nmapClass::createToolButtonSetup()

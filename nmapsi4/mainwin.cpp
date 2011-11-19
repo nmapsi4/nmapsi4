@@ -75,15 +75,15 @@ void nmapClass::initObject()
     loadHistoryDefault();
     // restore value with uid check
     rootMode();
-    _collections.value("nss-act")->setChecked(NSSsupport);
+    _collectionsButton.value("nss-act")->setChecked(NSSsupport);
     NSSCheck();
-    _collections.value("par-act")->setChecked(ADVSupport);
+    _collectionsButton.value("par-act")->setChecked(ADVSupport);
     parAdv();
-    _collections.value("tab-monitor-act")->setChecked(MonitorEnabled);
+    _collectionsButton.value("tab-monitor-act")->setChecked(MonitorEnabled);
     updateTabMonitor();
-    _collections.value("tab-look-act")->setChecked(LookupEnabled);
+    _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
     updateTabLook();
-    _collections.value("tab-trace-act")->setChecked(TraceEnabled);
+    _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);
     updateTabTrace();
     updateMenuBar();
     // load quick combo items
@@ -108,6 +108,7 @@ nmapClass::~nmapClass()
     freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     freelist<QWebView*>::itemDeleteAll(webViewList);
     freemap<QString,QAction*>::itemDeleteAll(_collections);
+    freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     discoveryClear();
     delete _monitor;
     delete _utilities;

@@ -121,7 +121,7 @@ void nmapClass::nseTreeActiveItem()
         }
     }
 
-    if (_collections.value("nss-act")->isChecked())
+    if (_collectionsButton.value("nss-act")->isChecked())
     {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
@@ -145,7 +145,7 @@ void nmapClass::nseTreeRemoveItem()
         }
     }
 
-    if (_collections.value("nss-act")->isChecked())
+    if (_collectionsButton.value("nss-act")->isChecked())
     {
         comboAdv->clear();
         comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));

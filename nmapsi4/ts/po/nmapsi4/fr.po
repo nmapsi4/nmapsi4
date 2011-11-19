@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-13 20:34+0200\n"
+"POT-Creation-Date: 2011-11-19 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1142,105 +1142,113 @@ msgid "Network Discover"
 msgstr "Découvrir Réseau"
 
 #: nmapClass#37
-msgid "Nss Script"
-msgstr "Script Nss"
-
-#: nmapClass#38
 msgid "Enable/Disable NSS script"
 msgstr "Activer/Désactiver script NSS"
 
-#: nmapClass#39
+#: nmapClass#38
 msgid "Enable/Disable Manual Parameters"
 msgstr "Activer/Désactiver Paramètres Manuel"
 
-#: nmapClass#40
-msgctxt "nmapClass#40"
+#: nmapClass#39
+msgctxt "nmapClass#39"
 msgid "Search"
 msgstr "Chercher"
 
-#: nmapClass#41
+#: nmapClass#40
 msgid "Back"
 msgstr "Retour"
 
-#: nmapClass#42
+#: nmapClass#41
 msgid "Forward"
 msgstr "En avant"
 
-#: nmapClass#43
+#: nmapClass#42
 msgid "Stop"
 msgstr "Arrêter"
 
-#: nmapClass#44
+#: nmapClass#43
 msgid "Show/Hide Lookup"
 msgstr "Afficher/Masquer Recherche"
 
-#: nmapClass#45
-msgid "Show/Hide Traceroot"
-msgstr "Afficher/Masquer Traceroot"
-
-#: nmapClass#46
+#: nmapClass#44
 msgid "Show/Hide Scan Monitor"
 msgstr "Afficher/Masquer Moniteur de Scan"
 
-#: nmapClass#47
+#: nmapClass#45
 msgid "Setup"
 msgstr "Configuration"
 
-#: nmapClass#48
+#: nmapClass#46
 msgid "Idle Scan"
 msgstr "Scan Idle"
 
-#: nmapClass#49
+#: nmapClass#47
 msgid "SYN Stealth Scan"
 msgstr "SYN Scan Furtif"
 
-#: nmapClass#50
+#: nmapClass#48
 msgid "ACK Stealth Scan"
 msgstr "ACK Scan Furtif"
 
-#: nmapClass#51
+#: nmapClass#49
 msgid "FIN|ACK Stealth Scan"
 msgstr "FIN|ACK Scan Furtif"
 
-#: nmapClass#52
+#: nmapClass#50
 msgid "FIN Stealth Scan"
 msgstr "FIN Scan Furtif"
 
-#: nmapClass#53
+#: nmapClass#51
 msgid "NULL Stealth Scan"
 msgstr "NULL Scan Furtif"
 
-#: nmapClass#54
+#: nmapClass#52
 #, fuzzy
 msgid "XMAS Tree Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
-#: nmapClass#55
+#: nmapClass#53
 msgid "TCP Window Scan"
 msgstr "Fenêtre de Scan TCP"
 
-#: nmapClass#56
+#: nmapClass#54
 msgid "UDP Ports Scan"
 msgstr "Scan de Ports UDP"
 
-#: nmapClass#57
+#: nmapClass#55
 msgid "IP Protocol Scan"
 msgstr "Protocol de Scan IP"
 
-#: nmapClass#58
+#: nmapClass#56
 msgid "Insert HostName to scan"
 msgstr "Insérez Nom d'hôte à scanner"
 
-#: nmapClass#59
+#: nmapClass#57
 msgid "Warning: Operation more expansive.\n"
 msgstr "Avertissement : Opération plus large.\n"
+
+#: nmapClass#58
+#, fuzzy
+msgctxt "nmapClass#58"
+msgid "Scan Options"
+msgstr ""
+"\n"
+"            "
+
+#: nmapClass#59
+#, fuzzy
+msgctxt "nmapClass#59"
+msgid "Nse Options"
+msgstr ""
+"\n"
+"            "
 
 #: nmapClass#60
 #, fuzzy
 msgctxt "nmapClass#60"
-msgid "Scan Options"
+msgid "Lookup"
 msgstr ""
 "\n"
 "            "
@@ -1248,7 +1256,7 @@ msgstr ""
 #: nmapClass#61
 #, fuzzy
 msgctxt "nmapClass#61"
-msgid "Nse Options"
+msgid "Traceroute"
 msgstr ""
 "\n"
 "            "
@@ -1256,7 +1264,7 @@ msgstr ""
 #: nmapClass#62
 #, fuzzy
 msgctxt "nmapClass#62"
-msgid "Lookup"
+msgid "Scan Monitor"
 msgstr ""
 "\n"
 "            "
@@ -1264,28 +1272,12 @@ msgstr ""
 #: nmapClass#63
 #, fuzzy
 msgctxt "nmapClass#63"
-msgid "Traceroute"
-msgstr ""
-"\n"
-"            "
-
-#: nmapClass#64
-#, fuzzy
-msgctxt "nmapClass#64"
-msgid "Scan Monitor"
-msgstr ""
-"\n"
-"            "
-
-#: nmapClass#65
-#, fuzzy
-msgctxt "nmapClass#65"
 msgid "Scan log parameters"
 msgstr ""
 "\n"
 "            "
 
-#: nmapClass#66
+#: nmapClass#64
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
@@ -1293,51 +1285,75 @@ msgstr ""
 "Insérer [ip] ou [dns] ou [plage d'adresses ip] ou [liste ip/dns avec un "
 "espace séparateur] pour le scan (ex. plage d'adresses ip. 192.168.1.10/20)"
 
-#: nmapClass#67
+#: nmapClass#65
 msgid "Search Vulnerabilities"
 msgstr "Recherche Vulnérabilités"
 
-#: nmapClass#68
+#: nmapClass#66
 msgid "No Host Target\n"
 msgstr "Aucun Hôte Cible\n"
 
-#: nmapClass#69
+#: nmapClass#67
 #, fuzzy
 msgid "is Up"
 msgstr ""
 "\n"
 "            "
 
-#: nmapClass#70
+#: nmapClass#68
 #, fuzzy
-msgctxt "nmapClass#70"
+msgctxt "nmapClass#68"
 msgid "Quick Scan"
 msgstr ""
 "\n"
 "            "
 
-#: nmapClass#71
+#: nmapClass#69
 msgid "Intense Scan"
 msgstr "Scan Intense"
 
-#: nmapClass#72
+#: nmapClass#70
 msgid "Intense Scan, all TCP ports"
 msgstr "Scan Intense,tous les ports TCP"
 
-#: nmapClass#73
+#: nmapClass#71
 msgid "Intense scan plus UDP"
 msgstr "Scan Intense plus UDP"
 
-#: nmapClass#74
+#: nmapClass#72
 msgid "Slow comprehensive scan"
 msgstr "scan complet Lent"
 
-#: nmapClass#75
+#: nmapClass#73
 msgid "Error: check nmap Installation.\n"
 msgstr "Erreur: vérifiez l'installation de nmap.\n"
 
-#: nmapClass#76
+#: nmapClass#74
 msgid "Hostname already scanning\n"
+msgstr ""
+
+#: nmapClass#75
+msgid "Paramenters"
+msgstr ""
+
+#: nmapClass#76
+msgid "NSS Script"
+msgstr ""
+
+#: nmapClass#77
+msgid "Show Lookup"
+msgstr ""
+
+#: nmapClass#78
+msgid "Show Traceroute"
+msgstr ""
+
+#: nmapClass#79
+msgid "Show/Hide Traceroute"
+msgstr ""
+
+#: nmapClass#80
+msgid "Show Monitor"
 msgstr ""
 
 #: utilities#1

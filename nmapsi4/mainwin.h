@@ -38,6 +38,7 @@
 #include "core/monitor/monitor.h"
 #include "core/tools/utilities.h"
 #include "core/tools/hostTools.h"
+#include "core/tools/qpushbuttonorientated.h"
 
 // Qt4 include
 #include <QtGui/QMainWindow>
@@ -149,6 +150,7 @@ protected:
     QList<QString> nseScriptActiveList;
     QHash<QString, QTextDocument*> nseHelpCache;
     QHash<QString, QAction*> _collections;
+    QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<parserObj*> parserObjList;
     QList<parserObjUtil*> parserObjUtilList;
     QList<lookUpT*> internealLookupList;

@@ -18,6 +18,7 @@ SET(SOURCES_CPP core/slots.cpp
 		mainwin.cpp
 		core/updateUI.cpp
 		core/tools/utilities.cpp
+                core/tools/qpushbuttonorientated.cpp
 		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
@@ -67,6 +68,7 @@ else (NOT Q_WS_X11)
 		mainwin.cpp
 		core/updateUI.cpp
 		core/tools/utilities.cpp
+                core/tools/qpushbuttonorientated.cpp
 		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp

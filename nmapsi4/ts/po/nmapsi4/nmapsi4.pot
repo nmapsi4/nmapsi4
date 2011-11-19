@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-13 20:34+0200\n"
+"POT-Creation-Date: 2011-11-19 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1104,168 +1104,184 @@ msgid "Network Discover"
 msgstr ""
 
 #: nmapClass#38
-msgid "Nss Script"
-msgstr ""
-
-#: nmapClass#39
 msgid "Enable/Disable NSS script"
 msgstr ""
 
-#: nmapClass#40
+#: nmapClass#39
 msgid "Enable/Disable Manual Parameters"
 msgstr ""
 
+#: nmapClass#40
+msgid "Paramenters"
+msgstr ""
+
 #: nmapClass#41
-msgctxt "nmapClass#41"
-msgid "Search"
+msgid "NSS Script"
 msgstr ""
 
 #: nmapClass#42
-msgid "Back"
+msgid "Show Lookup"
 msgstr ""
 
 #: nmapClass#43
-msgid "Forward"
+msgid "Show Traceroute"
 msgstr ""
 
 #: nmapClass#44
-msgid "Stop"
+msgid "Show/Hide Traceroute"
 msgstr ""
 
 #: nmapClass#45
-msgid "Show/Hide Lookup"
+msgid "Show Monitor"
 msgstr ""
 
 #: nmapClass#46
-msgid "Show/Hide Traceroot"
+msgctxt "nmapClass#46"
+msgid "Search"
 msgstr ""
 
 #: nmapClass#47
-msgid "Show/Hide Scan Monitor"
+msgid "Back"
 msgstr ""
 
 #: nmapClass#48
-msgid "Setup"
+msgid "Forward"
 msgstr ""
 
 #: nmapClass#49
-msgid "Idle Scan"
+msgid "Stop"
 msgstr ""
 
 #: nmapClass#50
-msgid "SYN Stealth Scan"
+msgid "Show/Hide Lookup"
 msgstr ""
 
 #: nmapClass#51
-msgid "ACK Stealth Scan"
+msgid "Show/Hide Scan Monitor"
 msgstr ""
 
 #: nmapClass#52
-msgid "FIN|ACK Stealth Scan"
+msgid "Setup"
 msgstr ""
 
 #: nmapClass#53
-msgid "FIN Stealth Scan"
+msgid "Idle Scan"
 msgstr ""
 
 #: nmapClass#54
-msgid "NULL Stealth Scan"
+msgid "SYN Stealth Scan"
 msgstr ""
 
 #: nmapClass#55
-msgid "XMAS Tree Stealth Scan"
+msgid "ACK Stealth Scan"
 msgstr ""
 
 #: nmapClass#56
-msgid "TCP Window Scan"
+msgid "FIN|ACK Stealth Scan"
 msgstr ""
 
 #: nmapClass#57
-msgid "UDP Ports Scan"
+msgid "FIN Stealth Scan"
 msgstr ""
 
 #: nmapClass#58
-msgid "IP Protocol Scan"
+msgid "NULL Stealth Scan"
 msgstr ""
 
 #: nmapClass#59
-msgid "Insert HostName to scan"
+msgid "XMAS Tree Stealth Scan"
 msgstr ""
 
 #: nmapClass#60
-msgid "Warning: Operation more expansive.\n"
+msgid "TCP Window Scan"
 msgstr ""
 
 #: nmapClass#61
-msgctxt "nmapClass#61"
-msgid "Scan Options"
+msgid "UDP Ports Scan"
 msgstr ""
 
 #: nmapClass#62
-msgctxt "nmapClass#62"
-msgid "Nse Options"
+msgid "IP Protocol Scan"
 msgstr ""
 
 #: nmapClass#63
-msgctxt "nmapClass#63"
-msgid "Lookup"
+msgid "Insert HostName to scan"
 msgstr ""
 
 #: nmapClass#64
-msgctxt "nmapClass#64"
-msgid "Traceroute"
+msgid "Warning: Operation more expansive.\n"
 msgstr ""
 
 #: nmapClass#65
 msgctxt "nmapClass#65"
-msgid "Scan Monitor"
+msgid "Scan Options"
 msgstr ""
 
 #: nmapClass#66
 msgctxt "nmapClass#66"
-msgid "Scan log parameters"
+msgid "Nse Options"
 msgstr ""
 
 #: nmapClass#67
+msgctxt "nmapClass#67"
+msgid "Lookup"
+msgstr ""
+
+#: nmapClass#68
+msgctxt "nmapClass#68"
+msgid "Traceroute"
+msgstr ""
+
+#: nmapClass#69
+msgctxt "nmapClass#69"
+msgid "Scan Monitor"
+msgstr ""
+
+#: nmapClass#70
+msgctxt "nmapClass#70"
+msgid "Scan log parameters"
+msgstr ""
+
+#: nmapClass#71
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
 msgstr ""
 
-#: nmapClass#68
+#: nmapClass#72
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: nmapClass#69
+#: nmapClass#73
 msgid "No Host Target\n"
 msgstr ""
 
-#: nmapClass#70
+#: nmapClass#74
 msgid "is Up"
 msgstr ""
 
-#: nmapClass#71
-msgctxt "nmapClass#71"
+#: nmapClass#75
+msgctxt "nmapClass#75"
 msgid "Quick Scan"
 msgstr ""
 
-#: nmapClass#72
+#: nmapClass#76
 msgid "Intense Scan"
 msgstr ""
 
-#: nmapClass#73
+#: nmapClass#77
 msgid "Intense Scan, all TCP ports"
 msgstr ""
 
-#: nmapClass#74
+#: nmapClass#78
 msgid "Intense scan plus UDP"
 msgstr ""
 
-#: nmapClass#75
+#: nmapClass#79
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: nmapClass#76
+#: nmapClass#80
 msgid "Error: check nmap Installation.\n"
 msgstr ""
 

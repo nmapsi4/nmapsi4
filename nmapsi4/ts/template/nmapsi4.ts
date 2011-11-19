@@ -1234,7 +1234,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../core/mainScan.cpp" line="26"/>
         <location filename="../../core/mainScan.cpp" line="37"/>
         <location filename="../../core/mainScan.cpp" line="160"/>
-        <location filename="../../core/parser/nmapParser.cpp" line="27"/>
+        <location filename="../../core/parserSlotsDefinition.cpp" line="27"/>
         <location filename="../../core/updateUI.cpp" line="306"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
@@ -1268,7 +1268,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="109"/>
+        <location filename="../../core/actionMenu.cpp" line="108"/>
         <location filename="../../core/resizeNmapsi4.cpp" line="93"/>
         <source>Scan</source>
         <translation type="unfinished"></translation>
@@ -1279,7 +1279,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="136"/>
+        <location filename="../../core/actionMenu.cpp" line="138"/>
         <location filename="../../core/resizeNmapsi4.cpp" line="101"/>
         <source>Discover</source>
         <translation type="unfinished"></translation>
@@ -1353,7 +1353,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="110"/>
+        <location filename="../../core/actionMenu.cpp" line="109"/>
         <source>Scan host(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1368,72 +1368,92 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="127"/>
+        <location filename="../../core/actionMenu.cpp" line="128"/>
         <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="128"/>
+        <location filename="../../core/actionMenu.cpp" line="129"/>
         <source>Check Vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="137"/>
+        <location filename="../../core/actionMenu.cpp" line="139"/>
         <source>Network Discover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="155"/>
-        <source>Nss Script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/actionMenu.cpp" line="156"/>
+        <location filename="../../core/actionMenu.cpp" line="161"/>
         <source>Enable/Disable NSS script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="147"/>
+        <location filename="../../core/actionMenu.cpp" line="151"/>
         <source>Enable/Disable Manual Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="166"/>
-        <source>Search</source>
+        <location filename="../../core/actionMenu.cpp" line="150"/>
+        <source>Paramenters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="174"/>
-        <source>Back</source>
+        <location filename="../../core/actionMenu.cpp" line="160"/>
+        <source>NSS Script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="182"/>
-        <source>Forward</source>
+        <location filename="../../core/actionMenu.cpp" line="172"/>
+        <source>Show Lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="190"/>
-        <source>Stop</source>
+        <location filename="../../core/actionMenu.cpp" line="183"/>
+        <source>Show Traceroute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="201"/>
-        <source>Show/Hide Lookup</source>
+        <location filename="../../core/actionMenu.cpp" line="184"/>
+        <source>Show/Hide Traceroute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/actionMenu.cpp" line="194"/>
+        <source>Show Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../core/actionMenu.cpp" line="209"/>
-        <source>Show/Hide Traceroot</source>
+        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../core/actionMenu.cpp" line="217"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/actionMenu.cpp" line="225"/>
+        <source>Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/actionMenu.cpp" line="233"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/actionMenu.cpp" line="173"/>
+        <source>Show/Hide Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/actionMenu.cpp" line="195"/>
         <source>Show/Hide Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/actionMenu.cpp" line="231"/>
+        <location filename="../../core/actionMenu.cpp" line="247"/>
         <source>Setup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1578,7 +1598,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/parser/nmapParser.cpp" line="27"/>
+        <location filename="../../core/parserSlotsDefinition.cpp" line="27"/>
         <source>Error: check nmap Installation.
 </source>
         <translation type="unfinished"></translation>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-13 20:34+0200\n"
+"POT-Creation-Date: 2011-11-19 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1228,173 +1228,189 @@ msgid "Network Discover"
 msgstr ""
 
 #: nmapClass#37
-msgid "Nss Script"
-msgstr ""
-
-#: nmapClass#38
 msgid "Enable/Disable NSS script"
 msgstr ""
 
-#: nmapClass#39
+#: nmapClass#38
 msgid "Enable/Disable Manual Parameters"
 msgstr ""
 
+#: nmapClass#39
+msgid "Paramenters"
+msgstr ""
+
 #: nmapClass#40
-msgctxt "nmapClass#40"
-msgid "Search"
+msgid "NSS Script"
 msgstr ""
 
 #: nmapClass#41
-msgid "Back"
+msgid "Show Lookup"
 msgstr ""
 
 #: nmapClass#42
-msgid "Forward"
+msgid "Show Traceroute"
 msgstr ""
 
 #: nmapClass#43
-msgid "Stop"
+msgid "Show/Hide Traceroute"
 msgstr ""
 
 #: nmapClass#44
-msgid "Show/Hide Lookup"
+msgid "Show Monitor"
 msgstr ""
 
 #: nmapClass#45
-msgid "Show/Hide Traceroot"
+msgctxt "nmapClass#45"
+msgid "Search"
 msgstr ""
 
 #: nmapClass#46
-msgid "Show/Hide Scan Monitor"
+msgid "Back"
 msgstr ""
 
 #: nmapClass#47
-msgid "Setup"
+msgid "Forward"
 msgstr ""
 
 #: nmapClass#48
+msgid "Stop"
+msgstr ""
+
+#: nmapClass#49
+msgid "Show/Hide Lookup"
+msgstr ""
+
+#: nmapClass#50
+msgid "Show/Hide Scan Monitor"
+msgstr ""
+
+#: nmapClass#51
+msgid "Setup"
+msgstr ""
+
+#: nmapClass#52
 #, fuzzy
 msgid "No Host Target\n"
 msgstr "Nenhuma máquina alvo"
 
-#: nmapClass#49
+#: nmapClass#53
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: nmapClass#50
+#: nmapClass#54
 #, fuzzy
 msgid "No Ftp Address \n"
 msgstr "Nenhum endereço Ftp"
 
-#: nmapClass#51
+#: nmapClass#55
 #, fuzzy
 msgid "Disable Ftp bounce"
 msgstr "Desativar retorno Ftp"
 
-#: nmapClass#52
+#: nmapClass#56
 #, fuzzy
 msgid "Idle Scan"
 msgstr "Cancelar Verredura"
 
-#: nmapClass#53
+#: nmapClass#57
 #, fuzzy
-msgctxt "nmapClass#53"
+msgctxt "nmapClass#57"
 msgid "Scan"
 msgstr "Varrer"
 
-#: nmapClass#54
+#: nmapClass#58
 msgid "Options"
 msgstr ""
 
-#: nmapClass#55
-msgctxt "nmapClass#55"
+#: nmapClass#59
+msgctxt "nmapClass#59"
 msgid "Discover"
 msgstr ""
 
-#: nmapClass#56
+#: nmapClass#60
 msgid "File"
 msgstr ""
 
-#: nmapClass#57
+#: nmapClass#61
 msgid "Timing"
 msgstr ""
 
-#: nmapClass#58
+#: nmapClass#62
 msgid "No description"
 msgstr ""
 
-#: nmapClass#59
+#: nmapClass#63
 msgid "Insert HostName to scan"
 msgstr ""
 
-#: nmapClass#60
+#: nmapClass#64
 msgid "<b>Mode:</b> "
 msgstr ""
 
-#: nmapClass#61
+#: nmapClass#65
 msgid "Wrong Address\n"
 msgstr ""
 
-#: nmapClass#62
+#: nmapClass#66
 msgid "Remove Host"
 msgstr ""
 
-#: nmapClass#63
-msgctxt "nmapClass#63"
+#: nmapClass#67
+msgctxt "nmapClass#67"
 msgid "Scan Host"
 msgstr ""
 
-#: nmapClass#64
+#: nmapClass#68
 msgid "Remove Service"
 msgstr ""
 
-#: nmapClass#65
+#: nmapClass#69
 msgid "Search for vulnerabilities"
 msgstr ""
 
-#: nmapClass#66
+#: nmapClass#70
 msgid "Remove Scan Paramenters"
 msgstr ""
 
-#: nmapClass#67
+#: nmapClass#71
 msgid "Use Parameters"
 msgstr ""
 
-#: nmapClass#68
+#: nmapClass#72
 msgid "Check Vulnerability"
 msgstr ""
 
-#: nmapClass#69
+#: nmapClass#73
 msgid " Active Scan "
 msgstr ""
 
-#: nmapClass#70
+#: nmapClass#74
 msgid "is Up"
 msgstr ""
 
-#: nmapClass#71
+#: nmapClass#75
 #, fuzzy
-msgctxt "nmapClass#71"
+msgctxt "nmapClass#75"
 msgid "Quick Scan"
 msgstr "Varrer rápido"
 
-#: nmapClass#72
+#: nmapClass#76
 msgid "Intense Scan"
 msgstr ""
 
-#: nmapClass#73
+#: nmapClass#77
 msgid "Intense Scan, all TCP ports"
 msgstr ""
 
-#: nmapClass#74
+#: nmapClass#78
 msgid "Intense scan plus UDP"
 msgstr ""
 
-#: nmapClass#75
+#: nmapClass#79
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: nmapClass#76
+#: nmapClass#80
 msgid "Error: check nmap Installation.\n"
 msgstr ""
 

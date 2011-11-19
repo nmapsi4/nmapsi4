@@ -1224,11 +1224,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Nss Script</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Enable/Disable NSS script</source>
         <translation type="unfinished">
             </translation>
@@ -1259,11 +1254,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show/Hide Lookup</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Show/Hide Traceroot</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1422,6 +1412,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Hostname already scanning
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paramenters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NSS Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Traceroute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Traceroute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Monitor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
