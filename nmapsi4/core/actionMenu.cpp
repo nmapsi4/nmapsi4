@@ -109,7 +109,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Scan host(s)"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("scan-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezScan()));
@@ -119,7 +119,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Scan Log"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("log-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezLog()));
@@ -129,7 +129,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Check Vulnerabilities"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("vuln-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
@@ -139,7 +139,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Network Discover"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("discover-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
@@ -151,7 +151,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Enable/Disable Manual Parameters"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("par-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(parAdv()));
@@ -161,7 +161,7 @@ void nmapClass::createBar()
     actionButt->setToolTip(tr("Enable/Disable NSS script"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("nss-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(NSSCheck()));
@@ -174,7 +174,7 @@ void nmapClass::createBar()
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("tab-look-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabLook()));
@@ -185,7 +185,7 @@ void nmapClass::createBar()
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("tab-trace-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
@@ -196,7 +196,7 @@ void nmapClass::createBar()
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
     actionButt->setFlat(true);
-    actionButt->setMaximumWidth(30);
+    actionButt->setMaximumWidth(25);
     actionButt->setCheckable(true);
     _collectionsButton.insert("tab-monitor-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabMonitor()));
