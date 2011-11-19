@@ -36,36 +36,36 @@ void nmapClass::fileSession()
 {
     int FLAGS = 0;
 
-    if ((!PFile) || (PFile && (firstPath != logPath) && (FLAGS = 1))) 
+    if ((!_logFilePath) || (_logFilePath && (firstPath != logPath) && (FLAGS = 1))) 
     {
 
         if (FLAGS) 
         {
             QDir::setCurrent(firstPath);
 #ifndef TOOLS_NO_DEBUG
-            qDebug() << "DEBUG::SESSION:: " << PFile << firstPath << logPath;
+            qDebug() << "DEBUG::SESSION:: " << _logFilePath << firstPath << logPath;
 #endif
-            PFile->remove();
+            _logFilePath->remove();
         }
 
         FileName = QDate::currentDate().toString("[dd-MM-yyyy]");
         FileName.append(QTime::currentTime().toString("[h-m-s]"));
         FileName.append("-nmapsi4.log");
         firstPath = logPath;
-        PFile = create_logFile(logPath);
-        PFile->open(QIODevice::WriteOnly | QIODevice::Text);
+        _logFilePath = create_logFile(logPath);
+        _logFilePath->open(QIODevice::WriteOnly | QIODevice::Text);
     }
 }
 
 void nmapClass::isEmptyLog()
 {
-    qint64 tmp = PFile->size();
+    qint64 tmp = _logFilePath->size();
 
     if (!tmp) 
     {
         QDir::setCurrent(logPath);
-        PFile->setFileName(FileName);
-        PFile->remove();
+        _logFilePath->setFileName(FileName);
+        _logFilePath->remove();
     } 
     else if (firstPath.compare(logPath)) 
     {
@@ -74,14 +74,14 @@ void nmapClass::isEmptyLog()
         pathTmp = QDir::toNativeSeparators(pathTmp);
         pathTmp.append(FileName);
 
-        if (!PFile->copy(FileName, pathTmp)) 
+        if (!_logFilePath->copy(FileName, pathTmp)) 
         {
             QMessageBox::critical(this, "NmapSI4",
                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
         } 
         else 
         {
-            PFile->remove();
+            _logFilePath->remove();
         }
     }
 }

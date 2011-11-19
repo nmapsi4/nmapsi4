@@ -105,13 +105,15 @@ private:
     void setNormalProfile();
     void setFullVersionProfile();
     void setQuickVersionProfile();
+    parserObj* parser(const QStringList parList, QString StdoutStr,
+                      QString StderrorStr, QTreeWidgetItem* mainTreeE);
 
 signals:
     void killDiscover();
 
 protected:
     int uid;
-    QFile *PFile;
+    QFile *_logFilePath;
     QListWidgetItem *scanW;
     QListWidgetItem *toolW;
     QListWidgetItem *discoverW;

@@ -10,10 +10,10 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
 if (NOT Q_WS_X11)
 SET(SOURCES_CPP core/slots.cpp
 		core/resizeNmapsi4.cpp
-                core/parser/parserUtils.cpp
 		core/parser/nmapParser.cpp
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
+                core/parserSlotsDefinition.cpp
 		core/extensions.cpp
 		mainwin.cpp
 		core/updateUI.cpp
@@ -59,10 +59,10 @@ else (NOT Q_WS_X11)
   SET(SOURCES_CPP  ${nmapsi4adaptor_SRCS}
                 core/slots.cpp
 		core/resizeNmapsi4.cpp
-		core/parser/parserUtils.cpp
 		core/parser/nmapParser.cpp
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
+                core/parserSlotsDefinition.cpp
 		core/extensions.cpp
 		mainwin.cpp
 		core/updateUI.cpp

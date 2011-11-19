@@ -19,27 +19,19 @@
 
 #include "../../mainwin.h"
 
-void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
+parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr, 
+                       QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
-    // check nmap error
-    if(!dataBuffer.size() && errorBuffer.size())
-    {
-        QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
-        return;
-    }
+    /*
+     * _logFilePath and verboseLog is global in Ui::MainWindow
+     * checkViewOS() methos in parserUtils
+     * TODO:: remove _logFilePath and verboleLog with porting to new save log.
+     */
     // Create parser Obect
     parserObj *elemObj = new parserObj();
     QString hostCheck = parList[parList.size()-1];
-
-    _monitor->delMonitorHost(hostCheck);
     elemObj->setHostName(hostCheck);
-
-    listClearFlag = false; // the listScan is not empty
-
-    progressScan->setValue(75);
     
-    QString StdoutStr(dataBuffer);
-    QString StderrorStr(errorBuffer);
     QRegExp rxT_("^\\d\\d?");
     QString generalBuffer_(hostCheck);
     QString tmp;
@@ -49,7 +41,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
     QString bufferNSS;
 
     QTextStream stream(&StdoutStr);
-
+    
     while (!stream.atEnd()) 
     {
         tmp = stream.readLine();
@@ -121,77 +113,44 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) 
         {
-#ifndef PARSER_NO_DEBUG
-            qDebug() << "Match String:: " << tmp;
-#endif
             bufferTraceroot.append(tmp);
             bufferTraceroot.append("\n");
         }
 
     }
-
-    QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
-    mainTreeElem.push_front(mainTreeE);
-    mainTreeE->setSizeHint(0, QSize(32, 32));
-    comboScanLog->insertItem(3, parList.join(" "));
-
+    
     // check for log file
-    QTextStream *out = NULL;
-
-    if (PFile) 
+    QTextStream *file = NULL;
+    if (_logFilePath) 
     {
-        out = new QTextStream(PFile);
+        file = new QTextStream(_logFilePath);
         // parameters list for log
-        QString nmap_command("\n==LogStart: ");
-        nmap_command.append("\nnmap ");
-        nmap_command.append(parList.join(" "));
-        *out << nmap_command << endl << endl;
+        QString nmap_command(QString("\n==LogStart: ") + QString("\nnmap ") + parList.join(" "));
+        *file << nmap_command << endl << endl;
     }
-
-    int tmpBox = SWscan->currentIndex();
- 
-    switch(tmpBox) 
-    {
-      case 0:
-        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-      case 1:
-        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-      case 2:
-        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-    }
-
-    mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-
-    QString tmp_host("");
+    
+    QString tmp_host;
 
     if (!generalBuffer_.isEmpty()) 
     {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        tmp_host.append(generalBuffer_);
-        tmp_host.append("\n");
-        tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        tmp_host.append(generalBuffer_ + "\n" + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
         
-        if ((PFile) && (!verboseLog))
+        if ((_logFilePath) && (!verboseLog))
         {
-            *out << generalBuffer_ << endl;
+            *file << generalBuffer_ << endl;
         }
     } 
     else 
     {
-        tmp_host.append(hostCheck);
-        tmp_host.append("\n");
-        tmp_host.append(QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        tmp_host.append(hostCheck + "\n" + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss")); 
         mainTreeE->setText(0, tmp_host);
         
-        if ((PFile) && (!verboseLog))
+        if ((_logFilePath) && (!verboseLog))
         {
-            *out << hostCheck << endl;
+            *file << hostCheck << endl;
         }
     }
     
@@ -226,16 +185,12 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
             {
                 QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
-#ifndef PARSER_NO_DEBUG
-                qDebug() << "Nmapsi4/parser:: --> Token:: " << lStr;
-#endif
-
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
-                if ((PFile) && (!verboseLog)) 
+                if ((_logFilePath) && (!verboseLog)) 
                 {
-                    *out << scanBufferToStream_line << endl;
+                    *file << scanBufferToStream_line << endl;
                 }
             }
         } // end while
@@ -258,14 +213,22 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
          if (bufferInfoStream_line.contains("OS") && !state_) 
          {
             // OS was found ?
-            state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
+            //state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
+            state_ = hostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
          }
 
          elemObj->setMainInfo(bufferInfoStream_line);
-         if (PFile && !verboseLog) 
+         if (_logFilePath && !verboseLog) 
          {
-            *out << bufferInfoStream_line << endl;
+            *file << bufferInfoStream_line << endl;
          }
+    }
+    
+    if (mainTreeE->icon(0).isNull())
+    {
+        mainTreeE->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);
+        mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+        mainTreeE->setText(1, "Undiscovered");
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
@@ -278,15 +241,15 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
         if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) 
         {
             elemObj->setTraceRouteInfo(bufferTraceStream_line);
-            if (PFile && !verboseLog) 
+            if (_logFilePath && !verboseLog) 
             {
-                *out << bufferTraceStream_line << endl;
+                *file << bufferTraceStream_line << endl;
             }
         }
     }
 
     QTextStream bufferNssStream(&bufferNSS); // NSS
-    QString bufferNssStream_line("");
+    QString bufferNssStream_line;
 
     // check for NSS scan information
     while (!bufferNssStream.atEnd()) 
@@ -295,9 +258,9 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
         if (!bufferNssStream_line.isEmpty()) 
         {
             elemObj->setNssInfo(bufferNssStream_line);
-            if (PFile && !verboseLog) 
+            if (_logFilePath && !verboseLog) 
             {
-                *out << bufferNssStream_line << endl;
+                *file << bufferNssStream_line << endl;
             }
         }
     }
@@ -314,17 +277,17 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
         if (!bufferLogStream_line.isEmpty())
         {
             elemObj->setFullScanLog(bufferLogStream_line);
-            if ((PFile) && (verboseLog))
+            if ((_logFilePath) && (verboseLog))
             {
-                *out << bufferLogStream_line << "\n";
+                *file << bufferLogStream_line << "\n";
             }
         }
     }
 
-    *out << "==LogEnd\n";
-    if (PFile) 
+    *file << "==LogEnd\n";
+    if (_logFilePath) 
     {
-        delete out;
+        delete file;
     }
 
     QTextStream bufferErrorStream(&StderrorStr);
@@ -337,42 +300,5 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
         elemObj->setErrorScan(bufferErrorStream_line);
     }
 
-    if(!_monitor->monitorHostNumber()) 
-    {
-        _monitor->clearHostMonitor();
-        freelist<lookUpT*>::itemDeleteAll(internealLookupList);
-        freelist<digSupport*>::itemDeleteAll(digLookupList);
-    }
-
-    dataBuffer.clear();
-    errorBuffer.clear();
-
-    progressScan->setValue(85);
-    if(!_monitor->monitorHostNumber()) 
-    {
-        progressScan->setValue(100);
-        monitorStopAllScanButt->setEnabled(false);
-        monitorStopCurrentScanButt->setEnabled(false);
-        monitorDetailsScanButt->setEnabled(false);
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),
-                          QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-    } 
-    else 
-    {
-        progressScan->setValue(55);
-    }
-
-    action_Scan_menu->setEnabled(true);
-    action_Scan_2->setEnabled(true);
-    hostEdit->setEnabled(true);
-    action_Save_As->setEnabled(true);
-    actionSave_As_Menu->setEnabled(true);
-    
-    if (!logSessionFile.isEmpty()) 
-    {
-        actionSave->setEnabled(true);
-        actionSave_Menu->setEnabled(true);
-    }
-
-    parserObjList.append(elemObj);
+    return elemObj;
 }

@@ -21,7 +21,7 @@
 
 nmapClass::nmapClass()
     : uid(0),
-      PFile(NULL),
+      _logFilePath(NULL),
       labelVersion(NULL),
       userMode(NULL)
 {
@@ -112,7 +112,7 @@ nmapClass::~nmapClass()
     delete _monitor;
     delete _utilities;
     delete progressScan;
-    delete PFile;
+    delete _logFilePath;
     delete labelVersion;
     delete userMode;
     delete bW;
