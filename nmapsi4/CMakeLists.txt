@@ -10,7 +10,7 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
 if (NOT Q_WS_X11)
 SET(SOURCES_CPP core/slots.cpp
 		core/resizeNmapsi4.cpp
-		core/parser/nmapParser.cpp
+		core/parser/parser.cpp
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
                 core/parserSlotsDefinition.cpp
@@ -41,8 +41,8 @@ SET(SOURCES_CPP core/slots.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
-		core/parserObj/parserObj.cpp
-		core/parserObj/parserObjUtil.cpp
+		core/parser/objects/parserObj.cpp
+		core/parser/objects/parserObjUtil.cpp
 		core/actionMenu.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
@@ -60,7 +60,7 @@ else (NOT Q_WS_X11)
   SET(SOURCES_CPP  ${nmapsi4adaptor_SRCS}
                 core/slots.cpp
 		core/resizeNmapsi4.cpp
-		core/parser/nmapParser.cpp
+		core/parser/parser.cpp
                 core/parser/scanParser.cpp
                 core/parser/pluginsParser.cpp
                 core/parserSlotsDefinition.cpp
@@ -88,8 +88,8 @@ else (NOT Q_WS_X11)
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
-		core/parserObj/parserObj.cpp
-		core/parserObj/parserObjUtil.cpp
+		core/parser/objects/parserObj.cpp
+		core/parser/objects/parserObjUtil.cpp
 		core/actionMenu.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp

@@ -118,9 +118,6 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     // start scan Thread
     QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters);
     _scanHashList.insert(hostname,thread);
-    // update progressbar for scan
-    connect(thread, SIGNAL(upgradePR()),
-            _parent, SLOT(setProgress()));
     // read current data scan from the thread
     connect(thread, SIGNAL(flowFromThread(QString,QString)),
             this, SLOT(readFlowFromThread(QString,QString)));

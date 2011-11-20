@@ -27,7 +27,7 @@
 #include <QtCore/QList>
 #include "digThread.h"
 #include "../nmapsi4Debug.h"
-#include "../parserObj/parserObjUtil.h"
+#include "../parser/objects/parserObjUtil.h"
 
 using namespace digLookup;
 using namespace parserUtilObject;

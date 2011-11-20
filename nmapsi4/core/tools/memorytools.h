@@ -30,8 +30,8 @@
 
 // local include
 #include "../discover/maindiscover.h"
-#include "../parserObj/parserObj.h"
-#include "../parserObj/parserObjUtil.h"
+#include "../parser/objects/parserObj.h"
+#include "../parser/objects/parserObjUtil.h"
 #include "../lookup/lookUpT.h"
 #include "../digSupport/digSupport.h"
 #include "../monitor/scanThread/scanThread.h"

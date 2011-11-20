@@ -396,11 +396,6 @@ void nmapClass::updateFontHostVuln()
             this, SLOT(callSearchHistoryVuln()));
 }
 
-void nmapClass::setProgress() 
-{
-    progressScan->setValue(60);
-}
-
 void nmapClass::updateSezScan() 
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(true);

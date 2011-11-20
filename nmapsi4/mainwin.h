@@ -29,8 +29,8 @@
 #include "core/nmapsi4Debug.h"
 #include "core/lookup/lookUpT.h"
 #include "core/digSupport/digSupport.h"
-#include "core/parserObj/parserObj.h"
-#include "core/parserObj/parserObjUtil.h"
+#include "core/parser/objects/parserObj.h"
+#include "core/parser/objects/parserObjUtil.h"
 #include "core/vulnerability/addurl.h"
 #include "core/discover/maindiscover.h"
 #include "core/bookmarks/addparbook.h"
@@ -211,7 +211,6 @@ private slots:
     void deleteBookMarkPar();
     void optionListCreate();
     void optionListUpdate();
-    void setProgress();
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();

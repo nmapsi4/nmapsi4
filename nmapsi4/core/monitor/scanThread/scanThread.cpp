@@ -51,7 +51,6 @@ void scanning::scanThread::run()
      
      exec();
      // emit signal, scan is end
-     emit upgradePR();
      emit threadEnd(ParList, pout, perr);
 
 #ifndef THREAD_NO_DEBUG

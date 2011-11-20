@@ -31,49 +31,46 @@
 #include "../../nmapsi4Debug.h"
 
 namespace scanning {
+/*!
+ * nmap thread class, start nmap with a QProcess and return
+ * QByteArray result with a signal.
+ */
+class scanThread : public QThread
+{
+    Q_OBJECT
+
+public:
     /*!
-     * nmap thread class, start nmap with a QProcess and return
-     * QByteArray result with a signal.
+     * Create a nmap QThread and start QProcess for nmap
+     * with parameters.
      */
-    class scanThread : public QThread
-    {
-	Q_OBJECT
+    scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters);
+    ~scanThread();
+signals:
+    /*!
+     * Return nmap QThread output with a Signal.
+     */
+    void threadEnd(const QStringList parameters, QByteArray dataBuffer, QByteArray errorBuffer);
+    /*!
+     * Return nmap QThread stdout for ETC and remaining scan time.
+     */
+    void flowFromThread(const QString parameters, const QString data);
 
-    public:
-	/*!
-	 * Create a nmap QThread and start QProcess for nmap
-	 * with parameters.
-	 */
-	scanThread(QByteArray& ProcB1, QByteArray& ProcB2, const QStringList parameters);
-	~scanThread();
-    signals:
-	/*!
-	 * Return nmap QThread output with a Signal.
-	 */
-	void threadEnd(const QStringList parameters, QByteArray dataBuffer, QByteArray errorBuffer);
-	/*!
-	 * Return nmap QThread stdout for ETC and remaining scan time.
-	 */
-	void flowFromThread(const QString parameters, const QString data);
-	/*!
-	 * Update scan progress bar with a signal.
-	 */
-	void upgradePR();
+private:
+    QByteArray pout;
+    QByteArray perr;
+    QStringList ParList;
 
-    private:
-	QByteArray pout;
-	QByteArray perr;
-	QStringList ParList;
+private slots:
+    void setValue();
+    void stopProcess();
+    void realtimeData();
 
-    private slots:
-	void setValue();
-	void stopProcess();
-	void realtimeData();
+protected:
+    QPointer<QProcess> proc;
+    void run();
+};
 
-    protected:
-	QPointer<QProcess> proc;
-	void run();
-    };
-}
+} // end namespace
 
 #endif
