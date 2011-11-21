@@ -185,6 +185,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(monitorShowDetails()));
     connect(_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
+    connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
+            this, SLOT(nmapParser(QStringList,QByteArray,QByteArray)));
 
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),

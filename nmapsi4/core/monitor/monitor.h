@@ -76,10 +76,15 @@ signals:
     /*
      * Exported with dbus
      */
-    void monitorUpdated(int hostNumber);
+    Q_SCRIPTABLE void monitorUpdated(int hostNumber);
+    /*
+     * Return scan result
+     */
+    void hostFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
     
 private slots:
     void readFlowFromThread(const QString hostname, QString lineData);
+    void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
 };
 
 #endif

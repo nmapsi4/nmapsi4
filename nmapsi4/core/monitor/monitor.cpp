@@ -123,9 +123,14 @@ void monitor::startScan(const QString hostname, QStringList parameters)
             this, SLOT(readFlowFromThread(QString,QString)));
     // read scan data return
     connect(thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-            _parent, SLOT(nmapParser(QStringList,QByteArray,QByteArray))); // nmapParser.cpp
+            this, SLOT(scanFinisced(QStringList,QByteArray,QByteArray)));
     // start scan
     thread->start();
+}
+
+void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
+{
+    emit hostFinisced(parametersList,dataBuffer,errorBuffer);
 }
 
 void monitor::clearHostMonitor()
