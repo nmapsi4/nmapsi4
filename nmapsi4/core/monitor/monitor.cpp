@@ -115,11 +115,11 @@ void monitor::startScan(const QString hostname, QStringList parameters)
 void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     /*
-     * Removed host scan finisced from the monitor list
+     * Remove host scan finisced from the monitor list.
      */
     delMonitorHost(parametersList[parametersList.size()-1]);
     /*
-     * Emit scan result
+     * Return scan result with a signal.
      */
     emit hostFinisced(parametersList,dataBuffer,errorBuffer);
 }
@@ -130,7 +130,7 @@ void monitor::delMonitorHost(const QString hostName)
      {
           if(monitorElem[i]->text(0) == hostName)
           {
-              // remove host from monitor and list
+              // remove host from monitor and list.
               delete monitorElem.takeAt(i);
               break;
            }
