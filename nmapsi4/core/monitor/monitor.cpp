@@ -44,7 +44,7 @@ monitor::~monitor()
     _scanHashListFlow.clear();
 }
 
-bool monitor::searchMonitorElem(const QString hostname)
+bool monitor::isHostOnMonitor(const QString hostname)
 {
     QList<QTreeWidgetItem*>::const_iterator i;
     for (i = monitorElem.begin(); i != monitorElem.end(); ++i)

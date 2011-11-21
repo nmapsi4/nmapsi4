@@ -49,7 +49,7 @@ public:
     /*
      * Return true if host is present in the monitor, otherwise return false.
      */
-    bool searchMonitorElem(const QString hostname);
+    bool isHostOnMonitor(const QString hostname);
     /*
      * Return current number of scanning host in the monitor.
      */

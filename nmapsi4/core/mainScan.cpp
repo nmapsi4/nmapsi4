@@ -32,7 +32,7 @@ void nmapClass::startScan()
     hostname = hostTools::clearHost(hostname);
     
     // check for duplicate hostname in the monitor 
-    if (_monitor->searchMonitorElem(hostname))
+    if (_monitor->isHostOnMonitor(hostname))
     {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
