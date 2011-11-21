@@ -43,7 +43,6 @@ public:
     monitor(QTreeWidget* monitor, QObject* parent);
     ~monitor();
     void addMonitorHost(const QString hostName,const QStringList parameters);
-    void delMonitorHost(const QString hostName);
     bool searchMonitorElem(const QString hostname);
     int monitorHostNumber();
     /*
@@ -64,6 +63,10 @@ private:
      * This method remove scanThread elem from scan hashTable
      */
     scanThread* takeMonitorElem(const QString hostName);
+    /*
+     * Delete host from monitor
+     */
+    void delMonitorHost(const QString hostName);
         
 protected:
     QList<QTreeWidgetItem*> monitorElem;

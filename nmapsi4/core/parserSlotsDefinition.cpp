@@ -35,9 +35,6 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
     
-    // remove host from monitor
-    _monitor->delMonitorHost(parList[parList.size()-1]);
-    
     // create a scan host item.
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(treeMain);
     mainTreeElem.push_front(mainTreeE);

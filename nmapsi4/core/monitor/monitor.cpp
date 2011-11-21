@@ -77,22 +77,6 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
     startScan(hostName,parameters);
 }
 
-
-void monitor::delMonitorHost(const QString hostName) 
-{
-     for(int i=0; i < monitorElem.size(); i++) 
-     {
-          if(monitorElem[i]->text(0) == hostName) 
-          {
-              // remove host from monitor and list
-              delete monitorElem.takeAt(i);
-              break;
-           }
-     }
-     
-     emit monitorUpdated(monitorHostNumber());
-}
-
 void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
 {
     Q_ASSERT(valueIndex < _monitor->columnCount());
@@ -130,7 +114,29 @@ void monitor::startScan(const QString hostname, QStringList parameters)
 
 void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
+    /*
+     * Removed host scan finisced from the monitor list
+     */
+    delMonitorHost(parametersList[parametersList.size()-1]);
+    /*
+     * Emit scan result
+     */
     emit hostFinisced(parametersList,dataBuffer,errorBuffer);
+}
+
+void monitor::delMonitorHost(const QString hostName)
+{
+     for(int i=0; i < monitorElem.size(); i++)
+     {
+          if(monitorElem[i]->text(0) == hostName)
+          {
+              // remove host from monitor and list
+              delete monitorElem.takeAt(i);
+              break;
+           }
+     }
+
+     emit monitorUpdated(monitorHostNumber());
 }
 
 void monitor::clearHostMonitor()
