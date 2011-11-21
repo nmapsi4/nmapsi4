@@ -42,8 +42,17 @@ class monitor : public QObject
 public:
     monitor(QTreeWidget* monitor, QObject* parent);
     ~monitor();
+    /*
+     * Add host in the monitor and start scan.
+     */
     void addMonitorHost(const QString hostName,const QStringList parameters);
+    /*
+     * Return true if host is present in the monitor, otherwise return false.
+     */
     bool searchMonitorElem(const QString hostname);
+    /*
+     * Return current number of scanning host in the monitor.
+     */
     int monitorHostNumber();
     /*
      * Clear all host in monitor
@@ -53,6 +62,9 @@ public:
      * Clear all scan host details
      */
     void clearHostMonitorDetails();
+    /*
+     * Stop host scan selected in the QTreeWidget.
+     */
     void stopSelectedScan();
     void showSelectedScanDetails();
     
