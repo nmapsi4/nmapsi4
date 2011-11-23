@@ -29,12 +29,12 @@
 #include <QtWebKit/QWebView>
 
 // local include
-#include "../discover/maindiscover.h"
-#include "../parser/objects/parserObj.h"
-#include "../parser/objects/parserObjUtil.h"
-#include "../lookup/lookUpT.h"
-#include "../digSupport/digSupport.h"
-#include "../monitor/scanThread/scanThread.h"
+#include "maindiscover.h"
+#include "parserObj.h"
+#include "parserObjUtil.h"
+#include "lookUpT.h"
+#include "digSupport.h"
+#include "scanThread.h"
 
 using namespace pingInterface;
 using namespace parserObject;

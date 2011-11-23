@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "mainwin.h"
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
@@ -67,7 +67,7 @@ void nmapClass::exit()
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digSupport*>::itemDeleteAll(digLookupList);
     
-    if (FileName != NULL) 
+    if (!FileName.isNull()) 
     {
 
         QFile *tmpFile = new QFile();
@@ -80,7 +80,7 @@ void nmapClass::exit()
         if ((checkLog) && (tmpFile->exists())) 
 	{
             tmpFile->close();
-            this->isEmptyLog();
+            isEmptyLog();
         } 
         else if ((!checkLog) && (tmpFile->exists())) 
 	{ // if log check is disable but the file exist

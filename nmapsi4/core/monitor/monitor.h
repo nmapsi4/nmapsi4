@@ -28,8 +28,8 @@
 #include <QtCore/QHash>
 
 // local include
-#include "../tools/memorytools.h"
-#include "scanThread/scanThread.h"
+#include "memorytools.h"
+#include "scanThread.h"
 #include "details.h"
 
 using namespace memory;

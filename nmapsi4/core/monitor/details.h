@@ -28,7 +28,7 @@
 #include <ui_details.h>
 
 // local include
-#include "../tools/memorytools.h"
+#include "memorytools.h"
 
 using namespace memory;
 

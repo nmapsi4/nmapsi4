@@ -20,9 +20,6 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-// local include
-#include "../../lib/about/about.h"
-
 // QT include
 #include <QtCore/QObject>
 #include <QtGui/QFileDialog>
@@ -31,6 +28,10 @@
 #include <QtGui/QDesktopServices>
 #include <QtCore/QUrl>
 #include <QtGui/QWidget>
+
+// local include
+#include "about.h"
+
 
 class utilities : public QObject
 {

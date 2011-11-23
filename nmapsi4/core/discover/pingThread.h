@@ -27,7 +27,9 @@
 #include <QtCore/QObject>
 #include <QtCore/QMetaType>
 #include <QtCore/QtDebug>
-#include "../nmapsi4Debug.h"
+
+// local include
+#include "nmapsi4Debug.h"
 
 namespace pingCore {
     /*!

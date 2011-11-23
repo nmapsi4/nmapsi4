@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "../mainwin.h"
+#include "mainwin.h"
 
 void nmapClass::openBrowser()
 {
@@ -88,21 +88,20 @@ void nmapClass::isEmptyLog()
 
 void nmapClass::saveAsLog()
 {
-
-    if ((FileName == NULL) || (listClearFlag)) 
+    if (FileName.isNull() || listClearFlag) 
     {
         QMessageBox::critical(this, tr("Save Log"), tr("No Scan found\n"), tr("Close"));
         return;
     }
 
     QFile *tmpFile = new QFile();
-    QString newFile = logPath;
-    newFile.append("/");
-    newFile = QDir::toNativeSeparators(newFile);
-    newFile.append(FileName);
-    tmpFile->setFileName(newFile);
+    QString newFilePath = logPath;
+    newFilePath.append("/");
+    newFilePath = QDir::toNativeSeparators(newFilePath);
+    newFilePath.append(FileName);
+    tmpFile->setFileName(newFilePath);
 
-    if (!tmpFile || !tmpFile->size()) 
+    if (!tmpFile->size())
     {
         QMessageBox::critical(this, tr("Save Log"),tr("No Scan found\n"), tr("Close"));
         delete tmpFile;

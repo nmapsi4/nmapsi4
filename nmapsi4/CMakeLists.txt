@@ -2,6 +2,25 @@ PROJECT(nmapsi4)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
+include_directories(${CMAKE_SOURCE_DIR}
+    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/nmapsi4/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/tools/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/objects/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/scanThread/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/digSupport/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/discover/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/bookmarks/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/vulnerability/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/lookup/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/preference/
+    ${CMAKE_SOURCE_DIR}/lib/about/
+    ${CMAKE_SOURCE_DIR}/lib/history/
+)
+
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
                      nmapsi4/core/monitor/monitor.h
@@ -175,11 +194,12 @@ else (NOT RELOAD_TRANSLATIONS)
   message( "nmapsi4:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
-INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} )
-
 if (Q_WS_X11)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR}
+	    ${CMAKE_BINARY_DIR}/lib/history/
+	    ${CMAKE_BINARY_DIR}/lib/about/
+  )
   TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY} nmapsi4_history nmapsi4_about)
 elseif(WIN32)
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})

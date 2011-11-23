@@ -15,9 +15,6 @@ if(Q_WS_MAC)
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
 endif(Q_WS_MAC)
 
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
-
-
 add_subdirectory( lib )
 add_subdirectory( nmapsi4 )
 add_subdirectory( nmapsi4-logr )

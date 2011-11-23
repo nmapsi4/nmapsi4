@@ -28,7 +28,9 @@
 #include <QtCore/QMetaType>
 #include <QtCore/QtDebug>
 #include <QtCore/QPointer>
-#include "../../nmapsi4Debug.h"
+
+//local include
+#include "nmapsi4Debug.h"
 
 namespace scanning {
 /*!

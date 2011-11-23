@@ -25,7 +25,9 @@
 #include <QtCore/QString>
 #include <QtCore/QMetaType>
 #include <QtNetwork/QHostInfo>
-#include "../nmapsi4Debug.h"
+
+//local include
+#include "nmapsi4Debug.h"
 
 namespace internalLookup {
     /*!
