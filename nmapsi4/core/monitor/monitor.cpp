@@ -47,14 +47,14 @@ monitor::~monitor()
 bool monitor::isHostOnMonitor(const QString hostname)
 {
     QList<QTreeWidgetItem*>::const_iterator i;
-    for (i = monitorElem.begin(); i != monitorElem.end(); ++i)
+    for (i = monitorElem.constBegin(); i != monitorElem.constEnd(); ++i)
     {
         if ((*i)->text(0) == hostname)
         {
             return true;
         }
     }
-    
+
     return false;
 }
 
@@ -82,7 +82,7 @@ void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
     Q_ASSERT(valueIndex < _monitor->columnCount());
     
     QList<QTreeWidgetItem*>::const_iterator i;
-    for (i = monitorElem.begin(); i != monitorElem.end(); ++i)
+    for (i = monitorElem.constBegin(); i != monitorElem.constEnd(); ++i)
     {
         if ((*i)->text(0) == hostName)
         {
@@ -195,7 +195,7 @@ void monitor::readFlowFromThread(const QString hostname, QString lineData)
     QHash<QString, QStringList>::const_iterator i = _scanHashListFlow.find(hostname);
     QTextStream stream(&lineData);
     
-    if (i == _scanHashListFlow.end()) 
+    if (i == _scanHashListFlow.constEnd()) 
     {
         QStringList flowHistory;
 
@@ -209,7 +209,7 @@ void monitor::readFlowFromThread(const QString hostname, QString lineData)
     else 
     {
         // append scan flow values
-        while (i != _scanHashListFlow.end() && i.key() == hostname) 
+        while (i != _scanHashListFlow.constEnd() && i.key() == hostname) 
         {
             QStringList flowHistory = i.value();
 

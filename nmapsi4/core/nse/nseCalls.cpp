@@ -43,7 +43,7 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
     
-    if (i == nseHelpCache.end()) 
+    if (i == nseHelpCache.constEnd()) 
     {
         /*
         * not category on cache
