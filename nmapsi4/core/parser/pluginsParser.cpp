@@ -20,11 +20,10 @@
 #include "mainwin.h"
 
 
-void nmapClass::showParserObjPlugins(int indexObj) 
+void nmapClass::showParserObjPlugins(int hostIndex) 
 {
-    QStringList listTraceRouteInfo_ = parserObjList[indexObj]->getTraceRouteInfo();
     // show traceroute
-    foreach (const QString &token, listTraceRouteInfo_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getTraceRouteInfo()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeTraceroot);
         itemListScan.push_front(root);
@@ -55,14 +54,6 @@ void nmapClass::showParserObjPlugins(int indexObj)
                 tmpToken[3].remove(')');
             }
         }
-#ifndef PARSER_NO_DEBUG
-        qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken.size();
-        for(int index=0; index < tmpToken.size(); index++) 
-        {
-            qDebug() << "DEBUG::TracerouteSplit:: " << tmpToken[index];
-
-        }
-#endif
 
         if(tmpToken.size() == 4) 
         {
@@ -90,10 +81,9 @@ void nmapClass::showParserObjPlugins(int indexObj)
     // show lookUp info
     foreach (parserObjUtil* elem, parserObjUtilList) 
     {
-        if(parserObjList[indexObj]->getHostName() == elem->getHostName()) 
+        if(parserObjList[hostIndex]->getHostName() == elem->getHostName()) 
         {
-            QStringList listLookupInfo_ = elem->getInfoLookup();
-            foreach (const QString &token, listLookupInfo_) 
+            foreach (const QString &token, elem->getInfoLookup()) 
             {
                 QTreeWidgetItem *root = new QTreeWidgetItem(treeLookup);
                 itemListScan.push_front(root);

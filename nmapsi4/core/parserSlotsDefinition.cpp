@@ -61,7 +61,7 @@ void nmapClass::nmapParser(const QStringList parList, QByteArray dataBuffer, QBy
         break;
     }
 
-    // clear ouput and error thread buffer.
+    // clear output and error thread buffer.
     dataBuffer.clear();
     errorBuffer.clear();
 

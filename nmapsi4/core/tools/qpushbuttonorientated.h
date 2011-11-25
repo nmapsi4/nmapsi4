@@ -27,7 +27,7 @@ class QPushButtonOrientated : public QPushButton
 {
 public:
     QPushButtonOrientated(QWidget* parent = 0);
-    QPushButtonOrientated(const QString& text, QWidget* parent = 0);
+    explicit QPushButtonOrientated(const QString& text, QWidget* parent = 0);
     QPushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
     ~QPushButtonOrientated();
     

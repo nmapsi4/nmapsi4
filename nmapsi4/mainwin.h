@@ -85,8 +85,8 @@ private:
     void checkProfile();
     void initGUI();
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
-    void showParserObj(int indexObj);
-    void showParserObjPlugins(int indexObj);
+    void showParserObj(int hostIndex);
+    void showParserObjPlugins(int hostIndex);
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();

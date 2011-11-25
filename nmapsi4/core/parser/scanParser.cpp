@@ -19,7 +19,7 @@
 
 #include "mainwin.h"
 
-void nmapClass::showParserObj(int indexObj) 
+void nmapClass::showParserObj(int hostIndex) 
 {
     // Clear widget
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan);
@@ -27,13 +27,14 @@ void nmapClass::showParserObj(int indexObj)
     listWscan->clear();
     GItree->clear();
     treeNSS->clear();
+    
+    // set combo scan parameters
     int treeMainIndex_ = treeMain->indexOfTopLevelItem(treeMain->currentItem());
     comboScanLog->setCurrentIndex(treeMainIndex_+1);
 
     QString noInfo("not Discovered");
-    QStringList listMainInfo_ = parserObjList[indexObj]->getMainInfo();
     
-    foreach (const QString &token, listMainInfo_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getMainInfo()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeHostDet);
         itemListScan.push_front(root);
@@ -43,19 +44,13 @@ void nmapClass::showParserObj(int indexObj)
         root->setToolTip(0, token);
     }
     
-    QStringList listOpen_ = parserObjList[indexObj]->getPortOpen();
-    QStringList listClose_ = parserObjList[indexObj]->getPortClose();
-    QStringList listFilterd_ = parserObjList[indexObj]->getPortFiltered();
-    QStringList listNssInfo_ = parserObjList[indexObj]->getNssInfo();
-    QStringList listLogInfo_ = parserObjList[indexObj]->getFullScanLog();
-    QStringList listErrorInfo_ = parserObjList[indexObj]->getErrorScan();
     QString noDes = tr("No description");
     // clear combo Vulnerabilities
     comboVuln->clear();
     comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    foreach (const QString &token, listOpen_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getPortOpen()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
@@ -98,7 +93,7 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show Close ports
-    foreach (const QString &token, listClose_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getPortClose()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
@@ -140,7 +135,7 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show Filtered ports
-    foreach (const QString &token, listFilterd_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getPortFiltered()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(listWscan);
         itemListScan.push_front(root);
@@ -182,10 +177,8 @@ void nmapClass::showParserObj(int indexObj)
         }
     }
     
-    QStringList listServices_ = parserObjList[indexObj]->getServices();
-    
     // show services
-    foreach (const QString &token, listServices_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getServices()) 
     {
         if (!listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) 
         {
@@ -198,7 +191,7 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show Nss Info
-    foreach (const QString &token, listNssInfo_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getNssInfo()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(treeNSS);
         itemListScan.push_front(root);
@@ -220,7 +213,7 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show full scan log
-    foreach (const QString &token, listLogInfo_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getFullScanLog()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScan);
         itemListScan.push_front(root);
@@ -231,7 +224,7 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // Show scan error
-    foreach (const QString &token, listErrorInfo_) 
+    foreach (const QString &token, parserObjList[hostIndex]->getErrorScan()) 
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(listScanError);
         itemListScan.push_front(root);
@@ -242,5 +235,5 @@ void nmapClass::showParserObj(int indexObj)
     }
 
     // call plugins parser
-    showParserObjPlugins(indexObj);
+    showParserObjPlugins(hostIndex);
 }

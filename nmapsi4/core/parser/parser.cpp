@@ -135,7 +135,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
     {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        tmp_host.append(generalBuffer_ + "\n" + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
         
         if ((_logFilePath) && (!verboseLog))
@@ -145,7 +145,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
     } 
     else 
     {
-        tmp_host.append(hostCheck + "\n" + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss")); 
+        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss")); 
         mainTreeE->setText(0, tmp_host);
         
         if ((_logFilePath) && (!verboseLog))
