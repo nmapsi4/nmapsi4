@@ -2,40 +2,13 @@ PROJECT(nmapsi4-logr)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
-if (WIN32)
-SET(SOURCES_CPP	src/mainwin.cpp 
-                src/logrApi.cpp
-		../lib/history/loghistory.cpp
-		../lib/history/coreHistory.cpp
-		../lib/about/about.cpp
-		main.cpp)
-#MESSAGE( STATUS ${SOURCES_CPP} )
-else (WIN32)
 SET(SOURCES_CPP src/mainwin.cpp 
                 src/logrApi.cpp	
 		main.cpp)
-#MESSAGE( STATUS ${SOURCES_CPP} )
 
-endif(WIN32)
-
-if(NOT WIN32)
-	SET(SOURCES_H src/mainwin.h)
-	#MESSAGE( STATUS ${SOURCES_H} )
-else(WIN32)
-	SET(SOURCES_H src/mainwin.h ../lib/about/about.h)
-	#MESSAGE( STATUS ${SOURCES_H} )
-endif(NOT WIN32)
-
-if(NOT WIN32)
-	SET(SOURCES_UI src/mainwin.ui )
-	#MESSAGE( STATUS ${SOURCES_UI} )
-else(WIN32)
-	SET(SOURCES_UI src/mainwin.ui ../lib/about/about.ui )
-	#MESSAGE( STATUS ${SOURCES_UI} )
-endif(NOT WIN32)
-
+SET(SOURCES_H src/mainwin.h)
+SET(SOURCES_UI src/mainwin.ui)
 SET(RESOURCES_QRC ../mainwin.qrc)
-#MESSAGE( STATUS ${RESOURCES_QRC} )
 
 qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
@@ -52,15 +25,14 @@ else (NOT RELOAD_TRANSLATIONS)
   message( "nmapsi4-logr:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
-ADD_EXECUTABLE(nmapsi4-logr ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR})
+INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/about/ ${CMAKE_BINARY_DIR}/lib/about/)
 
 if (WIN32)
-  INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-  TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES})
+  ADD_EXECUTABLE(nmapsi4-logr WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
+  TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} nmapsi4_history nmapsi4_about)
 else (NOT WIN32)
-  INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../lib/history/)
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/about/)
+  ADD_EXECUTABLE(nmapsi4-logr ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   TARGET_LINK_LIBRARIES( nmapsi4-logr ${QT_LIBRARIES} nmapsi4_history nmapsi4_about)
 endif (WIN32)
 
