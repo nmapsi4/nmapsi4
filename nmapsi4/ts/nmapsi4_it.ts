@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="it_IT" sourcelanguage="en">
 <context>
     <name>MainWindow</name>
     <message>
@@ -130,8 +130,7 @@
     </message>
     <message>
         <source>Host(s)</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Description</source>
@@ -390,8 +389,7 @@
     </message>
     <message>
         <source>RPC Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Don&apos;t Ping</source>
@@ -785,13 +783,11 @@
     </message>
     <message>
         <source>Quick Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Normal Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Root Profiles</source>
@@ -870,46 +866,38 @@
     <name>addParBook</name>
     <message>
         <source>Add Parameters Profile</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Inserisci un profilo parametri</translation>
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Nome profilo</translation>
     </message>
     <message>
         <source>Parameters</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Parametri</translation>
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Fatto</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Calcella</translation>
     </message>
 </context>
 <context>
     <name>addUrl</name>
     <message>
         <source>Add Vulnerability Url</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Inserisci un nuovo Indirizzo</translation>
     </message>
     <message>
         <source>Url Name</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Nome Url</translation>
     </message>
     <message>
         <source>Url address</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Indirizzo</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -921,18 +909,16 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Fatto</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Cancella</translation>
     </message>
 </context>
 <context>
@@ -958,8 +944,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;h3&gt;Profiles Scan&lt;/h3&gt;</source>
@@ -975,31 +960,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;h3&gt;Scan Lookup&lt;/h3&gt;</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>monitorDetails</name>
     <message>
         <source>Scan Process Details</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Dettagli Scan</translation>
     </message>
     <message>
         <source>Hostname:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Nome Host:</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Aggiorna</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Chiudi</translation>
     </message>
 </context>
 <context>
@@ -1051,8 +1031,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>no input file
@@ -1062,8 +1041,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Normal Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Wrong Address
@@ -1078,8 +1056,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Options</source>
@@ -1149,7 +1126,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Log</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
@@ -1158,8 +1135,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Services</source>
-        <translation type="unfinished">
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Check Vulnerabilities</source>
@@ -1211,52 +1187,52 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Idle Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>SYN Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>ACK Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>FIN|ACK Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>FIN Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>NULL Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>XMAS Tree Stealth Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>TCP Window Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>UDP Ports Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
         <source>IP Protocol Scan</source>
-        <translation type="unfinished">
+        <translation>
             </translation>
     </message>
     <message>
@@ -1381,7 +1357,7 @@ p, li { white-space: pre-wrap; }
     <name>utilities</name>
     <message>
         <source>Select the file</source>
-        <translation type="unfinished">Scegli il file</translation>
+        <translation>Scegli il file</translation>
     </message>
 </context>
 </TS>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-19 15:47+0200\n"
+"POT-Creation-Date: 2011-11-26 15:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,11 +142,8 @@ msgid "Save Profile"
 msgstr "Salva profilo"
 
 #: MainWindow#32
-#, fuzzy
 msgid "Host(s)"
 msgstr ""
-"\n"
-"            "
 
 #: MainWindow#33
 msgid "Description"
@@ -382,6 +379,7 @@ msgstr ""
 #: MainWindow#71
 #, fuzzy
 msgctxt "MainWindow#71"
+"MainWindow#71"
 msgid "Lookup"
 msgstr ""
 "\n"
@@ -481,11 +479,8 @@ msgstr ""
 "            "
 
 #: MainWindow#88
-#, fuzzy
 msgid "RPC Scan"
 msgstr ""
-"\n"
-"            "
 
 #: MainWindow#89
 msgid "Don't Ping"
@@ -865,6 +860,7 @@ msgstr ""
 #: MainWindow#163
 #, fuzzy
 msgctxt "MainWindow#163"
+"MainWindow#163"
 msgid "Done"
 msgstr ""
 "\n"
@@ -941,20 +937,14 @@ msgid "User Profiles"
 msgstr "Profili Utente"
 
 #: ProfileMain#3
-#, fuzzy
 msgctxt "ProfileMain#3"
 msgid "Quick Scan"
 msgstr ""
-"\n"
-"            "
 
 #: ProfileMain#4
-#, fuzzy
 msgctxt "ProfileMain#4"
 msgid "Normal Scan"
 msgstr ""
-"\n"
-"            "
 
 #: ProfileMain#5
 msgid "Root Profiles"
@@ -1029,66 +1019,41 @@ msgid "&Cancel"
 msgstr "&Annulla"
 
 #: addParBook#1
-#, fuzzy
 msgid "Add Parameters Profile"
-msgstr ""
-"\n"
-"            "
+msgstr "Inserisci un profilo parametri"
 
 #: addParBook#2
-#, fuzzy
 msgctxt "addParBook#2"
 msgid "Profile Name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nome profilo"
 
 #: addParBook#3
-#, fuzzy
 msgid "Parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Parametri"
 
 #: addParBook#4
-#, fuzzy
 msgctxt "addParBook#4"
 msgid "Done"
-msgstr ""
-"\n"
-"            "
+msgstr "Fatto"
 
 #: addParBook#5
-#, fuzzy
 msgctxt "addParBook#5"
 msgid "Cancel"
-msgstr ""
-"\n"
-"            "
+msgstr "Calcella"
 
 #: addUrl#1
-#, fuzzy
 msgid "Add Vulnerability Url"
-msgstr ""
-"\n"
-"            "
+msgstr "Inserisci un nuovo Indirizzo"
 
 #: addUrl#2
-#, fuzzy
 msgid "Url Name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nome Url"
 
 #: addUrl#3
-#, fuzzy
 msgid "Url address"
-msgstr ""
-"\n"
-"            "
+msgstr "Indirizzo"
 
 #: addUrl#4
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
 "html40/strict.dtd\">\n"
@@ -1116,20 +1081,14 @@ msgstr ""
 "            "
 
 #: addUrl#5
-#, fuzzy
 msgctxt "addUrl#5"
 msgid "Done"
-msgstr ""
-"\n"
-"            "
+msgstr "Fatto"
 
 #: addUrl#6
-#, fuzzy
 msgctxt "addUrl#6"
 msgid "Cancel"
-msgstr ""
-"\n"
-"            "
+msgstr "Cancella"
 
 #: logHistory#1
 msgid "Your configuration file is too old, please delete it"
@@ -1149,12 +1108,9 @@ msgid "Size"
 msgstr "Dimensione"
 
 #: mainProfile#4
-#, fuzzy
 msgctxt "mainProfile#4"
 msgid "Lookup"
 msgstr ""
-"\n"
-"            "
 
 #: mainProfile#5
 msgid "<h3>Profiles Scan</h3>"
@@ -1169,40 +1125,25 @@ msgid "<h3>Size Options</h3>"
 msgstr "<h3>Opzioni della finestra</h3>"
 
 #: mainProfile#8
-#, fuzzy
 msgid "<h3>Scan Lookup</h3>"
 msgstr ""
-"\n"
-"            "
 
 #: monitorDetails#1
-#, fuzzy
 msgid "Scan Process Details"
-msgstr ""
-"\n"
-"            "
+msgstr "Dettagli Scan"
 
 #: monitorDetails#2
-#, fuzzy
 msgid "Hostname:"
-msgstr ""
-"\n"
-"            "
+msgstr "Nome Host:"
 
 #: monitorDetails#3
-#, fuzzy
 msgid "Reload"
-msgstr ""
-"\n"
-"            "
+msgstr "Aggiorna"
 
 #: monitorDetails#4
-#, fuzzy
 msgctxt "monitorDetails#4"
 msgid "Close"
-msgstr ""
-"\n"
-"            "
+msgstr "Chiudi"
 
 #: nmapClass#1
 msgid "Remove Host"
@@ -1249,24 +1190,18 @@ msgid "No Ports Range (ex: 20-80)\n"
 msgstr "Manca l'intervallo delle porte (es: 20-80)\n"
 
 #: nmapClass#11
-#, fuzzy
 msgctxt "nmapClass#11"
 msgid "Close"
 msgstr ""
-"\n"
-"            "
 
 #: nmapClass#12
 msgid "no input file\n"
 msgstr "Nessun file in ingresso\n"
 
 #: nmapClass#13
-#, fuzzy
 msgctxt "nmapClass#13"
 msgid "Normal Scan"
 msgstr ""
-"\n"
-"            "
 
 #: nmapClass#14
 msgid "Wrong Address\n"
@@ -1280,12 +1215,9 @@ msgstr ""
 "            "
 
 #: nmapClass#16
-#, fuzzy
 msgctxt "nmapClass#16"
 msgid "Scan"
 msgstr ""
-"\n"
-"            "
 
 #: nmapClass#17
 msgid "Options"
@@ -1349,7 +1281,6 @@ msgid "Scan host(s)"
 msgstr "Scansione Host"
 
 #: nmapClass#32
-#, fuzzy
 msgctxt "nmapClass#32"
 msgid "Log"
 msgstr ""
@@ -1362,12 +1293,9 @@ msgid "Scan Log"
 msgstr "Log delle scansioni"
 
 #: nmapClass#34
-#, fuzzy
 msgctxt "nmapClass#34"
 msgid "Services"
 msgstr ""
-"\n"
-"            "
 
 #: nmapClass#35
 msgid "Check Vulnerabilities"
@@ -1427,70 +1355,60 @@ msgstr ""
 "            "
 
 #: nmapClass#46
-#, fuzzy
 msgid "Idle Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#47
-#, fuzzy
 msgid "SYN Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#48
-#, fuzzy
 msgid "ACK Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#49
-#, fuzzy
 msgid "FIN|ACK Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#50
-#, fuzzy
 msgid "FIN Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#51
-#, fuzzy
 msgid "NULL Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#52
-#, fuzzy
 msgid "XMAS Tree Stealth Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#53
-#, fuzzy
 msgid "TCP Window Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#54
-#, fuzzy
 msgid "UDP Ports Scan"
 msgstr ""
 "\n"
 "            "
 
 #: nmapClass#55
-#, fuzzy
 msgid "IP Protocol Scan"
 msgstr ""
 "\n"
@@ -1641,6 +1559,5 @@ msgid "Show Monitor"
 msgstr ""
 
 #: utilities#1
-#, fuzzy
 msgid "Select the file"
 msgstr "Scegli il file"
