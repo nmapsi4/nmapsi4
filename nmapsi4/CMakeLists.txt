@@ -21,10 +21,13 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
 
+
+if (NOT Q_WS_WIN)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
                      nmapsi4/core/monitor/monitor.h
                      monitor)
+endif (NOT Q_WS_WIN)
 
 if (NOT Q_WS_X11)
 SET(SOURCES_CPP core/slots.cpp
