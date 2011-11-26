@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.6.0)
 
-if (NOT Q_WS_WIN)
+if (NOT WIN32)
     FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus REQUIRED)
-else (NOT Q_WS_WIN)
+else (NOT WIN32)
     FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
-endif (NOT Q_WS_WIN)
+endif (NOT WIN32)
 
 include(${QT_USE_FILE})
 
