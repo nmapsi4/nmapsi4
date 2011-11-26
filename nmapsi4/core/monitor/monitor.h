@@ -24,7 +24,11 @@
 #include <QtCore/QObject>
 #include <QtGui/QTreeWidget>
 #include <QtCore/QList>
+
+#ifndef Q_WS_WIN
 #include <QtDBus/QDBusConnection>
+#endif
+
 #include <QtCore/QHash>
 
 // local include
@@ -37,7 +41,10 @@ using namespace memory;
 class monitor : public QObject
 {
     Q_OBJECT
+
+#ifndef Q_WS_WIN
     Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
+#endif
     
 public:
     monitor(QTreeWidget* monitor, QObject* parent);

@@ -147,7 +147,7 @@ else (Q_WS_X11)
   SET(SOURCES_H mainwin.h 
 	core/preference/profilemain.h 
 	../lib/about/about.h 
-	core/scanMT/scanThread.h 
+	core/monitor/scanThread/scanThread.h 
 	core/lookup/lookUpT.h 
 	core/digSupport/digSupport.h 
 	core/digSupport/digThread.h 

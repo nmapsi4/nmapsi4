@@ -18,10 +18,15 @@
  ***************************************************************************/
 
 #include "monitor.h"
+
+#ifndef Q_WS_WIN
 #include "nmapsi4adaptor.h"
+#endif
 
 monitor::monitor(QTreeWidget* monitor, QObject* parent) : _monitor(monitor), _parent(parent)
 {
+
+#ifndef Q_WS_WIN
     new Nmapsi4Adaptor(this);
     // FIXME: with full mode It is registrered into root dbus session
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -36,6 +41,7 @@ monitor::monitor(QTreeWidget* monitor, QObject* parent) : _monitor(monitor), _pa
     {
         qDebug() << "DBUS:: error with dbus connection";
     }
+#endif
 }
 
 monitor::~monitor()
