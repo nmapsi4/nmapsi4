@@ -62,7 +62,7 @@ SET(SOURCES_CPP
 		core/digSupport/digThread.cpp
 		core/parser/objects/parserObj.cpp
 		core/parser/objects/parserObjUtil.cpp
-		core/actionMenu.cpp
+		core/actions.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
 		core/nse/nseCalls.cpp
