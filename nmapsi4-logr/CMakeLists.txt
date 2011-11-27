@@ -2,6 +2,14 @@ PROJECT(nmapsi4-logr)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
+include_directories(${CMAKE_SOURCE_DIR}
+    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/lib/about/
+    ${CMAKE_SOURCE_DIR}/lib/history/
+)
+
+
 SET(SOURCES_CPP src/mainwin.cpp 
                 src/logrApi.cpp	
 		main.cpp)
