@@ -76,9 +76,9 @@ SET(SOURCES_CPP
 		main.cpp)
 
 
-if (Q_WS_X11)
+if (NOT Q_WS_WIN)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
-endif (Q_WS_X11)
+endif (NOT Q_WS_WIN)
 
 SET(SOURCES_H mainwin.h 
 	core/preference/profilemain.h 
