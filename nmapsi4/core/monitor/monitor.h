@@ -25,7 +25,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtCore/QList>
 
-#ifndef Q_WS_WIN
+#ifdef Q_WS_X11
 #include <QtDBus/QDBusConnection>
 #endif
 
@@ -42,7 +42,7 @@ class monitor : public QObject
 {
     Q_OBJECT
 
-#ifndef Q_WS_WIN
+#ifdef Q_WS_X11
     Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
 #endif
     

@@ -22,12 +22,12 @@ include_directories(${CMAKE_SOURCE_DIR}
 )
 
 
-if (NOT Q_WS_WIN)
+if (Q_WS_X11)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
                      nmapsi4/core/monitor/monitor.h
                      monitor)
-endif (NOT Q_WS_WIN)
+endif (Q_WS_X11)
 
 SET(SOURCES_CPP 
                 core/slots.cpp
@@ -76,9 +76,9 @@ SET(SOURCES_CPP
 		main.cpp)
 
 
-if (NOT Q_WS_WIN)
+if (Q_WS_X11)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
-endif (NOT Q_WS_WIN)
+endif (Q_WS_X11)
 
 SET(SOURCES_H mainwin.h 
 	core/preference/profilemain.h 
@@ -133,7 +133,7 @@ elseif(Q_WS_MAC)
   MESSAGE( STATUS MAC Osx)
   ADD_EXECUTABLE(nmapsi4 MACOSX_BUNDLE ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY} nmapsi4_history nmapsi4_about)
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} nmapsi4_history nmapsi4_about)
   ADD_CUSTOM_COMMAND( TARGET nmapsi4 POST_BUILD
         COMMAND mkdir ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS ${MACOSX_BUNDLE_ICON_FILE} ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources

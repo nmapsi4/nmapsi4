@@ -19,14 +19,14 @@
 
 #include "monitor.h"
 
-#ifndef Q_WS_WIN
+#ifdef Q_WS_X11
 #include "nmapsi4adaptor.h"
 #endif
 
 monitor::monitor(QTreeWidget* monitor, QObject* parent) : _monitor(monitor), _parent(parent)
 {
 
-#ifndef Q_WS_WIN
+#ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
     // FIXME: with full mode It is registrered into root dbus session
     QDBusConnection dbus = QDBusConnection::sessionBus();
