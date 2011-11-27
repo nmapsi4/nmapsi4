@@ -56,7 +56,6 @@ SET(SOURCES_CPP
 		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
 		core/monitor/monitor.cpp
-		core/monitorSlotsDefinition.cpp
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp

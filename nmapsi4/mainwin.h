@@ -65,7 +65,12 @@ using namespace parserUtilObject;
 using namespace pingInterface;
 using namespace memory;
 
-class nmapClass : public QMainWindow, private Ui::MainWindow
+namespace Ui
+{
+    class MainWindow;
+}
+
+class nmapClass : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
 
@@ -193,8 +198,6 @@ private slots:
     void runtimePars(QTreeWidgetItem *item, int column);
     void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
     void monitorRuntimeEvent();
-    void monitorStopCurrentScan();
-    void monitorShowDetails();
     void updateScanCounter(int hostNumber);
     void objVulnButton();
     // Check nmap version

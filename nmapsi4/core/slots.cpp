@@ -180,9 +180,9 @@ void nmapClass::setNmapsiSlot()
     connect(scanMonitor, SIGNAL(itemSelectionChanged()),
             this, SLOT(monitorRuntimeEvent()));
     connect(monitorStopCurrentScanButt, SIGNAL(clicked()),
-            this, SLOT(monitorStopCurrentScan()));
+            _monitor, SLOT(stopSelectedScan()));
     connect(monitorDetailsScanButt, SIGNAL(clicked()),
-            this, SLOT(monitorShowDetails()));
+            _monitor, SLOT(showSelectedScanDetails()));
     connect(_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
     connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),

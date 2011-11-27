@@ -714,4 +714,15 @@ void nmapClass::updateScanCounter(int hostNumber)
     setWindowTitle(title);
 }
 
-
+void nmapClass::monitorRuntimeEvent()
+{
+    if (!monitorStopCurrentScanButt->isEnabled()) 
+    {
+        monitorStopCurrentScanButt->setEnabled(true);
+    }
+    
+    if (!monitorDetailsScanButt->isEnabled()) 
+    {
+        monitorDetailsScanButt->setEnabled(true);
+    }
+}

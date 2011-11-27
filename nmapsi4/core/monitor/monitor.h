@@ -38,6 +38,8 @@
 
 using namespace memory;
 
+class nmapClass;
+
 class monitor : public QObject
 {
     Q_OBJECT
@@ -47,7 +49,7 @@ class monitor : public QObject
 #endif
     
 public:
-    monitor(QTreeWidget* monitor, QObject* parent);
+    monitor(QTreeWidget* monitor, nmapClass* parent);
     ~monitor();
     /*
      * Add host in the monitor and start scan.
@@ -69,11 +71,6 @@ public:
      * Clear all scan host details
      */
     void clearHostMonitorDetails();
-    /*
-     * Stop host scan selected in the QTreeWidget.
-     */
-    void stopSelectedScan();
-    void showSelectedScanDetails();
     
 private:
     void startScan(const QString hostname, QStringList parameters);
@@ -92,7 +89,7 @@ protected:
     QHash<QString, scanThread*> _scanHashList;
     QHash<QString, QStringList> _scanHashListFlow;
     QTreeWidget* _monitor;
-    QObject* _parent;
+    nmapClass* _parent;
     
 signals:
     /*
@@ -107,6 +104,13 @@ signals:
 private slots:
     void readFlowFromThread(const QString hostname, QString lineData);
     void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
+    
+public slots:
+        /*
+     * Stop host scan selected in the QTreeWidget.
+     */
+    void stopSelectedScan();
+    void showSelectedScanDetails();
 };
 
 #endif
