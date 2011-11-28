@@ -50,6 +50,7 @@ void nmapClass::initObject()
     tWresult->removeTab(0);
     _monitor = new monitor(scanMonitor,this);
     _utilities = new utilities(this);
+    _parser = new parser(this);
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();
@@ -98,20 +99,18 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan);
     freelist<digSupport*>::itemDeleteAll(digLookupList);
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
-    freelist<parserObj*>::itemDeleteAll(parserObjList);
-    freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     freelist<QWebView*>::itemDeleteAll(webViewList);
     freemap<QString,QAction*>::itemDeleteAll(_collections);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     discoveryClear();
     delete _monitor;
     delete _utilities;
+    delete _parser;
     delete progressScan;
     delete _logFilePath;
     delete labelVersion;

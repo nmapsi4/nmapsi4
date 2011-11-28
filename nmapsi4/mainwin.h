@@ -44,9 +44,6 @@
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
 #include "lookUpT.h"
-#include "digSupport.h"
-#include "parserObj.h"
-#include "parserObjUtil.h"
 #include "addurl.h"
 #include "maindiscover.h"
 #include "addparbook.h"
@@ -55,13 +52,12 @@
 #include "utilities.h"
 #include "hostTools.h"
 #include "qpushbuttonorientated.h"
+#include "parser.h"
 
 // define class namespace
 using namespace internalLookup;
 using namespace scanning;
 using namespace digInterface;
-using namespace parserObject;
-using namespace parserUtilObject;
 using namespace pingInterface;
 using namespace memory;
 
@@ -73,6 +69,8 @@ namespace Ui
 class nmapClass : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
+    
+    friend class parser;
 
 public:
     nmapClass();
@@ -90,8 +88,6 @@ private:
     void checkProfile();
     void initGUI();
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
-    void showParserObj(int hostIndex);
-    void showParserObjPlugins(int hostIndex);
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();
@@ -113,8 +109,6 @@ private:
     void setNormalProfile();
     void setFullVersionProfile();
     void setQuickVersionProfile();
-    parserObj* parser(const QStringList parList, QString StdoutStr,
-                      QString StderrorStr, QTreeWidgetItem* mainTreeE);
 
 signals:
     void killDiscover();
@@ -148,18 +142,14 @@ protected:
     bool LookupEnabled;
     bool digSupported;
     int hostCache;
-    QList<QTreeWidgetItem*> itemListScan;
     QList<QTreeWidgetItem*> itemNseAvail;
     QList<QTreeWidgetItem*> itemNseActive;
-    QList<QTreeWidgetItem*> objElem;
     QList<QTreeWidgetItem*> mainTreeElem;
     QList<QString> nseScriptAvailList;
     QList<QString> nseScriptActiveList;
     QHash<QString, QTextDocument*> nseHelpCache;
     QHash<QString, QAction*> _collections;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
-    QList<parserObj*> parserObjList;
-    QList<parserObjUtil*> parserObjUtilList;
     QList<lookUpT*> internealLookupList;
     QList<digSupport*> digLookupList;
     QList<QWebView*> webViewList;
@@ -170,13 +160,13 @@ protected:
     QToolButton *menuSetup;
     monitor *_monitor;
     utilities *_utilities;
+    parser *_parser;
 
 private slots:
     void initObject();
     void startScan();
     void stop_scan();
     void exit();
-    void nmapParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer);
     void update_portCombo();
     void update_scanCombo();
     void update_inputcheck();
@@ -195,8 +185,6 @@ private slots:
     void callScanDiscover();
     void callParFromBook();
     void scanLookup(QHostInfo info, int state, const QString hostname);
-    void runtimePars(QTreeWidgetItem *item, int column);
-    void runtimeTraceroutePars(QTreeWidgetItem *item, int column);
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
     void objVulnButton();

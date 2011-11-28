@@ -677,13 +677,9 @@ void nmapClass::updateTabMonitor()
 void nmapClass::listClear() 
 {
     listClearFlag = true;
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemListScan); //clear items list
-    // parserObj list
-    freelist<parserObj*>::itemDeleteAll(parserObjList);
-    freelist<parserObjUtil*>::itemDeleteAll(parserObjUtilList);
     // Host list
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(objElem);
+    _parser->cleanParserItems();
     listScanError->clear();
     treeMain->clear();
     treeLookup->clear();

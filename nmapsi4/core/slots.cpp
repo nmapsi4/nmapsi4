@@ -123,9 +123,9 @@ void nmapClass::setNmapsiSlot()
 
     // Obj parser runtime
     connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            this, SLOT(runtimePars(QTreeWidgetItem*, int)));
+            _parser, SLOT(showParserResult(QTreeWidgetItem*,int)));
     connect(treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            this, SLOT(runtimeTraceroutePars(QTreeWidgetItem*, int)));
+            _parser, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
     connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuServiceMain()));
 
@@ -186,7 +186,7 @@ void nmapClass::setNmapsiSlot()
     connect(_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
     connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
-            this, SLOT(nmapParser(QStringList,QByteArray,QByteArray)));
+            _parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
 
     // nse category
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),

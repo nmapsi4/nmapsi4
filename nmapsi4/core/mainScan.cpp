@@ -142,7 +142,7 @@ void nmapClass::preScanLookup(const QString hostname)
         digSupport *digC = new digSupport();
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
-        parserObjUtilList.append(tmpParserObj_);
+	_parser->addUtilObject(tmpParserObj_);
         
         _monitor->addMonitorHost(hostname, parameters);
     } 
@@ -170,7 +170,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
         elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }
 
-    parserObjUtilList.append(elemObjUtil);
+    _parser->addUtilObject(elemObjUtil);
 
     _monitor->addMonitorHost(hostname, loadExtensions());
 }

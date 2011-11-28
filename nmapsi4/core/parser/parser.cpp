@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,14 +17,41 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include "parser.h"
 #include "mainwin.h"
 
-parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr, 
+parser::parser(nmapClass* parent) : QWidget(parent), _ui(parent)
+{
+    
+}
+
+parser::~parser()
+{
+    freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
+    freelist<parserObj*>::itemDeleteAll(_parserObjList);
+    freelist<parserObjUtil*>::itemDeleteAll(_parserObjUtilList);
+
+}
+
+void parser::cleanParserItems()
+{
+    freelist<parserObj*>::itemDeleteAll(_parserObjList);
+    freelist<parserObjUtil*>::itemDeleteAll(_parserObjUtilList);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(_objectItems);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
+}
+
+void parser::addUtilObject(parserObjUtil* object)
+{
+    _parserObjUtilList.append(object);
+}
+
+
+parserObj* parser::parserCore(const QStringList parList, QString StdoutStr, 
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
     /*
      * _logFilePath and verboseLog is global in Ui::MainWindow
-     * checkViewOS() methos in parserUtils
      * TODO:: remove _logFilePath and verboleLog with porting to new save log.
      */
     // Create parser Obect
@@ -121,9 +148,9 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
     
     // check for log file
     QTextStream *file = NULL;
-    if (_logFilePath) 
+    if (_ui->_logFilePath) 
     {
-        file = new QTextStream(_logFilePath);
+        file = new QTextStream(_ui->_logFilePath);
         // parameters list for log
         QString nmap_command(QString("\n==LogStart: ") + QString("\nnmap ") + parList.join(" "));
         *file << nmap_command << endl << endl;
@@ -138,7 +165,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
         tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
         
-        if ((_logFilePath) && (!verboseLog))
+        if ((_ui->_logFilePath) && (!_ui->verboseLog))
         {
             *file << generalBuffer_ << endl;
         }
@@ -148,7 +175,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
         tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss")); 
         mainTreeE->setText(0, tmp_host);
         
-        if ((_logFilePath) && (!verboseLog))
+        if ((_ui->_logFilePath) && (!_ui->verboseLog))
         {
             *file << hostCheck << endl;
         }
@@ -188,7 +215,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
-                if ((_logFilePath) && (!verboseLog)) 
+                if ((_ui->_logFilePath) && (!_ui->verboseLog)) 
                 {
                     *file << scanBufferToStream_line << endl;
                 }
@@ -218,7 +245,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
          }
 
          elemObj->setMainInfo(bufferInfoStream_line);
-         if (_logFilePath && !verboseLog) 
+         if (_ui->_logFilePath && !_ui->verboseLog) 
          {
             *file << bufferInfoStream_line << endl;
          }
@@ -241,7 +268,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
         if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) 
         {
             elemObj->setTraceRouteInfo(bufferTraceStream_line);
-            if (_logFilePath && !verboseLog) 
+            if (_ui->_logFilePath && !_ui->verboseLog) 
             {
                 *file << bufferTraceStream_line << endl;
             }
@@ -258,14 +285,14 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
         if (!bufferNssStream_line.isEmpty()) 
         {
             elemObj->setNssInfo(bufferNssStream_line);
-            if (_logFilePath && !verboseLog) 
+            if (_ui->_logFilePath && !_ui->verboseLog) 
             {
                 *file << bufferNssStream_line << endl;
             }
         }
     }
 
-    actionClear_History->setEnabled(true);
+    _ui->actionClear_History->setEnabled(true);
 
     QTextStream bufferLogStream(&StdoutStr);
     QString bufferLogStream_line;
@@ -277,7 +304,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
         if (!bufferLogStream_line.isEmpty())
         {
             elemObj->setFullScanLog(bufferLogStream_line);
-            if ((_logFilePath) && (verboseLog))
+            if ((_ui->_logFilePath) && (_ui->verboseLog))
             {
                 *file << bufferLogStream_line << "\n";
             }
@@ -285,7 +312,7 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
     }
 
     *file << "==LogEnd\n";
-    if (_logFilePath) 
+    if (_ui->_logFilePath) 
     {
         delete file;
     }
@@ -301,4 +328,296 @@ parserObj* nmapClass::parser(const QStringList parList, QString StdoutStr,
     }
 
     return elemObj;
+}
+
+void parser::showParserObj(int hostIndex) 
+{
+    // Clear widget
+    freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(_objectItems);
+    _ui->listWscan->clear();
+    _ui->GItree->clear();
+    _ui->treeNSS->clear();
+    
+    // set combo scan parameters
+    int treeMainIndex_ = _ui->treeMain->indexOfTopLevelItem(_ui->treeMain->currentItem());
+    _ui->comboScanLog->setCurrentIndex(treeMainIndex_+1);
+
+    QString noInfo("not Discovered");
+    
+    foreach (const QString &token, _parserObjList[hostIndex]->getMainInfo()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeHostDet);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+        root->setText(0, token);
+        root->setToolTip(0, token);
+    }
+    
+    QString noDes = tr("No description");
+    // clear combo Vulnerabilities
+    _ui->comboVuln->clear();
+    _ui->comboVuln->insertItem(0,"Services");
+
+    // Show open ports
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortOpen()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
+        root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        root->setText(0, split[0]);
+        root->setText(1, split[1]);
+        root->setText(2, split[2]);
+        if (split.size() == 4) 
+        {
+            root->setText(3, split[3]);
+            root->setToolTip(3, split[3]);
+            if (!split[3].isEmpty()) 
+            {
+                _ui->comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
+            QString lineDescription_("");
+            for(int index=3; index < split.size(); index++) 
+            {
+                lineDescription_.append(split[index]);
+                lineDescription_.append(" ");
+            }
+            root->setText(3, lineDescription_);
+            root->setToolTip(3, lineDescription_);
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                _ui->comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
+            root->setText(3, noDes);
+        }
+    }
+
+    // Show Close ports
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortClose()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        root->setText(0, split[0]);
+        root->setText(1, split[1]);
+        root->setText(2, split[2]);
+        if (split.size() == 4) 
+        {
+            root->setText(3, split[3]);
+            root->setToolTip(3, split[3]);
+            if (!split[3].isEmpty()) 
+            {
+                _ui->comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
+            QString lineDescription_("");
+            for(int index=3; index < split.size(); index++) 
+            {
+                lineDescription_.append(split[index]);
+                lineDescription_.append(" ");
+            }
+            root->setText(3, lineDescription_);
+            root->setToolTip(3, lineDescription_);
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                _ui->comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
+            root->setText(3, noDes);
+        }
+    }
+
+    // Show Filtered ports
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortFiltered()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
+        root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        root->setText(0, split[0]);
+        root->setText(1, split[1]);
+        root->setText(2, split[2]);
+        if (split.size() == 4) 
+        {
+            root->setText(3, split[3]);
+            root->setToolTip(3, split[3]);
+            if (!split[3].isEmpty()) 
+            {
+                _ui->comboVuln->addItem(split[3]);
+            }
+        } 
+        else if (split.size() > 4) 
+        {
+            QString lineDescription_("");
+            for(int index=3; index < split.size(); index++) 
+            {
+                lineDescription_.append(split[index]);
+                lineDescription_.append(" ");
+            }
+            root->setText(3, lineDescription_);
+            root->setToolTip(3, lineDescription_);
+            //load comboVuln
+            if (!lineDescription_.isEmpty()) 
+            {
+                _ui->comboVuln->addItem(lineDescription_);
+            }
+        } 
+        else 
+        {
+            root->setText(3, noDes);
+        }
+    }
+    
+    // show services
+    foreach (const QString &token, _parserObjList[hostIndex]->getServices()) 
+    {
+        if (!_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) 
+        {
+            QTreeWidgetItem *objItem = new QTreeWidgetItem(_ui->GItree);
+            objItem->setSizeHint(0, QSize(22, 22));
+            objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+            _objectItems.push_front(objItem);
+            objItem->setText(0,token);
+        }
+    }
+
+    // Show Nss Info
+    foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+        if (token.contains(":") && !token.contains("=") 
+                && !token.contains("//")
+                && !token.contains("ERROR")) 
+        {
+            root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+        }
+
+        if (token.contains("ERROR")) 
+        {
+            root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+        }
+        root->setText(0, token);
+        root->setToolTip(0, token);
+    }
+
+    // Show full scan log
+    foreach (const QString &token, _parserObjList[hostIndex]->getFullScanLog()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listScan);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
+        root->setText(0, token);
+        root->setToolTip(0, token);
+    }
+
+    // Show scan error
+    foreach (const QString &token, _parserObjList[hostIndex]->getErrorScan()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listScanError);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
+        root->setText(0, token);
+        root->setToolTip(0, token);
+    }
+}
+
+void parser::showParserObjPlugins(int hostIndex) 
+{
+    // show traceroute
+    foreach (const QString &token, _parserObjList[hostIndex]->getTraceRouteInfo()) 
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeTraceroot);
+        _itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+        QStringList tmpToken = token.split(' ');
+
+        tmpToken.removeAll("");
+
+        // MS windows check for ms string
+        if(tmpToken.size() == 5) 
+        {
+            if(tmpToken[2].size() < 4) 
+            { // minimum dns length
+                tmpToken.removeAt(2);
+            }
+        }
+
+        if(tmpToken.size() == 4) 
+        {
+            if(tmpToken[2].size() < 4) 
+            { // minimum dns length
+                tmpToken.removeAt(2);
+            } 
+            else 
+            {
+                tmpToken[3].remove('(');
+                tmpToken[3].remove(')');
+            }
+        }
+
+        if(tmpToken.size() == 4) 
+        {
+            root->setText(0, tmpToken[0]);
+            root->setText(1, tmpToken[1]);
+            root->setText(3, tmpToken[2]);
+            root->setText(2, tmpToken[3]);
+
+        } 
+        else if(tmpToken.size() == 3) 
+        {
+            root->setText(0, tmpToken[0]);
+            root->setText(1, tmpToken[1]);
+            root->setText(2, tmpToken[2]);
+            root->setText(3, "no DNS");
+            root->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
+        } 
+        else 
+        {
+            root->setText(0, token);
+            root->setToolTip(0, token);
+        }
+    }
+    
+    // show lookUp info
+    foreach (parserObjUtil* elem, _parserObjUtilList) 
+    {
+        if(_parserObjList[hostIndex]->getHostName() == elem->getHostName()) 
+        {
+            foreach (const QString &token, elem->getInfoLookup()) 
+            {
+                QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeLookup);
+                _itemListScan.push_front(root);
+                root->setSizeHint(0, QSize(22, 22));
+                root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
+                root->setText(0, token);
+            }
+            break;
+        }
+    }
 }

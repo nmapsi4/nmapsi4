@@ -37,8 +37,6 @@
 #include "scanThread.h"
 
 using namespace pingInterface;
-using namespace parserObject;
-using namespace parserUtilObject;
 using namespace internalLookup;
 using namespace digInterface;
 using namespace scanning;

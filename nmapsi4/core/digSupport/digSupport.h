@@ -32,7 +32,6 @@
 #include "parserObjUtil.h"
 
 using namespace digLookup;
-using namespace parserUtilObject;
 
 namespace digInterface {
     /*!

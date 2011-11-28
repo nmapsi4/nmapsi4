@@ -19,122 +19,122 @@
 
 #include "parserObj.h"
 
-parserObject::parserObj::parserObj() 
+parserObj::parserObj() 
 {
 
 }
 
-parserObject::parserObj::~parserObj() 
+parserObj::~parserObj() 
 {
 
 }
 
-QString parserObject::parserObj::getHostName() const 
+QString parserObj::getHostName() const 
 {
     return this->m_hostName;
 }
 
-QStringList parserObject::parserObj::getMainInfo() const 
+QStringList parserObj::getMainInfo() const 
 {
     return this->m_mainInfo;
 }
 
-QStringList parserObject::parserObj::getServices() const 
+QStringList parserObj::getServices() const 
 {
     return this->m_services;
 }
 
-QStringList parserObject::parserObj::getPortServices() const 
+QStringList parserObj::getPortServices() const 
 {
     return this->m_portServices;
 }
 
-QStringList parserObject::parserObj::getPortOpen() const 
+QStringList parserObj::getPortOpen() const 
 {
     return this->m_portOpened;
 }
 
-QStringList parserObject::parserObj::getPortClose() const 
+QStringList parserObj::getPortClose() const 
 {
     return this->m_portClosed;
 }
 
-QStringList parserObject::parserObj::getPortFiltered() const 
+QStringList parserObj::getPortFiltered() const 
 {
     return this->m_portFiltered;
 }
 
-QStringList parserObject::parserObj::getNssInfo() const 
+QStringList parserObj::getNssInfo() const 
 {
     return this->m_scanNss;
 }
 
-QStringList parserObject::parserObj::getTraceRouteInfo() const 
+QStringList parserObj::getTraceRouteInfo() const 
 {
     return this->m_scanTraceRoute;
 }
 
-QStringList parserObject::parserObj::getFullScanLog() const 
+QStringList parserObj::getFullScanLog() const 
 {
     return this->m_fullLogScan;
 }
 
-QStringList parserObject::parserObj::getErrorScan() const 
+QStringList parserObj::getErrorScan() const 
 {
     return this->m_errorScan;
 }
 
-void parserObject::parserObj::setHostName(const QString hostName) 
+void parserObj::setHostName(const QString hostName) 
 {
     m_hostName.append(hostName);
 }
 
-void parserObject::parserObj::setMainInfo(const QString elemMainInfo) 
+void parserObj::setMainInfo(const QString elemMainInfo) 
 {
     m_mainInfo.append(elemMainInfo);
 }
 
-void parserObject::parserObj::setServices(const QString service) 
+void parserObj::setServices(const QString service) 
 {
     m_services.push_back(service);
 }
 
-void parserObject::parserObj::setPortServices(const QString portService) 
+void parserObj::setPortServices(const QString portService) 
 {
     m_portServices.push_back(portService);
 }
 
-void parserObject::parserObj::setPortOpen(const QString portOpen) 
+void parserObj::setPortOpen(const QString portOpen) 
 {
     m_portOpened.push_back(portOpen);
 }
 
-void parserObject::parserObj::setPortClose(const QString portClose) 
+void parserObj::setPortClose(const QString portClose) 
 {
     m_portClosed.push_back(portClose);
 }
 
-void parserObject::parserObj::setPortFiltered(const QString portFiltered) 
+void parserObj::setPortFiltered(const QString portFiltered) 
 {
     m_portFiltered.push_back(portFiltered);
 }
 
-void parserObject::parserObj::setNssInfo(const QString nssElem) 
+void parserObj::setNssInfo(const QString nssElem) 
 {
     m_scanNss.push_back(nssElem);
 }
 
-void parserObject::parserObj::setTraceRouteInfo(const QString traceElem) 
+void parserObj::setTraceRouteInfo(const QString traceElem) 
 {
     m_scanTraceRoute.push_back(traceElem);
 }
 
-void parserObject::parserObj::setFullScanLog(const QString logElem) 
+void parserObj::setFullScanLog(const QString logElem) 
 {
     m_fullLogScan.push_back(logElem);
 }
 
-void parserObject::parserObj::setErrorScan(const QString errorElem) 
+void parserObj::setErrorScan(const QString errorElem) 
 {
     m_errorScan.push_back(errorElem);
 }

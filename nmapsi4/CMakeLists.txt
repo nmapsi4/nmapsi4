@@ -8,6 +8,7 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/tools/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/objects/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/scanThread/
@@ -33,9 +34,7 @@ SET(SOURCES_CPP
                 core/slots.cpp
 		core/resizeNmapsi4.cpp
 		core/parser/parser.cpp
-                core/parser/scanParser.cpp
-                core/parser/pluginsParser.cpp
-                core/parserSlotsDefinition.cpp
+                core/parser/parserSlotsDefinition.cpp
 		core/extensions.cpp
 		mainwin.cpp
 		core/updateUI.cpp
@@ -91,7 +90,8 @@ SET(SOURCES_H mainwin.h
 	core/discover/pingThread.h
 	core/monitor/details.h
         core/monitor/monitor.h
-        core/tools/utilities.h)
+        core/tools/utilities.h
+	core/parser/parser.h)
 
 SET(SOURCES_UI mainwin.ui 
 	core/preference/profilemain.ui 

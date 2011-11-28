@@ -23,48 +23,46 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-namespace parserObject {
-    class parserObj
-    {
-    public:
-	parserObj();
-        ~parserObj();
-	QString getHostName() const;
-	QStringList getMainInfo() const;
-        QStringList getServices() const;
-        QStringList getPortServices() const;
-        QStringList getPortOpen() const;
-        QStringList getPortClose() const;
-        QStringList getPortFiltered() const;
-        QStringList getNssInfo() const;
-        QStringList getTraceRouteInfo() const;
-        QStringList getFullScanLog() const;
-        QStringList getErrorScan() const;
-	void setHostName(const QString hostName);
-	void setMainInfo(const QString infoMainElem);
-        void setServices(const QString Service);
-        void setPortServices(const QString portService);
-        void setPortOpen(const QString portOpen);
-        void setPortClose(const QString portClose);
-        void setPortFiltered(const QString portFiltered);
-        void setNssInfo(const QString nssElem);
-        void setTraceRouteInfo(const QString traceElem);
-        void setFullScanLog(const QString logElem);
-        void setErrorScan(const QString errorElem);
+class parserObj
+{
+public:
+    parserObj();
+    ~parserObj();
+    QString getHostName() const;
+    QStringList getMainInfo() const;
+    QStringList getServices() const;
+    QStringList getPortServices() const;
+    QStringList getPortOpen() const;
+    QStringList getPortClose() const;
+    QStringList getPortFiltered() const;
+    QStringList getNssInfo() const;
+    QStringList getTraceRouteInfo() const;
+    QStringList getFullScanLog() const;
+    QStringList getErrorScan() const;
+    void setHostName(const QString hostName);
+    void setMainInfo(const QString infoMainElem);
+    void setServices(const QString Service);
+    void setPortServices(const QString portService);
+    void setPortOpen(const QString portOpen);
+    void setPortClose(const QString portClose);
+    void setPortFiltered(const QString portFiltered);
+    void setNssInfo(const QString nssElem);
+    void setTraceRouteInfo(const QString traceElem);
+    void setFullScanLog(const QString logElem);
+    void setErrorScan(const QString errorElem);
 
-    protected:
-	QString m_hostName;
-        QStringList m_mainInfo;
-        QStringList m_services;
-        QStringList m_portServices;
-        QStringList m_portOpened;
-        QStringList m_portFiltered;
-        QStringList m_portClosed;
-        QStringList m_scanNss;
-        QStringList m_scanTraceRoute;
-        QStringList m_fullLogScan;
-        QStringList m_errorScan;
-    };
-}
+protected:
+    QString m_hostName;
+    QStringList m_mainInfo;
+    QStringList m_services;
+    QStringList m_portServices;
+    QStringList m_portOpened;
+    QStringList m_portFiltered;
+    QStringList m_portClosed;
+    QStringList m_scanNss;
+    QStringList m_scanTraceRoute;
+    QStringList m_fullLogScan;
+    QStringList m_errorScan;
+};
 
 #endif

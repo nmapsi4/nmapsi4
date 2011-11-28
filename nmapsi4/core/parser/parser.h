@@ -17,34 +17,47 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#ifndef PARSER_H
+#define PARSER_H
+
+#include <QtGui/QWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtGui/QMessageBox>
+
+// local inclusion
+#include "parserObj.h"
 #include "parserObjUtil.h"
+#include "memorytools.h"
 
-parserObjUtil::parserObjUtil() 
+class nmapClass;
+
+class parser : public QWidget
 {
+    Q_OBJECT
 
-}
+public:
+    parser(nmapClass* parent = 0);
+    ~parser();
+    void cleanParserItems();
+    void addUtilObject(parserObjUtil* object);
 
-parserObjUtil::~parserObjUtil() 
-{
+private:
+    void showParserObj(int hostIndex);
+    void showParserObjPlugins(int hostIndex);
+    parserObj* parserCore(const QStringList parList, QString StdoutStr,
+                          QString StderrorStr, QTreeWidgetItem* mainTreeE);
 
-}
+protected:
+    nmapClass* _ui;
+    QList<parserObj*> _parserObjList;
+    QList<parserObjUtil*> _parserObjUtilList;
+    QList<QTreeWidgetItem*> _itemListScan;
+    QList<QTreeWidgetItem*> _objectItems;
 
-QStringList parserObjUtil::getInfoLookup() const 
-{
-    return m_mainLookup;
-}
+public slots:
+    void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer);
+    void showParserResult(QTreeWidgetItem *item, int column);
+    void showParserTracerouteResult(QTreeWidgetItem *item, int column);
+};
 
-QString parserObjUtil::getHostName() const 
-{
-    return m_hostName;
-}
-
-void parserObjUtil::setInfoLookup(const QString lookupElem) 
-{
-    m_mainLookup.push_back(lookupElem);
-}
-
-void parserObjUtil::setHostName(const QString hostName) 
-{
-    m_hostName.append(hostName);
-}
+#endif // PARSER_H
