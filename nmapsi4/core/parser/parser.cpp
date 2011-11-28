@@ -33,7 +33,7 @@ parser::~parser()
 
 }
 
-void parser::cleanParserItems()
+void parser::clearParserItems()
 {
     freelist<parserObj*>::itemDeleteAll(_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(_parserObjUtilList);

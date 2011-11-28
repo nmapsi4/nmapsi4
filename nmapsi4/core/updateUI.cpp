@@ -679,7 +679,7 @@ void nmapClass::listClear()
     listClearFlag = true;
     // Host list
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
-    _parser->cleanParserItems();
+    _parser->clearParserItems();
     listScanError->clear();
     treeMain->clear();
     treeLookup->clear();

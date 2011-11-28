@@ -38,7 +38,13 @@ class parser : public QWidget
 public:
     parser(nmapClass* parent = 0);
     ~parser();
-    void cleanParserItems();
+    /*
+     * Clear all Items in parser QList
+     */
+    void clearParserItems();
+    /*
+     * Add a parserObjUtil in dedicate parser qlist
+     */
     void addUtilObject(parserObjUtil* object);
 
 private:
@@ -55,6 +61,9 @@ protected:
     QList<QTreeWidgetItem*> _objectItems;
 
 public slots:
+    /*
+     * Start data QByteArray scan result parser.
+     */
     void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer);
     void showParserResult(QTreeWidgetItem *item, int column);
     void showParserTracerouteResult(QTreeWidgetItem *item, int column);
