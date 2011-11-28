@@ -25,8 +25,7 @@
 #include <QtGui/QMessageBox>
 
 // local inclusion
-#include "parserObj.h"
-#include "parserObjUtil.h"
+#include "parserObjects.h"
 #include "memorytools.h"
 
 class nmapClass;

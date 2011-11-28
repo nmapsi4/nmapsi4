@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PARSEROBJ_H
-#define PARSEROBJ_H
+#ifndef PARSEROBJECTS_H
+#define PARSEROBJECTS_H
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
@@ -63,6 +63,21 @@ protected:
     QStringList m_scanTraceRoute;
     QStringList m_fullLogScan;
     QStringList m_errorScan;
+};
+
+class parserObjUtil
+{
+public:
+    parserObjUtil();
+    ~parserObjUtil();
+    QStringList getInfoLookup() const;
+    QString getHostName() const;
+    void setInfoLookup(const QString lookupElem);
+    void setHostName(const QString hostName);
+
+protected:
+    QStringList m_mainLookup;
+    QString m_hostName;
 };
 
 #endif

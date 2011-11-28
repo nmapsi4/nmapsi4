@@ -9,7 +9,6 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/tools/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/objects/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/scanThread/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/digSupport/
@@ -58,8 +57,7 @@ SET(SOURCES_CPP
 		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
 		core/digSupport/digThread.cpp
-		core/parser/objects/parserObj.cpp
-		core/parser/objects/parserObjUtil.cpp
+		core/parser/parserObjects.cpp
 		core/actions.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp

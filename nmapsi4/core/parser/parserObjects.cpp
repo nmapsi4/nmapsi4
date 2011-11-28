@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "parserObj.h"
+#include "parserObjects.h"
 
 parserObj::parserObj() 
 {
@@ -138,3 +138,34 @@ void parserObj::setErrorScan(const QString errorElem)
 {
     m_errorScan.push_back(errorElem);
 }
+
+parserObjUtil::parserObjUtil() 
+{
+
+}
+
+parserObjUtil::~parserObjUtil() 
+{
+
+}
+
+QStringList parserObjUtil::getInfoLookup() const 
+{
+    return m_mainLookup;
+}
+
+QString parserObjUtil::getHostName() const 
+{
+    return m_hostName;
+}
+
+void parserObjUtil::setInfoLookup(const QString lookupElem) 
+{
+    m_mainLookup.push_back(lookupElem);
+}
+
+void parserObjUtil::setHostName(const QString hostName) 
+{
+    m_hostName.append(hostName);
+}
+

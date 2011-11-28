@@ -29,7 +29,7 @@
 // local include
 #include "digThread.h"
 #include "nmapsi4Debug.h"
-#include "parserObjUtil.h"
+#include "parserObjects.h"
 
 using namespace digLookup;
 
