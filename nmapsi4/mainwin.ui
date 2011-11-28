@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
-    <height>698</height>
+    <width>845</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,8 +22,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>850</width>
-    <height>672</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -34,8 +34,8 @@
   </property>
   <property name="baseSize">
    <size>
-    <width>760</width>
-    <height>662</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -90,10 +90,16 @@
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QFrame" name="frameScan">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>35</height>
+            <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
@@ -153,7 +159,7 @@
            <item>
             <widget class="QComboBox" name="hostEdit">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -174,9 +180,15 @@
            </item>
            <item>
             <widget class="QComboBox" name="comboHostBook">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>300</width>
+               <width>0</width>
                <height>0</height>
               </size>
              </property>
@@ -224,7 +236,7 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>35</height>
+            <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
@@ -641,7 +653,7 @@
                 <widget class="QTreeWidget" name="treeTraceroot">
                  <property name="minimumSize">
                   <size>
-                   <width>200</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
@@ -688,7 +700,7 @@
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>150</height>
+               <height>30</height>
               </size>
              </property>
              <property name="frameShape">
@@ -894,7 +906,7 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>180</width>
+               <width>50</width>
                <height>0</height>
               </size>
              </property>
@@ -1024,8 +1036,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -1141,12 +1153,12 @@
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
+           <enum>QSizePolicy::Preferred</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>200</width>
-            <height>20</height>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
          </spacer>
@@ -1369,22 +1381,6 @@
                  </item>
                 </layout>
                </item>
-               <item row="6" column="0">
-                <spacer name="verticalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>330</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
                <item row="3" column="0">
                 <layout class="QHBoxLayout" name="horizontalLayout_17">
                  <item>
@@ -1429,6 +1425,22 @@
                   </widget>
                  </item>
                 </layout>
+               </item>
+               <item row="6" column="0">
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Expanding</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -1547,12 +1559,12 @@
                   <enum>Qt::Vertical</enum>
                  </property>
                  <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
+                  <enum>QSizePolicy::Expanding</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>350</height>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>
@@ -1614,8 +1626,8 @@
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>20</width>
-                   <height>40</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>
@@ -1837,12 +1849,12 @@
                   <enum>Qt::Vertical</enum>
                  </property>
                  <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
+                  <enum>QSizePolicy::Expanding</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>20</width>
-                   <height>300</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>
@@ -2023,12 +2035,12 @@
                   <enum>Qt::Vertical</enum>
                  </property>
                  <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
+                  <enum>QSizePolicy::Expanding</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>20</width>
-                   <height>250</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>
@@ -2116,8 +2128,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -2158,7 +2170,7 @@
          <widget class="QTabWidget" name="tabNseHelp">
           <property name="minimumSize">
            <size>
-            <width>400</width>
+            <width>350</width>
             <height>0</height>
            </size>
           </property>
@@ -2499,9 +2511,15 @@
               </item>
               <item>
                <widget class="QComboBox" name="comboVuln">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>250</width>
+                  <width>0</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -2530,7 +2548,7 @@
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
-                  <height>18</height>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -2546,9 +2564,15 @@
               </item>
               <item>
                <widget class="QComboBox" name="comboWebV">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>250</width>
+                  <width>0</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -2573,7 +2597,7 @@
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>160</height>
+                   <height>0</height>
                   </size>
                  </property>
                  <property name="currentIndex">
@@ -2862,8 +2886,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -2972,8 +2996,8 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -3014,8 +3038,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>873</width>
-     <height>20</height>
+     <width>845</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
