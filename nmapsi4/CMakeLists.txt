@@ -5,9 +5,8 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/nmapsi4/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/tools/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/app/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/common/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/scanThread/
@@ -35,10 +34,9 @@ SET(SOURCES_CPP
 		core/parser/parser.cpp
                 core/parser/parserSlotsDefinition.cpp
 		core/extensions.cpp
-		mainwin.cpp
 		core/updateUI.cpp
-		core/tools/utilities.cpp
-                core/tools/qpushbuttonorientated.cpp
+		common/utilities.cpp
+                common/qpushbuttonorientated.cpp
 		core/mainWinTools.cpp
 		core/preference/profilemain.cpp
 		core/preference/profilemainupdate.cpp
@@ -69,14 +67,15 @@ SET(SOURCES_CPP
 		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
 		core/mainScan.cpp
-		main.cpp)
+                app/mainwin.cpp
+		app/main.cpp)
 
 
 if (Q_WS_X11)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
 endif (Q_WS_X11)
 
-SET(SOURCES_H mainwin.h 
+SET(SOURCES_H app/mainwin.h 
 	core/preference/profilemain.h 
 	core/monitor/scanThread/scanThread.h 
 	core/lookup/lookUpT.h 
@@ -88,10 +87,10 @@ SET(SOURCES_H mainwin.h
 	core/discover/pingThread.h
 	core/monitor/details.h
         core/monitor/monitor.h
-        core/tools/utilities.h
+        common/utilities.h
 	core/parser/parser.h)
 
-SET(SOURCES_UI mainwin.ui 
+SET(SOURCES_UI app/mainwin.ui 
 	core/preference/profilemain.ui 
 	core/vulnerability/addurl.ui 
 	core/bookmarks/addparbook.ui
