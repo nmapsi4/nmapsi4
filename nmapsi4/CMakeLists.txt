@@ -10,11 +10,11 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/app/monitor/
     ${CMAKE_SOURCE_DIR}/nmapsi4/app/preference/
     ${CMAKE_SOURCE_DIR}/nmapsi4/common/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/digSupport/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/discover/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/bookmarks/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/vulnerability/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/lookup/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/digSupport/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/discover/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/bookmarks/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/vulnerability/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/lookup/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -38,32 +38,32 @@ SET(SOURCES_CPP
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
 		common/MThread.cpp
-		core/extensions.cpp
-		core/updateUI.cpp
-                core/slots.cpp
-		core/resizeNmapsi4.cpp
-		core/mainWinTools.cpp
-		core/profile/globalProfile.cpp
-		core/profile/profileSession.cpp
-		core/profile/defaultProfile.cpp
-		core/logUtils.cpp
-		core/vulnerability/searchVuln.cpp
-		core/vulnerability/defaultUrlVuln.cpp
-		core/vulnerability/tabVuln.cpp
-		core/vulnerability/utilsVuln.cpp
-		core/vulnerability/addurl.cpp
-		core/lookup/lookUpT.cpp
-		core/digSupport/digSupport.cpp
-		core/actions.cpp
-                core/bookmarks/bookCalls.cpp
-                core/saveUiSettings.cpp
-		core/nse/nseCalls.cpp
-		core/nse/nseUpdateCalls.cpp
-		core/startupTools.cpp
-		core/discover/maindiscover.cpp
-		core/discover/discoverCalls.cpp
-		core/bookmarks/addparbook.cpp
-		core/mainScan.cpp
+		platform/extensions.cpp
+		platform/updateUI.cpp
+                platform/slots.cpp
+		platform/resizeNmapsi4.cpp
+		platform/mainWinTools.cpp
+		platform/profile/globalProfile.cpp
+		platform/profile/profileSession.cpp
+		platform/profile/defaultProfile.cpp
+		platform/logUtils.cpp
+		platform/vulnerability/searchVuln.cpp
+		platform/vulnerability/defaultUrlVuln.cpp
+		platform/vulnerability/tabVuln.cpp
+		platform/vulnerability/utilsVuln.cpp
+		platform/vulnerability/addurl.cpp
+		platform/lookup/lookUpT.cpp
+		platform/digSupport/digSupport.cpp
+		platform/actions.cpp
+                platform/bookmarks/bookCalls.cpp
+                platform/saveUiSettings.cpp
+		platform/nse/nseCalls.cpp
+		platform/nse/nseUpdateCalls.cpp
+		platform/startupTools.cpp
+		platform/discover/maindiscover.cpp
+		platform/discover/discoverCalls.cpp
+		platform/bookmarks/addparbook.cpp
+		platform/mainScan.cpp
                 app/mainwin.cpp
 		app/main.cpp)
 
@@ -73,11 +73,11 @@ if (Q_WS_X11)
 endif (Q_WS_X11)
 
 SET(SOURCES_H app/mainwin.h 
-	core/lookup/lookUpT.h 
-	core/digSupport/digSupport.h 
-	core/vulnerability/addurl.h 
-	core/bookmarks/addparbook.h
-	core/discover/maindiscover.h
+	platform/lookup/lookUpT.h 
+	platform/digSupport/digSupport.h 
+	platform/vulnerability/addurl.h 
+	platform/bookmarks/addparbook.h
+	platform/discover/maindiscover.h
         common/utilities.h
 	common/MThread.h 
 	app/preference/profilemain.h 
@@ -86,8 +86,8 @@ SET(SOURCES_H app/mainwin.h
 	app/parser/parser.h)
 
 SET(SOURCES_UI app/mainwin.ui 
-	core/vulnerability/addurl.ui 
-	core/bookmarks/addparbook.ui
+	platform/vulnerability/addurl.ui 
+	platform/bookmarks/addparbook.ui
 	app/preference/profilemain.ui 
 	app/monitor/details.ui)
 
@@ -136,8 +136,8 @@ if (Q_WS_X11)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
   install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
   install(FILES "desktop/nmapsi4.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
-  install(FILES "core/dbus/org.nmapsi4.Nmapsi4.xml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces/)
   install(FILES "desktop/nmapsi4-admin.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
+  install(FILES "dbus/org.nmapsi4.Nmapsi4.xml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces/)
   install(FILES "../icons/32x32/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
   install(FILES "../icons/64x64/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)
   install(FILES "../icons/128x128/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/)
