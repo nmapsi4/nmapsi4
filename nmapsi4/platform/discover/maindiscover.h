@@ -28,9 +28,9 @@
 #include <QtCore/QPointer>
 #include <QtCore/QTimer>
 // local include
-#include "pingThread.h"
+#include "MThread.h"
 
-using namespace pingCore;
+using namespace MThread;
 
 namespace pingInterface {
     /*!

@@ -17,9 +17,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "scanThread.h"
+#include "MThread.h"
 
-scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
+MThread::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
                        const QStringList parameters)
      : pout(ProcB1), 
        perr(ProcB2),
@@ -28,13 +28,13 @@ scanning::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
 { 
 }
 
-scanning::scanThread::~scanThread()
+MThread::scanThread::~scanThread()
 {
     qDebug() << "DEBUG ~scanThread()";
-    stopProcess();
+    scanThread::stopProcess();
 }
 
-void scanning::scanThread::run() 
+void MThread::scanThread::run() 
 {     
      proc = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
@@ -58,7 +58,7 @@ void scanning::scanThread::run()
 #endif
 }
 
-void scanning::scanThread::setValue() 
+void MThread::scanThread::setValue() 
 {
 #ifndef THREAD_NO_DEBUG
      qDebug() << "scan() THREAD:: -> start";
@@ -70,7 +70,7 @@ void scanning::scanThread::setValue()
      exit(0);
 }
 
-void scanning::scanThread::stopProcess()
+void MThread::scanThread::stopProcess()
 {
      // stop scan process (Slot)
     if (!proc)
@@ -88,7 +88,7 @@ void scanning::scanThread::stopProcess()
      }
 }
 
-void scanning::scanThread::realtimeData() 
+void MThread::scanThread::realtimeData() 
 {
     // read realtime data from QProcess
     QByteArray realByte = proc->readAllStandardOutput();
@@ -98,5 +98,109 @@ void scanning::scanThread::realtimeData()
     if (!stream_.isEmpty()) 
     {
         emit flowFromThread(ParList[ParList.size()-1], stream_);
+    }
+}
+
+MThread::digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
+     : m_pout(ProcB1), 
+       m_host(hostname),
+       m_par(parent)
+{
+}
+
+MThread::digThread::~digThread()
+{
+    qDebug() << "DEBUG ~digThread()";
+    digThread::stopProcess();
+}
+
+void MThread::digThread::run() 
+{     
+     m_proc = new QProcess();
+     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+     connect(m_proc, SIGNAL(finished(int,QProcess::ExitStatus)),
+             this, SLOT(setValue()));
+
+     m_proc->start("dig", m_host);
+     
+     exec();
+     emit threadEnd(m_host, m_pout);
+#ifndef DIG_NO_DEBUG
+     qDebug() << "dig() THREAD:: Quit";
+#endif
+ }
+
+void MThread::digThread::setValue() 
+{
+#ifndef DIG_NO_DEBUG
+     qDebug() << "dig() THREAD:: -> start";
+#endif
+     m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+     m_proc->close();
+     delete m_proc;
+     exit(0);
+}
+
+void MThread::digThread::stopProcess() 
+{
+     if (!m_proc) 
+     {
+        return;
+     }
+     
+     if(m_proc->state() == QProcess::Running) 
+     {
+        m_proc->close();
+        delete m_proc;
+     }
+}
+
+MThread::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
+     : m_pout(ProcB1), 
+       m_host(hostname),
+       m_proc(NULL),
+       m_par(parent)
+{
+
+}
+
+MThread::pingThread::~pingThread()
+{
+    qDebug() << "DEBUG ~pingThread()";
+    pingThread::stopProcess();
+}
+
+
+void MThread::pingThread::run() 
+{
+    m_proc = new QProcess();
+    qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+    connect(m_proc, SIGNAL(finished(int,QProcess::ExitStatus)), 
+        this, SLOT(setValue()));
+
+    m_proc->start("nping", m_host);
+     
+    exec();
+    emit threadEnd(m_host, m_pout, this);
+ }
+
+void MThread::pingThread::setValue() 
+{
+    m_pout  = m_proc->readAllStandardOutput(); // read std buffer
+    m_proc->close();
+    delete m_proc;
+    exit(0);
+}
+
+void MThread::pingThread::stopProcess() 
+{
+    if (!m_proc) 
+    {
+        return;
+    }
+    
+    if(m_proc->state() == QProcess::Running) 
+    {
+        m_proc->terminate();
     }
 }

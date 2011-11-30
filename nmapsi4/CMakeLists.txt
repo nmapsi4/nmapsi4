@@ -6,16 +6,15 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/app/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/app/parser/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/app/monitor/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/app/preference/
     ${CMAKE_SOURCE_DIR}/nmapsi4/common/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/parser/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/monitor/scanThread/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/digSupport/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/discover/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/bookmarks/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/vulnerability/
     ${CMAKE_SOURCE_DIR}/nmapsi4/core/lookup/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/core/preference/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -24,22 +23,26 @@ include_directories(${CMAKE_SOURCE_DIR}
 if (Q_WS_X11)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
-                     nmapsi4/core/monitor/monitor.h
+                     nmapsi4/app/monitor/monitor.h
                      monitor)
 endif (Q_WS_X11)
 
 SET(SOURCES_CPP 
-                core/slots.cpp
-		core/resizeNmapsi4.cpp
-		core/parser/parser.cpp
-                core/parser/parserSlotsDefinition.cpp
-		core/extensions.cpp
-		core/updateUI.cpp
+		app/parser/parser.cpp
+                app/parser/parserSlotsDefinition.cpp
+		app/parser/parserObjects.cpp
+		app/monitor/monitor.cpp
+		app/monitor/details.cpp
+		app/preference/profilemain.cpp
+		app/preference/profilemainupdate.cpp
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
+		common/MThread.cpp
+		core/extensions.cpp
+		core/updateUI.cpp
+                core/slots.cpp
+		core/resizeNmapsi4.cpp
 		core/mainWinTools.cpp
-		core/preference/profilemain.cpp
-		core/preference/profilemainupdate.cpp
 		core/profile/globalProfile.cpp
 		core/profile/profileSession.cpp
 		core/profile/defaultProfile.cpp
@@ -49,13 +52,8 @@ SET(SOURCES_CPP
 		core/vulnerability/tabVuln.cpp
 		core/vulnerability/utilsVuln.cpp
 		core/vulnerability/addurl.cpp
-		core/monitor/scanThread/scanThread.cpp
 		core/lookup/lookUpT.cpp
-		core/monitor/monitor.cpp
-		core/monitor/details.cpp
 		core/digSupport/digSupport.cpp
-		core/digSupport/digThread.cpp
-		core/parser/parserObjects.cpp
 		core/actions.cpp
                 core/bookmarks/bookCalls.cpp
                 core/saveUiSettings.cpp
@@ -64,7 +62,6 @@ SET(SOURCES_CPP
 		core/startupTools.cpp
 		core/discover/maindiscover.cpp
 		core/discover/discoverCalls.cpp
-		core/discover/pingThread.cpp
 		core/bookmarks/addparbook.cpp
 		core/mainScan.cpp
                 app/mainwin.cpp
@@ -76,25 +73,23 @@ if (Q_WS_X11)
 endif (Q_WS_X11)
 
 SET(SOURCES_H app/mainwin.h 
-	core/preference/profilemain.h 
-	core/monitor/scanThread/scanThread.h 
 	core/lookup/lookUpT.h 
 	core/digSupport/digSupport.h 
-	core/digSupport/digThread.h 
 	core/vulnerability/addurl.h 
 	core/bookmarks/addparbook.h
 	core/discover/maindiscover.h
-	core/discover/pingThread.h
-	core/monitor/details.h
-        core/monitor/monitor.h
         common/utilities.h
-	core/parser/parser.h)
+	common/MThread.h 
+	app/preference/profilemain.h 
+	app/monitor/details.h
+        app/monitor/monitor.h
+	app/parser/parser.h)
 
 SET(SOURCES_UI app/mainwin.ui 
-	core/preference/profilemain.ui 
 	core/vulnerability/addurl.ui 
 	core/bookmarks/addparbook.ui
-	core/monitor/details.ui)
+	app/preference/profilemain.ui 
+	app/monitor/details.ui)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
 

@@ -32,7 +32,7 @@
 //local include
 #include "nmapsi4Debug.h"
 
-namespace scanning {
+namespace MThread {
 /*!
  * nmap thread class, start nmap with a QProcess and return
  * QByteArray result with a signal.
@@ -71,6 +71,82 @@ private slots:
 protected:
     QPointer<QProcess> proc;
     void run();
+};
+
+class digThread : public QThread
+{
+    Q_OBJECT
+
+public:
+    /*!
+     * Create a dig QThread and start QProcess for dig
+     * with hostname parameters.
+     */
+    digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
+    ~digThread();
+
+signals:
+    /*!
+     * Return dig QThread output with a Signal.
+     */
+    void threadEnd(const QStringList, QByteArray);
+
+private:
+    QByteArray m_pout;
+    QStringList m_host;
+
+private slots:
+    /*!
+     * Load QProcess buffer return on QByteArray
+     */
+    void setValue();
+    /*!
+     * Stop QProcess immediately.
+     */
+    void stopProcess();
+
+protected:
+    QPointer<QProcess> m_proc;
+    void run();
+    QObject* m_par;
+};
+
+class pingThread : public QThread
+{
+    Q_OBJECT
+
+public:
+    /*!
+     * Create a nping QThread and start QProcess for nping
+     * with hostname parameters.
+     */
+    pingThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent = 0);
+    ~pingThread();
+
+signals:
+    /*!
+     * Return nping QThread output with a Signal.
+     */
+    void threadEnd(const QStringList, QByteArray, pingThread*);
+
+private:
+    QByteArray m_pout;
+    QStringList m_host;
+
+private slots:
+    /*!
+     * Load QProcess buffer return on QByteArray
+     */
+    void setValue();
+    /*!
+     * Stop QProcess immediately.
+     */
+    void stopProcess();
+
+protected:
+    QProcess *m_proc;
+    void run();
+    QObject *m_par;
 };
 
 } // end namespace

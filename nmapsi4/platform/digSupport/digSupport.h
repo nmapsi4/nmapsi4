@@ -17,53 +17,64 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "digThread.h"
+#ifndef DIGSUPPORT_H
+#define DIGSUPPORT_H
 
-digLookup::digThread::digThread(QByteArray& ProcB1, const QStringList hostname, QObject *parent)
-     : m_pout(ProcB1), 
-       m_host(hostname),
-       m_par(parent)
-{
-    stopProcess();
+#include <QtCore/QObject>
+#include <QtCore/QProcess>
+#include <QtCore/QDebug>
+#include <QtCore/QTextStream>
+#include <QtCore/QList>
+
+// local include
+#include "MThread.h"
+#include "nmapsi4Debug.h"
+#include "parserObjects.h"
+
+using namespace MThread;
+
+namespace digInterface {
+    /*!
+     * dig interface, main method for dig lookup.
+     */
+    class digSupport : public QObject
+    {
+	Q_OBJECT
+    public:
+	/*!
+	 * Create a object for dig lookup Class.
+	 */
+	digSupport();
+	~digSupport();
+	/*!
+	 * Check for dig support (if installed) with QProcess.
+	 */
+	void checkDigSupport(bool& digState);
+	/*!
+	 * Start QThread dig for hostname.
+	 */
+	void digProcess(const QString hostname, parserObjUtil* objElem);
+
+    private slots:
+	void checkDig();
+	/*!
+	 * Set dig result on parser Object utils (objElem)
+	 */
+	void digReturn(const QStringList hostname, QByteArray buffer1);
+
+    signals:
+	/*!
+	 * Stop QProcess immediately.
+	 */
+	void killScan();
+
+    protected:
+	QProcess* m_digProc;
+	bool m_state;
+	parserObjUtil* m_elemObjUtil;
+	QString m_hostNameLocal;
+	QList<digThread*> threadList;
+
+    };
 }
-
-void digLookup::digThread::run() 
-{     
-     m_proc = new QProcess();
-     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
-     connect(m_proc, SIGNAL(finished(int,QProcess::ExitStatus)),
-             this, SLOT(setValue()));
-
-     m_proc->start("dig", m_host);
-     
-     exec();
-     emit threadEnd(m_host, m_pout);
-#ifndef DIG_NO_DEBUG
-     qDebug() << "dig() THREAD:: Quit";
 #endif
- }
-
-void digLookup::digThread::setValue() 
-{
-#ifndef DIG_NO_DEBUG
-     qDebug() << "dig() THREAD:: -> start";
-#endif
-     m_pout  = m_proc->readAllStandardOutput(); // read std buffer
-     m_proc->close();
-     delete m_proc;
-     exit(0);
-}
-
-void digLookup::digThread::stopProcess() 
-{
-     if (!m_proc) 
-     {
-        return;
-     }
-     
-     if(m_proc->state() == QProcess::Running) 
-     {
-        m_proc->close();
-        delete m_proc;
-     }
-}

@@ -33,12 +33,12 @@
 #include "parserObjects.h"
 #include "lookUpT.h"
 #include "digSupport.h"
-#include "scanThread.h"
+#include "MThread.h"
 
 using namespace pingInterface;
 using namespace internalLookup;
 using namespace digInterface;
-using namespace scanning;
+using namespace MThread;
 
 namespace memory
 {

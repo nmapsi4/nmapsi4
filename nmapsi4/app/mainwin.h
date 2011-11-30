@@ -56,7 +56,6 @@
 
 // define class namespace
 using namespace internalLookup;
-using namespace scanning;
 using namespace digInterface;
 using namespace pingInterface;
 using namespace memory;

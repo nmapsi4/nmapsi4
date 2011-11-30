@@ -33,10 +33,11 @@
 
 // local include
 #include "memorytools.h"
-#include "scanThread.h"
+#include "MThread.h"
 #include "details.h"
 
 using namespace memory;
+using namespace MThread;
 
 class nmapClass;
 
