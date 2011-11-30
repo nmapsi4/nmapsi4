@@ -30,7 +30,7 @@ MThread::scanThread::scanThread(QByteArray& ProcB1, QByteArray& ProcB2,
 
 MThread::scanThread::~scanThread()
 {
-    qDebug() << "DEBUG ~scanThread()";
+    qDebug() << "DEBUG:: ~scanThread()";
     scanThread::stopProcess();
 }
 
@@ -80,9 +80,6 @@ void MThread::scanThread::stopProcess()
      
      if(proc->state() == QProcess::Running) 
      {
-#ifndef THREAD_NO_DEBUG
-        qDebug() << "scan() THREAD:: Clear Process";
-#endif
         proc->close();
         delete proc;
      }
@@ -125,16 +122,10 @@ void MThread::digThread::run()
      
      exec();
      emit threadEnd(m_host, m_pout);
-#ifndef DIG_NO_DEBUG
-     qDebug() << "dig() THREAD:: Quit";
-#endif
  }
 
 void MThread::digThread::setValue() 
 {
-#ifndef DIG_NO_DEBUG
-     qDebug() << "dig() THREAD:: -> start";
-#endif
      m_pout  = m_proc->readAllStandardOutput(); // read std buffer
      m_proc->close();
      delete m_proc;
@@ -166,7 +157,7 @@ MThread::pingThread::pingThread(QByteArray& ProcB1, const QStringList hostname, 
 
 MThread::pingThread::~pingThread()
 {
-    qDebug() << "DEBUG ~pingThread()";
+    qDebug() << "DEBUG:: ~pingThread()";
     pingThread::stopProcess();
 }
 
@@ -201,6 +192,7 @@ void MThread::pingThread::stopProcess()
     
     if(m_proc->state() == QProcess::Running) 
     {
-        m_proc->terminate();
+        m_proc->close();
+        delete m_proc;
     }
 }
