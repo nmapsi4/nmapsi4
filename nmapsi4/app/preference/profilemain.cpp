@@ -312,6 +312,76 @@ void mainProfile::setDefaults()
     checkBoxDig->setChecked(false);
 }
 
+void mainProfile::updateNormalCheck()   // slot
+{
+    if (checkNormalScan->isChecked()) 
+    {
+        checkQuickScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "normal";
+    }
+}
+
+void mainProfile::updateQuickCheck()   //slot
+{
+    if (checkQuickScan->isChecked()) 
+    {
+        checkNormalScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "quick";
+    }
+}
+
+void mainProfile::updateFullVersionCheck()   // slot
+{
+    if (checkFullVersion->isChecked()) 
+    {
+        checkNormalScan->setChecked(false);
+        checkQuickScan->setChecked(false);
+        checkQuickVersion->setChecked(false);
+        ScanActive = "fullversion";
+    }
+}
+
+void mainProfile::updateQuickVersionCheck()   // slot
+{
+    if (checkQuickVersion->isChecked()) 
+    {
+        checkNormalScan->setChecked(false);
+        checkQuickScan->setChecked(false);
+        checkFullVersion->setChecked(false);
+        ScanActive = "quickversion";
+    }
+}
+
+void mainProfile::update_saveButton()
+{
+    if (!checkLogOn->isChecked()) 
+    {
+        lineEditPath->setEnabled(true);
+        buttonLogB->setEnabled(true);
+    } 
+    else 
+    {
+        lineEditPath->setEnabled(false);
+        buttonLogB->setEnabled(false);
+    }
+}
+
+void mainProfile::activeLookupInt() 
+{
+    if(checkBoxlookup->isChecked())
+        checkBoxDig->setChecked(false);
+}
+
+void mainProfile::activeLookupDig() 
+{
+    if(checkBoxDig->isChecked())
+        checkBoxlookup->setChecked(false);
+}
+
 mainProfile::~mainProfile()
 {
 }

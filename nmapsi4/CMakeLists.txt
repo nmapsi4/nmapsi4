@@ -29,12 +29,10 @@ endif (Q_WS_X11)
 
 SET(SOURCES_CPP 
 		app/parser/parser.cpp
-                app/parser/parserSlotsDefinition.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
 		app/monitor/details.cpp
 		app/preference/profilemain.cpp
-		app/preference/profilemainupdate.cpp
                 app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
