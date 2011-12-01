@@ -31,13 +31,26 @@
 #include <QFileInfo>
 #include <QComboBox>
 #include <QString>
-#include <QCompleter>
 #include <QPointer>
 
 #define HISTORY_NO_DEBUG
 
 class logHistory
 {
+
+public:
+    logHistory(QTreeWidget* treeLog,
+               const QString ConfigTag,
+               const QString ConfigTagTime,
+               int cacheSize);
+    logHistory(const QString ConfigTag, int cacheSize);
+    ~logHistory();
+    void updateLogHistory();
+    void updateBookMarks();
+    void addItemHistory(const QString name);
+    void addItemHistory(const QString name, const QString value);
+    void deleteItemBookmark(const QString item);
+    QStringList getHostCache();
 
 private:
     const QStringList historyReadUrl();
@@ -48,27 +61,11 @@ private:
     QTreeWidget* logTree;
     void coreItemHistory(const QString url, const QString scanTime);
 
-public:
-    logHistory(QTreeWidget* treeLog,
-               const QString ConfigTag,
-               const QString ConfigTagTime,
-               int cacheSize);
-    logHistory(const QString ConfigTag, int cacheSize);
-    ~logHistory() {};
-    void updateLogHistory();
-    void updateBookMarks();
-    void addItemHistory(const QString name);
-    void addItemHistory(const QString name, const QString value);
-    void deleteItemBookmark(const QString item);
-
 protected:
     QString configTag;
     QString configTagTime;
     int __CACHE_SIZE__;
-    QPointer<QCompleter> m_completer;
 
-public slots:
-    void searchHistory(const QString tokenWord,  QComboBox* lineHistory);
 };
 
 #endif

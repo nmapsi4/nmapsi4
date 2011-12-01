@@ -96,7 +96,6 @@ void nmapClass::discoverIpState()
     stopDiscoverButt->setEnabled(true);
     // clear tree discover
     discoveryClear();
-    freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
     
     QStringList ipList_;
     for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) 
@@ -171,6 +170,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 void nmapClass::discoveryClear()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(varDiscover::listTreeItemDiscover);
+    freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
     varDiscover::recvList.clear();
     varDiscover::sendList.clear();
     discoverScanButt->setEnabled(false);

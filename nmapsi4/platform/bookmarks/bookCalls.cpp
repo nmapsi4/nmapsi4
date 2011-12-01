@@ -26,9 +26,23 @@ void nmapClass::callSearchHistory()
         actionAdd_Bookmark->setEnabled(true);
         action_Add_BookmarkToolBar->setEnabled(true);
     }
-    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
-    history->searchHistory(hostEdit->currentText(), hostEdit);
-    delete history;
+
+    if (!_completer)
+    {
+        logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
+        _completer = new QCompleter(history->getHostCache());
+        _completer->setWrapAround(true);
+        _completer->setCaseSensitivity(Qt::CaseInsensitive);
+        hostEdit->setCompleter(_completer);
+        delete history;
+    }
+    else
+    {
+        if (hostEdit->completer() != _completer)
+        {
+            hostEdit->setCompleter(_completer);
+        }
+    }
 }
 
 void nmapClass::callScanH()

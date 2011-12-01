@@ -113,6 +113,7 @@ nmapClass::~nmapClass()
     delete _parser;
     delete progressScan;
     delete _logFilePath;
+    delete _completer;
     delete labelVersion;
     delete userMode;
     delete bW;

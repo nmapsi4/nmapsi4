@@ -31,57 +31,68 @@
 #include "qprocessthread.h"
 
 namespace pingInterface {
-    /*!
-     * nping interface, main method for discovery section
-     */
-    class mainDiscover : public QObject
-    {
+/*!
+ * nping interface, main method for discovery section
+ */
+class mainDiscover : public QObject
+{
     Q_OBJECT
 
-    public:
-	/*!
-	 * Create a object for discovery Class
-	 */
-	mainDiscover(int uid);
-	~mainDiscover();
-	/*!
-	 * Return a QList of network interfaces
-	 */
-	QList<QNetworkInterface> getAllInterfaces() const;
-	/*!
-	 * Return ip address for a QNetworkInterface
-	 */
-	QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
-	/*!
-	 * Return ip address for a interface name
-	 */
-	QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
-	
-    public slots:
-	/*!
-	 * Check state of ip on the network (up/down) with nping QThread
-	 */
-	void isUp(const QString networkIp, QObject *parent, QStringList parameters);
-        void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
+public:
+    /*!
+     * Create a object for discovery Class
+     */
+    mainDiscover(int uid);
+    ~mainDiscover();
+    /*!
+     * Return a QList of network interfaces
+     */
+    QList<QNetworkInterface> getAllInterfaces() const;
+    /*!
+     * Return ip address for a QNetworkInterface
+     */
+    QList<QNetworkAddressEntry> getAddressEntries(QNetworkInterface interface) const;
+    /*!
+     * Return ip address for a interface name
+     */
+    QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
 
-    protected:
-	bool ipState;
-	int uid_;
-        QList<QProcessThread*> _threadList;
-    
-    private slots:
-	/*!
-	 * Emit signal with nping QThread ByteArray output
-	 */
-	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
-	void repeatScanner();
-	void stopDiscover();
+private:
+    void isUp(const QString networkIp, QObject *parent, QStringList parameters);
 
-    signals:
-	/*!
-	 * Return with a signal of ip state (up/down)
-	 */
-	void endPing(QStringList ipAddr, bool state, const QByteArray callBuff);
-    };
+public slots:
+    /*!
+     * Check state of ip on the network (up/down) with nping QThread
+     */
+    void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
+
+protected:
+    bool ipState;
+    int uid_;
+    QStringList m_ipSospended;
+    QObject *m_parent;
+    int ScanCounter;
+    int threadLimit;
+    QTimer *timer;
+    bool connectState;
+    QStringList parameters_;
+    QList<QProcessThread*> _threadList;
+
+
+private slots:
+    /*!
+     * Emit signal with nping QThread ByteArray output
+     */
+    void threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
+    void repeatScanner();
+    void stopDiscover();
+
+signals:
+    /*!
+     * Return with a signal of ip state (up/down)
+     */
+    void endPing(QStringList ipAddr, bool state, const QByteArray callBuff);
+};
+
 }
 #endif // MAINDISCOVER_H

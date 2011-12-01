@@ -37,6 +37,7 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebView>
+#include <QtGui/QCompleter>
 
 // local include
 #include "profilemain.h"
@@ -160,6 +161,7 @@ protected:
     monitor *_monitor;
     utilities *_utilities;
     parser *_parser;
+    QPointer<QCompleter> _completer;
 
 private slots:
     void initObject();

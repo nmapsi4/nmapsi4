@@ -111,6 +111,11 @@ void nmapClass::preScanLookup(const QString hostname)
     // save ip or dns to history
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
+    // Update all completer with new host cache
+    delete _completer;
+    _completer = new QCompleter(history->getHostCache());
+    _completer->setWrapAround(true);
+    _completer->setCaseSensitivity(Qt::CaseInsensitive);
     delete history;
 
     // default action

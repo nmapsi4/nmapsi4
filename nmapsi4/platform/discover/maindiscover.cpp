@@ -20,31 +20,21 @@
 #include "maindiscover.h"
 #include "memorytools.h"
 
-namespace discoverLayer {
-    QStringList m_ipSospended;
-    QObject *m_parent;
-    int ScanCounter;
-    int threadLimit;
-    QTimer *timer;
-    bool connectState;
-    QStringList parameters_;
-}
-
 pingInterface::mainDiscover::mainDiscover(int uid) 
     : ipState(false),
       uid_(uid)
 {
-    discoverLayer::timer = new QTimer(this);
-    discoverLayer::connectState = false;
-    discoverLayer::ScanCounter = 0;
-    discoverLayer::threadLimit = 20;
+    timer = new QTimer(this);
+    connectState = false;
+    ScanCounter = 0;
+    threadLimit = 20;
 }
 
 pingInterface::mainDiscover::~mainDiscover()
 {
-    delete discoverLayer::timer;
-    discoverLayer::m_ipSospended.clear();
-    discoverLayer::parameters_.clear();
+    delete timer;
+    m_ipSospended.clear();
+    parameters_.clear();
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(_threadList);
 }
 
@@ -98,18 +88,18 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
      */
     QByteArray pingBuffer;
     QByteArray bufferError;
-    discoverLayer::m_parent = parent;
-    discoverLayer::parameters_ = parameters;
+    m_parent = parent;
+    parameters_ = parameters;
     // Create parameters list for npig
     parameters.append("-c 1");
     parameters.append("-v4");
     parameters.append(networkIp);
     
-    if (discoverLayer::threadLimit) 
+    if (threadLimit)
     {
         // acquire one element from thread counter
-        discoverLayer::threadLimit--;
-        discoverLayer::ScanCounter++;
+        threadLimit--;
+        ScanCounter++;
         QPointer<QProcessThread> pingTh = new QProcessThread("nping", pingBuffer, bufferError, parameters);
         _threadList.push_back(pingTh);
         pingTh->start();
@@ -120,22 +110,22 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     {
         qDebug() << "DEBUG:: thread suspended:: " << networkIp;
         // create a QStringlist with address suspended
-        discoverLayer::m_ipSospended.append(networkIp);
+        m_ipSospended.append(networkIp);
     }
     
-    if (!discoverLayer::connectState) 
+    if (!connectState)
     {
         connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
     }
     
     // check suspended discover ip
-    if (discoverLayer::m_ipSospended.size() && !discoverLayer::connectState) 
+    if (m_ipSospended.size() && !connectState)
     {
-        discoverLayer::connectState = true;
-        connect(discoverLayer::timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
-        if (!discoverLayer::timer->isActive()) 
+        connectState = true;
+        connect(timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
+        if (!timer->isActive())
         {
-            discoverLayer::timer->start(5000);
+            timer->start(5000);
         }
     }
 }
@@ -147,9 +137,9 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
      * Signal return, send data to discoverCalls
      */
     // increment thread limit, new ip discover is possible
-    discoverLayer::threadLimit++;
+    threadLimit++;
     // remove ip from counter
-    discoverLayer::ScanCounter--;
+    ScanCounter--;
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
     QString buffLine;
@@ -171,27 +161,29 @@ void pingInterface::mainDiscover::repeatScanner()
     /*
      * Recall discover for ip suspended 
      */
-    qDebug() << "DEBUG:: scan Counter timer:: " << discoverLayer::ScanCounter;
-    if (!discoverLayer::ScanCounter) 
+    qDebug() << "DEBUG:: scan Counter timer:: " << ScanCounter;
+    if (!ScanCounter) 
     {
-        disconnect(this, SLOT(repeatScanner()));        
-        discoverLayer::connectState = false;
-        discoverLayer::timer->stop();
-        int lengthMin_ = discoverLayer::threadLimit;
+        disconnect(this, SLOT(repeatScanner()));
+        disconnect(this, SLOT(stopDiscover()));
+
+        connectState = false;
+        timer->stop();
+        int lengthMin_ = threadLimit;
     
-        if (lengthMin_ > discoverLayer::m_ipSospended.size()) 
+        if (lengthMin_ > m_ipSospended.size())
         {
-            lengthMin_ = discoverLayer::m_ipSospended.size();
+            lengthMin_ = m_ipSospended.size();
             for (int index = 0; index < lengthMin_; index++) 
             {
-                isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
+                isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
             }
         } 
         else 
         {
             for (int index = 0; index < lengthMin_; index++) 
             {
-                isUp(discoverLayer::m_ipSospended.takeFirst(), discoverLayer::m_parent, discoverLayer::parameters_);
+                isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
             }
         }
     }
@@ -203,5 +195,5 @@ void pingInterface::mainDiscover::stopDiscover()
      * disconnect timer slot and stop it
      */
     disconnect(this, SLOT(repeatScanner()));
-    discoverLayer::timer->stop();
+    timer->stop();
 }

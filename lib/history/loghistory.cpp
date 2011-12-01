@@ -22,7 +22,7 @@
 logHistory::logHistory(QTreeWidget* treeLog, 
                        const QString ConfigTag,
                        const QString ConfigTagTime,
-                       int cacheSize) : historyItem(NULL),history(NULL),logTree(NULL) 
+                       int cacheSize) : logTree(NULL)
 {
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
     logTree = treeLog;
@@ -33,12 +33,14 @@ logHistory::logHistory(QTreeWidget* treeLog,
 
 // cache host contructor
 logHistory::logHistory(const QString ConfigTag, int cacheSize) 
-    : historyItem(NULL),
-      history(NULL),      
-      logTree(NULL) 
+    : logTree(NULL)
 {
     configTag = ConfigTag;
     __CACHE_SIZE__ = cacheSize;
+}
+
+logHistory::~logHistory()
+{
 }
 
 const QStringList logHistory::historyReadUrl()
@@ -194,13 +196,7 @@ void logHistory::updateBookMarks()
     }
 }
 
-void logHistory::searchHistory(const QString tokenWord, QComboBox* lineHistory)
+QStringList logHistory::getHostCache()
 {
-    Q_UNUSED(tokenWord);
-    QStringList urlList = historyReadUrl();
-    m_completer = new QCompleter(urlList);
-    m_completer->setWrapAround(true);
-    m_completer->setCaseSensitivity(Qt::CaseInsensitive);
-    lineHistory->setCompleter(m_completer);
-    
+    return historyReadUrl();
 }
