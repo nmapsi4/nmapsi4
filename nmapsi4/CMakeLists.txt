@@ -35,18 +35,24 @@ SET(SOURCES_CPP
 		app/monitor/details.cpp
 		app/preference/profilemain.cpp
 		app/preference/profilemainupdate.cpp
+                app/extensions.cpp
+                app/updateUI.cpp
+                app/slots.cpp
+                app/resizeNmapsi4.cpp
+                app/mainWinTools.cpp
+                app/logUtils.cpp
+                app/actions.cpp
+                app/saveUiSettings.cpp
+                app/startupTools.cpp
+                app/mainScan.cpp
+                app/mainwin.cpp
+                app/main.cpp
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
 		common/qprocessthread.cpp
-		platform/extensions.cpp
-		platform/updateUI.cpp
-                platform/slots.cpp
-		platform/resizeNmapsi4.cpp
-		platform/mainWinTools.cpp
 		platform/profile/globalProfile.cpp
 		platform/profile/profileSession.cpp
 		platform/profile/defaultProfile.cpp
-		platform/logUtils.cpp
 		platform/vulnerability/searchVuln.cpp
 		platform/vulnerability/defaultUrlVuln.cpp
 		platform/vulnerability/tabVuln.cpp
@@ -54,18 +60,12 @@ SET(SOURCES_CPP
 		platform/vulnerability/addurl.cpp
 		platform/lookup/lookUpT.cpp
 		platform/digSupport/digSupport.cpp
-		platform/actions.cpp
                 platform/bookmarks/bookCalls.cpp
-                platform/saveUiSettings.cpp
 		platform/nse/nseCalls.cpp
 		platform/nse/nseUpdateCalls.cpp
-		platform/startupTools.cpp
 		platform/discover/maindiscover.cpp
 		platform/discover/discoverCalls.cpp
-		platform/bookmarks/addparbook.cpp
-		platform/mainScan.cpp
-                app/mainwin.cpp
-		app/main.cpp)
+		platform/bookmarks/addparbook.cpp)
 
 
 if (Q_WS_X11)
