@@ -28,9 +28,7 @@
 #include <QtCore/QPointer>
 #include <QtCore/QTimer>
 // local include
-#include "MThread.h"
-
-using namespace MThread;
+#include "qprocessthread.h"
 
 namespace pingInterface {
     /*!
@@ -69,12 +67,13 @@ namespace pingInterface {
     protected:
 	bool ipState;
 	int uid_;
+        QList<QProcessThread*> _threadList;
     
     private slots:
 	/*!
 	 * Emit signal with nping QThread ByteArray output
 	 */
-	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread);
+	void threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
 	void repeatScanner();
 	void stopDiscover();
 

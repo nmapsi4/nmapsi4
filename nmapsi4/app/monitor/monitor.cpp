@@ -106,7 +106,7 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     QByteArray buff1;
     QByteArray buff2;
     // start scan Thread
-    QPointer<scanThread> thread = new scanThread(buff1, buff2, parameters);
+    QPointer<QProcessThread> thread = new QProcessThread("nmap",buff1, buff2, parameters);
     _scanHashList.insert(hostname,thread);
     // read current data scan from the thread
     connect(thread, SIGNAL(flowFromThread(QString,QString)),
@@ -147,7 +147,7 @@ void monitor::delMonitorHost(const QString hostName)
 
 void monitor::clearHostMonitor()
 {
-    freemap<QString,scanThread*>::itemDeleteAllWithWait(_scanHashList);
+    freemap<QString,QProcessThread*>::itemDeleteAllWithWait(_scanHashList);
 }
 
 void monitor::clearHostMonitorDetails()
@@ -155,7 +155,7 @@ void monitor::clearHostMonitorDetails()
     _scanHashListFlow.clear();
 }
 
-scanThread* monitor::takeMonitorElem(const QString hostName)
+QProcessThread* monitor::takeMonitorElem(const QString hostName)
 {
     return _scanHashList.take(hostName);
 }
@@ -168,7 +168,7 @@ void monitor::stopSelectedScan()
         return;
     }
 
-    scanThread *ptrTmp = takeMonitorElem(_monitor->selectedItems()[0]->text(0));
+    QProcessThread *ptrTmp = takeMonitorElem(_monitor->selectedItems()[0]->text(0));
     
     if (ptrTmp) 
     {

@@ -33,12 +33,11 @@
 #include "parserObjects.h"
 #include "lookUpT.h"
 #include "digSupport.h"
-#include "MThread.h"
+#include "qprocessthread.h"
 
 using namespace pingInterface;
 using namespace internalLookup;
 using namespace digInterface;
-using namespace MThread;
 
 namespace memory
 {
@@ -77,7 +76,7 @@ inline void memory::freelist<T>::itemDeleteAll(QList<T>& items)
 template <class T>
 inline void memory::freelist<T>::itemDeleteAllWithWait(QList<T>& items)
 {
-    foreach (lookUpT *pointer, items)
+    foreach (T pointer, items)
     {
         pointer->quit();
         pointer->wait();

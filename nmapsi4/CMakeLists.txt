@@ -37,7 +37,7 @@ SET(SOURCES_CPP
 		app/preference/profilemainupdate.cpp
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
-		common/MThread.cpp
+		common/qprocessthread.cpp
 		platform/extensions.cpp
 		platform/updateUI.cpp
                 platform/slots.cpp
@@ -79,7 +79,7 @@ SET(SOURCES_H app/mainwin.h
 	platform/bookmarks/addparbook.h
 	platform/discover/maindiscover.h
         common/utilities.h
-	common/MThread.h 
+	common/qprocessthread.h
 	app/preference/profilemain.h 
 	app/monitor/details.h
         app/monitor/monitor.h

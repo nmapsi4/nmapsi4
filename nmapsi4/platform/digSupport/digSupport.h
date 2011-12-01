@@ -27,11 +27,9 @@
 #include <QtCore/QList>
 
 // local include
-#include "MThread.h"
+#include "qprocessthread.h"
 #include "nmapsi4Debug.h"
 #include "parserObjects.h"
-
-using namespace MThread;
 
 namespace digInterface {
     /*!
@@ -60,7 +58,7 @@ namespace digInterface {
 	/*!
 	 * Set dig result on parser Object utils (objElem)
 	 */
-	void digReturn(const QStringList hostname, QByteArray buffer1);
+	void digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
 
     signals:
 	/*!
@@ -73,7 +71,7 @@ namespace digInterface {
 	bool m_state;
 	parserObjUtil* m_elemObjUtil;
 	QString m_hostNameLocal;
-	QList<digThread*> threadList;
+	QList<QProcessThread*> threadList;
 
     };
 }

@@ -18,27 +18,16 @@
  ***************************************************************************/
 
 #include "digSupport.h"
+#include "memorytools.h"
 
-digInterface::digSupport::digSupport() 
-    : m_digProc(NULL),
-      m_state(false),
-      m_elemObjUtil(NULL) 
-{
-    
+digInterface::digSupport::digSupport() : m_state(false)
+{  
 }
 
 digInterface::digSupport::~digSupport()
 {
     qDebug() << "DEBUG:: ~digSupport()";
-    foreach (digThread *ptr, threadList) 
-    {
-        if (ptr) 
-        {
-            ptr->quit();
-            ptr->wait();
-            delete ptr;
-        }
-    }
+    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(threadList);
 }
 
 void digInterface::digSupport::checkDigSupport(bool& digState) 
@@ -78,22 +67,24 @@ void digInterface::digSupport::checkDig()
 
 void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil* objElem) 
 {
-    QByteArray buff1;
+    QByteArray buffData;
+    QByteArray buffError;
     QStringList command;
     m_hostNameLocal = hostname;
     command << hostname;
     m_elemObjUtil = objElem;
-    QPointer<digThread> m_th = new digThread(buff1, command, this);
+    QPointer<QProcessThread> m_th = new QProcessThread("dig", buffData, buffError, command);
     threadList.push_back(m_th);
     m_th->start();
-    connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray)),
-      this, SLOT(digReturn(QStringList,QByteArray)));
+    connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+      this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));
 }
 
-void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray buffer1) 
+void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError) 
 {
     Q_UNUSED(hostname);
-    QString buff1(buffer1);
+    
+    QString buff1(bufferData);
     QTextStream stream1(&buff1);
     QString line;
     
@@ -111,5 +102,6 @@ void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray 
     }
 
     // clear thread
-    buffer1.clear();
+    bufferData.clear();
+    bufferError.clear();
 }

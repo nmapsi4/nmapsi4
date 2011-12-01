@@ -33,11 +33,10 @@
 
 // local include
 #include "memorytools.h"
-#include "MThread.h"
+#include "qprocessthread.h"
 #include "details.h"
 
 using namespace memory;
-using namespace MThread;
 
 class nmapClass;
 
@@ -79,7 +78,7 @@ private:
     /*
      * This method remove scanThread elem from scan hashTable
      */
-    scanThread* takeMonitorElem(const QString hostName);
+    QProcessThread* takeMonitorElem(const QString hostName);
     /*
      * Delete host from monitor
      */
@@ -87,7 +86,7 @@ private:
         
 protected:
     QList<QTreeWidgetItem*> monitorElem;
-    QHash<QString, scanThread*> _scanHashList;
+    QHash<QString, QProcessThread*> _scanHashList;
     QHash<QString, QStringList> _scanHashListFlow;
     QTreeWidget* _monitor;
     nmapClass* _parent;

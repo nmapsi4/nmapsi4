@@ -18,6 +18,7 @@
 
 
 #include "maindiscover.h"
+#include "memorytools.h"
 
 namespace discoverLayer {
     QStringList m_ipSospended;
@@ -44,6 +45,7 @@ pingInterface::mainDiscover::~mainDiscover()
     delete discoverLayer::timer;
     discoverLayer::m_ipSospended.clear();
     discoverLayer::parameters_.clear();
+    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(_threadList);
 }
 
 QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces() const
@@ -94,7 +96,8 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     /*
      * start thread for discover ip state
      */
-    QByteArray pingBuffer_;
+    QByteArray pingBuffer;
+    QByteArray bufferError;
     discoverLayer::m_parent = parent;
     discoverLayer::parameters_ = parameters;
     // Create parameters list for npig
@@ -107,10 +110,11 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
         // acquire one element from thread counter
         discoverLayer::threadLimit--;
         discoverLayer::ScanCounter++;
-        QPointer<pingThread> pingTh = new pingThread(pingBuffer_, parameters, parent);
+        QPointer<QProcessThread> pingTh = new QProcessThread("nping", pingBuffer, bufferError, parameters);
+        _threadList.push_back(pingTh);
         pingTh->start();
-        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,pingThread*)),
-            this, SLOT(threadReturn(QStringList,QByteArray,pingThread*)));
+        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+            this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
     } 
     else 
     {
@@ -136,16 +140,12 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     }
 }
 
-void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, pingThread *ptrThread)
+void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
+    Q_UNUSED(bufferError);
     /*
      * Signal return, send data to discoverCalls
      */
-    // clear thread
-    ptrThread->quit();
-    ptrThread->wait();
-    delete ptrThread;
-    
     // increment thread limit, new ip discover is possible
     discoverLayer::threadLimit++;
     // remove ip from counter
@@ -205,4 +205,3 @@ void pingInterface::mainDiscover::stopDiscover()
     disconnect(this, SLOT(repeatScanner()));
     discoverLayer::timer->stop();
 }
-

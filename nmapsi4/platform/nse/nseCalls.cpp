@@ -20,8 +20,8 @@
 #include "mainwin.h"
 
 namespace localCall {   
-    QPointer<scanThread> th;
-    QPointer<scanThread> thScript;
+    QPointer<QProcessThread> th;
+    QPointer<QProcessThread> thScript;
     QTextDocument *documentScript = NULL;
 }
 
@@ -56,7 +56,7 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        localCall::th = new scanThread(buff1, buff2, parameters_);
+        localCall::th = new QProcessThread("nmap",buff1, buff2, parameters_);
 
         connect(localCall::th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
@@ -86,7 +86,7 @@ void nmapClass::requestNseScriptHelp()
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    localCall::thScript = new scanThread(buff1, buff2, parameters_);
+    localCall::thScript = new QProcessThread("nmap", buff1, buff2, parameters_);
 
     connect(localCall::thScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
