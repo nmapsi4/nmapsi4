@@ -382,20 +382,6 @@ void nmapClass::updateFontHost()
             this, SLOT(callSearchHistory()));
 }
 
-void nmapClass::updateFontHostVuln() 
-{
-    comboVulnRis->clear();
-    _collections.value("search-act")->setEnabled(true);
-    comboVulnRis->setStyleSheet(QString::fromUtf8(""));
-    bool signalState = comboVulnRis->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
-    
-    if (!signalState)
-	return;
-    
-    connect(comboVulnRis, SIGNAL(editTextChanged(QString)),
-            this, SLOT(callSearchHistoryVuln()));
-}
-
 void nmapClass::updateSezScan() 
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(true);

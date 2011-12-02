@@ -53,7 +53,7 @@ void nmapClass::menuVulnBook()
     addBook.setIconText(tr("Search for vulnerabilities"));
 
     connect(&addBook, SIGNAL(triggered()),
-                this, SLOT(callVulnCheck()));
+                _vulnerability, SLOT(callVulnCheck()));
     connect(&removeBook, SIGNAL(triggered()),
             this, SLOT(deleteBookMark()));
 
@@ -93,7 +93,7 @@ void nmapClass::menuServiceMain()
     checkVuln.setIconText(tr("Check Vulnerability"));
 
     connect(&checkVuln, SIGNAL(triggered()),
-                this, SLOT(objVulnButton()));
+                _vulnerability, SLOT(objVulnButton()));
 
     QMenu menuVulnMain(this);
     menuVulnMain.addAction(&checkVuln);
@@ -220,7 +220,7 @@ void nmapClass::createBar()
     action->setIconText(tr("Search"));
     action->setEnabled(false);
     _collections.insert("search-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(searchVulnNG()));
+    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(searchVulnerability()));
     toolBarSearch->addAction(action);
 
     action = new QAction(this);
@@ -228,7 +228,7 @@ void nmapClass::createBar()
     action->setIconText(tr("Back"));
     action->setEnabled(false);
     _collections.insert("back-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(tabWebBack()));
+    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebBack()));
     toolBarSearch->addAction(action);
 
     action = new QAction(this);
@@ -236,7 +236,7 @@ void nmapClass::createBar()
     action->setIconText(tr("Forward"));
     action->setEnabled(false);
     _collections.insert("forward-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(tabWebForward()));
+    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebForward()));
     toolBarSearch->addAction(action);
 
     action = new QAction(this);
@@ -244,7 +244,7 @@ void nmapClass::createBar()
     action->setIconText(tr("Stop"));
     action->setEnabled(false);
     _collections.insert("stop-act",action);
-    connect(action, SIGNAL(triggered()),this, SLOT(tabWebStop()));
+    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebStop()));
     toolBarSearch->addAction(action);
 
     toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);

@@ -54,6 +54,7 @@
 #include "hostTools.h"
 #include "qpushbuttonorientated.h"
 #include "parser.h"
+#include "vulnerability.h"
 
 // define class namespace
 using namespace internalLookup;
@@ -71,6 +72,7 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
     Q_OBJECT
     
     friend class parser;
+    friend class vulnerability;
 
 public:
     nmapClass();
@@ -91,11 +93,9 @@ private:
     void setTreeWidgetValues();
     void createBar();
     void updateComboPar();
-    void updateComboWebV();
     void updateComboBook();
     void restoreGlobalProfile();
     QHash<QString, QString> defaultScanProfile() const;
-    QHash<QString, QString> defaultUrlVuln() const;
     void startDiscover();
     void loadHistoryDefault();
     void restoreSettings();
@@ -152,7 +152,6 @@ protected:
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
     QList<digSupport*> digLookupList;
-    QList<QWebView*> webViewList;
     QLabel *labelVersion;
     QLabel *userMode;
     QSplitter *cW;
@@ -162,6 +161,8 @@ protected:
     utilities *_utilities;
     parser *_parser;
     QPointer<QCompleter> _completer;
+    QPointer<QCompleter> _completerVuln;
+    vulnerability* _vulnerability;
 
 private slots:
     void initObject();
@@ -188,7 +189,6 @@ private slots:
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
-    void objVulnButton();
     // Check nmap version
     void checkNmapVersion();
     //update and log slots
@@ -197,7 +197,6 @@ private slots:
     void saveAsLog();
     void saveLog();
     void updateFontHost();
-    void updateFontHostVuln();
     void callSearchHistory();
     void saveBookMarks();
     void saveBookMarksPar(const QString profileName, const QString profilePar);
@@ -212,8 +211,6 @@ private slots:
     void updateTabLook();
     void updateTabTrace();
     void updateTabMonitor();
-    void vulnPostScan();
-    void updateComboVuln(const QString& value);
     void NSSCheck();
     void parAdv();
     void resetPar();
@@ -221,16 +218,6 @@ private slots:
     void nssOptions();
     void bookOptions();
     void bookOptionsPar();
-    // Vuln extension
-    void searchVulnNG();
-    void callSearchHistoryVuln();
-    void callVulnCheck();
-    void closeVulnTab(int index);
-    void tabWebBack();
-    void tabWebForward();
-    void tabWebStop();
-    void addUrlToBookmarks(const QString urlName, const QString urlAddr);
-    void removeUrlToBookmarks();
     //contest Menu
     void menuScanBook();
     void menuVulnBook();
@@ -250,7 +237,6 @@ private slots:
     void nseTreeActiveItem();
     void nseTreeRemoveItem();
     void nseTreeResetItem();
-    void startAddUrl_ui();
     void startAddParBook_ui();
     //discover
     void discoverIp(const QString& interface);

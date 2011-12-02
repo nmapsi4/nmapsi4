@@ -51,11 +51,8 @@ SET(SOURCES_CPP
 		platform/profile/globalProfile.cpp
 		platform/profile/profileSession.cpp
 		platform/profile/defaultProfile.cpp
-		platform/vulnerability/searchVuln.cpp
-		platform/vulnerability/defaultUrlVuln.cpp
-		platform/vulnerability/tabVuln.cpp
-		platform/vulnerability/utilsVuln.cpp
 		platform/vulnerability/addurl.cpp
+                platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookUpT.cpp
 		platform/digSupport/digSupport.cpp
                 platform/bookmarks/bookCalls.cpp
@@ -74,6 +71,7 @@ SET(SOURCES_H app/mainwin.h
 	platform/lookup/lookUpT.h 
 	platform/digSupport/digSupport.h 
 	platform/vulnerability/addurl.h 
+        platform/vulnerability/vulnerability.h
 	platform/bookmarks/addparbook.h
 	platform/discover/maindiscover.h
         common/utilities.h

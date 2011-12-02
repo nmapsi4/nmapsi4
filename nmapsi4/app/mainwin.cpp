@@ -51,6 +51,7 @@ void nmapClass::initObject()
     _monitor = new monitor(scanMonitor,this);
     _utilities = new utilities(this);
     _parser = new parser(this);
+    _vulnerability = new vulnerability(this);
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();
@@ -90,7 +91,7 @@ void nmapClass::initObject()
     // load quick combo items
     updateComboPar();
     updateComboBook();
-    updateComboWebV();
+    _vulnerability->updateComboWebV();
     // call discover startup, NPING is REQUIRED
     startDiscover();
     // set modes probe in discover
@@ -104,7 +105,6 @@ nmapClass::~nmapClass()
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
-    freelist<QWebView*>::itemDeleteAll(webViewList);
     freemap<QString,QAction*>::itemDeleteAll(_collections);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     discoveryClear();
@@ -114,6 +114,7 @@ nmapClass::~nmapClass()
     delete progressScan;
     delete _logFilePath;
     delete _completer;
+    delete _vulnerability;
     delete labelVersion;
     delete userMode;
     delete bW;

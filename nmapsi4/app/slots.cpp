@@ -138,8 +138,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(menuParBook()));
 
     // Vuln signal
-    connect(comboVuln, SIGNAL(currentIndexChanged(QString)),
-            this, SLOT(updateComboVuln(QString)));
+
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));
     connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
@@ -150,17 +149,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(slotParSelected()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(slotHostSelected()));
-
-    connect(tWresult, SIGNAL(tabCloseRequested(int)),
-            this,SLOT(closeVulnTab(int)));
-    connect(comboVulnRis->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
-            this, SLOT(updateFontHostVuln()));
-    connect(comboVulnRis->lineEdit(), SIGNAL(returnPressed()),
-            this, SLOT(searchVulnNG()));
-    connect(addUrlButt, SIGNAL(clicked()),
-            this, SLOT(startAddUrl_ui()));
-    connect(removeUrlButt, SIGNAL(clicked()),
-            this, SLOT(removeUrlToBookmarks()));
 
     // main session
     connect(actionScan_section, SIGNAL(triggered()),
