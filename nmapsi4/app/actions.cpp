@@ -215,6 +215,12 @@ void nmapClass::createBar()
     
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 
+    /**
+     * FIXME 
+     * move action in vulnerability class with dedicate method and
+     * launch It from contructor.
+     * Move and destroy _collections QHash on vulnerability class.
+     * */
     action = new QAction(this);
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     action->setIconText(tr("Search"));
