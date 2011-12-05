@@ -102,7 +102,6 @@ void nmapClass::menuServiceMain()
 
 void nmapClass::createBar() 
 {
-    QAction* action;
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 23;
     const QString verticalStyleSheet("padding: 5px;");
@@ -214,46 +213,6 @@ void nmapClass::createBar()
     toolBarTab->addWidget(actionButt);
     
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
-
-    /**
-     * FIXME 
-     * move action in vulnerability class with dedicate method and
-     * launch It from contructor.
-     * Move and destroy _collections QHash on vulnerability class.
-     * */
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
-    action->setIconText(tr("Search"));
-    action->setEnabled(false);
-    _collections.insert("search-act",action);
-    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(searchVulnerability()));
-    toolBarSearch->addAction(action);
-
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/left.png")));
-    action->setIconText(tr("Back"));
-    action->setEnabled(false);
-    _collections.insert("back-act",action);
-    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebBack()));
-    toolBarSearch->addAction(action);
-
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/right.png")));
-    action->setIconText(tr("Forward"));
-    action->setEnabled(false);
-    _collections.insert("forward-act",action);
-    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebForward()));
-    toolBarSearch->addAction(action);
-
-    action = new QAction(this);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
-    action->setIconText(tr("Stop"));
-    action->setEnabled(false);
-    _collections.insert("stop-act",action);
-    connect(action, SIGNAL(triggered()),_vulnerability, SLOT(tabWebStop()));
-    toolBarSearch->addAction(action);
-
-    toolBarSearch->setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
 void nmapClass::createToolButtonSetup()
