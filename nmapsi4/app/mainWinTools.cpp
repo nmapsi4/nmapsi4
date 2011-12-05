@@ -21,31 +21,71 @@
 
 void nmapClass::loadHistoryDefault()
 {
+    logHistory *history;
     // reload bookmark from history
-    logHistory *historyScan_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    historyScan_->updateBookMarks();
-    delete historyScan_;
+    history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    history->updateBookMarks();
+    delete history;
     // check for user or admin parameters bookmarks
     if (!uid) 
     {
-        logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-        historyPar_->updateBookMarks();
-        delete historyPar_;
+        history = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history->updateBookMarks();
+        delete history;
     } 
     else 
     {
-        logHistory *historyPar_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-        historyPar_->updateBookMarks();
-        delete historyPar_;
+        history = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history->updateBookMarks();
+        delete history;
     }
 
-    logHistory *historyVuln_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-    historyVuln_->updateBookMarks();
-    delete historyVuln_;
+    history = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    history->updateBookMarks();
+    delete history;
     
-    logHistory *historyVulnUrl_ = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
-    historyVulnUrl_->updateBookMarks();
-    delete historyVulnUrl_;
+    history = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
+    history->updateBookMarks();
+    delete history;
+}
+
+void nmapClass::updateCompleter()
+{
+    logHistory *history;
+
+    history = new logHistory("nmapsi4/cacheHost", hostCache);
+
+    if (history->getHostCache().first() != "NULL")
+    {
+        if (_completer)
+        {
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completer->model());
+            newModel->setStringList(history->getHostCache());
+        }
+        else if (!_hostModel)
+        {
+            _hostModel = new QStringListModel(history->getHostCache());
+        }
+    }
+
+    delete history;
+
+    history = new logHistory("nmapsi4/cacheVuln", hostCache);
+
+    if (history->getHostCache().first() != "NULL")
+    {
+        if (_completerVuln)
+        {
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completerVuln->model());
+            newModel->setStringList(history->getHostCache());
+        }
+        else if (!_vulnModel)
+        {
+            _vulnModel = new QStringListModel(history->getHostCache());
+        }
+    }
+
+    delete history;
 }
 
 void nmapClass::restoreSettings()

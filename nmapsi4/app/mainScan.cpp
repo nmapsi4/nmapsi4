@@ -113,16 +113,7 @@ void nmapClass::preScanLookup(const QString hostname)
     history->addItemHistory(hostname);
     delete history;
     
-    // FIXME:: 
-    /*if (_completer)
-    {
-        delete _completer;
-    }
-
-    if (_completerVuln)
-    {
-        delete _completerVuln;
-    }*/
+    updateCompleter();
 
     // default action
     monitorStopAllScanButt->setEnabled(true);

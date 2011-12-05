@@ -71,6 +71,7 @@ void nmapClass::initObject()
     restoreSettings();
     // load history items
     loadHistoryDefault();
+    updateCompleter();
     // restore value with uid check
     rootMode();
     _collectionsButton.value("nss-act")->setChecked(NSSsupport);
@@ -112,6 +113,8 @@ nmapClass::~nmapClass()
     delete _completer;
     delete _completerVuln;
     delete _vulnerability;
+    delete _hostModel;
+    delete _vulnModel;
     delete labelVersion;
     delete userMode;
     delete bW;

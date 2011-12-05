@@ -38,6 +38,7 @@
 #include <QtNetwork/QHostAddress>
 #include <QtWebKit/QWebView>
 #include <QtGui/QCompleter>
+#include <QtGui/QStringListModel>
 
 // local include
 #include "profilemain.h"
@@ -109,6 +110,7 @@ private:
     void setNormalProfile();
     void setFullVersionProfile();
     void setQuickVersionProfile();
+    void updateCompleter();
 
 signals:
     void killDiscover();
@@ -162,6 +164,8 @@ protected:
     parser *_parser;
     QPointer<QCompleter> _completer;
     QPointer<QCompleter> _completerVuln;
+    QPointer<QStringListModel> _hostModel;
+    QPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
 
 private slots:
