@@ -25,6 +25,9 @@
 
 class parserObj
 {
+    /**
+     * TODO:: make QStringList function const &.
+     **/
 public:
     parserObj();
     ~parserObj();
@@ -67,6 +70,9 @@ protected:
 
 class parserObjUtil
 {
+     /**
+     * TODO:: make QStringList and QString function const &.
+     **/
 public:
     parserObjUtil();
     ~parserObjUtil();

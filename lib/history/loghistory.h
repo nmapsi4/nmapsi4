@@ -37,6 +37,9 @@
 
 class logHistory
 {
+    /**
+     * TODO:: const to const & 
+     **/
 
 public:
     logHistory(QTreeWidget* treeLog,

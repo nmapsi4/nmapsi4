@@ -27,7 +27,7 @@
 class hostTools
 {
 public:
-    static bool isDns(QString hostname)
+    static bool isDns(const QString& hostname)
     {
         QRegExp rx_("*.*.*.*");
         rx_.setPatternSyntax(QRegExp::Wildcard);
@@ -66,7 +66,7 @@ public:
         return hostname;
     }
     
-    static bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS)
+    static bool checkViewOS(const QString& OSline, QTreeWidgetItem *itemOS)
     {
         // check string OS for Icon selection
         itemOS->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);

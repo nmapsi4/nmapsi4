@@ -19,11 +19,7 @@
 
 #include "mainwin.h"
 
-nmapClass::nmapClass()
-    : uid(0),
-      _logFilePath(NULL),
-      labelVersion(NULL),
-      userMode(NULL)
+nmapClass::nmapClass() : uid(0), _logFilePath(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
