@@ -49,9 +49,6 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
         * not category on cache
         * start help thread for nse
         */
-        //QByteArray buff1;
-        //QByteArray buff2;
-
         QStringList parameters_;
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
@@ -78,9 +75,6 @@ void nmapClass::requestNseScriptHelp()
     {
         return;
     }
-
-    //QByteArray buff1;
-    //QByteArray buff2;
 
     QStringList parameters_;
     parameters_.append("--script-help");

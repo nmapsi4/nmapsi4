@@ -103,8 +103,6 @@ void monitor::startScan(const QString hostname, QStringList parameters)
 {
     parameters.append(hostname); // add hostname
 
-    //QByteArray buff1;
-    //QByteArray buff2;
     // start scan Thread
     QPointer<QProcessThread> thread = new QProcessThread("nmap",parameters);
     _scanHashList.insert(hostname,thread);

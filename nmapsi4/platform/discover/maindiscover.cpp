@@ -86,8 +86,6 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     /*
      * start thread for discover ip state
      */
-    //QByteArray pingBuffer;
-    //QByteArray bufferError;
     m_parent = parent;
     parameters_ = parameters;
     // Create parameters list for npig

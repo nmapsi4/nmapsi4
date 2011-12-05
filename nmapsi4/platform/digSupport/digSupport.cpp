@@ -67,8 +67,6 @@ void digInterface::digSupport::checkDig()
 
 void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil* objElem) 
 {
-    //QByteArray buffData;
-    //QByteArray buffError;
     QStringList command;
     m_hostNameLocal = hostname;
     command << hostname;
