@@ -49,14 +49,14 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
         * not category on cache
         * start help thread for nse
         */
-        QByteArray buff1;
-        QByteArray buff2;
+        //QByteArray buff1;
+        //QByteArray buff2;
 
         QStringList parameters_;
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        localCall::th = new QProcessThread("nmap",buff1, buff2, parameters_);
+        localCall::th = new QProcessThread("nmap",parameters_);
 
         connect(localCall::th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
@@ -79,14 +79,14 @@ void nmapClass::requestNseScriptHelp()
         return;
     }
 
-    QByteArray buff1;
-    QByteArray buff2;
+    //QByteArray buff1;
+    //QByteArray buff2;
 
     QStringList parameters_;
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    localCall::thScript = new QProcessThread("nmap", buff1, buff2, parameters_);
+    localCall::thScript = new QProcessThread("nmap",parameters_);
 
     connect(localCall::thScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));

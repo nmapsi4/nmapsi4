@@ -108,23 +108,21 @@ void nmapClass::preScanLookup(const QString hostname)
         fileSession();
     }
 
-    logHistory *history;
     // save ip or dns to history
-    history = new logHistory("nmapsi4/cacheHost", hostCache);
+    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
-    // Update all completer with new host cache
-    delete _completer;
-    _completer = new QCompleter(history->getHostCache());
-    _completer->setWrapAround(true);
-    _completer->setCaseSensitivity(Qt::CaseInsensitive);
     delete history;
     
-    history = new logHistory("nmapsi4/cacheVuln", hostCache);
-    delete _completerVuln;
-    _completerVuln = new QCompleter(history->getHostCache());
-    _completerVuln->setWrapAround(true);
-    _completerVuln->setCaseSensitivity(Qt::CaseInsensitive);
-    delete history;
+    // FIXME:: 
+//     if (_completer)
+//     {
+//         delete _completer;
+//     }
+//
+//     if (_completerVuln)
+//     {
+//         delete _completerVuln;
+//     }
 
     // default action
     monitorStopAllScanButt->setEnabled(true);

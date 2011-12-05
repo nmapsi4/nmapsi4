@@ -44,7 +44,7 @@ public:
      * Create a nmap QThread and start QProcess for nmap
      * with parameters.
      */
-    QProcessThread(const QString& programName, QByteArray& ProcB1, QByteArray& ProcB2, const QStringList& parameters);
+    QProcessThread(const QString& programName, const QStringList& parameters);
     ~QProcessThread();
 signals:
     /*!

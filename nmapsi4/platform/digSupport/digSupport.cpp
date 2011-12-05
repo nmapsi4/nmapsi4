@@ -67,13 +67,13 @@ void digInterface::digSupport::checkDig()
 
 void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil* objElem) 
 {
-    QByteArray buffData;
-    QByteArray buffError;
+    //QByteArray buffData;
+    //QByteArray buffError;
     QStringList command;
     m_hostNameLocal = hostname;
     command << hostname;
     m_elemObjUtil = objElem;
-    QPointer<QProcessThread> m_th = new QProcessThread("dig", buffData, buffError, command);
+    QPointer<QProcessThread> m_th = new QProcessThread("dig",command);
     threadList.push_back(m_th);
     m_th->start();
     connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),

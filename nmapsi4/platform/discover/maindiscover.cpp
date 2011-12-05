@@ -86,8 +86,8 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     /*
      * start thread for discover ip state
      */
-    QByteArray pingBuffer;
-    QByteArray bufferError;
+    //QByteArray pingBuffer;
+    //QByteArray bufferError;
     m_parent = parent;
     parameters_ = parameters;
     // Create parameters list for npig
@@ -100,7 +100,7 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
         // acquire one element from thread counter
         threadLimit--;
         ScanCounter++;
-        QPointer<QProcessThread> pingTh = new QProcessThread("nping", pingBuffer, bufferError, parameters);
+        QPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
         _threadList.push_back(pingTh);
         pingTh->start();
         connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),

@@ -26,23 +26,25 @@ void nmapClass::callSearchHistory()
         actionAdd_Bookmark->setEnabled(true);
         action_Add_BookmarkToolBar->setEnabled(true);
     }
+    
+    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
+
+    if (history->getHostCache().first() == "NULL" || !history->getHostCache().size())
+    {
+        delete history;
+        return;
+    }
 
     if (!_completer)
     {
-        logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
         _completer = new QCompleter(history->getHostCache());
-        _completer->setWrapAround(true);
+        _completer->setCompletionRole(QCompleter::InlineCompletion);
         _completer->setCaseSensitivity(Qt::CaseInsensitive);
+        _completer->setWrapAround(false);
         hostEdit->setCompleter(_completer);
-        delete history;
     }
-    else
-    {
-        if (hostEdit->completer() != _completer)
-        {
-            hostEdit->setCompleter(_completer);
-        }
-    }
+
+    delete history;
 }
 
 void nmapClass::callScanH()

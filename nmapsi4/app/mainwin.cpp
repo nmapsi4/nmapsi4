@@ -110,6 +110,7 @@ nmapClass::~nmapClass()
     delete progressScan;
     delete _logFilePath;
     delete _completer;
+    delete _completerVuln;
     delete _vulnerability;
     delete labelVersion;
     delete userMode;
