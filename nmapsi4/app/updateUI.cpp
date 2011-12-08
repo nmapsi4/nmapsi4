@@ -419,13 +419,9 @@ void nmapClass::updateSezScan()
     // enable scan action
     if (!_collectionsButton.value("nss-act")->isEnabled())
     {
-        //_collectionsButton.value("par-act")->setVisible(true);
-        //_collectionsButton.value("nss-act")->setVisible(true);
         _collectionsButton.value("par-act")->setEnabled(true);
         _collectionsButton.value("nss-act")->setEnabled(true);
-        _collectionsButton.value("tab-look-act")->setEnabled(true);
-        _collectionsButton.value("tab-trace-act")->setEnabled(true);
-        _collectionsButton.value("tab-monitor-act")->setEnabled(true);
+        toolBarTab->setVisible(true);
     }
 }
 
@@ -450,13 +446,9 @@ void nmapClass::updateSezLog()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    //_collectionsButton.value("nss-act")->setVisible(false);
-    //_collectionsButton.value("par-act")->setVisible(false);
     _collectionsButton.value("nss-act")->setEnabled(false);
     _collectionsButton.value("par-act")->setEnabled(false);
-    _collectionsButton.value("tab-look-act")->setEnabled(false);
-    _collectionsButton.value("tab-trace-act")->setEnabled(false);
-    _collectionsButton.value("tab-monitor-act")->setEnabled(false);
+    toolBarTab->setVisible(false);
 }
 
 void nmapClass::updateSezVuln() 
@@ -480,13 +472,9 @@ void nmapClass::updateSezVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    //_collectionsButton.value("nss-act")->setVisible(false);
-    //_collectionsButton.value("par-act")->setVisible(false);
     _collectionsButton.value("nss-act")->setEnabled(false);
     _collectionsButton.value("par-act")->setEnabled(false);
-    _collectionsButton.value("tab-look-act")->setEnabled(false);
-    _collectionsButton.value("tab-trace-act")->setEnabled(false);
-    _collectionsButton.value("tab-monitor-act")->setEnabled(false);
+    toolBarTab->setVisible(false);
 }
 
 void nmapClass::updateDiscoverVuln() 
@@ -511,13 +499,9 @@ void nmapClass::updateDiscoverVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    //_collectionsButton.value("nss-act")->setVisible(false);
-    //_collectionsButton.value("par-act")->setVisible(false);
     _collectionsButton.value("nss-act")->setEnabled(false);
     _collectionsButton.value("par-act")->setEnabled(false);
-    _collectionsButton.value("tab-look-act")->setEnabled(false);
-    _collectionsButton.value("tab-trace-act")->setEnabled(false);
-    _collectionsButton.value("tab-monitor-act")->setEnabled(false);
+    toolBarTab->setVisible(false);
 }
 
 void nmapClass::NSSCheck() 
