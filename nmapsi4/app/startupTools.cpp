@@ -28,39 +28,6 @@ void nmapClass::startProfile_ui()   // start preference UI
     dialogPreference_.exec();
 }
 
-
-void nmapClass::checkNmapVersion()
-{
-    hostEdit->setEnabled(true);
-    
-    labelVersion = new QLabel();
-    // FIXME
-    QString uiVersion;
-    uiVersion.append("<b>Ui</b>: ");
-    uiVersion.append(_VERSION_);
-    labelVersion->setText(uiVersion);
-    
-    userMode = new QLabel();
-    // FIXME
-    QString userModeString;
-    userModeString.prepend(tr("<b>Mode:</b> "));
-    
-    if (!uid) 
-    {
-        userModeString.append(tr("Full"));
-    } 
-    else 
-    {
-        userModeString.append(tr("User"));
-    }
-    
-    userMode->setText(userModeString);
-    
-    statusBar()->setLayoutDirection(Qt::RightToLeft);
-    statusBar()->addPermanentWidget(labelVersion, 0);
-    statusBar()->addPermanentWidget(userMode, 0);
-}
-
 void nmapClass::exit()
 {
     _monitor->clearHostMonitor();

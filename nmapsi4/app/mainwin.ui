@@ -42,7 +42,7 @@
    <string>Nmapsi4</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../mainwin.qrc">
+   <iconset resource="../../mainwin.qrc">
     <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <property name="autoFillBackground">
@@ -64,29 +64,25 @@
     </property>
     <item>
      <widget class="QTabWidget" name="tabUi">
+      <property name="styleSheet">
+       <string notr="true">QTabWidget:pane {
+	border: 0px;
+}</string>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="tabScan">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
        </attribute>
        <attribute name="title">
         <string>Scan</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <property name="leftMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QFrame" name="frameScan">
@@ -148,7 +144,7 @@
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../mainwin.qrc">
+              <iconset resource="../../mainwin.qrc">
                <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
              </property>
              <property name="flat">
@@ -270,7 +266,7 @@
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../mainwin.qrc">
+              <iconset resource="../../mainwin.qrc">
                <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
              </property>
              <property name="flat">
@@ -329,6 +325,9 @@
            <number>0</number>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
+           <property name="margin">
+            <number>0</number>
+           </property>
            <item row="0" column="0">
             <widget class="QTabWidget" name="tabWidget">
              <property name="autoFillBackground">
@@ -346,14 +345,14 @@
               <enum>QTabWidget::Rounded</enum>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>2</number>
              </property>
              <property name="elideMode">
               <enum>Qt::ElideNone</enum>
              </property>
              <widget class="QWidget" name="tab_8">
               <attribute name="icon">
-               <iconset resource="../mainwin.qrc">
+               <iconset resource="../../mainwin.qrc">
                 <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
               </attribute>
               <attribute name="title">
@@ -604,7 +603,7 @@
              </widget>
              <widget class="QWidget" name="tab_3">
               <attribute name="icon">
-               <iconset resource="../mainwin.qrc">
+               <iconset resource="../../mainwin.qrc">
                 <normaloff>:/images/images/network-workgroup.png</normaloff>:/images/images/network-workgroup.png</iconset>
               </attribute>
               <attribute name="title">
@@ -639,7 +638,7 @@
              </widget>
              <widget class="QWidget" name="tab_7">
               <attribute name="icon">
-               <iconset resource="../mainwin.qrc">
+               <iconset resource="../../mainwin.qrc">
                 <normaloff>:/images/images/network-wired.png</normaloff>:/images/images/network-wired.png</iconset>
               </attribute>
               <attribute name="title">
@@ -797,7 +796,7 @@
                  <string>Details</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
                 </property>
                 <property name="checkable">
@@ -820,7 +819,7 @@
                  <string>NSE</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
                 </property>
                 <property name="checkable">
@@ -850,7 +849,7 @@
                  <string>Bookmarks</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
                 </property>
                 <property name="checkable">
@@ -867,7 +866,7 @@
                  <string>Bookmarks parameters</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
                 </property>
                 <property name="checkable">
@@ -953,7 +952,7 @@
       </widget>
       <widget class="QWidget" name="tabMainMonitor">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/utilities-log-viewer.png</normaloff>:/images/images/utilities-log-viewer.png</iconset>
        </attribute>
        <attribute name="title">
@@ -996,7 +995,7 @@
              <string>Stop All Scan</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
             </property>
            </widget>
@@ -1010,7 +1009,7 @@
              <string>Stop Current Scan</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
             </property>
            </widget>
@@ -1024,7 +1023,7 @@
              <string>Scan Details</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/traceroute.png</normaloff>:/images/images/traceroute.png</iconset>
             </property>
            </widget>
@@ -1088,7 +1087,7 @@
       </widget>
       <widget class="QWidget" name="tabSOpt">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
        </attribute>
        <attribute name="title">
@@ -1169,7 +1168,7 @@
            <string>Save Default Options</string>
           </property>
           <property name="icon">
-           <iconset resource="../mainwin.qrc">
+           <iconset resource="../../mainwin.qrc">
             <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
           </property>
          </widget>
@@ -1180,7 +1179,7 @@
            <string>Apply Quick Profile</string>
           </property>
           <property name="icon">
-           <iconset resource="../mainwin.qrc">
+           <iconset resource="../../mainwin.qrc">
             <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
           </property>
          </widget>
@@ -1191,7 +1190,7 @@
            <string>Remove Default Options</string>
           </property>
           <property name="icon">
-           <iconset resource="../mainwin.qrc">
+           <iconset resource="../../mainwin.qrc">
             <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
           </property>
          </widget>
@@ -1614,7 +1613,7 @@
                   <string>Browser</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../mainwin.qrc">
+                  <iconset resource="../../mainwin.qrc">
                    <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
                  </property>
                 </widget>
@@ -2056,7 +2055,7 @@
       </widget>
       <widget class="QWidget" name="tabNseOpt">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
        </attribute>
        <attribute name="title">
@@ -2085,7 +2084,7 @@
              <string>Restore Default Categories</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
             </property>
            </widget>
@@ -2099,7 +2098,7 @@
              <string>Active Script</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
             </property>
             <property name="flat">
@@ -2116,7 +2115,7 @@
              <string>Disable Script</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
             </property>
            </widget>
@@ -2179,7 +2178,7 @@
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2206,7 +2205,7 @@
           </widget>
           <widget class="QWidget" name="tab_10">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2237,7 +2236,7 @@
                  <string>Search</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
                 </property>
                 <property name="flat">
@@ -2308,7 +2307,7 @@
                <string>Done</string>
               </property>
               <property name="icon">
-               <iconset resource="../mainwin.qrc">
+               <iconset resource="../../mainwin.qrc">
                 <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
               </property>
              </widget>
@@ -2321,7 +2320,7 @@
       </widget>
       <widget class="QWidget" name="tabLog">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
        </attribute>
        <attribute name="title">
@@ -2346,7 +2345,7 @@
           </property>
           <widget class="QWidget" name="tab_5">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2405,7 +2404,7 @@
           </widget>
           <widget class="QWidget" name="tab_6">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2462,7 +2461,7 @@
       </widget>
       <widget class="QWidget" name="tabVulnMain">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
        </attribute>
        <attribute name="title">
@@ -2487,7 +2486,7 @@
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2621,7 +2620,7 @@
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2658,7 +2657,7 @@
           </widget>
           <widget class="QWidget" name="tab_4">
            <attribute name="icon">
-            <iconset resource="../mainwin.qrc">
+            <iconset resource="../../mainwin.qrc">
              <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
            </attribute>
            <attribute name="title">
@@ -2690,7 +2689,7 @@
                  <string>Add Url</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
                 </property>
                 <property name="flat">
@@ -2704,7 +2703,7 @@
                  <string>Remove Url</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../mainwin.qrc">
+                 <iconset resource="../../mainwin.qrc">
                   <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                 </property>
                </widget>
@@ -2732,7 +2731,7 @@
       </widget>
       <widget class="QWidget" name="tabDiscover">
        <attribute name="icon">
-        <iconset resource="../mainwin.qrc">
+        <iconset resource="../../mainwin.qrc">
          <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
        </attribute>
        <attribute name="title">
@@ -2788,7 +2787,7 @@
              <string>Start DIscover</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
             </property>
            </widget>
@@ -2802,7 +2801,7 @@
              <string>Stop Discover</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
             </property>
            </widget>
@@ -2907,7 +2906,7 @@
              <string>Scan Host</string>
             </property>
             <property name="icon">
-             <iconset resource="../mainwin.qrc">
+             <iconset resource="../../mainwin.qrc">
               <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
             </property>
            </widget>
@@ -3039,7 +3038,7 @@
      <x>0</x>
      <y>0</y>
      <width>845</width>
-     <height>19</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -3059,7 +3058,6 @@
     </property>
     <addaction name="actionFullS"/>
     <addaction name="actionMenuBar"/>
-    <addaction name="actionShow_Status_Bar"/>
    </widget>
    <widget class="QMenu" name="menu_Bookmaks">
     <property name="title">
@@ -3100,11 +3098,6 @@
    <addaction name="menu_Tools"/>
    <addaction name="menu_Settings"/>
    <addaction name="menu_Help"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="enabled">
@@ -3340,7 +3333,7 @@
   </widget>
   <action name="action_Quit">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
    <property name="text">
@@ -3358,7 +3351,7 @@
   </action>
   <action name="action_About">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
    <property name="text">
@@ -3367,7 +3360,7 @@
   </action>
   <action name="action_Scan">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -3388,7 +3381,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -3406,7 +3399,7 @@
   </action>
   <action name="actionAbout_Qt">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
    <property name="text">
@@ -3415,7 +3408,7 @@
   </action>
   <action name="actionProfile">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
    </property>
    <property name="text">
@@ -3427,7 +3420,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
    </property>
    <property name="text">
@@ -3436,7 +3429,7 @@
   </action>
   <action name="action_Quit_2">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/window-close.png</normaloff>:/images/images/window-close.png</iconset>
    </property>
    <property name="text">
@@ -3448,7 +3441,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
    </property>
    <property name="text">
@@ -3460,7 +3453,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/window_new.png</normaloff>:/images/images/window_new.png</iconset>
    </property>
    <property name="text">
@@ -3472,7 +3465,7 @@
   </action>
   <action name="actionClose_Tree">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/view-tree.png</normaloff>:/images/images/view-tree.png</iconset>
    </property>
    <property name="text">
@@ -3484,7 +3477,7 @@
   </action>
   <action name="actionClear_Hostname">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
    </property>
    <property name="text">
@@ -3499,7 +3492,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -3514,7 +3507,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
    <property name="text">
@@ -3529,7 +3522,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
    </property>
    <property name="text">
@@ -3541,7 +3534,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -3556,7 +3549,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/view-fullscreen.png</normaloff>:/images/images/view-fullscreen.png</iconset>
    </property>
    <property name="text">
@@ -3574,7 +3567,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/show-menu.png</normaloff>:/images/images/show-menu.png</iconset>
    </property>
    <property name="text">
@@ -3597,7 +3590,7 @@
   </action>
   <action name="actionAdd_Bookmark">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
    </property>
    <property name="text">
@@ -3621,7 +3614,7 @@
   </action>
   <action name="action_Add_BookmarkToolBar">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/bookmark_add.png</normaloff>:/images/images/bookmark_add.png</iconset>
    </property>
    <property name="text">
@@ -3640,7 +3633,7 @@
   </action>
   <action name="actionScan_section">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
    </property>
    <property name="text">
@@ -3649,7 +3642,7 @@
   </action>
   <action name="actionLog_section">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
    </property>
    <property name="text">
@@ -3658,7 +3651,7 @@
   </action>
   <action name="actionVulnerabilities_section">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
    </property>
    <property name="text">
@@ -3667,7 +3660,7 @@
   </action>
   <action name="actionDonate_Money">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/kwalletmanager.png</normaloff>:/images/images/kwalletmanager.png</iconset>
    </property>
    <property name="text">
@@ -3676,7 +3669,7 @@
   </action>
   <action name="actionDocumentation">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
    </property>
    <property name="text">
@@ -3685,7 +3678,7 @@
   </action>
   <action name="actionVisit_Website">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/icons/64x64/nmapsi4.png</normaloff>:/images/icons/64x64/nmapsi4.png</iconset>
    </property>
    <property name="text">
@@ -3694,7 +3687,7 @@
   </action>
   <action name="actionReport_Bug">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/tools-report-bug.png</normaloff>:/images/images/tools-report-bug.png</iconset>
    </property>
    <property name="text">
@@ -3703,7 +3696,7 @@
   </action>
   <action name="actionSection_Discover">
    <property name="icon">
-    <iconset resource="../mainwin.qrc">
+    <iconset resource="../../mainwin.qrc">
      <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
    </property>
    <property name="text">
@@ -3712,7 +3705,7 @@
   </action>
  </widget>
  <resources>
-  <include location="../mainwin.qrc"/>
+  <include location="../../mainwin.qrc"/>
  </resources>
  <connections>
   <connection>

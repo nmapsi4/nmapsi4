@@ -103,8 +103,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
-    connect(actionShow_Status_Bar, SIGNAL(triggered()),
-            this, SLOT(showStatusBar()));
     connect(optionAccept, SIGNAL(clicked()),
             this, SLOT(resetPar()));
     connect(Bdetails, SIGNAL(clicked()),

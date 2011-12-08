@@ -46,20 +46,6 @@ void nmapClass::updateMenuBar()
     }
 }
 
-void nmapClass::showStatusBar()
-{
-    if (statusbar->isVisible()) 
-    {
-        statusbar->setVisible(false);
-        actionShow_Status_Bar->setChecked(false);
-    } 
-    else 
-    {
-        statusbar->setVisible(true);
-        actionShow_Status_Bar->setChecked(true);
-    }
-}
-
 void nmapClass::optionListUpdate() 
 {
     if (scanW->isSelected()) 

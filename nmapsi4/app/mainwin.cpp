@@ -61,8 +61,8 @@ void nmapClass::initObject()
     digSupport *digC  = new digSupport();
     digC->checkDigSupport(digSupported);
     delete digC;
-    // check nmap version
-    checkNmapVersion();
+    // FIXME:: active hostEdit
+    hostEdit->setEnabled(true);
     // set tree default settings
     setTreeSettings();
     // create mainwindow Qsplitter
@@ -114,8 +114,6 @@ nmapClass::~nmapClass()
     delete _vulnerability;
     delete _hostModel;
     delete _vulnModel;
-    delete labelVersion;
-    delete userMode;
     delete bW;
     delete cW;
     delete menuSetup->menu();

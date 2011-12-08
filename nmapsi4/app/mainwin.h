@@ -153,8 +153,6 @@ protected:
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
     QList<digSupport*> digLookupList;
-    QLabel *labelVersion;
-    QLabel *userMode;
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;
@@ -184,7 +182,6 @@ private slots:
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
-    void showStatusBar();
     void updateIconsBox();
     void callScanH();
     void callScanDiscover();
@@ -192,8 +189,6 @@ private slots:
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
-    // Check nmap version
-    void checkNmapVersion();
     //update and log slots
     void startProfile_ui();
     void readProfile();
