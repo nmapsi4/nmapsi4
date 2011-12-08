@@ -150,7 +150,6 @@ protected:
     QList<QString> nseScriptAvailList;
     QList<QString> nseScriptActiveList;
     QHash<QString, QTextDocument*> nseHelpCache;
-    QHash<QString, QAction*> _collections;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
     QList<digSupport*> digLookupList;

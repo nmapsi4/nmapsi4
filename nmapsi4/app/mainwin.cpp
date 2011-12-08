@@ -102,7 +102,6 @@ nmapClass::~nmapClass()
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
-    freemap<QString,QAction*>::itemDeleteAll(_collections);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     discoveryClear();
     delete _monitor;
