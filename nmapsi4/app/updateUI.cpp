@@ -417,12 +417,7 @@ void nmapClass::updateSezScan()
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     // enable scan action
-    if (!_collectionsButton.value("nss-act")->isEnabled())
-    {
-        _collectionsButton.value("par-act")->setEnabled(true);
-        _collectionsButton.value("nss-act")->setEnabled(true);
-        toolBarTab->setVisible(true);
-    }
+    toolBarTab->setVisible(true);
 }
 
 void nmapClass::updateSezLog() 
@@ -446,8 +441,6 @@ void nmapClass::updateSezLog()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    _collectionsButton.value("nss-act")->setEnabled(false);
-    _collectionsButton.value("par-act")->setEnabled(false);
     toolBarTab->setVisible(false);
 }
 
@@ -472,8 +465,6 @@ void nmapClass::updateSezVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    _collectionsButton.value("nss-act")->setEnabled(false);
-    _collectionsButton.value("par-act")->setEnabled(false);
     toolBarTab->setVisible(false);
 }
 
@@ -499,8 +490,6 @@ void nmapClass::updateDiscoverVuln()
     tabUi->setCurrentIndex(0);
     
     // disable scan action
-    _collectionsButton.value("nss-act")->setEnabled(false);
-    _collectionsButton.value("par-act")->setEnabled(false);
     toolBarTab->setVisible(false);
 }
 
@@ -626,21 +615,6 @@ void nmapClass::updateTabTrace()
     {
         TraceEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
-    }
-}
-
-void nmapClass::updateTabMonitor() 
-{
-    if (_collectionsButton.value("tab-monitor-act")->isChecked() && tabUi->count() < 4)
-    {
-        tabUi->insertTab(tabUi->count(),tabMainMonitor,tr("Scan Monitor"));
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-        MonitorEnabled = true;
-    } 
-    else if (!_collectionsButton.value("tab-monitor-act")->isChecked())
-    {
-        tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
-        MonitorEnabled = false;
     }
 }
 

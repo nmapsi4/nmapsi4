@@ -139,7 +139,6 @@ protected:
     bool lookupDig;
     bool NSSsupport;
     bool ADVSupport;
-    bool MonitorEnabled;
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
@@ -208,7 +207,6 @@ private slots:
     void updateDiscoverVuln();
     void updateTabLook();
     void updateTabTrace();
-    void updateTabMonitor();
     void NSSCheck();
     void parAdv();
     void resetPar();

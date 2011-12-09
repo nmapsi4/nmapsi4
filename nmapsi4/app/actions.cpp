@@ -104,9 +104,9 @@ void nmapClass::createBar()
 {
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
-    const QString verticalStyleSheet(QString("QPushButton:checked {border: 1px solid #888;border-radius: 2px; ")
-        + QString("padding: 4px;background-color: palette(highlight); color: palette(highlighted-text); ")
-        + QString("margin-left: 0px; margin-right: 3px;}"));
+    const QString& verticalStyleSheet(QString("QPushButton:checked {border: 0px; border-radius: 2px; ")
+        + QString("background-color: palette(highlight); color: palette(highlighted-text); ")
+        + QString("margin-left: 0px; margin-right: 3px; padding: 4px;}"));
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan"));
     actionButt->setToolTip(tr("Scan host(s)"));
@@ -152,31 +152,31 @@ void nmapClass::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
     sezBar->addWidget(actionButt);
 
-    sezBar->addSeparator();
-
+    sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/show-menu.png")),tr("Paramenters"));
     actionButt->setToolTip(tr("Enable/Disable Manual Parameters"));
     actionButt->setOrientation(Qt::Vertical);
+    actionButt->setMirrored(true);
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("par-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(parAdv()));
-    sezBar->addWidget(actionButt);
+    toolBarTab->addWidget(actionButt);
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("NSS Script"));
     actionButt->setToolTip(tr("Enable/Disable NSS script"));
     actionButt->setOrientation(Qt::Vertical);
+    actionButt->setMirrored(true);
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("nss-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(NSSCheck()));
-    sezBar->addWidget(actionButt);
-
-    sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    toolBarTab->addWidget(actionButt);
     
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
     actionButt->setToolTip(tr("Show/Hide Lookup"));
@@ -200,18 +200,6 @@ void nmapClass::createBar()
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("tab-trace-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
-    toolBarTab->addWidget(actionButt);
-
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")),tr("Show Monitor"));
-    actionButt->setToolTip(tr("Show/Hide Scan Monitor"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setMirrored(true);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("tab-monitor-act",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabMonitor()));
     toolBarTab->addWidget(actionButt);
     
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);

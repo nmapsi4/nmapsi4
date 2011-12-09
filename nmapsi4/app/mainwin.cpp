@@ -39,9 +39,12 @@ void nmapClass::initObject()
 #endif
 
 #ifdef Q_WS_WIN
-    // FIXME: lookup fails on MS Windows
-    tabWidget->removeTab(3);
+    // lookup fails on MS Windows
+    _collectionsButton.value("tab-look-act")->setChecked(false);
+    _collectionsButton.value("tab-look-act")->setEnabled(false);
+    LookupEnabled = false;
 #endif
+    
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
     _monitor = new monitor(scanMonitor,this);
@@ -61,7 +64,7 @@ void nmapClass::initObject()
     digSupport *digC  = new digSupport();
     digC->checkDigSupport(digSupported);
     delete digC;
-    // FIXME:: active hostEdit
+    // FIXME:: active hostEdit by default
     hostEdit->setEnabled(true);
     // set tree default settings
     setTreeSettings();
@@ -78,8 +81,6 @@ void nmapClass::initObject()
     NSSCheck();
     _collectionsButton.value("par-act")->setChecked(ADVSupport);
     parAdv();
-    _collectionsButton.value("tab-monitor-act")->setChecked(MonitorEnabled);
-    updateTabMonitor();
     _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
     updateTabLook();
     _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);
