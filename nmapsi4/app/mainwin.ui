@@ -3109,6 +3109,11 @@
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
+   </property>
    <property name="movable">
     <bool>false</bool>
    </property>
@@ -3140,6 +3145,11 @@
    <property name="windowTitle">
     <string>toolBar_2</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
+   </property>
    <property name="movable">
     <bool>false</bool>
    </property>
@@ -3167,6 +3177,11 @@
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
+   </property>
    <property name="movable">
     <bool>false</bool>
    </property>
@@ -3191,6 +3206,11 @@
    </property>
    <property name="windowTitle">
     <string>toolBar_3</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
    </property>
    <property name="movable">
     <bool>false</bool>
@@ -3314,6 +3334,11 @@
    </property>
    <property name="layoutDirection">
     <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+	border: 0px;
+}</string>
    </property>
    <property name="movable">
     <bool>false</bool>
