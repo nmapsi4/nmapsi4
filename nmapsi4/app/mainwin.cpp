@@ -38,13 +38,6 @@ void nmapClass::initObject()
     uid = getuid();
 #endif
 
-#ifdef Q_WS_WIN
-    // lookup fails on MS Windows
-    _collectionsButton.value("tab-look-act")->setChecked(false);
-    _collectionsButton.value("tab-look-act")->setEnabled(false);
-    LookupEnabled = false;
-#endif
-    
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
     _monitor = new monitor(scanMonitor,this);
@@ -77,6 +70,14 @@ void nmapClass::initObject()
     updateCompleter();
     // restore value with uid check
     rootMode();
+    
+#ifdef Q_WS_WIN
+    // lookup fails on MS Windows
+    _collectionsButton.value("tab-look-act")->setChecked(false);
+    _collectionsButton.value("tab-look-act")->setEnabled(false);
+    LookupEnabled = false;
+#endif
+        
     _collectionsButton.value("nss-act")->setChecked(NSSsupport);
     NSSCheck();
     _collectionsButton.value("par-act")->setChecked(ADVSupport);
