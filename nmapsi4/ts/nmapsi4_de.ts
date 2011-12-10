@@ -969,14 +969,6 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <source>Full</source>
-        <translation>Voll</translation>
-    </message>
-    <message>
-        <source>User</source>
-        <translation>Benutzer</translation>
-    </message>
-    <message>
         <source>SYN Stealth Scan</source>
         <translation>SYN Stealth Scan</translation>
     </message>
@@ -1041,10 +1033,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation type="unfinished">Scannen</translation>
     </message>
@@ -1062,10 +1050,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1125,26 +1109,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove Scan Paramenters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use Parameters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1161,10 +1125,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show/Hide Scan Monitor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1174,10 +1134,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Traceroute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1217,11 +1173,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Nse Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1251,7 +1202,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Monitor</source>
+        <source>Remove Scan Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>parser</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Schließen</translation>
+    </message>
+    <message>
+        <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1260,6 +1227,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select the file</source>
         <translation type="unfinished">Wählen Sie die Datei</translation>
+    </message>
+</context>
+<context>
+    <name>vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

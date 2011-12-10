@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-19 15:47+0200\n"
+"POT-Creation-Date: 2011-12-10 02:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -359,7 +359,6 @@ msgid "Host Thread"
 msgstr ""
 
 #: MainWindow#87
-msgctxt "MainWindow#87"
 msgid "Scan Monitor"
 msgstr ""
 
@@ -992,305 +991,286 @@ msgid "Save File permission Error\n"
 msgstr "Dateiberechtigungesfehler\n"
 
 #: nmapClass#11
-msgid "Full"
-msgstr "Voll"
-
-#: nmapClass#12
-msgid "User"
-msgstr "Benutzer"
-
-#: nmapClass#13
 msgid "SYN Stealth Scan"
 msgstr "SYN Stealth Scan"
 
-#: nmapClass#14
+#: nmapClass#12
 msgid "ACK Stealth Scan"
 msgstr "ACK Stealth Scan"
 
-#: nmapClass#15
+#: nmapClass#13
 msgid "FIN|ACK Stealth Scan"
 msgstr "FIN|ACK Stealth Scan"
 
-#: nmapClass#16
+#: nmapClass#14
 msgid "FIN Stealth Scan"
 msgstr "FIN Stealth Scan"
 
-#: nmapClass#17
+#: nmapClass#15
 msgid "NULL Stealth Scan"
 msgstr "NULL Stealth Scan"
 
-#: nmapClass#18
+#: nmapClass#16
 msgid "XMAS Tree Stealth Scan"
 msgstr "XMAS Tree Stealth Scan"
 
-#: nmapClass#19
+#: nmapClass#17
 msgid "TCP Window Scan"
 msgstr "TCP Window Scan"
 
-#: nmapClass#20
+#: nmapClass#18
 msgid "UDP Ports Scan"
 msgstr "UDP Port Scan"
 
-#: nmapClass#21
+#: nmapClass#19
 msgid "IP Protocol Scan"
 msgstr "IP Protokoll Scan"
 
-#: nmapClass#22
+#: nmapClass#20
 msgid "Warning: Operation more expansive.\n"
 msgstr "Warnung: Operation sehr mitteilhaft."
 
-#: nmapClass#23
+#: nmapClass#21
 msgid "No Host Target\n"
 msgstr "Kein Server Ziel"
 
-#: nmapClass#24
+#: nmapClass#22
 msgid "No Ftp Address \n"
 msgstr "Keine FTP Adresse"
 
-#: nmapClass#25
+#: nmapClass#23
 msgid "Disable Ftp bounce"
 msgstr "FTP Bounce abschalten"
 
-#: nmapClass#26
+#: nmapClass#24
 msgid "Idle Scan"
 msgstr "Idle Scan"
 
-#: nmapClass#27
+#: nmapClass#25
 msgid "Wrong Address\n"
 msgstr ""
 
-#: nmapClass#28
-msgid "No description"
-msgstr ""
-
-#: nmapClass#29
+#: nmapClass#26
 #, fuzzy
-msgctxt "nmapClass#29"
+msgctxt "nmapClass#26"
 msgid "Scan"
 msgstr "Scannen"
 
-#: nmapClass#30
+#: nmapClass#27
 msgid "Options"
 msgstr ""
 
-#: nmapClass#31
-msgctxt "nmapClass#31"
+#: nmapClass#28
+msgctxt "nmapClass#28"
 msgid "Discover"
 msgstr ""
 
-#: nmapClass#32
+#: nmapClass#29
 msgid "File"
 msgstr ""
 
-#: nmapClass#33
+#: nmapClass#30
 msgid "Timing"
 msgstr ""
 
-#: nmapClass#34
-msgid "<b>Mode:</b> "
-msgstr ""
-
-#: nmapClass#35
+#: nmapClass#31
 msgid "Insert HostName to scan"
 msgstr ""
 
-#: nmapClass#36
+#: nmapClass#32
 msgid "Scan host(s)"
 msgstr ""
 
-#: nmapClass#37
+#: nmapClass#33
 #, fuzzy
-msgctxt "nmapClass#37"
+msgctxt "nmapClass#33"
 msgid "Log"
 msgstr "Log"
 
-#: nmapClass#38
-msgctxt "nmapClass#38"
+#: nmapClass#34
+msgctxt "nmapClass#34"
 msgid "Scan Log"
 msgstr ""
 
-#: nmapClass#39
-msgctxt "nmapClass#39"
+#: nmapClass#35
+msgctxt "nmapClass#35"
 msgid "Services"
 msgstr ""
 
-#: nmapClass#40
+#: nmapClass#36
 msgid "Check Vulnerabilities"
 msgstr ""
 
-#: nmapClass#41
+#: nmapClass#37
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
 msgstr ""
 
-#: nmapClass#42
+#: nmapClass#38
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: nmapClass#43
+#: nmapClass#39
 msgid "Enable/Disable NSS script"
 msgstr ""
 
-#: nmapClass#44
+#: nmapClass#40
 msgid "Enable/Disable Manual Parameters"
 msgstr ""
 
-#: nmapClass#45
+#: nmapClass#41
 msgid "Remove Host"
 msgstr ""
 
-#: nmapClass#46
-msgctxt "nmapClass#46"
+#: nmapClass#42
+msgctxt "nmapClass#42"
 msgid "Scan Host"
 msgstr ""
 
-#: nmapClass#47
+#: nmapClass#43
 msgid "Remove Service"
 msgstr ""
 
-#: nmapClass#48
+#: nmapClass#44
 msgid "Search for vulnerabilities"
+msgstr ""
+
+#: nmapClass#45
+msgid "Use Parameters"
+msgstr ""
+
+#: nmapClass#46
+msgid " Active Scan "
+msgstr ""
+
+#: nmapClass#47
+msgid "Check Vulnerability"
+msgstr ""
+
+#: nmapClass#48
+msgid "Show/Hide Lookup"
 msgstr ""
 
 #: nmapClass#49
 msgctxt "nmapClass#49"
-msgid "Search"
+msgid "Scan Options"
 msgstr ""
 
 #: nmapClass#50
-msgid "Back"
+msgctxt "nmapClass#50"
+msgid "Lookup"
 msgstr ""
 
 #: nmapClass#51
-msgid "Forward"
+msgctxt "nmapClass#51"
+msgid "Traceroute"
 msgstr ""
 
 #: nmapClass#52
-msgid "Stop"
+msgid "Network Discover"
 msgstr ""
 
 #: nmapClass#53
-msgid "Remove Scan Paramenters"
+msgid "Setup"
 msgstr ""
 
 #: nmapClass#54
-msgid "Use Parameters"
+msgid "is Up"
 msgstr ""
 
 #: nmapClass#55
-msgid " Active Scan "
-msgstr ""
+#, fuzzy
+msgctxt "nmapClass#55"
+msgid "Quick Scan"
+msgstr "Schneller Scan"
 
 #: nmapClass#56
-msgid "Check Vulnerability"
+msgid "Intense Scan"
 msgstr ""
 
 #: nmapClass#57
-msgid "Show/Hide Lookup"
+msgid "Intense Scan, all TCP ports"
 msgstr ""
 
 #: nmapClass#58
-msgid "Show/Hide Scan Monitor"
+msgid "Intense scan plus UDP"
 msgstr ""
 
 #: nmapClass#59
-msgctxt "nmapClass#59"
-msgid "Scan Options"
+msgid "Slow comprehensive scan"
 msgstr ""
 
 #: nmapClass#60
 msgctxt "nmapClass#60"
-msgid "Lookup"
+msgid "Scan log parameters"
 msgstr ""
 
 #: nmapClass#61
 msgctxt "nmapClass#61"
-msgid "Traceroute"
-msgstr ""
-
-#: nmapClass#62
-msgctxt "nmapClass#62"
-msgid "Scan Monitor"
-msgstr ""
-
-#: nmapClass#63
-msgid "Network Discover"
-msgstr ""
-
-#: nmapClass#64
-msgid "Setup"
-msgstr ""
-
-#: nmapClass#65
-msgid "is Up"
-msgstr ""
-
-#: nmapClass#66
-#, fuzzy
-msgctxt "nmapClass#66"
-msgid "Quick Scan"
-msgstr "Schneller Scan"
-
-#: nmapClass#67
-msgid "Intense Scan"
-msgstr ""
-
-#: nmapClass#68
-msgid "Intense Scan, all TCP ports"
-msgstr ""
-
-#: nmapClass#69
-msgid "Intense scan plus UDP"
-msgstr ""
-
-#: nmapClass#70
-msgid "Slow comprehensive scan"
-msgstr ""
-
-#: nmapClass#71
-msgctxt "nmapClass#71"
-msgid "Scan log parameters"
-msgstr ""
-
-#: nmapClass#72
-msgid "Error: check nmap Installation.\n"
-msgstr ""
-
-#: nmapClass#73
-msgctxt "nmapClass#73"
 msgid "Nse Options"
 msgstr ""
 
-#: nmapClass#74
+#: nmapClass#62
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: nmapClass#75
+#: nmapClass#63
 msgid "Paramenters"
 msgstr ""
 
-#: nmapClass#76
+#: nmapClass#64
 msgid "NSS Script"
 msgstr ""
 
-#: nmapClass#77
+#: nmapClass#65
 msgid "Show Lookup"
 msgstr ""
 
-#: nmapClass#78
+#: nmapClass#66
 msgid "Show Traceroute"
 msgstr ""
 
-#: nmapClass#79
+#: nmapClass#67
 msgid "Show/Hide Traceroute"
 msgstr ""
 
-#: nmapClass#80
-msgid "Show Monitor"
+#: nmapClass#68
+msgid "Remove Scan Parameters"
+msgstr ""
+
+#: parser#1
+msgid "Error: check nmap Installation.\n"
+msgstr ""
+
+#: parser#2
+#, fuzzy
+msgctxt "parser#2"
+msgid "Close"
+msgstr "Schließen"
+
+#: parser#3
+msgid "No description"
 msgstr ""
 
 #: utilities#1
 #, fuzzy
 msgid "Select the file"
 msgstr "Wählen Sie die Datei"
+
+#: vulnerability#1
+msgctxt "vulnerability#1"
+msgid "Search"
+msgstr ""
+
+#: vulnerability#2
+msgid "Back"
+msgstr ""
+
+#: vulnerability#3
+msgid "Forward"
+msgstr ""
+
+#: vulnerability#4
+msgid "Stop"
+msgstr ""

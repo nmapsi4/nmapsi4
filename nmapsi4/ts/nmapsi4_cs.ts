@@ -980,14 +980,6 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <source>Full</source>
-        <translation>Úplný</translation>
-    </message>
-    <message>
-        <source>User</source>
-        <translation>Uživatel</translation>
-    </message>
-    <message>
         <source>SYN Stealth Scan</source>
         <translation>Neviditelné prohledávání SYN</translation>
     </message>
@@ -1052,10 +1044,6 @@ p, li { white-space: pre-wrap; }
         <translation>Nesprávná adresa</translation>
     </message>
     <message>
-        <source>No description</source>
-        <translation>Žádný popis</translation>
-    </message>
-    <message>
         <source>Scan</source>
         <translation>Prohledat</translation>
     </message>
@@ -1074,10 +1062,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Timing</source>
         <translation>Načasování</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
-        <translation>&lt;b&gt;Režim:&lt;/b&gt; </translation>
     </message>
     <message>
         <source>Insert HostName to scan</source>
@@ -1136,26 +1120,6 @@ p, li { white-space: pre-wrap; }
         <translation>Hledat zranitelnosti</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Hledat</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Zpět</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Vpřed</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Zastavit</translation>
-    </message>
-    <message>
-        <source>Remove Scan Paramenters</source>
-        <translation>Odstranit pomocné proměnné prohledávání</translation>
-    </message>
-    <message>
         <source>Use Parameters</source>
         <translation>Použít pomocné proměnné</translation>
     </message>
@@ -1172,10 +1136,6 @@ p, li { white-space: pre-wrap; }
         <translation>Ukázat/Skrýt vyhledávání</translation>
     </message>
     <message>
-        <source>Show/Hide Scan Monitor</source>
-        <translation>Ukázat/Skrýt dohled nad prohledáváním</translation>
-    </message>
-    <message>
         <source>Scan Options</source>
         <translation>Volby pro prohledávání</translation>
     </message>
@@ -1186,10 +1146,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Traceroute</source>
         <translation>Sledování směrování na síti</translation>
-    </message>
-    <message>
-        <source>Scan Monitor</source>
-        <translation>Dohled nad prohledáváním</translation>
     </message>
     <message>
         <source>Network Discover</source>
@@ -1228,12 +1184,6 @@ p, li { white-space: pre-wrap; }
         <translation>Prohlédnout parametry zápisů</translation>
     </message>
     <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation>Chyba: prověřte instalaci nmap.
-</translation>
-    </message>
-    <message>
         <source>Nse Options</source>
         <translation>Volby pro nse</translation>
     </message>
@@ -1263,8 +1213,25 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Monitor</source>
+        <source>Remove Scan Parameters</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>parser</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished">Chyba: prověřte instalaci nmap.
+</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
+    </message>
+    <message>
+        <source>No description</source>
+        <translation type="unfinished">Žádný popis</translation>
     </message>
 </context>
 <context>
@@ -1272,6 +1239,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select the file</source>
         <translation type="unfinished">Vyberte soubor</translation>
+    </message>
+</context>
+<context>
+    <name>vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Hledat</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished">Vpřed</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Zastavit</translation>
     </message>
 </context>
 </TS>

@@ -938,10 +938,6 @@ p, li { white-space: pre-wrap; }
         <translation>Cerca vulnerabilità</translation>
     </message>
     <message>
-        <source>Remove Scan Paramenters</source>
-        <translation>Rimuovi parametro di scansione</translation>
-    </message>
-    <message>
         <source>Use Parameters</source>
         <translation>Usa parametri</translation>
     </message>
@@ -984,10 +980,6 @@ p, li { white-space: pre-wrap; }
 </source>
         <translation>Indirizzo errato
 </translation>
-    </message>
-    <message>
-        <source>No description</source>
-        <translation>Nessuna Descrizione</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -1044,25 +1036,12 @@ p, li { white-space: pre-wrap; }
         <translation> Scan in esecuzione </translation>
     </message>
     <message>
-        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
-        <translation>&lt;b&gt;Mode:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>Full</source>
-        <translation>Completo</translation>
-    </message>
-    <message>
-        <source>User</source>
-        <translation>Utente</translation>
-    </message>
-    <message>
         <source>Scan host(s)</source>
         <translation>Scansione Host</translation>
     </message>
     <message>
         <source>Log</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>Scan Log</source>
@@ -1089,28 +1068,8 @@ p, li { white-space: pre-wrap; }
         <translation>Abilita / Disabilita parametri manuali</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Cerca</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Indietro</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Avanti</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Ferma</translation>
-    </message>
-    <message>
         <source>Show/Hide Lookup</source>
         <translation>Visualizza/Nascondi Lookup</translation>
-    </message>
-    <message>
-        <source>Show/Hide Scan Monitor</source>
-        <translation>Visualizza/Nascondi Monitor</translation>
     </message>
     <message>
         <source>Setup</source>
@@ -1189,10 +1148,6 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <source>Scan Monitor</source>
-        <translation>Monitor di Scan</translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation>Parametri di Scansione</translation>
     </message>
@@ -1235,12 +1190,6 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation>Errore: controllare l&apos;installazione di nmap.
-</translation>
-    </message>
-    <message>
         <source>Nse Options</source>
         <translation>Impostazioni Nse</translation>
     </message>
@@ -1270,8 +1219,25 @@ p, li { white-space: pre-wrap; }
         <translation>Visualizza/Nascondi Traceroute</translation>
     </message>
     <message>
-        <source>Show Monitor</source>
-        <translation>Visualizza Monitor</translation>
+        <source>Remove Scan Parameters</source>
+        <translation>Disattivare Parametri di scansione</translation>
+    </message>
+</context>
+<context>
+    <name>parser</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation>Errore: controllare l&apos;installazione di nmap.
+</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <source>No description</source>
+        <translation>Nessuna Descrizione</translation>
     </message>
 </context>
 <context>
@@ -1279,6 +1245,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select the file</source>
         <translation>Scegli il file</translation>
+    </message>
+</context>
+<context>
+    <name>vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Indietro</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Avanti</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Ferma</translation>
     </message>
 </context>
 </TS>

@@ -950,10 +950,6 @@ p, li { white-space: pre-wrap; }
         <translation>Recherche de vulnérabilités</translation>
     </message>
     <message>
-        <source>Remove Scan Paramenters</source>
-        <translation>Suppression des Paramètres de Scan</translation>
-    </message>
-    <message>
         <source>Use Parameters</source>
         <translation>Suppression des Paramètres de Scan</translation>
     </message>
@@ -996,10 +992,6 @@ p, li { white-space: pre-wrap; }
 </source>
         <translation>Mauvaise Adresse
 </translation>
-    </message>
-    <message>
-        <source>No description</source>
-        <translation>Aucune description</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -1056,18 +1048,6 @@ p, li { white-space: pre-wrap; }
         <translation> Scan Actif </translation>
     </message>
     <message>
-        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
-        <translation>&lt;b&gt;Mode:&lt;/b&gt; </translation>
-    </message>
-    <message>
-        <source>Full</source>
-        <translation>Complet</translation>
-    </message>
-    <message>
-        <source>User</source>
-        <translation>Utilisateur</translation>
-    </message>
-    <message>
         <source>Scan host(s)</source>
         <translation>Scan hôte(s)</translation>
     </message>
@@ -1101,28 +1081,8 @@ p, li { white-space: pre-wrap; }
         <translation>Activer/Désactiver Paramètres Manuel</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Chercher</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Retour</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>En avant</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Arrêter</translation>
-    </message>
-    <message>
         <source>Show/Hide Lookup</source>
         <translation>Afficher/Masquer Recherche</translation>
-    </message>
-    <message>
-        <source>Show/Hide Scan Monitor</source>
-        <translation>Afficher/Masquer Moniteur de Scan</translation>
     </message>
     <message>
         <source>Setup</source>
@@ -1200,11 +1160,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Scan Monitor</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation type="unfinished">
             </translation>
@@ -1250,12 +1205,6 @@ p, li { white-space: pre-wrap; }
         <translation>scan complet Lent</translation>
     </message>
     <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation>Erreur: vérifiez l&apos;installation de nmap.
-</translation>
-    </message>
-    <message>
         <source>Hostname already scanning
 </source>
         <translation type="unfinished"></translation>
@@ -1281,8 +1230,25 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Monitor</source>
+        <source>Remove Scan Parameters</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>parser</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished">Erreur: vérifiez l&apos;installation de nmap.
+</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>No description</source>
+        <translation type="unfinished">Aucune description</translation>
     </message>
 </context>
 <context>
@@ -1290,6 +1256,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select the file</source>
         <translation type="unfinished">Sélectionner le fichier</translation>
+    </message>
+</context>
+<context>
+    <name>vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Retour</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished">En avant</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Arrêter</translation>
     </message>
 </context>
 </TS>

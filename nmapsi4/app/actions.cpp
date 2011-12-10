@@ -68,7 +68,7 @@ void nmapClass::menuParBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
-    removeBook.setIconText(tr("Remove Scan Paramenters"));
+    removeBook.setIconText(tr("Remove Scan Parameters"));
 
     QAction addBook(this);
     addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-19 15:47+0200\n"
+"POT-Creation-Date: 2011-12-10 02:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -361,7 +361,6 @@ msgid "Host Thread"
 msgstr "Vlákno serveru"
 
 #: MainWindow#87
-msgctxt "MainWindow#87"
 msgid "Scan Monitor"
 msgstr "Dohled nad prohledáváním"
 
@@ -1017,131 +1016,115 @@ msgid "Save File permission Error\n"
 msgstr "Chyba v oprávnění pro ukládání souboru\n"
 
 #: nmapClass#11
-msgid "Full"
-msgstr "Úplný"
-
-#: nmapClass#12
-msgid "User"
-msgstr "Uživatel"
-
-#: nmapClass#13
 msgid "SYN Stealth Scan"
 msgstr "Neviditelné prohledávání SYN"
 
-#: nmapClass#14
+#: nmapClass#12
 msgid "ACK Stealth Scan"
 msgstr "Neviditelné prohledávání ACK"
 
-#: nmapClass#15
+#: nmapClass#13
 msgid "FIN|ACK Stealth Scan"
 msgstr "Neviditelné prohledávání FIN|ACK"
 
-#: nmapClass#16
+#: nmapClass#14
 msgid "FIN Stealth Scan"
 msgstr "Neviditelné prohledávání FIN"
 
-#: nmapClass#17
+#: nmapClass#15
 msgid "NULL Stealth Scan"
 msgstr "Neviditelné prohledávání NULL"
 
-#: nmapClass#18
+#: nmapClass#16
 msgid "XMAS Tree Stealth Scan"
 msgstr "Neviditelné prohledávání XMAS stromu"
 
-#: nmapClass#19
+#: nmapClass#17
 msgid "TCP Window Scan"
 msgstr "Okenní prohledávání TCP"
 
-#: nmapClass#20
+#: nmapClass#18
 msgid "UDP Ports Scan"
 msgstr "Prohledávání přípojek UDP"
 
-#: nmapClass#21
+#: nmapClass#19
 msgid "IP Protocol Scan"
 msgstr "Prohledávání protokolu IP"
 
-#: nmapClass#22
+#: nmapClass#20
 msgid "Warning: Operation more expansive.\n"
 msgstr "Upozornění: Úkon je velmi rozsáhlý."
 
-#: nmapClass#23
+#: nmapClass#21
 msgid "No Host Target\n"
 msgstr "Žádný cíl se serverem"
 
-#: nmapClass#24
+#: nmapClass#22
 msgid "No Ftp Address \n"
 msgstr "Žádná adresa FTP"
 
-#: nmapClass#25
+#: nmapClass#23
 msgid "Disable Ftp bounce"
 msgstr "Zakázat odraz FTP"
 
-#: nmapClass#26
+#: nmapClass#24
 msgid "Idle Scan"
 msgstr "Prohledávání Idle"
 
-#: nmapClass#27
+#: nmapClass#25
 msgid "Wrong Address\n"
 msgstr "Nesprávná adresa"
 
-#: nmapClass#28
-msgid "No description"
-msgstr "Žádný popis"
-
-#: nmapClass#29
-msgctxt "nmapClass#29"
+#: nmapClass#26
+msgctxt "nmapClass#26"
 msgid "Scan"
 msgstr "Prohledat"
 
-#: nmapClass#30
+#: nmapClass#27
 msgid "Options"
 msgstr "Volby"
 
-#: nmapClass#31
-msgctxt "nmapClass#31"
+#: nmapClass#28
+msgctxt "nmapClass#28"
 msgid "Discover"
 msgstr "Objevit"
 
-#: nmapClass#32
+#: nmapClass#29
 msgid "File"
 msgstr "Soubor"
 
-#: nmapClass#33
+#: nmapClass#30
 msgid "Timing"
 msgstr "Načasování"
 
-#: nmapClass#34
-msgid "<b>Mode:</b> "
-msgstr "<b>Režim:</b> "
-
-#: nmapClass#35
+#: nmapClass#31
 msgid "Insert HostName to scan"
 msgstr "Vložit název serveru k prohledání"
 
-#: nmapClass#36
+#: nmapClass#32
 msgid "Scan host(s)"
 msgstr "Prohledat server(y)"
 
-#: nmapClass#37
-msgctxt "nmapClass#37"
+#: nmapClass#33
+msgctxt "nmapClass#33"
 msgid "Log"
 msgstr "Zápis"
 
-#: nmapClass#38
-msgctxt "nmapClass#38"
+#: nmapClass#34
+msgctxt "nmapClass#34"
 msgid "Scan Log"
 msgstr "Zápis o prohledávání"
 
-#: nmapClass#39
-msgctxt "nmapClass#39"
+#: nmapClass#35
+msgctxt "nmapClass#35"
 msgid "Services"
 msgstr "Služby"
 
-#: nmapClass#40
+#: nmapClass#36
 msgid "Check Vulnerabilities"
 msgstr "Prověřit zranitelnosti"
 
-#: nmapClass#41
+#: nmapClass#37
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
@@ -1149,172 +1132,175 @@ msgstr ""
 "Vložit [ip] nebo [dns] nebo [ip range] nebo [ip/dns list with space "
 "separator] pro prohledání (ip rozsah ex. 192.168.1.10/20)"
 
-#: nmapClass#42
+#: nmapClass#38
 msgid "Search Vulnerabilities"
 msgstr "Hledat zranitelnosti"
 
-#: nmapClass#43
+#: nmapClass#39
 msgid "Enable/Disable NSS script"
 msgstr "Povolit/Zakázat skript NSS"
 
-#: nmapClass#44
+#: nmapClass#40
 msgid "Enable/Disable Manual Parameters"
 msgstr "Povolit/Zakázat ruční parametry"
 
-#: nmapClass#45
+#: nmapClass#41
 msgid "Remove Host"
 msgstr "Odstranit server"
 
-#: nmapClass#46
-msgctxt "nmapClass#46"
+#: nmapClass#42
+msgctxt "nmapClass#42"
 msgid "Scan Host"
 msgstr "Prohledat server"
 
-#: nmapClass#47
+#: nmapClass#43
 msgid "Remove Service"
 msgstr "Odstranit službu"
 
-#: nmapClass#48
+#: nmapClass#44
 msgid "Search for vulnerabilities"
 msgstr "Hledat zranitelnosti"
 
-#: nmapClass#49
-msgctxt "nmapClass#49"
-msgid "Search"
-msgstr "Hledat"
-
-#: nmapClass#50
-msgid "Back"
-msgstr "Zpět"
-
-#: nmapClass#51
-msgid "Forward"
-msgstr "Vpřed"
-
-#: nmapClass#52
-msgid "Stop"
-msgstr "Zastavit"
-
-#: nmapClass#53
-msgid "Remove Scan Paramenters"
-msgstr "Odstranit pomocné proměnné prohledávání"
-
-#: nmapClass#54
+#: nmapClass#45
 msgid "Use Parameters"
 msgstr "Použít pomocné proměnné"
 
-#: nmapClass#55
+#: nmapClass#46
 msgid " Active Scan "
 msgstr " Činné prohledávání "
 
-#: nmapClass#56
+#: nmapClass#47
 msgid "Check Vulnerability"
 msgstr "Prověřit zranitelnost"
 
-#: nmapClass#57
+#: nmapClass#48
 msgid "Show/Hide Lookup"
 msgstr "Ukázat/Skrýt vyhledávání"
 
-#: nmapClass#58
-msgid "Show/Hide Scan Monitor"
-msgstr "Ukázat/Skrýt dohled nad prohledáváním"
-
-#: nmapClass#59
-msgctxt "nmapClass#59"
+#: nmapClass#49
+msgctxt "nmapClass#49"
 msgid "Scan Options"
 msgstr "Volby pro prohledávání"
 
-#: nmapClass#60
-msgctxt "nmapClass#60"
+#: nmapClass#50
+msgctxt "nmapClass#50"
 msgid "Lookup"
 msgstr "Vyhledávání"
 
-#: nmapClass#61
-msgctxt "nmapClass#61"
+#: nmapClass#51
+msgctxt "nmapClass#51"
 msgid "Traceroute"
 msgstr "Sledování směrování na síti"
 
-#: nmapClass#62
-msgctxt "nmapClass#62"
-msgid "Scan Monitor"
-msgstr "Dohled nad prohledáváním"
-
-#: nmapClass#63
+#: nmapClass#52
 msgid "Network Discover"
 msgstr "Síťové objevování"
 
-#: nmapClass#64
+#: nmapClass#53
 msgid "Setup"
 msgstr "Nastavení"
 
-#: nmapClass#65
+#: nmapClass#54
 msgid "is Up"
 msgstr "je Nahoře"
 
-#: nmapClass#66
-msgctxt "nmapClass#66"
+#: nmapClass#55
+msgctxt "nmapClass#55"
 msgid "Quick Scan"
 msgstr "Rychlé prohledávání"
 
-#: nmapClass#67
+#: nmapClass#56
 msgid "Intense Scan"
 msgstr "Silné prohledávání"
 
-#: nmapClass#68
+#: nmapClass#57
 msgid "Intense Scan, all TCP ports"
 msgstr "Silné prohledávání, všechny přípojky TCP"
 
-#: nmapClass#69
+#: nmapClass#58
 msgid "Intense scan plus UDP"
 msgstr "Silné prohledávání plus UDP"
 
-#: nmapClass#70
+#: nmapClass#59
 msgid "Slow comprehensive scan"
 msgstr "Ukázat úplné prohlédnutí"
 
-#: nmapClass#71
-msgctxt "nmapClass#71"
+#: nmapClass#60
+msgctxt "nmapClass#60"
 msgid "Scan log parameters"
 msgstr "Prohlédnout parametry zápisů"
 
-#: nmapClass#72
-msgid "Error: check nmap Installation.\n"
-msgstr "Chyba: prověřte instalaci nmap.\n"
-
-#: nmapClass#73
-msgctxt "nmapClass#73"
+#: nmapClass#61
+msgctxt "nmapClass#61"
 msgid "Nse Options"
 msgstr "Volby pro nse"
 
-#: nmapClass#74
+#: nmapClass#62
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: nmapClass#75
+#: nmapClass#63
 msgid "Paramenters"
 msgstr ""
 
-#: nmapClass#76
+#: nmapClass#64
 msgid "NSS Script"
 msgstr ""
 
-#: nmapClass#77
+#: nmapClass#65
 msgid "Show Lookup"
 msgstr ""
 
-#: nmapClass#78
+#: nmapClass#66
 msgid "Show Traceroute"
 msgstr ""
 
-#: nmapClass#79
+#: nmapClass#67
 msgid "Show/Hide Traceroute"
 msgstr ""
 
-#: nmapClass#80
-msgid "Show Monitor"
+#: nmapClass#68
+msgid "Remove Scan Parameters"
 msgstr ""
+
+#: parser#1
+#, fuzzy
+msgid "Error: check nmap Installation.\n"
+msgstr "Chyba: prověřte instalaci nmap.\n"
+
+#: parser#2
+#, fuzzy
+msgctxt "parser#2"
+msgid "Close"
+msgstr "Zavřít"
+
+#: parser#3
+#, fuzzy
+msgid "No description"
+msgstr "Žádný popis"
 
 #: utilities#1
 #, fuzzy
 msgid "Select the file"
 msgstr "Vyberte soubor"
+
+#: vulnerability#1
+#, fuzzy
+msgctxt "vulnerability#1"
+msgid "Search"
+msgstr "Hledat"
+
+#: vulnerability#2
+#, fuzzy
+msgid "Back"
+msgstr "Zpět"
+
+#: vulnerability#3
+#, fuzzy
+msgid "Forward"
+msgstr "Vpřed"
+
+#: vulnerability#4
+#, fuzzy
+msgid "Stop"
+msgstr "Zastavit"

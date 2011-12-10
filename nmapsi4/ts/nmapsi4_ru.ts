@@ -1100,11 +1100,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Remove Scan Paramenters</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Use Parameters</source>
         <translation>Использовать параметры</translation>
     </message>
@@ -1149,11 +1144,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Wrong Address
 </source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>No description</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1221,21 +1211,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>&lt;b&gt;Mode:&lt;/b&gt; </source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Full</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>User</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Scan host(s)</source>
         <translation type="unfinished">
             </translation>
@@ -1276,32 +1251,7 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Show/Hide Lookup</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Show/Hide Scan Monitor</source>
         <translation type="unfinished">
             </translation>
     </message>
@@ -1392,11 +1342,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Scan Monitor</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation type="unfinished">
             </translation>
@@ -1448,12 +1393,6 @@ p, li { white-space: pre-wrap; }
             </translation>
     </message>
     <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <source>Hostname already scanning
 </source>
         <translation type="unfinished"></translation>
@@ -1479,8 +1418,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Monitor</source>
+        <source>Remove Scan Parameters</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>parser</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>No description</source>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 <context>
@@ -1488,6 +1446,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select the file</source>
         <translation type="unfinished">Выбрать файл</translation>
+    </message>
+</context>
+<context>
+    <name>vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 </TS>
