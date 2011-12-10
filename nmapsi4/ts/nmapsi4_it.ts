@@ -1199,10 +1199,6 @@ p, li { white-space: pre-wrap; }
         <translation>Indirizzo già in scansione</translation>
     </message>
     <message>
-        <source>Paramenters</source>
-        <translation>Parametri</translation>
-    </message>
-    <message>
         <source>NSS Script</source>
         <translation></translation>
     </message>
@@ -1221,6 +1217,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove Scan Parameters</source>
         <translation>Disattivare Parametri di scansione</translation>
+    </message>
+    <message>
+        <source>Parameters</source>
+        <translation>Parametri</translation>
     </message>
 </context>
 <context>

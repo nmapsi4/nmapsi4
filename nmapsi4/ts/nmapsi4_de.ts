@@ -1182,10 +1182,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Paramenters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>NSS Script</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1203,6 +1199,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remove Scan Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

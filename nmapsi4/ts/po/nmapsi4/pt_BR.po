@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-10 02:18+0200\n"
+"POT-Creation-Date: 2011-12-10 02:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -924,6 +924,7 @@ msgid "Profile Name"
 msgstr ""
 
 #: addParBook#3
+msgctxt "addParBook#3"
 msgid "Parameters"
 msgstr ""
 
@@ -1212,19 +1213,20 @@ msgid "Network Discover"
 msgstr ""
 
 #: nmapClass#34
-msgid "Enable/Disable NSS script"
+msgctxt "nmapClass#34"
+msgid "Parameters"
 msgstr ""
 
 #: nmapClass#35
-msgid "Enable/Disable Manual Parameters"
+msgid "Enable/Disable NSS script"
 msgstr ""
 
 #: nmapClass#36
-msgid "Remove Scan Parameters"
+msgid "Enable/Disable Manual Parameters"
 msgstr ""
 
 #: nmapClass#37
-msgid "Paramenters"
+msgid "Remove Scan Parameters"
 msgstr ""
 
 #: nmapClass#38

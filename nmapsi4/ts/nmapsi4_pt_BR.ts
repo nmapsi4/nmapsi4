@@ -1358,6 +1358,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../app/actions.cpp" line="157"/>
+        <source>Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../app/actions.cpp" line="170"/>
         <source>Enable/Disable NSS script</source>
         <translation type="unfinished"></translation>
@@ -1370,11 +1375,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../app/actions.cpp" line="71"/>
         <source>Remove Scan Parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../app/actions.cpp" line="157"/>
-        <source>Paramenters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

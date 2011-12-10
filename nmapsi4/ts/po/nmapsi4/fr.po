@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-10 02:18+0200\n"
+"POT-Creation-Date: 2011-12-10 02:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -848,6 +848,7 @@ msgid "Profile Name"
 msgstr "Nom de Profil"
 
 #: addParBook#3
+msgctxt "addParBook#3"
 msgid "Parameters"
 msgstr "Paramètres"
 
@@ -1279,28 +1280,30 @@ msgid "Hostname already scanning\n"
 msgstr ""
 
 #: nmapClass#63
-msgid "Paramenters"
-msgstr ""
-
-#: nmapClass#64
 msgid "NSS Script"
 msgstr ""
 
-#: nmapClass#65
+#: nmapClass#64
 msgid "Show Lookup"
 msgstr ""
 
-#: nmapClass#66
+#: nmapClass#65
 msgid "Show Traceroute"
 msgstr ""
 
-#: nmapClass#67
+#: nmapClass#66
 msgid "Show/Hide Traceroute"
 msgstr ""
 
-#: nmapClass#68
+#: nmapClass#67
 msgid "Remove Scan Parameters"
 msgstr ""
+
+#: nmapClass#68
+#, fuzzy
+msgctxt "nmapClass#68"
+msgid "Parameters"
+msgstr "Paramètres"
 
 #: parser#1
 #, fuzzy
@@ -1324,9 +1327,10 @@ msgid "Select the file"
 msgstr "Sélectionner le fichier"
 
 #: vulnerability#1
+#, fuzzy
 msgctxt "vulnerability#1"
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: vulnerability#2
 #, fuzzy

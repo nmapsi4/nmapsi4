@@ -154,7 +154,7 @@ void nmapClass::createBar()
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
     
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/show-menu.png")),tr("Paramenters"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/show-menu.png")),tr("Parameters"));
     actionButt->setToolTip(tr("Enable/Disable Manual Parameters"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
