@@ -39,12 +39,10 @@ void nmapClass::checkProfile()
     if (globalProfile) 
     {
         // call restore global profile
-        qDebug() << "DEBUG:: Set global profile";
         restoreGlobalProfile();
     } 
     else 
     {
-        qDebug() << "DEBUG:: Set local profile";
         settings.setValue("globalProfile", false); // default value
         removeGlobalButton->setEnabled(false);
 

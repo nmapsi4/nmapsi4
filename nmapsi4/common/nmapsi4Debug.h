@@ -28,7 +28,9 @@
 #define TOOLS_NO_DEBUG
 #define PARSER_NO_DEBUG
 #define DIG_NO_DEBUG
-//#define THREAD_NO_DEBUG
+#define THREAD_NO_DEBUG
 #define LOOKUP_NO_DEBUG
+#define DISCOVER_NO_DEBUG
+#define NSE_NO_DEBUG
 
 #endif

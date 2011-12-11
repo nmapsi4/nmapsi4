@@ -26,7 +26,10 @@ digInterface::digSupport::digSupport() : m_state(false)
 
 digInterface::digSupport::~digSupport()
 {
+#ifndef DIG_NO_DEBUG
     qDebug() << "DEBUG:: ~digSupport()";
+#endif
+    
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(threadList);
 }
 

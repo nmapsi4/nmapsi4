@@ -28,7 +28,10 @@ namespace localCall {
 void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
 {
     Q_UNUSED(column);
+
+#ifndef DIG_NO_DEBUG
     qDebug() << "DEBUG:: item: " << item->text(0);
+#endif
 
     if (nseScriptAvailList.indexOf(item->text(0)) != -1) 
     {
@@ -63,7 +66,9 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
     else 
     {
         // category on cache
+#ifndef DIG_NO_DEBUG
         qDebug() << "DEBUG:: load help from cache";
+#endif
         nseTextHelp->setDocument(i.value());
     }
 }
@@ -118,7 +123,9 @@ void nmapClass::showNseScriptHelp(const QStringList parameters, QByteArray resul
     
     if (localCall::documentScript != NULL) 
     {
+#ifndef DIG_NO_DEBUG
         qDebug() << "DEBUG::ScriptNse delete document";
+#endif
         delete localCall::documentScript;
     }
     

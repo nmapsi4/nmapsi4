@@ -106,7 +106,9 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     } 
     else 
     {
+#ifndef DISCOVER_NO_DEBUG
         qDebug() << "DEBUG:: thread suspended:: " << networkIp;
+#endif
         // create a QStringlist with address suspended
         m_ipSospended.append(networkIp);
     }
@@ -159,7 +161,10 @@ void pingInterface::mainDiscover::repeatScanner()
     /*
      * Recall discover for ip suspended 
      */
+#ifndef DISCOVER_NO_DEBUG
     qDebug() << "DEBUG:: scan Counter timer:: " << ScanCounter;
+#endif
+    
     if (!ScanCounter) 
     {
         disconnect(this, SLOT(repeatScanner()));
