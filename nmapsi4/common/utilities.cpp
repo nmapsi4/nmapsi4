@@ -78,7 +78,8 @@ void utilities::showHomepageUrl()
 
 void utilities::showDocumentationUrl()
 {
-    QDesktopServices::openUrl(QUrl(""));
+    // FIXME: change It with the first doc release.
+    QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
 }
 
 void utilities::showDonateUrl()
