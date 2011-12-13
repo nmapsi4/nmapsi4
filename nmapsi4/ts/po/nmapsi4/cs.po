@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-10 02:25+0200\n"
+"POT-Creation-Date: 2011-12-13 21:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -708,33 +708,32 @@ msgstr "Objevit"
 
 #: MainWindow#170
 msgid "Save Default Options"
-msgstr ""
+msgstr "Uložit výchozí volby"
 
 #: MainWindow#171
 msgid "Remove Default Options"
-msgstr ""
+msgstr "Odstranit výchozí volby"
 
 #: MainWindow#172
-#, fuzzy
 msgctxt "MainWindow#172"
 msgid "Scan Host"
 msgstr "Prohledat server"
 
 #: MainWindow#173
 msgid "Probes Modes:"
-msgstr ""
+msgstr "Režimy pátrání:"
 
 #: MainWindow#174
 msgid "Send"
-msgstr ""
+msgstr "Poslat"
 
 #: MainWindow#175
 msgid "Received"
-msgstr ""
+msgstr "Přijato"
 
 #: MainWindow#176
 msgid "Section Discover"
-msgstr ""
+msgstr "Objevování části"
 
 #: ProfileMain#1
 msgid "NmapSI4 Preferences"
@@ -1238,72 +1237,63 @@ msgstr "Volby pro nse"
 
 #: nmapClass#62
 msgid "Hostname already scanning\n"
-msgstr ""
+msgstr "Název hostitelského počítače se již prohledává\n"
 
 #: nmapClass#63
 msgid "NSS Script"
-msgstr ""
+msgstr "Skript NSS"
 
 #: nmapClass#64
 msgid "Show Lookup"
-msgstr ""
+msgstr "Ukázat vyhledávání"
 
 #: nmapClass#65
 msgid "Show Traceroute"
-msgstr ""
+msgstr "Ukázat sledování směrování na síti"
 
 #: nmapClass#66
 msgid "Show/Hide Traceroute"
-msgstr ""
+msgstr "Ukázat/Skrýt sledování směrování na síti"
 
 #: nmapClass#67
 msgid "Remove Scan Parameters"
-msgstr ""
+msgstr "Odstranit parametry prohledávání"
 
 #: nmapClass#68
-#, fuzzy
 msgctxt "nmapClass#68"
 msgid "Parameters"
 msgstr "Parametry"
 
 #: parser#1
-#, fuzzy
 msgid "Error: check nmap Installation.\n"
 msgstr "Chyba: prověřte instalaci nmap.\n"
 
 #: parser#2
-#, fuzzy
 msgctxt "parser#2"
 msgid "Close"
 msgstr "Zavřít"
 
 #: parser#3
-#, fuzzy
 msgid "No description"
 msgstr "Žádný popis"
 
 #: utilities#1
-#, fuzzy
 msgid "Select the file"
 msgstr "Vyberte soubor"
 
 #: vulnerability#1
-#, fuzzy
 msgctxt "vulnerability#1"
 msgid "Search"
 msgstr "Hledat"
 
 #: vulnerability#2
-#, fuzzy
 msgid "Back"
 msgstr "Zpět"
 
 #: vulnerability#3
-#, fuzzy
 msgid "Forward"
 msgstr "Vpřed"
 
 #: vulnerability#4
-#, fuzzy
 msgid "Stop"
 msgstr "Zastavit"
