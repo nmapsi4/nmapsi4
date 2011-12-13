@@ -682,31 +682,31 @@ Zavřít strom s prohledáváním</translation>
     </message>
     <message>
         <source>Save Default Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit výchozí volby</translation>
     </message>
     <message>
         <source>Remove Default Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit výchozí volby</translation>
     </message>
     <message>
         <source>Scan Host</source>
-        <translation type="unfinished">Prohledat server</translation>
+        <translation>Prohledat server</translation>
     </message>
     <message>
         <source>Probes Modes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Režimy pátrání:</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Poslat</translation>
     </message>
     <message>
         <source>Received</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijato</translation>
     </message>
     <message>
         <source>Section Discover</source>
-        <translation type="unfinished"></translation>
+        <translation>Objevování části</translation>
     </message>
 </context>
 <context>
@@ -1190,31 +1190,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Hostname already scanning
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Název hostitelského počítače se již prohledává
+</translation>
     </message>
     <message>
         <source>NSS Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Skript NSS</translation>
     </message>
     <message>
         <source>Show Lookup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat vyhledávání</translation>
     </message>
     <message>
         <source>Show Traceroute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat sledování směrování na síti</translation>
     </message>
     <message>
         <source>Show/Hide Traceroute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat/Skrýt sledování směrování na síti</translation>
     </message>
     <message>
         <source>Remove Scan Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit parametry prohledávání</translation>
     </message>
     <message>
         <source>Parameters</source>
-        <translation type="unfinished">Parametry</translation>
+        <translation>Parametry</translation>
     </message>
 </context>
 <context>
@@ -1222,42 +1223,42 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Error: check nmap Installation.
 </source>
-        <translation type="unfinished">Chyba: prověřte instalaci nmap.
+        <translation>Chyba: prověřte instalaci nmap.
 </translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zavřít</translation>
+        <translation>Zavřít</translation>
     </message>
     <message>
         <source>No description</source>
-        <translation type="unfinished">Žádný popis</translation>
+        <translation>Žádný popis</translation>
     </message>
 </context>
 <context>
     <name>utilities</name>
     <message>
         <source>Select the file</source>
-        <translation type="unfinished">Vyberte soubor</translation>
+        <translation>Vyberte soubor</translation>
     </message>
 </context>
 <context>
     <name>vulnerability</name>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Hledat</translation>
+        <translation>Hledat</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished">Vpřed</translation>
+        <translation>Vpřed</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Zastavit</translation>
+        <translation>Zastavit</translation>
     </message>
 </context>
 </TS>
