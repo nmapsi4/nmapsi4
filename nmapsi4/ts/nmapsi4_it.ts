@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Scan</source>
-        <translation>Scansiona</translation>
+        <translation>Scansione</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -45,31 +45,31 @@
     </message>
     <message>
         <source>Stop Scan</source>
-        <translation>Ferma Scansione</translation>
+        <translation>Ferma scansione</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation>Cancella Risultati</translation>
+        <translation>Cancella cronologia</translation>
     </message>
     <message>
         <source>Close Tree</source>
-        <translation>Chiudi Albero</translation>
+        <translation>Chiudi albero</translation>
     </message>
     <message>
         <source>Close Scan Tree</source>
-        <translation>Chiudi Albero</translation>
+        <translation>Chiudi scansione albero</translation>
     </message>
     <message>
         <source>Clear HostName</source>
-        <translation>Cancella Host</translation>
+        <translation>Cancella host</translation>
     </message>
     <message>
         <source>Clear Hostname IP</source>
-        <translation>Cancella IP Host</translation>
+        <translation>Cancella IP host</translation>
     </message>
     <message>
         <source>Save As</source>
-        <translation>Salva con</translation>
+        <translation>Salva come</translation>
     </message>
     <message>
         <source>Save</source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>F&amp;ull Screen Mode</source>
-        <translation>Modo &amp;tutto schermo</translation>
+        <translation>Modalità a sc&amp;hermo intero</translation>
     </message>
     <message>
         <source>Ctrl+Shift+F11</source>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Show &amp;Menu Bar</source>
-        <translation>Mostra barra del &amp;menu</translation>
+        <translation>Mostra barra dei &amp;menu</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -113,7 +113,7 @@
     </message>
     <message>
         <source>Log</source>
-        <translation>Registro</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <source>Vuln</source>
@@ -129,7 +129,7 @@
     </message>
     <message>
         <source>Host(s)</source>
-        <translation></translation>
+        <translation>Host</translation>
     </message>
     <message>
         <source>Description</source>
@@ -145,7 +145,7 @@
     </message>
     <message>
         <source>Visit Website</source>
-        <translation>Visita il Sito Web</translation>
+        <translation>Visita il sito web</translation>
     </message>
     <message>
         <source>Report a bug</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>Nss script result</source>
-        <translation>Risultati scansione Nss</translation>
+        <translation>Risultati script NSS</translation>
     </message>
     <message>
         <source>Date</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Profile Name</source>
-        <translation>Nome Profilo</translation>
+        <translation>Nome profilo</translation>
     </message>
     <message>
         <source>Parameters List</source>
@@ -185,35 +185,35 @@
     </message>
     <message>
         <source>Scan Details</source>
-        <translation>Dettagli di scansione</translation>
+        <translation>Dettagli scansione</translation>
     </message>
     <message>
         <source>Add Url</source>
-        <translation>Inserisci Indirizzo</translation>
+        <translation>Aggiungi URL</translation>
     </message>
     <message>
         <source>Url(s)</source>
-        <translation>Indirizzo(i)</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Url(s) name</source>
-        <translation>Nome indirizzo(i)</translation>
+        <translation>Nome URL</translation>
     </message>
     <message>
         <source>Bookmarks Url</source>
-        <translation>Bookmarks Indirizzi</translation>
+        <translation>URL Segnalibri</translation>
     </message>
     <message>
         <source>Local Interfaces:</source>
-        <translation>Intercacce Locali:</translation>
+        <translation>Interfacce locali:</translation>
     </message>
     <message>
         <source>Start DIscover</source>
-        <translation>Inizia la ricerca</translation>
+        <translation>Avvia rilevamento</translation>
     </message>
     <message>
         <source>Stop Discover</source>
-        <translation>Interrompi la ricerca</translation>
+        <translation>Ferma rilevamento</translation>
     </message>
     <message>
         <source>Discover Group:</source>
@@ -221,15 +221,15 @@
     </message>
     <message>
         <source>Start Ip:</source>
-        <translation>Ip iniziale:</translation>
+        <translation>IP iniziale:</translation>
     </message>
     <message>
         <source>End Ip:</source>
-        <translation>Ip finale:</translation>
+        <translation>IP finale:</translation>
     </message>
     <message>
         <source>Ip</source>
-        <translation></translation>
+        <translation>IP</translation>
     </message>
     <message>
         <source>Service(s) with info</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation>Parametri di Scansione</translation>
+        <translation>Parametri di scansione</translation>
     </message>
     <message>
         <source>Stop All Scan</source>
@@ -253,7 +253,7 @@
     </message>
     <message>
         <source>Scan Options</source>
-        <translation>Imporstazioni di Scan</translation>
+        <translation>Opzioni di scansione</translation>
     </message>
     <message>
         <source>Host Thread</source>
@@ -261,15 +261,15 @@
     </message>
     <message>
         <source>Scan Monitor</source>
-        <translation>Monitor di Scan</translation>
+        <translation>Monitor di scansione</translation>
     </message>
     <message>
         <source>Auto nse script</source>
-        <translation>Nse script automatici</translation>
+        <translation>Script nse automatico</translation>
     </message>
     <message>
         <source>Custom nse script</source>
-        <translation>Nse script personalizzati</translation>
+        <translation>Script nse personalizzato</translation>
     </message>
     <message>
         <source>Nse categories script available</source>
@@ -281,7 +281,7 @@
     </message>
     <message>
         <source>Restore Default Categories</source>
-        <translation>Reimposta categorie base</translation>
+        <translation>Ripristina categorie predefinite</translation>
     </message>
     <message>
         <source>Lookup</source>
@@ -301,7 +301,7 @@
     </message>
     <message>
         <source>Hop(s)</source>
-        <translation></translation>
+        <translation>Hop</translation>
     </message>
     <message>
         <source>Traceroute</source>
@@ -317,7 +317,7 @@
     </message>
     <message>
         <source>Warning(s)</source>
-        <translation>Errori</translation>
+        <translation>Avvisi</translation>
     </message>
     <message>
         <source>Services</source>
@@ -345,11 +345,11 @@
     </message>
     <message>
         <source>Bookmarks parameters</source>
-        <translation>Segnalibro parametri</translation>
+        <translation>Parametri segnalibri</translation>
     </message>
     <message>
         <source>Apply Quick Profile</source>
-        <translation>Usa profile veloce</translation>
+        <translation>Applica profilo rapido</translation>
     </message>
     <message>
         <source>RPC Scan</source>
@@ -389,15 +389,15 @@
     </message>
     <message>
         <source>FTP Bounce Attack</source>
-        <translation></translation>
+        <translation>Attacco FTP Bounce</translation>
     </message>
     <message>
         <source>Version Probe</source>
-        <translation>Cerca Versione</translation>
+        <translation></translation>
     </message>
     <message>
         <source>OS Detection</source>
-        <translation>Scopri OS</translation>
+        <translation>Rilevamento OS</translation>
     </message>
     <message>
         <source>ICMP Echo</source>
@@ -425,11 +425,11 @@
     </message>
     <message>
         <source>Input File</source>
-        <translation>File in Ingresso</translation>
+        <translation>File in ingresso</translation>
     </message>
     <message>
         <source>Browser</source>
-        <translation>Sfoglia</translation>
+        <translation>Navigatore</translation>
     </message>
     <message>
         <source>Scan Delay</source>
@@ -517,11 +517,11 @@
     </message>
     <message>
         <source>Source Port</source>
-        <translation></translation>
+        <translation>Porta sorgente</translation>
     </message>
     <message>
         <source>Ordered Port</source>
-        <translation>Porte ordinate</translation>
+        <translation>Porta ordinata</translation>
     </message>
     <message>
         <source>Fragmentation</source>
@@ -549,7 +549,7 @@
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation></translation>
+        <translation>S&amp;trumenti</translation>
     </message>
     <message>
         <source>toolBar</source>
@@ -565,19 +565,19 @@
     </message>
     <message>
         <source>Section Scan</source>
-        <translation>Sezione di scan</translation>
+        <translation>Sezione Scansione</translation>
     </message>
     <message>
         <source>Section Log</source>
-        <translation>Sezione dei log</translation>
+        <translation>Sezione Log</translation>
     </message>
     <message>
         <source> Section Vulnerabilities</source>
-        <translation>Sezione delle vulnerabilità</translation>
+        <translation>Sezione Vulnerabilità</translation>
     </message>
     <message>
         <source>Ipv6 support</source>
-        <translation>Supporto ipv6</translation>
+        <translation>Supporto IPv6</translation>
     </message>
     <message>
         <source>Port Range:</source>
@@ -585,7 +585,7 @@
     </message>
     <message>
         <source>Scan Techniques:</source>
-        <translation>Tecniche di scan:</translation>
+        <translation>Tecniche di scansione:</translation>
     </message>
     <message>
         <source>Ports:</source>
@@ -657,7 +657,7 @@
     </message>
     <message>
         <source>Nse Options</source>
-        <translation>Impostazioni Nse</translation>
+        <translation>Opzioni nse</translation>
     </message>
     <message>
         <source>Scan Log</source>
@@ -665,7 +665,7 @@
     </message>
     <message>
         <source>Remove Url</source>
-        <translation>Rimuovi indirizzo</translation>
+        <translation>Rimuovi URL</translation>
     </message>
     <message>
         <source>Vulnerability</source>
@@ -677,15 +677,15 @@
     </message>
     <message>
         <source>Discover</source>
-        <translation>Ricerca</translation>
+        <translation>Rileva</translation>
     </message>
     <message>
         <source>Save Default Options</source>
-        <translation>Salva le impostazione base</translation>
+        <translation>Salva opzioni predefinite</translation>
     </message>
     <message>
         <source>Remove Default Options</source>
-        <translation>Rimuovi impostazioni base</translation>
+        <translation>Rimuovi opzioni predefinite</translation>
     </message>
     <message>
         <source>Scan Host</source>
@@ -693,7 +693,7 @@
     </message>
     <message>
         <source>Probes Modes:</source>
-        <translation>Cerca Versione:</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Send</source>
@@ -705,38 +705,38 @@
     </message>
     <message>
         <source>Section Discover</source>
-        <translation>Sezione di ricerca</translation>
+        <translation>Sezione Rilevamento</translation>
     </message>
 </context>
 <context>
     <name>ProfileMain</name>
     <message>
         <source>NmapSI4 Preferences</source>
-        <translation>Preferenze NmapSI4</translation>
+        <translation>Preferenze di NmapSI4</translation>
     </message>
     <message>
         <source>User Profiles</source>
-        <translation>Profili Utente</translation>
+        <translation>Profili utente</translation>
     </message>
     <message>
         <source>Quick Scan</source>
-        <translation></translation>
+        <translation>Scansione rapida</translation>
     </message>
     <message>
         <source>Normal Scan</source>
-        <translation></translation>
+        <translation>Scansione normale</translation>
     </message>
     <message>
         <source>Root Profiles</source>
-        <translation>Profilo Amministratore</translation>
+        <translation>Profili Amministratore</translation>
     </message>
     <message>
         <source>Full Version Detection</source>
-        <translation>Controllo versione completo</translation>
+        <translation>Rilevamento versione completo</translation>
     </message>
     <message>
         <source>Quick Version Detection</source>
-        <translation>Controllo versione veloce</translation>
+        <translation>Rilevamento versione rapida</translation>
     </message>
     <message>
         <source>Log Preferences</source>
@@ -748,7 +748,7 @@
     </message>
     <message>
         <source>Log File Path</source>
-        <translation>Percorso File log</translation>
+        <translation>Percorso file log</translation>
     </message>
     <message>
         <source>Active Log</source>
@@ -764,7 +764,7 @@
     </message>
     <message>
         <source>Size Preferences</source>
-        <translation>Preferenze Dimensione</translation>
+        <translation>Preferenze di dimensione</translation>
     </message>
     <message>
         <source>Save Windows Resize</source>
@@ -772,7 +772,7 @@
     </message>
     <message>
         <source>Save Windows Positions</source>
-        <translation>Salva la Posizione della finestra</translation>
+        <translation>Salva la posizione della finestra</translation>
     </message>
     <message>
         <source>Scan Preferences</source>
@@ -788,11 +788,11 @@
     </message>
     <message>
         <source>&amp;Defaults</source>
-        <translation>&amp;Predefinito</translation>
+        <translation>Pre&amp;definiti</translation>
     </message>
     <message>
         <source>&amp;Ok</source>
-        <translation>C&amp;onferma</translation>
+        <translation>&amp;Ok</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
@@ -803,7 +803,7 @@
     <name>addParBook</name>
     <message>
         <source>Add Parameters Profile</source>
-        <translation>Inserisci un profilo parametri</translation>
+        <translation>Aggiungi profilo parametri</translation>
     </message>
     <message>
         <source>Profile Name</source>
@@ -819,18 +819,18 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Calcella</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
     <name>addUrl</name>
     <message>
         <source>Add Vulnerability Url</source>
-        <translation>Inserisci un nuovo Indirizzo</translation>
+        <translation>Aggiungi URL vulnerabilità</translation>
     </message>
     <message>
         <source>Url Name</source>
-        <translation>Nome Url</translation>
+        <translation>Nome URL</translation>
     </message>
     <message>
         <source>Url address</source>
@@ -846,8 +846,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>
-            </translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Esempio:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nome URL: cve.mitre.org&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Indirizzo: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota: &lt;/span&gt;variabile di ricerca alla fine dell&apos;URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Done</source>
@@ -855,14 +862,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancella</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
     <name>logHistory</name>
     <message>
         <source>Your configuration file is too old, please delete it</source>
-        <translation>Il file di configurazione è troppo vecchio, si prega di eliminarlo</translation>
+        <translation>Il file di configurazione è troppo datato, eliminalo</translation>
     </message>
 </context>
 <context>
@@ -889,11 +896,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;h3&gt;Automatic Logs Options&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Opzioni di log automatico&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Opzioni log automatici&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Size Options&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Opzioni della finestra&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Opzioni dimensione&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan Lookup&lt;/h3&gt;</source>
@@ -904,11 +911,11 @@ p, li { white-space: pre-wrap; }
     <name>monitorDetails</name>
     <message>
         <source>Scan Process Details</source>
-        <translation>Dettagli Scan</translation>
+        <translation>Dettagli processo di scansione</translation>
     </message>
     <message>
         <source>Hostname:</source>
-        <translation>Nome Host:</translation>
+        <translation>Nome host:</translation>
     </message>
     <message>
         <source>Reload</source>
@@ -948,7 +955,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>No Ftp Address 
 </source>
-        <translation>Manca l&apos;indirizzo ftp 
+        <translation>Manca l&apos;indirizzo FTP 
 </translation>
     </message>
     <message>
@@ -963,17 +970,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation></translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <source>no input file
 </source>
-        <translation>Nessun file in ingresso
+        <translation>nessun file in ingresso
 </translation>
     </message>
     <message>
         <source>Normal Scan</source>
-        <translation></translation>
+        <translation>Scansione normale</translation>
     </message>
     <message>
         <source>Wrong Address
@@ -983,7 +990,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan</source>
-        <translation></translation>
+        <translation>Scansione</translation>
     </message>
     <message>
         <source>Options</source>
@@ -991,7 +998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Discover</source>
-        <translation>Ricerca</translation>
+        <translation>Rilevamento</translation>
     </message>
     <message>
         <source>File</source>
@@ -1037,7 +1044,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan host(s)</source>
-        <translation>Scansione Host</translation>
+        <translation>Scansione host</translation>
     </message>
     <message>
         <source>Log</source>
@@ -1049,7 +1056,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Services</source>
-        <translation></translation>
+        <translation>Servizi</translation>
     </message>
     <message>
         <source>Check Vulnerabilities</source>
@@ -1057,15 +1064,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Network Discover</source>
-        <translation></translation>
+        <translation>Rilevamento rete</translation>
     </message>
     <message>
         <source>Enable/Disable NSS script</source>
-        <translation>Abilita/Disabilita NSS script</translation>
+        <translation>Abilita/Disabilita script NSS</translation>
     </message>
     <message>
         <source>Enable/Disable Manual Parameters</source>
-        <translation>Abilita / Disabilita parametri manuali</translation>
+        <translation>Abilita/Disabilita parametri manuali</translation>
     </message>
     <message>
         <source>Show/Hide Lookup</source>
@@ -1077,57 +1084,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Idle Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>SYN Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>ACK Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>FIN|ACK Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>FIN Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>NULL Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>XMAS Tree Stealth Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>TCP Window Scan</source>
-        <translation>
-            </translation>
+        <translation></translation>
     </message>
     <message>
         <source>UDP Ports Scan</source>
-        <translation>
-            </translation>
+        <translation>Scansione porte UDP</translation>
     </message>
     <message>
         <source>IP Protocol Scan</source>
-        <translation>
-            </translation>
+        <translation>Scansione protocollo IP</translation>
     </message>
     <message>
         <source>Insert HostName to scan</source>
-        <translation>Inserisci un HostName per la scansione</translation>
+        <translation>Inserisci un nome host da analizzare</translation>
     </message>
     <message>
         <source>Warning: Operation more expansive.
@@ -1137,7 +1134,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Options</source>
-        <translation>Imporstazioni di Scan</translation>
+        <translation>Opzioni di scansione</translation>
     </message>
     <message>
         <source>Lookup</source>
@@ -1149,11 +1146,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation>Parametri di Scansione</translation>
+        <translation>Parametri di scansione</translation>
     </message>
     <message>
         <source>Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)</source>
-        <translation>Inserisci [ip] o [dns] o [gruppo di ip] o [lista di ip/dns separata da spazi] per la scansione (es. 192.168.1.10/20)</translation>
+        <translation>Inserisci [ip] o [dns] o [gruppo di ip] o [lista di ip/dns separata da spazi] per la scansione (ad es. 192.168.1.10/20)</translation>
     </message>
     <message>
         <source>Search Vulnerabilities</source>
@@ -1167,23 +1164,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>is Up</source>
-        <translation>Attivo</translation>
+        <translation>è attivo</translation>
     </message>
     <message>
         <source>Quick Scan</source>
-        <translation></translation>
+        <translation>Scansione rapida</translation>
     </message>
     <message>
         <source>Intense Scan</source>
-        <translation></translation>
+        <translation>Scansione completa</translation>
     </message>
     <message>
         <source>Intense Scan, all TCP ports</source>
-        <translation></translation>
+        <translation>Scansione completa, tutte le porte TCP</translation>
     </message>
     <message>
         <source>Intense scan plus UDP</source>
-        <translation></translation>
+        <translation>Scansione completa più UDP</translation>
     </message>
     <message>
         <source>Slow comprehensive scan</source>
@@ -1191,32 +1188,33 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse Options</source>
-        <translation>Impostazioni Nse</translation>
+        <translation>Opzioni nse</translation>
     </message>
     <message>
         <source>Hostname already scanning
 </source>
-        <translation>Indirizzo già in scansione</translation>
+        <translation>Nome host già in scansione
+</translation>
     </message>
     <message>
         <source>NSS Script</source>
-        <translation></translation>
+        <translation>Script NSS</translation>
     </message>
     <message>
         <source>Show Lookup</source>
-        <translation>Visualizza Lookup</translation>
+        <translation>Mostra Lookup</translation>
     </message>
     <message>
         <source>Show Traceroute</source>
-        <translation>Visualizza Traceroute</translation>
+        <translation>Mostra Traceroute</translation>
     </message>
     <message>
         <source>Show/Hide Traceroute</source>
-        <translation>Visualizza/Nascondi Traceroute</translation>
+        <translation>Mostra/Nascondi Traceroute</translation>
     </message>
     <message>
         <source>Remove Scan Parameters</source>
-        <translation>Disattivare Parametri di scansione</translation>
+        <translation>Rimuovi parametri di scansione</translation>
     </message>
     <message>
         <source>Parameters</source>
@@ -1237,7 +1235,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>No description</source>
-        <translation>Nessuna Descrizione</translation>
+        <translation>Nessuna descrizione</translation>
     </message>
 </context>
 <context>
