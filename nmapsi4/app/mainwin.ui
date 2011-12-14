@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>845</width>
-    <height>637</height>
+    <width>869</width>
+    <height>536</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -2779,6 +2779,29 @@
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="labelProbesModes">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Probes Modes:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="discoverProbesCombo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="startDiscoverButt">
             <property name="enabled">
              <bool>false</bool>
@@ -2911,29 +2934,6 @@
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="label_16">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Probes Modes:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="discoverProbesCombo">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
          </layout>
         </item>
         <item row="4" column="0">
@@ -3037,8 +3037,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>845</width>
-     <height>20</height>
+     <width>869</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

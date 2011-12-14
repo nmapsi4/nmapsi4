@@ -226,6 +226,7 @@ void nmapClass::defaultDiscoverProbes()
         if (!discoverProbesCombo->isVisible()) 
         {
             discoverProbesCombo->setVisible(true);
+            labelProbesModes->setVisible(true);
         }
         discoverProbesCombo->insertItem(0, "--icmp");
         discoverProbesCombo->insertItem(1, "--tcp");
@@ -236,5 +237,6 @@ void nmapClass::defaultDiscoverProbes()
     else 
     {
         discoverProbesCombo->setVisible(false);
+        labelProbesModes->setVisible(false);
     }
 }
