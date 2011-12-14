@@ -23,17 +23,46 @@
 #include <QtCore/QString>
 #include <QtCore/QRegExp>
 #include <QtGui/QTreeWidgetItem>
+#include <QtNetwork/QHostAddress>
 
 class hostTools
 {
 public:
     static bool isDns(const QString& hostname)
     {
-        QRegExp rx_("*.*.*.*");
-        rx_.setPatternSyntax(QRegExp::Wildcard);
-        return (rx_.exactMatch(hostname) == true) ? false : true;
+        /**
+         * check if hostname is a dns.
+         *
+         * if QHostAddress isn't null hostname is a ip.
+         **/
+        QHostAddress hostAddress(hostname);
+
+        if (!hostAddress.isNull())
+        {
+            return false;
+        }
+
+        return true;
     }
-    
+
+    static bool isValidDns(const QString& hostname)
+    {
+        /**
+         * check for dns validity
+         *
+         * TODO:: complete
+         **/
+
+        QStringList dnsRows = hostname.split(".",QString::SkipEmptyParts);
+
+        if ( !dnsRows.size() || dnsRows.last().data()->isDigit())
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     static QString clearHost(const QString hostname)
     {
         // check for wrong dns address
