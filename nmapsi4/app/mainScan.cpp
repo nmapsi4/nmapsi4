@@ -26,18 +26,18 @@ void nmapClass::startScan()
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
     }
-    
+
     QString hostname = hostEdit->currentText();
     // check wrong address
     hostname = hostTools::clearHost(hostname);
-    
+
     // check for duplicate hostname in the monitor 
     if (_monitor->isHostOnMonitor(hostname))
     {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
     }
-    
+
     if(!_monitor->monitorHostNumber()) 
     {
         // clear details QHash
@@ -58,7 +58,11 @@ void nmapClass::startScan()
         {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
-            preScanLookup(hostname);
+
+            if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+            {
+                preScanLookup(hostname);
+            }
         }
         return;
     }
@@ -76,15 +80,22 @@ void nmapClass::startScan()
             {
                 addrPart_[index] = hostTools::clearHost(addrPart_[index]);
                 // check for lookup support
-                preScanLookup(addrPart_[index]);
+                if (!hostTools::isDns(addrPart_[index]) || hostTools::isValidDns(addrPart_[index]))
+                {
+                    preScanLookup(addrPart_[index]);
+                }
             }
             return;
         }
         // remove all space on hostname
         hostname.remove(' ');
     }
+
     // single ip or dns after the move
-    preScanLookup(hostname);
+    if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+    {
+        preScanLookup(hostname);
+    }
 
 }
 
@@ -112,7 +123,7 @@ void nmapClass::preScanLookup(const QString hostname)
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);
     delete history;
-    
+
     updateCompleter();
 
     // default action
@@ -121,7 +132,7 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave_As_Menu->setEnabled(false);
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
-    
+
     QStringList parameters = loadExtensions();   
 
     // check for scan lookup
@@ -145,7 +156,7 @@ void nmapClass::preScanLookup(const QString hostname)
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
 	_parser->addUtilObject(tmpParserObj_);
-        
+
         _monitor->addMonitorHost(hostname, parameters);
     } 
     else 
@@ -162,7 +173,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         return;
     }
-    
+
     parserObjUtil* elemObjUtil = new parserObjUtil();
 
     elemObjUtil->setHostName(hostname);
@@ -176,4 +187,3 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
 
     _monitor->addMonitorHost(hostname, loadExtensions());
 }
-
