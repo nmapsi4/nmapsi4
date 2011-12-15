@@ -19,7 +19,13 @@
 
 #include "mainwin.h"
 
-namespace localCall {   
+/**
+ *
+ * TODO: create nse class
+ *
+ **/
+
+namespace localCall {
     QPointer<QProcessThread> th;
     QPointer<QProcessThread> thScript;
     QTextDocument *documentScript = NULL;
@@ -30,20 +36,20 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
     Q_UNUSED(column);
     qDebug() << "DEBUG:: item: " << item->text(0);
 
-    if (nseScriptAvailList.indexOf(item->text(0)) != -1) 
+    if (nseScriptAvailList.indexOf(item->text(0)) != -1)
     {
         nseActiveBut->setEnabled(true);
         nseRemoveBut->setEnabled(false);
-    } 
-    else 
+    }
+    else
     {
         nseActiveBut->setEnabled(false);
         nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
-    
-    if (i == nseHelpCache.constEnd()) 
+
+    if (i == nseHelpCache.constEnd())
     {
         /*
         * not category on cache
@@ -59,8 +65,8 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
         localCall::th->start();
-    } 
-    else 
+    }
+    else
     {
         // category on cache
         qDebug() << "DEBUG:: load help from cache";
@@ -71,7 +77,7 @@ void nmapClass::requestNseHelp(QTreeWidgetItem *item, int column)
 void nmapClass::requestNseScriptHelp()
 {
     QString searchString_ = comboScriptHelp->currentText();
-    if (searchString_.isEmpty()) 
+    if (searchString_.isEmpty())
     {
         return;
     }
@@ -115,13 +121,13 @@ void nmapClass::showNseScriptHelp(const QStringList parameters, QByteArray resul
     delete localCall::thScript;
 
     QString result_(result);
-    
-    if (localCall::documentScript != NULL) 
+
+    if (localCall::documentScript != NULL)
     {
         qDebug() << "DEBUG::ScriptNse delete document";
         delete localCall::documentScript;
     }
-    
+
     localCall::documentScript = new QTextDocument(result_);
     textScriptHelp->setDocument(localCall::documentScript);
 }
