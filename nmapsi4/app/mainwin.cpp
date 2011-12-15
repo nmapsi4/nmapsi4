@@ -54,7 +54,7 @@ void nmapClass::initObject()
     checkProfile();
     optionListCreate();
     // check dig support
-    digSupport *digC  = new digSupport();
+    dig *digC  = new dig();
     digC->checkDigSupport(digSupported);
     delete digC;
     // FIXME:: active hostEdit by default
@@ -99,7 +99,7 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    freelist<digSupport*>::itemDeleteAll(digLookupList);
+    freelist<dig*>::itemDeleteAll(digLookupList);
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);

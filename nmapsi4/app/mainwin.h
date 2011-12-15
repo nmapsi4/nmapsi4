@@ -59,7 +59,6 @@
 
 // define class namespace
 using namespace internalLookup;
-using namespace digInterface;
 using namespace pingInterface;
 using namespace memory;
 
@@ -150,7 +149,7 @@ protected:
     QHash<QString, QTextDocument*> nseHelpCache;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
-    QList<digSupport*> digLookupList;
+    QList<dig*> digLookupList;
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;

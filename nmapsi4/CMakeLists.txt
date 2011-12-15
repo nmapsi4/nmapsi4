@@ -10,7 +10,7 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/app/monitor/
     ${CMAKE_SOURCE_DIR}/nmapsi4/app/preference/
     ${CMAKE_SOURCE_DIR}/nmapsi4/common/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/digSupport/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/dig/
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/discover/
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/bookmarks/
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/vulnerability/
@@ -27,7 +27,7 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      monitor)
 endif (Q_WS_X11)
 
-SET(SOURCES_CPP 
+SET(SOURCES_CPP
 		app/parser/parser.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
@@ -54,7 +54,7 @@ SET(SOURCES_CPP
 		platform/vulnerability/addurl.cpp
                 platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookUpT.cpp
-		platform/digSupport/digSupport.cpp
+		platform/dig/dig.cpp
                 platform/bookmarks/bookCalls.cpp
 		platform/nse/nseCalls.cpp
 		platform/nse/nseUpdateCalls.cpp
@@ -67,24 +67,24 @@ if (Q_WS_X11)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
 endif (Q_WS_X11)
 
-SET(SOURCES_H app/mainwin.h 
-	platform/lookup/lookUpT.h 
-	platform/digSupport/digSupport.h 
-	platform/vulnerability/addurl.h 
+SET(SOURCES_H app/mainwin.h
+	platform/lookup/lookUpT.h
+	platform/dig/dig.h
+	platform/vulnerability/addurl.h
         platform/vulnerability/vulnerability.h
 	platform/bookmarks/addparbook.h
 	platform/discover/maindiscover.h
         common/utilities.h
 	common/qprocessthread.h
-	app/preference/profilemain.h 
+	app/preference/profilemain.h
 	app/monitor/details.h
         app/monitor/monitor.h
 	app/parser/parser.h)
 
-SET(SOURCES_UI app/mainwin.ui 
-	platform/vulnerability/addurl.ui 
+SET(SOURCES_UI app/mainwin.ui
+	platform/vulnerability/addurl.ui
 	platform/bookmarks/addparbook.ui
-	app/preference/profilemain.ui 
+	app/preference/profilemain.ui
 	app/monitor/details.ui)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
@@ -94,13 +94,13 @@ QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
 if (RELOAD_TRANSLATIONS)
-  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ../lib/history/loghistory.cpp ts/nmapsi4_it.ts 
-    ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts 
-    ts/nmapsi4_pl.ts ts/nmapsi4_pt_BR.ts ts/nmapsi4_cs.ts 
+  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ../lib/history/loghistory.cpp ts/nmapsi4_it.ts
+    ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts
+    ts/nmapsi4_pl.ts ts/nmapsi4_pt_BR.ts ts/nmapsi4_cs.ts
     ts/template/nmapsi4.ts ts/nmapsi4_ru.ts OPTIONS -no-obsolete)
-  message( "nmapsi4:: update and rebuild translation " )  
+  message( "nmapsi4:: update and rebuild translation " )
 else (NOT RELOAD_TRANSLATIONS)
-  QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts 
+  QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts
     ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_pl.ts ts/nmapsi4_pt_BR.ts ts/nmapsi4_cs.ts ts/nmapsi4_ru.ts)
   message( "nmapsi4:: update translation " )
 endif (RELOAD_TRANSLATIONS)

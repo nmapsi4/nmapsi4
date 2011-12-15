@@ -24,7 +24,7 @@ void nmapClass::startProfile_ui()   // start preference UI
     mainProfile dialogPreference_(this);
     connect(&dialogPreference_, SIGNAL(accepted()),
             this, SLOT(readProfile()));
-    
+
     dialogPreference_.exec();
 }
 
@@ -32,9 +32,9 @@ void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
-    freelist<digSupport*>::itemDeleteAll(digLookupList);
-    
-    if (!FileName.isNull()) 
+    freelist<dig*>::itemDeleteAll(digLookupList);
+
+    if (!FileName.isNull())
     {
 
         QFile *tmpFile = new QFile();
@@ -44,12 +44,12 @@ void nmapClass::exit()
         newFile.append(FileName);
         tmpFile->setFileName(newFile);
 
-        if ((checkLog) && (tmpFile->exists())) 
+        if ((checkLog) && (tmpFile->exists()))
 	{
             tmpFile->close();
             isEmptyLog();
-        } 
-        else if ((!checkLog) && (tmpFile->exists())) 
+        }
+        else if ((!checkLog) && (tmpFile->exists()))
 	{ // if log check is disable but the file exist
                 tmpFile->close();
                 tmpFile->remove();
@@ -68,5 +68,5 @@ void nmapClass::stop_scan()
     // stop and clear clear thread
     _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
-    freelist<digSupport*>::itemDeleteAll(digLookupList);
+    freelist<dig*>::itemDeleteAll(digLookupList);
 }

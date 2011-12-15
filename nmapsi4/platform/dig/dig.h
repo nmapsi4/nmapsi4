@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGSUPPORT_H
-#define DIGSUPPORT_H
+#ifndef DIG_H
+#define DIG_H
 
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
@@ -31,48 +31,46 @@
 #include "nmapsi4Debug.h"
 #include "parserObjects.h"
 
-namespace digInterface {
+class dig : public QObject
+{
     /*!
-     * dig interface, main method for dig lookup.
+    * dig interface, main method for dig lookup.
+    */
+    Q_OBJECT
+public:
+    /*!
+     * Create a object for dig lookup Class.
      */
-    class digSupport : public QObject
-    {
-	Q_OBJECT
-    public:
-	/*!
-	 * Create a object for dig lookup Class.
-	 */
-	digSupport();
-	~digSupport();
-	/*!
-	 * Check for dig support (if installed) with QProcess.
-	 */
-	void checkDigSupport(bool& digState);
-	/*!
-	 * Start QThread dig for hostname.
-	 */
-	void digProcess(const QString hostname, parserObjUtil* objElem);
+    dig();
+    ~dig();
+    /*!
+     * Check for dig support (if installed) with QProcess.
+     */
+    void checkDigSupport(bool& digState);
+    /*!
+     * Start QThread dig for hostname.
+     */
+    void digProcess(const QString hostname, parserObjUtil* objElem);
 
-    private slots:
-	void checkDig();
-	/*!
-	 * Set dig result on parser Object utils (objElem)
-	 */
-	void digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
+private slots:
+    void checkDig();
+    /*!
+     * Set dig result on parser Object utils (objElem)
+     */
+    void digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
 
-    signals:
-	/*!
-	 * Stop QProcess immediately.
-	 */
-	void killScan();
+signals:
+    /*!
+     * Stop QProcess immediately.
+     */
+    void killScan();
 
-    protected:
-	QProcess* m_digProc;
-	bool m_state;
-	parserObjUtil* m_elemObjUtil;
-	QString m_hostNameLocal;
-	QList<QProcessThread*> threadList;
+protected:
+    QProcess* m_digProc;
+    bool m_state;
+    parserObjUtil* m_elemObjUtil;
+    QString m_hostNameLocal;
+    QList<QProcessThread*> threadList;
 
-    };
-}
+};
 #endif

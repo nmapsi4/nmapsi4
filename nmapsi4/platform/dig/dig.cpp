@@ -17,20 +17,20 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "digSupport.h"
+#include "dig.h"
 #include "memorytools.h"
 
-digInterface::digSupport::digSupport() : m_state(false)
-{  
+dig::dig() : m_state(false)
+{
 }
 
-digInterface::digSupport::~digSupport()
+dig::~dig()
 {
-    qDebug() << "DEBUG:: ~digSupport()";
+    qDebug() << "DEBUG:: ~dig()";
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(threadList);
 }
 
-void digInterface::digSupport::checkDigSupport(bool& digState) 
+void dig::checkDigSupport(bool& digState)
 {
     m_digProc = new QProcess();
     m_state = digState;
@@ -42,7 +42,7 @@ void digInterface::digSupport::checkDigSupport(bool& digState)
             this, SLOT(checkDig()));
 }
 
-void digInterface::digSupport::checkDig() 
+void dig::checkDig()
 {
     QString output(m_digProc->readAllStandardOutput());
     QString error(m_digProc->readAllStandardError());
@@ -53,11 +53,11 @@ void digInterface::digSupport::checkDig()
     QString line(stream.readLine());
     QString line2(stream2.readLine());
 
-    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG"))) 
+    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG")))
     {
         m_state = true;
-    } 
-    else 
+    }
+    else
     {
         m_state = false;
     }
@@ -65,7 +65,7 @@ void digInterface::digSupport::checkDig()
     delete m_digProc;
 }
 
-void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil* objElem) 
+void dig::digProcess(const QString hostname, parserObjUtil* objElem)
 {
     QStringList command;
     m_hostNameLocal = hostname;
@@ -78,22 +78,22 @@ void digInterface::digSupport::digProcess(const QString hostname, parserObjUtil*
       this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));
 }
 
-void digInterface::digSupport::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError) 
+void dig::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
 {
     Q_UNUSED(hostname);
-    
+
     QString buff1(bufferData);
     QTextStream stream1(&buff1);
     QString line;
-    
+
     m_elemObjUtil->setHostName(m_hostNameLocal);
 
-    while(!stream1.atEnd()) 
+    while(!stream1.atEnd())
     {
         line = stream1.readLine();
-        if(!line.startsWith(QLatin1String(";;")) 
-            && !line.startsWith(QLatin1String(";")) 
-            && !line.isEmpty()) 
+        if(!line.startsWith(QLatin1String(";;"))
+            && !line.startsWith(QLatin1String(";"))
+            && !line.isEmpty())
         {
             m_elemObjUtil->setInfoLookup(line);
         }

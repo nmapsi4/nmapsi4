@@ -22,7 +22,7 @@
 
 parser::parser(nmapClass* parent) : QWidget(parent), _ui(parent)
 {
-    
+
 }
 
 parser::~parser()
@@ -58,23 +58,23 @@ void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByte
     _ui->listClearFlag = false; // the listScan is not empty
 
     _ui->progressScan->setValue(75);
-    
+
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
-    
+
     // create a scan host item.
     QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(_ui->treeMain);
     _ui->mainTreeElem.push_front(mainTreeE);
     mainTreeE->setSizeHint(0, QSize(32, 32));
-    
+
     _ui->comboScanLog->insertItem(3, parList.join(" "));
-    
+
     // call real parser
     parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,mainTreeE);
 
     int tmpBox = _ui->SWscan->currentIndex();
- 
-    switch(tmpBox) 
+
+    switch(tmpBox)
     {
       case 0:
         _ui->Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
@@ -94,7 +94,7 @@ void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByte
 
     _ui->progressScan->setValue(85);
 
-    if(!_ui->_monitor->monitorHostNumber()) 
+    if(!_ui->_monitor->monitorHostNumber())
     {
         _ui->progressScan->setValue(100);
         _ui->monitorStopAllScanButt->setEnabled(false);
@@ -102,8 +102,8 @@ void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByte
         _ui->monitorDetailsScanButt->setEnabled(false);
         _ui->tabUi->setTabIcon(_ui->tabUi->indexOf(_ui->tabMainMonitor),
                           QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-    } 
-    else 
+    }
+    else
     {
         _ui->progressScan->setValue(55);
     }
@@ -113,77 +113,77 @@ void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByte
     _ui->hostEdit->setEnabled(true);
     _ui->action_Save_As->setEnabled(true);
     _ui->actionSave_As_Menu->setEnabled(true);
-    
-    if (!_ui->logSessionFile.isEmpty()) 
+
+    if (!_ui->logSessionFile.isEmpty())
     {
         _ui->actionSave->setEnabled(true);
         _ui->actionSave_Menu->setEnabled(true);
     }
-    
-    if(!_ui->_monitor->monitorHostNumber()) 
+
+    if(!_ui->_monitor->monitorHostNumber())
     {
         _ui->_monitor->clearHostMonitor();
         freelist<lookUpT*>::itemDeleteAll(_ui->internealLookupList);
-        freelist<digSupport*>::itemDeleteAll(_ui->digLookupList);
+        freelist<dig*>::itemDeleteAll(_ui->digLookupList);
     }
 
     _parserObjList.append(elemObj);
 }
 
-void parser::showParserResult(QTreeWidgetItem *item, int column) 
+void parser::showParserResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
     QString hostName_ = item->text(0);
     hostName_  = hostName_.left(hostName_.indexOf("\n"));
 
-    if(_ui->hostEdit->itemText(0).isEmpty() && item->parent() == NULL) 
+    if(_ui->hostEdit->itemText(0).isEmpty() && item->parent() == NULL)
     {
         _ui->hostEdit->addItem(hostName_);
-    } 
-    else if(item->parent() == NULL) 
+    }
+    else if(item->parent() == NULL)
     {
         _ui->hostEdit->setItemText(0, hostName_);
     }
 
     int indexObj = _ui->treeMain->indexOfTopLevelItem(item);
 
-    if(indexObj != -1) 
+    if(indexObj != -1)
     {
         showParserObj(indexObj);
         showParserObjPlugins(indexObj);
     }
 }
 
-void parser::showParserTracerouteResult(QTreeWidgetItem *item, int column) 
+void parser::showParserTracerouteResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
-    if(_ui->hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty()) 
+    if(_ui->hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty())
     {
-        if(!item->text(3).contains("DNS")) 
+        if(!item->text(3).contains("DNS"))
         {
             _ui->hostEdit->addItem(item->text(3));
-        } 
-        else 
+        }
+        else
         {
             _ui->hostEdit->addItem(item->text(2));
         }
-    } 
-    else if(!item->parent() && !item->text(2).isEmpty()) 
+    }
+    else if(!item->parent() && !item->text(2).isEmpty())
     {
-        if(!item->text(3).contains("DNS")) 
+        if(!item->text(3).contains("DNS"))
         {
             _ui->hostEdit->setItemText(0, item->text(3));
-        } 
-        else 
+        }
+        else
         {
             _ui->hostEdit->setItemText(0, item->text(2));
         }
     }
 }
 
-parserObj* parser::parserCore(const QStringList parList, QString StdoutStr, 
+parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
     /*
@@ -194,7 +194,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     parserObj *elemObj = new parserObj();
     QString hostCheck = parList[parList.size()-1];
     elemObj->setHostName(hostCheck);
-    
+
     QRegExp rxT_("^\\d\\d?");
     QString generalBuffer_(hostCheck);
     QString tmp;
@@ -204,8 +204,8 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     QString bufferNSS;
 
     QTextStream stream(&StdoutStr);
-    
-    while (!stream.atEnd()) 
+
+    while (!stream.atEnd())
     {
         tmp = stream.readLine();
 
@@ -215,7 +215,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
                 || tmp.contains("filtered")
                 || tmp.contains("unfiltered"))
                 && !tmp.contains("Not shown:")
-                && !tmp.contains("Discovered")) 
+                && !tmp.contains("Discovered"))
         {
 
             scanBuffer.append(tmp);
@@ -240,31 +240,31 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
                 || tmp.contains("Nmap done:")
                 || tmp.startsWith(QLatin1String("Hosts"))
                 || tmp.startsWith(QLatin1String("Host")))
-                && !tmp.startsWith(QLatin1String("|"))) 
+                && !tmp.startsWith(QLatin1String("|")))
         {
             bufferInfo.append(tmp);
             bufferInfo.append("\n");
         }
-          
+
         // pars for subtree service
-        if(tmp.startsWith(QLatin1String("|"))) 
+        if(tmp.startsWith(QLatin1String("|")))
         {
             QString tmpClean(tmp);
-            if(tmpClean.startsWith(QLatin1String("|"))) 
+            if(tmpClean.startsWith(QLatin1String("|")))
             {
                 tmpClean.remove('|');
             }
-            
-            if(tmpClean.startsWith(QLatin1String("_"))) 
+
+            if(tmpClean.startsWith(QLatin1String("_")))
             {
                 tmpClean.remove('_');
             }
 
             int pos;
-            while(tmpClean.startsWith(QLatin1String(" "))) 
+            while(tmpClean.startsWith(QLatin1String(" ")))
             {
                 pos = tmpClean.indexOf(" ");
-                if(pos == 0) 
+                if(pos == 0)
                 {
                     tmpClean.remove(pos,1);
                 }
@@ -274,91 +274,91 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
             bufferNSS.append("\n");
         }
 
-        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/"))) 
+        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/")))
         {
             bufferTraceroot.append(tmp);
             bufferTraceroot.append("\n");
         }
 
     }
-    
+
     // check for log file
     QTextStream *file = NULL;
-    if (_ui->_logFilePath) 
+    if (_ui->_logFilePath)
     {
         file = new QTextStream(_ui->_logFilePath);
         // parameters list for log
         QString nmap_command(QString("\n==LogStart: ") + QString("\nnmap ") + parList.join(" "));
         *file << nmap_command << endl << endl;
     }
-    
+
     QString tmp_host;
 
-    if (!generalBuffer_.isEmpty()) 
+    if (!generalBuffer_.isEmpty())
     {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-        
+
         if ((_ui->_logFilePath) && (!_ui->verboseLog))
         {
             *file << generalBuffer_ << endl;
         }
-    } 
-    else 
+    }
+    else
     {
-        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss")); 
+        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-        
+
         if ((_ui->_logFilePath) && (!_ui->verboseLog))
         {
             *file << hostCheck << endl;
         }
     }
-    
+
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
     QString scanBufferToStream_line;
 
     // check for scan result
-    if (!scanBufferToStream_.atEnd()) 
+    if (!scanBufferToStream_.atEnd())
     {
-        while (!scanBufferToStream_.atEnd()) 
+        while (!scanBufferToStream_.atEnd())
         {
             scanBufferToStream_line = scanBufferToStream_.readLine();
             if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
-                    || scanBufferToStream_line.contains("unfiltered")) 
+                    || scanBufferToStream_line.contains("unfiltered"))
             {
 
-                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) 
+                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered"))
                 {
                     elemObj->setPortFiltered(scanBufferToStream_line);
-                } 
-                else 
+                }
+                else
                 {
                     elemObj->setPortOpen(scanBufferToStream_line);
                 }
-            } 
-            else 
+            }
+            else
             {
                 elemObj->setPortClose(scanBufferToStream_line);
             }
 
-            if (!scanBufferToStream_line.isEmpty()) 
+            if (!scanBufferToStream_line.isEmpty())
             {
                 QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
 
-                if ((_ui->_logFilePath) && (!_ui->verboseLog)) 
+                if ((_ui->_logFilePath) && (!_ui->verboseLog))
                 {
                     *file << scanBufferToStream_line << endl;
                 }
             }
         } // end while
-    } 
-    else 
+    }
+    else
     {
         mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
@@ -369,11 +369,11 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     // check for Host information
     // OS not detected
     bool state_ = false;
-    while (!bufferInfoStream.atEnd()) 
+    while (!bufferInfoStream.atEnd())
     {
          bufferInfoStream_line = bufferInfoStream.readLine();
          // Check OS String
-         if (bufferInfoStream_line.contains("OS") && !state_) 
+         if (bufferInfoStream_line.contains("OS") && !state_)
          {
             // OS was found ?
             //state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
@@ -381,12 +381,12 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
          }
 
          elemObj->setMainInfo(bufferInfoStream_line);
-         if (_ui->_logFilePath && !_ui->verboseLog) 
+         if (_ui->_logFilePath && !_ui->verboseLog)
          {
             *file << bufferInfoStream_line << endl;
          }
     }
-    
+
     if (mainTreeE->icon(0).isNull())
     {
         mainTreeE->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);
@@ -398,13 +398,13 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     QString bufferTraceStream_line;
 
     // check for traceroute scan information
-    while (!bufferTraceStream.atEnd()) 
+    while (!bufferTraceStream.atEnd())
     {
         bufferTraceStream_line = bufferTraceStream.readLine();
-        if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) 
+        if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop"))
         {
             elemObj->setTraceRouteInfo(bufferTraceStream_line);
-            if (_ui->_logFilePath && !_ui->verboseLog) 
+            if (_ui->_logFilePath && !_ui->verboseLog)
             {
                 *file << bufferTraceStream_line << endl;
             }
@@ -415,13 +415,13 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     QString bufferNssStream_line;
 
     // check for NSS scan information
-    while (!bufferNssStream.atEnd()) 
+    while (!bufferNssStream.atEnd())
     {
         bufferNssStream_line = bufferNssStream.readLine();
-        if (!bufferNssStream_line.isEmpty()) 
+        if (!bufferNssStream_line.isEmpty())
         {
             elemObj->setNssInfo(bufferNssStream_line);
-            if (_ui->_logFilePath && !_ui->verboseLog) 
+            if (_ui->_logFilePath && !_ui->verboseLog)
             {
                 *file << bufferNssStream_line << endl;
             }
@@ -434,7 +434,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     QString bufferLogStream_line;
 
     // check for full log scan
-    while (!bufferLogStream.atEnd()) 
+    while (!bufferLogStream.atEnd())
     {
         bufferLogStream_line = bufferLogStream.readLine();
         if (!bufferLogStream_line.isEmpty())
@@ -448,7 +448,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     }
 
     *file << "==LogEnd\n";
-    if (_ui->_logFilePath) 
+    if (_ui->_logFilePath)
     {
         delete file;
     }
@@ -457,7 +457,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     QString bufferErrorStream_line;
 
     // check for scan error
-    while (!bufferErrorStream.atEnd()) 
+    while (!bufferErrorStream.atEnd())
     {
         bufferErrorStream_line = bufferErrorStream.readLine();
         elemObj->setErrorScan(bufferErrorStream_line);
@@ -466,7 +466,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     return elemObj;
 }
 
-void parser::showParserObj(int hostIndex) 
+void parser::showParserObj(int hostIndex)
 {
     // Clear widget
     freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
@@ -474,14 +474,14 @@ void parser::showParserObj(int hostIndex)
     _ui->listWscan->clear();
     _ui->GItree->clear();
     _ui->treeNSS->clear();
-    
+
     // set combo scan parameters
     int treeMainIndex_ = _ui->treeMain->indexOfTopLevelItem(_ui->treeMain->currentItem());
     _ui->comboScanLog->setCurrentIndex(treeMainIndex_+1);
 
     QString noInfo("not Discovered");
-    
-    foreach (const QString &token, _parserObjList[hostIndex]->getMainInfo()) 
+
+    foreach (const QString &token, _parserObjList[hostIndex]->getMainInfo())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeHostDet);
         _itemListScan.push_front(root);
@@ -490,14 +490,14 @@ void parser::showParserObj(int hostIndex)
         root->setText(0, token);
         root->setToolTip(0, token);
     }
-    
+
     QString noDes = tr("No description");
     // clear combo Vulnerabilities
     _ui->comboVuln->clear();
     _ui->comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    foreach (const QString &token, _parserObjList[hostIndex]->getPortOpen()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortOpen())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
         _itemListScan.push_front(root);
@@ -508,19 +508,19 @@ void parser::showParserObj(int hostIndex)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) 
+        if (split.size() == 4)
         {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) 
+            if (!split[3].isEmpty())
             {
                 _ui->comboVuln->addItem(split[3]);
             }
-        } 
-        else if (split.size() > 4) 
+        }
+        else if (split.size() > 4)
         {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) 
+            for(int index=3; index < split.size(); index++)
             {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
@@ -528,19 +528,19 @@ void parser::showParserObj(int hostIndex)
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
             //load comboVuln
-            if (!lineDescription_.isEmpty()) 
+            if (!lineDescription_.isEmpty())
             {
                 _ui->comboVuln->addItem(lineDescription_);
             }
-        } 
-        else 
+        }
+        else
         {
             root->setText(3, noDes);
         }
     }
 
     // Show Close ports
-    foreach (const QString &token, _parserObjList[hostIndex]->getPortClose()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortClose())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
         _itemListScan.push_front(root);
@@ -550,19 +550,19 @@ void parser::showParserObj(int hostIndex)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) 
+        if (split.size() == 4)
         {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) 
+            if (!split[3].isEmpty())
             {
                 _ui->comboVuln->addItem(split[3]);
             }
-        } 
-        else if (split.size() > 4) 
+        }
+        else if (split.size() > 4)
         {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) 
+            for(int index=3; index < split.size(); index++)
             {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
@@ -570,19 +570,19 @@ void parser::showParserObj(int hostIndex)
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
             //load comboVuln
-            if (!lineDescription_.isEmpty()) 
+            if (!lineDescription_.isEmpty())
             {
                 _ui->comboVuln->addItem(lineDescription_);
             }
-        } 
-        else 
+        }
+        else
         {
             root->setText(3, noDes);
         }
     }
 
     // Show Filtered ports
-    foreach (const QString &token, _parserObjList[hostIndex]->getPortFiltered()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getPortFiltered())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listWscan);
         _itemListScan.push_front(root);
@@ -593,19 +593,19 @@ void parser::showParserObj(int hostIndex)
         root->setText(0, split[0]);
         root->setText(1, split[1]);
         root->setText(2, split[2]);
-        if (split.size() == 4) 
+        if (split.size() == 4)
         {
             root->setText(3, split[3]);
             root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) 
+            if (!split[3].isEmpty())
             {
                 _ui->comboVuln->addItem(split[3]);
             }
-        } 
-        else if (split.size() > 4) 
+        }
+        else if (split.size() > 4)
         {
             QString lineDescription_("");
-            for(int index=3; index < split.size(); index++) 
+            for(int index=3; index < split.size(); index++)
             {
                 lineDescription_.append(split[index]);
                 lineDescription_.append(" ");
@@ -613,21 +613,21 @@ void parser::showParserObj(int hostIndex)
             root->setText(3, lineDescription_);
             root->setToolTip(3, lineDescription_);
             //load comboVuln
-            if (!lineDescription_.isEmpty()) 
+            if (!lineDescription_.isEmpty())
             {
                 _ui->comboVuln->addItem(lineDescription_);
             }
-        } 
-        else 
+        }
+        else
         {
             root->setText(3, noDes);
         }
     }
-    
+
     // show services
-    foreach (const QString &token, _parserObjList[hostIndex]->getServices()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getServices())
     {
-        if (!_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) 
+        if (!_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes))
         {
             QTreeWidgetItem *objItem = new QTreeWidgetItem(_ui->GItree);
             objItem->setSizeHint(0, QSize(22, 22));
@@ -638,20 +638,20 @@ void parser::showParserObj(int hostIndex)
     }
 
     // Show Nss Info
-    foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
         _itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        if (token.contains(":") && !token.contains("=") 
+        if (token.contains(":") && !token.contains("=")
                 && !token.contains("//")
-                && !token.contains("ERROR")) 
+                && !token.contains("ERROR"))
         {
             root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
         }
 
-        if (token.contains("ERROR")) 
+        if (token.contains("ERROR"))
         {
             root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
         }
@@ -660,7 +660,7 @@ void parser::showParserObj(int hostIndex)
     }
 
     // Show full scan log
-    foreach (const QString &token, _parserObjList[hostIndex]->getFullScanLog()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getFullScanLog())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listScan);
         _itemListScan.push_front(root);
@@ -671,7 +671,7 @@ void parser::showParserObj(int hostIndex)
     }
 
     // Show scan error
-    foreach (const QString &token, _parserObjList[hostIndex]->getErrorScan()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getErrorScan())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->listScanError);
         _itemListScan.push_front(root);
@@ -682,10 +682,10 @@ void parser::showParserObj(int hostIndex)
     }
 }
 
-void parser::showParserObjPlugins(int hostIndex) 
+void parser::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
-    foreach (const QString &token, _parserObjList[hostIndex]->getTraceRouteInfo()) 
+    foreach (const QString &token, _parserObjList[hostIndex]->getTraceRouteInfo())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeTraceroot);
         _itemListScan.push_front(root);
@@ -696,56 +696,56 @@ void parser::showParserObjPlugins(int hostIndex)
         tmpToken.removeAll("");
 
         // MS windows check for ms string
-        if(tmpToken.size() == 5) 
+        if(tmpToken.size() == 5)
         {
-            if(tmpToken[2].size() < 4) 
+            if(tmpToken[2].size() < 4)
             { // minimum dns length
                 tmpToken.removeAt(2);
             }
         }
 
-        if(tmpToken.size() == 4) 
+        if(tmpToken.size() == 4)
         {
-            if(tmpToken[2].size() < 4) 
+            if(tmpToken[2].size() < 4)
             { // minimum dns length
                 tmpToken.removeAt(2);
-            } 
-            else 
+            }
+            else
             {
                 tmpToken[3].remove('(');
                 tmpToken[3].remove(')');
             }
         }
 
-        if(tmpToken.size() == 4) 
+        if(tmpToken.size() == 4)
         {
             root->setText(0, tmpToken[0]);
             root->setText(1, tmpToken[1]);
             root->setText(3, tmpToken[2]);
             root->setText(2, tmpToken[3]);
 
-        } 
-        else if(tmpToken.size() == 3) 
+        }
+        else if(tmpToken.size() == 3)
         {
             root->setText(0, tmpToken[0]);
             root->setText(1, tmpToken[1]);
             root->setText(2, tmpToken[2]);
             root->setText(3, "no DNS");
             root->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
-        } 
-        else 
+        }
+        else
         {
             root->setText(0, token);
             root->setToolTip(0, token);
         }
     }
-    
+
     // show lookUp info
-    foreach (parserObjUtil* elem, _parserObjUtilList) 
+    foreach (parserObjUtil* elem, _parserObjUtilList)
     {
-        if(_parserObjList[hostIndex]->getHostName() == elem->getHostName()) 
+        if(_parserObjList[hostIndex]->getHostName() == elem->getHostName())
         {
-            foreach (const QString &token, elem->getInfoLookup()) 
+            foreach (const QString &token, elem->getInfoLookup())
             {
                 QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeLookup);
                 _itemListScan.push_front(root);

@@ -21,7 +21,7 @@
 
 void nmapClass::startScan()
 {
-    if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty()) 
+    if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty())
     {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
@@ -31,14 +31,14 @@ void nmapClass::startScan()
     // check wrong address
     hostname = hostTools::clearHost(hostname);
 
-    // check for duplicate hostname in the monitor 
+    // check for duplicate hostname in the monitor
     if (_monitor->isHostOnMonitor(hostname))
     {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
     }
 
-    if(!_monitor->monitorHostNumber()) 
+    if(!_monitor->monitorHostNumber())
     {
         // clear details QHash
        _monitor->clearHostMonitorDetails();
@@ -46,7 +46,7 @@ void nmapClass::startScan()
 
 
     // check for ip list
-    if(hostname.contains("/") && !hostname.contains("//")) 
+    if(hostname.contains("/") && !hostname.contains("//"))
     {
         // is a ip list
         QStringList addrPart_ = hostname.split('/');
@@ -54,7 +54,7 @@ void nmapClass::startScan()
         int ipLeft_ = ipBase_[3].toInt();
         int ipRight_ = addrPart_[1].toInt();
         // TODO limit parallel ip scan
-        for(int index = ipLeft_; index <= ipRight_; index++) 
+        for(int index = ipLeft_; index <= ipRight_; index++)
         {
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
@@ -68,15 +68,15 @@ void nmapClass::startScan()
     }
 
     //scan token DNS/IP parser
-    if(hostname.contains(" ")) 
+    if(hostname.contains(" "))
     { // space delimiter
         QStringList addrPart_ = hostname.split(' ');
         addrPart_.removeAll("");
         // check for only one space in hostname
-        if(addrPart_.size() > 1) 
+        if(addrPart_.size() > 1)
         {
             // multiple ip or dns to scan
-            for(int index=0; index < addrPart_.size(); index++) 
+            for(int index=0; index < addrPart_.size(); index++)
             {
                 addrPart_[index] = hostTools::clearHost(addrPart_[index]);
                 // check for lookup support
@@ -102,13 +102,13 @@ void nmapClass::startScan()
 void nmapClass::preScanLookup(const QString hostname)
 {
     // log check
-    if (checkLog) 
+    if (checkLog)
     { // create a file log
         fileSession();
-    } 
-    else 
+    }
+    else
     {
-        if (!logPath.contains(QDir::tempPath())) 
+        if (!logPath.contains(QDir::tempPath()))
         {
             QSettings ptr("nmapsi4", "nmapsi4");
             ptr.setValue("confPath", QDir::tempPath());
@@ -133,10 +133,10 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    QStringList parameters = loadExtensions();   
+    QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    if(lookupInternal) 
+    if(lookupInternal)
     {
         // if internal lookUp is actived
         // call internal lookup thread and save the pointer.
@@ -147,28 +147,28 @@ void nmapClass::preScanLookup(const QString hostname)
                 this, SLOT(scanLookup(QHostInfo,int,QString)));
 
         internalLookupTh_->start();
-    } 
-    else if(lookupDig && digSupported) 
+    }
+    else if(lookupDig && digSupported)
     {
         // if dig support is actived
         parserObjUtil* tmpParserObj_ = new parserObjUtil();
-        digSupport *digC = new digSupport();
+        dig *digC = new dig();
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
 	_parser->addUtilObject(tmpParserObj_);
 
         _monitor->addMonitorHost(hostname, parameters);
-    } 
-    else 
+    }
+    else
     {
         // lookup isn't actived or not supported
         _monitor->addMonitorHost(hostname, parameters);
     }
 }
 
-void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname) 
+void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
 {
-    if(state == -1) 
+    if(state == -1)
     {
         QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         return;
@@ -178,7 +178,7 @@ void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
 
     elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();
-    for(int index=0; index < infoSize_; index++) 
+    for(int index=0; index < infoSize_; index++)
     {
         elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }

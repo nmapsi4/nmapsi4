@@ -32,12 +32,11 @@
 #include "maindiscover.h"
 #include "parserObjects.h"
 #include "lookUpT.h"
-#include "digSupport.h"
+#include "dig.h"
 #include "qprocessthread.h"
 
 using namespace pingInterface;
 using namespace internalLookup;
-using namespace digInterface;
 
 namespace memory
 {
