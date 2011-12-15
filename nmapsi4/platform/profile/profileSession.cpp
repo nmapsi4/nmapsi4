@@ -203,18 +203,6 @@ void nmapClass::checkProfile()
 
     NSSsupport = settings.value("NSSsupport").toBool();
 
-    /**
-     * TODO: remove, It is not more necessary
-     **/
-    QString adv_ = settings.value("ADVSupport", "none").toString();
-
-    if ((!adv_.compare("none")))
-    {
-         settings.setValue("ADVSupport", "true"); // default value
-    }
-
-    ADVSupport = settings.value("ADVSupport").toBool();
-
     QString LookupEnabled_ = settings.value("LookupEnabled", "none").toString();
 
     if ((!LookupEnabled_.compare("none")))

@@ -20,7 +20,7 @@
 #include "mainwin.h"
 
 
-void nmapClass::menuScanBook() 
+void nmapClass::menuScanBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -42,7 +42,7 @@ void nmapClass::menuScanBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuVulnBook() 
+void nmapClass::menuVulnBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -64,7 +64,7 @@ void nmapClass::menuVulnBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuParBook() 
+void nmapClass::menuParBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -86,7 +86,7 @@ void nmapClass::menuParBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuServiceMain() 
+void nmapClass::menuServiceMain()
 {
     QAction checkVuln(this);
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
@@ -100,7 +100,7 @@ void nmapClass::menuServiceMain()
     menuVulnMain.exec(QCursor::pos());
 }
 
-void nmapClass::createBar() 
+void nmapClass::createBar()
 {
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
@@ -153,21 +153,9 @@ void nmapClass::createBar()
     sezBar->addWidget(actionButt);
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/show-menu.png")),tr("Parameters"));
-    actionButt->setToolTip(tr("Enable/Disable Manual Parameters"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setMirrored(true);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("par-act",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(parAdv()));
-    toolBarTab->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("NSS Script"));
-    actionButt->setToolTip(tr("Enable/Disable NSS script"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("NSE Script"));
+    actionButt->setToolTip(tr("Enable/Disable NSE script"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
     actionButt->setFlat(true);
@@ -177,7 +165,7 @@ void nmapClass::createBar()
     _collectionsButton.insert("nss-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(NSSCheck()));
     toolBarTab->addWidget(actionButt);
-    
+
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
     actionButt->setToolTip(tr("Show/Hide Lookup"));
     actionButt->setOrientation(Qt::Vertical);
@@ -201,7 +189,7 @@ void nmapClass::createBar()
     _collectionsButton.insert("tab-trace-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
     toolBarTab->addWidget(actionButt);
-    
+
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
@@ -212,7 +200,7 @@ void nmapClass::createToolButtonSetup()
     menuSetup->setPopupMode(QToolButton::InstantPopup);
     menuSetup->setText(tr("Setup"));
     menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
-    
+
     QMenu *menu = new QMenu();
     menu->addAction(action_Scan_2);
     menu->addAction(actionSave);

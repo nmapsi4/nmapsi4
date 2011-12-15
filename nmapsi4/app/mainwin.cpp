@@ -70,18 +70,18 @@ void nmapClass::initObject()
     updateCompleter();
     // restore value with uid check
     rootMode();
-    
+
 #ifdef Q_WS_WIN
     // lookup fails on MS Windows
     _collectionsButton.value("tab-look-act")->setChecked(false);
     _collectionsButton.value("tab-look-act")->setEnabled(false);
     LookupEnabled = false;
 #endif
-        
+
     _collectionsButton.value("nss-act")->setChecked(NSSsupport);
     NSSCheck();
-    _collectionsButton.value("par-act")->setChecked(ADVSupport);
-    parAdv();
+    // load first profile
+    loadDefaultProfile();
     _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
     updateTabLook();
     _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);

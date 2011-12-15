@@ -71,7 +71,7 @@ namespace Ui
 class nmapClass : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
-    
+
     friend class parser;
     friend class vulnerability;
 
@@ -138,7 +138,6 @@ protected:
     bool lookupInternal;
     bool lookupDig;
     bool NSSsupport;
-    bool ADVSupport;
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
@@ -208,7 +207,7 @@ private slots:
     void updateTabLook();
     void updateTabTrace();
     void NSSCheck();
-    void parAdv();
+    void loadDefaultProfile();
     void resetPar();
     void detailsOptions();
     void nssOptions();
