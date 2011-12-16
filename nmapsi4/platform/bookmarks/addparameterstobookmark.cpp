@@ -17,12 +17,12 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "addparbook.h"
+#include "addparameterstobookmark.h"
 
-mainParamClass::mainParamClass(const QString parameters) 
+addParametersToBookmark::addParametersToBookmark(const QString parameters)
 {
     setupUi(this);
-    
+
     connect(doneButt, SIGNAL(clicked(bool)),
             this, SLOT(exit()));
     connect(cancelButt, SIGNAL(clicked(bool)),
@@ -30,19 +30,19 @@ mainParamClass::mainParamClass(const QString parameters)
     lineProfilePar->setText(parameters);
 }
 
-mainParamClass::~mainParamClass() 
+addParametersToBookmark::~addParametersToBookmark()
 {
-    
+
 }
 
-void mainParamClass::exit() 
+void addParametersToBookmark::exit()
 {
-    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) 
+    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty())
     {
         emit doneParBook(lineProfileName->text(), lineProfilePar->text());
         close();
-    } 
-    else 
+    }
+    else
     {
         // TODO lineEdit is Empty
     }

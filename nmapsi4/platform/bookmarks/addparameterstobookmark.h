@@ -17,29 +17,24 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef ADDURL_H
-#define ADDURL_H
+#ifndef ADDPARBOOK_H
+#define ADDPARBOOK_H
 
 #include <QtGui/QDialog>
-#include <QtCore/QObject>
-#include <ui_addurl.h>
+#include "ui_addparameterstobookmark.h"
 
-class mainUrlClass : public QDialog, private Ui::addUrl
+class addParametersToBookmark : public QDialog, private Ui::addParBook
 {
     Q_OBJECT
 
 public:
-    mainUrlClass(QObject *parent);
-    ~mainUrlClass();
+    addParametersToBookmark(const QString parameters);
+    ~addParametersToBookmark();
 
-protected:
-    QObject *par;
-    
 private slots:
     void exit();
-    
-signals:
-    void doneUrl(const QString urlName, const QString urlAddr);
-};
 
+signals:
+    void doneParBook(const QString profileName, const QString profilePar);
+};
 #endif

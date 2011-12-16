@@ -52,7 +52,7 @@ SET(SOURCES_CPP
 		platform/profile/globalProfile.cpp
 		platform/profile/profileSession.cpp
 		platform/profile/defaultProfile.cpp
-		platform/vulnerability/addurl.cpp
+		platform/vulnerability/addvulnerabilityurl.cpp
                 platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookUpT.cpp
 		platform/dig/dig.cpp
@@ -60,7 +60,7 @@ SET(SOURCES_CPP
 		platform/nse/nsemanager.cpp
 		platform/discover/maindiscover.cpp
 		platform/discover/discoverCalls.cpp
-		platform/bookmarks/addparbook.cpp)
+		platform/bookmarks/addparameterstobookmark.cpp)
 
 
 if (Q_WS_X11)
@@ -70,9 +70,9 @@ endif (Q_WS_X11)
 SET(SOURCES_H app/mainwin.h
 	platform/lookup/lookUpT.h
 	platform/dig/dig.h
-	platform/vulnerability/addurl.h
+	platform/vulnerability/addvulnerabilityurl.h
         platform/vulnerability/vulnerability.h
-	platform/bookmarks/addparbook.h
+	platform/bookmarks/addparameterstobookmark.h
 	platform/discover/maindiscover.h
         platform/nse/nsemanager.h
         common/utilities.h
@@ -83,8 +83,8 @@ SET(SOURCES_H app/mainwin.h
 	app/parser/parser.h)
 
 SET(SOURCES_UI app/mainwin.ui
-	platform/vulnerability/addurl.ui
-	platform/bookmarks/addparbook.ui
+	platform/vulnerability/addvulnerabilityurl.ui
+	platform/bookmarks/addparameterstobookmark.ui
 	app/preference/profilemain.ui
 	app/monitor/details.ui)
 

@@ -36,8 +36,20 @@ class nseManager : public QObject
 public:
     nseManager(nmapClass* parent);
     ~nseManager();
+    /**
+     * Save script list state to file
+     *
+     **/
     void sync();
+    /**
+     * Load script list state from file
+     *
+     **/
     void loadNseCategoryScript();
+    /**
+     * Get QString List with all actived script
+     *
+     **/
     const QStringList getActiveNseScript();
 
 private:
