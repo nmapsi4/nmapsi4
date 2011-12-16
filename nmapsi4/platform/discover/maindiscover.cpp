@@ -26,7 +26,6 @@ pingInterface::mainDiscover::mainDiscover(int uid)
 {
     timer = new QTimer(this);
     connectState = false;
-    ScanCounter = 0;
     threadLimit = 20;
 }
 
@@ -114,12 +113,14 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     {
         // acquire one element from thread counter
         threadLimit--;
-        ScanCounter++;
+
         QPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
         _threadList.push_back(pingTh);
-        pingTh->start();
+
         connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-            this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
+                this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
+
+        pingTh->start();
     }
     else
     {
@@ -151,10 +152,10 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     /*
      * Signal return, send data to discoverCalls
      */
+
     // increment thread limit, new ip discover is possible
     threadLimit++;
-    // remove ip from counter
-    ScanCounter--;
+
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
     QString buffLine;
@@ -176,31 +177,24 @@ void pingInterface::mainDiscover::repeatScanner()
     /*
      * Recall discover for ip suspended
      */
-    qDebug() << "DEBUG:: scan Counter timer:: " << ScanCounter;
-    if (!ScanCounter)
+    qDebug() << "DEBUG:: scan Counter timer:: " << threadLimit;
+
+    if (!threadLimit)
     {
-        disconnect(this, SLOT(repeatScanner()));
-        disconnect(this, SLOT(stopDiscover()));
+        return;
+    }
 
-        connectState = false;
-        timer->stop();
-        int lengthMin_ = threadLimit;
+    disconnect(this, SLOT(repeatScanner()));
+    disconnect(this, SLOT(stopDiscover()));
 
-        if (lengthMin_ > m_ipSospended.size())
-        {
-            lengthMin_ = m_ipSospended.size();
-            for (int index = 0; index < lengthMin_; index++)
-            {
-                isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
-            }
-        }
-        else
-        {
-            for (int index = 0; index < lengthMin_; index++)
-            {
-                isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
-            }
-        }
+    connectState = false;
+    timer->stop();
+    int freeThreadSpace = 1;
+
+    while (freeThreadSpace != threadLimit && freeThreadSpace <= m_ipSospended.size())
+    {
+        isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
+        freeThreadSpace++;
     }
 }
 

@@ -77,7 +77,6 @@ protected:
     int uid_;
     QStringList m_ipSospended;
     QObject *m_parent;
-    int ScanCounter;
     int threadLimit;
     QTimer *timer;
     bool connectState;
