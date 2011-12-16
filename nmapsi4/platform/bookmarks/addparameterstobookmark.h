@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef ADDPARBOOK_H
-#define ADDPARBOOK_H
+#ifndef ADDPARAMETERSTOBOOKMARK_H
+#define ADDPARAMETERSTOBOOKMARK_H
 
 #include <QtGui/QDialog>
 #include "ui_addparameterstobookmark.h"
