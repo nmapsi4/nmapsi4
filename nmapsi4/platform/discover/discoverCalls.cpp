@@ -26,35 +26,37 @@ namespace varDiscover {
     QStringList recvList;
 }
 
-void nmapClass::startDiscover() 
+void nmapClass::startDiscover()
 {
     // take local interfaces
     comboDiscover->clear();
     comboDiscover->insertItem(0, "Select Interface");
-    
+
     mainDiscover *discover = new mainDiscover(uid);
-    foreach (const QNetworkInterface &interface, discover->getAllInterfaces()) 
+    foreach (const QNetworkInterface &interface, discover->getAllInterfaces(mainDiscover::AllInterfaceWithAddress))
     {
         comboDiscover->insertItem(1, interface.name());
     }
 
     delete discover;
-    
 }
 
-void nmapClass::discoverIp(const QString& interface) 
+void nmapClass::discoverIp(const QString& interface)
 {
     // ip from interface and discover ip range
     mainDiscover *discover_ = new mainDiscover(uid);
-    
+
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
-    
-    if (!entryList_.isEmpty()) 
+
+    if (!entryList_.isEmpty())
     {
         QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
         QString ipString_ = entry_.ip().toString();
 
-        if (!ipString_.contains("127.0.0.1")) 
+        QHostAddress address(ipString_);
+
+        // TODO:: ipv6 support
+        if (!ipString_.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol)
         {
             // active discover buttton
             startDiscoverButt->setEnabled(true);
@@ -66,8 +68,8 @@ void nmapClass::discoverIp(const QString& interface)
             lineIpDiscover->setText(ipClass_);
             spinBeginDiscover->setValue(ipStart);
             spinEndDiscover->setValue(ipStart+10);
-        } 
-        else 
+        }
+        else
         {
             // reset discover value
             lineIpDiscover->clear();
@@ -75,8 +77,8 @@ void nmapClass::discoverIp(const QString& interface)
             spinBeginDiscover->setValue(0);
             spinEndDiscover->setValue(0);
         }
-    } 
-    else 
+    }
+    else
     {
         // reset discover value
         lineIpDiscover->clear();
@@ -84,7 +86,7 @@ void nmapClass::discoverIp(const QString& interface)
         spinBeginDiscover->setValue(0);
         spinEndDiscover->setValue(0);
     }
-    
+
     delete discover_;
 }
 
@@ -96,29 +98,29 @@ void nmapClass::discoverIpState()
     stopDiscoverButt->setEnabled(true);
     // clear tree discover
     discoveryClear();
-    
+
     QStringList ipList_;
-    for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index) 
+    for (int index = spinBeginDiscover->value(); index <= spinEndDiscover->value(); ++index)
     {
         QString tmpIp_ = lineIpDiscover->text().append(QString::number(index));
         ipList_.append(tmpIp_);
     }
-    
+
     QStringList parameters;
-    if (!uid) 
+    if (!uid)
     {
         parameters.append(discoverProbesCombo->currentText());
-    } 
-    else 
+    }
+    else
     {
         parameters.append("--tcp-connect");
     }
-    
+
     mainDiscover *discover = new mainDiscover(uid);
     varDiscover::listDiscover.push_back(discover);
-    connect(discover, SIGNAL(endPing(QStringList,bool,QByteArray)), 
+    connect(discover, SIGNAL(endPing(QStringList,bool,QByteArray)),
             this, SLOT(pingResult(QStringList,bool,QByteArray)));
-    
+
     discover->isUp(ipList_,this,parameters);
     varDiscover::ipCounter = ipList_.size();
     nseNumber->display(varDiscover::ipCounter);
@@ -133,7 +135,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
     treeDiscover->setIconSize(QSize(24,24));
     QTextStream stream(callBuff);
 
-    if (state) 
+    if (state)
     {
         QTreeWidgetItem *item = new QTreeWidgetItem(treeDiscover);
         item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
@@ -142,15 +144,15 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
         item->setText(0, hostname[hostname.size()-1]);
         item->setText(1, tr("is Up"));
 
-        while (!stream.atEnd()) 
-        {       
+        while (!stream.atEnd())
+        {
             QString line = stream.readLine();
             if ((line.startsWith(QLatin1String("RCVD")) || line.startsWith(QLatin1String("RECV")))
-                && line.contains(hostname[hostname.size()-1])) 
+                && line.contains(hostname[hostname.size()-1]))
             {
                 varDiscover::recvList.push_back(line);
-            } 
-            else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1])) 
+            }
+            else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1]))
             {
                 varDiscover::sendList.push_back(line);
             }
@@ -158,8 +160,8 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
     } /*else {
 	//qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
     }*/
-    
-    if (!varDiscover::ipCounter) 
+
+    if (!varDiscover::ipCounter)
     {
         freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
         startDiscoverButt->setEnabled(true);
@@ -195,7 +197,7 @@ void nmapClass::updateSRdata()
 
 void nmapClass::callScanDiscover()
 {
-    if(treeDiscover->currentItem()) 
+    if(treeDiscover->currentItem())
     {
         updateFontHost();
         // clear history setItemText fails
@@ -205,12 +207,12 @@ void nmapClass::callScanDiscover()
     }
 }
 
-void nmapClass::runtimeScanDiscover() 
+void nmapClass::runtimeScanDiscover()
 {
     // show discover send/recv data
     updateSRdata();
-    
-    if (!discoverScanButt->isEnabled()) 
+
+    if (!discoverScanButt->isEnabled())
     {
         discoverScanButt->setEnabled(true);
     }
@@ -221,9 +223,9 @@ void nmapClass::defaultDiscoverProbes()
     /* Modes Probe
     * --tcp,--udp,--arp,--tr
     */
-    if (!uid) 
+    if (!uid)
     {
-        if (!discoverProbesCombo->isVisible()) 
+        if (!discoverProbesCombo->isVisible())
         {
             discoverProbesCombo->setVisible(true);
             labelProbesModes->setVisible(true);
@@ -233,8 +235,8 @@ void nmapClass::defaultDiscoverProbes()
         discoverProbesCombo->insertItem(2, "--udp");
         discoverProbesCombo->insertItem(3, "--arp");
         discoverProbesCombo->insertItem(4, "--tr");
-    } 
-    else 
+    }
+    else
     {
         discoverProbesCombo->setVisible(false);
         labelProbesModes->setVisible(false);

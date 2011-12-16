@@ -213,4 +213,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(runtimeScanDiscover()));
     connect(discoverScanButt, SIGNAL(clicked()),
             this, SLOT(callScanDiscover()));
+    connect(reloadComboDiscover, SIGNAL(clicked()),
+            this, SLOT(startDiscover()));
 }

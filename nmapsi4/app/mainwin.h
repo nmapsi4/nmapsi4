@@ -97,7 +97,6 @@ private:
     void updateComboBook();
     void restoreGlobalProfile();
     QHash<QString, QString> defaultScanProfile() const;
-    void startDiscover();
     void loadHistoryDefault();
     void restoreSettings();
     void setTreeSettings();
@@ -245,6 +244,7 @@ private slots:
     void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
     void requestNseScriptHelp();
     void showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors);
+    void startDiscover();
 };
 
 #endif
