@@ -56,6 +56,7 @@
 #include "qpushbuttonorientated.h"
 #include "parser.h"
 #include "vulnerability.h"
+#include "nsemanager.h"
 
 // define class namespace
 using namespace internalLookup;
@@ -73,6 +74,7 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
 
     friend class parser;
     friend class vulnerability;
+    friend class nseManager;
 
 public:
     nmapClass();
@@ -140,13 +142,8 @@ protected:
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
-    int hostCache;
-    QList<QTreeWidgetItem*> itemNseAvail;
-    QList<QTreeWidgetItem*> itemNseActive;
+    int hostCache;;
     QList<QTreeWidgetItem*> mainTreeElem;
-    QList<QString> nseScriptAvailList;
-    QList<QString> nseScriptActiveList;
-    QHash<QString, QTextDocument*> nseHelpCache;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
     QList<dig*> digLookupList;
@@ -161,6 +158,7 @@ protected:
     QPointer<QStringListModel> _hostModel;
     QPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
+    nseManager* _nseManager;
 
 private slots:
     void initObject();
@@ -224,13 +222,6 @@ private slots:
     // global profile
     void saveGlobalProfile();
     void removeGlobalProfile();
-    void updateNseOptionScript(int index);
-    void nseTreeDefaultValue();
-    void nseTreeAvailRestoreValues();
-    void nseTreeActiveRestoreValues();
-    void nseTreeActiveItem();
-    void nseTreeRemoveItem();
-    void nseTreeResetItem();
     void startAddParBook_ui();
     //discover
     void discoverIp(const QString& interface);
@@ -239,10 +230,6 @@ private slots:
     void discoveryClear();
     void stopDiscover();
     void updateSRdata();
-    void requestNseHelp(QTreeWidgetItem *item, int column);
-    void showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors);
-    void requestNseScriptHelp();
-    void showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors);
 };
 
 #endif

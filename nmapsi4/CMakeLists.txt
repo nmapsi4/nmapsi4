@@ -15,6 +15,7 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/bookmarks/
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/vulnerability/
     ${CMAKE_SOURCE_DIR}/nmapsi4/platform/lookup/
+    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/nse/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -56,8 +57,7 @@ SET(SOURCES_CPP
 		platform/lookup/lookUpT.cpp
 		platform/dig/dig.cpp
                 platform/bookmarks/bookCalls.cpp
-		platform/nse/nseCalls.cpp
-		platform/nse/nseUpdateCalls.cpp
+		platform/nse/nsemanager.cpp
 		platform/discover/maindiscover.cpp
 		platform/discover/discoverCalls.cpp
 		platform/bookmarks/addparbook.cpp)
@@ -74,6 +74,7 @@ SET(SOURCES_H app/mainwin.h
         platform/vulnerability/vulnerability.h
 	platform/bookmarks/addparbook.h
 	platform/discover/maindiscover.h
+        platform/nse/nsemanager.h
         common/utilities.h
 	common/qprocessthread.h
 	app/preference/profilemain.h

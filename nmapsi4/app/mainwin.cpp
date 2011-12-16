@@ -40,17 +40,22 @@ void nmapClass::initObject()
 
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
-    _monitor = new monitor(scanMonitor,this);
+    // preload mainwindow info
+    setTreeWidgetValues();
+
+    _monitor = new monitor(scanMonitor);
     _utilities = new utilities(this);
     _parser = new parser(this);
     _vulnerability = new vulnerability(this);
+    _nseManager = new nseManager(this);
+    // load nse values from file settings
+    _nseManager->loadNseCategoryScript();
+
     createBar();
     createToolButtonSetup();
     setNmapsiSlot();
     // Set default properties
     setDefaultAction();
-    // preload mainwindow info
-    setTreeWidgetValues();
     checkProfile();
     optionListCreate();
     // check dig support
@@ -102,8 +107,6 @@ nmapClass::~nmapClass()
     freelist<dig*>::itemDeleteAll(digLookupList);
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     discoveryClear();
     delete _monitor;
@@ -114,6 +117,7 @@ nmapClass::~nmapClass()
     delete _completer;
     delete _completerVuln;
     delete _vulnerability;
+    delete _nseManager;
     delete _hostModel;
     delete _vulnModel;
     delete bW;

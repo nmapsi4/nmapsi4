@@ -19,7 +19,6 @@
 
 #include "mainwin.h"
 
-
 void nmapClass::saveUiSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
@@ -44,25 +43,9 @@ void nmapClass::saveUiSettings()
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
 
     /**
-     * TODO: move to nse class on method sync()
+     * nse data sync()
      **/
-    if (nseScriptActiveList.isEmpty())
-    {
-        settings.setValue("nseScriptActiveList","");
-    }
-    else
-    {
-        settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
-    }
-
-    if (nseScriptAvailList.isEmpty())
-    {
-        settings.setValue("nseScriptAvailList", "");
-    }
-    else
-    {
-        settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
-    }
+     _nseManager->sync();
 
 // check and reset for settings file permission
 #ifndef Q_WS_WIN

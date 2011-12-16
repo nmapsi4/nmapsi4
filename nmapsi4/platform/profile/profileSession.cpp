@@ -238,34 +238,4 @@ void nmapClass::checkProfile()
     {
         actionMenuBar->setChecked(false);
     }
-
-    /**
-     * Restore nse Combo script
-     *
-     * TODO: move to nse class, when It is possible.
-     **/
-    int nseComboScriptTmp_ = settings.value("nseComboScript", 0).toInt();
-    updateNseOptionScript(nseComboScriptTmp_);
-
-    nseScriptActiveList = settings.value("nseScriptActiveList","none").toStringList();
-    nseScriptAvailList = settings.value("nseScriptAvailList","none").toStringList();
-
-    if (!nseScriptAvailList.first().compare("none"))
-    {
-        nseTreeDefaultValue();
-    }
-    else
-    {
-        if (!nseScriptAvailList.first().compare(""))
-        {
-            nseScriptAvailList.removeFirst();
-        }
-
-        if (!nseScriptActiveList.first().compare(""))
-        {
-            nseScriptActiveList.removeFirst();
-        }
-        nseTreeAvailRestoreValues();
-        nseTreeActiveRestoreValues();
-    }
 }

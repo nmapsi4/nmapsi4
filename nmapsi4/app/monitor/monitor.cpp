@@ -24,7 +24,7 @@
 #include "nmapsi4adaptor.h"
 #endif
 
-monitor::monitor(QTreeWidget* monitor, nmapClass* parent) : QObject(parent), _monitor(monitor), _parent(parent)
+monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
@@ -86,7 +86,7 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
 void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
 {
     Q_ASSERT(valueIndex < _monitor->columnCount());
-    
+
     QList<QTreeWidgetItem*>::const_iterator i;
     for (i = monitorElem.constBegin(); i != monitorElem.constEnd(); ++i)
     {
@@ -94,7 +94,7 @@ void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
         {
             (*i)->setText(valueIndex,newData);
         }
-        
+
         break;
     }
 }
@@ -161,27 +161,27 @@ QProcessThread* monitor::takeMonitorElem(const QString hostName)
 void monitor::stopSelectedScan()
 {
         // Stop and wait thread from QHash table
-    if (_monitor->selectedItems().isEmpty()) 
+    if (_monitor->selectedItems().isEmpty())
     {
         return;
     }
 
     QProcessThread *ptrTmp = takeMonitorElem(_monitor->selectedItems()[0]->text(0));
-    
-    if (ptrTmp) 
+
+    if (ptrTmp)
     {
         ptrTmp->quit();
         ptrTmp->wait();
         delete ptrTmp;
     }
-    
+
     // Remove Qhash entry for stopped scan
     _scanHashListFlow.take(_monitor->selectedItems()[0]->text(0));
 }
 
 void monitor::showSelectedScanDetails()
 {
-    if (_monitor->selectedItems().isEmpty()) 
+    if (_monitor->selectedItems().isEmpty())
     {
         return;
     }
@@ -191,33 +191,33 @@ void monitor::showSelectedScanDetails()
     details.exec();
 }
 
-void monitor::readFlowFromThread(const QString hostname, QString lineData) 
+void monitor::readFlowFromThread(const QString hostname, QString lineData)
 {
     /*
      * read data line form thread
      */
     QHash<QString, QStringList>::const_iterator i = _scanHashListFlow.find(hostname);
     QTextStream stream(&lineData);
-    
-    if (i == _scanHashListFlow.constEnd()) 
+
+    if (i == _scanHashListFlow.constEnd())
     {
         QStringList flowHistory;
 
-        while (!stream.atEnd()) 
+        while (!stream.atEnd())
         {
             flowHistory.append(stream.readLine());
         }
 
         _scanHashListFlow.insert(hostname,flowHistory);
-    } 
-    else 
+    }
+    else
     {
         // append scan flow values
-        while (i != _scanHashListFlow.constEnd() && i.key() == hostname) 
+        while (i != _scanHashListFlow.constEnd() && i.key() == hostname)
         {
             QStringList flowHistory = i.value();
 
-            while (!stream.atEnd()) 
+            while (!stream.atEnd())
             {
                 flowHistory.append(stream.readLine());
             }
@@ -226,10 +226,10 @@ void monitor::readFlowFromThread(const QString hostname, QString lineData)
             ++i;
         }
     }
-    
+
     // search hostname on treeWidget and update data rows (index = 2)
     // take only remaining time and remove character unused, only [remaining || ETA]
-    if (lineData.contains("remaining") || lineData.contains("ETC")) 
+    if (lineData.contains("remaining") || lineData.contains("ETC"))
     {
         QString infoTmp_ = lineData.mid(lineData.indexOf("("),lineData.indexOf(")"));
         infoTmp_ = infoTmp_.remove('(');

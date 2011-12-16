@@ -113,7 +113,7 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(bookOptions()));
     connect(BBPar, SIGNAL(clicked()),
             this, SLOT(bookOptionsPar()));
-    
+
     connect(globalButton, SIGNAL(clicked()),
             this, SLOT(saveGlobalProfile()));
     connect(removeGlobalButton, SIGNAL(clicked()),
@@ -174,24 +174,24 @@ void nmapClass::setNmapsiSlot()
     connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
             _parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
 
-    // nse category
+    // FIXME:: nse category -- port to nseManager
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(updateNseOptionScript(int)));
+            _nseManager, SLOT(updateNseOptionScript(int)));
     connect(nseActiveBut, SIGNAL(clicked()),
-            this, SLOT(nseTreeActiveItem()));
+            _nseManager, SLOT(nseTreeActiveItem()));
     connect(nseRemoveBut, SIGNAL(clicked()),
-            this, SLOT(nseTreeRemoveItem()));
+            _nseManager, SLOT(nseTreeRemoveItem()));
     connect(nseResetBut, SIGNAL(clicked()),
-            this, SLOT(nseTreeResetItem()));
+            _nseManager, SLOT(nseTreeResetItem()));
     connect(nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(nseFixedSButt, SIGNAL(clicked()),
             this, SLOT(resetPar()));
     connect(searchButtHelp, SIGNAL(clicked()),
-            this, SLOT(requestNseScriptHelp()));
-    
+            _nseManager, SLOT(requestNseScriptHelp()));
+
     // action help menu (browser call)
     connect(actionReport_Bug, SIGNAL(triggered()),
             _utilities, SLOT(showBugUrl()));
@@ -201,7 +201,7 @@ void nmapClass::setNmapsiSlot()
             _utilities, SLOT(showDocumentationUrl()));
     connect(actionDonate_Money, SIGNAL(triggered()),
             _utilities, SLOT(showDonateUrl()));
-    
+
     // Discover
     connect(comboDiscover, SIGNAL(activated(QString)),
             this, SLOT(discoverIp(QString)));

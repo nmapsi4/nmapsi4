@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               * 
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -47,9 +47,9 @@ class monitor : public QObject
 #ifdef Q_WS_X11
     Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
 #endif
-    
+
 public:
-    monitor(QTreeWidget* monitor, nmapClass* parent);
+    monitor(QTreeWidget* monitor);
     ~monitor();
     /*
      * Add host in the monitor and start scan.
@@ -71,7 +71,7 @@ public:
      * Clear all scan host details
      */
     void clearHostMonitorDetails();
-    
+
 private:
     void startScan(const QString hostname, QStringList parameters);
     void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
@@ -83,14 +83,14 @@ private:
      * Delete host from monitor
      */
     void delMonitorHost(const QString hostName);
-        
+
 protected:
     QList<QTreeWidgetItem*> monitorElem;
     QHash<QString, QProcessThread*> _scanHashList;
     QHash<QString, QStringList> _scanHashListFlow;
     QTreeWidget* _monitor;
     nmapClass* _parent;
-    
+
 signals:
     /*
      * Exported with dbus
@@ -100,11 +100,11 @@ signals:
      * Return scan result
      */
     void hostFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
-    
+
 private slots:
     void readFlowFromThread(const QString hostname, QString lineData);
     void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
-    
+
 public slots:
         /*
      * Stop host scan selected in the QTreeWidget.

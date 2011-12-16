@@ -61,9 +61,9 @@ QStringList nmapClass::check_extensions()
         QString tmpList_;
         QString tmpListArgs_;
 
-        if (nseScriptActiveList.size())
+        if (_nseManager->getActiveNseScript().size())
         {
-            foreach (const QString &token, nseScriptActiveList)
+            foreach (const QString &token, _nseManager->getActiveNseScript())
             {
                 tmpList_.append(token);
                 tmpList_.append(",");
