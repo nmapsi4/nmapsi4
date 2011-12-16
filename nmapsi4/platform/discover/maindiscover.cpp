@@ -20,7 +20,7 @@
 #include "maindiscover.h"
 #include "memorytools.h"
 
-pingInterface::mainDiscover::mainDiscover(int uid) 
+pingInterface::mainDiscover::mainDiscover(int uid)
     : ipState(false),
       uid_(uid)
 {
@@ -38,12 +38,29 @@ pingInterface::mainDiscover::~mainDiscover()
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(_threadList);
 }
 
-QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces() const
+QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces(InterfaceOption option) const
 {
     /*
-     * return all loca interfaces
+     * return all local interfaces
+     *
      */
-    return QNetworkInterface::allInterfaces();
+
+    if (option == AllInterface)
+    {
+        return QNetworkInterface::allInterfaces();
+    }
+
+    QList<QNetworkInterface> interfacesWithAddress;
+
+    foreach (const QNetworkInterface& address, QNetworkInterface::allInterfaces())
+    {
+        if (address.addressEntries().size())
+        {
+            interfacesWithAddress.append(address);
+        }
+    }
+
+    return interfacesWithAddress;
 }
 
 QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetworkInterface interface) const
@@ -60,20 +77,20 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
      * return all entries for a single interface name
      */
     QNetworkInterface interface_ = QNetworkInterface::interfaceFromName(interfaceName);
-    
+
     QList<QNetworkAddressEntry> entryList_;
-    
-    if (interface_.isValid()) 
+
+    if (interface_.isValid())
     {
         return interface_.addressEntries();
-    } 
-    else 
+    }
+    else
     {
         return entryList_;
     }
 }
 
-void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters) 
+void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
 {
     foreach (const QString& host, networkIpList)
     {
@@ -81,7 +98,7 @@ void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject 
     }
 }
 
-void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent, QStringList parameters) 
+void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
 {
     /*
      * start thread for discover ip state
@@ -92,7 +109,7 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     parameters.append("-c 1");
     parameters.append("-v4");
     parameters.append(networkIp);
-    
+
     if (threadLimit)
     {
         // acquire one element from thread counter
@@ -103,19 +120,19 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
         pingTh->start();
         connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
-    } 
-    else 
+    }
+    else
     {
         qDebug() << "DEBUG:: thread suspended:: " << networkIp;
         // create a QStringlist with address suspended
         m_ipSospended.append(networkIp);
     }
-    
+
     if (!connectState)
     {
         connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
     }
-    
+
     // check suspended discover ip
     if (m_ipSospended.size() && !connectState)
     {
@@ -141,11 +158,11 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
     QString buffLine;
-    
-    while(!buffStream.atEnd()) 
+
+    while(!buffStream.atEnd())
     {
         buffLine = buffStream.readLine();
-        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) 
+        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV")))
         {
             emit endPing(ipAddr, true, ipBuffer);
             return;
@@ -157,10 +174,10 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
 void pingInterface::mainDiscover::repeatScanner()
 {
     /*
-     * Recall discover for ip suspended 
+     * Recall discover for ip suspended
      */
     qDebug() << "DEBUG:: scan Counter timer:: " << ScanCounter;
-    if (!ScanCounter) 
+    if (!ScanCounter)
     {
         disconnect(this, SLOT(repeatScanner()));
         disconnect(this, SLOT(stopDiscover()));
@@ -168,18 +185,18 @@ void pingInterface::mainDiscover::repeatScanner()
         connectState = false;
         timer->stop();
         int lengthMin_ = threadLimit;
-    
+
         if (lengthMin_ > m_ipSospended.size())
         {
             lengthMin_ = m_ipSospended.size();
-            for (int index = 0; index < lengthMin_; index++) 
+            for (int index = 0; index < lengthMin_; index++)
             {
                 isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
             }
-        } 
-        else 
+        }
+        else
         {
-            for (int index = 0; index < lengthMin_; index++) 
+            for (int index = 0; index < lengthMin_; index++)
             {
                 isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
             }

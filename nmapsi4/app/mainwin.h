@@ -97,7 +97,6 @@ private:
     void updateComboBook();
     void restoreGlobalProfile();
     QHash<QString, QString> defaultScanProfile() const;
-    void startDiscover();
     void loadHistoryDefault();
     void restoreSettings();
     void setTreeSettings();
@@ -229,6 +228,7 @@ private slots:
     void discoveryClear();
     void stopDiscover();
     void updateSRdata();
+    void startDiscover();
 };
 
 #endif

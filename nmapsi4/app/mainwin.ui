@@ -2779,6 +2779,23 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="reloadComboDiscover">
+            <property name="toolTip">
+             <string extracomment="Reload Interfaces"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../../mainwin.qrc">
+              <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="labelProbesModes">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">

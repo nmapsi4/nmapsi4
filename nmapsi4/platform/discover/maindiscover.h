@@ -39,6 +39,12 @@ class mainDiscover : public QObject
     Q_OBJECT
 
 public:
+    enum InterfaceOption
+    {
+        AllInterfaceWithAddress,
+        AllInterface
+    };
+
     /*!
      * Create a object for discovery Class
      */
@@ -47,7 +53,7 @@ public:
     /*!
      * Return a QList of network interfaces
      */
-    QList<QNetworkInterface> getAllInterfaces() const;
+    QList<QNetworkInterface> getAllInterfaces(InterfaceOption option) const;
     /*!
      * Return ip address for a QNetworkInterface
      */
