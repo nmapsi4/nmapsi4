@@ -30,13 +30,13 @@
 
 class nmapClass;
 
-class parser : public QWidget
+class parserManager : public QWidget
 {
     Q_OBJECT
 
 public:
-    parser(nmapClass* parent = 0);
-    ~parser();
+    parserManager(nmapClass* parent = 0);
+    ~parserManager();
     /*
      * Clear all Items in parser QList
      */

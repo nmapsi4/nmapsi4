@@ -52,10 +52,10 @@
 #include "utilities.h"
 #include "hostTools.h"
 #include "qpushbuttonorientated.h"
-#include "parser.h"
 #include "vulnerability.h"
 #include "nsemanager.h"
 #include "discovermanager.h"
+#include "parsermanager.h"
 #include "dig.h"
 
 // define class namespace
@@ -71,7 +71,7 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
 
-    friend class parser;
+    friend class parserManager;
     friend class vulnerability;
     friend class nseManager;
     friend class discoverManager;
@@ -147,7 +147,7 @@ protected:
     QToolButton *menuSetup;
     monitor *_monitor;
     utilities *_utilities;
-    parser *_parser;
+    parserManager *_parser;
     QPointer<QCompleter> _completer;
     QPointer<QCompleter> _completerVuln;
     QPointer<QStringListModel> _hostModel;

@@ -17,15 +17,15 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "parser.h"
+#include "parsermanager.h"
 #include "mainwin.h"
 
-parser::parser(nmapClass* parent) : QWidget(parent), _ui(parent)
+parserManager::parserManager(nmapClass* parent) : QWidget(parent), _ui(parent)
 {
 
 }
 
-parser::~parser()
+parserManager::~parserManager()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
     freelist<parserObj*>::itemDeleteAll(_parserObjList);
@@ -33,7 +33,7 @@ parser::~parser()
 
 }
 
-void parser::clearParserItems()
+void parserManager::clearParserItems()
 {
     freelist<parserObj*>::itemDeleteAll(_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(_parserObjUtilList);
@@ -41,12 +41,12 @@ void parser::clearParserItems()
     freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
 }
 
-void parser::addUtilObject(parserObjUtil* object)
+void parserManager::addUtilObject(parserObjUtil* object)
 {
     _parserObjUtilList.append(object);
 }
 
-void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
+void parserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     // check nmap error
     if(!dataBuffer.size() && errorBuffer.size())
@@ -130,7 +130,7 @@ void parser::startParser(const QStringList parList, QByteArray dataBuffer, QByte
     _parserObjList.append(elemObj);
 }
 
-void parser::showParserResult(QTreeWidgetItem *item, int column)
+void parserManager::showParserResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
@@ -155,7 +155,7 @@ void parser::showParserResult(QTreeWidgetItem *item, int column)
     }
 }
 
-void parser::showParserTracerouteResult(QTreeWidgetItem *item, int column)
+void parserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
@@ -183,7 +183,7 @@ void parser::showParserTracerouteResult(QTreeWidgetItem *item, int column)
     }
 }
 
-parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
+parserObj* parserManager::parserCore(const QStringList parList, QString StdoutStr,
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
     /*
@@ -466,7 +466,7 @@ parserObj* parser::parserCore(const QStringList parList, QString StdoutStr,
     return elemObj;
 }
 
-void parser::showParserObj(int hostIndex)
+void parserManager::showParserObj(int hostIndex)
 {
     // Clear widget
     freelist<QTreeWidgetItem*>::itemDeleteAll(_itemListScan);
@@ -682,7 +682,7 @@ void parser::showParserObj(int hostIndex)
     }
 }
 
-void parser::showParserObjPlugins(int hostIndex)
+void parserManager::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
     foreach (const QString &token, _parserObjList[hostIndex]->getTraceRouteInfo())

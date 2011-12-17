@@ -46,7 +46,7 @@ void nmapClass::initObject()
 
     _monitor = new monitor(scanMonitor);
     _utilities = new utilities(this);
-    _parser = new parser(this);
+    _parser = new parserManager(this);
     _vulnerability = new vulnerability(this);
 
     // create and load nse values from file settings

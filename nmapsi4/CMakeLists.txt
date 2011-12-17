@@ -29,7 +29,7 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
 endif (Q_WS_X11)
 
 SET(SOURCES_CPP
-		app/parser/parser.cpp
+		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
 		app/monitor/details.cpp
@@ -81,7 +81,7 @@ SET(SOURCES_H app/mainwin.h
 	app/preference/profilemain.h
 	app/monitor/details.h
         app/monitor/monitor.h
-	app/parser/parser.h)
+	app/parser/parsermanager.h)
 
 SET(SOURCES_UI app/mainwin.ui
 	platform/vulnerability/addvulnerabilityurl.ui
