@@ -56,7 +56,7 @@
 #include "nsemanager.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
-#include "dig.h"
+#include "digmanager.h"
 
 // define class namespace
 using namespace internalLookup;
@@ -141,7 +141,7 @@ protected:
     QList<QTreeWidgetItem*> mainTreeElem;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QList<lookUpT*> internealLookupList;
-    QList<dig*> digLookupList;
+    QList<digManager*> digLookupList;
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;

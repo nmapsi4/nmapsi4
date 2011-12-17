@@ -55,7 +55,7 @@ SET(SOURCES_CPP
 		platform/vulnerability/addvulnerabilityurl.cpp
                 platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookUpT.cpp
-		platform/dig/dig.cpp
+		platform/dig/digmanager.cpp
                 platform/bookmarks/bookCalls.cpp
 		platform/nse/nsemanager.cpp
 		platform/discover/discover.cpp
@@ -69,7 +69,7 @@ endif (Q_WS_X11)
 
 SET(SOURCES_H app/mainwin.h
 	platform/lookup/lookUpT.h
-	platform/dig/dig.h
+	platform/dig/digmanager.h
 	platform/vulnerability/addvulnerabilityurl.h
         platform/vulnerability/vulnerability.h
 	platform/bookmarks/addparameterstobookmark.h

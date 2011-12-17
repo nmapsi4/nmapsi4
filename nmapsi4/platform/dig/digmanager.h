@@ -1,4 +1,4 @@
-/***************************************************************************
+/**************************************************************************
  *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIG_H
-#define DIG_H
+#ifndef DIGMANAGER_H
+#define DIGMANAGER_H
 
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
@@ -31,7 +31,7 @@
 #include "nmapsi4Debug.h"
 #include "parserObjects.h"
 
-class dig : public QObject
+class digManager : public QObject
 {
     /*!
     * dig interface, main method for dig lookup.
@@ -41,19 +41,14 @@ public:
     /*!
      * Create a object for dig lookup Class.
      */
-    dig();
-    ~dig();
-    /*!
-     * Check for dig support (if installed) with QProcess.
-     */
-    void checkDigSupport(bool& digState);
+    digManager();
+    ~digManager();
     /*!
      * Start QThread dig for hostname.
      */
     void digProcess(const QString hostname, parserObjUtil* objElem);
 
 private slots:
-    void checkDig();
     /*!
      * Set dig result on parser Object utils (objElem)
      */
@@ -66,8 +61,6 @@ signals:
     void killScan();
 
 protected:
-    QProcess* m_digProc;
-    bool m_state;
     parserObjUtil* m_elemObjUtil;
     QString m_hostNameLocal;
     QList<QProcessThread*> threadList;

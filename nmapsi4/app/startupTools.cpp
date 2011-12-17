@@ -32,7 +32,7 @@ void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
-    freelist<dig*>::itemDeleteAll(digLookupList);
+    freelist<digManager*>::itemDeleteAll(digLookupList);
 
     if (!FileName.isNull())
     {
@@ -68,5 +68,5 @@ void nmapClass::stop_scan()
     // stop and clear clear thread
     _monitor->clearHostMonitor();
     freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
-    freelist<dig*>::itemDeleteAll(digLookupList);
+    freelist<digManager*>::itemDeleteAll(digLookupList);
 }

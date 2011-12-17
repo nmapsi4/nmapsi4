@@ -17,55 +17,20 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "dig.h"
+#include "digmanager.h"
 #include "memorytools.h"
 
-dig::dig() : m_state(false)
+digManager::digManager() //: m_state(false)
 {
 }
 
-dig::~dig()
+digManager::~digManager()
 {
     qDebug() << "DEBUG:: ~dig()";
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(threadList);
 }
 
-void dig::checkDigSupport(bool& digState)
-{
-    m_digProc = new QProcess();
-    m_state = digState;
-    QStringList parametri;
-    parametri << "-v";
-    m_digProc->start("dig", parametri);
-
-    connect(m_digProc, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(checkDig()));
-}
-
-void dig::checkDig()
-{
-    QString output(m_digProc->readAllStandardOutput());
-    QString error(m_digProc->readAllStandardError());
-
-    QTextStream stream(&output);
-    QTextStream stream2(&error);
-
-    QString line(stream.readLine());
-    QString line2(stream2.readLine());
-
-    if (line2.startsWith(QLatin1String("DiG")) || line.startsWith(QLatin1String("DiG")))
-    {
-        m_state = true;
-    }
-    else
-    {
-        m_state = false;
-    }
-
-    delete m_digProc;
-}
-
-void dig::digProcess(const QString hostname, parserObjUtil* objElem)
+void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
 {
     QStringList command;
     m_hostNameLocal = hostname;
@@ -78,7 +43,7 @@ void dig::digProcess(const QString hostname, parserObjUtil* objElem)
       this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));
 }
 
-void dig::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
+void digManager::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
 {
     Q_UNUSED(hostname);
 

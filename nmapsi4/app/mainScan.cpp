@@ -136,7 +136,7 @@ void nmapClass::preScanLookup(const QString hostname)
     QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    if(lookupInternal)
+    if(lookupInternal && LookupEnabled)
     {
         // if internal lookUp is actived
         // call internal lookup thread and save the pointer.
@@ -148,15 +148,14 @@ void nmapClass::preScanLookup(const QString hostname)
 
         internalLookupTh_->start();
     }
-    else if(lookupDig && digSupported)
+    else if(lookupDig && LookupEnabled)
     {
         // if dig support is actived
         parserObjUtil* tmpParserObj_ = new parserObjUtil();
-        dig *digC = new dig();
+        digManager *digC = new digManager();
         digLookupList.push_back(digC);
         digC->digProcess(hostname,tmpParserObj_);
-	_parser->addUtilObject(tmpParserObj_);
-
+        _parser->addUtilObject(tmpParserObj_);
         _monitor->addMonitorHost(hostname, parameters);
     }
     else

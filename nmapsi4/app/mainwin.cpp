@@ -60,10 +60,7 @@ void nmapClass::initObject()
     setDefaultAction();
     checkProfile();
     optionListCreate();
-    // check dig support
-    dig *digC  = new dig();
-    digC->checkDigSupport(digSupported);
-    delete digC;
+
     // FIXME:: active hostEdit by default
     hostEdit->setEnabled(true);
     // set tree default settings
@@ -83,6 +80,9 @@ void nmapClass::initObject()
     _collectionsButton.value("tab-look-act")->setChecked(false);
     _collectionsButton.value("tab-look-act")->setEnabled(false);
     LookupEnabled = false;
+#else
+    // removed dig runtime check, linux, mac and BSD.
+    LookupEnabled = true;
 #endif
 
     _collectionsButton.value("nss-act")->setChecked(NSSsupport);
@@ -111,7 +111,7 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    freelist<dig*>::itemDeleteAll(digLookupList);
+    freelist<digManager*>::itemDeleteAll(digLookupList);
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);

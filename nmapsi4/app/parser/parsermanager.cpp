@@ -124,7 +124,7 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     {
         _ui->_monitor->clearHostMonitor();
         freelist<lookUpT*>::itemDeleteAll(_ui->internealLookupList);
-        freelist<dig*>::itemDeleteAll(_ui->digLookupList);
+        freelist<digManager*>::itemDeleteAll(_ui->digLookupList);
     }
 
     _parserObjList.append(elemObj);
