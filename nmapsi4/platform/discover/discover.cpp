@@ -1,26 +1,26 @@
-/*
-    Copyright (C) 2011  Francesco Cecconi <francesco.cecconi@gmail.com>
+/***************************************************************************
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   francesco.cecconi@gmail.com                                           *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License.        *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-*/
-
-
-#include "maindiscover.h"
+#include "discover.h"
 #include "memorytools.h"
 
-pingInterface::mainDiscover::mainDiscover(int uid)
+discover::discover(int uid)
     : ipState(false),
       uid_(uid)
 {
@@ -29,7 +29,7 @@ pingInterface::mainDiscover::mainDiscover(int uid)
     threadLimit = 20;
 }
 
-pingInterface::mainDiscover::~mainDiscover()
+discover::~discover()
 {
     delete timer;
     m_ipSospended.clear();
@@ -37,7 +37,7 @@ pingInterface::mainDiscover::~mainDiscover()
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(_threadList);
 }
 
-QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces(InterfaceOption option) const
+QList<QNetworkInterface> discover::getAllInterfaces(InterfaceOption option) const
 {
     /*
      * return all local interfaces
@@ -62,7 +62,7 @@ QList<QNetworkInterface> pingInterface::mainDiscover::getAllInterfaces(Interface
     return interfacesWithAddress;
 }
 
-QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetworkInterface interface) const
+QList<QNetworkAddressEntry> discover::getAddressEntries(QNetworkInterface interface) const
 {
     /*
      * return all entries for a single QNeworkInterface
@@ -70,7 +70,7 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(QNetw
     return interface.addressEntries();
 }
 
-QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const QString interfaceName) const
+QList<QNetworkAddressEntry> discover::getAddressEntries(const QString interfaceName) const
 {
     /*
      * return all entries for a single interface name
@@ -89,7 +89,7 @@ QList<QNetworkAddressEntry> pingInterface::mainDiscover::getAddressEntries(const
     }
 }
 
-void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
+void discover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
 {
     foreach (const QString& host, networkIpList)
     {
@@ -97,7 +97,7 @@ void pingInterface::mainDiscover::isUp(const QStringList networkIpList, QObject 
     }
 }
 
-void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
+void discover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
 {
     /*
      * start thread for discover ip state
@@ -146,7 +146,7 @@ void pingInterface::mainDiscover::isUp(const QString networkIp, QObject *parent,
     }
 }
 
-void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+void discover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
     Q_UNUSED(bufferError);
     /*
@@ -172,7 +172,7 @@ void pingInterface::mainDiscover::threadReturn(QStringList ipAddr, QByteArray ip
     emit endPing(ipAddr, false, ipBuffer);
 }
 
-void pingInterface::mainDiscover::repeatScanner()
+void discover::repeatScanner()
 {
     /*
      * Recall discover for ip suspended
@@ -198,7 +198,7 @@ void pingInterface::mainDiscover::repeatScanner()
     }
 }
 
-void pingInterface::mainDiscover::stopDiscover()
+void discover::stopDiscover()
 {
     /*
      * disconnect timer slot and stop it

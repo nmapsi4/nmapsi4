@@ -1,25 +1,26 @@
-/*
-    Copyright (C) 2011  Francesco Cecconi <francesco.cecconi@gmail.com>
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-*/
+/***************************************************************************
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   francesco.cecconi@gmail.com                                           *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License.        *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
 
 #include "mainwin.h"
 
 namespace varDiscover {
-    QList<mainDiscover*> listDiscover;
+    QList<discover*> listDiscover;
     QList<QTreeWidgetItem*> listTreeItemDiscover;
     int ipCounter = 0;
     QStringList sendList;
@@ -33,19 +34,19 @@ void nmapClass::startDiscover()
     comboDiscover->clear();
     comboDiscover->insertItem(0, "Select Interface");
 
-    mainDiscover *discover = new mainDiscover(uid);
-    foreach (const QNetworkInterface &interface, discover->getAllInterfaces(mainDiscover::AllInterfaceWithAddress))
+    discover *discoverPtr = new discover(uid);
+    foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(discover::AllInterfaceWithAddress))
     {
         comboDiscover->insertItem(1, interface.name());
     }
 
-    delete discover;
+    delete discoverPtr;
 }
 
 void nmapClass::discoverIp(const QString& interface)
 {
     // ip from interface and discover ip range
-    mainDiscover *discover_ = new mainDiscover(uid);
+    discover *discover_ = new discover(uid);
 
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
 
@@ -117,13 +118,13 @@ void nmapClass::discoverIpState()
         parameters.append("--tcp-connect");
     }
 
-    mainDiscover *discover = new mainDiscover(uid);
-    varDiscover::listDiscover.push_back(discover);
-    connect(discover, SIGNAL(endPing(QStringList,bool,QByteArray)),
+    discover *discoverPtr = new discover(uid);
+    varDiscover::listDiscover.push_back(discoverPtr);
+    connect(discoverPtr, SIGNAL(endPing(QStringList,bool,QByteArray)),
             this, SLOT(pingResult(QStringList,bool,QByteArray)));
 
     varDiscover::_discoverIsActive = true;
-    discover->isUp(ipList_,this,parameters);
+    discoverPtr->isUp(ipList_,this,parameters);
     varDiscover::ipCounter = ipList_.size();
     nseNumber->display(varDiscover::ipCounter);
 }
@@ -168,7 +169,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 
     if (!varDiscover::ipCounter)
     {
-        freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
+        freelist<discover*>::itemDeleteAll(varDiscover::listDiscover);
         startDiscoverButt->setEnabled(true);
         stopDiscoverButt->setEnabled(false);
     }
@@ -177,7 +178,7 @@ void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray ca
 void nmapClass::discoveryClear()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(varDiscover::listTreeItemDiscover);
-    freelist<mainDiscover*>::itemDeleteAll(varDiscover::listDiscover);
+    freelist<discover*>::itemDeleteAll(varDiscover::listDiscover);
     varDiscover::recvList.clear();
     varDiscover::sendList.clear();
     discoverScanButt->setEnabled(false);

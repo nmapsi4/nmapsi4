@@ -46,7 +46,7 @@
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
 #include "lookUpT.h"
-#include "maindiscover.h"
+#include "discover.h"
 #include "addparameterstobookmark.h"
 #include "memorytools.h"
 #include "monitor.h"
@@ -56,10 +56,10 @@
 #include "parser.h"
 #include "vulnerability.h"
 #include "nsemanager.h"
+#include "dig.h"
 
 // define class namespace
 using namespace internalLookup;
-using namespace pingInterface;
 using namespace memory;
 
 namespace Ui

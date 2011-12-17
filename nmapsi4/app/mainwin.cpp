@@ -40,6 +40,7 @@ void nmapClass::initObject()
 
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
+
     // preload mainwindow info
     setTreeWidgetValues();
 
@@ -47,13 +48,14 @@ void nmapClass::initObject()
     _utilities = new utilities(this);
     _parser = new parser(this);
     _vulnerability = new vulnerability(this);
+
+    // create and load nse values from file settings
     _nseManager = new nseManager(this);
-    // load nse values from file settings
     _nseManager->loadNseCategoryScript();
 
     createBar();
     createToolButtonSetup();
-    setNmapsiSlot();
+
     // Set default properties
     setDefaultAction();
     checkProfile();
@@ -100,6 +102,9 @@ void nmapClass::initObject()
     startDiscover();
     // set modes probe in discover
     defaultDiscoverProbes();
+
+    // connect slots
+    setNmapsiSlot();
 }
 
 nmapClass::~nmapClass()

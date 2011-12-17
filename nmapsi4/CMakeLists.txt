@@ -58,7 +58,7 @@ SET(SOURCES_CPP
 		platform/dig/dig.cpp
                 platform/bookmarks/bookCalls.cpp
 		platform/nse/nsemanager.cpp
-		platform/discover/maindiscover.cpp
+		platform/discover/discover.cpp
 		platform/discover/discoverCalls.cpp
 		platform/bookmarks/addparameterstobookmark.cpp)
 
@@ -73,7 +73,7 @@ SET(SOURCES_H app/mainwin.h
 	platform/vulnerability/addvulnerabilityurl.h
         platform/vulnerability/vulnerability.h
 	platform/bookmarks/addparameterstobookmark.h
-	platform/discover/maindiscover.h
+	platform/discover/discover.h
         platform/nse/nsemanager.h
         common/utilities.h
 	common/qprocessthread.h

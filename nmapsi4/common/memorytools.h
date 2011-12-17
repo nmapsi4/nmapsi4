@@ -28,16 +28,6 @@
 #include <QtGui/QListWidgetItem>
 #include <QtWebKit/QWebView>
 
-// local include
-#include "maindiscover.h"
-#include "parserObjects.h"
-#include "lookUpT.h"
-#include "dig.h"
-#include "qprocessthread.h"
-
-using namespace pingInterface;
-using namespace internalLookup;
-
 namespace memory
 {
 
