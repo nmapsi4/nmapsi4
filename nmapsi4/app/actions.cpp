@@ -108,7 +108,7 @@ void nmapClass::createBar()
         + QString("background-color: palette(highlight); color: palette(highlighted-text); ")
         + QString("margin-left: 0px; margin-right: 3px; padding: 4px;}"));
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"));
     actionButt->setToolTip(tr("Scan host(s)"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -117,6 +117,28 @@ void nmapClass::createBar()
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("scan-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezScan()));
+    sezBar->addWidget(actionButt);
+
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"));
+    actionButt->setToolTip(tr("Network Discover"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(verticalButtonWidth);
+    actionButt->setCheckable(true);
+    actionButt->setStyleSheet(verticalStyleSheet);
+    _collectionsButton.insert("discover-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
+    sezBar->addWidget(actionButt);
+
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"));
+    actionButt->setToolTip(tr("Check Vulnerabilities"));
+    actionButt->setOrientation(Qt::Vertical);
+    actionButt->setFlat(true);
+    actionButt->setMaximumWidth(verticalButtonWidth);
+    actionButt->setCheckable(true);
+    actionButt->setStyleSheet(verticalStyleSheet);
+    _collectionsButton.insert("vuln-sez",actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
     sezBar->addWidget(actionButt);
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/book.png")),tr("Log"));
@@ -128,28 +150,6 @@ void nmapClass::createBar()
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("log-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezLog()));
-    sezBar->addWidget(actionButt);
-
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Services"));
-    actionButt->setToolTip(tr("Check Vulnerabilities"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("vuln-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
-    sezBar->addWidget(actionButt);
-
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Discover"));
-    actionButt->setToolTip(tr("Network Discover"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("discover-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
     sezBar->addWidget(actionButt);
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
