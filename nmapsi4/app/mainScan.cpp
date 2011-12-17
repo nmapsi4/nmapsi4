@@ -140,13 +140,13 @@ void nmapClass::preScanLookup(const QString hostname)
     {
         // if internal lookUp is actived
         // call internal lookup thread and save the pointer.
-        lookUpT *internalLookupTh_ = new lookUpT(hostname,this);
-        internealLookupList.push_back(internalLookupTh_);
+        lookupManager *internalLookupPtr = new lookupManager(hostname,this);
+        internealLookupList.push_back(internalLookupPtr);
 
-        connect(internalLookupTh_, SIGNAL(threadEnd(QHostInfo,int,QString)),
+        connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),
                 this, SLOT(scanLookup(QHostInfo,int,QString)));
 
-        internalLookupTh_->start();
+        internalLookupPtr->start();
     }
     else if(lookupDig && LookupEnabled)
     {

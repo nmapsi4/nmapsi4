@@ -29,40 +29,40 @@
 //local include
 #include "nmapsi4Debug.h"
 
-namespace internalLookup {
+class lookupManager : public QThread
+{
     /*!
-     * internal lookup thread class, return QHostInfo with 
-     * address resolv.
+    * internal lookup thread class, return QHostInfo with
+    * address resolv.
+    */
+
+    Q_OBJECT
+
+public:
+    /*!
+     * Create a QThread and start static QHostInfo resolv.
      */
-    class lookUpT : public QThread
-    {
-	Q_OBJECT
+    lookupManager(const QString hostname, QObject *parent);
 
-	public:
-	    /*!
-	     * Create a QThread and start static QHostInfo resolv.
-	     */
-	    lookUpT(const QString hostname, QObject *parent);
+signals:
+    /*!
+     * Return QHostInfo with a signal with address resolv.
+     */
+    void threadEnd(QHostInfo, int, const QString);
 
-	signals:
-	    /*!
-	     * Return QHostInfo with a signal with address resolv.
-	     */
-	    void threadEnd(QHostInfo, int, const QString);
+private:
+    QString m_host;
+    QHostInfo m_info;
 
-	private:
-	    QString m_host;
-	    QHostInfo m_info;
+private slots:
+    /*!
+     * Stop static QHostInfo resolv immediately.
+     */
+    void killLookup();
 
-	private slots:
-	    /*!
-	     * Stop static QHostInfo resolv immediately.
-	     */
-	    void killLookup();
+protected:
+    void run();
+    QObject* m_par;
+};
 
-	protected:
-	    void run();
-	    QObject* m_par;
-    };
-}
 #endif

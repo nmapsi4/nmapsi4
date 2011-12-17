@@ -17,22 +17,22 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "lookUpT.h"
+#include "lookupmanager.h"
 
 
-internalLookup::lookUpT::lookUpT(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
+lookupManager::lookupManager(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
 {
     killLookup();
 }
 
-void internalLookup::lookUpT::run() 
+void lookupManager::run()
 {
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
 
-    if(m_info.error() != QHostInfo::NoError 
+    if(m_info.error() != QHostInfo::NoError
         && m_info.error() != QHostInfo::UnknownError
-        && m_info.error() != QHostInfo::HostNotFound) 
+        && m_info.error() != QHostInfo::HostNotFound)
     {
 #ifdef LOOKUP_NO_THREAD
          qDebug() << "Lookup failed:" << info.errorString();
@@ -43,7 +43,7 @@ void internalLookup::lookUpT::run()
     emit threadEnd(m_info, 1, m_host);
 }
 
-void internalLookup::lookUpT::killLookup() 
+void lookupManager::killLookup()
 {
 #ifdef LOOKUP_NO_THREAD
     qDebug() << "Lookup::kill --> call";

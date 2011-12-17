@@ -45,7 +45,7 @@
 #include "loghistory.h"
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
-#include "lookUpT.h"
+#include "lookupmanager.h"
 #include "addparameterstobookmark.h"
 #include "memorytools.h"
 #include "monitor.h"
@@ -59,7 +59,6 @@
 #include "digmanager.h"
 
 // define class namespace
-using namespace internalLookup;
 using namespace memory;
 
 namespace Ui
@@ -140,7 +139,7 @@ protected:
     int hostCache;;
     QList<QTreeWidgetItem*> mainTreeElem;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
-    QList<lookUpT*> internealLookupList;
+    QList<lookupManager*> internealLookupList;
     QList<digManager*> digLookupList;
     QSplitter *cW;
     QSplitter *bW;

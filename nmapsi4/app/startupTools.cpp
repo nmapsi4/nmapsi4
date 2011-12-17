@@ -31,7 +31,7 @@ void nmapClass::startProfile_ui()   // start preference UI
 void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
-    freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digManager*>::itemDeleteAll(digLookupList);
 
     if (!FileName.isNull())
@@ -67,6 +67,6 @@ void nmapClass::stop_scan()
 {
     // stop and clear clear thread
     _monitor->clearHostMonitor();
-    freelist<lookUpT*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digManager*>::itemDeleteAll(digLookupList);
 }

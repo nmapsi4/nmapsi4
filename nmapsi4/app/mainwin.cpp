@@ -112,7 +112,7 @@ void nmapClass::initObject()
 nmapClass::~nmapClass()
 {
     freelist<digManager*>::itemDeleteAll(digLookupList);
-    freelist<lookUpT*>::itemDeleteAll(internealLookupList);
+    freelist<lookupManager*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     delete _discoverManager;

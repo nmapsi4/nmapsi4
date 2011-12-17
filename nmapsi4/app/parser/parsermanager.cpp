@@ -123,7 +123,7 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     if(!_ui->_monitor->monitorHostNumber())
     {
         _ui->_monitor->clearHostMonitor();
-        freelist<lookUpT*>::itemDeleteAll(_ui->internealLookupList);
+        freelist<lookupManager*>::itemDeleteAll(_ui->internealLookupList);
         freelist<digManager*>::itemDeleteAll(_ui->digLookupList);
     }
 

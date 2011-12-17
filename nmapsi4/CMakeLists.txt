@@ -54,7 +54,7 @@ SET(SOURCES_CPP
 		platform/profile/defaultProfile.cpp
 		platform/vulnerability/addvulnerabilityurl.cpp
                 platform/vulnerability/vulnerability.cpp
-		platform/lookup/lookUpT.cpp
+		platform/lookup/lookupmanager.cpp
 		platform/dig/digmanager.cpp
                 platform/bookmarks/bookCalls.cpp
 		platform/nse/nsemanager.cpp
@@ -68,7 +68,7 @@ if (Q_WS_X11)
 endif (Q_WS_X11)
 
 SET(SOURCES_H app/mainwin.h
-	platform/lookup/lookUpT.h
+	platform/lookup/lookupmanager.h
 	platform/dig/digmanager.h
 	platform/vulnerability/addvulnerabilityurl.h
         platform/vulnerability/vulnerability.h
