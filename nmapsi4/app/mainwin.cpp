@@ -94,14 +94,16 @@ void nmapClass::initObject()
     _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);
     updateTabTrace();
     updateMenuBar();
+
     // load quick combo items
     updateComboPar();
     updateComboBook();
     _vulnerability->updateComboWebV();
+
     // call discover startup, NPING is REQUIRED
-    startDiscover();
-    // set modes probe in discover
-    defaultDiscoverProbes();
+    _discoverManager = new discoverManager(this);
+    _discoverManager->startDiscover();
+    _discoverManager->defaultDiscoverProbes();
 
     // connect slots
     setNmapsiSlot();
@@ -113,7 +115,7 @@ nmapClass::~nmapClass()
     freelist<lookUpT*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
-    discoveryClear();
+    delete _discoverManager;
     delete _monitor;
     delete _utilities;
     delete _parser;

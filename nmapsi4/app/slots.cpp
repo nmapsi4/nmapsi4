@@ -204,15 +204,15 @@ void nmapClass::setNmapsiSlot()
 
     // Discover
     connect(comboDiscover, SIGNAL(activated(QString)),
-            this, SLOT(discoverIp(QString)));
+            _discoverManager, SLOT(discoverIp(QString)));
     connect(startDiscoverButt, SIGNAL(clicked()),
-            this, SLOT(discoverIpState()));
+            _discoverManager, SLOT(discoverIpState()));
     connect(stopDiscoverButt, SIGNAL(clicked()),
-            this, SLOT(stopDiscover()));
+            _discoverManager, SLOT(stopDiscover()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(runtimeScanDiscover()));
+            _discoverManager, SLOT(runtimeScanDiscover()));
     connect(discoverScanButt, SIGNAL(clicked()),
-            this, SLOT(callScanDiscover()));
+            _discoverManager, SLOT(callScanDiscover()));
     connect(reloadComboDiscover, SIGNAL(clicked()),
-            this, SLOT(startDiscover()));
+            _discoverManager, SLOT(startDiscover()));
 }

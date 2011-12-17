@@ -46,7 +46,6 @@
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
 #include "lookUpT.h"
-#include "discover.h"
 #include "addparameterstobookmark.h"
 #include "memorytools.h"
 #include "monitor.h"
@@ -56,6 +55,7 @@
 #include "parser.h"
 #include "vulnerability.h"
 #include "nsemanager.h"
+#include "discovermanager.h"
 #include "dig.h"
 
 // define class namespace
@@ -74,6 +74,7 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
     friend class parser;
     friend class vulnerability;
     friend class nseManager;
+    friend class discoverManager;
 
 public:
     nmapClass();
@@ -103,16 +104,12 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
-    void defaultDiscoverProbes();
     void createToolButtonSetup();
     void setQuickProfile();
     void setNormalProfile();
     void setFullVersionProfile();
     void setQuickVersionProfile();
     void updateCompleter();
-
-signals:
-    void killDiscover();
 
 protected:
     int uid;
@@ -157,6 +154,7 @@ protected:
     QPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
     nseManager* _nseManager;
+    discoverManager* _discoverManager;
 
 private slots:
     void initObject();
@@ -177,7 +175,6 @@ private slots:
     void updateMenuBar();
     void updateIconsBox();
     void callScanH();
-    void callScanDiscover();
     void callParFromBook();
     void scanLookup(QHostInfo info, int state, const QString hostname);
     void monitorRuntimeEvent();
@@ -213,7 +210,6 @@ private slots:
     void menuVulnBook();
     void menuParBook();
     void menuServiceMain();
-    void runtimeScanDiscover();
     void slotParSelected();
     void slotHostSelected();
     void saveUiSettings();
@@ -221,14 +217,6 @@ private slots:
     void saveGlobalProfile();
     void removeGlobalProfile();
     void startAddParBook_ui();
-    //discover
-    void discoverIp(const QString& interface);
-    void pingResult(QStringList hostname, bool state, const QByteArray callBuff);
-    void discoverIpState();
-    void discoveryClear();
-    void stopDiscover();
-    void updateSRdata();
-    void startDiscover();
 };
 
 #endif
