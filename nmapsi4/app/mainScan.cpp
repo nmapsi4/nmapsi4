@@ -138,51 +138,15 @@ void nmapClass::preScanLookup(const QString hostname)
     // check for scan lookup
     if(lookupInternal && LookupEnabled)
     {
-        // if internal lookUp is actived
-        // call internal lookup thread and save the pointer.
-        lookupManager *internalLookupPtr = new lookupManager(hostname,this);
-        internealLookupList.push_back(internalLookupPtr);
-
-        connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),
-                this, SLOT(scanLookup(QHostInfo,int,QString)));
-
-        internalLookupPtr->start();
+        _monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
     }
     else if(lookupDig && LookupEnabled)
     {
-        // if dig support is actived
-        parserObjUtil* tmpParserObj_ = new parserObjUtil();
-        digManager *digC = new digManager();
-        digLookupList.push_back(digC);
-        digC->digProcess(hostname,tmpParserObj_);
-        _parser->addUtilObject(tmpParserObj_);
-        _monitor->addMonitorHost(hostname, parameters);
+        _monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
     }
     else
     {
         // lookup isn't actived or not supported
-        _monitor->addMonitorHost(hostname, parameters);
+        _monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
     }
-}
-
-void nmapClass::scanLookup(QHostInfo info, int state, const QString hostname)
-{
-    if(state == -1)
-    {
-        QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        return;
-    }
-
-    parserObjUtil* elemObjUtil = new parserObjUtil();
-
-    elemObjUtil->setHostName(hostname);
-    const int infoSize_ = info.addresses().size();
-    for(int index=0; index < infoSize_; index++)
-    {
-        elemObjUtil->setInfoLookup(info.addresses()[index].toString());
-    }
-
-    _parser->addUtilObject(elemObjUtil);
-
-    _monitor->addMonitorHost(hostname, loadExtensions());
 }

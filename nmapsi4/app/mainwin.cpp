@@ -44,7 +44,7 @@ void nmapClass::initObject()
     // preload mainwindow info
     setTreeWidgetValues();
 
-    _monitor = new monitor(scanMonitor);
+    _monitor = new monitor(scanMonitor,this);
     _utilities = new utilities(this);
     _parser = new parserManager(this);
     _vulnerability = new vulnerability(this);
@@ -111,8 +111,6 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    freelist<digManager*>::itemDeleteAll(digLookupList);
-    freelist<lookupManager*>::itemDeleteAll(internealLookupList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     delete _discoverManager;

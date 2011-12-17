@@ -45,7 +45,6 @@
 #include "loghistory.h"
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
-#include "lookupmanager.h"
 #include "addparameterstobookmark.h"
 #include "memorytools.h"
 #include "monitor.h"
@@ -56,7 +55,6 @@
 #include "nsemanager.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
-#include "digmanager.h"
 
 // define class namespace
 using namespace memory;
@@ -74,6 +72,7 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
     friend class vulnerability;
     friend class nseManager;
     friend class discoverManager;
+    friend class monitor;
 
 public:
     nmapClass();
@@ -139,8 +138,6 @@ protected:
     int hostCache;;
     QList<QTreeWidgetItem*> mainTreeElem;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
-    QList<lookupManager*> internealLookupList;
-    QList<digManager*> digLookupList;
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;
@@ -175,7 +172,6 @@ private slots:
     void updateIconsBox();
     void callScanH();
     void callParFromBook();
-    void scanLookup(QHostInfo info, int state, const QString hostname);
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
     //update and log slots

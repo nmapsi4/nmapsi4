@@ -24,7 +24,7 @@
 #include "nmapsi4adaptor.h"
 #endif
 
-monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
+monitor::monitor(QTreeWidget* monitor, nmapClass* parent) : _monitor(monitor), _ui(parent)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
@@ -47,6 +47,8 @@ monitor::monitor(QTreeWidget* monitor) : _monitor(monitor)
 monitor::~monitor()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
+    freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<digManager*>::itemDeleteAll(digLookupList);
     _scanHashListFlow.clear();
 }
 
@@ -69,7 +71,7 @@ int monitor::monitorHostNumber()
     return monitorElem.size();
 }
 
-void monitor::addMonitorHost(const QString hostName, const QStringList parameters)
+void monitor::addMonitorHost(const QString hostName, const QStringList parameters, LookupType option)
 {
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(_monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
@@ -80,7 +82,10 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
     monitorElem.push_front(hostThread);
 
     emit monitorUpdated(monitorHostNumber());
+
+    // Start Scan for host
     startScan(hostName,parameters);
+    startLookup(hostName,option);
 }
 
 void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
@@ -116,6 +121,36 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     thread->start();
 }
 
+void monitor::startLookup(const QString hostname, LookupType option)
+{
+    if (option == DisabledLookup)
+    {
+        return;
+    }
+
+    if (option == InternalLookup)
+    {
+        lookupManager *internalLookupPtr = new lookupManager(hostname,this);
+        internealLookupList.push_back(internalLookupPtr);
+
+        connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),
+                this, SLOT(lookupFinisced(QHostInfo,int,QString)));
+
+        internalLookupPtr->start();
+    }
+    else
+    {
+        parserObjUtil* tmpParserObj_ = new parserObjUtil();
+
+        digManager *digC = new digManager();
+        digLookupList.push_back(digC);
+
+        digC->digProcess(hostname,tmpParserObj_);
+
+        _ui->_parser->addUtilObject(tmpParserObj_);
+    }
+}
+
 void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     /*
@@ -126,6 +161,26 @@ void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
      * Return scan result with a signal.
      */
     emit hostFinisced(parametersList,dataBuffer,errorBuffer);
+}
+
+void monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
+{
+    if(state == -1)
+    {
+        //QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
+        return;
+    }
+
+    parserObjUtil* elemObjUtil = new parserObjUtil();
+
+    elemObjUtil->setHostName(hostname);
+    const int infoSize_ = info.addresses().size();
+    for(int index=0; index < infoSize_; index++)
+    {
+        elemObjUtil->setInfoLookup(info.addresses()[index].toString());
+    }
+
+    _ui->_parser->addUtilObject(elemObjUtil);
 }
 
 void monitor::delMonitorHost(const QString hostName)
@@ -146,6 +201,8 @@ void monitor::delMonitorHost(const QString hostName)
 void monitor::clearHostMonitor()
 {
     freemap<QString,QProcessThread*>::itemDeleteAllWithWait(_scanHashList);
+    freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
+    freelist<digManager*>::itemDeleteAll(digLookupList);
 }
 
 void monitor::clearHostMonitorDetails()

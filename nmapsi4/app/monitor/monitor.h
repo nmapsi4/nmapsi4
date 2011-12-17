@@ -21,20 +21,21 @@
 #define MONITOR_H
 
 // Qt include
-#include <QtCore/QObject>
 #include <QtGui/QTreeWidget>
+#include <QtCore/QObject>
 #include <QtCore/QList>
+#include <QtCore/QHash>
 
 #ifdef Q_WS_X11
 #include <QtDBus/QDBusConnection>
 #endif
 
-#include <QtCore/QHash>
-
 // local include
 #include "memorytools.h"
 #include "qprocessthread.h"
 #include "details.h"
+#include "lookupmanager.h"
+#include "digmanager.h"
 
 using namespace memory;
 
@@ -49,12 +50,19 @@ class monitor : public QObject
 #endif
 
 public:
-    monitor(QTreeWidget* monitor);
+    monitor(QTreeWidget* monitor, nmapClass* parent);
     ~monitor();
+
+    enum LookupType
+    {
+        DigLookup,
+        InternalLookup,
+        DisabledLookup
+    };
     /*
      * Add host in the monitor and start scan.
      */
-    void addMonitorHost(const QString hostName,const QStringList parameters);
+    void addMonitorHost(const QString hostName, const QStringList parameters, LookupType option);
     /*
      * Return true if host is present in the monitor, otherwise return false.
      */
@@ -74,6 +82,7 @@ public:
 
 private:
     void startScan(const QString hostname, QStringList parameters);
+    void startLookup(const QString hostname, LookupType option);
     void updateMonitorHost(const QString hostName, int valueIndex, const QString newData);
     /*
      * This method remove scanThread elem from scan hashTable
@@ -88,8 +97,10 @@ protected:
     QList<QTreeWidgetItem*> monitorElem;
     QHash<QString, QProcessThread*> _scanHashList;
     QHash<QString, QStringList> _scanHashListFlow;
+    QList<lookupManager*> internealLookupList;
+    QList<digManager*> digLookupList;
     QTreeWidget* _monitor;
-    nmapClass* _parent;
+    nmapClass* _ui;
 
 signals:
     /*
@@ -104,6 +115,7 @@ signals:
 private slots:
     void readFlowFromThread(const QString hostname, QString lineData);
     void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
+    void lookupFinisced(QHostInfo info, int state, const QString hostname);
 
 public slots:
         /*
