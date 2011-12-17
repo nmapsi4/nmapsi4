@@ -24,6 +24,7 @@ namespace varDiscover {
     int ipCounter = 0;
     QStringList sendList;
     QStringList recvList;
+    bool _discoverIsActive = false;
 }
 
 void nmapClass::startDiscover()
@@ -121,6 +122,7 @@ void nmapClass::discoverIpState()
     connect(discover, SIGNAL(endPing(QStringList,bool,QByteArray)),
             this, SLOT(pingResult(QStringList,bool,QByteArray)));
 
+    varDiscover::_discoverIsActive = true;
     discover->isUp(ipList_,this,parameters);
     varDiscover::ipCounter = ipList_.size();
     nseNumber->display(varDiscover::ipCounter);
@@ -129,7 +131,10 @@ void nmapClass::discoverIpState()
 void nmapClass::pingResult(QStringList hostname, bool state, const QByteArray callBuff)
 {
     // decrement ping ip counter
-    --varDiscover::ipCounter;
+    if (varDiscover::_discoverIsActive)
+    {
+        --varDiscover::ipCounter;
+    }
     nseNumber->display(varDiscover::ipCounter);
     // set values in treeDiscover widget
     treeDiscover->setIconSize(QSize(24,24));
@@ -183,6 +188,7 @@ void nmapClass::stopDiscover()
     startDiscoverButt->setEnabled(true);
     stopDiscoverButt->setEnabled(false);
     varDiscover::ipCounter = 0;
+    varDiscover::_discoverIsActive = false;
     nseNumber->display(varDiscover::ipCounter);
     //emit signal
     emit killDiscover();
