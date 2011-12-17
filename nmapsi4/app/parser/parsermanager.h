@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PARSER_H
-#define PARSER_H
+#ifndef PARSERMANAGER_H
+#define PARSERMANAGER_H
 
 #include <QtGui/QWidget>
 #include <QtGui/QTreeWidgetItem>
