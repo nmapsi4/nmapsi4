@@ -137,7 +137,7 @@ void discoverManager::discoverIpState()
     _ui->nseNumber->display(ipCounter);
 }
 
-void discoverManager::pingResult(QStringList hostname, bool state, const QByteArray callBuff)
+void discoverManager::pingResult(const QStringList hostname, bool state, const QByteArray callBuff)
 {
     // decrement ping ip counter
     if (_discoverIsActive)

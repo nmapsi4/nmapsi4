@@ -146,7 +146,7 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
     }
 }
 
-void discover::threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+void discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
     Q_UNUSED(bufferError);
     /*

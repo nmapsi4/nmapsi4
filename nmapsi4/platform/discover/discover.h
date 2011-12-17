@@ -84,7 +84,7 @@ private slots:
     /*!
      * Emit signal with nping QThread ByteArray output
      */
-    void threadReturn(QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
+    void threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
     void repeatScanner();
     void stopDiscover();
 
@@ -92,7 +92,7 @@ signals:
     /*!
      * Return with a signal of ip state (up/down)
      */
-    void endPing(QStringList ipAddr, bool state, const QByteArray callBuff);
+    void endPing(const QStringList ipAddr, bool state, const QByteArray callBuff);
 };
 
 #endif // MAINDISCOVER_H

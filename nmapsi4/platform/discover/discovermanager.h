@@ -63,7 +63,7 @@ public slots:
     void callScanDiscover();
 
 private slots:
-    void pingResult(QStringList hostname, bool state, const QByteArray callBuff);
+    void pingResult(const QStringList hostname, bool state, const QByteArray callBuff);
 };
 
 #endif // DISCOVERMANAGER_H
