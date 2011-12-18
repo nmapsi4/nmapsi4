@@ -335,18 +335,16 @@ void monitor::stopSelectedScan()
     }
     else
     {
-        int i = 0;
-        for (; i < _hostScanCacheList.size(); ++i)
+        for (int i = 0; i < _hostScanCacheList.size(); ++i)
         {
             if (_hostScanCacheList[i].first == hostname)
             {
+                // Remove stopped host from cache
+                _hostScanCacheList.removeAt(i);
+                _lookupScanCacheList.removeAt(i);
                 break;
             }
         }
-
-        // Remove stopped host from cache
-        _hostScanCacheList.removeAt(i);
-        _lookupScanCacheList.removeAt(i);
 
         // delete QTreeWidgetItem for removed host
         delMonitorHost(hostname);
