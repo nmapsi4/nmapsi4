@@ -5,17 +5,17 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/nmapsi4/app/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/app/parser/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/app/monitor/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/app/preference/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/common/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/dig/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/discover/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/bookmarks/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/vulnerability/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/lookup/
-    ${CMAKE_SOURCE_DIR}/nmapsi4/platform/nse/
+    ${CMAKE_SOURCE_DIR}/src/app/
+    ${CMAKE_SOURCE_DIR}/src/app/parser/
+    ${CMAKE_SOURCE_DIR}/src/app/monitor/
+    ${CMAKE_SOURCE_DIR}/src/app/preference/
+    ${CMAKE_SOURCE_DIR}/src/common/
+    ${CMAKE_SOURCE_DIR}/src/platform/dig/
+    ${CMAKE_SOURCE_DIR}/src/platform/discover/
+    ${CMAKE_SOURCE_DIR}/src/platform/bookmarks/
+    ${CMAKE_SOURCE_DIR}/src/platform/vulnerability/
+    ${CMAKE_SOURCE_DIR}/src/platform/lookup/
+    ${CMAKE_SOURCE_DIR}/src/platform/nse/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -24,7 +24,7 @@ include_directories(${CMAKE_SOURCE_DIR}
 if (Q_WS_X11)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
-                     nmapsi4/app/monitor/monitor.h
+                     src/app/monitor/monitor.h
                      monitor)
 endif (Q_WS_X11)
 

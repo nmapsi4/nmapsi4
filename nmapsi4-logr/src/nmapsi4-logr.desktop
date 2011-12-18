@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=NmapSI4-logr
-Comment=Is a Qt4 interface for nmapsi4 log
-Comment[it]=Interfaccia Qt4 per leggere i log di nmapsi4
-Exec=nmapsi4-logr
-Icon=nmapsi4
-Terminal=false
-Type=Application
-Categories=Qt;System;Security;
