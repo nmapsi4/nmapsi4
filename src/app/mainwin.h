@@ -155,7 +155,6 @@ protected:
 private slots:
     void initObject();
     void startScan();
-    void stop_scan();
     void exit();
     void update_portCombo();
     void update_scanCombo();

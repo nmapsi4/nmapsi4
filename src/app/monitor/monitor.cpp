@@ -20,6 +20,8 @@
 #include "monitor.h"
 #include "mainwin.h"
 
+#define MAX_THREAD 5
+
 #ifdef Q_WS_X11
 #include "nmapsi4adaptor.h"
 #endif
@@ -42,14 +44,29 @@ monitor::monitor(QTreeWidget* monitor, nmapClass* parent) : _monitor(monitor), _
         qDebug() << "DBUS:: error with dbus connection";
     }
 #endif
+
+    _parallelThreadLimit = MAX_THREAD;
+    _isHostcached = false;
+    timer = new QTimer(this);
 }
 
 monitor::~monitor()
 {
+    freemap<QString,QProcessThread*>::itemDeleteAllWithWait(_scanHashList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
     freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digManager*>::itemDeleteAll(digLookupList);
+
+    if (timer->isActive())
+    {
+        timer->stop();
+    }
+
+    delete timer;
+
     _scanHashListFlow.clear();
+    _hostScanCacheList.clear();
+    _lookupScanCacheList.clear();
 }
 
 bool monitor::isHostOnMonitor(const QString hostname)
@@ -84,24 +101,71 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
     emit monitorUpdated(monitorHostNumber());
 
     // Start Scan for host
-    startScan(hostName,parameters);
-    startLookup(hostName,option);
+    cacheScan(hostName,parameters,option,hostThread);
 }
 
-void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
+void monitor::cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item)
 {
-    Q_ASSERT(valueIndex < _monitor->columnCount());
-
-    QList<QTreeWidgetItem*>::const_iterator i;
-    for (i = monitorElem.constBegin(); i != monitorElem.constEnd(); ++i)
+    if (_parallelThreadLimit)
     {
-        if ((*i)->text(0) == hostName)
-        {
-            (*i)->setText(valueIndex,newData);
-        }
+        _parallelThreadLimit--;
 
-        break;
+        startScan(hostname,parameters);
+        startLookup(hostname,option);
     }
+    else
+    {
+        /**
+         * Create a cache Item
+         */
+        QPair<QString, QStringList> scanPair(hostname,parameters);
+        QPair<LookupType, QTreeWidgetItem*> lookupPair(option,item);
+
+        _hostScanCacheList.append(scanPair);
+        _lookupScanCacheList.append(lookupPair);
+
+        item->setText(2, tr("Waiting"));
+        qDebug() << "DEBUG::cached:: " << hostname;
+    }
+
+    if (_hostScanCacheList.size() && !_isHostcached)
+    {
+        _isHostcached = true;
+        connect(timer, SIGNAL(timeout()), this, SLOT(cacheRepeat()));
+
+        if (!timer->isActive())
+        {
+            timer->start(5000);
+        }
+    }
+}
+
+void monitor::cacheRepeat()
+{
+    if (!_parallelThreadLimit)
+    {
+        return;
+    }
+
+    disconnect(this, SLOT(cacheRepeat()));
+
+    _isHostcached = false;
+
+    timer->stop();
+    int freeThreadSpace = 1;
+
+    while (freeThreadSpace <= _parallelThreadLimit && freeThreadSpace <= _hostScanCacheList.size())
+    {
+        QPair<QString, QStringList> scanPair = _hostScanCacheList.takeFirst();
+        QPair<LookupType, QTreeWidgetItem*> lookupPair = _lookupScanCacheList.takeFirst();
+        lookupPair.second->setText(2,tr("Scanning"));
+
+        qDebug() << "DEBUG::restored:: " << scanPair.first;
+
+        cacheScan(scanPair.first,scanPair.second,lookupPair.first,lookupPair.second);
+        freeThreadSpace++;
+    }
+
 }
 
 void monitor::startScan(const QString hostname, QStringList parameters)
@@ -157,6 +221,8 @@ void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
      * Remove host scan finisced from the monitor list.
      */
     delMonitorHost(parametersList[parametersList.size()-1]);
+
+    _parallelThreadLimit++;
     /*
      * Return scan result with a signal.
      */
@@ -198,11 +264,40 @@ void monitor::delMonitorHost(const QString hostName)
      emit monitorUpdated(monitorHostNumber());
 }
 
+void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
+{
+    Q_ASSERT(valueIndex < _monitor->columnCount());
+
+    QList<QTreeWidgetItem*>::const_iterator i;
+    for (i = monitorElem.constBegin(); i != monitorElem.constEnd(); ++i)
+    {
+        if ((*i)->text(0) == hostName)
+        {
+            (*i)->setText(valueIndex,newData);
+        }
+
+        break;
+    }
+}
+
 void monitor::clearHostMonitor()
 {
     freemap<QString,QProcessThread*>::itemDeleteAllWithWait(_scanHashList);
     freelist<lookupManager*>::itemDeleteAllWithWait(internealLookupList);
     freelist<digManager*>::itemDeleteAll(digLookupList);
+
+    if (timer->isActive())
+    {
+        timer->stop();
+    }
+
+    _hostScanCacheList.clear();
+    _lookupScanCacheList.clear();
+
+    _isHostcached = false;
+    _parallelThreadLimit = MAX_THREAD;
+
+    freelist<QTreeWidgetItem*>::itemDeleteAll(monitorElem);
 }
 
 void monitor::clearHostMonitorDetails()
@@ -223,17 +318,44 @@ void monitor::stopSelectedScan()
         return;
     }
 
-    QProcessThread *ptrTmp = takeMonitorElem(_monitor->selectedItems()[0]->text(0));
+    const QString& hostname = _monitor->selectedItems()[0]->text(0);
+
+    QProcessThread *ptrTmp = takeMonitorElem(hostname);
+
+    qDebug() << "DEBUG:: pointer not in list:: " << ptrTmp;
 
     if (ptrTmp)
     {
         ptrTmp->quit();
         ptrTmp->wait();
         delete ptrTmp;
-    }
 
-    // Remove Qhash entry for stopped scan
-    _scanHashListFlow.take(_monitor->selectedItems()[0]->text(0));
+        // Remove Qhash entry for stopped scan
+        _scanHashListFlow.take(hostname);
+    }
+    else
+    {
+        int i = 0;
+        for (; i < _hostScanCacheList.size(); ++i)
+        {
+            if (_hostScanCacheList[i].first == hostname)
+            {
+                break;
+            }
+        }
+
+        // Remove stopped host from cache
+        _hostScanCacheList.removeAt(i);
+        _lookupScanCacheList.removeAt(i);
+
+        // delete QTreeWidgetItem for removed host
+        delMonitorHost(hostname);
+    }
+}
+
+void monitor::stopAllScan()
+{
+    clearHostMonitor();
 }
 
 void monitor::showSelectedScanDetails()

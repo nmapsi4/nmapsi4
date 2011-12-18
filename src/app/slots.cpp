@@ -28,8 +28,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(update_scanCombo()));  // comboScan slot
     connect(checkInputFile, SIGNAL(toggled(bool)),
             this, SLOT(update_inputcheck()));  // input check
-    connect(monitorStopAllScanButt, SIGNAL(clicked()),
-            this, SLOT(stop_scan()));    // stop scan button slot
 
     // discover
     connect(checkTcpPing, SIGNAL(toggled(bool)),
@@ -173,6 +171,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(updateScanCounter(int)));
     connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
             _parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
+    connect(monitorStopAllScanButt, SIGNAL(clicked()),
+            _monitor, SLOT(stopAllScan()));
 
     // FIXME:: nse category -- port to nseManager
     connect(nseComboScript, SIGNAL(currentIndexChanged(int)),

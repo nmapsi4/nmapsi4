@@ -25,6 +25,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QList>
 #include <QtCore/QHash>
+#include <QtCore/QPair>
 
 #ifdef Q_WS_X11
 #include <QtDBus/QDBusConnection>
@@ -92,6 +93,10 @@ private:
      * Delete host from monitor
      */
     void delMonitorHost(const QString hostName);
+    /*
+     * Cache for parallel host thread
+     */
+    void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
 
 protected:
     QList<QTreeWidgetItem*> monitorElem;
@@ -101,6 +106,11 @@ protected:
     QList<digManager*> digLookupList;
     QTreeWidget* _monitor;
     nmapClass* _ui;
+    int _parallelThreadLimit;
+    QList< QPair<QString, QStringList> > _hostScanCacheList;
+    QList< QPair<LookupType, QTreeWidgetItem*> > _lookupScanCacheList;
+    bool _isHostcached;
+    QTimer *timer;
 
 signals:
     /*
@@ -116,12 +126,14 @@ private slots:
     void readFlowFromThread(const QString hostname, QString lineData);
     void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
     void lookupFinisced(QHostInfo info, int state, const QString hostname);
+    void cacheRepeat();
 
 public slots:
         /*
      * Stop host scan selected in the QTreeWidget.
      */
     void stopSelectedScan();
+    void stopAllScan();
     void showSelectedScanDetails();
 };
 

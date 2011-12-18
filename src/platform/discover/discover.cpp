@@ -191,7 +191,7 @@ void discover::repeatScanner()
     timer->stop();
     int freeThreadSpace = 1;
 
-    while (freeThreadSpace != threadLimit && freeThreadSpace <= m_ipSospended.size())
+    while (freeThreadSpace <= threadLimit && freeThreadSpace <= m_ipSospended.size())
     {
         isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
         freeThreadSpace++;

@@ -60,9 +60,3 @@ void nmapClass::exit()
     saveUiSettings();
     close();
 }
-
-void nmapClass::stop_scan()
-{
-    // stop and clear clear thread
-    _monitor->clearHostMonitor();
-}

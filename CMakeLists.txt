@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6.0)
 
 if (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus REQUIRED)
+    FIND_PACKAGE(Qt4 4.6 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus REQUIRED)
 else (NOT WIN32 AND NOT APPLE)
     FIND_PACKAGE(Qt4 4.5.3 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
@@ -30,7 +30,7 @@ ADD_CUSTOM_TARGET( uninstall
   "${CMAKE_COMMAND}" -P "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake" )
 
 message("------------------------------------------------")
-message(" Required for build:   qt4-dev (>> 4.5.3) ")
+message(" Required for build:   qt4-dev (>>= 4.6) ")
 message(" Required for runtime: nmap ( >= 5.51 ) with nping for discovery tool")
 message(" Recommends for runtime: dig ")
 message("------------------------------------------------")

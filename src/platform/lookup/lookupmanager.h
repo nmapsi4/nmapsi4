@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef LOOKUPT_H
-#define LOOKUPT_H
+#ifndef LOOKUPMANAGER_H
+#define LOOKUPMANAGER_H
 
 #include <QtCore/QThread>
 #include <QtCore/QStringList>
