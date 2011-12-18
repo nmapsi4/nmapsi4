@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,8 +19,6 @@
 
 #include "monitor.h"
 #include "mainwin.h"
-
-#define MAX_THREAD 5
 
 #ifdef Q_WS_X11
 #include "nmapsi4adaptor.h"
@@ -234,6 +232,7 @@ void monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
     if(state == -1)
     {
         //QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
+        qWarning() << "Wrong Address for lookUp";
         return;
     }
 

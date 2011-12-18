@@ -38,6 +38,8 @@
 #include "lookupmanager.h"
 #include "digmanager.h"
 
+#define MAX_THREAD 5
+
 using namespace memory;
 
 class nmapClass;
