@@ -45,6 +45,7 @@ private:
      * Load scan realtime line to QListWidget
      */
     void loadFlow();
+
     QStringList& scanLines;
     QList<QListWidgetItem*> itemsList;
     int m_itemsSize;

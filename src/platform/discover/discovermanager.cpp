@@ -23,8 +23,8 @@
 discoverManager::discoverManager(nmapClass* parent): QObject(parent),
     _ui(parent),
     ipCounter(0),
-    _discoverIsActive(false),
-    _uid(0)
+    _uid(0),
+    _discoverIsActive(false)
 {
 #ifndef Q_WS_WIN
     _uid = getuid();

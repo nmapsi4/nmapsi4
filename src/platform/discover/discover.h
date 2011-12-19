@@ -61,15 +61,16 @@ public:
 
 private:
     void isUp(const QString networkIp, QObject *parent, QStringList parameters);
+
     bool ipState;
-    int uid_;
-    QStringList m_ipSospended;
-    QObject *m_parent;
-    int threadLimit;
-    QTimer *timer;
     bool connectState;
+    int uid_;
+    int threadLimit;
+    QStringList m_ipSospended;
     QStringList parameters_;
     QList<QProcessThread*> _threadList;
+    QObject *m_parent;
+    QTimer *timer;
 
 public slots:
     /*!

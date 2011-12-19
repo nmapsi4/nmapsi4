@@ -49,8 +49,8 @@ public:
 private:
     void showParserObj(int hostIndex);
     void showParserObjPlugins(int hostIndex);
-    parserObj* parserCore(const QStringList parList, QString StdoutStr,
-                          QString StderrorStr, QTreeWidgetItem* mainTreeE);
+    parserObj* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
+
     nmapClass* _ui;
     QList<parserObj*> _parserObjList;
     QList<parserObjUtil*> _parserObjUtilList;

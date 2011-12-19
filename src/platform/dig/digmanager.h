@@ -48,6 +48,11 @@ public:
      */
     void digProcess(const QString hostname, parserObjUtil* objElem);
 
+private:
+    parserObjUtil* m_elemObjUtil;
+    QString m_hostNameLocal;
+    QList<QProcessThread*> threadList;
+
 private slots:
     /*!
      * Set dig result on parser Object utils (objElem)
@@ -59,11 +64,5 @@ signals:
      * Stop QProcess immediately.
      */
     void killScan();
-
-private:
-    parserObjUtil* m_elemObjUtil;
-    QString m_hostNameLocal;
-    QList<QProcessThread*> threadList;
-
 };
 #endif

@@ -99,16 +99,17 @@ private:
      * Cache for parallel host thread
      */
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
+
     QList<QTreeWidgetItem*> monitorElem;
-    QHash<QString, QProcessThread*> _scanHashList;
-    QHash<QString, QStringList> _scanHashListFlow;
     QList<lookupManager*> internealLookupList;
     QList<digManager*> digLookupList;
+    QList< QPair<QString, QStringList> > _hostScanCacheList;
+    QList< QPair<LookupType, QTreeWidgetItem*> > _lookupScanCacheList;
+    QHash<QString, QProcessThread*> _scanHashList;
+    QHash<QString, QStringList> _scanHashListFlow;
     QTreeWidget* _monitor;
     nmapClass* _ui;
     int _parallelThreadLimit;
-    QList< QPair<QString, QStringList> > _hostScanCacheList;
-    QList< QPair<LookupType, QTreeWidgetItem*> > _lookupScanCacheList;
     bool _isHostcached;
     QTimer *timer;
 

@@ -55,6 +55,7 @@ public:
 private:
     void nseTreeAvailRestoreValues();
     void nseTreeActiveRestoreValues();
+
     nmapClass* _ui;
     QPointer<QProcessThread> _thread;
     QPointer<QProcessThread> _threadScript;
