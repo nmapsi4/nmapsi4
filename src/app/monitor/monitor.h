@@ -99,8 +99,6 @@ private:
      * Cache for parallel host thread
      */
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
-
-protected:
     QList<QTreeWidgetItem*> monitorElem;
     QHash<QString, QProcessThread*> _scanHashList;
     QHash<QString, QStringList> _scanHashListFlow;

@@ -61,6 +61,7 @@ private:
     QByteArray _perr;
     QStringList _ParList;
     QString _programName;
+    QPointer<QProcess> _process;
 
 private slots:
     void readFinished();
@@ -68,7 +69,6 @@ private slots:
     void readyReadData();
 
 protected:
-    QPointer<QProcess> _process;
     void run();
 };
 

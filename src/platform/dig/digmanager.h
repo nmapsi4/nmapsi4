@@ -60,7 +60,7 @@ signals:
      */
     void killScan();
 
-protected:
+private:
     parserObjUtil* m_elemObjUtil;
     QString m_hostNameLocal;
     QList<QProcessThread*> threadList;

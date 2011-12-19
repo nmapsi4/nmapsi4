@@ -61,14 +61,6 @@ public:
 
 private:
     void isUp(const QString networkIp, QObject *parent, QStringList parameters);
-
-public slots:
-    /*!
-     * Check state of ip on the network (up/down) with nping QThread
-     */
-    void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
-
-protected:
     bool ipState;
     int uid_;
     QStringList m_ipSospended;
@@ -79,6 +71,11 @@ protected:
     QStringList parameters_;
     QList<QProcessThread*> _threadList;
 
+public slots:
+    /*!
+     * Check state of ip on the network (up/down) with nping QThread
+     */
+    void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
 
 private slots:
     /*!

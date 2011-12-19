@@ -39,8 +39,6 @@ public:
 private:
     void updateSRdata();
     void discoveryClear();
-
-protected:
     nmapClass* _ui;
     QList<discover*> listDiscover;
     QList<QTreeWidgetItem*> listTreeItemDiscover;

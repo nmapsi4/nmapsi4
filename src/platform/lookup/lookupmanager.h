@@ -53,6 +53,7 @@ signals:
 private:
     QString m_host;
     QHostInfo m_info;
+    QObject* m_par;
 
 private slots:
     /*!
@@ -62,7 +63,6 @@ private slots:
 
 protected:
     void run();
-    QObject* m_par;
 };
 
 #endif

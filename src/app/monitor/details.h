@@ -39,19 +39,17 @@ class classDetails : public QDialog, private Ui::monitorDetails
 public:
     classDetails(QStringList& processFlow, const QString hostname);
     ~classDetails();
-    
+
 private:
     /*
      * Load scan realtime line to QListWidget
      */
     void loadFlow();
-    
-protected:
     QStringList& scanLines;
     QList<QListWidgetItem*> itemsList;
     int m_itemsSize;
     QTimer *m_timer;
-    
+
 private slots:
     /*
      * Reload scan realtime line, append to QListWidget

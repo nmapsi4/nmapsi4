@@ -51,8 +51,6 @@ private:
     void showParserObjPlugins(int hostIndex);
     parserObj* parserCore(const QStringList parList, QString StdoutStr,
                           QString StderrorStr, QTreeWidgetItem* mainTreeE);
-
-protected:
     nmapClass* _ui;
     QList<parserObj*> _parserObjList;
     QList<parserObjUtil*> _parserObjUtilList;

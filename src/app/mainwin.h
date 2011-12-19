@@ -79,37 +79,6 @@ public:
     ~nmapClass();
 
 private:
-    void preScanLookup(const QString hostname);
-    void rootMode();
-    void isEmptyLog();
-    void setNmapsiSlot();
-    QFile* create_logFile(const QString Path);
-    QStringList check_extensions();
-    QStringList loadExtensions();
-    void resetOptions();
-    void checkProfile();
-    void initGUI();
-    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
-    void setTreeWidgetValues();
-    void createBar();
-    void updateComboPar();
-    void updateComboBook();
-    void restoreGlobalProfile();
-    QHash<QString, QString> defaultScanProfile() const;
-    void loadHistoryDefault();
-    void restoreSettings();
-    void setTreeSettings();
-    void setDefaultAction();
-    void setDefaultSplitter();
-    void defaultComboValues();
-    void createToolButtonSetup();
-    void setQuickProfile();
-    void setNormalProfile();
-    void setFullVersionProfile();
-    void setQuickVersionProfile();
-    void updateCompleter();
-
-protected:
     int uid;
     QFile *_logFilePath;
     QListWidgetItem *scanW;
@@ -151,6 +120,35 @@ protected:
     vulnerability* _vulnerability;
     nseManager* _nseManager;
     discoverManager* _discoverManager;
+    void preScanLookup(const QString hostname);
+    void rootMode();
+    void isEmptyLog();
+    void setNmapsiSlot();
+    QFile* create_logFile(const QString Path);
+    QStringList check_extensions();
+    QStringList loadExtensions();
+    void resetOptions();
+    void checkProfile();
+    void initGUI();
+    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
+    void setTreeWidgetValues();
+    void createBar();
+    void updateComboPar();
+    void updateComboBook();
+    void restoreGlobalProfile();
+    QHash<QString, QString> defaultScanProfile() const;
+    void loadHistoryDefault();
+    void restoreSettings();
+    void setTreeSettings();
+    void setDefaultAction();
+    void setDefaultSplitter();
+    void defaultComboValues();
+    void createToolButtonSetup();
+    void setQuickProfile();
+    void setNormalProfile();
+    void setFullVersionProfile();
+    void setQuickVersionProfile();
+    void updateCompleter();
 
 private slots:
     void initObject();

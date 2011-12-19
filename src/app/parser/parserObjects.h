@@ -54,7 +54,7 @@ public:
     void setFullScanLog(const QString logElem);
     void setErrorScan(const QString errorElem);
 
-protected:
+private:
     QString m_hostName;
     QStringList m_mainInfo;
     QStringList m_services;
@@ -81,7 +81,7 @@ public:
     void setInfoLookup(const QString lookupElem);
     void setHostName(const QString hostName);
 
-protected:
+private:
     QStringList m_mainLookup;
     QString m_hostName;
 };

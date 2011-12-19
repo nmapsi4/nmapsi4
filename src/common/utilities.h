@@ -42,10 +42,11 @@ public:
     ~utilities();
     void openDirectoryDialog(QLineEdit *destination);
     void openFileBrowser(QLineEdit *destination);
-    
+
 private:
     void showBrowser(QLineEdit *destination);
-    
+    QWidget* _parent;
+
 public slots:
     void about();
     void aboutQt();
@@ -53,9 +54,6 @@ public slots:
     void showHomepageUrl();
     void showDocumentationUrl();
     void showDonateUrl();
-    
-protected:
-    QWidget* _parent;
 };
 
 #endif // UTILITIES_H
