@@ -24,11 +24,8 @@ msgid "Quit"
 msgstr "Salir"
 
 #: MainWindow#4
-#, fuzzy
 msgid "Ctrl+Q"
-msgstr ""
-"\n"
-"            "
+msgstr "Ctrl+Q"
 
 #: MainWindow#5
 msgid "&About nmapsi4"
@@ -44,15 +41,12 @@ msgid "Scan"
 msgstr "Escanear"
 
 #: MainWindow#8
-#, fuzzy
 msgid "Ctrl+S"
-msgstr ""
-"\n"
-"            "
+msgstr "Ctrl+S"
 
 #: MainWindow#9
 msgid "About &Qt"
-msgstr "Acercade &Qt"
+msgstr "Acerca de &Qt"
 
 #: MainWindow#10
 msgid "&Preferences"
@@ -60,7 +54,7 @@ msgstr "&Preferencias"
 
 #: MainWindow#11
 msgid "Stop Scan"
-msgstr "Detener scaneo"
+msgstr "Detener escaneo"
 
 #: MainWindow#12
 msgid "Clear History"
@@ -75,18 +69,12 @@ msgid "Close Scan Tree"
 msgstr "Cerrar Árbol de Scaneo"
 
 #: MainWindow#15
-#, fuzzy
 msgid "Clear HostName"
-msgstr ""
-"\n"
-"            "
+msgstr "Limpiar nombre de Host"
 
 #: MainWindow#16
-#, fuzzy
 msgid "Clear Hostname IP"
-msgstr ""
-"\n"
-"            "
+msgstr "Limpiar IP de nombre de Host"
 
 #: MainWindow#17
 msgid "Save As"
@@ -125,52 +113,33 @@ msgid "Show Status Bar"
 msgstr "Mostrar Barra de Estado"
 
 #: MainWindow#26
-#, fuzzy
 msgid "&Add Bookmark"
-msgstr ""
-"\n"
-"            "
+msgstr "&Añadir a marcadores"
 
 #: MainWindow#27
 msgid "Main"
 msgstr "Principal"
 
 #: MainWindow#28
-#, fuzzy
 msgctxt "MainWindow#28"
-"MainWindow#28"
 msgid "Log"
-msgstr ""
-"\n"
-"            "
+msgstr "Log"
 
 #: MainWindow#29
-#, fuzzy
 msgid "Vuln"
-msgstr ""
-"\n"
-"            "
+msgstr "Vuln"
 
 #: MainWindow#30
-#, fuzzy
 msgid "Section Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Sección Escanear"
 
 #: MainWindow#31
-#, fuzzy
 msgid "Section Log"
-msgstr ""
-"\n"
-"            "
+msgstr "Sección Log"
 
 #: MainWindow#32
-#, fuzzy
 msgid " Section Vulnerabilities"
-msgstr ""
-"\n"
-"            "
+msgstr "Sección Vulnerabilidades"
 
 #: MainWindow#33
 msgid "Clear"
@@ -189,32 +158,20 @@ msgid "Description"
 msgstr "Descripción"
 
 #: MainWindow#37
-#, fuzzy
 msgid "Donate Money"
-msgstr ""
-"\n"
-"            "
+msgstr "Donar Dinero"
 
 #: MainWindow#38
-#, fuzzy
 msgid "Documentation"
-msgstr ""
-"\n"
-"            "
+msgstr "Documentación"
 
 #: MainWindow#39
-#, fuzzy
 msgid "Visit Website"
-msgstr ""
-"\n"
-"            "
+msgstr "Visitar Web"
 
 #: MainWindow#40
-#, fuzzy
 msgid "Report a bug"
-msgstr ""
-"\n"
-"            "
+msgstr "Reportar Error"
 
 #: MainWindow#41
 msgid "Service"
@@ -225,11 +182,8 @@ msgid "State"
 msgstr "Estado"
 
 #: MainWindow#43
-#, fuzzy
 msgid "Port"
-msgstr ""
-"\n"
-"            "
+msgstr "Puerto"
 
 #: MainWindow#44
 msgid "Nss script result"
@@ -244,12 +198,9 @@ msgid "IP List"
 msgstr "Lista de IP"
 
 #: MainWindow#47
-#, fuzzy
 msgctxt "MainWindow#47"
 msgid "Profile Name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nombre del perfil"
 
 #: MainWindow#48
 msgid "Parameters List"
@@ -260,354 +211,211 @@ msgid "Scan Details"
 msgstr "Detalles de scaneo"
 
 #: MainWindow#50
-#, fuzzy
 msgid "Save Default Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Guardar Opciones Predefinidas"
 
 #: MainWindow#51
-#, fuzzy
 msgid "Remove Default Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Eliminar Opciones Predefinidas"
 
 #: MainWindow#52
-#, fuzzy
 msgid "Ipv6 support"
-msgstr ""
-"\n"
-"            "
+msgstr "Soporte Ipv6"
 
 #: MainWindow#53
-#, fuzzy
 msgid "Port Range:"
-msgstr ""
-"\n"
-"            "
+msgstr "Rango de Puertos:"
 
 #: MainWindow#54
-#, fuzzy
 msgid "Scan Techniques:"
-msgstr ""
-"\n"
-"            "
+msgstr "Técnicas de escáner"
 
 #: MainWindow#55
-#, fuzzy
 msgid "Ports:"
-msgstr ""
-"\n"
-"            "
+msgstr "Puertos:"
 
 #: MainWindow#56
-#, fuzzy
 msgid "Bounce Host:"
-msgstr ""
-"\n"
-"            "
+msgstr "Host de Rebote"
 
 #: MainWindow#57
-#, fuzzy
 msgid "Timing Template:"
-msgstr ""
-"\n"
-"            "
+msgstr "Plantilla de Tiempo"
 
 #: MainWindow#58
-#, fuzzy
 msgid "Min outstanding probes"
-msgstr ""
-"\n"
-"            "
+msgstr "Intentos Min de exploración"
 
 #: MainWindow#59
-#, fuzzy
 msgid "Max outstanding probes"
-msgstr ""
-"\n"
-"            "
+msgstr "Intentos Máx de exploración"
 
 #: MainWindow#60
-#, fuzzy
 msgid "Max time to scan a target"
-msgstr ""
-"\n"
-"            "
+msgstr "Tiempo máximo de escaneo del objetivo"
 
 #: MainWindow#61
-#, fuzzy
 msgid "Initial probe timeout"
-msgstr ""
-"\n"
-"            "
+msgstr "Timeout inicial de exploración"
 
 #: MainWindow#62
-#, fuzzy
 msgid "Min probe timeout"
-msgstr ""
-"\n"
-"            "
+msgstr "Min timeout de exploración"
 
 #: MainWindow#63
-#, fuzzy
 msgid "Max probe timeout"
-msgstr ""
-"\n"
-"            "
+msgstr "Máx timeout de exploración"
 
 #: MainWindow#64
-#, fuzzy
 msgid "Active Script"
-msgstr ""
-"\n"
-"            "
+msgstr "Activar Script"
 
 #: MainWindow#65
-#, fuzzy
 msgid "Disable Script"
-msgstr ""
-"\n"
-"            "
+msgstr "Desactivar Script"
 
 #: MainWindow#66
-#, fuzzy
 msgid "Nse Categories Help"
-msgstr ""
-"\n"
-"            "
+msgstr "Nse Categorías de Ayuda"
 
 #: MainWindow#67
-#, fuzzy
 msgctxt "MainWindow#67"
 msgid "Search"
-msgstr ""
-"\n"
-"            "
+msgstr "Buscar"
 
 #: MainWindow#68
-#, fuzzy
 msgid "Nse Script Search"
-msgstr ""
-"\n"
-"            "
+msgstr "Buscar Script Nse"
 
 #: MainWindow#69
-#, fuzzy
 msgid ""
 "Nse script parameters (Ex. "
 "user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
-msgstr ""
-"\n"
-"            "
+msgstr "Parámetros de script NSe (Ej. "
+"user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 
 #: MainWindow#70
-#, fuzzy
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
-msgstr ""
-"\n"
-"            "
+msgstr "Manual de invocación de script Nse: (Ej. snmp-sysdescr,smb-os-discovery )"
 
 #: MainWindow#71
-#, fuzzy
 msgctxt "MainWindow#71"
 msgid "Done"
-msgstr ""
-"\n"
-"            "
+msgstr "Hecho"
 
 #: MainWindow#72
-#, fuzzy
 msgctxt "MainWindow#72"
 msgid "Nse Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Opciones Nse"
 
 #: MainWindow#73
-#, fuzzy
 msgctxt "MainWindow#73"
 msgid "Scan Log"
-msgstr ""
-"\n"
-"            "
+msgstr "Log de Escaneo"
 
 #: MainWindow#74
-#, fuzzy
 msgid "Add Url"
-msgstr ""
-"\n"
-"            "
+msgstr "Añadir Url"
 
 #: MainWindow#75
-#, fuzzy
 msgid "Url(s)"
-msgstr ""
-"\n"
-"            "
+msgstr "Url(s)"
 
 #: MainWindow#76
-#, fuzzy
 msgid "Url(s) name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nombre de Url(s)"
 
 #: MainWindow#77
-#, fuzzy
 msgid "Bookmarks Url"
-msgstr ""
-"\n"
-"            "
+msgstr "Marcadores de Url"
 
 #: MainWindow#78
-#, fuzzy
 msgid "Local Interfaces:"
-msgstr ""
-"\n"
-"            "
+msgstr "Interfaces Locales"
 
 #: MainWindow#79
-#, fuzzy
 msgid "Start DIscover"
-msgstr ""
-"\n"
-"            "
+msgstr "Empezar a Descubrir"
 
 #: MainWindow#80
-#, fuzzy
 msgid "Stop Discover"
-msgstr ""
-"\n"
-"            "
+msgstr "Parar de Descubrir"
 
 #: MainWindow#81
-#, fuzzy
 msgid "Discover Group:"
-msgstr ""
-"\n"
-"            "
+msgstr "Grupos Descubiertos:"
 
 #: MainWindow#82
-#, fuzzy
 msgid "Start Ip:"
-msgstr ""
-"\n"
-"            "
+msgstr "Ip de Comienzo:"
 
 #: MainWindow#83
-#, fuzzy
 msgid "End Ip:"
-msgstr ""
-"\n"
-"            "
+msgstr "Ip Final"
 
 #: MainWindow#84
-#, fuzzy
 msgid "Ip"
-msgstr ""
-"\n"
-"            "
+msgstr "Ip"
 
 #: MainWindow#85
-#, fuzzy
 msgid "Service(s) with info"
-msgstr ""
-"\n"
-"            "
+msgstr "Servicio(s) con información"
 
 #: MainWindow#86
-#, fuzzy
 msgid "Os"
-msgstr ""
-"\n"
-"            "
+msgstr "OS"
 
 #: MainWindow#87
-#, fuzzy
 msgctxt "MainWindow#87"
 msgid "Scan log parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Log de parámetros de escaneo"
 
 #: MainWindow#88
-#, fuzzy
 msgid "Stop All Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Parar Todos los Escaneos"
 
 #: MainWindow#89
-#, fuzzy
 msgid "Stop Current Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Parar el Escaneo Actual"
 
 #: MainWindow#90
-#, fuzzy
 msgctxt "MainWindow#90"
 msgid "Scan Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Opciones de Escaneo"
 
 #: MainWindow#91
 msgid "Host Thread"
 msgstr "Hilo de Host"
 
 #: MainWindow#92
-#, fuzzy
 msgid "Scan Monitor"
-msgstr ""
-"\n"
-"            "
+msgstr "Estado del Escaneo"
 
 #: MainWindow#93
-#, fuzzy
 msgid "Auto nse script"
-msgstr ""
-"\n"
-"            "
+msgstr "Auto Script Nse"
 
 #: MainWindow#94
-#, fuzzy
 msgid "Custom nse script"
-msgstr ""
-"\n"
-"            "
+msgstr "Script Nse propio"
 
 #: MainWindow#95
-#, fuzzy
 msgid "Nse categories script available"
-msgstr ""
-"\n"
-"            "
+msgstr "Categorías de script Nse posibles"
 
 #: MainWindow#96
-#, fuzzy
 msgid "Nse categories Script Active"
-msgstr ""
-"\n"
-"            "
+msgstr "Categorías de Script Nse Activas"
 
 #: MainWindow#97
-#, fuzzy
 msgid "Restore Default Categories"
-msgstr ""
-"\n"
-"            "
+msgstr "Restaurar Categorías por Defecto"
 
 #: MainWindow#98
-#, fuzzy
 msgctxt "MainWindow#98"
 "MainWindow#98"
 msgid "Lookup"
-msgstr ""
-"\n"
-"            "
+msgstr "Lookup"
 
 #: MainWindow#99
 msgid "DNS"
@@ -622,19 +430,13 @@ msgid "RTT"
 msgstr "RTT"
 
 #: MainWindow#102
-#, fuzzy
 msgid "Hop(s)"
-msgstr ""
-"\n"
-"            "
+msgstr "Salto(s)"
 
 #: MainWindow#103
-#, fuzzy
 msgctxt "MainWindow#103"
 msgid "Traceroute"
-msgstr ""
-"\n"
-"            "
+msgstr "Traceroute"
 
 #: MainWindow#104
 msgid "Log(s)"
@@ -649,23 +451,17 @@ msgid "Warning(s)"
 msgstr "Peligro(s)"
 
 #: MainWindow#107
-#, fuzzy
 msgctxt "MainWindow#107"
 msgid "Services"
-msgstr ""
-"\n"
-"            "
+msgstr "Servicios"
 
 #: MainWindow#108
 msgid "Data"
 msgstr "Datos"
 
 #: MainWindow#109
-#, fuzzy
 msgid "Bookmarks"
-msgstr ""
-"\n"
-"            "
+msgstr "Marcadores"
 
 #: MainWindow#110
 msgid "Host Details"
@@ -676,33 +472,24 @@ msgid "Details"
 msgstr "Detalles"
 
 #: MainWindow#112
-#, fuzzy
 msgid "NSE"
-msgstr ""
-"\n"
-"            "
+msgstr "NSE"
 
 #: MainWindow#113
 msgid "Bookmarks parameters"
 msgstr "Parámetros de marcadores"
 
 #: MainWindow#114
-#, fuzzy
 msgid "Apply Quick Profile"
-msgstr ""
-"\n"
-"            "
+msgstr "Aplicar Perfil Rápido"
 
 #: MainWindow#115
 msgid "RPC Scan"
 msgstr "Scaneo RPC"
 
 #: MainWindow#116
-#, fuzzy
 msgid "Don't Ping"
-msgstr ""
-"\n"
-"            "
+msgstr "No hacer Ping"
 
 #: MainWindow#117
 msgid "Normal"
@@ -721,104 +508,68 @@ msgid "Range"
 msgstr "Rango"
 
 #: MainWindow#121
-#, fuzzy
 msgid "Connect Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo de Conexión"
 
 #: MainWindow#122
-#, fuzzy
 msgid "Ping Sweep"
-msgstr ""
-"\n"
-"            "
+msgstr "Ping Sweep"
 
 #: MainWindow#123
 msgid "Host List"
 msgstr "Lista de Hosts"
 
 #: MainWindow#124
-#, fuzzy
 msgid "FTP Bounce Attack"
-msgstr ""
-"\n"
-"            "
+msgstr "Ataque FTP Bounce"
 
 #: MainWindow#125
 msgid "Version Probe"
-msgstr "Versión Sonda"
+msgstr "Exploración de la Versión"
 
 #: MainWindow#126
 msgid "OS Detection"
 msgstr "Detección de SO"
 
 #: MainWindow#127
-#, fuzzy
 msgid "ICMP Echo"
-msgstr ""
-"\n"
-"            "
+msgstr "Eco ICMP"
 
 #: MainWindow#128
-#, fuzzy
 msgid "ICMP TImestamp"
-msgstr ""
-"\n"
-"            "
+msgstr "Timestamp ICMP"
 
 #: MainWindow#129
 msgid "UDP Ping"
 msgstr "Ping UDP"
 
 #: MainWindow#130
-#, fuzzy
 msgid "TCP SYN Ping"
-msgstr ""
-"\n"
-"            "
+msgstr "Ping TCP SYN"
 
 #: MainWindow#131
-#, fuzzy
 msgid "TCP ACK Ping"
-msgstr ""
-"\n"
-"            "
+msgstr "Ping TCP ACK"
 
 #: MainWindow#132
-#, fuzzy
 msgid "ICMP Netmask"
-msgstr ""
-"\n"
-"            "
+msgstr "Máscara ICMP"
 
 #: MainWindow#133
-#, fuzzy
 msgid "Input File"
-msgstr ""
-"\n"
-"            "
+msgstr "Fichero de Entrada"
 
 #: MainWindow#134
-#, fuzzy
 msgid "Browser"
-msgstr ""
-"\n"
-"            "
+msgstr "Navegador"
 
 #: MainWindow#135
-#, fuzzy
 msgid "Scan Delay"
-msgstr ""
-"\n"
-"            "
+msgstr "Retardo del Escaneo"
 
 #: MainWindow#136
-#, fuzzy
 msgid "Ipv4 TTL"
-msgstr ""
-"\n"
-"            "
+msgstr "Ipv4 TTL"
 
 #: MainWindow#137
 msgid "Normal Throttling"
@@ -833,11 +584,8 @@ msgid "Sneaky Throttling"
 msgstr "Limitación Sigilosa"
 
 #: MainWindow#140
-#, fuzzy
 msgid "Polite Throttling"
-msgstr ""
-"\n"
-"            "
+msgstr "Límitación Suave"
 
 #: MainWindow#141
 msgid "Aggressive Throttling"
@@ -880,180 +628,114 @@ msgid "Never"
 msgstr "Nunca"
 
 #: MainWindow#151
-#, fuzzy
 msgid "DNS Resolution"
-msgstr ""
-"\n"
-"            "
+msgstr "Resolución DNS"
 
 #: MainWindow#152
 msgid "Verbosity"
 msgstr "Detallado"
 
 #: MainWindow#153
-#, fuzzy
 msgid "Spoof Address"
-msgstr ""
-"\n"
-"            "
+msgstr "Dirección de Spoof"
 
 #: MainWindow#154
 msgid "Specific Device"
 msgstr "Dispositivo Específico"
 
 #: MainWindow#155
-#, fuzzy
 msgid "Decoy"
-msgstr ""
-"\n"
-"            "
+msgstr "Señuelo"
 
 #: MainWindow#156
-#, fuzzy
 msgid "Source Port"
-msgstr ""
-"\n"
-"            "
+msgstr "Puerto de Origen"
 
 #: MainWindow#157
-#, fuzzy
 msgid "Ordered Port"
-msgstr ""
-"\n"
-"            "
+msgstr "Puertos Ordenados"
 
 #: MainWindow#158
 msgid "Fragmentation"
 msgstr "Fragmentación"
 
 #: MainWindow#159
-#, fuzzy
 msgid "Remove Url"
-msgstr ""
-"\n"
-"            "
+msgstr "Eliminar Url"
 
 #: MainWindow#160
-#, fuzzy
 msgid "Vulnerability"
-msgstr ""
-"\n"
-"            "
+msgstr "Vulnerabilidad"
 
 #: MainWindow#161
-#, fuzzy
 msgctxt "MainWindow#161"
 msgid "Scan Host"
-msgstr ""
-"\n"
-"            "
+msgstr "Escanear Host"
 
 #: MainWindow#162
-#, fuzzy
 msgid "Probes Modes:"
-msgstr ""
-"\n"
-"            "
+msgstr "Modos de Exploración"
 
 #: MainWindow#163
-#, fuzzy
 msgid "Send"
-msgstr ""
-"\n"
-"            "
+msgstr "Enviados"
 
 #: MainWindow#164
-#, fuzzy
 msgid "Received"
-msgstr ""
-"\n"
-"            "
+msgstr "Recibidos"
 
 #: MainWindow#165
-#, fuzzy
 msgid "Remaining Ip:"
-msgstr ""
-"\n"
-"            "
+msgstr "Ips restantes:"
 
 #: MainWindow#166
-#, fuzzy
 msgctxt "MainWindow#166"
 msgid "Discover"
-msgstr ""
-"\n"
-"            "
+msgstr "Descubiertos"
 
 #: MainWindow#167
-#, fuzzy
 msgid "&File"
-msgstr ""
-"\n"
-"            "
+msgstr "&Archivo"
 
 #: MainWindow#168
-#, fuzzy
 msgid "&View"
-msgstr ""
-"\n"
-"            "
+msgstr "&Vista"
 
 #: MainWindow#169
 msgid "&Bookmarks"
 msgstr "&Favoritos"
 
 #: MainWindow#170
-#, fuzzy
 msgid "&Help"
-msgstr ""
-"\n"
-"            "
+msgstr "A&yuda"
 
 #: MainWindow#171
-#, fuzzy
 msgid "S&ettings"
-msgstr ""
-"\n"
-"            "
+msgstr "&Configuración"
 
 #: MainWindow#172
-#, fuzzy
 msgid "&Tools"
-msgstr ""
-"\n"
-"            "
+msgstr "&Herramientas"
 
 #: MainWindow#173
-#, fuzzy
 msgid "toolBar"
-msgstr ""
-"\n"
-"            "
+msgstr "toolBar"
 
 #: MainWindow#174
-#, fuzzy
 msgid "toolBar_2"
-msgstr ""
-"\n"
-"            "
+msgstr "toolBar_2"
 
 #: MainWindow#175
-#, fuzzy
 msgid "toolBar_3"
-msgstr ""
-"\n"
-"            "
+msgstr "toolBar_3"
 
 #: MainWindow#176
 msgid "Section Discover"
-msgstr ""
+msgstr "Sección Descubrir"
 
 #: ProfileMain#1
-#, fuzzy
 msgid "NmapSI4 Preferences"
-msgstr ""
-"\n"
-"            "
+msgstr "Configuración NmapSI4"
 
 #: ProfileMain#2
 msgid "User Profiles"
@@ -1065,12 +747,9 @@ msgid "Quick Scan"
 msgstr "Scaneo Rápido"
 
 #: ProfileMain#4
-#, fuzzy
 msgctxt "ProfileMain#4"
 msgid "Normal Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Normal"
 
 #: ProfileMain#5
 msgid "Root Profiles"
@@ -1089,18 +768,12 @@ msgid "Log Preferences"
 msgstr "Preferencias del Log"
 
 #: ProfileMain#9
-#, fuzzy
 msgid "&Browse"
-msgstr ""
-"\n"
-"            "
+msgstr "&Navegar"
 
 #: ProfileMain#10
-#, fuzzy
 msgid "Log File Path"
-msgstr ""
-"\n"
-"            "
+msgstr "Lugar del Fichero de Log"
 
 #: ProfileMain#11
 msgid "Active Log"
@@ -1131,102 +804,62 @@ msgid "Scan Preferences"
 msgstr "Preferencias de Scaneo"
 
 #: ProfileMain#18
-#, fuzzy
 msgid "Internal Lookup"
-msgstr ""
-"\n"
-"            "
+msgstr "Lookup Interno"
 
 #: ProfileMain#19
-#, fuzzy
 msgid "Dig Lookup"
-msgstr ""
-"\n"
-"            "
+msgstr "Lookup Dig"
 
 #: ProfileMain#20
-#, fuzzy
 msgid "&Defaults"
-msgstr ""
-"\n"
-"            "
+msgstr "Por &Defecto"
 
 #: ProfileMain#21
-#, fuzzy
 msgid "&Ok"
-msgstr ""
-"\n"
-"            "
+msgstr "&Ok"
 
 #: ProfileMain#22
-#, fuzzy
 msgid "&Cancel"
-msgstr ""
-"\n"
-"            "
+msgstr "&Cancelar"
 
 #: addParBook#1
-#, fuzzy
 msgid "Add Parameters Profile"
-msgstr ""
-"\n"
-"            "
+msgstr "Añadir Parámetros al Perfil"
 
 #: addParBook#2
-#, fuzzy
 msgctxt "addParBook#2"
 msgid "Profile Name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nombre del Perfil"
 
 #: addParBook#3
-#, fuzzy
 msgctxt "addParBook#3"
 msgid "Parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Parámetros"
 
 #: addParBook#4
-#, fuzzy
 msgctxt "addParBook#4"
 msgid "Done"
-msgstr ""
-"\n"
-"            "
+msgstr "Hecho"
 
 #: addParBook#5
-#, fuzzy
 msgctxt "addParBook#5"
 msgid "Cancel"
-msgstr ""
-"\n"
-"            "
+msgstr "Cancelar"
 
 #: addUrl#1
-#, fuzzy
 msgid "Add Vulnerability Url"
-msgstr ""
-"\n"
-"            "
+msgstr "Añadir Url de Vulnerabilidades"
 
 #: addUrl#2
-#, fuzzy
 msgid "Url Name"
-msgstr ""
-"\n"
-"            "
+msgstr "Nombre de Url"
 
 #: addUrl#3
-#, fuzzy
 msgid "Url address"
-msgstr ""
-"\n"
-"            "
+msgstr "Dirección Url"
 
 #: addUrl#4
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
 "html40/strict.dtd\">\n"
@@ -1250,29 +883,41 @@ msgid ""
 "weight:600;\">Note: </span>search variable at the and of "
 "url</p></body></html>"
 msgstr ""
-"\n"
-"            "
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Ejemplo:</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Nombre Url: cve.mitre.org</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Dirección Url: "
+"http://cve.mitre.org/cgi-bin/cvekey.cgi?<span style=\" font-weight:600; font-"
+"style:italic;\">keyword=</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Nota: </span>buscar variables al final de la "
+"url</p></body></html>"
 
 #: addUrl#5
-#, fuzzy
 msgctxt "addUrl#5"
 msgid "Done"
-msgstr ""
-"\n"
-"            "
+msgstr "Hecho"
 
 #: addUrl#6
-#, fuzzy
 msgctxt "addUrl#6"
 msgid "Cancel"
-msgstr ""
-"\n"
-"            "
+msgstr "Cancelar"
 
 #: logHistory#1
 msgid "Your configuration file is too old, please delete it"
-msgstr ""
-"Tus archivos de configuración son demasiado antiguos, por favor eliminalos"
+msgstr "Tus archivos de configuración son demasiado antiguos, por favor eliminalos"
 
 #: mainProfile#1
 msgid "Profiles"
@@ -1305,48 +950,30 @@ msgid "<h3>Size Options</h3>"
 msgstr "<h3>Opciones de tamaño</h3>"
 
 #: mainProfile#8
-#, fuzzy
 msgid "<h3>Scan Lookup</h3>"
-msgstr ""
-"\n"
-"            "
+msgstr "<h3>Escáner Lookup</h3>"
 
 #: monitorDetails#1
-#, fuzzy
 msgid "Scan Process Details"
-msgstr ""
-"\n"
-"            "
+msgstr "Detalles del Proceso de Escaneo"
 
 #: monitorDetails#2
-#, fuzzy
 msgid "Hostname:"
-msgstr ""
-"\n"
-"            "
+msgstr "Nombre de Host:"
 
 #: monitorDetails#3
-#, fuzzy
 msgid "Reload"
-msgstr ""
-"\n"
-"            "
+msgstr "Recargar"
 
 #: monitorDetails#4
-#, fuzzy
 msgctxt "monitorDetails#4"
 "monitorDetails#4"
 msgid "Close"
-msgstr ""
-"\n"
-"            "
+msgstr "Cerrar"
 
 #: nmapClass#1
-#, fuzzy
 msgid "Remove Host"
-msgstr ""
-"\n"
-"            "
+msgstr "Eliminar Host"
 
 #: nmapClass#2
 msgctxt "nmapClass#2"
@@ -1366,32 +993,20 @@ msgid "Use Parameters"
 msgstr "Usar Parámetros"
 
 #: nmapClass#6
-#, fuzzy
 msgid "Check Vulnerability"
-msgstr ""
-"\n"
-"            "
+msgstr "Comprobar Vulnerabilidades"
 
 #: nmapClass#7
-#, fuzzy
 msgid "No Ftp Address \n"
-msgstr ""
-"\n"
-"            "
+msgstr "Sin Dirección FTP"
 
 #: nmapClass#8
-#, fuzzy
 msgid "Disable Ftp bounce"
-msgstr ""
-"\n"
-"            "
+msgstr "Desactivar Rebote FTP"
 
 #: nmapClass#9
-#, fuzzy
 msgid "No Ports Range (ex: 20-80)\n"
-msgstr ""
-"\n"
-"            "
+msgstr "Sin Rango de Puertos (ej. 20-80)\n"
 
 #: nmapClass#10
 msgctxt "nmapClass#10"
@@ -1399,31 +1014,22 @@ msgid "Close"
 msgstr "Cerrar"
 
 #: nmapClass#11
-#, fuzzy
 msgid "no input file\n"
-msgstr ""
-"\n"
-"            "
+msgstr "sin ficheros de entrada\n"
 
 #: nmapClass#12
-#, fuzzy
 msgctxt "nmapClass#12"
 msgid "Normal Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Normal"
 
 #: nmapClass#13
 msgid "Wrong Address\n"
 msgstr "Dirección Errónea\n"
 
 #: nmapClass#14
-#, fuzzy
 msgctxt "nmapClass#14"
 msgid "Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escanear"
 
 #: nmapClass#15
 msgid "Options"
@@ -1432,18 +1038,15 @@ msgstr "Opciones"
 #: nmapClass#16
 msgctxt "nmapClass#16"
 msgid "Discover"
-msgstr "Decubrir"
+msgstr "Descubrir"
 
 #: nmapClass#17
 msgid "File"
 msgstr "Archivo"
 
 #: nmapClass#18
-#, fuzzy
 msgid "Timing"
-msgstr ""
-"\n"
-"            "
+msgstr "Tiempos"
 
 #: nmapClass#19
 msgid "Save Log"
@@ -1454,51 +1057,33 @@ msgid "No Scan found\n"
 msgstr "No se encontró ningún escaneo\n"
 
 #: nmapClass#21
-#, fuzzy
 msgid "Log (*.log)"
-msgstr ""
-"\n"
-"            "
+msgstr "Log (*.log)"
 
 #: nmapClass#22
-#, fuzzy
 msgid "Information"
-msgstr ""
-"\n"
-"            "
+msgstr "Información"
 
 #: nmapClass#23
-#, fuzzy
 msgid "Save File permission Error (Log stored in /tmp)\n"
-msgstr ""
-"\n"
-"            "
+msgstr "Error de permisos al Guardar el Fichero (Logs almacenados en /tmp)\n"
 
 #: nmapClass#24
-#, fuzzy
 msgid "Save File permission Error\n"
-msgstr ""
-"\n"
-"            "
+msgstr "Error al Guardar Fichero."
 
 #: nmapClass#25
 msgid " Active Scan "
 msgstr " Escaneo Activo "
 
 #: nmapClass#26
-#, fuzzy
 msgid "Scan host(s)"
-msgstr ""
-"\n"
-"            "
+msgstr "Escanear host(s)"
 
 #: nmapClass#27
-#, fuzzy
 msgctxt "nmapClass#27"
 msgid "Log"
-msgstr ""
-"\n"
-"            "
+msgstr "Log"
 
 #: nmapClass#28
 msgctxt "nmapClass#28"
@@ -1506,320 +1091,207 @@ msgid "Scan Log"
 msgstr "Log de Scaneo"
 
 #: nmapClass#29
-#, fuzzy
 msgctxt "nmapClass#29"
 msgid "Services"
-msgstr ""
-"\n"
-"            "
+msgstr "Servicios"
 
 #: nmapClass#30
 msgid "Check Vulnerabilities"
 msgstr "Revisar Vulnerabilidades"
 
 #: nmapClass#31
-#, fuzzy
 msgid "Network Discover"
-msgstr ""
-"\n"
-"            "
+msgstr "Descubrir Red"
 
 #: nmapClass#32
-#, fuzzy
 msgid "Enable/Disable NSS script"
-msgstr ""
-"\n"
-"            "
+msgstr "Activar/Desactivar Script NSS"
 
 #: nmapClass#33
-#, fuzzy
 msgid "Enable/Disable Manual Parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Activar/Desactivar Parámetros Manuales"
 
 #: nmapClass#34
-#, fuzzy
 msgid "Show/Hide Lookup"
-msgstr ""
-"\n"
-"            "
+msgstr "Mostrar/Ocultar Lookup"
 
 #: nmapClass#35
-#, fuzzy
 msgid "Setup"
-msgstr ""
-"\n"
-"            "
+msgstr "Configuración"
 
 #: nmapClass#36
-#, fuzzy
 msgid "Idle Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Parado"
 
 #: nmapClass#37
-#, fuzzy
 msgid "SYN Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo SYN Stealth"
 
 #: nmapClass#38
-#, fuzzy
 msgid "ACK Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo ACK Stealth"
 
 #: nmapClass#39
-#, fuzzy
 msgid "FIN|ACK Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo FIN|ACK Stealth"
 
 #: nmapClass#40
-#, fuzzy
 msgid "FIN Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo FIN Stealth"
 
 #: nmapClass#41
-#, fuzzy
 msgid "NULL Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo NULL Stealth"
 
 #: nmapClass#42
-#, fuzzy
 msgid "XMAS Tree Stealth Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo XMAS Tree Stealth"
 
 #: nmapClass#43
-#, fuzzy
 msgid "TCP Window Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Ventana TCP"
 
 #: nmapClass#44
-#, fuzzy
 msgid "UDP Ports Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Puertos UDP"
 
 #: nmapClass#45
-#, fuzzy
 msgid "IP Protocol Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Protocolo IP"
 
 #: nmapClass#46
 msgid "Insert HostName to scan"
 msgstr "Ingrese un Hostname para scanear"
 
 #: nmapClass#47
-#, fuzzy
 msgid "Warning: Operation more expansive.\n"
-msgstr ""
-"\n"
-"            "
+msgstr "Peligro: Operación más amplia.\n"
 
 #: nmapClass#48
-#, fuzzy
 msgctxt "nmapClass#48"
 msgid "Scan Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Opciones de Escaneo"
 
 #: nmapClass#49
-#, fuzzy
 msgctxt "nmapClass#49"
 msgid "Nse Options"
-msgstr ""
-"\n"
-"            "
+msgstr "Opciones Nse"
 
 #: nmapClass#50
-#, fuzzy
 msgctxt "nmapClass#50"
 msgid "Lookup"
-msgstr ""
-"\n"
-"            "
+msgstr "Lookup"
 
 #: nmapClass#51
-#, fuzzy
 msgctxt "nmapClass#51"
 msgid "Traceroute"
-msgstr ""
-"\n"
-"            "
+msgstr "Traceroute"
 
 #: nmapClass#52
-#, fuzzy
 msgctxt "nmapClass#52"
 msgid "Scan log parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Parámetros del log de escaneo"
 
 #: nmapClass#53
-#, fuzzy
 msgid ""
 "Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
 "scan (ip range ex. 192.168.1.10/20)"
 msgstr ""
-"\n"
-"            "
+"Inserta [ip] o [dns] o [rango ip] o [lista ip/dns con espacio como separador] para "
+"escanear (rango ip de ejemplo. 192.168.1.10/20)"
 
 #: nmapClass#54
-#, fuzzy
 msgid "Search Vulnerabilities"
-msgstr ""
-"\n"
-"            "
+msgstr "Buscar Vulnerabilidades"
 
 #: nmapClass#55
-#, fuzzy
 msgid "No Host Target\n"
-msgstr ""
-"\n"
-"            "
+msgstr "No hay Host Objetivo"
 
 #: nmapClass#56
-#, fuzzy
 msgid "is Up"
-msgstr ""
-"\n"
-"            "
+msgstr "está Encendido"
 
 #: nmapClass#57
-#, fuzzy
 msgctxt "nmapClass#57"
 msgid "Quick Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Rápido"
 
 #: nmapClass#58
-#, fuzzy
 msgid "Intense Scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Intensivo"
 
 #: nmapClass#59
-#, fuzzy
 msgid "Intense Scan, all TCP ports"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Intensivo, todos los puertos TCP"
 
 #: nmapClass#60
-#, fuzzy
 msgid "Intense scan plus UDP"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo Intensivo más UDP"
 
 #: nmapClass#61
-#, fuzzy
 msgid "Slow comprehensive scan"
-msgstr ""
-"\n"
-"            "
+msgstr "Escaneo lento completo"
 
 #: nmapClass#62
 msgid "Hostname already scanning\n"
-msgstr ""
+msgstr "El nombre de Host está actualmente escaneando\n"
 
 #: nmapClass#63
 msgid "NSS Script"
-msgstr ""
+msgstr "Script NSS"
 
 #: nmapClass#64
 msgid "Show Lookup"
-msgstr ""
+msgstr "Mostrar Lookup"
 
 #: nmapClass#65
 msgid "Show Traceroute"
-msgstr ""
+msgstr "Mostrar Traceroute"
 
 #: nmapClass#66
 msgid "Show/Hide Traceroute"
-msgstr ""
+msgstr "Mostrar/Ocultar Traceroute"
 
 #: nmapClass#67
 msgid "Remove Scan Parameters"
-msgstr ""
+msgstr "Eliminar Parámetros de Scaneo"
 
 #: nmapClass#68
-#, fuzzy
 msgctxt "nmapClass#68"
 msgid "Parameters"
-msgstr ""
-"\n"
-"            "
+msgstr "Parámetros"
 
 #: parser#1
-#, fuzzy
 msgid "Error: check nmap Installation.\n"
-msgstr ""
-"\n"
-"            "
+msgstr "Error: revisa la instalación de nmap"
 
 #: parser#2
 msgctxt "parser#2"
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: parser#3
-#, fuzzy
 msgid "No description"
-msgstr ""
-"\n"
-"            "
+msgstr "Sin descripción"
 
 #: utilities#1
-#, fuzzy
 msgid "Select the file"
-msgstr ""
-"\n"
-"            "
+msgstr "Selecciona un fichero"
 
 #: vulnerability#1
-#, fuzzy
 msgctxt "vulnerability#1"
 msgid "Search"
-msgstr ""
-"\n"
-"            "
+msgstr "Buscar"
 
 #: vulnerability#2
-#, fuzzy
 msgid "Back"
-msgstr ""
-"\n"
-"            "
+msgstr "Volver"
 
 #: vulnerability#3
-#, fuzzy
 msgid "Forward"
-msgstr ""
-"\n"
-"            "
+msgstr "Avanzar"
 
 #: vulnerability#4
-#, fuzzy
 msgid "Stop"
 msgstr "Detener"
