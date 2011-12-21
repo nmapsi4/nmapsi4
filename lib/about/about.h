@@ -20,14 +20,14 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QDialog>
-#include <QMessageBox>
-#include <ui_about.h>
+#include <QtGui/QDialog>
+#include <QtGui/QMessageBox>
 
+#include "ui_about.h"
 #include "staticDefine.h"
 
 class mainAbout : public QDialog, private Ui::AboutWin
-{ 
+{
   public:
      mainAbout();
      ~mainAbout();

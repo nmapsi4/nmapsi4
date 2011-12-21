@@ -37,20 +37,20 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
         urlListTime = historyReadUrlTime();
     }
 
-    if (urlList.contains("NULL")) 
+    if (urlList.contains("NULL"))
     {
         urlList.removeFirst();
         urlList.append(url);
         settings.setValue(configTag, QVariant(urlList));
-        if (!scanTime.isNull()) 
+        if (!scanTime.isNull())
         {
             urlListTime.removeFirst();
             urlListTime.append(scanTime);
             settings.setValue(configTagTime, QVariant(urlListTime));
         }
-    } 
-    else if (((urlList.size() == __CACHE_SIZE__)
-              && (__CACHE_SIZE__ != -1))
+    }
+    else if (((urlList.size() == m_cacheSize)
+              && (m_cacheSize != -1))
              && (!urlList.contains(url)))
     {
         urlList.removeLast();
@@ -64,7 +64,7 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
             settings.setValue(configTagTime, QVariant(urlListTime));
         }
     }
-    else if (!urlList.contains(url)) 
+    else if (!urlList.contains(url))
     {
         urlList.push_front(url);
         settings.setValue(configTag, QVariant(urlList));
@@ -74,7 +74,7 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
             urlListTime.push_front(scanTime);
             settings.setValue(configTagTime, QVariant(urlListTime));
         }
-    } 
+    }
     else if (!scanTime.isNull())
     {
         int index = urlList.indexOf(url);

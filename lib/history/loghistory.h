@@ -20,32 +20,30 @@
 #ifndef LOGHISTORY_H
 #define LOGHISTORY_H
 
-#include <QList>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QSettings>
-#include <QFile>
-#include <QDebug>
-#include <QApplication>
-#include <QDateTime>
-#include <QFileInfo>
-#include <QComboBox>
-#include <QString>
-#include <QPointer>
+#include <QtCore/QList>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QSettings>
+#include <QtCore/QFile>
+#include <QtGui/QApplication>
+#include <QtCore/QDateTime>
+#include <QtCore/QFileInfo>
+#include <QtGui/QComboBox>
+#include <QtCore/QString>
+#include <QtCore/QPointer>
+
+#include "memorytools.h"
 
 #define HISTORY_NO_DEBUG
 
 class logHistory
 {
     /**
-     * TODO:: const to const & 
+     * TODO:: const to const &
      **/
 
 public:
-    logHistory(QTreeWidget* treeLog,
-               const QString ConfigTag,
-               const QString ConfigTagTime,
-               int cacheSize);
+    logHistory(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
     logHistory(const QString ConfigTag, int cacheSize);
     ~logHistory();
     void updateLogHistory();
@@ -58,16 +56,15 @@ public:
 private:
     const QStringList historyReadUrl();
     const QList<QString> historyReadUrlTime();
+    void coreItemHistory(const QString url, const QString scanTime);
+
+    QTreeWidget* logTree;
     QTreeWidgetItem* historyItem;
     QTreeWidgetItem* history;
     QList<QTreeWidgetItem*> ItemListHistory;
-    QTreeWidget* logTree;
-    void coreItemHistory(const QString url, const QString scanTime);
-
-protected:
     QString configTag;
     QString configTagTime;
-    int __CACHE_SIZE__;
+    int m_cacheSize;
 
 };
 
