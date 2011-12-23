@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PROFILEMAIN_H
-#define PROFILEMAIN_H
+#ifndef PREFERENCESDIALOG_H
+#define PREFERENCESDIALOG_H
 
 #include <QtGui/QDialog>
 #include <QtCore/QSettings>
@@ -27,15 +27,15 @@
 
 // local include
 #include "utilities.h"
-#include "ui_profilemain.h"
+#include "ui_preferencesdialog.h"
 
-class mainProfile : public QDialog, private Ui::ProfileMain
+class preferencesDialog : public QDialog, private Ui::ProfileMain
 {
     Q_OBJECT
 
 public:
-    mainProfile(QWidget *parent = 0);
-    ~mainProfile();
+    preferencesDialog(QWidget *parent = 0);
+    ~preferencesDialog();
 
 private:
     void saveProfile(const QString ProfileType); // Create a enum for the profile

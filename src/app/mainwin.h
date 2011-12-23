@@ -41,7 +41,7 @@
 #include <QtGui/QStringListModel>
 
 // local include
-#include "profilemain.h"
+#include "preferencesdialog.h"
 #include "loghistory.h"
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"

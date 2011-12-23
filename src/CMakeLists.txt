@@ -33,7 +33,7 @@ SET(SOURCES_CPP
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
 		app/monitor/details.cpp
-		app/preference/profilemain.cpp
+		app/preference/preferencesdialog.cpp
                 app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
@@ -78,7 +78,7 @@ SET(SOURCES_H app/mainwin.h
         platform/nse/nsemanager.h
         common/utilities.h
 	common/qprocessthread.h
-	app/preference/profilemain.h
+	app/preference/preferencesdialog.h
 	app/monitor/details.h
         app/monitor/monitor.h
 	app/parser/parsermanager.h)
@@ -86,7 +86,7 @@ SET(SOURCES_H app/mainwin.h
 SET(SOURCES_UI app/mainwin.ui
 	platform/vulnerability/addvulnerabilityurl.ui
 	platform/bookmarks/addparameterstobookmark.ui
-	app/preference/profilemain.ui
+	app/preference/preferencesdialog.ui
 	app/monitor/details.ui)
 
 SET(RESOURCES_QRC ../mainwin.qrc)

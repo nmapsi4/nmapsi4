@@ -17,9 +17,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "profilemain.h"
+#include "preferencesdialog.h"
 
-mainProfile::mainProfile(QWidget *parent) : QDialog(parent)
+preferencesDialog::preferencesDialog(QWidget *parent) : QDialog(parent)
 {
     setupUi(this);
     QSettings ptrFile("nmapsi4", "nmapsi4");
@@ -151,20 +151,20 @@ mainProfile::mainProfile(QWidget *parent) : QDialog(parent)
 
 }
 
-void mainProfile::saveProfile(const QString ProfileType)
+void preferencesDialog::saveProfile(const QString ProfileType)
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
     ptrFile.setValue("configProfile", ProfileType); // default value
 }
 
-QString mainProfile::readProfile()
+QString preferencesDialog::readProfile()
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
     QString tmpProfile = ptrFile.value("configProfile", "none").toString();
     return tmpProfile;
 }
 
-void mainProfile::setScan()
+void preferencesDialog::setScan()
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
     ptrFile.setValue("configProfile", m_ScanActive);
@@ -205,7 +205,7 @@ void mainProfile::setScan()
 }
 
 
-void mainProfile::updateItem()
+void preferencesDialog::updateItem()
 {
     if (m_profileItem->isSelected())
     {
@@ -229,14 +229,14 @@ void mainProfile::updateItem()
     }
 }
 
-void mainProfile::log_browser()
+void preferencesDialog::log_browser()
 {
     utilities *util = new utilities(this);
     util->openDirectoryDialog(lineEditPath);
     delete util;
 }
 
-void mainProfile::setProfile()
+void preferencesDialog::setProfile()
 {
 
     int uid = 0;
@@ -292,13 +292,13 @@ void mainProfile::setProfile()
 
 }
 
-void mainProfile::quit()
+void preferencesDialog::quit()
 {
     setScan(); // save Options
     emit accept();   // send accept signal and exit
 }
 
-void mainProfile::setDefaults()
+void preferencesDialog::setDefaults()
 {
     checkNormalScan->setChecked(true);
     checkQuickScan->setChecked(false);
@@ -312,7 +312,7 @@ void mainProfile::setDefaults()
     checkBoxDig->setChecked(false);
 }
 
-void mainProfile::updateNormalCheck()   // slot
+void preferencesDialog::updateNormalCheck()   // slot
 {
     if (checkNormalScan->isChecked())
     {
@@ -323,7 +323,7 @@ void mainProfile::updateNormalCheck()   // slot
     }
 }
 
-void mainProfile::updateQuickCheck()   //slot
+void preferencesDialog::updateQuickCheck()   //slot
 {
     if (checkQuickScan->isChecked())
     {
@@ -334,7 +334,7 @@ void mainProfile::updateQuickCheck()   //slot
     }
 }
 
-void mainProfile::updateFullVersionCheck()   // slot
+void preferencesDialog::updateFullVersionCheck()   // slot
 {
     if (checkFullVersion->isChecked())
     {
@@ -345,7 +345,7 @@ void mainProfile::updateFullVersionCheck()   // slot
     }
 }
 
-void mainProfile::updateQuickVersionCheck()   // slot
+void preferencesDialog::updateQuickVersionCheck()   // slot
 {
     if (checkQuickVersion->isChecked())
     {
@@ -356,7 +356,7 @@ void mainProfile::updateQuickVersionCheck()   // slot
     }
 }
 
-void mainProfile::update_saveButton()
+void preferencesDialog::update_saveButton()
 {
     if (!checkLogOn->isChecked())
     {
@@ -370,18 +370,18 @@ void mainProfile::update_saveButton()
     }
 }
 
-void mainProfile::activeLookupInt()
+void preferencesDialog::activeLookupInt()
 {
     if(checkBoxlookup->isChecked())
         checkBoxDig->setChecked(false);
 }
 
-void mainProfile::activeLookupDig()
+void preferencesDialog::activeLookupDig()
 {
     if(checkBoxDig->isChecked())
         checkBoxlookup->setChecked(false);
 }
 
-mainProfile::~mainProfile()
+preferencesDialog::~preferencesDialog()
 {
 }
