@@ -25,9 +25,9 @@
 #include <QtCore/QStringList>
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
-#include <ui_details.h>
 
 // local include
+#include "ui_details.h"
 #include "memorytools.h"
 
 using namespace memory;
@@ -46,10 +46,10 @@ private:
      */
     void loadFlow();
 
-    QStringList& scanLines;
-    QList<QListWidgetItem*> itemsList;
+    QStringList& m_scanLines;
+    QList<QListWidgetItem*> m_itemsList;
     int m_itemsSize;
-    QTimer *m_timer;
+    QTimer* m_timer;
 
 private slots:
     /*

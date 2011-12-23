@@ -100,18 +100,18 @@ private:
      */
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
 
-    QList<QTreeWidgetItem*> monitorElem;
-    QList<lookupManager*> internealLookupList;
-    QList<digManager*> digLookupList;
-    QList< QPair<QString, QStringList> > _hostScanCacheList;
-    QList< QPair<LookupType, QTreeWidgetItem*> > _lookupScanCacheList;
-    QHash<QString, QProcessThread*> _scanHashList;
-    QHash<QString, QStringList> _scanHashListFlow;
-    QTreeWidget* _monitor;
-    nmapClass* _ui;
-    int _parallelThreadLimit;
-    bool _isHostcached;
-    QTimer *timer;
+    QList<QTreeWidgetItem*> m_monitorElem;
+    QList<lookupManager*> m_internealLookupList;
+    QList<digManager*> m_digLookupList;
+    QList< QPair<QString, QStringList> > m_hostScanCacheList;
+    QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
+    QHash<QString, QProcessThread*> m_scanHashList;
+    QHash<QString, QStringList> m_scanHashListFlow;
+    QTreeWidget* m_monitor;
+    nmapClass* m_ui;
+    int m_parallelThreadLimit;
+    bool m_isHostcached;
+    QTimer* m_timer;
 
 signals:
     /*
