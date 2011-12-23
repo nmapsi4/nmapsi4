@@ -111,7 +111,6 @@ void nmapClass::initObject()
 
 nmapClass::~nmapClass()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     delete _discoverManager;
     delete _monitor;

@@ -611,7 +611,6 @@ void nmapClass::listClear()
 {
     listClearFlag = true;
     // Host list
-    freelist<QTreeWidgetItem*>::itemDeleteAll(mainTreeElem);
     _parser->clearParserItems();
     listScanError->clear();
     treeMain->clear();

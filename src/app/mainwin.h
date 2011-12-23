@@ -104,8 +104,7 @@ private:
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
-    int hostCache;;
-    QList<QTreeWidgetItem*> mainTreeElem;
+    int hostCache;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QSplitter *cW;
     QSplitter *bW;

@@ -30,7 +30,7 @@ parserManager::~parserManager()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     freelist<parserObj*>::itemDeleteAll(m_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
-
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 }
 
 void parserManager::clearParserItems()
@@ -39,6 +39,7 @@ void parserManager::clearParserItems()
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 }
 
 void parserManager::addUtilObject(parserObjUtil* object)
@@ -63,14 +64,14 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     QString StderrorStr(errorBuffer);
 
     // create a scan host item.
-    QTreeWidgetItem *mainTreeE = new QTreeWidgetItem(m_ui->treeMain);
-    m_ui->mainTreeElem.push_front(mainTreeE);
-    mainTreeE->setSizeHint(0, QSize(32, 32));
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem(m_ui->treeMain);
+    m_treeItems.push_front(treeItem);
+    treeItem->setSizeHint(0, QSize(32, 32));
 
     m_ui->comboScanLog->insertItem(3, parList.join(" "));
 
     // call real parser
-    parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,mainTreeE);
+    parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
 
     int tmpBox = m_ui->SWscan->currentIndex();
 
