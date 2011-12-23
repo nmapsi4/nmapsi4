@@ -30,21 +30,21 @@ public:
     explicit QPushButtonOrientated(const QString& text, QWidget* parent = 0);
     QPushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
     ~QPushButtonOrientated();
-    
+
     Qt::Orientation getOrientation() const;
     void setOrientation(Qt::Orientation orientation);
-    
+
     bool mirrored() const;
     void setMirrored(bool mirrored);
-    
+
     QSize sizeHint() const;
     QSize minimumSizeHint() const;
-    
+
 protected:
-    Qt::Orientation _orientation;
-    bool _mirrored;   
+    Qt::Orientation m_orientation;
+    bool m_mirrored;
     void paintEvent(QPaintEvent* event);
-    
+
 private:
     QStyleOptionButton getStyleOption() const;
     void initObject();

@@ -19,7 +19,7 @@
 
 #include "utilities.h"
 
-utilities::utilities(QWidget* parent) : _parent(parent)
+utilities::utilities(QWidget* parent) : m_parent(parent)
 {
 }
 
@@ -34,7 +34,7 @@ void utilities::openFileBrowser(QLineEdit *destination)
 
 void utilities::showBrowser(QLineEdit *destination) // private
 {
-    QString FileName = QFileDialog::getOpenFileName(_parent, tr("Select the file"), "/home", "");
+    QString FileName = QFileDialog::getOpenFileName(m_parent, tr("Select the file"), "/home", "");
 
     destination->setText(FileName);
 }
@@ -43,14 +43,14 @@ void utilities::openDirectoryDialog(QLineEdit *destination)
 {
     QString url = QDir::homePath();
 
-    QString FileName = QFileDialog::getExistingDirectory(_parent, "Open Directory",
+    QString FileName = QFileDialog::getExistingDirectory(m_parent, "Open Directory",
                url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-    if(FileName.isEmpty()) 
+    if(FileName.isEmpty())
     {
         FileName.append(QDir::tempPath());
     }
-    
+
     destination->setText(FileName);
 }
 

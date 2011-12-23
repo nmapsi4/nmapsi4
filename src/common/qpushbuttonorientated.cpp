@@ -46,18 +46,18 @@ QPushButtonOrientated::~QPushButtonOrientated()
 
 void QPushButtonOrientated::initObject()
 {
-    _orientation = Qt::Horizontal;
-    _mirrored = false;
+    m_orientation = Qt::Horizontal;
+    m_mirrored = false;
 }
 
 Qt::Orientation QPushButtonOrientated::getOrientation() const
 {
-    return _orientation;
+    return m_orientation;
 }
 
 void QPushButtonOrientated::setOrientation(Qt::Orientation orientation)
 {
-    _orientation = orientation;
+    m_orientation = orientation;
     switch (orientation)
     {
     case Qt::Horizontal:
@@ -72,35 +72,35 @@ void QPushButtonOrientated::setOrientation(Qt::Orientation orientation)
 
 bool QPushButtonOrientated::mirrored() const
 {
-    return _mirrored;
+    return m_mirrored;
 }
 
 void QPushButtonOrientated::setMirrored(bool mirrored)
 {
-    _mirrored = mirrored;
+    m_mirrored = mirrored;
 }
 
 QSize QPushButtonOrientated::sizeHint() const
 {
     QSize size = QPushButton::sizeHint();
-    
-    if (_orientation == Qt::Vertical)
+
+    if (m_orientation == Qt::Vertical)
     {
         size.transpose();
     }
-    
+
     return size;
 }
 
 QSize QPushButtonOrientated::minimumSizeHint() const
 {
     QSize size = QPushButton::minimumSizeHint();
-    
-    if (_orientation == Qt::Vertical)
+
+    if (m_orientation == Qt::Vertical)
     {
         size.transpose();
     }
-    
+
     return size;
 }
 
@@ -109,10 +109,10 @@ void QPushButtonOrientated::paintEvent(QPaintEvent* event)
     Q_UNUSED(event);
     QStylePainter painter(this);
 
-    switch (_orientation)
+    switch (m_orientation)
     {
     case Qt::Horizontal:
-        if (_mirrored)
+        if (m_mirrored)
         {
             painter.rotate(180);
             painter.translate(-width(), -height());
@@ -120,7 +120,7 @@ void QPushButtonOrientated::paintEvent(QPaintEvent* event)
         break;
 
     case Qt::Vertical:
-        if (_mirrored)
+        if (m_mirrored)
         {
             painter.rotate(-90);
             painter.translate(-height(), 0);
@@ -140,49 +140,49 @@ QStyleOptionButton QPushButtonOrientated::getStyleOption() const
 {
     QStyleOptionButton option;
     option.initFrom(this);
-    if (_orientation == Qt::Vertical)
+    if (m_orientation == Qt::Vertical)
     {
         QSize size = option.rect.size();
         size.transpose();
         option.rect.setSize(size);
     }
     option.features = QStyleOptionButton::None;
-    
+
     if (isFlat())
     {
         option.features |= QStyleOptionButton::Flat;
     }
-    
+
     if (menu())
     {
         option.features |= QStyleOptionButton::HasMenu;
     }
-    
+
     if (autoDefault() || isDefault())
     {
         option.features |= QStyleOptionButton::AutoDefaultButton;
     }
-    
+
     if (isDefault())
     {
         option.features |= QStyleOptionButton::DefaultButton;
     }
-    
+
     if (isDown() || (menu() && menu()->isVisible()))
     {
         option.state |= QStyle::State_Sunken;
     }
-    
+
     if (isChecked())
     {
         option.state |= QStyle::State_On;
     }
-    
+
     if (!isFlat() && !isDown())
     {
         option.state |= QStyle::State_Raised;
     }
-    
+
     option.text = text();
     option.icon = icon();
     option.iconSize = iconSize();

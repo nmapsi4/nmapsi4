@@ -57,11 +57,11 @@ signals:
     void flowFromThread(const QString parameters, const QString data);
 
 private:
-    QByteArray _pout;
-    QByteArray _perr;
-    QStringList _ParList;
-    QString _programName;
-    QPointer<QProcess> _process;
+    QByteArray m_pout;
+    QByteArray m_perr;
+    QStringList m_ParList;
+    QString m_programName;
+    QPointer<QProcess> m_process;
 
 private slots:
     void readFinished();

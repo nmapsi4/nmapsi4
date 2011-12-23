@@ -45,7 +45,7 @@ public:
 
 private:
     void showBrowser(QLineEdit *destination);
-    QWidget* _parent;
+    QWidget* m_parent;
 
 public slots:
     void about();
