@@ -24,14 +24,17 @@
 #include <QtCore/QStringList>
 #include <QtCore/QHash>
 
+/**
+ * TODO:: make QStringList function const &.
+ **/
+
 class parserObj
 {
-    /**
-     * TODO:: make QStringList function const &.
-     **/
+
 public:
     parserObj();
     ~parserObj();
+
     const QString getHostName();
     const QStringList getMainInfo();
     const QStringList getServices();
@@ -39,7 +42,6 @@ public:
     const QStringList getPortOpen();
     const QStringList getPortClose();
     const QStringList getPortFiltered();
-    //QStringList getNssInfo() const;
     const QStringList getTraceRouteInfo();
     const QStringList getFullScanLog();
     const QStringList getErrorScan();
@@ -52,7 +54,6 @@ public:
     void setPortOpen(const QString portOpen);
     void setPortClose(const QString portClose);
     void setPortFiltered(const QString portFiltered);
-    //void setNssInfo(const QString nssElem);
     void setTraceRouteInfo(const QString traceElem);
     void setFullScanLog(const QString logElem);
     void setErrorScan(const QString errorElem);
@@ -66,29 +67,30 @@ private:
     QStringList m_portOpened;
     QStringList m_portFiltered;
     QStringList m_portClosed;
-//     QStringList m_scanNss;
     QStringList m_scanTraceRoute;
     QStringList m_fullLogScan;
     QStringList m_errorScan;
     QHash<QString, QStringList> m_nssResult;
+
 };
 
 class parserObjUtil
 {
-     /**
-     * TODO:: make QStringList and QString function const &.
-     **/
+
 public:
     parserObjUtil();
     ~parserObjUtil();
+
     const QStringList getInfoLookup();
     const QString getHostName();
+
     void setInfoLookup(const QString lookupElem);
     void setHostName(const QString hostName);
 
 private:
     QStringList m_mainLookup;
     QString m_hostName;
+
 };
 
 #endif

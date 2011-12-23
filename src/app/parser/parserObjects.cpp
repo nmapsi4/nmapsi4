@@ -64,11 +64,6 @@ const QStringList parserObj::getPortFiltered()
     return m_portFiltered;
 }
 
-// QStringList parserObj::getNssInfo() const
-// {
-//     return m_scanNss;
-// }
-
 const QStringList parserObj::getTraceRouteInfo()
 {
     return m_scanTraceRoute;
@@ -88,7 +83,6 @@ const QHash< QString, QStringList > parserObj::getNseResult()
 {
     return m_nssResult;
 }
-
 
 void parserObj::setHostName(const QString hostName)
 {
@@ -124,11 +118,6 @@ void parserObj::setPortFiltered(const QString portFiltered)
 {
     m_portFiltered.push_back(portFiltered);
 }
-
-// void parserObj::setNssInfo(const QString nssElem)
-// {
-//     m_scanNss.push_back(nssElem);
-// }
 
 void parserObj::setTraceRouteInfo(const QString traceElem)
 {

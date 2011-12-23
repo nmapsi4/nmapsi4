@@ -198,8 +198,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     QString scanBuffer;
     QString bufferInfo;
     QString bufferTraceroot;
-    //QString bufferNSS;
-
     QString nseBuffer;
     QString tmp;
 
@@ -221,7 +219,12 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
             scanBuffer.append(tmp);
             scanBuffer.append("\n");
 
-            // FIXME: create new nse buffer
+            // Insert new elem to nse buffer result
+            nseBuffer.append("|--" + tmp + "\n");
+        }
+
+        if (tmp.startsWith("Host script results:"))
+        {
             nseBuffer.append("|--" + tmp + "\n");
         }
 
@@ -242,7 +245,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 || tmp.contains("Note:")
                 || tmp.contains("Nmap done:")
                 || tmp.startsWith(QLatin1String("Hosts"))
-                || tmp.startsWith(QLatin1String("Host")))
+                || (tmp.startsWith(QLatin1String("Host")) && !tmp.contains("Host script results:")))
                 && !tmp.startsWith(QLatin1String("|")))
         {
             bufferInfo.append(tmp);
@@ -273,9 +276,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 }
             }
 
-            //bufferNSS.append(tmpClean);
-            //bufferNSS.append("\n");
-
             // FIXME: create new nse buffer
             nseBuffer.append(tmpClean + "\n");
         }
@@ -287,9 +287,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         }
 
     } // End first While
-
-    // FIXME:: print new nse buffer
-    //qDebug() << nseBuffer;
 
     // check for log file
     QTextStream *file = NULL;
@@ -385,7 +382,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
          if (bufferInfoStream_line.contains("OS") && !state_)
          {
             // OS was found ?
-            //state_ = checkViewOS(bufferInfoStream_line,mainTreeE);
             state_ = hostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
          }
 
@@ -420,23 +416,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         }
     }
 
-//     QTextStream bufferNssStream(&bufferNSS); // NSS
-//     QString bufferNssStream_line;
-//
-//     // check for NSS scan information
-//     while (!bufferNssStream.atEnd())
-//     {
-//         bufferNssStream_line = bufferNssStream.readLine();
-//         if (!bufferNssStream_line.isEmpty())
-//         {
-//             elemObj->setNssInfo(bufferNssStream_line);
-//             if (_ui->_logFilePath && !_ui->verboseLog)
-//             {
-//                 *file << bufferNssStream_line << endl;
-//             }
-//         }
-//     }
-
     QTextStream nseStream(&nseBuffer);
     QString nseStreamLine = nseStream.readLine();
     QHash<QString, QStringList> nseResult;
@@ -467,19 +446,8 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         }
     }
 
-    // TODO save nse result with QHash
+    // save nse result with QHash
     elemObj->setNseResult(nseResult);
-
-//     QHash<QString, QStringList>::const_iterator i;
-//     for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i)
-//     {
-//         qDebug() << "Key:: " << i.key();
-//         foreach (QString value, i.value())
-//         {
-//             qDebug() << "Value:: " << value;
-//         }
-//     }
-
     _ui->actionClear_History->setEnabled(true);
 
     QTextStream bufferLogStream(&StdoutStr);
@@ -690,27 +658,6 @@ void parserManager::showParserObj(int hostIndex)
     }
 
     // Show Nss Info
-//     foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo())
-//     {
-//         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
-//         _itemListScan.push_front(root);
-//         root->setSizeHint(0, QSize(22, 22));
-//         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-//         if (token.contains(":") && !token.contains("=")
-//                 && !token.contains("//")
-//                 && !token.contains("ERROR"))
-//         {
-//             root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-//         }
-//
-//         if (token.contains("ERROR"))
-//         {
-//             root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
-//         }
-//         root->setText(0, token);
-//         root->setToolTip(0, token);
-//     }
-
     QHash<QString, QStringList> nseResult = _parserObjList[hostIndex]->getNseResult();
     QHash<QString, QStringList>::const_iterator i;
     _ui->treeNSS->setRootIsDecorated(true);
@@ -720,9 +667,7 @@ void parserManager::showParserObj(int hostIndex)
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
         _itemListScan.push_front(root);
         root->setSizeHint(0, QSize(32, 32));
-
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        //qDebug() << "Key:: " << i.key();
 
         QStringList rootValue = i.key().split(' ', QString::SkipEmptyParts);
 
@@ -737,16 +682,14 @@ void parserManager::showParserObj(int hostIndex)
 
         foreach (const QString& value, i.value())
         {
-            //qDebug() << "Value:: " << value;
             QTreeWidgetItem *item = new QTreeWidgetItem(root);
             _itemListScan.push_front(item);
 
-//             if (value.contains(":") && !value.contains("=")
-//                     && !value.contains("//")
-//                     && !value.contains("ERROR"))
-//             {
-//                 item->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-//             }
+            if (value.contains(":") && !value.contains("//")
+                    && !value.contains("ERROR"))
+            {
+                item->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+            }
 
             if (value.contains("ERROR"))
             {
