@@ -22,6 +22,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QHash>
 
 class parserObj
 {
@@ -31,17 +32,19 @@ class parserObj
 public:
     parserObj();
     ~parserObj();
-    QString getHostName() const;
-    QStringList getMainInfo() const;
-    QStringList getServices() const;
-    QStringList getPortServices() const;
-    QStringList getPortOpen() const;
-    QStringList getPortClose() const;
-    QStringList getPortFiltered() const;
-    QStringList getNssInfo() const;
-    QStringList getTraceRouteInfo() const;
-    QStringList getFullScanLog() const;
-    QStringList getErrorScan() const;
+    const QString getHostName();
+    const QStringList getMainInfo();
+    const QStringList getServices();
+    const QStringList getPortServices();
+    const QStringList getPortOpen();
+    const QStringList getPortClose();
+    const QStringList getPortFiltered();
+    //QStringList getNssInfo() const;
+    const QStringList getTraceRouteInfo();
+    const QStringList getFullScanLog();
+    const QStringList getErrorScan();
+    const QHash<QString, QStringList> getNseResult();
+
     void setHostName(const QString hostName);
     void setMainInfo(const QString infoMainElem);
     void setServices(const QString Service);
@@ -49,10 +52,11 @@ public:
     void setPortOpen(const QString portOpen);
     void setPortClose(const QString portClose);
     void setPortFiltered(const QString portFiltered);
-    void setNssInfo(const QString nssElem);
+    //void setNssInfo(const QString nssElem);
     void setTraceRouteInfo(const QString traceElem);
     void setFullScanLog(const QString logElem);
     void setErrorScan(const QString errorElem);
+    void setNseResult(const QHash<QString, QStringList> nseResult);
 
 private:
     QString m_hostName;
@@ -62,10 +66,11 @@ private:
     QStringList m_portOpened;
     QStringList m_portFiltered;
     QStringList m_portClosed;
-    QStringList m_scanNss;
+//     QStringList m_scanNss;
     QStringList m_scanTraceRoute;
     QStringList m_fullLogScan;
     QStringList m_errorScan;
+    QHash<QString, QStringList> m_nssResult;
 };
 
 class parserObjUtil
@@ -76,8 +81,8 @@ class parserObjUtil
 public:
     parserObjUtil();
     ~parserObjUtil();
-    QStringList getInfoLookup() const;
-    QString getHostName() const;
+    const QStringList getInfoLookup();
+    const QString getHostName();
     void setInfoLookup(const QString lookupElem);
     void setHostName(const QString hostName);
 

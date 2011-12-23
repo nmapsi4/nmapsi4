@@ -195,11 +195,13 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
 
     QRegExp rxT_("^\\d\\d?");
     QString generalBuffer_(hostCheck);
-    QString tmp;
     QString scanBuffer;
     QString bufferInfo;
     QString bufferTraceroot;
-    QString bufferNSS;
+    //QString bufferNSS;
+
+    QString nseBuffer;
+    QString tmp;
 
     QTextStream stream(&StdoutStr);
 
@@ -218,6 +220,9 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
 
             scanBuffer.append(tmp);
             scanBuffer.append("\n");
+
+            // FIXME: create new nse buffer
+            nseBuffer.append("|--" + tmp + "\n");
         }
 
         if ((tmp.contains("MAC")
@@ -245,7 +250,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         }
 
         // pars for subtree service
-        if(tmp.startsWith(QLatin1String("|")))
+        if(tmp.startsWith(QLatin1String("|")) && !nseBuffer.isEmpty())
         {
             QString tmpClean(tmp);
             if(tmpClean.startsWith(QLatin1String("|")))
@@ -268,8 +273,11 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 }
             }
 
-            bufferNSS.append(tmpClean);
-            bufferNSS.append("\n");
+            //bufferNSS.append(tmpClean);
+            //bufferNSS.append("\n");
+
+            // FIXME: create new nse buffer
+            nseBuffer.append(tmpClean + "\n");
         }
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/")))
@@ -278,7 +286,10 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
             bufferTraceroot.append("\n");
         }
 
-    }
+    } // End first While
+
+    // FIXME:: print new nse buffer
+    //qDebug() << nseBuffer;
 
     // check for log file
     QTextStream *file = NULL;
@@ -409,22 +420,65 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         }
     }
 
-    QTextStream bufferNssStream(&bufferNSS); // NSS
-    QString bufferNssStream_line;
+//     QTextStream bufferNssStream(&bufferNSS); // NSS
+//     QString bufferNssStream_line;
+//
+//     // check for NSS scan information
+//     while (!bufferNssStream.atEnd())
+//     {
+//         bufferNssStream_line = bufferNssStream.readLine();
+//         if (!bufferNssStream_line.isEmpty())
+//         {
+//             elemObj->setNssInfo(bufferNssStream_line);
+//             if (_ui->_logFilePath && !_ui->verboseLog)
+//             {
+//                 *file << bufferNssStream_line << endl;
+//             }
+//         }
+//     }
 
-    // check for NSS scan information
-    while (!bufferNssStream.atEnd())
+    QTextStream nseStream(&nseBuffer);
+    QString nseStreamLine = nseStream.readLine();
+    QHash<QString, QStringList> nseResult;
+
+    while (!nseStream.atEnd())
     {
-        bufferNssStream_line = bufferNssStream.readLine();
-        if (!bufferNssStream_line.isEmpty())
+        QString service;
+        QStringList serviceNseResult;
+
+        if (nseStreamLine.startsWith("|--"))
         {
-            elemObj->setNssInfo(bufferNssStream_line);
-            if (_ui->_logFilePath && !_ui->verboseLog)
+            service = nseStreamLine.remove("|--");
+            nseStreamLine = nseStream.readLine();
+        }
+
+        while (!nseStreamLine.startsWith("|--") && !nseStream.atEnd())
+        {
+            if (!nseStreamLine.isEmpty())
             {
-                *file << bufferNssStream_line << endl;
+                serviceNseResult.append(nseStreamLine);
             }
+            nseStreamLine = nseStream.readLine();
+        }
+
+        if (!service.isEmpty() && serviceNseResult.size())
+        {
+            nseResult.insert(service,serviceNseResult);
         }
     }
+
+    // TODO save nse result with QHash
+    elemObj->setNseResult(nseResult);
+
+//     QHash<QString, QStringList>::const_iterator i;
+//     for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i)
+//     {
+//         qDebug() << "Key:: " << i.key();
+//         foreach (QString value, i.value())
+//         {
+//             qDebug() << "Value:: " << value;
+//         }
+//     }
 
     _ui->actionClear_History->setEnabled(true);
 
@@ -636,25 +690,71 @@ void parserManager::showParserObj(int hostIndex)
     }
 
     // Show Nss Info
-    foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo())
+//     foreach (const QString &token, _parserObjList[hostIndex]->getNssInfo())
+//     {
+//         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
+//         _itemListScan.push_front(root);
+//         root->setSizeHint(0, QSize(22, 22));
+//         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
+//         if (token.contains(":") && !token.contains("=")
+//                 && !token.contains("//")
+//                 && !token.contains("ERROR"))
+//         {
+//             root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+//         }
+//
+//         if (token.contains("ERROR"))
+//         {
+//             root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+//         }
+//         root->setText(0, token);
+//         root->setToolTip(0, token);
+//     }
+
+    QHash<QString, QStringList> nseResult = _parserObjList[hostIndex]->getNseResult();
+    QHash<QString, QStringList>::const_iterator i;
+    _ui->treeNSS->setRootIsDecorated(true);
+
+    for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i)
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(_ui->treeNSS);
         _itemListScan.push_front(root);
-        root->setSizeHint(0, QSize(22, 22));
+        root->setSizeHint(0, QSize(32, 32));
+
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        if (token.contains(":") && !token.contains("=")
-                && !token.contains("//")
-                && !token.contains("ERROR"))
+        //qDebug() << "Key:: " << i.key();
+
+        QStringList rootValue = i.key().split(' ', QString::SkipEmptyParts);
+
+        if (rootValue.size() >= 3)
         {
-            root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+            root->setText(0, rootValue[0] + ' ' + rootValue[2]);
+        }
+        else
+        {
+            root->setText(0, rootValue[0]);
         }
 
-        if (token.contains("ERROR"))
+        foreach (const QString& value, i.value())
         {
-            root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+            //qDebug() << "Value:: " << value;
+            QTreeWidgetItem *item = new QTreeWidgetItem(root);
+            _itemListScan.push_front(item);
+
+//             if (value.contains(":") && !value.contains("=")
+//                     && !value.contains("//")
+//                     && !value.contains("ERROR"))
+//             {
+//                 item->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+//             }
+
+            if (value.contains("ERROR"))
+            {
+                item->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+            }
+
+            item->setText(0, value);
         }
-        root->setText(0, token);
-        root->setToolTip(0, token);
     }
 
     // Show full scan log
@@ -689,9 +789,7 @@ void parserManager::showParserObjPlugins(int hostIndex)
         _itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        QStringList tmpToken = token.split(' ');
-
-        tmpToken.removeAll("");
+        QStringList tmpToken = token.split(' ',QString::SkipEmptyParts);
 
         // MS windows check for ms string
         if(tmpToken.size() == 5)
