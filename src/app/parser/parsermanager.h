@@ -51,11 +51,11 @@ private:
     void showParserObjPlugins(int hostIndex);
     parserObj* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
 
-    nmapClass* _ui;
-    QList<parserObj*> _parserObjList;
-    QList<parserObjUtil*> _parserObjUtilList;
-    QList<QTreeWidgetItem*> _itemListScan;
-    QList<QTreeWidgetItem*> _objectItems;
+    nmapClass* m_ui;
+    QList<parserObj*> m_parserObjList;
+    QList<parserObjUtil*> m_parserObjUtilList;
+    QList<QTreeWidgetItem*> m_itemListScan;
+    QList<QTreeWidgetItem*> m_objectItems;
 
 public slots:
     /*

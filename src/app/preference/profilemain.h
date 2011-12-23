@@ -27,28 +27,26 @@
 
 // local include
 #include "utilities.h"
-#include <ui_profilemain.h>
+#include "ui_profilemain.h"
 
 class mainProfile : public QDialog, private Ui::ProfileMain
 {
     Q_OBJECT
+
+public:
+    mainProfile(QWidget *parent = 0);
+    ~mainProfile();
 
 private:
     void saveProfile(const QString ProfileType); // Create a enum for the profile
     QString readProfile();
     void setProfile();
 
-public:
-    mainProfile(QObject *parent = 0);
-    ~mainProfile();
-
-protected:
-    QString ScanActive;
-    QListWidgetItem *profileItem;
-    QListWidgetItem *logItem;
-    QListWidgetItem *sizeItem;
-    QListWidgetItem *lookItem;
-    QObject *par;
+    QString m_ScanActive;
+    QListWidgetItem* m_profileItem;
+    QListWidgetItem* m_logItem;
+    QListWidgetItem* m_sizeItem;
+    QListWidgetItem* m_lookItem;
 
 public slots:
     void setScan();
@@ -69,4 +67,3 @@ private slots:
 };
 
 #endif
-

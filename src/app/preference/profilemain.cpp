@@ -19,7 +19,7 @@
 
 #include "profilemain.h"
 
-mainProfile::mainProfile(QObject *parent) : par(parent)
+mainProfile::mainProfile(QWidget *parent) : QDialog(parent)
 {
     setupUi(this);
     QSettings ptrFile("nmapsi4", "nmapsi4");
@@ -47,12 +47,12 @@ mainProfile::mainProfile(QObject *parent) : par(parent)
     QString logCheck = ptrFile.value("logCheck", "none").toString();
     lineEditPath->setText(path);
 
-    if (logCheck.contains("false")) 
+    if (logCheck.contains("false"))
     {
         checkLogOn->setChecked(false);
         lineEditPath->setDisabled(true);
         buttonLogB->setDisabled(true);
-    } 
+    }
     else
     {
         checkLogOn->setChecked(true);
@@ -116,22 +116,22 @@ mainProfile::mainProfile(QObject *parent) : par(parent)
     // TODO insert history item and window setup
     listViewOptions->setIconSize(QSize(52, 52));
 
-    profileItem = new QListWidgetItem(listViewOptions);
-    profileItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-system-windows.png")));
-    profileItem->setText(tr("Profiles"));
+    m_profileItem = new QListWidgetItem(listViewOptions);
+    m_profileItem->setIcon(QIcon(QString::fromUtf8(":/images/images/preferences-system-windows.png")));
+    m_profileItem->setText(tr("Profiles"));
 
-    logItem = new QListWidgetItem(listViewOptions);
-    logItem->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-log-viewer.png")));
-    logItem->setText(tr("Log"));
+    m_logItem = new QListWidgetItem(listViewOptions);
+    m_logItem->setIcon(QIcon(QString::fromUtf8(":/images/images/utilities-log-viewer.png")));
+    m_logItem->setText(tr("Log"));
 
-    sizeItem = new QListWidgetItem(listViewOptions);
-    sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
-    sizeItem->setText(tr("Size"));
+    m_sizeItem = new QListWidgetItem(listViewOptions);
+    m_sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
+    m_sizeItem->setText(tr("Size"));
 
 #ifndef Q_WS_WIN
-    lookItem = new QListWidgetItem(listViewOptions);
-    lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    lookItem->setText(tr("Lookup"));
+    m_lookItem = new QListWidgetItem(listViewOptions);
+    m_lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    m_lookItem->setText(tr("Lookup"));
 #endif
 
     connect(checkLogOn, SIGNAL(pressed()),
@@ -139,7 +139,7 @@ mainProfile::mainProfile(QObject *parent) : par(parent)
     connect(listViewOptions, SIGNAL(itemSelectionChanged()),
             this, SLOT(updateItem()));
 
-    profileItem->setSelected(true);
+    m_profileItem->setSelected(true);
 
     connect(buttonLogB, SIGNAL(clicked()),
             this, SLOT(log_browser()));
@@ -167,7 +167,7 @@ QString mainProfile::readProfile()
 void mainProfile::setScan()
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
-    ptrFile.setValue("configProfile", ScanActive);
+    ptrFile.setValue("configProfile", m_ScanActive);
     ptrFile.setValue("confPath", lineEditPath->text());
     ptrFile.setValue("hostCache", spinBoxCache->value());
 
@@ -207,22 +207,22 @@ void mainProfile::setScan()
 
 void mainProfile::updateItem()
 {
-    if (profileItem->isSelected()) 
+    if (m_profileItem->isSelected())
     {
         labelTitle->setText(tr("<h3>Profiles Scan</h3>"));
         stackPref->setCurrentIndex(0);
-    } 
-    else if (logItem->isSelected()) 
+    }
+    else if (m_logItem->isSelected())
     {
         labelTitle->setText(tr("<h3>Automatic Logs Options</h3>"));
         stackPref->setCurrentIndex(1);
-    } 
-    else if (sizeItem->isSelected()) 
+    }
+    else if (m_sizeItem->isSelected())
     {
         labelTitle->setText(tr("<h3>Size Options</h3>"));
         stackPref->setCurrentIndex(2);
-    } 
-    else if (lookItem->isSelected()) 
+    }
+    else if (m_lookItem->isSelected())
     {
         labelTitle->setText(tr("<h3>Scan Lookup</h3>"));
         stackPref->setCurrentIndex(3);
@@ -251,40 +251,40 @@ void mainProfile::setProfile()
     {
         groupRoot->setVisible(false);
     }
-    else 
+    else
     {
         checkNormalScan->setEnabled(false);
         checkQuickScan->setEnabled(false);
     }
 
-    if (!tmpProfile.compare("normal")) 
+    if (!tmpProfile.compare("normal"))
     {
         checkNormalScan->setChecked(true);
-        ScanActive = "normal";
+        m_ScanActive = "normal";
     }
 
-    if (!tmpProfile.compare("quick")) 
+    if (!tmpProfile.compare("quick"))
     {
         checkQuickScan->setChecked(true);
-        ScanActive = "quick";
+        m_ScanActive = "quick";
     }
 
 
-    if (!tmpProfile.compare("fullversion") && !uid) 
+    if (!tmpProfile.compare("fullversion") && !uid)
     {
         checkFullVersion->setChecked(true);
-        ScanActive = "fullversion";
-    } 
+        m_ScanActive = "fullversion";
+    }
     else if (uid)
     {
         checkFullVersion->setEnabled(false);
     }
 
-    if (!tmpProfile.compare("quickversion") && !uid) 
+    if (!tmpProfile.compare("quickversion") && !uid)
     {
         checkQuickVersion->setChecked(true);
-        ScanActive = "quickversion";
-    } 
+        m_ScanActive = "quickversion";
+    }
     else if (uid)
     {
         checkQuickVersion->setEnabled(false);
@@ -314,69 +314,69 @@ void mainProfile::setDefaults()
 
 void mainProfile::updateNormalCheck()   // slot
 {
-    if (checkNormalScan->isChecked()) 
+    if (checkNormalScan->isChecked())
     {
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
         checkQuickVersion->setChecked(false);
-        ScanActive = "normal";
+        m_ScanActive = "normal";
     }
 }
 
 void mainProfile::updateQuickCheck()   //slot
 {
-    if (checkQuickScan->isChecked()) 
+    if (checkQuickScan->isChecked())
     {
         checkNormalScan->setChecked(false);
         checkFullVersion->setChecked(false);
         checkQuickVersion->setChecked(false);
-        ScanActive = "quick";
+        m_ScanActive = "quick";
     }
 }
 
 void mainProfile::updateFullVersionCheck()   // slot
 {
-    if (checkFullVersion->isChecked()) 
+    if (checkFullVersion->isChecked())
     {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
         checkQuickVersion->setChecked(false);
-        ScanActive = "fullversion";
+        m_ScanActive = "fullversion";
     }
 }
 
 void mainProfile::updateQuickVersionCheck()   // slot
 {
-    if (checkQuickVersion->isChecked()) 
+    if (checkQuickVersion->isChecked())
     {
         checkNormalScan->setChecked(false);
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
-        ScanActive = "quickversion";
+        m_ScanActive = "quickversion";
     }
 }
 
 void mainProfile::update_saveButton()
 {
-    if (!checkLogOn->isChecked()) 
+    if (!checkLogOn->isChecked())
     {
         lineEditPath->setEnabled(true);
         buttonLogB->setEnabled(true);
-    } 
-    else 
+    }
+    else
     {
         lineEditPath->setEnabled(false);
         buttonLogB->setEnabled(false);
     }
 }
 
-void mainProfile::activeLookupInt() 
+void mainProfile::activeLookupInt()
 {
     if(checkBoxlookup->isChecked())
         checkBoxDig->setChecked(false);
 }
 
-void mainProfile::activeLookupDig() 
+void mainProfile::activeLookupDig()
 {
     if(checkBoxDig->isChecked())
         checkBoxlookup->setChecked(false);
