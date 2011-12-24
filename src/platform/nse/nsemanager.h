@@ -56,15 +56,15 @@ private:
     void nseTreeAvailRestoreValues();
     void nseTreeActiveRestoreValues();
 
-    nmapClass* _ui;
-    QPointer<QProcessThread> _thread;
-    QPointer<QProcessThread> _threadScript;
-    QPointer<QTextDocument> _documentScript;
-    QList<QTreeWidgetItem*> itemNseAvail;
-    QList<QTreeWidgetItem*> itemNseActive;
-    QHash<QString, QTextDocument*> nseHelpCache;
-    QStringList nseScriptAvailList;
-    QStringList nseScriptActiveList;
+    nmapClass* m_ui;
+    QPointer<QProcessThread> m_thread;
+    QPointer<QProcessThread> m_threadScript;
+    QPointer<QTextDocument> m_documentScript;
+    QList<QTreeWidgetItem*> m_itemNseAvail;
+    QList<QTreeWidgetItem*> m_itemNseActive;
+    QHash<QString, QTextDocument*> m_nseHelpCache;
+    QStringList m_nseScriptAvailList;
+    QStringList m_nseScriptActiveList;
 
 public slots:
     void requestNseHelp(QTreeWidgetItem *item, int column);

@@ -27,7 +27,7 @@ digManager::digManager() //: m_state(false)
 digManager::~digManager()
 {
     qDebug() << "DEBUG:: ~dig()";
-    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(threadList);
+    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
 void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
@@ -37,7 +37,7 @@ void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
     command << hostname;
     m_elemObjUtil = objElem;
     QPointer<QProcessThread> m_th = new QProcessThread("dig",command);
-    threadList.push_back(m_th);
+    m_threadList.push_back(m_th);
     m_th->start();
     connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
       this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));

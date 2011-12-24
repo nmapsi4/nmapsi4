@@ -51,7 +51,7 @@ public:
 private:
     parserObjUtil* m_elemObjUtil;
     QString m_hostNameLocal;
-    QList<QProcessThread*> threadList;
+    QList<QProcessThread*> m_threadList;
 
 private slots:
     /*!

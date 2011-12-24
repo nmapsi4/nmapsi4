@@ -20,14 +20,14 @@
 #include "nsemanager.h"
 #include "mainwin.h"
 
-nseManager::nseManager(nmapClass* parent) : QObject(parent), _ui(parent)
+nseManager::nseManager(nmapClass* parent) : QObject(parent), m_ui(parent)
 {
 }
 
 nseManager::~nseManager()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
 }
 
 void nseManager::loadNseCategoryScript()
@@ -37,23 +37,23 @@ void nseManager::loadNseCategoryScript()
     int nseComboScriptTmp_ = settings.value("nseComboScript", 0).toInt();
     updateNseOptionScript(nseComboScriptTmp_);
 
-    nseScriptActiveList = settings.value("nseScriptActiveList","none").toStringList();
-    nseScriptAvailList = settings.value("nseScriptAvailList","none").toStringList();
+    m_nseScriptActiveList = settings.value("nseScriptActiveList","none").toStringList();
+    m_nseScriptAvailList = settings.value("nseScriptAvailList","none").toStringList();
 
-    if (!nseScriptAvailList.first().compare("none"))
+    if (!m_nseScriptAvailList.first().compare("none"))
     {
         nseTreeDefaultValue();
     }
     else
     {
-        if (!nseScriptAvailList.first().compare(""))
+        if (!m_nseScriptAvailList.first().compare(""))
         {
-            nseScriptAvailList.removeFirst();
+            m_nseScriptAvailList.removeFirst();
         }
 
-        if (!nseScriptActiveList.first().compare(""))
+        if (!m_nseScriptActiveList.first().compare(""))
         {
-            nseScriptActiveList.removeFirst();
+            m_nseScriptActiveList.removeFirst();
         }
 
         nseTreeAvailRestoreValues();
@@ -63,7 +63,7 @@ void nseManager::loadNseCategoryScript()
 
 const QStringList nseManager::getActiveNseScript()
 {
-    return nseScriptActiveList;
+    return m_nseScriptActiveList;
 }
 
 void nseManager::sync()
@@ -74,22 +74,22 @@ void nseManager::sync()
 
     QSettings settings("nmapsi4", "nmapsi4");
 
-    if (nseScriptActiveList.isEmpty())
+    if (m_nseScriptActiveList.isEmpty())
     {
         settings.setValue("nseScriptActiveList","");
     }
     else
     {
-        settings.setValue("nseScriptActiveList",QVariant(nseScriptActiveList));
+        settings.setValue("nseScriptActiveList",QVariant(m_nseScriptActiveList));
     }
 
-    if (nseScriptAvailList.isEmpty())
+    if (m_nseScriptAvailList.isEmpty())
     {
         settings.setValue("nseScriptAvailList", "");
     }
     else
     {
-        settings.setValue("nseScriptAvailList", QVariant(nseScriptAvailList));
+        settings.setValue("nseScriptAvailList", QVariant(m_nseScriptAvailList));
     }
 }
 
@@ -98,20 +98,20 @@ void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
     Q_UNUSED(column);
     qDebug() << "DEBUG:: item: " << item->text(0);
 
-    if (nseScriptAvailList.indexOf(item->text(0)) != -1)
+    if (m_nseScriptAvailList.indexOf(item->text(0)) != -1)
     {
-        _ui->nseActiveBut->setEnabled(true);
-        _ui->nseRemoveBut->setEnabled(false);
+        m_ui->nseActiveBut->setEnabled(true);
+        m_ui->nseRemoveBut->setEnabled(false);
     }
     else
     {
-        _ui->nseActiveBut->setEnabled(false);
-        _ui->nseRemoveBut->setEnabled(true);
+        m_ui->nseActiveBut->setEnabled(false);
+        m_ui->nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
-    QHash<QString, QTextDocument*>::const_iterator i = nseHelpCache.find(item->text(0));
+    QHash<QString, QTextDocument*>::const_iterator i = m_nseHelpCache.find(item->text(0));
 
-    if (i == nseHelpCache.constEnd())
+    if (i == m_nseHelpCache.constEnd())
     {
         /*
         * not category on cache
@@ -121,24 +121,24 @@ void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        _thread = new QProcessThread("nmap",parameters_);
+        m_thread = new QProcessThread("nmap",parameters_);
 
-        connect(_thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(m_thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
-        _thread->start();
+        m_thread->start();
     }
     else
     {
         // category on cache
         qDebug() << "DEBUG:: load help from cache";
-        _ui->nseTextHelp->setDocument(i.value());
+        m_ui->nseTextHelp->setDocument(i.value());
     }
 }
 
 void nseManager::requestNseScriptHelp()
 {
-    QString searchString_ = _ui->comboScriptHelp->currentText();
+    QString searchString_ = m_ui->comboScriptHelp->currentText();
     if (searchString_.isEmpty())
     {
         return;
@@ -148,28 +148,28 @@ void nseManager::requestNseScriptHelp()
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    _threadScript = new QProcessThread("nmap",parameters_);
+    m_threadScript = new QProcessThread("nmap",parameters_);
 
-    connect(_threadScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+    connect(m_threadScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
 
-    _threadScript->start();
+    m_threadScript->start();
 }
 
 void nseManager::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
 {
     Q_UNUSED(errors);
     // show help result for nse
-    _thread->quit();
-    _thread->wait();
-    delete _thread;
+    m_thread->quit();
+    m_thread->wait();
+    delete m_thread;
 
     QString result_(result);
     QTextDocument *document = new QTextDocument(result_);
     // insert document on cache
-    nseHelpCache.insert(parameters[parameters.size()-1],document);
+    m_nseHelpCache.insert(parameters[parameters.size()-1],document);
     // load document
-    _ui->nseTextHelp->setDocument(document);
+    m_ui->nseTextHelp->setDocument(document);
 }
 
 void nseManager::showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors)
@@ -178,54 +178,54 @@ void nseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     Q_UNUSED(errors);
     Q_UNUSED(parameters);
     // show help result for nse
-    _threadScript->quit();
-    _threadScript->wait();
-    delete _threadScript;
+    m_threadScript->quit();
+    m_threadScript->wait();
+    delete m_threadScript;
 
     QString result_(result);
 
-    if (_documentScript)
+    if (m_documentScript)
     {
         qDebug() << "DEBUG::ScriptNse delete document";
-        delete _documentScript;
+        delete m_documentScript;
     }
 
-    _documentScript = new QTextDocument(result_);
-    _ui->textScriptHelp->setDocument(_documentScript);
+    m_documentScript = new QTextDocument(result_);
+    m_ui->textScriptHelp->setDocument(m_documentScript);
 }
 
 void nseManager::nseTreeDefaultValue()
 {
-    nseScriptActiveList.clear();
-    nseScriptAvailList.clear();
-    nseScriptAvailList.append("auth");
-    nseScriptAvailList.append("default");
-    nseScriptAvailList.append("discovery");
-    nseScriptAvailList.append("dos");
-    nseScriptAvailList.append("exploit");
-    nseScriptAvailList.append("external");
-    nseScriptAvailList.append("fuzzer");
-    nseScriptAvailList.append("intrusive");
-    nseScriptAvailList.append("malware");
-    nseScriptAvailList.append("safe");
-    nseScriptAvailList.append("version");
-    nseScriptAvailList.append("vuln");
+    m_nseScriptActiveList.clear();
+    m_nseScriptAvailList.clear();
+    m_nseScriptAvailList.append("auth");
+    m_nseScriptAvailList.append("default");
+    m_nseScriptAvailList.append("discovery");
+    m_nseScriptAvailList.append("dos");
+    m_nseScriptAvailList.append("exploit");
+    m_nseScriptAvailList.append("external");
+    m_nseScriptAvailList.append("fuzzer");
+    m_nseScriptAvailList.append("intrusive");
+    m_nseScriptAvailList.append("malware");
+    m_nseScriptAvailList.append("safe");
+    m_nseScriptAvailList.append("version");
+    m_nseScriptAvailList.append("vuln");
 
     nseTreeAvailRestoreValues();
 }
 
 void nseManager::nseTreeAvailRestoreValues()
 {
-    if (itemNseAvail.size())
+    if (m_itemNseAvail.size())
     {
-        freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseAvail);
-        itemNseAvail.clear();
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
+        m_itemNseAvail.clear();
     }
 
-    foreach (const QString &token, nseScriptAvailList)
+    foreach (const QString &token, m_nseScriptAvailList)
     {
-        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->nseTreeAvail);
-        itemNseAvail.push_front(root);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->nseTreeAvail);
+        m_itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-typedef.png")));
         root->setText(0, token);
@@ -235,16 +235,16 @@ void nseManager::nseTreeAvailRestoreValues()
 
 void nseManager::nseTreeActiveRestoreValues()
 {
-    if (itemNseActive.size())
+    if (m_itemNseActive.size())
     {
-        freelist<QTreeWidgetItem*>::itemDeleteAll(itemNseActive);
-        itemNseActive.clear();
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
+        m_itemNseActive.clear();
     }
 
-    foreach (const QString &token, nseScriptActiveList)
+    foreach (const QString &token, m_nseScriptActiveList)
     {
-        QTreeWidgetItem *root = new QTreeWidgetItem(_ui->nseTreeActive);
-        itemNseActive.push_front(root);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->nseTreeActive);
+        m_itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-function.png")));
         root->setText(0, token);
@@ -254,87 +254,87 @@ void nseManager::nseTreeActiveRestoreValues()
 
 void nseManager::nseTreeActiveItem()
 {
-    int indexNseItem = _ui->nseTreeAvail->indexOfTopLevelItem(_ui->nseTreeAvail->currentItem());
+    int indexNseItem = m_ui->nseTreeAvail->indexOfTopLevelItem(m_ui->nseTreeAvail->currentItem());
 
     if (indexNseItem != -1)
     {
-        QString tmpElem_ = nseScriptAvailList.takeAt(indexNseItem);
-        nseScriptActiveList.append(tmpElem_);
+        QString tmpElem_ = m_nseScriptAvailList.takeAt(indexNseItem);
+        m_nseScriptActiveList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!nseScriptActiveList.size())
+        if (!m_nseScriptActiveList.size())
         {
-            nseScriptActiveList.clear();
+            m_nseScriptActiveList.clear();
         }
     }
 
-    if (_ui->_collectionsButton.value("nss-act")->isChecked())
+    if (m_ui->_collectionsButton.value("nss-act")->isChecked())
     {
-        _ui->comboAdv->clear();
-        _ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        _ui->comboAdv->insertItem(0, _ui->check_extensions().join(" "));
+        m_ui->comboAdv->clear();
+        m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        m_ui->comboAdv->insertItem(0, m_ui->check_extensions().join(" "));
     }
 }
 
 void nseManager::nseTreeRemoveItem()
 {
-    int indexNseItem = _ui->nseTreeActive->indexOfTopLevelItem(_ui->nseTreeActive->currentItem());
+    int indexNseItem = m_ui->nseTreeActive->indexOfTopLevelItem(m_ui->nseTreeActive->currentItem());
 
     if (indexNseItem != -1)
     {
-        QString tmpElem_ = nseScriptActiveList.takeAt(indexNseItem);
-        nseScriptAvailList.append(tmpElem_);
+        QString tmpElem_ = m_nseScriptActiveList.takeAt(indexNseItem);
+        m_nseScriptAvailList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!nseScriptAvailList.size())
+        if (!m_nseScriptAvailList.size())
         {
-            nseScriptAvailList.clear();
+            m_nseScriptAvailList.clear();
         }
     }
 
-    if (_ui->_collectionsButton.value("nss-act")->isChecked())
+    if (m_ui->_collectionsButton.value("nss-act")->isChecked())
     {
-        _ui->comboAdv->clear();
-        _ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        _ui->comboAdv->insertItem(0, _ui->check_extensions().join(" "));
+        m_ui->comboAdv->clear();
+        m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+        m_ui->comboAdv->insertItem(0, m_ui->check_extensions().join(" "));
     }
 }
 
 void nseManager::nseTreeResetItem()
 {
-    foreach (const QString &token, nseScriptActiveList)
+    foreach (const QString &token, m_nseScriptActiveList)
     {
-        nseScriptAvailList.append(token);
+        m_nseScriptAvailList.append(token);
     }
-    nseScriptActiveList.clear();
+    m_nseScriptActiveList.clear();
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
 }
 
 void nseManager::updateNseOptionScript(int index)
 {
-    _ui->nseComboScript->setCurrentIndex(index);
+    m_ui->nseComboScript->setCurrentIndex(index);
 
     if (index)
     {
-        _ui->nseTreeActive->setEnabled(true);
-        _ui->nseTreeAvail->setEnabled(true);
-        _ui->nseResetBut->setEnabled(true);
-        _ui->comboNseInv->setEnabled(true);
-        _ui->comboNsePar->setEnabled(true);
-        _ui->nseFixedSButt->setEnabled(true);
+        m_ui->nseTreeActive->setEnabled(true);
+        m_ui->nseTreeAvail->setEnabled(true);
+        m_ui->nseResetBut->setEnabled(true);
+        m_ui->comboNseInv->setEnabled(true);
+        m_ui->comboNsePar->setEnabled(true);
+        m_ui->nseFixedSButt->setEnabled(true);
     }
     else
     {
-        _ui->nseTreeActive->setEnabled(false);
-        _ui->nseTreeAvail->setEnabled(false);
-        _ui->nseResetBut->setEnabled(false);
-        _ui->nseActiveBut->setEnabled(false);
-        _ui->nseRemoveBut->setEnabled(false);
-        _ui->comboNseInv->setEnabled(false);
-        _ui->comboNsePar->setEnabled(false);
-        _ui->nseFixedSButt->setEnabled(false);
+        m_ui->nseTreeActive->setEnabled(false);
+        m_ui->nseTreeAvail->setEnabled(false);
+        m_ui->nseResetBut->setEnabled(false);
+        m_ui->nseActiveBut->setEnabled(false);
+        m_ui->nseRemoveBut->setEnabled(false);
+        m_ui->comboNseInv->setEnabled(false);
+        m_ui->comboNsePar->setEnabled(false);
+        m_ui->nseFixedSButt->setEnabled(false);
     }
     // reset parameters for change
-    _ui->resetPar();
+    m_ui->resetPar();
 }

@@ -21,20 +21,20 @@
 #include "memorytools.h"
 
 discover::discover(int uid)
-    : ipState(false),
-      uid_(uid)
+    : m_ipState(false),
+      m_uid(uid)
 {
-    timer = new QTimer(this);
-    connectState = false;
-    threadLimit = 20;
+    m_timer = new QTimer(this);
+    m_connectState = false;
+    m_threadLimit = 20;
 }
 
 discover::~discover()
 {
-    delete timer;
+    delete m_timer;
     m_ipSospended.clear();
-    parameters_.clear();
-    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(_threadList);
+    m_parameters.clear();
+    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
 QList<QNetworkInterface> discover::getAllInterfaces(InterfaceOption option) const
@@ -103,19 +103,19 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
      * start thread for discover ip state
      */
     m_parent = parent;
-    parameters_ = parameters;
+    m_parameters = parameters;
     // Create parameters list for npig
     parameters.append("-c 1");
     parameters.append("-v4");
     parameters.append(networkIp);
 
-    if (threadLimit)
+    if (m_threadLimit)
     {
         // acquire one element from thread counter
-        threadLimit--;
+        m_threadLimit--;
 
         QPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
-        _threadList.push_back(pingTh);
+        m_threadList.push_back(pingTh);
 
         connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
@@ -129,19 +129,19 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
         m_ipSospended.append(networkIp);
     }
 
-    if (!connectState)
+    if (!m_connectState)
     {
         connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
     }
 
     // check suspended discover ip
-    if (m_ipSospended.size() && !connectState)
+    if (m_ipSospended.size() && !m_connectState)
     {
-        connectState = true;
-        connect(timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
-        if (!timer->isActive())
+        m_connectState = true;
+        connect(m_timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
+        if (!m_timer->isActive())
         {
-            timer->start(5000);
+            m_timer->start(5000);
         }
     }
 }
@@ -154,7 +154,7 @@ void discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByte
      */
 
     // increment thread limit, new ip discover is possible
-    threadLimit++;
+    m_threadLimit++;
 
     QString buffString(ipBuffer);
     QTextStream buffStream(&buffString);
@@ -177,9 +177,9 @@ void discover::repeatScanner()
     /*
      * Recall discover for ip suspended
      */
-    qDebug() << "DEBUG:: scan Counter timer:: " << threadLimit;
+    qDebug() << "DEBUG:: scan Counter timer:: " << m_threadLimit;
 
-    if (!threadLimit)
+    if (!m_threadLimit)
     {
         return;
     }
@@ -187,13 +187,13 @@ void discover::repeatScanner()
     disconnect(this, SLOT(repeatScanner()));
     disconnect(this, SLOT(stopDiscover()));
 
-    connectState = false;
-    timer->stop();
+    m_connectState = false;
+    m_timer->stop();
     int freeThreadSpace = 1;
 
-    while (freeThreadSpace <= threadLimit && freeThreadSpace <= m_ipSospended.size())
+    while (freeThreadSpace <= m_threadLimit && freeThreadSpace <= m_ipSospended.size())
     {
-        isUp(m_ipSospended.takeFirst(), m_parent, parameters_);
+        isUp(m_ipSospended.takeFirst(), m_parent, m_parameters);
         freeThreadSpace++;
     }
 }
@@ -204,5 +204,5 @@ void discover::stopDiscover()
      * disconnect timer slot and stop it
      */
     disconnect(this, SLOT(repeatScanner()));
-    timer->stop();
+    m_timer->stop();
 }

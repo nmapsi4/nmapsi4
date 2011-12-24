@@ -40,14 +40,14 @@ private:
     void updateSRdata();
     void discoveryClear();
 
-    nmapClass* _ui;
-    QList<discover*> listDiscover;
-    QList<QTreeWidgetItem*> listTreeItemDiscover;
-    int ipCounter;
-    int _uid;
-    QStringList sendList;
-    QStringList recvList;
-    bool _discoverIsActive;
+    nmapClass* m_ui;
+    QList<discover*> m_listDiscover;
+    QList<QTreeWidgetItem*> m_listTreeItemDiscover;
+    int m_ipCounter;
+    int m_uid;
+    QStringList m_sendList;
+    QStringList m_recvList;
+    bool m_discoverIsActive;
 
 signals:
     void killDiscover();
