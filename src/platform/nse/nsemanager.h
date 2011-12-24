@@ -24,6 +24,7 @@
 #include <QtGui/QTextDocument>
 #include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
+#include <QtCore/QPointer>
 
 #include "qprocessthread.h"
 

@@ -39,15 +39,15 @@ void QProcessThread::run()
      m_process = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
-     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
+     connect(m_process.data(), SIGNAL(finished(int,QProcess::ExitStatus)),
              this, SLOT(readFinished()));
-     connect(m_process, SIGNAL(readyReadStandardOutput()),
+     connect(m_process.data(), SIGNAL(readyReadStandardOutput()),
              this, SLOT(readyReadData()));
 
 #ifndef THREAD_NO_DEBUG
      qDebug() << "DEBUG::ThreadString:: " << m_ParList;
 #endif
-     m_process->start(m_programName, m_ParList);
+     m_process.data()->start(m_programName, m_ParList);
 
      exec();
      // emit signal, scan is end
@@ -64,31 +64,31 @@ void QProcessThread::readFinished()
      qDebug() << "THREAD::Start(" << m_programName << ")";
 #endif
      // set scan return buffer
-     m_perr  = m_process->readAllStandardError(); // read error buffer
-     m_process->close();
-     delete m_process;
+     m_perr  = m_process.data()->readAllStandardError(); // read error buffer
+     m_process.data()->close();
+     delete m_process.data();
      exit(0);
 }
 
 void QProcessThread::stopProcess()
 {
     // stop scan process (Slot)
-    if (!m_process)
+    if (m_process.isNull())
     {
         return;
     }
 
-    if (m_process->state() == QProcess::Running)
+    if (m_process.data()->state() == QProcess::Running)
     {
-        m_process->close();
-        delete m_process;
+        m_process.data()->close();
+        delete m_process.data();
     }
 }
 
 void QProcessThread::readyReadData()
 {
     // read realtime data from QProcess
-    QByteArray realByte = m_process->readAllStandardOutput();
+    QByteArray realByte = m_process.data()->readAllStandardOutput();
     m_pout.append(realByte);
     QString stream_(realByte);
     // emit signal for data trasmission to parent

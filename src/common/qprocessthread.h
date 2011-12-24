@@ -25,7 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QProcess>
 #include <QtCore/QMetaType>
-#include <QtCore/QPointer>
+#include <QtCore/QWeakPointer>
 #include <QtCore/QDebug>
 
 //local include
@@ -61,7 +61,7 @@ private:
     QByteArray m_perr;
     QStringList m_ParList;
     QString m_programName;
-    QPointer<QProcess> m_process;
+    QWeakPointer<QProcess> m_process;
 
 private slots:
     void readFinished();
