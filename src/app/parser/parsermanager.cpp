@@ -56,8 +56,6 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
         return;
     }
 
-    m_ui->listClearFlag = false; // the listScan is not empty
-
     m_ui->progressScan->setValue(75);
 
     QString StdoutStr(dataBuffer);
@@ -115,11 +113,11 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->action_Save_As->setEnabled(true);
     m_ui->actionSave_As_Menu->setEnabled(true);
 
-    if (!m_ui->logSessionFile.isEmpty())
-    {
-        m_ui->actionSave->setEnabled(true);
-        m_ui->actionSave_Menu->setEnabled(true);
-    }
+//     if (!m_ui->logSessionFile.isEmpty())
+//     {
+//         m_ui->actionSave->setEnabled(true);
+//         m_ui->actionSave_Menu->setEnabled(true);
+//     }
 
     if(!m_ui->_monitor->monitorHostNumber())
     {
@@ -289,16 +287,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
 
     } // End first While
 
-    // check for log file
-    QTextStream *file = NULL;
-    if (m_ui->_logFilePath)
-    {
-        file = new QTextStream(m_ui->_logFilePath);
-        // parameters list for log
-        QString nmap_command(QString("\n==LogStart: ") + QString("\nnmap ") + parList.join(" "));
-        *file << nmap_command << endl << endl;
-    }
-
     QString tmp_host;
 
     if (!generalBuffer_.isEmpty())
@@ -307,21 +295,11 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         //rootFont.setWeight(QFont::Normal);
         tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-
-        if ((m_ui->_logFilePath) && (!m_ui->verboseLog))
-        {
-            *file << generalBuffer_ << endl;
-        }
     }
     else
     {
         tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
-
-        if ((m_ui->_logFilePath) && (!m_ui->verboseLog))
-        {
-            *file << hostCheck << endl;
-        }
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
@@ -357,11 +335,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
                 elemObj->setServices(lStr[2]); // Obj Services
                 elemObj->setPortServices(lStr[0]);
-
-                if ((m_ui->_logFilePath) && (!m_ui->verboseLog))
-                {
-                    *file << scanBufferToStream_line << endl;
-                }
             }
         } // end while
     }
@@ -387,10 +360,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
          }
 
          elemObj->setMainInfo(bufferInfoStream_line);
-         if (m_ui->_logFilePath && !m_ui->verboseLog)
-         {
-            *file << bufferInfoStream_line << endl;
-         }
     }
 
     if (mainTreeE->icon(0).isNull())
@@ -410,10 +379,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop"))
         {
             elemObj->setTraceRouteInfo(bufferTraceStream_line);
-            if (m_ui->_logFilePath && !m_ui->verboseLog)
-            {
-                *file << bufferTraceStream_line << endl;
-            }
         }
     }
 
@@ -461,17 +426,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         if (!bufferLogStream_line.isEmpty())
         {
             elemObj->setFullScanLog(bufferLogStream_line);
-            if ((m_ui->_logFilePath) && (m_ui->verboseLog))
-            {
-                *file << bufferLogStream_line << "\n";
-            }
         }
-    }
-
-    *file << "==LogEnd\n";
-    if (m_ui->_logFilePath)
-    {
-        delete file;
     }
 
     QTextStream bufferErrorStream(&StderrorStr);

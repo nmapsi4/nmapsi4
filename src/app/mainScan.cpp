@@ -101,24 +101,6 @@ void nmapClass::startScan()
 
 void nmapClass::preScanLookup(const QString hostname)
 {
-    // log check
-    if (checkLog)
-    { // create a file log
-        fileSession();
-    }
-    else
-    {
-        if (!logPath.contains(QDir::tempPath()))
-        {
-            QSettings ptr("nmapsi4", "nmapsi4");
-            ptr.setValue("confPath", QDir::tempPath());
-            logPath = QDir::tempPath();
-            checkProfile();
-        }
-
-        fileSession();
-    }
-
     // save ip or dns to history
     logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
     history->addItemHistory(hostname);

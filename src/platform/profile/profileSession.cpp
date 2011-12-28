@@ -21,12 +21,12 @@
 
 void nmapClass::readProfile()
 {
-    this->checkProfile();
+    checkProfile();
 
-    if (checkLog)
-    {
-        this->fileSession();
-    }
+//     if (checkLog)
+//     {
+//         this->fileSession();
+//     }
 }
 
 void nmapClass::checkProfile()
@@ -85,42 +85,42 @@ void nmapClass::checkProfile()
         }
     }
 
-    logPath = settings.value("confPath", "none").toString();
-    if (!logPath.compare("none"))
-    {
-        QString path_string = QDir::homePath();
-        path_string.append("/");
-        settings.setValue("confPath", path_string); // default value
-        logPath = path_string;
-    }
+//     logPath = settings.value("confPath", "none").toString();
+//     if (!logPath.compare("none"))
+//     {
+//         QString path_string = QDir::homePath();
+//         path_string.append("/");
+//         settings.setValue("confPath", path_string); // default value
+//         logPath = path_string;
+//     }
 
-    QString log = settings.value("logCheck", "none").toString();
+//     QString log = settings.value("logCheck", "none").toString();
+//
+//     if ((!log.compare("none")) || (log.compare("true") && (log.compare("false"))))
+//     {
+//         settings.setValue("logCheck", "false"); // default value
+//         log = "false";
+//     }
+//
+//     if (!log.compare("true"))
+//     {
+//         checkLog = true;
+//         action_Save_As->setEnabled(false);
+//         actionSave->setEnabled(false);
+//     }
+//     else
+//     {
+//         checkLog = false;
+//     }
 
-    if ((!log.compare("none")) || (log.compare("true") && (log.compare("false"))))
-    {
-        settings.setValue("logCheck", "false"); // default value
-        log = "false";
-    }
-
-    if (!log.compare("true"))
-    {
-        checkLog = true;
-        action_Save_As->setEnabled(false);
-        actionSave->setEnabled(false);
-    }
-    else
-    {
-        checkLog = false;
-    }
-
-    QString Vlog = settings.value("Vlog", "none").toString();
-
-    if ((!Vlog.compare("none")))
-    {
-        settings.setValue("Vlog", "false"); // default value
-    }
-
-    verboseLog = settings.value("Vlog").toBool();
+//     QString Vlog = settings.value("Vlog", "none").toString();
+//
+//     if ((!Vlog.compare("none")))
+//     {
+//         settings.setValue("Vlog", "false"); // default value
+//     }
+//
+//     verboseLog = settings.value("Vlog").toBool();
 
     QString pos = settings.value("savePos", "none").toString();
 

@@ -22,11 +22,8 @@
 
 #include <QtGui/QDialog>
 #include <QtCore/QSettings>
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
 
 // local include
-#include "utilities.h"
 #include "ui_preferencesdialog.h"
 
 class preferencesDialog : public QDialog, private Ui::ProfileMain
@@ -49,7 +46,7 @@ private:
     QListWidgetItem* m_lookItem;
 
 public slots:
-    void setScan();
+    void saveValues();
 
 private slots:
     void updateNormalCheck();
@@ -57,8 +54,6 @@ private slots:
     void updateFullVersionCheck();
     void updateQuickVersionCheck();
     void updateItem();
-    void log_browser();
-    void update_saveButton();
     void quit();
     void setDefaults();
     void activeLookupInt();

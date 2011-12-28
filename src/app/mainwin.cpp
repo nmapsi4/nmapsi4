@@ -19,7 +19,7 @@
 
 #include "mainwin.h"
 
-nmapClass::nmapClass() : uid(0), _logFilePath(0)
+nmapClass::nmapClass() : uid(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
@@ -117,7 +117,6 @@ nmapClass::~nmapClass()
     delete _utilities;
     delete _parser;
     delete progressScan;
-    delete _logFilePath;
     delete _completer;
     delete _completerVuln;
     delete _vulnerability;

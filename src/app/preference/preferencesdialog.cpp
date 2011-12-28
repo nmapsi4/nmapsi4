@@ -43,20 +43,8 @@ preferencesDialog::preferencesDialog(QWidget *parent) : QDialog(parent)
     setProfile(); // set profile preference
 
     // create a read log config
-    QString path = ptrFile.value("confPath", "none").toString();
-    QString logCheck = ptrFile.value("logCheck", "none").toString();
-    lineEditPath->setText(path);
-
-    if (logCheck.contains("false"))
-    {
-        checkLogOn->setChecked(false);
-        lineEditPath->setDisabled(true);
-        buttonLogB->setDisabled(true);
-    }
-    else
-    {
-        checkLogOn->setChecked(true);
-    }
+    int logType = ptrFile.value("logType", 0).toInt();
+    comboLogType->setCurrentIndex(logType);
 
     QString tmpSavePos = ptrFile.value("savePos", "none").toString();
     if (tmpSavePos.contains("true"))
@@ -76,16 +64,6 @@ preferencesDialog::preferencesDialog(QWidget *parent) : QDialog(parent)
     else
     {
         checkSize->setChecked(false);
-    }
-
-    bool Vlog = ptrFile.value("Vlog").toBool();
-    if (Vlog)
-    {
-        checkVerboseLog->setChecked(true);
-    }
-    else
-    {
-        checkVerboseLog->setChecked(false);
     }
 
     bool lookI = ptrFile.value("lookInternal").toBool();
@@ -134,15 +112,11 @@ preferencesDialog::preferencesDialog(QWidget *parent) : QDialog(parent)
     m_lookItem->setText(tr("Lookup"));
 #endif
 
-    connect(checkLogOn, SIGNAL(pressed()),
-            this, SLOT(update_saveButton()));
     connect(listViewOptions, SIGNAL(itemSelectionChanged()),
             this, SLOT(updateItem()));
 
     m_profileItem->setSelected(true);
 
-    connect(buttonLogB, SIGNAL(clicked()),
-            this, SLOT(log_browser()));
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
 
@@ -164,17 +138,12 @@ QString preferencesDialog::readProfile()
     return tmpProfile;
 }
 
-void preferencesDialog::setScan()
+void preferencesDialog::saveValues()
 {
     QSettings ptrFile("nmapsi4", "nmapsi4");
     ptrFile.setValue("configProfile", m_ScanActive);
-    ptrFile.setValue("confPath", lineEditPath->text());
+    ptrFile.setValue("logType", comboLogType->currentIndex());
     ptrFile.setValue("hostCache", spinBoxCache->value());
-
-    if (checkLogOn->isChecked()) // update checklog from configuration file
-        ptrFile.setValue("logCheck", "true");
-    else
-        ptrFile.setValue("logCheck", "false");
 
     if (checkWinPos->isChecked())
         ptrFile.setValue("savePos", "true");
@@ -185,11 +154,6 @@ void preferencesDialog::setScan()
         ptrFile.setValue("saveSize", "true");
     else
         ptrFile.setValue("saveSize", "false");
-
-    if (checkVerboseLog->isChecked())
-        ptrFile.setValue("Vlog", "true");
-    else
-        ptrFile.setValue("Vlog", "false");
 
 #ifndef Q_WS_WIN
     if (checkBoxlookup->isChecked())
@@ -227,13 +191,6 @@ void preferencesDialog::updateItem()
         labelTitle->setText(tr("<h3>Scan Lookup</h3>"));
         stackPref->setCurrentIndex(3);
     }
-}
-
-void preferencesDialog::log_browser()
-{
-    utilities *util = new utilities(this);
-    util->openDirectoryDialog(lineEditPath);
-    delete util;
 }
 
 void preferencesDialog::setProfile()
@@ -294,7 +251,7 @@ void preferencesDialog::setProfile()
 
 void preferencesDialog::quit()
 {
-    setScan(); // save Options
+    saveValues(); // save Options
     emit accept();   // send accept signal and exit
 }
 
@@ -304,10 +261,8 @@ void preferencesDialog::setDefaults()
     checkQuickScan->setChecked(false);
     checkFullVersion->setChecked(false);
     checkQuickVersion->setChecked(false);
-    checkLogOn->setChecked(false);
     checkSize->setChecked(false);
     checkWinPos->setChecked(false);
-    checkVerboseLog->setChecked(false);
     checkBoxlookup->setChecked(true);
     checkBoxDig->setChecked(false);
 }
@@ -353,20 +308,6 @@ void preferencesDialog::updateQuickVersionCheck()   // slot
         checkQuickScan->setChecked(false);
         checkFullVersion->setChecked(false);
         m_ScanActive = "quickversion";
-    }
-}
-
-void preferencesDialog::update_saveButton()
-{
-    if (!checkLogOn->isChecked())
-    {
-        lineEditPath->setEnabled(true);
-        buttonLogB->setEnabled(true);
-    }
-    else
-    {
-        lineEditPath->setEnabled(false);
-        buttonLogB->setEnabled(false);
     }
 }
 

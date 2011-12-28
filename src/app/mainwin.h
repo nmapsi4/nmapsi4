@@ -80,24 +80,16 @@ public:
 
 private:
     int uid;
-    QFile *_logFilePath;
     QListWidgetItem *scanW;
     QListWidgetItem *toolW;
     QListWidgetItem *discoverW;
     QListWidgetItem *fileW;
     QListWidgetItem *timingW;
-    QString FileName;
-    QString firstPath;
     QString Profile;
-    QString logPath;
-    QString logSessionFile;
     bool globalProfile;
-    bool checkLog;
     bool flag_state;
     bool savePos;
     bool saveSize;
-    bool listClearFlag;
-    bool verboseLog;
     bool lookupInternal;
     bool lookupDig;
     bool NSSsupport;
@@ -121,9 +113,7 @@ private:
     discoverManager* _discoverManager;
     void preScanLookup(const QString hostname);
     void rootMode();
-    void isEmptyLog();
     void setNmapsiSlot();
-    QFile* create_logFile(const QString Path);
     QStringList check_extensions();
     QStringList loadExtensions();
     void resetOptions();
@@ -161,7 +151,6 @@ private slots:
     void update_options();
     void update_comboVerbosity();
     void openBrowser();
-    void fileSession();
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
@@ -173,8 +162,6 @@ private slots:
     //update and log slots
     void startProfile_ui();
     void readProfile();
-    void saveAsLog();
-    void saveLog();
     void updateFontHost();
     void callSearchHistory();
     void saveBookMarks();

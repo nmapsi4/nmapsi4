@@ -19,161 +19,153 @@
 
 #include "mainwin.h"
 
-void nmapClass::openBrowser()
-{
-    _utilities->openFileBrowser(lineInputFile);
-}
+// QFile* nmapClass::create_logFile(const QString Path)
+// {
+//     QFile *Pfile = new QFile();
+//     QDir::setCurrent(Path);
+//     Pfile->setFileName(FileName);
+//     return Pfile;
+// }
 
-QFile* nmapClass::create_logFile(const QString Path)
-{
-    QFile *Pfile = new QFile();
-    QDir::setCurrent(Path);
-    Pfile->setFileName(FileName);
-    return Pfile;
-}
+// void nmapClass::fileSession()
+// {
+//     int FLAGS = 0;
+//
+//     if ((!_logFilePath) || (_logFilePath && (firstPath != logPath) && (FLAGS = 1)))
+//     {
+//
+//         if (FLAGS)
+//         {
+//             QDir::setCurrent(firstPath);
+//             _logFilePath->remove();
+//         }
+//
+//         FileName = QDate::currentDate().toString("[dd-MM-yyyy]");
+//         FileName.append(QTime::currentTime().toString("[h-m-s]"));
+//         FileName.append("-nmapsi4.log");
+//         firstPath = logPath;
+//         _logFilePath = create_logFile(logPath);
+//         _logFilePath->open(QIODevice::WriteOnly | QIODevice::Text);
+//     }
+// }
 
-void nmapClass::fileSession()
-{
-    int FLAGS = 0;
+// void nmapClass::isEmptyLog()
+// {
+//     qint64 tmp = _logFilePath->size();
+//
+//     if (!tmp)
+//     {
+//         QDir::setCurrent(logPath);
+//         _logFilePath->setFileName(FileName);
+//         _logFilePath->remove();
+//     }
+//     else if (firstPath.compare(logPath))
+//     {
+//         QString pathTmp = logPath;
+//         pathTmp.append("/");
+//         pathTmp = QDir::toNativeSeparators(pathTmp);
+//         pathTmp.append(FileName);
+//
+//         if (!_logFilePath->copy(FileName, pathTmp))
+//         {
+//             QMessageBox::critical(this, "NmapSI4",
+//                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
+//         }
+//         else
+//         {
+//             _logFilePath->remove();
+//         }
+//     }
+// }
 
-    if ((!_logFilePath) || (_logFilePath && (firstPath != logPath) && (FLAGS = 1))) 
-    {
-
-        if (FLAGS) 
-        {
-            QDir::setCurrent(firstPath);
-#ifndef TOOLS_NO_DEBUG
-            qDebug() << "DEBUG::SESSION:: " << _logFilePath << firstPath << logPath;
-#endif
-            _logFilePath->remove();
-        }
-
-        FileName = QDate::currentDate().toString("[dd-MM-yyyy]");
-        FileName.append(QTime::currentTime().toString("[h-m-s]"));
-        FileName.append("-nmapsi4.log");
-        firstPath = logPath;
-        _logFilePath = create_logFile(logPath);
-        _logFilePath->open(QIODevice::WriteOnly | QIODevice::Text);
-    }
-}
-
-void nmapClass::isEmptyLog()
-{
-    qint64 tmp = _logFilePath->size();
-
-    if (!tmp) 
-    {
-        QDir::setCurrent(logPath);
-        _logFilePath->setFileName(FileName);
-        _logFilePath->remove();
-    } 
-    else if (firstPath.compare(logPath)) 
-    {
-        QString pathTmp = logPath;
-        pathTmp.append("/");
-        pathTmp = QDir::toNativeSeparators(pathTmp);
-        pathTmp.append(FileName);
-
-        if (!_logFilePath->copy(FileName, pathTmp)) 
-        {
-            QMessageBox::critical(this, "NmapSI4",
-                                  tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
-        } 
-        else 
-        {
-            _logFilePath->remove();
-        }
-    }
-}
-
-void nmapClass::saveAsLog()
-{
-    if (FileName.isNull() || listClearFlag) 
-    {
-        QMessageBox::critical(this, tr("Save Log"), tr("No Scan found\n"), tr("Close"));
-        return;
-    }
-
-    QFile *tmpFile = new QFile();
-    QString newFilePath = logPath;
-    newFilePath.append("/");
-    newFilePath = QDir::toNativeSeparators(newFilePath);
-    newFilePath.append(FileName);
-    tmpFile->setFileName(newFilePath);
-
-    if (!tmpFile->size())
-    {
-        QMessageBox::critical(this, tr("Save Log"),tr("No Scan found\n"), tr("Close"));
-        delete tmpFile;
-        return;
-    }
-
-    QString url;
-    url = QDir::homePath();
-    url.append("/");
-    url = QDir::toNativeSeparators(url);
-    url.append("si4");
-    url.append(_VERSION_);
-    url.append("-");
-    url.append(hostEdit->currentText());
-    url.append(".log");
-
-    QString FileNameTmp;
-    FileNameTmp = QFileDialog::getSaveFileName(this, tr("Save Log"), url, tr("Log (*.log)"));
-
-    if (!FileNameTmp.isEmpty()) 
-    {
-
-        QFile *freeFile = new QFile();
-        freeFile->setFileName(FileNameTmp);
-        if (freeFile->exists())
-        {
-            freeFile->remove();
-        }
-        delete freeFile;
-
-        if (!tmpFile->copy(FileNameTmp))
-        {
-            QMessageBox::critical(this, tr("Information"),
-                                  tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
-        }
-
-        logSessionFile = FileNameTmp;
-    }
-
-    delete tmpFile;
-}
-
-void nmapClass::saveLog()
-{
-
-    if (logSessionFile.isEmpty()) 
-    {
-        return;
-    }
-
-    QFile *tmpFile = new QFile();
-    QString newFile = logPath;
-    newFile.append("/");
-    newFile = QDir::toNativeSeparators(newFile);
-    newFile.append(FileName);
-    tmpFile->setFileName(newFile);
-
-    QFile *freeFile = new QFile();
-    freeFile->setFileName(logSessionFile);
-    
-    if (freeFile->exists()) 
-    {
-        freeFile->remove();
-    }
-    
-    delete freeFile;
-
-    if (!tmpFile->copy(logSessionFile)) 
-    {
-        QMessageBox::critical(this, tr("Information"),
-                              tr("Save File permission Error\n"), tr("Close"));
-    }
-
-    delete tmpFile;
-}
+// void nmapClass::saveAsLog()
+// {
+//     if (FileName.isNull() || listClearFlag)
+//     {
+//         QMessageBox::critical(this, tr("Save Log"), tr("No Scan found\n"), tr("Close"));
+//         return;
+//     }
+//
+//     QFile *tmpFile = new QFile();
+//     QString newFilePath = logPath;
+//     newFilePath.append("/");
+//     newFilePath = QDir::toNativeSeparators(newFilePath);
+//     newFilePath.append(FileName);
+//     tmpFile->setFileName(newFilePath);
+//
+//     if (!tmpFile->size())
+//     {
+//         QMessageBox::critical(this, tr("Save Log"),tr("No Scan found\n"), tr("Close"));
+//         delete tmpFile;
+//         return;
+//     }
+//
+//     QString url;
+//     url = QDir::homePath();
+//     url.append("/");
+//     url = QDir::toNativeSeparators(url);
+//     url.append("si4");
+//     url.append(_VERSION_);
+//     url.append("-");
+//     url.append(hostEdit->currentText());
+//     url.append(".log");
+//
+//     QString FileNameTmp;
+//     FileNameTmp = QFileDialog::getSaveFileName(this, tr("Save Log"), url, tr("Log (*.log)"));
+//
+//     if (!FileNameTmp.isEmpty())
+//     {
+//
+//         QFile *freeFile = new QFile();
+//         freeFile->setFileName(FileNameTmp);
+//         if (freeFile->exists())
+//         {
+//             freeFile->remove();
+//         }
+//         delete freeFile;
+//
+//         if (!tmpFile->copy(FileNameTmp))
+//         {
+//             QMessageBox::critical(this, tr("Information"),
+//                                   tr("Save File permission Error (Log stored in /tmp)\n"), tr("Close"));
+//         }
+//
+//         logSessionFile = FileNameTmp;
+//     }
+//
+//     delete tmpFile;
+// }
+//
+// void nmapClass::saveLog()
+// {
+//
+//     if (logSessionFile.isEmpty())
+//     {
+//         return;
+//     }
+//
+//     QFile *tmpFile = new QFile();
+//     QString newFile = logPath;
+//     newFile.append("/");
+//     newFile = QDir::toNativeSeparators(newFile);
+//     newFile.append(FileName);
+//     tmpFile->setFileName(newFile);
+//
+//     QFile *freeFile = new QFile();
+//     freeFile->setFileName(logSessionFile);
+//
+//     if (freeFile->exists())
+//     {
+//         freeFile->remove();
+//     }
+//
+//     delete freeFile;
+//
+//     if (!tmpFile->copy(logSessionFile))
+//     {
+//         QMessageBox::critical(this, tr("Information"),
+//                               tr("Save File permission Error\n"), tr("Close"));
+//     }
+//
+//     delete tmpFile;
+// }

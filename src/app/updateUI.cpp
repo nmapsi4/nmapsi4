@@ -609,7 +609,6 @@ void nmapClass::updateTabTrace()
 
 void nmapClass::listClear()
 {
-    listClearFlag = true;
     // Host list
     _parser->clearParserItems();
     listScanError->clear();
@@ -653,4 +652,9 @@ void nmapClass::monitorRuntimeEvent()
     {
         monitorDetailsScanButt->setEnabled(true);
     }
+}
+
+void nmapClass::openBrowser()
+{
+    _utilities->openFileBrowser(lineInputFile);
 }

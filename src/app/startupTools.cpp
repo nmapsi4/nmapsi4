@@ -31,32 +31,7 @@ void nmapClass::startProfile_ui()   // start preference UI
 void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
-
-    if (!FileName.isNull())
-    {
-
-        QFile *tmpFile = new QFile();
-        QString newFile = logPath;
-        newFile.append("/");
-	newFile = QDir::toNativeSeparators(newFile);
-        newFile.append(FileName);
-        tmpFile->setFileName(newFile);
-
-        if ((checkLog) && (tmpFile->exists()))
-	{
-            tmpFile->close();
-            isEmptyLog();
-        }
-        else if ((!checkLog) && (tmpFile->exists()))
-	{ // if log check is disable but the file exist
-                tmpFile->close();
-                tmpFile->remove();
-        }
-
-        delete tmpFile;
-    }
-
-    // Save window size and position and NSS info
+    // Save Ui settings
     saveUiSettings();
     close();
 }

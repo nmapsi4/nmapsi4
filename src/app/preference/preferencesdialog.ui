@@ -204,11 +204,8 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <property name="margin">
-        <number>0</number>
-       </property>
-       <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -219,117 +216,89 @@
          <property name="title">
           <string>Log Preferences</string>
          </property>
-         <widget class="QPushButton" name="buttonLogB">
-          <property name="geometry">
-           <rect>
-            <x>250</x>
-            <y>40</y>
-            <width>91</width>
-            <height>32</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>&amp;Browse</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../mainwin.qrc">
-            <normaloff>:/images/images/fileopen.png</normaloff>:/images/images/fileopen.png</iconset>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEditPath">
-          <property name="geometry">
-           <rect>
-            <x>130</x>
-            <y>80</y>
-            <width>211</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_45">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>80</y>
-            <width>121</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Log File Path</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkLogOn">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>40</y>
-            <width>131</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Active Log</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkVerboseLog">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>190</y>
-            <width>191</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Verbose Log</string>
-          </property>
-         </widget>
-         <widget class="Line" name="line">
-          <property name="geometry">
-           <rect>
-            <x>27</x>
-            <y>240</y>
-            <width>321</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-         <widget class="QSpinBox" name="spinBoxCache">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>280</y>
-            <width>71</width>
-            <height>28</height>
-           </rect>
-          </property>
-          <property name="minimum">
-           <number>5</number>
-          </property>
-          <property name="value">
-           <number>10</number>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label">
-          <property name="geometry">
-           <rect>
-            <x>90</x>
-            <y>280</y>
-            <width>251</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>History Cache</string>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Log type</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboLogType">
+              <item>
+               <property name="text">
+                <string>Fancy log</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Nmap raw log</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>History Values</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="spinBoxCache">
+              <property name="minimum">
+               <number>5</number>
+              </property>
+              <property name="value">
+               <number>10</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>History Item Number</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -428,7 +397,7 @@
       <string>&amp;Defaults</string>
      </property>
      <property name="icon">
-      <iconset resource="../../mainwin.qrc">
+      <iconset resource="../../../mainwin.qrc">
        <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
      </property>
     </widget>
@@ -439,7 +408,7 @@
       <string>&amp;Ok</string>
      </property>
      <property name="icon">
-      <iconset resource="../../mainwin.qrc">
+      <iconset resource="../../../mainwin.qrc">
        <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
      </property>
     </widget>
@@ -450,7 +419,7 @@
       <string>&amp;Cancel</string>
      </property>
      <property name="icon">
-      <iconset resource="../../mainwin.qrc">
+      <iconset resource="../../../mainwin.qrc">
        <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
      </property>
     </widget>
@@ -458,7 +427,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../mainwin.qrc"/>
+  <include location="../../../mainwin.qrc"/>
  </resources>
  <connections>
   <connection>
