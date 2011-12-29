@@ -624,6 +624,7 @@ void nmapClass::listClear()
 
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
+    actionSave_As_Menu->setEnabled(false);
 
     comboScanLog->clear();
     comboScanLog->addItem(tr("Scan log parameters"));

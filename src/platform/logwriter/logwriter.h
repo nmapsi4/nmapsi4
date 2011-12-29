@@ -26,6 +26,7 @@
 #include <QtCore/QString>
 #include <QtCore/QTextStream>
 #include <QtCore/QDebug>
+#include <QtCore/QList>
 
 #include "parserObjects.h"
 
@@ -33,10 +34,11 @@ class logWriter
 {
 
 public:
-    logWriter(const QString& path);
-    ~logWriter();
+    logWriter();
+    ~logWriter() {};
 
-    void writeSingleLogFile(parserObj* pObject);
+    void writeSingleLogFile(parserObj* pObject, const QString& path);
+    void writeAllLogFile(QList<parserObj*> pObjectList, const QString& path);
 
 private:
     enum LogType {
@@ -44,11 +46,10 @@ private:
         RawLog
     };
 
-    QString m_filePath;
     parserObj* m_pObject;
 
-    void writeRawLog();
-    void writeFancyLog();
+    void writeRawLog(const QString& path);
+    void writeFancyLog(const QString& path);
 };
 
 #endif // LOGWRITER_H

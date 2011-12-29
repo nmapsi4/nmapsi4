@@ -110,12 +110,9 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->action_Scan_menu->setEnabled(true);
     m_ui->action_Scan_2->setEnabled(true);
     m_ui->hostEdit->setEnabled(true);
-    //m_ui->action_Save_As->setEnabled(true);
-    //m_ui->actionSave_As_Menu->setEnabled(true);
-
     m_ui->actionSave->setEnabled(true);
     m_ui->actionSave_Menu->setEnabled(true);
-
+    m_ui->actionSave_As_Menu->setEnabled(true);
 
     if(!m_ui->_monitor->monitorHostNumber())
     {
@@ -749,8 +746,13 @@ void parserManager::showParserObjPlugins(int hostIndex)
     }
 }
 
-void parserManager::callSingleLogWriter()
+void parserManager::callSaveSingleLogWriter()
 {
+    if (!m_ui->treeMain->selectedItems().size())
+    {
+        return;
+    }
+
     int selectedItemsIndex = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->selectedItems()[0]);
     parserObj *object = m_parserObjList[selectedItemsIndex];
 
@@ -768,8 +770,26 @@ void parserManager::callSingleLogWriter()
 
     if (!path.isEmpty())
     {
-        logWriter *writer = new logWriter(path);
-        writer->writeSingleLogFile(object);
+        logWriter *writer = new logWriter();
+        writer->writeSingleLogFile(object, path);
+        delete writer;
+    }
+}
+
+void parserManager::callSaveAllLogWriter()
+{
+    if (!m_parserObjList.size())
+    {
+        return;
+    }
+
+    const QString& directoryPath = QFileDialog::getExistingDirectory(this, "Open Directory",
+               QDir::homePath(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+
+    if (!directoryPath.isEmpty())
+    {
+        logWriter *writer = new logWriter();
+        writer->writeAllLogFile(m_parserObjList,directoryPath);
         delete writer;
     }
 }

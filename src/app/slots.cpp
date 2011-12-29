@@ -90,16 +90,6 @@ void nmapClass::setNmapsiSlot()
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startProfile_ui()));
 
-    connect(actionSave, SIGNAL(triggered()),
-            _parser, SLOT(callSingleLogWriter()));
-    connect(actionSave_Menu, SIGNAL(triggered()),
-            _parser, SLOT(callSingleLogWriter()));
-
-//     connect(actionSave_As_Menu, SIGNAL(triggered()),
-//             _parser, SLOT(callSingleLogWriter()));
-//     connect(action_Save_As, SIGNAL(triggered()),
-//             _parser, SLOT(callSingleLogWriter()));
-
     connect(actionFullS, SIGNAL(triggered()),
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
@@ -119,14 +109,20 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(saveGlobalProfile()));
     connect(removeGlobalButton, SIGNAL(clicked()),
             this, SLOT(removeGlobalProfile()));
+    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuServiceMain()));
 
     // Obj parser runtime
     connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             _parser, SLOT(showParserResult(QTreeWidgetItem*,int)));
     connect(treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             _parser, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
-    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuServiceMain()));
+    connect(actionSave, SIGNAL(triggered()),
+            _parser, SLOT(callSaveSingleLogWriter()));
+    connect(actionSave_Menu, SIGNAL(triggered()),
+            _parser, SLOT(callSaveSingleLogWriter()));
+    connect(actionSave_As_Menu, SIGNAL(triggered()),
+            _parser, SLOT(callSaveAllLogWriter()));
 
     // BookMark signals
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),

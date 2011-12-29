@@ -68,7 +68,8 @@ public slots:
     void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer);
     void showParserResult(QTreeWidgetItem *item, int column);
     void showParserTracerouteResult(QTreeWidgetItem *item, int column);
-    void callSingleLogWriter();
+    void callSaveSingleLogWriter();
+    void callSaveAllLogWriter();
 };
 
 #endif // PARSER_H

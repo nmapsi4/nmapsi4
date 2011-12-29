@@ -19,17 +19,34 @@
 
 #include "logwriter.h"
 
-logWriter::logWriter(const QString& path) : m_filePath(path)
+logWriter::logWriter()
 {
-
 }
 
-logWriter::~logWriter()
+void logWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& path)
 {
+    foreach (parserObj* object, pObjectList)
+    {
+        if (object->isValidObject())
+        {
+            QString pathTmp(path);
+            if (!pathTmp.endsWith(QDir::toNativeSeparators("/")))
+            {
+                pathTmp.append(QDir::toNativeSeparators("/"));
+            }
 
+            QString fileName(object->getHostName());
+            fileName = fileName.replace('.','_');
+            fileName.append(".log");
+
+            pathTmp.append(fileName);
+
+            writeSingleLogFile(object, pathTmp);
+        }
+    }
 }
 
-void logWriter::writeSingleLogFile(parserObj* pObject)
+void logWriter::writeSingleLogFile(parserObj* pObject, const QString& path)
 {
     m_pObject = pObject;
 
@@ -41,18 +58,18 @@ void logWriter::writeSingleLogFile(parserObj* pObject)
     switch (logType)
     {
     case FancyLog:
-        writeFancyLog();
+        writeFancyLog(path);
         break;
     case RawLog:
-        writeRawLog();
+        writeRawLog(path);
         break;
     }
 
 }
 
-void logWriter::writeFancyLog()
+void logWriter::writeFancyLog(const QString& path)
 {
-    QFile *filePtr = new QFile(m_filePath);
+    QFile *filePtr = new QFile(path);
 
     if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
     {
@@ -120,9 +137,9 @@ void logWriter::writeFancyLog()
     delete filePtr;
 }
 
-void logWriter::writeRawLog()
+void logWriter::writeRawLog(const QString& path)
 {
-    QFile *filePtr = new QFile(m_filePath);
+    QFile *filePtr = new QFile(path);
 
     if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
     {
