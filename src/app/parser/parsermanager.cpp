@@ -66,10 +66,13 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_treeItems.push_front(treeItem);
     treeItem->setSizeHint(0, QSize(32, 32));
 
+    // TODO: move to runtime parser
     m_ui->comboScanLog->insertItem(3, parList.join(" "));
 
     // call real parser
     parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
+
+    elemObj->setParameters(parList.join(" "));
 
     int tmpBox = m_ui->SWscan->currentIndex();
 
@@ -783,8 +786,12 @@ void parserManager::callSaveAllLogWriter()
         return;
     }
 
-    const QString& directoryPath = QFileDialog::getExistingDirectory(this, "Open Directory",
-               QDir::homePath(), QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    const QString& directoryPath = QFileDialog::getExistingDirectory(
+                                       this,
+                                       "Open Directory",
+                                       QDir::homePath(),
+                                       QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+                                   );
 
     if (!directoryPath.isEmpty())
     {

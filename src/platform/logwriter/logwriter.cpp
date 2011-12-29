@@ -80,7 +80,7 @@ void logWriter::writeFancyLog(const QString& path)
     QTextStream fileStream(filePtr);
 
     // hostname
-    fileStream << m_pObject->getHostName() << "\n\n";
+    fileStream << "\n" << m_pObject->getParameters() << "\n\n";
     fileStream << "|---------- Services" << "\n\n";
 
     // Open Ports

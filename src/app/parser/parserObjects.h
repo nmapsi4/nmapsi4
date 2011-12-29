@@ -36,6 +36,7 @@ public:
     ~parserObj();
 
     const QString getHostName();
+    const QString getParameters();
     const QStringList getMainInfo();
     const QStringList getServices();
     const QStringList getPortServices();
@@ -60,9 +61,11 @@ public:
     void setErrorScan(const QString errorElem);
     void setNseResult(const QHash<QString, QStringList> nseResult);
     void setValidity(bool isValid);
+    void setParameters(const QString parameters);
 
 private:
     QString m_hostName;
+    QString m_parameters;
     QStringList m_mainInfo;
     QStringList m_services;
     QStringList m_portServices;

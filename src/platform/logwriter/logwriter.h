@@ -37,7 +37,13 @@ public:
     logWriter();
     ~logWriter() {};
 
+    /**
+     * Save log for a single selected host
+     **/
     void writeSingleLogFile(parserObj* pObject, const QString& path);
+    /**
+     * Save all not empty log for scanned hosts
+     **/
     void writeAllLogFile(QList<parserObj*> pObjectList, const QString& path);
 
 private:

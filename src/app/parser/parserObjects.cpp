@@ -89,6 +89,11 @@ bool parserObj::isValidObject()
     return m_validFlag;
 }
 
+const QString parserObj::getParameters()
+{
+    return m_parameters;
+}
+
 void parserObj::setValidity(bool isValid)
 {
     m_validFlag = isValid;
@@ -142,6 +147,11 @@ void parserObj::setFullScanLog(const QString logElem)
 void parserObj::setErrorScan(const QString errorElem)
 {
     m_errorScan.push_back(errorElem);
+}
+
+void parserObj::setParameters(const QString parameters)
+{
+    m_parameters = parameters;
 }
 
 parserObjUtil::parserObjUtil()
