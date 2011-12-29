@@ -621,7 +621,10 @@ void nmapClass::listClear()
     treeNSS->clear();
     listScan->clear();
     actionClear_History->setEnabled(false);
-    action_Save_As->setEnabled(false);
+
+    actionSave->setEnabled(false);
+    actionSave_Menu->setEnabled(false);
+
     comboScanLog->clear();
     comboScanLog->addItem(tr("Scan log parameters"));
 }

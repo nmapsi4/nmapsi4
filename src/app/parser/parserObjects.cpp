@@ -84,6 +84,16 @@ const QHash< QString, QStringList > parserObj::getNseResult()
     return m_nssResult;
 }
 
+bool parserObj::isValidObject()
+{
+    return m_validFlag;
+}
+
+void parserObj::setValidity(bool isValid)
+{
+    m_validFlag = isValid;
+}
+
 void parserObj::setHostName(const QString hostName)
 {
     m_hostName.append(hostName);

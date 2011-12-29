@@ -19,14 +19,12 @@
 
 #include "mainwin.h"
 
-QHash<QString, QString> nmapClass::defaultScanProfile() const 
+QHash<QString, QString> nmapClass::defaultScanProfile() const
 {
     // preload StringList with default static Scan profile
-    // use QHash::insert(key,value) for new value
-    // use QHash::value(key) for value from a key
     QHash<QString, QString> tmpStaticProfileMap_;
-    
-    if (!uid) 
+
+    if (!uid)
     {
         tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
         tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -A -v --traceroute");
@@ -35,8 +33,8 @@ QHash<QString, QString> nmapClass::defaultScanProfile() const
         tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -A -v --traceroute");
         tmpStaticProfileMap_.insert(tr("Slow comprehensive scan"),
                                     "-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute");
-    } 
-    else 
+    }
+    else
     {
         // for user mode
         tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");

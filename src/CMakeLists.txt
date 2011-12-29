@@ -16,6 +16,7 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src/platform/vulnerability/
     ${CMAKE_SOURCE_DIR}/src/platform/lookup/
     ${CMAKE_SOURCE_DIR}/src/platform/nse/
+    ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -39,7 +40,6 @@ SET(SOURCES_CPP
                 app/slots.cpp
                 app/resizeNmapsi4.cpp
                 app/mainWinTools.cpp
-                app/logUtils.cpp
                 app/actions.cpp
                 app/saveUiSettings.cpp
                 app/startupTools.cpp
@@ -60,7 +60,8 @@ SET(SOURCES_CPP
 		platform/nse/nsemanager.cpp
 		platform/discover/discover.cpp
 		platform/discover/discovermanager.cpp
-		platform/bookmarks/addparameterstobookmark.cpp)
+		platform/bookmarks/addparameterstobookmark.cpp
+                platform/logwriter/logwriter.cpp)
 
 
 if (Q_WS_X11)

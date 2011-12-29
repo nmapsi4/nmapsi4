@@ -26,19 +26,12 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMessageBox>
 #include <QtGui/QToolButton>
-#include <QtGui/QTextDocument>
 #include <QtGui/QSplitter>
+#include <QtGui/QCompleter>
+#include <QtGui/QStringListModel>
 #include <QtCore/QHash>
 #include <QtCore/QPointer>
 #include <QtCore/QTimer>
-#include <QtCore/QDir>
-#include <QtCore/QDate>
-#include <QtCore/QTime>
-#include <QtNetwork/QHostInfo>
-#include <QtNetwork/QHostAddress>
-#include <QtWebKit/QWebView>
-#include <QtGui/QCompleter>
-#include <QtGui/QStringListModel>
 
 // local include
 #include "preferencesdialog.h"

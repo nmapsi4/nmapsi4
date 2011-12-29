@@ -25,6 +25,7 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
 #include <QtCore/QPointer>
+#include <QtWebKit/QWebView>
 
 #include "qprocessthread.h"
 

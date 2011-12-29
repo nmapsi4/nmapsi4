@@ -17,9 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QApplication>
-#include <QTranslator>
-#include <config.h>
+#include <QtGui/QApplication>
+#include <QtCore/QTranslator>
+#include <QtCore/QDir>
+
+#include "config.h"
 #include "mainwin.h"
 
 
@@ -35,8 +37,8 @@ int main(int argc, char *argv[])
     if(locale.contains("pt"))
     {
          locale.resize(5);
-    } 
-    else 
+    }
+    else
     {
          locale.resize(2);
     }

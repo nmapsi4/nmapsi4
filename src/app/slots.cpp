@@ -89,14 +89,17 @@ void nmapClass::setNmapsiSlot()
 
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startProfile_ui()));
-//     connect(action_Save_As, SIGNAL(triggered()),
-//             this, SLOT(saveAsLog()));
-//     connect(actionSave, SIGNAL(triggered()),
-//             this, SLOT(saveLog()));
+
+    connect(actionSave, SIGNAL(triggered()),
+            _parser, SLOT(callSingleLogWriter()));
+    connect(actionSave_Menu, SIGNAL(triggered()),
+            _parser, SLOT(callSingleLogWriter()));
+
 //     connect(actionSave_As_Menu, SIGNAL(triggered()),
-//             this, SLOT(saveAsLog()));
-//     connect(actionSave_Menu, SIGNAL(triggered()),
-//             this, SLOT(saveLog()));
+//             _parser, SLOT(callSingleLogWriter()));
+//     connect(action_Save_As, SIGNAL(triggered()),
+//             _parser, SLOT(callSingleLogWriter()));
+
     connect(actionFullS, SIGNAL(triggered()),
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),

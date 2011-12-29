@@ -26,6 +26,7 @@
 #include <QtCore/QList>
 #include <QtCore/QHash>
 #include <QtCore/QPair>
+#include <QtNetwork/QHostInfo>
 
 #ifdef Q_WS_X11
 #include <QtDBus/QDBusConnection>

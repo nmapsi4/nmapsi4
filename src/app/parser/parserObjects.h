@@ -46,6 +46,7 @@ public:
     const QStringList getFullScanLog();
     const QStringList getErrorScan();
     const QHash<QString, QStringList> getNseResult();
+    bool isValidObject();
 
     void setHostName(const QString hostName);
     void setMainInfo(const QString infoMainElem);
@@ -58,6 +59,7 @@ public:
     void setFullScanLog(const QString logElem);
     void setErrorScan(const QString errorElem);
     void setNseResult(const QHash<QString, QStringList> nseResult);
+    void setValidity(bool isValid);
 
 private:
     QString m_hostName;
@@ -71,6 +73,7 @@ private:
     QStringList m_fullLogScan;
     QStringList m_errorScan;
     QHash<QString, QStringList> m_nssResult;
+    bool m_validFlag;
 
 };
 

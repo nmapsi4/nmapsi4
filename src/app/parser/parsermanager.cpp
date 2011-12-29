@@ -110,14 +110,12 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->action_Scan_menu->setEnabled(true);
     m_ui->action_Scan_2->setEnabled(true);
     m_ui->hostEdit->setEnabled(true);
-    m_ui->action_Save_As->setEnabled(true);
-    m_ui->actionSave_As_Menu->setEnabled(true);
+    //m_ui->action_Save_As->setEnabled(true);
+    //m_ui->actionSave_As_Menu->setEnabled(true);
 
-//     if (!m_ui->logSessionFile.isEmpty())
-//     {
-//         m_ui->actionSave->setEnabled(true);
-//         m_ui->actionSave_Menu->setEnabled(true);
-//     }
+    m_ui->actionSave->setEnabled(true);
+    m_ui->actionSave_Menu->setEnabled(true);
+
 
     if(!m_ui->_monitor->monitorHostNumber())
     {
@@ -183,10 +181,6 @@ void parserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
 parserObj* parserManager::parserCore(const QStringList parList, QString StdoutStr,
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
-    /*
-     * _logFilePath and verboseLog is global in Ui::MainWindow
-     * TODO:: remove _logFilePath and verboleLog with porting to new save log.
-     */
     // Create parser Obect
     parserObj *elemObj = new parserObj();
     QString hostCheck = parList[parList.size()-1];
@@ -275,7 +269,6 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 }
             }
 
-            // FIXME: create new nse buffer
             nseBuffer.append(tmpClean + "\n");
         }
 
@@ -337,10 +330,13 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 elemObj->setPortServices(lStr[0]);
             }
         } // end while
+
+        elemObj->setValidity(true);
     }
     else
     {
         mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+        elemObj->setValidity(false);
     }
 
     QTextStream bufferInfoStream(&bufferInfo); // QString to QtextStrem (scan Tree)
@@ -750,5 +746,30 @@ void parserManager::showParserObjPlugins(int hostIndex)
             }
             break;
         }
+    }
+}
+
+void parserManager::callSingleLogWriter()
+{
+    int selectedItemsIndex = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->selectedItems()[0]);
+    parserObj *object = m_parserObjList[selectedItemsIndex];
+
+    if (!object->isValidObject())
+    {
+        return;
+    }
+
+    const QString& path = QFileDialog::getSaveFileName(
+                              this,
+                              tr("Save Log"),
+                              QDir::homePath() + QDir::toNativeSeparators("/") + ".log",
+                              tr("Log (*.log)")
+                          );
+
+    if (!path.isEmpty())
+    {
+        logWriter *writer = new logWriter(path);
+        writer->writeSingleLogFile(object);
+        delete writer;
     }
 }
