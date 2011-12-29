@@ -21,7 +21,7 @@
 #include <QtCore/QTranslator>
 #include <QtCore/QDir>
 
-#include "config.h"
+#include <config.h>
 #include "mainwin.h"
 
 

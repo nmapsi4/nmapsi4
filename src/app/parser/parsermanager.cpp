@@ -213,12 +213,12 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
             scanBuffer.append("\n");
 
             // Insert new elem to nse buffer result
-            nseBuffer.append("|--" + tmp + "\n");
+            nseBuffer.append("|--" + tmp + '\n');
         }
 
-        if (tmp.startsWith("Host script results:"))
+        if (tmp.startsWith(QLatin1String("Host script results:")))
         {
-            nseBuffer.append("|--" + tmp + "\n");
+            nseBuffer.append("|--" + tmp + '\n');
         }
 
         if ((tmp.contains("MAC")
@@ -269,7 +269,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
                 }
             }
 
-            nseBuffer.append(tmpClean + "\n");
+            nseBuffer.append(tmpClean + '\n');
         }
 
         if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/")))
@@ -387,13 +387,13 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         QString service;
         QStringList serviceNseResult;
 
-        if (nseStreamLine.startsWith("|--"))
+        if (nseStreamLine.startsWith(QLatin1String("|--")))
         {
             service = nseStreamLine.remove("|--");
             nseStreamLine = nseStream.readLine();
         }
 
-        while (!nseStreamLine.startsWith("|--") && !nseStream.atEnd())
+        while (!nseStreamLine.startsWith(QLatin1String("|--")) && !nseStream.atEnd())
         {
             if (!nseStreamLine.isEmpty())
             {
