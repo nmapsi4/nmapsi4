@@ -29,57 +29,57 @@ parserObj::~parserObj()
 
 }
 
-const QString parserObj::getHostName()
+const QString &parserObj::getHostName() const
 {
     return m_hostName;
 }
 
-const QStringList parserObj::getMainInfo()
+const QStringList &parserObj::getMainInfo() const
 {
     return m_mainInfo;
 }
 
-const QStringList parserObj::getServices()
+const QStringList &parserObj::getServices() const
 {
     return m_services;
 }
 
-const QStringList parserObj::getPortServices()
+const QStringList &parserObj::getPortServices() const
 {
     return m_portServices;
 }
 
-const QStringList parserObj::getPortOpen()
+const QStringList &parserObj::getPortOpen() const
 {
     return m_portOpened;
 }
 
-const QStringList parserObj::getPortClose()
+const QStringList &parserObj::getPortClose() const
 {
     return m_portClosed;
 }
 
-const QStringList parserObj::getPortFiltered()
+const QStringList &parserObj::getPortFiltered() const
 {
     return m_portFiltered;
 }
 
-const QStringList parserObj::getTraceRouteInfo()
+const QStringList &parserObj::getTraceRouteInfo() const
 {
     return m_scanTraceRoute;
 }
 
-const QStringList parserObj::getFullScanLog()
+const QStringList &parserObj::getFullScanLog() const
 {
     return m_fullLogScan;
 }
 
-const QStringList parserObj::getErrorScan()
+const QStringList &parserObj::getErrorScan() const
 {
     return m_errorScan;
 }
 
-const QHash< QString, QStringList > parserObj::getNseResult()
+const QHash< QString, QStringList > &parserObj::getNseResult() const
 {
     return m_nssResult;
 }
@@ -89,7 +89,7 @@ bool parserObj::isValidObject()
     return m_validFlag;
 }
 
-const QString parserObj::getParameters()
+const QString &parserObj::getParameters() const
 {
     return m_parameters;
 }
@@ -164,12 +164,12 @@ parserObjUtil::~parserObjUtil()
 
 }
 
-const QStringList parserObjUtil::getInfoLookup()
+const QStringList &parserObjUtil::getInfoLookup() const
 {
     return m_mainLookup;
 }
 
-const QString parserObjUtil::getHostName()
+const QString &parserObjUtil::getHostName() const
 {
     return m_hostName;
 }

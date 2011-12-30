@@ -35,18 +35,18 @@ public:
     parserObj();
     ~parserObj();
 
-    const QString getHostName();
-    const QString getParameters();
-    const QStringList getMainInfo();
-    const QStringList getServices();
-    const QStringList getPortServices();
-    const QStringList getPortOpen();
-    const QStringList getPortClose();
-    const QStringList getPortFiltered();
-    const QStringList getTraceRouteInfo();
-    const QStringList getFullScanLog();
-    const QStringList getErrorScan();
-    const QHash<QString, QStringList> getNseResult();
+    const QString &getHostName() const;
+    const QString &getParameters() const;
+    const QStringList &getMainInfo() const;
+    const QStringList &getServices() const;
+    const QStringList &getPortServices() const;
+    const QStringList &getPortOpen() const;
+    const QStringList &getPortClose() const;
+    const QStringList &getPortFiltered() const;
+    const QStringList &getTraceRouteInfo() const;
+    const QStringList &getFullScanLog() const;
+    const QStringList &getErrorScan() const;
+    const QHash<QString, QStringList> &getNseResult() const;
     bool isValidObject();
 
     void setHostName(const QString hostName);
@@ -87,8 +87,8 @@ public:
     parserObjUtil();
     ~parserObjUtil();
 
-    const QStringList getInfoLookup();
-    const QString getHostName();
+    const QStringList &getInfoLookup() const;
+    const QString &getHostName() const;
 
     void setInfoLookup(const QString lookupElem);
     void setHostName(const QString hostName);
