@@ -24,7 +24,7 @@
 #include <QtGui/QTextDocument>
 #include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
-#include <QtCore/QPointer>
+#include <QtCore/QWeakPointer>
 #include <QtWebKit/QWebView>
 
 #include "qprocessthread.h"
@@ -59,9 +59,9 @@ private:
     void nseTreeActiveRestoreValues();
 
     nmapClass* m_ui;
-    QPointer<QProcessThread> m_thread;
-    QPointer<QProcessThread> m_threadScript;
-    QPointer<QTextDocument> m_documentScript;
+    QWeakPointer<QProcessThread> m_thread;
+    QWeakPointer<QProcessThread> m_threadScript;
+    QWeakPointer<QTextDocument> m_documentScript;
     QList<QTreeWidgetItem*> m_itemNseAvail;
     QList<QTreeWidgetItem*> m_itemNseActive;
     QHash<QString, QTextDocument*> m_nseHelpCache;

@@ -27,13 +27,13 @@ void nmapClass::loadHistoryDefault()
     history->updateBookMarks();
     delete history;
     // check for user or admin parameters bookmarks
-    if (!uid) 
+    if (!uid)
     {
         history = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         history->updateBookMarks();
         delete history;
-    } 
-    else 
+    }
+    else
     {
         history = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         history->updateBookMarks();
@@ -43,7 +43,7 @@ void nmapClass::loadHistoryDefault()
     history = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     history->updateBookMarks();
     delete history;
-    
+
     history = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
     history->updateBookMarks();
     delete history;
@@ -57,12 +57,12 @@ void nmapClass::updateCompleter()
 
     if (history->getHostCache().first() != "NULL")
     {
-        if (_completer)
+        if (!_completer.isNull())
         {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completer->model());
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completer.data()->model());
             newModel->setStringList(history->getHostCache());
         }
-        else if (!_hostModel)
+        else if (_hostModel.isNull())
         {
             _hostModel = new QStringListModel(history->getHostCache());
         }
@@ -74,12 +74,12 @@ void nmapClass::updateCompleter()
 
     if (history->getHostCache().first() != "NULL")
     {
-        if (_completerVuln)
+        if (!_completerVuln.isNull())
         {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completerVuln->model());
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completerVuln.data()->model());
             newModel->setStringList(history->getHostCache());
         }
-        else if (!_vulnModel)
+        else if (_vulnModel.isNull())
         {
             _vulnModel = new QStringListModel(history->getHostCache());
         }
@@ -140,7 +140,7 @@ void nmapClass::setDefaultSplitter()
 {
     // define default Ui splitter
     cW = new QSplitter();
-    bW = new QSplitter();    
+    bW = new QSplitter();
     cW->setOrientation(Qt::Horizontal);
     cW->addWidget(frameLeft);
     cW->addWidget(frameCenter);

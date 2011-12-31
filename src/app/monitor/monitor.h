@@ -26,6 +26,7 @@
 #include <QtCore/QList>
 #include <QtCore/QHash>
 #include <QtCore/QPair>
+#include <QtCore/QWeakPointer>
 #include <QtNetwork/QHostInfo>
 
 #ifdef Q_WS_X11

@@ -30,7 +30,7 @@
 #include <QtGui/QCompleter>
 #include <QtGui/QStringListModel>
 #include <QtCore/QHash>
-#include <QtCore/QPointer>
+#include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
 
 // local include
@@ -97,10 +97,10 @@ private:
     monitor *_monitor;
     utilities *_utilities;
     parserManager *_parser;
-    QPointer<QCompleter> _completer;
-    QPointer<QCompleter> _completerVuln;
-    QPointer<QStringListModel> _hostModel;
-    QPointer<QStringListModel> _vulnModel;
+    QWeakPointer<QCompleter> _completer;
+    QWeakPointer<QCompleter> _completerVuln;
+    QWeakPointer<QStringListModel> _hostModel;
+    QWeakPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
     nseManager* _nseManager;
     discoverManager* _discoverManager;

@@ -25,7 +25,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QTextStream>
 #include <QtCore/QList>
-#include <QtCore/QPointer>
+#include <QtCore/QWeakPointer>
 
 // local include
 #include "qprocessthread.h"

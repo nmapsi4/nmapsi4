@@ -25,7 +25,7 @@
 #include <QtNetwork/QHostInfo>
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
-#include <QtCore/QPointer>
+#include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
 // local include
 #include "qprocessthread.h"

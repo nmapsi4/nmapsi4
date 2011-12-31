@@ -114,13 +114,13 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
         // acquire one element from thread counter
         m_threadLimit--;
 
-        QPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
-        m_threadList.push_back(pingTh);
+        QWeakPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
+        m_threadList.push_back(pingTh.data());
 
-        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(pingTh.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
 
-        pingTh->start();
+        pingTh.data()->start();
     }
     else
     {

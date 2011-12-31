@@ -28,18 +28,18 @@ void nmapClass::callSearchHistory()
     }
 
 
-    if (!_hostModel)
+    if (_hostModel.isNull())
     {
         return;
     }
 
-    if (!_completer)
+    if (_completer.isNull())
     {
-        _completer = new QCompleter(_hostModel);
-        _completer->setCompletionRole(QCompleter::InlineCompletion);
-        _completer->setCaseSensitivity(Qt::CaseInsensitive);
-        _completer->setWrapAround(false);
-        hostEdit->setCompleter(_completer);
+        _completer = new QCompleter(_hostModel.data());
+        _completer.data()->setCompletionRole(QCompleter::InlineCompletion);
+        _completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
+        _completer.data()->setWrapAround(false);
+        hostEdit->setCompleter(_completer.data());
     }
 }
 

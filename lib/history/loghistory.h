@@ -30,7 +30,6 @@
 #include <QtCore/QFileInfo>
 #include <QtGui/QComboBox>
 #include <QtCore/QString>
-#include <QtCore/QPointer>
 
 #include "memorytools.h"
 

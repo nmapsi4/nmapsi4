@@ -117,12 +117,12 @@ nmapClass::~nmapClass()
     delete _utilities;
     delete _parser;
     delete progressScan;
-    delete _completer;
-    delete _completerVuln;
+    delete _completer.data();
+    delete _completerVuln.data();
     delete _vulnerability;
     delete _nseManager;
-    delete _hostModel;
-    delete _vulnModel;
+    delete _hostModel.data();
+    delete _vulnModel.data();
     delete bW;
     delete cW;
     delete menuSetup->menu();

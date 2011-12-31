@@ -171,16 +171,16 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     parameters.append(hostname); // add hostname
 
     // start scan Thread
-    QPointer<QProcessThread> thread = new QProcessThread("nmap",parameters);
-    m_scanHashList.insert(hostname,thread);
+    QWeakPointer<QProcessThread> thread = new QProcessThread("nmap",parameters);
+    m_scanHashList.insert(hostname,thread.data());
     // read current data scan from the thread
-    connect(thread, SIGNAL(flowFromThread(QString,QString)),
+    connect(thread.data(), SIGNAL(flowFromThread(QString,QString)),
             this, SLOT(readFlowFromThread(QString,QString)));
     // read scan data return
-    connect(thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+    connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(scanFinisced(QStringList,QByteArray,QByteArray)));
     // start scan
-    thread->start();
+    thread.data()->start();
 }
 
 void monitor::startLookup(const QString hostname, LookupType option)

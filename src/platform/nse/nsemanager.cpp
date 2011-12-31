@@ -123,10 +123,10 @@ void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 
         m_thread = new QProcessThread("nmap",parameters_);
 
-        connect(m_thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(m_thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
-        m_thread->start();
+        m_thread.data()->start();
     }
     else
     {
@@ -150,19 +150,19 @@ void nseManager::requestNseScriptHelp()
 
     m_threadScript = new QProcessThread("nmap",parameters_);
 
-    connect(m_threadScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+    connect(m_threadScript.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
 
-    m_threadScript->start();
+    m_threadScript.data()->start();
 }
 
 void nseManager::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
 {
     Q_UNUSED(errors);
     // show help result for nse
-    m_thread->quit();
-    m_thread->wait();
-    delete m_thread;
+    m_thread.data()->quit();
+    m_thread.data()->wait();
+    delete m_thread.data();
 
     QString result_(result);
     QTextDocument *document = new QTextDocument(result_);
@@ -178,20 +178,20 @@ void nseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     Q_UNUSED(errors);
     Q_UNUSED(parameters);
     // show help result for nse
-    m_threadScript->quit();
-    m_threadScript->wait();
-    delete m_threadScript;
+    m_threadScript.data()->quit();
+    m_threadScript.data()->wait();
+    delete m_threadScript.data();
 
     QString result_(result);
 
-    if (m_documentScript)
+    if (!m_documentScript.isNull())
     {
         qDebug() << "DEBUG::ScriptNse delete document";
-        delete m_documentScript;
+        delete m_documentScript.data();
     }
 
     m_documentScript = new QTextDocument(result_);
-    m_ui->textScriptHelp->setDocument(m_documentScript);
+    m_ui->textScriptHelp->setDocument(m_documentScript.data());
 }
 
 void nseManager::nseTreeDefaultValue()

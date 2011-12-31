@@ -36,11 +36,14 @@ void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
     m_hostNameLocal = hostname;
     command << hostname;
     m_elemObjUtil = objElem;
-    QPointer<QProcessThread> m_th = new QProcessThread("dig",command);
-    m_threadList.push_back(m_th);
-    m_th->start();
-    connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+
+    QWeakPointer<QProcessThread> m_th = new QProcessThread("dig",command);
+    m_threadList.push_back(m_th.data());
+
+    connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
       this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));
+
+    m_th.data()->start();
 }
 
 void digManager::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
