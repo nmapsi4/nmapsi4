@@ -29,9 +29,8 @@ CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
 ADD_CUSTOM_TARGET( uninstall
   "${CMAKE_COMMAND}" -P "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake" )
 
-message("------------------------------------------------")
+message("-------------------------------------------------------------------")
 message(" Required for build:   qt4-dev (>>= 4.6) ")
-message(" Required for runtime: nmap ( >= 5.51 ) with nping for discovery tool")
-message(" Recommends for runtime: dig ")
-message("------------------------------------------------")
+message(" Required for runtime: nmap ( >= 5.51 ), nping (nmap >= 5.51), dig")
+message("-------------------------------------------------------------------")
 
