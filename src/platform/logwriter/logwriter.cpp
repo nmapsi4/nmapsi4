@@ -199,15 +199,15 @@ void logWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "<title>" + hostName + "</title>";
     // css Style
     htmlPage += "<style type=\"text/css\">";
-    htmlPage += ".head { height:20px; width:695px; background: #ccc; color: #000; float: left; padding: 5px; }";
-    htmlPage += ".sectionHead { height:20px; width:695px; background: #ccc; color: #000; float: left; padding: 5px; }";
-    htmlPage += ".container { width:700px; background: #82b9ed; color: #000; float: left; padding: 2px; }";
-    htmlPage += ".title { height:20px; width:690px; background: #82b9ed; color: #000; float: left; padding: 5px; }";
-    htmlPage += ".result { width:690px; background: #fff; color: #000; float: left; padding: 5px; }";
-    htmlPage += ".space { height: 20px; width:700px; background: #fff; float: left; }";
-    htmlPage += "</style>";
+    htmlPage += ".head { width:700px; background: #ccc; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".sectionHead { width:700px; background: #ccc; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".container { width:700px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".title { width:695px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".result { width:695px; background: #fff; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".space { width:700px; background: #fff; float: left; }";
+    htmlPage += "</style></head>";
     //Html core
-    htmlPage += "</style></head><body>";
+    htmlPage += "<body>";
     // hostname
     htmlPage += "<div class=\"head\"><b>Scan parameters:</b> ";
     htmlPage += m_pObject->getParameters();
@@ -256,7 +256,7 @@ void logWriter::writeHtmlLogFormat(const QString& path)
         htmlPage += token + "<br/>\n";
     }
     htmlPage += "</div></div>";
-    //htmlPage += "<div class=\"space\">&nbsp;</div>";
+    htmlPage += "<div class=\"space\">&nbsp;</div>";
 
     // Show Nss Info
     htmlPage += "<div class=\"sectionHead\"><b>Nse result</b></div>";
