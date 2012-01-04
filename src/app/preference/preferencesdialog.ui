@@ -230,12 +230,17 @@
              <widget class="QComboBox" name="comboLogType">
               <item>
                <property name="text">
-                <string>Fancy log</string>
+                <string>Fancy format</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Nmap raw log</string>
+                <string>Nmap raw format</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Html format</string>
                </property>
               </item>
              </widget>

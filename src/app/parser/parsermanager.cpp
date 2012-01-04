@@ -767,8 +767,8 @@ void parserManager::callSaveSingleLogWriter()
     const QString& path = QFileDialog::getSaveFileName(
                               this,
                               tr("Save Log"),
-                              QDir::homePath() + QDir::toNativeSeparators("/") + ".log",
-                              tr("Log (*.log)")
+                              QDir::homePath() + QDir::toNativeSeparators("/"),
+                              tr("Log (*.log);;Html (*.html *.htm)")
                           );
 
     if (!path.isEmpty())

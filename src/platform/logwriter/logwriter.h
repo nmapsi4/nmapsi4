@@ -49,13 +49,15 @@ public:
 private:
     enum LogType {
         FancyLog,
-        RawLog
+        RawLog,
+        HtmlLog
     };
 
     parserObj* m_pObject;
 
-    void writeRawLog(const QString& path);
-    void writeFancyLog(const QString& path);
+    void writeRawLogFormat(const QString& path);
+    void writeFancyLogFormat(const QString& path);
+    void writeHtmlLogFormat(const QString& path);
 };
 
 #endif // LOGWRITER_H
