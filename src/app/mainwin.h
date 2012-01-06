@@ -130,7 +130,6 @@ private slots:
     void updateMenuBar();
     void updateIconsBox();
     void callScanH();
-    void callParFromBook();
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
     //update and log slots

@@ -39,6 +39,7 @@ SET(SOURCES_CPP
                 app/profiler/profilerdialog.cpp
                 app/restoreDefaultValues.cpp
                 app/loadDefaultProfile.cpp
+                app/bookmarkcallevents.cpp
                 app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
@@ -56,7 +57,6 @@ SET(SOURCES_CPP
                 platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookupmanager.cpp
 		platform/dig/digmanager.cpp
-                platform/bookmarks/bookCalls.cpp
 		platform/nse/nsemanager.cpp
 		platform/discover/discover.cpp
 		platform/discover/discovermanager.cpp

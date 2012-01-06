@@ -121,16 +121,15 @@ void profilerManager::exit()
 {
     if (!profileNameLine->text().isEmpty())
     {
-        // TODO: save profile to bookmark
         QString parameters(buildExtensions().join(" "));
         qDebug() << "Profiler::Parameters:: " << parameters;
 
-        // TODO: save profile into history
-        //emit doneParBook(profileNameLine->text(), parameters);
+        emit doneParBook(profileNameLine->text(), parameters);
         close();
     }
     else
     {
+        // FIXME: show message for empty name
         qWarning() << "Please enter profile name";
     }
 }

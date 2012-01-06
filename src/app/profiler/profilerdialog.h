@@ -50,6 +50,9 @@ private:
     void resetOptions();
     void createQList();
 
+signals:
+    void doneParBook(const QString profileName, const QString profilePar);
+
 private slots:
     void optionListUpdate();
     void update_portCombo();

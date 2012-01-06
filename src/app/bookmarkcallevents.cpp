@@ -168,20 +168,6 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
     loadScanProfile();
 }
 
-void nmapClass::callParFromBook()
-{
-    if(!frameAdv->isVisible())
-    {
-        frameAdv->setVisible(true);
-    }
-
-     if(treeBookPar->currentItem())
-     {
-        comboAdv->clear();
-        comboAdv->insertItem(0, treeBookPar->currentItem()->text(0));
-    }
-}
-
 void nmapClass::slotHostSelected()
 {
     if(comboHostBook->currentIndex())

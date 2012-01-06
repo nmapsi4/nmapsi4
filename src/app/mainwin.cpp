@@ -118,6 +118,9 @@ void nmapClass::startProfile_ui()   // start preference UI
 void nmapClass::startProfilerManager()
 {
     profilerManager pManger(this);
+    connect(&pManger, SIGNAL(doneParBook(QString,QString)),
+            this, SLOT(saveBookMarksPar(QString,QString)));
+
     pManger.exec();
 }
 
