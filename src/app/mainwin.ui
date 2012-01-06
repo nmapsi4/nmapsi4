@@ -2534,7 +2534,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../mainwin.qrc">
-     <normaloff>:/images/images/window_new.png</normaloff>:/images/images/window_new.png</iconset>
+     <normaloff>:/images/images/edit-clear-list.png</normaloff>:/images/images/edit-clear-list.png</iconset>
    </property>
    <property name="text">
     <string>Clear History</string>
@@ -2735,7 +2735,7 @@
      <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
    </property>
    <property name="text">
-    <string> Section Vulnerabilities</string>
+    <string>Section Vulnerabilities</string>
    </property>
   </action>
   <action name="actionDonate_Money">
@@ -2786,7 +2786,7 @@
   <action name="actionNew_Profile">
    <property name="icon">
     <iconset resource="../../mainwin.qrc">
-     <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
+     <normaloff>:/images/images/document-new.png</normaloff>:/images/images/document-new.png</iconset>
    </property>
    <property name="text">
     <string>New Profile</string>
@@ -2795,7 +2795,7 @@
   <action name="actionNew_ProfileMenu">
    <property name="icon">
     <iconset resource="../../mainwin.qrc">
-     <normaloff>:/images/images/tool.png</normaloff>:/images/images/tool.png</iconset>
+     <normaloff>:/images/images/document-new.png</normaloff>:/images/images/document-new.png</iconset>
    </property>
    <property name="text">
     <string>New Profile</string>

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/edit-clear-list.png</file>
+    <file>images/document-new.png</file>
     <file>images/document-preview-archive.png</file>
     <file>images/code-function.png</file>
     <file>images/code-typedef.png</file>
