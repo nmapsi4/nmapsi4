@@ -109,6 +109,23 @@ void nmapClass::initObject()
     setNmapsiSlot();
 }
 
+void nmapClass::startProfile_ui()   // start preference UI
+{
+    preferencesDialog dialogPreference_(this);
+    connect(&dialogPreference_, SIGNAL(accepted()),
+            this, SLOT(checkProfile()));
+
+    dialogPreference_.exec();
+}
+
+void nmapClass::exit()
+{
+    _monitor->clearHostMonitor();
+    // Save Ui settings
+    saveUiSettings();
+    close();
+}
+
 nmapClass::~nmapClass()
 {
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);

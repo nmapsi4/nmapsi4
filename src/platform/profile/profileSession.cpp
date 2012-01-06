@@ -19,11 +19,6 @@
 
 #include "mainwin.h"
 
-void nmapClass::readProfile()
-{
-    checkProfile();
-}
-
 void nmapClass::checkProfile()
 {
 
@@ -43,7 +38,7 @@ void nmapClass::checkProfile()
         settings.setValue("globalProfile", false); // default value
         removeGlobalButton->setEnabled(false);
 
-        Profile = settings.value("configProfile", "none").toString();
+        QString Profile = settings.value("configProfile", "none").toString();
 
         if (!Profile.compare("none"))
         {
@@ -64,19 +59,19 @@ void nmapClass::checkProfile()
 
         if (Profile.contains("quick"))
         {
-            this->setQuickProfile();
+            setQuickProfile();
         }
         else if (Profile.contains("normal"))
         {
-            this->setNormalProfile();
+            setNormalProfile();
         }
         else if (Profile.contains("fullversion"))
         {
-            this->setFullVersionProfile();
+            setFullVersionProfile();
         }
         else if (Profile.contains("quickversion"))
         {
-            this->setQuickVersionProfile();
+            setQuickVersionProfile();
         }
     }
 

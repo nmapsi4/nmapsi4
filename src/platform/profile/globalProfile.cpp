@@ -20,43 +20,43 @@
 #include "mainwin.h"
 
 
-void nmapClass::restoreGlobalProfile() 
+void nmapClass::restoreGlobalProfile()
 {
     // global profile options
     QSettings settings("nmapsi4", "nmapsi4_gprofile");
-    
+
     // **************** Start Scan section ********************************
-    //  user mode 
+    //  user mode
     rpcBox->setChecked(settings.value("scan/rpc_scan").toBool());
     notpingBox->setChecked(settings.value("scan/dont_ping").toBool());
     versionBox->setChecked(settings.value("scan/version_probe").toBool());
     portCombo->setCurrentIndex(settings.value("scan/port_range").toInt());
     int comboScanIndex_ = settings.value("scan/scan_type").toInt();
-    
-    if (!uid) 
+
+    if (!uid)
     {
         comboScan->setCurrentIndex(comboScanIndex_);
-    } 
-    else if (comboScanIndex_ < 4) 
+    }
+    else if (comboScanIndex_ < 4)
     {
         comboScan->setCurrentIndex(comboScanIndex_);
-    } 
-    else 
+    }
+    else
     {
         // isn't admin and not valid profile
         comboScan->setCurrentIndex(0);
     }
-    
+
     portEdit->setText(settings.value("scan/ports_value").toString());
     bounceEdit->setText(settings.value("scan/bounce_host").toString());
-    
+
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         checkOS->setChecked(settings.value("scan/os_detection").toBool());
     }
     // **************** End Scan section **********************************
-    
+
     // **************** Start Options section *****************************
     //  user mode
     comboVerbosity->setCurrentIndex(settings.value("options/verbosity_combo").toInt());
@@ -68,7 +68,7 @@ void nmapClass::restoreGlobalProfile()
     OlineDevice->setText(settings.value("options/specificdevice_line").toString());
     lineEditSpoof->setText(settings.value("options/spoofaddress_line").toString());
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         checkFrag->setChecked(settings.value("options/fragmentation").toBool());
         checkDecoy->setChecked(settings.value("options/decoy_check").toBool());
@@ -77,7 +77,7 @@ void nmapClass::restoreGlobalProfile()
         lineSourcePort->setText(settings.value("options/sourceport_line").toString());
     }
     // **************** End Options section **********************************
-    
+
     // **************** Start Discover section *****************************
     //  user mode
     checkTcpPing->setChecked(settings.value("discover/tcpack_ping").toBool());
@@ -85,7 +85,7 @@ void nmapClass::restoreGlobalProfile()
     checkTcpSyn->setChecked(settings.value("discover/tcpsyn_ping").toBool());
     lineSynPing->setText(settings.value("discover/tcpsyn_line").toString());
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         checkIcmpTimestamp->setChecked(settings.value("discover/icmp_timestamp").toBool());
         checkIcmpNetmask->setChecked(settings.value("discover/icmp_netmask").toBool());
@@ -94,9 +94,9 @@ void nmapClass::restoreGlobalProfile()
         lineUdpPing->setText(settings.value("discover/udpping_line").toString());
     }
     // **************** End Discover section **********************************
-    
+
     // **************** Start Timing section *****************************
-    //  user mode 
+    //  user mode
     TcheckIpv4ttl->setChecked(settings.value("timing/ipv4_ttl").toBool());
     spinBoxIpv4ttl->setValue(settings.value("timing/ipv4ttl_spinbox").toInt());
     TcheckMinPar->setChecked(settings.value("timing/min_parallel").toBool());
@@ -118,16 +118,16 @@ void nmapClass::restoreGlobalProfile()
 
 }
 
-void nmapClass::saveGlobalProfile() 
+void nmapClass::saveGlobalProfile()
 {
     globalProfile = true;
-    
+
     // global profile options
     QSettings settings("nmapsi4", "nmapsi4_gprofile");
     removeGlobalButton->setEnabled(true);
-    
+
     // **************** Start Scan section ********************************
-    //  user mode 
+    //  user mode
     settings.setValue("scan/rpc_scan", rpcBox->isChecked());
     settings.setValue("scan/dont_ping", notpingBox->isChecked());
     settings.setValue("scan/version_probe", versionBox->isChecked());
@@ -136,14 +136,14 @@ void nmapClass::saveGlobalProfile()
     settings.setValue("scan/ports_value", portEdit->text());
     settings.setValue("scan/bounce_host", bounceEdit->text());
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         settings.setValue("scan/os_detection", checkOS->isChecked());
     }
     // **************** End Scan section **********************************
-    
+
     // **************** Start Options section *****************************
-    //  user mode 
+    //  user mode
     settings.setValue("options/verbosity_combo", comboVerbosity->currentIndex());
     settings.setValue("options/dnsresolution_combo", comboDNSResolv->currentIndex());
     settings.setValue("options/orderdport_checl", checkOrdered->isChecked());
@@ -153,7 +153,7 @@ void nmapClass::saveGlobalProfile()
     settings.setValue("options/specificdevice_line", OlineDevice->text());
     settings.setValue("options/spoofaddress_line", lineEditSpoof->text());
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         settings.setValue("options/fragmentation", checkFrag->isChecked());
         settings.setValue("options/decoy_check", checkDecoy->isChecked());
@@ -162,15 +162,15 @@ void nmapClass::saveGlobalProfile()
         settings.setValue("options/sourceport_line", lineSourcePort->text());
     }
     // **************** End Options section **********************************
-    
+
     // **************** Start Discover section *****************************
-    //  user mode 
+    //  user mode
     settings.setValue("discover/tcpack_ping", checkTcpPing->isChecked());
     settings.setValue("discover/tcpack_line", lineTcpPing->text());
     settings.setValue("discover/tcpsyn_ping", checkTcpSyn->isChecked());
     settings.setValue("discover/tcpsyn_line", lineSynPing->text());
     //  admin mode
-    if (!uid) 
+    if (!uid)
     {
         settings.setValue("discover/icmp_timestamp", checkIcmpTimestamp->isChecked());
         settings.setValue("discover/icmp_netmask", checkIcmpNetmask->isChecked());
@@ -179,9 +179,9 @@ void nmapClass::saveGlobalProfile()
         settings.setValue("discover/udpping_line", lineUdpPing->text());
     }
     // **************** End Discover section **********************************
-    
+
     // **************** Start Timing section *****************************
-    //  user mode 
+    //  user mode
     settings.setValue("timing/ipv4_ttl", TcheckIpv4ttl->isChecked());
     settings.setValue("timing/ipv4ttl_spinbox", spinBoxIpv4ttl->value());
     settings.setValue("timing/min_parallel", TcheckMinPar->isChecked());
@@ -202,13 +202,13 @@ void nmapClass::saveGlobalProfile()
     // **************** End Timing section **********************************
 }
 
-void nmapClass::removeGlobalProfile() 
+void nmapClass::removeGlobalProfile()
 {
     QSettings settings("nmapsi4", "nmapsi4");
     removeGlobalButton->setEnabled(false);
     globalProfile = false;
     settings.setValue("globalProfile",globalProfile);
-    readProfile();
+    checkProfile();
 }
 
 

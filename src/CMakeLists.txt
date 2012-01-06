@@ -38,11 +38,10 @@ SET(SOURCES_CPP
                 app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
-                app/resizeNmapsi4.cpp
-                app/mainWinTools.cpp
+                app/resizeuievents.cpp
+                app/defaultuisettings.cpp
                 app/actions.cpp
                 app/saveUiSettings.cpp
-                app/startupTools.cpp
                 app/mainScan.cpp
                 app/mainwin.cpp
                 app/main.cpp

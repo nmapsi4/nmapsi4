@@ -78,7 +78,6 @@ private:
     QListWidgetItem *discoverW;
     QListWidgetItem *fileW;
     QListWidgetItem *timingW;
-    QString Profile;
     bool globalProfile;
     bool flag_state;
     bool savePos;
@@ -110,7 +109,6 @@ private:
     QStringList check_extensions();
     QStringList loadExtensions();
     void resetOptions();
-    void checkProfile();
     void initGUI();
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     void setTreeWidgetValues();
@@ -154,7 +152,7 @@ private slots:
     void updateScanCounter(int hostNumber);
     //update and log slots
     void startProfile_ui();
-    void readProfile();
+    void checkProfile();
     void updateFontHost();
     void callSearchHistory();
     void saveBookMarks();
