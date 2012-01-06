@@ -9,6 +9,7 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src/app/parser/
     ${CMAKE_SOURCE_DIR}/src/app/monitor/
     ${CMAKE_SOURCE_DIR}/src/app/preference/
+    ${CMAKE_SOURCE_DIR}/src/app/profiler/
     ${CMAKE_SOURCE_DIR}/src/common/
     ${CMAKE_SOURCE_DIR}/src/platform/dig/
     ${CMAKE_SOURCE_DIR}/src/platform/discover/
@@ -35,6 +36,9 @@ SET(SOURCES_CPP
 		app/monitor/monitor.cpp
 		app/monitor/details.cpp
 		app/preference/preferencesdialog.cpp
+                app/profiler/profilerdialog.cpp
+                app/restoreDefaultValues.cpp
+                app/loadDefaultProfile.cpp
                 app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
@@ -48,9 +52,6 @@ SET(SOURCES_CPP
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
 		common/qprocessthread.cpp
-		platform/profile/globalProfile.cpp
-		platform/profile/profileSession.cpp
-		platform/profile/defaultProfile.cpp
 		platform/vulnerability/addvulnerabilityurl.cpp
                 platform/vulnerability/vulnerability.cpp
 		platform/lookup/lookupmanager.cpp
@@ -81,12 +82,14 @@ SET(SOURCES_H app/mainwin.h
 	app/preference/preferencesdialog.h
 	app/monitor/details.h
         app/monitor/monitor.h
+        app/profiler/profilerdialog.h
 	app/parser/parsermanager.h)
 
 SET(SOURCES_UI app/mainwin.ui
 	platform/vulnerability/addvulnerabilityurl.ui
 	platform/bookmarks/addparameterstobookmark.ui
 	app/preference/preferencesdialog.ui
+        app/profiler/profilerdialog.ui
 	app/monitor/details.ui)
 
 SET(RESOURCES_QRC ../mainwin.qrc)

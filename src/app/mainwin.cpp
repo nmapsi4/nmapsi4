@@ -59,7 +59,6 @@ void nmapClass::initObject()
     // Set default properties
     setDefaultAction();
     checkProfile();
-    optionListCreate();
 
     // FIXME:: active hostEdit by default
     hostEdit->setEnabled(true);
@@ -72,8 +71,6 @@ void nmapClass::initObject()
     // load history items
     loadHistoryDefault();
     updateCompleter();
-    // restore value with uid check
-    rootMode();
 
 #ifdef Q_WS_WIN
     // lookup fails on MS Windows
@@ -96,7 +93,7 @@ void nmapClass::initObject()
     updateMenuBar();
 
     // load quick combo items
-    updateComboPar();
+    loadScanProfile();
     updateComboBook();
     _vulnerability->updateComboWebV();
 
@@ -116,6 +113,12 @@ void nmapClass::startProfile_ui()   // start preference UI
             this, SLOT(checkProfile()));
 
     dialogPreference_.exec();
+}
+
+void nmapClass::startProfilerManager()
+{
+    profilerManager pManger(this);
+    pManger.exec();
 }
 
 void nmapClass::exit()

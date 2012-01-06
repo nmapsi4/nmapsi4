@@ -27,7 +27,6 @@ void nmapClass::callSearchHistory()
         action_Add_BookmarkToolBar->setEnabled(true);
     }
 
-
     if (_hostModel.isNull())
     {
         return;
@@ -129,7 +128,7 @@ void nmapClass::deleteBookMarkPar()
     }
 
     delete history_;
-    updateComboPar();
+    loadScanProfile();
 }
 
 void nmapClass::startAddParBook_ui()
@@ -166,7 +165,7 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
     BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
     history_->updateBookMarks();
     delete history_;
-    updateComboPar();
+    loadScanProfile();
 }
 
 void nmapClass::callParFromBook()
@@ -181,36 +180,6 @@ void nmapClass::callParFromBook()
         comboAdv->clear();
         comboAdv->insertItem(0, treeBookPar->currentItem()->text(0));
     }
-}
-
-void nmapClass::slotParSelected()
-{
-   // insert profile from comboPar to comboAdv
-   int parIndex = comboPar->currentIndex();
-
-   if(parIndex)
-   {
-        // if not 0
-        QHash<QString, QString> tmpMap_ = defaultScanProfile();
-        comboAdv->clear();
-        if (parIndex <= tmpMap_.size())
-        {
-            // call static default profile for check
-            comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
-        }
-        else
-        {
-            // saved user profile
-            QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
-            comboAdv->insertItem(0, resultList_[0]->text(0));
-        }
-   }
-   else
-   {
-        // if 0 no action, reload extension
-        comboAdv->clear();
-        comboAdv->insertItem(0, check_extensions().join(" "));
-   }
 }
 
 void nmapClass::slotHostSelected()

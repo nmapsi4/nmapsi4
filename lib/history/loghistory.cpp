@@ -20,11 +20,19 @@
 #include "loghistory.h"
 
 logHistory::logHistory(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize)
-    : logTree(0)
 {
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
 
     logTree = treeLog;
+    configTag = ConfigTag;
+    configTagTime = ConfigTagTime;
+    m_cacheSize = cacheSize;
+}
+
+// cache host contructor
+logHistory::logHistory(const QString ConfigTag, const QString ConfigTagTime, int cacheSize)
+    : logTree(0)
+{
     configTag = ConfigTag;
     configTagTime = ConfigTagTime;
     m_cacheSize = cacheSize;
@@ -40,7 +48,7 @@ logHistory::logHistory(const QString ConfigTag, int cacheSize)
 
 logHistory::~logHistory()
 {
-    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(ItemListHistory);
+    //memory::freelist<QTreeWidgetItem*>::itemDeleteAll(ItemListHistory);
 }
 
 const QStringList logHistory::historyReadUrl()
@@ -159,7 +167,6 @@ void logHistory::updateLogHistory()
 
 void logHistory::updateBookMarks()
 {
-    QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
 
@@ -168,8 +175,8 @@ void logHistory::updateBookMarks()
     logTree->clear();
     logTree->setIconSize(QSize(22, 22));
 
-    if (!urlList.isEmpty() && urlList.first().compare("NULL")
-        && urlListTime.first().compare("NULL"))
+    if (!urlList.isEmpty() && !urlList.first().contains("NULL")
+        && !urlListTime.first().contains("NULL"))
     {
         short index = 0;
         foreach(const QString& item, urlList)
@@ -181,15 +188,6 @@ void logHistory::updateBookMarks()
             historyItem->setText(1, urlListTime[index]);
             index++;
         }
-    }
-    else if (!urlListTime.first().compare("NULL") && urlList.first().compare("NULL"))
-    {
-        history = new QTreeWidgetItem(logTree);
-        history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
-        ItemListHistory.push_front(historyItem);
-        history->setText(0, QApplication::translate("logHistory",
-                         "Your configuration file is too old, please delete it",
-                         0, QApplication::UnicodeUTF8));
     }
 }
 

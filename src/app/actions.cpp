@@ -214,6 +214,7 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionSection_Discover);
     menu->addSeparator();
     menu->addAction(actionProfile);
+    menu->addAction(actionNew_Profile);
     menu->addSeparator();
     menu->addMenu(menu_Help);
     menu->addSeparator();

@@ -24,56 +24,7 @@ void nmapClass::checkProfile()
 
     QSettings settings("nmapsi4", "nmapsi4");
 
-    // saved global profile
-    globalProfile = settings.value("globalProfile", false).toBool();
-    if (globalProfile)
-    {
-        // call restore global profile
-        qDebug() << "DEBUG:: Set global profile";
-        restoreGlobalProfile();
-    }
-    else
-    {
-        qDebug() << "DEBUG:: Set local profile";
-        settings.setValue("globalProfile", false); // default value
-        removeGlobalButton->setEnabled(false);
-
-        QString Profile = settings.value("configProfile", "none").toString();
-
-        if (!Profile.compare("none"))
-        {
-            settings.setValue("configProfile", "normal"); // default value
-            Profile = settings.value("configProfile", "none").toString();
-        }
-
-        if ((Profile.contains("fullversion") || Profile.contains("quickversion")) && uid)
-        {
-            Profile = "normal"; // reset profile
-            settings.setValue("configProfile", Profile);
-        }
-        else if (!Profile.contains("fullversion") && !Profile.contains("quickversion") && !uid)
-        {
-            Profile = "fullversion"; // reset profile
-            settings.setValue("configProfile", Profile);
-        }
-
-        if (Profile.contains("quick"))
-        {
-            setQuickProfile();
-        }
-        else if (Profile.contains("normal"))
-        {
-            setNormalProfile();
-        }
-        else if (Profile.contains("fullversion"))
-        {
-            setFullVersionProfile();
-        }
-        else if (Profile.contains("quickversion"))
-        {
-            setQuickVersionProfile();
-        }
-    }
+    // TODO: load saved profile or simple default
 
     QString pos = settings.value("savePos", "none").toString();
 

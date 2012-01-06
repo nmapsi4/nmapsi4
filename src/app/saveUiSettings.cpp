@@ -38,7 +38,6 @@ void nmapClass::saveUiSettings()
     settings.setValue("TraceEnabled", TraceEnabled);
     settings.setValue("splitterSizes", cW->saveState());
     settings.setValue("splitterSizesRight", bW->saveState());
-    settings.setValue("globalProfile", globalProfile); // default value
     settings.setValue("nseComboScript", nseComboScript->currentIndex()); // default value
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
 

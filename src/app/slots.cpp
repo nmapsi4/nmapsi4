@@ -21,22 +21,6 @@
 
 void nmapClass::setNmapsiSlot()
 {
-
-    connect(portCombo, SIGNAL(activated(QString)),
-            this, SLOT(update_portCombo()));  // portCombo slot
-    connect(comboScan, SIGNAL(activated(QString)),
-            this, SLOT(update_scanCombo()));  // comboScan slot
-    connect(checkInputFile, SIGNAL(toggled(bool)),
-            this, SLOT(update_inputcheck()));  // input check
-
-    // discover
-    connect(checkTcpPing, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
-    connect(checkTcpSyn, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
-    connect(checkUdpPing, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
-
     // action slot
     connect(action_Quit, SIGNAL(triggered()),
             this, SLOT(exit()));    // file action menu
@@ -54,48 +38,18 @@ void nmapClass::setNmapsiSlot()
             hostEdit, SLOT(clearEditText()));
     connect(action_Scan_2, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
-    connect(buttonBrowser, SIGNAL(clicked()),
-            this, SLOT(openBrowser()));    // Input file Browser slot
-
-    // Timing Slot (Enable and Disable spinBox)
-    connect(TcheckIpv4ttl, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMinPar, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMaxPar, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckInitRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMinRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMaxRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckHostTime, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckScanDelay, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-
-    //Options
-    connect(checkBoxDevice, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
-    connect(checkDecoy, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
-    connect(checkSpoof, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
-    connect(checkSourcePort, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
-    connect(comboVerbosity, SIGNAL(activated(QString)),
-            this, SLOT(update_comboVerbosity()));
 
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startProfile_ui()));
+    connect(actionNew_Profile, SIGNAL(triggered()),
+            this, SLOT(startProfilerManager()));
+    connect(actionNew_ProfileMenu, SIGNAL(triggered()),
+            this, SLOT(startProfilerManager()));
 
     connect(actionFullS, SIGNAL(triggered()),
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
-    connect(optionAccept, SIGNAL(clicked()),
-            this, SLOT(resetPar()));
     connect(Bdetails, SIGNAL(clicked()),
             this, SLOT(detailsOptions()));
     connect(Bnss, SIGNAL(clicked()),
@@ -104,11 +58,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(bookOptions()));
     connect(BBPar, SIGNAL(clicked()),
             this, SLOT(bookOptionsPar()));
-
-    connect(globalButton, SIGNAL(clicked()),
-            this, SLOT(saveGlobalProfile()));
-    connect(removeGlobalButton, SIGNAL(clicked()),
-            this, SLOT(removeGlobalProfile()));
     connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuServiceMain()));
 

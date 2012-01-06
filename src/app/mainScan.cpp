@@ -21,7 +21,7 @@
 
 void nmapClass::startScan()
 {
-    if (hostEdit->currentText().isEmpty() && lineInputFile->text().isEmpty())
+    if (hostEdit->currentText().isEmpty())
     {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;

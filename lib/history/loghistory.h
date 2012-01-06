@@ -43,6 +43,7 @@ class logHistory
 
 public:
     logHistory(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
+    logHistory(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
     logHistory(const QString ConfigTag, int cacheSize);
     ~logHistory();
     void updateLogHistory();

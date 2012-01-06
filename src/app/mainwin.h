@@ -48,6 +48,7 @@
 #include "nsemanager.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
+#include "profilerdialog.h"
 
 // define class namespace
 using namespace memory;
@@ -73,12 +74,7 @@ public:
 
 private:
     int uid;
-    QListWidgetItem *scanW;
-    QListWidgetItem *toolW;
-    QListWidgetItem *discoverW;
-    QListWidgetItem *fileW;
-    QListWidgetItem *timingW;
-    bool globalProfile;
+    int hostCache;
     bool flag_state;
     bool savePos;
     bool saveSize;
@@ -88,7 +84,6 @@ private:
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
-    int hostCache;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QSplitter *cW;
     QSplitter *bW;
@@ -103,8 +98,8 @@ private:
     vulnerability* _vulnerability;
     nseManager* _nseManager;
     discoverManager* _discoverManager;
+
     void preScanLookup(const QString hostname);
-    void rootMode();
     void setNmapsiSlot();
     QStringList check_extensions();
     QStringList loadExtensions();
@@ -113,7 +108,7 @@ private:
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     void setTreeWidgetValues();
     void createBar();
-    void updateComboPar();
+    void loadScanProfile();
     void updateComboBook();
     void restoreGlobalProfile();
     QHash<QString, QString> defaultScanProfile() const;
@@ -124,24 +119,12 @@ private:
     void setDefaultSplitter();
     void defaultComboValues();
     void createToolButtonSetup();
-    void setQuickProfile();
-    void setNormalProfile();
-    void setFullVersionProfile();
-    void setQuickVersionProfile();
     void updateCompleter();
 
 private slots:
     void initObject();
     void startScan();
     void exit();
-    void update_portCombo();
-    void update_scanCombo();
-    void update_inputcheck();
-    void update_discover();
-    void update_timing();
-    void update_options();
-    void update_comboVerbosity();
-    void openBrowser();
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
@@ -159,8 +142,6 @@ private slots:
     void saveBookMarksPar(const QString profileName, const QString profilePar);
     void deleteBookMark();
     void deleteBookMarkPar();
-    void optionListCreate();
-    void optionListUpdate();
     void updateSezScan();
     void updateSezLog();
     void updateSezVuln();
@@ -182,10 +163,8 @@ private slots:
     void slotParSelected();
     void slotHostSelected();
     void saveUiSettings();
-    // global profile
-    void saveGlobalProfile();
-    void removeGlobalProfile();
     void startAddParBook_ui();
+    void startProfilerManager();
 };
 
 #endif

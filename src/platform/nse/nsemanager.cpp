@@ -270,9 +270,8 @@ void nseManager::nseTreeActiveItem()
 
     if (m_ui->_collectionsButton.value("nss-act")->isChecked())
     {
-        m_ui->comboAdv->clear();
         m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        m_ui->comboAdv->insertItem(0, m_ui->check_extensions().join(" "));
+        m_ui->slotParSelected();
     }
 }
 
@@ -294,9 +293,8 @@ void nseManager::nseTreeRemoveItem()
 
     if (m_ui->_collectionsButton.value("nss-act")->isChecked())
     {
-        m_ui->comboAdv->clear();
         m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        m_ui->comboAdv->insertItem(0, m_ui->check_extensions().join(" "));
+        m_ui->slotParSelected();
     }
 }
 

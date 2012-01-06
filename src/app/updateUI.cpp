@@ -19,293 +19,6 @@
 
 #include "mainwin.h"
 
-void nmapClass::update_portCombo()
-{
-    switch (portCombo->currentIndex())
-    {
-    case 0:
-//    Normal
-        portEdit->setEnabled(false);
-        break;
-    case 1:
-//    All
-        portEdit->setEnabled(false);
-        break;
-    case 2:
-//    Most Important
-        portEdit->setEnabled(false);
-        break;
-    case 3:
-//    Range
-        portEdit->setEnabled(true);
-        break;
-    default:
-        portEdit->setEnabled(false);
-        break;
-    }
-}
-
-
-void nmapClass::update_scanCombo()
-{
-    switch (comboScan->currentIndex())
-    {
-    case 0:
-//    Connect Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 1:
-//    Ping Sweep
-        bounceEdit->setEnabled(false);
-        break;
-    case 2:
-//    Host List
-        bounceEdit->setEnabled(false);
-        break;
-    case 3:
-//    FTP Bounce Attack
-        bounceEdit->setEnabled(true);
-        break;
-    case 4:
-//    Idle Scan
-        bounceEdit->setEnabled(true);
-        break;
-    case 5:
-//    SYN Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 6:
-//    ACK Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 7:
-//    FIN|ACK Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 8:
-//    FIN Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 9:
-//    NULL Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 10:
-//    XMAS Tree Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 11:
-//    TCP Window Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 12:
-//    UDP Ports Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 13:
-//    IP Protocol Scan
-        bounceEdit->setEnabled(false);
-        break;
-    default:
-        bounceEdit->setEnabled(false);
-        break;
-
-    }
-}
-
-void nmapClass::rootMode()
-{
-    if (!uid)
-    { // if root
-        comboScan->addItem(QApplication::translate("nmapClass", "Idle Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "FIN|ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "FIN Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "NULL Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "XMAS Tree Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "TCP Window Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "UDP Ports Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("nmapClass", "IP Protocol Scan", 0, QApplication::UnicodeUTF8));
-
-        comboScan->setCurrentIndex(5);
-
-    }
-    else
-    {
-        checkIcmpEcho->setVisible(false);
-        checkIcmpTimestamp->setVisible(false);
-        checkIcmpNetmask->setVisible(false);
-        checkOS->setVisible(false);
-
-        // discover Udp Ping
-        checkUdpPing->setVisible(false);
-        lineUdpPing->setVisible(false);
-        label_7->setVisible(false);
-
-        // Misc Option
-        checkFrag->setVisible(false);
-        checkDecoy->setVisible(false);
-        lineDecoy->setVisible(false);
-        checkSourcePort->setVisible(false);
-        lineSourcePort->setVisible(false);
-    }
-}
-
-void nmapClass::update_inputcheck()
-{
-    if (checkInputFile->isChecked())
-    {
-        lineInputFile->setEnabled(true);
-        buttonBrowser->setEnabled(true);
-        lineInputFile->clear();
-        hostEdit->clear();
-    }
-    else
-    {
-        lineInputFile->setEnabled(false);
-        buttonBrowser->setEnabled(false);
-        lineInputFile->clear();
-
-        hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        hostEdit->setItemText(0, tr("Insert HostName to scan"));
-    }
-}
-
-void nmapClass::update_discover()
-{
-    if (checkTcpPing->isChecked())
-    {
-        lineTcpPing->setEnabled(true);
-        lineTcpPing->clear();
-    }
-    else
-    {
-        lineTcpPing->setEnabled(false);
-        lineTcpPing->clear();
-    }
-
-    if (checkTcpSyn->isChecked())
-    {
-        lineSynPing->setEnabled(true);
-        lineSynPing->clear();
-    }
-    else
-    {
-        lineSynPing->setEnabled(false);
-        lineSynPing->clear();
-    }
-
-    if (checkUdpPing->isChecked())
-    {
-        lineUdpPing->setEnabled(true);
-        lineUdpPing->clear();
-    }
-    else
-    {
-        lineUdpPing->setEnabled(false);
-        lineUdpPing->clear();
-    }
-}
-
-void nmapClass::update_timing()
-{
-    if (TcheckIpv4ttl->isChecked())
-        spinBoxIpv4ttl->setEnabled(true);
-    else
-        spinBoxIpv4ttl->setEnabled(false);
-
-    if (TcheckMinPar->isChecked())
-        TspinBoxMinP->setEnabled(true);
-    else
-        TspinBoxMinP->setEnabled(false);
-
-    if (TcheckMaxPar->isChecked())
-        spinBoxMaxPar->setEnabled(true);
-    else
-        spinBoxMaxPar->setEnabled(false);
-
-    if (TcheckInitRtt->isChecked())
-        spinBoxInitRtt->setEnabled(true);
-    else
-        spinBoxInitRtt->setEnabled(false);
-
-    if (TcheckMinRtt->isChecked())
-        spinBoxMinRtt->setEnabled(true);
-    else
-        spinBoxMinRtt->setEnabled(false);
-
-    if (TcheckMaxRtt->isChecked())
-        spinBoxMaxRtt->setEnabled(true);
-    else
-        spinBoxMaxRtt->setEnabled(false);
-
-    if (TcheckHostTime->isChecked())
-        spinBoxHostTime->setEnabled(true);
-    else
-        spinBoxHostTime->setEnabled(false);
-
-    if (TcheckScanDelay->isChecked())
-        spinBoxScanDelay->setEnabled(true);
-    else
-        spinBoxScanDelay->setEnabled(false);
-}
-
-void nmapClass::update_options()
-{
-    if (checkBoxDevice->isChecked())
-    {
-        OlineDevice->setEnabled(true);
-    }
-    else
-    {
-        OlineDevice->setEnabled(false);
-        OlineDevice->clear();
-    }
-
-    if (checkDecoy->isChecked())
-    {
-        lineDecoy->setEnabled(true);
-    }
-    else
-    {
-        lineDecoy->setEnabled(false);
-        lineDecoy->clear();
-    }
-
-    if (checkSpoof->isChecked())
-    {
-        lineEditSpoof->setEnabled(true);
-        comboScan->setCurrentIndex(0);
-        notpingBox->setChecked(true);
-        checkBoxDevice->setChecked(true);
-    }
-    else
-    {
-        lineEditSpoof->setEnabled(false);
-        lineEditSpoof->clear();
-        checkBoxDevice->setCheckState(Qt::Unchecked);
-        notpingBox->setChecked(false);
-    }
-
-    if (checkSourcePort->isChecked())
-    {
-        lineSourcePort->setEnabled(true);
-        comboScan->setCurrentIndex(5);
-    }
-    else
-    {
-        lineSourcePort->setEnabled(false);
-        lineSourcePort->clear();
-    }
-}
-
-void nmapClass::update_comboVerbosity()
-{
-    if (comboVerbosity->currentIndex() == 4)
-        QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
-}
-
 void nmapClass::detailsOptions()
 {
     Bdetails->setChecked(true);
@@ -395,20 +108,14 @@ void nmapClass::updateSezScan()
 
     if (!tabScan->isVisible())
     {
-	tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
-	tabUi->setCurrentIndex(0);
-    }
-
-    if (!tabSOpt->isVisible())
-    {
-	tabUi->insertTab(tabUi->count(),tabSOpt,tr("Scan Options"));
-	tabUi->setTabIcon(tabUi->indexOf(tabSOpt),QIcon(QString::fromUtf8(":/images/images/tool.png")));
+        tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
+        tabUi->setCurrentIndex(0);
     }
 
     if (!tabNseOpt->isVisible())
     {
-	tabUi->insertTab(tabUi->count(),tabNseOpt,tr("Nse Options"));
-	tabUi->setTabIcon(tabUi->indexOf(tabNseOpt),QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        tabUi->insertTab(tabUi->count(),tabNseOpt,tr("Nse Options"));
+        tabUi->setTabIcon(tabUi->indexOf(tabNseOpt),QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     }
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
@@ -432,7 +139,6 @@ void nmapClass::updateSezLog()
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
@@ -456,7 +162,6 @@ void nmapClass::updateSezVuln()
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(true);
 
-    tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
@@ -481,7 +186,6 @@ void nmapClass::updateDiscoverVuln()
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(tabSOpt));
     tabUi->removeTab(tabUi->indexOf(tabNseOpt));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
@@ -533,37 +237,8 @@ void nmapClass::setTreeWidgetValues()
 
 void nmapClass::loadDefaultProfile()
 {
-    optionAccept->setVisible(true);
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboAdv->insertItem(0, check_extensions().join(" "));
-}
-
-void nmapClass::resetPar()
-{
-    comboAdv->clear();
-    comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboAdv->insertItem(0, check_extensions().join(" "));
-}
-
-void nmapClass::updateComboPar()
-{
-    comboPar->clear();
-    comboPar->insertItem(0, "Select Profile");
-
-    // value from treeWidget parameters
-    for(int index=0; index < treeBookPar->topLevelItemCount(); index++)
-    {
-        comboPar->insertItem(1, treeBookPar->topLevelItem(index)->text(1));
-    }
-
-    comboPar->insertSeparator(1);
-    // insert default static profile
-    QHash<QString, QString> tmpStaticProfile_ = defaultScanProfile();
-    QHash<QString, QString>::const_iterator i;
-    for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i)
-    {
-	comboPar->insertItem(1, i.key());
-    }
+    comboAdv->insertItem(0, loadExtensions().join(" "));
 }
 
 void nmapClass::updateComboBook()
@@ -656,9 +331,4 @@ void nmapClass::monitorRuntimeEvent()
     {
         monitorDetailsScanButt->setEnabled(true);
     }
-}
-
-void nmapClass::openBrowser()
-{
-    _utilities->openFileBrowser(lineInputFile);
 }

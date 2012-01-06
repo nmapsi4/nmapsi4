@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2012 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,31 +17,49 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "mainwin.h"
 
-void nmapClass::checkFullScreen()
+#ifndef PROFILEDIALOG_H
+#define PROFILEDIALOG_H
+
+#include <QtGui/QDialog>
+#include <QtGui/QListWidgetItem>
+#include <QtGui/QMessageBox>
+#include <QtCore/QDebug>
+
+#include "ui_profilerdialog.h"
+
+class profilerManager : public QDialog, private Ui::profilerDialog
 {
+    Q_OBJECT
+public:
+    profilerManager(QWidget* parent = 0);
+    ~profilerManager();
 
-    if (isFullScreen())
-    {
-        setWindowState(windowState() & ~Qt::WindowFullScreen );
-        actionFullS->setChecked(false);
-    }
-    else
-    {
-        setWindowState(windowState() | Qt::WindowFullScreen );
-        actionFullS->setChecked(true);
-    }
-}
+private:
+    QListWidgetItem *scanW;
+    QListWidgetItem *toolW;
+    QListWidgetItem *discoverW;
+    QListWidgetItem *timingW;
+    int uid;
 
-void nmapClass::updateMenuBar()
-{
-    if (actionMenuBar->isChecked())
-    {
-        menuBar()->setVisible(true);
-    }
-    else
-    {
-        menuBar()->setVisible(false);
-    }
-}
+    QStringList buildExtensions();
+    void loadDefaultComboValues();
+    void loadDefaultBaseParameters();
+    void setNormalProfile();
+    void setFullVersionProfile();
+    void resetOptions();
+    void createQList();
+
+private slots:
+    void optionListUpdate();
+    void update_portCombo();
+    void update_scanCombo();
+    void update_discover();
+    void update_timing();
+    void update_options();
+    void update_comboVerbosity();
+    void exit();
+
+};
+
+#endif // PROFILEDIALOG_H
