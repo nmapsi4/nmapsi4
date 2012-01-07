@@ -36,11 +36,11 @@ public:
     ~profilerManager();
 
 private:
-    QListWidgetItem *scanW;
-    QListWidgetItem *toolW;
-    QListWidgetItem *discoverW;
-    QListWidgetItem *timingW;
-    int uid;
+    QListWidgetItem *m_scanW;
+    QListWidgetItem *m_toolW;
+    QListWidgetItem *m_discoverW;
+    QListWidgetItem *m_timingW;
+    int m_uid;
 
     QStringList buildExtensions();
     void loadDefaultComboValues();

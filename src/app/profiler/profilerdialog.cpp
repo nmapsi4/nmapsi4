@@ -25,7 +25,7 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
     Q_UNUSED(parent);
 
 #ifndef Q_WS_WIN
-    uid = getuid();
+    m_uid = getuid();
 #endif
 
     setupUi(this);
@@ -88,30 +88,30 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
 profilerManager::~profilerManager()
 {
-    delete timingW;
-    delete discoverW;
-    delete toolW;
-    delete scanW;
+    delete m_timingW;
+    delete m_discoverW;
+    delete m_toolW;
+    delete m_scanW;
 }
 
 void profilerManager::createQList()
 {
-    scanW = new QListWidgetItem(optionsListScan);
-    scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
-    scanW->setText(tr("Scan")); // scan Options
-    scanW->setSelected(true);
+    m_scanW = new QListWidgetItem(optionsListScan);
+    m_scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    m_scanW->setText(tr("Scan")); // scan Options
+    m_scanW->setSelected(true);
 
-    toolW = new QListWidgetItem(optionsListScan);
-    toolW->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
-    toolW->setText(tr("Options"));
+    m_toolW = new QListWidgetItem(optionsListScan);
+    m_toolW->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    m_toolW->setText(tr("Options"));
 
-    discoverW = new QListWidgetItem(optionsListScan);
-    discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    discoverW->setText(tr("Discover"));
+    m_discoverW = new QListWidgetItem(optionsListScan);
+    m_discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    m_discoverW->setText(tr("Discover"));
 
-    timingW = new QListWidgetItem(optionsListScan);
-    timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
-    timingW->setText(tr("Timing"));
+    m_timingW = new QListWidgetItem(optionsListScan);
+    m_timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
+    m_timingW->setText(tr("Timing"));
 }
 
 void profilerManager::exit()
@@ -133,19 +133,19 @@ void profilerManager::exit()
 
 void profilerManager::optionListUpdate()
 {
-    if (scanW->isSelected())
+    if (m_scanW->isSelected())
     {
         stackedOptions->setCurrentIndex(0);
     }
-    else if (discoverW->isSelected())
+    else if (m_discoverW->isSelected())
     {
         stackedOptions->setCurrentIndex(1);
     }
-    else if (timingW->isSelected())
+    else if (m_timingW->isSelected())
     {
         stackedOptions->setCurrentIndex(2);
     }
-    else if (toolW->isSelected())
+    else if (m_toolW->isSelected())
     {
         stackedOptions->setCurrentIndex(3);
     }
@@ -564,7 +564,7 @@ void profilerManager::update_portCombo()
 
 void profilerManager::loadDefaultComboValues()
 {
-    if (!uid)
+    if (!m_uid)
     { // if root
         comboScanTcp->addItem(QApplication::translate("profilerManager", "TCP SYN Stealth Scan (-sS)", 0, QApplication::UnicodeUTF8));
         comboScanTcp->addItem(QApplication::translate("profilerManager", "ACK Stealth Scan (-sA)", 0, QApplication::UnicodeUTF8));
@@ -743,7 +743,7 @@ void profilerManager::update_comboVerbosity()
 
 void profilerManager::loadDefaultBaseParameters()
 {
-    if (!uid)
+    if (!m_uid)
     {
         setFullVersionProfile();
     }
