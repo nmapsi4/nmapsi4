@@ -37,9 +37,6 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
          this, SLOT(optionListUpdate()));
     connect(portCombo, SIGNAL(activated(QString)),
             this, SLOT(update_portCombo()));  // portCombo slot
-    connect(comboScan, SIGNAL(activated(QString)),
-            this, SLOT(update_scanCombo()));  // comboScan slot
-
     // discover
     connect(checkTcpPing, SIGNAL(toggled(bool)),
             this, SLOT(update_discover()));  // discover check
@@ -124,7 +121,7 @@ void profilerManager::exit()
         QString parameters(buildExtensions().join(" "));
         qDebug() << "Profiler::Parameters:: " << parameters;
 
-        emit doneParBook(profileNameLine->text(), parameters);
+        //emit doneParBook(profileNameLine->text(), parameters);
         close();
     }
     else
@@ -158,94 +155,116 @@ QStringList profilerManager::buildExtensions()
 {
     QStringList parameters;
 
-    switch (comboScan->currentIndex()) { //scan check
-    case 0:
+    switch (comboScanTcp->currentIndex()) { //scan check
+    case 1:
 //    Connect Scan
         parameters << "-sT";
         break;
-    case 1:
+    case 2:
 //    Ping Sweep
         parameters << "-sP";
         break;
-    case 2:
-//    Host List
-        parameters << "-sL";
-        break;
     case 3:
-//    FTP Bounce Attack
-        if ((bounceEdit->text()).isEmpty())
-        {
-            QMessageBox::warning(this, "NmapSI4", tr("No Ftp Address \n"), tr("Disable Ftp bounce"));
-            comboScan->setCurrentIndex(0);
-            bounceEdit->setEnabled(false);
-            parameters << "-sT";
-        }
-        else
-        {
-            parameters << "-b";
-            parameters << bounceEdit->text();
-        }
-        break;
-    case 4:
-//    Idle Scan
-        parameters << "-sI";
-        parameters << bounceEdit->text();
-        break;
-    case 5:
 //    SYN Stealth Scan (rootMode)
         parameters << "-sS";
         break;
-    case 6:
+    case 4:
 //    ACK Stealth Scan (rootMode)
         parameters << "-sA";
         break;
-    case 7:
-//    FIN|ACK Stealth Scan (rootMode)
+    case 5:
+//    Mainmon Stealth Scan (rootMode)
         parameters << "-sM";
         break;
-    case 8:
+    case 6:
 //    FIN Stealth Scan (rootMode)
         parameters << "-sF";
         break;
-    case 9:
+    case 7:
 //    NULL Stealth Scan (rootMode)
         parameters << "-sN";
         break;
-    case 10:
+    case 8:
 //    XMAS Tree Stealth Scan (rootMode)
         parameters << "-sX";
         break;
-    case 11:
+    case 9:
 //    TCP Window Scan (rootMode)
         parameters << "-sW";
         break;
-    case 12:
-//    UDP Ports Scan (rootMode)
-        parameters << "-sU";
-        break;
-    case 13:
-//    IP Protocol Scan (rootMode)
-        parameters << "-sO";
-        break;
     default:
-        comboScan->setCurrentIndex(0);
+        comboScanTcp->setCurrentIndex(1);
         parameters << "-sT";
         break;
 
+    } // end switch scan
+
+    switch(comboScanNonTcp->currentIndex())
+    {
+    case 1:
+        //Host List
+        parameters << "-sL";
+        break;
+    case 2:
+        //UDP Ports Scan (rootMode)
+        parameters << "-sU";
+        break;
+    case 3:
+        //IP Protocol Scan (rootMode)
+        parameters << "-sO";
+        break;
+    case 4:
+        //SCTP INIT port scan (rootMode)
+        parameters << "-sY";
+        break;
+    case 5:
+        //SCTP cookie-echo port scan (rootMode)
+        parameters << "-sZ";
+        break;
+    }
+
+    if (checkFtpBounce->isChecked() && !bounceEdit->text().isEmpty())
+    {
+        // FTP Bounce attack
+        parameters << "-b";
+        parameters << bounceEdit->text();
+    }
+    else
+    {
+        checkFtpBounce->setCheckState(Qt::Unchecked);
+    }
+
+    if (checkIdleScan->isChecked() && !lineIdleScan->text().isEmpty())
+    {
+        // Idle scan
+        parameters << "-sI";
+        parameters << lineIdleScan->text();
+    }
+    else
+    {
+        checkIdleScan->setCheckState(Qt::Unchecked);
     }
 
     // start option scan
     if (rpcBox->isChecked())
+    {
         parameters << "-sR";
+    }
 
     if (versionBox->isChecked())
+    {
         parameters << "-sV";
+    }
 
     if (notpingBox->isChecked())
+    {
         parameters << "-P0";
+    }
 
     if (checkOS->isChecked())
+    {
         parameters << "-O";
+    }
     //end Extension
 
     switch (portCombo->currentIndex())
@@ -274,81 +293,83 @@ QStringList profilerManager::buildExtensions()
     }
 
 
-    if (checkTcpPing->isChecked())
+    if (checkTcpPing->isChecked() && !lineTcpPing->text().isEmpty())
     { // Discover options (tcp ack)
-        if (!lineTcpPing->text().isEmpty())
-        {
-            QString tmpCommand;
-            tmpCommand.append("-PT");
-            tmpCommand.append(lineTcpPing->text());
-            parameters << tmpCommand;
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
-        }
+        QString tmpCommand;
+        tmpCommand.append("-PT");
+        tmpCommand.append(lineTcpPing->text());
+        parameters << tmpCommand;
+    }
+    else
+    {
+        checkTcpPing->setCheckState(Qt::Unchecked);
     }
 
-    if (checkTcpSyn->isChecked())
+    if (checkTcpSyn->isChecked() && !lineSynPing->text().isEmpty())
     { // Discover options (tcp syn)
-        if (!lineSynPing->text().isEmpty())
-        {
-            QString tmpCommand;
-            tmpCommand.append("-PS");
-            tmpCommand.append(lineSynPing->text());
-            parameters << tmpCommand;
 
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
-        }
+        QString tmpCommand;
+        tmpCommand.append("-PS");
+        tmpCommand.append(lineSynPing->text());
+        parameters << tmpCommand;
+    }
+    else
+    {
+        checkTcpSyn->setCheckState(Qt::Unchecked);
     }
 
-    if (checkUdpPing->isChecked())
+    if (checkUdpPing->isChecked() && !lineUdpPing->text().isEmpty())
     { // Discover options (tcp syn)
-        if (!lineUdpPing->text().isEmpty())
-        {
-            QString tmpCommand;
-            tmpCommand.append("-PU");
-            tmpCommand.append(lineUdpPing->text());
-            parameters << tmpCommand;
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "no port (ex: 80)\n", "Normal Scan");
-        }
+        QString tmpCommand;
+        tmpCommand.append("-PU");
+        tmpCommand.append(lineUdpPing->text());
+        parameters << tmpCommand;
+    }
+    else
+    {
+        checkUdpPing->setCheckState(Qt::Unchecked);
     }
 
-    if (checkIcmpEcho->isChecked()) // Discover option
+    // Discover option
+    if (checkIcmpEcho->isChecked())
+    {
         parameters << "-PI";
-    if (checkIcmpTimestamp->isChecked()) // Discover option
+    }
+
+    if (checkIcmpTimestamp->isChecked())
+    {
         parameters << "-PP";
-    if (checkIcmpNetmask->isChecked()) // Discover option
+    }
+
+    if (checkIcmpNetmask->isChecked())
+    {
         parameters << "-PM";
+    }
 
     switch (comboTiming->currentIndex())
     { // port combo Timing
     case 1:
-//    Paranoid
+        //Paranoid
         parameters << "-T0";
         break;
     case 2:
-//    Sneaky
+        //Sneaky
         parameters << "-T1";
         break;
     case 3:
-//    Polite
+        //Polite
         parameters << "-T2";
         break;
     case 4:
-//    Aggressive
-        parameters << "-T4";
+        //Normal
+        parameters << "-T3";
         break;
     case 5:
-//    Insane
+        //Aggressive
+        parameters << "-T4";
+        break;
+    case 6:
+        //Insane
         parameters << "-T5";
         break;
     default:
@@ -391,12 +412,21 @@ QStringList profilerManager::buildExtensions()
         break;
     }
 
-    if (checkOrdered->isChecked()) // Misc Options
+    // Misc Options
+    if (checkOrdered->isChecked())
+    {
         parameters << "-r"; // Ordered Port
+    }
+
     if (checkIpv6->isChecked())
+    {
         parameters << "-6"; // Ipv6
+    }
+
     if (checkFrag->isChecked())
+    {
         parameters << "-f"; // Ipv6
+    }
 
     // Timing options
     if (TcheckIpv4ttl->isChecked())
@@ -448,19 +478,14 @@ QStringList profilerManager::buildExtensions()
     }
 
     //Options
-    if (checkBoxDevice->isChecked())
+    if (checkBoxDevice->isChecked() && !OlineDevice->text().isEmpty())
     { // Discover options (tcp syn)
-        if (!OlineDevice->text().isEmpty())
-        {
             parameters << "-e";
             parameters << OlineDevice->text();
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "Please, first insert a Device\n", "Disable Option");
-            checkBoxDevice->setCheckState(Qt::Unchecked);
-        }
+    }
+    else
+    {
+        checkBoxDevice->setCheckState(Qt::Unchecked);
     }
 
     if (checkDecoy->isChecked())
@@ -537,90 +562,24 @@ void profilerManager::update_portCombo()
     }
 }
 
-
-void profilerManager::update_scanCombo()
-{
-    switch (comboScan->currentIndex())
-    {
-    case 0:
-//    Connect Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 1:
-//    Ping Sweep
-        bounceEdit->setEnabled(false);
-        break;
-    case 2:
-//    Host List
-        bounceEdit->setEnabled(false);
-        break;
-    case 3:
-//    FTP Bounce Attack
-        bounceEdit->setEnabled(true);
-        break;
-    case 4:
-//    Idle Scan
-        bounceEdit->setEnabled(true);
-        break;
-    case 5:
-//    SYN Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 6:
-//    ACK Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 7:
-//    FIN|ACK Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 8:
-//    FIN Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 9:
-//    NULL Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 10:
-//    XMAS Tree Stealth Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 11:
-//    TCP Window Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 12:
-//    UDP Ports Scan
-        bounceEdit->setEnabled(false);
-        break;
-    case 13:
-//    IP Protocol Scan
-        bounceEdit->setEnabled(false);
-        break;
-    default:
-        bounceEdit->setEnabled(false);
-        break;
-
-    }
-}
-
 void profilerManager::loadDefaultComboValues()
 {
     if (!uid)
     { // if root
-        comboScan->addItem(QApplication::translate("profilerManager", "Idle Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "SYN Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "FIN|ACK Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "FIN Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "NULL Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "XMAS Tree Stealth Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "TCP Window Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "UDP Ports Scan", 0, QApplication::UnicodeUTF8));
-        comboScan->addItem(QApplication::translate("profilerManager", "IP Protocol Scan", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "TCP SYN Stealth Scan (-sS)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "ACK Stealth Scan (-sA)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "Mainmon Scan (-sM)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "FIN Stealth Scan (-sF)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "NULL Stealth Scan (-sN)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "XMAS Tree Stealth Scan (-sX)", 0, QApplication::UnicodeUTF8));
+        comboScanTcp->addItem(QApplication::translate("profilerManager", "TCP Window Scan (-sW)", 0, QApplication::UnicodeUTF8));
 
-        comboScan->setCurrentIndex(5);
+        comboScanNonTcp->addItem(QApplication::translate("profilerManager", "UDP Ports Scan (-sU)", 0, QApplication::UnicodeUTF8));
+        comboScanNonTcp->addItem(QApplication::translate("profilerManager", "IP Protocol Scan (-sO)", 0, QApplication::UnicodeUTF8));
+        comboScanNonTcp->addItem(QApplication::translate("profilerManager", "SCTP INIT scan (-sY)", 0, QApplication::UnicodeUTF8));
+        comboScanNonTcp->addItem(QApplication::translate("profilerManager", "SCTP cookie-echo scan (-sZ)", 0, QApplication::UnicodeUTF8));
+
+        comboScanTcp->setCurrentIndex(3);
 
     }
     else
@@ -641,6 +600,10 @@ void profilerManager::loadDefaultComboValues()
         lineDecoy->setVisible(false);
         checkSourcePort->setVisible(false);
         lineSourcePort->setVisible(false);
+
+        //idle scan
+        checkIdleScan->setVisible(false);
+        lineIdleScan->setVisible(false);
     }
 }
 
@@ -748,7 +711,7 @@ void profilerManager::update_options()
     if (checkSpoof->isChecked())
     {
         lineEditSpoof->setEnabled(true);
-        comboScan->setCurrentIndex(0);
+        comboScanTcp->setCurrentIndex(1);
         notpingBox->setChecked(true);
         checkBoxDevice->setChecked(true);
     }
@@ -763,7 +726,7 @@ void profilerManager::update_options()
     if (checkSourcePort->isChecked())
     {
         lineSourcePort->setEnabled(true);
-        comboScan->setCurrentIndex(5);
+        comboScanTcp->setCurrentIndex(3);
     }
     else
     {

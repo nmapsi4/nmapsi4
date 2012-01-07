@@ -89,46 +89,123 @@
               <string/>
              </property>
              <layout class="QGridLayout" name="gridLayout">
-              <item row="2" column="0">
-               <layout class="QGridLayout" name="gridLayout_3">
-                <item row="0" column="1">
-                 <widget class="QCheckBox" name="notpingBox">
+              <item row="0" column="0" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="label">
                   <property name="text">
-                   <string>Don't Ping</string>
+                   <string>Profile name: </string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="0">
-                 <widget class="QCheckBox" name="rpcBox">
+                <item>
+                 <widget class="QLineEdit" name="profileNameLine"/>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <spacer name="verticalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <item>
+                 <widget class="QLabel" name="label_8">
                   <property name="text">
-                   <string>RPC Scan</string>
+                   <string>TCP scan:</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkOS">
-                  <property name="text">
-                   <string>OS Detection</string>
+                <item>
+                 <widget class="QComboBox" name="comboScanTcp">
+                  <property name="mouseTracking">
+                   <bool>true</bool>
                   </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QCheckBox" name="versionBox">
-                  <property name="text">
-                   <string>Version Probe</string>
+                  <property name="maxVisibleItems">
+                   <number>20</number>
                   </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QCheckBox" name="checkIpv6">
-                  <property name="text">
-                   <string>Ipv6 support</string>
-                  </property>
+                  <item>
+                   <property name="text">
+                    <string>None</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>TCP Connect Scan (-sT)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Ping Sweep (-sP)</string>
+                   </property>
+                  </item>
                  </widget>
                 </item>
                </layout>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Timing Template:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboTiming">
+                  <item>
+                   <property name="text">
+                    <string>None</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Paranoid Throttling (-T0)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Sneaky Throttling (-T1)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Polite Throttling (-T2)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Normal Throttling (-T3)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Aggressive Throttling (-T4)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Insane Throttling (-T5)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="7" column="0" colspan="2">
                <layout class="QHBoxLayout" name="horizontalLayout_13">
                 <item>
                  <widget class="QLabel" name="label_9">
@@ -173,103 +250,6 @@
                   </item>
                  </widget>
                 </item>
-               </layout>
-              </item>
-              <item row="4" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <item>
-                 <widget class="QLabel" name="label_8">
-                  <property name="text">
-                   <string>Scan Techniques:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="comboScan">
-                  <property name="mouseTracking">
-                   <bool>true</bool>
-                  </property>
-                  <property name="maxVisibleItems">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Connect Scan</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Ping Sweep</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Host List</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>FTP Bounce Attack</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="5" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_17">
-                <item>
-                 <widget class="QLabel" name="label_10">
-                  <property name="text">
-                   <string>Timing Template:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="comboTiming">
-                  <item>
-                   <property name="text">
-                    <string>Normal Throttling</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Paranoid Throttling</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Sneaky Throttling</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Polite Throttling</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Aggressive Throttling</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Insane Throttling</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="6" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_14">
-                <item>
-                 <widget class="QLabel" name="label_38">
-                  <property name="text">
-                   <string>Ports:</string>
-                  </property>
-                 </widget>
-                </item>
                 <item>
                  <widget class="QLineEdit" name="portEdit">
                   <property name="enabled">
@@ -279,25 +259,83 @@
                 </item>
                </layout>
               </item>
-              <item row="7" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_15">
-                <item>
-                 <widget class="QLabel" name="label_39">
+              <item row="8" column="0" colspan="2">
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="rpcBox">
                   <property name="text">
-                   <string>Bounce Host:</string>
+                   <string>RPC Scan (-sR)</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="4" column="0">
+                 <widget class="QCheckBox" name="checkOS">
+                  <property name="text">
+                   <string>OS Detection (-O)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QCheckBox" name="notpingBox">
+                  <property name="text">
+                   <string>Don't Ping</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QCheckBox" name="versionBox">
+                  <property name="text">
+                   <string>Version Probe (-sV)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QCheckBox" name="checkIpv6">
+                  <property name="text">
+                   <string>Ipv6 support (-6)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkFtpBounce">
+                  <property name="text">
+                   <string>FTP bounce attack (-b)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
                  <widget class="QLineEdit" name="bounceEdit">
                   <property name="enabled">
                    <bool>false</bool>
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="0">
+                 <spacer name="verticalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="checkIdleScan">
+                  <property name="text">
+                   <string>Idle Scan (-sl)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QLineEdit" name="lineIdleScan"/>
+                </item>
                </layout>
               </item>
-              <item row="9" column="0">
+              <item row="10" column="0" colspan="2">
                <spacer name="verticalSpacer">
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
@@ -310,35 +348,37 @@
                 </property>
                </spacer>
               </item>
-              <item row="0" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item row="3" column="0" colspan="2">
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
                 <item>
-                 <widget class="QLabel" name="label">
+                 <widget class="QLabel" name="label_2">
                   <property name="text">
-                   <string>Profile name: </string>
+                   <string>Non-TCP scans:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="profileNameLine"/>
+                 <widget class="QComboBox" name="comboScanNonTcp">
+                  <item>
+                   <property name="text">
+                    <string>None</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>List Scan (-sL)</string>
+                   </property>
+                  </item>
+                 </widget>
                 </item>
                </layout>
               </item>
-              <item row="1" column="0">
-               <spacer name="verticalSpacer_8">
+              <item row="6" column="0" colspan="2">
+               <widget class="Line" name="line">
                 <property name="orientation">
-                 <enum>Qt::Vertical</enum>
+                 <enum>Qt::Horizontal</enum>
                 </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::Fixed</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
+               </widget>
               </item>
              </layout>
             </widget>
