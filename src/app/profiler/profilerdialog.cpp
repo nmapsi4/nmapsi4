@@ -37,13 +37,6 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
          this, SLOT(optionListUpdate()));
     connect(portCombo, SIGNAL(activated(QString)),
             this, SLOT(update_portCombo()));  // portCombo slot
-    // discover
-    connect(checkTcpPing, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
-    connect(checkTcpSyn, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
-    connect(checkUdpPing, SIGNAL(toggled(bool)),
-            this, SLOT(update_discover()));  // discover check
 
     // Timing Slot (Enable and Disable spinBox)
     connect(TcheckIpv4ttl, SIGNAL(toggled(bool)),
@@ -88,6 +81,9 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
 profilerManager::~profilerManager()
 {
+    // NOTE: hack for remove segfault on delete
+    optionsListScan->disconnect(SIGNAL(itemSelectionChanged()));
+
     delete m_timingW;
     delete m_discoverW;
     delete m_toolW;
@@ -107,7 +103,7 @@ void profilerManager::createQList()
 
     m_discoverW = new QListWidgetItem(optionsListScan);
     m_discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    m_discoverW->setText(tr("Discover"));
+    m_discoverW->setText(tr("Ping"));
 
     m_timingW = new QListWidgetItem(optionsListScan);
     m_timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
@@ -296,7 +292,7 @@ QStringList profilerManager::buildExtensions()
     if (checkTcpPing->isChecked() && !lineTcpPing->text().isEmpty())
     { // Discover options (tcp ack)
         QString tmpCommand;
-        tmpCommand.append("-PT");
+        tmpCommand.append("-PA");
         tmpCommand.append(lineTcpPing->text());
         parameters << tmpCommand;
     }
@@ -318,16 +314,41 @@ QStringList profilerManager::buildExtensions()
         checkTcpSyn->setCheckState(Qt::Unchecked);
     }
 
-    if (checkUdpPing->isChecked() && !lineUdpPing->text().isEmpty())
+    if (checkUdpPing->isChecked())
     { // Discover options (tcp syn)
         QString tmpCommand;
         tmpCommand.append("-PU");
-        tmpCommand.append(lineUdpPing->text());
+        if (!lineUdpPing->text().isEmpty())
+        {
+            tmpCommand.append(lineUdpPing->text());
+        }
         parameters << tmpCommand;
     }
-    else
-    {
-        checkUdpPing->setCheckState(Qt::Unchecked);
+
+    if (checkProtoPing->isChecked())
+    { // IPProto ping (tcp syn)
+        QString tmpCommand;
+        tmpCommand.append("-PO");
+
+        if (!lineProtoPing->text().isEmpty())
+        {
+            tmpCommand.append(lineUdpPing->text());
+        }
+
+        parameters << tmpCommand;
+    }
+
+    if (checkSctpPing->isChecked())
+    { // IPProto ping (tcp syn)
+        QString tmpCommand;
+        tmpCommand.append("-PY");
+
+        if (!lineSctpPing->text().isEmpty())
+        {
+            tmpCommand.append(lineSctpPing->text());
+        }
+
+        parameters << tmpCommand;
     }
 
     // Discover option
@@ -592,7 +613,6 @@ void profilerManager::loadDefaultComboValues()
         // discover Udp Ping
         checkUdpPing->setVisible(false);
         lineUdpPing->setVisible(false);
-        label_7->setVisible(false);
 
         // Misc Option
         checkFrag->setVisible(false);
@@ -604,42 +624,14 @@ void profilerManager::loadDefaultComboValues()
         //idle scan
         checkIdleScan->setVisible(false);
         lineIdleScan->setVisible(false);
-    }
-}
 
-void profilerManager::update_discover()
-{
-    if (checkTcpPing->isChecked())
-    {
-        lineTcpPing->setEnabled(true);
-        lineTcpPing->clear();
-    }
-    else
-    {
-        lineTcpPing->setEnabled(false);
-        lineTcpPing->clear();
-    }
+        //proto ping
+        checkProtoPing->setVisible(false);
+        lineProtoPing->setVisible(false);
 
-    if (checkTcpSyn->isChecked())
-    {
-        lineSynPing->setEnabled(true);
-        lineSynPing->clear();
-    }
-    else
-    {
-        lineSynPing->setEnabled(false);
-        lineSynPing->clear();
-    }
-
-    if (checkUdpPing->isChecked())
-    {
-        lineUdpPing->setEnabled(true);
-        lineUdpPing->clear();
-    }
-    else
-    {
-        lineUdpPing->setEnabled(false);
-        lineUdpPing->clear();
+        //sctp ping
+        checkSctpPing->setVisible(false);
+        lineSctpPing->setVisible(false);
     }
 }
 

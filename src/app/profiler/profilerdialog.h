@@ -33,7 +33,7 @@ class profilerManager : public QDialog, private Ui::profilerDialog
     Q_OBJECT
 public:
     profilerManager(QWidget* parent = 0);
-    ~profilerManager();
+    virtual ~profilerManager();
 
 private:
     QListWidgetItem *m_scanW;
@@ -56,7 +56,6 @@ signals:
 private slots:
     void optionListUpdate();
     void update_portCombo();
-    void update_discover();
     void update_timing();
     void update_options();
     void update_comboVerbosity();
