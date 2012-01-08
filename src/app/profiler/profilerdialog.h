@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 
-#ifndef PROFILEDIALOG_H
-#define PROFILEDIALOG_H
+#ifndef PROFILERDIALOG_H
+#define PROFILERDIALOG_H
 
 #include <QtGui/QDialog>
 #include <QtGui/QListWidgetItem>
@@ -33,7 +33,7 @@ class profilerManager : public QDialog, private Ui::profilerDialog
     Q_OBJECT
 public:
     profilerManager(QWidget* parent = 0);
-    virtual ~profilerManager();
+    ~profilerManager();
 
 private:
     QListWidgetItem *m_scanW;

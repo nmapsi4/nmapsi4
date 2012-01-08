@@ -89,7 +89,7 @@ void nmapClass::slotParSelected()
     if (parIndex <= tmpMap_.size())
     {
         // call static default profile for check
-        QString scanParameters = check_extensions().join(" ") + " " + tmpMap_.value(comboPar->currentText());
+        QString scanParameters = check_extensions().join(" ") + ' ' + tmpMap_.value(comboPar->currentText());
         comboAdv->insertItem(0, scanParameters);
     }
     else
@@ -103,7 +103,7 @@ void nmapClass::slotParSelected()
         }
         else
         {
-            QString scanParameters = check_extensions().join(" ") + " " + resultList_[0]->text(0);
+            QString scanParameters = check_extensions().join(" ") + ' ' + resultList_[0]->text(0);
             comboAdv->insertItem(0, scanParameters);
         }
     }
