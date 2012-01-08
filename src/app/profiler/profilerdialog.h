@@ -56,7 +56,6 @@ signals:
 private slots:
     void optionListUpdate();
     void update_portCombo();
-    void update_timing();
     void update_options();
     void update_comboVerbosity();
     void exit();

@@ -38,24 +38,6 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
     connect(portCombo, SIGNAL(activated(QString)),
             this, SLOT(update_portCombo()));  // portCombo slot
 
-    // Timing Slot (Enable and Disable spinBox)
-    connect(TcheckIpv4ttl, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMinPar, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMaxPar, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckInitRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMinRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckMaxRtt, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckHostTime, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-    connect(TcheckScanDelay, SIGNAL(toggled(bool)),
-            this, SLOT(update_timing()));
-
     //Options
     connect(checkBoxDevice, SIGNAL(toggled(bool)),
             this, SLOT(update_options()));
@@ -458,44 +440,50 @@ QStringList profilerManager::buildExtensions()
 
     if (TcheckMinPar->isChecked())
     {
-        parameters << "--min_parallelism";
+        parameters << "--min-parallelism";
         parameters << TspinBoxMinP->text();
     }
 
     if (TcheckMaxPar->isChecked())
     {
-        parameters << "--max_parallelism";
+        parameters << "--max-parallelism";
         parameters << spinBoxMaxPar->text();
     }
 
     if (TcheckInitRtt->isChecked())
     {
-        parameters << "--initial_rtt_timeout";
+        parameters << "--initial-rtt-timeout";
         parameters << spinBoxInitRtt->text();
     }
 
     if (TcheckMinRtt->isChecked())
     {
-        parameters << "--min_rtt_timeout";
+        parameters << "--min-rtt-timeout";
         parameters << spinBoxMinRtt->text();
     }
 
     if (TcheckMaxRtt->isChecked())
     {
-        parameters << "--max_rtt_timeout";
+        parameters << "--max-rtt-timeout";
         parameters << spinBoxMaxRtt->text();
     }
 
     if (TcheckHostTime->isChecked())
     {
-        parameters << "--host_timeout";
+        parameters << "--host-timeout";
         parameters << spinBoxHostTime->text();
     }
 
     if (TcheckScanDelay->isChecked())
     {
-        parameters << "--scan_delay";
+        parameters << "--scan-delay";
         parameters << spinBoxScanDelay->text();
+    }
+
+    if (TcheckScanDelayMax->isChecked())
+    {
+        parameters << "--max-scan-delay";
+        parameters << spinBoxScanDelayMax->text();
     }
 
     //Options
@@ -633,49 +621,6 @@ void profilerManager::loadDefaultComboValues()
         checkSctpPing->setVisible(false);
         lineSctpPing->setVisible(false);
     }
-}
-
-void profilerManager::update_timing()
-{
-    if (TcheckIpv4ttl->isChecked())
-        spinBoxIpv4ttl->setEnabled(true);
-    else
-        spinBoxIpv4ttl->setEnabled(false);
-
-    if (TcheckMinPar->isChecked())
-        TspinBoxMinP->setEnabled(true);
-    else
-        TspinBoxMinP->setEnabled(false);
-
-    if (TcheckMaxPar->isChecked())
-        spinBoxMaxPar->setEnabled(true);
-    else
-        spinBoxMaxPar->setEnabled(false);
-
-    if (TcheckInitRtt->isChecked())
-        spinBoxInitRtt->setEnabled(true);
-    else
-        spinBoxInitRtt->setEnabled(false);
-
-    if (TcheckMinRtt->isChecked())
-        spinBoxMinRtt->setEnabled(true);
-    else
-        spinBoxMinRtt->setEnabled(false);
-
-    if (TcheckMaxRtt->isChecked())
-        spinBoxMaxRtt->setEnabled(true);
-    else
-        spinBoxMaxRtt->setEnabled(false);
-
-    if (TcheckHostTime->isChecked())
-        spinBoxHostTime->setEnabled(true);
-    else
-        spinBoxHostTime->setEnabled(false);
-
-    if (TcheckScanDelay->isChecked())
-        spinBoxScanDelay->setEnabled(true);
-    else
-        spinBoxScanDelay->setEnabled(false);
 }
 
 void profilerManager::update_options()

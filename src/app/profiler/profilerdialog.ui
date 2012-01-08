@@ -541,14 +541,14 @@
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="TcheckIpv4ttl">
                   <property name="text">
-                   <string>Ipv4 TTL</string>
+                   <string>Ipv4 TTL (--ttl)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
                  <widget class="QSpinBox" name="spinBoxIpv4ttl">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="maximum">
                    <number>255</number>
@@ -561,14 +561,14 @@
                 <item row="1" column="0">
                  <widget class="QCheckBox" name="TcheckMinPar">
                   <property name="text">
-                   <string>Min outstanding probes</string>
+                   <string>Min outstanding probes (--min-parallelism)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
                  <widget class="QSpinBox" name="TspinBoxMinP">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -581,14 +581,14 @@
                 <item row="2" column="0">
                  <widget class="QCheckBox" name="TcheckMaxPar">
                   <property name="text">
-                   <string>Max outstanding probes</string>
+                   <string>Max outstanding probes (--max-parallelism)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
                  <widget class="QSpinBox" name="spinBoxMaxPar">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -601,14 +601,14 @@
                 <item row="3" column="0">
                  <widget class="QCheckBox" name="TcheckHostTime">
                   <property name="text">
-                   <string>Max time to scan a target</string>
+                   <string>Max time to scan a target (seconds, --host-timeout)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
                  <widget class="QSpinBox" name="spinBoxHostTime">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minimum">
                    <number>201</number>
@@ -624,14 +624,14 @@
                 <item row="4" column="0">
                  <widget class="QCheckBox" name="TcheckInitRtt">
                   <property name="text">
-                   <string>Initial probe timeout</string>
+                   <string>Initial probe timeout (seconds, --initial-rtt-timeout)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="4" column="1">
                  <widget class="QSpinBox" name="spinBoxInitRtt">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="maximum">
                    <number>9999999</number>
@@ -644,14 +644,14 @@
                 <item row="5" column="0">
                  <widget class="QCheckBox" name="TcheckMinRtt">
                   <property name="text">
-                   <string>Min probe timeout</string>
+                   <string>Min probe timeout (seconds, --min-rtt-timeout)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="5" column="1">
                  <widget class="QSpinBox" name="spinBoxMinRtt">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -667,14 +667,14 @@
                 <item row="6" column="0">
                  <widget class="QCheckBox" name="TcheckMaxRtt">
                   <property name="text">
-                   <string>Max probe timeout</string>
+                   <string>Max probe timeout (seconds, --max-rtt-timeout)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="6" column="1">
                  <widget class="QSpinBox" name="spinBoxMaxRtt">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minimum">
                    <number>6</number>
@@ -690,15 +690,35 @@
                 <item row="7" column="0">
                  <widget class="QCheckBox" name="TcheckScanDelay">
                   <property name="text">
-                   <string>Scan Delay</string>
+                   <string>Scan Delay (seconds, --scan-delay)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="7" column="1">
                  <widget class="QSpinBox" name="spinBoxScanDelay">
                   <property name="enabled">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>9999999</number>
+                  </property>
+                  <property name="value">
+                   <number>6000</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QCheckBox" name="TcheckScanDelayMax">
+                  <property name="text">
+                   <string>Max scan delay (seconds, --max-scan-delay)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QSpinBox" name="spinBoxScanDelayMax">
                   <property name="minimum">
                    <number>1</number>
                   </property>
