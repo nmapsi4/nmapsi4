@@ -36,6 +36,7 @@ public:
     ~profilerManager();
 
 private:
+    QListWidgetItem *m_profileW;
     QListWidgetItem *m_scanW;
     QListWidgetItem *m_toolW;
     QListWidgetItem *m_discoverW;
@@ -49,6 +50,7 @@ private:
     void setFullVersionProfile();
     void resetOptions();
     void createQList();
+    void reloadScanParameters();
 
 signals:
     void doneParBook(const QString profileName, const QString profilePar);

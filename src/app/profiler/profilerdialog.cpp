@@ -58,6 +58,8 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
     loadDefaultBaseParameters();
     loadDefaultComboValues();
+
+    m_profileW->setSelected(true);
 }
 
 
@@ -70,14 +72,20 @@ profilerManager::~profilerManager()
     delete m_discoverW;
     delete m_toolW;
     delete m_scanW;
+    delete m_profileW;
 }
 
 void profilerManager::createQList()
 {
+    m_profileW = new QListWidgetItem();
+    m_profileW->setIcon(QIcon(QString::fromUtf8(":/images/images/document-new.png")));
+    m_profileW->setText(tr("Profile")); // profile Options
+
+    optionsListScan->addItem(m_profileW);
+
     m_scanW = new QListWidgetItem();
     m_scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_scanW->setText(tr("Scan")); // scan Options
-    m_scanW->setSelected(true);
 
     optionsListScan->addItem(m_scanW);
 
@@ -117,23 +125,33 @@ void profilerManager::exit()
     }
 }
 
+void profilerManager::reloadScanParameters()
+{
+    lineScanParameters->setText(buildExtensions().join(" "));
+}
+
 void profilerManager::optionListUpdate()
 {
-    if (m_scanW->isSelected())
+    if (m_profileW->isSelected())
     {
+        reloadScanParameters();
         stackedOptions->setCurrentIndex(0);
     }
-    else if (m_discoverW->isSelected())
+    else if (m_scanW->isSelected())
     {
         stackedOptions->setCurrentIndex(1);
     }
-    else if (m_timingW->isSelected())
+    else if (m_discoverW->isSelected())
     {
         stackedOptions->setCurrentIndex(2);
     }
-    else if (m_toolW->isSelected())
+    else if (m_timingW->isSelected())
     {
         stackedOptions->setCurrentIndex(3);
+    }
+    else if (m_toolW->isSelected())
+    {
+        stackedOptions->setCurrentIndex(4);
     }
 }
 
