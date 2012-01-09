@@ -30,7 +30,7 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
     setupUi(this);
 
-    optionsListScan->setIconSize(QSize(52, 52));
+    optionsListScan->setIconSize(QSize(42, 42));
     createQList();
 
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
@@ -74,22 +74,30 @@ profilerManager::~profilerManager()
 
 void profilerManager::createQList()
 {
-    m_scanW = new QListWidgetItem(optionsListScan);
+    m_scanW = new QListWidgetItem();
     m_scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_scanW->setText(tr("Scan")); // scan Options
     m_scanW->setSelected(true);
 
-    m_toolW = new QListWidgetItem(optionsListScan);
+    optionsListScan->addItem(m_scanW);
+
+    m_toolW = new QListWidgetItem();
     m_toolW->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
     m_toolW->setText(tr("Options"));
 
-    m_discoverW = new QListWidgetItem(optionsListScan);
+    optionsListScan->addItem(m_toolW);
+
+    m_discoverW = new QListWidgetItem();
     m_discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     m_discoverW->setText(tr("Ping"));
 
-    m_timingW = new QListWidgetItem(optionsListScan);
+    optionsListScan->addItem(m_discoverW);
+
+    m_timingW = new QListWidgetItem();
     m_timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
     m_timingW->setText(tr("Timing"));
+
+    optionsListScan->addItem(m_timingW);
 }
 
 void profilerManager::exit()
