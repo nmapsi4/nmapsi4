@@ -428,7 +428,16 @@ QStringList profilerManager::buildExtensions()
 
     if (checkFrag->isChecked())
     {
-        parameters << "-f"; // Ipv6
+        parameters << "-f";
+    }
+
+    if (checkMaxRetries->isChecked())
+    {
+        parameters << "--max-retries";
+        if (!lineMaxRetries->text().isEmpty())
+        {
+            parameters << lineMaxRetries->text();
+        }
     }
 
     // Timing options
