@@ -56,8 +56,13 @@ void utilities::openDirectoryDialog(QLineEdit *destination)
 
 void utilities::about()
 {
-    mainAbout about;
-    about.exec();
+    QWeakPointer<mainAbout> about = new mainAbout();
+    about.data()->exec();
+
+    if (!about.isNull())
+    {
+        delete about.data();
+    }
 }
 
 void utilities::aboutQt()

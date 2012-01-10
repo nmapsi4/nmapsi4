@@ -362,9 +362,14 @@ void monitor::showSelectedScanDetails()
         return;
     }
     // start details UI
-    classDetails details(m_scanHashListFlow.operator[](m_monitor->selectedItems()[0]->text(0)),
+    QWeakPointer<classDetails> details = new classDetails(m_scanHashListFlow.operator[](m_monitor->selectedItems()[0]->text(0)),
                          m_monitor->selectedItems()[0]->text(0));
-    details.exec();
+    details.data()->exec();
+
+    if (!details.isNull())
+    {
+        delete details.data();
+    }
 }
 
 void monitor::readFlowFromThread(const QString hostname, QString lineData)

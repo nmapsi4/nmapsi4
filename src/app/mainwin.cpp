@@ -108,20 +108,32 @@ void nmapClass::initObject()
 
 void nmapClass::startProfile_ui()   // start preference UI
 {
-    preferencesDialog dialogPreference_(this);
-    connect(&dialogPreference_, SIGNAL(accepted()),
+    QWeakPointer<preferencesDialog> dialogPreference = new preferencesDialog(this);
+
+    connect(dialogPreference.data(), SIGNAL(accepted()),
             this, SLOT(checkProfile()));
 
-    dialogPreference_.exec();
+    dialogPreference.data()->exec();
+
+    if (!dialogPreference.isNull())
+    {
+        delete dialogPreference.data();
+    }
 }
 
 void nmapClass::startProfilerManager()
 {
-    profilerManager pManger(this);
-    connect(&pManger, SIGNAL(doneParBook(QString,QString)),
+    QWeakPointer<profilerManager> pManager = new profilerManager(this);
+
+    connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             this, SLOT(saveBookMarksPar(QString,QString)));
 
-    pManger.exec();
+    pManager.data()->exec();
+
+    if (!pManager.isNull())
+    {
+        delete pManager.data();
+    }
 }
 
 void nmapClass::exit()

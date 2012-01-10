@@ -134,12 +134,17 @@ void nmapClass::deleteBookMarkPar()
 void nmapClass::startAddParBook_ui()
 {
 
-    addParametersToBookmark dialogParAdd_(comboAdv->currentText());
+    QWeakPointer<addParametersToBookmark> dialogParAdd = new addParametersToBookmark(comboAdv->currentText());
 
-    connect(&dialogParAdd_, SIGNAL(doneParBook(QString,QString)),
+    connect(dialogParAdd.data(), SIGNAL(doneParBook(QString,QString)),
             this, SLOT(saveBookMarksPar(QString,QString)));
 
-    dialogParAdd_.exec();
+    dialogParAdd.data()->exec();
+
+    if (!dialogParAdd.isNull())
+    {
+        delete dialogParAdd.data();
+    }
 }
 
 void nmapClass::saveBookMarksPar(const QString profileName, const QString profilePar)
