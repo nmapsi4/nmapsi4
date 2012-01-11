@@ -70,7 +70,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedOptions">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -101,6 +101,32 @@
                 </item>
                 <item row="1" column="1">
                  <widget class="QLineEdit" name="lineScanParameters"/>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Base options:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QComboBox" name="comboBaseOptions">
+                  <item>
+                   <property name="text">
+                    <string>None</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Default</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Default with nse script</string>
+                   </property>
+                  </item>
+                 </widget>
                 </item>
                </layout>
               </item>

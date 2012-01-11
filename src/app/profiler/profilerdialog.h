@@ -45,7 +45,6 @@ private:
 
     QStringList buildExtensions();
     void loadDefaultComboValues();
-    void loadDefaultBaseParameters();
     void setNormalProfile();
     void setFullVersionProfile();
     void resetOptions();
@@ -61,6 +60,7 @@ private slots:
     void update_options();
     void update_comboVerbosity();
     void exit();
+    void updateBaseOptions();
 
 };
 

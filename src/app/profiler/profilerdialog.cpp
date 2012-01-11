@@ -36,8 +36,7 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));
     connect(portCombo, SIGNAL(activated(QString)),
-            this, SLOT(update_portCombo()));  // portCombo slot
-
+            this, SLOT(update_portCombo()));
     //Options
     connect(checkBoxDevice, SIGNAL(toggled(bool)),
             this, SLOT(update_options()));
@@ -49,14 +48,13 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
             this, SLOT(update_options()));
     connect(comboVerbosity, SIGNAL(activated(QString)),
             this, SLOT(update_comboVerbosity()));
-
     connect(doneButton, SIGNAL(clicked(bool)),
             this, SLOT(exit()));
     connect(cancelButton, SIGNAL(clicked(bool)),
             this, SLOT(close()));
+    connect(comboBaseOptions, SIGNAL(activated(QString)),
+            this, SLOT(updateBaseOptions()));
 
-
-    loadDefaultBaseParameters();
     loadDefaultComboValues();
 
     m_profileW->setSelected(true);
@@ -196,11 +194,6 @@ QStringList profilerManager::buildExtensions()
 //    TCP Window Scan (rootMode)
         parameters << "-sW";
         break;
-    default:
-        comboScanTcp->setCurrentIndex(1);
-        parameters << "-sT";
-        break;
-
     } // end switch scan
 
     switch(comboScanNonTcp->currentIndex())
@@ -622,9 +615,6 @@ void profilerManager::loadDefaultComboValues()
         comboScanNonTcp->addItem(QApplication::translate("profilerManager", "IP Protocol Scan (-sO)", 0, QApplication::UnicodeUTF8));
         comboScanNonTcp->addItem(QApplication::translate("profilerManager", "SCTP INIT scan (-sY)", 0, QApplication::UnicodeUTF8));
         comboScanNonTcp->addItem(QApplication::translate("profilerManager", "SCTP cookie-echo scan (-sZ)", 0, QApplication::UnicodeUTF8));
-
-        comboScanTcp->setCurrentIndex(3);
-
     }
     else
     {
@@ -713,21 +703,37 @@ void profilerManager::update_comboVerbosity()
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
 }
 
-void profilerManager::loadDefaultBaseParameters()
+void profilerManager::updateBaseOptions()
 {
-    if (!m_uid)
+    switch (comboBaseOptions->currentIndex())
     {
-        setFullVersionProfile();
+    case 0:
+        resetOptions();
+        break;
+    case 1:
+        resetOptions();
+        if (!m_uid)
+        {
+            setFullVersionProfile();
+        }
+        else
+        {
+            setNormalProfile();
+        }
+        break;
+    case 2:
+        //TODO
+        resetOptions();
+        break;
     }
-    else
-    {
-        setNormalProfile();
-    }
+
+    reloadScanParameters();
 }
 
 void profilerManager::setNormalProfile()
 {
     resetOptions();
+    comboScanTcp->setCurrentIndex(1);
     comboTiming->setCurrentIndex(4);
     comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(1);
@@ -737,6 +743,7 @@ void profilerManager::setNormalProfile()
 void profilerManager::setFullVersionProfile()
 {
     resetOptions();
+    comboScanTcp->setCurrentIndex(3);
     comboTiming->setCurrentIndex(4);
     checkOS->setChecked(true);
     versionBox->setChecked(true);
@@ -748,8 +755,9 @@ void profilerManager::resetOptions()
 {
     versionBox->setChecked(false);
     checkOS->setChecked(false);
+    comboScanTcp->setCurrentIndex(0);
+    comboScanNonTcp->setCurrentIndex(0);
     comboTiming->setCurrentIndex(0);
     comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(0);
 }
-
