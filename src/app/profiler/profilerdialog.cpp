@@ -19,7 +19,7 @@
 
 #include "profilerdialog.h"
 
-profilerManager::profilerManager(QWidget* parent) //: QDialog(parent)
+profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 {
     Q_UNUSED(parent);
 
@@ -142,8 +142,6 @@ void profilerManager::exit()
     }
     else
     {
-        // FIXME: show message for empty name
-        //qWarning() << "Please enter profile name";
         QMessageBox::warning(this, tr("No profile name"), tr("Please, enter profile name."), tr("Close"));
     }
 }
