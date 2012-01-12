@@ -29,6 +29,12 @@ nseManager::~nseManager()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
+    freemap<QString,QTextDocument*>::itemDeleteAll(m_nseHelpCache);
+
+    if (!m_documentScript.isNull())
+    {
+        delete m_documentScript.data();
+    }
 }
 
 const QStringList nseManager::getActiveNseScript()
