@@ -52,14 +52,14 @@ QStringList nmapClass::check_extensions()
     if (nseComboScript->currentIndex())
     {
         //set --script "xx,xx"
-        if (parameters.contains("-A"))
-        {
-            parameters.removeAll("-A");
-            if (!uid)
-            {
-                parameters << "--traceroute";
-            }
-        }
+//         if (parameters.contains("-A"))
+//         {
+//             parameters.removeAll("-A");
+//             if (!uid)
+//             {
+//                 parameters << "--traceroute";
+//             }
+//         }
         QString tmpListScript_("--script=");
         QString tmpListParam_("--script-args=");
         QString tmpList_;

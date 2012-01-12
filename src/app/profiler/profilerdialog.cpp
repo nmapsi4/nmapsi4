@@ -242,6 +242,11 @@ QStringList profilerManager::buildExtensions()
         checkIdleScan->setCheckState(Qt::Unchecked);
     }
 
+    // Agressive options
+    if (checkAggressiveOptions->isChecked())
+    {
+        parameters << "-A";
+    }
     // start option scan
     if (rpcBox->isChecked())
     {
@@ -738,6 +743,7 @@ void profilerManager::setNormalProfile()
     comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(1);
     versionBox->setChecked(true);
+    checkAggressiveOptions->setChecked(true);
 }
 
 void profilerManager::setFullVersionProfile()
@@ -749,6 +755,7 @@ void profilerManager::setFullVersionProfile()
     versionBox->setChecked(true);
     comboVerbosity->setCurrentIndex(1);
     comboDNSResolv->setCurrentIndex(0);
+    checkAggressiveOptions->setChecked(true);
 }
 
 void profilerManager::resetOptions()
@@ -760,4 +767,5 @@ void profilerManager::resetOptions()
     comboTiming->setCurrentIndex(0);
     comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(0);
+    checkAggressiveOptions->setChecked(false);
 }

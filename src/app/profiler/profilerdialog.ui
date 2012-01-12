@@ -353,28 +353,28 @@
               </item>
               <item row="6" column="0">
                <layout class="QGridLayout" name="gridLayout_3">
-                <item row="5" column="0">
+                <item row="6" column="0">
                  <widget class="QCheckBox" name="rpcBox">
                   <property name="text">
                    <string>RPC Scan (-sR)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0">
+                <item row="7" column="0">
                  <widget class="QCheckBox" name="checkOS">
                   <property name="text">
                    <string>OS Detection (-O)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="7" column="0">
+                <item row="8" column="0">
                  <widget class="QCheckBox" name="versionBox">
                   <property name="text">
                    <string>Version Probe (-sV)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="8" column="0">
+                <item row="9" column="0">
                  <widget class="QCheckBox" name="checkIpv6">
                   <property name="text">
                    <string>Ipv6 support (-6)</string>
@@ -454,6 +454,13 @@
                 </item>
                 <item row="4" column="1">
                  <widget class="QLineEdit" name="lineIdleScan"/>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QCheckBox" name="checkAggressiveOptions">
+                  <property name="text">
+                   <string>Aggressive options (-A)</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
