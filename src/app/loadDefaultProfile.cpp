@@ -95,16 +95,6 @@ void nmapClass::slotParSelected()
     {
         // saved user profile
         QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
-//         if (resultList_[0]->text(0).contains("-A") || resultList_[0]->text(0).contains("--script="))
-//         {
-//             QString scanParameters = resultList_[0]->text(0);
-//             comboAdv->insertItem(0, scanParameters);
-//         }
-//         else
-//         {
-//             QString scanParameters = check_extensions().join(" ") + ' ' + resultList_[0]->text(0);
-//             comboAdv->insertItem(0, scanParameters);
-//         }
         comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }
@@ -124,4 +114,3 @@ QStringList nmapClass::loadExtensions()
 
     return comboAdv->lineEdit()->text().split(' ');
 }
-

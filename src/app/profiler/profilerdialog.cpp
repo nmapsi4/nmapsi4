@@ -137,13 +137,14 @@ void profilerManager::exit()
         QString parameters(buildExtensions().join(" "));
         qDebug() << "Profiler::Parameters:: " << parameters;
 
-        //emit doneParBook(profileNameLine->text(), parameters);
+        emit doneParBook(profileNameLine->text(), parameters);
         close();
     }
     else
     {
         // FIXME: show message for empty name
-        qWarning() << "Please enter profile name";
+        //qWarning() << "Please enter profile name";
+        QMessageBox::warning(this, tr("No profile name"), tr("Please, enter profile name."), tr("Close"));
     }
 }
 

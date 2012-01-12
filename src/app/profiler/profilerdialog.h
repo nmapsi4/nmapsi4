@@ -25,6 +25,7 @@
 #include <QtGui/QListWidgetItem>
 #include <QtGui/QMessageBox>
 #include <QtCore/QDebug>
+#include <QtGui/QMessageBox>
 
 #include "ui_profilerdialog.h"
 #include "nsemanager.h"

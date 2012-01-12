@@ -115,8 +115,7 @@ void nmapClass::preScanLookup(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    // FIXME
-    QStringList parameters = comboAdv->lineEdit()->text().split(' ');
+    QStringList parameters = loadExtensions();
 
     // check for scan lookup
     if(lookupInternal && LookupEnabled)
