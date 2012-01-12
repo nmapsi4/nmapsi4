@@ -76,7 +76,7 @@ void nmapClass::saveBookMarks()
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
     }
 
-    Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    // FIXME: delete QTreeWidgetItem for history treewidget
     history_->updateBookMarks();
     delete history_;
     updateComboBook();
@@ -91,6 +91,7 @@ void nmapClass::deleteBookMark()
 
     logHistory *history_ = NULL;
 
+    // FIXME: delete QTreeWidgetItem
     if (tabScan->isVisible())
     {
         history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
@@ -116,6 +117,7 @@ void nmapClass::deleteBookMarkPar()
 
     logHistory *history_ = NULL;
 
+    // FIXME: delete QTreeWidgetItem
     if (!uid)
     {
         history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
@@ -167,7 +169,7 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
         history_->addItemHistory(profilePar, profileName);
     }
 
-    BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    // FIXME: delete QTreeWidgetItem for history treewidget
     history_->updateBookMarks();
     delete history_;
     loadScanProfile();

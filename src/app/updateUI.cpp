@@ -23,8 +23,6 @@ void nmapClass::detailsOptions()
 {
     Bdetails->setChecked(true);
     Bnss->setChecked(false);
-    Bbook->setChecked(false);
-    BBPar->setChecked(false);
     SWscan->setCurrentIndex(0);
     updateIconsBox();
 }
@@ -33,30 +31,8 @@ void nmapClass::nssOptions()
 {
     Bdetails->setChecked(false);
     Bnss->setChecked(true);
-    Bbook->setChecked(false);
-    BBPar->setChecked(false);
     SWscan->setCurrentIndex(1);
     tabWidget->setCurrentIndex(0);
-    updateIconsBox();
-}
-
-void nmapClass::bookOptions()
-{
-    Bdetails->setChecked(false);
-    Bnss->setChecked(false);
-    Bbook->setChecked(true);
-    BBPar->setChecked(false);
-    SWscan->setCurrentIndex(2);
-    updateIconsBox();
-}
-
-void nmapClass::bookOptionsPar()
-{
-    Bdetails->setChecked(false);
-    Bnss->setChecked(false);
-    Bbook->setChecked(false);
-    BBPar->setChecked(true);
-    SWscan->setCurrentIndex(3);
     updateIconsBox();
 }
 
@@ -71,12 +47,6 @@ void nmapClass::updateIconsBox()
     case 1:
         Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
         break;
-    case 2:
-        Bbook->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-	break;
-    case 3:
-        BBPar->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-	break;
     }
 }
 

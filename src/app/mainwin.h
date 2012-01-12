@@ -146,8 +146,6 @@ private slots:
     void resetPar();
     void detailsOptions();
     void nssOptions();
-    void bookOptions();
-    void bookOptionsPar();
     //contest Menu
     void menuScanBook();
     void menuVulnBook();

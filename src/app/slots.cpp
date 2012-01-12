@@ -54,10 +54,6 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(detailsOptions()));
     connect(Bnss, SIGNAL(clicked()),
             this, SLOT(nssOptions()));
-    connect(Bbook, SIGNAL(clicked()),
-            this, SLOT(bookOptions()));
-    connect(BBPar, SIGNAL(clicked()),
-            this, SLOT(bookOptionsPar()));
     connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuServiceMain()));
 
