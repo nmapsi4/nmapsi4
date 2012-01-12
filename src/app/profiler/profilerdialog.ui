@@ -92,24 +92,24 @@
                 <item row="0" column="1">
                  <widget class="QLineEdit" name="profileNameLine"/>
                 </item>
-                <item row="1" column="0">
+                <item row="3" column="0">
                  <widget class="QLabel" name="label_3">
                   <property name="text">
-                   <string>Scan parameters:</string>
+                   <string>Profile parameters:</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="1">
+                <item row="3" column="1">
                  <widget class="QLineEdit" name="lineScanParameters"/>
                 </item>
-                <item row="2" column="0">
+                <item row="1" column="0">
                  <widget class="QLabel" name="label_4">
                   <property name="text">
                    <string>Base options:</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="1">
+                <item row="1" column="1">
                  <widget class="QComboBox" name="comboBaseOptions">
                   <item>
                    <property name="text">
@@ -127,6 +127,22 @@
                    </property>
                   </item>
                  </widget>
+                </item>
+                <item row="2" column="1">
+                 <spacer name="verticalSpacer_8">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </item>
