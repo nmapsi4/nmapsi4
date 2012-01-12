@@ -112,10 +112,10 @@ void nmapClass::updateSezScan()
         tabUi->setCurrentIndex(0);
     }
 
-    if (!tabNseOpt->isVisible())
+    if (!bookmarks->isVisible())
     {
-        tabUi->insertTab(tabUi->count(),tabNseOpt,tr("Nse Options"));
-        tabUi->setTabIcon(tabUi->indexOf(tabNseOpt),QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        tabUi->insertTab(tabUi->count(),bookmarks,tr("Bookmarks"));
+        tabUi->setTabIcon(tabUi->indexOf(bookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
     }
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
@@ -139,7 +139,7 @@ void nmapClass::updateSezLog()
     toolBarBook->setVisible(false);
     toolBarSearch->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
+    tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
@@ -162,7 +162,7 @@ void nmapClass::updateSezVuln()
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(true);
 
-    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
+    tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
@@ -186,7 +186,7 @@ void nmapClass::updateDiscoverVuln()
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(tabNseOpt));
+    tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));

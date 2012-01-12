@@ -45,7 +45,6 @@
 #include "hostTools.h"
 #include "qpushbuttonorientated.h"
 #include "vulnerability.h"
-#include "nsemanager.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
 #include "profilerdialog.h"
@@ -64,7 +63,6 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
 
     friend class parserManager;
     friend class vulnerability;
-    friend class nseManager;
     friend class discoverManager;
     friend class monitor;
 
@@ -95,12 +93,10 @@ private:
     QWeakPointer<QStringListModel> _hostModel;
     QWeakPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
-    nseManager* _nseManager;
     discoverManager* _discoverManager;
 
     void preScanLookup(const QString hostname);
     void setNmapsiSlot();
-    QStringList check_extensions();
     QStringList loadExtensions();
     void resetOptions();
     void initGUI();

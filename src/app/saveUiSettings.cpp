@@ -37,13 +37,7 @@ void nmapClass::saveUiSettings()
     settings.setValue("TraceEnabled", TraceEnabled);
     settings.setValue("splitterSizes", cW->saveState());
     settings.setValue("splitterSizesRight", bW->saveState());
-    settings.setValue("nseComboScript", nseComboScript->currentIndex()); // default value
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
-
-    /**
-     * nse data sync()
-     **/
-     _nseManager->sync();
 
 // check and reset for settings file permission
 #ifndef Q_WS_WIN

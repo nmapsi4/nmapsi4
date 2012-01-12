@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,10 +18,11 @@
  ***************************************************************************/
 
 #include "nsemanager.h"
-#include "mainwin.h"
+#include "profilerdialog.h"
 
-nseManager::nseManager(nmapClass* parent) : QObject(parent), m_ui(parent)
+nseManager::nseManager(profilerManager* parent) : QObject(parent), m_ui(parent)
 {
+    nseTreeDefaultValue();
 }
 
 nseManager::~nseManager()
@@ -30,67 +31,9 @@ nseManager::~nseManager()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
 }
 
-void nseManager::loadNseCategoryScript()
-{
-    QSettings settings("nmapsi4", "nmapsi4");
-
-    int nseComboScriptTmp_ = settings.value("nseComboScript", 0).toInt();
-    updateNseOptionScript(nseComboScriptTmp_);
-
-    m_nseScriptActiveList = settings.value("nseScriptActiveList","none").toStringList();
-    m_nseScriptAvailList = settings.value("nseScriptAvailList","none").toStringList();
-
-    if (!m_nseScriptAvailList.first().compare("none"))
-    {
-        nseTreeDefaultValue();
-    }
-    else
-    {
-        if (!m_nseScriptAvailList.first().compare(""))
-        {
-            m_nseScriptAvailList.removeFirst();
-        }
-
-        if (!m_nseScriptActiveList.first().compare(""))
-        {
-            m_nseScriptActiveList.removeFirst();
-        }
-
-        nseTreeAvailRestoreValues();
-        nseTreeActiveRestoreValues();
-    }
-}
-
 const QStringList nseManager::getActiveNseScript()
 {
     return m_nseScriptActiveList;
-}
-
-void nseManager::sync()
-{
-    /**
-    * Save script list state to disk
-    **/
-
-    QSettings settings("nmapsi4", "nmapsi4");
-
-    if (m_nseScriptActiveList.isEmpty())
-    {
-        settings.setValue("nseScriptActiveList","");
-    }
-    else
-    {
-        settings.setValue("nseScriptActiveList",QVariant(m_nseScriptActiveList));
-    }
-
-    if (m_nseScriptAvailList.isEmpty())
-    {
-        settings.setValue("nseScriptAvailList", "");
-    }
-    else
-    {
-        settings.setValue("nseScriptAvailList", QVariant(m_nseScriptAvailList));
-    }
 }
 
 void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
@@ -219,7 +162,6 @@ void nseManager::nseTreeAvailRestoreValues()
     if (m_itemNseAvail.size())
     {
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
-        m_itemNseAvail.clear();
     }
 
     foreach (const QString &token, m_nseScriptAvailList)
@@ -238,7 +180,6 @@ void nseManager::nseTreeActiveRestoreValues()
     if (m_itemNseActive.size())
     {
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
-        m_itemNseActive.clear();
     }
 
     foreach (const QString &token, m_nseScriptActiveList)
@@ -267,12 +208,6 @@ void nseManager::nseTreeActiveItem()
             m_nseScriptActiveList.clear();
         }
     }
-
-    if (m_ui->_collectionsButton.value("nss-act")->isChecked())
-    {
-        m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        m_ui->slotParSelected();
-    }
 }
 
 void nseManager::nseTreeRemoveItem()
@@ -290,12 +225,6 @@ void nseManager::nseTreeRemoveItem()
             m_nseScriptAvailList.clear();
         }
     }
-
-    if (m_ui->_collectionsButton.value("nss-act")->isChecked())
-    {
-        m_ui->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-        m_ui->slotParSelected();
-    }
 }
 
 void nseManager::nseTreeResetItem()
@@ -307,32 +236,4 @@ void nseManager::nseTreeResetItem()
     m_nseScriptActiveList.clear();
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
-}
-
-void nseManager::updateNseOptionScript(int index)
-{
-    m_ui->nseComboScript->setCurrentIndex(index);
-
-    if (index)
-    {
-        m_ui->nseTreeActive->setEnabled(true);
-        m_ui->nseTreeAvail->setEnabled(true);
-        m_ui->nseResetBut->setEnabled(true);
-        m_ui->comboNseInv->setEnabled(true);
-        m_ui->comboNsePar->setEnabled(true);
-        m_ui->nseFixedSButt->setEnabled(true);
-    }
-    else
-    {
-        m_ui->nseTreeActive->setEnabled(false);
-        m_ui->nseTreeAvail->setEnabled(false);
-        m_ui->nseResetBut->setEnabled(false);
-        m_ui->nseActiveBut->setEnabled(false);
-        m_ui->nseRemoveBut->setEnabled(false);
-        m_ui->comboNseInv->setEnabled(false);
-        m_ui->comboNsePar->setEnabled(false);
-        m_ui->nseFixedSButt->setEnabled(false);
-    }
-    // reset parameters for change
-    m_ui->resetPar();
 }

@@ -27,10 +27,19 @@
 #include <QtCore/QDebug>
 
 #include "ui_profilerdialog.h"
+#include "nsemanager.h"
 
-class profilerManager : public QDialog, private Ui::profilerDialog
+namespace Ui
+{
+    class profilerDialog;
+}
+
+class profilerManager : public QDialog, public Ui::profilerDialog
 {
     Q_OBJECT
+
+    friend class nseManager;
+
 public:
     profilerManager(QWidget* parent = 0);
     ~profilerManager();
@@ -41,6 +50,8 @@ private:
     QListWidgetItem *m_toolW;
     QListWidgetItem *m_discoverW;
     QListWidgetItem *m_timingW;
+    QListWidgetItem *m_nseW;
+    nseManager* _nseManager;
     int m_uid;
 
     QStringList buildExtensions();

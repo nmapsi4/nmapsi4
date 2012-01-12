@@ -28,26 +28,19 @@
 #include <QtWebKit/QWebView>
 
 #include "qprocessthread.h"
+#include "memorytools.h"
 
-class nmapClass;
+using namespace memory;
+
+class profilerManager;
 
 class nseManager : public QObject
 {
     Q_OBJECT
 
 public:
-    nseManager(nmapClass* parent);
+    nseManager(profilerManager* parent);
     ~nseManager();
-    /**
-     * Save script list state to file
-     *
-     **/
-    void sync();
-    /**
-     * Load script list state from file
-     *
-     **/
-    void loadNseCategoryScript();
     /**
      * Get QString List with all actived script
      *
@@ -58,7 +51,7 @@ private:
     void nseTreeAvailRestoreValues();
     void nseTreeActiveRestoreValues();
 
-    nmapClass* m_ui;
+    profilerManager* m_ui;
     QWeakPointer<QProcessThread> m_thread;
     QWeakPointer<QProcessThread> m_threadScript;
     QWeakPointer<QTextDocument> m_documentScript;
@@ -77,7 +70,6 @@ public slots:
     void nseTreeActiveItem();
     void nseTreeRemoveItem();
     void nseTreeResetItem();
-    void updateNseOptionScript(int index);
 };
 
 #endif // NSEMANAGER_H

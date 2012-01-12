@@ -122,24 +122,6 @@ void nmapClass::setNmapsiSlot()
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
             _monitor, SLOT(stopAllScan()));
 
-    // FIXME:: nse category -- port to nseManager
-    connect(nseComboScript, SIGNAL(currentIndexChanged(int)),
-            _nseManager, SLOT(updateNseOptionScript(int)));
-    connect(nseActiveBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeActiveItem()));
-    connect(nseRemoveBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeRemoveItem()));
-    connect(nseResetBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeResetItem()));
-    connect(nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
-    connect(nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
-    connect(nseFixedSButt, SIGNAL(clicked()),
-            this, SLOT(resetPar()));
-    connect(searchButtHelp, SIGNAL(clicked()),
-            _nseManager, SLOT(requestNseScriptHelp()));
-
     // action help menu (browser call)
     connect(actionReport_Bug, SIGNAL(triggered()),
             _utilities, SLOT(showBugUrl()));

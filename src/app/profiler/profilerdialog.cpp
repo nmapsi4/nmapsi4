@@ -17,10 +17,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-
 #include "profilerdialog.h"
 
-profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
+profilerManager::profilerManager(QWidget* parent) //: QDialog(parent)
 {
     Q_UNUSED(parent);
 
@@ -32,6 +31,9 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
     optionsListScan->setIconSize(QSize(42, 42));
     createQList();
+
+    // create and load nse values from file settings
+    _nseManager = new nseManager(this);
 
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));
@@ -55,6 +57,20 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
     connect(comboBaseOptions, SIGNAL(activated(QString)),
             this, SLOT(updateBaseOptions()));
 
+    // nse slots
+    connect(nseActiveBut, SIGNAL(clicked()),
+            _nseManager, SLOT(nseTreeActiveItem()));
+    connect(nseRemoveBut, SIGNAL(clicked()),
+            _nseManager, SLOT(nseTreeRemoveItem()));
+    connect(nseResetBut, SIGNAL(clicked()),
+            _nseManager, SLOT(nseTreeResetItem()));
+    connect(nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+    connect(nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+    connect(searchButtHelp, SIGNAL(clicked()),
+            _nseManager, SLOT(requestNseScriptHelp()));
+
     loadDefaultComboValues();
 
     m_profileW->setSelected(true);
@@ -63,7 +79,7 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 
 profilerManager::~profilerManager()
 {
-    // NOTE: hack for remove segfault on delete
+    // NOTE: remove segfault on delete
     optionsListScan->disconnect(SIGNAL(itemSelectionChanged()));
 
     delete m_timingW;
@@ -71,6 +87,8 @@ profilerManager::~profilerManager()
     delete m_toolW;
     delete m_scanW;
     delete m_profileW;
+    delete m_nseW;
+    delete _nseManager;
 }
 
 void profilerManager::createQList()
@@ -104,6 +122,12 @@ void profilerManager::createQList()
     m_timingW->setText(tr("Timing"));
 
     optionsListScan->addItem(m_timingW);
+
+    m_nseW = new QListWidgetItem();
+    m_nseW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    m_nseW->setText(tr("Nse"));
+
+    optionsListScan->addItem(m_nseW);
 }
 
 void profilerManager::exit()
@@ -151,11 +175,71 @@ void profilerManager::optionListUpdate()
     {
         stackedOptions->setCurrentIndex(4);
     }
+    else if (m_nseW->isSelected())
+    {
+        stackedOptions->setCurrentIndex(5);
+    }
 }
 
 QStringList profilerManager::buildExtensions()
 {
     QStringList parameters;
+
+    // NSE check
+    if (_nseManager->getActiveNseScript().size())
+    {
+        QString tmpListScript_("--script=");
+        QString tmpListParam_("--script-args=");
+        QString tmpList_;
+        QString tmpListArgs_;
+
+        // read nse category actived
+        foreach (const QString &token, _nseManager->getActiveNseScript())
+        {
+            tmpList_.append(token);
+            tmpList_.append(",");
+        }
+
+        // load nse manual script
+        if (!comboNseInv->lineEdit()->text().isEmpty())
+        {
+            QStringList manualNse_ = comboNseInv->lineEdit()->text().split(',');
+            foreach (const QString &token, manualNse_)
+            {
+                tmpList_.append(token);
+                tmpList_.append(",");
+            }
+        }
+
+        if (tmpList_.size())
+        {
+            tmpList_.remove(' ');
+            tmpList_.resize(tmpList_.size()-1);
+            tmpListScript_.append(tmpList_);
+        }
+
+        if (!comboNsePar->lineEdit()->text().isEmpty())
+        {
+            QString argsClean_ = comboNsePar->lineEdit()->text().remove('"');
+            argsClean_ = argsClean_.remove('\'');
+            QStringList argsNse_ = argsClean_.split(',');
+            foreach (const QString &token, argsNse_)
+            {
+                tmpListArgs_.append(token);
+                tmpListArgs_.append(",");
+            }
+        }
+
+        if (tmpListArgs_.size())
+        {
+            tmpListArgs_.remove(' ');
+            tmpListArgs_.resize(tmpListArgs_.size()-1);
+            tmpListParam_.append(tmpListArgs_);
+            parameters << tmpListParam_;
+        }
+
+        parameters << tmpListScript_;
+    } // End NSE check
 
     switch (comboScanTcp->currentIndex()) { //scan check
     case 1:

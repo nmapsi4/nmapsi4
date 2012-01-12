@@ -49,10 +49,6 @@ void nmapClass::initObject()
     _parser = new parserManager(this);
     _vulnerability = new vulnerability(this);
 
-    // create and load nse values from file settings
-    _nseManager = new nseManager(this);
-    _nseManager->loadNseCategoryScript();
-
     createBar();
     createToolButtonSetup();
 
@@ -153,7 +149,6 @@ nmapClass::~nmapClass()
     delete _completer.data();
     delete _completerVuln.data();
     delete _vulnerability;
-    delete _nseManager;
     delete _hostModel.data();
     delete _vulnModel.data();
     delete bW;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -89,23 +89,23 @@ void nmapClass::slotParSelected()
     if (parIndex <= tmpMap_.size())
     {
         // call static default profile for check
-        QString scanParameters = check_extensions().join(" ") + ' ' + tmpMap_.value(comboPar->currentText());
-        comboAdv->insertItem(0, scanParameters);
+        comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
     }
     else
     {
         // saved user profile
         QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
-        if (resultList_[0]->text(0).contains("-A") || resultList_[0]->text(0).contains("--script="))
-        {
-            QString scanParameters = resultList_[0]->text(0);
-            comboAdv->insertItem(0, scanParameters);
-        }
-        else
-        {
-            QString scanParameters = check_extensions().join(" ") + ' ' + resultList_[0]->text(0);
-            comboAdv->insertItem(0, scanParameters);
-        }
+//         if (resultList_[0]->text(0).contains("-A") || resultList_[0]->text(0).contains("--script="))
+//         {
+//             QString scanParameters = resultList_[0]->text(0);
+//             comboAdv->insertItem(0, scanParameters);
+//         }
+//         else
+//         {
+//             QString scanParameters = check_extensions().join(" ") + ' ' + resultList_[0]->text(0);
+//             comboAdv->insertItem(0, scanParameters);
+//         }
+        comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }
 
@@ -114,3 +114,14 @@ void nmapClass::resetPar()
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     slotParSelected();
 }
+
+QStringList nmapClass::loadExtensions()
+{
+    if(_monitor->monitorHostNumber())
+    {
+        progressScan->setValue(55); // start progress bar
+    }
+
+    return comboAdv->lineEdit()->text().split(' ');
+}
+

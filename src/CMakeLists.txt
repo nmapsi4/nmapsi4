@@ -40,7 +40,6 @@ SET(SOURCES_CPP
                 app/restoreDefaultValues.cpp
                 app/loadDefaultProfile.cpp
                 app/bookmarkcallevents.cpp
-                app/extensions.cpp
                 app/updateUI.cpp
                 app/slots.cpp
                 app/resizeuievents.cpp
