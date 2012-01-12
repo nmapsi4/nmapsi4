@@ -455,6 +455,12 @@ QStringList profilerManager::buildExtensions()
         parameters << "-f";
     }
 
+    // traceroute
+    if (checkTraceroute->isChecked())
+    {
+        parameters << "--traceroute";
+    }
+
     if (checkMaxRetries->isChecked())
     {
         parameters << "--max-retries";
@@ -650,6 +656,9 @@ void profilerManager::loadDefaultComboValues()
         //sctp ping
         checkSctpPing->setVisible(false);
         lineSctpPing->setVisible(false);
+
+        //traceroute
+        checkTraceroute->setVisible(false);
     }
 }
 
@@ -756,6 +765,7 @@ void profilerManager::setFullVersionProfile()
     comboVerbosity->setCurrentIndex(1);
     comboDNSResolv->setCurrentIndex(0);
     checkAggressiveOptions->setChecked(true);
+    checkTraceroute->setChecked(true);
 }
 
 void profilerManager::resetOptions()
@@ -768,4 +778,5 @@ void profilerManager::resetOptions()
     comboDNSResolv->setCurrentIndex(0);
     comboVerbosity->setCurrentIndex(0);
     checkAggressiveOptions->setChecked(false);
+    checkTraceroute->setChecked(false);
 }
