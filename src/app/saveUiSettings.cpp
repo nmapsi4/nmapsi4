@@ -33,7 +33,6 @@ void nmapClass::saveUiSettings()
         settings.setValue("window/size", size());
     }
 
-    settings.setValue("NSSsupport", NSSsupport);
     settings.setValue("LookupEnabled", LookupEnabled);
     settings.setValue("TraceEnabled", TraceEnabled);
     settings.setValue("splitterSizes", cW->saveState());

@@ -37,17 +37,17 @@ QStringList nmapClass::check_extensions()
         progressScan->setValue(10); // start progress bar
     }
 
-    if(NSSsupport)
-    {
-        parameters << "-A";
-    }
-    else
-    {
-        if (!uid)
-        {
-            parameters << "--traceroute";
-        }
-    }
+//     if(NSSsupport)
+//     {
+//         parameters << "-A";
+//     }
+//     else
+//     {
+//         if (!uid)
+//         {
+//             parameters << "--traceroute";
+//         }
+//     }
 
     if (nseComboScript->currentIndex())
     {

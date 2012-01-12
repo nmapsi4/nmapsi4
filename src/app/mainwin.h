@@ -80,7 +80,6 @@ private:
     bool saveSize;
     bool lookupInternal;
     bool lookupDig;
-    bool NSSsupport;
     bool TraceEnabled;
     bool LookupEnabled;
     bool digSupported;
@@ -147,7 +146,6 @@ private slots:
     void updateDiscoverVuln();
     void updateTabLook();
     void updateTabTrace();
-    void NSSCheck();
     void loadDefaultProfile();
     void resetPar();
     void detailsOptions();

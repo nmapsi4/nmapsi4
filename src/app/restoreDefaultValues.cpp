@@ -98,15 +98,6 @@ void nmapClass::checkProfile()
     lookupDig = false;
 #endif
 
-    QString nss_ = settings.value("NSSsupport", "none").toString();
-
-    if ((!nss_.compare("none")))
-    {
-         settings.setValue("NSSsupport", "true"); // default value
-    }
-
-    NSSsupport = settings.value("NSSsupport").toBool();
-
     QString LookupEnabled_ = settings.value("LookupEnabled", "none").toString();
 
     if ((!LookupEnabled_.compare("none")))

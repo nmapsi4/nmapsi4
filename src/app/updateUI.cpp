@@ -197,24 +197,6 @@ void nmapClass::updateDiscoverVuln()
     toolBarTab->setVisible(false);
 }
 
-void nmapClass::NSSCheck()
-{ // SLOT
-   if (_collectionsButton.value("nss-act")->isChecked())
-   {
-       NSSsupport = true;
-       Bnss->setVisible(true);
-       resetPar();
-   }
-   else
-   {
-       // check for nse combo
-       nseComboScript->setCurrentIndex(0);
-       NSSsupport = false;
-       Bnss->setVisible(false);
-       resetPar();
-   }
-}
-
 void nmapClass::setTreeWidgetValues()
 {
     listWscan->setIconSize(QSize(22, 22));

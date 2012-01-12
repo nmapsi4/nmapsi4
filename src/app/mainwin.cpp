@@ -82,8 +82,6 @@ void nmapClass::initObject()
     LookupEnabled = true;
 #endif
 
-    _collectionsButton.value("nss-act")->setChecked(NSSsupport);
-    NSSCheck();
     // load first profile
     loadDefaultProfile();
     _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);

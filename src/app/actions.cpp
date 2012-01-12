@@ -147,18 +147,6 @@ void nmapClass::createBar()
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("NSE Script"));
-    actionButt->setToolTip(tr("Enable/Disable NSE script"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setMirrored(true);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("nss-act",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(NSSCheck()));
-    toolBarTab->addWidget(actionButt);
-
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
     actionButt->setToolTip(tr("Show/Hide Lookup"));
     actionButt->setOrientation(Qt::Vertical);
