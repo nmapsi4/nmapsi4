@@ -51,13 +51,14 @@ private:
     QListWidgetItem *m_discoverW;
     QListWidgetItem *m_timingW;
     QListWidgetItem *m_nseW;
-    nseManager* _nseManager;
+    nseManager* m_nseManager;
     int m_uid;
 
     QStringList buildExtensions();
     void loadDefaultComboValues();
     void setNormalProfile();
     void setFullVersionProfile();
+    void setDefaultNseScripts();
     void resetOptions();
     void createQList();
     void reloadScanParameters();
@@ -72,7 +73,6 @@ private slots:
     void update_comboVerbosity();
     void exit();
     void updateBaseOptions();
-
 };
 
 #endif // PROFILEDIALOG_H

@@ -203,9 +203,9 @@ void nseManager::nseTreeActiveItem()
         m_nseScriptActiveList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!m_nseScriptActiveList.size())
+        if (!m_nseScriptAvailList.size())
         {
-            m_nseScriptActiveList.clear();
+            m_nseScriptAvailList.clear();
         }
     }
 }
@@ -220,9 +220,9 @@ void nseManager::nseTreeRemoveItem()
         m_nseScriptAvailList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!m_nseScriptAvailList.size())
+        if (!m_nseScriptActiveList.size())
         {
-            m_nseScriptAvailList.clear();
+            m_nseScriptActiveList.clear();
         }
     }
 }
@@ -236,4 +236,25 @@ void nseManager::nseTreeResetItem()
     m_nseScriptActiveList.clear();
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
+}
+
+void nseManager::nseTreeActiveScriptValues(const QStringList scripts)
+{
+    foreach (const QString& script, scripts)
+    {
+        nseTreeActiveSingleScript(script);
+    }
+}
+
+void nseManager::nseTreeActiveSingleScript(const QString script)
+{
+    m_nseScriptActiveList.append(m_nseScriptAvailList.takeAt(m_nseScriptAvailList.indexOf(script)));
+
+    nseTreeAvailRestoreValues();
+    nseTreeActiveRestoreValues();
+
+    if (!m_nseScriptAvailList.size())
+    {
+        m_nseScriptAvailList.clear();
+    }
 }

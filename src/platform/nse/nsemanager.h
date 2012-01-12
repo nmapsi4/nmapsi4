@@ -46,6 +46,8 @@ public:
      *
      **/
     const QStringList getActiveNseScript();
+    void nseTreeActiveScriptValues(const QStringList scripts);
+    void nseTreeActiveSingleScript(const QString script);
 
 private:
     void nseTreeAvailRestoreValues();
@@ -69,6 +71,8 @@ public slots:
     void nseTreeDefaultValue();
     void nseTreeActiveItem();
     void nseTreeRemoveItem();
+
+public slots:
     void nseTreeResetItem();
 };
 

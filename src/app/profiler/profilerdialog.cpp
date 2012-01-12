@@ -33,7 +33,7 @@ profilerManager::profilerManager(QWidget* parent) //: QDialog(parent)
     createQList();
 
     // create and load nse values from file settings
-    _nseManager = new nseManager(this);
+    m_nseManager = new nseManager(this);
 
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));
@@ -59,17 +59,17 @@ profilerManager::profilerManager(QWidget* parent) //: QDialog(parent)
 
     // nse slots
     connect(nseActiveBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeActiveItem()));
+            m_nseManager, SLOT(nseTreeActiveItem()));
     connect(nseRemoveBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeRemoveItem()));
+            m_nseManager, SLOT(nseTreeRemoveItem()));
     connect(nseResetBut, SIGNAL(clicked()),
-            _nseManager, SLOT(nseTreeResetItem()));
+            m_nseManager, SLOT(nseTreeResetItem()));
     connect(nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            _nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(searchButtHelp, SIGNAL(clicked()),
-            _nseManager, SLOT(requestNseScriptHelp()));
+            m_nseManager, SLOT(requestNseScriptHelp()));
 
     loadDefaultComboValues();
 
@@ -88,7 +88,7 @@ profilerManager::~profilerManager()
     delete m_scanW;
     delete m_profileW;
     delete m_nseW;
-    delete _nseManager;
+    delete m_nseManager;
 }
 
 void profilerManager::createQList()
@@ -186,7 +186,7 @@ QStringList profilerManager::buildExtensions()
     QStringList parameters;
 
     // NSE check
-    if (_nseManager->getActiveNseScript().size())
+    if (m_nseManager->getActiveNseScript().size())
     {
         QString tmpListScript_("--script=");
         QString tmpListParam_("--script-args=");
@@ -194,7 +194,7 @@ QStringList profilerManager::buildExtensions()
         QString tmpListArgs_;
 
         // read nse category actived
-        foreach (const QString &token, _nseManager->getActiveNseScript())
+        foreach (const QString &token, m_nseManager->getActiveNseScript())
         {
             tmpList_.append(token);
             tmpList_.append(",");
@@ -820,8 +820,16 @@ void profilerManager::updateBaseOptions()
         }
         break;
     case 2:
-        //TODO
         resetOptions();
+        if (!m_uid)
+        {
+            setFullVersionProfile();
+        }
+        else
+        {
+            setNormalProfile();
+        }
+        setDefaultNseScripts();
         break;
     }
 
@@ -852,6 +860,12 @@ void profilerManager::setFullVersionProfile()
     checkTraceroute->setChecked(true);
 }
 
+void profilerManager::setDefaultNseScripts()
+{
+    m_nseManager->nseTreeActiveSingleScript("default");
+    m_nseManager->nseTreeActiveSingleScript("safe");
+}
+
 void profilerManager::resetOptions()
 {
     versionBox->setChecked(false);
@@ -863,4 +877,5 @@ void profilerManager::resetOptions()
     comboVerbosity->setCurrentIndex(0);
     checkAggressiveOptions->setChecked(false);
     checkTraceroute->setChecked(false);
+    m_nseManager->nseTreeResetItem();
 }
