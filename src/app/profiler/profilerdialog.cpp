@@ -22,8 +22,24 @@
 profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
 {
     Q_UNUSED(parent);
+    initObject();
+}
 
-#ifndef Q_WS_WIN
+profilerManager::profilerManager(const QString profileName, const QString paramters, QWidget* parent) : QDialog(parent)
+{
+    Q_UNUSED(parent);
+    initObject();
+    // restore values
+    QStringList parameters = paramters.split(' ',QString::SkipEmptyParts);
+
+    profileNameLine->setText(profileName);
+    restoreValuesFromProfile(parameters);
+    reloadScanParameters();
+}
+
+void profilerManager::initObject()
+{
+    #ifndef Q_WS_WIN
     m_uid = getuid();
 #endif
 
@@ -72,10 +88,10 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
             m_nseManager, SLOT(requestNseScriptHelp()));
 
     loadDefaultComboValues();
+    loadDefaultHash();
 
     m_profileW->setSelected(true);
 }
-
 
 profilerManager::~profilerManager()
 {
@@ -378,29 +394,21 @@ QStringList profilerManager::buildExtensions()
     }
 
 
-    if (checkTcpPing->isChecked() && !lineTcpPing->text().isEmpty())
+    if (checkTcpPing->isChecked())
     { // Discover options (tcp ack)
         QString tmpCommand;
         tmpCommand.append("-PA");
         tmpCommand.append(lineTcpPing->text());
         parameters << tmpCommand;
     }
-    else
-    {
-        checkTcpPing->setCheckState(Qt::Unchecked);
-    }
 
-    if (checkTcpSyn->isChecked() && !lineSynPing->text().isEmpty())
+    if (checkTcpSyn->isChecked())
     { // Discover options (tcp syn)
 
         QString tmpCommand;
         tmpCommand.append("-PS");
         tmpCommand.append(lineSynPing->text());
         parameters << tmpCommand;
-    }
-    else
-    {
-        checkTcpSyn->setCheckState(Qt::Unchecked);
     }
 
     if (checkUdpPing->isChecked())
@@ -443,7 +451,7 @@ QStringList profilerManager::buildExtensions()
     // Discover option
     if (checkIcmpEcho->isChecked())
     {
-        parameters << "-PI";
+        parameters << "-PE";
     }
 
     if (checkIcmpTimestamp->isChecked())

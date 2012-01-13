@@ -37,6 +37,7 @@ SET(SOURCES_CPP
 		app/monitor/details.cpp
 		app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
+                app/profiler/profilerdialogoptions.cpp
                 app/restoreDefaultValues.cpp
                 app/loadDefaultProfile.cpp
                 app/bookmarkcallevents.cpp

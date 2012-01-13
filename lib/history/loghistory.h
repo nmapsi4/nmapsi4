@@ -52,6 +52,8 @@ public:
     void addItemHistory(const QString name, const QString value);
     void deleteItemBookmark(const QString item);
     QStringList getHostCache();
+    bool isProfileInHistory(const QString profileName);
+    void updateProfile(const QString parameters, const QString profileName);
 
 private:
     const QStringList historyReadUrl();

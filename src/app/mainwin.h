@@ -85,6 +85,7 @@ private:
     QSplitter *cW;
     QSplitter *bW;
     QToolButton *menuSetup;
+    QToolButton *m_profilerTool;
     monitor *_monitor;
     utilities *_utilities;
     parserManager *_parser;
@@ -156,6 +157,7 @@ private slots:
     void saveUiSettings();
     void startAddParBook_ui();
     void startProfilerManager();
+    void editProfile();
 };
 
 #endif

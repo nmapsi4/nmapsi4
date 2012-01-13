@@ -26,6 +26,8 @@
 #include <QtGui/QMessageBox>
 #include <QtCore/QDebug>
 #include <QtGui/QMessageBox>
+#include <QtCore/QHash>
+#include <QtCore/QPair>
 
 #include "ui_profilerdialog.h"
 #include "nsemanager.h"
@@ -43,6 +45,7 @@ class profilerManager : public QDialog, public Ui::profilerDialog
 
 public:
     profilerManager(QWidget* parent = 0);
+    profilerManager(const QString profileName, const QString paramters, QWidget* parent = 0);
     ~profilerManager();
 
 private:
@@ -54,7 +57,13 @@ private:
     QListWidgetItem *m_nseW;
     nseManager* m_nseManager;
     int m_uid;
+    QHash<QString,QPair<QComboBox*,int> > preLoadComboList;
+    QHash<QString,QPair<QCheckBox*,QString> > preLoadCheckBoxList;
+    QHash<QString,QLineEdit*> lineEditList;
+    QHash<QString,QSpinBox*> spinBoxList;
 
+    void initObject();
+    void loadDefaultHash();
     QStringList buildExtensions();
     void loadDefaultComboValues();
     void setNormalProfile();
@@ -63,6 +72,9 @@ private:
     void resetOptions();
     void createQList();
     void reloadScanParameters();
+    void preLoadOptionsCombo();
+    void preLoadOptionsCheckBox();
+    void restoreValuesFromProfile(const QStringList paramters);
 
 signals:
     void doneParBook(const QString profileName, const QString profilePar);

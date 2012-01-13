@@ -252,8 +252,13 @@ void nseManager::nseTreeActiveScriptValues(const QStringList scripts)
     }
 }
 
-void nseManager::nseTreeActiveSingleScript(const QString script)
+bool nseManager::nseTreeActiveSingleScript(const QString script)
 {
+    if (!m_nseScriptAvailList.contains(script))
+    {
+        return false;
+    }
+
     m_nseScriptActiveList.append(m_nseScriptAvailList.takeAt(m_nseScriptAvailList.indexOf(script)));
 
     nseTreeAvailRestoreValues();
@@ -263,4 +268,6 @@ void nseManager::nseTreeActiveSingleScript(const QString script)
     {
         m_nseScriptAvailList.clear();
     }
+
+    return true;
 }

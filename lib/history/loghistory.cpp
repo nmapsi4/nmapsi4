@@ -48,7 +48,6 @@ logHistory::logHistory(const QString ConfigTag, int cacheSize)
 
 logHistory::~logHistory()
 {
-    //memory::freelist<QTreeWidgetItem*>::itemDeleteAll(ItemListHistory);
 }
 
 const QStringList logHistory::historyReadUrl()
@@ -73,6 +72,39 @@ void logHistory::addItemHistory(const QString name)
 void logHistory::addItemHistory(const QString name, const QString value)
 {
     coreItemHistory(name, value);
+}
+
+bool logHistory::isProfileInHistory(const QString profileName)
+{
+    return historyReadUrlTime().contains(profileName);
+}
+
+void logHistory::updateProfile(const QString parameters, const QString profileName)
+{
+    QSettings settings("nmapsi4", "nmapsi4_bookmark");
+
+    QList<QString> urlList = historyReadUrl();
+    QList<QString> urlListTime = historyReadUrlTime();
+
+    if (urlListTime.contains(profileName))
+    {
+        int index = urlListTime.indexOf(profileName);
+        urlList.removeAt(index);
+        urlListTime.removeAt(index);
+
+        if (urlList.size())
+        {
+            settings.setValue(configTag, QVariant(urlList));
+            settings.setValue(configTagTime, QVariant(urlListTime));
+        }
+        else
+        {
+            settings.setValue(configTag, "NULL");
+            settings.setValue(configTagTime, "NULL");
+        }
+    }
+
+    addItemHistory(parameters,profileName);
 }
 
 void logHistory::deleteItemBookmark(const QString item)

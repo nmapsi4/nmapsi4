@@ -1789,7 +1789,7 @@
      <x>0</x>
      <y>0</y>
      <width>726</width>
-     <height>19</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -1834,6 +1834,7 @@
     </property>
     <addaction name="actionProfile"/>
     <addaction name="actionNew_Profile"/>
+    <addaction name="actionEdit_Profile"/>
    </widget>
    <widget class="QMenu" name="menu_Tools">
     <property name="title">
@@ -1919,7 +1920,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionNew_ProfileMenu"/>
    <addaction name="actionClear_History"/>
   </widget>
   <widget class="QToolBar" name="toolBarBook">
@@ -2152,7 +2152,7 @@
   <action name="action_Quit_bar">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../.designer/backup</normaloff>../../../../../.designer/backup</iconset>
+     <normaloff>../../../../../../../.designer/backup</normaloff>../../../../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>&amp;Quit</string>
@@ -2501,6 +2501,15 @@
    </property>
    <property name="text">
     <string>New Profile</string>
+   </property>
+  </action>
+  <action name="actionEdit_Profile">
+   <property name="icon">
+    <iconset resource="../../mainwin.qrc">
+     <normaloff>:/images/images/document-properties.png</normaloff>:/images/images/document-properties.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Profile</string>
    </property>
   </action>
  </widget>

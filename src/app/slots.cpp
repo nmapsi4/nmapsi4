@@ -43,8 +43,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(startProfile_ui()));
     connect(actionNew_Profile, SIGNAL(triggered()),
             this, SLOT(startProfilerManager()));
-    connect(actionNew_ProfileMenu, SIGNAL(triggered()),
-            this, SLOT(startProfilerManager()));
+    connect(actionEdit_Profile, SIGNAL(triggered()),
+            this, SLOT(editProfile()));
 
     connect(actionFullS, SIGNAL(triggered()),
             this, SLOT(checkFullScreen()));

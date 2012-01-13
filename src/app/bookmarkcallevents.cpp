@@ -161,17 +161,34 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
     if (!uid)
     {
         history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-        history_->addItemHistory(profilePar, profileName);
+
+        if (!history_->isProfileInHistory(profileName))
+        {
+            history_->addItemHistory(profilePar, profileName);
+        }
+        else
+        {
+            history_->updateProfile(profilePar,profileName);
+        }
     }
     else
     {
         history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-        history_->addItemHistory(profilePar, profileName);
+
+        if (!history_->isProfileInHistory(profileName))
+        {
+            history_->addItemHistory(profilePar, profileName);
+        }
+        else
+        {
+            history_->updateProfile(profilePar,profileName);
+        }
     }
 
     // FIXME: delete QTreeWidgetItem for history treewidget
     history_->updateBookMarks();
     delete history_;
+
     loadScanProfile();
 }
 

@@ -47,7 +47,7 @@ public:
      **/
     const QStringList getActiveNseScript();
     void nseTreeActiveScriptValues(const QStringList scripts);
-    void nseTreeActiveSingleScript(const QString script);
+    bool nseTreeActiveSingleScript(const QString script);
 
 private:
     void nseTreeAvailRestoreValues();

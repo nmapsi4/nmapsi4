@@ -130,6 +130,21 @@ void nmapClass::startProfilerManager()
     }
 }
 
+void nmapClass::editProfile()
+{
+    QWeakPointer<profilerManager> pManager = new profilerManager(comboPar->currentText(),comboAdv->currentText(),this);
+
+    connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
+            this, SLOT(saveBookMarksPar(QString,QString)));
+
+    pManager.data()->exec();
+
+    if (!pManager.isNull())
+    {
+        delete pManager.data();
+    }
+}
+
 void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
@@ -155,5 +170,7 @@ nmapClass::~nmapClass()
     delete cW;
     delete menuSetup->menu();
     delete menuSetup;
+    delete m_profilerTool->menu();
+    delete m_profilerTool;
 }
 

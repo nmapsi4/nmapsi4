@@ -196,6 +196,7 @@ void nmapClass::createToolButtonSetup()
     menu->addSeparator();
     menu->addAction(actionProfile);
     menu->addAction(actionNew_Profile);
+    menu->addAction(actionEdit_Profile);
     menu->addSeparator();
     menu->addMenu(menu_Help);
     menu->addSeparator();
@@ -206,6 +207,20 @@ void nmapClass::createToolButtonSetup()
     menuSetup->setMenu(menu);
     //toolBarQuit->addWidget(menuSetup);
     toolMenuBar->addWidget(menuSetup);
+
+    // profiler menu
+    m_profilerTool = new QToolButton();
+    m_profilerTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_profilerTool->setPopupMode(QToolButton::InstantPopup);
+    m_profilerTool->setText(tr("Profile"));
+    m_profilerTool->setIcon(QIcon(QString::fromUtf8(":/images/images/documentation.png")));
+
+    QMenu *menuProfiler = new QMenu();
+    menuProfiler->addAction(actionNew_Profile);
+    menuProfiler->addAction(actionEdit_Profile);
+    m_profilerTool->setMenu(menuProfiler);
+
+    toolBar_2->addWidget(m_profilerTool);
 }
 
 
