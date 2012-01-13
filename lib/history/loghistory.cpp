@@ -155,7 +155,9 @@ void logHistory::updateBookMarks()
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);
             historyItem->setText(0, item);
+            historyItem->setToolTip(0, item);
             historyItem->setText(1, urlListTime[index]);
+            historyItem->setToolTip(1, urlListTime[index]);
             index++;
         }
     }
