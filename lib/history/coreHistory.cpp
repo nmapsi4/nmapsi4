@@ -19,19 +19,15 @@
 
 #include "loghistory.h"
 
-//
-// @Developer: Francesco Cecconi
-//
 void logHistory::coreItemHistory(const QString url, const QString scanTime)
 {
     Q_ASSERT(!url.isEmpty());
 
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
-    QList<QString> urlList;
+    QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime;
 
-    urlList = historyReadUrl();
     if (!scanTime.isNull())
     {
         urlListTime = historyReadUrlTime();
@@ -49,9 +45,7 @@ void logHistory::coreItemHistory(const QString url, const QString scanTime)
             settings.setValue(configTagTime, QVariant(urlListTime));
         }
     }
-    else if (((urlList.size() == m_cacheSize)
-              && (m_cacheSize != -1))
-             && (!urlList.contains(url)))
+    else if (((urlList.size() == m_cacheSize) && (m_cacheSize != -1)) && (!urlList.contains(url)))
     {
         urlList.removeLast();
         urlList.push_front(url);

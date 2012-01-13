@@ -133,69 +133,7 @@ void logHistory::deleteItemBookmark(const QString item)
             break;
         }
     }
-    updateBookMarks();
 }
-
-void logHistory::updateLogHistory()
-{
-    QSettings settings("nmapsi4", "nmapsi4_bookmark");
-    QList<QString> urlList = historyReadUrl();
-    QList<QString> urlListTime = historyReadUrlTime();
-
-    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(ItemListHistory);
-
-    logTree->clear();
-    logTree->setIconSize(QSize(32, 32));
-
-    QFile *tmpFile = new QFile();
-    if (!urlList.isEmpty() && urlList.first().compare("NULL"))
-    {
-        short index = 0;
-        foreach(const QString& item, urlList)
-        {
-            tmpFile->setFileName(item);
-            if (tmpFile->exists() && urlListTime.first().compare("NULL"))
-            {
-                historyItem = new QTreeWidgetItem(logTree);
-                historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-                ItemListHistory.push_front(historyItem);
-                QFileInfo fInfo(item);
-                historyItem->setText(0, fInfo.fileName());
-                historyItem->setText(1, fInfo.filePath().remove(fInfo.fileName()));
-                historyItem->setText(2, urlListTime[index]);
-                index++;
-            }
-            else if (urlList.contains(item) && urlListTime.first().compare("NULL"))
-            {
-                int index = urlList.indexOf(item);
-                urlList.removeOne(item);
-                urlListTime.removeAt(index);
-                settings.setValue(configTag, QVariant(urlList));
-                settings.setValue(configTagTime, QVariant(urlListTime));
-            }
-            else
-            {
-                history = new QTreeWidgetItem(logTree);
-                history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-                ItemListHistory.push_front(historyItem);
-                history->setText(0, QApplication::translate("logHistory",
-                                 "Your configuration file is too old, please delete it",
-                                 0, QApplication::UnicodeUTF8));
-
-            }
-        }
-    }
-    else
-    {
-        history = new QTreeWidgetItem(logTree);
-        history->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
-        ItemListHistory.push_front(historyItem);
-        history->setText(0, "No Log Cache");
-    }
-
-    delete tmpFile;
-}
-
 
 void logHistory::updateBookMarks()
 {

@@ -103,6 +103,8 @@ void nmapClass::deleteBookMark()
         history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
     }
 
+    // FIXME: delete QTreeWidgetItem for history treewidget
+    history_->updateBookMarks();
     delete history_;
     updateComboBook();
 }
@@ -129,6 +131,8 @@ void nmapClass::deleteBookMarkPar()
         history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
     }
 
+    // FIXME: delete QTreeWidgetItem for history treewidget
+    history_->updateBookMarks();
     delete history_;
     loadScanProfile();
 }

@@ -24,11 +24,8 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
-#include <QtCore/QFile>
 #include <QtGui/QApplication>
 #include <QtCore/QDateTime>
-#include <QtCore/QFileInfo>
-#include <QtGui/QComboBox>
 #include <QtCore/QString>
 
 #include "memorytools.h"
@@ -37,16 +34,11 @@
 
 class logHistory
 {
-    /**
-     * TODO:: const to const &
-     **/
-
 public:
     logHistory(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
     logHistory(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
     logHistory(const QString ConfigTag, int cacheSize);
     ~logHistory();
-    void updateLogHistory();
     void updateBookMarks();
     void addItemHistory(const QString name);
     void addItemHistory(const QString name, const QString value);
