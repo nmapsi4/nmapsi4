@@ -156,18 +156,22 @@ void nmapClass::exit()
 nmapClass::~nmapClass()
 {
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
     delete _discoverManager;
     delete _monitor;
     delete _utilities;
     delete _parser;
-    delete progressScan;
+    delete _vulnerability;
     delete _completer.data();
     delete _completerVuln.data();
-    delete _vulnerability;
     delete _hostModel.data();
     delete _vulnModel.data();
     delete bW;
     delete cW;
+    delete progressScan;
     delete menuSetup->menu();
     delete menuSetup;
     delete m_profilerTool->menu();

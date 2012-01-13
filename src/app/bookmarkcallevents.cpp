@@ -68,16 +68,20 @@ void nmapClass::saveBookMarks()
         history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->addItemHistory(hostEdit->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
+        m_treeloghlist = history_->updateBookMarks();
     }
     else
     {
         history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
+        m_treebookvulnlist = history_->updateBookMarks();
     }
 
-    // FIXME: delete QTreeWidgetItem for history treewidget
-    history_->updateBookMarks();
     delete history_;
     updateComboBook();
 }
@@ -91,20 +95,23 @@ void nmapClass::deleteBookMark()
 
     logHistory *history_ = NULL;
 
-    // FIXME: delete QTreeWidgetItem
     if (tabScan->isVisible())
     {
         history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(treeLogH->currentItem()->text(0));
+
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
+        m_treeloghlist = history_->updateBookMarks();
     }
     else
     {
         history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
+
+        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
+        m_treebookvulnlist = history_->updateBookMarks();
     }
 
-    // FIXME: delete QTreeWidgetItem for history treewidget
-    history_->updateBookMarks();
     delete history_;
     updateComboBook();
 }
@@ -119,7 +126,6 @@ void nmapClass::deleteBookMarkPar()
 
     logHistory *history_ = NULL;
 
-    // FIXME: delete QTreeWidgetItem
     if (!uid)
     {
         history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
@@ -131,8 +137,9 @@ void nmapClass::deleteBookMarkPar()
         history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
     }
 
-    // FIXME: delete QTreeWidgetItem for history treewidget
-    history_->updateBookMarks();
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
+    m_treebookparlist = history_->updateBookMarks();
+
     delete history_;
     loadScanProfile();
 }
@@ -189,10 +196,10 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
         }
     }
 
-    // FIXME: delete QTreeWidgetItem for history treewidget
-    history_->updateBookMarks();
-    delete history_;
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
+    m_treebookparlist = history_->updateBookMarks();
 
+    delete history_;
     loadScanProfile();
 }
 

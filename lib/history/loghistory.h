@@ -39,7 +39,7 @@ public:
     logHistory(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
     logHistory(const QString ConfigTag, int cacheSize);
     ~logHistory();
-    void updateBookMarks();
+    QList<QTreeWidgetItem*> updateBookMarks();
     void addItemHistory(const QString name);
     void addItemHistory(const QString name, const QString value);
     void deleteItemBookmark(const QString item);
@@ -55,7 +55,6 @@ private:
     QTreeWidget* logTree;
     QTreeWidgetItem* historyItem;
     QTreeWidgetItem* history;
-    QList<QTreeWidgetItem*> ItemListHistory;
     QString configTag;
     QString configTagTime;
     int m_cacheSize;

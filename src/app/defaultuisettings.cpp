@@ -24,28 +24,28 @@ void nmapClass::loadHistoryDefault()
     logHistory *history;
     // reload bookmark from history
     history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    history->updateBookMarks();
+    m_treeloghlist = history->updateBookMarks();
     delete history;
     // check for user or admin parameters bookmarks
     if (!uid)
     {
         history = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-        history->updateBookMarks();
+        m_treebookparlist = history->updateBookMarks();
         delete history;
     }
     else
     {
         history = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-        history->updateBookMarks();
+        m_treebookparlist = history->updateBookMarks();
         delete history;
     }
 
     history = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-    history->updateBookMarks();
+    m_treebookvulnlist = history->updateBookMarks();
     delete history;
 
     history = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
-    history->updateBookMarks();
+    m_treewidgetvulnlist = history->updateBookMarks();
     delete history;
 }
 

@@ -135,12 +135,12 @@ void logHistory::deleteItemBookmark(const QString item)
     }
 }
 
-void logHistory::updateBookMarks()
+QList<QTreeWidgetItem*> logHistory::updateBookMarks()
 {
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
 
-    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(ItemListHistory);
+    QList<QTreeWidgetItem*> ItemListHistory;
 
     logTree->clear();
     logTree->setIconSize(QSize(22, 22));
@@ -161,6 +161,8 @@ void logHistory::updateBookMarks()
             index++;
         }
     }
+
+    return ItemListHistory;
 }
 
 QStringList logHistory::getHostCache()

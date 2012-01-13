@@ -95,6 +95,11 @@ private:
     QWeakPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
     discoverManager* _discoverManager;
+    // TODO
+    QList<QTreeWidgetItem*> m_treeloghlist;
+    QList<QTreeWidgetItem*> m_treebookparlist;
+    QList<QTreeWidgetItem*> m_treebookvulnlist;
+    QList<QTreeWidgetItem*> m_treewidgetvulnlist;
 
     void preScanLookup(const QString hostname);
     void setNmapsiSlot();
