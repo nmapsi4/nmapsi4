@@ -1033,6 +1033,9 @@
             <property name="frameShadow">
              <enum>QFrame::Sunken</enum>
             </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
             <property name="rootIsDecorated">
              <bool>false</bool>
             </property>
