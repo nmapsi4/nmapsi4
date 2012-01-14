@@ -86,6 +86,7 @@ private:
     QSplitter *bW;
     QToolButton *menuSetup;
     QToolButton *m_profilerTool;
+    QToolButton *m_saveTool;
     monitor *_monitor;
     utilities *_utilities;
     parserManager *_parser;
@@ -95,7 +96,6 @@ private:
     QWeakPointer<QStringListModel> _vulnModel;
     vulnerability* _vulnerability;
     discoverManager* _discoverManager;
-    // TODO
     QList<QTreeWidgetItem*> m_treeloghlist;
     QList<QTreeWidgetItem*> m_treebookparlist;
     QList<QTreeWidgetItem*> m_treebookvulnlist;

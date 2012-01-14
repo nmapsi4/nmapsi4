@@ -176,5 +176,7 @@ nmapClass::~nmapClass()
     delete menuSetup;
     delete m_profilerTool->menu();
     delete m_profilerTool;
+    delete m_saveTool->menu();
+    delete m_saveTool;
 }
 

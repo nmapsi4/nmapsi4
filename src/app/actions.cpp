@@ -221,6 +221,19 @@ void nmapClass::createToolButtonSetup()
     m_profilerTool->setMenu(menuProfiler);
 
     toolBar_2->addWidget(m_profilerTool);
+
+    // save menu
+    m_saveTool = new QToolButton();
+    m_saveTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_saveTool->setPopupMode(QToolButton::InstantPopup);
+    m_saveTool->setText(tr("Save"));
+    m_saveTool->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
+
+    QMenu *menuSave = new QMenu();
+    menuSave->addAction(actionSave_Menu);
+    menuSave->addAction(actionSave_As_Menu);
+    m_saveTool->setMenu(menuSave);
+
+    toolBar->addWidget(m_saveTool);
+    toolBar->addSeparator();
 }
-
-

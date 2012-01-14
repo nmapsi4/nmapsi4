@@ -1890,8 +1890,6 @@
    </attribute>
    <addaction name="action_Scan_menu"/>
    <addaction name="separator"/>
-   <addaction name="actionSave"/>
-   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="contextMenuPolicy">
