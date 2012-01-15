@@ -25,15 +25,15 @@ profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
     initObject();
 }
 
-profilerManager::profilerManager(const QString profileName, const QString paramters, QWidget* parent) : QDialog(parent)
+profilerManager::profilerManager(const QString profileName, const QString parameters, QWidget* parent) : QDialog(parent)
 {
     Q_UNUSED(parent);
     initObject();
     // restore values
-    QStringList parameters = paramters.split(' ',QString::SkipEmptyParts);
+    QStringList parametersList = parameters.split(' ',QString::SkipEmptyParts);
 
     profileNameLine->setText(profileName);
-    restoreValuesFromProfile(parameters);
+    restoreValuesFromProfile(parametersList);
     reloadScanParameters();
 }
 
@@ -341,7 +341,7 @@ QStringList profilerManager::buildExtensions()
         checkIdleScan->setCheckState(Qt::Unchecked);
     }
 
-    // Agressive options
+    // Aggressive options
     if (checkAggressiveOptions->isChecked())
     {
         parameters << "-A";

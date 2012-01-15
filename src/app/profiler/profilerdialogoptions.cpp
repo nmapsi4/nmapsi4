@@ -352,13 +352,13 @@ void profilerManager::preLoadOptionsCheckBox()
 
     //Min outstanding
     comboDefault.first = TcheckMinPar;
-    comboDefault.second = "1";
+    comboDefault.second = '1';
     preLoadCheckBoxList.insert("--min-parallelism", comboDefault);
     spinBoxList.insert("--min-parallelism",TspinBoxMinP);
 
     //Min outstanding
     comboDefault.first = TcheckMaxPar;
-    comboDefault.second = "1";
+    comboDefault.second = '1';
     preLoadCheckBoxList.insert("--max-parallelism", comboDefault);
     spinBoxList.insert("--max-parallelism",spinBoxMaxPar);
 

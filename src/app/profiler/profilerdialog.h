@@ -25,7 +25,6 @@
 #include <QtGui/QListWidgetItem>
 #include <QtGui/QMessageBox>
 #include <QtCore/QDebug>
-#include <QtGui/QMessageBox>
 #include <QtCore/QHash>
 #include <QtCore/QPair>
 
@@ -45,7 +44,7 @@ class profilerManager : public QDialog, public Ui::profilerDialog
 
 public:
     profilerManager(QWidget* parent = 0);
-    profilerManager(const QString profileName, const QString paramters, QWidget* parent = 0);
+    profilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
     ~profilerManager();
 
 private:
@@ -74,7 +73,7 @@ private:
     void reloadScanParameters();
     void preLoadOptionsCombo();
     void preLoadOptionsCheckBox();
-    void restoreValuesFromProfile(const QStringList paramters);
+    void restoreValuesFromProfile(const QStringList parameters);
 
 signals:
     void doneParBook(const QString profileName, const QString profilePar);
