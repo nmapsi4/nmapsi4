@@ -137,7 +137,6 @@ private slots:
     void callScanH();
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
-    //update and log slots
     void startProfile_ui();
     void checkProfile();
     void updateFontHost();
@@ -147,7 +146,6 @@ private slots:
     void deleteBookMark();
     void deleteBookMarkPar();
     void updateSezScan();
-    void updateSezLog();
     void updateSezVuln();
     void updateDiscoverVuln();
     void updateTabLook();
@@ -156,7 +154,6 @@ private slots:
     void resetPar();
     void detailsOptions();
     void nssOptions();
-    //contest Menu
     void menuScanBook();
     void menuVulnBook();
     void menuParBook();

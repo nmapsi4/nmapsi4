@@ -136,7 +136,6 @@ void nmapClass::setDefaultAction()
     nseNumber->setSegmentStyle(QLCDNumber::Flat);
     tWresult->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
 }
@@ -162,7 +161,7 @@ void nmapClass::setDefaultSplitter()
 void nmapClass::defaultComboValues()
 {
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to scan (ip range ex. 192.168.1.10/20)"));
+    hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
     comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
 }

@@ -68,7 +68,6 @@ void nmapClass::updateFontHost()
 void nmapClass::updateSezScan()
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(true);
-    _collectionsButton.value("log-sez")->setChecked(false);
     _collectionsButton.value("vuln-sez")->setChecked(false);
     _collectionsButton.value("discover-sez")->setChecked(false);
     toolBar->setVisible(true);
@@ -87,43 +86,24 @@ void nmapClass::updateSezScan()
         tabUi->insertTab(tabUi->count(),bookmarks,tr("Bookmarks"));
         tabUi->setTabIcon(tabUi->indexOf(bookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
     }
+
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
 
+    if (!tabLog->isVisible())
+    {
+        tabUi->insertTab(tabUi->count(),tabLog,QIcon(QString::fromUtf8(":/images/images/book.png")),"Raw scan log");
+    }
+
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
-    tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     // enable scan action
     toolBarTab->setVisible(true);
 }
 
-void nmapClass::updateSezLog()
-{  // SLOT
-    _collectionsButton.value("scan-sez")->setChecked(false);
-    _collectionsButton.value("log-sez")->setChecked(true);
-    _collectionsButton.value("vuln-sez")->setChecked(false);
-    _collectionsButton.value("discover-sez")->setChecked(false);
-    // main and action bar only in scan index
-    toolBar->setVisible(false);
-    toolBar_2->setVisible(false);
-    toolBarBook->setVisible(false);
-    toolBarSearch->setVisible(false);
-
-    tabUi->removeTab(tabUi->indexOf(bookmarks));
-    tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
-    tabUi->removeTab(tabUi->indexOf(tabDiscover));
-    tabUi->insertTab(0,tabLog,QIcon(QString::fromUtf8(":/images/images/book.png")),"Scan Log");
-    tabUi->setCurrentIndex(0);
-
-    // disable scan action
-    toolBarTab->setVisible(false);
-}
-
 void nmapClass::updateSezVuln()
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(false);
-    _collectionsButton.value("log-sez")->setChecked(false);
     _collectionsButton.value("vuln-sez")->setChecked(true);
     _collectionsButton.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
@@ -147,7 +127,6 @@ void nmapClass::updateDiscoverVuln()
 { // SLOT
     // discover section
     _collectionsButton.value("scan-sez")->setChecked(false);
-    _collectionsButton.value("log-sez")->setChecked(false);
     _collectionsButton.value("vuln-sez")->setChecked(false);
     _collectionsButton.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index

@@ -131,17 +131,6 @@ void nmapClass::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
     sezBar->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/book.png")),tr("Log"));
-    actionButt->setToolTip(tr("Scan Log"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("log-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezLog()));
-    sezBar->addWidget(actionButt);
-
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
@@ -187,7 +176,6 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionAdd_Bookmark);
     menu->addSeparator();
     menu->addAction(actionScan_section);
-    menu->addAction(actionLog_section);
     menu->addAction(actionVulnerabilities_section);
     menu->addAction(actionSection_Discover);
     menu->addSeparator();

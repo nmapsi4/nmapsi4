@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>726</width>
-    <height>556</height>
+    <width>761</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1061,138 +1061,96 @@
          <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
        </attribute>
        <attribute name="title">
-        <string>Scan Log</string>
+        <string>Raw scan log</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_22">
-        <property name="margin">
-         <number>0</number>
-        </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QTabWidget" name="tabWidget_2">
-          <property name="styleSheet">
-           <string notr="true">QTabWidget:pane {
-	border: 0px;
-}</string>
-          </property>
-          <property name="tabPosition">
-           <enum>QTabWidget::South</enum>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_5">
-           <attribute name="icon">
-            <iconset resource="../../mainwin.qrc">
-             <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
-           </attribute>
-           <attribute name="title">
-            <string>Main</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_7">
-            <property name="margin">
-             <number>0</number>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QTreeWidget" name="listScan">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <item row="0" column="0">
-             <widget class="QTreeWidget" name="listScan">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Sunken</enum>
-              </property>
-              <property name="lineWidth">
-               <number>1</number>
-              </property>
-              <property name="autoScroll">
-               <bool>false</bool>
-              </property>
-              <property name="showDropIndicator" stdset="0">
-               <bool>false</bool>
-              </property>
-              <property name="alternatingRowColors">
-               <bool>true</bool>
-              </property>
-              <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
-              </property>
-              <property name="indentation">
-               <number>20</number>
-              </property>
-              <property name="rootIsDecorated">
-               <bool>false</bool>
-              </property>
-              <property name="itemsExpandable">
-               <bool>true</bool>
-              </property>
-              <property name="animated">
-               <bool>true</bool>
-              </property>
-              <property name="columnCount">
-               <number>1</number>
-              </property>
-              <column>
-               <property name="text">
-                <string>Log(s)</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_6">
-           <attribute name="icon">
-            <iconset resource="../../mainwin.qrc">
-             <normaloff>:/images/images/messagebox_critical.png</normaloff>:/images/images/messagebox_critical.png</iconset>
-           </attribute>
-           <attribute name="title">
-            <string>Warning(s)</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <property name="margin">
-             <number>0</number>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
             </property>
-            <item row="0" column="0">
-             <widget class="QTreeWidget" name="listScanError">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Sunken</enum>
-              </property>
-              <property name="lineWidth">
-               <number>1</number>
-              </property>
-              <property name="autoScroll">
-               <bool>false</bool>
-              </property>
-              <property name="showDropIndicator" stdset="0">
-               <bool>false</bool>
-              </property>
-              <property name="alternatingRowColors">
-               <bool>true</bool>
-              </property>
-              <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
-              </property>
-              <property name="rootIsDecorated">
-               <bool>false</bool>
-              </property>
-              <property name="uniformRowHeights">
-               <bool>false</bool>
-              </property>
-              <property name="animated">
-               <bool>true</bool>
-              </property>
-              <column>
-               <property name="text">
-                <string>Error(s)</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="autoScroll">
+             <bool>false</bool>
+            </property>
+            <property name="showDropIndicator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="indentation">
+             <number>20</number>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <property name="itemsExpandable">
+             <bool>true</bool>
+            </property>
+            <property name="animated">
+             <bool>true</bool>
+            </property>
+            <property name="columnCount">
+             <number>1</number>
+            </property>
+            <column>
+             <property name="text">
+              <string>Log(s)</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTreeWidget" name="listScanError">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="autoScroll">
+             <bool>false</bool>
+            </property>
+            <property name="showDropIndicator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <property name="uniformRowHeights">
+             <bool>false</bool>
+            </property>
+            <property name="animated">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>Error(s)</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -1791,8 +1749,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>726</width>
-     <height>19</height>
+     <width>761</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -1844,7 +1802,6 @@
      <string>&amp;Tools</string>
     </property>
     <addaction name="actionScan_section"/>
-    <addaction name="actionLog_section"/>
     <addaction name="actionVulnerabilities_section"/>
     <addaction name="actionSection_Discover"/>
    </widget>

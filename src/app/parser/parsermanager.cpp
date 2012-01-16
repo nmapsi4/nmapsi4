@@ -74,22 +74,6 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
 
     elemObj->setParameters(parList.join(" "));
 
-    int tmpBox = m_ui->SWscan->currentIndex();
-
-    switch(tmpBox)
-    {
-      case 0:
-        m_ui->Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-      case 1:
-        m_ui->Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-      case 2:
-        m_ui->Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        m_ui->Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/reload.png")));
-        break;
-    }
-
     // clear output and error thread buffer.
     dataBuffer.clear();
     errorBuffer.clear();
