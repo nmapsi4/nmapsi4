@@ -49,6 +49,10 @@
 #include "parsermanager.h"
 #include "profilerdialog.h"
 
+static const char verticalStyleSheet[] = "QPushButton:checked {border: 0px; border-radius: 2px; \
+        background-color: palette(highlight); color: palette(highlighted-text); \
+        margin-left: 0px; margin-right: 3px; padding: 4px;}";
+
 // define class namespace
 using namespace memory;
 

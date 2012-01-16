@@ -97,9 +97,6 @@ void nmapClass::createBar()
 {
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
-    const QString& verticalStyleSheet(QString("QPushButton:checked {border: 0px; border-radius: 2px; ")
-        + QString("background-color: palette(highlight); color: palette(highlighted-text); ")
-        + QString("margin-left: 0px; margin-right: 3px; padding: 4px;}"));
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"));
     actionButt->setToolTip(tr("Scan host(s)"));

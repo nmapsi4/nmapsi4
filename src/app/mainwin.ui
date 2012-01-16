@@ -78,7 +78,7 @@
          <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
        </attribute>
        <attribute name="title">
-        <string>Scan</string>
+        <string>Scan host(s)</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <property name="margin">
@@ -356,7 +356,7 @@
                 <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
               </attribute>
               <attribute name="title">
-               <string>Scan Details</string>
+               <string>Service(s) Details</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_13">
                <property name="margin">
@@ -721,7 +721,7 @@
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>Details</string>
+                 <string>Scan host details</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../../mainwin.qrc">
@@ -744,7 +744,7 @@
               <item>
                <widget class="QPushButton" name="Bnss">
                 <property name="text">
-                 <string>NSE</string>
+                 <string>Nse result</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../../mainwin.qrc">
@@ -1472,7 +1472,7 @@
          <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
        </attribute>
        <attribute name="title">
-        <string>Discover</string>
+        <string>Network discover</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
         <item row="0" column="0">
@@ -1792,7 +1792,7 @@
      <x>0</x>
      <y>0</y>
      <width>726</width>
-     <height>20</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

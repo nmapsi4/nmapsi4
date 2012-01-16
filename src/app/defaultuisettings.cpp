@@ -127,10 +127,15 @@ void nmapClass::setDefaultAction()
     action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
     _collectionsButton.value("scan-sez")->setChecked(true);
+
     Bdetails->setChecked(true);
+    Bdetails->setStyleSheet(verticalStyleSheet);
+    Bnss->setStyleSheet(verticalStyleSheet);
+
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     nseNumber->setSegmentStyle(QLCDNumber::Flat);
     tWresult->setVisible(false);
+
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
