@@ -21,71 +21,71 @@
 
 void nmapClass::loadHistoryDefault()
 {
-    logHistory *history;
+    history *newHistory;
     // reload bookmark from history
-    history = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    m_treeloghlist = history->updateBookMarks();
-    delete history;
+    newHistory = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    m_treeloghlist = newHistory->updateBookMarks();
+    delete newHistory;
     // check for user or admin parameters bookmarks
     if (!uid)
     {
-        history = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-        m_treebookparlist = history->updateBookMarks();
-        delete history;
+        newHistory = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        m_treebookparlist = newHistory->updateBookMarks();
+        delete newHistory;
     }
     else
     {
-        history = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-        m_treebookparlist = history->updateBookMarks();
-        delete history;
+        newHistory = new history(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        m_treebookparlist = newHistory->updateBookMarks();
+        delete newHistory;
     }
 
-    history = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-    m_treebookvulnlist = history->updateBookMarks();
-    delete history;
+    newHistory = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    m_treebookvulnlist = newHistory->updateBookMarks();
+    delete newHistory;
 
-    history = new logHistory(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
-    m_treewidgetvulnlist = history->updateBookMarks();
-    delete history;
+    newHistory = new history(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
+    m_treewidgetvulnlist = newHistory->updateBookMarks();
+    delete newHistory;
 }
 
 void nmapClass::updateCompleter()
 {
-    logHistory *history;
+    history *newHistory;
 
-    history = new logHistory("nmapsi4/cacheHost", hostCache);
+    newHistory = new history("nmapsi4/cacheHost", hostCache);
 
-    if (history->getHostCache().first() != "NULL")
+    if (newHistory->getHostCache().first() != "NULL")
     {
         if (!_completer.isNull())
         {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(_completer.data()->model());
-            newModel->setStringList(history->getHostCache());
+            newModel->setStringList(newHistory->getHostCache());
         }
         else if (_hostModel.isNull())
         {
-            _hostModel = new QStringListModel(history->getHostCache());
+            _hostModel = new QStringListModel(newHistory->getHostCache());
         }
     }
 
-    delete history;
+    delete newHistory;
 
-    history = new logHistory("nmapsi4/cacheVuln", hostCache);
+    newHistory = new history("nmapsi4/cacheVuln", hostCache);
 
-    if (history->getHostCache().first() != "NULL")
+    if (newHistory->getHostCache().first() != "NULL")
     {
         if (!_completerVuln.isNull())
         {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(_completerVuln.data()->model());
-            newModel->setStringList(history->getHostCache());
+            newModel->setStringList(newHistory->getHostCache());
         }
         else if (_vulnModel.isNull())
         {
-            _vulnModel = new QStringListModel(history->getHostCache());
+            _vulnModel = new QStringListModel(newHistory->getHostCache());
         }
     }
 
-    delete history;
+    delete newHistory;
 }
 
 void nmapClass::restoreSettings()

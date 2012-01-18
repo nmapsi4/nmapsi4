@@ -17,14 +17,13 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef LOGHISTORY_H
-#define LOGHISTORY_H
+#ifndef HISTORY_H
+#define HISTORY_H
 
 #include <QtCore/QList>
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
-#include <QtGui/QApplication>
 #include <QtCore/QDateTime>
 #include <QtCore/QString>
 
@@ -32,13 +31,13 @@
 
 #define HISTORY_NO_DEBUG
 
-class logHistory
+class history
 {
 public:
-    logHistory(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
-    logHistory(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
-    logHistory(const QString ConfigTag, int cacheSize);
-    ~logHistory();
+    history(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
+    history(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
+    history(const QString ConfigTag, int cacheSize);
+    ~history();
     QList<QTreeWidgetItem*> updateBookMarks();
     void addItemHistory(const QString name);
     void addItemHistory(const QString name, const QString value);
@@ -50,11 +49,10 @@ public:
 private:
     const QStringList historyReadUrl();
     const QList<QString> historyReadUrlTime();
-    void coreItemHistory(const QString url, const QString scanTime);
+    void addItemToHistory(const QString url, const QString scanTime);
 
     QTreeWidget* logTree;
     QTreeWidgetItem* historyItem;
-    QTreeWidgetItem* history;
     QString configTag;
     QString configTagTime;
     int m_cacheSize;

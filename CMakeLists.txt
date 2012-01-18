@@ -19,7 +19,6 @@ if(Q_WS_MAC)
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
 endif(Q_WS_MAC)
 
-add_subdirectory( lib )
 add_subdirectory( src )
 
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"

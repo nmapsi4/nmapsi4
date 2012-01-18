@@ -35,7 +35,7 @@
 
 // local include
 #include "preferencesdialog.h"
-#include "loghistory.h"
+#include "history.h"
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
 #include "addparameterstobookmark.h"

@@ -18,6 +18,8 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src/platform/lookup/
     ${CMAKE_SOURCE_DIR}/src/platform/nse/
     ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
+    ${CMAKE_SOURCE_DIR}/src/platform/history/
+    ${CMAKE_SOURCE_DIR}/src/platform/about/
     ${CMAKE_SOURCE_DIR}/lib/about/
     ${CMAKE_SOURCE_DIR}/lib/history/
 )
@@ -61,7 +63,10 @@ SET(SOURCES_CPP
 		platform/discover/discover.cpp
 		platform/discover/discovermanager.cpp
 		platform/bookmarks/addparameterstobookmark.cpp
-                platform/logwriter/logwriter.cpp)
+                platform/logwriter/logwriter.cpp
+                platform/history/history.cpp
+                platform/about/about.cpp
+)
 
 
 if (Q_WS_X11)
@@ -77,20 +82,24 @@ SET(SOURCES_H app/mainwin.h
 	platform/discover/discover.h
         platform/discover/discovermanager.h
         platform/nse/nsemanager.h
+#         platform/about/about.h
         common/utilities.h
 	common/qprocessthread.h
 	app/preference/preferencesdialog.h
 	app/monitor/details.h
         app/monitor/monitor.h
         app/profiler/profilerdialog.h
-	app/parser/parsermanager.h)
+	app/parser/parsermanager.h
+)
 
 SET(SOURCES_UI app/mainwin.ui
 	platform/vulnerability/addvulnerabilityurl.ui
 	platform/bookmarks/addparameterstobookmark.ui
+        platform/about/about.ui
 	app/preference/preferencesdialog.ui
         app/profiler/profilerdialog.ui
-	app/monitor/details.ui)
+	app/monitor/details.ui
+)
 
 SET(RESOURCES_QRC ../mainwin.qrc)
 
@@ -99,7 +108,7 @@ QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
 if (RELOAD_TRANSLATIONS)
-  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ../lib/history/loghistory.cpp ts/nmapsi4_it.ts
+  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts
     ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts
     ts/template/nmapsi4.ts ts/nmapsi4_ru.ts OPTIONS -no-obsolete)
   message( "nmapsi4:: update and rebuild translation " )
@@ -111,20 +120,17 @@ endif (RELOAD_TRANSLATIONS)
 
 if (Q_WS_X11)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR}
-	    ${CMAKE_BINARY_DIR}/lib/history/
-	    ${CMAKE_BINARY_DIR}/lib/about/
-  )
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY} nmapsi4_history nmapsi4_about)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTDBUS_LIBRARY} )
 elseif(WIN32)
   ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} nmapsi4_history nmapsi4_about)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} )
 elseif(Q_WS_MAC)
   MESSAGE( STATUS MAC Osx)
   ADD_EXECUTABLE(nmapsi4 MACOSX_BUNDLE ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/lib/history/ ${CMAKE_BINARY_DIR}/lib/about/)
-  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} nmapsi4_history nmapsi4_about)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+  TARGET_LINK_LIBRARIES( nmapsi4 ${QT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTNETWORK_LIBRARY} )
   ADD_CUSTOM_COMMAND( TARGET nmapsi4 POST_BUILD
         COMMAND mkdir ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS ${MACOSX_BUNDLE_ICON_FILE} ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
