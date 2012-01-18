@@ -102,9 +102,9 @@ void nmapClass::startScan()
 void nmapClass::preScanLookup(const QString hostname)
 {
     // save ip or dns to history
-    logHistory *history = new logHistory("nmapsi4/cacheHost", hostCache);
-    history->addItemHistory(hostname);
-    delete history;
+    history *newHistory = new history("nmapsi4/cacheHost", hostCache);
+    newHistory->addItemHistory(hostname);
+    delete newHistory;
 
     updateCompleter();
 

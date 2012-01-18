@@ -61,11 +61,11 @@ void nmapClass::saveBookMarks()
         return;
     }
 
-    logHistory *history_ = NULL;
+    history *history_ = NULL;
 
     if (tabScan->isVisible())
     {
-        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+        history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->addItemHistory(hostEdit->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
@@ -74,7 +74,7 @@ void nmapClass::saveBookMarks()
     }
     else
     {
-        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        history_ = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
@@ -93,11 +93,11 @@ void nmapClass::deleteBookMark()
         return;
     }
 
-    logHistory *history_ = NULL;
+    history *history_ = NULL;
 
     if (tabScan->isVisible())
     {
-        history_ = new logHistory(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+        history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(treeLogH->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
@@ -105,7 +105,7 @@ void nmapClass::deleteBookMark()
     }
     else
     {
-        history_ = new logHistory(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        history_ = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(treeBookVuln->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
@@ -124,16 +124,16 @@ void nmapClass::deleteBookMarkPar()
         return;
     }
 
-    logHistory *history_ = NULL;
+    history *history_ = NULL;
 
     if (!uid)
     {
-        history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_ = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
     }
     else
     {
-        history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_ = new history(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
     }
 
@@ -167,11 +167,11 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
         return;
     }
 
-    logHistory *history_ = NULL;
+    history *history_ = NULL;
 
     if (!uid)
     {
-        history_ = new logHistory(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_ = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 
         if (!history_->isProfileInHistory(profileName))
         {
@@ -184,7 +184,7 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
     }
     else
     {
-        history_ = new logHistory(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_ = new history(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
 
         if (!history_->isProfileInHistory(profileName))
         {
