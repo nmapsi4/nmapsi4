@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,13 +35,8 @@ public:
     ~preferencesDialog();
 
 private:
-    void saveProfile(const QString ProfileType); // Create a enum for the profile
-    QString readProfile();
-    void setProfile();
-
     QString m_ScanActive;
-    QListWidgetItem* m_profileItem;
-    QListWidgetItem* m_logItem;
+    QListWidgetItem* m_generalItem;
     QListWidgetItem* m_sizeItem;
     QListWidgetItem* m_lookItem;
 
@@ -49,16 +44,11 @@ public slots:
     void saveValues();
 
 private slots:
-    void updateNormalCheck();
-    void updateQuickCheck();
-    void updateFullVersionCheck();
-    void updateQuickVersionCheck();
     void updateItem();
     void quit();
     void setDefaults();
     void activeLookupInt();
     void activeLookupDig();
-
 };
 
 #endif

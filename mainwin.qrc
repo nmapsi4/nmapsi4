@@ -20,16 +20,13 @@
     <file>images/os-logo/linux_logo.png</file>
     <file>images/traceroute.png</file>
     <file>images/no-os.png</file>
-    <file>images/viewmagfit_result.png</file>
     <file>images/viewmagfit_noresult.png</file>
     <file>icons/64x64/nmapsi4.png</file>
     <file>icons/128x128/nmapsi4.png</file>
-    <file>images/view-web-browser-dom-tree.png</file>
     <file>images/bookmark_folder.png</file>
     <file>images/bookmark_toolbar.png</file>
     <file>images/bookmark.png</file>
     <file>images/bookmark_add.png</file>
-    <file>images/world.png</file>
     <file>images/left.png</file>
     <file>images/right.png</file>
     <file>images/reload.png</file>
@@ -40,7 +37,6 @@
     <file>images/viewmag+.png</file>
     <file>images/document-save-as.png</file>
     <file>images/erase.png</file>
-    <file>images/fileopen.png</file>
     <file>images/flag_green.png</file>
     <file>images/flag_red.png</file>
     <file>images/flag_yellow.png</file>
@@ -49,7 +45,6 @@
     <file>images/messagebox_info.png</file>
     <file>images/network_local.png</file>
     <file>images/player_time.png</file>
-    <file>images/preferences-system-windows.png</file>
     <file>images/save_all.png</file>
     <file>images/tool.png</file>
     <file>images/utilities-log-viewer.png</file>
