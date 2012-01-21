@@ -19,7 +19,8 @@
 
 #include "preferencesdialog.h"
 
-preferencesDialog::preferencesDialog(QWidget *parent) : QDialog(parent)
+preferencesDialog::preferencesDialog(QWidget *parent)
+: QDialog(parent)
 {
     setupUi(this);
     QSettings settings("nmapsi4", "nmapsi4");

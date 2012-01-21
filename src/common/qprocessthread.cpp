@@ -19,10 +19,8 @@
 
 #include "qprocessthread.h"
 
-QProcessThread::QProcessThread(const QString& programName,
-                               const QStringList& parameters)
-     : m_ParList(parameters),
-       m_programName(programName)
+QProcessThread::QProcessThread(const QString& programName, const QStringList& parameters)
+: m_ParList(parameters), m_programName(programName)
 {
 }
 

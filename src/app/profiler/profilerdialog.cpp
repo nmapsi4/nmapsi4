@@ -19,7 +19,8 @@
 
 #include "profilerdialog.h"
 
-profilerManager::profilerManager(QWidget* parent) : QDialog(parent)
+profilerManager::profilerManager(QWidget* parent)
+: QDialog(parent)
 {
     Q_UNUSED(parent);
     initObject();

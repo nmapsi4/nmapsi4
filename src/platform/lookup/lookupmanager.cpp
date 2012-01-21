@@ -20,7 +20,8 @@
 #include "lookupmanager.h"
 
 
-lookupManager::lookupManager(const QString hostname, QObject *parent) : m_host(hostname), m_par(parent)
+lookupManager::lookupManager(const QString hostname, QObject *parent)
+: m_host(hostname), m_par(parent)
 {
     killLookup();
 }

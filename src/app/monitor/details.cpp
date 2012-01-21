@@ -19,7 +19,8 @@
 
 #include "details.h"
 
-classDetails::classDetails(QStringList& processFlow, const QString hostname): m_scanLines(processFlow)
+classDetails::classDetails(QStringList& processFlow, const QString hostname)
+: m_scanLines(processFlow)
 {
     setupUi(this);
     monitorEditHostname->setText(hostname);

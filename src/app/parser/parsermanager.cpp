@@ -20,7 +20,8 @@
 #include "parsermanager.h"
 #include "mainwin.h"
 
-parserManager::parserManager(nmapClass* parent) : QWidget(parent), m_ui(parent)
+parserManager::parserManager(nmapClass* parent)
+: QWidget(parent), m_ui(parent)
 {
 
 }

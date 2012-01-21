@@ -20,11 +20,8 @@
 #include "discovermanager.h"
 #include "mainwin.h"
 
-discoverManager::discoverManager(nmapClass* parent): QObject(parent),
-    m_ui(parent),
-    m_ipCounter(0),
-    m_uid(0),
-    m_discoverIsActive(false)
+discoverManager::discoverManager(nmapClass* parent)
+: QObject(parent), m_ui(parent), m_ipCounter(0), m_uid(0), m_discoverIsActive(false)
 {
 #ifndef Q_WS_WIN
     m_uid = getuid();

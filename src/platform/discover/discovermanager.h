@@ -32,7 +32,7 @@ class discoverManager : public QObject
     Q_OBJECT
 
 public:
-    discoverManager(nmapClass* parent);
+    discoverManager(nmapClass* parent=0);
     ~discoverManager();
     void defaultDiscoverProbes();
 

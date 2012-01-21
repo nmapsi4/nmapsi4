@@ -39,7 +39,7 @@ class nseManager : public QObject
     Q_OBJECT
 
 public:
-    nseManager(profilerManager* parent);
+    nseManager(profilerManager* parent=0);
     ~nseManager();
     /**
      * Get QString List with all actived script

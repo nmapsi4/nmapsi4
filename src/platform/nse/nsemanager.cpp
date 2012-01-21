@@ -20,7 +20,8 @@
 #include "nsemanager.h"
 #include "profilerdialog.h"
 
-nseManager::nseManager(profilerManager* parent) : QObject(parent), m_ui(parent)
+nseManager::nseManager(profilerManager* parent)
+: QObject(parent), m_ui(parent)
 {
     nseTreeDefaultValue();
 }

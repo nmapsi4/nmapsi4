@@ -42,7 +42,7 @@ public:
     /*!
      * Create a QThread and start static QHostInfo resolv.
      */
-    lookupManager(const QString hostname, QObject *parent);
+    lookupManager(const QString hostname, QObject *parent=0);
 
 signals:
     /*!

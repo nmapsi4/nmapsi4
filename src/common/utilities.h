@@ -38,7 +38,7 @@ class utilities : public QObject
     Q_OBJECT
 
 public:
-    utilities(QWidget* parent);
+    utilities(QWidget* parent=0);
     ~utilities();
     void openDirectoryDialog(QLineEdit *destination);
     void openFileBrowser(QLineEdit *destination);

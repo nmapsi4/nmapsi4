@@ -55,7 +55,7 @@ class monitor : public QObject
 #endif
 
 public:
-    monitor(QTreeWidget* monitor, nmapClass* parent);
+    monitor(QTreeWidget* monitor, nmapClass* parent=0);
     ~monitor();
 
     enum LookupType

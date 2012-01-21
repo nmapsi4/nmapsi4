@@ -24,7 +24,8 @@
 #include "nmapsi4adaptor.h"
 #endif
 
-monitor::monitor(QTreeWidget* monitor, nmapClass* parent) : m_monitor(monitor), m_ui(parent)
+monitor::monitor(QTreeWidget* monitor, nmapClass* parent)
+: m_monitor(monitor), m_ui(parent)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);

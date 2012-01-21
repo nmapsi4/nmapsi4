@@ -19,7 +19,8 @@
 
 #include "utilities.h"
 
-utilities::utilities(QWidget* parent) : m_parent(parent)
+utilities::utilities(QWidget* parent)
+: m_parent(parent)
 {
 }
 

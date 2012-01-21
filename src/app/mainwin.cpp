@@ -19,7 +19,8 @@
 
 #include "mainwin.h"
 
-nmapClass::nmapClass() : uid(0)
+nmapClass::nmapClass()
+: uid(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
