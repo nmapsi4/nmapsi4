@@ -74,6 +74,9 @@
          </property>
          <widget class="QWidget" name="page">
           <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <property name="margin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QGroupBox" name="groupBox_8">
              <property name="title">
@@ -221,7 +224,7 @@
               <bool>false</bool>
              </property>
              <property name="title">
-              <string/>
+              <string>Scan</string>
              </property>
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="0" colspan="2">
@@ -493,137 +496,128 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
            <property name="margin">
             <number>0</number>
            </property>
            <item>
-            <widget class="QGroupBox" name="groupBox_4">
+            <widget class="QGroupBox" name="groupBox_3">
              <property name="title">
-              <string/>
+              <string>Ping options</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
-               <widget class="QGroupBox" name="groupBox_3">
-                <property name="title">
-                 <string>Ping options</string>
+               <layout class="QGridLayout" name="gridLayout_14">
+                <item row="4" column="0">
+                 <widget class="QCheckBox" name="checkTcpPing">
+                  <property name="text">
+                   <string>TCP ACK Ping (-PA)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="lineTcpPing">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>21,23,80,3389</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QCheckBox" name="checkTcpSyn">
+                  <property name="text">
+                   <string>TCP SYN Ping (-PS)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLineEdit" name="lineSynPing">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>22,25,80</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QCheckBox" name="checkUdpPing">
+                  <property name="text">
+                   <string>UDP Ping (-PU)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLineEdit" name="lineUdpPing">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="checkIcmpNetmask">
+                  <property name="text">
+                   <string>ICMP Netmask (-PM)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="checkIcmpTimestamp">
+                  <property name="text">
+                   <string>ICMP TImestamp (-PP)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkIcmpEcho">
+                  <property name="text">
+                   <string>ICMP Echo (-PE)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="notpingBox">
+                  <property name="text">
+                   <string>Don't Ping (-P0)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QCheckBox" name="checkProtoPing">
+                  <property name="text">
+                   <string>IPProto probes (-PO)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QLineEdit" name="lineProtoPing"/>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QCheckBox" name="checkSctpPing">
+                  <property name="text">
+                   <string>SCTP INIT ping (-PY)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QLineEdit" name="lineSctpPing"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_3">
-                 <item>
-                  <layout class="QGridLayout" name="gridLayout_14">
-                   <item row="4" column="0">
-                    <widget class="QCheckBox" name="checkTcpPing">
-                     <property name="text">
-                      <string>TCP ACK Ping (-PA)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="4" column="1">
-                    <widget class="QLineEdit" name="lineTcpPing">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                     <property name="text">
-                      <string>21,23,80,3389</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="0">
-                    <widget class="QCheckBox" name="checkTcpSyn">
-                     <property name="text">
-                      <string>TCP SYN Ping (-PS)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="1">
-                    <widget class="QLineEdit" name="lineSynPing">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                     <property name="text">
-                      <string>22,25,80</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="7" column="0">
-                    <widget class="QCheckBox" name="checkUdpPing">
-                     <property name="text">
-                      <string>UDP Ping (-PU)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="7" column="1">
-                    <widget class="QLineEdit" name="lineUdpPing">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0">
-                    <widget class="QCheckBox" name="checkIcmpNetmask">
-                     <property name="text">
-                      <string>ICMP Netmask (-PM)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QCheckBox" name="checkIcmpTimestamp">
-                     <property name="text">
-                      <string>ICMP TImestamp (-PP)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QCheckBox" name="checkIcmpEcho">
-                     <property name="text">
-                      <string>ICMP Echo (-PE)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0">
-                    <widget class="QCheckBox" name="notpingBox">
-                     <property name="text">
-                      <string>Don't Ping (-P0)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="8" column="0">
-                    <widget class="QCheckBox" name="checkProtoPing">
-                     <property name="text">
-                      <string>IPProto probes (-PO)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="8" column="1">
-                    <widget class="QLineEdit" name="lineProtoPing"/>
-                   </item>
-                   <item row="9" column="0">
-                    <widget class="QCheckBox" name="checkSctpPing">
-                     <property name="text">
-                      <string>SCTP INIT ping (-PY)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="9" column="1">
-                    <widget class="QLineEdit" name="lineSctpPing"/>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_2">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -641,7 +635,7 @@
            <item>
             <widget class="QGroupBox" name="groupBox_6">
              <property name="title">
-              <string/>
+              <string>Timing</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_17">
               <item>
@@ -845,239 +839,227 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_8">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
            <property name="margin">
             <number>0</number>
            </property>
            <item>
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="autoFillBackground">
-              <bool>false</bool>
-             </property>
+            <widget class="QGroupBox" name="groupBox_5">
              <property name="title">
-              <string/>
+              <string>Source</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_9">
+             <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <widget class="QGroupBox" name="groupBox_5">
-                <property name="title">
-                 <string>Source</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_4">
-                 <item>
-                  <layout class="QGridLayout" name="gridLayout_18">
-                   <item row="0" column="0">
-                    <widget class="QCheckBox" name="checkBoxDevice">
-                     <property name="text">
-                      <string>Specific network interface (-e)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QLineEdit" name="OlineDevice">
-                     <property name="enabled">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QCheckBox" name="checkSpoof">
-                     <property name="text">
-                      <string>Set source spoof ip address (-S)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
-                    <widget class="QLineEdit" name="lineEditSpoof">
-                     <property name="enabled">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QCheckBox" name="checkDecoy">
-                     <property name="text">
-                      <string>Set decoy (-D)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="1">
-                    <widget class="QLineEdit" name="lineDecoy">
-                     <property name="enabled">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0">
-                    <widget class="QCheckBox" name="checkSourcePort">
-                     <property name="text">
-                      <string>Set Source spoof port (-g)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="1">
-                    <widget class="QLineEdit" name="lineSourcePort">
-                     <property name="enabled">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_5">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
+               <layout class="QGridLayout" name="gridLayout_18">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxDevice">
+                  <property name="text">
+                   <string>Specific network interface (-e)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="OlineDevice">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkSpoof">
+                  <property name="text">
+                   <string>Set source spoof ip address (-S)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="lineEditSpoof">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="checkDecoy">
+                  <property name="text">
+                   <string>Set decoy (-D)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="lineDecoy">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="checkSourcePort">
+                  <property name="text">
+                   <string>Set Source spoof port (-g)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="lineSourcePort">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
               <item>
-               <widget class="QGroupBox" name="groupBox_7">
-                <property name="title">
-                 <string>Extra</string>
+               <spacer name="verticalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_6">
-                 <item>
-                  <layout class="QGridLayout" name="gridLayout_2">
-                   <item row="1" column="0">
-                    <widget class="QLabel" name="label_40">
-                     <property name="text">
-                      <string>DNS Resolution</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
-                    <widget class="QComboBox" name="comboDNSResolv">
-                     <item>
-                      <property name="text">
-                       <string>When Required</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Always</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Never</string>
-                      </property>
-                     </item>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QLabel" name="label_41">
-                     <property name="text">
-                      <string>Verbosity level (-v)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="1">
-                    <widget class="QComboBox" name="comboVerbosity">
-                     <item>
-                      <property name="text">
-                       <string>Quiet</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Verbose</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Very Verbose</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Debug</string>
-                      </property>
-                     </item>
-                     <item>
-                      <property name="text">
-                       <string>Verbose Debug</string>
-                      </property>
-                     </item>
-                    </widget>
-                   </item>
-                   <item row="5" column="0">
-                    <widget class="QCheckBox" name="checkOrdered">
-                     <property name="text">
-                      <string>Ordered scanned port (-r)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="6" column="0">
-                    <widget class="QCheckBox" name="checkFrag">
-                     <property name="text">
-                      <string>Fragment IP packets (-f)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0">
-                    <widget class="QCheckBox" name="TcheckIpv4ttl">
-                     <property name="text">
-                      <string>Ipv4 TTL (--ttl)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="1">
-                    <widget class="QSpinBox" name="spinBoxIpv4ttl">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                     <property name="maximum">
-                      <number>255</number>
-                     </property>
-                     <property name="value">
-                      <number>127</number>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="4" column="0">
-                    <widget class="QCheckBox" name="checkMaxRetries">
-                     <property name="text">
-                      <string>Max Retries (--max-retries)</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="4" column="1">
-                    <widget class="QLineEdit" name="lineMaxRetries"/>
-                   </item>
-                   <item row="7" column="0">
-                    <widget class="QCheckBox" name="checkTraceroute">
-                     <property name="text">
-                      <string>Traceroute (--traceroute)</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_6">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="title">
+              <string>Extra</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_40">
+                  <property name="text">
+                   <string>DNS Resolution</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QComboBox" name="comboDNSResolv">
+                  <item>
+                   <property name="text">
+                    <string>When Required</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Always</string>
                    </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Never</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_41">
+                  <property name="text">
+                   <string>Verbosity level (-v)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QComboBox" name="comboVerbosity">
+                  <item>
+                   <property name="text">
+                    <string>Quiet</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Verbose</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Very Verbose</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Debug</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Verbose Debug</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QCheckBox" name="checkOrdered">
+                  <property name="text">
+                   <string>Ordered scanned port (-r)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QCheckBox" name="checkFrag">
+                  <property name="text">
+                   <string>Fragment IP packets (-f)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="TcheckIpv4ttl">
+                  <property name="text">
+                   <string>Ipv4 TTL (--ttl)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSpinBox" name="spinBoxIpv4ttl">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>255</number>
+                  </property>
+                  <property name="value">
+                   <number>127</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QCheckBox" name="checkMaxRetries">
+                  <property name="text">
+                   <string>Max Retries (--max-retries)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="lineMaxRetries"/>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QCheckBox" name="checkTraceroute">
+                  <property name="text">
+                   <string>Traceroute (--traceroute)</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -1086,6 +1068,9 @@
          </widget>
          <widget class="QWidget" name="page_3">
           <layout class="QVBoxLayout" name="verticalLayout_12">
+           <property name="margin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QTabWidget" name="tabNse">
              <property name="currentIndex">
