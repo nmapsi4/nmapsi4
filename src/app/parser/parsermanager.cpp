@@ -594,7 +594,7 @@ void parserManager::showParserObj(int hostIndex)
         }
     }
 
-    // Show Nss Info
+    // Show Nse Info
     QHash<QString, QStringList> nseResult = m_parserObjList[hostIndex]->getNseResult();
     QHash<QString, QStringList>::const_iterator i;
     m_ui->treeNSS->setRootIsDecorated(true);
@@ -634,6 +634,7 @@ void parserManager::showParserObj(int hostIndex)
             }
 
             item->setText(0, value);
+            item->setToolTip(0, value);
         }
     }
 
