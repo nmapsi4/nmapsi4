@@ -21,12 +21,13 @@
 #define MAINDISCOVER_H
 
 #include <QtCore/QList>
-#include <QtNetwork/QNetworkInterface>
-#include <QtNetwork/QHostInfo>
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
+#include <QtCore/QSettings>
+#include <QtNetwork/QNetworkInterface>
+#include <QtNetwork/QHostInfo>
 // local include
 #include "qprocessthread.h"
 

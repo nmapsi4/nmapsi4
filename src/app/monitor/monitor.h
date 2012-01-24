@@ -27,6 +27,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QPair>
 #include <QtCore/QWeakPointer>
+#include <QtCore/QSettings>
 #include <QtNetwork/QHostInfo>
 
 #ifdef Q_WS_X11
@@ -39,8 +40,6 @@
 #include "details.h"
 #include "lookupmanager.h"
 #include "digmanager.h"
-
-#define MAX_THREAD 5
 
 using namespace memory;
 
@@ -112,6 +111,7 @@ private:
     QTreeWidget* m_monitor;
     nmapClass* m_ui;
     int m_parallelThreadLimit;
+    int m_maxParallelScan;
     bool m_isHostcached;
     QTimer* m_timer;
 

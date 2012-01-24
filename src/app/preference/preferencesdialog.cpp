@@ -36,6 +36,14 @@ preferencesDialog::preferencesDialog(QWidget *parent)
     int logType = settings.value("logType", 0).toInt();
     comboLogType->setCurrentIndex(logType);
 
+    // Restore max parallel scan option
+    int maxParallelScan = settings.value("maxParallelScan", 5).toInt();
+    spinMaxParallelScan->setValue(maxParallelScan);
+
+    // Restore max discover process
+    int maxDiscoverProcess = settings.value("maxDiscoverProcess", 20).toInt();
+    spinMaxDiscoverProcess->setValue(maxDiscoverProcess);
+
     QString tmpSavePos = settings.value("savePos", "none").toString();
     if (tmpSavePos.contains("true"))
     {
@@ -122,45 +130,47 @@ preferencesDialog::~preferencesDialog()
 
 void preferencesDialog::saveValues()
 {
-    QSettings ptrFile("nmapsi4", "nmapsi4");
-    ptrFile.setValue("logType", comboLogType->currentIndex());
-    ptrFile.setValue("hostCache", spinBoxCache->value());
+    QSettings settings("nmapsi4", "nmapsi4");
+    settings.setValue("logType", comboLogType->currentIndex());
+    settings.setValue("hostCache", spinBoxCache->value());
+    settings.setValue("maxParallelScan", spinMaxParallelScan->value());
+    settings.setValue("maxDiscoverProcess", spinMaxDiscoverProcess->value());
 
     if (checkWinPos->isChecked())
     {
-        ptrFile.setValue("savePos", "true");
+        settings.setValue("savePos", "true");
     }
     else
     {
-        ptrFile.setValue("savePos", "false");
+        settings.setValue("savePos", "false");
     }
 
     if (checkSize->isChecked())
     {
-        ptrFile.setValue("saveSize", "true");
+        settings.setValue("saveSize", "true");
     }
     else
     {
-        ptrFile.setValue("saveSize", "false");
+        settings.setValue("saveSize", "false");
     }
 
 #ifndef Q_WS_WIN
     if (checkBoxlookup->isChecked())
     {
-        ptrFile.setValue("lookInternal", "true");
+        settings.setValue("lookInternal", "true");
     }
     else
     {
-        ptrFile.setValue("lookInternal", "false");
+        settings.setValue("lookInternal", "false");
     }
 
     if (checkBoxDig->isChecked())
     {
-        ptrFile.setValue("lookDig", "true");
+        settings.setValue("lookDig", "true");
     }
     else
     {
-        ptrFile.setValue("lookDig", "false");
+        settings.setValue("lookDig", "false");
     }
 #endif
 }

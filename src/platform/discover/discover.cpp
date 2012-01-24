@@ -26,14 +26,14 @@ discover::discover(int uid)
 {
     m_timer = new QTimer(this);
     m_connectState = false;
-    m_threadLimit = 20;
+
+    QSettings settings("nmapsi4", "nmapsi4");
+    m_threadLimit = settings.value("maxDiscoverProcess", 20).toInt();
 }
 
 discover::~discover()
 {
     delete m_timer;
-    m_ipSospended.clear();
-    m_parameters.clear();
     memory::freelist<QProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
