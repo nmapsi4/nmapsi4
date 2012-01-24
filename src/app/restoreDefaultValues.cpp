@@ -133,4 +133,7 @@ void nmapClass::checkProfile()
     {
         actionMenuBar->setChecked(false);
     }
+
+    // update max parallel scan option
+    _monitor->updateMaxParallelScan();
 }

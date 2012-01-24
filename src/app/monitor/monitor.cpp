@@ -44,11 +44,8 @@ monitor::monitor(QTreeWidget* monitor, nmapClass* parent)
     }
 #endif
 
-    QSettings settings("nmapsi4", "nmapsi4");
+    updateMaxParallelScan();
 
-    m_maxParallelScan = settings.value("maxParallelScan", 5).toInt();
-
-    m_parallelThreadLimit = m_maxParallelScan;
     m_isHostcached = false;
     m_timer = new QTimer(this);
 }
@@ -299,10 +296,17 @@ void monitor::clearHostMonitor()
     m_lookupScanCacheList.clear();
 
     m_isHostcached = false;
-    m_parallelThreadLimit = m_maxParallelScan;
+    updateMaxParallelScan();
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
 }
+
+void monitor::updateMaxParallelScan()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+    m_parallelThreadLimit = settings.value("maxParallelScan", 5).toInt();
+}
+
 
 void monitor::clearHostMonitorDetails()
 {

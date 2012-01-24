@@ -83,6 +83,10 @@ public:
      * Clear all scan host details
      */
     void clearHostMonitorDetails();
+    /*
+     * Load max parallel scan option from config file
+     */
+    void updateMaxParallelScan();
 
 private:
     void startScan(const QString hostname, QStringList parameters);
@@ -111,7 +115,6 @@ private:
     QTreeWidget* m_monitor;
     nmapClass* m_ui;
     int m_parallelThreadLimit;
-    int m_maxParallelScan;
     bool m_isHostcached;
     QTimer* m_timer;
 
