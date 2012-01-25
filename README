@@ -19,44 +19,12 @@ cd ../build/
 Packages:
 http://www.nmapsi4.org
 
-* Debian Package (not tested with kubuntu)
-* OpenSuse
-* altlinux
-* archlinux (DPKGBUILD)
-
-Start nmapsi4 SVN version:
-
-# ./nmapsi (user mode)
-# sudo ./nmapsi4 (full nmap extensions) || (kdesu etc etc ;) )
-
-For SVN version read:
-http://code.google.com/p/nmapsi4/wiki/CompileSvnSnapshot
-
 **********************************************************************
-nmapsi4-admin.desktop (with kdesu):
-**********************************************************************
-installed nmapsi4-admin.desktop used kdesu for default
+The nmapsi4-admin.desktop used kdesu by default or is possible:
 **********************************************************************
 
-**********************************************************************
-For sudo users:
-**********************************************************************
+* change Exec=nmapsi4 with Exec=kdesu/su-to-root nmapsi4
 
-* set X-KDE-SubstituteUID=true to X-KDE-SubstituteUID=false in /usr/share/applications/kde/nmapsi4-admin.desktop
-* change Exec=nmapsi4 with Exec=kdesu/sudo/su-to-root nmapsi4
-
-insert this line in your /etc/sudoers:
-#cd /etc
-#visudo
-
-#
-# sudoers line
-#
-Cmnd_Alias NMAPSI4 = /usr/bin/nmapsi4
-ALL ALL=NOPASSWD:NMAPSI4
-
-Else:
-start nmapsi4 in user mode. ;)
 
 ***********************************************************************************
 MS windows build:
