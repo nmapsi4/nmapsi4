@@ -97,6 +97,7 @@ void nmapClass::updateSezScan()
 
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
+    tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     // enable scan action
     toolBarTab->setVisible(true);
 }
@@ -117,13 +118,20 @@ void nmapClass::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
+
+    if (!tabVulnBookmarks->isVisible())
+    {
+        tabUi->insertTab(tabUi->count(),tabVulnBookmarks,tr("Bookmarks"));
+        tabUi->setTabIcon(tabUi->indexOf(tabVulnBookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
+    }
+
     tabUi->setCurrentIndex(0);
 
     // disable scan action
     toolBarTab->setVisible(false);
 }
 
-void nmapClass::updateDiscoverVuln()
+void nmapClass::updateSezDiscover()
 { // SLOT
     // discover section
     _collectionsButton.value("scan-sez")->setChecked(false);
@@ -139,6 +147,7 @@ void nmapClass::updateDiscoverVuln()
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     tabUi->insertTab(0,tabDiscover,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");
     tabUi->setCurrentIndex(0);
 

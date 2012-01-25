@@ -117,7 +117,7 @@ void nmapClass::createBar()
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
     _collectionsButton.insert("discover-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateDiscoverVuln()));
+    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezDiscover()));
     sezBar->addWidget(actionButt);
 
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"));

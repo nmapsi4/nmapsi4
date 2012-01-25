@@ -96,7 +96,7 @@ void nmapClass::setNmapsiSlot()
     connect(actionVulnerabilities_section, SIGNAL(triggered()),
             this, SLOT(updateSezVuln()));
     connect(actionSection_Discover, SIGNAL(triggered()),
-            this, SLOT(updateDiscoverVuln()));
+            this, SLOT(updateSezDiscover()));
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
     connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),

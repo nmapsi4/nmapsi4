@@ -147,7 +147,7 @@ private slots:
     void deleteBookMarkPar();
     void updateSezScan();
     void updateSezVuln();
-    void updateDiscoverVuln();
+    void updateSezDiscover();
     void updateTabLook();
     void updateTabTrace();
     void loadDefaultProfile();

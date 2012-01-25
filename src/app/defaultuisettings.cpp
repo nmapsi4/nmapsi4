@@ -137,6 +137,7 @@ void nmapClass::setDefaultAction()
     tWresult->setVisible(false);
 
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
 }
 
