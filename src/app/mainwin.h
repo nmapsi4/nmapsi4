@@ -158,6 +158,7 @@ private slots:
     void menuVulnBook();
     void menuParBook();
     void menuServiceMain();
+    void menuVulnUrlBookmark();
     void slotParSelected();
     void slotHostSelected();
     void saveUiSettings();

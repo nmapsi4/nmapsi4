@@ -78,6 +78,8 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(menuParBook()));
 
     // Vuln signal
+    connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(menuVulnUrlBookmark()));
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             this, SLOT(saveBookMarks()));

@@ -30,10 +30,8 @@ void nmapClass::menuScanBook()
     scanBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     scanBook.setIconText(tr("Scan Host"));
 
-    connect(&scanBook, SIGNAL(triggered()),
-                this, SLOT(callScanH()));
-    connect(&removeBook, SIGNAL(triggered()),
-            this, SLOT(deleteBookMark()));
+    connect(&scanBook, SIGNAL(triggered()), this, SLOT(callScanH()));
+    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteBookMark()));
 
     QMenu menuBook(this);
     menuBook.addAction(&scanBook);
@@ -52,10 +50,8 @@ void nmapClass::menuVulnBook()
     addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     addBook.setIconText(tr("Search for vulnerabilities"));
 
-    connect(&addBook, SIGNAL(triggered()),
-                _vulnerability, SLOT(callVulnCheck()));
-    connect(&removeBook, SIGNAL(triggered()),
-            this, SLOT(deleteBookMark()));
+    connect(&addBook, SIGNAL(triggered()), _vulnerability, SLOT(callVulnCheck()));
+    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteBookMark()));
 
     QMenu menuBook(this);
     menuBook.addAction(&addBook);
@@ -70,8 +66,7 @@ void nmapClass::menuParBook()
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Scan Parameters"));
 
-    connect(&removeBook, SIGNAL(triggered()),
-            this, SLOT(deleteBookMarkPar()));
+    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteBookMarkPar()));
 
     QMenu menuBook(this);
     menuBook.addAction(&removeBook);
@@ -85,12 +80,23 @@ void nmapClass::menuServiceMain()
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     checkVuln.setIconText(tr("Check Vulnerability"));
 
-    connect(&checkVuln, SIGNAL(triggered()),
-                _vulnerability, SLOT(objVulnButton()));
+    connect(&checkVuln, SIGNAL(triggered()), _vulnerability, SLOT(objVulnButton()));
 
     QMenu menuVulnMain(this);
     menuVulnMain.addAction(&checkVuln);
     menuVulnMain.exec(QCursor::pos());
+}
+
+void nmapClass::menuVulnUrlBookmark()
+{
+    QAction removeVulnUrl(this);
+    removeVulnUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
+    removeVulnUrl.setIconText(tr("Remove url"));
+    connect(&removeVulnUrl, SIGNAL(triggered()), _vulnerability, SLOT(removeUrlToBookmarks()));
+
+    QMenu menuVulnUrl(this);
+    menuVulnUrl.addAction(&removeVulnUrl);
+    menuVulnUrl.exec(QCursor::pos());
 }
 
 void nmapClass::createBar()
