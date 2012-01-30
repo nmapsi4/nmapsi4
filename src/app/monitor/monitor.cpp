@@ -187,7 +187,7 @@ void monitor::startScan(const QString hostname, QStringList parameters)
 
 void monitor::startLookup(const QString hostname, LookupType option)
 {
-    if (option == DisabledLookup)
+    if (option == DisabledLookup || !hostTools::isDns(hostname))
     {
         return;
     }

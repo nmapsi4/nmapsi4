@@ -68,7 +68,7 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     treeItem->setSizeHint(0, QSize(32, 32));
 
     // TODO: move to runtime parser
-    m_ui->comboScanLog->insertItem(3, parList.join(" "));
+    //m_ui->comboScanLog->insertItem(3, parList.join(" "));
 
     // call real parser
     parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
@@ -433,8 +433,10 @@ void parserManager::showParserObj(int hostIndex)
     m_ui->treeNSS->clear();
 
     // set combo scan parameters
-    int treeMainIndex_ = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->currentItem());
-    m_ui->comboScanLog->setCurrentIndex(treeMainIndex_+1);
+    //int treeMainIndex_ = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->currentItem());
+
+    m_ui->comboScanLog->clear();
+    m_ui->comboScanLog->insertItem(0, m_parserObjList[hostIndex]->getParameters());
 
     QString noInfo("not Discovered");
 
