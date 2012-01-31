@@ -24,8 +24,6 @@ void nmapClass::setNmapsiSlot()
     // action slot
     connect(action_Quit, SIGNAL(triggered()),
             this, SLOT(exit()));    // file action menu
-    connect(action_Quit_2, SIGNAL(triggered()),
-            this, SLOT(exit()));    // file action menu
     connect(action_About, SIGNAL(triggered()),
             _utilities, SLOT(about()));    // about action menu
     connect(actionAbout_Qt, SIGNAL(triggered()),

@@ -193,7 +193,7 @@ void nmapClass::createToolButtonSetup()
     menu->addSeparator();
     menu->addAction(actionMenuBar);
     menu->addSeparator();
-    menu->addAction(action_Quit_2);
+    menu->addAction(action_Quit);
     menu->setLayoutDirection(Qt::LeftToRight);
     menuSetup->setMenu(menu);
 
