@@ -20,6 +20,6 @@
 #ifndef STATICDEFINE_H
 #define STATICDEFINE_H
 
-#define _VERSION_         "0.3.60"
+#define _VERSION_         "0.3.70"
 
 #endif
