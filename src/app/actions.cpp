@@ -179,7 +179,7 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(actionSave);
     menu->addAction(actionSave_As_Menu);
     menu->addSeparator();
-    menu->addAction(actionAdd_Bookmark);
+    menu->addMenu(menu_Bookmaks);
     menu->addSeparator();
     menu->addAction(actionScan_section);
     menu->addAction(actionVulnerabilities_section);
@@ -196,7 +196,7 @@ void nmapClass::createToolButtonSetup()
     menu->addAction(action_Quit_2);
     menu->setLayoutDirection(Qt::LeftToRight);
     menuSetup->setMenu(menu);
-    //toolBarQuit->addWidget(menuSetup);
+
     toolMenuBar->addWidget(menuSetup);
 
     // profiler menu
@@ -227,4 +227,14 @@ void nmapClass::createToolButtonSetup()
 
     toolBar->addWidget(m_saveTool);
     toolBar->addSeparator();
+
+    // save menu
+    m_bookmarksTool = new QToolButton();
+    m_bookmarksTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_bookmarksTool->setPopupMode(QToolButton::InstantPopup);
+    m_bookmarksTool->setText(tr("Bookmarks"));
+    m_bookmarksTool->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
+    m_bookmarksTool->setMenu(menu_Bookmaks);
+
+    toolBarBook->addWidget(m_bookmarksTool);
 }

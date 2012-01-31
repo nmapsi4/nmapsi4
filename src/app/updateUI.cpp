@@ -100,6 +100,11 @@ void nmapClass::updateSezScan()
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     // enable scan action
     toolBarTab->setVisible(true);
+
+    menu_Bookmaks->setEnabled(true);
+    actionAdd_Bookmark->setText(tr("&Add host to bookmark"));
+    actionAdd_Parameters_to_bookmark->setVisible(true);
+    actionAdd_vulnerability_search_url->setVisible(false);
 }
 
 void nmapClass::updateSezVuln()
@@ -129,6 +134,11 @@ void nmapClass::updateSezVuln()
 
     // disable scan action
     toolBarTab->setVisible(false);
+
+    menu_Bookmaks->setEnabled(true);
+    actionAdd_Bookmark->setText(tr("Add service to &bookmark"));
+    actionAdd_Parameters_to_bookmark->setVisible(false);
+    actionAdd_vulnerability_search_url->setVisible(true);
 }
 
 void nmapClass::updateSezDiscover()
@@ -153,6 +163,8 @@ void nmapClass::updateSezDiscover()
 
     // disable scan action
     toolBarTab->setVisible(false);
+
+    menu_Bookmaks->setEnabled(false);
 }
 
 void nmapClass::setTreeWidgetValues()

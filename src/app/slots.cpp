@@ -34,8 +34,10 @@ void nmapClass::setNmapsiSlot()
             this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
             this, SLOT(listClear()));
-    connect(buttonHClear, SIGNAL(clicked()),
+    connect(buttonHostClear, SIGNAL(clicked()),
             hostEdit, SLOT(clearEditText()));
+    connect(buttonParametersClear, SIGNAL(clicked()),
+            comboAdv, SLOT(clearEditText()));
     connect(action_Scan_2, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
 
@@ -69,7 +71,7 @@ void nmapClass::setNmapsiSlot()
     connect(actionSave_As_Menu, SIGNAL(triggered()),
             _parser, SLOT(callSaveAllLogWriter()));
 
-    // BookMark signals
+    // Bookmarks signals
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuScanBook()));
     connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
@@ -77,16 +79,15 @@ void nmapClass::setNmapsiSlot()
     connect(treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuParBook()));
 
+    connect(actionAdd_Bookmark, SIGNAL(triggered()),
+            this, SLOT(saveBookMarks()));
+    connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
+            this, SLOT(startAddParBook_ui()));
+
+
     // Vuln signal
     connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuVulnUrlBookmark()));
-
-    connect(actionAdd_Bookmark, SIGNAL(triggered()),
-            this, SLOT(saveBookMarks()));
-    connect(action_Add_BookmarkToolBar, SIGNAL(triggered()),
-            this, SLOT(saveBookMarks()));
-    connect(addBookPar, SIGNAL(clicked()),
-            this, SLOT(startAddParBook_ui()));
     connect(comboPar, SIGNAL(activated(QString)),
             this, SLOT(slotParSelected()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),

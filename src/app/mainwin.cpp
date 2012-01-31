@@ -179,5 +179,7 @@ nmapClass::~nmapClass()
     delete m_profilerTool;
     delete m_saveTool->menu();
     delete m_saveTool;
+    delete m_bookmarksTool->menu();
+    delete m_bookmarksTool;
 }
 

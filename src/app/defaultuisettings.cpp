@@ -124,7 +124,6 @@ void nmapClass::setDefaultAction()
     action_Scan_2->setEnabled(false);
     hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
-    action_Add_BookmarkToolBar->setEnabled(false);
     toolBarSearch->setVisible(false);
     _collectionsButton.value("scan-sez")->setChecked(true);
 
@@ -139,6 +138,8 @@ void nmapClass::setDefaultAction()
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
+
+    actionAdd_vulnerability_search_url->setVisible(false);
 }
 
 void nmapClass::setDefaultSplitter()

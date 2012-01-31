@@ -91,6 +91,7 @@ private:
     QToolButton *menuSetup;
     QToolButton *m_profilerTool;
     QToolButton *m_saveTool;
+    QToolButton *m_bookmarksTool;
     monitor *_monitor;
     utilities *_utilities;
     parserManager *_parser;

@@ -24,7 +24,6 @@ void nmapClass::callSearchHistory()
     if (!actionAdd_Bookmark->isEnabled())
     {
         actionAdd_Bookmark->setEnabled(true);
-        action_Add_BookmarkToolBar->setEnabled(true);
     }
 
     if (_hostModel.isNull())
@@ -61,7 +60,7 @@ void nmapClass::saveBookMarks()
         return;
     }
 
-    history *history_ = NULL;
+    history *history_;
 
     if (tabScan->isVisible())
     {
@@ -93,7 +92,7 @@ void nmapClass::deleteBookMark()
         return;
     }
 
-    history *history_ = NULL;
+    history *history_;
 
     if (tabScan->isVisible())
     {
@@ -124,7 +123,7 @@ void nmapClass::deleteBookMarkPar()
         return;
     }
 
-    history *history_ = NULL;
+    history *history_;
 
     if (!uid)
     {
@@ -146,8 +145,14 @@ void nmapClass::deleteBookMarkPar()
 
 void nmapClass::startAddParBook_ui()
 {
+    const QString& parameters = comboAdv->currentText();
 
-    QWeakPointer<addParametersToBookmark> dialogParAdd = new addParametersToBookmark(comboAdv->currentText());
+    if (parameters.isEmpty())
+    {
+        return;
+    }
+
+    QWeakPointer<addParametersToBookmark> dialogParAdd = new addParametersToBookmark(parameters);
 
     connect(dialogParAdd.data(), SIGNAL(doneParBook(QString,QString)),
             this, SLOT(saveBookMarksPar(QString,QString)));
@@ -167,7 +172,7 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
         return;
     }
 
-    history *history_ = NULL;
+    history *history_;
 
     if (!uid)
     {
