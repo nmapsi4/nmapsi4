@@ -33,9 +33,9 @@ void nmapClass::setNmapsiSlot()
     connect(actionClear_History, SIGNAL(triggered()),
             this, SLOT(listClear()));
     connect(buttonHostClear, SIGNAL(clicked()),
-            hostEdit, SLOT(clearEditText()));
+            this, SLOT(clearHostnameCombo()));
     connect(buttonParametersClear, SIGNAL(clicked()),
-            comboAdv, SLOT(clearEditText()));
+            this, SLOT(clearParametersCombo()));
     connect(action_Scan_2, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
 

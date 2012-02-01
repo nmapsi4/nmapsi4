@@ -284,3 +284,17 @@ void nmapClass::monitorRuntimeEvent()
         monitorDetailsScanButt->setEnabled(true);
     }
 }
+
+void nmapClass::clearHostnameCombo()
+{
+    // reset combo host bookmarks to default value
+    comboHostBook->setCurrentIndex(0);
+    hostEdit->clearEditText();
+}
+
+void nmapClass::clearParametersCombo()
+{
+    // TODO:set to default saved parameters profile
+    comboPar->setCurrentIndex(0);
+    slotParSelected();
+}

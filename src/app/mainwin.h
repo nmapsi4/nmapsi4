@@ -166,6 +166,8 @@ private slots:
     void startAddParBook_ui();
     void startProfilerManager();
     void editProfile();
+    void clearHostnameCombo();
+    void clearParametersCombo();
 };
 
 #endif
