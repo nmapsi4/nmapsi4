@@ -139,7 +139,7 @@ private slots:
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
     void startProfile_ui();
-    void checkProfile();
+    void syncSettings();
     void updateFontHost();
     void callSearchHistory();
     void saveBookMarks();

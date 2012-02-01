@@ -19,7 +19,7 @@
 
 #include "mainwin.h"
 
-void nmapClass::checkProfile()
+void nmapClass::syncSettings()
 {
 
     QSettings settings("nmapsi4", "nmapsi4");
@@ -70,28 +70,14 @@ void nmapClass::checkProfile()
 
     hostCache = settings.value("hostCache").toInt();
 
-    QString lookInt = settings.value("lookInternal", "none").toString();
-
-    if ((!lookInt.compare("none")))
-    {
-         settings.setValue("lookInternal", "true"); // default value
-    }
-
-    lookupInternal = settings.value("lookInternal").toBool();
+    lookupInternal = settings.value("lookInternal",true).toBool();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
     lookupInternal = false;
 #endif
 
-    QString lDig = settings.value("lookDig", "none").toString();
-
-    if ((!lDig.compare("none")))
-    {
-         settings.setValue("lookDig", "false"); // default value
-    }
-
-    lookupDig = settings.value("lookDig").toBool();
+    lookupDig = settings.value("lookDig",false).toBool();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
@@ -102,17 +88,10 @@ void nmapClass::checkProfile()
     // disable lookup in MS windows
     LookupEnabled = false;
 #else
-    LookupEnabled = settings.value("LookupEnabled", "false").toBool();
+    LookupEnabled = settings.value("LookupEnabled", false).toBool();
 #endif
 
-    QString TracerouteEnabled_ = settings.value("TraceEnabled", "none").toString();
-
-    if ((!TracerouteEnabled_.compare("none")))
-    {
-         settings.setValue("TraceEnabled", "true"); // default value
-    }
-
-    TraceEnabled = settings.value("TraceEnabled").toBool();
+    TraceEnabled = settings.value("TraceEnabled",true).toBool();
 
     // restore actionMenuBar
 

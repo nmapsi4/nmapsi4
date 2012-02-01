@@ -64,7 +64,7 @@ preferencesDialog::preferencesDialog(QWidget *parent)
         checkSize->setChecked(false);
     }
 
-    bool lookI = settings.value("lookInternal").toBool();
+    bool lookI = settings.value("lookInternal",true).toBool();
     if (lookI)
     {
         checkBoxlookup->setChecked(true);
@@ -74,7 +74,7 @@ preferencesDialog::preferencesDialog(QWidget *parent)
         checkBoxlookup->setChecked(false);
     }
 
-    bool lookD = settings.value("lookDig").toBool();
+    bool lookD = settings.value("lookDig",false).toBool();
     if (lookD)
     {
         checkBoxDig->setChecked(true);

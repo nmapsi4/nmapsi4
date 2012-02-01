@@ -55,7 +55,7 @@ void nmapClass::initObject()
 
     // Set default properties
     setDefaultAction();
-    checkProfile();
+    syncSettings();
 
     // FIXME:: active hostEdit by default
     hostEdit->setEnabled(true);
@@ -105,7 +105,7 @@ void nmapClass::startProfile_ui()   // start preference UI
     QWeakPointer<preferencesDialog> dialogPreference = new preferencesDialog(this);
 
     connect(dialogPreference.data(), SIGNAL(accepted()),
-            this, SLOT(checkProfile()));
+            this, SLOT(syncSettings()));
 
     dialogPreference.data()->exec();
 
