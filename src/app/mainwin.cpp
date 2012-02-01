@@ -69,20 +69,19 @@ void nmapClass::initObject()
     loadHistoryDefault();
     updateCompleter();
 
+    loadDefaultProfile();
+
 #ifdef Q_WS_WIN
     // lookup fails on MS Windows
     _collectionsButton.value("tab-look-act")->setChecked(false);
     _collectionsButton.value("tab-look-act")->setEnabled(false);
-    LookupEnabled = false;
 #else
     // removed dig runtime check, linux, mac and BSD.
-    LookupEnabled = true;
+    _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
+    updateTabLook();
 #endif
 
     // load first profile
-    loadDefaultProfile();
-    _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
-    updateTabLook();
     _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);
     updateTabTrace();
     updateMenuBar();

@@ -98,18 +98,11 @@ void nmapClass::checkProfile()
     lookupDig = false;
 #endif
 
-    QString LookupEnabled_ = settings.value("LookupEnabled", "none").toString();
-
-    if ((!LookupEnabled_.compare("none")))
-    {
-         settings.setValue("LookupEnabled", "true"); // default value
-    }
-
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
     LookupEnabled = false;
 #else
-    LookupEnabled = settings.value("LookupEnabled").toBool();
+    LookupEnabled = settings.value("LookupEnabled", "false").toBool();
 #endif
 
     QString TracerouteEnabled_ = settings.value("TraceEnabled", "none").toString();
