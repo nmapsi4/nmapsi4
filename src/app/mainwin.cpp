@@ -57,8 +57,6 @@ void nmapClass::initObject()
     setDefaultAction();
     syncSettings();
 
-    // FIXME:: active hostEdit by default
-    hostEdit->setEnabled(true);
     // set tree default settings
     setTreeSettings();
     // create mainwindow Qsplitter

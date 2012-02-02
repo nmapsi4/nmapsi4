@@ -94,7 +94,6 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
 
     m_ui->action_Scan_menu->setEnabled(true);
     m_ui->action_Scan_2->setEnabled(true);
-    m_ui->hostEdit->setEnabled(true);
     m_ui->actionSave->setEnabled(true);
     m_ui->actionSave_Menu->setEnabled(true);
     m_ui->actionSave_As_Menu->setEnabled(true);

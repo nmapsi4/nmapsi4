@@ -122,7 +122,6 @@ void nmapClass::setDefaultAction()
     // Set default properties
     action_Scan_menu->setEnabled(false);
     action_Scan_2->setEnabled(false);
-    hostEdit->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     toolBarSearch->setVisible(false);
     _collectionsButton.value("scan-sez")->setChecked(true);
