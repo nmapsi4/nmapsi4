@@ -77,14 +77,12 @@ public:
 private:
     int uid;
     int hostCache;
+    int lookupType;
     bool flag_state;
     bool savePos;
     bool saveSize;
-    bool lookupInternal;
-    bool lookupDig;
     bool TraceEnabled;
-    bool LookupEnabled;
-    bool digSupported;
+    bool lookupEnabled;
     QHash<QString, QPushButtonOrientated*> _collectionsButton;
     QSplitter *cW;
     QSplitter *bW;
@@ -162,7 +160,7 @@ private slots:
     void menuVulnUrlBookmark();
     void slotParSelected();
     void slotHostSelected();
-    void saveUiSettings();
+    void saveSettings();
     void startAddParBook_ui();
     void startProfilerManager();
     void editProfile();

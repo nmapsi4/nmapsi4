@@ -210,11 +210,11 @@ void nmapClass::updateTabLook()
     {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
-        LookupEnabled = true;
+        lookupEnabled = true;
     }
     else
     {
-        LookupEnabled = false;
+        lookupEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_3));
     }
 }

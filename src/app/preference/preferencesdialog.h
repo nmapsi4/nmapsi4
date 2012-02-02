@@ -35,7 +35,6 @@ public:
     ~preferencesDialog();
 
 private:
-    QString m_ScanActive;
     QListWidgetItem* m_generalItem;
     QListWidgetItem* m_sizeItem;
     QListWidgetItem* m_lookItem;
@@ -44,11 +43,9 @@ public slots:
     void saveValues();
 
 private slots:
-    void updateItem();
+    void updateListWidgetItem();
     void quit();
     void setDefaults();
-    void activeLookupInt();
-    void activeLookupDig();
 };
 
 #endif

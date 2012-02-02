@@ -27,13 +27,9 @@ preferencesDialog::preferencesDialog(QWidget *parent)
 
     connect(buttonSave, SIGNAL(clicked(bool)),
             this, SLOT(quit()));
-    connect(checkBoxlookup, SIGNAL(toggled(bool)),
-            this, SLOT(activeLookupInt()));
-    connect(checkBoxDig, SIGNAL(toggled(bool)),
-            this, SLOT(activeLookupDig()));
 
     // create a read log config
-    int logType = settings.value("logType", 0).toInt();
+    int logType = settings.value("logType", 1).toInt();
     comboLogType->setCurrentIndex(logType);
 
     // Restore max parallel scan option
@@ -44,45 +40,14 @@ preferencesDialog::preferencesDialog(QWidget *parent)
     int maxDiscoverProcess = settings.value("maxDiscoverProcess", 20).toInt();
     spinMaxDiscoverProcess->setValue(maxDiscoverProcess);
 
-    QString tmpSavePos = settings.value("savePos", "none").toString();
-    if (tmpSavePos.contains("true"))
-    {
-        checkWinPos->setChecked(true);
-    }
-    else
-    {
-        checkWinPos->setChecked(false);
-    }
+    bool position = settings.value("savePos",true).toBool();
+    checkWinPos->setChecked(position);
 
-    QString tmpSize = settings.value("saveSize", "none").toString();
-    if (tmpSize.contains("true"))
-    {
-        checkSize->setChecked(true);
-    }
-    else
-    {
-        checkSize->setChecked(false);
-    }
+    bool size = settings.value("saveSize",true).toBool();
+    checkSize->setChecked(size);
 
-    bool lookI = settings.value("lookInternal",true).toBool();
-    if (lookI)
-    {
-        checkBoxlookup->setChecked(true);
-    }
-    else
-    {
-        checkBoxlookup->setChecked(false);
-    }
-
-    bool lookD = settings.value("lookDig",false).toBool();
-    if (lookD)
-    {
-        checkBoxDig->setChecked(true);
-    }
-    else
-    {
-        checkBoxDig->setChecked(false);
-    }
+    int lookupTypeIndex = settings.value("lookupType", 1).toInt();
+    comboLookupType->setCurrentIndex(lookupTypeIndex);
 
 
     int cache = settings.value("hostCache",10).toInt();
@@ -103,18 +68,19 @@ preferencesDialog::preferencesDialog(QWidget *parent)
     m_lookItem = new QListWidgetItem(listViewOptions);
     m_lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     m_lookItem->setText(tr("Lookup"));
+#else
+    //NOTE disable lookup on MS Windows
+    comboLookupType->setCurrentIndex(0);
+    comboLookupType->setDisabled(true);
 #endif
 
     connect(listViewOptions, SIGNAL(itemSelectionChanged()),
-            this, SLOT(updateItem()));
+            this, SLOT(updateListWidgetItem()));
 
     m_generalItem->setSelected(true);
 
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
-
-    // FIXME disable dig support (many works)
-    // TODO rework lookup item with combo
 }
 
 preferencesDialog::~preferencesDialog()
@@ -153,29 +119,11 @@ void preferencesDialog::saveValues()
         settings.setValue("saveSize",false);
     }
 
-#ifndef Q_WS_WIN
-    if (checkBoxlookup->isChecked())
-    {
-        settings.setValue("lookInternal",true);
-    }
-    else
-    {
-        settings.setValue("lookInternal",false);
-    }
-
-    if (checkBoxDig->isChecked())
-    {
-        settings.setValue("lookDig",true);
-    }
-    else
-    {
-        settings.setValue("lookDig",false);
-    }
-#endif
+    settings.setValue("lookupType",comboLookupType->currentIndex());
 }
 
 
-void preferencesDialog::updateItem()
+void preferencesDialog::updateListWidgetItem()
 {
     if (m_generalItem->isSelected())
     {
@@ -204,22 +152,9 @@ void preferencesDialog::setDefaults()
 {
     checkSize->setChecked(false);
     checkWinPos->setChecked(false);
-    checkBoxlookup->setChecked(true);
-    checkBoxDig->setChecked(false);
-}
-
-void preferencesDialog::activeLookupInt()
-{
-    if(checkBoxlookup->isChecked())
-    {
-        checkBoxDig->setChecked(false);
-    }
-}
-
-void preferencesDialog::activeLookupDig()
-{
-    if(checkBoxDig->isChecked())
-    {
-        checkBoxlookup->setChecked(false);
-    }
+#ifndef Q_WS_WIN
+    comboLookupType->setCurrentIndex(1);
+#else
+    comboLookupType->setCurrentIndex(0);
+#endif
 }

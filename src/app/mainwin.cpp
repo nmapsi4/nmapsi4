@@ -77,7 +77,7 @@ void nmapClass::initObject()
     _collectionsButton.value("tab-look-act")->setEnabled(false);
 #else
     // removed dig runtime check, linux, mac and BSD.
-    _collectionsButton.value("tab-look-act")->setChecked(LookupEnabled);
+    _collectionsButton.value("tab-look-act")->setChecked(lookupEnabled);
     updateTabLook();
 #endif
 
@@ -149,7 +149,7 @@ void nmapClass::exit()
 {
     _monitor->clearHostMonitor();
     // Save Ui settings
-    saveUiSettings();
+    saveSettings();
     close();
 }
 

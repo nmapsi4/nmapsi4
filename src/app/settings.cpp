@@ -27,59 +27,33 @@ void nmapClass::syncSettings()
     // TODO: load saved profile or simple default
 
     bool position = settings.value("savePos",true).toBool();
-
-    if (position)
-    {
-        savePos = true;
-    }
-    else
-    {
-        savePos = false;
-    }
+    savePos = position;
 
     bool size = settings.value("saveSize",true).toBool();
-
-    if (size)
-    {
-        saveSize = true;
-    }
-    else
-    {
-        saveSize = false;
-    }
+    saveSize = size;
 
     hostCache = settings.value("hostCache",10).toInt();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
-    lookupInternal = false;
-    lookupDig = false;
-    LookupEnabled = false;
+    lookupEnabled = false;
+    lookupType = 0;
 #else
-    lookupInternal = settings.value("lookInternal",true).toBool();
-    lookupDig = settings.value("lookDig",false).toBool();
-    LookupEnabled = settings.value("LookupEnabled", false).toBool();
+    lookupEnabled = settings.value("LookupEnabled", false).toBool();
+    lookupType = settings.value("lookupType", 1).toInt();
 #endif
 
     TraceEnabled = settings.value("TraceEnabled",true).toBool();
 
     // restore actionMenuBar
     bool actionMB = settings.value("showMenuBar", false).toBool();
-
-    if (actionMB)
-    {
-        actionMenuBar->setChecked(true);
-    }
-    else
-    {
-        actionMenuBar->setChecked(false);
-    }
+    actionMenuBar->setChecked(actionMB);
 
     // update max parallel scan option
     _monitor->updateMaxParallelScan();
 }
 
-void nmapClass::saveUiSettings()
+void nmapClass::saveSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
 
@@ -93,7 +67,7 @@ void nmapClass::saveUiSettings()
         settings.setValue("window/size", size());
     }
 
-    settings.setValue("LookupEnabled", LookupEnabled);
+    settings.setValue("LookupEnabled", lookupEnabled);
     settings.setValue("TraceEnabled", TraceEnabled);
     settings.setValue("savePos", savePos);
     settings.setValue("saveSize", saveSize);

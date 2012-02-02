@@ -118,17 +118,19 @@ void nmapClass::preScanLookup(const QString hostname)
     QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    if(lookupInternal && LookupEnabled)
+    if (lookupEnabled)
     {
-        _monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
-    }
-    else if(lookupDig && LookupEnabled)
-    {
-        _monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
-    }
-    else
-    {
-        // lookup isn't actived or not supported
-        _monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+        switch (lookupType)
+        {
+        case monitor::DisabledLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+            break;
+        case monitor::InternalLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
+            break;
+        case monitor::DigLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
+            break;
+        }
     }
 }
