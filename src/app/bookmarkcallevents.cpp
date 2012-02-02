@@ -64,9 +64,15 @@ void nmapClass::saveBookMarks()
 
     if (tabScan->isVisible())
     {
+        // save list of ip/dns in input
         history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-        history_->addItemHistory(hostEdit->currentText(),
-                                 QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+
+        QStringList hostList = hostEdit->currentText().split(" ", QString::KeepEmptyParts);
+
+        foreach (const QString& host, hostList)
+        {
+            history_->addItemHistory(host, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+        }
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
         m_treeloghlist = history_->updateBookMarks();
