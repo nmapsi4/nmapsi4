@@ -40,7 +40,6 @@ SET(SOURCES_CPP
 		app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
-                app/restoreDefaultValues.cpp
                 app/loadDefaultProfile.cpp
                 app/bookmarkcallevents.cpp
                 app/updateUI.cpp
@@ -48,7 +47,7 @@ SET(SOURCES_CPP
                 app/resizeuievents.cpp
                 app/defaultuisettings.cpp
                 app/actions.cpp
-                app/saveUiSettings.cpp
+                app/settings.cpp
                 app/mainScan.cpp
                 app/mainwin.cpp
                 app/main.cpp

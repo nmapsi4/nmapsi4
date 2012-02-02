@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2010-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,6 +19,66 @@
 
 #include "mainwin.h"
 
+void nmapClass::syncSettings()
+{
+
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    // TODO: load saved profile or simple default
+
+    bool position = settings.value("savePos",true).toBool();
+
+    if (position)
+    {
+        savePos = true;
+    }
+    else
+    {
+        savePos = false;
+    }
+
+    bool size = settings.value("saveSize",true).toBool();
+
+    if (size)
+    {
+        saveSize = true;
+    }
+    else
+    {
+        saveSize = false;
+    }
+
+    hostCache = settings.value("hostCache",10).toInt();
+
+#ifdef Q_WS_WIN
+    // disable lookup in MS windows
+    lookupInternal = false;
+    lookupDig = false;
+    LookupEnabled = false;
+#else
+    lookupInternal = settings.value("lookInternal",true).toBool();
+    lookupDig = settings.value("lookDig",false).toBool();
+    LookupEnabled = settings.value("LookupEnabled", false).toBool();
+#endif
+
+    TraceEnabled = settings.value("TraceEnabled",true).toBool();
+
+    // restore actionMenuBar
+    bool actionMB = settings.value("showMenuBar", false).toBool();
+
+    if (actionMB)
+    {
+        actionMenuBar->setChecked(true);
+    }
+    else
+    {
+        actionMenuBar->setChecked(false);
+    }
+
+    // update max parallel scan option
+    _monitor->updateMaxParallelScan();
+}
+
 void nmapClass::saveUiSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
@@ -35,6 +95,9 @@ void nmapClass::saveUiSettings()
 
     settings.setValue("LookupEnabled", LookupEnabled);
     settings.setValue("TraceEnabled", TraceEnabled);
+    settings.setValue("savePos", savePos);
+    settings.setValue("saveSize", saveSize);
+    settings.setValue("hostCache",10);
     settings.setValue("splitterSizes", cW->saveState());
     settings.setValue("splitterSizesRight", bW->saveState());
     settings.setValue("showMenuBar", actionMenuBar->isChecked());

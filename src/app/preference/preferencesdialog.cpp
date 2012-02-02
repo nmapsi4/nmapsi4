@@ -85,11 +85,10 @@ preferencesDialog::preferencesDialog(QWidget *parent)
     }
 
 
-    QString cache = settings.value("hostCache", "10").toString();
-    spinBoxCache->setValue(cache.toInt());
+    int cache = settings.value("hostCache",10).toInt();
+    spinBoxCache->setValue(cache);
 
     // Create listview items
-    // TODO insert history item and window setup
     listViewOptions->setIconSize(QSize(52, 52));
 
     m_generalItem = new QListWidgetItem(listViewOptions);
@@ -115,7 +114,7 @@ preferencesDialog::preferencesDialog(QWidget *parent)
             this, SLOT(setDefaults()));
 
     // FIXME disable dig support (many works)
-    //checkBoxDig->setEnabled(false);
+    // TODO rework lookup item with combo
 }
 
 preferencesDialog::~preferencesDialog()
@@ -138,39 +137,39 @@ void preferencesDialog::saveValues()
 
     if (checkWinPos->isChecked())
     {
-        settings.setValue("savePos", "true");
+        settings.setValue("savePos",true);
     }
     else
     {
-        settings.setValue("savePos", "false");
+        settings.setValue("savePos",false);
     }
 
     if (checkSize->isChecked())
     {
-        settings.setValue("saveSize", "true");
+        settings.setValue("saveSize",true);
     }
     else
     {
-        settings.setValue("saveSize", "false");
+        settings.setValue("saveSize",false);
     }
 
 #ifndef Q_WS_WIN
     if (checkBoxlookup->isChecked())
     {
-        settings.setValue("lookInternal", "true");
+        settings.setValue("lookInternal",true);
     }
     else
     {
-        settings.setValue("lookInternal", "false");
+        settings.setValue("lookInternal",false);
     }
 
     if (checkBoxDig->isChecked())
     {
-        settings.setValue("lookDig", "true");
+        settings.setValue("lookDig",true);
     }
     else
     {
-        settings.setValue("lookDig", "false");
+        settings.setValue("lookDig",false);
     }
 #endif
 }
