@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,21 +19,21 @@
 
 #include "mainwindow.h"
 
-nmapClass::nmapClass()
+MainWindow::MainWindow()
 : uid(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
 }
 
-void nmapClass::initGUI()
+void MainWindow::initGUI()
 {
     setupUi(this);
     // set default value in combo editable
     defaultComboValues();
 }
 
-void nmapClass::initObject()
+void MainWindow::initObject()
 {
 #ifndef Q_WS_WIN
     uid = getuid();
@@ -98,7 +98,7 @@ void nmapClass::initObject()
     setNmapsiSlot();
 }
 
-void nmapClass::startProfile_ui()   // start preference UI
+void MainWindow::startProfile_ui()   // start preference UI
 {
     QWeakPointer<preferencesDialog> dialogPreference = new preferencesDialog(this);
 
@@ -113,7 +113,7 @@ void nmapClass::startProfile_ui()   // start preference UI
     }
 }
 
-void nmapClass::startProfilerManager()
+void MainWindow::startProfilerManager()
 {
     QWeakPointer<profilerManager> pManager = new profilerManager(this);
 
@@ -128,7 +128,7 @@ void nmapClass::startProfilerManager()
     }
 }
 
-void nmapClass::editProfile()
+void MainWindow::editProfile()
 {
     QWeakPointer<profilerManager> pManager = new profilerManager(comboPar->currentText(),comboAdv->currentText(),this);
 
@@ -143,7 +143,123 @@ void nmapClass::editProfile()
     }
 }
 
-void nmapClass::exit()
+void MainWindow::startScan()
+{
+    if (hostEdit->currentText().isEmpty())
+    {
+        QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
+        return;
+    }
+
+    QString hostname = hostEdit->currentText();
+    // check wrong address
+    hostname = hostTools::clearHost(hostname);
+
+    // check for duplicate hostname in the monitor
+    if (_monitor->isHostOnMonitor(hostname))
+    {
+        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
+        return;
+    }
+
+    if(!_monitor->monitorHostNumber())
+    {
+        // clear details QHash
+       _monitor->clearHostMonitorDetails();
+    }
+
+
+    // check for ip list
+    if(hostname.contains("/") && !hostname.contains("//"))
+    {
+        // is a ip list
+        QStringList addrPart_ = hostname.split('/');
+        QStringList ipBase_ = addrPart_[0].split('.');
+        int ipLeft_ = ipBase_[3].toInt();
+        int ipRight_ = addrPart_[1].toInt();
+        // TODO limit parallel ip scan
+        for(int index = ipLeft_; index <= ipRight_; index++)
+        {
+            ipBase_[3].setNum(index);
+            hostname = ipBase_.join(".");
+
+            if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+            {
+                preScanLookup(hostname);
+            }
+        }
+        return;
+    }
+
+    //scan token DNS/IP parser
+    if(hostname.contains(" "))
+    { // space delimiter
+        QStringList addrPart_ = hostname.split(' ');
+        addrPart_.removeAll("");
+        // check for only one space in hostname
+        if(addrPart_.size() > 1)
+        {
+            // multiple ip or dns to scan
+            for(int index=0; index < addrPart_.size(); index++)
+            {
+                addrPart_[index] = hostTools::clearHost(addrPart_[index]);
+                // check for lookup support
+                if (!hostTools::isDns(addrPart_[index]) || hostTools::isValidDns(addrPart_[index]))
+                {
+                    preScanLookup(addrPart_[index]);
+                }
+            }
+            return;
+        }
+        // remove all space on hostname
+        hostname.remove(' ');
+    }
+
+    // single ip or dns after the move
+    if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+    {
+        preScanLookup(hostname);
+    }
+
+}
+
+void MainWindow::preScanLookup(const QString hostname)
+{
+    // save ip or dns to history
+    history *newHistory = new history("nmapsi4/cacheHost", hostCache);
+    newHistory->addItemHistory(hostname);
+    delete newHistory;
+
+    updateCompleter();
+
+    // default action
+    monitorStopAllScanButt->setEnabled(true);
+    action_Save_As->setEnabled(false);
+    actionSave_As_Menu->setEnabled(false);
+    actionSave->setEnabled(false);
+    actionSave_Menu->setEnabled(false);
+
+    QStringList parameters = loadExtensions();
+
+    // check for scan lookup
+    if (lookupEnabled)
+    {
+        switch (lookupType)
+        {
+        case monitor::DisabledLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+            break;
+        case monitor::InternalLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
+            break;
+        case monitor::DigLookup:
+            _monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
+            break;
+        }
+    }
+}
+
+void MainWindow::exit()
 {
     _monitor->clearHostMonitor();
     // Save Ui settings
@@ -151,7 +267,7 @@ void nmapClass::exit()
     close();
 }
 
-nmapClass::~nmapClass()
+MainWindow::~MainWindow()
 {
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);

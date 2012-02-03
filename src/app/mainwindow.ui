@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <author>Francesco Cecconi</author>
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>

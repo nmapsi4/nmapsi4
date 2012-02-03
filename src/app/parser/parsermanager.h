@@ -31,14 +31,14 @@
 #include "memorytools.h"
 #include "logwriter.h"
 
-class nmapClass;
+class MainWindow;
 
 class parserManager : public QWidget
 {
     Q_OBJECT
 
 public:
-    parserManager(nmapClass* parent = 0);
+    parserManager(MainWindow* parent = 0);
     ~parserManager();
     /*
      * Clear all Items in parser QList
@@ -54,7 +54,7 @@ private:
     void showParserObjPlugins(int hostIndex);
     parserObj* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
 
-    nmapClass* m_ui;
+    MainWindow* m_ui;
     QList<parserObj*> m_parserObjList;
     QList<parserObjUtil*> m_parserObjUtilList;
     QList<QTreeWidgetItem*> m_itemListScan;

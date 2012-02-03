@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void nmapClass::callSearchHistory()
+void MainWindow::callSearchHistory()
 {
     if (!actionAdd_Bookmark->isEnabled())
     {
@@ -41,7 +41,7 @@ void nmapClass::callSearchHistory()
     }
 }
 
-void nmapClass::callScanH()
+void MainWindow::callScanH()
 {
      if(treeLogH->currentItem())
      {
@@ -53,7 +53,7 @@ void nmapClass::callScanH()
     }
 }
 
-void nmapClass::saveBookMarks()
+void MainWindow::saveBookMarks()
 {
     if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty())
     {
@@ -91,7 +91,7 @@ void nmapClass::saveBookMarks()
     updateComboBook();
 }
 
-void nmapClass::deleteBookMark()
+void MainWindow::deleteBookMark()
 {
     if(!treeLogH->currentItem() && !treeBookVuln->currentItem())
     {
@@ -121,7 +121,7 @@ void nmapClass::deleteBookMark()
     updateComboBook();
 }
 
-void nmapClass::deleteBookMarkPar()
+void MainWindow::deleteBookMarkPar()
 {
 
     if(!treeBookPar->currentItem())
@@ -149,7 +149,7 @@ void nmapClass::deleteBookMarkPar()
     loadScanProfile();
 }
 
-void nmapClass::startAddParBook_ui()
+void MainWindow::startAddParBook_ui()
 {
     const QString& parameters = comboAdv->currentText();
 
@@ -171,7 +171,7 @@ void nmapClass::startAddParBook_ui()
     }
 }
 
-void nmapClass::saveBookMarksPar(const QString profileName, const QString profilePar)
+void MainWindow::saveBookMarksPar(const QString profileName, const QString profilePar)
 {
     if(comboAdv->currentText().isEmpty())
     {
@@ -214,7 +214,7 @@ void nmapClass::saveBookMarksPar(const QString profileName, const QString profil
     loadScanProfile();
 }
 
-void nmapClass::slotHostSelected()
+void MainWindow::slotHostSelected()
 {
     if(comboHostBook->currentIndex())
     {

@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void nmapClass::syncSettings()
+void MainWindow::syncSettings()
 {
 
     QSettings settings("nmapsi4", "nmapsi4");
@@ -53,7 +53,7 @@ void nmapClass::syncSettings()
     _monitor->updateMaxParallelScan();
 }
 
-void nmapClass::saveSettings()
+void MainWindow::saveSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
 

@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-QHash<QString, QString> nmapClass::defaultScanProfile() const
+QHash<QString, QString> MainWindow::defaultScanProfile() const
 {
     // preload StringList with default static Scan profile
     QHash<QString, QString> tmpStaticProfileMap_;
@@ -47,7 +47,7 @@ QHash<QString, QString> nmapClass::defaultScanProfile() const
     return tmpStaticProfileMap_;
 }
 
-void nmapClass::loadScanProfile()
+void MainWindow::loadScanProfile()
 {
     // TODO create a default profile
     comboPar->clear();
@@ -78,7 +78,7 @@ void nmapClass::loadScanProfile()
     slotParSelected();
 }
 
-void nmapClass::slotParSelected()
+void MainWindow::slotParSelected()
 {
    // insert profile from comboPar to comboAdv
    int parIndex = comboPar->currentIndex();
@@ -99,13 +99,13 @@ void nmapClass::slotParSelected()
     }
 }
 
-void nmapClass::resetPar()
+void MainWindow::resetPar()
 {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     slotParSelected();
 }
 
-QStringList nmapClass::loadExtensions()
+QStringList MainWindow::loadExtensions()
 {
     if(_monitor->monitorHostNumber())
     {

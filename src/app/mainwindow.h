@@ -58,10 +58,10 @@ using namespace memory;
 
 namespace Ui
 {
-    class MainWindow;
+    class MainWindowClass;
 }
 
-class nmapClass : public QMainWindow, public Ui::MainWindow
+class MainWindow : public QMainWindow, public Ui::MainWindowClass
 {
     Q_OBJECT
 
@@ -71,8 +71,8 @@ class nmapClass : public QMainWindow, public Ui::MainWindow
     friend class monitor;
 
 public:
-    nmapClass();
-    ~nmapClass();
+    MainWindow();
+    ~MainWindow();
 
 private:
     int uid;

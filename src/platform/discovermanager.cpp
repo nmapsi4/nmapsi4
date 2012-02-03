@@ -20,7 +20,7 @@
 #include "discovermanager.h"
 #include "mainwindow.h"
 
-discoverManager::discoverManager(nmapClass* parent)
+discoverManager::discoverManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_uid(0), m_discoverIsActive(false)
 {
 #ifndef Q_WS_WIN

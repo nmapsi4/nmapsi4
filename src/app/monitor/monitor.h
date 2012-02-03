@@ -43,7 +43,7 @@
 
 using namespace memory;
 
-class nmapClass;
+class MainWindow;
 
 class monitor : public QObject
 {
@@ -54,7 +54,7 @@ class monitor : public QObject
 #endif
 
 public:
-    monitor(QTreeWidget* monitor, nmapClass* parent=0);
+    monitor(QTreeWidget* monitor, MainWindow* parent=0);
     ~monitor();
 
     enum LookupType
@@ -113,7 +113,7 @@ private:
     QHash<QString, QProcessThread*> m_scanHashList;
     QHash<QString, QStringList> m_scanHashListFlow;
     QTreeWidget* m_monitor;
-    nmapClass* m_ui;
+    MainWindow* m_ui;
     int m_parallelThreadLimit;
     bool m_isHostcached;
     QTimer* m_timer;

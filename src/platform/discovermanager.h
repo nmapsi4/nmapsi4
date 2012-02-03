@@ -25,14 +25,14 @@
 
 #include "discover.h"
 
-class nmapClass;
+class MainWindow;
 
 class discoverManager : public QObject
 {
     Q_OBJECT
 
 public:
-    discoverManager(nmapClass* parent=0);
+    discoverManager(MainWindow* parent=0);
     ~discoverManager();
     void defaultDiscoverProbes();
 
@@ -40,7 +40,7 @@ private:
     void updateSRdata();
     void discoveryClear();
 
-    nmapClass* m_ui;
+    MainWindow* m_ui;
     QList<discover*> m_listDiscover;
     QList<QTreeWidgetItem*> m_listTreeItemDiscover;
     int m_ipCounter;

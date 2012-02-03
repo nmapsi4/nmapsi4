@@ -20,7 +20,7 @@
 #include "mainwindow.h"
 
 
-void nmapClass::menuScanBook()
+void MainWindow::menuScanBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -40,7 +40,7 @@ void nmapClass::menuScanBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuVulnBook()
+void MainWindow::menuVulnBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -60,7 +60,7 @@ void nmapClass::menuVulnBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuParBook()
+void MainWindow::menuParBook()
 {
     QAction removeBook(this);
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -74,7 +74,7 @@ void nmapClass::menuParBook()
     menuBook.exec(QCursor::pos());
 }
 
-void nmapClass::menuServiceMain()
+void MainWindow::menuServiceMain()
 {
     QAction checkVuln(this);
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
@@ -87,7 +87,7 @@ void nmapClass::menuServiceMain()
     menuVulnMain.exec(QCursor::pos());
 }
 
-void nmapClass::menuVulnUrlBookmark()
+void MainWindow::menuVulnUrlBookmark()
 {
     QAction removeVulnUrl(this);
     removeVulnUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
@@ -99,7 +99,7 @@ void nmapClass::menuVulnUrlBookmark()
     menuVulnUrl.exec(QCursor::pos());
 }
 
-void nmapClass::createBar()
+void MainWindow::createBar()
 {
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
@@ -166,7 +166,7 @@ void nmapClass::createBar()
     toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
 }
 
-void nmapClass::createToolButtonSetup()
+void MainWindow::createToolButtonSetup()
 {
     // new QToolButton menu
     menuSetup = new QToolButton();

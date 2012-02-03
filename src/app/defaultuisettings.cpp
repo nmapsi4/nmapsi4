@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void nmapClass::loadHistoryDefault()
+void MainWindow::loadHistoryDefault()
 {
     history *newHistory;
     // reload bookmark from history
@@ -49,7 +49,7 @@ void nmapClass::loadHistoryDefault()
     delete newHistory;
 }
 
-void nmapClass::updateCompleter()
+void MainWindow::updateCompleter()
 {
     history *newHistory;
 
@@ -88,7 +88,7 @@ void nmapClass::updateCompleter()
     delete newHistory;
 }
 
-void nmapClass::restoreSettings()
+void MainWindow::restoreSettings()
 {
     // restore window position
     QSettings settings("nmapsi4", "nmapsi4");
@@ -100,7 +100,7 @@ void nmapClass::restoreSettings()
     bW->restoreState(settings.value("splitterSizesRight").toByteArray());
 }
 
-void nmapClass::setTreeSettings()
+void MainWindow::setTreeSettings()
 {
     // set TreeWidget properties
     treeLogH->setColumnWidth(0, 400);
@@ -117,7 +117,7 @@ void nmapClass::setTreeSettings()
     treeDiscover->setColumnWidth(0, 300);
 }
 
-void nmapClass::setDefaultAction()
+void MainWindow::setDefaultAction()
 {
     // Set default properties
     action_Scan_menu->setEnabled(false);
@@ -141,7 +141,7 @@ void nmapClass::setDefaultAction()
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 
-void nmapClass::setDefaultSplitter()
+void MainWindow::setDefaultSplitter()
 {
     // define default Ui splitter
     cW = new QSplitter();
@@ -159,7 +159,7 @@ void nmapClass::setDefaultSplitter()
     frameCenter->layout()->addWidget(frame_2);
 }
 
-void nmapClass::defaultComboValues()
+void MainWindow::defaultComboValues()
 {
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));

@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void nmapClass::detailsOptions()
+void MainWindow::detailsOptions()
 {
     Bdetails->setChecked(true);
     Bnss->setChecked(false);
@@ -27,7 +27,7 @@ void nmapClass::detailsOptions()
     updateIconsBox();
 }
 
-void nmapClass::nssOptions()
+void MainWindow::nssOptions()
 {
     Bdetails->setChecked(false);
     Bnss->setChecked(true);
@@ -36,7 +36,34 @@ void nmapClass::nssOptions()
     updateIconsBox();
 }
 
-void nmapClass::updateIconsBox()
+void MainWindow::checkFullScreen()
+{
+
+    if (isFullScreen())
+    {
+        setWindowState(windowState() & ~Qt::WindowFullScreen );
+        actionFullS->setChecked(false);
+    }
+    else
+    {
+        setWindowState(windowState() | Qt::WindowFullScreen );
+        actionFullS->setChecked(true);
+    }
+}
+
+void MainWindow::updateMenuBar()
+{
+    if (actionMenuBar->isChecked())
+    {
+        menuBar()->setVisible(true);
+    }
+    else
+    {
+        menuBar()->setVisible(false);
+    }
+}
+
+void MainWindow::updateIconsBox()
 {
     int tmpBox = SWscan->currentIndex();
     switch (tmpBox)
@@ -50,7 +77,7 @@ void nmapClass::updateIconsBox()
     }
 }
 
-void nmapClass::updateFontHost()
+void MainWindow::updateFontHost()
 {
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
@@ -65,7 +92,7 @@ void nmapClass::updateFontHost()
             this, SLOT(callSearchHistory()));
 }
 
-void nmapClass::updateSezScan()
+void MainWindow::updateSezScan()
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(true);
     _collectionsButton.value("vuln-sez")->setChecked(false);
@@ -107,7 +134,7 @@ void nmapClass::updateSezScan()
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 
-void nmapClass::updateSezVuln()
+void MainWindow::updateSezVuln()
 { // SLOT
     _collectionsButton.value("scan-sez")->setChecked(false);
     _collectionsButton.value("vuln-sez")->setChecked(true);
@@ -141,7 +168,7 @@ void nmapClass::updateSezVuln()
     actionAdd_vulnerability_search_url->setVisible(true);
 }
 
-void nmapClass::updateSezDiscover()
+void MainWindow::updateSezDiscover()
 { // SLOT
     // discover section
     _collectionsButton.value("scan-sez")->setChecked(false);
@@ -167,7 +194,7 @@ void nmapClass::updateSezDiscover()
     menu_Bookmaks->setEnabled(false);
 }
 
-void nmapClass::setTreeWidgetValues()
+void MainWindow::setTreeWidgetValues()
 {
     listWscan->setIconSize(QSize(22, 22));
     listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
@@ -187,13 +214,13 @@ void nmapClass::setTreeWidgetValues()
     scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
 
-void nmapClass::loadDefaultProfile()
+void MainWindow::loadDefaultProfile()
 {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboAdv->insertItem(0, loadExtensions().join(" "));
 }
 
-void nmapClass::updateComboBook()
+void MainWindow::updateComboBook()
 {
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
@@ -204,7 +231,7 @@ void nmapClass::updateComboBook()
     }
 }
 
-void nmapClass::updateTabLook()
+void MainWindow::updateTabLook()
 {
     if (_collectionsButton.value("tab-look-act")->isChecked())
     {
@@ -219,7 +246,7 @@ void nmapClass::updateTabLook()
     }
 }
 
-void nmapClass::updateTabTrace()
+void MainWindow::updateTabTrace()
 {
     if (_collectionsButton.value("tab-trace-act")->isChecked())
     {
@@ -234,7 +261,7 @@ void nmapClass::updateTabTrace()
     }
 }
 
-void nmapClass::listClear()
+void MainWindow::listClear()
 {
     // Host list
     _parser->clearParserItems();
@@ -257,7 +284,7 @@ void nmapClass::listClear()
     comboScanLog->addItem(tr("Scan log parameters"));
 }
 
-void nmapClass::updateScanCounter(int hostNumber)
+void MainWindow::updateScanCounter(int hostNumber)
 {
     if (hostNumber == 1)
     {
@@ -272,7 +299,7 @@ void nmapClass::updateScanCounter(int hostNumber)
     setWindowTitle(title);
 }
 
-void nmapClass::monitorRuntimeEvent()
+void MainWindow::monitorRuntimeEvent()
 {
     if (!monitorStopCurrentScanButt->isEnabled())
     {
@@ -285,14 +312,14 @@ void nmapClass::monitorRuntimeEvent()
     }
 }
 
-void nmapClass::clearHostnameCombo()
+void MainWindow::clearHostnameCombo()
 {
     // reset combo host bookmarks to default value
     comboHostBook->setCurrentIndex(0);
     hostEdit->clearEditText();
 }
 
-void nmapClass::clearParametersCombo()
+void MainWindow::clearParametersCombo()
 {
     // TODO:set to default saved parameters profile
     comboPar->setCurrentIndex(0);

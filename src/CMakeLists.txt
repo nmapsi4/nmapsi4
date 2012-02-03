@@ -5,16 +5,16 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/src/platform/
+    ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
+    ${CMAKE_SOURCE_DIR}/src/platform/history/
+    ${CMAKE_SOURCE_DIR}/src/platform/about/
+    ${CMAKE_SOURCE_DIR}/src/common/
     ${CMAKE_SOURCE_DIR}/src/app/
     ${CMAKE_SOURCE_DIR}/src/app/parser/
     ${CMAKE_SOURCE_DIR}/src/app/monitor/
     ${CMAKE_SOURCE_DIR}/src/app/preference/
     ${CMAKE_SOURCE_DIR}/src/app/profiler/
-    ${CMAKE_SOURCE_DIR}/src/common/
-    ${CMAKE_SOURCE_DIR}/src/platform/
-    ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
-    ${CMAKE_SOURCE_DIR}/src/platform/history/
-    ${CMAKE_SOURCE_DIR}/src/platform/about/
 )
 
 
@@ -26,6 +26,20 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
 endif (Q_WS_X11)
 
 SET(SOURCES_CPP
+                platform/addvulnerabilityurl.cpp
+                platform/vulnerability.cpp
+                platform/lookupmanager.cpp
+                platform/digmanager.cpp
+                platform/nsemanager.cpp
+                platform/discover.cpp
+                platform/discovermanager.cpp
+                platform/addparameterstobookmark.cpp
+                platform/logwriter/logwriter.cpp
+                platform/history/history.cpp
+                platform/about/about.cpp
+                common/utilities.cpp
+                common/qpushbuttonorientated.cpp
+                common/qprocessthread.cpp
 		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
@@ -37,27 +51,11 @@ SET(SOURCES_CPP
                 app/bookmarkcallevents.cpp
                 app/updateUI.cpp
                 app/slots.cpp
-                app/resizeuievents.cpp
                 app/defaultuisettings.cpp
                 app/actions.cpp
                 app/settings.cpp
-                app/mainScan.cpp
                 app/mainwindow.cpp
                 app/main.cpp
-		common/utilities.cpp
-                common/qpushbuttonorientated.cpp
-		common/qprocessthread.cpp
-		platform/addvulnerabilityurl.cpp
-                platform/vulnerability.cpp
-		platform/lookupmanager.cpp
-		platform/digmanager.cpp
-		platform/nsemanager.cpp
-		platform/discover.cpp
-		platform/discovermanager.cpp
-		platform/addparameterstobookmark.cpp
-                platform/logwriter/logwriter.cpp
-                platform/history/history.cpp
-                platform/about/about.cpp
 )
 
 
@@ -65,7 +63,7 @@ if (Q_WS_X11)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
 endif (Q_WS_X11)
 
-SET(SOURCES_H app/mainwindow.h
+SET(SOURCES_H
 	platform/lookupmanager.h
 	platform/digmanager.h
 	platform/addvulnerabilityurl.h
@@ -81,15 +79,17 @@ SET(SOURCES_H app/mainwindow.h
         app/monitor/monitor.h
         app/profiler/profilerdialog.h
 	app/parser/parsermanager.h
+        app/mainwindow.h
 )
 
-SET(SOURCES_UI app/mainwindow.ui
+SET(SOURCES_UI
 	platform/addvulnerabilityurl.ui
 	platform/addparameterstobookmark.ui
         platform/about/about.ui
 	app/preference/preferencesdialog.ui
         app/profiler/profilerdialog.ui
 	app/monitor/details.ui
+        app/mainwindow.ui
 )
 
 SET(RESOURCES_QRC ../mainwin.qrc)

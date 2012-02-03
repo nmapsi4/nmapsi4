@@ -49,20 +49,11 @@ int main(int argc, char *argv[])
     bool tmp_translator;
     QString urlTranslate;
 
-#ifndef Q_WS_WIN // Gnu/Linux && Mac Os/x
+#ifndef Q_WS_WIN
     urlTranslate = __LinuxTranslateUrl__;
-#ifndef TRANSL_NO_DEBUG
-    qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
-#endif
-
-#else // MS Windows
-    //urlTranslate = QDir::homePath();
+#else
     urlTranslate = QDir::rootPath();
     urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
-#ifndef TRANSL_NO_DEBUG
-    qDebug() << "Nmapsi4/core -> url Translator::" << urlTranslate;
-#endif
-
 #endif
 
     tmp_translator = translator.load(localeComplete, urlTranslate);
@@ -72,16 +63,9 @@ int main(int argc, char *argv[])
         tmp_translator = translator.load(localeComplete, QDir::currentPath());
     }
 
-    // debug messages for Translation file
-#ifndef TRANSL_NO_DEBUG
-    qDebug() << "Nmapsi4/core -> Locale::" << localeComplete;
-    qDebug() << "Nmapsi4/core -> Translation file Load::" << tmp_translator;
-    qDebug() << "Nmapsi4/core -> Traslation file is Empty::" << translator.isEmpty();
-#endif
-
     app.installTranslator(&translator);
 
-    nmapClass dialog;
-    dialog.show();
+    MainWindow* dialog = new MainWindow();
+    dialog->show();
     return app.exec();
 }
