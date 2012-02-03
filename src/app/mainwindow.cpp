@@ -261,10 +261,35 @@ void MainWindow::preScanLookup(const QString hostname)
 
 void MainWindow::closeEvent(QCloseEvent * event)
 {
-    m_monitor->clearHostMonitor();
-    // Save Ui settings
-    saveSettings();
-    event->accept();
+    if (m_monitor->monitorHostNumber())
+    {
+        QMessageBox box;
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("<b>There are still active scan.</b>"));
+        box.setInformativeText(tr("Do you want to close nmapsi4 anyway?"));
+        box.setStandardButtons(QMessageBox::Cancel | QMessageBox::Close);
+        box.setDefaultButton(QMessageBox::Cancel);
+        int ret = box.exec();
+
+        switch (ret)
+        {
+        case QMessageBox::Close:
+            m_monitor->clearHostMonitor();
+            saveSettings();
+            event->accept();
+            break;
+        case QMessageBox::Cancel:
+            event->ignore();
+            break;
+        }
+    }
+    else
+    {
+        m_monitor->clearHostMonitor();
+        // Save Ui settings
+        saveSettings();
+        event->accept();
+    }
 }
 
 MainWindow::~MainWindow()
