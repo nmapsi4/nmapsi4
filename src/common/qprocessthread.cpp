@@ -27,7 +27,7 @@ QProcessThread::QProcessThread(const QString& programName, const QStringList& pa
 QProcessThread::~QProcessThread()
 {
 #ifndef THREAD_NO_DEBUG
-    qDebug() << "DEBUG:: ~QProcessThread()";
+    qDebug() << "DEBUG:: ~QProcessThread( " << m_programName << " )";
 #endif
     stopProcess();
 }
@@ -43,24 +43,18 @@ void QProcessThread::run()
              this, SLOT(readyReadData()));
 
 #ifndef THREAD_NO_DEBUG
-     qDebug() << "DEBUG::ThreadString:: " << m_ParList;
+     qDebug() << "QProcessThread::Command:: " << m_ParList;
 #endif
+
      m_process.data()->start(m_programName, m_ParList);
 
      exec();
      // emit signal, scan is end
      emit threadEnd(m_ParList, m_pout, m_perr);
-
-#ifndef THREAD_NO_DEBUG
-     qDebug() << "THREAD::Stop(" << m_programName << ")";
-#endif
 }
 
 void QProcessThread::readFinished()
 {
-#ifndef THREAD_NO_DEBUG
-     qDebug() << "THREAD::Start(" << m_programName << ")";
-#endif
      // set scan return buffer
      m_perr  = m_process.data()->readAllStandardError(); // read error buffer
      m_process.data()->close();

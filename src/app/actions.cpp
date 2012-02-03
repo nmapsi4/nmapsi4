@@ -192,8 +192,8 @@ void MainWindow::createToolButtonSetup()
     menu->addMenu(menu_Help);
     menu->addSeparator();
     menu->addAction(actionMenuBar);
-//     menu->addSeparator();
-//     menu->addAction(action_Quit);
+    menu->addSeparator();
+    menu->addAction(action_Quit);
     menu->setLayoutDirection(Qt::LeftToRight);
     m_menuSetup->setMenu(menu);
 
