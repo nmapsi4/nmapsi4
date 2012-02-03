@@ -27,58 +27,58 @@ void MainWindow::syncSettings()
     // TODO: load saved profile or simple default
 
     bool position = settings.value("savePos",true).toBool();
-    savePos = position;
+    m_savePos = position;
 
     bool size = settings.value("saveSize",true).toBool();
-    saveSize = size;
+    m_saveSize = size;
 
-    hostCache = settings.value("hostCache",10).toInt();
+    m_hostCache = settings.value("hostCache",10).toInt();
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
-    lookupEnabled = false;
-    lookupType = 0;
+    m_lookupEnabled = false;
+    m_lookupType = 0;
 #else
-    lookupEnabled = settings.value("LookupEnabled", false).toBool();
-    lookupType = settings.value("lookupType", 1).toInt();
+    m_lookupEnabled = settings.value("LookupEnabled", false).toBool();
+    m_lookupType = settings.value("lookupType", 1).toInt();
 #endif
 
-    TraceEnabled = settings.value("TraceEnabled",true).toBool();
+    m_TraceEnabled = settings.value("TraceEnabled",true).toBool();
 
     // restore actionMenuBar
     bool actionMB = settings.value("showMenuBar", false).toBool();
     actionMenuBar->setChecked(actionMB);
 
     // update max parallel scan option
-    _monitor->updateMaxParallelScan();
+    m_monitor->updateMaxParallelScan();
 }
 
 void MainWindow::saveSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
 
-    if(savePos)
+    if(m_savePos)
     {
         settings.setValue("window/pos", pos());
     }
 
-    if(saveSize)
+    if(m_saveSize)
     {
         settings.setValue("window/size", size());
     }
 
-    settings.setValue("LookupEnabled", lookupEnabled);
-    settings.setValue("TraceEnabled", TraceEnabled);
-    settings.setValue("savePos", savePos);
-    settings.setValue("saveSize", saveSize);
+    settings.setValue("LookupEnabled", m_lookupEnabled);
+    settings.setValue("TraceEnabled", m_TraceEnabled);
+    settings.setValue("savePos", m_savePos);
+    settings.setValue("saveSize", m_saveSize);
     settings.setValue("hostCache",10);
-    settings.setValue("splitterSizes", cW->saveState());
-    settings.setValue("splitterSizesRight", bW->saveState());
+    settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
+    settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
 
 // check and reset for settings file permission
 #ifndef Q_WS_WIN
-    if (!uid)
+    if (!m_userId)
     {
         QString settingsFile_ = settings.fileName();
         QFileInfo fiS_(settingsFile_);
@@ -91,7 +91,7 @@ void MainWindow::saveSettings()
 #endif
 
 #ifndef Q_WS_WIN
-    if (!uid)
+    if (!m_userId)
     {
         QSettings settings2("nmapsi4", "nmapsi4_bookmark");
         QString settingsFile_ = settings2.fileName();
@@ -104,7 +104,7 @@ void MainWindow::saveSettings()
         }
     }
 
-    if (!uid)
+    if (!m_userId)
     {
         QSettings settings3("nmapsi4", "nmapsi4_gprofile");
         QString settingsFile_ = settings3.fileName();

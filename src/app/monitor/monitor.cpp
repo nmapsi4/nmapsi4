@@ -211,7 +211,7 @@ void monitor::startLookup(const QString hostname, LookupType option)
 
         digC->digProcess(hostname,tmpParserObj_);
 
-        m_ui->_parser->addUtilObject(tmpParserObj_);
+        m_ui->m_parser->addUtilObject(tmpParserObj_);
     }
 }
 
@@ -247,7 +247,7 @@ void monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
         elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }
 
-    m_ui->_parser->addUtilObject(elemObjUtil);
+    m_ui->m_parser->addUtilObject(elemObjUtil);
 }
 
 void monitor::delMonitorHost(const QString hostName)

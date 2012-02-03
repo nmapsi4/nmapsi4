@@ -27,7 +27,7 @@ void MainWindow::loadHistoryDefault()
     m_treeloghlist = newHistory->updateBookMarks();
     delete newHistory;
     // check for user or admin parameters bookmarks
-    if (!uid)
+    if (!m_userId)
     {
         newHistory = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         m_treebookparlist = newHistory->updateBookMarks();
@@ -53,35 +53,35 @@ void MainWindow::updateCompleter()
 {
     history *newHistory;
 
-    newHistory = new history("nmapsi4/cacheHost", hostCache);
+    newHistory = new history("nmapsi4/cacheHost", m_hostCache);
 
     if (newHistory->getHostCache().first() != "NULL")
     {
-        if (!_completer.isNull())
+        if (!m_completer.isNull())
         {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completer.data()->model());
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
             newModel->setStringList(newHistory->getHostCache());
         }
-        else if (_hostModel.isNull())
+        else if (m_hostModel.isNull())
         {
-            _hostModel = new QStringListModel(newHistory->getHostCache());
+            m_hostModel = new QStringListModel(newHistory->getHostCache());
         }
     }
 
     delete newHistory;
 
-    newHistory = new history("nmapsi4/cacheVuln", hostCache);
+    newHistory = new history("nmapsi4/cacheVuln", m_hostCache);
 
     if (newHistory->getHostCache().first() != "NULL")
     {
-        if (!_completerVuln.isNull())
+        if (!m_completerVuln.isNull())
         {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(_completerVuln.data()->model());
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
             newModel->setStringList(newHistory->getHostCache());
         }
-        else if (_vulnModel.isNull())
+        else if (m_vulnModel.isNull())
         {
-            _vulnModel = new QStringListModel(newHistory->getHostCache());
+            m_vulnModel = new QStringListModel(newHistory->getHostCache());
         }
     }
 
@@ -96,8 +96,8 @@ void MainWindow::restoreSettings()
     QSize size = settings.value("window/size", QSize(910, 672)).toSize();
     resize(size);
     move(pos);
-    cW->restoreState(settings.value("splitterSizes").toByteArray());
-    bW->restoreState(settings.value("splitterSizesRight").toByteArray());
+    m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
+    m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
 }
 
 void MainWindow::setTreeSettings()
@@ -124,7 +124,7 @@ void MainWindow::setDefaultAction()
     action_Scan_2->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     toolBarSearch->setVisible(false);
-    _collectionsButton.value("scan-sez")->setChecked(true);
+    m_collectionsButton.value("scan-sez")->setChecked(true);
 
     Bdetails->setChecked(true);
     Bdetails->setStyleSheet(verticalStyleSheet);
@@ -144,18 +144,18 @@ void MainWindow::setDefaultAction()
 void MainWindow::setDefaultSplitter()
 {
     // define default Ui splitter
-    cW = new QSplitter();
-    bW = new QSplitter();
-    cW->setOrientation(Qt::Horizontal);
-    cW->addWidget(frameLeft);
-    cW->addWidget(frameCenter);
+    m_mainHorizontalSplitter = new QSplitter();
+    m_mainVerticalSplitter = new QSplitter();
+    m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
+    m_mainHorizontalSplitter->addWidget(frameLeft);
+    m_mainHorizontalSplitter->addWidget(frameCenter);
     //frameCenter
-    bW->setOrientation(Qt::Vertical);
-    bW->addWidget(tabWidget);
-    bW->addWidget(frameRight);
+    m_mainVerticalSplitter->setOrientation(Qt::Vertical);
+    m_mainVerticalSplitter->addWidget(tabWidget);
+    m_mainVerticalSplitter->addWidget(frameRight);
     // insert splitter
-    tabUi->widget(0)->layout()->addWidget(cW);
-    frameCenter->layout()->addWidget(bW);
+    tabUi->widget(0)->layout()->addWidget(m_mainHorizontalSplitter);
+    frameCenter->layout()->addWidget(m_mainVerticalSplitter);
     frameCenter->layout()->addWidget(frame_2);
 }
 

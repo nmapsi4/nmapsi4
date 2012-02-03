@@ -78,7 +78,7 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
 
     m_ui->progressScan->setValue(85);
 
-    if(!m_ui->_monitor->monitorHostNumber())
+    if(!m_ui->m_monitor->monitorHostNumber())
     {
         m_ui->progressScan->setValue(100);
         m_ui->monitorStopAllScanButt->setEnabled(false);
@@ -98,9 +98,9 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->actionSave_Menu->setEnabled(true);
     m_ui->actionSave_As_Menu->setEnabled(true);
 
-    if(!m_ui->_monitor->monitorHostNumber())
+    if(!m_ui->m_monitor->monitorHostNumber())
     {
-        m_ui->_monitor->clearHostMonitor();
+        m_ui->m_monitor->clearHostMonitor();
     }
 
     m_parserObjList.append(elemObj);

@@ -26,18 +26,18 @@ void MainWindow::callSearchHistory()
         actionAdd_Bookmark->setEnabled(true);
     }
 
-    if (_hostModel.isNull())
+    if (m_hostModel.isNull())
     {
         return;
     }
 
-    if (_completer.isNull())
+    if (m_completer.isNull())
     {
-        _completer = new QCompleter(_hostModel.data());
-        _completer.data()->setCompletionRole(QCompleter::InlineCompletion);
-        _completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
-        _completer.data()->setWrapAround(false);
-        hostEdit->setCompleter(_completer.data());
+        m_completer = new QCompleter(m_hostModel.data());
+        m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
+        m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
+        m_completer.data()->setWrapAround(false);
+        hostEdit->setCompleter(m_completer.data());
     }
 }
 
@@ -131,7 +131,7 @@ void MainWindow::deleteBookMarkPar()
 
     history *history_;
 
-    if (!uid)
+    if (!m_userId)
     {
         history_ = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         history_->deleteItemBookmark(treeBookPar->currentItem()->text(0));
@@ -180,7 +180,7 @@ void MainWindow::saveBookMarksPar(const QString profileName, const QString profi
 
     history *history_;
 
-    if (!uid)
+    if (!m_userId)
     {
         history_ = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 

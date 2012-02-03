@@ -24,7 +24,7 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
     // preload StringList with default static Scan profile
     QHash<QString, QString> tmpStaticProfileMap_;
 
-    if (!uid)
+    if (!m_userId)
     {
         tmpStaticProfileMap_.insert("Default","-sS -sV -O -T4 -v");
         tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
@@ -107,7 +107,7 @@ void MainWindow::resetPar()
 
 QStringList MainWindow::loadExtensions()
 {
-    if(_monitor->monitorHostNumber())
+    if(m_monitor->monitorHostNumber())
     {
         progressScan->setValue(55); // start progress bar
     }

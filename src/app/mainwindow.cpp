@@ -20,7 +20,7 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow()
-: uid(0)
+: m_userId(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
@@ -36,7 +36,7 @@ void MainWindow::initGUI()
 void MainWindow::initObject()
 {
 #ifndef Q_WS_WIN
-    uid = getuid();
+    m_userId = getuid();
 #endif
 
     tWresult->setTabsClosable(true);
@@ -45,10 +45,10 @@ void MainWindow::initObject()
     // preload mainwindow info
     setTreeWidgetValues();
 
-    _monitor = new monitor(scanMonitor,this);
-    _utilities = new utilities(this);
-    _parser = new parserManager(this);
-    _vulnerability = new vulnerability(this);
+    m_monitor = new monitor(scanMonitor,this);
+    m_utilities = new utilities(this);
+    m_parser = new parserManager(this);
+    m_vulnerability = new vulnerability(this);
 
     createBar();
     createToolButtonSetup();
@@ -75,24 +75,24 @@ void MainWindow::initObject()
     _collectionsButton.value("tab-look-act")->setEnabled(false);
 #else
     // removed dig runtime check, linux, mac and BSD.
-    _collectionsButton.value("tab-look-act")->setChecked(lookupEnabled);
+    m_collectionsButton.value("tab-look-act")->setChecked(m_lookupEnabled);
     updateTabLook();
 #endif
 
     // load first profile
-    _collectionsButton.value("tab-trace-act")->setChecked(TraceEnabled);
+    m_collectionsButton.value("tab-trace-act")->setChecked(m_TraceEnabled);
     updateTabTrace();
     updateMenuBar();
 
     // load quick combo items
     loadScanProfile();
     updateComboBook();
-    _vulnerability->updateComboWebV();
+    m_vulnerability->updateComboWebV();
 
     // call discover startup, NPING is REQUIRED
-    _discoverManager = new discoverManager(this);
-    _discoverManager->startDiscover();
-    _discoverManager->defaultDiscoverProbes();
+    m_discoverManager = new discoverManager(this);
+    m_discoverManager->startDiscover();
+    m_discoverManager->defaultDiscoverProbes();
 
     // connect slots
     setNmapsiSlot();
@@ -156,16 +156,16 @@ void MainWindow::startScan()
     hostname = hostTools::clearHost(hostname);
 
     // check for duplicate hostname in the monitor
-    if (_monitor->isHostOnMonitor(hostname))
+    if (m_monitor->isHostOnMonitor(hostname))
     {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
     }
 
-    if(!_monitor->monitorHostNumber())
+    if(!m_monitor->monitorHostNumber())
     {
         // clear details QHash
-       _monitor->clearHostMonitorDetails();
+        m_monitor->clearHostMonitorDetails();
     }
 
 
@@ -226,7 +226,7 @@ void MainWindow::startScan()
 void MainWindow::preScanLookup(const QString hostname)
 {
     // save ip or dns to history
-    history *newHistory = new history("nmapsi4/cacheHost", hostCache);
+    history *newHistory = new history("nmapsi4/cacheHost", m_hostCache);
     newHistory->addItemHistory(hostname);
     delete newHistory;
 
@@ -242,18 +242,18 @@ void MainWindow::preScanLookup(const QString hostname)
     QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    if (lookupEnabled)
+    if (m_lookupEnabled)
     {
-        switch (lookupType)
+        switch (m_lookupType)
         {
         case monitor::DisabledLookup:
-            _monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+            m_monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
             break;
         case monitor::InternalLookup:
-            _monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
+            m_monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
             break;
         case monitor::DigLookup:
-            _monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
+            m_monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
             break;
         }
     }
@@ -261,7 +261,7 @@ void MainWindow::preScanLookup(const QString hostname)
 
 void MainWindow::exit()
 {
-    _monitor->clearHostMonitor();
+    m_monitor->clearHostMonitor();
     // Save Ui settings
     saveSettings();
     close();
@@ -269,25 +269,25 @@ void MainWindow::exit()
 
 MainWindow::~MainWindow()
 {
-    freemap<QString,QPushButtonOrientated*>::itemDeleteAll(_collectionsButton);
+    freemap<QString,QPushButtonOrientated*>::itemDeleteAll(m_collectionsButton);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
-    delete _discoverManager;
-    delete _monitor;
-    delete _utilities;
-    delete _parser;
-    delete _vulnerability;
-    delete _completer.data();
-    delete _completerVuln.data();
-    delete _hostModel.data();
-    delete _vulnModel.data();
-    delete bW;
-    delete cW;
+    delete m_discoverManager;
+    delete m_monitor;
+    delete m_utilities;
+    delete m_parser;
+    delete m_vulnerability;
+    delete m_completer.data();
+    delete m_completerVuln.data();
+    delete m_hostModel.data();
+    delete m_vulnModel.data();
+    delete m_mainVerticalSplitter;
+    delete m_mainHorizontalSplitter;
     delete progressScan;
-    delete menuSetup->menu();
-    delete menuSetup;
+    delete m_menuSetup->menu();
+    delete m_menuSetup;
     delete m_profilerTool->menu();
     delete m_profilerTool;
     delete m_saveTool->menu();

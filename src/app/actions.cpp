@@ -50,7 +50,7 @@ void MainWindow::menuVulnBook()
     addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     addBook.setIconText(tr("Search for vulnerabilities"));
 
-    connect(&addBook, SIGNAL(triggered()), _vulnerability, SLOT(callVulnCheck()));
+    connect(&addBook, SIGNAL(triggered()), m_vulnerability, SLOT(callVulnCheck()));
     connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteBookMark()));
 
     QMenu menuBook(this);
@@ -80,7 +80,7 @@ void MainWindow::menuServiceMain()
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     checkVuln.setIconText(tr("Check Vulnerability"));
 
-    connect(&checkVuln, SIGNAL(triggered()), _vulnerability, SLOT(objVulnButton()));
+    connect(&checkVuln, SIGNAL(triggered()), m_vulnerability, SLOT(objVulnButton()));
 
     QMenu menuVulnMain(this);
     menuVulnMain.addAction(&checkVuln);
@@ -92,7 +92,7 @@ void MainWindow::menuVulnUrlBookmark()
     QAction removeVulnUrl(this);
     removeVulnUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeVulnUrl.setIconText(tr("Remove url"));
-    connect(&removeVulnUrl, SIGNAL(triggered()), _vulnerability, SLOT(removeUrlToBookmarks()));
+    connect(&removeVulnUrl, SIGNAL(triggered()), m_vulnerability, SLOT(removeUrlToBookmarks()));
 
     QMenu menuVulnUrl(this);
     menuVulnUrl.addAction(&removeVulnUrl);
@@ -111,7 +111,7 @@ void MainWindow::createBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("scan-sez",actionButt);
+    m_collectionsButton.insert("scan-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezScan()));
     sezBar->addWidget(actionButt);
 
@@ -122,7 +122,7 @@ void MainWindow::createBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("discover-sez",actionButt);
+    m_collectionsButton.insert("discover-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezDiscover()));
     sezBar->addWidget(actionButt);
 
@@ -133,7 +133,7 @@ void MainWindow::createBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("vuln-sez",actionButt);
+    m_collectionsButton.insert("vuln-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezVuln()));
     sezBar->addWidget(actionButt);
 
@@ -147,7 +147,7 @@ void MainWindow::createBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("tab-look-act",actionButt);
+    m_collectionsButton.insert("tab-look-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabLook()));
     toolBarTab->addWidget(actionButt);
 
@@ -159,7 +159,7 @@ void MainWindow::createBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     actionButt->setStyleSheet(verticalStyleSheet);
-    _collectionsButton.insert("tab-trace-act",actionButt);
+    m_collectionsButton.insert("tab-trace-act",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
     toolBarTab->addWidget(actionButt);
 
@@ -169,10 +169,10 @@ void MainWindow::createBar()
 void MainWindow::createToolButtonSetup()
 {
     // new QToolButton menu
-    menuSetup = new QToolButton();
-    menuSetup->setPopupMode(QToolButton::InstantPopup);
-    menuSetup->setText(tr("Setup"));
-    menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    m_menuSetup = new QToolButton();
+    m_menuSetup->setPopupMode(QToolButton::InstantPopup);
+    m_menuSetup->setText(tr("Setup"));
+    m_menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
 
     QMenu *menu = new QMenu();
     menu->addAction(action_Scan_2);
@@ -195,9 +195,9 @@ void MainWindow::createToolButtonSetup()
     menu->addSeparator();
     menu->addAction(action_Quit);
     menu->setLayoutDirection(Qt::LeftToRight);
-    menuSetup->setMenu(menu);
+    m_menuSetup->setMenu(menu);
 
-    toolMenuBar->addWidget(menuSetup);
+    toolMenuBar->addWidget(m_menuSetup);
 
     // profiler menu
     m_profilerTool = new QToolButton();

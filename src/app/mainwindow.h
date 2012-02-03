@@ -75,47 +75,15 @@ public:
     ~MainWindow();
 
 private:
-    int uid;
-    int hostCache;
-    int lookupType;
-    bool flag_state;
-    bool savePos;
-    bool saveSize;
-    bool TraceEnabled;
-    bool lookupEnabled;
-    QHash<QString, QPushButtonOrientated*> _collectionsButton;
-    QSplitter *cW;
-    QSplitter *bW;
-    QToolButton *menuSetup;
-    QToolButton *m_profilerTool;
-    QToolButton *m_saveTool;
-    QToolButton *m_bookmarksTool;
-    monitor *_monitor;
-    utilities *_utilities;
-    parserManager *_parser;
-    QWeakPointer<QCompleter> _completer;
-    QWeakPointer<QCompleter> _completerVuln;
-    QWeakPointer<QStringListModel> _hostModel;
-    QWeakPointer<QStringListModel> _vulnModel;
-    vulnerability* _vulnerability;
-    discoverManager* _discoverManager;
-    QList<QTreeWidgetItem*> m_treeloghlist;
-    QList<QTreeWidgetItem*> m_treebookparlist;
-    QList<QTreeWidgetItem*> m_treebookvulnlist;
-    QList<QTreeWidgetItem*> m_treewidgetvulnlist;
-
     void preScanLookup(const QString hostname);
     void setNmapsiSlot();
-    QStringList loadExtensions();
     void resetOptions();
     void initGUI();
-    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     void setTreeWidgetValues();
     void createBar();
     void loadScanProfile();
     void updateComboBook();
     void restoreGlobalProfile();
-    QHash<QString, QString> defaultScanProfile() const;
     void loadHistoryDefault();
     void restoreSettings();
     void setTreeSettings();
@@ -124,6 +92,38 @@ private:
     void defaultComboValues();
     void createToolButtonSetup();
     void updateCompleter();
+    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
+    QStringList loadExtensions();
+    QHash<QString, QString> defaultScanProfile() const;
+
+    QHash<QString, QPushButtonOrientated*> m_collectionsButton;
+    QSplitter *m_mainHorizontalSplitter;
+    QSplitter *m_mainVerticalSplitter;
+    QToolButton *m_menuSetup;
+    QToolButton *m_profilerTool;
+    QToolButton *m_saveTool;
+    QToolButton *m_bookmarksTool;
+    QWeakPointer<QCompleter> m_completer;
+    QWeakPointer<QCompleter> m_completerVuln;
+    QWeakPointer<QStringListModel> m_hostModel;
+    QWeakPointer<QStringListModel> m_vulnModel;
+    vulnerability* m_vulnerability;
+    discoverManager* m_discoverManager;
+    monitor* m_monitor;
+    utilities* m_utilities;
+    parserManager* m_parser;
+    QList<QTreeWidgetItem*> m_treeloghlist;
+    QList<QTreeWidgetItem*> m_treebookparlist;
+    QList<QTreeWidgetItem*> m_treebookvulnlist;
+    QList<QTreeWidgetItem*> m_treewidgetvulnlist;
+    int m_userId;
+    int m_hostCache;
+    int m_lookupType;
+    bool m_flag_state;
+    bool m_savePos;
+    bool m_saveSize;
+    bool m_TraceEnabled;
+    bool m_lookupEnabled;
 
 private slots:
     void initObject();

@@ -94,9 +94,9 @@ void MainWindow::updateFontHost()
 
 void MainWindow::updateSezScan()
 { // SLOT
-    _collectionsButton.value("scan-sez")->setChecked(true);
-    _collectionsButton.value("vuln-sez")->setChecked(false);
-    _collectionsButton.value("discover-sez")->setChecked(false);
+    m_collectionsButton.value("scan-sez")->setChecked(true);
+    m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collectionsButton.value("discover-sez")->setChecked(false);
     toolBar->setVisible(true);
     toolBar_2->setVisible(true);
     toolBarSearch->setVisible(false);
@@ -136,9 +136,9 @@ void MainWindow::updateSezScan()
 
 void MainWindow::updateSezVuln()
 { // SLOT
-    _collectionsButton.value("scan-sez")->setChecked(false);
-    _collectionsButton.value("vuln-sez")->setChecked(true);
-    _collectionsButton.value("discover-sez")->setChecked(false);
+    m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collectionsButton.value("vuln-sez")->setChecked(true);
+    m_collectionsButton.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
@@ -171,9 +171,9 @@ void MainWindow::updateSezVuln()
 void MainWindow::updateSezDiscover()
 { // SLOT
     // discover section
-    _collectionsButton.value("scan-sez")->setChecked(false);
-    _collectionsButton.value("vuln-sez")->setChecked(false);
-    _collectionsButton.value("discover-sez")->setChecked(true);
+    m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collectionsButton.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(false);
@@ -233,30 +233,30 @@ void MainWindow::updateComboBook()
 
 void MainWindow::updateTabLook()
 {
-    if (_collectionsButton.value("tab-look-act")->isChecked())
+    if (m_collectionsButton.value("tab-look-act")->isChecked())
     {
         tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
-        lookupEnabled = true;
+        m_lookupEnabled = true;
     }
     else
     {
-        lookupEnabled = false;
+        m_lookupEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_3));
     }
 }
 
 void MainWindow::updateTabTrace()
 {
-    if (_collectionsButton.value("tab-trace-act")->isChecked())
+    if (m_collectionsButton.value("tab-trace-act")->isChecked())
     {
         tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
         tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
-        TraceEnabled = true;
+        m_TraceEnabled = true;
     }
     else
     {
-        TraceEnabled = false;
+        m_TraceEnabled = false;
         tabWidget->removeTab(tabWidget->indexOf(tab_7));
     }
 }
@@ -264,7 +264,7 @@ void MainWindow::updateTabTrace()
 void MainWindow::listClear()
 {
     // Host list
-    _parser->clearParserItems();
+    m_parser->clearParserItems();
     listScanError->clear();
     treeMain->clear();
     treeLookup->clear();
@@ -293,7 +293,7 @@ void MainWindow::updateScanCounter(int hostNumber)
 
     QString title("Nmapsi4 -" + tr(" Active Scan ")
                   + QLatin1String("(")
-                  + QString("%1").arg(_monitor->monitorHostNumber())
+                  + QString("%1").arg(m_monitor->monitorHostNumber())
                   + QLatin1String(")"));
 
     setWindowTitle(title);

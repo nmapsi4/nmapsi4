@@ -25,9 +25,9 @@ void MainWindow::setNmapsiSlot()
     connect(action_Quit, SIGNAL(triggered()),
             this, SLOT(exit()));    // file action menu
     connect(action_About, SIGNAL(triggered()),
-            _utilities, SLOT(about()));    // about action menu
+            m_utilities, SLOT(about()));    // about action menu
     connect(actionAbout_Qt, SIGNAL(triggered()),
-            _utilities, SLOT(aboutQt()));    // about action menu
+            m_utilities, SLOT(aboutQt()));    // about action menu
     connect(action_Scan_menu, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
@@ -59,15 +59,15 @@ void MainWindow::setNmapsiSlot()
 
     // Obj parser runtime
     connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            _parser, SLOT(showParserResult(QTreeWidgetItem*,int)));
+            m_parser, SLOT(showParserResult(QTreeWidgetItem*,int)));
     connect(treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            _parser, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
+            m_parser, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
     connect(actionSave, SIGNAL(triggered()),
-            _parser, SLOT(callSaveSingleLogWriter()));
+            m_parser, SLOT(callSaveSingleLogWriter()));
     connect(actionSave_Menu, SIGNAL(triggered()),
-            _parser, SLOT(callSaveSingleLogWriter()));
+            m_parser, SLOT(callSaveSingleLogWriter()));
     connect(actionSave_As_Menu, SIGNAL(triggered()),
-            _parser, SLOT(callSaveAllLogWriter()));
+            m_parser, SLOT(callSaveAllLogWriter()));
 
     // Bookmarks signals
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
@@ -107,37 +107,37 @@ void MainWindow::setNmapsiSlot()
     connect(scanMonitor, SIGNAL(itemSelectionChanged()),
             this, SLOT(monitorRuntimeEvent()));
     connect(monitorStopCurrentScanButt, SIGNAL(clicked()),
-            _monitor, SLOT(stopSelectedScan()));
+            m_monitor, SLOT(stopSelectedScan()));
     connect(monitorDetailsScanButt, SIGNAL(clicked()),
-            _monitor, SLOT(showSelectedScanDetails()));
-    connect(_monitor, SIGNAL(monitorUpdated(int)),
+            m_monitor, SLOT(showSelectedScanDetails()));
+    connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
-    connect(_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
-            _parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
+    connect(m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
+            m_parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
-            _monitor, SLOT(stopAllScan()));
+            m_monitor, SLOT(stopAllScan()));
 
     // action help menu (browser call)
     connect(actionReport_Bug, SIGNAL(triggered()),
-            _utilities, SLOT(showBugUrl()));
+            m_utilities, SLOT(showBugUrl()));
     connect(actionVisit_Website, SIGNAL(triggered()),
-            _utilities, SLOT(showHomepageUrl()));
+            m_utilities, SLOT(showHomepageUrl()));
     connect(actionDocumentation, SIGNAL(triggered()),
-            _utilities, SLOT(showDocumentationUrl()));
+            m_utilities, SLOT(showDocumentationUrl()));
     connect(actionDonate_Money, SIGNAL(triggered()),
-            _utilities, SLOT(showDonateUrl()));
+            m_utilities, SLOT(showDonateUrl()));
 
     // Discover
     connect(comboDiscover, SIGNAL(activated(QString)),
-            _discoverManager, SLOT(discoverIp(QString)));
+            m_discoverManager, SLOT(discoverIp(QString)));
     connect(startDiscoverButt, SIGNAL(clicked()),
-            _discoverManager, SLOT(discoverIpState()));
+            m_discoverManager, SLOT(discoverIpState()));
     connect(stopDiscoverButt, SIGNAL(clicked()),
-            _discoverManager, SLOT(stopDiscover()));
+            m_discoverManager, SLOT(stopDiscover()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            _discoverManager, SLOT(runtimeScanDiscover()));
+            m_discoverManager, SLOT(runtimeScanDiscover()));
     connect(discoverScanButt, SIGNAL(clicked()),
-            _discoverManager, SLOT(callScanDiscover()));
+            m_discoverManager, SLOT(callScanDiscover()));
     connect(reloadComboDiscover, SIGNAL(clicked()),
-            _discoverManager, SLOT(startDiscover()));
+            m_discoverManager, SLOT(startDiscover()));
 }
