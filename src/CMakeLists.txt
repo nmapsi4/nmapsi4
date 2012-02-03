@@ -11,17 +11,10 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src/app/preference/
     ${CMAKE_SOURCE_DIR}/src/app/profiler/
     ${CMAKE_SOURCE_DIR}/src/common/
-    ${CMAKE_SOURCE_DIR}/src/platform/dig/
-    ${CMAKE_SOURCE_DIR}/src/platform/discover/
-    ${CMAKE_SOURCE_DIR}/src/platform/bookmarks/
-    ${CMAKE_SOURCE_DIR}/src/platform/vulnerability/
-    ${CMAKE_SOURCE_DIR}/src/platform/lookup/
-    ${CMAKE_SOURCE_DIR}/src/platform/nse/
+    ${CMAKE_SOURCE_DIR}/src/platform/
     ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
     ${CMAKE_SOURCE_DIR}/src/platform/history/
     ${CMAKE_SOURCE_DIR}/src/platform/about/
-    ${CMAKE_SOURCE_DIR}/lib/about/
-    ${CMAKE_SOURCE_DIR}/lib/history/
 )
 
 
@@ -54,14 +47,14 @@ SET(SOURCES_CPP
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
 		common/qprocessthread.cpp
-		platform/vulnerability/addvulnerabilityurl.cpp
-                platform/vulnerability/vulnerability.cpp
-		platform/lookup/lookupmanager.cpp
-		platform/dig/digmanager.cpp
-		platform/nse/nsemanager.cpp
-		platform/discover/discover.cpp
-		platform/discover/discovermanager.cpp
-		platform/bookmarks/addparameterstobookmark.cpp
+		platform/addvulnerabilityurl.cpp
+                platform/vulnerability.cpp
+		platform/lookupmanager.cpp
+		platform/digmanager.cpp
+		platform/nsemanager.cpp
+		platform/discover.cpp
+		platform/discovermanager.cpp
+		platform/addparameterstobookmark.cpp
                 platform/logwriter/logwriter.cpp
                 platform/history/history.cpp
                 platform/about/about.cpp
@@ -73,15 +66,14 @@ if (Q_WS_X11)
 endif (Q_WS_X11)
 
 SET(SOURCES_H app/mainwin.h
-	platform/lookup/lookupmanager.h
-	platform/dig/digmanager.h
-	platform/vulnerability/addvulnerabilityurl.h
-        platform/vulnerability/vulnerability.h
-	platform/bookmarks/addparameterstobookmark.h
-	platform/discover/discover.h
-        platform/discover/discovermanager.h
-        platform/nse/nsemanager.h
-#         platform/about/about.h
+	platform/lookupmanager.h
+	platform/digmanager.h
+	platform/addvulnerabilityurl.h
+        platform/vulnerability.h
+	platform/addparameterstobookmark.h
+	platform/discover.h
+        platform/discovermanager.h
+        platform/nsemanager.h
         common/utilities.h
 	common/qprocessthread.h
 	app/preference/preferencesdialog.h
@@ -92,8 +84,8 @@ SET(SOURCES_H app/mainwin.h
 )
 
 SET(SOURCES_UI app/mainwin.ui
-	platform/vulnerability/addvulnerabilityurl.ui
-	platform/bookmarks/addparameterstobookmark.ui
+	platform/addvulnerabilityurl.ui
+	platform/addparameterstobookmark.ui
         platform/about/about.ui
 	app/preference/preferencesdialog.ui
         app/profiler/profilerdialog.ui
