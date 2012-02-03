@@ -67,7 +67,7 @@ void MainWindow::saveBookMarks()
         // save list of ip/dns in input
         history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
-        QStringList hostList = hostEdit->currentText().split(" ", QString::KeepEmptyParts);
+        QStringList hostList = hostEdit->currentText().split(' ', QString::KeepEmptyParts);
 
         foreach (const QString& host, hostList)
         {

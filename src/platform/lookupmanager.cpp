@@ -20,8 +20,12 @@
 #include "lookupmanager.h"
 
 
-lookupManager::lookupManager(const QString hostname, QObject *parent)
-: m_host(hostname), m_par(parent)
+lookupManager::lookupManager(const QString hostname)
+: m_host(hostname)
+{
+}
+
+lookupManager::~lookupManager()
 {
     killLookup();
 }
@@ -35,9 +39,7 @@ void lookupManager::run()
         && m_info.error() != QHostInfo::UnknownError
         && m_info.error() != QHostInfo::HostNotFound)
     {
-#ifdef LOOKUP_NO_THREAD
-         qDebug() << "Lookup failed:" << info.errorString();
-#endif
+
          emit threadEnd(m_info, -1, m_host);
          return;
     }
@@ -46,8 +48,5 @@ void lookupManager::run()
 
 void lookupManager::killLookup()
 {
-#ifdef LOOKUP_NO_THREAD
-    qDebug() << "Lookup::kill --> call";
-#endif
     m_info.abortHostLookup(m_info.lookupId());
 }

@@ -194,7 +194,7 @@ void monitor::startLookup(const QString hostname, LookupType option)
 
     if (option == InternalLookup)
     {
-        lookupManager *internalLookupPtr = new lookupManager(hostname,this);
+        lookupManager *internalLookupPtr = new lookupManager(hostname);
         m_internealLookupList.push_back(internalLookupPtr);
 
         connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),

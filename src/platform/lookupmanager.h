@@ -21,7 +21,6 @@
 #define LOOKUPMANAGER_H
 
 #include <QtCore/QThread>
-#include <QtCore/QStringList>
 #include <QtCore/QString>
 #include <QtCore/QMetaType>
 #include <QtNetwork/QHostInfo>
@@ -42,7 +41,8 @@ public:
     /*!
      * Create a QThread and start static QHostInfo resolv.
      */
-    lookupManager(const QString hostname, QObject *parent=0);
+    lookupManager(const QString hostname);
+    ~lookupManager();
 
 signals:
     /*!
