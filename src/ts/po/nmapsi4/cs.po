@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-13 21:36+0200\n"
+"POT-Creation-Date: 2012-02-03 12:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,729 +11,832 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.9.0\n"
 
+#: AboutWin#1
+msgid "About Nmapsi4"
+msgstr ""
+
+#: AboutWin#2
+#, fuzzy
+msgctxt "AboutWin#2"
+msgid "Nmapsi4"
+msgstr "Nmapsi4"
+
+#: AboutWin#3
+msgid ""
+"NmapSi4 is a complete Qt4-based Gui with the design\n"
+"goals to provide a complete nmap interface for Users,\n"
+"in order to menage all option of this power security net scanner."
+msgstr ""
+
+#: AboutWin#4
+msgid ""
+"\n"
+"\n"
+"(c) 2007-2011 Francesco Cecconi\n"
+"\n"
+"License: GNU General Public License Version 2"
+msgstr ""
+
+#: AboutWin#5
+msgid "&Close"
+msgstr ""
+
+#: AboutWin#6
+msgid "&About"
+msgstr ""
+
+#: AboutWin#7
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Francesco Cecconi</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"style:italic;\">Core Developer</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mainto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"text-decoration: underline; color:#0057ae;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Innocenzo Ventre</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"style:italic;\">MS Windows Packages</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mainto:el.diabl09@gmail.com\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p></body></html>"
+msgstr ""
+
+#: AboutWin#8
+msgid "A&uthors"
+msgstr ""
+
+#: AboutWin#9
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
+"html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Website:</span>  </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://www.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Bug Tracking:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://bugs.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Sources:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://gitorious.org/nmapsi4\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">gitorious.org/nmapsi4</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Sources:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://code.google.com/p/nmapsi4/\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">code.google.com</span></a></p></body></html>"
+msgstr ""
+
+#: AboutWin#10
+msgid "&Support"
+msgstr ""
+
+#: AboutWin#11
+msgid "Version "
+msgstr ""
+
 #: MainWindow#1
 msgctxt "MainWindow#1"
-msgid "Scan"
-msgstr "Prohledat"
+msgid "Save"
+msgstr "Uložit"
 
 #: MainWindow#2
-msgid "Host(s)"
-msgstr "Server"
+msgctxt "MainWindow#2"
+msgid "Bookmarks"
+msgstr "Záložky"
 
 #: MainWindow#3
-msgid "Error(s)"
-msgstr "Chyba(y)"
+msgctxt "MainWindow#3"
+msgid "Lookup"
+msgstr "Vyhledávání"
 
 #: MainWindow#4
 msgctxt "MainWindow#4"
-msgid "Log"
-msgstr "Zápis"
+msgid "Traceroute"
+msgstr "Sledování směrování na síti"
 
 #: MainWindow#5
-msgid "Log(s)"
-msgstr "Zápis(y)"
+msgctxt "MainWindow#5"
+msgid "Scan log parameters"
+msgstr "Prohledat parametry zápisů"
 
 #: MainWindow#6
-msgid "RPC Scan"
-msgstr "Prohledávání RPC"
+msgctxt "MainWindow#6"
+msgid "Vulnerability"
+msgstr "Zranitelnost"
 
 #: MainWindow#7
-msgid "Connect Scan"
-msgstr "Prohledávání spojení"
+msgctxt "MainWindow#7"
+msgid "Scan Host"
+msgstr "Prohledat server"
 
 #: MainWindow#8
-msgid "Ping Sweep"
-msgstr "Velký rozsah zazvonění"
+#, fuzzy
+msgid "Remove Host"
+msgstr "Odstranit server"
 
 #: MainWindow#9
-msgid "Host List"
-msgstr "Seznam serverů"
+#, fuzzy
+msgid "Remove Service"
+msgstr "Odstranit službu"
 
 #: MainWindow#10
-msgid "FTP Bounce Attack"
-msgstr "Útok odrazu FTP"
+#, fuzzy
+msgid "Search for vulnerabilities"
+msgstr "Hledat zranitelnosti"
 
 #: MainWindow#11
-msgid "Version Probe"
-msgstr "Ověření verze"
+#, fuzzy
+msgid "Remove Scan Parameters"
+msgstr "Odstranit parametry prohledávání"
 
 #: MainWindow#12
-msgid "Don't Ping"
-msgstr "Nezvonit"
+#, fuzzy
+msgid "Check Vulnerability"
+msgstr "Prověřit zranitelnost"
 
 #: MainWindow#13
-msgid "Normal"
-msgstr "Obvyklý"
+msgid "Remove url"
+msgstr ""
 
 #: MainWindow#14
-msgid "All"
-msgstr "Vše"
+#, fuzzy
+msgctxt "MainWindow#14"
+msgid "Scan host(s)"
+msgstr "Prohledat server(y)"
 
 #: MainWindow#15
-msgid "Most Important"
-msgstr "Nejdůležitější"
+#, fuzzy
+msgid "Network Discover"
+msgstr "Síťové objevování"
 
 #: MainWindow#16
-msgid "Range"
-msgstr "Rozsah"
+#, fuzzy
+msgid "Check Vulnerabilities"
+msgstr "Prověřit zranitelnosti"
 
 #: MainWindow#17
-msgid "OS Detection"
-msgstr "Rozpoznání OS"
+#, fuzzy
+msgid "Show Lookup"
+msgstr "Ukázat vyhledávání"
 
 #: MainWindow#18
-msgid "Fragmentation"
-msgstr "Rozkouskovanost"
+#, fuzzy
+msgid "Show/Hide Lookup"
+msgstr "Ukázat/Skrýt vyhledávání"
 
 #: MainWindow#19
-msgid "Ordered Port"
-msgstr "Přikázaná přípojka"
+#, fuzzy
+msgid "Show Traceroute"
+msgstr "Ukázat sledování směrování na síti"
 
 #: MainWindow#20
-msgid "ICMP Echo"
-msgstr "Odezva ICMP"
+#, fuzzy
+msgid "Show/Hide Traceroute"
+msgstr "Ukázat/Skrýt sledování směrování na síti"
 
 #: MainWindow#21
-msgid "ICMP TImestamp"
-msgstr "Časové razítko ICMP"
+#, fuzzy
+msgid "Setup"
+msgstr "Nastavení"
 
 #: MainWindow#22
-msgid "Port"
-msgstr "Přípojka"
+msgctxt "MainWindow#22"
+msgid "Profile"
+msgstr ""
 
 #: MainWindow#23
-msgid "UDP Ping"
-msgstr "Zazvonění UDP"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr ""
 
 #: MainWindow#24
-msgid "TCP SYN Ping"
-msgstr "Zazvonění TCP SYN"
+#, fuzzy
+msgid "Search Vulnerabilities"
+msgstr "Hledat zranitelnosti"
 
 #: MainWindow#25
-msgid "TCP ACK Ping"
-msgstr "Zazvonění TCP ACK"
+#, fuzzy
+msgid "Quick Scan"
+msgstr "Rychlé prohledávání"
 
 #: MainWindow#26
-msgid "ICMP Netmask"
-msgstr "Síťová maska ICMP"
+#, fuzzy
+msgid "Intense Scan"
+msgstr "Silné prohledávání"
 
 #: MainWindow#27
-msgid "Input File"
-msgstr "Vstupní soubor"
+#, fuzzy
+msgid "Intense Scan, all TCP ports"
+msgstr "Silné prohledávání, všechny přípojky TCP"
 
 #: MainWindow#28
-msgid "Browser"
-msgstr "Prohlížeč"
+#, fuzzy
+msgid "Intense scan plus UDP"
+msgstr "Silné prohledávání plus UDP"
 
 #: MainWindow#29
-msgid "Scan Delay"
-msgstr "Zpoždění prohlédávání"
+#, fuzzy
+msgid "Slow comprehensive scan"
+msgstr "Ukázat úplné prohlédnutí"
 
 #: MainWindow#30
-msgid "Ipv4 TTL"
-msgstr "Ipv4 TTL"
+#, fuzzy
+msgid "No Host Target\n"
+msgstr "Žádný cíl se serverem"
 
 #: MainWindow#31
-msgid "Normal Throttling"
-msgstr "Obvyklé omezení"
+#, fuzzy
+msgctxt "MainWindow#31"
+msgid "Close"
+msgstr "Zavřít"
 
 #: MainWindow#32
-msgid "Paranoid Throttling"
-msgstr "Chorobně podezíravé omezení"
+#, fuzzy
+msgid "Hostname already scanning\n"
+msgstr "Název hostitelského počítače se již prohledává\n"
 
 #: MainWindow#33
-msgid "Sneaky Throttling"
-msgstr "Úskočné (omezení"
+msgctxt "MainWindow#33"
+msgid "&Add host to bookmark"
+msgstr ""
 
 #: MainWindow#34
-msgid "Polite Throttling"
-msgstr "Zdvořilé omezení"
+msgctxt "MainWindow#34"
+msgid "Add service to &bookmark"
+msgstr ""
 
 #: MainWindow#35
-msgid "Aggressive Throttling"
-msgstr "Útočné omezení"
+#, fuzzy
+msgid " Active Scan "
+msgstr " Činné prohledávání "
 
-#: MainWindow#36
-msgid "Insane Throttling"
-msgstr "Pomatené omezení"
+#: MainWindowClass#1
+#, fuzzy
+msgctxt "MainWindowClass#1"
+msgid "Nmapsi4"
+msgstr "Nmapsi4"
 
-#: MainWindow#37
-msgid "Quiet"
-msgstr "Tichý"
+#: MainWindowClass#2
+#, fuzzy
+msgid "&About nmapsi4"
+msgstr "&O programu Nmapsi4"
 
-#: MainWindow#38
-msgid "Verbose"
-msgstr "Podrobný"
-
-#: MainWindow#39
-msgid "Very Verbose"
-msgstr "Velmi podrobný"
-
-#: MainWindow#40
-msgid "Debug"
-msgstr "Ladění"
-
-#: MainWindow#41
-msgid "Verbose Debug"
-msgstr "Podrobné ladění"
-
-#: MainWindow#42
-msgid "When Required"
-msgstr "Při požádání"
-
-#: MainWindow#43
-msgid "Always"
-msgstr "Vždy"
-
-#: MainWindow#44
-msgid "Never"
-msgstr "Nikdy"
-
-#: MainWindow#45
-msgid "DNS Resolution"
-msgstr "Rozlišení DNS"
-
-#: MainWindow#46
-msgid "Verbosity"
-msgstr "Podrobnost"
-
-#: MainWindow#47
-msgid "Spoof Address"
-msgstr "Předstíraná adresa"
-
-#: MainWindow#48
-msgid "Specific Device"
-msgstr "Zvláštní zařízení"
-
-#: MainWindow#49
-msgid "Decoy"
-msgstr "Návnada"
-
-#: MainWindow#50
-msgid "Source Port"
-msgstr "Zdrojová přípojka"
-
-#: MainWindow#51
-msgid "&File"
-msgstr "&Soubor"
-
-#: MainWindow#52
-msgid "&Help"
-msgstr "&Nápověda"
-
-#: MainWindow#53
-msgid "S&ettings"
-msgstr "&Nastavení"
-
-#: MainWindow#54
-msgid "toolBar"
-msgstr "Nástrojový panel"
-
-#: MainWindow#55
-msgid "toolBar_2"
-msgstr "Nástrojový panel 2"
-
-#: MainWindow#56
-msgid "&Quit"
-msgstr "&Ukončit"
-
-#: MainWindow#57
-msgid "Quit"
-msgstr "Ukončit"
-
-#: MainWindow#58
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-#: MainWindow#59
+#: MainWindowClass#3
+#, fuzzy
 msgid "&Scan"
 msgstr "&Prohledat"
 
-#: MainWindow#60
+#: MainWindowClass#4
+#, fuzzy
+msgctxt "MainWindowClass#4"
+msgid "Scan"
+msgstr "Prohledat"
+
+#: MainWindowClass#5
+#, fuzzy
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: MainWindow#61
+#: MainWindowClass#6
+#, fuzzy
 msgid "About &Qt"
 msgstr "O &Qt"
 
-#: MainWindow#62
+#: MainWindowClass#7
+#, fuzzy
 msgid "&Preferences"
 msgstr "&Nastavení"
 
-#: MainWindow#63
+#: MainWindowClass#8
+#, fuzzy
+msgid "&Quit"
+msgstr "&Ukončit"
+
+#: MainWindowClass#9
+#, fuzzy
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: MainWindowClass#10
+#, fuzzy
 msgid "Stop Scan"
 msgstr "Zastavit prohledávání"
 
-#: MainWindow#64
+#: MainWindowClass#11
+#, fuzzy
 msgid "Clear History"
 msgstr "Smazat historii"
 
-#: MainWindow#65
+#: MainWindowClass#12
+#, fuzzy
 msgid "Close Tree"
 msgstr "Zavřít strom"
 
-#: MainWindow#66
+#: MainWindowClass#13
+#, fuzzy
 msgid "Close Scan Tree"
 msgstr ""
 "\n"
 "Zavřít strom s prohledáváním"
 
-#: MainWindow#67
+#: MainWindowClass#14
+#, fuzzy
 msgid "Clear HostName"
 msgstr "Smazat název serveru"
 
-#: MainWindow#68
+#: MainWindowClass#15
+#, fuzzy
 msgid "Clear Hostname IP"
 msgstr "Smazat IP u názvu serveru"
 
-#: MainWindow#69
+#: MainWindowClass#16
+#, fuzzy
 msgid "Save As"
 msgstr "Uložit jako"
 
-#: MainWindow#70
+#: MainWindowClass#17
+msgid "Save Scan"
+msgstr ""
+
+#: MainWindowClass#18
+#, fuzzy
+msgctxt "MainWindowClass#18"
 msgid "Save"
 msgstr "Uložit"
 
-#: MainWindow#71
-msgid "S&ave"
-msgstr "&Uložit"
+#: MainWindowClass#19
+msgid "S&ave Scan"
+msgstr ""
 
-#: MainWindow#72
-msgid "Save &As"
-msgstr "Uložit &jako"
+#: MainWindowClass#20
+msgid "Save all scans to &Directory"
+msgstr ""
 
-#: MainWindow#73
-msgid "&View"
-msgstr "&Pohled"
-
-#: MainWindow#74
+#: MainWindowClass#21
+#, fuzzy
 msgid "F&ull Screen Mode"
 msgstr "Režim &celé obrazovky"
 
-#: MainWindow#75
+#: MainWindowClass#22
+#, fuzzy
 msgid "Ctrl+Shift+F11"
 msgstr "Ctrl+Shift+F11"
 
-#: MainWindow#76
+#: MainWindowClass#23
+#, fuzzy
 msgid "Show &Menu Bar"
 msgstr "Ukázat &nabídkový panel"
 
-#: MainWindow#77
+#: MainWindowClass#24
+#, fuzzy
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: MainWindow#78
+#: MainWindowClass#25
+#, fuzzy
 msgid "Show Status Bar"
 msgstr "Ukázat stavový řádek"
 
-#: MainWindow#79
-msgid "&Add Bookmark"
-msgstr "&Přidat záložku"
+#: MainWindowClass#26
+msgctxt "MainWindowClass#26"
+msgid "&Add host to bookmark"
+msgstr ""
 
-#: MainWindow#80
+#: MainWindowClass#27
+msgid "Add host to bookmark"
+msgstr ""
+
+#: MainWindowClass#28
+#, fuzzy
 msgid "Main"
 msgstr "Hlavní"
 
-#: MainWindow#81
+#: MainWindowClass#29
+#, fuzzy
+msgid "Log"
+msgstr "Zápis"
+
+#: MainWindowClass#30
+#, fuzzy
 msgid "Vuln"
 msgstr "Zranitelnost"
 
-#: MainWindow#82
-msgid "Date"
-msgstr "Datum"
-
-#: MainWindow#83
-msgid "Bookmarks"
-msgstr "Záložky"
-
-#: MainWindow#84
-msgctxt "MainWindow#84"
-msgid "Scan Options"
-msgstr "Volby pro prohledávání"
-
-#: MainWindow#85
-msgid "State"
-msgstr "Stav"
-
-#: MainWindow#86
-msgid "Host Thread"
-msgstr "Vlákno serveru"
-
-#: MainWindow#87
-msgid "Scan Monitor"
-msgstr "Dohled nad prohledáváním"
-
-#: MainWindow#88
-msgctxt "MainWindow#88"
-msgid "Lookup"
-msgstr "Vyhledávání"
-
-#: MainWindow#89
-msgid "Hop(s)"
-msgstr "Poskočení"
-
-#: MainWindow#90
-msgctxt "MainWindow#90"
-msgid "Traceroute"
-msgstr "Sledování směrování na síti"
-
-#: MainWindow#91
-msgid "Warning(s)"
-msgstr "Varování"
-
-#: MainWindow#92
-msgid "Data"
-msgstr "Data"
-
-#: MainWindow#93
-msgid "Service"
-msgstr "Služba"
-
-#: MainWindow#94
-msgid "&Bookmarks"
-msgstr "&Záložky"
-
-#: MainWindow#95
-msgid "toolBar_3"
-msgstr "Nástrojový panel 3"
-
-#: MainWindow#96
-msgid "Nss script result"
-msgstr "Výsledek skriptu NSS"
-
-#: MainWindow#97
-msgid "DNS"
-msgstr "DNS"
-
-#: MainWindow#98
-msgid "IP"
-msgstr "IP"
-
-#: MainWindow#99
-msgid "RTT"
-msgstr "RTT"
-
-#: MainWindow#100
-msgid "&About nmapsi4"
-msgstr "&O programu Nmapsi4"
-
-#: MainWindow#101
-msgid "Details"
-msgstr "Podrobnosti"
-
-#: MainWindow#102
-msgid "Scan Details"
-msgstr "Podrobnosti prohledávání"
-
-#: MainWindow#103
-msgid "Host Details"
-msgstr "Podrobnosti o serveru"
-
-#: MainWindow#104
-msgid "Clear"
-msgstr "Smazat"
-
-#: MainWindow#105
-msgctxt "MainWindow#105"
-msgid "Services"
-msgstr "Služby"
-
-#: MainWindow#106
-msgid "IP List"
-msgstr "Seznam IP"
-
-#: MainWindow#107
-msgid "Parameters List"
-msgstr "Seznam pomocných proměnných"
-
-#: MainWindow#108
-msgid "Bookmarks parameters"
-msgstr "Pomocné proměnné záložek"
-
-#: MainWindow#109
-msgid "Nmapsi4"
-msgstr "Nmapsi4"
-
-#: MainWindow#110
-msgid "Save Profile"
-msgstr "Uložit profil"
-
-#: MainWindow#111
-msgid "Description"
-msgstr "Popis"
-
-#: MainWindow#112
-msgid "NSE"
-msgstr "NSE"
-
-#: MainWindow#113
-msgid "Donate Money"
-msgstr "Darujte peníze"
-
-#: MainWindow#114
-msgid "Documentation"
-msgstr "Dokumentace"
-
-#: MainWindow#115
-msgid "Visit Website"
-msgstr "Navštivte stránky projektu"
-
-#: MainWindow#116
-msgid "Report a bug"
-msgstr "Nahlášte chybu"
-
-#: MainWindow#117
-msgctxt "MainWindow#117"
-msgid "Profile Name"
-msgstr "Název profilu"
-
-#: MainWindow#118
-msgid "Add Url"
-msgstr "Přidat adresu (URL)"
-
-#: MainWindow#119
-msgid "Url(s)"
-msgstr "Adresa (URL)"
-
-#: MainWindow#120
-msgid "Url(s) name"
-msgstr "Název adresy (URL)"
-
-#: MainWindow#121
-msgid "Bookmarks Url"
-msgstr "Adresa záložky (URL)"
-
-#: MainWindow#122
-msgid "Local Interfaces:"
-msgstr "Místní rozhraní:"
-
-#: MainWindow#123
-msgid "Start DIscover"
-msgstr "Spustit objevování"
-
-#: MainWindow#124
-msgid "Stop Discover"
-msgstr "Zastavit objevování"
-
-#: MainWindow#125
-msgid "Discover Group:"
-msgstr "Skupina objevování:"
-
-#: MainWindow#126
-msgid "Start Ip:"
-msgstr "Začátek IP:"
-
-#: MainWindow#127
-msgid "End Ip:"
-msgstr "Konec IP:"
-
-#: MainWindow#128
-msgid "Ip"
-msgstr "IP"
-
-#: MainWindow#129
-msgid "Service(s) with info"
-msgstr "Služba(y) s informacemi"
-
-#: MainWindow#130
-msgid "Os"
-msgstr "OS"
-
-#: MainWindow#131
-msgctxt "MainWindow#131"
-msgid "Scan log parameters"
-msgstr "Prohledat parametry zápisů"
-
-#: MainWindow#132
-msgid "Stop All Scan"
-msgstr "Zastavit všechno prohledávání"
-
-#: MainWindow#133
-msgid "Stop Current Scan"
-msgstr "Zastavit nynější prohledávání"
-
-#: MainWindow#134
-msgid "Apply Quick Profile"
-msgstr "Použít rychlý profil"
-
-#: MainWindow#135
-msgid "Auto nse script"
-msgstr "Automatický skript nse"
-
-#: MainWindow#136
-msgid "Custom nse script"
-msgstr "Vlastní skript nse"
-
-#: MainWindow#137
-msgid "Nse categories script available"
-msgstr "Skript pro skupiny nse dostupný"
-
-#: MainWindow#138
-msgid "Nse categories Script Active"
-msgstr "Skript pro skupiny nse v činnosti"
-
-#: MainWindow#139
-msgid "Restore Default Categories"
-msgstr "Obnovit výchozí skupiny"
-
-#: MainWindow#140
-msgid "&Tools"
-msgstr "&Nástroje"
-
-#: MainWindow#141
+#: MainWindowClass#31
+#, fuzzy
 msgid "Section Scan"
 msgstr "Prohledávání části"
 
-#: MainWindow#142
+#: MainWindowClass#32
+#, fuzzy
 msgid "Section Log"
 msgstr "Zápis k části"
 
-#: MainWindow#143
-msgid " Section Vulnerabilities"
-msgstr "Zranitelnosti části"
-
-#: MainWindow#144
-msgid "Ipv6 support"
-msgstr "Podpora pro Ipv6"
-
-#: MainWindow#145
-msgid "Port Range:"
-msgstr "Rozsah přípojky:"
-
-#: MainWindow#146
-msgid "Scan Techniques:"
-msgstr "Postupy prohledávání:"
-
-#: MainWindow#147
-msgid "Ports:"
-msgstr "Přípojky:"
-
-#: MainWindow#148
-msgid "Bounce Host:"
-msgstr "Server odrazu:"
-
-#: MainWindow#149
-msgid "Timing Template:"
-msgstr "Předloha načasování:"
-
-#: MainWindow#150
-msgid "Min outstanding probes"
-msgstr "Nejméně mimořádných pátrání"
-
-#: MainWindow#151
-msgid "Max outstanding probes"
-msgstr "Nejvíce mimořádných pátrání"
-
-#: MainWindow#152
-msgid "Max time to scan a target"
-msgstr "Nejvíce času na prohlížení cíle"
-
-#: MainWindow#153
-msgid "Initial probe timeout"
-msgstr "Přerušení počátečního pátrání"
-
-#: MainWindow#154
-msgid "Min probe timeout"
-msgstr "Nejmenší přerušení pátrání"
-
-#: MainWindow#155
-msgid "Max probe timeout"
-msgstr "Největší přerušení pátrání"
-
-#: MainWindow#156
-msgid "Active Script"
-msgstr "Skript v činnosti"
-
-#: MainWindow#157
-msgid "Disable Script"
-msgstr "Zakázat skript"
-
-#: MainWindow#158
-msgid "Nse Categories Help"
-msgstr "Nápověda ke skupinám nse"
-
-#: MainWindow#159
-msgctxt "MainWindow#159"
-msgid "Search"
-msgstr "Hledat"
-
-#: MainWindow#160
-msgid "Nse Script Search"
-msgstr "Hledání skriptu nse"
-
-#: MainWindow#161
-msgid ""
-"Nse script parameters (Ex. "
-"user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
+#: MainWindowClass#33
+msgid "Section Vulnerabilities"
 msgstr ""
-"Parametry skriptu nse (Ex. "
-"user=foo,pass=test,whois={whodb=nofollow+ripe},userdb=custom)"
 
-#: MainWindow#162
-msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
-msgstr "Ruční vyvolání skriptu nse: (Ex. snmp-sysdescr,smb-os-discovery )"
+#: MainWindowClass#34
+#, fuzzy
+msgid "Donate Money"
+msgstr "Darujte peníze"
 
-#: MainWindow#163
-msgctxt "MainWindow#163"
-msgid "Done"
-msgstr "Hotovo"
+#: MainWindowClass#35
+#, fuzzy
+msgid "Documentation"
+msgstr "Dokumentace"
 
-#: MainWindow#164
-msgctxt "MainWindow#164"
-msgid "Nse Options"
-msgstr "Volby pro nse"
+#: MainWindowClass#36
+#, fuzzy
+msgid "Visit Website"
+msgstr "Navštivte stránky projektu"
 
-#: MainWindow#165
-msgctxt "MainWindow#165"
-msgid "Scan Log"
-msgstr "Zápis o prohledávání"
+#: MainWindowClass#37
+#, fuzzy
+msgid "Report a bug"
+msgstr "Nahlášte chybu"
 
-#: MainWindow#166
-msgid "Remove Url"
-msgstr "Odstranit adresu (URL)"
+#: MainWindowClass#38
+#, fuzzy
+msgid "Section Discover"
+msgstr "Objevování části"
 
-#: MainWindow#167
+#: MainWindowClass#39
+msgid "New Profile"
+msgstr ""
+
+#: MainWindowClass#40
+msgid "Edit Profile"
+msgstr ""
+
+#: MainWindowClass#41
+msgid "Add &parameters to bookmark"
+msgstr ""
+
+#: MainWindowClass#42
+msgid "Add vulnerability search url"
+msgstr ""
+
+#: MainWindowClass#43
+#, fuzzy
+msgid "Clear"
+msgstr "Smazat"
+
+#: MainWindowClass#44
+#, fuzzy
+msgid "Save Profile"
+msgstr "Uložit profil"
+
+#: MainWindowClass#45
+#, fuzzy
+msgid "Description"
+msgstr "Popis"
+
+#: MainWindowClass#46
+#, fuzzy
+msgid "Service"
+msgstr "Služba"
+
+#: MainWindowClass#47
+#, fuzzy
+msgid "State"
+msgstr "Stav"
+
+#: MainWindowClass#48
+#, fuzzy
+msgid "Port"
+msgstr "Přípojka"
+
+#: MainWindowClass#49
+#, fuzzy
+msgid "Nss script result"
+msgstr "Výsledek skriptu NSS"
+
+#: MainWindowClass#50
+msgid "Service(s) Details"
+msgstr ""
+
+#: MainWindowClass#51
+#, fuzzy
+msgid "Host(s)"
+msgstr "Server"
+
+#: MainWindowClass#52
+#, fuzzy
+msgctxt "MainWindowClass#52"
+msgid "Lookup"
+msgstr "Vyhledávání"
+
+#: MainWindowClass#53
+#, fuzzy
+msgid "DNS"
+msgstr "DNS"
+
+#: MainWindowClass#54
+#, fuzzy
+msgid "IP"
+msgstr "IP"
+
+#: MainWindowClass#55
+#, fuzzy
+msgid "RTT"
+msgstr "RTT"
+
+#: MainWindowClass#56
+#, fuzzy
+msgid "Hop(s)"
+msgstr "Poskočení"
+
+#: MainWindowClass#57
+#, fuzzy
+msgctxt "MainWindowClass#57"
+msgid "Traceroute"
+msgstr "Sledování směrování na síti"
+
+#: MainWindowClass#58
+#, fuzzy
+msgid "Host Details"
+msgstr "Podrobnosti o serveru"
+
+#: MainWindowClass#59
+#, fuzzy
+msgid "Service(s) with info"
+msgstr "Služba(y) s informacemi"
+
+#: MainWindowClass#60
+msgid "Scan host details"
+msgstr ""
+
+#: MainWindowClass#61
+msgid "Nse result"
+msgstr ""
+
+#: MainWindowClass#62
+#, fuzzy
+msgid "Os"
+msgstr "OS"
+
+#: MainWindowClass#63
+msgctxt "MainWindowClass#63"
+msgid "Scan log parameters"
+msgstr ""
+
+#: MainWindowClass#64
+#, fuzzy
+msgctxt "MainWindowClass#64"
+msgid "Scan host(s)"
+msgstr "Prohledat server(y)"
+
+#: MainWindowClass#65
+#, fuzzy
+msgid "Stop All Scan"
+msgstr "Zastavit všechno prohledávání"
+
+#: MainWindowClass#66
+#, fuzzy
+msgid "Stop Current Scan"
+msgstr "Zastavit nynější prohledávání"
+
+#: MainWindowClass#67
+#, fuzzy
+msgid "Scan Details"
+msgstr "Podrobnosti prohledávání"
+
+#: MainWindowClass#68
+#, fuzzy
+msgid "Scan Options"
+msgstr "Volby pro prohledávání"
+
+#: MainWindowClass#69
+#, fuzzy
+msgid "Host Thread"
+msgstr "Vlákno serveru"
+
+#: MainWindowClass#70
+#, fuzzy
+msgid "Scan Monitor"
+msgstr "Dohled nad prohledáváním"
+
+#: MainWindowClass#71
+#, fuzzy
+msgid "Date"
+msgstr "Datum"
+
+#: MainWindowClass#72
+#, fuzzy
+msgid "IP List"
+msgstr "Seznam IP"
+
+#: MainWindowClass#73
+#, fuzzy
+msgctxt "MainWindowClass#73"
+msgid "Profile Name"
+msgstr "Název profilu"
+
+#: MainWindowClass#74
+#, fuzzy
+msgid "Parameters List"
+msgstr "Seznam pomocných proměnných"
+
+#: MainWindowClass#75
+#, fuzzy
+msgctxt "MainWindowClass#75"
+msgid "Bookmarks"
+msgstr "Záložky"
+
+#: MainWindowClass#76
+#, fuzzy
+msgid "Log(s)"
+msgstr "Zápis(y)"
+
+#: MainWindowClass#77
+#, fuzzy
+msgid "Error(s)"
+msgstr "Chyba(y)"
+
+#: MainWindowClass#78
+msgid "Raw scan log"
+msgstr ""
+
+#: MainWindowClass#79
+#, fuzzy
+msgid "Services"
+msgstr "Služby"
+
+#: MainWindowClass#80
+#, fuzzy
+msgctxt "MainWindowClass#80"
 msgid "Vulnerability"
 msgstr "Zranitelnost"
 
-#: MainWindow#168
-msgid "Remaining Ip:"
-msgstr "Zbývající IP:"
+#: MainWindowClass#81
+#, fuzzy
+msgid "Data"
+msgstr "Data"
 
-#: MainWindow#169
-msgctxt "MainWindow#169"
-msgid "Discover"
-msgstr "Objevit"
+#: MainWindowClass#82
+#, fuzzy
+msgid "Url(s)"
+msgstr "Adresa (URL)"
 
-#: MainWindow#170
-msgid "Save Default Options"
-msgstr "Uložit výchozí volby"
+#: MainWindowClass#83
+#, fuzzy
+msgid "Url(s) name"
+msgstr "Název adresy (URL)"
 
-#: MainWindow#171
-msgid "Remove Default Options"
-msgstr "Odstranit výchozí volby"
+#: MainWindowClass#84
+#, fuzzy
+msgid "Local Interfaces:"
+msgstr "Místní rozhraní:"
 
-#: MainWindow#172
-msgctxt "MainWindow#172"
-msgid "Scan Host"
-msgstr "Prohledat server"
-
-#: MainWindow#173
+#: MainWindowClass#85
+#, fuzzy
 msgid "Probes Modes:"
 msgstr "Režimy pátrání:"
 
-#: MainWindow#174
+#: MainWindowClass#86
+#, fuzzy
+msgid "Start DIscover"
+msgstr "Spustit objevování"
+
+#: MainWindowClass#87
+#, fuzzy
+msgid "Stop Discover"
+msgstr "Zastavit objevování"
+
+#: MainWindowClass#88
+#, fuzzy
+msgid "Discover Group:"
+msgstr "Skupina objevování:"
+
+#: MainWindowClass#89
+#, fuzzy
+msgid "Start Ip:"
+msgstr "Začátek IP:"
+
+#: MainWindowClass#90
+#, fuzzy
+msgid "End Ip:"
+msgstr "Konec IP:"
+
+#: MainWindowClass#91
+#, fuzzy
+msgid "Ip"
+msgstr "IP"
+
+#: MainWindowClass#92
+#, fuzzy
+msgctxt "MainWindowClass#92"
+msgid "Scan Host"
+msgstr "Prohledat server"
+
+#: MainWindowClass#93
+#, fuzzy
 msgid "Send"
 msgstr "Poslat"
 
-#: MainWindow#175
+#: MainWindowClass#94
+#, fuzzy
 msgid "Received"
 msgstr "Přijato"
 
-#: MainWindow#176
-msgid "Section Discover"
-msgstr "Objevování části"
+#: MainWindowClass#95
+#, fuzzy
+msgid "Remaining Ip:"
+msgstr "Zbývající IP:"
+
+#: MainWindowClass#96
+msgid "Network discover"
+msgstr ""
+
+#: MainWindowClass#97
+#, fuzzy
+msgid "&File"
+msgstr "&Soubor"
+
+#: MainWindowClass#98
+#, fuzzy
+msgid "&View"
+msgstr "&Pohled"
+
+#: MainWindowClass#99
+#, fuzzy
+msgid "&Bookmarks"
+msgstr "&Záložky"
+
+#: MainWindowClass#100
+#, fuzzy
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: MainWindowClass#101
+#, fuzzy
+msgid "S&ettings"
+msgstr "&Nastavení"
+
+#: MainWindowClass#102
+#, fuzzy
+msgid "&Tools"
+msgstr "&Nástroje"
+
+#: MainWindowClass#103
+#, fuzzy
+msgid "toolBar"
+msgstr "Nástrojový panel"
+
+#: MainWindowClass#104
+#, fuzzy
+msgid "toolBar_2"
+msgstr "Nástrojový panel 2"
+
+#: MainWindowClass#105
+#, fuzzy
+msgid "toolBar_3"
+msgstr "Nástrojový panel 3"
 
 #: ProfileMain#1
 msgid "NmapSI4 Preferences"
@@ -748,82 +851,77 @@ msgid "&Ok"
 msgstr "&OK"
 
 #: ProfileMain#4
-msgid "User Profiles"
-msgstr "Uživatelské profily"
-
-#: ProfileMain#5
-msgctxt "ProfileMain#5"
-msgid "Quick Scan"
-msgstr "Rychlé prohledávání"
-
-#: ProfileMain#6
-msgctxt "ProfileMain#6"
-msgid "Normal Scan"
-msgstr "Obvyklé prohledávání"
-
-#: ProfileMain#7
-msgid "Root Profiles"
-msgstr "Základní profily"
-
-#: ProfileMain#8
-msgid "Full Version Detection"
-msgstr "Plné rozpoznávání verzí"
-
-#: ProfileMain#9
-msgid "Quick Version Detection"
-msgstr "Rychlé rozpoznávání verzí"
-
-#: ProfileMain#10
 msgid "Log Preferences"
 msgstr "Nastavení zápisu"
 
-#: ProfileMain#11
-msgid "&Browse"
-msgstr "&Procházet"
-
-#: ProfileMain#12
-msgid "Log File Path"
-msgstr "Cesta k souboru se zápisem"
-
-#: ProfileMain#13
-msgid "Active Log"
-msgstr "Činný zápis"
-
-#: ProfileMain#14
+#: ProfileMain#5
 msgid "Size Preferences"
 msgstr "Nastavení velikosti"
 
-#: ProfileMain#15
+#: ProfileMain#6
 msgid "Save Windows Resize"
 msgstr "Uložit změnu velikosti okna"
 
-#: ProfileMain#16
+#: ProfileMain#7
 msgid "Save Windows Positions"
 msgstr "Uložit polohy oken"
 
-#: ProfileMain#17
+#: ProfileMain#8
 msgid "&Defaults"
 msgstr "&Výchozí"
 
+#: ProfileMain#9
+msgid "Log type"
+msgstr ""
+
+#: ProfileMain#10
+msgid "Fancy format"
+msgstr ""
+
+#: ProfileMain#11
+msgid "Nmap raw format"
+msgstr ""
+
+#: ProfileMain#12
+msgid "Html format"
+msgstr ""
+
+#: ProfileMain#13
+msgid "Tuning options"
+msgstr ""
+
+#: ProfileMain#14
+msgid "History Item Number"
+msgstr ""
+
+#: ProfileMain#15
+msgid "Max parallel scan"
+msgstr ""
+
+#: ProfileMain#16
+msgid "Max parallel discover process"
+msgstr ""
+
+#: ProfileMain#17
+msgid "Lookup Preferences"
+msgstr ""
+
 #: ProfileMain#18
-msgid "Verbose Log"
-msgstr "Podrobný zápis"
+msgid "Lookup type"
+msgstr ""
 
 #: ProfileMain#19
-msgid "History Cache"
-msgstr "Vyrovnávací paměť s historií"
+msgctxt "ProfileMain#19"
+msgid "None"
+msgstr ""
 
 #: ProfileMain#20
-msgid "Scan Preferences"
-msgstr "Nastavení prohledávání"
+msgid "Internal lookup"
+msgstr ""
 
 #: ProfileMain#21
-msgid "Internal Lookup"
-msgstr "Vnitřní vyhledávání"
-
-#: ProfileMain#22
-msgid "Dig Lookup"
-msgstr "Důkladné vyhledávání"
+msgid "Dig lookup"
+msgstr ""
 
 #: addParBook#1
 msgid "Add Parameters Profile"
@@ -835,7 +933,6 @@ msgid "Profile Name"
 msgstr "Název profilu"
 
 #: addParBook#3
-msgctxt "addParBook#3"
 msgid "Parameters"
 msgstr "Parametry"
 
@@ -918,43 +1015,18 @@ msgctxt "addUrl#6"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: logHistory#1
-msgid "Your configuration file is too old, please delete it"
-msgstr "Soubor s vaším nastavením je příliš starý. Smažte jej, prosím"
+#: discoverManager#1
+#, fuzzy
+msgid "is Up"
+msgstr "je Nahoře"
 
-#: mainProfile#1
-msgid "Profiles"
-msgstr "Profily"
+#: monitor#1
+msgid "Waiting"
+msgstr ""
 
-#: mainProfile#2
-msgctxt "mainProfile#2"
-msgid "Log"
-msgstr "Zápis"
-
-#: mainProfile#3
-msgid "Size"
-msgstr "Velikost"
-
-#: mainProfile#4
-msgid "<h3>Profiles Scan</h3>"
-msgstr "<h3>Prohledávání profilů</h3>"
-
-#: mainProfile#5
-msgid "<h3>Automatic Logs Options</h3>"
-msgstr "<h3>Automatické volby pro zápis</h3>"
-
-#: mainProfile#6
-msgid "<h3>Size Options</h3>"
-msgstr "<h3>Volby pro velikost</h3>"
-
-#: mainProfile#7
-msgctxt "mainProfile#7"
-msgid "Lookup"
-msgstr "Vyhledávání"
-
-#: mainProfile#8
-msgid "<h3>Scan Lookup</h3>"
-msgstr "<h3>Vyhledávání prohledávání</h3>"
+#: monitor#2
+msgid "Scanning"
+msgstr ""
 
 #: monitorDetails#1
 msgid "Scan Process Details"
@@ -973,309 +1045,544 @@ msgctxt "monitorDetails#4"
 msgid "Close"
 msgstr "Zavřít"
 
-#: nmapClass#1
-msgid "No Ports Range (ex: 20-80)\n"
-msgstr "Žádný rozsah přípojek (ex: 20-80)\n"
-
-#: nmapClass#2
-msgctxt "nmapClass#2"
-msgid "Close"
-msgstr "Zavřít"
-
-#: nmapClass#3
-msgid "no input file\n"
-msgstr "Žádný vstupní soubor\n"
-
-#: nmapClass#4
-msgctxt "nmapClass#4"
-msgid "Normal Scan"
-msgstr "Obvyklé prohledávání"
-
-#: nmapClass#5
-msgid "Save Log"
-msgstr "Uložit zápis"
-
-#: nmapClass#6
-msgid "No Scan found\n"
-msgstr "Nenalezeno žádné prohledávání\n"
-
-#: nmapClass#7
-msgid "Log (*.log)"
-msgstr "Zápis (*.log)"
-
-#: nmapClass#8
-msgid "Information"
-msgstr "Informace"
-
-#: nmapClass#9
-msgid "Save File permission Error (Log stored in /tmp)\n"
-msgstr "Chyba v oprávnění pro ukládání souboru (zápis uložen v /tmp)\n"
-
-#: nmapClass#10
-msgid "Save File permission Error\n"
-msgstr "Chyba v oprávnění pro ukládání souboru\n"
-
-#: nmapClass#11
-msgid "SYN Stealth Scan"
-msgstr "Neviditelné prohledávání SYN"
-
-#: nmapClass#12
-msgid "ACK Stealth Scan"
-msgstr "Neviditelné prohledávání ACK"
-
-#: nmapClass#13
-msgid "FIN|ACK Stealth Scan"
-msgstr "Neviditelné prohledávání FIN|ACK"
-
-#: nmapClass#14
-msgid "FIN Stealth Scan"
-msgstr "Neviditelné prohledávání FIN"
-
-#: nmapClass#15
-msgid "NULL Stealth Scan"
-msgstr "Neviditelné prohledávání NULL"
-
-#: nmapClass#16
-msgid "XMAS Tree Stealth Scan"
-msgstr "Neviditelné prohledávání XMAS stromu"
-
-#: nmapClass#17
-msgid "TCP Window Scan"
-msgstr "Okenní prohledávání TCP"
-
-#: nmapClass#18
-msgid "UDP Ports Scan"
-msgstr "Prohledávání přípojek UDP"
-
-#: nmapClass#19
-msgid "IP Protocol Scan"
-msgstr "Prohledávání protokolu IP"
-
-#: nmapClass#20
-msgid "Warning: Operation more expansive.\n"
-msgstr "Upozornění: Úkon je velmi rozsáhlý."
-
-#: nmapClass#21
-msgid "No Host Target\n"
-msgstr "Žádný cíl se serverem"
-
-#: nmapClass#22
-msgid "No Ftp Address \n"
-msgstr "Žádná adresa FTP"
-
-#: nmapClass#23
-msgid "Disable Ftp bounce"
-msgstr "Zakázat odraz FTP"
-
-#: nmapClass#24
-msgid "Idle Scan"
-msgstr "Prohledávání Idle"
-
-#: nmapClass#25
-msgid "Wrong Address\n"
-msgstr "Nesprávná adresa"
-
-#: nmapClass#26
-msgctxt "nmapClass#26"
-msgid "Scan"
-msgstr "Prohledat"
-
-#: nmapClass#27
-msgid "Options"
-msgstr "Volby"
-
-#: nmapClass#28
-msgctxt "nmapClass#28"
-msgid "Discover"
-msgstr "Objevit"
-
-#: nmapClass#29
-msgid "File"
-msgstr "Soubor"
-
-#: nmapClass#30
-msgid "Timing"
-msgstr "Načasování"
-
-#: nmapClass#31
-msgid "Insert HostName to scan"
-msgstr "Vložit název serveru k prohledání"
-
-#: nmapClass#32
-msgid "Scan host(s)"
-msgstr "Prohledat server(y)"
-
-#: nmapClass#33
-msgctxt "nmapClass#33"
-msgid "Log"
-msgstr "Zápis"
-
-#: nmapClass#34
-msgctxt "nmapClass#34"
-msgid "Scan Log"
-msgstr "Zápis o prohledávání"
-
-#: nmapClass#35
-msgctxt "nmapClass#35"
-msgid "Services"
-msgstr "Služby"
-
-#: nmapClass#36
-msgid "Check Vulnerabilities"
-msgstr "Prověřit zranitelnosti"
-
-#: nmapClass#37
-msgid ""
-"Insert [ip] or [dns] or [ip range] or [ip/dns list with space separator] to "
-"scan (ip range ex. 192.168.1.10/20)"
-msgstr ""
-"Vložit [ip] nebo [dns] nebo [ip range] nebo [ip/dns list with space "
-"separator] pro prohledání (ip rozsah ex. 192.168.1.10/20)"
-
-#: nmapClass#38
-msgid "Search Vulnerabilities"
-msgstr "Hledat zranitelnosti"
-
-#: nmapClass#39
-msgid "Enable/Disable NSS script"
-msgstr "Povolit/Zakázat skript NSS"
-
-#: nmapClass#40
-msgid "Enable/Disable Manual Parameters"
-msgstr "Povolit/Zakázat ruční parametry"
-
-#: nmapClass#41
-msgid "Remove Host"
-msgstr "Odstranit server"
-
-#: nmapClass#42
-msgctxt "nmapClass#42"
-msgid "Scan Host"
-msgstr "Prohledat server"
-
-#: nmapClass#43
-msgid "Remove Service"
-msgstr "Odstranit službu"
-
-#: nmapClass#44
-msgid "Search for vulnerabilities"
-msgstr "Hledat zranitelnosti"
-
-#: nmapClass#45
-msgid "Use Parameters"
-msgstr "Použít pomocné proměnné"
-
-#: nmapClass#46
-msgid " Active Scan "
-msgstr " Činné prohledávání "
-
-#: nmapClass#47
-msgid "Check Vulnerability"
-msgstr "Prověřit zranitelnost"
-
-#: nmapClass#48
-msgid "Show/Hide Lookup"
-msgstr "Ukázat/Skrýt vyhledávání"
-
-#: nmapClass#49
-msgctxt "nmapClass#49"
-msgid "Scan Options"
-msgstr "Volby pro prohledávání"
-
-#: nmapClass#50
-msgctxt "nmapClass#50"
-msgid "Lookup"
-msgstr "Vyhledávání"
-
-#: nmapClass#51
-msgctxt "nmapClass#51"
-msgid "Traceroute"
-msgstr "Sledování směrování na síti"
-
-#: nmapClass#52
-msgid "Network Discover"
-msgstr "Síťové objevování"
-
-#: nmapClass#53
-msgid "Setup"
-msgstr "Nastavení"
-
-#: nmapClass#54
-msgid "is Up"
-msgstr "je Nahoře"
-
-#: nmapClass#55
-msgctxt "nmapClass#55"
-msgid "Quick Scan"
-msgstr "Rychlé prohledávání"
-
-#: nmapClass#56
-msgid "Intense Scan"
-msgstr "Silné prohledávání"
-
-#: nmapClass#57
-msgid "Intense Scan, all TCP ports"
-msgstr "Silné prohledávání, všechny přípojky TCP"
-
-#: nmapClass#58
-msgid "Intense scan plus UDP"
-msgstr "Silné prohledávání plus UDP"
-
-#: nmapClass#59
-msgid "Slow comprehensive scan"
-msgstr "Ukázat úplné prohlédnutí"
-
-#: nmapClass#60
-msgctxt "nmapClass#60"
-msgid "Scan log parameters"
-msgstr "Prohlédnout parametry zápisů"
-
-#: nmapClass#61
-msgctxt "nmapClass#61"
-msgid "Nse Options"
-msgstr "Volby pro nse"
-
-#: nmapClass#62
-msgid "Hostname already scanning\n"
-msgstr "Název hostitelského počítače se již prohledává\n"
-
-#: nmapClass#63
-msgid "NSS Script"
-msgstr "Skript NSS"
-
-#: nmapClass#64
-msgid "Show Lookup"
-msgstr "Ukázat vyhledávání"
-
-#: nmapClass#65
-msgid "Show Traceroute"
-msgstr "Ukázat sledování směrování na síti"
-
-#: nmapClass#66
-msgid "Show/Hide Traceroute"
-msgstr "Ukázat/Skrýt sledování směrování na síti"
-
-#: nmapClass#67
-msgid "Remove Scan Parameters"
-msgstr "Odstranit parametry prohledávání"
-
-#: nmapClass#68
-msgctxt "nmapClass#68"
-msgid "Parameters"
-msgstr "Parametry"
-
-#: parser#1
+#: parserManager#1
+#, fuzzy
 msgid "Error: check nmap Installation.\n"
 msgstr "Chyba: prověřte instalaci nmap.\n"
 
-#: parser#2
-msgctxt "parser#2"
+#: parserManager#2
+#, fuzzy
+msgctxt "parserManager#2"
 msgid "Close"
 msgstr "Zavřít"
 
-#: parser#3
+#: parserManager#3
+#, fuzzy
 msgid "No description"
 msgstr "Žádný popis"
+
+#: parserManager#4
+#, fuzzy
+msgid "Save Log"
+msgstr "Uložit zápis"
+
+#: parserManager#5
+msgid "Log (*.log);;Html (*.html *.htm)"
+msgstr ""
+
+#: preferencesDialog#1
+msgid "General"
+msgstr ""
+
+#: preferencesDialog#2
+#, fuzzy
+msgid "Size"
+msgstr "Velikost"
+
+#: preferencesDialog#3
+#, fuzzy
+msgctxt "preferencesDialog#3"
+msgid "Lookup"
+msgstr "Vyhledávání"
+
+#: preferencesDialog#4
+msgid "<h3>General</h3>"
+msgstr ""
+
+#: preferencesDialog#5
+msgid "<h3>Size</h3>"
+msgstr ""
+
+#: preferencesDialog#6
+msgid "<h3>Lookup</h3>"
+msgstr ""
+
+#: profilerDialog#1
+msgid "nmapsi4 - profiler"
+msgstr ""
+
+#: profilerDialog#2
+msgctxt "profilerDialog#2"
+msgid "Profile"
+msgstr ""
+
+#: profilerDialog#3
+msgid "Profile name: "
+msgstr ""
+
+#: profilerDialog#4
+msgid "Profile parameters:"
+msgstr ""
+
+#: profilerDialog#5
+msgid "Base options:"
+msgstr ""
+
+#: profilerDialog#6
+msgctxt "profilerDialog#6"
+msgid "None"
+msgstr ""
+
+#: profilerDialog#7
+msgid "Default"
+msgstr ""
+
+#: profilerDialog#8
+msgid "Default with nse script"
+msgstr ""
+
+#: profilerDialog#9
+#, fuzzy
+msgctxt "profilerDialog#9"
+msgid "Done"
+msgstr "Hotovo"
+
+#: profilerDialog#10
+#, fuzzy
+msgctxt "profilerDialog#10"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: profilerDialog#11
+#, fuzzy
+msgctxt "profilerDialog#11"
+msgid "Scan"
+msgstr "Prohledat"
+
+#: profilerDialog#12
+msgid "TCP scan:"
+msgstr ""
+
+#: profilerDialog#13
+msgid "TCP Connect Scan (-sT)"
+msgstr ""
+
+#: profilerDialog#14
+msgid "Ping Sweep (-sP)"
+msgstr ""
+
+#: profilerDialog#15
+#, fuzzy
+msgid "Timing Template:"
+msgstr "Předloha načasování:"
+
+#: profilerDialog#16
+msgid "Paranoid Throttling (-T0)"
+msgstr ""
+
+#: profilerDialog#17
+msgid "Sneaky Throttling (-T1)"
+msgstr ""
+
+#: profilerDialog#18
+msgid "Polite Throttling (-T2)"
+msgstr ""
+
+#: profilerDialog#19
+msgid "Normal Throttling (-T3)"
+msgstr ""
+
+#: profilerDialog#20
+msgid "Aggressive Throttling (-T4)"
+msgstr ""
+
+#: profilerDialog#21
+msgid "Insane Throttling (-T5)"
+msgstr ""
+
+#: profilerDialog#22
+msgid "Non-TCP scans:"
+msgstr ""
+
+#: profilerDialog#23
+msgid "List Scan (-sL)"
+msgstr ""
+
+#: profilerDialog#24
+msgid "RPC Scan (-sR)"
+msgstr ""
+
+#: profilerDialog#25
+msgid "OS Detection (-O)"
+msgstr ""
+
+#: profilerDialog#26
+msgid "Version Probe (-sV)"
+msgstr ""
+
+#: profilerDialog#27
+msgid "Ipv6 support (-6)"
+msgstr ""
+
+#: profilerDialog#28
+msgid "FTP bounce attack (-b)"
+msgstr ""
+
+#: profilerDialog#29
+msgid "Idle Scan (-sl)"
+msgstr ""
+
+#: profilerDialog#30
+#, fuzzy
+msgid "Normal"
+msgstr "Obvyklý"
+
+#: profilerDialog#31
+#, fuzzy
+msgid "All"
+msgstr "Vše"
+
+#: profilerDialog#32
+#, fuzzy
+msgid "Most Important"
+msgstr "Nejdůležitější"
+
+#: profilerDialog#33
+#, fuzzy
+msgid "Range"
+msgstr "Rozsah"
+
+#: profilerDialog#34
+#, fuzzy
+msgid "Port Range:"
+msgstr "Rozsah přípojky:"
+
+#: profilerDialog#35
+msgid "Aggressive options (-A)"
+msgstr ""
+
+#: profilerDialog#36
+msgid "Ping options"
+msgstr ""
+
+#: profilerDialog#37
+msgid "TCP ACK Ping (-PA)"
+msgstr ""
+
+#: profilerDialog#38
+msgid "21,23,80,3389"
+msgstr ""
+
+#: profilerDialog#39
+msgid "TCP SYN Ping (-PS)"
+msgstr ""
+
+#: profilerDialog#40
+msgid "22,25,80"
+msgstr ""
+
+#: profilerDialog#41
+msgid "UDP Ping (-PU)"
+msgstr ""
+
+#: profilerDialog#42
+msgid "ICMP Netmask (-PM)"
+msgstr ""
+
+#: profilerDialog#43
+msgid "ICMP TImestamp (-PP)"
+msgstr ""
+
+#: profilerDialog#44
+msgid "ICMP Echo (-PE)"
+msgstr ""
+
+#: profilerDialog#45
+msgid "Don't Ping (-P0)"
+msgstr ""
+
+#: profilerDialog#46
+msgid "IPProto probes (-PO)"
+msgstr ""
+
+#: profilerDialog#47
+msgid "SCTP INIT ping (-PY)"
+msgstr ""
+
+#: profilerDialog#48
+#, fuzzy
+msgctxt "profilerDialog#48"
+msgid "Timing"
+msgstr "Načasování"
+
+#: profilerDialog#49
+msgid "Min outstanding probes (--min-parallelism)"
+msgstr ""
+
+#: profilerDialog#50
+msgid "Max outstanding probes (--max-parallelism)"
+msgstr ""
+
+#: profilerDialog#51
+msgid "Max time to scan a target (seconds, --host-timeout)"
+msgstr ""
+
+#: profilerDialog#52
+msgid "Initial probe timeout (seconds, --initial-rtt-timeout)"
+msgstr ""
+
+#: profilerDialog#53
+msgid "Min probe timeout (seconds, --min-rtt-timeout)"
+msgstr ""
+
+#: profilerDialog#54
+msgid "Max probe timeout (seconds, --max-rtt-timeout)"
+msgstr ""
+
+#: profilerDialog#55
+msgid "Scan Delay (seconds, --scan-delay)"
+msgstr ""
+
+#: profilerDialog#56
+msgid "Max scan delay (seconds, --max-scan-delay)"
+msgstr ""
+
+#: profilerDialog#57
+msgid "Source"
+msgstr ""
+
+#: profilerDialog#58
+msgid "Specific network interface (-e)"
+msgstr ""
+
+#: profilerDialog#59
+msgid "Set source spoof ip address (-S)"
+msgstr ""
+
+#: profilerDialog#60
+msgid "Set decoy (-D)"
+msgstr ""
+
+#: profilerDialog#61
+msgid "Set Source spoof port (-g)"
+msgstr ""
+
+#: profilerDialog#62
+msgid "Extra"
+msgstr ""
+
+#: profilerDialog#63
+#, fuzzy
+msgid "DNS Resolution"
+msgstr "Rozlišení DNS"
+
+#: profilerDialog#64
+#, fuzzy
+msgid "When Required"
+msgstr "Při požádání"
+
+#: profilerDialog#65
+#, fuzzy
+msgid "Always"
+msgstr "Vždy"
+
+#: profilerDialog#66
+#, fuzzy
+msgid "Never"
+msgstr "Nikdy"
+
+#: profilerDialog#67
+msgid "Verbosity level (-v)"
+msgstr ""
+
+#: profilerDialog#68
+#, fuzzy
+msgid "Quiet"
+msgstr "Tichý"
+
+#: profilerDialog#69
+#, fuzzy
+msgid "Verbose"
+msgstr "Podrobný"
+
+#: profilerDialog#70
+#, fuzzy
+msgid "Very Verbose"
+msgstr "Velmi podrobný"
+
+#: profilerDialog#71
+#, fuzzy
+msgid "Debug"
+msgstr "Ladění"
+
+#: profilerDialog#72
+#, fuzzy
+msgid "Verbose Debug"
+msgstr "Podrobné ladění"
+
+#: profilerDialog#73
+msgid "Ordered scanned port (-r)"
+msgstr ""
+
+#: profilerDialog#74
+msgid "Fragment IP packets (-f)"
+msgstr ""
+
+#: profilerDialog#75
+msgid "Ipv4 TTL (--ttl)"
+msgstr ""
+
+#: profilerDialog#76
+msgid "Max Retries (--max-retries)"
+msgstr ""
+
+#: profilerDialog#77
+msgid "Traceroute (--traceroute)"
+msgstr ""
+
+#: profilerDialog#78
+#, fuzzy
+msgid "Nse categories script available"
+msgstr "Skript pro skupiny nse dostupný"
+
+#: profilerDialog#79
+#, fuzzy
+msgid "Nse categories Script Active"
+msgstr "Skript pro skupiny nse v činnosti"
+
+#: profilerDialog#80
+#, fuzzy
+msgid "Restore Default Categories"
+msgstr "Obnovit výchozí skupiny"
+
+#: profilerDialog#81
+#, fuzzy
+msgid "Active Script"
+msgstr "Skript v činnosti"
+
+#: profilerDialog#82
+#, fuzzy
+msgid "Disable Script"
+msgstr "Zakázat skript"
+
+#: profilerDialog#83
+msgid "Nse categories help"
+msgstr ""
+
+#: profilerDialog#84
+msgid "Categories"
+msgstr ""
+
+#: profilerDialog#85
+msgid "Nse script parameters (Ex. user=foo,pass=test)"
+msgstr ""
+
+#: profilerDialog#86
+#, fuzzy
+msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
+msgstr "Ruční vyvolání skriptu nse: (Ex. snmp-sysdescr,smb-os-discovery )"
+
+#: profilerDialog#87
+msgid "Nse script search"
+msgstr ""
+
+#: profilerDialog#88
+#, fuzzy
+msgctxt "profilerDialog#88"
+msgid "Search"
+msgstr "Hledat"
+
+#: profilerDialog#89
+msgid "Single Script"
+msgstr ""
+
+#: profilerManager#1
+msgctxt "profilerManager#1"
+msgid "Profile"
+msgstr ""
+
+#: profilerManager#2
+#, fuzzy
+msgctxt "profilerManager#2"
+msgid "Scan"
+msgstr "Prohledat"
+
+#: profilerManager#3
+#, fuzzy
+msgid "Options"
+msgstr "Volby"
+
+#: profilerManager#4
+msgid "Ping"
+msgstr ""
+
+#: profilerManager#5
+#, fuzzy
+msgctxt "profilerManager#5"
+msgid "Timing"
+msgstr "Načasování"
+
+#: profilerManager#6
+msgid "Nse"
+msgstr ""
+
+#: profilerManager#7
+msgid "No profile name"
+msgstr ""
+
+#: profilerManager#8
+msgid "Please, enter profile name."
+msgstr ""
+
+#: profilerManager#9
+#, fuzzy
+msgctxt "profilerManager#9"
+msgid "Close"
+msgstr "Zavřít"
+
+#: profilerManager#10
+#, fuzzy
+msgid "No Ports Range (ex: 20-80)\n"
+msgstr "Žádný rozsah přípojek (ex: 20-80)\n"
+
+#: profilerManager#11
+msgid "TCP SYN Stealth Scan (-sS)"
+msgstr ""
+
+#: profilerManager#12
+msgid "ACK Stealth Scan (-sA)"
+msgstr ""
+
+#: profilerManager#13
+msgid "Mainmon Scan (-sM)"
+msgstr ""
+
+#: profilerManager#14
+msgid "FIN Stealth Scan (-sF)"
+msgstr ""
+
+#: profilerManager#15
+msgid "NULL Stealth Scan (-sN)"
+msgstr ""
+
+#: profilerManager#16
+msgid "XMAS Tree Stealth Scan (-sX)"
+msgstr ""
+
+#: profilerManager#17
+msgid "TCP Window Scan (-sW)"
+msgstr ""
+
+#: profilerManager#18
+msgid "UDP Ports Scan (-sU)"
+msgstr ""
+
+#: profilerManager#19
+msgid "IP Protocol Scan (-sO)"
+msgstr ""
+
+#: profilerManager#20
+msgid "SCTP INIT scan (-sY)"
+msgstr ""
+
+#: profilerManager#21
+msgid "SCTP cookie-echo scan (-sZ)"
+msgstr ""
+
+#: profilerManager#22
+#, fuzzy
+msgid "Warning: Operation more expansive.\n"
+msgstr "Upozornění: Úkon je velmi rozsáhlý."
 
 #: utilities#1
 msgid "Select the file"
@@ -1297,3 +1604,8 @@ msgstr "Vpřed"
 #: vulnerability#4
 msgid "Stop"
 msgstr "Zastavit"
+
+#: vulnerability#5
+msgctxt "vulnerability#5"
+msgid "Add service to &bookmark"
+msgstr ""
