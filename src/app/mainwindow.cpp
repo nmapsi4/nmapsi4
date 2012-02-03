@@ -259,12 +259,12 @@ void MainWindow::preScanLookup(const QString hostname)
     }
 }
 
-void MainWindow::exit()
+void MainWindow::closeEvent(QCloseEvent * event)
 {
     m_monitor->clearHostMonitor();
     // Save Ui settings
     saveSettings();
-    close();
+    event->accept();
 }
 
 MainWindow::~MainWindow()

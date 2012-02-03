@@ -29,6 +29,7 @@
 #include <QtGui/QSplitter>
 #include <QtGui/QCompleter>
 #include <QtGui/QStringListModel>
+#include <QtGui/QCloseEvent>
 #include <QtCore/QHash>
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
@@ -128,7 +129,6 @@ private:
 private slots:
     void initObject();
     void startScan();
-    void exit();
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
@@ -166,6 +166,12 @@ private slots:
     void editProfile();
     void clearHostnameCombo();
     void clearParametersCombo();
+
+protected:
+    /**
+     * Reimplement closeEvent protected function
+     */
+    virtual void closeEvent(QCloseEvent * event);
 };
 
 #endif

@@ -23,7 +23,7 @@ void MainWindow::setNmapsiSlot()
 {
     // action slot
     connect(action_Quit, SIGNAL(triggered()),
-            this, SLOT(exit()));    // file action menu
+            this, SLOT(close()));    // file action menu
     connect(action_About, SIGNAL(triggered()),
             m_utilities, SLOT(about()));    // about action menu
     connect(actionAbout_Qt, SIGNAL(triggered()),
