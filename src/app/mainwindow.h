@@ -17,10 +17,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef MAINWIN_H
-#define MAINWIN_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-#include "ui_mainwin.h"
+#include "ui_mainwindow.h"
 
 // Qt4 include
 #include <QtGui/QMainWindow>

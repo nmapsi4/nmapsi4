@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "monitor.h"
-#include "mainwin.h"
+#include "mainwindow.h"
 
 #ifdef Q_WS_X11
 #include "nmapsi4adaptor.h"

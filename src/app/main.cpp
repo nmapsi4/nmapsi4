@@ -22,7 +22,7 @@
 #include <QtCore/QDir>
 
 #include <config.h>
-#include "mainwin.h"
+#include "mainwindow.h"
 
 
 int main(int argc, char *argv[])

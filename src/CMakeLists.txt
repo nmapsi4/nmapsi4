@@ -42,7 +42,7 @@ SET(SOURCES_CPP
                 app/actions.cpp
                 app/settings.cpp
                 app/mainScan.cpp
-                app/mainwin.cpp
+                app/mainwindow.cpp
                 app/main.cpp
 		common/utilities.cpp
                 common/qpushbuttonorientated.cpp
@@ -65,7 +65,7 @@ if (Q_WS_X11)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
 endif (Q_WS_X11)
 
-SET(SOURCES_H app/mainwin.h
+SET(SOURCES_H app/mainwindow.h
 	platform/lookupmanager.h
 	platform/digmanager.h
 	platform/addvulnerabilityurl.h
@@ -83,7 +83,7 @@ SET(SOURCES_H app/mainwin.h
 	app/parser/parsermanager.h
 )
 
-SET(SOURCES_UI app/mainwin.ui
+SET(SOURCES_UI app/mainwindow.ui
 	platform/addvulnerabilityurl.ui
 	platform/addparameterstobookmark.ui
         platform/about/about.ui

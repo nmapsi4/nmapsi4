@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "discovermanager.h"
-#include "mainwin.h"
+#include "mainwindow.h"
 
 discoverManager::discoverManager(nmapClass* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_uid(0), m_discoverIsActive(false)
