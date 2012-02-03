@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-03 12:56+0200\n"
+"POT-Creation-Date: 2012-02-03 13:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,6 @@ msgid "About Nmapsi4"
 msgstr ""
 
 #: AboutWin#2
-#, fuzzy
 msgctxt "AboutWin#2"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
@@ -176,106 +175,89 @@ msgid "Scan Host"
 msgstr "Scansione host"
 
 #: MainWindow#8
-#, fuzzy
 msgid "Remove Host"
 msgstr "Rimuovi host"
 
 #: MainWindow#9
-#, fuzzy
 msgid "Remove Service"
 msgstr "Rimuovi servizio"
 
 #: MainWindow#10
-#, fuzzy
 msgid "Search for vulnerabilities"
 msgstr "Cerca vulnerabilità"
 
 #: MainWindow#11
-#, fuzzy
 msgid "Remove Scan Parameters"
 msgstr "Rimuovi parametri di scansione"
 
 #: MainWindow#12
-#, fuzzy
 msgid "Check Vulnerability"
 msgstr "Controlla vulnerabilità"
 
 #: MainWindow#13
 msgid "Remove url"
-msgstr ""
+msgstr "Rimovi Indirizzo"
 
 #: MainWindow#14
-#, fuzzy
 msgctxt "MainWindow#14"
 msgid "Scan host(s)"
 msgstr "Scansione host"
 
 #: MainWindow#15
-#, fuzzy
 msgid "Network Discover"
 msgstr "Rilevamento rete"
 
 #: MainWindow#16
-#, fuzzy
 msgid "Check Vulnerabilities"
 msgstr "Controlla vulnerabilità"
 
 #: MainWindow#17
-#, fuzzy
 msgid "Show Lookup"
 msgstr "Mostra Lookup"
 
 #: MainWindow#18
-#, fuzzy
 msgid "Show/Hide Lookup"
 msgstr "Visualizza/Nascondi Lookup"
 
 #: MainWindow#19
-#, fuzzy
 msgid "Show Traceroute"
 msgstr "Mostra Traceroute"
 
 #: MainWindow#20
-#, fuzzy
 msgid "Show/Hide Traceroute"
 msgstr "Mostra/Nascondi Traceroute"
 
 #: MainWindow#21
-#, fuzzy
 msgid "Setup"
 msgstr "Configura"
 
 #: MainWindow#22
 msgctxt "MainWindow#22"
+"MainWindow#22"
 msgid "Profile"
-msgstr ""
+msgstr "Profilo"
 
 #: MainWindow#23
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
 
 #: MainWindow#24
-#, fuzzy
 msgid "Search Vulnerabilities"
 msgstr "Cerca vulnerabilità"
 
 #: MainWindow#25
-#, fuzzy
 msgid "Quick Scan"
 msgstr "Scansione rapida"
 
 #: MainWindow#26
-#, fuzzy
 msgid "Intense Scan"
 msgstr "Scansione completa"
 
 #: MainWindow#27
-#, fuzzy
 msgid "Intense Scan, all TCP ports"
 msgstr "Scansione completa, tutte le porte TCP"
 
 #: MainWindow#28
-#, fuzzy
 msgid "Intense scan plus UDP"
 msgstr "Scansione completa più UDP"
 
@@ -284,115 +266,95 @@ msgid "Slow comprehensive scan"
 msgstr ""
 
 #: MainWindow#30
-#, fuzzy
 msgid "No Host Target\n"
-msgstr "Nessun host specificato\n"
+msgstr "Nessun host specificato"
 
 #: MainWindow#31
-#, fuzzy
 msgctxt "MainWindow#31"
 msgid "Close"
 msgstr "Chiudi"
 
 #: MainWindow#32
-#, fuzzy
 msgid "Hostname already scanning\n"
-msgstr "Nome host già in scansione\n"
+msgstr "Nome host già in scansione"
 
 #: MainWindow#33
 msgctxt "MainWindow#33"
 msgid "&Add host to bookmark"
-msgstr ""
+msgstr "&Salva l'host nel bookmark"
 
 #: MainWindow#34
 msgctxt "MainWindow#34"
 msgid "Add service to &bookmark"
-msgstr ""
+msgstr "Salva il servizio nel &bookmark"
 
 #: MainWindow#35
-#, fuzzy
 msgid " Active Scan "
 msgstr " Scan in esecuzione "
 
 #: MainWindowClass#1
-#, fuzzy
 msgctxt "MainWindowClass#1"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
 
 #: MainWindowClass#2
-#, fuzzy
 msgid "&About nmapsi4"
 msgstr "&Informazioni su nmapsi4"
 
 #: MainWindowClass#3
-#, fuzzy
 msgid "&Scan"
 msgstr "&Scansione"
 
 #: MainWindowClass#4
-#, fuzzy
 msgctxt "MainWindowClass#4"
 msgid "Scan"
 msgstr "Scansione"
 
 #: MainWindowClass#5
-#, fuzzy
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: MainWindowClass#6
-#, fuzzy
 msgid "About &Qt"
 msgstr "&Informazioni su &Qt"
 
 #: MainWindowClass#7
-#, fuzzy
 msgid "&Preferences"
 msgstr "&Preferenze"
 
 #: MainWindowClass#8
-#, fuzzy
 msgid "&Quit"
 msgstr "&Esci"
 
 #: MainWindowClass#9
-#, fuzzy
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
 #: MainWindowClass#10
-#, fuzzy
 msgid "Stop Scan"
 msgstr "Ferma scansione"
 
 #: MainWindowClass#11
-#, fuzzy
 msgid "Clear History"
 msgstr "Cancella cronologia"
 
 #: MainWindowClass#12
-#, fuzzy
 msgid "Close Tree"
 msgstr "Chiudi albero"
 
 #: MainWindowClass#13
-#, fuzzy
 msgid "Close Scan Tree"
 msgstr "Chiudi scansione albero"
 
 #: MainWindowClass#14
-#, fuzzy
 msgid "Clear HostName"
 msgstr "Cancella host"
 
 #: MainWindowClass#15
-#, fuzzy
 msgid "Clear Hostname IP"
 msgstr "Cancella IP host"
 
 #: MainWindowClass#16
-#, fuzzy
 msgid "Save As"
 msgstr "Salva come"
 
@@ -401,7 +363,6 @@ msgid "Save Scan"
 msgstr ""
 
 #: MainWindowClass#18
-#, fuzzy
 msgctxt "MainWindowClass#18"
 msgid "Save"
 msgstr "Salva"
@@ -415,27 +376,22 @@ msgid "Save all scans to &Directory"
 msgstr ""
 
 #: MainWindowClass#21
-#, fuzzy
 msgid "F&ull Screen Mode"
 msgstr "Modalità a sc&hermo intero"
 
 #: MainWindowClass#22
-#, fuzzy
 msgid "Ctrl+Shift+F11"
 msgstr "Ctrl+Shift+F11"
 
 #: MainWindowClass#23
-#, fuzzy
 msgid "Show &Menu Bar"
 msgstr "Mostra barra dei &menu"
 
 #: MainWindowClass#24
-#, fuzzy
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: MainWindowClass#25
-#, fuzzy
 msgid "Show Status Bar"
 msgstr "Mostra la barra di stato"
 
@@ -449,27 +405,22 @@ msgid "Add host to bookmark"
 msgstr ""
 
 #: MainWindowClass#28
-#, fuzzy
 msgid "Main"
 msgstr "Principale"
 
 #: MainWindowClass#29
-#, fuzzy
 msgid "Log"
 msgstr "Log"
 
 #: MainWindowClass#30
-#, fuzzy
 msgid "Vuln"
 msgstr "Vulnerabilità"
 
 #: MainWindowClass#31
-#, fuzzy
 msgid "Section Scan"
 msgstr "Sezione Scansione"
 
 #: MainWindowClass#32
-#, fuzzy
 msgid "Section Log"
 msgstr "Sezione Log"
 
@@ -478,27 +429,22 @@ msgid "Section Vulnerabilities"
 msgstr ""
 
 #: MainWindowClass#34
-#, fuzzy
 msgid "Donate Money"
 msgstr "Donazioni"
 
 #: MainWindowClass#35
-#, fuzzy
 msgid "Documentation"
 msgstr "Documentazione"
 
 #: MainWindowClass#36
-#, fuzzy
 msgid "Visit Website"
 msgstr "Visita il sito web"
 
 #: MainWindowClass#37
-#, fuzzy
 msgid "Report a bug"
 msgstr "Segnala un bug"
 
 #: MainWindowClass#38
-#, fuzzy
 msgid "Section Discover"
 msgstr "Sezione Rilevamento"
 
@@ -519,37 +465,30 @@ msgid "Add vulnerability search url"
 msgstr ""
 
 #: MainWindowClass#43
-#, fuzzy
 msgid "Clear"
 msgstr "Pulisci"
 
 #: MainWindowClass#44
-#, fuzzy
 msgid "Save Profile"
 msgstr "Salva profilo"
 
 #: MainWindowClass#45
-#, fuzzy
 msgid "Description"
 msgstr "Descrizione"
 
 #: MainWindowClass#46
-#, fuzzy
 msgid "Service"
 msgstr "Servizio"
 
 #: MainWindowClass#47
-#, fuzzy
 msgid "State"
 msgstr "Stato"
 
 #: MainWindowClass#48
-#, fuzzy
 msgid "Port"
 msgstr "Porta"
 
 #: MainWindowClass#49
-#, fuzzy
 msgid "Nss script result"
 msgstr "Risultati script NSS"
 
@@ -558,7 +497,6 @@ msgid "Service(s) Details"
 msgstr ""
 
 #: MainWindowClass#51
-#, fuzzy
 msgid "Host(s)"
 msgstr "Host"
 
@@ -580,7 +518,6 @@ msgid "RTT"
 msgstr ""
 
 #: MainWindowClass#56
-#, fuzzy
 msgid "Hop(s)"
 msgstr "Hop"
 
@@ -590,12 +527,10 @@ msgid "Traceroute"
 msgstr ""
 
 #: MainWindowClass#58
-#, fuzzy
 msgid "Host Details"
 msgstr "Dettagli host"
 
 #: MainWindowClass#59
-#, fuzzy
 msgid "Service(s) with info"
 msgstr "Servizi(o) con informazioni"
 
@@ -612,34 +547,28 @@ msgid "Os"
 msgstr ""
 
 #: MainWindowClass#63
-#, fuzzy
 msgctxt "MainWindowClass#63"
 msgid "Scan log parameters"
 msgstr "Parametri di scansione"
 
 #: MainWindowClass#64
-#, fuzzy
 msgctxt "MainWindowClass#64"
 msgid "Scan host(s)"
 msgstr "Scansione host"
 
 #: MainWindowClass#65
-#, fuzzy
 msgid "Stop All Scan"
 msgstr "Ferma tutte le scansioni"
 
 #: MainWindowClass#66
-#, fuzzy
 msgid "Stop Current Scan"
 msgstr "Ferma la scansione corrente"
 
 #: MainWindowClass#67
-#, fuzzy
 msgid "Scan Details"
 msgstr "Dettagli scansione"
 
 #: MainWindowClass#68
-#, fuzzy
 msgid "Scan Options"
 msgstr "Opzioni di scansione"
 
@@ -648,44 +577,36 @@ msgid "Host Thread"
 msgstr ""
 
 #: MainWindowClass#70
-#, fuzzy
 msgid "Scan Monitor"
 msgstr "Monitor di scansione"
 
 #: MainWindowClass#71
-#, fuzzy
 msgid "Date"
 msgstr "Data"
 
 #: MainWindowClass#72
-#, fuzzy
 msgid "IP List"
 msgstr "Elenco IP"
 
 #: MainWindowClass#73
-#, fuzzy
 msgctxt "MainWindowClass#73"
 msgid "Profile Name"
 msgstr "Nome profilo"
 
 #: MainWindowClass#74
-#, fuzzy
 msgid "Parameters List"
 msgstr "Elenco parametri"
 
 #: MainWindowClass#75
-#, fuzzy
 msgctxt "MainWindowClass#75"
 msgid "Bookmarks"
 msgstr "Segnalibri"
 
 #: MainWindowClass#76
-#, fuzzy
 msgid "Log(s)"
 msgstr "Log"
 
 #: MainWindowClass#77
-#, fuzzy
 msgid "Error(s)"
 msgstr "Errori"
 
@@ -694,33 +615,27 @@ msgid "Raw scan log"
 msgstr ""
 
 #: MainWindowClass#79
-#, fuzzy
 msgid "Services"
 msgstr "Servizi"
 
 #: MainWindowClass#80
-#, fuzzy
 msgctxt "MainWindowClass#80"
 msgid "Vulnerability"
 msgstr "Vulnerabilità"
 
 #: MainWindowClass#81
-#, fuzzy
 msgid "Data"
 msgstr "Dati"
 
 #: MainWindowClass#82
-#, fuzzy
 msgid "Url(s)"
 msgstr "URL"
 
 #: MainWindowClass#83
-#, fuzzy
 msgid "Url(s) name"
 msgstr "Nome URL"
 
 #: MainWindowClass#84
-#, fuzzy
 msgid "Local Interfaces:"
 msgstr "Interfacce locali:"
 
@@ -729,53 +644,43 @@ msgid "Probes Modes:"
 msgstr ""
 
 #: MainWindowClass#86
-#, fuzzy
 msgid "Start DIscover"
 msgstr "Avvia rilevamento"
 
 #: MainWindowClass#87
-#, fuzzy
 msgid "Stop Discover"
 msgstr "Ferma rilevamento"
 
 #: MainWindowClass#88
-#, fuzzy
 msgid "Discover Group:"
 msgstr "Indirizzo di ricerca:"
 
 #: MainWindowClass#89
-#, fuzzy
 msgid "Start Ip:"
 msgstr "IP iniziale:"
 
 #: MainWindowClass#90
-#, fuzzy
 msgid "End Ip:"
 msgstr "IP finale:"
 
 #: MainWindowClass#91
-#, fuzzy
 msgid "Ip"
 msgstr "IP"
 
 #: MainWindowClass#92
-#, fuzzy
 msgctxt "MainWindowClass#92"
 msgid "Scan Host"
 msgstr "Scansione host"
 
 #: MainWindowClass#93
-#, fuzzy
 msgid "Send"
 msgstr "Inviato"
 
 #: MainWindowClass#94
-#, fuzzy
 msgid "Received"
 msgstr "Ricevuto"
 
 #: MainWindowClass#95
-#, fuzzy
 msgid "Remaining Ip:"
 msgstr "Ip restanti:"
 
@@ -784,32 +689,26 @@ msgid "Network discover"
 msgstr ""
 
 #: MainWindowClass#97
-#, fuzzy
 msgid "&File"
 msgstr "&File"
 
 #: MainWindowClass#98
-#, fuzzy
 msgid "&View"
 msgstr "&Visualizza"
 
 #: MainWindowClass#99
-#, fuzzy
 msgid "&Bookmarks"
 msgstr "&Segnalibri"
 
 #: MainWindowClass#100
-#, fuzzy
 msgid "&Help"
 msgstr "&Aiuto"
 
 #: MainWindowClass#101
-#, fuzzy
 msgid "S&ettings"
 msgstr "I&mpostazioni"
 
 #: MainWindowClass#102
-#, fuzzy
 msgid "&Tools"
 msgstr "S&trumenti"
 
@@ -1002,17 +901,16 @@ msgid "Cancel"
 msgstr "Annulla"
 
 #: discoverManager#1
-#, fuzzy
 msgid "is Up"
 msgstr "è attivo"
 
 #: monitor#1
 msgid "Waiting"
-msgstr ""
+msgstr "Attendo"
 
 #: monitor#2
 msgid "Scanning"
-msgstr ""
+msgstr "In scansione"
 
 #: monitorDetails#1
 msgid "Scan Process Details"
@@ -1032,23 +930,19 @@ msgid "Close"
 msgstr "Chiudi"
 
 #: parserManager#1
-#, fuzzy
 msgid "Error: check nmap Installation.\n"
-msgstr "Errore: controllare l'installazione di nmap.\n"
+msgstr "Errore: controllare l'installazione di nmap."
 
 #: parserManager#2
-#, fuzzy
 msgctxt "parserManager#2"
 msgid "Close"
 msgstr "Chiudi"
 
 #: parserManager#3
-#, fuzzy
 msgid "No description"
 msgstr "Nessuna descrizione"
 
 #: parserManager#4
-#, fuzzy
 msgid "Save Log"
 msgstr "Salva log"
 
@@ -1058,29 +952,28 @@ msgstr ""
 
 #: preferencesDialog#1
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 #: preferencesDialog#2
-#, fuzzy
 msgid "Size"
 msgstr "Dimensione"
 
 #: preferencesDialog#3
 msgctxt "preferencesDialog#3"
 msgid "Lookup"
-msgstr ""
+msgstr "Lookup"
 
 #: preferencesDialog#4
 msgid "<h3>General</h3>"
-msgstr ""
+msgstr "<h3>Generale</h3>"
 
 #: preferencesDialog#5
 msgid "<h3>Size</h3>"
-msgstr ""
+msgstr "<h3>Dimensione</h3>"
 
 #: preferencesDialog#6
 msgid "<h3>Lookup</h3>"
-msgstr ""
+msgstr "<h3>Lookup</h3>"
 
 #: profilerDialog#1
 msgid "nmapsi4 - profiler"
@@ -1117,19 +1010,16 @@ msgid "Default with nse script"
 msgstr ""
 
 #: profilerDialog#9
-#, fuzzy
 msgctxt "profilerDialog#9"
 msgid "Done"
 msgstr "Fatto"
 
 #: profilerDialog#10
-#, fuzzy
 msgctxt "profilerDialog#10"
 msgid "Cancel"
 msgstr "Annulla"
 
 #: profilerDialog#11
-#, fuzzy
 msgctxt "profilerDialog#11"
 msgid "Scan"
 msgstr "Scansione"
@@ -1207,27 +1097,22 @@ msgid "Idle Scan (-sl)"
 msgstr ""
 
 #: profilerDialog#30
-#, fuzzy
 msgid "Normal"
 msgstr "Predefinito"
 
 #: profilerDialog#31
-#, fuzzy
 msgid "All"
 msgstr "Tutti"
 
 #: profilerDialog#32
-#, fuzzy
 msgid "Most Important"
 msgstr "Rilevanti"
 
 #: profilerDialog#33
-#, fuzzy
 msgid "Range"
 msgstr "Intervallo"
 
 #: profilerDialog#34
-#, fuzzy
 msgid "Port Range:"
 msgstr "Intervallo porte:"
 
@@ -1284,7 +1169,6 @@ msgid "SCTP INIT ping (-PY)"
 msgstr ""
 
 #: profilerDialog#48
-#, fuzzy
 msgctxt "profilerDialog#48"
 msgid "Timing"
 msgstr "Timing"
@@ -1346,22 +1230,18 @@ msgid "Extra"
 msgstr ""
 
 #: profilerDialog#63
-#, fuzzy
 msgid "DNS Resolution"
 msgstr "Risoluzione DNS"
 
 #: profilerDialog#64
-#, fuzzy
 msgid "When Required"
 msgstr "Se richiesto"
 
 #: profilerDialog#65
-#, fuzzy
 msgid "Always"
 msgstr "Sempre"
 
 #: profilerDialog#66
-#, fuzzy
 msgid "Never"
 msgstr "Mai"
 
@@ -1370,27 +1250,22 @@ msgid "Verbosity level (-v)"
 msgstr ""
 
 #: profilerDialog#68
-#, fuzzy
 msgid "Quiet"
 msgstr "Sintetico"
 
 #: profilerDialog#69
-#, fuzzy
 msgid "Verbose"
 msgstr "Dettagliato"
 
 #: profilerDialog#70
-#, fuzzy
 msgid "Very Verbose"
 msgstr "Completo"
 
 #: profilerDialog#71
-#, fuzzy
 msgid "Debug"
 msgstr "Debug"
 
 #: profilerDialog#72
-#, fuzzy
 msgid "Verbose Debug"
 msgstr "Debug completo"
 
@@ -1415,27 +1290,22 @@ msgid "Traceroute (--traceroute)"
 msgstr ""
 
 #: profilerDialog#78
-#, fuzzy
 msgid "Nse categories script available"
 msgstr "Categorie di script nse disponibili"
 
 #: profilerDialog#79
-#, fuzzy
 msgid "Nse categories Script Active"
 msgstr "Categorie di script nse attive"
 
 #: profilerDialog#80
-#, fuzzy
 msgid "Restore Default Categories"
 msgstr "Ripristina categorie predefinite"
 
 #: profilerDialog#81
-#, fuzzy
 msgid "Active Script"
 msgstr "Attiva script"
 
 #: profilerDialog#82
-#, fuzzy
 msgid "Disable Script"
 msgstr "Disattiva script"
 
@@ -1452,7 +1322,6 @@ msgid "Nse script parameters (Ex. user=foo,pass=test)"
 msgstr ""
 
 #: profilerDialog#86
-#, fuzzy
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr "Lancia nse script: (Ex. snmp-sysdescr,smb-os-discovery )"
 
@@ -1461,7 +1330,6 @@ msgid "Nse script search"
 msgstr ""
 
 #: profilerDialog#88
-#, fuzzy
 msgctxt "profilerDialog#88"
 msgid "Search"
 msgstr "Cerca"
@@ -1473,25 +1341,22 @@ msgstr ""
 #: profilerManager#1
 msgctxt "profilerManager#1"
 msgid "Profile"
-msgstr ""
+msgstr "Profile"
 
 #: profilerManager#2
-#, fuzzy
 msgctxt "profilerManager#2"
 msgid "Scan"
 msgstr "Scansione"
 
 #: profilerManager#3
-#, fuzzy
 msgid "Options"
 msgstr "Opzioni"
 
 #: profilerManager#4
 msgid "Ping"
-msgstr ""
+msgstr "Ping"
 
 #: profilerManager#5
-#, fuzzy
 msgctxt "profilerManager#5"
 msgid "Timing"
 msgstr "Timing"
@@ -1509,13 +1374,11 @@ msgid "Please, enter profile name."
 msgstr ""
 
 #: profilerManager#9
-#, fuzzy
 msgctxt "profilerManager#9"
 msgid "Close"
 msgstr "Chiudi"
 
 #: profilerManager#10
-#, fuzzy
 msgid "No Ports Range (ex: 20-80)\n"
 msgstr "Manca l'intervallo delle porte (es: 20-80)\n"
 
@@ -1564,7 +1427,6 @@ msgid "SCTP cookie-echo scan (-sZ)"
 msgstr ""
 
 #: profilerManager#22
-#, fuzzy
 msgid "Warning: Operation more expansive.\n"
 msgstr "Attenzione: l'operazione richiede molte risorse.\n"
 
@@ -1592,4 +1454,4 @@ msgstr "Ferma"
 #: vulnerability#5
 msgctxt "vulnerability#5"
 msgid "Add service to &bookmark"
-msgstr ""
+msgstr "Salva il servizio nel &bookmark"
