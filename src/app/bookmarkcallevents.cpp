@@ -19,40 +19,6 @@
 
 #include "mainwindow.h"
 
-void MainWindow::linkCompleterToHostname()
-{
-    if (!actionAdd_Bookmark->isEnabled())
-    {
-        actionAdd_Bookmark->setEnabled(true);
-    }
-
-    if (m_hostModel.isNull())
-    {
-        return;
-    }
-
-    if (m_completer.isNull())
-    {
-        m_completer = new QCompleter(m_hostModel.data());
-        m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
-        m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
-        m_completer.data()->setWrapAround(false);
-        hostEdit->setCompleter(m_completer.data());
-    }
-}
-
-void MainWindow::takeHostFromBookmark()
-{
-     if(treeLogH->currentItem())
-     {
-        updateFontHost();
-        // clear history setItemText fails
-        hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
-        SWscan->setCurrentIndex(0);
-        startScan();
-    }
-}
-
 void MainWindow::saveItemToBookmarks()
 {
     if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty())
@@ -217,13 +183,4 @@ void MainWindow::saveParametersToBookmarks(const QString profileName, const QStr
 
     delete history_;
     loadScanProfile();
-}
-
-void MainWindow::quickAddressSelectionEvent()
-{
-    if(comboHostBook->currentIndex())
-    {
-        updateFontHost();
-        hostEdit->insertItem(0, comboHostBook->currentText());
-    }
 }
