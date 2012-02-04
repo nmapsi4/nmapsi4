@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void MainWindow::callSearchHistory()
+void MainWindow::linkCompleterToHostname()
 {
     if (!actionAdd_Bookmark->isEnabled())
     {
@@ -41,7 +41,7 @@ void MainWindow::callSearchHistory()
     }
 }
 
-void MainWindow::callScanH()
+void MainWindow::takeHostFromBookmark()
 {
      if(treeLogH->currentItem())
      {
@@ -53,7 +53,7 @@ void MainWindow::callScanH()
     }
 }
 
-void MainWindow::saveBookMarks()
+void MainWindow::saveItemToBookmarks()
 {
     if(hostEdit->currentText().isEmpty() && comboVulnRis->currentText().isEmpty())
     {
@@ -96,7 +96,7 @@ void MainWindow::saveBookMarks()
     }
 }
 
-void MainWindow::deleteBookMark()
+void MainWindow::deleteItemFromBookmark()
 {
     if(!treeLogH->currentItem() && !treeBookVuln->currentItem())
     {
@@ -126,7 +126,7 @@ void MainWindow::deleteBookMark()
     updateComboBook();
 }
 
-void MainWindow::deleteBookMarkPar()
+void MainWindow::deleteParametersFromBookmark()
 {
 
     if(!treeBookPar->currentItem())
@@ -154,7 +154,7 @@ void MainWindow::deleteBookMarkPar()
     loadScanProfile();
 }
 
-void MainWindow::startAddParBook_ui()
+void MainWindow::startParametersToBookmarksDialog()
 {
     const QString& parameters = comboAdv->currentText();
 
@@ -166,7 +166,7 @@ void MainWindow::startAddParBook_ui()
     QWeakPointer<addParametersToBookmark> dialogParAdd = new addParametersToBookmark(parameters);
 
     connect(dialogParAdd.data(), SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveBookMarksPar(QString,QString)));
+            this, SLOT(saveParametersToBookmarks(QString,QString)));
 
     dialogParAdd.data()->exec();
 
@@ -176,7 +176,7 @@ void MainWindow::startAddParBook_ui()
     }
 }
 
-void MainWindow::saveBookMarksPar(const QString profileName, const QString profilePar)
+void MainWindow::saveParametersToBookmarks(const QString profileName, const QString profilePar)
 {
     if(comboAdv->currentText().isEmpty())
     {
@@ -219,7 +219,7 @@ void MainWindow::saveBookMarksPar(const QString profileName, const QString profi
     loadScanProfile();
 }
 
-void MainWindow::slotHostSelected()
+void MainWindow::quickAddressSelectionEvent()
 {
     if(comboHostBook->currentIndex())
     {

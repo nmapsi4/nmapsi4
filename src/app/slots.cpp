@@ -40,9 +40,9 @@ void MainWindow::setNmapsiSlot()
             this, SLOT(startScan()));    // about action menu
 
     connect(actionProfile, SIGNAL(triggered()),
-            this, SLOT(startProfile_ui()));
+            this, SLOT(startPreferencesDialog()));
     connect(actionNew_Profile, SIGNAL(triggered()),
-            this, SLOT(startProfilerManager()));
+            this, SLOT(newProfile()));
     connect(actionEdit_Profile, SIGNAL(triggered()),
             this, SLOT(editProfile()));
 
@@ -78,9 +78,9 @@ void MainWindow::setNmapsiSlot()
             this, SLOT(menuParBook()));
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
-            this, SLOT(saveBookMarks()));
+            this, SLOT(saveItemToBookmarks()));
     connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
-            this, SLOT(startAddParBook_ui()));
+            this, SLOT(startParametersToBookmarksDialog()));
 
 
     // Vuln signal
@@ -89,7 +89,7 @@ void MainWindow::setNmapsiSlot()
     connect(comboPar, SIGNAL(activated(QString)),
             this, SLOT(slotParSelected()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
-            this, SLOT(slotHostSelected()));
+            this, SLOT(quickAddressSelectionEvent()));
 
     // main session
     connect(actionScan_section, SIGNAL(triggered()),

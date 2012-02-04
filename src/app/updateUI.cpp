@@ -89,7 +89,7 @@ void MainWindow::updateFontHost()
 	return;
 
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
-            this, SLOT(callSearchHistory()));
+            this, SLOT(linkCompleterToHostname()));
 }
 
 void MainWindow::updateSezScan()

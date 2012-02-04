@@ -98,7 +98,7 @@ void MainWindow::initObject()
     setNmapsiSlot();
 }
 
-void MainWindow::startProfile_ui()   // start preference UI
+void MainWindow::startPreferencesDialog()   // start preference UI
 {
     QWeakPointer<preferencesDialog> dialogPreference = new preferencesDialog(this);
 
@@ -113,12 +113,12 @@ void MainWindow::startProfile_ui()   // start preference UI
     }
 }
 
-void MainWindow::startProfilerManager()
+void MainWindow::newProfile()
 {
     QWeakPointer<profilerManager> pManager = new profilerManager(this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveBookMarksPar(QString,QString)));
+            this, SLOT(saveParametersToBookmarks(QString,QString)));
 
     pManager.data()->exec();
 
@@ -133,7 +133,7 @@ void MainWindow::editProfile()
     QWeakPointer<profilerManager> pManager = new profilerManager(comboPar->currentText(),comboAdv->currentText(),this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveBookMarksPar(QString,QString)));
+            this, SLOT(saveParametersToBookmarks(QString,QString)));
 
     pManager.data()->exec();
 
