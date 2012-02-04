@@ -60,12 +60,11 @@ void MainWindow::saveBookMarks()
         return;
     }
 
-    history *history_;
-
     if (tabScan->isVisible())
     {
+        const QString& currentHost = hostEdit->currentText();
         // save list of ip/dns in input
-        history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+        history *history_ = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
         QStringList hostList = hostEdit->currentText().split(' ', QString::KeepEmptyParts);
 
@@ -76,19 +75,25 @@ void MainWindow::saveBookMarks()
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
         m_treeloghlist = history_->updateBookMarks();
+
+        delete history_;
+        updateComboBook();
+        hostEdit->lineEdit()->setText(currentHost);
     }
     else
     {
-        history_ = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        const QString& currentHost = comboVulnRis->currentText();
+        history *history_ = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();
-    }
 
-    delete history_;
-    updateComboBook();
+        delete history_;
+        updateComboBook();
+        comboVulnRis->lineEdit()->setText(currentHost);
+    }
 }
 
 void MainWindow::deleteBookMark()

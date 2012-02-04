@@ -228,7 +228,7 @@ void MainWindow::createToolButtonSetup()
     toolBar->addWidget(m_saveTool);
     toolBar->addSeparator();
 
-    // save menu
+    // bookmark menu
     m_bookmarksTool = new QToolButton();
     m_bookmarksTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_bookmarksTool->setPopupMode(QToolButton::InstantPopup);
