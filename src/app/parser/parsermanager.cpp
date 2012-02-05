@@ -182,11 +182,11 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     {
         tmp = stream.readLine();
 
-        if ((portRx.indexIn(tmp) != -1) &&
-                (tmp.contains("open")
-                || tmp.contains("closed")
-                || tmp.contains("filtered")
-                || tmp.contains("unfiltered"))
+        if ((portRx.indexIn(tmp) != -1)
+                && (tmp.contains("open")
+                    || tmp.contains("closed")
+                    || tmp.contains("filtered")
+                    || tmp.contains("unfiltered"))
                 && !tmp.contains("Not shown:")
                 && !tmp.contains("Discovered"))
         {
@@ -329,15 +329,15 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     bool state_ = false;
     while (!bufferInfoStream.atEnd())
     {
-         bufferInfoStream_line = bufferInfoStream.readLine();
-         // Check OS String
-         if (bufferInfoStream_line.contains("OS") && !state_)
-         {
+        bufferInfoStream_line = bufferInfoStream.readLine();
+        // Check OS String
+        if (bufferInfoStream_line.contains("OS") && !state_)
+        {
             // OS was found ?
             state_ = hostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
-         }
+        }
 
-         elemObj->setMainInfo(bufferInfoStream_line);
+        elemObj->setMainInfo(bufferInfoStream_line);
     }
 
     if (mainTreeE->icon(0).isNull())

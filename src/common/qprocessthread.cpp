@@ -64,7 +64,7 @@ void QProcessThread::readFinished()
 
 void QProcessThread::stopProcess()
 {
-    // stop scan process (Slot)
+    // stop scan process
     if (m_process.isNull())
     {
         return;
