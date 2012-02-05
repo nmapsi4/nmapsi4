@@ -37,7 +37,7 @@
 // local include
 #include "memorytools.h"
 #include "qprocessthread.h"
-#include "details.h"
+#include "monitorhostscandetails.h"
 #include "lookupmanager.h"
 #include "digmanager.h"
 

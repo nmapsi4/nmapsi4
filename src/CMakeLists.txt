@@ -43,7 +43,7 @@ SET(SOURCES_CPP
 		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
-		app/monitor/details.cpp
+		app/monitor/monitorhostscandetails.cpp
 		app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
@@ -75,7 +75,7 @@ SET(SOURCES_H
         common/utilities.h
 	common/qprocessthread.h
 	app/preference/preferencesdialog.h
-	app/monitor/details.h
+	app/monitor/monitorhostscandetails.h
         app/monitor/monitor.h
         app/profiler/profilerdialog.h
 	app/parser/parsermanager.h
@@ -89,7 +89,7 @@ SET(SOURCES_UI
         platform/about/about.ui
 	app/preference/preferencesdialog.ui
         app/profiler/profilerdialog.ui
-	app/monitor/details.ui
+	app/monitor/monitorhostscandetails.ui
         app/mainwindow.ui
 )
 

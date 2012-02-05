@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DETAILS_H
-#define DETAILS_H
+#ifndef MONITORHOSTSCANDETAILS_H
+#define MONITORHOSTSCANDETAILS_H
 
 #include <QtGui/QDialog>
 #include <QtCore/QList>
@@ -27,18 +27,18 @@
 #include <QtCore/QTimer>
 
 // local include
-#include "ui_details.h"
+#include "ui_monitorhostscandetails.h"
 #include "memorytools.h"
 
 using namespace memory;
 
-class classDetails : public QDialog, private Ui::monitorDetails
+class MonitorDetails : public QDialog, private Ui::monitorDetails
 {
     Q_OBJECT
 
 public:
-    classDetails(QStringList& processFlow, const QString hostname);
-    ~classDetails();
+    MonitorDetails(QStringList& processFlow, const QString hostname);
+    ~MonitorDetails();
 
 private:
     /*

@@ -371,7 +371,7 @@ void monitor::showSelectedScanDetails()
         return;
     }
     // start details UI
-    QWeakPointer<classDetails> details = new classDetails(m_scanHashListFlow.operator[](m_monitor->selectedItems()[0]->text(0)),
+    QWeakPointer<MonitorDetails> details = new MonitorDetails(m_scanHashListFlow.operator[](m_monitor->selectedItems()[0]->text(0)),
                          m_monitor->selectedItems()[0]->text(0));
     details.data()->exec();
 

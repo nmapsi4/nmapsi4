@@ -17,9 +17,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "details.h"
+#include "monitorhostscandetails.h"
 
-classDetails::classDetails(QStringList& processFlow, const QString hostname)
+MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname)
 : m_scanLines(processFlow)
 {
     setupUi(this);
@@ -32,14 +32,14 @@ classDetails::classDetails(QStringList& processFlow, const QString hostname)
     loadFlow();
 }
 
-classDetails::~classDetails()
+MonitorDetails::~MonitorDetails()
 {
     freelist<QListWidgetItem*>::itemDeleteAll(m_itemsList);
     m_timer->stop();
     delete m_timer;
 }
 
-void classDetails::loadFlow()
+void MonitorDetails::loadFlow()
 {
     foreach (const QString &token, m_scanLines)
     {
@@ -65,7 +65,7 @@ void classDetails::loadFlow()
     m_timer->start(4000);
 }
 
-void classDetails::reloadFlow()
+void MonitorDetails::reloadFlow()
 {
     if (m_itemsSize < m_scanLines.size())
     {
