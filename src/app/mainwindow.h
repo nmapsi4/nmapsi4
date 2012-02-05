@@ -36,7 +36,6 @@
 
 // local include
 #include "preferencesdialog.h"
-#include "history.h"
 #include "staticDefine.h"
 #include "nmapsi4Debug.h"
 #include "addparameterstobookmark.h"
@@ -49,6 +48,7 @@
 #include "discovermanager.h"
 #include "parsermanager.h"
 #include "profilerdialog.h"
+#include "bookmarkmanager.h"
 
 static const char verticalStyleSheet[] = "QPushButton:checked {border: 0px; border-radius: 2px; \
         background-color: palette(highlight); color: palette(highlighted-text); \
@@ -66,14 +66,24 @@ class MainWindow : public QMainWindow, public Ui::MainWindowClass
 {
     Q_OBJECT
 
-    friend class parserManager;
-    friend class vulnerability;
-    friend class discoverManager;
-    friend class monitor;
-
 public:
     MainWindow();
     ~MainWindow();
+    void loadScanProfile();
+    void updateComboBook();
+    // NOTE: check completer section in vulnerability
+    void updateCompleter();
+
+    QHash<QString, QPushButtonOrientated*> m_collectionsButton;
+    vulnerability* m_vulnerability;
+    discoverManager* m_discoverManager;
+    monitor* m_monitor;
+    utilities* m_utilities;
+    parserManager* m_parser;
+    BookmarkManager* m_bookmark;
+    int m_hostCache;
+    QWeakPointer<QCompleter> m_completerVuln;
+    QWeakPointer<QStringListModel> m_vulnModel;
 
 private:
     void preScanLookup(const QString hostname);
@@ -82,22 +92,17 @@ private:
     void initGUI();
     void setTreeWidgetValues();
     void createBar();
-    void loadScanProfile();
-    void updateComboBook();
     void restoreGlobalProfile();
-    void loadHistoryDefault();
     void restoreSettings();
     void setTreeSettings();
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
     void createToolButtonSetup();
-    void updateCompleter();
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     QStringList loadExtensions();
     QHash<QString, QString> defaultScanProfile() const;
 
-    QHash<QString, QPushButtonOrientated*> m_collectionsButton;
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
     QToolButton *m_menuSetup;
@@ -105,20 +110,8 @@ private:
     QToolButton *m_saveTool;
     QToolButton *m_bookmarksTool;
     QWeakPointer<QCompleter> m_completer;
-    QWeakPointer<QCompleter> m_completerVuln;
     QWeakPointer<QStringListModel> m_hostModel;
-    QWeakPointer<QStringListModel> m_vulnModel;
-    vulnerability* m_vulnerability;
-    discoverManager* m_discoverManager;
-    monitor* m_monitor;
-    utilities* m_utilities;
-    parserManager* m_parser;
-    QList<QTreeWidgetItem*> m_treeloghlist;
-    QList<QTreeWidgetItem*> m_treebookparlist;
-    QList<QTreeWidgetItem*> m_treebookvulnlist;
-    QList<QTreeWidgetItem*> m_treewidgetvulnlist;
     int m_userId;
-    int m_hostCache;
     int m_lookupType;
     bool m_flag_state;
     bool m_savePos;
@@ -126,9 +119,18 @@ private:
     bool m_TraceEnabled;
     bool m_lookupEnabled;
 
+protected:
+    /**
+     * Reimplement closeEvent protected function
+     */
+    virtual void closeEvent(QCloseEvent * event);
+
+public slots:
+    void startScan();
+    void updateFontHost();
+
 private slots:
     void initObject();
-    void startScan();
     void listClear();
     void checkFullScreen();
     void updateMenuBar();
@@ -138,12 +140,7 @@ private slots:
     void updateScanCounter(int hostNumber);
     void startPreferencesDialog();
     void syncSettings();
-    void updateFontHost();
     void linkCompleterToHostname();
-    void saveItemToBookmarks();
-    void saveParametersToBookmarks(const QString profileName, const QString profilePar);
-    void deleteItemFromBookmark();
-    void deleteParametersFromBookmark();
     void updateSezScan();
     void updateSezVuln();
     void updateSezDiscover();
@@ -161,17 +158,11 @@ private slots:
     void slotParSelected();
     void quickAddressSelectionEvent();
     void saveSettings();
-    void startParametersToBookmarksDialog();
     void newProfile();
     void editProfile();
     void clearHostnameCombo();
     void clearParametersCombo();
 
-protected:
-    /**
-     * Reimplement closeEvent protected function
-     */
-    virtual void closeEvent(QCloseEvent * event);
 };
 
 #endif

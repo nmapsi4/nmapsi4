@@ -45,6 +45,7 @@ void MainWindow::initObject()
     // preload mainwindow info
     setTreeWidgetValues();
 
+    m_bookmark = new BookmarkManager(this);
     m_monitor = new monitor(scanMonitor,this);
     m_utilities = new utilities(this);
     m_parser = new parserManager(this);
@@ -63,8 +64,8 @@ void MainWindow::initObject()
     setDefaultSplitter();
     // restore saved settings
     restoreSettings();
-    // load history items
-    loadHistoryDefault();
+    // load items from bookmark
+    m_bookmark->restoreAllHistoryValues();
     updateCompleter();
 
     loadDefaultProfile();
@@ -118,7 +119,7 @@ void MainWindow::newProfile()
     QWeakPointer<profilerManager> pManager = new profilerManager(this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveParametersToBookmarks(QString,QString)));
+            m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
 
     pManager.data()->exec();
 
@@ -133,7 +134,7 @@ void MainWindow::editProfile()
     QWeakPointer<profilerManager> pManager = new profilerManager(comboPar->currentText(),comboAdv->currentText(),this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveParametersToBookmarks(QString,QString)));
+            m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
 
     pManager.data()->exec();
 
@@ -170,7 +171,6 @@ void MainWindow::takeHostFromBookmark()
      if(treeLogH->currentItem())
      {
         updateFontHost();
-        // clear history setItemText fails
         hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         SWscan->setCurrentIndex(0);
         startScan();
@@ -268,11 +268,7 @@ void MainWindow::startScan()
 
 void MainWindow::preScanLookup(const QString hostname)
 {
-    // save ip or dns to history
-    history *newHistory = new history("nmapsi4/cacheHost", m_hostCache);
-    newHistory->addItemHistory(hostname);
-    delete newHistory;
-
+    m_bookmark->saveHostToBookmark(hostname,m_hostCache);
     updateCompleter();
 
     // default action
@@ -338,15 +334,12 @@ void MainWindow::closeEvent(QCloseEvent * event)
 MainWindow::~MainWindow()
 {
     freemap<QString,QPushButtonOrientated*>::itemDeleteAll(m_collectionsButton);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
     delete m_discoverManager;
     delete m_monitor;
     delete m_utilities;
     delete m_parser;
     delete m_vulnerability;
+    delete m_bookmark;
     delete m_completer.data();
     delete m_completerVuln.data();
     delete m_hostModel.data();

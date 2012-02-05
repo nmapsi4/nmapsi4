@@ -48,13 +48,13 @@ SET(SOURCES_CPP
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
                 app/loadDefaultProfile.cpp
-                app/bookmarkcallevents.cpp
                 app/updateUI.cpp
                 app/slots.cpp
                 app/defaultuisettings.cpp
                 app/actions.cpp
                 app/settings.cpp
                 app/mainwindow.cpp
+                app/bookmarkmanager.cpp
                 app/main.cpp
 )
 
@@ -79,6 +79,7 @@ SET(SOURCES_H
         app/monitor/monitor.h
         app/profiler/profilerdialog.h
 	app/parser/parsermanager.h
+        app/bookmarkmanager.h
         app/mainwindow.h
 )
 

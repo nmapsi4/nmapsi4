@@ -19,73 +19,33 @@
 
 #include "mainwindow.h"
 
-void MainWindow::loadHistoryDefault()
-{
-    history *newHistory;
-    // reload bookmark from history
-    newHistory = new history(treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
-    m_treeloghlist = newHistory->updateBookMarks();
-    delete newHistory;
-    // check for user or admin parameters bookmarks
-    if (!m_userId)
-    {
-        newHistory = new history(treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
-        m_treebookparlist = newHistory->updateBookMarks();
-        delete newHistory;
-    }
-    else
-    {
-        newHistory = new history(treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
-        m_treebookparlist = newHistory->updateBookMarks();
-        delete newHistory;
-    }
-
-    newHistory = new history(treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-    m_treebookvulnlist = newHistory->updateBookMarks();
-    delete newHistory;
-
-    newHistory = new history(treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
-    m_treewidgetvulnlist = newHistory->updateBookMarks();
-    delete newHistory;
-}
-
 void MainWindow::updateCompleter()
 {
-    history *newHistory;
-
-    newHistory = new history("nmapsi4/cacheHost", m_hostCache);
-
-    if (newHistory->getHostCache().first() != "NULL")
+    if (!m_bookmark->isBookmarkHostListEmpty())
     {
         if (!m_completer.isNull())
         {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
-            newModel->setStringList(newHistory->getHostCache());
+            newModel->setStringList(m_bookmark->getHostListFromBookmark());
         }
         else if (m_hostModel.isNull())
         {
-            m_hostModel = new QStringListModel(newHistory->getHostCache());
+            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark());
         }
     }
 
-    delete newHistory;
-
-    newHistory = new history("nmapsi4/cacheVuln", m_hostCache);
-
-    if (newHistory->getHostCache().first() != "NULL")
+    if (!m_bookmark->isBookmarkServicesListEmpty())
     {
         if (!m_completerVuln.isNull())
         {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
-            newModel->setStringList(newHistory->getHostCache());
+            newModel->setStringList(m_bookmark->getServicesListFromBookmark());
         }
         else if (m_vulnModel.isNull())
         {
-            m_vulnModel = new QStringListModel(newHistory->getHostCache());
+            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark());
         }
     }
-
-    delete newHistory;
 }
 
 void MainWindow::restoreSettings()

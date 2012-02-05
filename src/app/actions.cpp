@@ -31,7 +31,7 @@ void MainWindow::menuScanBook()
     scanBook.setIconText(tr("Scan Host"));
 
     connect(&scanBook, SIGNAL(triggered()), this, SLOT(takeHostFromBookmark()));
-    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteItemFromBookmark()));
+    connect(&removeBook, SIGNAL(triggered()), m_bookmark, SLOT(deleteItemFromBookmark()));
 
     QMenu menuBook(this);
     menuBook.addAction(&scanBook);
@@ -51,7 +51,7 @@ void MainWindow::menuVulnBook()
     addBook.setIconText(tr("Search for vulnerabilities"));
 
     connect(&addBook, SIGNAL(triggered()), m_vulnerability, SLOT(callVulnCheck()));
-    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteItemFromBookmark()));
+    connect(&removeBook, SIGNAL(triggered()), m_bookmark, SLOT(deleteItemFromBookmark()));
 
     QMenu menuBook(this);
     menuBook.addAction(&addBook);
@@ -66,7 +66,7 @@ void MainWindow::menuParBook()
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Scan Parameters"));
 
-    connect(&removeBook, SIGNAL(triggered()), this, SLOT(deleteParametersFromBookmark()));
+    connect(&removeBook, SIGNAL(triggered()), m_bookmark, SLOT(deleteParametersFromBookmark()));
 
     QMenu menuBook(this);
     menuBook.addAction(&removeBook);

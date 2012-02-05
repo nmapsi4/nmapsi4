@@ -36,7 +36,7 @@ class history
 public:
     history(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
     history(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
-    history(const QString ConfigTag, int cacheSize);
+    explicit history(const QString ConfigTag, int cacheSize = 0);
     ~history();
     QList<QTreeWidgetItem*> updateBookMarks();
     void addItemHistory(const QString name);

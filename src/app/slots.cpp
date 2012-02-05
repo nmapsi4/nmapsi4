@@ -78,9 +78,9 @@ void MainWindow::setNmapsiSlot()
             this, SLOT(menuParBook()));
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
-            this, SLOT(saveItemToBookmarks()));
+            m_bookmark, SLOT(saveItemToBookmarks()));
     connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
-            this, SLOT(startParametersToBookmarksDialog()));
+            m_bookmark, SLOT(startParametersToBookmarksDialog()));
 
 
     // Vuln signal
