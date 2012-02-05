@@ -167,7 +167,8 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     QString hostCheck = parList[parList.size()-1];
     elemObj->setHostName(hostCheck);
 
-    QRegExp rxT_("^\\d\\d?");
+    QRegExp portRx("^\\d{1,5}/+\\d?");
+    QRegExp tracerouteRx("^\\d\\d?");
     QString generalBuffer_(hostCheck);
     QString scanBuffer;
     QString bufferInfo;
@@ -181,7 +182,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     {
         tmp = stream.readLine();
 
-        if ((rxT_.indexIn(tmp) != -1) &&
+        if ((portRx.indexIn(tmp) != -1) &&
                 (tmp.contains("open")
                 || tmp.contains("closed")
                 || tmp.contains("filtered")
@@ -253,7 +254,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
             nseBuffer.append(tmpClean + '\n');
         }
 
-        if((rxT_.indexIn(tmp) != -1) && (!tmp.contains("/")))
+        if((tracerouteRx.indexIn(tmp) != -1) && (!tmp.contains("/")))
         {
             bufferTraceroot.append(tmp);
             bufferTraceroot.append("\n");
