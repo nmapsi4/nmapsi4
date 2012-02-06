@@ -56,8 +56,43 @@ void MainWindow::restoreSettings()
     QSize size = settings.value("window/size", QSize(910, 672)).toSize();
     resize(size);
     move(pos);
-    m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
-    m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
+
+    // restore state of the QAction's connected to splitter widget
+    if (!settings.value("splitterSizes").toByteArray().isEmpty())
+    {
+        m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
+
+        if (m_mainHorizontalSplitter->sizes()[0])
+        {
+            m_collectionsButton.value("scan-list")->setChecked(true);
+        }
+        else
+        {
+            m_collectionsButton.value("scan-list")->setChecked(false);
+        }
+    }
+    else
+    {
+        m_collectionsButton.value("scan-list")->setChecked(true);
+    }
+
+    if (!settings.value("splitterSizesRight").toByteArray().isEmpty())
+    {
+        m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
+
+        if (m_mainVerticalSplitter->sizes()[1])
+        {
+            m_collectionsButton.value("details-list")->setChecked(true);
+        }
+        else
+        {
+            m_collectionsButton.value("details-list")->setChecked(false);
+        }
+    }
+    else
+    {
+        m_collectionsButton.value("details-list")->setChecked(true);
+    }
 }
 
 void MainWindow::setTreeSettings()
@@ -106,6 +141,13 @@ void MainWindow::setDefaultSplitter()
     // define default Ui splitter
     m_mainHorizontalSplitter = new QSplitter();
     m_mainVerticalSplitter = new QSplitter();
+
+    connect(m_mainVerticalSplitter, SIGNAL(splitterMoved(int,int)),
+            this, SLOT(resizeVerticalSplitterEvent()));
+
+    connect(m_mainHorizontalSplitter, SIGNAL(splitterMoved(int,int)),
+            this, SLOT(resizeHorizontalSplitterEvent()));
+
     m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
     m_mainHorizontalSplitter->addWidget(frameLeft);
     m_mainHorizontalSplitter->addWidget(frameCenter);

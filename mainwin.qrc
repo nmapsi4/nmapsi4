@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/view-restore.png</file>
     <file>images/documentation.png</file>
     <file>images/document-properties.png</file>
     <file>images/edit-clear-list.png</file>

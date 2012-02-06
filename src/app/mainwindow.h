@@ -33,6 +33,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
+#include <QtCore/QList>
 
 // local include
 #include "preferencesdialog.h"
@@ -118,6 +119,8 @@ private:
     bool m_saveSize;
     bool m_TraceEnabled;
     bool m_lookupEnabled;
+    QByteArray m_scanListWidgetSize;
+    QByteArray m_detailsWidgetSize;
 
 protected:
     /**
@@ -162,6 +165,10 @@ private slots:
     void editProfile();
     void clearHostnameCombo();
     void clearParametersCombo();
+    void resizeVerticalSplitterEvent();
+    void resizeHorizontalSplitterEvent();
+    void resizeScanListWidgetEvent();
+    void resizeHostDetailsWidgetEvent();
 
 };
 
