@@ -212,10 +212,10 @@ void MainWindow::startScan()
 
 
     // check for ip list
-    if(hostname.contains("/") && !hostname.contains("//"))
+    if(hostname.contains("/") && !hostname.endsWith("/") && !hostname.contains("//"))
     {
         // is a ip list
-        QStringList addrPart_ = hostname.split('/');
+        QStringList addrPart_ = hostname.split('/',QString::KeepEmptyParts);
         QStringList ipBase_ = addrPart_[0].split('.');
         int ipLeft_ = ipBase_[3].toInt();
         int ipRight_ = addrPart_[1].toInt();
@@ -232,12 +232,15 @@ void MainWindow::startScan()
         }
         return;
     }
+    else if (hostname.endsWith("/"))
+    {
+        hostname.remove("/");
+    }
 
     //scan token DNS/IP parser
     if(hostname.contains(" "))
     { // space delimiter
-        QStringList addrPart_ = hostname.split(' ');
-        addrPart_.removeAll("");
+        QStringList addrPart_ = hostname.split(' ',QString::KeepEmptyParts);
         // check for only one space in hostname
         if(addrPart_.size() > 1)
         {
