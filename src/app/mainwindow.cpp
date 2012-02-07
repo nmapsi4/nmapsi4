@@ -45,7 +45,10 @@ void MainWindow::initObject()
     // preload mainwindow info
     setTreeWidgetValues();
 
+    // declare and restore items from bookmark
     m_bookmark = new BookmarkManager(this);
+    m_bookmark->restoreAllHistoryValues();
+
     m_monitor = new monitor(scanMonitor,this);
     m_utilities = new utilities(this);
     m_parser = new parserManager(this);
@@ -64,8 +67,6 @@ void MainWindow::initObject()
     setDefaultSplitter();
     // restore saved settings
     restoreSettings();
-    // load items from bookmark
-    m_bookmark->restoreAllHistoryValues();
     updateCompleter();
 
     loadDefaultProfile();

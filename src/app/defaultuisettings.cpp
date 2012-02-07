@@ -139,8 +139,8 @@ void MainWindow::setDefaultAction()
 void MainWindow::setDefaultSplitter()
 {
     // define default Ui splitter
-    m_mainHorizontalSplitter = new QSplitter();
-    m_mainVerticalSplitter = new QSplitter();
+    m_mainHorizontalSplitter = new QSplitter(this);
+    m_mainVerticalSplitter = new QSplitter(this);
 
     connect(m_mainVerticalSplitter, SIGNAL(splitterMoved(int,int)),
             this, SLOT(resizeVerticalSplitterEvent()));
