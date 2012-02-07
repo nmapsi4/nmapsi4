@@ -151,18 +151,6 @@ void MainWindow::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabLook()));
     toolBarTab->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-wired.png")),tr("Show Traceroute"));
-    actionButt->setToolTip(tr("Show/Hide Traceroute"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setMirrored(true);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    m_collectionsButton.insert("tab-trace-act",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabTrace()));
-    toolBarTab->addWidget(actionButt);
-
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"));
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setOrientation(Qt::Vertical);

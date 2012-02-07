@@ -246,21 +246,6 @@ void MainWindow::updateTabLook()
     }
 }
 
-void MainWindow::updateTabTrace()
-{
-    if (m_collectionsButton.value("tab-trace-act")->isChecked())
-    {
-        tabWidget->insertTab(tabWidget->count(),tab_7,tr("Traceroute"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tab_7),QIcon(QString::fromUtf8(":/images/images/network-wired.png")));
-        m_TraceEnabled = true;
-    }
-    else
-    {
-        m_TraceEnabled = false;
-        tabWidget->removeTab(tabWidget->indexOf(tab_7));
-    }
-}
-
 void MainWindow::listClear()
 {
     // Host list

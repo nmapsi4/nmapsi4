@@ -117,7 +117,6 @@ private:
     bool m_flag_state;
     bool m_savePos;
     bool m_saveSize;
-    bool m_TraceEnabled;
     bool m_lookupEnabled;
     QByteArray m_scanListWidgetSize;
     QByteArray m_detailsWidgetSize;
@@ -148,7 +147,6 @@ private slots:
     void updateSezVuln();
     void updateSezDiscover();
     void updateTabLook();
-    void updateTabTrace();
     void loadDefaultProfile();
     void resetPar();
     void detailsOptions();

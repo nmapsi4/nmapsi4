@@ -82,8 +82,6 @@ void MainWindow::initObject()
 #endif
 
     // load first profile
-    m_collectionsButton.value("tab-trace-act")->setChecked(m_TraceEnabled);
-    updateTabTrace();
     updateMenuBar();
 
     // load quick combo items

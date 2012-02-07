@@ -43,8 +43,6 @@ void MainWindow::syncSettings()
     m_lookupType = settings.value("lookupType", 1).toInt();
 #endif
 
-    m_TraceEnabled = settings.value("TraceEnabled",true).toBool();
-
     // restore actionMenuBar
     bool actionMB = settings.value("showMenuBar", false).toBool();
     actionMenuBar->setChecked(actionMB);
@@ -68,7 +66,6 @@ void MainWindow::saveSettings()
     }
 
     settings.setValue("LookupEnabled", m_lookupEnabled);
-    settings.setValue("TraceEnabled", m_TraceEnabled);
     settings.setValue("savePos", m_savePos);
     settings.setValue("saveSize", m_saveSize);
     settings.setValue("hostCache",10);
