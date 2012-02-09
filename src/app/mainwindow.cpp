@@ -85,7 +85,7 @@ void MainWindow::initObject()
     m_discoverManager->defaultDiscoverProbes();
 
     // connect slots
-    setNmapsiSlot();
+    connectSlots();
 }
 
 void MainWindow::startPreferencesDialog()   // start preference UI

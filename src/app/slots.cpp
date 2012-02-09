@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void MainWindow::setNmapsiSlot()
+void MainWindow::connectSlots()
 {
     // action slot
     connect(action_Quit, SIGNAL(triggered()),

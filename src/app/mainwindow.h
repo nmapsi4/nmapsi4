@@ -88,7 +88,7 @@ public:
 
 private:
     void preScanLookup(const QString hostname);
-    void setNmapsiSlot();
+    void connectSlots();
     void resetOptions();
     void initGUI();
     void setTreeWidgetValues();
