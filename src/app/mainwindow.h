@@ -132,7 +132,7 @@ public slots:
 
 private slots:
     void initObject();
-    void listClear();
+    void clearAll();
     void checkFullScreen();
     void updateMenuBar();
     void updateIconsBox();
@@ -146,7 +146,7 @@ private slots:
     void updateSezVuln();
     void updateSezDiscover();
     void loadDefaultProfile();
-    void resetPar();
+    void resetComboParameters();
     void detailsOptions();
     void nssOptions();
     void menuScanBook();
@@ -154,7 +154,7 @@ private slots:
     void menuParBook();
     void menuServiceMain();
     void menuVulnUrlBookmark();
-    void slotParSelected();
+    void comboParametersSelectedEvent();
     void quickAddressSelectionEvent();
     void saveSettings();
     void newProfile();

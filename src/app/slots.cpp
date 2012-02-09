@@ -31,7 +31,7 @@ void MainWindow::connectSlots()
     connect(action_Scan_menu, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
-            this, SLOT(listClear()));
+            this, SLOT(clearAll()));
     connect(buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
     connect(buttonParametersClear, SIGNAL(clicked()),
@@ -87,7 +87,7 @@ void MainWindow::connectSlots()
     connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(menuVulnUrlBookmark()));
     connect(comboPar, SIGNAL(activated(QString)),
-            this, SLOT(slotParSelected()));
+            this, SLOT(comboParametersSelectedEvent()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
 

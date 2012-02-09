@@ -75,10 +75,10 @@ void MainWindow::loadScanProfile()
         comboPar->addItem(treeBookPar->topLevelItem(index)->text(1));
     }
 
-    slotParSelected();
+    comboParametersSelectedEvent();
 }
 
-void MainWindow::slotParSelected()
+void MainWindow::comboParametersSelectedEvent()
 {
    // insert profile from comboPar to comboAdv
    int parIndex = comboPar->currentIndex();
@@ -99,10 +99,10 @@ void MainWindow::slotParSelected()
     }
 }
 
-void MainWindow::resetPar()
+void MainWindow::resetComboParameters()
 {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    slotParSelected();
+    comboParametersSelectedEvent();
 }
 
 QStringList MainWindow::loadExtensions()

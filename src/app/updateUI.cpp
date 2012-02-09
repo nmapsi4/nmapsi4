@@ -231,7 +231,7 @@ void MainWindow::updateComboBook()
     }
 }
 
-void MainWindow::listClear()
+void MainWindow::clearAll()
 {
     // Host list
     m_parser->clearParserItems();
@@ -293,5 +293,5 @@ void MainWindow::clearParametersCombo()
 {
     // TODO:set to default saved parameters profile
     comboPar->setCurrentIndex(0);
-    slotParSelected();
+    comboParametersSelectedEvent();
 }
