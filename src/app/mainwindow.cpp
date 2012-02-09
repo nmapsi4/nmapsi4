@@ -172,6 +172,8 @@ void MainWindow::quickAddressSelectionEvent()
     {
         updateFontHost();
         hostEdit->insertItem(0, comboHostBook->currentText());
+        // reset comboHostBook to default selection item (index=0)
+        comboHostBook->setCurrentIndex(0);
     }
 }
 
