@@ -213,7 +213,7 @@ void discoverManager::callScanDiscover()
 {
     if(m_ui->treeDiscover->currentItem())
     {
-        m_ui->updateFontHost();
+        m_ui->updateComboHostnameProperties();
         m_ui->hostEdit->insertItem(0, m_ui->treeDiscover->currentItem()->text(0));
         m_ui->SWscan->setCurrentIndex(0);
         m_ui->startScan();

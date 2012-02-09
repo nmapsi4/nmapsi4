@@ -159,7 +159,7 @@ void MainWindow::takeHostFromBookmark()
 {
      if(treeLogH->currentItem())
      {
-        updateFontHost();
+        updateComboHostnameProperties();
         hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         SWscan->setCurrentIndex(0);
         startScan();
@@ -170,7 +170,7 @@ void MainWindow::quickAddressSelectionEvent()
 {
     if(comboHostBook->currentIndex())
     {
-        updateFontHost();
+        updateComboHostnameProperties();
         hostEdit->insertItem(0, comboHostBook->currentText());
         // reset comboHostBook to default selection item (index=0)
         comboHostBook->setCurrentIndex(0);

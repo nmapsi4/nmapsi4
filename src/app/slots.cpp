@@ -101,7 +101,7 @@ void MainWindow::setNmapsiSlot()
     connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
     connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
-            this, SLOT(updateFontHost()));
+            this, SLOT(updateComboHostnameProperties()));
 
     // monitor events
     connect(scanMonitor, SIGNAL(itemSelectionChanged()),

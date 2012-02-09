@@ -77,7 +77,7 @@ void MainWindow::updateIconsBox()
     }
 }
 
-void MainWindow::updateFontHost()
+void MainWindow::updateComboHostnameProperties()
 {
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);

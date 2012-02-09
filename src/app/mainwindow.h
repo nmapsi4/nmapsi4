@@ -129,7 +129,7 @@ protected:
 
 public slots:
     void startScan();
-    void updateFontHost();
+    void updateComboHostnameProperties();
 
 private slots:
     void initObject();
