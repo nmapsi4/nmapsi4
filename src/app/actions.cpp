@@ -139,18 +139,6 @@ void MainWindow::createBar()
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")),tr("Show Lookup"));
-    actionButt->setToolTip(tr("Show/Hide Lookup"));
-    actionButt->setOrientation(Qt::Vertical);
-    actionButt->setMirrored(true);
-    actionButt->setFlat(true);
-    actionButt->setMaximumWidth(verticalButtonWidth);
-    actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
-    m_collectionsButton.insert("tab-look-act",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateTabLook()));
-    toolBarTab->addWidget(actionButt);
-
     actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"));
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setOrientation(Qt::Vertical);

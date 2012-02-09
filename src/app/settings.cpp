@@ -36,10 +36,8 @@ void MainWindow::syncSettings()
 
 #ifdef Q_WS_WIN
     // disable lookup in MS windows
-    m_lookupEnabled = false;
     m_lookupType = 0;
 #else
-    m_lookupEnabled = settings.value("LookupEnabled", false).toBool();
     m_lookupType = settings.value("lookupType", 1).toInt();
 #endif
 

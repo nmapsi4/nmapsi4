@@ -71,16 +71,6 @@ void MainWindow::initObject()
 
     loadDefaultProfile();
 
-#ifdef Q_WS_WIN
-    // lookup fails on MS Windows
-    _collectionsButton.value("tab-look-act")->setChecked(false);
-    _collectionsButton.value("tab-look-act")->setEnabled(false);
-#else
-    // removed dig runtime check, linux, mac and BSD.
-    m_collectionsButton.value("tab-look-act")->setChecked(m_lookupEnabled);
-    updateTabLook();
-#endif
-
     // load first profile
     updateMenuBar();
 

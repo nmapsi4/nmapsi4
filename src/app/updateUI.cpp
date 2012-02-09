@@ -231,21 +231,6 @@ void MainWindow::updateComboBook()
     }
 }
 
-void MainWindow::updateTabLook()
-{
-    if (m_collectionsButton.value("tab-look-act")->isChecked())
-    {
-        tabWidget->insertTab(tabWidget->count(),tab_3,tr("Lookup"));
-        tabWidget->setTabIcon(tabWidget->indexOf(tab_3),QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
-        m_lookupEnabled = true;
-    }
-    else
-    {
-        m_lookupEnabled = false;
-        tabWidget->removeTab(tabWidget->indexOf(tab_3));
-    }
-}
-
 void MainWindow::listClear()
 {
     // Host list

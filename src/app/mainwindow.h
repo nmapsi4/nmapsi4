@@ -146,7 +146,6 @@ private slots:
     void updateSezScan();
     void updateSezVuln();
     void updateSezDiscover();
-    void updateTabLook();
     void loadDefaultProfile();
     void resetPar();
     void detailsOptions();
