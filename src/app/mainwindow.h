@@ -87,13 +87,12 @@ public:
     QWeakPointer<QStringListModel> m_vulnModel;
 
 private:
-    void preScanLookup(const QString hostname);
+    void addHostToMonitor(const QString hostname);
     void connectSlots();
     void resetOptions();
     void initGUI();
     void setTreeWidgetValues();
     void createBar();
-    void restoreGlobalProfile();
     void restoreSettings();
     void setTreeSettings();
     void setDefaultAction();

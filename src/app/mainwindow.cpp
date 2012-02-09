@@ -219,7 +219,7 @@ void MainWindow::startScan()
 
             if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
             {
-                preScanLookup(hostname);
+                addHostToMonitor(hostname);
             }
         }
         return;
@@ -243,7 +243,7 @@ void MainWindow::startScan()
                 // check for lookup support
                 if (!hostTools::isDns(addrPart_[index]) || hostTools::isValidDns(addrPart_[index]))
                 {
-                    preScanLookup(addrPart_[index]);
+                    addHostToMonitor(addrPart_[index]);
                 }
             }
             return;
@@ -255,12 +255,12 @@ void MainWindow::startScan()
     // single ip or dns after the move
     if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
     {
-        preScanLookup(hostname);
+        addHostToMonitor(hostname);
     }
 
 }
 
-void MainWindow::preScanLookup(const QString hostname)
+void MainWindow::addHostToMonitor(const QString hostname)
 {
     m_bookmark->saveHostToBookmark(hostname,m_hostCache);
     updateCompleter();
