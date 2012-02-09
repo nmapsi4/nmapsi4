@@ -232,7 +232,7 @@ void MainWindow::createToolButtonSetup()
     m_bookmarksTool = new QToolButton();
     m_bookmarksTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_bookmarksTool->setPopupMode(QToolButton::InstantPopup);
-    m_bookmarksTool->setText(tr("Bookmarks"));
+    m_bookmarksTool->setText(tr("Bookmark"));
     m_bookmarksTool->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
     m_bookmarksTool->setMenu(menu_Bookmaks);
 
