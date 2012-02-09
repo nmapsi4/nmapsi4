@@ -77,7 +77,7 @@ void MainWindow::initObject()
     // load quick combo items
     loadScanProfile();
     updateComboBook();
-    m_vulnerability->updateComboWebV();
+    m_vulnerability->loadSearchUrlIntoCombo();
 
     // call discover startup, NPING is REQUIRED
     m_discoverManager = new discoverManager(this);
