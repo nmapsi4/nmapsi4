@@ -104,7 +104,7 @@ void MainWindow::createBar()
     QPushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"),this);
     actionButt->setToolTip(tr("Scan host(s)"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -115,7 +115,7 @@ void MainWindow::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezScan()));
     sezBar->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"),this);
     actionButt->setToolTip(tr("Network Discover"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -126,7 +126,7 @@ void MainWindow::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(updateSezDiscover()));
     sezBar->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"),this);
     actionButt->setToolTip(tr("Check Vulnerabilities"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -139,7 +139,7 @@ void MainWindow::createBar()
 
     sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"),this);
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
@@ -151,7 +151,7 @@ void MainWindow::createBar()
     connect(actionButt, SIGNAL(clicked(bool)),this, SLOT(resizeScanListWidgetEvent()));
     toolBarTab->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host Details"));
+    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host Details"),this);
     actionButt->setToolTip(tr("Show/Hide Host Details"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
@@ -169,12 +169,12 @@ void MainWindow::createBar()
 void MainWindow::createToolButtonSetup()
 {
     // new QToolButton menu
-    m_menuSetup = new QToolButton();
+    m_menuSetup = new QToolButton(this);
     m_menuSetup->setPopupMode(QToolButton::InstantPopup);
     m_menuSetup->setText(tr("Setup"));
     m_menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
 
-    QMenu *menu = new QMenu();
+    QMenu *menu = new QMenu(this);
     menu->addAction(action_Scan_2);
     menu->addAction(actionSave);
     menu->addAction(actionSave_As_Menu);
@@ -200,13 +200,13 @@ void MainWindow::createToolButtonSetup()
     toolMenuBar->addWidget(m_menuSetup);
 
     // profiler menu
-    m_profilerTool = new QToolButton();
+    m_profilerTool = new QToolButton(this);
     m_profilerTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_profilerTool->setPopupMode(QToolButton::InstantPopup);
     m_profilerTool->setText(tr("Profile"));
     m_profilerTool->setIcon(QIcon(QString::fromUtf8(":/images/images/documentation.png")));
 
-    QMenu *menuProfiler = new QMenu();
+    QMenu *menuProfiler = new QMenu(this);
     menuProfiler->addAction(actionNew_Profile);
     menuProfiler->addAction(actionEdit_Profile);
     m_profilerTool->setMenu(menuProfiler);
@@ -214,13 +214,13 @@ void MainWindow::createToolButtonSetup()
     toolBar_2->addWidget(m_profilerTool);
 
     // save menu
-    m_saveTool = new QToolButton();
+    m_saveTool = new QToolButton(this);
     m_saveTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_saveTool->setPopupMode(QToolButton::InstantPopup);
     m_saveTool->setText(tr("Save"));
     m_saveTool->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
 
-    QMenu *menuSave = new QMenu();
+    QMenu *menuSave = new QMenu(this);
     menuSave->addAction(actionSave_Menu);
     menuSave->addAction(actionSave_As_Menu);
     m_saveTool->setMenu(menuSave);
@@ -229,7 +229,7 @@ void MainWindow::createToolButtonSetup()
     toolBar->addSeparator();
 
     // bookmark menu
-    m_bookmarksTool = new QToolButton();
+    m_bookmarksTool = new QToolButton(this);
     m_bookmarksTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_bookmarksTool->setPopupMode(QToolButton::InstantPopup);
     m_bookmarksTool->setText(tr("Bookmark"));
