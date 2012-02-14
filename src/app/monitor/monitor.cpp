@@ -25,7 +25,7 @@
 #endif
 
 monitor::monitor(QTreeWidget* monitor, MainWindow* parent)
-: m_monitor(monitor), m_ui(parent)
+: QObject(parent), m_monitor(monitor), m_ui(parent)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
