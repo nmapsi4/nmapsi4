@@ -68,7 +68,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindowClass
     Q_OBJECT
 
 public:
-    MainWindow();
+    MainWindow(QWidget* parent=0);
     ~MainWindow();
     void loadScanProfile();
     void updateComboBook();

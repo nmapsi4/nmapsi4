@@ -19,8 +19,8 @@
 
 #include "mainwindow.h"
 
-MainWindow::MainWindow()
-: m_userId(0)
+MainWindow::MainWindow(QWidget* parent)
+: QMainWindow(parent), m_userId(0)
 {
     initGUI();
     QTimer::singleShot( 0, this, SLOT(initObject()) );
@@ -417,7 +417,6 @@ MainWindow::~MainWindow()
     delete m_vulnModel.data();
     delete m_mainVerticalSplitter;
     delete m_mainHorizontalSplitter;
-    delete progressScan;
     delete m_menuSetup->menu();
     delete m_menuSetup;
     delete m_profilerTool->menu();
