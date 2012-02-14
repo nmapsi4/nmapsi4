@@ -113,7 +113,6 @@ private:
     QWeakPointer<QStringListModel> m_hostModel;
     int m_userId;
     int m_lookupType;
-    bool m_flag_state;
     bool m_savePos;
     bool m_saveSize;
     QByteArray m_scanListWidgetSize;
