@@ -63,7 +63,6 @@ void MainWindow::saveSettings()
         settings.setValue("window/size", size());
     }
 
-    settings.setValue("LookupEnabled", m_lookupEnabled);
     settings.setValue("savePos", m_savePos);
     settings.setValue("saveSize", m_saveSize);
     settings.setValue("hostCache",10);

@@ -275,20 +275,17 @@ void MainWindow::addHostToMonitor(const QString hostname)
     QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    if (m_lookupEnabled)
+    switch (m_lookupType)
     {
-        switch (m_lookupType)
-        {
-        case monitor::DisabledLookup:
-            m_monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
-            break;
-        case monitor::InternalLookup:
-            m_monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
-            break;
-        case monitor::DigLookup:
-            m_monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
-            break;
-        }
+    case monitor::DisabledLookup:
+        m_monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+        break;
+    case monitor::InternalLookup:
+        m_monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
+        break;
+    case monitor::DigLookup:
+        m_monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
+        break;
     }
 }
 
