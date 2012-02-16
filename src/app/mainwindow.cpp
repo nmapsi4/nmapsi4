@@ -406,26 +406,12 @@ void MainWindow::resizeScanListWidgetEvent()
 
 MainWindow::~MainWindow()
 {
-    freemap<QString,QPushButtonOrientated*>::itemDeleteAll(m_collectionsButton);
-    delete m_discoverManager;
-    delete m_monitor;
-    delete m_utilities;
-    delete m_parser;
-    delete m_vulnerability;
     delete m_bookmark;
+    // FIXME: add in QCompleter and QStringListModel memory allocation, this parent
+    // and remove from destructor
     delete m_completer.data();
     delete m_completerVuln.data();
     delete m_hostModel.data();
     delete m_vulnModel.data();
-    delete m_mainVerticalSplitter;
-    delete m_mainHorizontalSplitter;
-    delete m_menuSetup->menu();
-    delete m_menuSetup;
-    delete m_profilerTool->menu();
-    delete m_profilerTool;
-    delete m_saveTool->menu();
-    delete m_saveTool;
-    delete m_bookmarksTool->menu();
-    delete m_bookmarksTool;
 }
 

@@ -27,6 +27,8 @@
 #include "history.h"
 #include "memorytools.h"
 
+using namespace memory;
+
 class MainWindow;
 
 class BookmarkManager : public QObject

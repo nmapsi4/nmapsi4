@@ -30,7 +30,8 @@ discoverManager::discoverManager(MainWindow* parent)
 
 discoverManager::~discoverManager()
 {
-    discoveryClear();
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
+    freelist<discover*>::itemDeleteAll(m_listDiscover);
 }
 
 void discoverManager::startDiscover()
