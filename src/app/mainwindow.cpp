@@ -406,7 +406,6 @@ void MainWindow::resizeScanListWidgetEvent()
 
 MainWindow::~MainWindow()
 {
-    delete m_bookmark;
     // FIXME: add in QCompleter and QStringListModel memory allocation, this parent
     // and remove from destructor
     delete m_completer.data();

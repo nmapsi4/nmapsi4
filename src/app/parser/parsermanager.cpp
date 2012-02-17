@@ -28,10 +28,8 @@ parserManager::parserManager(MainWindow* parent)
 
 parserManager::~parserManager()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     freelist<parserObj*>::itemDeleteAll(m_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 }
 
 void parserManager::clearParserItems()

@@ -53,7 +53,6 @@ monitor::monitor(QTreeWidget* monitor, MainWindow* parent)
 monitor::~monitor()
 {
     freemap<QString,QProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
     freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
     freelist<digManager*>::itemDeleteAll(m_digLookupList);
 
@@ -63,10 +62,6 @@ monitor::~monitor()
     }
 
     delete m_timer;
-
-    m_scanHashListFlow.clear();
-    m_hostScanCacheList.clear();
-    m_lookupScanCacheList.clear();
 }
 
 bool monitor::isHostOnMonitor(const QString hostname)

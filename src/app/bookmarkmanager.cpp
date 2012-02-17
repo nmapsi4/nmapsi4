@@ -32,11 +32,6 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
 
 BookmarkManager::~BookmarkManager()
 {
-    //qDebug() << "~BookmarkManager()";
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
 }
 
 void BookmarkManager::saveItemToBookmarks()
