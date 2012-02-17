@@ -30,7 +30,7 @@ void MainWindow::updateCompleter()
         }
         else if (m_hostModel.isNull())
         {
-            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark());
+            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(),this);
         }
     }
 
@@ -43,7 +43,7 @@ void MainWindow::updateCompleter()
         }
         else if (m_vulnModel.isNull())
         {
-            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark());
+            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(),this);
         }
     }
 }

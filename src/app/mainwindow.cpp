@@ -147,7 +147,7 @@ void MainWindow::linkCompleterToHostname()
 
     if (m_completer.isNull())
     {
-        m_completer = new QCompleter(m_hostModel.data());
+        m_completer = new QCompleter(m_hostModel.data(),this);
         m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
         m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
         m_completer.data()->setWrapAround(false);
@@ -406,11 +406,5 @@ void MainWindow::resizeScanListWidgetEvent()
 
 MainWindow::~MainWindow()
 {
-    // FIXME: add in QCompleter and QStringListModel memory allocation, this parent
-    // and remove from destructor
-    delete m_completer.data();
-    delete m_completerVuln.data();
-    delete m_hostModel.data();
-    delete m_vulnModel.data();
 }
 
