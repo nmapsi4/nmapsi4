@@ -25,7 +25,6 @@
 // Qt4 include
 #include <QtGui/QMainWindow>
 #include <QtGui/QMessageBox>
-#include <QtGui/QToolButton>
 #include <QtGui/QSplitter>
 #include <QtGui/QCompleter>
 #include <QtGui/QStringListModel>
@@ -44,12 +43,12 @@
 #include "monitor.h"
 #include "utilities.h"
 #include "hostTools.h"
-#include "qpushbuttonorientated.h"
 #include "vulnerability.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
 #include "profilerdialog.h"
 #include "bookmarkmanager.h"
+#include "actionmanager.h"
 
 static const char verticalStyleSheet[] = "QPushButton:checked {border: 0px; border-radius: 2px; \
         background-color: palette(highlight); color: palette(highlighted-text); \
@@ -75,13 +74,13 @@ public:
     // NOTE: check completer section in vulnerability
     void updateCompleter();
 
-    QHash<QString, QPushButtonOrientated*> m_collectionsButton;
     vulnerability* m_vulnerability;
     discoverManager* m_discoverManager;
     monitor* m_monitor;
     utilities* m_utilities;
     parserManager* m_parser;
     BookmarkManager* m_bookmark;
+    ActionManager* m_collections;
     int m_hostCache;
     QWeakPointer<QCompleter> m_completerVuln;
     QWeakPointer<QStringListModel> m_vulnModel;
@@ -92,23 +91,17 @@ private:
     void resetOptions();
     void initGUI();
     void setTreeWidgetValues();
-    void createBar();
     void restoreSettings();
     void setTreeSettings();
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
-    void createToolButtonSetup();
     bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     QStringList loadExtensions();
     QHash<QString, QString> defaultScanProfile() const;
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
-    QToolButton *m_menuSetup;
-    QToolButton *m_profilerTool;
-    QToolButton *m_saveTool;
-    QToolButton *m_bookmarksTool;
     QWeakPointer<QCompleter> m_completer;
     QWeakPointer<QStringListModel> m_hostModel;
     int m_userId;
@@ -147,11 +140,6 @@ private slots:
     void resetComboParameters();
     void detailsOptions();
     void nssOptions();
-    void menuScanBook();
-    void menuVulnBook();
-    void menuParBook();
-    void menuServiceMain();
-    void menuVulnUrlBookmark();
     void comboParametersSelectedEvent();
     void quickAddressSelectionEvent();
     void saveSettings();

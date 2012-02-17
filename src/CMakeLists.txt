@@ -51,10 +51,10 @@ SET(SOURCES_CPP
                 app/updateUI.cpp
                 app/slots.cpp
                 app/defaultuisettings.cpp
-                app/actions.cpp
                 app/settings.cpp
                 app/mainwindow.cpp
                 app/bookmarkmanager.cpp
+                app/actionmanager.cpp
                 app/main.cpp
 )
 
@@ -80,6 +80,7 @@ SET(SOURCES_H
         app/profiler/profilerdialog.h
 	app/parser/parsermanager.h
         app/bookmarkmanager.h
+        app/actionmanager.h
         app/mainwindow.h
 )
 

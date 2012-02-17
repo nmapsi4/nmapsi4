@@ -41,7 +41,7 @@ void BookmarkManager::saveItemToBookmarks()
         return;
     }
 
-    if (m_ui->m_collectionsButton.value("scan-sez")->isChecked())
+    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked())
     {
         const QString& currentHost = m_ui->hostEdit->currentText();
         // save list of ip/dns in input
@@ -86,7 +86,7 @@ void BookmarkManager::deleteItemFromBookmark()
 
     history *history_;
 
-    if (m_ui->m_collectionsButton.value("scan-sez")->isChecked())
+    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked())
     {
         history_ = new history(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(m_ui->treeLogH->currentItem()->text(0));

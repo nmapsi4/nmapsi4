@@ -53,9 +53,10 @@ void MainWindow::initObject()
     m_utilities = new utilities(this);
     m_parser = new parserManager(this);
     m_vulnerability = new vulnerability(this);
+    m_collections = new ActionManager(this);
 
-    createBar();
-    createToolButtonSetup();
+    m_collections->createSectionsBar();
+    m_collections->createToolButtonBar();
 
     // Set default properties
     setDefaultAction();
@@ -329,11 +330,11 @@ void MainWindow::resizeVerticalSplitterEvent()
     if (!m_mainVerticalSplitter->sizes()[1])
     {
         qDebug() << "Vertical QWidget details:: " << m_mainVerticalSplitter->sizes()[1];
-        m_collectionsButton.value("details-list")->setChecked(false);
+        m_collections->m_collectionsButton.value("details-list")->setChecked(false);
     }
     else
     {
-        m_collectionsButton.value("details-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("details-list")->setChecked(true);
     }
 }
 
@@ -342,17 +343,17 @@ void MainWindow::resizeHorizontalSplitterEvent()
     if (!m_mainHorizontalSplitter->sizes()[0])
     {
         qDebug() << "Horizotal QWidget details:: " << m_mainHorizontalSplitter->sizes()[0];
-        m_collectionsButton.value("scan-list")->setChecked(false);
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
     }
     else
     {
-        m_collectionsButton.value("scan-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
     }
 }
 
 void MainWindow::resizeHostDetailsWidgetEvent()
 {
-    if (!m_collectionsButton.value("details-list")->isChecked() && m_mainVerticalSplitter->sizes()[1])
+    if (!m_collections->m_collectionsButton.value("details-list")->isChecked() && m_mainVerticalSplitter->sizes()[1])
     {
         m_detailsWidgetSize = m_mainVerticalSplitter->saveState();
 
@@ -360,7 +361,7 @@ void MainWindow::resizeHostDetailsWidgetEvent()
         size[1] = 0;
         m_mainVerticalSplitter->setSizes(size);
     }
-    else if (m_collectionsButton.value("details-list")->isChecked() && !m_mainVerticalSplitter->sizes()[1])
+    else if (m_collections->m_collectionsButton.value("details-list")->isChecked() && !m_mainVerticalSplitter->sizes()[1])
     {
         if (!m_detailsWidgetSize.isEmpty())
         {
@@ -379,7 +380,7 @@ void MainWindow::resizeHostDetailsWidgetEvent()
 
 void MainWindow::resizeScanListWidgetEvent()
 {
-    if (!m_collectionsButton.value("scan-list")->isChecked() && m_mainHorizontalSplitter->sizes()[0])
+    if (!m_collections->m_collectionsButton.value("scan-list")->isChecked() && m_mainHorizontalSplitter->sizes()[0])
     {
         m_scanListWidgetSize = m_mainHorizontalSplitter->saveState();
 
@@ -387,7 +388,7 @@ void MainWindow::resizeScanListWidgetEvent()
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
     }
-    else if (m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
+    else if (m_collections->m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
     {
         if (!m_scanListWidgetSize.isEmpty())
         {
@@ -407,4 +408,3 @@ void MainWindow::resizeScanListWidgetEvent()
 MainWindow::~MainWindow()
 {
 }
-
