@@ -17,19 +17,19 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef QPUSHBUTTONORIENTATED_H
-#define QPUSHBUTTONORIENTATED_H
+#ifndef PUSHBUTTONORIENTATED_H
+#define PUSHBUTTONORIENTATED_H
 
 #include <QtGui/QPushButton>
 #include <QtGui/QStyleOptionButton>
 
-class QPushButtonOrientated : public QPushButton
+class PushButtonOrientated : public QPushButton
 {
 public:
-    QPushButtonOrientated(QWidget* parent = 0);
-    explicit QPushButtonOrientated(const QString& text, QWidget* parent = 0);
-    QPushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
-    ~QPushButtonOrientated();
+    PushButtonOrientated(QWidget* parent = 0);
+    explicit PushButtonOrientated(const QString& text, QWidget* parent = 0);
+    PushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
+    ~PushButtonOrientated();
 
     Qt::Orientation getOrientation() const;
     void setOrientation(Qt::Orientation orientation);

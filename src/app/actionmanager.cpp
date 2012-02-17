@@ -32,10 +32,10 @@ ActionManager::~ActionManager()
 
 void ActionManager::createSectionsBar()
 {
-    QPushButtonOrientated* actionButt;
+    PushButtonOrientated* actionButt;
     const int verticalButtonWidth = 25;
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"),m_ui);
     actionButt->setToolTip(tr("Scan host(s)"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -46,7 +46,7 @@ void ActionManager::createSectionsBar()
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezScan()));
     m_ui->sezBar->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"),m_ui);
     actionButt->setToolTip(tr("Network Discover"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -57,7 +57,7 @@ void ActionManager::createSectionsBar()
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezDiscover()));
     m_ui->sezBar->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"),m_ui);
     actionButt->setToolTip(tr("Check Vulnerabilities"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
@@ -70,7 +70,7 @@ void ActionManager::createSectionsBar()
 
     m_ui->sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"),m_ui);
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
@@ -82,7 +82,7 @@ void ActionManager::createSectionsBar()
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(resizeScanListWidgetEvent()));
     m_ui->toolBarTab->addWidget(actionButt);
 
-    actionButt = new QPushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host Details"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host Details"),m_ui);
     actionButt->setToolTip(tr("Show/Hide Host Details"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);

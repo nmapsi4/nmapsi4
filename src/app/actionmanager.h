@@ -26,7 +26,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QToolButton>
 
-#include <qpushbuttonorientated.h>
+#include <pushbuttonorientated.h>
 
 class MainWindow;
 
@@ -40,7 +40,7 @@ public:
     void createToolButtonBar();
     void createSectionsBar();
 
-    QHash<QString, QPushButtonOrientated*> m_collectionsButton;
+    QHash<QString, PushButtonOrientated*> m_collectionsButton;
 
 private:
     MainWindow* m_ui;

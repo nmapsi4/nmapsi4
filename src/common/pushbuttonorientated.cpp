@@ -17,45 +17,45 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "qpushbuttonorientated.h"
+#include "pushbuttonorientated.h"
 
 #include <QtGui/QStylePainter>
 #include <QtGui/QMenu>
 
-QPushButtonOrientated::QPushButtonOrientated(QWidget* parent)
+PushButtonOrientated::PushButtonOrientated(QWidget* parent)
 : QPushButton(parent)
 {
     initObject();
 }
 
-QPushButtonOrientated::QPushButtonOrientated(const QString& text, QWidget* parent)
+PushButtonOrientated::PushButtonOrientated(const QString& text, QWidget* parent)
 : QPushButton(text, parent)
 {
     initObject();
 }
 
-QPushButtonOrientated::QPushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent)
+PushButtonOrientated::PushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent)
 : QPushButton(icon, text, parent)
 {
     initObject();
 }
 
-QPushButtonOrientated::~QPushButtonOrientated()
+PushButtonOrientated::~PushButtonOrientated()
 {
 }
 
-void QPushButtonOrientated::initObject()
+void PushButtonOrientated::initObject()
 {
     m_orientation = Qt::Horizontal;
     m_mirrored = false;
 }
 
-Qt::Orientation QPushButtonOrientated::getOrientation() const
+Qt::Orientation PushButtonOrientated::getOrientation() const
 {
     return m_orientation;
 }
 
-void QPushButtonOrientated::setOrientation(Qt::Orientation orientation)
+void PushButtonOrientated::setOrientation(Qt::Orientation orientation)
 {
     m_orientation = orientation;
     switch (orientation)
@@ -70,17 +70,17 @@ void QPushButtonOrientated::setOrientation(Qt::Orientation orientation)
     }
 }
 
-bool QPushButtonOrientated::mirrored() const
+bool PushButtonOrientated::mirrored() const
 {
     return m_mirrored;
 }
 
-void QPushButtonOrientated::setMirrored(bool mirrored)
+void PushButtonOrientated::setMirrored(bool mirrored)
 {
     m_mirrored = mirrored;
 }
 
-QSize QPushButtonOrientated::sizeHint() const
+QSize PushButtonOrientated::sizeHint() const
 {
     QSize size = QPushButton::sizeHint();
 
@@ -92,7 +92,7 @@ QSize QPushButtonOrientated::sizeHint() const
     return size;
 }
 
-QSize QPushButtonOrientated::minimumSizeHint() const
+QSize PushButtonOrientated::minimumSizeHint() const
 {
     QSize size = QPushButton::minimumSizeHint();
 
@@ -104,7 +104,7 @@ QSize QPushButtonOrientated::minimumSizeHint() const
     return size;
 }
 
-void QPushButtonOrientated::paintEvent(QPaintEvent* event)
+void PushButtonOrientated::paintEvent(QPaintEvent* event)
 {
     Q_UNUSED(event);
     QStylePainter painter(this);
@@ -136,7 +136,7 @@ void QPushButtonOrientated::paintEvent(QPaintEvent* event)
     painter.drawControl(QStyle::CE_PushButton, getStyleOption());
 }
 
-QStyleOptionButton QPushButtonOrientated::getStyleOption() const
+QStyleOptionButton PushButtonOrientated::getStyleOption() const
 {
     QStyleOptionButton option;
     option.initFrom(this);

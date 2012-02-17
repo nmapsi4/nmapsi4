@@ -38,7 +38,7 @@ SET(SOURCES_CPP
                 platform/history/history.cpp
                 platform/about/about.cpp
                 common/utilities.cpp
-                common/qpushbuttonorientated.cpp
+                common/pushbuttonorientated.cpp
                 common/qprocessthread.cpp
 		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
