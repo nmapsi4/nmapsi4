@@ -29,7 +29,7 @@
 #include <QtNetwork/QNetworkInterface>
 #include <QtNetwork/QHostInfo>
 // local include
-#include "qprocessthread.h"
+#include "processthread.h"
 
 class discover : public QObject
 {
@@ -69,7 +69,7 @@ private:
     int m_threadLimit;
     QStringList m_ipSospended;
     QStringList m_parameters;
-    QList<QProcessThread*> m_threadList;
+    QList<ProcessThread*> m_threadList;
     QObject* m_parent;
     QTimer* m_timer;
 

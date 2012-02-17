@@ -52,7 +52,7 @@ monitor::monitor(QTreeWidget* monitor, MainWindow* parent)
 
 monitor::~monitor()
 {
-    freemap<QString,QProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
+    freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
     freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
     freelist<digManager*>::itemDeleteAll(m_digLookupList);
 
@@ -168,7 +168,7 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     parameters.append(hostname); // add hostname
 
     // start scan Thread
-    QWeakPointer<QProcessThread> thread = new QProcessThread("nmap",parameters);
+    QWeakPointer<ProcessThread> thread = new ProcessThread("nmap",parameters);
     m_scanHashList.insert(hostname,thread.data());
     // read current data scan from the thread
     connect(thread.data(), SIGNAL(flowFromThread(QString,QString)),
@@ -278,7 +278,7 @@ void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
 
 void monitor::clearHostMonitor()
 {
-    freemap<QString,QProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
+    freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
     freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
     freelist<digManager*>::itemDeleteAll(m_digLookupList);
 
@@ -308,7 +308,7 @@ void monitor::clearHostMonitorDetails()
     m_scanHashListFlow.clear();
 }
 
-QProcessThread* monitor::takeMonitorElem(const QString hostName)
+ProcessThread* monitor::takeMonitorElem(const QString hostName)
 {
     return m_scanHashList.take(hostName);
 }
@@ -323,7 +323,7 @@ void monitor::stopSelectedScan()
 
     const QString& hostname = m_monitor->selectedItems()[0]->text(0);
 
-    QProcessThread *ptrTmp = takeMonitorElem(hostname);
+    ProcessThread *ptrTmp = takeMonitorElem(hostname);
 
     qDebug() << "DEBUG:: pointer not in list:: " << ptrTmp;
 

@@ -28,7 +28,7 @@
 #include <QtCore/QWeakPointer>
 
 // local include
-#include "qprocessthread.h"
+#include "processthread.h"
 #include "nmapsi4Debug.h"
 #include "parserObjects.h"
 
@@ -52,7 +52,7 @@ public:
 private:
     parserObjUtil* m_elemObjUtil;
     QString m_hostNameLocal;
-    QList<QProcessThread*> m_threadList;
+    QList<ProcessThread*> m_threadList;
 
 private slots:
     /*!

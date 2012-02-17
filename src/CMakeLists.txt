@@ -39,7 +39,7 @@ SET(SOURCES_CPP
                 platform/about/about.cpp
                 common/utilities.cpp
                 common/pushbuttonorientated.cpp
-                common/qprocessthread.cpp
+                common/processthread.cpp
 		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
@@ -73,7 +73,7 @@ SET(SOURCES_H
         platform/discovermanager.h
         platform/nsemanager.h
         common/utilities.h
-	common/qprocessthread.h
+	common/processthread.h
 	app/preference/preferencesdialog.h
 	app/monitor/monitorhostscandetails.h
         app/monitor/monitor.h

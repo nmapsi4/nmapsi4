@@ -31,7 +31,7 @@
 //local include
 #include "nmapsi4Debug.h"
 
-class QProcessThread : public QThread
+class ProcessThread : public QThread
 {
     /*!
     * nmap thread class, start nmap with a QProcess and return
@@ -44,8 +44,8 @@ public:
      * Create a nmap QThread and start QProcess for nmap
      * with parameters.
      */
-    QProcessThread(const QString& programName, const QStringList& parameters);
-    ~QProcessThread();
+    ProcessThread(const QString& programName, const QStringList& parameters);
+    ~ProcessThread();
 signals:
     /*!
      * Return nmap QThread output with a Signal.

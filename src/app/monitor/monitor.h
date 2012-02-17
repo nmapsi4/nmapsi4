@@ -36,7 +36,7 @@
 
 // local include
 #include "memorytools.h"
-#include "qprocessthread.h"
+#include "processthread.h"
 #include "monitorhostscandetails.h"
 #include "lookupmanager.h"
 #include "digmanager.h"
@@ -95,7 +95,7 @@ private:
     /*
      * This method remove scanThread elem from scan hashTable
      */
-    QProcessThread* takeMonitorElem(const QString hostName);
+    ProcessThread* takeMonitorElem(const QString hostName);
     /*
      * Delete host from monitor
      */
@@ -110,7 +110,7 @@ private:
     QList<digManager*> m_digLookupList;
     QList< QPair<QString, QStringList> > m_hostScanCacheList;
     QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
-    QHash<QString, QProcessThread*> m_scanHashList;
+    QHash<QString, ProcessThread*> m_scanHashList;
     QHash<QString, QStringList> m_scanHashListFlow;
     QTreeWidget* m_monitor;
     MainWindow* m_ui;
