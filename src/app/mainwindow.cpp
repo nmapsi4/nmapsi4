@@ -205,7 +205,7 @@ void MainWindow::startScan()
 
 
     // check for ip list
-    if(hostname.contains("/") && !hostname.endsWith("/") && !hostname.contains("//"))
+    if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//"))
     {
         // is a ip list
         QStringList addrPart_ = hostname.split('/', QString::SkipEmptyParts);
@@ -225,9 +225,9 @@ void MainWindow::startScan()
         }
         return;
     }
-    else if (hostname.endsWith("/"))
+    else if (hostname.endsWith(QLatin1String("/")))
     {
-        hostname.remove("/");
+        hostname.remove('/');
     }
 
     //scan token DNS/IP parser
