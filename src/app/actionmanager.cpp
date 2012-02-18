@@ -33,7 +33,6 @@ ActionManager::~ActionManager()
 void ActionManager::createSectionsBar()
 {
     PushButtonOrientated* actionButt;
-    const int verticalButtonWidth = 25;
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"),m_ui);
     actionButt->setToolTip(tr("Scan host(s)"));
