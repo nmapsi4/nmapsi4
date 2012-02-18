@@ -110,40 +110,22 @@ profilerManager::~profilerManager()
 
 void profilerManager::createQList()
 {
-    m_profileW = new QListWidgetItem();
-    m_profileW->setIcon(QIcon(QString::fromUtf8(":/images/images/document-new.png")));
-    m_profileW->setText(tr("Profile")); // profile Options
-
+    m_profileW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/document-new.png")),tr("Profile"));
     optionsListScan->addItem(m_profileW);
 
-    m_scanW = new QListWidgetItem();
-    m_scanW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
-    m_scanW->setText(tr("Scan")); // scan Options
-
+    m_scanW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag.png")),tr("Scan"));
     optionsListScan->addItem(m_scanW);
 
-    m_toolW = new QListWidgetItem();
-    m_toolW->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
-    m_toolW->setText(tr("Options"));
-
+    m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")),tr("Options"));
     optionsListScan->addItem(m_toolW);
 
-    m_discoverW = new QListWidgetItem();
-    m_discoverW->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    m_discoverW->setText(tr("Ping"));
-
+    m_discoverW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Ping"));
     optionsListScan->addItem(m_discoverW);
 
-    m_timingW = new QListWidgetItem();
-    m_timingW->setIcon(QIcon(QString::fromUtf8(":/images/images/player_time.png")));
-    m_timingW->setText(tr("Timing"));
-
+    m_timingW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/player_time.png")),tr("Timing"));
     optionsListScan->addItem(m_timingW);
 
-    m_nseW = new QListWidgetItem();
-    m_nseW->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    m_nseW->setText(tr("Nse"));
-
+    m_nseW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Nse"));
     optionsListScan->addItem(m_nseW);
 }
 

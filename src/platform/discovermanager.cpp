@@ -30,7 +30,7 @@ discoverManager::discoverManager(MainWindow* parent)
 
 discoverManager::~discoverManager()
 {
-    discoveryClear();
+    freelist<discover*>::itemDeleteAll(m_listDiscover);
 }
 
 void discoverManager::startDiscover()

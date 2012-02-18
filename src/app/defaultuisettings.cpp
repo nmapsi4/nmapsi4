@@ -30,7 +30,7 @@ void MainWindow::updateCompleter()
         }
         else if (m_hostModel.isNull())
         {
-            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark());
+            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(),this);
         }
     }
 
@@ -43,7 +43,7 @@ void MainWindow::updateCompleter()
         }
         else if (m_vulnModel.isNull())
         {
-            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark());
+            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(),this);
         }
     }
 }
@@ -64,16 +64,16 @@ void MainWindow::restoreSettings()
 
         if (m_mainHorizontalSplitter->sizes()[0])
         {
-            m_collectionsButton.value("scan-list")->setChecked(true);
+            m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
         }
         else
         {
-            m_collectionsButton.value("scan-list")->setChecked(false);
+            m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
         }
     }
     else
     {
-        m_collectionsButton.value("scan-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
     }
 
     if (!settings.value("splitterSizesRight").toByteArray().isEmpty())
@@ -82,16 +82,16 @@ void MainWindow::restoreSettings()
 
         if (m_mainVerticalSplitter->sizes()[1])
         {
-            m_collectionsButton.value("details-list")->setChecked(true);
+            m_collections->m_collectionsButton.value("details-list")->setChecked(true);
         }
         else
         {
-            m_collectionsButton.value("details-list")->setChecked(false);
+            m_collections->m_collectionsButton.value("details-list")->setChecked(false);
         }
     }
     else
     {
-        m_collectionsButton.value("details-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("details-list")->setChecked(true);
     }
 }
 
@@ -119,7 +119,7 @@ void MainWindow::setDefaultAction()
     action_Scan_2->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     toolBarSearch->setVisible(false);
-    m_collectionsButton.value("scan-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
 
     Bdetails->setChecked(true);
     Bdetails->setStyleSheet(verticalStyleSheet);

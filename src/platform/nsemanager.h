@@ -27,7 +27,7 @@
 #include <QtCore/QWeakPointer>
 #include <QtWebKit/QWebView>
 
-#include "qprocessthread.h"
+#include "processthread.h"
 #include "memorytools.h"
 
 using namespace memory;
@@ -54,8 +54,8 @@ private:
     void nseTreeActiveRestoreValues();
 
     profilerManager* m_ui;
-    QWeakPointer<QProcessThread> m_thread;
-    QWeakPointer<QProcessThread> m_threadScript;
+    QWeakPointer<ProcessThread> m_thread;
+    QWeakPointer<ProcessThread> m_threadScript;
     QWeakPointer<QTextDocument> m_documentScript;
     QList<QTreeWidgetItem*> m_itemNseAvail;
     QList<QTreeWidgetItem*> m_itemNseActive;

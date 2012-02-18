@@ -34,7 +34,7 @@ discover::discover(int uid)
 discover::~discover()
 {
     delete m_timer;
-    memory::freelist<QProcessThread*>::itemDeleteAllWithWait(m_threadList);
+    memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
 QList<QNetworkInterface> discover::getAllInterfaces(InterfaceOption option) const
@@ -114,7 +114,7 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
         // acquire one element from thread counter
         m_threadLimit--;
 
-        QWeakPointer<QProcessThread> pingTh = new QProcessThread("nping",parameters);
+        QWeakPointer<ProcessThread> pingTh = new ProcessThread("nping",parameters);
         m_threadList.push_back(pingTh.data());
 
         connect(pingTh.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),

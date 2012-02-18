@@ -54,8 +54,6 @@ void MainWindow::connectSlots()
             this, SLOT(detailsOptions()));
     connect(Bnss, SIGNAL(clicked()),
             this, SLOT(nssOptions()));
-    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuServiceMain()));
 
     // Obj parser runtime
     connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
@@ -69,13 +67,18 @@ void MainWindow::connectSlots()
     connect(actionSave_As_Menu, SIGNAL(triggered()),
             m_parser, SLOT(callSaveAllLogWriter()));
 
-    // Bookmarks signals
+    // ActionManager signals
     connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuScanBook()));
-    connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuVulnBook()));
+            m_collections, SLOT(scanBookmarkContextMenu()));
     connect(treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuParBook()));
+            m_collections, SLOT(parametersBookmarkContextMenu()));
+    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            m_collections, SLOT(mainServicesContextMenu()));
+    connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            m_collections, SLOT(servicesContextMenu()));
+    connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            m_collections, SLOT(vulnerabilityUrlContextMenu()));
+
 
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             m_bookmark, SLOT(saveItemToBookmarks()));
@@ -84,8 +87,6 @@ void MainWindow::connectSlots()
 
 
     // Vuln signal
-    connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            this, SLOT(menuVulnUrlBookmark()));
     connect(comboPar, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),

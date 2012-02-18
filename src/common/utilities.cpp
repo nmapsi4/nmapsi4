@@ -20,7 +20,7 @@
 #include "utilities.h"
 
 utilities::utilities(QWidget* parent)
-: m_parent(parent)
+: QObject(parent), m_parent(parent)
 {
 }
 

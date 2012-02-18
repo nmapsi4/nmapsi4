@@ -94,9 +94,9 @@ void MainWindow::updateComboHostnameProperties()
 
 void MainWindow::updateSezScan()
 { // SLOT
-    m_collectionsButton.value("scan-sez")->setChecked(true);
-    m_collectionsButton.value("vuln-sez")->setChecked(false);
-    m_collectionsButton.value("discover-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
     toolBar->setVisible(true);
     toolBar_2->setVisible(true);
     toolBarSearch->setVisible(false);
@@ -136,9 +136,9 @@ void MainWindow::updateSezScan()
 
 void MainWindow::updateSezVuln()
 { // SLOT
-    m_collectionsButton.value("scan-sez")->setChecked(false);
-    m_collectionsButton.value("vuln-sez")->setChecked(true);
-    m_collectionsButton.value("discover-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(true);
@@ -171,9 +171,9 @@ void MainWindow::updateSezVuln()
 void MainWindow::updateSezDiscover()
 { // SLOT
     // discover section
-    m_collectionsButton.value("scan-sez")->setChecked(false);
-    m_collectionsButton.value("vuln-sez")->setChecked(false);
-    m_collectionsButton.value("discover-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index
     toolBar->setVisible(false);
     toolBarBook->setVisible(false);

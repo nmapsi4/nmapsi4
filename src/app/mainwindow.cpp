@@ -53,9 +53,10 @@ void MainWindow::initObject()
     m_utilities = new utilities(this);
     m_parser = new parserManager(this);
     m_vulnerability = new vulnerability(this);
+    m_collections = new ActionManager(this);
 
-    createBar();
-    createToolButtonSetup();
+    m_collections->createSectionsBar();
+    m_collections->createToolButtonBar();
 
     // Set default properties
     setDefaultAction();
@@ -147,7 +148,7 @@ void MainWindow::linkCompleterToHostname()
 
     if (m_completer.isNull())
     {
-        m_completer = new QCompleter(m_hostModel.data());
+        m_completer = new QCompleter(m_hostModel.data(),this);
         m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
         m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
         m_completer.data()->setWrapAround(false);
@@ -204,7 +205,7 @@ void MainWindow::startScan()
 
 
     // check for ip list
-    if(hostname.contains("/") && !hostname.endsWith("/") && !hostname.contains("//"))
+    if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//"))
     {
         // is a ip list
         QStringList addrPart_ = hostname.split('/', QString::SkipEmptyParts);
@@ -224,9 +225,9 @@ void MainWindow::startScan()
         }
         return;
     }
-    else if (hostname.endsWith("/"))
+    else if (hostname.endsWith(QLatin1String("/")))
     {
-        hostname.remove("/");
+        hostname.remove('/');
     }
 
     //scan token DNS/IP parser
@@ -307,6 +308,7 @@ void MainWindow::closeEvent(QCloseEvent * event)
             m_monitor->clearHostMonitor();
             saveSettings();
             event->accept();
+            delete this;
             break;
         case QMessageBox::Cancel:
             event->ignore();
@@ -319,6 +321,7 @@ void MainWindow::closeEvent(QCloseEvent * event)
         // Save Ui settings
         saveSettings();
         event->accept();
+        delete this;
     }
 }
 
@@ -327,11 +330,11 @@ void MainWindow::resizeVerticalSplitterEvent()
     if (!m_mainVerticalSplitter->sizes()[1])
     {
         qDebug() << "Vertical QWidget details:: " << m_mainVerticalSplitter->sizes()[1];
-        m_collectionsButton.value("details-list")->setChecked(false);
+        m_collections->m_collectionsButton.value("details-list")->setChecked(false);
     }
     else
     {
-        m_collectionsButton.value("details-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("details-list")->setChecked(true);
     }
 }
 
@@ -340,17 +343,17 @@ void MainWindow::resizeHorizontalSplitterEvent()
     if (!m_mainHorizontalSplitter->sizes()[0])
     {
         qDebug() << "Horizotal QWidget details:: " << m_mainHorizontalSplitter->sizes()[0];
-        m_collectionsButton.value("scan-list")->setChecked(false);
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
     }
     else
     {
-        m_collectionsButton.value("scan-list")->setChecked(true);
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
     }
 }
 
 void MainWindow::resizeHostDetailsWidgetEvent()
 {
-    if (!m_collectionsButton.value("details-list")->isChecked() && m_mainVerticalSplitter->sizes()[1])
+    if (!m_collections->m_collectionsButton.value("details-list")->isChecked() && m_mainVerticalSplitter->sizes()[1])
     {
         m_detailsWidgetSize = m_mainVerticalSplitter->saveState();
 
@@ -358,7 +361,7 @@ void MainWindow::resizeHostDetailsWidgetEvent()
         size[1] = 0;
         m_mainVerticalSplitter->setSizes(size);
     }
-    else if (m_collectionsButton.value("details-list")->isChecked() && !m_mainVerticalSplitter->sizes()[1])
+    else if (m_collections->m_collectionsButton.value("details-list")->isChecked() && !m_mainVerticalSplitter->sizes()[1])
     {
         if (!m_detailsWidgetSize.isEmpty())
         {
@@ -377,7 +380,7 @@ void MainWindow::resizeHostDetailsWidgetEvent()
 
 void MainWindow::resizeScanListWidgetEvent()
 {
-    if (!m_collectionsButton.value("scan-list")->isChecked() && m_mainHorizontalSplitter->sizes()[0])
+    if (!m_collections->m_collectionsButton.value("scan-list")->isChecked() && m_mainHorizontalSplitter->sizes()[0])
     {
         m_scanListWidgetSize = m_mainHorizontalSplitter->saveState();
 
@@ -385,7 +388,7 @@ void MainWindow::resizeScanListWidgetEvent()
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
     }
-    else if (m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
+    else if (m_collections->m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
     {
         if (!m_scanListWidgetSize.isEmpty())
         {
@@ -404,26 +407,4 @@ void MainWindow::resizeScanListWidgetEvent()
 
 MainWindow::~MainWindow()
 {
-    freemap<QString,QPushButtonOrientated*>::itemDeleteAll(m_collectionsButton);
-    delete m_discoverManager;
-    delete m_monitor;
-    delete m_utilities;
-    delete m_parser;
-    delete m_vulnerability;
-    delete m_bookmark;
-    delete m_completer.data();
-    delete m_completerVuln.data();
-    delete m_hostModel.data();
-    delete m_vulnModel.data();
-    delete m_mainVerticalSplitter;
-    delete m_mainHorizontalSplitter;
-    delete m_menuSetup->menu();
-    delete m_menuSetup;
-    delete m_profilerTool->menu();
-    delete m_profilerTool;
-    delete m_saveTool->menu();
-    delete m_saveTool;
-    delete m_bookmarksTool->menu();
-    delete m_bookmarksTool;
 }
-

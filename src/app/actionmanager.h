@@ -1,5 +1,5 @@
-/**************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+/***************************************************************************
+ *   Copyright (C) 2012 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,53 +17,45 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DIGMANAGER_H
-#define DIGMANAGER_H
+#ifndef ACTIONMANAGER_H
+#define ACTIONMANAGER_H
 
 #include <QtCore/QObject>
-#include <QtCore/QProcess>
-#include <QtCore/QDebug>
-#include <QtCore/QTextStream>
-#include <QtCore/QList>
-#include <QtCore/QWeakPointer>
+#include <QtCore/QHash>
+#include <QtGui/QAction>
+#include <QtGui/QMenu>
+#include <QtGui/QToolButton>
 
-// local include
-#include "processthread.h"
-#include "nmapsi4Debug.h"
-#include "parserObjects.h"
+#include <pushbuttonorientated.h>
 
-class digManager : public QObject
+class MainWindow;
+
+class ActionManager : public QObject
 {
-    /*!
-    * dig interface, main method for dig lookup.
-    */
     Q_OBJECT
+
 public:
-    /*!
-     * Create a object for dig lookup Class.
-     */
-    digManager();
-    ~digManager();
-    /*!
-     * Start QThread dig for hostname.
-     */
-    void digProcess(const QString hostname, parserObjUtil* objElem);
+    ActionManager(MainWindow* parent=0);
+    ~ActionManager();
+    void createToolButtonBar();
+    void createSectionsBar();
+
+    QHash<QString, PushButtonOrientated*> m_collectionsButton;
 
 private:
-    parserObjUtil* m_elemObjUtil;
-    QString m_hostNameLocal;
-    QList<ProcessThread*> m_threadList;
+    MainWindow* m_ui;
+    QToolButton *m_menuSetup;
+    QToolButton *m_profilerTool;
+    QToolButton *m_saveTool;
+    QToolButton *m_bookmarksTool;
 
-private slots:
-    /*!
-     * Set dig result on parser Object utils (objElem)
-     */
-    void digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
+public slots:
+    void scanBookmarkContextMenu();
+    void parametersBookmarkContextMenu();
+    void mainServicesContextMenu();
+    void servicesContextMenu();
+    void vulnerabilityUrlContextMenu();
 
-signals:
-    /*!
-     * Stop QProcess immediately.
-     */
-    void killScan();
 };
-#endif
+
+#endif // ACTIONMANAGER_H

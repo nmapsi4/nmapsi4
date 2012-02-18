@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011 by Francesco Cecconi                               *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,59 +17,37 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef QPROCESSTHREAD_H
-#define QPROCESSTHREAD_H
+#ifndef PUSHBUTTONORIENTATED_H
+#define PUSHBUTTONORIENTATED_H
 
-#include <QtCore/QThread>
-#include <QtCore/QByteArray>
-#include <QtCore/QStringList>
-#include <QtCore/QProcess>
-#include <QtCore/QMetaType>
-#include <QtCore/QWeakPointer>
-#include <QtCore/QDebug>
+#include <QtGui/QPushButton>
+#include <QtGui/QStyleOptionButton>
 
-//local include
-#include "nmapsi4Debug.h"
-
-class QProcessThread : public QThread
+class PushButtonOrientated : public QPushButton
 {
-    /*!
-    * nmap thread class, start nmap with a QProcess and return
-    * QByteArray result with a signal.
-    */
-    Q_OBJECT
-
 public:
-    /*!
-     * Create a nmap QThread and start QProcess for nmap
-     * with parameters.
-     */
-    QProcessThread(const QString& programName, const QStringList& parameters);
-    ~QProcessThread();
-signals:
-    /*!
-     * Return nmap QThread output with a Signal.
-     */
-    void threadEnd(const QStringList parameters, QByteArray dataBuffer, QByteArray errorBuffer);
-    /*!
-     * Return nmap QThread stdout for ETC and remaining scan time.
-     */
-    void flowFromThread(const QString parameters, const QString data);
+    PushButtonOrientated(QWidget* parent = 0);
+    explicit PushButtonOrientated(const QString& text, QWidget* parent = 0);
+    PushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
+    ~PushButtonOrientated();
 
-private:
-    QByteArray m_pout;
-    QByteArray m_perr;
-    QStringList m_ParList;
-    QString m_programName;
-    QWeakPointer<QProcess> m_process;
+    Qt::Orientation getOrientation() const;
+    void setOrientation(Qt::Orientation orientation);
 
-private slots:
-    void readFinished();
-    void stopProcess();
-    void readyReadData();
+    bool mirrored() const;
+    void setMirrored(bool mirrored);
+
+    QSize sizeHint() const;
+    QSize minimumSizeHint() const;
 
 protected:
-    void run();
+    Qt::Orientation m_orientation;
+    bool m_mirrored;
+    void paintEvent(QPaintEvent* event);
+
+private:
+    QStyleOptionButton getStyleOption() const;
+    void initObject();
 };
 
-#endif
+#endif // QPUSHBUTTONORIENTATED_H

@@ -71,7 +71,7 @@ void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        m_thread = new QProcessThread("nmap",parameters_);
+        m_thread = new ProcessThread("nmap",parameters_);
 
         connect(m_thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
@@ -98,7 +98,7 @@ void nseManager::requestNseScriptHelp()
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    m_threadScript = new QProcessThread("nmap",parameters_);
+    m_threadScript = new ProcessThread("nmap",parameters_);
 
     connect(m_threadScript.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));

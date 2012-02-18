@@ -38,8 +38,8 @@ SET(SOURCES_CPP
                 platform/history/history.cpp
                 platform/about/about.cpp
                 common/utilities.cpp
-                common/qpushbuttonorientated.cpp
-                common/qprocessthread.cpp
+                common/pushbuttonorientated.cpp
+                common/processthread.cpp
 		app/parser/parsermanager.cpp
 		app/parser/parserObjects.cpp
 		app/monitor/monitor.cpp
@@ -51,10 +51,10 @@ SET(SOURCES_CPP
                 app/updateUI.cpp
                 app/slots.cpp
                 app/defaultuisettings.cpp
-                app/actions.cpp
                 app/settings.cpp
                 app/mainwindow.cpp
                 app/bookmarkmanager.cpp
+                app/actionmanager.cpp
                 app/main.cpp
 )
 
@@ -73,13 +73,14 @@ SET(SOURCES_H
         platform/discovermanager.h
         platform/nsemanager.h
         common/utilities.h
-	common/qprocessthread.h
+	common/processthread.h
 	app/preference/preferencesdialog.h
 	app/monitor/monitorhostscandetails.h
         app/monitor/monitor.h
         app/profiler/profilerdialog.h
 	app/parser/parsermanager.h
         app/bookmarkmanager.h
+        app/actionmanager.h
         app/mainwindow.h
 )
 

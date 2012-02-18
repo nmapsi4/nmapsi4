@@ -17,22 +17,22 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "qprocessthread.h"
+#include "processthread.h"
 
-QProcessThread::QProcessThread(const QString& programName, const QStringList& parameters)
+ProcessThread::ProcessThread(const QString& programName, const QStringList& parameters)
 : m_ParList(parameters), m_programName(programName)
 {
 }
 
-QProcessThread::~QProcessThread()
+ProcessThread::~ProcessThread()
 {
 #ifndef THREAD_NO_DEBUG
-    qDebug() << "DEBUG:: ~QProcessThread( " << m_programName << " )";
+    qDebug() << "DEBUG:: ~ProcessThread( " << m_programName << " )";
 #endif
     stopProcess();
 }
 
-void QProcessThread::run()
+void ProcessThread::run()
 {
      m_process = new QProcess();
      qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
@@ -43,7 +43,7 @@ void QProcessThread::run()
              this, SLOT(readyReadData()));
 
 #ifndef THREAD_NO_DEBUG
-     qDebug() << "QProcessThread::Command:: " << m_ParList;
+     qDebug() << "ProcessThread::Command:: " << m_ParList;
 #endif
 
      m_process.data()->start(m_programName, m_ParList);
@@ -53,7 +53,7 @@ void QProcessThread::run()
      emit threadEnd(m_ParList, m_pout, m_perr);
 }
 
-void QProcessThread::readFinished()
+void ProcessThread::readFinished()
 {
      // set scan return buffer
      m_perr  = m_process.data()->readAllStandardError(); // read error buffer
@@ -62,7 +62,7 @@ void QProcessThread::readFinished()
      exit(0);
 }
 
-void QProcessThread::stopProcess()
+void ProcessThread::stopProcess()
 {
     // stop scan process
     if (m_process.isNull())
@@ -82,7 +82,7 @@ void QProcessThread::stopProcess()
     }
 }
 
-void QProcessThread::readyReadData()
+void ProcessThread::readyReadData()
 {
     // read realtime data from QProcess
     QByteArray realByte = m_process.data()->readAllStandardOutput();
