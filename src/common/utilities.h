@@ -20,8 +20,6 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-// QT include
-#include <QtCore/QObject>
 #include <QtGui/QFileDialog>
 #include <QtGui/QLineEdit>
 #include <QtCore/QDir>
@@ -33,7 +31,7 @@
 #include "about.h"
 
 
-class utilities : public QObject
+class utilities : public QWidget
 {
     Q_OBJECT
 

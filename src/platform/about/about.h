@@ -21,6 +21,7 @@
 #define ABOUT_H
 
 #include <QtGui/QDialog>
+#include <QtGui/QWidget>
 #include <QtGui/QMessageBox>
 
 #include "ui_about.h"
@@ -29,9 +30,8 @@
 class mainAbout : public QDialog, private Ui::AboutWin
 {
   public:
-     mainAbout();
-     ~mainAbout();
-     void qt();
+     mainAbout(QWidget *parent=0);
+     ~mainAbout() {};
 };
 
 #endif

@@ -19,18 +19,12 @@
 
 #include "about.h"
 
-mainAbout::mainAbout() 
+mainAbout::mainAbout(QWidget *parent)
+: QDialog(parent)
 {
     setupUi(this);
+
     QString version = labelVersion->text();
     version.append(_VERSION_);
     labelVersion->setText(version);
-}
-
-void mainAbout::qt() 
-{
-    QMessageBox::aboutQt(this, "Qt Version");
-}
-
-mainAbout::~mainAbout() {
 }
