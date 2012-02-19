@@ -27,11 +27,11 @@
 #include "ui_about.h"
 #include "staticDefine.h"
 
-class mainAbout : public QDialog, private Ui::AboutWin
+class About : public QDialog, private Ui::AboutUi
 {
   public:
-     mainAbout(QWidget *parent=0);
-     ~mainAbout() {};
+     About(QWidget *parent=0);
+     ~About() {};
 };
 
 #endif

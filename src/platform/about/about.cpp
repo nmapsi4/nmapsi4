@@ -19,7 +19,7 @@
 
 #include "about.h"
 
-mainAbout::mainAbout(QWidget *parent)
+About::About(QWidget *parent)
 : QDialog(parent)
 {
     setupUi(this);
