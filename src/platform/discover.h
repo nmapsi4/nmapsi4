@@ -31,7 +31,7 @@
 // local include
 #include "processthread.h"
 
-class discover : public QObject
+class Discover : public QObject
 {
     Q_OBJECT
 
@@ -45,8 +45,8 @@ public:
     /*!
      * Create a object for discovery Class
      */
-    discover(int uid);
-    ~discover();
+    Discover(int uid);
+    ~Discover();
     /*!
      * Return a QList of network interfaces
      */

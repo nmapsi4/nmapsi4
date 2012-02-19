@@ -20,13 +20,13 @@
 #include "nsemanager.h"
 #include "profilerdialog.h"
 
-nseManager::nseManager(profilerManager* parent)
+NseManager::NseManager(profilerManager* parent)
 : QObject(parent), m_ui(parent)
 {
     nseTreeDefaultValue();
 }
 
-nseManager::~nseManager()
+NseManager::~NseManager()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
@@ -38,12 +38,12 @@ nseManager::~nseManager()
     }
 }
 
-const QStringList nseManager::getActiveNseScript()
+const QStringList NseManager::getActiveNseScript()
 {
     return m_nseScriptActiveList;
 }
 
-void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
+void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 {
     Q_UNUSED(column);
     qDebug() << "DEBUG:: item: " << item->text(0);
@@ -86,7 +86,7 @@ void nseManager::requestNseHelp(QTreeWidgetItem *item, int column)
     }
 }
 
-void nseManager::requestNseScriptHelp()
+void NseManager::requestNseScriptHelp()
 {
     QString searchString_ = m_ui->comboScriptHelp->currentText();
     if (searchString_.isEmpty())
@@ -106,7 +106,7 @@ void nseManager::requestNseScriptHelp()
     m_threadScript.data()->start();
 }
 
-void nseManager::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
+void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
 {
     Q_UNUSED(errors);
     // show help result for nse
@@ -122,7 +122,7 @@ void nseManager::showNseHelp(const QStringList parameters, QByteArray result, QB
     m_ui->nseTextHelp->setDocument(document);
 }
 
-void nseManager::showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors)
+void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors)
 {
     // result for script search
     Q_UNUSED(errors);
@@ -144,7 +144,7 @@ void nseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     m_ui->textScriptHelp->setDocument(m_documentScript.data());
 }
 
-void nseManager::nseTreeDefaultValue()
+void NseManager::nseTreeDefaultValue()
 {
     m_nseScriptActiveList.clear();
     m_nseScriptAvailList.clear();
@@ -164,7 +164,7 @@ void nseManager::nseTreeDefaultValue()
     nseTreeAvailRestoreValues();
 }
 
-void nseManager::nseTreeAvailRestoreValues()
+void NseManager::nseTreeAvailRestoreValues()
 {
     if (m_itemNseAvail.size())
     {
@@ -182,7 +182,7 @@ void nseManager::nseTreeAvailRestoreValues()
     }
 }
 
-void nseManager::nseTreeActiveRestoreValues()
+void NseManager::nseTreeActiveRestoreValues()
 {
     if (m_itemNseActive.size())
     {
@@ -200,7 +200,7 @@ void nseManager::nseTreeActiveRestoreValues()
     }
 }
 
-void nseManager::nseTreeActiveItem()
+void NseManager::nseTreeActiveItem()
 {
     int indexNseItem = m_ui->nseTreeAvail->indexOfTopLevelItem(m_ui->nseTreeAvail->currentItem());
 
@@ -217,7 +217,7 @@ void nseManager::nseTreeActiveItem()
     }
 }
 
-void nseManager::nseTreeRemoveItem()
+void NseManager::nseTreeRemoveItem()
 {
     int indexNseItem = m_ui->nseTreeActive->indexOfTopLevelItem(m_ui->nseTreeActive->currentItem());
 
@@ -234,7 +234,7 @@ void nseManager::nseTreeRemoveItem()
     }
 }
 
-void nseManager::nseTreeResetItem()
+void NseManager::nseTreeResetItem()
 {
     foreach (const QString &token, m_nseScriptActiveList)
     {
@@ -245,7 +245,7 @@ void nseManager::nseTreeResetItem()
     nseTreeActiveRestoreValues();
 }
 
-void nseManager::nseTreeActiveScriptValues(const QStringList scripts)
+void NseManager::nseTreeActiveScriptValues(const QStringList scripts)
 {
     foreach (const QString& script, scripts)
     {
@@ -253,7 +253,7 @@ void nseManager::nseTreeActiveScriptValues(const QStringList scripts)
     }
 }
 
-bool nseManager::nseTreeActiveSingleScript(const QString script)
+bool NseManager::nseTreeActiveSingleScript(const QString script)
 {
     if (!m_nseScriptAvailList.contains(script))
     {

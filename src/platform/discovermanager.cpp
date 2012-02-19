@@ -20,7 +20,7 @@
 #include "discovermanager.h"
 #include "mainwindow.h"
 
-discoverManager::discoverManager(MainWindow* parent)
+DiscoverManager::DiscoverManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_uid(0), m_discoverIsActive(false)
 {
 #ifndef Q_WS_WIN
@@ -28,19 +28,19 @@ discoverManager::discoverManager(MainWindow* parent)
 #endif
 }
 
-discoverManager::~discoverManager()
+DiscoverManager::~DiscoverManager()
 {
-    freelist<discover*>::itemDeleteAll(m_listDiscover);
+    freelist<Discover*>::itemDeleteAll(m_listDiscover);
 }
 
-void discoverManager::startDiscover()
+void DiscoverManager::startDiscover()
 {
     // take local interfaces
     m_ui->comboDiscover->clear();
     m_ui->comboDiscover->insertItem(0, "Select Interface");
 
-    discover *discoverPtr = new discover(m_uid);
-    foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(discover::AllInterfaceWithAddress))
+    Discover *discoverPtr = new Discover(m_uid);
+    foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress))
     {
         m_ui->comboDiscover->insertItem(1, interface.name());
     }
@@ -48,10 +48,10 @@ void discoverManager::startDiscover()
     delete discoverPtr;
 }
 
-void discoverManager::discoverIp(const QString& interface)
+void DiscoverManager::discoverIp(const QString& interface)
 {
     // ip from interface and discover ip range
-    discover *discover_ = new discover(m_uid);
+    Discover *discover_ = new Discover(m_uid);
 
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
 
@@ -97,7 +97,7 @@ void discoverManager::discoverIp(const QString& interface)
     delete discover_;
 }
 
-void discoverManager::discoverIpState()
+void DiscoverManager::discoverIpState()
 {
     // start ip discover
     // disable start discover button
@@ -123,7 +123,7 @@ void discoverManager::discoverIpState()
         parameters.append("--tcp-connect");
     }
 
-    discover *discoverPtr = new discover(m_uid);
+    Discover *discoverPtr = new Discover(m_uid);
     m_listDiscover.push_back(discoverPtr);
 
     connect(discoverPtr, SIGNAL(endPing(QStringList,bool,QByteArray)),
@@ -135,7 +135,7 @@ void discoverManager::discoverIpState()
     m_ui->nseNumber->display(m_ipCounter);
 }
 
-void discoverManager::pingResult(const QStringList hostname, bool state, const QByteArray callBuff)
+void DiscoverManager::pingResult(const QStringList hostname, bool state, const QByteArray callBuff)
 {
     // decrement ping ip counter
     if (m_discoverIsActive)
@@ -176,22 +176,22 @@ void discoverManager::pingResult(const QStringList hostname, bool state, const Q
 
     if (!m_ipCounter)
     {
-        freelist<discover*>::itemDeleteAll(m_listDiscover);
+        freelist<Discover*>::itemDeleteAll(m_listDiscover);
         m_ui->startDiscoverButt->setEnabled(true);
         m_ui->stopDiscoverButt->setEnabled(false);
     }
 }
 
-void discoverManager::discoveryClear()
+void DiscoverManager::discoveryClear()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
-    freelist<discover*>::itemDeleteAll(m_listDiscover);
+    freelist<Discover*>::itemDeleteAll(m_listDiscover);
     m_recvList.clear();
     m_sendList.clear();
     m_ui->discoverScanButt->setEnabled(false);
 }
 
-void discoverManager::stopDiscover()
+void DiscoverManager::stopDiscover()
 {
     m_ui->startDiscoverButt->setEnabled(true);
     m_ui->stopDiscoverButt->setEnabled(false);
@@ -202,14 +202,14 @@ void discoverManager::stopDiscover()
     emit killDiscover();
 }
 
-void discoverManager::updateSRdata()
+void DiscoverManager::updateSRdata()
 {
     int index = m_ui->treeDiscover->indexOfTopLevelItem(m_ui->treeDiscover->currentItem());
     m_ui->textDiscoverRec->setText(m_recvList[index]);
     m_ui->textDiscoverSend->setText(m_sendList[index]);
 }
 
-void discoverManager::callScanDiscover()
+void DiscoverManager::callScanDiscover()
 {
     if(m_ui->treeDiscover->currentItem())
     {
@@ -220,7 +220,7 @@ void discoverManager::callScanDiscover()
     }
 }
 
-void discoverManager::runtimeScanDiscover()
+void DiscoverManager::runtimeScanDiscover()
 {
     // show discover send/recv data
     updateSRdata();
@@ -231,7 +231,7 @@ void discoverManager::runtimeScanDiscover()
     }
 }
 
-void discoverManager::defaultDiscoverProbes()
+void DiscoverManager::defaultDiscoverProbes()
 {
     /* Modes Probe
     * --tcp,--udp,--arp,--tr

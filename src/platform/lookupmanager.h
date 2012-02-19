@@ -28,7 +28,7 @@
 //local include
 #include "nmapsi4Debug.h"
 
-class lookupManager : public QThread
+class LookupManager : public QThread
 {
     /*!
     * internal lookup thread class, return QHostInfo with
@@ -41,8 +41,8 @@ public:
     /*!
      * Create a QThread and start static QHostInfo resolv.
      */
-    lookupManager(const QString hostname);
-    ~lookupManager();
+    LookupManager(const QString hostname);
+    ~LookupManager();
 
 signals:
     /*!

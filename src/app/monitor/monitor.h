@@ -106,8 +106,8 @@ private:
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
 
     QList<QTreeWidgetItem*> m_monitorElem;
-    QList<lookupManager*> m_internealLookupList;
-    QList<digManager*> m_digLookupList;
+    QList<LookupManager*> m_internealLookupList;
+    QList<DigManager*> m_digLookupList;
     QList< QPair<QString, QStringList> > m_hostScanCacheList;
     QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
     QHash<QString, ProcessThread*> m_scanHashList;

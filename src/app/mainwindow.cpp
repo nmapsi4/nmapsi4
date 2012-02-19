@@ -50,9 +50,9 @@ void MainWindow::initObject()
     m_bookmark->restoreAllHistoryValues();
 
     m_monitor = new Monitor(scanMonitor,this);
-    m_utilities = new utilities(this);
-    m_parser = new parserManager(this);
-    m_vulnerability = new vulnerability(this);
+    m_utilities = new Utilities(this);
+    m_parser = new ParserManager(this);
+    m_vulnerability = new Vulnerability(this);
     m_collections = new ActionManager(this);
 
     m_collections->createSectionsBar();
@@ -81,7 +81,7 @@ void MainWindow::initObject()
     m_vulnerability->loadSearchUrlIntoCombo();
 
     // call discover startup, NPING is REQUIRED
-    m_discoverManager = new discoverManager(this);
+    m_discoverManager = new DiscoverManager(this);
     m_discoverManager->startDiscover();
     m_discoverManager->defaultDiscoverProbes();
 
@@ -188,7 +188,7 @@ void MainWindow::startScan()
 
     QString hostname = hostEdit->currentText();
     // check wrong address
-    hostname = hostTools::clearHost(hostname);
+    hostname = HostTools::clearHost(hostname);
 
     // check for duplicate hostname in the monitor
     if (m_monitor->isHostOnMonitor(hostname))
@@ -218,7 +218,7 @@ void MainWindow::startScan()
             ipBase_[3].setNum(index);
             hostname = ipBase_.join(".");
 
-            if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+            if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname))
             {
                 addHostToMonitor(hostname);
             }
@@ -240,9 +240,9 @@ void MainWindow::startScan()
             // multiple ip or dns to scan
             for(int index=0; index < addrPart_.size(); index++)
             {
-                addrPart_[index] = hostTools::clearHost(addrPart_[index]);
+                addrPart_[index] = HostTools::clearHost(addrPart_[index]);
                 // check for lookup support
-                if (!hostTools::isDns(addrPart_[index]) || hostTools::isValidDns(addrPart_[index]))
+                if (!HostTools::isDns(addrPart_[index]) || HostTools::isValidDns(addrPart_[index]))
                 {
                     addHostToMonitor(addrPart_[index]);
                 }
@@ -254,7 +254,7 @@ void MainWindow::startScan()
     }
 
     // single ip or dns after the move
-    if (!hostTools::isDns(hostname) || hostTools::isValidDns(hostname))
+    if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname))
     {
         addHostToMonitor(hostname);
     }

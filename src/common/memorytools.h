@@ -37,7 +37,6 @@ class freelist
 public:
     static void itemDeleteAll(QList<T>& items);
     /*
-     * list itemDeleteAll(QHash<QString, scanThread*>& items)
      * with thread quit() and wait()
      */
     static void itemDeleteAllWithWait(QList<T>& items);

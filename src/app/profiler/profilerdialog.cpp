@@ -50,7 +50,7 @@ void profilerManager::initObject()
     createQList();
 
     // create and load nse values from file settings
-    m_nseManager = new nseManager(this);
+    m_nseManager = new NseManager(this);
 
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));

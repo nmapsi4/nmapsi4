@@ -31,13 +31,13 @@
 #include "about.h"
 
 
-class utilities : public QWidget
+class Utilities : public QWidget
 {
     Q_OBJECT
 
 public:
-    utilities(QWidget* parent=0);
-    ~utilities();
+    Utilities(QWidget* parent=0);
+    ~Utilities();
     void openDirectoryDialog(QLineEdit *destination);
     void openFileBrowser(QLineEdit *destination);
 

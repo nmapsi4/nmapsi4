@@ -20,19 +20,19 @@
 #include "parsermanager.h"
 #include "mainwindow.h"
 
-parserManager::parserManager(MainWindow* parent)
+ParserManager::ParserManager(MainWindow* parent)
 : QWidget(parent), m_ui(parent)
 {
 
 }
 
-parserManager::~parserManager()
+ParserManager::~ParserManager()
 {
     freelist<parserObj*>::itemDeleteAll(m_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
 }
 
-void parserManager::clearParserItems()
+void ParserManager::clearParserItems()
 {
     freelist<parserObj*>::itemDeleteAll(m_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
@@ -41,12 +41,12 @@ void parserManager::clearParserItems()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 }
 
-void parserManager::addUtilObject(parserObjUtil* object)
+void ParserManager::addUtilObject(parserObjUtil* object)
 {
     m_parserObjUtilList.append(object);
 }
 
-void parserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
+void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     // check nmap error
     if(!dataBuffer.size() && errorBuffer.size())
@@ -104,7 +104,7 @@ void parserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_parserObjList.append(elemObj);
 }
 
-void parserManager::showParserResult(QTreeWidgetItem *item, int column)
+void ParserManager::showParserResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
@@ -129,7 +129,7 @@ void parserManager::showParserResult(QTreeWidgetItem *item, int column)
     }
 }
 
-void parserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column)
+void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column)
 { // SLOT
     Q_UNUSED(column);
 
@@ -157,7 +157,7 @@ void parserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
     }
 }
 
-parserObj* parserManager::parserCore(const QStringList parList, QString StdoutStr,
+parserObj* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
     // Create parser Obect
@@ -332,7 +332,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
         if (bufferInfoStream_line.contains("OS") && !state_)
         {
             // OS was found ?
-            state_ = hostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
+            state_ = HostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
         }
 
         elemObj->setMainInfo(bufferInfoStream_line);
@@ -418,7 +418,7 @@ parserObj* parserManager::parserCore(const QStringList parList, QString StdoutSt
     return elemObj;
 }
 
-void parserManager::showParserObj(int hostIndex)
+void ParserManager::showParserObj(int hostIndex)
 {
     // Clear widget
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
@@ -656,7 +656,7 @@ void parserManager::showParserObj(int hostIndex)
     }
 }
 
-void parserManager::showParserObjPlugins(int hostIndex)
+void ParserManager::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
     foreach (const QString &token, m_parserObjList[hostIndex]->getTraceRouteInfo())
@@ -730,7 +730,7 @@ void parserManager::showParserObjPlugins(int hostIndex)
     }
 }
 
-void parserManager::callSaveSingleLogWriter()
+void ParserManager::callSaveSingleLogWriter()
 {
     if (!m_ui->treeMain->selectedItems().size())
     {
@@ -754,13 +754,13 @@ void parserManager::callSaveSingleLogWriter()
 
     if (!path.isEmpty())
     {
-        logWriter *writer = new logWriter();
+        LogWriter *writer = new LogWriter();
         writer->writeSingleLogFile(object, path);
         delete writer;
     }
 }
 
-void parserManager::callSaveAllLogWriter()
+void ParserManager::callSaveAllLogWriter()
 {
     if (!m_parserObjList.size())
     {
@@ -776,7 +776,7 @@ void parserManager::callSaveAllLogWriter()
 
     if (!directoryPath.isEmpty())
     {
-        logWriter *writer = new logWriter();
+        LogWriter *writer = new LogWriter();
         writer->writeAllLogFile(m_parserObjList,directoryPath);
         delete writer;
     }

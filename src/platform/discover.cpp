@@ -20,7 +20,7 @@
 #include "discover.h"
 #include "memorytools.h"
 
-discover::discover(int uid)
+Discover::Discover(int uid)
     : m_ipState(false),
       m_uid(uid)
 {
@@ -31,13 +31,13 @@ discover::discover(int uid)
     m_threadLimit = settings.value("maxDiscoverProcess", 20).toInt();
 }
 
-discover::~discover()
+Discover::~Discover()
 {
     delete m_timer;
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-QList<QNetworkInterface> discover::getAllInterfaces(InterfaceOption option) const
+QList<QNetworkInterface> Discover::getAllInterfaces(InterfaceOption option) const
 {
     /*
      * return all local interfaces
@@ -62,7 +62,7 @@ QList<QNetworkInterface> discover::getAllInterfaces(InterfaceOption option) cons
     return interfacesWithAddress;
 }
 
-QList<QNetworkAddressEntry> discover::getAddressEntries(QNetworkInterface interface) const
+QList<QNetworkAddressEntry> Discover::getAddressEntries(QNetworkInterface interface) const
 {
     /*
      * return all entries for a single QNeworkInterface
@@ -70,7 +70,7 @@ QList<QNetworkAddressEntry> discover::getAddressEntries(QNetworkInterface interf
     return interface.addressEntries();
 }
 
-QList<QNetworkAddressEntry> discover::getAddressEntries(const QString interfaceName) const
+QList<QNetworkAddressEntry> Discover::getAddressEntries(const QString interfaceName) const
 {
     /*
      * return all entries for a single interface name
@@ -89,7 +89,7 @@ QList<QNetworkAddressEntry> discover::getAddressEntries(const QString interfaceN
     }
 }
 
-void discover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
+void Discover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
 {
     foreach (const QString& host, networkIpList)
     {
@@ -97,7 +97,7 @@ void discover::isUp(const QStringList networkIpList, QObject *parent, QStringLis
     }
 }
 
-void discover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
+void Discover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
 {
     /*
      * start thread for discover ip state
@@ -146,7 +146,7 @@ void discover::isUp(const QString networkIp, QObject *parent, QStringList parame
     }
 }
 
-void discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+void Discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
     Q_UNUSED(bufferError);
     /*
@@ -172,7 +172,7 @@ void discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByte
     emit endPing(ipAddr, false, ipBuffer);
 }
 
-void discover::repeatScanner()
+void Discover::repeatScanner()
 {
     /*
      * Recall discover for ip suspended
@@ -198,7 +198,7 @@ void discover::repeatScanner()
     }
 }
 
-void discover::stopDiscover()
+void Discover::stopDiscover()
 {
     /*
      * disconnect timer slot and stop it

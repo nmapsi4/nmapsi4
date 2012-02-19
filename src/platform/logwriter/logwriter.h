@@ -30,12 +30,12 @@
 
 #include "parserObjects.h"
 
-class logWriter
+class LogWriter
 {
 
 public:
-    logWriter();
-    ~logWriter() {};
+    LogWriter();
+    ~LogWriter() {};
 
     /**
      * Save log for a single selected host

@@ -31,13 +31,13 @@
 
 #define HISTORY_NO_DEBUG
 
-class history
+class History
 {
 public:
-    history(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
-    history(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
-    explicit history(const QString ConfigTag, int cacheSize = 0);
-    ~history();
+    History(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
+    History(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
+    explicit History(const QString ConfigTag, int cacheSize = 0);
+    ~History();
     QList<QTreeWidgetItem*> updateBookMarks();
     void addItemHistory(const QString name);
     void addItemHistory(const QString name, const QString value);

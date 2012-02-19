@@ -71,11 +71,11 @@ public:
     // NOTE: check completer section in vulnerability
     void updateCompleter();
 
-    vulnerability* m_vulnerability;
-    discoverManager* m_discoverManager;
+    Vulnerability* m_vulnerability;
+    DiscoverManager* m_discoverManager;
     Monitor* m_monitor;
-    utilities* m_utilities;
-    parserManager* m_parser;
+    Utilities* m_utilities;
+    ParserManager* m_parser;
     BookmarkManager* m_bookmark;
     ActionManager* m_collections;
     int m_hostCache;

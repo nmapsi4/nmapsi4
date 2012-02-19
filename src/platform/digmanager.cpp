@@ -20,17 +20,17 @@
 #include "digmanager.h"
 #include "memorytools.h"
 
-digManager::digManager() //: m_state(false)
+DigManager::DigManager() //: m_state(false)
 {
 }
 
-digManager::~digManager()
+DigManager::~DigManager()
 {
     qDebug() << "DEBUG:: ~dig()";
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
+void DigManager::digProcess(const QString hostname, parserObjUtil* objElem)
 {
     QStringList command;
     m_hostNameLocal = hostname;
@@ -46,7 +46,7 @@ void digManager::digProcess(const QString hostname, parserObjUtil* objElem)
     m_th.data()->start();
 }
 
-void digManager::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
+void DigManager::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
 {
     Q_UNUSED(hostname);
 

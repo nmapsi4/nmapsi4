@@ -19,11 +19,11 @@
 
 #include "logwriter.h"
 
-logWriter::logWriter()
+LogWriter::LogWriter()
 {
 }
 
-void logWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& path)
+void LogWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& path)
 {
     QSettings settings("nmapsi4", "nmapsi4");
     int logType = settings.value("logType", 0).toInt();
@@ -57,7 +57,7 @@ void logWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& pa
     }
 }
 
-void logWriter::writeSingleLogFile(parserObj* pObject, const QString& path)
+void LogWriter::writeSingleLogFile(parserObj* pObject, const QString& path)
 {
     m_pObject = pObject;
 
@@ -87,7 +87,7 @@ void logWriter::writeSingleLogFile(parserObj* pObject, const QString& path)
 
 }
 
-void logWriter::writeFancyLogFormat(const QString& path)
+void LogWriter::writeFancyLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 
@@ -157,7 +157,7 @@ void logWriter::writeFancyLogFormat(const QString& path)
     delete filePtr;
 }
 
-void logWriter::writeRawLogFormat(const QString& path)
+void LogWriter::writeRawLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 
@@ -178,7 +178,7 @@ void logWriter::writeRawLogFormat(const QString& path)
     delete filePtr;
 }
 
-void logWriter::writeHtmlLogFormat(const QString& path)
+void LogWriter::writeHtmlLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 

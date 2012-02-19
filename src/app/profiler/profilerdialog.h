@@ -40,7 +40,7 @@ class profilerManager : public QDialog, public Ui::profilerDialog
 {
     Q_OBJECT
 
-    friend class nseManager;
+    friend class NseManager;
 
 public:
     profilerManager(QWidget* parent = 0);
@@ -54,7 +54,7 @@ private:
     QListWidgetItem *m_discoverW;
     QListWidgetItem *m_timingW;
     QListWidgetItem *m_nseW;
-    nseManager* m_nseManager;
+    NseManager* m_nseManager;
     int m_uid;
     QHash<QString,QPair<QComboBox*,int> > preLoadComboList;
     QHash<QString,QPair<QCheckBox*,QString> > preLoadCheckBoxList;

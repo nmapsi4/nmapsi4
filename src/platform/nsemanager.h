@@ -34,13 +34,13 @@ using namespace memory;
 
 class profilerManager;
 
-class nseManager : public QObject
+class NseManager : public QObject
 {
     Q_OBJECT
 
 public:
-    nseManager(profilerManager* parent=0);
-    ~nseManager();
+    NseManager(profilerManager* parent=0);
+    ~NseManager();
     /**
      * Get QString List with all actived script
      *

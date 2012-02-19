@@ -45,7 +45,7 @@ void BookmarkManager::saveItemToBookmarks()
     {
         const QString& currentHost = m_ui->hostEdit->currentText();
         // save list of ip/dns in input
-        history *history_ = new history(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+        History *history_ = new History(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
         QStringList hostList = m_ui->hostEdit->currentText().split(' ', QString::KeepEmptyParts);
 
@@ -64,7 +64,7 @@ void BookmarkManager::saveItemToBookmarks()
     else
     {
         const QString& currentHost = m_ui->comboVulnRis->currentText();
-        history *history_ = new history(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        History *history_ = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(m_ui->comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
 
@@ -84,11 +84,11 @@ void BookmarkManager::deleteItemFromBookmark()
         return;
     }
 
-    history *history_;
+    History *history_;
 
     if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked())
     {
-        history_ = new history(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+        history_ = new History(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(m_ui->treeLogH->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
@@ -96,7 +96,7 @@ void BookmarkManager::deleteItemFromBookmark()
     }
     else
     {
-        history_ = new history(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        history_ = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(m_ui->treeBookVuln->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
@@ -115,16 +115,16 @@ void BookmarkManager::deleteParametersFromBookmark()
         return;
     }
 
-    history *history_;
+    History *history_;
 
     if (!m_userId)
     {
-        history_ = new history(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_ = new History(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         history_->deleteItemBookmark(m_ui->treeBookPar->currentItem()->text(0));
     }
     else
     {
-        history_ = new history(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_ = new History(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         history_->deleteItemBookmark(m_ui->treeBookPar->currentItem()->text(0));
     }
 
@@ -164,11 +164,11 @@ void BookmarkManager::saveParametersToBookmarks(const QString profileName, const
         return;
     }
 
-    history *history_;
+    History *history_;
 
     if (!m_userId)
     {
-        history_ = new history(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        history_ = new History(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 
         if (!history_->isProfileInHistory(profileName))
         {
@@ -181,7 +181,7 @@ void BookmarkManager::saveParametersToBookmarks(const QString profileName, const
     }
     else
     {
-        history_ = new history(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        history_ = new History(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
 
         if (!history_->isProfileInHistory(profileName))
         {
@@ -202,37 +202,37 @@ void BookmarkManager::saveParametersToBookmarks(const QString profileName, const
 
 void BookmarkManager::restoreAllHistoryValues()
 {
-    history *newHistory;
+    History *newHistory;
     // reload bookmark from history
-    newHistory = new history(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
+    newHistory = new History(m_ui->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
     m_treeloghlist = newHistory->updateBookMarks();
     delete newHistory;
     // check for user or admin parameters bookmarks
     if (!m_userId)
     {
-        newHistory = new history(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
+        newHistory = new History(m_ui->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         m_treebookparlist = newHistory->updateBookMarks();
         delete newHistory;
     }
     else
     {
-        newHistory = new history(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
+        newHistory = new History(m_ui->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         m_treebookparlist = newHistory->updateBookMarks();
         delete newHistory;
     }
 
-    newHistory = new history(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    newHistory = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     m_treebookvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 
-    newHistory = new history(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
+    newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
     m_treewidgetvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 }
 
 void BookmarkManager::saveAddressToBookmark(const QString addressName, const QString address)
 {
-    history *newHistory = new history(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
+    History *newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->addItemHistory(addressName, address);
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
@@ -242,7 +242,7 @@ void BookmarkManager::saveAddressToBookmark(const QString addressName, const QSt
 
 void BookmarkManager::deleteAddressFromBookmark(const QString addressName)
 {
-    history *newHistory = new history(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
+    History *newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->deleteItemBookmark(addressName);
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
@@ -252,21 +252,21 @@ void BookmarkManager::deleteAddressFromBookmark(const QString addressName)
 
 void BookmarkManager::saveHostToBookmark(const QString hostName, int cacheLimit)
 {
-    history *newHistory = new history("nmapsi4/cacheHost", cacheLimit);
+    History *newHistory = new History("nmapsi4/cacheHost", cacheLimit);
     newHistory->addItemHistory(hostName);
     delete newHistory;
 }
 
 void BookmarkManager::saveServiceToBookmark(const QString service, int cacheLimit)
 {
-    history *newHistory = new history("nmapsi4/cacheVuln", cacheLimit);
+    History *newHistory = new History("nmapsi4/cacheVuln", cacheLimit);
     newHistory->addItemHistory(service);
     delete newHistory;
 }
 
 QStringList BookmarkManager::getHostListFromBookmark()
 {
-    history *newHistory = new history("nmapsi4/cacheHost");
+    History *newHistory = new History("nmapsi4/cacheHost");
     QStringList hostCache = newHistory->getHostCache();
     delete newHistory;
 
@@ -275,7 +275,7 @@ QStringList BookmarkManager::getHostListFromBookmark()
 
 QStringList BookmarkManager::getServicesListFromBookmark()
 {
-    history *newHistory = new history("nmapsi4/cacheVuln");
+    History *newHistory = new History("nmapsi4/cacheVuln");
     QStringList hostCache = newHistory->getHostCache();
     delete newHistory;
 

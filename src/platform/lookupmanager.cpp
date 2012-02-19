@@ -20,17 +20,17 @@
 #include "lookupmanager.h"
 
 
-lookupManager::lookupManager(const QString hostname)
+LookupManager::LookupManager(const QString hostname)
 : m_host(hostname)
 {
 }
 
-lookupManager::~lookupManager()
+LookupManager::~LookupManager()
 {
     killLookup();
 }
 
-void lookupManager::run()
+void LookupManager::run()
 {
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
@@ -46,7 +46,7 @@ void lookupManager::run()
     emit threadEnd(m_info, 1, m_host);
 }
 
-void lookupManager::killLookup()
+void LookupManager::killLookup()
 {
     m_info.abortHostLookup(m_info.lookupId());
 }

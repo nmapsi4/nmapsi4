@@ -33,13 +33,13 @@
 
 class MainWindow;
 
-class parserManager : public QWidget
+class ParserManager : public QWidget
 {
     Q_OBJECT
 
 public:
-    parserManager(MainWindow* parent = 0);
-    ~parserManager();
+    ParserManager(MainWindow* parent = 0);
+    ~ParserManager();
     /*
      * Clear all Items in parser QList
      */

@@ -27,13 +27,13 @@
 
 class MainWindow;
 
-class discoverManager : public QObject
+class DiscoverManager : public QObject
 {
     Q_OBJECT
 
 public:
-    discoverManager(MainWindow* parent=0);
-    ~discoverManager();
+    DiscoverManager(MainWindow* parent=0);
+    ~DiscoverManager();
     void defaultDiscoverProbes();
 
 private:
@@ -41,7 +41,7 @@ private:
     void discoveryClear();
 
     MainWindow* m_ui;
-    QList<discover*> m_listDiscover;
+    QList<Discover*> m_listDiscover;
     QList<QTreeWidgetItem*> m_listTreeItemDiscover;
     int m_ipCounter;
     int m_uid;

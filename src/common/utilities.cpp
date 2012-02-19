@@ -19,28 +19,28 @@
 
 #include "utilities.h"
 
-utilities::utilities(QWidget* parent)
+Utilities::Utilities(QWidget* parent)
 : QWidget(parent), m_parent(parent)
 {
 }
 
-utilities::~utilities()
+Utilities::~Utilities()
 {
 }
 
-void utilities::openFileBrowser(QLineEdit *destination)
+void Utilities::openFileBrowser(QLineEdit *destination)
 {
     showBrowser(destination);
 }
 
-void utilities::showBrowser(QLineEdit *destination) // private
+void Utilities::showBrowser(QLineEdit *destination) // private
 {
     QString FileName = QFileDialog::getOpenFileName(m_parent, tr("Select the file"), "/home", "");
 
     destination->setText(FileName);
 }
 
-void utilities::openDirectoryDialog(QLineEdit *destination)
+void Utilities::openDirectoryDialog(QLineEdit *destination)
 {
     QString url = QDir::homePath();
 
@@ -55,7 +55,7 @@ void utilities::openDirectoryDialog(QLineEdit *destination)
     destination->setText(FileName);
 }
 
-void utilities::about()
+void Utilities::about()
 {
     QWeakPointer<About> about = new About(this);
     about.data()->exec();
@@ -66,27 +66,27 @@ void utilities::about()
     }
 }
 
-void utilities::aboutQt()
+void Utilities::aboutQt()
 {
     QMessageBox::aboutQt(this, "Qt Version");
 }
 
-void utilities::showBugUrl()
+void Utilities::showBugUrl()
 {
     QDesktopServices::openUrl(QUrl("https://launchpad.net/nmapsi4"));
 }
 
-void utilities::showHomepageUrl()
+void Utilities::showHomepageUrl()
 {
     QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
 }
 
-void utilities::showDocumentationUrl()
+void Utilities::showDocumentationUrl()
 {
     QDesktopServices::openUrl(QUrl(""));
 }
 
-void utilities::showDonateUrl()
+void Utilities::showDonateUrl()
 {
     QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
 }

@@ -32,7 +32,7 @@
 #include "nmapsi4Debug.h"
 #include "parserObjects.h"
 
-class digManager : public QObject
+class DigManager : public QObject
 {
     /*!
     * dig interface, main method for dig lookup.
@@ -42,8 +42,8 @@ public:
     /*!
      * Create a object for dig lookup Class.
      */
-    digManager();
-    ~digManager();
+    DigManager();
+    ~DigManager();
     /*!
      * Start QThread dig for hostname.
      */

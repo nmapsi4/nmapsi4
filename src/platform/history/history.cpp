@@ -19,7 +19,7 @@
 
 #include "history.h"
 
-history::history(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize)
+History::History(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize)
 {
     Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
 
@@ -30,7 +30,7 @@ history::history(QTreeWidget* treeLog,const QString ConfigTag,const QString Conf
 }
 
 // cache host contructor
-history::history(const QString ConfigTag, const QString ConfigTagTime, int cacheSize)
+History::History(const QString ConfigTag, const QString ConfigTagTime, int cacheSize)
     : logTree(0)
 {
     configTag = ConfigTag;
@@ -39,47 +39,47 @@ history::history(const QString ConfigTag, const QString ConfigTagTime, int cache
 }
 
 // cache host contructor
-history::history(const QString ConfigTag, int cacheSize)
+History::History(const QString ConfigTag, int cacheSize)
     : logTree(0)
 {
     configTag = ConfigTag;
     m_cacheSize = cacheSize;
 }
 
-history::~history()
+History::~History()
 {
 }
 
-const QStringList history::historyReadUrl()
+const QStringList History::historyReadUrl()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
     return settings.value(configTag, "NULL").toStringList();
 }
 
-const QList<QString> history::historyReadUrlTime()
+const QList<QString> History::historyReadUrlTime()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
     return settings.value(configTagTime, "NULL").toStringList();
 }
 
-void history::addItemHistory(const QString name)
+void History::addItemHistory(const QString name)
 {
     addItemToHistory(name, NULL);
 }
 
-void history::addItemHistory(const QString name, const QString value)
+void History::addItemHistory(const QString name, const QString value)
 {
     addItemToHistory(name, value);
 }
 
-bool history::isProfileInHistory(const QString profileName)
+bool History::isProfileInHistory(const QString profileName)
 {
     return historyReadUrlTime().contains(profileName);
 }
 
-void history::updateProfile(const QString parameters, const QString profileName)
+void History::updateProfile(const QString parameters, const QString profileName)
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
@@ -107,7 +107,7 @@ void history::updateProfile(const QString parameters, const QString profileName)
     addItemHistory(parameters,profileName);
 }
 
-void history::deleteItemBookmark(const QString item)
+void History::deleteItemBookmark(const QString item)
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
     QList<QString> urlList = historyReadUrl();
@@ -135,7 +135,7 @@ void history::deleteItemBookmark(const QString item)
     }
 }
 
-QList<QTreeWidgetItem*> history::updateBookMarks()
+QList<QTreeWidgetItem*> History::updateBookMarks()
 {
     QList<QString> urlList = historyReadUrl();
     QList<QString> urlListTime = historyReadUrlTime();
@@ -165,12 +165,12 @@ QList<QTreeWidgetItem*> history::updateBookMarks()
     return ItemListHistory;
 }
 
-QStringList history::getHostCache()
+QStringList History::getHostCache()
 {
     return historyReadUrl();
 }
 
-void history::addItemToHistory(const QString url, const QString scanTime)
+void History::addItemToHistory(const QString url, const QString scanTime)
 {
     Q_ASSERT(!url.isEmpty());
 

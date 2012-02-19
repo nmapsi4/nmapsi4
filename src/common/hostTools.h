@@ -25,7 +25,7 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtNetwork/QHostAddress>
 
-class hostTools
+class HostTools
 {
 public:
     static bool isDns(const QString& hostname)
@@ -94,7 +94,7 @@ public:
 
         return hostname;
     }
-    
+
     static bool checkViewOS(const QString& OSline, QTreeWidgetItem *itemOS)
     {
         // check string OS for Icon selection

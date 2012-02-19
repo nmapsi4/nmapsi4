@@ -53,8 +53,8 @@ Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
 Monitor::~Monitor()
 {
     freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
-    freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
-    freelist<digManager*>::itemDeleteAll(m_digLookupList);
+    freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
+    freelist<DigManager*>::itemDeleteAll(m_digLookupList);
 
     if (m_timer->isActive())
     {
@@ -182,14 +182,14 @@ void Monitor::startScan(const QString hostname, QStringList parameters)
 
 void Monitor::startLookup(const QString hostname, LookupType option)
 {
-    if (option == DisabledLookup || !hostTools::isDns(hostname))
+    if (option == DisabledLookup || !HostTools::isDns(hostname))
     {
         return;
     }
 
     if (option == InternalLookup)
     {
-        lookupManager *internalLookupPtr = new lookupManager(hostname);
+        LookupManager *internalLookupPtr = new LookupManager(hostname);
         m_internealLookupList.push_back(internalLookupPtr);
 
         connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),
@@ -201,7 +201,7 @@ void Monitor::startLookup(const QString hostname, LookupType option)
     {
         parserObjUtil* tmpParserObj_ = new parserObjUtil();
 
-        digManager *digC = new digManager();
+        DigManager *digC = new DigManager();
         m_digLookupList.push_back(digC);
 
         digC->digProcess(hostname,tmpParserObj_);
@@ -279,8 +279,8 @@ void Monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
 void Monitor::clearHostMonitor()
 {
     freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
-    freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
-    freelist<digManager*>::itemDeleteAll(m_digLookupList);
+    freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
+    freelist<DigManager*>::itemDeleteAll(m_digLookupList);
 
     if (m_timer->isActive())
     {
