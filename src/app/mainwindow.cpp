@@ -49,7 +49,7 @@ void MainWindow::initObject()
     m_bookmark = new BookmarkManager(this);
     m_bookmark->restoreAllHistoryValues();
 
-    m_monitor = new monitor(scanMonitor,this);
+    m_monitor = new Monitor(scanMonitor,this);
     m_utilities = new utilities(this);
     m_parser = new parserManager(this);
     m_vulnerability = new vulnerability(this);
@@ -278,14 +278,14 @@ void MainWindow::addHostToMonitor(const QString hostname)
     // check for scan lookup
     switch (m_lookupType)
     {
-    case monitor::DisabledLookup:
-        m_monitor->addMonitorHost(hostname, parameters, monitor::DisabledLookup);
+    case Monitor::DisabledLookup:
+        m_monitor->addMonitorHost(hostname, parameters, Monitor::DisabledLookup);
         break;
-    case monitor::InternalLookup:
-        m_monitor->addMonitorHost(hostname, parameters, monitor::InternalLookup);
+    case Monitor::InternalLookup:
+        m_monitor->addMonitorHost(hostname, parameters, Monitor::InternalLookup);
         break;
-    case monitor::DigLookup:
-        m_monitor->addMonitorHost(hostname, parameters, monitor::DigLookup);
+    case Monitor::DigLookup:
+        m_monitor->addMonitorHost(hostname, parameters, Monitor::DigLookup);
         break;
     }
 }

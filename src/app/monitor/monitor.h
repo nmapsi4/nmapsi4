@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -45,7 +45,7 @@ using namespace memory;
 
 class MainWindow;
 
-class monitor : public QObject
+class Monitor : public QObject
 {
     Q_OBJECT
 
@@ -54,8 +54,8 @@ class monitor : public QObject
 #endif
 
 public:
-    monitor(QTreeWidget* monitor, MainWindow* parent);
-    ~monitor();
+    Monitor(QTreeWidget* monitor, MainWindow* parent);
+    ~Monitor();
 
     enum LookupType
     {

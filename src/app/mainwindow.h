@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -73,7 +73,7 @@ public:
 
     vulnerability* m_vulnerability;
     discoverManager* m_discoverManager;
-    monitor* m_monitor;
+    Monitor* m_monitor;
     utilities* m_utilities;
     parserManager* m_parser;
     BookmarkManager* m_bookmark;

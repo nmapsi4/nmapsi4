@@ -22,7 +22,7 @@ if (Q_WS_X11)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
                      src/app/monitor/monitor.h
-                     monitor)
+                     Monitor)
 endif (Q_WS_X11)
 
 SET(SOURCES_CPP

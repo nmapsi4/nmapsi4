@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,7 +24,7 @@
 #include "nmapsi4adaptor.h"
 #endif
 
-monitor::monitor(QTreeWidget* monitor, MainWindow* parent)
+Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
 : QObject(parent), m_monitor(monitor), m_ui(parent)
 {
 #ifdef Q_WS_X11
@@ -50,7 +50,7 @@ monitor::monitor(QTreeWidget* monitor, MainWindow* parent)
     m_timer = new QTimer(this);
 }
 
-monitor::~monitor()
+Monitor::~Monitor()
 {
     freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
     freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
@@ -64,7 +64,7 @@ monitor::~monitor()
     delete m_timer;
 }
 
-bool monitor::isHostOnMonitor(const QString hostname)
+bool Monitor::isHostOnMonitor(const QString hostname)
 {
     QList<QTreeWidgetItem*>::const_iterator i;
     for (i = m_monitorElem.constBegin(); i != m_monitorElem.constEnd(); ++i)
@@ -78,12 +78,12 @@ bool monitor::isHostOnMonitor(const QString hostname)
     return false;
 }
 
-int monitor::monitorHostNumber()
+int Monitor::monitorHostNumber()
 {
     return m_monitorElem.size();
 }
 
-void monitor::addMonitorHost(const QString hostName, const QStringList parameters, LookupType option)
+void Monitor::addMonitorHost(const QString hostName, const QStringList parameters, LookupType option)
 {
     QTreeWidgetItem *hostThread = new QTreeWidgetItem(m_monitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
@@ -99,7 +99,7 @@ void monitor::addMonitorHost(const QString hostName, const QStringList parameter
     cacheScan(hostName,parameters,option,hostThread);
 }
 
-void monitor::cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item)
+void Monitor::cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item)
 {
     if (m_parallelThreadLimit)
     {
@@ -135,7 +135,7 @@ void monitor::cacheScan(const QString& hostname, const QStringList& parameters, 
     }
 }
 
-void monitor::cacheRepeat()
+void Monitor::cacheRepeat()
 {
     if (!m_parallelThreadLimit)
     {
@@ -163,7 +163,7 @@ void monitor::cacheRepeat()
 
 }
 
-void monitor::startScan(const QString hostname, QStringList parameters)
+void Monitor::startScan(const QString hostname, QStringList parameters)
 {
     parameters.append(hostname); // add hostname
 
@@ -180,7 +180,7 @@ void monitor::startScan(const QString hostname, QStringList parameters)
     thread.data()->start();
 }
 
-void monitor::startLookup(const QString hostname, LookupType option)
+void Monitor::startLookup(const QString hostname, LookupType option)
 {
     if (option == DisabledLookup || !hostTools::isDns(hostname))
     {
@@ -210,7 +210,7 @@ void monitor::startLookup(const QString hostname, LookupType option)
     }
 }
 
-void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
+void Monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer)
 {
     /*
      * Remove host scan finisced from the monitor list.
@@ -224,7 +224,7 @@ void monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
     emit hostFinisced(parametersList,dataBuffer,errorBuffer);
 }
 
-void monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
+void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
 {
     if(state == -1)
     {
@@ -245,7 +245,7 @@ void monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
     m_ui->m_parser->addUtilObject(elemObjUtil);
 }
 
-void monitor::delMonitorHost(const QString hostName)
+void Monitor::delMonitorHost(const QString hostName)
 {
      for(int i=0; i < m_monitorElem.size(); i++)
      {
@@ -260,7 +260,7 @@ void monitor::delMonitorHost(const QString hostName)
      emit monitorUpdated(monitorHostNumber());
 }
 
-void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
+void Monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
 {
     Q_ASSERT(valueIndex < m_monitor->columnCount());
 
@@ -276,7 +276,7 @@ void monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
     }
 }
 
-void monitor::clearHostMonitor()
+void Monitor::clearHostMonitor()
 {
     freemap<QString,ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
     freelist<lookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
@@ -296,24 +296,24 @@ void monitor::clearHostMonitor()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
 }
 
-void monitor::updateMaxParallelScan()
+void Monitor::updateMaxParallelScan()
 {
     QSettings settings("nmapsi4", "nmapsi4");
     m_parallelThreadLimit = settings.value("maxParallelScan", 5).toInt();
 }
 
 
-void monitor::clearHostMonitorDetails()
+void Monitor::clearHostMonitorDetails()
 {
     m_scanHashListFlow.clear();
 }
 
-ProcessThread* monitor::takeMonitorElem(const QString hostName)
+ProcessThread* Monitor::takeMonitorElem(const QString hostName)
 {
     return m_scanHashList.take(hostName);
 }
 
-void monitor::stopSelectedScan()
+void Monitor::stopSelectedScan()
 {
     // Stop and wait thread from QHash table
     if (m_monitor->selectedItems().isEmpty())
@@ -354,12 +354,12 @@ void monitor::stopSelectedScan()
     }
 }
 
-void monitor::stopAllScan()
+void Monitor::stopAllScan()
 {
     clearHostMonitor();
 }
 
-void monitor::showSelectedScanDetails()
+void Monitor::showSelectedScanDetails()
 {
     if (m_monitor->selectedItems().isEmpty())
     {
@@ -376,7 +376,7 @@ void monitor::showSelectedScanDetails()
     }
 }
 
-void monitor::readFlowFromThread(const QString hostname, QString lineData)
+void Monitor::readFlowFromThread(const QString hostname, QString lineData)
 {
     /*
      * read data line form thread
