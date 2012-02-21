@@ -22,7 +22,9 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QList>
+#include <QtCore/QSettings>
 #include <QtGui/QTreeWidgetItem>
+#include <QtGui/QSplitter>
 
 #include "history.h"
 #include "memorytools.h"
@@ -68,6 +70,7 @@ public:
     QStringList getServicesListFromBookmark();
     bool isBookmarkHostListEmpty();
     bool isBookmarkServicesListEmpty();
+    void syncSettings();
 
 private:
     MainWindow* m_ui;
@@ -76,6 +79,8 @@ private:
     QList<QTreeWidgetItem*> m_treebookparlist;
     QList<QTreeWidgetItem*> m_treebookvulnlist;
     QList<QTreeWidgetItem*> m_treewidgetvulnlist;
+    QSplitter *m_scanBookmarkSplitter;
+    QSplitter *m_vulnBookmarkSplitter;
 
 public slots:
     /**

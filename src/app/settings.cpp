@@ -70,6 +70,8 @@ void MainWindow::saveSettings()
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
 
+    m_bookmark->syncSettings();
+
 // check and reset for settings file permission
 #ifndef Q_WS_WIN
     if (!m_userId)

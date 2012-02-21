@@ -28,10 +28,41 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
     m_userId = getuid();
 #endif
 
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    m_scanBookmarkSplitter = new QSplitter(m_ui);
+    m_scanBookmarkSplitter->setOrientation(Qt::Vertical);
+    m_scanBookmarkSplitter->addWidget(m_ui->treeLogH);
+    m_scanBookmarkSplitter->addWidget(m_ui->treeBookPar);
+
+    m_vulnBookmarkSplitter = new QSplitter(m_ui);
+    m_vulnBookmarkSplitter->setOrientation(Qt::Vertical);
+    m_vulnBookmarkSplitter->addWidget(m_ui->treeBookVuln);
+    m_vulnBookmarkSplitter->addWidget(m_ui->treeWidgetVulnUrl);
+
+    m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->bookmarks))->layout()->addWidget(m_scanBookmarkSplitter);
+    m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabVulnBookmarks))->layout()->addWidget(m_vulnBookmarkSplitter);
+
+    if (!settings.value("scanBookmarkSplitter").toByteArray().isEmpty())
+    {
+        m_scanBookmarkSplitter->restoreState(settings.value("scanBookmarkSplitter").toByteArray());
+    }
+
+    if (!settings.value("vulnBookmarkSplitter").toByteArray().isEmpty())
+    {
+        m_vulnBookmarkSplitter->restoreState(settings.value("vulnBookmarkSplitter").toByteArray());
+    }
 }
 
 BookmarkManager::~BookmarkManager()
 {
+}
+
+void BookmarkManager::syncSettings()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+    settings.setValue("scanBookmarkSplitter", m_scanBookmarkSplitter->saveState());
+    settings.setValue("vulnBookmarkSplitter", m_vulnBookmarkSplitter->saveState());
 }
 
 void BookmarkManager::saveItemToBookmarks()
