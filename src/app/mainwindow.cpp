@@ -212,7 +212,7 @@ void MainWindow::startScan()
         QStringList ipBase_ = addrPart_[0].split('.');
         int ipLeft_ = ipBase_[3].toInt();
         int ipRight_ = addrPart_[1].toInt();
-        // TODO limit parallel ip scan
+
         for(int index = ipLeft_; index <= ipRight_; index++)
         {
             ipBase_[3].setNum(index);

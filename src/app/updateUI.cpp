@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -261,10 +261,11 @@ void MainWindow::updateScanCounter(int hostNumber)
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
 
-    QString title("Nmapsi4 -" + tr(" Active Scan ")
+    QString title(tr(" Active Scan ")
                   + QLatin1String("(")
                   + QString("%1").arg(m_monitor->monitorHostNumber())
-                  + QLatin1String(")"));
+                  + QLatin1String(")")
+                  + " - Nmapsi4");
 
     setWindowTitle(title);
 }

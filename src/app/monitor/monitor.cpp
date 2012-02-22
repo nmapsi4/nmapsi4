@@ -120,7 +120,7 @@ void Monitor::cacheScan(const QString& hostname, const QStringList& parameters, 
         m_lookupScanCacheList.append(lookupPair);
 
         item->setText(2, tr("Waiting"));
-        qDebug() << "DEBUG::cached:: " << hostname;
+        qDebug() << "Monitor::cached:: " << hostname;
     }
 
     if (m_hostScanCacheList.size() && !m_isHostcached)
@@ -155,7 +155,7 @@ void Monitor::cacheRepeat()
         QPair<LookupType, QTreeWidgetItem*> lookupPair = m_lookupScanCacheList.takeFirst();
         lookupPair.second->setText(2,tr("Scanning"));
 
-        qDebug() << "DEBUG::restored:: " << scanPair.first;
+        qDebug() << "Monitor::restored:: " << scanPair.first;
 
         cacheScan(scanPair.first,scanPair.second,lookupPair.first,lookupPair.second);
         freeThreadSpace++;
@@ -229,7 +229,7 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
     if(state == -1)
     {
         //QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
-        qWarning() << "Wrong Address for lookUp";
+        qWarning() << "Monitor:: Wrong Address for lookUp";
         return;
     }
 
@@ -325,7 +325,7 @@ void Monitor::stopSelectedScan()
 
     ProcessThread *ptrTmp = takeMonitorElem(hostname);
 
-    qDebug() << "DEBUG:: pointer not in list:: " << ptrTmp;
+    qDebug() << "Monitor:: pointer not in list:: " << ptrTmp;
 
     if (ptrTmp)
     {
