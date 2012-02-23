@@ -188,7 +188,8 @@ void DiscoverManager::discoveryClear()
     freelist<Discover*>::itemDeleteAll(m_listDiscover);
     m_recvList.clear();
     m_sendList.clear();
-    m_ui->discoverScanButt->setEnabled(false);
+
+    m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(false);
 }
 
 void DiscoverManager::stopDiscover()
@@ -225,9 +226,9 @@ void DiscoverManager::runtimeScanDiscover()
     // show discover send/recv data
     updateSRdata();
 
-    if (!m_ui->discoverScanButt->isEnabled())
+    if (!m_ui->m_collections->m_collectionsDiscover.value("scan-single")->isEnabled())
     {
-        m_ui->discoverScanButt->setEnabled(true);
+        m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(true);
     }
 }
 

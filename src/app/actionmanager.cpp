@@ -247,4 +247,42 @@ void ActionManager::createToolButtonBar()
     m_bookmarksTool->setMenu(m_ui->menu_Bookmaks);
 
     m_ui->toolBarBook->addWidget(m_bookmarksTool);
+
+}
+
+void ActionManager::createDiscoverBar()
+{
+        // discover toolbar
+    m_discoverToolBar = new QToolBar(m_ui);
+    m_discoverToolBar->setObjectName(QString::fromUtf8("discoverToolBar"));
+    m_discoverToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_discoverToolBar->setLayoutDirection(Qt::LeftToRight);
+    m_discoverToolBar->setStyleSheet(QString::fromUtf8("QToolBar { border: 0px; }"));
+    m_discoverToolBar->setMovable(false);
+    m_discoverToolBar->setIconSize(QSize(22, 22));
+    m_discoverToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_ui->addToolBar(Qt::TopToolBarArea, m_discoverToolBar);
+    m_discoverToolBar->setVisible(false);
+
+    // scan discover action
+    m_discoverScanTool = new QToolButton(m_ui);
+    m_discoverScanTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_discoverScanTool->setPopupMode(QToolButton::InstantPopup);
+    m_discoverScanTool->setText(tr("Scan discovered ips"));
+    m_discoverScanTool->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+
+    QMenu *menuScanDiscover = new QMenu(m_ui);
+
+    QAction *action = new QAction(m_ui);
+    action->setText("Scan single ip");
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    m_collectionsDiscover.insert("scan-single", action);
+    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(callScanDiscover()));
+    action->setEnabled(false);
+    menuScanDiscover->addAction(action);
+
+    m_discoverScanTool->setMenu(menuScanDiscover);
+
+    m_discoverToolBar->addWidget(m_discoverScanTool);
+    m_discoverToolBar->addSeparator();
 }

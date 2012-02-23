@@ -25,6 +25,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QMenu>
 #include <QtGui/QToolButton>
+#include <QtGui/QToolBar>
 
 #include <pushbuttonorientated.h>
 
@@ -39,8 +40,11 @@ public:
     ~ActionManager();
     void createToolButtonBar();
     void createSectionsBar();
+    void createDiscoverBar();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
+    QHash<QString, QAction*> m_collectionsDiscover;
+    QToolBar *m_discoverToolBar;
 
 private:
     MainWindow* m_ui;
@@ -48,6 +52,7 @@ private:
     QToolButton *m_profilerTool;
     QToolButton *m_saveTool;
     QToolButton *m_bookmarksTool;
+    QToolButton *m_discoverScanTool;
 
 public slots:
     void scanBookmarkContextMenu();

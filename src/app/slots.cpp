@@ -137,8 +137,7 @@ void MainWindow::connectSlots()
             m_discoverManager, SLOT(stopDiscover()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             m_discoverManager, SLOT(runtimeScanDiscover()));
-    connect(discoverScanButt, SIGNAL(clicked()),
-            m_discoverManager, SLOT(callScanDiscover()));
+
     connect(reloadComboDiscover, SIGNAL(clicked()),
             m_discoverManager, SLOT(startDiscover()));
 }

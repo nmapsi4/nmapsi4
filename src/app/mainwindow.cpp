@@ -85,6 +85,8 @@ void MainWindow::initObject()
     m_discoverManager->startDiscover();
     m_discoverManager->defaultDiscoverProbes();
 
+    m_collections->createDiscoverBar();
+
     // connect slots
     connectSlots();
 }

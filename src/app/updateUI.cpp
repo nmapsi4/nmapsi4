@@ -102,6 +102,9 @@ void MainWindow::updateSezScan()
     toolBarSearch->setVisible(false);
     toolBarBook->setVisible(true);
 
+    m_collections->m_discoverToolBar->setVisible(false);
+    toolMenuBar->setVisible(true);
+
     if (!tabScan->isVisible())
     {
         tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
@@ -145,6 +148,9 @@ void MainWindow::updateSezVuln()
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(true);
 
+    toolMenuBar->setVisible(false);
+    m_collections->m_discoverToolBar->setVisible(false);
+
     tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabLog));
@@ -179,6 +185,9 @@ void MainWindow::updateSezDiscover()
     toolBarBook->setVisible(false);
     toolBar_2->setVisible(false);
     toolBarSearch->setVisible(false);
+
+    toolMenuBar->setVisible(false);
+    m_collections->m_discoverToolBar->setVisible(true);
 
     tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
