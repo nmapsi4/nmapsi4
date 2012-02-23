@@ -93,7 +93,6 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
-    bool checkViewOS(const QString OSline, QTreeWidgetItem *itemOS) const;
     QStringList loadExtensions();
     QHash<QString, QString> defaultScanProfile() const;
 
