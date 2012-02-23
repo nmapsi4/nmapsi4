@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>nmapsi4 - profiler</string>
+   <string>Profiler - Nmapsi4</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_3">
    <item>
