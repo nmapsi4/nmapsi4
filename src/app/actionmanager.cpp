@@ -272,17 +272,25 @@ void ActionManager::createDiscoverBar()
     m_discoverScanTool->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
 
     QMenu *menuScanDiscover = new QMenu(m_ui);
+    QAction *action;
 
-    QAction *action = new QAction(m_ui);
-    action->setText("Scan single ip");
+    action = new QAction(m_ui);
+    action->setText("Scan selected ip");
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-single", action);
-    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(callScanDiscover()));
+    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanSingleDiscoveredIp()));
+    action->setEnabled(false);
+    menuScanDiscover->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setText("Scan all discoverd ips");
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    m_collectionsDiscover.insert("scan-all", action);
+    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));
     action->setEnabled(false);
     menuScanDiscover->addAction(action);
 
     m_discoverScanTool->setMenu(menuScanDiscover);
-
     m_discoverToolBar->addWidget(m_discoverScanTool);
     m_discoverToolBar->addSeparator();
 }

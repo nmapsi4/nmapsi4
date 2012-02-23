@@ -59,7 +59,8 @@ public slots:
     void discoverIpState();
     void stopDiscover();
     void runtimeScanDiscover();
-    void callScanDiscover();
+    void scanSingleDiscoveredIp();
+    void scanAllDiscoveredIps();
 
 private slots:
     void pingResult(const QStringList hostname, bool state, const QByteArray callBuff);

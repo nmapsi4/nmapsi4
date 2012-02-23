@@ -150,6 +150,9 @@ void DiscoverManager::pingResult(const QStringList hostname, bool state, const Q
 
     if (state)
     {
+        // active scan all action
+        m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+
         QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->treeDiscover);
         item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
         item->setIcon(1, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
@@ -190,6 +193,7 @@ void DiscoverManager::discoveryClear()
     m_sendList.clear();
 
     m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(false);
+    m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(false);
 }
 
 void DiscoverManager::stopDiscover()
@@ -210,14 +214,26 @@ void DiscoverManager::updateSRdata()
     m_ui->textDiscoverSend->setText(m_sendList[index]);
 }
 
-void DiscoverManager::callScanDiscover()
+void DiscoverManager::scanSingleDiscoveredIp()
 {
     if(m_ui->treeDiscover->currentItem())
     {
         m_ui->updateComboHostnameProperties();
         m_ui->hostEdit->insertItem(0, m_ui->treeDiscover->currentItem()->text(0));
-        m_ui->SWscan->setCurrentIndex(0);
         m_ui->startScan();
+    }
+}
+
+void DiscoverManager::scanAllDiscoveredIps()
+{
+    if (m_listTreeItemDiscover.size())
+    {
+        foreach (QTreeWidgetItem *item, m_listTreeItemDiscover)
+        {
+            m_ui->updateComboHostnameProperties();
+            m_ui->hostEdit->insertItem(0, item->text(0));
+            m_ui->startScan();
+        }
     }
 }
 
