@@ -71,6 +71,7 @@ void MainWindow::saveSettings()
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
 
     m_bookmark->syncSettings();
+    m_discoverManager->syncSettings();
 
 // check and reset for settings file permission
 #ifndef Q_WS_WIN

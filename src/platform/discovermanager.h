@@ -22,6 +22,7 @@
 
 #include <QtCore/QObject>
 #include <QtGui/QTreeWidgetItem>
+#include <QtGui/QSplitter>
 
 #include "discover.h"
 
@@ -35,19 +36,19 @@ public:
     DiscoverManager(MainWindow* parent=0);
     ~DiscoverManager();
     void defaultDiscoverProbes();
+    void syncSettings();
 
 private:
-    void updateSRdata();
     void discoveryClear();
 
     MainWindow* m_ui;
     QList<Discover*> m_listDiscover;
     QList<QTreeWidgetItem*> m_listTreeItemDiscover;
+    QList<QTreeWidgetItem*> m_listTreePackets;
     int m_ipCounter;
     int m_uid;
-    QStringList m_sendList;
-    QStringList m_recvList;
     bool m_discoverIsActive;
+    QSplitter *m_discoverHorizontalSplitter;
 
 signals:
     void killDiscover();
@@ -56,14 +57,14 @@ signals:
 public slots:
     void startDiscover();
     void discoverIp(const QString& interface);
-    void discoverIpState();
+    void startDiscoverIpsFromRange();
     void stopDiscover();
     void runtimeScanDiscover();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();
 
 private slots:
-    void pingResult(const QStringList hostname, bool state, const QByteArray callBuff);
+    void endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff);
 };
 
 #endif // DISCOVERMANAGER_H

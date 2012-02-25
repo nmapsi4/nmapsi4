@@ -61,7 +61,7 @@ public:
     QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
 
 private:
-    void isUp(const QString networkIp, QObject *parent, QStringList parameters);
+    void fromList(const QString networkIp, QObject *parent, QStringList parameters);
 
     bool m_ipState;
     bool m_connectState;
@@ -77,13 +77,13 @@ public slots:
     /*!
      * Check state of ip on the network (up/down) with nping QThread
      */
-    void isUp(const QStringList networkIpList, QObject *parent, QStringList parameters);
+    void fromList(const QStringList networkIpList, QObject *parent, QStringList parameters);
 
 private slots:
     /*!
      * Emit signal with nping QThread ByteArray output
      */
-    void threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
+    void fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
     void repeatScanner();
     void stopDiscover();
 
@@ -91,7 +91,7 @@ signals:
     /*!
      * Return with a signal of ip state (up/down)
      */
-    void endPing(const QStringList ipAddr, bool state, const QByteArray callBuff);
+    void fromListFinisched(const QStringList ipAddr, bool state, const QByteArray callBuff);
 };
 
 #endif // MAINDISCOVER_H

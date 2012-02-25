@@ -26,12 +26,33 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
 #ifndef Q_WS_WIN
     m_uid = getuid();
 #endif
+
+    m_discoverHorizontalSplitter = new QSplitter(m_ui);
+    m_discoverHorizontalSplitter->setOrientation(Qt::Horizontal);
+    m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverTree);
+    m_discoverHorizontalSplitter->addWidget(m_ui->tabRightDiscover);
+
+    m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabDiscover))->layout()->addWidget(m_discoverHorizontalSplitter);
+
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    if (!settings.value("discoverHorizontalSplitter").toByteArray().isEmpty())
+    {
+        m_discoverHorizontalSplitter->restoreState(settings.value("discoverHorizontalSplitter").toByteArray());
+    }
 }
 
 DiscoverManager::~DiscoverManager()
 {
     freelist<Discover*>::itemDeleteAll(m_listDiscover);
 }
+
+void DiscoverManager::syncSettings()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+    settings.setValue("discoverHorizontalSplitter", m_discoverHorizontalSplitter->saveState());
+}
+
 
 void DiscoverManager::startDiscover()
 {
@@ -97,7 +118,7 @@ void DiscoverManager::discoverIp(const QString& interface)
     delete discover_;
 }
 
-void DiscoverManager::discoverIpState()
+void DiscoverManager::startDiscoverIpsFromRange()
 {
     // start ip discover
     // disable start discover button
@@ -126,16 +147,16 @@ void DiscoverManager::discoverIpState()
     Discover *discoverPtr = new Discover(m_uid);
     m_listDiscover.push_back(discoverPtr);
 
-    connect(discoverPtr, SIGNAL(endPing(QStringList,bool,QByteArray)),
-            this, SLOT(pingResult(QStringList,bool,QByteArray)));
+    connect(discoverPtr, SIGNAL(fromListFinisched(QStringList,bool,QByteArray)),
+            this, SLOT(endDiscoverIpsFromRange(QStringList,bool,QByteArray)));
 
     m_discoverIsActive = true;
-    discoverPtr->isUp(ipList,this,parameters);
+    discoverPtr->fromList(ipList,this,parameters);
     m_ipCounter = ipList.size();
     m_ui->nseNumber->display(m_ipCounter);
 }
 
-void DiscoverManager::pingResult(const QStringList hostname, bool state, const QByteArray callBuff)
+void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff)
 {
     // decrement ping ip counter
     if (m_discoverIsActive)
@@ -166,11 +187,15 @@ void DiscoverManager::pingResult(const QStringList hostname, bool state, const Q
             if ((line.startsWith(QLatin1String("RCVD")) || line.startsWith(QLatin1String("RECV")))
                 && line.contains(hostname[hostname.size()-1]))
             {
-                m_recvList.push_back(line);
+                QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+                packet->setText(0, line);
+                m_listTreePackets.push_back(packet);
             }
             else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1]))
             {
-                m_sendList.push_back(line);
+                QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+                packet->setText(0, line);
+                m_listTreePackets.push_back(packet);
             }
         }
     } /*else {
@@ -188,9 +213,8 @@ void DiscoverManager::pingResult(const QStringList hostname, bool state, const Q
 void DiscoverManager::discoveryClear()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
+    freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreePackets);
     freelist<Discover*>::itemDeleteAll(m_listDiscover);
-    m_recvList.clear();
-    m_sendList.clear();
 
     m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(false);
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(false);
@@ -205,13 +229,6 @@ void DiscoverManager::stopDiscover()
     m_ui->nseNumber->display(m_ipCounter);
     //emit signal
     emit killDiscover();
-}
-
-void DiscoverManager::updateSRdata()
-{
-    int index = m_ui->treeDiscover->indexOfTopLevelItem(m_ui->treeDiscover->currentItem());
-    m_ui->textDiscoverRec->setText(m_recvList[index]);
-    m_ui->textDiscoverSend->setText(m_sendList[index]);
 }
 
 void DiscoverManager::scanSingleDiscoveredIp()
@@ -239,9 +256,6 @@ void DiscoverManager::scanAllDiscoveredIps()
 
 void DiscoverManager::runtimeScanDiscover()
 {
-    // show discover send/recv data
-    updateSRdata();
-
     if (!m_ui->m_collections->m_collectionsDiscover.value("scan-single")->isEnabled())
     {
         m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(true);

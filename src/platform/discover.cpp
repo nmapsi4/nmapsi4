@@ -89,15 +89,15 @@ QList<QNetworkAddressEntry> Discover::getAddressEntries(const QString interfaceN
     }
 }
 
-void Discover::isUp(const QStringList networkIpList, QObject *parent, QStringList parameters)
+void Discover::fromList(const QStringList networkIpList, QObject *parent, QStringList parameters)
 {
     foreach (const QString& host, networkIpList)
     {
-        isUp(host, parent, parameters);
+        fromList(host, parent, parameters);
     }
 }
 
-void Discover::isUp(const QString networkIp, QObject *parent, QStringList parameters)
+void Discover::fromList(const QString networkIp, QObject *parent, QStringList parameters)
 {
     /*
      * start thread for discover ip state
@@ -118,7 +118,7 @@ void Discover::isUp(const QString networkIp, QObject *parent, QStringList parame
         m_threadList.push_back(pingTh.data());
 
         connect(pingTh.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(threadReturn(QStringList,QByteArray,QByteArray)));
+                this, SLOT(fromListReturn(QStringList,QByteArray,QByteArray)));
 
         pingTh.data()->start();
     }
@@ -146,7 +146,7 @@ void Discover::isUp(const QString networkIp, QObject *parent, QStringList parame
     }
 }
 
-void Discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+void Discover::fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
     Q_UNUSED(bufferError);
     /*
@@ -165,11 +165,11 @@ void Discover::threadReturn(const QStringList ipAddr, QByteArray ipBuffer, QByte
         buffLine = buffStream.readLine();
         if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV")))
         {
-            emit endPing(ipAddr, true, ipBuffer);
+            emit fromListFinisched(ipAddr, true, ipBuffer);
             return;
         }
     }
-    emit endPing(ipAddr, false, ipBuffer);
+    emit fromListFinisched(ipAddr, false, ipBuffer);
 }
 
 void Discover::repeatScanner()
@@ -193,7 +193,7 @@ void Discover::repeatScanner()
 
     while (freeThreadSpace <= m_threadLimit && freeThreadSpace <= m_ipSospended.size())
     {
-        isUp(m_ipSospended.takeFirst(), m_parent, m_parameters);
+        fromList(m_ipSospended.takeFirst(), m_parent, m_parameters);
         freeThreadSpace++;
     }
 }

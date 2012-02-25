@@ -132,7 +132,7 @@ void MainWindow::connectSlots()
     connect(comboDiscover, SIGNAL(activated(QString)),
             m_discoverManager, SLOT(discoverIp(QString)));
     connect(startDiscoverButt, SIGNAL(clicked()),
-            m_discoverManager, SLOT(discoverIpState()));
+            m_discoverManager, SLOT(startDiscoverIpsFromRange()));
     connect(stopDiscoverButt, SIGNAL(clicked()),
             m_discoverManager, SLOT(stopDiscover()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),

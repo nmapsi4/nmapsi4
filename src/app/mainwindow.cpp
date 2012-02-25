@@ -53,6 +53,7 @@ void MainWindow::initObject()
     m_utilities = new Utilities(this);
     m_parser = new ParserManager(this);
     m_vulnerability = new Vulnerability(this);
+    m_discoverManager = new DiscoverManager(this);
     m_collections = new ActionManager(this);
 
     m_collections->createSectionsBar();
@@ -81,10 +82,8 @@ void MainWindow::initObject()
     m_vulnerability->loadSearchUrlIntoCombo();
 
     // call discover startup, NPING is REQUIRED
-    m_discoverManager = new DiscoverManager(this);
     m_discoverManager->startDiscover();
     m_discoverManager->defaultDiscoverProbes();
-
     m_collections->createDiscoverBar();
 
     // connect slots
