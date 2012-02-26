@@ -283,7 +283,7 @@ void ActionManager::createDiscoverBar()
     menuScanDiscover->addAction(action);
 
     action = new QAction(m_ui);
-    action->setText("Scan all discoverd ips");
+    action->setText("Scan all discovered ips");
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-all", action);
     connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));

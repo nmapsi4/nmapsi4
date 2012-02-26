@@ -32,6 +32,8 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverTree);
     m_discoverHorizontalSplitter->addWidget(m_ui->tabRightDiscover);
 
+    // TODO: insert a vertical splitter and save it
+
     m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabDiscover))->layout()->addWidget(m_discoverHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
@@ -40,6 +42,9 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     {
         m_discoverHorizontalSplitter->restoreState(settings.value("discoverHorizontalSplitter").toByteArray());
     }
+
+    m_ui->treeTracePackets->setIconSize(QSize(22,22));
+    //m_ui->treeTracePackets->header()->setResizeMode(0, QHeaderView::ResizeToContents);
 }
 
 DiscoverManager::~DiscoverManager()
@@ -175,8 +180,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
 
         QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->treeDiscover);
-        item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
-        item->setIcon(1, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
+        item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         m_listTreeItemDiscover.push_back(item);
         item->setText(0, hostname[hostname.size()-1]);
         item->setText(1, tr("is Up"));
@@ -189,12 +193,17 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
             {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
                 packet->setText(0, line);
+                packet->setForeground(0, QBrush(QColor(100, 162, 101)));
+                packet->setToolTip(0,line);
+                packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
             }
             else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1]))
             {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
                 packet->setText(0, line);
+                packet->setToolTip(0,line);
+                packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
             }
         }
@@ -274,10 +283,11 @@ void DiscoverManager::defaultDiscoverProbes()
             m_ui->discoverProbesCombo->setVisible(true);
             m_ui->labelProbesModes->setVisible(true);
         }
-        m_ui->discoverProbesCombo->insertItem(0, "--icmp");
-        m_ui->discoverProbesCombo->insertItem(1, "--tcp");
-        m_ui->discoverProbesCombo->insertItem(2, "--udp");
-        m_ui->discoverProbesCombo->insertItem(3, "--arp");
+
+        m_ui->discoverProbesCombo->insertItem(0, "--arp");
+        m_ui->discoverProbesCombo->insertItem(1, "--icmp");
+        m_ui->discoverProbesCombo->insertItem(2, "--tcp");
+        m_ui->discoverProbesCombo->insertItem(3, "--udp");
         m_ui->discoverProbesCombo->insertItem(4, "--tr");
     }
     else
