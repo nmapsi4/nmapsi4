@@ -68,7 +68,10 @@ void DiscoverManager::startDiscover()
     Discover *discoverPtr = new Discover(m_uid);
     foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress))
     {
-        m_ui->comboDiscover->insertItem(1, interface.name());
+        if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack))
+        {
+            m_ui->comboDiscover->insertItem(1, interface.name());
+        }
     }
 
     delete discoverPtr;
