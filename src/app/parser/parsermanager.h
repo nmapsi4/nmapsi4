@@ -23,6 +23,7 @@
 #include <QtGui/QWidget>
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QMessageBox>
+#include <QtGui/QSplitter>
 #include <QtCore/QDir>
 #include <QtCore/QDateTime>
 
@@ -48,6 +49,7 @@ public:
      * Add a parserObjUtil in dedicate parser qlist
      */
     void addUtilObject(parserObjUtil* object);
+    void syncSettings();
 
 private:
     void showParserObj(int hostIndex);
@@ -60,6 +62,7 @@ private:
     QList<QTreeWidgetItem*> m_itemListScan;
     QList<QTreeWidgetItem*> m_objectItems;
     QList<QTreeWidgetItem*> m_treeItems;
+    QSplitter *m_rawlogHorizontalSplitter;
 
 public slots:
     /*

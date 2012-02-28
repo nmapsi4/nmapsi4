@@ -23,13 +23,31 @@
 ParserManager::ParserManager(MainWindow* parent)
 : QWidget(parent), m_ui(parent)
 {
+    m_rawlogHorizontalSplitter = new QSplitter(m_ui);
+    m_rawlogHorizontalSplitter->setOrientation(Qt::Horizontal);
+    m_rawlogHorizontalSplitter->addWidget(m_ui->listScan);
+    m_rawlogHorizontalSplitter->addWidget(m_ui->listScanError);
 
+    m_ui->horizontalLayoutRawlog->layout()->addWidget(m_rawlogHorizontalSplitter);
+
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    if (!settings.value("rawlogHorizontalSplitter").toByteArray().isEmpty())
+    {
+        m_rawlogHorizontalSplitter->restoreState(settings.value("rawlogHorizontalSplitter").toByteArray());
+    }
 }
 
 ParserManager::~ParserManager()
 {
     freelist<parserObj*>::itemDeleteAll(m_parserObjList);
     freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
+}
+
+void ParserManager::syncSettings()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+    settings.setValue("rawlogHorizontalSplitter", m_rawlogHorizontalSplitter->saveState());
 }
 
 void ParserManager::clearParserItems()
