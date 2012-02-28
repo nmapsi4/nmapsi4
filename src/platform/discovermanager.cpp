@@ -32,8 +32,12 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverTree);
     m_discoverHorizontalSplitter->addWidget(m_ui->tabRightDiscover);
 
-    // TODO: insert a vertical splitter and save it
+    m_discoverVerticalSplitter = new QSplitter(m_ui);
+    m_discoverVerticalSplitter->setOrientation(Qt::Vertical);
+    m_discoverVerticalSplitter->addWidget(m_ui->treeDiscover);
+    m_discoverVerticalSplitter->addWidget(m_ui->treeTracePackets);
 
+    m_ui->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
     m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabDiscover))->layout()->addWidget(m_discoverHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
@@ -43,7 +47,13 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
         m_discoverHorizontalSplitter->restoreState(settings.value("discoverHorizontalSplitter").toByteArray());
     }
 
+    if (!settings.value("discoverVerticalSplitter").toByteArray().isEmpty())
+    {
+        m_discoverVerticalSplitter->restoreState(settings.value("discoverVerticalSplitter").toByteArray());
+    }
+
     m_ui->treeTracePackets->setIconSize(QSize(22,22));
+    m_ui->treeDiscover->setIconSize(QSize(22,22));
     //m_ui->treeTracePackets->header()->setResizeMode(0, QHeaderView::ResizeToContents);
 }
 
@@ -56,6 +66,7 @@ void DiscoverManager::syncSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
     settings.setValue("discoverHorizontalSplitter", m_discoverHorizontalSplitter->saveState());
+    settings.setValue("discoverVerticalSplitter", m_discoverVerticalSplitter->saveState());
 }
 
 
@@ -143,14 +154,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
     }
 
     QStringList parameters;
-    if (!m_uid)
-    {
-        parameters.append(m_ui->discoverProbesCombo->currentText());
-    }
-    else
-    {
-        parameters.append("--tcp-connect");
-    }
+    parameters << m_ui->discoverProbesCombo->currentText();
 
     Discover *discoverPtr = new Discover(m_uid);
     m_listDiscover.push_back(discoverPtr);
@@ -281,21 +285,140 @@ void DiscoverManager::defaultDiscoverProbes()
     */
     if (!m_uid)
     {
-        if (!m_ui->discoverProbesCombo->isVisible())
-        {
-            m_ui->discoverProbesCombo->setVisible(true);
-            m_ui->labelProbesModes->setVisible(true);
-        }
-
         m_ui->discoverProbesCombo->insertItem(0, "--arp");
         m_ui->discoverProbesCombo->insertItem(1, "--icmp");
         m_ui->discoverProbesCombo->insertItem(2, "--tcp");
         m_ui->discoverProbesCombo->insertItem(3, "--udp");
         m_ui->discoverProbesCombo->insertItem(4, "--tr");
+        m_ui->discoverProbesCombo->insertItem(5, "--tcp-connect");
     }
     else
     {
-        m_ui->discoverProbesCombo->setVisible(false);
-        m_ui->labelProbesModes->setVisible(false);
+        m_ui->discoverProbesCombo->insertItem(0, "--tcp-connect");
+    }
+}
+
+void DiscoverManager::startDiscoverIpsFromCIDR()
+{
+    if (m_ui->lineCidr->text().isEmpty())
+    {
+        return;
+    }
+
+    if (!m_ui->lineCidr->text().contains('/'))
+    {
+        // wrong format
+        QMessageBox::warning(m_ui, "Warning - Nmapsi4", tr("Wrong CIDR notation format."));
+        return;
+    }
+
+    m_ui->cidrButton->setEnabled(false);
+    // FIXME
+    //m_ui->startDiscoverButt->setEnabled(false);
+    //m_ui->stopDiscoverButt->setEnabled(true);
+    // clear tree discover
+    discoveryClear();
+
+    QStringList parameters;
+    if (!m_uid)
+    {
+        parameters.append(m_ui->discoverProbesCombo->currentText());
+    }
+    else
+    {
+        parameters.append("--tcp-connect");
+    }
+
+    Discover *discoverPtr = new Discover(m_uid);
+    m_listDiscover.push_back(discoverPtr);
+
+    connect(discoverPtr, SIGNAL(cidrCurrentValue(QString,QString)),
+            this, SLOT(currentDiscoverIpsFromCIDR(QString,QString)));
+    connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
+            this, SLOT(endDiscoverIpsFromCIDR(QStringList,QByteArray,QByteArray)));
+
+    discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters);
+
+}
+
+void DiscoverManager::endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+{
+    qDebug() << "CIDR::Discover::CIDR::End:: " << ipAddr;
+    // TODO: active CIDR button
+    m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+    m_ui->cidrButton->setEnabled(true);
+}
+
+void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
+{
+    QRegExp ip("((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])");
+
+    if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD")))
+    {
+        qDebug() << "CIDR::Discover::CIDR::Current::UP:: " << data;
+        QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+        m_listTreePackets.push_back(packet);
+        packet->setForeground(0, QBrush(QColor(100, 162, 101)));
+        packet->setText(0,data);
+        packet->setToolTip(0,data);
+        packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+
+        int positionMatched = 0;
+
+        QStringList matched;
+        while ((positionMatched = ip.indexIn(data, positionMatched)) != -1)
+        {
+            //qDebug() << "CIDR::Discover::CIDR::Current::Captured:: " << ip.cap(0);
+            matched << ip.cap(0);
+            positionMatched += ip.matchedLength();
+        }
+
+        if (matched.size())
+        {
+            qDebug() << "CIDR::Discover::CIDR::Current::Captured:: " << matched[0];
+            QTreeWidgetItem *ipItem = new QTreeWidgetItem(m_ui->treeDiscover);
+            m_listTreeItemDiscover.push_back(ipItem);
+            ipItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
+            ipItem->setText(0, matched.first());
+            ipItem->setText(1, tr("is Up"));
+        }
+    }
+    else
+    {
+        //qDebug() << "CIDR::Discover::CIDR::Current:: " << data;
+        QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+        m_listTreePackets.push_back(packet);
+        packet->setText(0,data);
+        packet->setToolTip(0,data);
+        packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+    }
+}
+
+void DiscoverManager::calculateAddressFromCIDR()
+{
+    if (m_ui->lineCidr->text().isEmpty())
+    {
+        return;
+    }
+
+    QStringList cidr = m_ui->lineCidr->text().split("/");
+
+    if (cidr.size() == 2)
+    {
+        int exp = 32 - cidr[1].toInt() - 1;
+        int numberOfIps = 2;
+
+        while (exp)
+        {
+            numberOfIps *= 2;
+            exp--;
+        }
+
+        m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
+    }
+    else
+    {
+        // wrong format
+        QMessageBox::warning(m_ui, "Warning - Nmapsi4", tr("Wrong CIDR notation format."));
     }
 }

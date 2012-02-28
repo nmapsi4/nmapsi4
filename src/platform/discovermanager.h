@@ -49,6 +49,7 @@ private:
     int m_uid;
     bool m_discoverIsActive;
     QSplitter *m_discoverHorizontalSplitter;
+    QSplitter *m_discoverVerticalSplitter;
 
 signals:
     void killDiscover();
@@ -62,9 +63,13 @@ public slots:
     void runtimeScanDiscover();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();
+    void startDiscoverIpsFromCIDR();
+    void calculateAddressFromCIDR();
 
 private slots:
     void endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff);
+    void endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
+    void currentDiscoverIpsFromCIDR(const QString parameters, const QString data);
 };
 
 #endif // DISCOVERMANAGER_H

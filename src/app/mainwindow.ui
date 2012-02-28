@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>832</width>
-    <height>495</height>
+    <height>543</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1412,17 +1412,66 @@
              <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
            </attribute>
            <attribute name="title">
-            <string>From ip range</string>
+            <string>Discover options</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_11">
             <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Probe</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="labelProbesModes">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Probes Modes:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="discoverProbesCombo">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
              <widget class="QGroupBox" name="groupBox">
               <property name="title">
-               <string/>
+               <string>Ips range</string>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
                 <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Local Interfaces:</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="2" column="2">
                   <widget class="QLineEdit" name="lineIpDiscover"/>
                  </item>
@@ -1437,19 +1486,6 @@
                    <property name="icon">
                     <iconset resource="../../mainwin.qrc">
                      <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="labelProbesModes">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Probes Modes:</string>
                    </property>
                   </widget>
                  </item>
@@ -1480,19 +1516,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="9" column="1">
-                  <spacer name="verticalSpacer_2">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
                  <item row="4" column="2">
                   <widget class="QSpinBox" name="spinEndDiscover">
                    <property name="maximum">
@@ -1521,36 +1544,13 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="2">
-                  <widget class="QComboBox" name="discoverProbesCombo">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label">
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Local Interfaces:</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="6" column="1">
                   <widget class="QPushButton" name="startDiscoverButt">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                    <property name="text">
-                    <string>Start DIscover</string>
+                    <string>Start DIscover from ips range</string>
                    </property>
                    <property name="icon">
                     <iconset resource="../../mainwin.qrc">
@@ -1610,21 +1610,80 @@
                    </property>
                   </spacer>
                  </item>
-                 <item row="5" column="2">
-                  <spacer name="verticalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Cidr notation</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_12">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>CIDR Address:</string>
                    </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Fixed</enum>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="lineCidr"/>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QPushButton" name="calculateAddressButton">
+                   <property name="toolTip">
+                    <string>Estimate number of ip to ping</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>25</height>
-                    </size>
+                   <property name="text">
+                    <string/>
                    </property>
-                  </spacer>
+                   <property name="icon">
+                    <iconset resource="../../mainwin.qrc">
+                     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+                   </property>
+                   <property name="flat">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QPushButton" name="cidrButton">
+                   <property name="text">
+                    <string>Start discover from CIDR-style addressing</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../../mainwin.qrc">
+                     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>Number of ips:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="lineAddressNumber">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_7">
+                   <property name="statusTip">
+                    <string/>
+                   </property>
+                   <property name="text">
+                    <string>Ex. 192.168.1.0/28 (16 ips)</string>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>

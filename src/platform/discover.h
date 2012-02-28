@@ -78,6 +78,7 @@ public slots:
      * Check state of ip on the network (up/down) with nping QThread
      */
     void fromList(const QStringList networkIpList, QObject *parent, QStringList parameters);
+    void fromCIDR(const QString networkCIDR, QStringList parameters);
 
 private slots:
     /*!
@@ -85,13 +86,17 @@ private slots:
      */
     void fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
     void repeatScanner();
-    void stopDiscover();
+    void stopDiscoverFromList();
+    void currentCIDRValue(const QString parameters, const QString data);
+    void endCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
 
 signals:
     /*!
      * Return with a signal of ip state (up/down)
      */
     void fromListFinisched(const QStringList ipAddr, bool state, const QByteArray callBuff);
+    void cidrFinisced(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
+    void cidrCurrentValue(const QString parameters, const QString data);
 };
 
 #endif // MAINDISCOVER_H

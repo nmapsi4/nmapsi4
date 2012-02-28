@@ -131,7 +131,7 @@ void Discover::fromList(const QString networkIp, QObject *parent, QStringList pa
 
     if (!m_connectState)
     {
-        connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscover()));
+        connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscoverFromList()));
     }
 
     // check suspended discover ip
@@ -185,7 +185,7 @@ void Discover::repeatScanner()
     }
 
     disconnect(this, SLOT(repeatScanner()));
-    disconnect(this, SLOT(stopDiscover()));
+    disconnect(this, SLOT(stopDiscoverFromList()));
 
     m_connectState = false;
     m_timer->stop();
@@ -198,11 +198,53 @@ void Discover::repeatScanner()
     }
 }
 
-void Discover::stopDiscover()
+void Discover::stopDiscoverFromList()
 {
     /*
      * disconnect timer slot and stop it
      */
     disconnect(this, SLOT(repeatScanner()));
     m_timer->stop();
+}
+
+void Discover::fromCIDR(const QString networkCIDR, QStringList parameters)
+{
+    parameters.append("-c 1");
+    parameters.append("-v4");
+    parameters.append(networkCIDR);
+
+    QWeakPointer<ProcessThread> thread = new ProcessThread("nping",parameters);
+
+    connect(thread.data(), SIGNAL(flowFromThread(QString,QString)),
+                this, SLOT(currentCIDRValue(QString,QString)));
+    connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+                this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
+
+    m_threadList.push_back(thread.data());
+
+    thread.data()->start();
+}
+
+void Discover::currentCIDRValue(const QString parameters, const QString data)
+{
+    QString localBuffer(data);
+    QTextStream currentValues(&localBuffer);
+    QString currentLine;
+
+    while (!currentValues.atEnd())
+    {
+        currentLine = currentValues.readLine();
+
+        if (currentLine.startsWith(QLatin1String("RCVD"))
+                || currentLine.startsWith(QLatin1String("RECV"))
+                || currentLine.startsWith(QLatin1String("SENT")))
+        {
+            emit cidrCurrentValue(parameters,currentLine);
+        }
+    }
+}
+
+void Discover::endCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+{
+    emit cidrFinisced(ipAddr,ipBuffer,bufferError);
 }
