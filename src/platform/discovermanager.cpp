@@ -143,6 +143,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
     // disable start discover button
     m_ui->startDiscoverButt->setEnabled(false);
     m_ui->stopDiscoverButt->setEnabled(true);
+    m_ui->cidrButton->setEnabled(false);
     // clear tree discover
     discoveryClear();
 
@@ -223,6 +224,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         freelist<Discover*>::itemDeleteAll(m_listDiscover);
         m_ui->startDiscoverButt->setEnabled(true);
         m_ui->stopDiscoverButt->setEnabled(false);
+        m_ui->cidrButton->setEnabled(true);
     }
 }
 
@@ -312,10 +314,9 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
         return;
     }
 
+    // NOTE: disable CIDR button but also ip range discover
     m_ui->cidrButton->setEnabled(false);
-    // FIXME
-    //m_ui->startDiscoverButt->setEnabled(false);
-    //m_ui->stopDiscoverButt->setEnabled(true);
+    m_ui->startDiscoverButt->setEnabled(false);
     // clear tree discover
     discoveryClear();
 
@@ -343,7 +344,6 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
 
 void DiscoverManager::endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
-    qDebug() << "CIDR::Discover::CIDR::End:: " << ipAddr;
     // TODO: active CIDR button
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
     m_ui->cidrButton->setEnabled(true);
@@ -368,14 +368,12 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         QStringList matched;
         while ((positionMatched = ip.indexIn(data, positionMatched)) != -1)
         {
-            //qDebug() << "CIDR::Discover::CIDR::Current::Captured:: " << ip.cap(0);
             matched << ip.cap(0);
             positionMatched += ip.matchedLength();
         }
 
         if (matched.size())
         {
-            qDebug() << "CIDR::Discover::CIDR::Current::Captured:: " << matched[0];
             QTreeWidgetItem *ipItem = new QTreeWidgetItem(m_ui->treeDiscover);
             m_listTreeItemDiscover.push_back(ipItem);
             ipItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
@@ -385,7 +383,6 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
     }
     else
     {
-        //qDebug() << "CIDR::Discover::CIDR::Current:: " << data;
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
         m_listTreePackets.push_back(packet);
         packet->setText(0,data);
