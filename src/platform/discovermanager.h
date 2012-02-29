@@ -52,14 +52,15 @@ private:
     QSplitter *m_discoverVerticalSplitter;
 
 signals:
-    void killDiscover();
-
+    void killDiscoverFromIpsRange();
+    void killDiscoverFromCIDR();
 
 public slots:
     void startDiscover();
     void discoverIp(const QString& interface);
     void startDiscoverIpsFromRange();
-    void stopDiscover();
+    void stopDiscoverFromIpsRange();
+    void stopDiscoverFromCIDR();
     void runtimeScanDiscover();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();

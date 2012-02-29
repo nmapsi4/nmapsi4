@@ -30,6 +30,9 @@
 #include <QtNetwork/QHostInfo>
 // local include
 #include "processthread.h"
+#include "memorytools.h"
+
+class DiscoverManager;
 
 class Discover : public QObject
 {
@@ -59,9 +62,14 @@ public:
      * Return ip address for a interface name
      */
     QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
+        /*!
+     * Check state of ip on the network (up/down) with nping QThread
+     */
+    void fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters);
+    void fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent);
 
 private:
-    void fromList(const QString networkIp, QObject *parent, QStringList parameters);
+    void fromList(const QString networkIp, DiscoverManager *parent, QStringList parameters);
 
     bool m_ipState;
     bool m_connectState;
@@ -70,15 +78,8 @@ private:
     QStringList m_ipSospended;
     QStringList m_parameters;
     QList<ProcessThread*> m_threadList;
-    QObject* m_parent;
+    DiscoverManager* m_parent;
     QTimer* m_timer;
-
-public slots:
-    /*!
-     * Check state of ip on the network (up/down) with nping QThread
-     */
-    void fromList(const QStringList networkIpList, QObject *parent, QStringList parameters);
-    void fromCIDR(const QString networkCIDR, QStringList parameters);
 
 private slots:
     /*!
@@ -87,6 +88,7 @@ private slots:
     void fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QByteArray BufferError);
     void repeatScanner();
     void stopDiscoverFromList();
+    void stopDiscoverFromCIDR();
     void currentCIDRValue(const QString parameters, const QString data);
     void endCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
 

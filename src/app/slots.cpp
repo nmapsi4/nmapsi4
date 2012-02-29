@@ -133,11 +133,12 @@ void MainWindow::connectSlots()
             m_discoverManager, SLOT(discoverIp(QString)));
     connect(startDiscoverButt, SIGNAL(clicked()),
             m_discoverManager, SLOT(startDiscoverIpsFromRange()));
-    // FIXME: test CIDR
     connect(cidrButton, SIGNAL(clicked()),
             m_discoverManager, SLOT(startDiscoverIpsFromCIDR()));
     connect(stopDiscoverButt, SIGNAL(clicked()),
-            m_discoverManager, SLOT(stopDiscover()));
+            m_discoverManager, SLOT(stopDiscoverFromIpsRange()));
+    connect(stopDiscoverCidrButton, SIGNAL(clicked()),
+            m_discoverManager, SLOT(stopDiscoverFromCIDR()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             m_discoverManager, SLOT(runtimeScanDiscover()));
 

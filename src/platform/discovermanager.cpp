@@ -238,7 +238,7 @@ void DiscoverManager::discoveryClear()
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(false);
 }
 
-void DiscoverManager::stopDiscover()
+void DiscoverManager::stopDiscoverFromIpsRange()
 {
     m_ui->startDiscoverButt->setEnabled(true);
     m_ui->stopDiscoverButt->setEnabled(false);
@@ -246,7 +246,7 @@ void DiscoverManager::stopDiscover()
     m_discoverIsActive = false;
     m_ui->nseNumber->display(m_ipCounter);
     //emit signal
-    emit killDiscover();
+    emit killDiscoverFromIpsRange();
 }
 
 void DiscoverManager::scanSingleDiscoveredIp()
@@ -317,6 +317,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     // NOTE: disable CIDR button but also ip range discover
     m_ui->cidrButton->setEnabled(false);
     m_ui->startDiscoverButt->setEnabled(false);
+    m_ui->stopDiscoverCidrButton->setEnabled(true);
     // clear tree discover
     discoveryClear();
 
@@ -338,7 +339,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
             this, SLOT(endDiscoverIpsFromCIDR(QStringList,QByteArray,QByteArray)));
 
-    discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters);
+    discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters,this);
 
 }
 
@@ -347,6 +348,7 @@ void DiscoverManager::endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArra
     // TODO: active CIDR button
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
     m_ui->cidrButton->setEnabled(true);
+    m_ui->stopDiscoverCidrButton->setEnabled(false);
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
@@ -389,6 +391,11 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         packet->setToolTip(0,data);
         packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     }
+}
+
+void DiscoverManager::stopDiscoverFromCIDR()
+{
+    emit killDiscoverFromCIDR();
 }
 
 void DiscoverManager::calculateAddressFromCIDR()

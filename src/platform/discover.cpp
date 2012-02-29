@@ -19,6 +19,7 @@
 
 #include "discover.h"
 #include "memorytools.h"
+#include "discovermanager.h"
 
 Discover::Discover(int uid)
     : m_ipState(false),
@@ -89,7 +90,7 @@ QList<QNetworkAddressEntry> Discover::getAddressEntries(const QString interfaceN
     }
 }
 
-void Discover::fromList(const QStringList networkIpList, QObject *parent, QStringList parameters)
+void Discover::fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters)
 {
     foreach (const QString& host, networkIpList)
     {
@@ -97,7 +98,7 @@ void Discover::fromList(const QStringList networkIpList, QObject *parent, QStrin
     }
 }
 
-void Discover::fromList(const QString networkIp, QObject *parent, QStringList parameters)
+void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStringList parameters)
 {
     /*
      * start thread for discover ip state
@@ -131,7 +132,7 @@ void Discover::fromList(const QString networkIp, QObject *parent, QStringList pa
 
     if (!m_connectState)
     {
-        connect(parent, SIGNAL(killDiscover()), this, SLOT(stopDiscoverFromList()));
+        connect(parent, SIGNAL(killDiscoverFromIpsRange()), this, SLOT(stopDiscoverFromList()));
     }
 
     // check suspended discover ip
@@ -207,7 +208,7 @@ void Discover::stopDiscoverFromList()
     m_timer->stop();
 }
 
-void Discover::fromCIDR(const QString networkCIDR, QStringList parameters)
+void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent)
 {
     parameters.append("-c 1");
     parameters.append("-v4");
@@ -219,10 +220,17 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters)
                 this, SLOT(currentCIDRValue(QString,QString)));
     connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
+    connect(parent, SIGNAL(killDiscoverFromCIDR()),
+                this, SLOT(stopDiscoverFromCIDR()));
 
     m_threadList.push_back(thread.data());
 
     thread.data()->start();
+}
+
+void Discover::stopDiscoverFromCIDR()
+{
+    memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
 void Discover::currentCIDRValue(const QString parameters, const QString data)
