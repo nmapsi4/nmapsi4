@@ -62,7 +62,7 @@ public:
      * Return ip address for a interface name
      */
     QList<QNetworkAddressEntry> getAddressEntries(const QString interfaceName) const;
-        /*!
+    /*!
      * Check state of ip on the network (up/down) with nping QThread
      */
     void fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters);

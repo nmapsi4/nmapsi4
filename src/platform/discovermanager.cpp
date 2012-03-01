@@ -196,12 +196,12 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         while (!stream.atEnd())
         {
             QString line = stream.readLine();
-            if ((line.startsWith(QLatin1String("RCVD")) || line.startsWith(QLatin1String("RECV")))
+            if (((line.startsWith(QLatin1String("RECV")) && line.contains("completed")) || line.startsWith(QLatin1String("RCVD")))
                 && line.contains(hostname[hostname.size()-1]))
             {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
                 packet->setText(0, line);
-                packet->setForeground(0, QBrush(QColor(100, 162, 101)));
+                packet->setBackground(0, QBrush(QColor(163, 224, 163)));
                 packet->setToolTip(0,line);
                 packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
@@ -360,7 +360,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         qDebug() << "CIDR::Discover::CIDR::Current::UP:: " << data;
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
         m_listTreePackets.push_back(packet);
-        packet->setForeground(0, QBrush(QColor(100, 162, 101)));
+        packet->setBackground(0, QBrush(QColor(163, 224, 163)));
         packet->setText(0,data);
         packet->setToolTip(0,data);
         packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
