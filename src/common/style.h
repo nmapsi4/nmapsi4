@@ -25,6 +25,8 @@ static const char verticalStyleSheet[] = "QPushButton:checked {border: 0px; bord
         "background-color: palette(highlight); color: palette(highlighted-text); "
         "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
 
+static const char nofifyStyleSheet[] = "QPushButton { color: red; } ";
+
 // sidebar button width
 const int verticalButtonWidth = 25;
 

@@ -371,9 +371,8 @@ void MainWindow::resizeHostDetailsWidgetEvent()
         }
         else
         {
-            // TODO select the best default size
             QList<int> size = m_mainVerticalSplitter->sizes();
-            size[1] = 100;
+            size[1] = centralWidget()->height() / 2;
             m_mainVerticalSplitter->setSizes(size);
         }
     }
@@ -388,6 +387,7 @@ void MainWindow::resizeScanListWidgetEvent()
         QList<int> size = m_mainHorizontalSplitter->sizes();
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
+        m_collections->m_collectionsButton.value("scan-list")->setStyleSheet("");
     }
     else if (m_collections->m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
     {
@@ -395,13 +395,14 @@ void MainWindow::resizeScanListWidgetEvent()
         {
             // restore previous value
             m_mainHorizontalSplitter->restoreState(m_scanListWidgetSize);
+            m_collections->m_collectionsButton.value("scan-list")->setStyleSheet(verticalStyleSheet);
         }
         else
         {
-            // TODO select the best default size
             QList<int> size = m_mainHorizontalSplitter->sizes();
-            size[0] = 100;
+            size[0] = centralWidget()->width() / 2;
             m_mainHorizontalSplitter->setSizes(size);
+            m_collections->m_collectionsButton.value("scan-list")->setStyleSheet(verticalStyleSheet);
         }
     }
 }

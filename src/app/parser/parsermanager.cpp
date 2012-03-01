@@ -75,6 +75,12 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
 
     m_ui->progressScan->setValue(75);
 
+    // more attention for host list if it isn't checked
+    if (!m_ui->m_collections->m_collectionsButton.value("scan-list")->isChecked())
+    {
+        m_ui->m_collections->m_collectionsButton.value("scan-list")->setStyleSheet(nofifyStyleSheet);
+    }
+
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
 
