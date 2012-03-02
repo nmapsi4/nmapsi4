@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef PARSEROBJECTS_H
-#define PARSEROBJECTS_H
+#ifndef POBJECTS_H
+#define POBJECTS_H
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>

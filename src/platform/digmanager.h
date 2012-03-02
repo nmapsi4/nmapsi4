@@ -30,7 +30,7 @@
 // local include
 #include "processthread.h"
 #include "nmapsi4Debug.h"
-#include "parserObjects.h"
+#include "pobjects.h"
 
 class DigManager : public QObject
 {

@@ -28,7 +28,7 @@
 #include <QtGui/QSplitter>
 
 // local inclusion
-#include "parserObjects.h"
+#include "pobjects.h"
 #include "memorytools.h"
 #include "logwriter.h"
 

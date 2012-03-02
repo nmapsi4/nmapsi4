@@ -40,11 +40,11 @@ SET(SOURCES_CPP
                 common/utilities.cpp
                 common/pushbuttonorientated.cpp
                 common/processthread.cpp
-		app/parser/parsermanager.cpp
-		app/parser/parserObjects.cpp
-		app/monitor/monitor.cpp
-		app/monitor/monitorhostscandetails.cpp
-		app/preference/preferencesdialog.cpp
+                common/pobjects.cpp
+                app/parser/parsermanager.cpp
+                app/monitor/monitor.cpp
+                app/monitor/monitorhostscandetails.cpp
+                app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
                 app/loadDefaultProfile.cpp

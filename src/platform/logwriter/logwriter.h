@@ -28,7 +28,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QList>
 
-#include "parserObjects.h"
+#include "pobjects.h"
 
 class LogWriter
 {
