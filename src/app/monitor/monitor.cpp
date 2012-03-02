@@ -199,7 +199,7 @@ void Monitor::startLookup(const QString hostname, LookupType option)
     }
     else
     {
-        parserObjUtil* tmpParserObj_ = new parserObjUtil();
+        PObjectLookup* tmpParserObj_ = new PObjectLookup();
 
         DigManager *digC = new DigManager();
         m_digLookupList.push_back(digC);
@@ -233,7 +233,7 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
         return;
     }
 
-    parserObjUtil* elemObjUtil = new parserObjUtil();
+    PObjectLookup* elemObjUtil = new PObjectLookup();
 
     elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();

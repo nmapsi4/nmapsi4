@@ -30,7 +30,7 @@ DigManager::~DigManager()
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-void DigManager::digProcess(const QString hostname, parserObjUtil* objElem)
+void DigManager::digProcess(const QString hostname, PObjectLookup* objElem)
 {
     QStringList command;
     m_hostNameLocal = hostname;

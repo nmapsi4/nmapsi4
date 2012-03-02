@@ -48,17 +48,17 @@ public:
     /*
      * Add a parserObjUtil in dedicate parser qlist
      */
-    void addUtilObject(parserObjUtil* object);
+    void addUtilObject(PObjectLookup* object);
     void syncSettings();
 
 private:
     void showParserObj(int hostIndex);
     void showParserObjPlugins(int hostIndex);
-    parserObj* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
+    PObject* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
 
     MainWindow* m_ui;
-    QList<parserObj*> m_parserObjList;
-    QList<parserObjUtil*> m_parserObjUtilList;
+    QList<PObject*> m_parserObjList;
+    QList<PObjectLookup*> m_parserObjUtilList;
     QList<QTreeWidgetItem*> m_itemListScan;
     QList<QTreeWidgetItem*> m_objectItems;
     QList<QTreeWidgetItem*> m_treeItems;

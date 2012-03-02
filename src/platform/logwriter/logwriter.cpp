@@ -23,12 +23,12 @@ LogWriter::LogWriter()
 {
 }
 
-void LogWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& path)
+void LogWriter::writeAllLogFile(QList<PObject*> pObjectList, const QString& path)
 {
     QSettings settings("nmapsi4", "nmapsi4");
     int logType = settings.value("logType", 0).toInt();
 
-    foreach (parserObj* object, pObjectList)
+    foreach (PObject* object, pObjectList)
     {
         if (object->isValidObject())
         {
@@ -57,7 +57,7 @@ void LogWriter::writeAllLogFile(QList<parserObj*> pObjectList, const QString& pa
     }
 }
 
-void LogWriter::writeSingleLogFile(parserObj* pObject, const QString& path)
+void LogWriter::writeSingleLogFile(PObject* pObject, const QString& path)
 {
     m_pObject = pObject;
 

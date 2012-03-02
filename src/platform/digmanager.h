@@ -47,10 +47,10 @@ public:
     /*!
      * Start QThread dig for hostname.
      */
-    void digProcess(const QString hostname, parserObjUtil* objElem);
+    void digProcess(const QString hostname, PObjectLookup* objElem);
 
 private:
-    parserObjUtil* m_elemObjUtil;
+    PObjectLookup* m_elemObjUtil;
     QString m_hostNameLocal;
     QList<ProcessThread*> m_threadList;
 

@@ -40,11 +40,11 @@ public:
     /**
      * Save log for a single selected host
      **/
-    void writeSingleLogFile(parserObj* pObject, const QString& path);
+    void writeSingleLogFile(PObject* pObject, const QString& path);
     /**
      * Save all not empty log for scanned hosts
      **/
-    void writeAllLogFile(QList<parserObj*> pObjectList, const QString& path);
+    void writeAllLogFile(QList<PObject*> pObjectList, const QString& path);
 
 private:
     enum LogType {
@@ -53,7 +53,7 @@ private:
         HtmlLog
     };
 
-    parserObj* m_pObject;
+    PObject* m_pObject;
 
     void writeRawLogFormat(const QString& path);
     void writeFancyLogFormat(const QString& path);

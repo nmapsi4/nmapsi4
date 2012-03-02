@@ -40,8 +40,8 @@ ParserManager::ParserManager(MainWindow* parent)
 
 ParserManager::~ParserManager()
 {
-    freelist<parserObj*>::itemDeleteAll(m_parserObjList);
-    freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
+    freelist<PObject*>::itemDeleteAll(m_parserObjList);
+    freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
 }
 
 void ParserManager::syncSettings()
@@ -52,14 +52,14 @@ void ParserManager::syncSettings()
 
 void ParserManager::clearParserItems()
 {
-    freelist<parserObj*>::itemDeleteAll(m_parserObjList);
-    freelist<parserObjUtil*>::itemDeleteAll(m_parserObjUtilList);
+    freelist<PObject*>::itemDeleteAll(m_parserObjList);
+    freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 }
 
-void ParserManager::addUtilObject(parserObjUtil* object)
+void ParserManager::addUtilObject(PObjectLookup* object)
 {
     m_parserObjUtilList.append(object);
 }
@@ -90,7 +90,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     treeItem->setSizeHint(0, QSize(32, 32));
 
     // call real parser
-    parserObj* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
+    PObject* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
 
     elemObj->setParameters(parList.join(" "));
 
@@ -181,11 +181,11 @@ void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
     }
 }
 
-parserObj* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
+PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
                        QString StderrorStr, QTreeWidgetItem* mainTreeE)
 {
     // Create parser Obect
-    parserObj *elemObj = new parserObj();
+    PObject *elemObj = new PObject();
     QString hostCheck = parList[parList.size()-1];
     elemObj->setHostName(hostCheck);
 
@@ -737,7 +737,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     }
 
     // show lookUp info
-    foreach (parserObjUtil* elem, m_parserObjUtilList)
+    foreach (PObjectLookup* elem, m_parserObjUtilList)
     {
         if(m_parserObjList[hostIndex]->getHostName() == elem->getHostName())
         {
@@ -762,7 +762,7 @@ void ParserManager::callSaveSingleLogWriter()
     }
 
     int selectedItemsIndex = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->selectedItems()[0]);
-    parserObj *object = m_parserObjList[selectedItemsIndex];
+    PObject *object = m_parserObjList[selectedItemsIndex];
 
     if (!object->isValidObject())
     {

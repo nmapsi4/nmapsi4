@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2010-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,172 +19,172 @@
 
 #include "parserObjects.h"
 
-parserObj::parserObj()
+PObject::PObject()
 {
 
 }
 
-parserObj::~parserObj()
+PObject::~PObject()
 {
 
 }
 
-const QString &parserObj::getHostName() const
+const QString &PObject::getHostName() const
 {
     return m_hostName;
 }
 
-const QStringList &parserObj::getMainInfo() const
+const QStringList &PObject::getMainInfo() const
 {
     return m_mainInfo;
 }
 
-const QStringList &parserObj::getServices() const
+const QStringList &PObject::getServices() const
 {
     return m_services;
 }
 
-const QStringList &parserObj::getPortServices() const
+const QStringList &PObject::getPortServices() const
 {
     return m_portServices;
 }
 
-const QStringList &parserObj::getPortOpen() const
+const QStringList &PObject::getPortOpen() const
 {
     return m_portOpened;
 }
 
-const QStringList &parserObj::getPortClose() const
+const QStringList &PObject::getPortClose() const
 {
     return m_portClosed;
 }
 
-const QStringList &parserObj::getPortFiltered() const
+const QStringList &PObject::getPortFiltered() const
 {
     return m_portFiltered;
 }
 
-const QStringList &parserObj::getTraceRouteInfo() const
+const QStringList &PObject::getTraceRouteInfo() const
 {
     return m_scanTraceRoute;
 }
 
-const QStringList &parserObj::getFullScanLog() const
+const QStringList &PObject::getFullScanLog() const
 {
     return m_fullLogScan;
 }
 
-const QStringList &parserObj::getErrorScan() const
+const QStringList &PObject::getErrorScan() const
 {
     return m_errorScan;
 }
 
-const QHash< QString, QStringList > &parserObj::getNseResult() const
+const QHash< QString, QStringList > &PObject::getNseResult() const
 {
     return m_nssResult;
 }
 
-bool parserObj::isValidObject()
+bool PObject::isValidObject()
 {
     return m_validFlag;
 }
 
-const QString &parserObj::getParameters() const
+const QString &PObject::getParameters() const
 {
     return m_parameters;
 }
 
-void parserObj::setValidity(bool isValid)
+void PObject::setValidity(bool isValid)
 {
     m_validFlag = isValid;
 }
 
-void parserObj::setHostName(const QString hostName)
+void PObject::setHostName(const QString hostName)
 {
     m_hostName.append(hostName);
 }
 
-void parserObj::setMainInfo(const QString elemMainInfo)
+void PObject::setMainInfo(const QString elemMainInfo)
 {
     m_mainInfo.append(elemMainInfo);
 }
 
-void parserObj::setServices(const QString service)
+void PObject::setServices(const QString service)
 {
     m_services.push_back(service);
 }
 
-void parserObj::setPortServices(const QString portService)
+void PObject::setPortServices(const QString portService)
 {
     m_portServices.push_back(portService);
 }
 
-void parserObj::setPortOpen(const QString portOpen)
+void PObject::setPortOpen(const QString portOpen)
 {
     m_portOpened.push_back(portOpen);
 }
 
-void parserObj::setPortClose(const QString portClose)
+void PObject::setPortClose(const QString portClose)
 {
     m_portClosed.push_back(portClose);
 }
 
-void parserObj::setPortFiltered(const QString portFiltered)
+void PObject::setPortFiltered(const QString portFiltered)
 {
     m_portFiltered.push_back(portFiltered);
 }
 
-void parserObj::setTraceRouteInfo(const QString traceElem)
+void PObject::setTraceRouteInfo(const QString traceElem)
 {
     m_scanTraceRoute.push_back(traceElem);
 }
 
-void parserObj::setFullScanLog(const QString logElem)
+void PObject::setFullScanLog(const QString logElem)
 {
     m_fullLogScan.push_back(logElem);
 }
 
-void parserObj::setErrorScan(const QString errorElem)
+void PObject::setErrorScan(const QString errorElem)
 {
     m_errorScan.push_back(errorElem);
 }
 
-void parserObj::setParameters(const QString parameters)
+void PObject::setParameters(const QString parameters)
 {
     m_parameters = parameters;
 }
 
-parserObjUtil::parserObjUtil()
+PObjectLookup::PObjectLookup()
 {
 
 }
 
-parserObjUtil::~parserObjUtil()
+PObjectLookup::~PObjectLookup()
 {
 
 }
 
-const QStringList &parserObjUtil::getInfoLookup() const
+const QStringList &PObjectLookup::getInfoLookup() const
 {
     return m_mainLookup;
 }
 
-const QString &parserObjUtil::getHostName() const
+const QString &PObjectLookup::getHostName() const
 {
     return m_hostName;
 }
 
-void parserObjUtil::setInfoLookup(const QString lookupElem)
+void PObjectLookup::setInfoLookup(const QString lookupElem)
 {
     m_mainLookup.push_back(lookupElem);
 }
 
-void parserObjUtil::setHostName(const QString hostName)
+void PObjectLookup::setHostName(const QString hostName)
 {
     m_hostName.append(hostName);
 }
 
-void parserObj::setNseResult(const QHash< QString, QStringList > nseResult)
+void PObject::setNseResult(const QHash< QString, QStringList > nseResult)
 {
     m_nssResult = nseResult;
 }

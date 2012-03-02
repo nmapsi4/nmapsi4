@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2010-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,16 +24,12 @@
 #include <QtCore/QStringList>
 #include <QtCore/QHash>
 
-/**
- * TODO:: make QStringList function const &.
- **/
-
-class parserObj
+class PObject
 {
 
 public:
-    parserObj();
-    ~parserObj();
+    PObject();
+    ~PObject();
 
     const QString &getHostName() const;
     const QString &getParameters() const;
@@ -80,12 +76,12 @@ private:
 
 };
 
-class parserObjUtil
+class PObjectLookup
 {
 
 public:
-    parserObjUtil();
-    ~parserObjUtil();
+    PObjectLookup();
+    ~PObjectLookup();
 
     const QStringList &getInfoLookup() const;
     const QString &getHostName() const;
