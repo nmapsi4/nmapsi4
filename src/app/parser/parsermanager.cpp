@@ -21,7 +21,7 @@
 #include "mainwindow.h"
 
 ParserManager::ParserManager(MainWindow* parent)
-: QWidget(parent), m_ui(parent)
+: QObject(parent), m_ui(parent)
 {
     m_rawlogHorizontalSplitter = new QSplitter(m_ui);
     m_rawlogHorizontalSplitter->setOrientation(Qt::Horizontal);
@@ -69,7 +69,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     // check nmap error
     if(!dataBuffer.size() && errorBuffer.size())
     {
-        QMessageBox::critical(this, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
+        QMessageBox::critical(m_ui, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
         return;
     }
 
@@ -770,7 +770,7 @@ void ParserManager::callSaveSingleLogWriter()
     }
 
     const QString& path = QFileDialog::getSaveFileName(
-                              this,
+                              m_ui,
                               tr("Save Log"),
                               QDir::homePath() + QDir::toNativeSeparators("/"),
                               tr("Log (*.log);;Html (*.html *.htm)")
@@ -792,7 +792,7 @@ void ParserManager::callSaveAllLogWriter()
     }
 
     const QString& directoryPath = QFileDialog::getExistingDirectory(
-                                       this,
+                                       m_ui,
                                        "Open Directory",
                                        QDir::homePath(),
                                        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks

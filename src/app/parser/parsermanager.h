@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,12 +20,12 @@
 #ifndef PARSERMANAGER_H
 #define PARSERMANAGER_H
 
-#include <QtGui/QWidget>
+#include <QtCore/QObject>
+#include <QtCore/QDir>
+#include <QtCore/QDateTime>
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplitter>
-#include <QtCore/QDir>
-#include <QtCore/QDateTime>
 
 // local inclusion
 #include "parserObjects.h"
@@ -34,7 +34,7 @@
 
 class MainWindow;
 
-class ParserManager : public QWidget
+class ParserManager : public QObject
 {
     Q_OBJECT
 
