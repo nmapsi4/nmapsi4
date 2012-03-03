@@ -29,7 +29,7 @@
 #include <QtCore/QDebug>
 
 //local include
-#include "nmapsi4Debug.h"
+#include "debug.h"
 
 class ProcessThread : public QThread
 {

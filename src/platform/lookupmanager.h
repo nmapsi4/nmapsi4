@@ -26,7 +26,7 @@
 #include <QtNetwork/QHostInfo>
 
 //local include
-#include "nmapsi4Debug.h"
+#include "debug.h"
 
 class LookupManager : public QThread
 {

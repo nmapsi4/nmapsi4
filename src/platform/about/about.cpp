@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2008-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,7 +24,7 @@ About::About(QWidget *parent)
 {
     setupUi(this);
 
-    QString version = labelVersion->text();
-    version.append(_VERSION_);
-    labelVersion->setText(version);
+    QString versionText = labelVersion->text();
+    versionText.append(version);
+    labelVersion->setText(versionText);
 }

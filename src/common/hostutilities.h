@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,8 +17,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef HOSTTOOLS_H
-#define HOSTTOOLS_H
+#ifndef HOSTUTILITIES_H
+#define HOSTUTILITIES_H
 
 #include <QtCore/QString>
 #include <QtCore/QRegExp>
@@ -34,6 +34,7 @@ public:
          * check if hostname is a dns.
          *
          * if QHostAddress isn't null hostname is a ip.
+         * * TODO:: regular espression
          **/
         QHostAddress hostAddress(hostname);
 
@@ -50,7 +51,7 @@ public:
         /**
          * check for dns validity
          *
-         * TODO:: complete
+         * TODO:: regular espression
          **/
 
         QStringList dnsRows = hostname.split(".",QString::SkipEmptyParts);
@@ -146,4 +147,4 @@ public:
 
 };
 
-#endif // HOSTTOOLS_H
+#endif // HOSTUTILITIES_H

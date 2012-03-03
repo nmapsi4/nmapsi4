@@ -25,7 +25,7 @@
 #include <QtGui/QMessageBox>
 
 #include "ui_about.h"
-#include "staticDefine.h"
+#include "version.h"
 
 class About : public QDialog, private Ui::AboutUi
 {

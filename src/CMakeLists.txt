@@ -47,7 +47,7 @@ SET(SOURCES_CPP
                 app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
-                app/loadDefaultProfile.cpp
+                app/defaultprofile.cpp
                 app/updateUI.cpp
                 app/slots.cpp
                 app/defaultuisettings.cpp

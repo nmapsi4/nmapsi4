@@ -36,13 +36,12 @@
 
 // local include
 #include "preferencesdialog.h"
-#include "staticDefine.h"
-#include "nmapsi4Debug.h"
+#include "debug.h"
 #include "addparameterstobookmark.h"
 #include "memorytools.h"
 #include "monitor.h"
 #include "utilities.h"
-#include "hostTools.h"
+#include "hostutilities.h"
 #include "vulnerability.h"
 #include "discovermanager.h"
 #include "parsermanager.h"

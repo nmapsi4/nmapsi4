@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2007-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,18 +17,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef NMAPSI4DEBUG_H
-#define NMAPSI4DEBUG_H
+#ifndef VERSION_H
+#define VERSION_H
 
-// debug define (undefine for debug)
-#define VULN_NO_DEBUG
-#define TRANSL_NO_DEBUG
-#define MAIN_NO_DEBUG
-#define SAVELOG_NO_DEBUG
-#define TOOLS_NO_DEBUG
-#define PARSER_NO_DEBUG
-#define DIG_NO_DEBUG
-//#define THREAD_NO_DEBUG
-#define LOOKUP_NO_DEBUG
+static const char version[] = "0.3.70";
 
 #endif
