@@ -20,7 +20,7 @@
 #include "utilities.h"
 
 Utilities::Utilities(QWidget* parent)
-: QWidget(parent), m_parent(parent)
+: QObject(parent), m_parent(parent)
 {
 }
 
@@ -57,7 +57,7 @@ void Utilities::openDirectoryDialog(QLineEdit *destination)
 
 void Utilities::about()
 {
-    QWeakPointer<About> about = new About(this);
+    QWeakPointer<About> about = new About(m_parent);
     about.data()->exec();
 
     if (!about.isNull())
@@ -68,7 +68,7 @@ void Utilities::about()
 
 void Utilities::aboutQt()
 {
-    QMessageBox::aboutQt(this, "Qt Version");
+    QMessageBox::aboutQt(m_parent, "Qt Version");
 }
 
 void Utilities::showBugUrl()

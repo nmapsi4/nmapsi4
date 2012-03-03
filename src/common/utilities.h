@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,16 +22,16 @@
 
 #include <QtGui/QFileDialog>
 #include <QtGui/QLineEdit>
-#include <QtCore/QDir>
 #include <QtGui/QDesktopServices>
+#include <QtCore/QObject>
+#include <QtCore/QDir>
 #include <QtCore/QUrl>
-#include <QtGui/QWidget>
 
 // local include
 #include "about.h"
 
 
-class Utilities : public QWidget
+class Utilities : public QObject
 {
     Q_OBJECT
 
