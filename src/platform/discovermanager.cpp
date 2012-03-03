@@ -405,7 +405,7 @@ void DiscoverManager::calculateAddressFromCIDR()
         return;
     }
 
-    QStringList cidr = m_ui->lineCidr->text().split("/");
+    QStringList cidr = m_ui->lineCidr->text().split('/');
 
     if (cidr.size() == 2)
     {
