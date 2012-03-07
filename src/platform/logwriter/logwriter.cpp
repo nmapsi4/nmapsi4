@@ -28,7 +28,7 @@ void LogWriter::writeAllLogFile(QList<PObject*> pObjectList, const QString& path
     QSettings settings("nmapsi4", "nmapsi4");
     int logType = settings.value("logType", 0).toInt();
 
-    foreach (PObject* object, pObjectList)
+    Q_FOREACH (PObject* object, pObjectList)
     {
         if (object->isValidObject())
         {
@@ -104,19 +104,19 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "|---------- Services" << "\n\n";
 
     // Open Ports
-    foreach (const QString &token, m_pObject->getPortOpen())
+    Q_FOREACH (const QString& token, m_pObject->getPortOpen())
     {
         fileStream << token << "\n";
     }
 
     // close Ports
-    foreach (const QString &token, m_pObject->getPortClose())
+    Q_FOREACH (const QString& token, m_pObject->getPortClose())
     {
         fileStream << token << "\n";
     }
 
     // filtered/unfilteres Ports
-    foreach (const QString &token, m_pObject->getPortFiltered())
+    Q_FOREACH (const QString& token, m_pObject->getPortFiltered())
     {
         fileStream << token << "\n";
     }
@@ -124,7 +124,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "\n|---------- General information" << "\n\n";
 
     // filtered/unfilteres Ports
-    foreach (const QString &token, m_pObject->getMainInfo())
+    Q_FOREACH (const QString& token, m_pObject->getMainInfo())
     {
         fileStream << token << "\n";
     }
@@ -139,7 +139,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     {
         fileStream << "\n--- " << i.key() << "\n\n";
 
-        foreach (const QString& value, i.value())
+        Q_FOREACH (const QString& value, i.value())
         {
             fileStream << value << "\n";
         }
@@ -148,7 +148,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "\n|---------- Scan Errors/Warning" << "\n\n";
 
     // scan errors/Warning
-    foreach (const QString &token, m_pObject->getErrorScan())
+    Q_FOREACH (const QString& token, m_pObject->getErrorScan())
     {
         fileStream << token << "\n";
     }
@@ -169,7 +169,7 @@ void LogWriter::writeRawLogFormat(const QString& path)
 
     QTextStream fileStream(filePtr);
 
-    foreach (const QString& token, m_pObject->getFullScanLog())
+    Q_FOREACH (const QString& token, m_pObject->getFullScanLog())
     {
         fileStream << token << "\n";
     }
@@ -218,19 +218,19 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Open Ports
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Services</b></div>";
     htmlPage += "<div class=\"result\">";
-    foreach (const QString &token, m_pObject->getPortOpen())
+    Q_FOREACH (const QString& token, m_pObject->getPortOpen())
     {
         htmlPage += token +"<br/>\n";
     }
 
     // close Ports
-    foreach (const QString &token, m_pObject->getPortClose())
+    Q_FOREACH (const QString& token, m_pObject->getPortClose())
     {
         htmlPage += token +"<br/>\n";
     }
 
     // filtered/unfilteres Ports
-    foreach (const QString &token, m_pObject->getPortFiltered())
+    Q_FOREACH (const QString& token, m_pObject->getPortFiltered())
     {
         htmlPage += token +"<br/>\n";
     }
@@ -241,7 +241,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Info
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>General information</b></div>";
     htmlPage += "<div class=\"result\">";
-    foreach (const QString &token, m_pObject->getMainInfo())
+    Q_FOREACH (const QString& token, m_pObject->getMainInfo())
     {
         htmlPage +=token +"<br/>\n";
     }
@@ -251,7 +251,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // scan errors/Warning
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Scan Errors/Warning</b></div>";
     htmlPage += "<div class=\"result\">";
-    foreach (const QString &token, m_pObject->getErrorScan())
+    Q_FOREACH (const QString& token, m_pObject->getErrorScan())
     {
         htmlPage += token + "<br/>\n";
     }
@@ -271,7 +271,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         htmlPage += "</div>";
 
         htmlPage += "<div class=\"result\">";
-        foreach (const QString& value, i.value())
+        Q_FOREACH (const QString& value, i.value())
         {
             htmlPage += value + "<br/>\n";
         }

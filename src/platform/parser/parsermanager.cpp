@@ -457,7 +457,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     QString noInfo("not Discovered");
 
-    foreach (const QString &token, m_parserObjList[hostIndex]->getMainInfo())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getMainInfo())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeHostDet);
         m_itemListScan.push_front(root);
@@ -473,7 +473,7 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->comboVuln->insertItem(0,"Services");
 
     // Show open ports
-    foreach (const QString &token, m_parserObjList[hostIndex]->getPortOpen())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getPortOpen())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
         m_itemListScan.push_front(root);
@@ -516,7 +516,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show Close ports
-    foreach (const QString &token, m_parserObjList[hostIndex]->getPortClose())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getPortClose())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
         m_itemListScan.push_front(root);
@@ -558,7 +558,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show Filtered ports
-    foreach (const QString &token, m_parserObjList[hostIndex]->getPortFiltered())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getPortFiltered())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
         m_itemListScan.push_front(root);
@@ -601,7 +601,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // show services
-    foreach (const QString &token, m_parserObjList[hostIndex]->getServices())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getServices())
     {
         if (!m_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes))
         {
@@ -658,7 +658,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show full scan log
-    foreach (const QString &token, m_parserObjList[hostIndex]->getFullScanLog())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getFullScanLog())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listScan);
         m_itemListScan.push_front(root);
@@ -669,7 +669,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show scan error
-    foreach (const QString &token, m_parserObjList[hostIndex]->getErrorScan())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getErrorScan())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listScanError);
         m_itemListScan.push_front(root);
@@ -683,7 +683,7 @@ void ParserManager::showParserObj(int hostIndex)
 void ParserManager::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
-    foreach (const QString &token, m_parserObjList[hostIndex]->getTraceRouteInfo())
+    foreach (const QString& token, m_parserObjList[hostIndex]->getTraceRouteInfo())
     {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeTraceroot);
         m_itemListScan.push_front(root);
@@ -741,7 +741,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     {
         if(m_parserObjList[hostIndex]->getHostName() == elem->getHostName())
         {
-            foreach (const QString &token, elem->getInfoLookup())
+            foreach (const QString& token, elem->getInfoLookup())
             {
                 QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeLookup);
                 m_itemListScan.push_front(root);
