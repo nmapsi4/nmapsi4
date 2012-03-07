@@ -27,4 +27,7 @@ static const char matchTraceroute[] = "^\\d\\d?";
 static const char matchIp[] = "((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})"
     "([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])";
 
+static const char matchDNS[] = "^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)"
+    "*([A-Za-z]|[A-Za-z][A-Za-z0-9\\-]*[A-Za-z0-9])$";
+
 #endif // REGULAREXPRESSION_H
