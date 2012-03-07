@@ -9,10 +9,10 @@ include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src/platform/logwriter/
     ${CMAKE_SOURCE_DIR}/src/platform/history/
     ${CMAKE_SOURCE_DIR}/src/platform/about/
+    ${CMAKE_SOURCE_DIR}/src/platform/monitor/
+    ${CMAKE_SOURCE_DIR}/src/platform/parser/
     ${CMAKE_SOURCE_DIR}/src/common/
     ${CMAKE_SOURCE_DIR}/src/app/
-    ${CMAKE_SOURCE_DIR}/src/app/parser/
-    ${CMAKE_SOURCE_DIR}/src/app/monitor/
     ${CMAKE_SOURCE_DIR}/src/app/preference/
     ${CMAKE_SOURCE_DIR}/src/app/profiler/
 )
@@ -21,7 +21,7 @@ include_directories(${CMAKE_SOURCE_DIR}
 if (Q_WS_X11)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      dbus/org.nmapsi4.Nmapsi4.xml
-                     src/app/monitor/monitor.h
+                     src/platform/monitor/monitor.h
                      Monitor)
 endif (Q_WS_X11)
 
@@ -37,13 +37,13 @@ SET(SOURCES_CPP
                 platform/logwriter/logwriter.cpp
                 platform/history/history.cpp
                 platform/about/about.cpp
+                platform/monitor/monitor.cpp
+                platform/monitor/monitorhostscandetails.cpp
+                platform/parser/parsermanager.cpp
                 common/utilities.cpp
                 common/pushbuttonorientated.cpp
                 common/processthread.cpp
                 common/pobjects.cpp
-                app/parser/parsermanager.cpp
-                app/monitor/monitor.cpp
-                app/monitor/monitorhostscandetails.cpp
                 app/preference/preferencesdialog.cpp
                 app/profiler/profilerdialog.cpp
                 app/profiler/profilerdialogoptions.cpp
@@ -64,33 +64,33 @@ if (Q_WS_X11)
 endif (Q_WS_X11)
 
 SET(SOURCES_H
-	platform/lookupmanager.h
-	platform/digmanager.h
-	platform/addvulnerabilityurl.h
+        platform/lookupmanager.h
+        platform/digmanager.h
+        platform/addvulnerabilityurl.h
         platform/vulnerability.h
-	platform/addparameterstobookmark.h
-	platform/discover.h
+        platform/addparameterstobookmark.h
+        platform/discover.h
         platform/discovermanager.h
         platform/nsemanager.h
+        platform/monitor/monitorhostscandetails.h
+        platform/monitor/monitor.h
+        platform/parser/parsermanager.h
         common/utilities.h
-	common/processthread.h
-	app/preference/preferencesdialog.h
-	app/monitor/monitorhostscandetails.h
-        app/monitor/monitor.h
+        common/processthread.h
         app/profiler/profilerdialog.h
-	app/parser/parsermanager.h
+        app/preference/preferencesdialog.h
         app/bookmarkmanager.h
         app/actionmanager.h
         app/mainwindow.h
 )
 
 SET(SOURCES_UI
-	platform/addvulnerabilityurl.ui
-	platform/addparameterstobookmark.ui
+        platform/addvulnerabilityurl.ui
+        platform/addparameterstobookmark.ui
         platform/about/about.ui
-	app/preference/preferencesdialog.ui
+        platform/monitor/monitorhostscandetails.ui
+        app/preference/preferencesdialog.ui
         app/profiler/profilerdialog.ui
-	app/monitor/monitorhostscandetails.ui
         app/mainwindow.ui
 )
 
