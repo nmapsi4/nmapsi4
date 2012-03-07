@@ -24,7 +24,7 @@ static const char matchPorts[] = "^\\d{1,5}/+\\d?";
 
 static const char matchTraceroute[] = "^\\d\\d?";
 
-static const char matchIp[] = "((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})"
+static const char matchIpv4[] = "((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})"
     "([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])";
 
 static const char matchDNS[] = "^(([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)"

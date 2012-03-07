@@ -355,7 +355,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 {
     Q_UNUSED(parameters);
 
-    QRegExp ip(matchIp);
+    QRegExp ipv4(matchIpv4);
 
     if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD")))
     {
@@ -370,10 +370,10 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         int positionMatched = 0;
 
         QStringList matched;
-        while ((positionMatched = ip.indexIn(data, positionMatched)) != -1)
+        while ((positionMatched = ipv4.indexIn(data, positionMatched)) != -1)
         {
-            matched << ip.cap(0);
-            positionMatched += ip.matchedLength();
+            matched << ipv4.cap(0);
+            positionMatched += ipv4.matchedLength();
         }
 
         if (matched.size())

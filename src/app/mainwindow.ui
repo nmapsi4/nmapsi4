@@ -1460,7 +1460,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox">
               <property name="title">
-               <string>Ips range</string>
+               <string>Ips range (IPv4)</string>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <property name="margin">
@@ -1611,7 +1611,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_3">
               <property name="title">
-               <string>Cidr notation</string>
+               <string>Cidr notation (IPv4)</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
                <property name="margin">
@@ -1729,7 +1729,7 @@
      <x>0</x>
      <y>0</y>
      <width>836</width>
-     <height>20</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
