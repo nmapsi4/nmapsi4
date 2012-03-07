@@ -25,6 +25,8 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtNetwork/QHostAddress>
 
+#include "regularexpression.h"
+
 class HostTools
 {
 public:
@@ -32,10 +34,11 @@ public:
     {
         /**
          * check if hostname is a dns.
+         * QHostAddress is not null only if hostname is a ip.
          *
-         * if QHostAddress isn't null hostname is a ip.
-         * * TODO:: regular espression
          **/
+
+        // The check is valid for ipv4 and ipv6 address.
         QHostAddress hostAddress(hostname);
 
         if (!hostAddress.isNull())
@@ -49,19 +52,18 @@ public:
     static bool isValidDns(const QString& hostname)
     {
         /**
-         * check for dns validity
+         * Check for dns validity.
          *
-         * TODO:: regular espression
          **/
 
-        QStringList dnsRows = hostname.split(".",QString::SkipEmptyParts);
+        QRegExp dns(matchDNS);
 
-        if ( !dnsRows.size() || dnsRows.last().data()->isDigit())
+        if (dns.indexIn(hostname) != -1)
         {
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     static QString clearHost(const QString hostname)

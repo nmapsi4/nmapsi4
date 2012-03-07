@@ -28,13 +28,13 @@
 //local include
 #include "debug.h"
 
+/*!
+ * Internal lookup thread class, return QHostInfo with
+ * address resolv.
+ */
+
 class LookupManager : public QThread
 {
-    /*!
-    * internal lookup thread class, return QHostInfo with
-    * address resolv.
-    */
-
     Q_OBJECT
 
 public:
