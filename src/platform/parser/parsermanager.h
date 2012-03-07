@@ -31,6 +31,7 @@
 #include "pobjects.h"
 #include "memorytools.h"
 #include "logwriter.h"
+#include "regularexpression.h"
 
 class MainWindow;
 

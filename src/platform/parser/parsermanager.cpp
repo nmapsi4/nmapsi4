@@ -189,8 +189,8 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     QString hostCheck = parList[parList.size()-1];
     elemObj->setHostName(hostCheck);
 
-    QRegExp portRx("^\\d{1,5}/+\\d?");
-    QRegExp tracerouteRx("^\\d\\d?");
+    QRegExp portRx(matchPorts);
+    QRegExp tracerouteRx(matchTraceroute);
     QString generalBuffer_(hostCheck);
     QString scanBuffer;
     QString bufferInfo;

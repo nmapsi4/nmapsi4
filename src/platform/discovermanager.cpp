@@ -355,7 +355,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 {
     Q_UNUSED(parameters);
 
-    QRegExp ip("((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])");
+    QRegExp ip(matchIp);
 
     if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD")))
     {

@@ -25,6 +25,7 @@
 #include <QtGui/QSplitter>
 
 #include "discover.h"
+#include "regularexpression.h"
 
 class MainWindow;
 
