@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -314,7 +314,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
         return;
     }
 
-    // NOTE: disable CIDR button but also ip range discover
+    // disable CIDR button but also ip range discover
     m_ui->cidrButton->setEnabled(false);
     m_ui->startDiscoverButt->setEnabled(false);
     m_ui->stopDiscoverCidrButton->setEnabled(true);
@@ -337,15 +337,15 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     connect(discoverPtr, SIGNAL(cidrCurrentValue(QString,QString)),
             this, SLOT(currentDiscoverIpsFromCIDR(QString,QString)));
     connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
-            this, SLOT(endDiscoverIpsFromCIDR(QStringList,QByteArray,QByteArray)));
+            this, SLOT(endDiscoverIpsFromCIDR()));
 
     discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters,this);
 
 }
 
-void DiscoverManager::endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
+void DiscoverManager::endDiscoverIpsFromCIDR()
 {
-    // TODO: active CIDR button
+    // restore default button state.
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
     m_ui->cidrButton->setEnabled(true);
     m_ui->stopDiscoverCidrButton->setEnabled(false);
@@ -353,6 +353,8 @@ void DiscoverManager::endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArra
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
 {
+    Q_UNUSED(parameters);
+
     QRegExp ip("((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])");
 
     if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD")))

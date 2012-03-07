@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -69,7 +69,7 @@ public slots:
 
 private slots:
     void endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff);
-    void endDiscoverIpsFromCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
+    void endDiscoverIpsFromCIDR();
     void currentDiscoverIpsFromCIDR(const QString parameters, const QString data);
 };
 
