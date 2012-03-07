@@ -44,6 +44,6 @@ void addParametersToBookmark::exit()
     }
     else
     {
-        // TODO lineEdit is Empty
+        QMessageBox::warning(this, tr("Warning"), tr("Insert profile name or/and profile parameters."), tr("Close"));
     }
 }

@@ -21,6 +21,8 @@
 #define ADDPARAMETERSTOBOOKMARK_H
 
 #include <QtGui/QDialog>
+#include <QtGui/QMessageBox>
+
 #include "ui_addparameterstobookmark.h"
 
 class addParametersToBookmark : public QDialog, private Ui::addParBook
