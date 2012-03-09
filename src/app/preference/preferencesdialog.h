@@ -26,13 +26,13 @@
 // local include
 #include "ui_preferencesdialog.h"
 
-class preferencesDialog : public QDialog, private Ui::ProfileMain
+class PreferencesDialog : public QDialog, private Ui::ProfileMain
 {
     Q_OBJECT
 
 public:
-    preferencesDialog(QWidget *parent = 0);
-    ~preferencesDialog();
+    PreferencesDialog(QWidget *parent = 0);
+    ~PreferencesDialog();
 
 private:
     QListWidgetItem* m_generalItem;

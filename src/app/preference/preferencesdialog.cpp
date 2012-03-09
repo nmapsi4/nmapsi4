@@ -19,7 +19,7 @@
 
 #include "preferencesdialog.h"
 
-preferencesDialog::preferencesDialog(QWidget *parent)
+PreferencesDialog::PreferencesDialog(QWidget *parent)
 : QDialog(parent)
 {
     setupUi(this);
@@ -27,6 +27,8 @@ preferencesDialog::preferencesDialog(QWidget *parent)
 
     connect(buttonSave, SIGNAL(clicked(bool)),
             this, SLOT(quit()));
+    connect(buttonDefault, SIGNAL(clicked()),
+            this, SLOT(setDefaults()));
 
     // create a read log config
     int logType = settings.value("logType", 1).toInt();
@@ -54,20 +56,17 @@ preferencesDialog::preferencesDialog(QWidget *parent)
     spinBoxCache->setValue(cache);
 
     // Create listview items
-    listViewOptions->setIconSize(QSize(52, 52));
+    listViewOptions->setIconSize(QSize(42, 42));
 
-    m_generalItem = new QListWidgetItem(listViewOptions);
-    m_generalItem->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
-    m_generalItem->setText(tr("General"));
+    m_generalItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("General"));
+    listViewOptions->addItem(m_generalItem);
 
-    m_sizeItem = new QListWidgetItem(listViewOptions);
-    m_sizeItem->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
-    m_sizeItem->setText(tr("Size"));
+    m_sizeItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")), tr("Size"));
+    listViewOptions->addItem(m_sizeItem);
 
 #ifndef Q_WS_WIN
-    m_lookItem = new QListWidgetItem(listViewOptions);
-    m_lookItem->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    m_lookItem->setText(tr("Lookup"));
+    m_lookItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Lookup"));
+    listViewOptions->addItem(m_lookItem);
 #else
     //NOTE disable lookup on MS Windows
     comboLookupType->setCurrentIndex(0);
@@ -78,22 +77,13 @@ preferencesDialog::preferencesDialog(QWidget *parent)
             this, SLOT(updateListWidgetItem()));
 
     m_generalItem->setSelected(true);
-
-    connect(buttonDefault, SIGNAL(clicked()),
-            this, SLOT(setDefaults()));
 }
 
-preferencesDialog::~preferencesDialog()
+PreferencesDialog::~PreferencesDialog()
 {
-    // NOTE: remove segfault on delete
-    listViewOptions->disconnect(SIGNAL(itemSelectionChanged()));
-
-    delete m_generalItem;
-    delete m_lookItem;
-    delete m_sizeItem;
 }
 
-void preferencesDialog::saveValues()
+void PreferencesDialog::saveValues()
 {
     QSettings settings("nmapsi4", "nmapsi4");
     settings.setValue("logType", comboLogType->currentIndex());
@@ -123,7 +113,7 @@ void preferencesDialog::saveValues()
 }
 
 
-void preferencesDialog::updateListWidgetItem()
+void PreferencesDialog::updateListWidgetItem()
 {
     if (m_generalItem->isSelected())
     {
@@ -142,13 +132,13 @@ void preferencesDialog::updateListWidgetItem()
     }
 }
 
-void preferencesDialog::quit()
+void PreferencesDialog::quit()
 {
     saveValues(); // save Options
     emit accept();   // send accept signal and exit
 }
 
-void preferencesDialog::setDefaults()
+void PreferencesDialog::setDefaults()
 {
     checkSize->setChecked(false);
     checkWinPos->setChecked(false);

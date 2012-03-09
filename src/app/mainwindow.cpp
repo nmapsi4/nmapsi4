@@ -92,7 +92,7 @@ void MainWindow::initObject()
 
 void MainWindow::startPreferencesDialog()   // start preference UI
 {
-    QWeakPointer<preferencesDialog> dialogPreference = new preferencesDialog(this);
+    QWeakPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
 
     connect(dialogPreference.data(), SIGNAL(accepted()),
             this, SLOT(syncSettings()));
