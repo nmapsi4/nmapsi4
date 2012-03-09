@@ -63,18 +63,6 @@ void MainWindow::connectSlots()
     connect(actionSave_As_Menu, SIGNAL(triggered()),
             m_parser, SLOT(callSaveAllLogWriter()));
 
-    // ActionManager signals
-    connect(treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_collections, SLOT(scanBookmarkContextMenu()));
-    connect(treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_collections, SLOT(parametersBookmarkContextMenu()));
-    connect(GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_collections, SLOT(mainServicesContextMenu()));
-    connect(treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_collections, SLOT(servicesContextMenu()));
-    connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_collections, SLOT(vulnerabilityUrlContextMenu()));
-
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             m_bookmark, SLOT(saveItemToBookmarks()));
     connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
@@ -125,7 +113,6 @@ void MainWindow::connectSlots()
             m_discoverManager, SLOT(stopDiscoverFromCIDR()));
     connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             m_discoverManager, SLOT(runtimeScanDiscover()));
-
     connect(reloadComboDiscover, SIGNAL(clicked()),
             m_discoverManager, SLOT(startDiscover()));
     connect(calculateAddressButton, SIGNAL(clicked()),
