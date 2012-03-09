@@ -24,10 +24,6 @@ void MainWindow::connectSlots()
     // action slot
     connect(action_Quit, SIGNAL(triggered()),
             this, SLOT(close()));    // file action menu
-    connect(action_About, SIGNAL(triggered()),
-            m_utilities, SLOT(about()));    // about action menu
-    connect(actionAbout_Qt, SIGNAL(triggered()),
-            m_utilities, SLOT(aboutQt()));    // about action menu
     connect(action_Scan_menu, SIGNAL(triggered()),
             this, SLOT(startScan()));    // about action menu
     connect(actionClear_History, SIGNAL(triggered()),
@@ -79,12 +75,10 @@ void MainWindow::connectSlots()
     connect(treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             m_collections, SLOT(vulnerabilityUrlContextMenu()));
 
-
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             m_bookmark, SLOT(saveItemToBookmarks()));
     connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
             m_bookmark, SLOT(startParametersToBookmarksDialog()));
-
 
     // Vuln signal
     connect(comboPar, SIGNAL(activated(QString)),
@@ -117,16 +111,6 @@ void MainWindow::connectSlots()
             m_parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
             m_monitor, SLOT(stopAllScan()));
-
-    // action help menu (browser call)
-    connect(actionReport_Bug, SIGNAL(triggered()),
-            m_utilities, SLOT(showBugUrl()));
-    connect(actionVisit_Website, SIGNAL(triggered()),
-            m_utilities, SLOT(showHomepageUrl()));
-    connect(actionDocumentation, SIGNAL(triggered()),
-            m_utilities, SLOT(showDocumentationUrl()));
-    connect(actionDonate_Money, SIGNAL(triggered()),
-            m_utilities, SLOT(showDonateUrl()));
 
     // Discover
     connect(comboDiscover, SIGNAL(activated(QString)),

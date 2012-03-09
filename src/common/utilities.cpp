@@ -18,10 +18,25 @@
  ***************************************************************************/
 
 #include "utilities.h"
+#include "mainwindow.h"
 
-Utilities::Utilities(QWidget* parent)
-: QObject(parent), m_parent(parent)
+Utilities::Utilities(MainWindow* parent)
+: QObject(parent), m_ui(parent)
 {
+    connect(m_ui->action_About, SIGNAL(triggered()),
+            this, SLOT(about()));    // about action menu
+    connect(m_ui->actionAbout_Qt, SIGNAL(triggered()),
+            this, SLOT(aboutQt()));    // about action menu
+
+        // action help menu (browser call)
+    connect(m_ui->actionReport_Bug, SIGNAL(triggered()),
+            this, SLOT(showBugUrl()));
+    connect(m_ui->actionVisit_Website, SIGNAL(triggered()),
+            this, SLOT(showHomepageUrl()));
+    connect(m_ui->actionDocumentation, SIGNAL(triggered()),
+            this, SLOT(showDocumentationUrl()));
+    connect(m_ui->actionDonate_Money, SIGNAL(triggered()),
+            this, SLOT(showDonateUrl()));
 }
 
 Utilities::~Utilities()
@@ -35,7 +50,7 @@ void Utilities::openFileBrowser(QLineEdit *destination)
 
 void Utilities::showBrowser(QLineEdit *destination) // private
 {
-    QString FileName = QFileDialog::getOpenFileName(m_parent, tr("Select the file"), "/home", "");
+    QString FileName = QFileDialog::getOpenFileName(m_ui, tr("Select the file"), "/home", "");
 
     destination->setText(FileName);
 }
@@ -44,7 +59,7 @@ void Utilities::openDirectoryDialog(QLineEdit *destination)
 {
     QString url = QDir::homePath();
 
-    QString FileName = QFileDialog::getExistingDirectory(m_parent, "Open Directory",
+    QString FileName = QFileDialog::getExistingDirectory(m_ui, "Open Directory",
                url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
     if(FileName.isEmpty())
@@ -57,7 +72,7 @@ void Utilities::openDirectoryDialog(QLineEdit *destination)
 
 void Utilities::about()
 {
-    QWeakPointer<About> about = new About(m_parent);
+    QWeakPointer<About> about = new About(m_ui);
     about.data()->exec();
 
     if (!about.isNull())
@@ -68,7 +83,7 @@ void Utilities::about()
 
 void Utilities::aboutQt()
 {
-    QMessageBox::aboutQt(m_parent, "Qt Version");
+    QMessageBox::aboutQt(m_ui, "Qt Version");
 }
 
 void Utilities::showBugUrl()

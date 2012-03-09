@@ -30,20 +30,21 @@
 // local include
 #include "about.h"
 
+class MainWindow;
 
 class Utilities : public QObject
 {
     Q_OBJECT
 
 public:
-    Utilities(QWidget* parent=0);
+    Utilities(MainWindow* parent=0);
     ~Utilities();
     void openDirectoryDialog(QLineEdit *destination);
     void openFileBrowser(QLineEdit *destination);
 
 private:
     void showBrowser(QLineEdit *destination);
-    QWidget* m_parent;
+    MainWindow* m_ui;
 
 public slots:
     void about();
