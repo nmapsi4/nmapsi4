@@ -44,6 +44,6 @@ void addParametersToBookmark::exit()
     }
     else
     {
-        QMessageBox::warning(this, tr("Warning"), tr("Insert profile name or/and profile parameters."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or/and profile parameters."), tr("Close"));
     }
 }

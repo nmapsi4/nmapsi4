@@ -19,7 +19,7 @@
 
 #include "profilerdialog.h"
 
-void profilerManager::restoreValuesFromProfile(const QStringList parameters)
+void ProfilerManager::restoreValuesFromProfile(const QStringList parameters)
 {
     for (int index = 0; index < parameters.size(); ++index)
     {
@@ -155,13 +155,13 @@ void profilerManager::restoreValuesFromProfile(const QStringList parameters)
 }
 
 
-void profilerManager::loadDefaultHash()
+void ProfilerManager::loadDefaultHash()
 {
     preLoadOptionsCheckBox();
     preLoadOptionsCombo();
 }
 
-void profilerManager::preLoadOptionsCombo()
+void ProfilerManager::preLoadOptionsCombo()
 {
     QPair<QComboBox*,int> comboDefault;
 
@@ -250,7 +250,7 @@ void profilerManager::preLoadOptionsCombo()
     preLoadComboList.insert("-d2",comboDefault);
 }
 
-void profilerManager::preLoadOptionsCheckBox()
+void ProfilerManager::preLoadOptionsCheckBox()
 {
 
     QPair<QCheckBox*,QString> comboDefault;

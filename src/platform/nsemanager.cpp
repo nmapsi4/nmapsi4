@@ -20,7 +20,7 @@
 #include "nsemanager.h"
 #include "profilerdialog.h"
 
-NseManager::NseManager(profilerManager* parent)
+NseManager::NseManager(ProfilerManager* parent)
 : QObject(parent), m_ui(parent)
 {
     nseTreeDefaultValue();
@@ -28,8 +28,6 @@ NseManager::NseManager(profilerManager* parent)
 
 NseManager::~NseManager()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
     freemap<QString,QTextDocument*>::itemDeleteAll(m_nseHelpCache);
 
     if (!m_documentScript.isNull())

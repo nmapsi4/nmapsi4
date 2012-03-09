@@ -19,14 +19,17 @@
 
 #include "profilerdialog.h"
 
-profilerManager::profilerManager(QWidget* parent)
+ProfilerManager::ProfilerManager(QWidget* parent)
 : QDialog(parent)
 {
     Q_UNUSED(parent);
     initObject();
+
+    setWindowTitle(tr("New profile") + " - Nmapsi4");
 }
 
-profilerManager::profilerManager(const QString profileName, const QString parameters, QWidget* parent) : QDialog(parent)
+ProfilerManager::ProfilerManager(const QString profileName, const QString parameters, QWidget* parent)
+: QDialog(parent)
 {
     Q_UNUSED(parent);
     initObject();
@@ -36,9 +39,11 @@ profilerManager::profilerManager(const QString profileName, const QString parame
     profileNameLine->setText(profileName);
     restoreValuesFromProfile(parametersList);
     reloadScanParameters();
+
+    setWindowTitle(tr("Edit profile ") + QString("\"") + profileName + QString("\"") + " - Nmapsi4");
 }
 
-void profilerManager::initObject()
+void ProfilerManager::initObject()
 {
     #ifndef Q_WS_WIN
     m_uid = getuid();
@@ -94,21 +99,11 @@ void profilerManager::initObject()
     m_profileW->setSelected(true);
 }
 
-profilerManager::~profilerManager()
+ProfilerManager::~ProfilerManager()
 {
-    // NOTE: remove segfault on delete
-    optionsListScan->disconnect(SIGNAL(itemSelectionChanged()));
-
-    delete m_timingW;
-    delete m_discoverW;
-    delete m_toolW;
-    delete m_scanW;
-    delete m_profileW;
-    delete m_nseW;
-    delete m_nseManager;
 }
 
-void profilerManager::createQList()
+void ProfilerManager::createQList()
 {
     m_profileW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/document-new.png")),tr("Profile"));
     optionsListScan->addItem(m_profileW);
@@ -129,7 +124,7 @@ void profilerManager::createQList()
     optionsListScan->addItem(m_nseW);
 }
 
-void profilerManager::exit()
+void ProfilerManager::exit()
 {
     if (!profileNameLine->text().isEmpty())
     {
@@ -141,16 +136,16 @@ void profilerManager::exit()
     }
     else
     {
-        QMessageBox::warning(this, tr("No profile name"), tr("Please, enter profile name."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name."), tr("Close"));
     }
 }
 
-void profilerManager::reloadScanParameters()
+void ProfilerManager::reloadScanParameters()
 {
     lineScanParameters->setText(buildExtensions().join(" "));
 }
 
-void profilerManager::optionListUpdate()
+void ProfilerManager::optionListUpdate()
 {
     if (m_profileW->isSelected())
     {
@@ -179,7 +174,7 @@ void profilerManager::optionListUpdate()
     }
 }
 
-QStringList profilerManager::buildExtensions()
+QStringList ProfilerManager::buildExtensions()
 {
     QStringList parameters;
 
@@ -192,7 +187,7 @@ QStringList profilerManager::buildExtensions()
         QString tmpListArgs_;
 
         // read nse category actived
-        foreach (const QString &token, m_nseManager->getActiveNseScript())
+        Q_FOREACH (const QString& token, m_nseManager->getActiveNseScript())
         {
             tmpList_.append(token);
             tmpList_.append(",");
@@ -201,8 +196,8 @@ QStringList profilerManager::buildExtensions()
         // load nse manual script
         if (!comboNseInv->lineEdit()->text().isEmpty())
         {
-            QStringList manualNse_ = comboNseInv->lineEdit()->text().split(',');
-            foreach (const QString &token, manualNse_)
+            QStringList manualNse = comboNseInv->lineEdit()->text().split(',');
+            Q_FOREACH (const QString& token, manualNse)
             {
                 tmpList_.append(token);
                 tmpList_.append(",");
@@ -218,10 +213,10 @@ QStringList profilerManager::buildExtensions()
 
         if (!comboNsePar->lineEdit()->text().isEmpty())
         {
-            QString argsClean_ = comboNsePar->lineEdit()->text().remove('"');
-            argsClean_ = argsClean_.remove('\'');
-            QStringList argsNse_ = argsClean_.split(',');
-            foreach (const QString &token, argsNse_)
+            QString argsClean = comboNsePar->lineEdit()->text().remove('"');
+            argsClean = argsClean.remove('\'');
+            QStringList argsNse = argsClean.split(',');
+            Q_FOREACH (const QString& token, argsNse)
             {
                 tmpListArgs_.append(token);
                 tmpListArgs_.append(",");
@@ -658,7 +653,7 @@ QStringList profilerManager::buildExtensions()
     return parameters;
 }
 
-void profilerManager::update_portCombo()
+void ProfilerManager::update_portCombo()
 {
     switch (portCombo->currentIndex())
     {
@@ -684,7 +679,7 @@ void profilerManager::update_portCombo()
     }
 }
 
-void profilerManager::loadDefaultComboValues()
+void ProfilerManager::loadDefaultComboValues()
 {
     if (!m_uid)
     { // if root
@@ -736,7 +731,7 @@ void profilerManager::loadDefaultComboValues()
     }
 }
 
-void profilerManager::update_options()
+void ProfilerManager::update_options()
 {
     if (checkBoxDevice->isChecked())
     {
@@ -785,13 +780,13 @@ void profilerManager::update_options()
     }
 }
 
-void profilerManager::update_comboVerbosity()
+void ProfilerManager::update_comboVerbosity()
 {
     if (comboVerbosity->currentIndex() == 4)
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
 }
 
-void profilerManager::updateBaseOptions()
+void ProfilerManager::updateBaseOptions()
 {
     switch (comboBaseOptions->currentIndex())
     {
@@ -826,7 +821,7 @@ void profilerManager::updateBaseOptions()
     reloadScanParameters();
 }
 
-void profilerManager::setNormalProfile()
+void ProfilerManager::setNormalProfile()
 {
     resetOptions();
     comboScanTcp->setCurrentIndex(1);
@@ -837,7 +832,7 @@ void profilerManager::setNormalProfile()
     checkAggressiveOptions->setChecked(true);
 }
 
-void profilerManager::setFullVersionProfile()
+void ProfilerManager::setFullVersionProfile()
 {
     resetOptions();
     comboScanTcp->setCurrentIndex(3);
@@ -850,13 +845,13 @@ void profilerManager::setFullVersionProfile()
     checkTraceroute->setChecked(true);
 }
 
-void profilerManager::setDefaultNseScripts()
+void ProfilerManager::setDefaultNseScripts()
 {
     m_nseManager->nseTreeActiveSingleScript("default");
     m_nseManager->nseTreeActiveSingleScript("safe");
 }
 
-void profilerManager::resetOptions()
+void ProfilerManager::resetOptions()
 {
     versionBox->setChecked(false);
     checkOS->setChecked(false);

@@ -107,7 +107,7 @@ void MainWindow::startPreferencesDialog()   // start preference UI
 
 void MainWindow::newProfile()
 {
-    QWeakPointer<profilerManager> pManager = new profilerManager(this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
@@ -122,7 +122,7 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<profilerManager> pManager = new profilerManager(comboPar->currentText(),comboAdv->currentText(),this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboPar->currentText(),comboAdv->currentText(),this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));

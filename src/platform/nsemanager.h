@@ -32,14 +32,14 @@
 
 using namespace memory;
 
-class profilerManager;
+class ProfilerManager;
 
 class NseManager : public QObject
 {
     Q_OBJECT
 
 public:
-    NseManager(profilerManager* parent=0);
+    NseManager(ProfilerManager* parent=0);
     ~NseManager();
     /**
      * Get QString List with all actived script
@@ -53,7 +53,7 @@ private:
     void nseTreeAvailRestoreValues();
     void nseTreeActiveRestoreValues();
 
-    profilerManager* m_ui;
+    ProfilerManager* m_ui;
     QWeakPointer<ProcessThread> m_thread;
     QWeakPointer<ProcessThread> m_threadScript;
     QWeakPointer<QTextDocument> m_documentScript;

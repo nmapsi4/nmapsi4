@@ -36,16 +36,16 @@ namespace Ui
     class profilerDialog;
 }
 
-class profilerManager : public QDialog, public Ui::profilerDialog
+class ProfilerManager : public QDialog, public Ui::profilerDialog
 {
     Q_OBJECT
 
     friend class NseManager;
 
 public:
-    profilerManager(QWidget* parent = 0);
-    profilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
-    ~profilerManager();
+    ProfilerManager(QWidget* parent = 0);
+    ProfilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
+    ~ProfilerManager();
 
 private:
     QListWidgetItem *m_profileW;
