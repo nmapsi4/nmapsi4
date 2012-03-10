@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
-    <name>AboutWin</name>
+    <name>AboutUi</name>
     <message>
         <source>About Nmapsi4</source>
         <translation type="unfinished"></translation>
@@ -41,11 +41,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Core Developer&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mainto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mainto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -59,13 +59,13 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Website:&lt;/span&gt;  &lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bug Tracking:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://gitorious.org/nmapsi4&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;gitorious.org/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/p/nmapsi4/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -80,38 +80,50 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>MainWindow</name>
+    <name>ActionManager</name>
     <message>
-        <source>Save</source>
-        <translation>Enregistrer</translation>
+        <source>Scan host(s)</source>
+        <translation type="unfinished">Scan hôte(s)</translation>
     </message>
     <message>
-        <source>Scan log parameters</source>
-        <translation>Scan des paramètres log</translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation>Recherche</translation>
-    </message>
-    <message>
-        <source>Traceroute</source>
-        <translation>Traceroute</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Favoris</translation>
+        <source>Network Discover</source>
+        <translation type="unfinished">Découvrir Réseau</translation>
     </message>
     <message>
         <source>Vulnerability</source>
-        <translation>Vulnérabilité</translation>
+        <translation type="unfinished">Vulnérabilité</translation>
+    </message>
+    <message>
+        <source>Check Vulnerabilities</source>
+        <translation type="unfinished">Vérifier Vulnérabilités</translation>
+    </message>
+    <message>
+        <source>Host List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide Host List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Details</source>
+        <translation type="unfinished">Détails de l&apos;hôte</translation>
+    </message>
+    <message>
+        <source>Show/Hide Host Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Host</source>
+        <translation type="unfinished">Supprimer l&apos;Hôte</translation>
     </message>
     <message>
         <source>Scan Host</source>
         <translation type="unfinished">Scan de l&apos;Hôte</translation>
     </message>
     <message>
-        <source>Remove Host</source>
-        <translation type="unfinished">Supprimer l&apos;Hôte</translation>
+        <source>Remove Scan Parameters</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove Service</source>
@@ -122,43 +134,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Recherche de vulnérabilités</translation>
     </message>
     <message>
-        <source>Remove Scan Parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Check Vulnerability</source>
         <translation type="unfinished">Vérifier la Vulnérabilité</translation>
     </message>
     <message>
         <source>Remove url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan host(s)</source>
-        <translation type="unfinished">Scan hôte(s)</translation>
-    </message>
-    <message>
-        <source>Network Discover</source>
-        <translation type="unfinished">Découvrir Réseau</translation>
-    </message>
-    <message>
-        <source>Check Vulnerabilities</source>
-        <translation type="unfinished">Vérifier Vulnérabilités</translation>
-    </message>
-    <message>
-        <source>Show Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show/Hide Lookup</source>
-        <translation type="unfinished">Afficher/Masquer Recherche</translation>
-    </message>
-    <message>
-        <source>Show Traceroute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show/Hide Traceroute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -168,6 +148,41 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Profile</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Enregistrer</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan discovered ips</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DiscoverManager</name>
+    <message>
+        <source>is Up</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <source>Wrong CIDR notation format.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Scan log parameters</source>
+        <translation>Scan des paramètres log</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Favoris</translation>
     </message>
     <message>
         <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
@@ -223,6 +238,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source> Active Scan </source>
         <translation type="unfinished"> Scan Actif </translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to close nmapsi4 anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -433,7 +456,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Recherche</translation>
     </message>
     <message>
         <source>DNS</source>
@@ -453,7 +476,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Traceroute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Traceroute</translation>
     </message>
     <message>
         <source>Host Details</source>
@@ -477,7 +500,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scan des paramètres log</translation>
     </message>
     <message>
         <source>Scan host(s)</source>
@@ -517,7 +540,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom de Profil</translation>
     </message>
     <message>
         <source>Parameters List</source>
@@ -568,10 +591,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Start DIscover</source>
-        <translation type="unfinished">Démarrage Découvrir</translation>
-    </message>
-    <message>
         <source>Stop Discover</source>
         <translation type="unfinished">Arrêter Découvrir</translation>
     </message>
@@ -590,18 +609,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Ip</source>
         <translation type="unfinished">Ip</translation>
-    </message>
-    <message>
-        <source>Scan Host</source>
-        <translation type="unfinished">Scan de l&apos;Hôte</translation>
-    </message>
-    <message>
-        <source>Send</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Received</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remaining Ip:</source>
@@ -647,13 +654,120 @@ p, li { white-space: pre-wrap; }
         <source>toolBar_3</source>
         <translation type="unfinished">Barre d&apos;outils_3</translation>
     </message>
+    <message>
+        <source>Packets trace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Probe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ips range (IPv4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start DIscover from ips range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cidr notation (IPv4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start with CIDR-style addressing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CIDR Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Estimate number of ip to ping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of ips:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ex. 192.168.1.0/28 (16 ips)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discover options</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Monitor</name>
+    <message>
+        <source>Waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scanning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ParserManager</name>
+    <message>
+        <source>Error: check nmap Installation.
+</source>
+        <translation type="unfinished">Erreur: vérifiez l&apos;installation de nmap.
+</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>No description</source>
+        <translation type="unfinished">Aucune description</translation>
+    </message>
+    <message>
+        <source>Save Log</source>
+        <translation type="unfinished">Enregistrer le journal</translation>
+    </message>
+    <message>
+        <source>Log (*.log);;Html (*.html *.htm)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreferencesDialog</name>
+    <message>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Taille</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished">Recherche</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;General&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Size&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Lookup&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileMain</name>
-    <message>
-        <source>NmapSI4 Preferences</source>
-        <translation>Préférences de nmapsi4</translation>
-    </message>
     <message>
         <source>Log Preferences</source>
         <translation>Préférences de Connexion</translation>
@@ -734,13 +848,102 @@ p, li { white-space: pre-wrap; }
         <source>Dig lookup</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Preferences - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ProfilerManager</name>
+    <message>
+        <source>New profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit profile </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Options</translation>
+    </message>
+    <message>
+        <source>Ping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing</source>
+        <translation type="unfinished">Timing</translation>
+    </message>
+    <message>
+        <source>Nse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert profile name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>No Ports Range (ex: 20-80)
+</source>
+        <translation type="unfinished">Aucune Plage de Ports (ex: 20-80)
+</translation>
+    </message>
+    <message>
+        <source>Warning: Operation more expansive.
+</source>
+        <translation type="unfinished">Avertissement : Opération plus large.
+</translation>
+    </message>
+</context>
+<context>
+    <name>Utilities</name>
+    <message>
+        <source>Select the file</source>
+        <translation type="unfinished">Sélectionner le fichier</translation>
+    </message>
+</context>
+<context>
+    <name>Vulnerability</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Rechercher</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Retour</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished">En avant</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Arrêter</translation>
+    </message>
+    <message>
+        <source>Add service to &amp;bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>addParBook</name>
-    <message>
-        <source>Add Parameters Profile</source>
-        <translation>Ajouter un profil de paramètres</translation>
-    </message>
     <message>
         <source>Profile Name</source>
         <translation>Nom de Profil</translation>
@@ -757,13 +960,28 @@ p, li { white-space: pre-wrap; }
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
+    <message>
+        <source>Save quick profile - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>addParametersToBookmark</name>
+    <message>
+        <source>Warning - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert profile name or/and profile parameters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
 </context>
 <context>
     <name>addUrl</name>
-    <message>
-        <source>Add Vulnerability Url</source>
-        <translation>Ajouter la vulnérabilité Url</translation>
-    </message>
     <message>
         <source>Url Name</source>
         <translation>Nom Url</translation>
@@ -773,26 +991,6 @@ p, li { white-space: pre-wrap; }
         <translation>Adresse URL</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Done</source>
         <translation>Effectué</translation>
     </message>
@@ -800,24 +998,36 @@ p, li { white-space: pre-wrap; }
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
-</context>
-<context>
-    <name>discoverManager</name>
     <message>
-        <source>is Up</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-</context>
-<context>
-    <name>monitor</name>
-    <message>
-        <source>Waiting</source>
+        <source>Save vulnerability search address - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Scanning</source>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>addVulnerabilityUrl</name>
+    <message>
+        <source>Warning - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert url name or/and address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
     </message>
 </context>
 <context>
@@ -840,63 +1050,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>parserManager</name>
-    <message>
-        <source>Error: check nmap Installation.
-</source>
-        <translation type="unfinished">Erreur: vérifiez l&apos;installation de nmap.
-</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
-    </message>
-    <message>
-        <source>No description</source>
-        <translation type="unfinished">Aucune description</translation>
-    </message>
-    <message>
-        <source>Save Log</source>
-        <translation type="unfinished">Enregistrer le journal</translation>
-    </message>
-    <message>
-        <source>Log (*.log);;Html (*.html *.htm)</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>preferencesDialog</name>
-    <message>
-        <source>General</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="unfinished">Taille</translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;General&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Size&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Lookup&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>profilerDialog</name>
-    <message>
-        <source>nmapsi4 - profiler</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Profile</source>
         <translation type="unfinished"></translation>
@@ -1249,51 +1403,13 @@ p, li { white-space: pre-wrap; }
         <source>Single Script</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Profiler - Nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>profilerManager</name>
-    <message>
-        <source>Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="unfinished">Options</translation>
-    </message>
-    <message>
-        <source>Ping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timing</source>
-        <translation type="unfinished">Timing</translation>
-    </message>
-    <message>
-        <source>Nse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No profile name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter profile name.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
-    </message>
-    <message>
-        <source>No Ports Range (ex: 20-80)
-</source>
-        <translation type="unfinished">Aucune Plage de Ports (ex: 20-80)
-</translation>
-    </message>
     <message>
         <source>TCP SYN Stealth Scan (-sS)</source>
         <translation type="unfinished"></translation>
@@ -1336,42 +1452,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>SCTP cookie-echo scan (-sZ)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Warning: Operation more expansive.
-</source>
-        <translation type="unfinished">Avertissement : Opération plus large.
-</translation>
-    </message>
-</context>
-<context>
-    <name>utilities</name>
-    <message>
-        <source>Select the file</source>
-        <translation type="unfinished">Sélectionner le fichier</translation>
-    </message>
-</context>
-<context>
-    <name>vulnerability</name>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished">Rechercher</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished">Retour</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation type="unfinished">En avant</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished">Arrêter</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
