@@ -59,9 +59,9 @@ public:
 
     enum LookupType
     {
-        DigLookup,
+        DisabledLookup,
         InternalLookup,
-        DisabledLookup
+        DigLookup
     };
     /*
      * Add host in the monitor and start scan.

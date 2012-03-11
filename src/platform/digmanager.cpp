@@ -27,7 +27,6 @@ DigManager::DigManager(QObject* parent)
 
 DigManager::~DigManager()
 {
-    qDebug() << "DEBUG:: ~dig()";
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
