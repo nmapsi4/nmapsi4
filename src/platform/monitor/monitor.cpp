@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -204,7 +204,7 @@ void Monitor::startLookup(const QString hostname, LookupType option)
         DigManager *digC = new DigManager();
         m_digLookupList.push_back(digC);
 
-        digC->digProcess(hostname,tmpParserObj_);
+        digC->startProcess(hostname,tmpParserObj_);
 
         m_ui->m_parser->addUtilObject(tmpParserObj_);
     }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2009-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,7 +20,8 @@
 #include "digmanager.h"
 #include "memorytools.h"
 
-DigManager::DigManager() //: m_state(false)
+DigManager::DigManager(QObject* parent)
+: QObject(parent)
 {
 }
 
@@ -30,11 +31,12 @@ DigManager::~DigManager()
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-void DigManager::digProcess(const QString hostname, PObjectLookup* objElem)
+void DigManager::startProcess(const QString hostname, PObjectLookup* objElem)
 {
     QStringList command;
-    m_hostNameLocal = hostname;
     command << hostname;
+
+    m_hostNameLocal = hostname;
     m_elemObjUtil = objElem;
 
     QWeakPointer<ProcessThread> m_th = new ProcessThread("dig",command);

@@ -1,5 +1,5 @@
 /**************************************************************************
- *   Copyright (C) 2009-2011 by Francesco Cecconi                          *
+ *   Copyright (C) 2009-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,12 +42,12 @@ public:
     /*!
      * Create a object for dig lookup Class.
      */
-    DigManager();
+    DigManager(QObject* parent=0);
     ~DigManager();
     /*!
      * Start QThread dig for hostname.
      */
-    void digProcess(const QString hostname, PObjectLookup* objElem);
+    void startProcess(const QString hostname, PObjectLookup* objElem);
 
 private:
     PObjectLookup* m_elemObjUtil;
