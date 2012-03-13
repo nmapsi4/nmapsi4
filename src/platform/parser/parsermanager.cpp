@@ -64,7 +64,7 @@ void ParserManager::addUtilObject(PObjectLookup* object)
     m_parserObjUtilList.append(object);
 }
 
-void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer)
+void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer, int id)
 {
     // check nmap error
     if(!dataBuffer.size() && errorBuffer.size())
@@ -93,6 +93,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     PObject* elemObj = parserCore(parList,StdoutStr,StderrorStr,treeItem);
 
     elemObj->setParameters(parList.join(" "));
+    elemObj->setId(id);
 
     // clear output and error thread buffer.
     dataBuffer.clear();
@@ -739,7 +740,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     // show lookUp info
     foreach (PObjectLookup* elem, m_parserObjUtilList)
     {
-        if(m_parserObjList[hostIndex]->getHostName() == elem->getHostName())
+        if(m_parserObjList[hostIndex]->getId() == elem->getId())
         {
             foreach (const QString& token, elem->getInfoLookup())
             {

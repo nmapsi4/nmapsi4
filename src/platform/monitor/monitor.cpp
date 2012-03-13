@@ -25,7 +25,7 @@
 #endif
 
 Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
-: QObject(parent), m_monitor(monitor), m_ui(parent)
+: QObject(parent), m_monitor(monitor), m_ui(parent), m_idCounter(0)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
@@ -96,6 +96,9 @@ void Monitor::addMonitorHost(const QString hostName, const QStringList parameter
     emit monitorUpdated(monitorHostNumber());
 
     // Start Scan for host
+    m_hostIdList.insert(hostName,m_idCounter);
+    ++m_idCounter;
+
     cacheScan(hostName,parameters,option,hostThread);
 }
 
@@ -206,6 +209,7 @@ void Monitor::startLookup(const QString hostname, LookupType option)
 
         digC->startProcess(hostname,tmpParserObj_);
 
+        tmpParserObj_->setId(m_hostIdList.value(hostname));
         m_ui->m_parser->addUtilObject(tmpParserObj_);
     }
 }
@@ -221,7 +225,7 @@ void Monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
     /*
      * Return scan result with a signal.
      */
-    emit hostFinisced(parametersList,dataBuffer,errorBuffer);
+    emit hostFinisced(parametersList,dataBuffer,errorBuffer,m_hostIdList.value(parametersList[parametersList.size()-1]));
 }
 
 void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
@@ -242,6 +246,7 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
         elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }
 
+    elemObjUtil->setId(m_hostIdList.value(hostname));
     m_ui->m_parser->addUtilObject(elemObjUtil);
 }
 
@@ -294,6 +299,7 @@ void Monitor::clearHostMonitor()
     updateMaxParallelScan();
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
+    m_hostIdList.clear();
 }
 
 void Monitor::updateMaxParallelScan()

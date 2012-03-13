@@ -112,9 +112,11 @@ private:
     QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
     QHash<QString, ProcessThread*> m_scanHashList;
     QHash<QString, QStringList> m_scanHashListFlow;
+    QHash<QString, int> m_hostIdList;
     QTreeWidget* m_monitor;
     MainWindow* m_ui;
     int m_parallelThreadLimit;
+    int m_idCounter;
     bool m_isHostcached;
     QTimer* m_timer;
 
@@ -126,7 +128,7 @@ signals:
     /*
      * Return scan result
      */
-    void hostFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
+    void hostFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer, int id);
 
 private slots:
     void readFlowFromThread(const QString hostname, QString lineData);

@@ -19,7 +19,7 @@
 
 #include "pobjects.h"
 
-PObject::PObject()
+PObject::PObject() : m_id(0)
 {
 
 }
@@ -154,7 +154,22 @@ void PObject::setParameters(const QString parameters)
     m_parameters = parameters;
 }
 
-PObjectLookup::PObjectLookup()
+void PObject::setNseResult(const QHash< QString, QStringList > nseResult)
+{
+    m_nssResult = nseResult;
+}
+
+void PObject::setId(int id)
+{
+    m_id = id;
+}
+
+int PObject::getId()
+{
+    return m_id;
+}
+
+PObjectLookup::PObjectLookup() : m_id(0)
 {
 
 }
@@ -184,7 +199,12 @@ void PObjectLookup::setHostName(const QString hostName)
     m_hostName.append(hostName);
 }
 
-void PObject::setNseResult(const QHash< QString, QStringList > nseResult)
+void PObjectLookup::setId(int id)
 {
-    m_nssResult = nseResult;
+    m_id = id;
+}
+
+int PObjectLookup::getId()
+{
+    return m_id;
 }

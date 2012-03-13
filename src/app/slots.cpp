@@ -95,8 +95,8 @@ void MainWindow::connectSlots()
             m_monitor, SLOT(showSelectedScanDetails()));
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
-    connect(m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray)),
-            m_parser, SLOT(startParser(QStringList,QByteArray,QByteArray)));
+    connect(m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray,int)),
+            m_parser, SLOT(startParser(QStringList,QByteArray,QByteArray,int)));
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
             m_monitor, SLOT(stopAllScan()));
 

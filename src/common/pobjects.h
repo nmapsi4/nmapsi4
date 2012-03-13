@@ -44,6 +44,7 @@ public:
     const QStringList &getErrorScan() const;
     const QHash<QString, QStringList> &getNseResult() const;
     bool isValidObject();
+    int getId();
 
     void setHostName(const QString hostName);
     void setMainInfo(const QString infoMainElem);
@@ -58,6 +59,7 @@ public:
     void setNseResult(const QHash<QString, QStringList> nseResult);
     void setValidity(bool isValid);
     void setParameters(const QString parameters);
+    void setId(int id);
 
 private:
     QString m_hostName;
@@ -73,6 +75,7 @@ private:
     QStringList m_errorScan;
     QHash<QString, QStringList> m_nssResult;
     bool m_validFlag;
+    int m_id;
 
 };
 
@@ -85,13 +88,16 @@ public:
 
     const QStringList &getInfoLookup() const;
     const QString &getHostName() const;
+    int getId();
 
     void setInfoLookup(const QString lookupElem);
     void setHostName(const QString hostName);
+    void setId(int indexCounter);
 
 private:
     QStringList m_mainLookup;
     QString m_hostName;
+    int m_id;
 
 };
 
