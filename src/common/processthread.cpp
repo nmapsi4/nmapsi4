@@ -73,7 +73,7 @@ void ProcessThread::stopProcess()
     if (m_process.data()->state() == QProcess::Running)
     {
         //m_process.data()->close();
-        // FIXME:: close() function segfault
+        // NOTE:: close() function segfault
         m_process.data()->closeWriteChannel();
         m_process.data()->closeReadChannel(m_process.data()->readChannel());
         m_process.data()->kill();

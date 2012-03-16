@@ -44,7 +44,6 @@ const QStringList NseManager::getActiveNseScript()
 void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 {
     Q_UNUSED(column);
-    qDebug() << "DEBUG:: item: " << item->text(0);
 
     if (m_nseScriptAvailList.indexOf(item->text(0)) != -1)
     {
@@ -129,15 +128,17 @@ void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     Q_UNUSED(errors);
     Q_UNUSED(parameters);
     // show help result for nse
-    m_threadScript.data()->quit();
-    m_threadScript.data()->wait();
-    delete m_threadScript.data();
+    if (!m_threadScript.isNull())
+    {
+        m_threadScript.data()->quit();
+        m_threadScript.data()->wait();
+        delete m_threadScript.data();
+    }
 
     QString result_(result);
 
     if (!m_documentScript.isNull())
     {
-        qDebug() << "DEBUG::ScriptNse delete document";
         delete m_documentScript.data();
     }
 
