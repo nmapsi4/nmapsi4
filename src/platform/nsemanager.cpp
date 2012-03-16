@@ -108,9 +108,12 @@ void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QB
 {
     Q_UNUSED(errors);
     // show help result for nse
-    m_thread.data()->quit();
-    m_thread.data()->wait();
-    delete m_thread.data();
+    if (!m_thread.isNull())
+    {
+        m_thread.data()->quit();
+        m_thread.data()->wait();
+        delete m_thread.data();
+    }
 
     QString result_(result);
     QTextDocument *document = new QTextDocument(result_);
