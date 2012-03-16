@@ -302,6 +302,6 @@ void MainWindow::clearHostnameCombo()
 void MainWindow::clearParametersCombo()
 {
     // TODO:set to default saved parameters profile
-    comboPar->setCurrentIndex(0);
+    //comboPar->setCurrentIndex(0);
     comboParametersSelectedEvent();
 }
