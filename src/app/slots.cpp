@@ -46,10 +46,6 @@ void MainWindow::connectSlots()
             this, SLOT(checkFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
-    connect(Bdetails, SIGNAL(clicked()),
-            this, SLOT(detailsOptions()));
-    connect(Bnss, SIGNAL(clicked()),
-            this, SLOT(nssOptions()));
 
     // Obj parser runtime
     connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),

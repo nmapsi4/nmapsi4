@@ -163,7 +163,6 @@ void MainWindow::takeHostFromBookmark()
      {
         updateComboHostnameProperties();
         hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
-        SWscan->setCurrentIndex(0);
         startScan();
     }
 }

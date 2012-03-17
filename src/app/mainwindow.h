@@ -121,7 +121,6 @@ private slots:
     void clearAll();
     void checkFullScreen();
     void updateMenuBar();
-    void updateIconsBox();
     void takeHostFromBookmark();
     void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
@@ -133,8 +132,6 @@ private slots:
     void updateSezDiscover();
     void loadDefaultProfile();
     void resetComboParameters();
-    void detailsOptions();
-    void nssOptions();
     void comboParametersSelectedEvent();
     void quickAddressSelectionEvent();
     void saveSettings();

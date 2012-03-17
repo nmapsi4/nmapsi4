@@ -19,23 +19,6 @@
 
 #include "mainwindow.h"
 
-void MainWindow::detailsOptions()
-{
-    Bdetails->setChecked(true);
-    Bnss->setChecked(false);
-    SWscan->setCurrentIndex(0);
-    updateIconsBox();
-}
-
-void MainWindow::nssOptions()
-{
-    Bdetails->setChecked(false);
-    Bnss->setChecked(true);
-    SWscan->setCurrentIndex(1);
-    tabWidget->setCurrentIndex(0);
-    updateIconsBox();
-}
-
 void MainWindow::checkFullScreen()
 {
 
@@ -60,20 +43,6 @@ void MainWindow::updateMenuBar()
     else
     {
         menuBar()->setVisible(false);
-    }
-}
-
-void MainWindow::updateIconsBox()
-{
-    int tmpBox = SWscan->currentIndex();
-    switch (tmpBox)
-    {
-    case 0:
-        Bdetails->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-	break;
-    case 1:
-        Bnss->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-        break;
     }
 }
 

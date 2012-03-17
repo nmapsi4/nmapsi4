@@ -121,10 +121,6 @@ void MainWindow::setDefaultAction()
     toolBarSearch->setVisible(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
 
-    Bdetails->setChecked(true);
-    Bdetails->setStyleSheet(verticalStyleSheet);
-    Bnss->setStyleSheet(verticalStyleSheet);
-
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     nseNumber->setSegmentStyle(QLCDNumber::Flat);
     tWresult->setVisible(false);
