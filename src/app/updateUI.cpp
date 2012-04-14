@@ -89,11 +89,6 @@ void MainWindow::updateSezScan()
     tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     tabUi->setTabText(0, "Scan");
 
-    if (!tabLog->isVisible())
-    {
-        tabUi->insertTab(tabUi->count(),tabLog,QIcon(QString::fromUtf8(":/images/images/book.png")),"Raw scan log");
-    }
-
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
@@ -122,7 +117,6 @@ void MainWindow::updateSezVuln()
 
     tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
     tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
 
@@ -160,7 +154,6 @@ void MainWindow::updateSezDiscover()
 
     tabUi->removeTab(tabUi->indexOf(bookmarks));
     tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(tabLog));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     tabUi->insertTab(0,tabDiscover,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");
