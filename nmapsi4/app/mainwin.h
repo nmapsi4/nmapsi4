@@ -60,7 +60,6 @@
 // system
 #ifndef Q_WS_WIN
 #include <unistd.h>
-#include <sys/types.h>
 #endif
 
 // define class namespace
@@ -77,7 +76,7 @@ namespace Ui
 class nmapClass : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
-    
+
     friend class parser;
     friend class vulnerability;
 

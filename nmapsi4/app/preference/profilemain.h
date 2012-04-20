@@ -32,7 +32,6 @@
 // system
 #ifndef Q_WS_WIN
 #include <unistd.h>
-#include <sys/types.h>
 #endif
 
 class mainProfile : public QDialog, private Ui::ProfileMain
