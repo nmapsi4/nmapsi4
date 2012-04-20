@@ -27,6 +27,11 @@
 #include "discover.h"
 #include "regularexpression.h"
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#endif
+
 class MainWindow;
 
 class DiscoverManager : public QObject

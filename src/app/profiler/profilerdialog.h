@@ -31,6 +31,11 @@
 #include "ui_profilerdialog.h"
 #include "nsemanager.h"
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#endif
+
 namespace Ui
 {
     class profilerDialog;

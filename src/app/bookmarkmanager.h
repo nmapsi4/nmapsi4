@@ -29,6 +29,11 @@
 #include "history.h"
 #include "memorytools.h"
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#endif
+
 using namespace memory;
 
 class MainWindow;

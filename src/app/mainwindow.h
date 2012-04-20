@@ -50,6 +50,11 @@
 #include "actionmanager.h"
 #include "style.h"
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#endif
+
 // define class namespace
 using namespace memory;
 
