@@ -29,6 +29,12 @@
 #include "utilities.h"
 #include <ui_profilemain.h>
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#include <sys/types.h>
+#endif
+
 class mainProfile : public QDialog, private Ui::ProfileMain
 {
     Q_OBJECT

@@ -57,6 +57,12 @@
 #include "parser.h"
 #include "vulnerability.h"
 
+// system
+#ifndef Q_WS_WIN
+#include <unistd.h>
+#include <sys/types.h>
+#endif
+
 // define class namespace
 using namespace internalLookup;
 using namespace digInterface;
