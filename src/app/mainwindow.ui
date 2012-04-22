@@ -78,6 +78,9 @@
 	border: 0px;
 }</string>
       </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::South</enum>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
