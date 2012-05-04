@@ -18,68 +18,37 @@
  ***************************************************************************/
 
 
-#ifndef PROFILERDIALOG_H
-#define PROFILERDIALOG_H
+#ifndef PROFILER_H
+#define PROFILER_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QListWidgetItem>
-#include <QtGui/QMessageBox>
-#include <QtCore/QDebug>
+#include <QtCore/QStringList>
+#include <QtCore/QPair>
+#include <QtGui/QLineEdit>
+#include <QtGui/QSpinBox>
+#include <QtGui/QComboBox>
+#include <QtGui/QCheckBox>
 
-#include "ui_profilerdialog.h"
-#include "nsemanager.h"
-#include "profiler.h"
+class ProfilerManager;
 
-// system
-#ifndef Q_WS_WIN
-#include <unistd.h>
-#endif
-
-namespace Ui
+class Profiler
 {
-    class profilerDialog;
-}
-
-class ProfilerManager : public QDialog, public Ui::profilerDialog
-{
-    Q_OBJECT
 
 public:
-    NseManager* m_nseManager;
-
-    ProfilerManager(QWidget* parent = 0);
-    ProfilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
-    ~ProfilerManager();
+    Profiler(ProfilerManager *parent);
+    ~Profiler() { };
+    void restoreValuesFromProfile(const QStringList parameters);
+    void loadDefaultHash();
+    QStringList buildExtensions();
 
 private:
-    QListWidgetItem *m_profileW;
-    QListWidgetItem *m_scanW;
-    QListWidgetItem *m_toolW;
-    QListWidgetItem *m_discoverW;
-    QListWidgetItem *m_timingW;
-    QListWidgetItem *m_nseW;
-    int m_uid;
-    Profiler *m_profiler;
+    ProfilerManager *m_ui;
+    QHash<QString,QPair<QComboBox*,int> > preLoadComboList;
+    QHash<QString,QPair<QCheckBox*,QString> > preLoadCheckBoxList;
+    QHash<QString,QLineEdit*> lineEditList;
+    QHash<QString,QSpinBox*> spinBoxList;
 
-    void initObject();
-    void loadDefaultComboValues();
-    void setNormalProfile();
-    void setFullVersionProfile();
-    void setDefaultNseScripts();
-    void resetOptions();
-    void createQList();
-    void reloadScanParameters();
-
-signals:
-    void doneParBook(const QString profileName, const QString profilePar);
-
-private slots:
-    void optionListUpdate();
-    void update_portCombo();
-    void update_options();
-    void update_comboVerbosity();
-    void exit();
-    void updateBaseOptions();
+    void preLoadOptionsCombo();
+    void preLoadOptionsCheckBox();
 };
 
-#endif // PROFILEDIALOG_H
+#endif

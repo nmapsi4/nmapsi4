@@ -37,7 +37,7 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
     QStringList parametersList = parameters.split(' ',QString::SkipEmptyParts);
 
     profileNameLine->setText(profileName);
-    restoreValuesFromProfile(parametersList);
+    m_profiler->restoreValuesFromProfile(parametersList);
     reloadScanParameters();
 
     setWindowTitle(tr("Edit profile ") + QString("\"") + profileName + QString("\"") + " - Nmapsi4");
@@ -56,6 +56,7 @@ void ProfilerManager::initObject()
 
     // create and load nse values from file settings
     m_nseManager = new NseManager(this);
+    m_profiler = new Profiler(this);
 
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));
@@ -94,13 +95,14 @@ void ProfilerManager::initObject()
             m_nseManager, SLOT(requestNseScriptHelp()));
 
     loadDefaultComboValues();
-    loadDefaultHash();
+    m_profiler->loadDefaultHash();
 
     m_profileW->setSelected(true);
 }
 
 ProfilerManager::~ProfilerManager()
 {
+    delete m_profiler;
 }
 
 void ProfilerManager::createQList()
@@ -128,7 +130,7 @@ void ProfilerManager::exit()
 {
     if (!profileNameLine->text().isEmpty())
     {
-        QString parameters(buildExtensions().join(" "));
+        QString parameters(m_profiler->buildExtensions().join(" "));
         qDebug() << "Profiler::Parameters:: " << parameters;
 
         emit doneParBook(profileNameLine->text(), parameters);
@@ -142,7 +144,7 @@ void ProfilerManager::exit()
 
 void ProfilerManager::reloadScanParameters()
 {
-    lineScanParameters->setText(buildExtensions().join(" "));
+    lineScanParameters->setText(m_profiler->buildExtensions().join(" "));
 }
 
 void ProfilerManager::optionListUpdate()
@@ -172,485 +174,6 @@ void ProfilerManager::optionListUpdate()
     {
         stackedOptions->setCurrentIndex(5);
     }
-}
-
-QStringList ProfilerManager::buildExtensions()
-{
-    QStringList parameters;
-
-    // NSE check
-    if (m_nseManager->getActiveNseScript().size())
-    {
-        QString tmpListScript_("--script=");
-        QString tmpListParam_("--script-args=");
-        QString tmpList_;
-        QString tmpListArgs_;
-
-        // read nse category actived
-        Q_FOREACH (const QString& token, m_nseManager->getActiveNseScript())
-        {
-            tmpList_.append(token);
-            tmpList_.append(",");
-        }
-
-        // load nse manual script
-        if (!comboNseInv->lineEdit()->text().isEmpty())
-        {
-            QStringList manualNse = comboNseInv->lineEdit()->text().split(',');
-            Q_FOREACH (const QString& token, manualNse)
-            {
-                tmpList_.append(token);
-                tmpList_.append(",");
-            }
-        }
-
-        if (tmpList_.size())
-        {
-            tmpList_.remove(' ');
-            tmpList_.resize(tmpList_.size()-1);
-            tmpListScript_.append(tmpList_);
-        }
-
-        if (!comboNsePar->lineEdit()->text().isEmpty())
-        {
-            QString argsClean = comboNsePar->lineEdit()->text().remove('"');
-            argsClean = argsClean.remove('\'');
-            QStringList argsNse = argsClean.split(',');
-            Q_FOREACH (const QString& token, argsNse)
-            {
-                tmpListArgs_.append(token);
-                tmpListArgs_.append(",");
-            }
-        }
-
-        if (tmpListArgs_.size())
-        {
-            tmpListArgs_.remove(' ');
-            tmpListArgs_.resize(tmpListArgs_.size()-1);
-            tmpListParam_.append(tmpListArgs_);
-            parameters << tmpListParam_;
-        }
-
-        parameters << tmpListScript_;
-    } // End NSE check
-
-    switch (comboScanTcp->currentIndex()) { //scan check
-    case 1:
-//    Connect Scan
-        parameters << "-sT";
-        break;
-    case 2:
-//    Ping Sweep
-        parameters << "-sP";
-        break;
-    case 3:
-//    SYN Stealth Scan (rootMode)
-        parameters << "-sS";
-        break;
-    case 4:
-//    ACK Stealth Scan (rootMode)
-        parameters << "-sA";
-        break;
-    case 5:
-//    Mainmon Stealth Scan (rootMode)
-        parameters << "-sM";
-        break;
-    case 6:
-//    FIN Stealth Scan (rootMode)
-        parameters << "-sF";
-        break;
-    case 7:
-//    NULL Stealth Scan (rootMode)
-        parameters << "-sN";
-        break;
-    case 8:
-//    XMAS Tree Stealth Scan (rootMode)
-        parameters << "-sX";
-        break;
-    case 9:
-//    TCP Window Scan (rootMode)
-        parameters << "-sW";
-        break;
-    } // end switch scan
-
-    switch(comboScanNonTcp->currentIndex())
-    {
-    case 1:
-        //Host List
-        parameters << "-sL";
-        break;
-    case 2:
-        //UDP Ports Scan (rootMode)
-        parameters << "-sU";
-        break;
-    case 3:
-        //IP Protocol Scan (rootMode)
-        parameters << "-sO";
-        break;
-    case 4:
-        //SCTP INIT port scan (rootMode)
-        parameters << "-sY";
-        break;
-    case 5:
-        //SCTP cookie-echo port scan (rootMode)
-        parameters << "-sZ";
-        break;
-    }
-
-    if (checkFtpBounce->isChecked() && !bounceEdit->text().isEmpty())
-    {
-        // FTP Bounce attack
-        parameters << "-b";
-        parameters << bounceEdit->text();
-    }
-    else
-    {
-        checkFtpBounce->setCheckState(Qt::Unchecked);
-    }
-
-    if (checkIdleScan->isChecked() && !lineIdleScan->text().isEmpty())
-    {
-        // Idle scan
-        parameters << "-sI";
-        parameters << lineIdleScan->text();
-    }
-    else
-    {
-        checkIdleScan->setCheckState(Qt::Unchecked);
-    }
-
-    // Aggressive options
-    if (checkAggressiveOptions->isChecked())
-    {
-        parameters << "-A";
-    }
-    // start option scan
-    if (rpcBox->isChecked())
-    {
-        parameters << "-sR";
-    }
-
-    if (versionBox->isChecked())
-    {
-        parameters << "-sV";
-    }
-
-    if (notpingBox->isChecked())
-    {
-        parameters << "-P0";
-    }
-
-    if (checkOS->isChecked())
-    {
-        parameters << "-O";
-    }
-    //end Extension
-
-    switch (portCombo->currentIndex())
-    { // port combo check
-    case 1:
-//    All
-        parameters << "-p-";
-        break;
-    case 2:
-//    Most Important
-        parameters << "-F";
-        break;
-    case 3:
-//    Range
-        if (!portEdit->text().isEmpty())
-        {
-            parameters << "-p";
-            parameters << portEdit->text();
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", tr("No Ports Range (ex: 20-80)\n"), tr("Close"));
-        }
-    default:
-        break;
-    }
-
-
-    if (checkTcpPing->isChecked())
-    { // Discover options (tcp ack)
-        QString tmpCommand;
-        tmpCommand.append("-PA");
-        tmpCommand.append(lineTcpPing->text());
-        parameters << tmpCommand;
-    }
-
-    if (checkTcpSyn->isChecked())
-    { // Discover options (tcp syn)
-
-        QString tmpCommand;
-        tmpCommand.append("-PS");
-        tmpCommand.append(lineSynPing->text());
-        parameters << tmpCommand;
-    }
-
-    if (checkUdpPing->isChecked())
-    { // Discover options (tcp syn)
-        QString tmpCommand;
-        tmpCommand.append("-PU");
-        if (!lineUdpPing->text().isEmpty())
-        {
-            tmpCommand.append(lineUdpPing->text());
-        }
-        parameters << tmpCommand;
-    }
-
-    if (checkProtoPing->isChecked())
-    { // IPProto ping (tcp syn)
-        QString tmpCommand;
-        tmpCommand.append("-PO");
-
-        if (!lineProtoPing->text().isEmpty())
-        {
-            tmpCommand.append(lineUdpPing->text());
-        }
-
-        parameters << tmpCommand;
-    }
-
-    if (checkSctpPing->isChecked())
-    { // IPProto ping (tcp syn)
-        QString tmpCommand;
-        tmpCommand.append("-PY");
-
-        if (!lineSctpPing->text().isEmpty())
-        {
-            tmpCommand.append(lineSctpPing->text());
-        }
-
-        parameters << tmpCommand;
-    }
-
-    // Discover option
-    if (checkIcmpEcho->isChecked())
-    {
-        parameters << "-PE";
-    }
-
-    if (checkIcmpTimestamp->isChecked())
-    {
-        parameters << "-PP";
-    }
-
-    if (checkIcmpNetmask->isChecked())
-    {
-        parameters << "-PM";
-    }
-
-    switch (comboTiming->currentIndex())
-    { // port combo Timing
-    case 1:
-        //Paranoid
-        parameters << "-T0";
-        break;
-    case 2:
-        //Sneaky
-        parameters << "-T1";
-        break;
-    case 3:
-        //Polite
-        parameters << "-T2";
-        break;
-    case 4:
-        //Normal
-        parameters << "-T3";
-        break;
-    case 5:
-        //Aggressive
-        parameters << "-T4";
-        break;
-    case 6:
-        //Insane
-        parameters << "-T5";
-        break;
-    default:
-        break;
-    }
-
-    switch (comboDNSResolv->currentIndex())
-    { // port DNS resolv
-    case 1:
-//    Always
-        parameters << "-R";
-        break;
-    case 2:
-//    Never
-        parameters << "-n";
-        break;
-    default:
-        break;
-    }
-
-    switch (comboVerbosity->currentIndex())
-    { // port DNS resolv
-    case 1:
-//    Verbose
-        parameters << "-v";
-        break;
-    case 2:
-//    Very Verbose
-        parameters << "-vv";
-        break;
-    case 3:
-//    Debug
-        parameters << "-d";
-        break;
-    case 4:
-//    Verbose Debug
-        parameters << "-d2";
-        break;
-    default:
-        break;
-    }
-
-    // Misc Options
-    if (checkOrdered->isChecked())
-    {
-        parameters << "-r"; // Ordered Port
-    }
-
-    if (checkIpv6->isChecked())
-    {
-        parameters << "-6"; // Ipv6
-    }
-
-    if (checkFrag->isChecked())
-    {
-        parameters << "-f";
-    }
-
-    // traceroute
-    if (checkTraceroute->isChecked())
-    {
-        parameters << "--traceroute";
-    }
-
-    if (checkMaxRetries->isChecked())
-    {
-        parameters << "--max-retries";
-        if (!lineMaxRetries->text().isEmpty())
-        {
-            parameters << lineMaxRetries->text();
-        }
-    }
-
-    // Timing options
-    if (TcheckIpv4ttl->isChecked())
-    {
-        parameters << "--ttl";
-        parameters << spinBoxIpv4ttl->text();
-    }
-
-    if (TcheckMinPar->isChecked())
-    {
-        parameters << "--min-parallelism";
-        parameters << TspinBoxMinP->text();
-    }
-
-    if (TcheckMaxPar->isChecked())
-    {
-        parameters << "--max-parallelism";
-        parameters << spinBoxMaxPar->text();
-    }
-
-    if (TcheckInitRtt->isChecked())
-    {
-        parameters << "--initial-rtt-timeout";
-        parameters << spinBoxInitRtt->text();
-    }
-
-    if (TcheckMinRtt->isChecked())
-    {
-        parameters << "--min-rtt-timeout";
-        parameters << spinBoxMinRtt->text();
-    }
-
-    if (TcheckMaxRtt->isChecked())
-    {
-        parameters << "--max-rtt-timeout";
-        parameters << spinBoxMaxRtt->text();
-    }
-
-    if (TcheckHostTime->isChecked())
-    {
-        parameters << "--host-timeout";
-        parameters << spinBoxHostTime->text();
-    }
-
-    if (TcheckScanDelay->isChecked())
-    {
-        parameters << "--scan-delay";
-        parameters << spinBoxScanDelay->text();
-    }
-
-    if (TcheckScanDelayMax->isChecked())
-    {
-        parameters << "--max-scan-delay";
-        parameters << spinBoxScanDelayMax->text();
-    }
-
-    //Options
-    if (checkBoxDevice->isChecked() && !OlineDevice->text().isEmpty())
-    { // Discover options (tcp syn)
-            parameters << "-e";
-            parameters << OlineDevice->text();
-    }
-    else
-    {
-        checkBoxDevice->setCheckState(Qt::Unchecked);
-    }
-
-    if (checkDecoy->isChecked())
-    { // Discover options (tcp syn)
-        if (!lineDecoy->text().isEmpty())
-        {
-            parameters << "-D";
-            parameters << lineDecoy->text();
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "Please, first insert a Decoy\n", "Disable Option");
-            checkDecoy->setCheckState(Qt::Unchecked);
-        }
-    }
-
-    if (checkSpoof->isChecked())
-    { // Spoof options
-        if (!lineEditSpoof->text().isEmpty())
-        {
-            parameters << "-S";
-            parameters << lineEditSpoof->text();
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "Please, insert spoof address\n", "Disable Option");
-            checkSpoof->setCheckState(Qt::Unchecked);
-        }
-    }
-
-    if (checkSourcePort->isChecked())
-    { // Spoof options
-        if (!lineSourcePort->text().isEmpty())
-        {
-            parameters << "-g";
-            parameters << lineSourcePort->text();
-
-        }
-        else
-        {
-            QMessageBox::warning(this, "NmapSI4", "Please, insert port address\n", "Disable Option");
-            checkSourcePort->setCheckState(Qt::Unchecked);
-        }
-    }
-
-    return parameters;
 }
 
 void ProfilerManager::update_portCombo()
