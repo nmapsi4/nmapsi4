@@ -41,14 +41,15 @@ public:
     QStringList buildExtensions();
 
 private:
+    void preLoadOptionsCombo();
+    void preLoadOptionsCheckBox();
+
     ProfilerManager *m_ui;
     QHash<QString,QPair<QComboBox*,int> > preLoadComboList;
     QHash<QString,QPair<QCheckBox*,QString> > preLoadCheckBoxList;
     QHash<QString,QLineEdit*> lineEditList;
     QHash<QString,QSpinBox*> spinBoxList;
 
-    void preLoadOptionsCombo();
-    void preLoadOptionsCheckBox();
 };
 
 #endif
