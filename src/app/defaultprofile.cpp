@@ -26,14 +26,14 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
 
     if (!m_userId)
     {
-        tmpStaticProfileMap_.insert("Default","-sS -sV -O -T4 -v");
-        tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
-        tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v");
-        tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v");
+        tmpStaticProfileMap_.insert("Default","-sS -sV -O -T4 -v --traceroute");
+        tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
+        tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v --traceroute");
+        tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v --traceroute");
         // profile for full mode
-        tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -v");
+        tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -v --traceroute");
         tmpStaticProfileMap_.insert(tr("Slow comprehensive scan"),
-                                    "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53");
+                                    "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute");
     }
     else
     {
