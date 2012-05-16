@@ -27,6 +27,8 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
     if (!m_userId)
     {
         tmpStaticProfileMap_.insert("Default","-sS -sV -O -T4 -v --traceroute");
+        tmpStaticProfileMap_.insert("Default + Aggressive","-A -sS -sV -O -T4 -v --traceroute");
+        tmpStaticProfileMap_.insert("Default + base nse script","--script=default,safe -sS -sV -O -T4 -v --traceroute");
         tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
         tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v --traceroute");
         tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v --traceroute");
@@ -39,6 +41,8 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
     {
         // for user mode
         tmpStaticProfileMap_.insert("Default","-sT -sV -T4 -v");
+        tmpStaticProfileMap_.insert("Default + Aggressive","-A -sT -sV -T4 -v");
+        tmpStaticProfileMap_.insert("Default + base nse script","--script=default,safe -sT -sV -T4 -v");
         tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v");
         tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v");
         tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
@@ -49,7 +53,6 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
 
 void MainWindow::loadScanProfile()
 {
-    // TODO create a default profile
     comboPar->clear();
     comboPar->insertItem(0, "Default");
 
@@ -59,7 +62,6 @@ void MainWindow::loadScanProfile()
     QHash<QString, QString>::const_iterator i;
     for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i)
     {
-        //comboPar->insertItem(comboPosition, i.key());
         if (i.key() != "Default")
         {
             comboPar->addItem(i.key());
