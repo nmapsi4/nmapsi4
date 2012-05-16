@@ -69,6 +69,18 @@ void DiscoverManager::syncSettings()
     settings.setValue("discoverVerticalSplitter", m_discoverVerticalSplitter->saveState());
 }
 
+bool DiscoverManager::activeIpContains(const QString ipAddress)
+{
+    foreach (QTreeWidgetItem* item, m_listTreeItemDiscover)
+    {
+        if (item->text(0) == ipAddress)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
 
 void DiscoverManager::startDiscover()
 {
@@ -376,7 +388,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
             positionMatched += ipv4.matchedLength();
         }
 
-        if (matched.size())
+        if (matched.size() && !activeIpContains(matched.first()))
         {
             QTreeWidgetItem *ipItem = new QTreeWidgetItem(m_ui->treeDiscover);
             m_listTreeItemDiscover.push_back(ipItem);

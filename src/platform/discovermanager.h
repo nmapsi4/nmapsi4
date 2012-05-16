@@ -46,6 +46,7 @@ public:
 
 private:
     void discoveryClear();
+    bool activeIpContains(const QString ipAddress);
 
     MainWindow* m_ui;
     QList<Discover*> m_listDiscover;
