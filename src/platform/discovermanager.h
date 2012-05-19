@@ -39,7 +39,7 @@ class DiscoverManager : public QObject
     Q_OBJECT
 
 public:
-    DiscoverManager(MainWindow* parent=0);
+    DiscoverManager(MainWindow* parent);
     ~DiscoverManager();
     void defaultDiscoverProbes();
     void syncSettings();

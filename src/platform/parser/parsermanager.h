@@ -40,7 +40,7 @@ class ParserManager : public QObject
     Q_OBJECT
 
 public:
-    ParserManager(MainWindow* parent = 0);
+    ParserManager(MainWindow* parent);
     ~ParserManager();
     /*
      * Clear all Items in parser QList
