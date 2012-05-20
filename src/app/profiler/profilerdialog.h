@@ -40,27 +40,20 @@ namespace Ui
     class profilerDialog;
 }
 
+class MainWindow;
+
 class ProfilerManager : public QDialog, public Ui::profilerDialog
 {
     Q_OBJECT
 
 public:
-    NseManager* m_nseManager;
-
-    ProfilerManager(QWidget* parent = 0);
+    ProfilerManager(MainWindow* parent);
     ProfilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
     ~ProfilerManager();
 
-private:
-    QListWidgetItem *m_profileW;
-    QListWidgetItem *m_scanW;
-    QListWidgetItem *m_toolW;
-    QListWidgetItem *m_discoverW;
-    QListWidgetItem *m_timingW;
-    QListWidgetItem *m_nseW;
-    int m_uid;
-    Profiler *m_profiler;
+    NseManager* m_nseManager;
 
+private:
     void initObject();
     void loadDefaultComboValues();
     void setNormalProfile();
@@ -69,14 +62,24 @@ private:
     void createQList();
     void reloadScanParameters();
 
+    QListWidgetItem *m_profileW;
+    QListWidgetItem *m_scanW;
+    QListWidgetItem *m_toolW;
+    QListWidgetItem *m_discoverW;
+    QListWidgetItem *m_timingW;
+    QListWidgetItem *m_nseW;
+    int m_userId;
+    Profiler *m_profiler;
+    MainWindow *m_ui;
+
 signals:
     void doneParBook(const QString profileName, const QString profilePar);
 
 private slots:
     void optionListUpdate();
-    void update_portCombo();
-    void update_options();
-    void update_comboVerbosity();
+    void updatePortCombo();
+    void updateOptions();
+    void updateComboVerbosity();
     void exit();
     void updateBaseOptions();
 };

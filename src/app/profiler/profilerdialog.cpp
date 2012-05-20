@@ -18,9 +18,10 @@
  ***************************************************************************/
 
 #include "profilerdialog.h"
+#include "mainwindow.h"
 
-ProfilerManager::ProfilerManager(QWidget* parent)
-: QDialog(parent)
+ProfilerManager::ProfilerManager(MainWindow* parent)
+: QDialog(parent), m_ui(parent)
 {
     Q_UNUSED(parent);
     initObject();
@@ -46,7 +47,7 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
 void ProfilerManager::initObject()
 {
     #ifndef Q_WS_WIN
-    m_uid = getuid();
+    m_userId = getuid();
 #endif
 
     setupUi(this);
@@ -61,18 +62,18 @@ void ProfilerManager::initObject()
     connect(optionsListScan, SIGNAL(itemSelectionChanged()),
          this, SLOT(optionListUpdate()));
     connect(portCombo, SIGNAL(activated(QString)),
-            this, SLOT(update_portCombo()));
+            this, SLOT(updatePortCombo()));
     //Options
     connect(checkBoxDevice, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
+            this, SLOT(updateOptions()));
     connect(checkDecoy, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
+            this, SLOT(updateOptions()));
     connect(checkSpoof, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
+            this, SLOT(updateOptions()));
     connect(checkSourcePort, SIGNAL(toggled(bool)),
-            this, SLOT(update_options()));
+            this, SLOT(updateOptions()));
     connect(comboVerbosity, SIGNAL(activated(QString)),
-            this, SLOT(update_comboVerbosity()));
+            this, SLOT(updateComboVerbosity()));
     connect(doneButton, SIGNAL(clicked(bool)),
             this, SLOT(exit()));
     connect(cancelButton, SIGNAL(clicked(bool)),
@@ -175,7 +176,7 @@ void ProfilerManager::optionListUpdate()
     }
 }
 
-void ProfilerManager::update_portCombo()
+void ProfilerManager::updatePortCombo()
 {
     switch (portCombo->currentIndex())
     {
@@ -203,7 +204,7 @@ void ProfilerManager::update_portCombo()
 
 void ProfilerManager::loadDefaultComboValues()
 {
-    if (!m_uid)
+    if (!m_userId)
     { // if root
         comboScanTcp->addItem(QApplication::translate("profilerManager", "TCP SYN Stealth Scan (-sS)", 0, QApplication::UnicodeUTF8));
         comboScanTcp->addItem(QApplication::translate("profilerManager", "ACK Stealth Scan (-sA)", 0, QApplication::UnicodeUTF8));
@@ -253,7 +254,7 @@ void ProfilerManager::loadDefaultComboValues()
     }
 }
 
-void ProfilerManager::update_options()
+void ProfilerManager::updateOptions()
 {
     if (checkBoxDevice->isChecked())
     {
@@ -302,7 +303,7 @@ void ProfilerManager::update_options()
     }
 }
 
-void ProfilerManager::update_comboVerbosity()
+void ProfilerManager::updateComboVerbosity()
 {
     if (comboVerbosity->currentIndex() == 4)
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
@@ -317,7 +318,7 @@ void ProfilerManager::updateBaseOptions()
         break;
     case 1:
         m_profiler->resetOptions();
-        if (!m_uid)
+        if (!m_userId)
         {
             setFullVersionProfile();
         }
@@ -328,7 +329,7 @@ void ProfilerManager::updateBaseOptions()
         break;
     case 2:
         m_profiler->resetOptions();
-        if (!m_uid)
+        if (!m_userId)
         {
             setFullVersionProfile();
         }
