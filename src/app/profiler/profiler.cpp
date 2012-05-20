@@ -23,7 +23,7 @@
 Profiler::Profiler(ProfilerManager* parent)
 : m_ui(parent)
 {
-
+    loadDefaultHash();
 }
 
 void Profiler::restoreValuesFromProfile(const QStringList parameters)
@@ -260,149 +260,149 @@ void Profiler::preLoadOptionsCombo()
 void Profiler::preLoadOptionsCheckBox()
 {
 
-    QPair<QCheckBox*,QString> comboDefault;
+    QPair<QCheckBox*,QString> checkDefault;
 
     // scan stack
     // ftp bounce
-    comboDefault.first = m_ui->checkFtpBounce;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-b", comboDefault);
+    checkDefault.first = m_ui->checkFtpBounce;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-b", checkDefault);
     lineEditList.insert("-b",m_ui->bounceEdit);
 
     // idle scan
-    comboDefault.first = m_ui->checkIdleScan;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-sI", comboDefault);
+    checkDefault.first = m_ui->checkIdleScan;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-sI", checkDefault);
     lineEditList.insert("-sI",m_ui->lineIdleScan);
 
     // Aggressive scan
-    comboDefault.first = m_ui->checkAggressiveOptions;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-A", comboDefault);
+    checkDefault.first = m_ui->checkAggressiveOptions;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-A", checkDefault);
 
     // RPC scan
-    comboDefault.first = m_ui->rpcBox;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-sR", comboDefault);
+    checkDefault.first = m_ui->rpcBox;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-sR", checkDefault);
 
     // OS Detection
-    comboDefault.first = m_ui->checkOS;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-O", comboDefault);
+    checkDefault.first = m_ui->checkOS;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-O", checkDefault);
 
     // Version Probe
-    comboDefault.first = m_ui->versionBox;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-sV", comboDefault);
+    checkDefault.first = m_ui->versionBox;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-sV", checkDefault);
 
     // Ipv6
-    comboDefault.first = m_ui->checkIpv6;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-6", comboDefault);
+    checkDefault.first = m_ui->checkIpv6;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-6", checkDefault);
 
     // end scan stack
 
     // start ping stack
 
     // Dont'ping
-    comboDefault.first = m_ui->notpingBox;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-P0", comboDefault);
+    checkDefault.first = m_ui->notpingBox;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-P0", checkDefault);
 
     // ICMP echo
-    comboDefault.first = m_ui->checkIcmpEcho;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-PE", comboDefault);
+    checkDefault.first = m_ui->checkIcmpEcho;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-PE", checkDefault);
 
     // ICMP timestamp
-    comboDefault.first = m_ui->checkIcmpTimestamp;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-PP", comboDefault);
+    checkDefault.first = m_ui->checkIcmpTimestamp;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-PP", checkDefault);
 
     // ICMP netmask
-    comboDefault.first = m_ui->checkIcmpNetmask;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-PM", comboDefault);
+    checkDefault.first = m_ui->checkIcmpNetmask;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-PM", checkDefault);
 
     //TCP ack ping
-    comboDefault.first = m_ui->checkTcpPing;
-    comboDefault.second = "21,23,80,3389";
-    preLoadCheckBoxList.insert("-PA", comboDefault);
+    checkDefault.first = m_ui->checkTcpPing;
+    checkDefault.second = "21,23,80,3389";
+    preLoadCheckBoxList.insert("-PA", checkDefault);
     lineEditList.insert("-PA",m_ui->lineTcpPing);
 
     //TCP syn ping
-    comboDefault.first = m_ui->checkTcpSyn;
-    comboDefault.second = "22,25,80";
-    preLoadCheckBoxList.insert("-PS", comboDefault);
+    checkDefault.first = m_ui->checkTcpSyn;
+    checkDefault.second = "22,25,80";
+    preLoadCheckBoxList.insert("-PS", checkDefault);
     lineEditList.insert("-PS",m_ui->lineSynPing);
 
     // UDP Ping
-    comboDefault.first = m_ui->checkUdpPing;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-PU", comboDefault);
+    checkDefault.first = m_ui->checkUdpPing;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-PU", checkDefault);
     lineEditList.insert("-PU",m_ui->lineUdpPing);
 
     // IP proto
-    comboDefault.first = m_ui->checkProtoPing;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-PO", comboDefault);
+    checkDefault.first = m_ui->checkProtoPing;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-PO", checkDefault);
     lineEditList.insert("-PO",m_ui->lineProtoPing);
 
     //SCTP init ping
-    comboDefault.first = m_ui->checkSctpPing;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-PY", comboDefault);
+    checkDefault.first = m_ui->checkSctpPing;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-PY", checkDefault);
     lineEditList.insert("-PY",m_ui->lineSctpPing);
 
     // end ping stack
     // start timing stack
 
     //Min outstanding
-    comboDefault.first = m_ui->TcheckMinPar;
-    comboDefault.second = '1';
-    preLoadCheckBoxList.insert("--min-parallelism", comboDefault);
+    checkDefault.first = m_ui->TcheckMinPar;
+    checkDefault.second = '1';
+    preLoadCheckBoxList.insert("--min-parallelism", checkDefault);
     spinBoxList.insert("--min-parallelism",m_ui->TspinBoxMinP);
 
     //Min outstanding
-    comboDefault.first = m_ui->TcheckMaxPar;
-    comboDefault.second = '1';
-    preLoadCheckBoxList.insert("--max-parallelism", comboDefault);
+    checkDefault.first = m_ui->TcheckMaxPar;
+    checkDefault.second = '1';
+    preLoadCheckBoxList.insert("--max-parallelism", checkDefault);
     spinBoxList.insert("--max-parallelism",m_ui->spinBoxMaxPar);
 
     //Max time
-    comboDefault.first = m_ui->TcheckHostTime;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--host-timeout", comboDefault);
+    checkDefault.first = m_ui->TcheckHostTime;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--host-timeout", checkDefault);
     spinBoxList.insert("--host-timeout",m_ui->spinBoxHostTime);
 
     //initial probe
-    comboDefault.first = m_ui->TcheckInitRtt;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--initial-rtt-timeout", comboDefault);
+    checkDefault.first = m_ui->TcheckInitRtt;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--initial-rtt-timeout", checkDefault);
     spinBoxList.insert("--initial-rtt-timeout",m_ui->spinBoxInitRtt);
 
     //min probe
-    comboDefault.first = m_ui->TcheckMinRtt;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--min-rtt-timeout", comboDefault);
+    checkDefault.first = m_ui->TcheckMinRtt;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--min-rtt-timeout", checkDefault);
     spinBoxList.insert("--min-rtt-timeout",m_ui->spinBoxMinRtt);
 
     //max probe
-    comboDefault.first = m_ui->TcheckMaxRtt;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--max-rtt-timeout", comboDefault);
+    checkDefault.first = m_ui->TcheckMaxRtt;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--max-rtt-timeout", checkDefault);
     spinBoxList.insert("--max-rtt-timeout",m_ui->spinBoxMaxRtt);
 
     //scan delay
-    comboDefault.first = m_ui->TcheckScanDelay;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--scan-delay", comboDefault);
+    checkDefault.first = m_ui->TcheckScanDelay;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--scan-delay", checkDefault);
     spinBoxList.insert("--scan-delay",m_ui->spinBoxScanDelay);
 
     //Max scan
-    comboDefault.first = m_ui->TcheckScanDelayMax;
-    comboDefault.second = "6000";
-    preLoadCheckBoxList.insert("--max-scan-delay", comboDefault);
+    checkDefault.first = m_ui->TcheckScanDelayMax;
+    checkDefault.second = "6000";
+    preLoadCheckBoxList.insert("--max-scan-delay", checkDefault);
     spinBoxList.insert("--max-scan-delay",m_ui->spinBoxScanDelayMax);
 
     // end timing stack
@@ -410,57 +410,76 @@ void Profiler::preLoadOptionsCheckBox()
     // start options
 
     // network interface
-    comboDefault.first = m_ui->checkBoxDevice;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-e", comboDefault);
+    checkDefault.first = m_ui->checkBoxDevice;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-e", checkDefault);
     lineEditList.insert("-e",m_ui->OlineDevice);
 
     // source spoof ip
-    comboDefault.first = m_ui->checkSpoof;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-S", comboDefault);
+    checkDefault.first = m_ui->checkSpoof;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-S", checkDefault);
     lineEditList.insert("-S",m_ui->lineEditSpoof);
 
     // set decoy
-    comboDefault.first = m_ui->checkDecoy;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-D", comboDefault);
+    checkDefault.first = m_ui->checkDecoy;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-D", checkDefault);
     lineEditList.insert("-D",m_ui->lineDecoy);
 
     // source spoof port
-    comboDefault.first = m_ui->checkSourcePort;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("-g", comboDefault);
+    checkDefault.first = m_ui->checkSourcePort;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("-g", checkDefault);
     lineEditList.insert("-g",m_ui->lineSourcePort);
 
     // ipv4 ttl
-    comboDefault.first = m_ui->TcheckIpv4ttl;
-    comboDefault.second = "127";
-    preLoadCheckBoxList.insert("--ttl", comboDefault);
+    checkDefault.first = m_ui->TcheckIpv4ttl;
+    checkDefault.second = "127";
+    preLoadCheckBoxList.insert("--ttl", checkDefault);
     spinBoxList.insert("--ttl",m_ui->spinBoxIpv4ttl);
 
     // max retries
-    comboDefault.first = m_ui->checkMaxRetries;
-    comboDefault.second = "";
-    preLoadCheckBoxList.insert("--max-retries", comboDefault);
+    checkDefault.first = m_ui->checkMaxRetries;
+    checkDefault.second = "";
+    preLoadCheckBoxList.insert("--max-retries", checkDefault);
     lineEditList.insert("--max-retries",m_ui->lineMaxRetries);
 
     // ordered scanned
-    comboDefault.first = m_ui->checkOrdered;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-r", comboDefault);
+    checkDefault.first = m_ui->checkOrdered;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-r", checkDefault);
 
     // fragment IP
-    comboDefault.first = m_ui->checkFrag;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("-f", comboDefault);
+    checkDefault.first = m_ui->checkFrag;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-f", checkDefault);
 
     // traceroute
-    comboDefault.first = m_ui->checkTraceroute;
-    comboDefault.second = "none";
-    preLoadCheckBoxList.insert("--traceroute", comboDefault);
+    checkDefault.first = m_ui->checkTraceroute;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("--traceroute", checkDefault);
 
     // end options
+}
+
+void Profiler::resetOptions()
+{
+    QHash<QString,QPair<QCheckBox*,QString> >::const_iterator i;
+
+    for (i = preLoadCheckBoxList.constBegin(); i != preLoadCheckBoxList.constEnd(); ++i)
+    {
+        i.value().first->setChecked(false);
+    }
+
+    QHash<QString,QPair<QComboBox*,int> >::const_iterator j;
+
+    for (j = preLoadComboList.constBegin(); j != preLoadComboList.constEnd(); ++j)
+    {
+        j.value().first->setCurrentIndex(0);
+    }
+
+    m_ui->m_nseManager->nseTreeResetItem();
 }
 
 QStringList Profiler::buildExtensions()

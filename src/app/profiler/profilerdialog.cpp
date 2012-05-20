@@ -95,7 +95,6 @@ void ProfilerManager::initObject()
             m_nseManager, SLOT(requestNseScriptHelp()));
 
     loadDefaultComboValues();
-    m_profiler->loadDefaultHash();
 
     m_profileW->setSelected(true);
 }
@@ -314,10 +313,10 @@ void ProfilerManager::updateBaseOptions()
     switch (comboBaseOptions->currentIndex())
     {
     case 0:
-        resetOptions();
+        m_profiler->resetOptions();
         break;
     case 1:
-        resetOptions();
+        m_profiler->resetOptions();
         if (!m_uid)
         {
             setFullVersionProfile();
@@ -328,7 +327,7 @@ void ProfilerManager::updateBaseOptions()
         }
         break;
     case 2:
-        resetOptions();
+        m_profiler->resetOptions();
         if (!m_uid)
         {
             setFullVersionProfile();
@@ -346,7 +345,7 @@ void ProfilerManager::updateBaseOptions()
 
 void ProfilerManager::setNormalProfile()
 {
-    resetOptions();
+    m_profiler->resetOptions();
     comboScanTcp->setCurrentIndex(1);
     comboTiming->setCurrentIndex(4);
     comboDNSResolv->setCurrentIndex(0);
@@ -357,7 +356,7 @@ void ProfilerManager::setNormalProfile()
 
 void ProfilerManager::setFullVersionProfile()
 {
-    resetOptions();
+    m_profiler->resetOptions();
     comboScanTcp->setCurrentIndex(3);
     comboTiming->setCurrentIndex(4);
     checkOS->setChecked(true);
@@ -372,18 +371,4 @@ void ProfilerManager::setDefaultNseScripts()
 {
     m_nseManager->nseTreeActiveSingleScript("default");
     m_nseManager->nseTreeActiveSingleScript("safe");
-}
-
-void ProfilerManager::resetOptions()
-{
-    versionBox->setChecked(false);
-    checkOS->setChecked(false);
-    comboScanTcp->setCurrentIndex(0);
-    comboScanNonTcp->setCurrentIndex(0);
-    comboTiming->setCurrentIndex(0);
-    comboDNSResolv->setCurrentIndex(0);
-    comboVerbosity->setCurrentIndex(0);
-    checkAggressiveOptions->setChecked(false);
-    checkTraceroute->setChecked(false);
-    m_nseManager->nseTreeResetItem();
 }

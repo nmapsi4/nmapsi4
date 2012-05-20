@@ -38,6 +38,7 @@ public:
     ~Profiler() { };
     void restoreValuesFromProfile(const QStringList parameters);
     void loadDefaultHash();
+    void resetOptions();
     QStringList buildExtensions();
 
 private:

@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 
-#ifndef PROFILERDIALOG_H
-#define PROFILERDIALOG_H
+#ifndef PROFILERMANAGER_H
+#define PROFILERMANAGER_H
 
 #include <QtGui/QDialog>
 #include <QtGui/QListWidgetItem>
@@ -66,7 +66,6 @@ private:
     void setNormalProfile();
     void setFullVersionProfile();
     void setDefaultNseScripts();
-    void resetOptions();
     void createQList();
     void reloadScanParameters();
 
@@ -82,4 +81,4 @@ private slots:
     void updateBaseOptions();
 };
 
-#endif // PROFILEDIALOG_H
+#endif // PROFILEMANAGER_H
