@@ -74,6 +74,7 @@ public:
     void updateComboBook();
     // NOTE: check completer section in vulnerability
     void updateCompleter();
+    QHash<QString, QString> defaultScanProfile() const;
 
     Vulnerability* m_vulnerability;
     DiscoverManager* m_discoverManager;
@@ -98,7 +99,6 @@ private:
     void setDefaultSplitter();
     void defaultComboValues();
     QStringList loadExtensions();
-    QHash<QString, QString> defaultScanProfile() const;
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;

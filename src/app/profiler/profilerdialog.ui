@@ -123,16 +123,6 @@
                     <string>None</string>
                    </property>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>Default</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Default with nse script</string>
-                   </property>
-                  </item>
                  </widget>
                 </item>
                 <item row="2" column="1">

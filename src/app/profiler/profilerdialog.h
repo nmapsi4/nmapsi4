@@ -56,11 +56,9 @@ public:
 private:
     void initObject();
     void loadDefaultComboValues();
-    void setNormalProfile();
-    void setFullVersionProfile();
-    void setDefaultNseScripts();
     void createQList();
     void reloadScanParameters();
+    void loadDefaultBaseProfile();
 
     QListWidgetItem *m_profileW;
     QListWidgetItem *m_scanW;

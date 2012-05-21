@@ -96,6 +96,7 @@ void ProfilerManager::initObject()
             m_nseManager, SLOT(requestNseScriptHelp()));
 
     loadDefaultComboValues();
+    loadDefaultBaseProfile();
 
     m_profileW->setSelected(true);
 }
@@ -309,67 +310,31 @@ void ProfilerManager::updateComboVerbosity()
         QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
 }
 
+void ProfilerManager::loadDefaultBaseProfile()
+{
+    foreach (const QString& profile, m_ui->defaultScanProfile().keys())
+    {
+        comboBaseOptions->insertItem(comboBaseOptions->count()+1, profile);
+    }
+}
+
 void ProfilerManager::updateBaseOptions()
 {
-    switch (comboBaseOptions->currentIndex())
+    if (!comboBaseOptions->currentIndex())
     {
-    case 0:
         m_profiler->resetOptions();
-        break;
-    case 1:
+        reloadScanParameters();
+        return;
+    }
+
+    QString parameters(m_ui->defaultScanProfile().value(comboBaseOptions->currentText()));
+
+    // NOTE: if is not necessary
+    if (!parameters.isEmpty())
+    {
         m_profiler->resetOptions();
-        if (!m_userId)
-        {
-            setFullVersionProfile();
-        }
-        else
-        {
-            setNormalProfile();
-        }
-        break;
-    case 2:
-        m_profiler->resetOptions();
-        if (!m_userId)
-        {
-            setFullVersionProfile();
-        }
-        else
-        {
-            setNormalProfile();
-        }
-        setDefaultNseScripts();
-        break;
+        m_profiler->restoreValuesFromProfile(parameters.split(' '));
     }
 
     reloadScanParameters();
-}
-
-void ProfilerManager::setNormalProfile()
-{
-    m_profiler->resetOptions();
-    comboScanTcp->setCurrentIndex(1);
-    comboTiming->setCurrentIndex(4);
-    comboDNSResolv->setCurrentIndex(0);
-    comboVerbosity->setCurrentIndex(1);
-    versionBox->setChecked(true);
-    checkAggressiveOptions->setChecked(true);
-}
-
-void ProfilerManager::setFullVersionProfile()
-{
-    m_profiler->resetOptions();
-    comboScanTcp->setCurrentIndex(3);
-    comboTiming->setCurrentIndex(4);
-    checkOS->setChecked(true);
-    versionBox->setChecked(true);
-    comboVerbosity->setCurrentIndex(1);
-    comboDNSResolv->setCurrentIndex(0);
-    checkAggressiveOptions->setChecked(true);
-    checkTraceroute->setChecked(true);
-}
-
-void ProfilerManager::setDefaultNseScripts()
-{
-    m_nseManager->nseTreeActiveSingleScript("default");
-    m_nseManager->nseTreeActiveSingleScript("safe");
 }
