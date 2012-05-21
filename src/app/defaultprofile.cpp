@@ -54,22 +54,16 @@ QHash<QString, QString> MainWindow::defaultScanProfile() const
 void MainWindow::loadScanProfile()
 {
     comboPar->clear();
-    comboPar->insertItem(0, "Default");
 
-    // insert default static profile
     QHash<QString, QString> tmpStaticProfile_ = defaultScanProfile();
-    int keyPosition = 0;
+
     QHash<QString, QString>::const_iterator i;
     for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i)
     {
-        if (i.key() != "Default")
-        {
-            comboPar->addItem(i.key());
-            keyPosition++;
-        }
+        comboPar->insertItem(comboPar->count()+1,i.key());
     }
-
-    comboPar->insertSeparator(++keyPosition);
+    
+    comboPar->insertSeparator(comboPar->count()+1);
 
     // value from treeWidget parameters
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++)
