@@ -48,7 +48,7 @@ class ProfilerManager : public QDialog, public Ui::profilerDialog
 
 public:
     ProfilerManager(MainWindow* parent);
-    ProfilerManager(const QString profileName, const QString parameters, QWidget* parent = 0);
+    ProfilerManager(const QString profileName, const QString parameters, MainWindow* parent);
     ~ProfilerManager();
 
     NseManager* m_nseManager;

@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "profiler.h"
-#include "profilerdialog.h"
+#include "profilermanager.h"
 
 Profiler::Profiler(ProfilerManager* parent)
 : m_ui(parent)

@@ -19,50 +19,94 @@
 
 #include "mainwindow.h"
 
-QHash<QString, QString> MainWindow::defaultScanProfile() const
+QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
 {
     // preload StringList with default static Scan profile
-    QHash<QString, QString> tmpStaticProfileMap_;
+    QPair<QString, QString> profileModel;
+    QList< QPair<QString, QString> > listProfileModel;
 
     if (!m_userId)
     {
-        tmpStaticProfileMap_.insert("Default","-sS -sV -O -T4 -v --traceroute");
-        tmpStaticProfileMap_.insert("Default + Aggressive","-A -sS -sV -O -T4 -v --traceroute");
-        tmpStaticProfileMap_.insert("Default + base nse script","--script=default,safe -sS -sV -O -T4 -v --traceroute");
-        tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
-        tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v --traceroute");
-        tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v --traceroute");
-        // profile for full mode
-        tmpStaticProfileMap_.insert(tr("Intense scan plus UDP"),"-sS -sU -T4 -v --traceroute");
-        tmpStaticProfileMap_.insert(tr("Slow comprehensive scan"),
-                                    "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute");
+        profileModel.first = "Default";
+        profileModel.second = "-sS -sV -O -T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = "Default + Aggressive";
+        profileModel.second = "-A -sS -sV -O -T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = "Default + base nse script";
+        profileModel.second = "--script=default,safe -sS -sV -O -T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        //FIXME tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
+        profileModel.first = tr("Quick Scan");
+        profileModel.second = "-T4 -F --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v --traceroute");
+        profileModel.first = tr("Intense Scan");
+        profileModel.second = "-T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v --traceroute");
+        profileModel.first = tr("Intense Scan, all TCP ports");
+        profileModel.second = "-p 1-65535 -T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = tr("Intense scan plus UDP");
+        profileModel.second = "-sS -sU -T4 -v --traceroute";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = tr("Slow comprehensive scan");
+        profileModel.second = "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute";
+        listProfileModel.push_back(profileModel);
     }
     else
     {
         // for user mode
-        tmpStaticProfileMap_.insert("Default","-sT -sV -T4 -v");
-        tmpStaticProfileMap_.insert("Default + Aggressive","-A -sT -sV -T4 -v");
-        tmpStaticProfileMap_.insert("Default + base nse script","--script=default,safe -sT -sV -T4 -v");
-        tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v");
-        tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v");
-        tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
+
+        profileModel.first = "Default";
+        profileModel.second = "-sT -sV -T4 -v";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = "Default + Aggressive";
+        profileModel.second = "-A -sT -sV -T4 -v";
+        listProfileModel.push_back(profileModel);
+
+        profileModel.first = "Default + base nse script";
+        profileModel.second = "--script=default,safe -sT -sV -T4 -v";
+        listProfileModel.push_back(profileModel);
+
+        //tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v");
+        profileModel.first = tr("Intense Scan, all TCP ports");
+        profileModel.second = "-p 1-65535 -T4 -v";
+        listProfileModel.push_back(profileModel);
+
+        //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v");
+        profileModel.first = tr("Intense Scan");
+        profileModel.second = "-T4 -v";
+        listProfileModel.push_back(profileModel);
+
+        //FIXME tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
+        profileModel.first = tr("Quick Scan");
+        profileModel.second = "-T4 -F";
+        listProfileModel.push_back(profileModel);
     }
 
-    return tmpStaticProfileMap_;
+    return listProfileModel;
 }
 
 void MainWindow::loadScanProfile()
 {
     comboPar->clear();
 
-    QHash<QString, QString> tmpStaticProfile_ = defaultScanProfile();
-
-    QHash<QString, QString>::const_iterator i;
-    for (i = tmpStaticProfile_.constBegin(); i != tmpStaticProfile_.constEnd(); ++i)
+    QListIterator< QPair<QString, QString> > i(defaultScanProfile());
+    while (i.hasNext())
     {
-        comboPar->insertItem(comboPar->count()+1,i.key());
+        comboPar->insertItem(comboPar->count()+1, i.next().first);
     }
-    
+
     comboPar->insertSeparator(comboPar->count()+1);
 
     // value from treeWidget parameters
@@ -80,12 +124,22 @@ void MainWindow::comboParametersSelectedEvent()
    int parIndex = comboPar->currentIndex();
 
     // if not 0
-    QHash<QString, QString> tmpMap_ = defaultScanProfile();
+    QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
     comboAdv->clear();
-    if (parIndex <= tmpMap_.size())
+
+    if (parIndex <= listProfileModel.size())
     {
-        // call static default profile for check
-        comboAdv->insertItem(0, tmpMap_.value(comboPar->currentText()));
+        QListIterator< QPair<QString, QString> > i(defaultScanProfile());
+        while (i.hasNext())
+        {
+            QPair<QString, QString> profile = i.next();
+            if (profile.first == comboPar->currentText())
+            {
+                // call static default profile for check
+                comboAdv->insertItem(0, profile.second);
+                break;
+            }
+        }
     }
     else
     {

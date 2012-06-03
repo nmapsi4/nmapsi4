@@ -45,7 +45,7 @@
 #include "vulnerability.h"
 #include "discovermanager.h"
 #include "parsermanager.h"
-#include "profilerdialog.h"
+#include "profilermanager.h"
 #include "bookmarkmanager.h"
 #include "actionmanager.h"
 #include "style.h"
@@ -74,7 +74,7 @@ public:
     void updateComboBook();
     // NOTE: check completer section in vulnerability
     void updateCompleter();
-    QHash<QString, QString> defaultScanProfile() const;
+    QList< QPair<QString, QString> > defaultScanProfile();
 
     Vulnerability* m_vulnerability;
     DiscoverManager* m_discoverManager;

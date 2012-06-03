@@ -17,7 +17,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "profilerdialog.h"
+#include "profilermanager.h"
 #include "mainwindow.h"
 
 ProfilerManager::ProfilerManager(MainWindow* parent)
@@ -29,8 +29,8 @@ ProfilerManager::ProfilerManager(MainWindow* parent)
     setWindowTitle(tr("New profile") + " - Nmapsi4");
 }
 
-ProfilerManager::ProfilerManager(const QString profileName, const QString parameters, QWidget* parent)
-: QDialog(parent)
+ProfilerManager::ProfilerManager(const QString profileName, const QString parameters, MainWindow* parent)
+: QDialog(parent), m_ui(parent)
 {
     Q_UNUSED(parent);
     initObject();
@@ -312,9 +312,10 @@ void ProfilerManager::updateComboVerbosity()
 
 void ProfilerManager::loadDefaultBaseProfile()
 {
-    foreach (const QString& profile, m_ui->defaultScanProfile().keys())
+    QListIterator< QPair<QString, QString> > i(m_ui->defaultScanProfile());
+    while (i.hasNext())
     {
-        comboBaseOptions->insertItem(comboBaseOptions->count()+1, profile);
+        comboBaseOptions->insertItem(comboBaseOptions->count()+1, i.next().first);
     }
 }
 
@@ -327,7 +328,17 @@ void ProfilerManager::updateBaseOptions()
         return;
     }
 
-    QString parameters(m_ui->defaultScanProfile().value(comboBaseOptions->currentText()));
+    QString parameters;
+    QListIterator< QPair<QString, QString> > i(m_ui->defaultScanProfile());
+    while (i.hasNext())
+    {
+        QPair<QString, QString> profile = i.next();
+        if (profile.first == comboBaseOptions->currentText())
+        {
+            parameters =  profile.second;
+            break;
+        }
+    }
 
     // NOTE: if is not necessary
     if (!parameters.isEmpty())

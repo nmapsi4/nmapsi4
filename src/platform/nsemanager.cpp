@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "nsemanager.h"
-#include "profilerdialog.h"
+#include "profilermanager.h"
 
 NseManager::NseManager(ProfilerManager* parent)
 : QObject(parent), m_ui(parent)

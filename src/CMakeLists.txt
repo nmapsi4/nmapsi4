@@ -45,7 +45,7 @@ SET(SOURCES_CPP
                 common/processthread.cpp
                 common/pobjects.cpp
                 app/preference/preferencesdialog.cpp
-                app/profiler/profilerdialog.cpp
+                app/profiler/profilermanager.cpp
                 app/profiler/profiler.cpp
                 app/defaultprofile.cpp
                 app/updateUI.cpp
@@ -77,7 +77,7 @@ SET(SOURCES_H
         platform/parser/parsermanager.h
         common/utilities.h
         common/processthread.h
-        app/profiler/profilerdialog.h
+        app/profiler/profilermanager.h
         app/preference/preferencesdialog.h
         app/bookmarkmanager.h
         app/actionmanager.h
