@@ -655,6 +655,7 @@ void ParserManager::showParserObj(int hostIndex)
 
             item->setText(0, value);
             item->setToolTip(0, value);
+            item->setIcon(0,QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
         }
     }
 
