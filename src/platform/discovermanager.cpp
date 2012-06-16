@@ -299,10 +299,10 @@ void DiscoverManager::defaultDiscoverProbes()
     */
     if (!m_uid)
     {
-        m_ui->discoverProbesCombo->insertItem(0, "--arp");
-        m_ui->discoverProbesCombo->insertItem(1, "--icmp");
-        m_ui->discoverProbesCombo->insertItem(2, "--tcp");
-        m_ui->discoverProbesCombo->insertItem(3, "--udp");
+        m_ui->discoverProbesCombo->insertItem(0, "--icmp");
+        m_ui->discoverProbesCombo->insertItem(1, "--tcp");
+        m_ui->discoverProbesCombo->insertItem(2, "--udp");
+        m_ui->discoverProbesCombo->insertItem(3, "--arp");
         m_ui->discoverProbesCombo->insertItem(4, "--tr");
         m_ui->discoverProbesCombo->insertItem(5, "--tcp-connect");
     }

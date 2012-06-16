@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/media-playback-pause.png</file>
+    <file>images/media-playback-start.png</file>
     <file>images/view-restore.png</file>
     <file>images/documentation.png</file>
     <file>images/document-properties.png</file>
