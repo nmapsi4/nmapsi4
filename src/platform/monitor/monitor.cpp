@@ -89,7 +89,7 @@ void Monitor::addMonitorHost(const QString hostName, const QStringList parameter
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, hostName);
     hostThread->setText(1, parameters.join(" "));
-    hostThread->setIcon(2, QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    hostThread->setIcon(2, QIcon::fromTheme("media-playback-start"));
     hostThread->setText(2, "Scanning");
     m_monitorElem.push_front(hostThread);
 
@@ -123,6 +123,7 @@ void Monitor::cacheScan(const QString& hostname, const QStringList& parameters, 
         m_lookupScanCacheList.append(lookupPair);
 
         item->setText(2, tr("Waiting"));
+        item->setIcon(2, QIcon::fromTheme("media-playback-pause"));
         qDebug() << "Monitor::cached:: " << hostname;
     }
 
@@ -157,6 +158,7 @@ void Monitor::cacheRepeat()
         QPair<QString, QStringList> scanPair = m_hostScanCacheList.takeFirst();
         QPair<LookupType, QTreeWidgetItem*> lookupPair = m_lookupScanCacheList.takeFirst();
         lookupPair.second->setText(2,tr("Scanning"));
+        lookupPair.second->setIcon(2, QIcon::fromTheme("media-playback-start"));
 
         qDebug() << "Monitor::restored:: " << scanPair.first;
 
