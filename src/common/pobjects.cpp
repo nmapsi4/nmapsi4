@@ -84,6 +84,11 @@ const QHash< QString, QStringList > &PObject::getNseResult() const
     return m_nssResult;
 }
 
+const QStringList& PObject::getVulnDiscoverd() const
+{
+    return m_vulnDiscoverd;
+}
+
 bool PObject::isValidObject()
 {
     return m_validFlag;
@@ -167,6 +172,14 @@ void PObject::setId(int id)
 int PObject::getId()
 {
     return m_id;
+}
+
+void PObject::setVulnDiscoverd(const QString vulnAddress)
+{
+    if (!m_vulnDiscoverd.contains(vulnAddress))
+    {
+        m_vulnDiscoverd.push_back(vulnAddress);
+    }
 }
 
 PObjectLookup::PObjectLookup() : m_id(0)

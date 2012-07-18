@@ -42,6 +42,7 @@ public:
     const QStringList &getTraceRouteInfo() const;
     const QStringList &getFullScanLog() const;
     const QStringList &getErrorScan() const;
+    const QStringList &getVulnDiscoverd() const;
     const QHash<QString, QStringList> &getNseResult() const;
     bool isValidObject();
     int getId();
@@ -60,6 +61,7 @@ public:
     void setValidity(bool isValid);
     void setParameters(const QString parameters);
     void setId(int id);
+    void setVulnDiscoverd(const QString vulnAddress);
 
 private:
     QString m_hostName;
@@ -74,6 +76,7 @@ private:
     QStringList m_fullLogScan;
     QStringList m_errorScan;
     QHash<QString, QStringList> m_nssResult;
+    QStringList m_vulnDiscoverd;
     bool m_validFlag;
     int m_id;
 

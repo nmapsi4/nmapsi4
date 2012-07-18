@@ -405,6 +405,14 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
                 serviceNseResult.append(nseStreamLine);
             }
             nseStreamLine = nseStream.readLine();
+
+            // Save nse vulnerabilies url discovered
+            if ((nseStreamLine.startsWith(QLatin1String("http://")) 
+                || nseStreamLine.startsWith(QLatin1String("https://")))
+                && !nseStreamLine.contains(hostCheck))
+            {
+                elemObj->setVulnDiscoverd(nseStreamLine);
+            }
         }
 
         if (!service.isEmpty() && serviceNseResult.size())
@@ -451,6 +459,7 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->listWscan->clear();
     m_ui->GItree->clear();
     m_ui->treeNSS->clear();
+    m_ui->treeVulnNseRecovered->clear();
 
     // set combo scan parameters
     m_ui->comboScanLog->clear();
@@ -657,6 +666,17 @@ void ParserManager::showParserObj(int hostIndex)
             item->setToolTip(0, value);
             item->setIcon(0,QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
         }
+    }
+
+    // Show nse url discovered
+    foreach (const QString& url, m_parserObjList[hostIndex]->getVulnDiscoverd())
+    {
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeVulnNseRecovered);
+        m_itemListScan.push_front(root);
+        root->setSizeHint(0, QSize(22, 22));
+        root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+        root->setText(0, url);
+        root->setToolTip(0, url);
     }
 
     // Show full scan log
