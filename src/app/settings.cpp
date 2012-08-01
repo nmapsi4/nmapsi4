@@ -73,6 +73,7 @@ void MainWindow::saveSettings()
     m_bookmark->syncSettings();
     m_discoverManager->syncSettings();
     m_parser->syncSettings();
+    m_vulnerability->syncSettings();
 
 // check and reset for settings file permission
 #ifndef Q_WS_WIN
