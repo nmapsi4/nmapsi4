@@ -102,7 +102,8 @@ void MainWindow::updateSezScan()
 }
 
 void MainWindow::updateSezVuln()
-{ // SLOT
+{
+    Notify::setCheckedNotify(m_collections->m_collectionsButton.value("vuln-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);

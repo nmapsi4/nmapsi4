@@ -50,7 +50,7 @@ void ActionManager::createSectionsBar()
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
+    Notify::setCheckedNotify(actionButt);
     m_collectionsButton.insert("scan-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezScan()));
     m_ui->sezBar->addWidget(actionButt);
@@ -61,7 +61,7 @@ void ActionManager::createSectionsBar()
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
+    Notify::setCheckedNotify(actionButt);
     m_collectionsButton.insert("discover-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezDiscover()));
     m_ui->sezBar->addWidget(actionButt);
@@ -72,7 +72,7 @@ void ActionManager::createSectionsBar()
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
+    Notify::setCheckedNotify(actionButt);
     m_collectionsButton.insert("vuln-sez",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezVuln()));
     m_ui->sezBar->addWidget(actionButt);
@@ -86,7 +86,7 @@ void ActionManager::createSectionsBar()
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
+    Notify::setCheckedNotify(actionButt);
     m_collectionsButton.insert("scan-list",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(resizeScanListWidgetEvent()));
     m_ui->toolBarTab->addWidget(actionButt);
@@ -98,7 +98,7 @@ void ActionManager::createSectionsBar()
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
-    actionButt->setStyleSheet(verticalStyleSheet);
+    Notify::setCheckedNotify(actionButt);
     m_collectionsButton.insert("details-list",actionButt);
     connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(resizeHostDetailsWidgetEvent()));
     m_ui->toolBarTab->addWidget(actionButt);

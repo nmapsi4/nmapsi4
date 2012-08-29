@@ -75,11 +75,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
 
     m_ui->progressScan->setValue(75);
 
-    // more attention for host list if it isn't checked
-    if (!m_ui->m_collections->m_collectionsButton.value("scan-list")->isChecked())
-    {
-        m_ui->m_collections->m_collectionsButton.value("scan-list")->setStyleSheet(nofifyStyleSheet);
-    }
+    Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-list"));
 
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
@@ -621,6 +617,12 @@ void ParserManager::showParserObj(int hostIndex)
             m_objectItems.push_front(objItem);
             objItem->setText(0,token);
         }
+    }
+
+    if (m_parserObjList[hostIndex]->getServices().size()) {
+        Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
+    } else {
+        Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
     }
 
     // Show Nse Info

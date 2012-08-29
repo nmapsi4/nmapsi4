@@ -25,7 +25,7 @@ QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
                      Monitor)
 endif (Q_WS_X11)
 
-SET(SOURCES_CPP
+SET(SOURCES_CPP 
                 platform/addvulnerabilityurl.cpp
                 platform/vulnerability.cpp
                 platform/lookupmanager.cpp
@@ -44,6 +44,7 @@ SET(SOURCES_CPP
                 common/pushbuttonorientated.cpp
                 common/processthread.cpp
                 common/pobjects.cpp
+                common/notify.cpp
                 app/preference/preferencesdialog.cpp
                 app/profiler/profilermanager.cpp
                 app/profiler/profiler.cpp

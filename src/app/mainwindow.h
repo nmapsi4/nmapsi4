@@ -48,7 +48,7 @@
 #include "profilermanager.h"
 #include "bookmarkmanager.h"
 #include "actionmanager.h"
-#include "style.h"
+#include "notify.h"
 
 // system
 #ifndef Q_WS_WIN

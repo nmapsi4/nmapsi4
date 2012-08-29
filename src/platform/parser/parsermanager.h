@@ -32,6 +32,7 @@
 #include "memorytools.h"
 #include "logwriter.h"
 #include "regularexpression.h"
+#include "notify.h"
 
 class MainWindow;
 
