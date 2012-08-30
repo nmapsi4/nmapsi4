@@ -6,7 +6,14 @@ else (NOT WIN32 AND NOT APPLE)
     FIND_PACKAGE(Qt4 4.6 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
 
-include(${QT_USE_FILE})
+find_package(KDE4)
+
+if(KDE4_FOUND)
+        add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+	set(USE_KDELIBS 1)
+else(KDE4_FOUND)
+        add_definitions (${QT_DEFINITIONS})
+endif(KDE4_FOUND)
 
 ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
@@ -31,5 +38,12 @@ ADD_CUSTOM_TARGET( uninstall
 message("-------------------------------------------------------------------")
 message(" Required for build:   qt4-dev (>>= 4.6) ")
 message(" Required for runtime: nmap ( >= 5.51 ), nping (nmap >= 5.51), dig")
+
+if(KDE4_FOUND)
+	message(" OPTIONAL: Kdelibs-dev founded - build with kde support ")
+else(KDE4_FOUND)
+	message(" OPTIONAL: Kdelibs-dev not founded - build without kde support ")
+endif(KDE4_FOUND)
+
 message("-------------------------------------------------------------------")
 

@@ -22,6 +22,15 @@
 
 #include "style.h"
 #include "pushbuttonorientated.h"
+#include <config.h>
+
+// qt includes
+#include <QtCore/QDebug>
+
+// kde includes
+#ifdef USE_KDELIBS
+#include <knotification.h>
+#endif
 
 class Notify
 {
