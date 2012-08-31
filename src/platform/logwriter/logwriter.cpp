@@ -27,7 +27,9 @@ void LogWriter::writeAllLogFile(QList<PObject*> pObjectList, const QString& path
 {
     QSettings settings("nmapsi4", "nmapsi4");
     int logType = settings.value("logType", 0).toInt();
-
+    /*
+     * TODO: create index.html if logType == HtmlLog
+     */
     Q_FOREACH (PObject* object, pObjectList)
     {
         if (object->isValidObject())
@@ -93,7 +95,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
 
     if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qWarning() << "DEBUG::File Writer:: Problem with file open";
+        qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
 
@@ -163,7 +165,7 @@ void LogWriter::writeRawLogFormat(const QString& path)
 
     if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qWarning() << "DEBUG::File Writer:: Problem with file open";
+        qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
 
@@ -184,7 +186,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
 
     if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qWarning() << "DEBUG::File Writer:: Problem with file open";
+        qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
 
