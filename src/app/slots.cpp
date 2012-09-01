@@ -43,7 +43,7 @@ void MainWindow::connectSlots()
             this, SLOT(editProfile()));
 
     connect(actionFullS, SIGNAL(triggered()),
-            this, SLOT(checkFullScreen()));
+            this, SLOT(setFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
 

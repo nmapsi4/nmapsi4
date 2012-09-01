@@ -124,7 +124,7 @@ public slots:
 private slots:
     void initObject();
     void clearAll();
-    void checkFullScreen();
+    void setFullScreen();
     void updateMenuBar();
     void takeHostFromBookmark();
     void monitorRuntimeEvent();

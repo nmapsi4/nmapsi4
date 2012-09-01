@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-void MainWindow::checkFullScreen()
+void MainWindow::setFullScreen()
 {
 
     if (isFullScreen())
@@ -39,10 +39,12 @@ void MainWindow::updateMenuBar()
     if (actionMenuBar->isChecked())
     {
         menuBar()->setVisible(true);
+        toolMenuBar->setVisible(false);
     }
     else
     {
         menuBar()->setVisible(false);
+        toolMenuBar->setVisible(true);
     }
 }
 
