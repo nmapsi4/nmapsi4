@@ -151,6 +151,8 @@ void NseManager::nseTreeDefaultValue()
     m_nseScriptActiveList.clear();
     m_nseScriptAvailList.clear();
     m_nseScriptAvailList.append("auth");
+    m_nseScriptAvailList.append("broadcast");
+    m_nseScriptAvailList.append("brute");
     m_nseScriptAvailList.append("default");
     m_nseScriptAvailList.append("discovery");
     m_nseScriptAvailList.append("dos");

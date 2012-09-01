@@ -30,6 +30,6 @@ ADD_CUSTOM_TARGET( uninstall
 
 message("-------------------------------------------------------------------")
 message(" Required for build:   qt4-dev (>>= 4.6) ")
-message(" Required for runtime: nmap ( >= 5.51 ), nping (nmap >= 5.51), dig")
+message(" Required for runtime: nmap+nping ( >= 6.00 ), dig ")
 message("-------------------------------------------------------------------")
 
