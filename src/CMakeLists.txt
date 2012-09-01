@@ -86,13 +86,13 @@ SET(SOURCES_H
 )
 
 SET(SOURCES_UI
-        platform/addvulnerabilityurl.ui
-        platform/addparameterstobookmark.ui
-        platform/about/about.ui
-        platform/monitor/monitorhostscandetails.ui
-        app/preference/preferencesdialog.ui
-        app/profiler/profilerdialog.ui
-        app/mainwindow.ui
+        platform/ui/addvulnerabilityurl.ui
+        platform/ui/addparameterstobookmark.ui
+        platform/ui/about.ui
+        platform/ui/monitorhostscandetails.ui
+        app/ui/preferencesdialog.ui
+        app/ui/profilerdialog.ui
+        app/ui/mainwindow.ui
 )
 
 SET(RESOURCES_QRC ../mainwin.qrc)
