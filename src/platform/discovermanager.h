@@ -53,7 +53,7 @@ private:
     QList<QTreeWidgetItem*> m_listTreeItemDiscover;
     QList<QTreeWidgetItem*> m_listTreePackets;
     int m_ipCounter;
-    int m_uid;
+    int m_userid;
     bool m_discoverIsActive;
     QSplitter *m_discoverHorizontalSplitter;
     QSplitter *m_discoverVerticalSplitter;

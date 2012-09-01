@@ -51,6 +51,16 @@ void DigManager::digReturn(const QStringList hostname, QByteArray bufferData, QB
 {
     Q_UNUSED(hostname);
 
+    /*
+     * TODO: remove this check with QT5 QStandardPaths::findExecutable.
+     *
+     */
+    if(!bufferData.size() && bufferError.size())
+    {
+        qWarning() << "Error: Dig is not installed.";
+        return;
+    }
+
     QString buff1(bufferData);
     QTextStream stream1(&buff1);
     QString line;

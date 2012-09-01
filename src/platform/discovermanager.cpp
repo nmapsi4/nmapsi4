@@ -21,7 +21,7 @@
 #include "mainwindow.h"
 
 DiscoverManager::DiscoverManager(MainWindow* parent)
-: QObject(parent), m_ui(parent), m_ipCounter(0), m_uid(0), m_discoverIsActive(false)
+: QObject(parent), m_ui(parent), m_ipCounter(0), m_userid(0), m_discoverIsActive(false)
 {
 #ifndef Q_WS_WIN
     m_uid = getuid();
@@ -54,7 +54,6 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
 
     m_ui->treeTracePackets->setIconSize(QSize(22,22));
     m_ui->treeDiscover->setIconSize(QSize(22,22));
-    //m_ui->treeTracePackets->header()->setResizeMode(0, QHeaderView::ResizeToContents);
 }
 
 DiscoverManager::~DiscoverManager()
@@ -176,6 +175,10 @@ void DiscoverManager::startDiscoverIpsFromRange()
             this, SLOT(endDiscoverIpsFromRange(QStringList,bool,QByteArray)));
 
     m_discoverIsActive = true;
+    /*
+     * TODO: check nping with QT5 QStandardPaths::findExecutable.
+     *
+     */
     discoverPtr->fromList(ipList,this,parameters);
     m_ipCounter = ipList.size();
     m_ui->nseNumber->display(m_ipCounter);
@@ -351,6 +354,10 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
             this, SLOT(endDiscoverIpsFromCIDR()));
 
+    /*
+     * TODO: check nping with QT5 QStandardPaths::findExecutable.
+     *
+     */
     discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters,this);
 
 }
