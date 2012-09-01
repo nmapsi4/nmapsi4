@@ -1783,7 +1783,7 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
-    <addaction name="actionFullS"/>
+    <addaction name="actionFullScreen"/>
     <addaction name="actionMenuBar"/>
    </widget>
    <widget class="QMenu" name="menu_Bookmaks">
@@ -2235,7 +2235,7 @@
     <string>Save all scans to &amp;Directory</string>
    </property>
   </action>
-  <action name="actionFullS">
+  <action name="actionFullScreen">
    <property name="checkable">
     <bool>true</bool>
    </property>

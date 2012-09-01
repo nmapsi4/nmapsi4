@@ -42,7 +42,7 @@ void MainWindow::connectSlots()
     connect(actionEdit_Profile, SIGNAL(triggered()),
             this, SLOT(editProfile()));
 
-    connect(actionFullS, SIGNAL(triggered()),
+    connect(actionFullScreen, SIGNAL(triggered()),
             this, SLOT(setFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));

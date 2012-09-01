@@ -25,12 +25,12 @@ void MainWindow::setFullScreen()
     if (isFullScreen())
     {
         setWindowState(windowState() & ~Qt::WindowFullScreen );
-        actionFullS->setChecked(false);
+        actionFullScreen->setChecked(false);
     }
     else
     {
         setWindowState(windowState() | Qt::WindowFullScreen );
-        actionFullS->setChecked(true);
+        actionFullScreen->setChecked(true);
     }
 }
 
