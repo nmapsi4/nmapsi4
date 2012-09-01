@@ -66,10 +66,15 @@ void ParserManager::addUtilObject(PObjectLookup* object)
 
 void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer, QByteArray errorBuffer, int id)
 {
-    // check nmap error
+    /*
+     * TODO: remove this check with QT5 QStandardPaths::findExecutable.
+     *
+     */
     if(!dataBuffer.size() && errorBuffer.size())
     {
-        QMessageBox::critical(m_ui, "NmapSI4", tr("Error: check nmap Installation.\n"), tr("Close"));
+        QMessageBox::critical(m_ui, "NmapSI4", tr("Error: check nmap Installation.\n")
+            + "\n\n"
+            + QString(errorBuffer), tr("Close"));
         return;
     }
 
