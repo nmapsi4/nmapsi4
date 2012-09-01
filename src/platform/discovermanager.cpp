@@ -24,7 +24,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_userid(0), m_discoverIsActive(false)
 {
 #ifndef Q_WS_WIN
-    m_uid = getuid();
+    m_userid = getuid();
 #endif
 
     m_discoverHorizontalSplitter = new QSplitter(m_ui);
@@ -87,7 +87,7 @@ void DiscoverManager::startDiscover()
     m_ui->comboDiscover->clear();
     m_ui->comboDiscover->insertItem(0, "Select Interface");
 
-    Discover *discoverPtr = new Discover(m_uid);
+    Discover *discoverPtr = new Discover(m_userid);
     foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress))
     {
         if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack))
@@ -102,7 +102,7 @@ void DiscoverManager::startDiscover()
 void DiscoverManager::discoverIp(const QString& interface)
 {
     // ip from interface and discover ip range
-    Discover *discover_ = new Discover(m_uid);
+    Discover *discover_ = new Discover(m_userid);
 
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
 
@@ -168,7 +168,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
     QStringList parameters;
     parameters << m_ui->discoverProbesCombo->currentText();
 
-    Discover *discoverPtr = new Discover(m_uid);
+    Discover *discoverPtr = new Discover(m_userid);
     m_listDiscover.push_back(discoverPtr);
 
     connect(discoverPtr, SIGNAL(fromListFinisched(QStringList,bool,QByteArray)),
@@ -300,7 +300,7 @@ void DiscoverManager::defaultDiscoverProbes()
     /* Modes Probe
     * --tcp,--udp,--arp,--tr
     */
-    if (!m_uid)
+    if (!m_userid)
     {
         m_ui->discoverProbesCombo->insertItem(0, "--icmp");
         m_ui->discoverProbesCombo->insertItem(1, "--tcp");
@@ -337,7 +337,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     discoveryClear();
 
     QStringList parameters;
-    if (!m_uid)
+    if (!m_userid)
     {
         parameters.append(m_ui->discoverProbesCombo->currentText());
     }
@@ -346,7 +346,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
         parameters.append("--tcp-connect");
     }
 
-    Discover *discoverPtr = new Discover(m_uid);
+    Discover *discoverPtr = new Discover(m_userid);
     m_listDiscover.push_back(discoverPtr);
 
     connect(discoverPtr, SIGNAL(cidrCurrentValue(QString,QString)),
