@@ -85,20 +85,26 @@
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
                <layout class="QGridLayout" name="gridLayout_4">
-                <item row="0" column="0">
+                <item row="0" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label">
                   <property name="text">
                    <string>Profile name: </string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>profileNameLine</cstring>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
                  <widget class="QLineEdit" name="profileNameLine"/>
                 </item>
-                <item row="3" column="0">
+                <item row="3" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label_3">
                   <property name="text">
                    <string>Profile parameters:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>lineScanParameters</cstring>
                   </property>
                  </widget>
                 </item>
@@ -109,10 +115,13 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0">
+                <item row="1" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label_4">
                   <property name="text">
                    <string>Base options:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboBaseOptions</cstring>
                   </property>
                  </widget>
                 </item>
@@ -216,18 +225,17 @@
              <property name="title">
               <string>Scan</string>
              </property>
-             <layout class="QGridLayout" name="gridLayout">
-              <item row="0" column="0" colspan="2">
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <item>
-                 <widget class="QLabel" name="label_8">
-                  <property name="text">
-                   <string>TCP scan:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QGridLayout" name="gridLayout">
+                <item row="0" column="1">
                  <widget class="QComboBox" name="comboScanTcp">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="mouseTracking">
                    <bool>true</bool>
                   </property>
@@ -251,18 +259,41 @@
                   </item>
                  </widget>
                 </item>
-               </layout>
-              </item>
-              <item row="2" column="0" colspan="2">
-               <layout class="QHBoxLayout" name="horizontalLayout_17">
-                <item>
-                 <widget class="QLabel" name="label_10">
+                <item row="0" column="0" alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="label_8">
                   <property name="text">
-                   <string>Timing Template:</string>
+                   <string>TCP scan:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboScanTcp</cstring>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="0" alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>Non-TCP scans:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboScanNonTcp</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QComboBox" name="comboScanNonTcp">
+                  <item>
+                   <property name="text">
+                    <string>None</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>List Scan (-sL)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="2" column="1">
                  <widget class="QComboBox" name="comboTiming">
                   <item>
                    <property name="text">
@@ -301,41 +332,26 @@
                   </item>
                  </widget>
                 </item>
-               </layout>
-              </item>
-              <item row="1" column="0" colspan="2">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QLabel" name="label_2">
+                <item row="2" column="0" alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="label_10">
                   <property name="text">
-                   <string>Non-TCP scans:</string>
+                   <string>Timing Template:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboTiming</cstring>
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <widget class="QComboBox" name="comboScanNonTcp">
-                  <item>
-                   <property name="text">
-                    <string>None</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>List Scan (-sL)</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
                </layout>
               </item>
-              <item row="4" column="0" colspan="2">
+              <item>
                <widget class="Line" name="line">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
                </widget>
               </item>
-              <item row="5" column="0">
+              <item>
                <spacer name="verticalSpacer_4">
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
@@ -351,20 +367,7 @@
                 </property>
                </spacer>
               </item>
-              <item row="8" column="0" colspan="2">
-               <spacer name="verticalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="6" column="0">
+              <item>
                <layout class="QGridLayout" name="gridLayout_3">
                 <item row="6" column="0">
                  <widget class="QCheckBox" name="rpcBox">
@@ -438,7 +441,7 @@
                   </item>
                  </widget>
                 </item>
-                <item row="0" column="0">
+                <item row="0" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label_9">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -448,6 +451,9 @@
                   </property>
                   <property name="text">
                    <string>Port Range:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>portCombo</cstring>
                   </property>
                  </widget>
                 </item>
@@ -476,6 +482,19 @@
                  </widget>
                 </item>
                </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -841,7 +860,7 @@
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
                <layout class="QGridLayout" name="gridLayout_18">
-                <item row="0" column="0">
+                <item row="0" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkBoxDevice">
                   <property name="text">
                    <string>Specific network interface (-e)</string>
@@ -855,7 +874,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0">
+                <item row="1" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkSpoof">
                   <property name="text">
                    <string>Set source spoof ip address (-S)</string>
@@ -869,7 +888,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="0">
+                <item row="2" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkDecoy">
                   <property name="text">
                    <string>Set decoy (-D)</string>
@@ -883,7 +902,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
+                <item row="3" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkSourcePort">
                   <property name="text">
                    <string>Set Source spoof port (-g)</string>
@@ -923,10 +942,13 @@
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
                <layout class="QGridLayout" name="gridLayout_2">
-                <item row="1" column="0">
+                <item row="1" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label_40">
                   <property name="text">
                    <string>DNS Resolution</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboDNSResolv</cstring>
                   </property>
                  </widget>
                 </item>
@@ -949,10 +971,13 @@
                   </item>
                  </widget>
                 </item>
-                <item row="2" column="0">
+                <item row="2" column="0" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="label_41">
                   <property name="text">
                    <string>Verbosity level (-v)</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboVerbosity</cstring>
                   </property>
                  </widget>
                 </item>
@@ -985,21 +1010,21 @@
                   </item>
                  </widget>
                 </item>
-                <item row="5" column="0">
+                <item row="5" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkOrdered">
                   <property name="text">
                    <string>Ordered scanned port (-r)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0">
+                <item row="6" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkFrag">
                   <property name="text">
                    <string>Fragment IP packets (-f)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
+                <item row="3" column="0" alignment="Qt::AlignRight">
                  <widget class="QCheckBox" name="TcheckIpv4ttl">
                   <property name="text">
                    <string>Ipv4 TTL (--ttl)</string>
@@ -1019,7 +1044,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
+                <item row="4" column="0" alignment="Qt::AlignRight">
                  <widget class="QCheckBox" name="checkMaxRetries">
                   <property name="text">
                    <string>Max Retries (--max-retries)</string>
@@ -1029,7 +1054,7 @@
                 <item row="4" column="1">
                  <widget class="QLineEdit" name="lineMaxRetries"/>
                 </item>
-                <item row="7" column="0">
+                <item row="7" column="0" alignment="Qt::AlignLeft">
                  <widget class="QCheckBox" name="checkTraceroute">
                   <property name="text">
                    <string>Traceroute (--traceroute)</string>
