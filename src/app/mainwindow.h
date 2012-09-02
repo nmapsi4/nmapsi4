@@ -89,7 +89,6 @@ public:
 
 private:
     void addHostToMonitor(const QString hostname);
-    void connectSlots();
     void resetOptions();
     void initGUI();
     void setTreeWidgetValues();

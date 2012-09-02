@@ -35,7 +35,7 @@ void MainWindow::initGUI()
 
 void MainWindow::initObject()
 {
-#ifndef Q_WS_WIN
+#if !defined(Q_WS_WIN)
     m_userId = getuid();
 #endif
 
@@ -87,7 +87,49 @@ void MainWindow::initObject()
     m_collections->createDiscoverBar();
 
     // connect slots
-    connectSlots();
+    connect(action_Quit, SIGNAL(triggered()),
+            this, SLOT(close()));
+    connect(action_Scan_menu, SIGNAL(triggered()),
+            this, SLOT(startScan()));
+    connect(actionClear_History, SIGNAL(triggered()),
+            this, SLOT(clearAll()));
+    connect(buttonHostClear, SIGNAL(clicked()),
+            this, SLOT(clearHostnameCombo()));
+    connect(buttonParametersClear, SIGNAL(clicked()),
+            this, SLOT(clearParametersCombo()));
+    connect(action_Scan_2, SIGNAL(triggered()),
+            this, SLOT(startScan()));
+    connect(actionProfile, SIGNAL(triggered()),
+            this, SLOT(startPreferencesDialog()));
+    connect(actionNew_Profile, SIGNAL(triggered()),
+            this, SLOT(newProfile()));
+    connect(actionEdit_Profile, SIGNAL(triggered()),
+            this, SLOT(editProfile()));
+    connect(actionFullScreen, SIGNAL(triggered()),
+            this, SLOT(setFullScreen()));
+    connect(actionMenuBar, SIGNAL(triggered()),
+            this, SLOT(updateMenuBar()));
+    // Vuln signal
+    connect(comboPar, SIGNAL(activated(QString)),
+            this, SLOT(comboParametersSelectedEvent()));
+    connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(quickAddressSelectionEvent()));
+    // main session
+    connect(actionScan_section, SIGNAL(triggered()),
+            this, SLOT(updateSezScan()));
+    connect(actionVulnerabilities_section, SIGNAL(triggered()),
+            this, SLOT(updateSezVuln()));
+    connect(actionSection_Discover, SIGNAL(triggered()),
+            this, SLOT(updateSezDiscover()));
+    connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
+            this, SLOT(startScan()));
+    connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
+            this, SLOT(updateComboHostnameProperties()));
+    // monitor events
+    connect(scanMonitor, SIGNAL(itemSelectionChanged()),
+            this, SLOT(monitorRuntimeEvent()));
+    connect(m_monitor, SIGNAL(monitorUpdated(int)),
+            this, SLOT(updateScanCounter(int)));
 }
 
 void MainWindow::startPreferencesDialog()   // start preference UI

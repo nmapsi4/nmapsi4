@@ -50,7 +50,6 @@ SET(SOURCES_CPP
                 app/profiler/profiler.cpp
                 app/defaultprofile.cpp
                 app/updateUI.cpp
-                app/slots.cpp
                 app/defaultuisettings.cpp
                 app/settings.cpp
                 app/mainwindow.cpp
