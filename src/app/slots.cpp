@@ -47,18 +47,6 @@ void MainWindow::connectSlots()
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
 
-    // Obj parser runtime
-    connect(treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            m_parser, SLOT(showParserResult(QTreeWidgetItem*,int)));
-    connect(treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            m_parser, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
-    connect(actionSave, SIGNAL(triggered()),
-            m_parser, SLOT(callSaveSingleLogWriter()));
-    connect(actionSave_Menu, SIGNAL(triggered()),
-            m_parser, SLOT(callSaveSingleLogWriter()));
-    connect(actionSave_As_Menu, SIGNAL(triggered()),
-            m_parser, SLOT(callSaveAllLogWriter()));
-
     connect(actionAdd_Bookmark, SIGNAL(triggered()),
             m_bookmark, SLOT(saveItemToBookmarks()));
     connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
@@ -91,8 +79,6 @@ void MainWindow::connectSlots()
             m_monitor, SLOT(showSelectedScanDetails()));
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
-    connect(m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray,int)),
-            m_parser, SLOT(startParser(QStringList,QByteArray,QByteArray,int)));
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
             m_monitor, SLOT(stopAllScan()));
 

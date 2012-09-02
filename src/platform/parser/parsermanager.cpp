@@ -36,6 +36,19 @@ ParserManager::ParserManager(MainWindow* parent)
     {
         m_rawlogHorizontalSplitter->restoreState(settings.value("rawlogHorizontalSplitter").toByteArray());
     }
+
+    connect(m_ui->treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
+            this, SLOT(showParserResult(QTreeWidgetItem*,int)));
+    connect(m_ui->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
+            this, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
+    connect(m_ui->actionSave, SIGNAL(triggered()),
+            this, SLOT(callSaveSingleLogWriter()));
+    connect(m_ui->actionSave_Menu, SIGNAL(triggered()),
+            this, SLOT(callSaveSingleLogWriter()));
+    connect(m_ui->actionSave_As_Menu, SIGNAL(triggered()),
+            this, SLOT(callSaveAllLogWriter()));
+    connect(m_ui->m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray,int)),
+            this, SLOT(startParser(QStringList,QByteArray,QByteArray,int)));
 }
 
 ParserManager::~ParserManager()

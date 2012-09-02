@@ -66,7 +66,7 @@ private:
     QList<QTreeWidgetItem*> m_treeItems;
     QSplitter *m_rawlogHorizontalSplitter;
 
-public slots:
+private slots:
     /*
      * Start data QByteArray scan result parser.
      */
