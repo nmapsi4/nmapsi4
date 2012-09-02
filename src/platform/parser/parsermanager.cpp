@@ -612,6 +612,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // show services
+    int servicesWithDetails = 0;
     foreach (const QString& token, m_parserObjList[hostIndex]->getServices())
     {
         if (!m_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes))
@@ -621,10 +622,11 @@ void ParserManager::showParserObj(int hostIndex)
             objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
             m_objectItems.push_front(objItem);
             objItem->setText(0,token);
+            servicesWithDetails++;
         }
     }
 
-    if (m_parserObjList[hostIndex]->getServices().size()) {
+    if (servicesWithDetails) {
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
     } else {
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
