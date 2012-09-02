@@ -94,6 +94,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->progressScan->setValue(75);
 
     Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-list"));
+    Notify::sendNotification(parList[parList.size()-1]);
 
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
