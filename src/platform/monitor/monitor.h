@@ -135,9 +135,7 @@ private slots:
     void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
     void lookupFinisced(QHostInfo info, int state, const QString hostname);
     void cacheRepeat();
-
-public slots:
-        /*
+    /*
      * Stop host scan selected in the QTreeWidget.
      */
     void stopSelectedScan();

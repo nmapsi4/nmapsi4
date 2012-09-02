@@ -68,12 +68,6 @@ void MainWindow::connectSlots()
     // monitor events
     connect(scanMonitor, SIGNAL(itemSelectionChanged()),
             this, SLOT(monitorRuntimeEvent()));
-    connect(monitorStopCurrentScanButt, SIGNAL(clicked()),
-            m_monitor, SLOT(stopSelectedScan()));
-    connect(monitorDetailsScanButt, SIGNAL(clicked()),
-            m_monitor, SLOT(showSelectedScanDetails()));
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
-    connect(monitorStopAllScanButt, SIGNAL(clicked()),
-            m_monitor, SLOT(stopAllScan()));
 }

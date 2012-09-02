@@ -48,6 +48,13 @@ Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
 
     m_isHostcached = false;
     m_timer = new QTimer(this);
+
+    connect(m_ui->monitorStopCurrentScanButt, SIGNAL(clicked()),
+            this, SLOT(stopSelectedScan()));
+    connect(m_ui->monitorDetailsScanButt, SIGNAL(clicked()),
+            this, SLOT(showSelectedScanDetails()));
+    connect(m_ui->monitorStopAllScanButt, SIGNAL(clicked()),
+            this, SLOT(stopAllScan()));
 }
 
 Monitor::~Monitor()
