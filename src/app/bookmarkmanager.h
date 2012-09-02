@@ -89,22 +89,24 @@ private:
 
 public slots:
     /**
-     * Save selected Vulnerability service, host from bookmark (contextual menu)
-     */
-    void saveItemToBookmarks();
-    /**
      * Delete selected Vulnerability service, host from bookmark (contextual menu)
      */
     void deleteItemFromBookmark();
-    /**
-     * Save scan parameters to bookmark
-     */
-    void saveParametersToBookmarks(const QString profileName, const QString profileParameters);
     /**
      * Delete selected scan parameters to bookmark (contextual menu)
      */
     void deleteParametersFromBookmark();
     void startParametersToBookmarksDialog();
+
+private slots:
+    /**
+     * Save selected Vulnerability service, host from bookmark (contextual menu)
+     */
+    void saveItemToBookmarks();
+    /**
+     * Save scan parameters to bookmark
+     */
+    void saveParametersToBookmarks(const QString profileName, const QString profileParameters);
 
 };
 

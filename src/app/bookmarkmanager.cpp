@@ -52,6 +52,12 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
     {
         m_vulnBookmarkSplitter->restoreState(settings.value("vulnBookmarkSplitter").toByteArray());
     }
+
+    connect(m_ui->actionAdd_Bookmark, SIGNAL(triggered()),
+            this, SLOT(saveItemToBookmarks()));
+    connect(m_ui->actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
+            this, SLOT(startParametersToBookmarksDialog()));
+
 }
 
 BookmarkManager::~BookmarkManager()

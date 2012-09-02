@@ -47,11 +47,6 @@ void MainWindow::connectSlots()
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
 
-    connect(actionAdd_Bookmark, SIGNAL(triggered()),
-            m_bookmark, SLOT(saveItemToBookmarks()));
-    connect(actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
-            m_bookmark, SLOT(startParametersToBookmarksDialog()));
-
     // Vuln signal
     connect(comboPar, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
