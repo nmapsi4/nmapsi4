@@ -64,20 +64,20 @@ signals:
 
 public slots:
     void startDiscover();
-    void discoverIp(const QString& interface);
-    void startDiscoverIpsFromRange();
-    void stopDiscoverFromIpsRange();
-    void stopDiscoverFromCIDR();
-    void runtimeScanDiscover();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();
-    void startDiscoverIpsFromCIDR();
-    void calculateAddressFromCIDR();
 
 private slots:
     void endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff);
     void endDiscoverIpsFromCIDR();
     void currentDiscoverIpsFromCIDR(const QString parameters, const QString data);
+    void discoverIp(const QString& interface);
+    void runtimeScanDiscover();
+    void stopDiscoverFromIpsRange();
+    void stopDiscoverFromCIDR();
+    void startDiscoverIpsFromCIDR();
+    void startDiscoverIpsFromRange();
+    void calculateAddressFromCIDR();
 };
 
 #endif // DISCOVERMANAGER_H

@@ -81,22 +81,4 @@ void MainWindow::connectSlots()
             this, SLOT(updateScanCounter(int)));
     connect(monitorStopAllScanButt, SIGNAL(clicked()),
             m_monitor, SLOT(stopAllScan()));
-
-    // Discover
-    connect(comboDiscover, SIGNAL(activated(QString)),
-            m_discoverManager, SLOT(discoverIp(QString)));
-    connect(startDiscoverButt, SIGNAL(clicked()),
-            m_discoverManager, SLOT(startDiscoverIpsFromRange()));
-    connect(cidrButton, SIGNAL(clicked()),
-            m_discoverManager, SLOT(startDiscoverIpsFromCIDR()));
-    connect(stopDiscoverButt, SIGNAL(clicked()),
-            m_discoverManager, SLOT(stopDiscoverFromIpsRange()));
-    connect(stopDiscoverCidrButton, SIGNAL(clicked()),
-            m_discoverManager, SLOT(stopDiscoverFromCIDR()));
-    connect(treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_discoverManager, SLOT(runtimeScanDiscover()));
-    connect(reloadComboDiscover, SIGNAL(clicked()),
-            m_discoverManager, SLOT(startDiscover()));
-    connect(calculateAddressButton, SIGNAL(clicked()),
-            m_discoverManager, SLOT(calculateAddressFromCIDR()));
 }

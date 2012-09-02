@@ -54,6 +54,23 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
 
     m_ui->treeTracePackets->setIconSize(QSize(22,22));
     m_ui->treeDiscover->setIconSize(QSize(22,22));
+
+    connect(m_ui->comboDiscover, SIGNAL(activated(QString)),
+            this, SLOT(discoverIp(QString)));
+    connect(m_ui->startDiscoverButt, SIGNAL(clicked()),
+            this, SLOT(startDiscoverIpsFromRange()));
+    connect(m_ui->cidrButton, SIGNAL(clicked()),
+            this, SLOT(startDiscoverIpsFromCIDR()));
+    connect(m_ui->stopDiscoverButt, SIGNAL(clicked()),
+            this, SLOT(stopDiscoverFromIpsRange()));
+    connect(m_ui->stopDiscoverCidrButton, SIGNAL(clicked()),
+            this, SLOT(stopDiscoverFromCIDR()));
+    connect(m_ui->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+            this, SLOT(runtimeScanDiscover()));
+    connect(m_ui->reloadComboDiscover, SIGNAL(clicked()),
+            this, SLOT(startDiscover()));
+    connect(m_ui->calculateAddressButton, SIGNAL(clicked()),
+            this, SLOT(calculateAddressFromCIDR()));
 }
 
 DiscoverManager::~DiscoverManager()
