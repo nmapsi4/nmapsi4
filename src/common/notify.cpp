@@ -35,3 +35,15 @@ void Notify::clearButtonNotify(PushButtonOrientated* button)
 {
     button->setStyleSheet("");
 }
+
+void Notify::sendNotification(const QString& hostName)
+{
+#if defined(USE_KDELIBS)
+    KNotification::event(KNotification::Notification, QApplication::tr("Scan Completed"),
+        QString("Ip: ") + hostName,
+        QPixmap(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")),
+        QApplication::activeWindow(),
+        KNotification::CloseWhenWidgetActivated
+    );
+#endif
+}
