@@ -35,6 +35,3 @@ void Notify::clearButtonNotify(PushButtonOrientated* button)
 {
     button->setStyleSheet("");
 }
-
-
-
