@@ -64,7 +64,8 @@ void MainWindow::updateComboHostnameProperties()
 }
 
 void MainWindow::updateSezScan()
-{ // SLOT
+{
+    Notify::setCheckedNotify(m_collections->m_collectionsButton.value("scan-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);

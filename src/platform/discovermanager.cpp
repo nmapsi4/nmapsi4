@@ -285,6 +285,7 @@ void DiscoverManager::scanSingleDiscoveredIp()
 {
     if(m_ui->treeDiscover->currentItem())
     {
+        Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
         m_ui->updateComboHostnameProperties();
         m_ui->hostEdit->insertItem(0, m_ui->treeDiscover->currentItem()->text(0));
         m_ui->startScan();
@@ -297,6 +298,7 @@ void DiscoverManager::scanAllDiscoveredIps()
     {
         foreach (QTreeWidgetItem *item, m_listTreeItemDiscover)
         {
+            Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
             m_ui->updateComboHostnameProperties();
             m_ui->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();

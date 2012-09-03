@@ -26,6 +26,7 @@
 
 #include "discover.h"
 #include "regularexpression.h"
+#include "notify.h"
 
 // system
 #ifndef Q_WS_WIN
