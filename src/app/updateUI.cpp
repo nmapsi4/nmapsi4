@@ -86,7 +86,15 @@ void MainWindow::updateSezScan()
     if (!tabMainMonitor->isVisible())
     {
         tabUi->insertTab(1,tabMainMonitor,tr("Scan Monitor"));
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/utilities-log-viewer.png")));
+
+        QIcon tabIcon;
+        if(m_monitor->monitorHostNumber()) {
+            tabIcon.addFile(QString(":/images/images/reload.png"));
+        } else {
+            tabIcon.addFile(QString(":/images/images/utilities-log-viewer.png"));
+        }
+
+        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),tabIcon);
     }
 
     if (!bookmarks->isVisible())
