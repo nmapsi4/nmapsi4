@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>836</width>
-    <height>568</height>
+    <height>588</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1540,16 +1540,6 @@
                </property>
                <item>
                 <layout class="QGridLayout" name="gridLayout_2">
-                 <item row="4" column="1" alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="label_4">
-                   <property name="text">
-                    <string>End Ip:</string>
-                   </property>
-                   <property name="buddy">
-                    <cstring>spinEndDiscover</cstring>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="1" alignment="Qt::AlignRight">
                   <widget class="QLabel" name="label">
                    <property name="maximumSize">
@@ -1566,10 +1556,47 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="2">
-                  <widget class="QLineEdit" name="lineIpDiscover"/>
-                 </item>
                  <item row="6" column="2">
+                  <widget class="QPushButton" name="startDiscoverButt">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Start DIscover from ips range</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../../../mainwin.qrc">
+                     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QComboBox" name="comboDiscover">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>End Ip:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>spinEndDiscover</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="2">
                   <widget class="QPushButton" name="stopDiscoverButt">
                    <property name="enabled">
                     <bool>false</bool>
@@ -1583,13 +1610,43 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="1">
+                 <item row="2" column="1" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>Discover Group:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>lineIpDiscover</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QSpinBox" name="spinEndDiscover">
+                   <property name="maximum">
+                    <number>255</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="1">
                   <widget class="QLabel" name="label_12">
                    <property name="layoutDirection">
                     <enum>Qt::LeftToRight</enum>
                    </property>
                    <property name="text">
                     <string>Remaining Ip:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLineEdit" name="lineIpDiscover"/>
+                 </item>
+                 <item row="3" column="1" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Start Ip:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>spinBeginDiscover</cstring>
                    </property>
                   </widget>
                  </item>
@@ -1610,48 +1667,14 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="2">
-                  <widget class="QSpinBox" name="spinEndDiscover">
+                 <item row="3" column="2">
+                  <widget class="QSpinBox" name="spinBeginDiscover">
                    <property name="maximum">
                     <number>255</number>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1" alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="label_3">
-                   <property name="text">
-                    <string>Start Ip:</string>
-                   </property>
-                   <property name="buddy">
-                    <cstring>spinBeginDiscover</cstring>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1" alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="label_2">
-                   <property name="text">
-                    <string>Discover Group:</string>
-                   </property>
-                   <property name="buddy">
-                    <cstring>lineIpDiscover</cstring>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="1">
-                  <widget class="QPushButton" name="startDiscoverButt">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="text">
-                    <string>Start DIscover from ips range</string>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
-                     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="2">
+                 <item row="8" column="2">
                   <widget class="QLCDNumber" name="nseNumber">
                    <property name="layoutDirection">
                     <enum>Qt::LeftToRight</enum>
@@ -1661,29 +1684,6 @@
                    </property>
                    <property name="lineWidth">
                     <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QComboBox" name="comboDiscover">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="QSpinBox" name="spinBeginDiscover">
-                   <property name="maximum">
-                    <number>255</number>
                    </property>
                   </widget>
                  </item>
@@ -1703,18 +1703,7 @@
                </property>
                <item>
                 <layout class="QGridLayout" name="gridLayout_5">
-                 <item row="3" column="0">
-                  <widget class="QPushButton" name="cidrButton">
-                   <property name="text">
-                    <string>Start with CIDR-style addressing</string>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
-                     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
+                 <item row="4" column="1">
                   <widget class="QPushButton" name="stopDiscoverCidrButton">
                    <property name="enabled">
                     <bool>false</bool>
@@ -1782,6 +1771,17 @@
                    </property>
                    <property name="text">
                     <string>Ex. 192.168.1.0/28 (16 ips)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QPushButton" name="cidrButton">
+                   <property name="text">
+                    <string>Start with CIDR-style addressing</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../../../mainwin.qrc">
+                     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
                    </property>
                   </widget>
                  </item>
