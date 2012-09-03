@@ -132,7 +132,7 @@ void MainWindow::initObject()
             this, SLOT(updateScanCounter(int)));
 }
 
-void MainWindow::startPreferencesDialog()   // start preference UI
+void MainWindow::startPreferencesDialog()
 {
     QWeakPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
 

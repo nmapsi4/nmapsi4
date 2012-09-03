@@ -285,6 +285,7 @@ void DiscoverManager::scanSingleDiscoveredIp()
 {
     if(m_ui->treeDiscover->currentItem())
     {
+        startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
         m_ui->updateComboHostnameProperties();
         m_ui->hostEdit->insertItem(0, m_ui->treeDiscover->currentItem()->text(0));
@@ -296,6 +297,8 @@ void DiscoverManager::scanAllDiscoveredIps()
 {
     if (m_listTreeItemDiscover.size())
     {
+        startSelectProfilesDialog();
+
         foreach (QTreeWidgetItem *item, m_listTreeItemDiscover)
         {
             Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
@@ -303,6 +306,18 @@ void DiscoverManager::scanAllDiscoveredIps()
             m_ui->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
         }
+    }
+}
+
+void DiscoverManager::startSelectProfilesDialog()
+{
+    QWeakPointer<SelectProfileDialog> profileDialg = new SelectProfileDialog(m_ui);
+
+    profileDialg.data()->exec();
+
+    if (!profileDialg.isNull())
+    {
+        delete profileDialg.data();
     }
 }
 

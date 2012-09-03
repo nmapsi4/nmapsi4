@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>selectProfileDialog</class>
+ <widget class="QDialog" name="selectProfileDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>506</width>
+    <height>51</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Select a scan profile</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../mainwin.qrc">
+    <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QComboBox" name="showProfilesCombo"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="doneButton">
+     <property name="text">
+      <string>Done</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../mainwin.qrc">
+       <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../mainwin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -27,6 +27,7 @@
 #include "discover.h"
 #include "regularexpression.h"
 #include "notify.h"
+#include "selectprofiledialog.h"
 
 // system
 #ifndef Q_WS_WIN
@@ -48,6 +49,7 @@ public:
 private:
     void discoveryClear();
     bool activeIpContains(const QString ipAddress);
+    void startSelectProfilesDialog();
 
     MainWindow* m_ui;
     QList<Discover*> m_listDiscover;

@@ -119,6 +119,7 @@ protected:
 public slots:
     void startScan();
     void updateComboHostnameProperties();
+    void comboParametersSelectedEvent();
 
 private slots:
     void initObject();
@@ -136,7 +137,6 @@ private slots:
     void updateSezDiscover();
     void loadDefaultProfile();
     void resetComboParameters();
-    void comboParametersSelectedEvent();
     void quickAddressSelectionEvent();
     void saveSettings();
     void newProfile();
