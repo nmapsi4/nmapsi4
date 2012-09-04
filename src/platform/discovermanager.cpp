@@ -23,7 +23,8 @@
 DiscoverManager::DiscoverManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_userid(0), m_discoverIsActive(false)
 {
-#ifndef Q_WS_WIN
+
+#if !defined(Q_WS_WIN)
     m_userid = getuid();
 #endif
 
@@ -283,25 +284,25 @@ void DiscoverManager::stopDiscoverFromIpsRange()
 
 void DiscoverManager::scanSingleDiscoveredIp()
 {
-    if(m_ui->treeDiscover->currentItem())
-    {
+    if(m_ui->treeDiscover->currentItem()) {
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
-        m_ui->updateComboHostnameProperties();
-        m_ui->hostEdit->insertItem(0, m_ui->treeDiscover->currentItem()->text(0));
-        m_ui->startScan();
+
+        foreach (QTreeWidgetItem* item, m_ui->treeDiscover->selectedItems()) {
+            m_ui->updateComboHostnameProperties();
+            m_ui->hostEdit->insertItem(0, item->text(0));
+            m_ui->startScan();
+        }
     }
 }
 
 void DiscoverManager::scanAllDiscoveredIps()
 {
-    if (m_listTreeItemDiscover.size())
-    {
+    if (m_listTreeItemDiscover.size()) {
         startSelectProfilesDialog();
+        Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        foreach (QTreeWidgetItem *item, m_listTreeItemDiscover)
-        {
-            Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
+        foreach (QTreeWidgetItem *item, m_listTreeItemDiscover) {
             m_ui->updateComboHostnameProperties();
             m_ui->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
