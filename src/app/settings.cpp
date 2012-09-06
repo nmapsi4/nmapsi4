@@ -25,16 +25,11 @@ void MainWindow::syncSettings()
     QSettings settings("nmapsi4", "nmapsi4");
 
     // TODO: load saved profile or simple default
-
-    bool position = settings.value("savePos",true).toBool();
-    m_savePos = position;
-
-    bool size = settings.value("saveSize",true).toBool();
-    m_saveSize = size;
-
+    m_savePos = settings.value("savePos",true).toBool();
+    m_saveSize = settings.value("saveSize",true).toBool();
     m_hostCache = settings.value("hostCache",10).toInt();
 
-#ifdef Q_WS_WIN
+#if defined(Q_WS_WIN)
     // disable lookup in MS windows
     m_lookupType = 0;
 #else
@@ -42,9 +37,7 @@ void MainWindow::syncSettings()
 #endif
 
     // restore actionMenuBar
-    bool actionMB = settings.value("showMenuBar", false).toBool();
-    actionMenuBar->setChecked(actionMB);
-
+    actionMenuBar->setChecked(settings.value("showMenuBar", false).toBool());
     // update max parallel scan option
     m_monitor->updateMaxParallelScan();
 }
@@ -76,43 +69,21 @@ void MainWindow::saveSettings()
     m_vulnerability->syncSettings();
 
 // check and reset for settings file permission
-#ifndef Q_WS_WIN
-    if (!m_userId)
-    {
-        QString settingsFile_ = settings.fileName();
-        QFileInfo fiS_(settingsFile_);
-        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId()))
-        {
-             QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
+#if !defined(Q_WS_WIN)
+    if (!m_userId) {
+        QFileInfo fileInfo;
+
+        fileInfo.setFile(settings.fileName());
+        if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
+             QFile::setPermissions(settings.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
                 QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
         }
-    }
-#endif
 
-#ifndef Q_WS_WIN
-    if (!m_userId)
-    {
-        QSettings settings2("nmapsi4", "nmapsi4_bookmark");
-        QString settingsFile_ = settings2.fileName();
-        QFileInfo fiS_(settingsFile_);
-
-        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId()))
-        {
-            QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
+        QSettings settingsBookmark("nmapsi4", "nmapsi4_bookmark");
+        fileInfo.setFile(settingsBookmark.fileName());
+        if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
+            QFile::setPermissions(settingsBookmark.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
                 QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
-        }
-    }
-
-    if (!m_userId)
-    {
-        QSettings settings3("nmapsi4", "nmapsi4_gprofile");
-        QString settingsFile_ = settings3.fileName();
-        QFileInfo fiS_(settingsFile_);
-
-        if ((!fiS_.permissions().testFlag(QFile::WriteOther) && !fiS_.ownerId()))
-        {
-           QFile::setPermissions(settingsFile_, QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
-               QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
         }
     }
 #endif
