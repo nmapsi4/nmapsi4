@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Francesco Cecconi                               *
+ *   Copyright (C) 2011-2012 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -197,12 +197,12 @@ void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
 }
 
 PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
-                       QString StderrorStr, QTreeWidgetItem* mainTreeE)
+                       QString StderrorStr, QTreeWidgetItem* mainScanTreeElem)
 {
     // Create parser Obect
-    PObject *elemObj = new PObject();
+    PObject *parserObjectElem = new PObject();
     QString hostCheck = parList[parList.size()-1];
-    elemObj->setHostName(hostCheck);
+    parserObjectElem->setHostName(hostCheck);
 
     QRegExp portRx(matchPorts);
     QRegExp tracerouteRx(matchTraceroute);
@@ -305,13 +305,13 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
-        mainTreeE->setText(0, tmp_host);
+        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(0, tmp_host);
     }
     else
     {
-        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
-        mainTreeE->setText(0, tmp_host);
+        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(0, tmp_host);
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
@@ -329,33 +329,33 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
 
                 if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered"))
                 {
-                    elemObj->setPortFiltered(scanBufferToStream_line);
+                    parserObjectElem->setPortFiltered(scanBufferToStream_line);
                 }
                 else
                 {
-                    elemObj->setPortOpen(scanBufferToStream_line);
+                    parserObjectElem->setPortOpen(scanBufferToStream_line);
                 }
             }
             else
             {
-                elemObj->setPortClose(scanBufferToStream_line);
+                parserObjectElem->setPortClose(scanBufferToStream_line);
             }
 
             if (!scanBufferToStream_line.isEmpty())
             {
                 QString tmpStr = scanBufferToStream_line;
                 QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
-                elemObj->setServices(lStr[2]); // Obj Services
-                elemObj->setPortServices(lStr[0]);
+                parserObjectElem->setServices(lStr[2]); // Obj Services
+                parserObjectElem->setPortServices(lStr[0]);
             }
         } // end while
 
-        elemObj->setValidity(true);
+        parserObjectElem->setValidity(true);
     }
     else
     {
-        mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
-        elemObj->setValidity(false);
+        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+        parserObjectElem->setValidity(false);
     }
 
     QTextStream bufferInfoStream(&bufferInfo); // QString to QtextStrem (scan Tree)
@@ -363,25 +363,25 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
 
     // check for Host information
     // OS not detected
-    bool state_ = false;
+    bool isOsFound = false;
     while (!bufferInfoStream.atEnd())
     {
         bufferInfoStream_line = bufferInfoStream.readLine();
         // Check OS String
-        if (bufferInfoStream_line.contains("OS") && !state_)
+        if (bufferInfoStream_line.contains("OS") && !isOsFound)
         {
             // OS was found ?
-            state_ = HostTools::checkViewOS(bufferInfoStream_line,mainTreeE);
+            isOsFound = HostTools::checkViewOS(bufferInfoStream_line,mainScanTreeElem);
         }
 
-        elemObj->setMainInfo(bufferInfoStream_line);
+        parserObjectElem->setMainInfo(bufferInfoStream_line);
     }
 
-    if (mainTreeE->icon(0).isNull())
+    if (mainScanTreeElem->icon(0).isNull())
     {
-        mainTreeE->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);
-        mainTreeE->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-        mainTreeE->setText(1, "Undiscovered");
+        mainScanTreeElem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
+        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+        mainScanTreeElem->setText(1, "Undiscovered");
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
@@ -393,7 +393,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
         bufferTraceStream_line = bufferTraceStream.readLine();
         if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop"))
         {
-            elemObj->setTraceRouteInfo(bufferTraceStream_line);
+            parserObjectElem->setTraceRouteInfo(bufferTraceStream_line);
         }
     }
 
@@ -425,7 +425,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
                 || nseStreamLine.startsWith(QLatin1String("https://")))
                 && !nseStreamLine.contains(hostCheck))
             {
-                elemObj->setVulnDiscoverd(nseStreamLine);
+                parserObjectElem->setVulnDiscoverd(nseStreamLine);
             }
         }
 
@@ -436,7 +436,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     }
 
     // save nse result with QHash
-    elemObj->setNseResult(nseResult);
+    parserObjectElem->setNseResult(nseResult);
     m_ui->actionClear_History->setEnabled(true);
 
     QTextStream bufferLogStream(&StdoutStr);
@@ -448,7 +448,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
         bufferLogStream_line = bufferLogStream.readLine();
         if (!bufferLogStream_line.isEmpty())
         {
-            elemObj->setFullScanLog(bufferLogStream_line);
+            parserObjectElem->setFullScanLog(bufferLogStream_line);
         }
     }
 
@@ -459,10 +459,10 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     while (!bufferErrorStream.atEnd())
     {
         bufferErrorStream_line = bufferErrorStream.readLine();
-        elemObj->setErrorScan(bufferErrorStream_line);
+        parserObjectElem->setErrorScan(bufferErrorStream_line);
     }
 
-    return elemObj;
+    return parserObjectElem;
 }
 
 void ParserManager::showParserObj(int hostIndex)

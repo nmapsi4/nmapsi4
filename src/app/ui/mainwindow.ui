@@ -1445,7 +1445,7 @@
              </property>
              <column>
               <property name="text">
-               <string>Ip</string>
+               <string>Discovered IP/s</string>
               </property>
              </column>
              <column>

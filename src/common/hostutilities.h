@@ -101,7 +101,7 @@ public:
     static bool checkViewOS(const QString& OSline, QTreeWidgetItem *itemOS)
     {
         // check string OS for Icon selection
-        itemOS->setTextAlignment(1, Qt::AlignVCenter | Qt::AlignRight);
+        itemOS->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
 
         if (OSline.contains("Linux"))
         {
