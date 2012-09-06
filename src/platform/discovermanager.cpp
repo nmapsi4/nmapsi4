@@ -436,13 +436,18 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
             m_listTreeItemDiscover.push_back(ipItem);
             ipItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
             ipItem->setText(0, matched.first());
-            ipItem->setText(1, tr("is Up"));
+            ipItem->setText(1, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         }
     }
     else
     {
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
         m_listTreePackets.push_back(packet);
+
+        if (data.startsWith(QLatin1String("SENT"))) {
+            packet->setBackground(0, QBrush(QColor(221, 224, 163)));
+        }
+
         packet->setText(0,data);
         packet->setToolTip(0,data);
         packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));

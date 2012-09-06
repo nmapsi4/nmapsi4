@@ -226,7 +226,7 @@ void History::addItemToHistory(const QString url, const QString scanTime)
     {
         int index = urlList.indexOf(url);
         urlListTime[index].clear();
-        urlListTime[index].append(QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+        urlListTime[index].append(QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         settings.setValue(configTagTime, QVariant(urlListTime));
     }
 }

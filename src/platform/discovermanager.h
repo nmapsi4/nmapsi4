@@ -21,6 +21,7 @@
 #define DISCOVERMANAGER_H
 
 #include <QtCore/QObject>
+#include <QtCore/QDateTime>
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QSplitter>
 

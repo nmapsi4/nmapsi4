@@ -88,7 +88,7 @@ void BookmarkManager::saveItemToBookmarks()
 
         foreach (const QString& host, hostList)
         {
-            history_->addItemHistory(host, QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+            history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         }
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
@@ -103,7 +103,7 @@ void BookmarkManager::saveItemToBookmarks()
         const QString& currentHost = m_ui->comboVulnRis->currentText();
         History *history_ = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(m_ui->comboVulnRis->currentText(),
-                                 QDateTime::currentDateTime().toString("ddd MMMM d yy - hh:mm:ss.zzz"));
+                                 QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();

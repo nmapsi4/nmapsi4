@@ -305,12 +305,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
     }
     else
     {
-        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("ddd MMM d yy - hh:mm:ss"));
+        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         mainTreeE->setText(0, tmp_host);
     }
 

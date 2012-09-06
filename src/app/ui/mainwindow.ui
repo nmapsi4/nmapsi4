@@ -1450,7 +1450,7 @@
              </column>
              <column>
               <property name="text">
-               <string>State</string>
+               <string>Date</string>
               </property>
              </column>
             </widget>
@@ -1733,23 +1733,6 @@
                  <item row="1" column="1">
                   <widget class="QLineEdit" name="lineCidr"/>
                  </item>
-                 <item row="1" column="2">
-                  <widget class="QPushButton" name="calculateAddressButton">
-                   <property name="toolTip">
-                    <string>Estimate number of ip to ping</string>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
-                     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
-                   </property>
-                   <property name="flat">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="0" alignment="Qt::AlignRight">
                   <widget class="QLabel" name="label_6">
                    <property name="text">
@@ -1785,6 +1768,23 @@
                    <property name="icon">
                     <iconset resource="../../../mainwin.qrc">
                      <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QPushButton" name="calculateAddressButton">
+                   <property name="toolTip">
+                    <string>Estimate number of ip to ping</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../../../mainwin.qrc">
+                     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+                   </property>
+                   <property name="flat">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
