@@ -59,7 +59,7 @@ SET(SOURCES_CPP platform/selectprofiledialog.cpp
 
 
 if (Q_WS_X11)
-    SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
+    SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS} common/qtnotification/qtnotification.cpp)
 endif (Q_WS_X11)
 
 SET(SOURCES_H
@@ -83,6 +83,10 @@ SET(SOURCES_H
         app/actionmanager.h
         app/mainwindow.h
 )
+
+if (Q_WS_X11)
+    SET(SOURCES_H ${SOURCES_H} common/qtnotification/qtnotification.h)
+endif (Q_WS_X11)
 
 SET(SOURCES_UI
         platform/ui/addvulnerabilityurl.ui
