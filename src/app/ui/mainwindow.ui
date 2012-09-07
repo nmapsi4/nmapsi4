@@ -1814,7 +1814,7 @@
      <x>0</x>
      <y>0</y>
      <width>836</width>
-     <height>20</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -2075,7 +2075,7 @@
     <string>toolBar_3</string>
    </property>
    <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
+    <enum>Qt::LeftToRight</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QToolBar {

@@ -190,8 +190,9 @@ void ActionManager::createToolButtonBar()
 {
     // new QToolButton menu
     m_menuSetup = new QToolButton(m_ui);
+    m_menuSetup->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_menuSetup->setPopupMode(QToolButton::InstantPopup);
-    m_menuSetup->setText(tr("Setup"));
+    m_menuSetup->setText(tr("Control"));
     m_menuSetup->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
 
     QMenu *menu = new QMenu(m_ui);
