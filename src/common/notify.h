@@ -22,6 +22,7 @@
 
 #include "style.h"
 #include "pushbuttonorientated.h"
+#include "qtnotification/qtnotification.h"
 
 class Notify
 {
@@ -30,6 +31,7 @@ public:
     static void startButtonNotify(PushButtonOrientated* button);
     static void setCheckedNotify(PushButtonOrientated* button);
     static void clearButtonNotify(PushButtonOrientated* button);
+    static void sendQtNotification(const QString& address);
 
 };
 

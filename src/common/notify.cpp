@@ -35,3 +35,26 @@ void Notify::clearButtonNotify(PushButtonOrientated* button)
 {
     button->setStyleSheet("");
 }
+
+void Notify::sendQtNotification(const QString& address)
+{
+#if defined(Q_WS_X11)
+    org::freedesktop::Notifications notification("org.freedesktop.Notifications",
+            "/org/freedesktop/Notifications",
+            QDBusConnection::sessionBus());
+
+    if (notification.isValid()) {
+        QVariantMap hints;
+        hints["desktop-entry"] = "nmapsi4";
+
+        QDBusPendingReply<uint> dbusReply = notification.Notify("nmapsi4", 0, "nmapsi4",
+                                        QString("Scan Completed"),
+                                        QString("Ip: ") + address, QStringList(), hints, -1);
+        dbusReply.waitForFinished();
+
+        if(!dbusReply.isError()) {
+            return;
+        }
+    }
+#endif
+}
