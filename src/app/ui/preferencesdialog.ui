@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>515</width>
-    <height>480</height>
+    <width>578</width>
+    <height>481</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,7 +21,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>515</width>
+    <width>530</width>
     <height>480</height>
    </size>
   </property>
@@ -45,6 +45,49 @@
    <property name="margin">
     <number>4</number>
    </property>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="buttonSave">
+     <property name="text">
+      <string>&amp;Ok</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../mainwin.qrc">
+       <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="QLabel" name="labelTitle">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="ButtonQuit">
+     <property name="text">
+      <string>&amp;Cancel</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../mainwin.qrc">
+       <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="buttonDefault">
+     <property name="text">
+      <string>&amp;Defaults</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../mainwin.qrc">
+       <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0" rowspan="3">
     <widget class="QListWidget" name="listViewOptions">
      <property name="sizePolicy">
@@ -61,7 +104,7 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>120</width>
+       <width>130</width>
        <height>16777215</height>
       </size>
      </property>
@@ -69,7 +112,7 @@
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
+      <enum>Qt::ScrollBarAsNeeded</enum>
      </property>
      <property name="textElideMode">
       <enum>Qt::ElideMiddle</enum>
@@ -97,49 +140,6 @@
      </property>
      <property name="uniformItemSizes">
       <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" colspan="3">
-    <widget class="QLabel" name="labelTitle">
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QPushButton" name="buttonDefault">
-     <property name="text">
-      <string>&amp;Defaults</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QPushButton" name="buttonSave">
-     <property name="text">
-      <string>&amp;Ok</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QPushButton" name="ButtonQuit">
-     <property name="text">
-      <string>&amp;Cancel</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
      </property>
     </widget>
    </item>
@@ -171,6 +171,12 @@
       <number>0</number>
      </property>
      <widget class="QWidget" name="page_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <property name="margin">
         <number>0</number>
@@ -344,6 +350,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <property name="margin">
         <number>0</number>
@@ -393,6 +405,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="margin">
         <number>0</number>
