@@ -37,6 +37,7 @@ SelectProfileDialog::~SelectProfileDialog()
 void SelectProfileDialog::loadComboValues()
 {
     showProfilesCombo->setModel(m_ui->comboPar->model());
+    showProfilesCombo->setCurrentIndex(m_ui->comboPar->currentIndex());
 }
 
 void SelectProfileDialog::closeDialog()
