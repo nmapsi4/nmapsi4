@@ -36,13 +36,13 @@ SelectProfileDialog::~SelectProfileDialog()
 
 void SelectProfileDialog::loadComboValues()
 {
-    showProfilesCombo->setModel(m_ui->comboPar->model());
-    showProfilesCombo->setCurrentIndex(m_ui->comboPar->currentIndex());
+    showProfilesCombo->setModel(m_ui->comboParametersProfiles->model());
+    showProfilesCombo->setCurrentIndex(m_ui->comboParametersProfiles->currentIndex());
 }
 
 void SelectProfileDialog::closeDialog()
 {
-    m_ui->comboPar->setCurrentIndex(showProfilesCombo->currentIndex());
+    m_ui->comboParametersProfiles->setCurrentIndex(showProfilesCombo->currentIndex());
     m_ui->comboParametersSelectedEvent();
     close();
 }

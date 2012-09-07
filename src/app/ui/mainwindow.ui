@@ -312,7 +312,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboPar">
+            <widget class="QComboBox" name="comboParametersProfiles">
              <property name="maximumSize">
               <size>
                <width>300</width>

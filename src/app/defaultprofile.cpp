@@ -99,20 +99,20 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
 
 void MainWindow::loadScanProfile()
 {
-    comboPar->clear();
+    comboParametersProfiles->clear();
 
     QListIterator< QPair<QString, QString> > i(defaultScanProfile());
     while (i.hasNext())
     {
-        comboPar->insertItem(comboPar->count()+1, i.next().first);
+        comboParametersProfiles->insertItem(comboParametersProfiles->count()+1, i.next().first);
     }
 
-    comboPar->insertSeparator(comboPar->count()+1);
+    comboParametersProfiles->insertSeparator(comboParametersProfiles->count()+1);
 
     // value from treeWidget parameters
     for(int index=0; index < treeBookPar->topLevelItemCount(); index++)
     {
-        comboPar->addItem(treeBookPar->topLevelItem(index)->text(1));
+        comboParametersProfiles->addItem(treeBookPar->topLevelItem(index)->text(1));
     }
 
     comboParametersSelectedEvent();
@@ -121,7 +121,7 @@ void MainWindow::loadScanProfile()
 void MainWindow::comboParametersSelectedEvent()
 {
    // insert profile from comboPar to comboAdv
-   int parIndex = comboPar->currentIndex();
+   int parIndex = comboParametersProfiles->currentIndex();
 
     // if not 0
     QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
@@ -133,7 +133,7 @@ void MainWindow::comboParametersSelectedEvent()
         while (i.hasNext())
         {
             QPair<QString, QString> profile = i.next();
-            if (profile.first == comboPar->currentText())
+            if (profile.first == comboParametersProfiles->currentText())
             {
                 // call static default profile for check
                 comboAdv->insertItem(0, profile.second);
@@ -144,7 +144,7 @@ void MainWindow::comboParametersSelectedEvent()
     else
     {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboPar->currentText(),Qt::MatchExactly,1);
+        QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboParametersProfiles->currentText(),Qt::MatchExactly,1);
         comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }

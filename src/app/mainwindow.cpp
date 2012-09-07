@@ -110,7 +110,7 @@ void MainWindow::initObject()
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
     // Vuln signal
-    connect(comboPar, SIGNAL(activated(QString)),
+    connect(comboParametersProfiles, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
@@ -164,7 +164,7 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboPar->currentText(),comboAdv->currentText(),this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboParametersProfiles->currentText(),comboAdv->currentText(),this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
