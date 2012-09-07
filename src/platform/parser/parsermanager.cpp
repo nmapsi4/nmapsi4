@@ -70,6 +70,10 @@ void ParserManager::clearParserItems()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
+
+    // clear combo Vulnerabilities
+    m_ui->comboVuln->clear();
+    m_ui->comboVuln->insertItem(0,"Services");
 }
 
 void ParserManager::addUtilObject(PObjectLookup* object)
