@@ -48,9 +48,10 @@ public:
     void syncSettings();
 
 private:
-    void discoveryClear();
-    bool activeIpContains(const QString ipAddress);
+    void clearDiscover();
     void startSelectProfilesDialog();
+    void resetUiValues();
+    bool activeIpContains(const QString ipAddress);
 
     MainWindow* m_ui;
     QList<Discover*> m_listDiscover;

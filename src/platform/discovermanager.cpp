@@ -124,16 +124,14 @@ void DiscoverManager::discoverIp(const QString& interface)
 
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
 
-    if (!entryList_.isEmpty())
-    {
+    if (!entryList_.isEmpty()) {
         QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
         QString ipAdressString = entry_.ip().toString();
 
         QHostAddress address(ipAdressString);
 
         // TODO:: ipv6 support
-        if (!ipAdressString.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol)
-        {
+        if (!ipAdressString.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol) {
             // active discover buttton
             m_ui->startDiscoverButt->setEnabled(true);
             QStringList ipAdressSplitted = ipAdressString.split('.');
@@ -144,30 +142,26 @@ void DiscoverManager::discoverIp(const QString& interface)
             m_ui->discoverIpThreeSpin->setValue(ipAdressSplitted[2].toInt());
             m_ui->spinBeginDiscover->setValue(ipStart);
             m_ui->spinEndDiscover->setValue(ipStart+10);
-        }
-        else
-        {
+        } else {
             // reset discover value
-            m_ui->discoverIpFirstSpin->setValue(0);
-            m_ui->discoverIpSecondSpin->setValue(0);
-            m_ui->discoverIpThreeSpin->setValue(0);
-            m_ui->startDiscoverButt->setEnabled(false);
-            m_ui->spinBeginDiscover->setValue(0);
-            m_ui->spinEndDiscover->setValue(0);
+            resetUiValues();
         }
-    }
-    else
-    {
+    } else {
         // reset discover value
-        m_ui->discoverIpFirstSpin->setValue(0);
-        m_ui->discoverIpSecondSpin->setValue(0);
-        m_ui->discoverIpThreeSpin->setValue(0);
-        m_ui->startDiscoverButt->setEnabled(false);
-        m_ui->spinBeginDiscover->setValue(0);
-        m_ui->spinEndDiscover->setValue(0);
+        resetUiValues();
     }
 
     delete discover_;
+}
+
+void DiscoverManager::resetUiValues()
+{
+    m_ui->discoverIpFirstSpin->setValue(0);
+    m_ui->discoverIpSecondSpin->setValue(0);
+    m_ui->discoverIpThreeSpin->setValue(0);
+    m_ui->startDiscoverButt->setEnabled(false);
+    m_ui->spinBeginDiscover->setValue(0);
+    m_ui->spinEndDiscover->setValue(0);
 }
 
 void DiscoverManager::startDiscoverIpsFromRange()
@@ -177,11 +171,10 @@ void DiscoverManager::startDiscoverIpsFromRange()
     m_ui->stopDiscoverButt->setEnabled(true);
     m_ui->cidrButton->setEnabled(false);
     // clear tree discover
-    discoveryClear();
+    clearDiscover();
 
-    QStringList ipList;
-    for (int index = m_ui->spinBeginDiscover->value(); index <= m_ui->spinEndDiscover->value(); ++index)
-    {
+    QStringList addressList;
+    for (int index = m_ui->spinBeginDiscover->value(); index <= m_ui->spinEndDiscover->value(); ++index) {
         QString tmpIpAddress = QString::number(m_ui->discoverIpFirstSpin->value())
                          + '.'
                          + QString::number(m_ui->discoverIpSecondSpin->value())
@@ -190,7 +183,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
                          + '.'
                          + QString::number(index);
 
-        ipList.append(tmpIpAddress);
+        addressList.append(tmpIpAddress);
     }
 
     QStringList parameters;
@@ -207,8 +200,8 @@ void DiscoverManager::startDiscoverIpsFromRange()
      * TODO: check nping with QT5 QStandardPaths::findExecutable.
      *
      */
-    discoverPtr->fromList(ipList,this,parameters);
-    m_ipCounter = ipList.size();
+    discoverPtr->fromList(addressList,this,parameters);
+    m_ipCounter = addressList.size();
     m_ui->nseNumber->display(m_ipCounter);
 }
 
@@ -272,7 +265,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
     }
 }
 
-void DiscoverManager::discoveryClear()
+void DiscoverManager::clearDiscover()
 {
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreePackets);
@@ -380,7 +373,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     m_ui->startDiscoverButt->setEnabled(false);
     m_ui->stopDiscoverCidrButton->setEnabled(true);
     // clear tree discover
-    discoveryClear();
+    clearDiscover();
 
     QStringList parameters;
     if (!m_userid)
