@@ -72,6 +72,8 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
             this, SLOT(startDiscover()));
     connect(m_ui->calculateAddressButton, SIGNAL(clicked()),
             this, SLOT(calculateAddressFromCIDR()));
+
+    calculateAddressFromCIDR();
 }
 
 DiscoverManager::~DiscoverManager()
@@ -356,18 +358,6 @@ void DiscoverManager::defaultDiscoverProbes()
 
 void DiscoverManager::startDiscoverIpsFromCIDR()
 {
-    if (m_ui->lineCidr->text().isEmpty())
-    {
-        return;
-    }
-
-    if (!m_ui->lineCidr->text().contains('/'))
-    {
-        // wrong format
-        QMessageBox::warning(m_ui, "Warning - Nmapsi4", tr("Wrong CIDR notation format."));
-        return;
-    }
-
     // disable CIDR button but also ip range discover
     m_ui->cidrButton->setEnabled(false);
     m_ui->startDiscoverButt->setEnabled(false);
@@ -393,12 +383,18 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
             this, SLOT(endDiscoverIpsFromCIDR()));
 
-    /*
-     * TODO: check nping with QT5 QStandardPaths::findExecutable.
-     *
-     */
-    discoverPtr->fromCIDR(m_ui->lineCidr->text(),parameters,this);
+    const QString& cidrAddress = QString::number(m_ui->discoverCIDRFirstSpin->value())
+                                + '.'
+                                + QString::number(m_ui->discoverCIDRSecondSpin->value())
+                                + '.'
+                                + QString::number(m_ui->discoverCIDRThirdSpin->value())
+                                + '.'
+                                + QString::number(m_ui->discoverCIDRFourthSpin->value())
+                                + '/'
+                                + QString::number(m_ui->discoverCIDRPrefixSizeSpin->value());
 
+     // TODO: check nping with QT5 QStandardPaths::findExecutable.
+    discoverPtr->fromCIDR(cidrAddress,parameters,this);
 }
 
 void DiscoverManager::endDiscoverIpsFromCIDR()
@@ -465,29 +461,17 @@ void DiscoverManager::stopDiscoverFromCIDR()
 
 void DiscoverManager::calculateAddressFromCIDR()
 {
-    if (m_ui->lineCidr->text().isEmpty())
-    {
-        return;
+    int exp = 32 - m_ui->discoverCIDRPrefixSizeSpin->value();
+    int numberOfIps = 2;
+
+    while (exp >= 2) {
+        numberOfIps *= 2;
+        exp--;
     }
 
-    QStringList cidr = m_ui->lineCidr->text().split('/');
-
-    if (cidr.size() == 2)
-    {
-        int exp = 32 - cidr[1].toInt() - 1;
-        int numberOfIps = 2;
-
-        while (exp)
-        {
-            numberOfIps *= 2;
-            exp--;
-        }
-
-        m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
+    if (!exp) {
+        numberOfIps = 1;
     }
-    else
-    {
-        // wrong format
-        QMessageBox::warning(m_ui, "Warning - Nmapsi4", tr("Wrong CIDR notation format."));
-    }
+
+    m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
 }
