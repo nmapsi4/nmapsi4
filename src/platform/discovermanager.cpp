@@ -127,28 +127,30 @@ void DiscoverManager::discoverIp(const QString& interface)
     if (!entryList_.isEmpty())
     {
         QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
-        QString ipString_ = entry_.ip().toString();
+        QString ipAdressString = entry_.ip().toString();
 
-        QHostAddress address(ipString_);
+        QHostAddress address(ipAdressString);
 
         // TODO:: ipv6 support
-        if (!ipString_.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol)
+        if (!ipAdressString.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol)
         {
             // active discover buttton
             m_ui->startDiscoverButt->setEnabled(true);
-            QStringList ipSplit_ = ipString_.split('.');
-            int ipStart = ipSplit_[3].toInt();
-            ipSplit_.removeLast();
-            QString ipClass_ = ipSplit_.join(".");
-            ipClass_.append(".");
-            m_ui->lineIpDiscover->setText(ipClass_);
+            QStringList ipAdressSplitted = ipAdressString.split('.');
+            int ipStart = ipAdressSplitted[3].toInt();
+            ipAdressSplitted.removeLast();
+            m_ui->discoverIpFirstSpin->setValue(ipAdressSplitted[0].toInt());
+            m_ui->discoverIpSecondSpin->setValue(ipAdressSplitted[1].toInt());
+            m_ui->discoverIpThreeSpin->setValue(ipAdressSplitted[2].toInt());
             m_ui->spinBeginDiscover->setValue(ipStart);
             m_ui->spinEndDiscover->setValue(ipStart+10);
         }
         else
         {
             // reset discover value
-            m_ui->lineIpDiscover->clear();
+            m_ui->discoverIpFirstSpin->setValue(0);
+            m_ui->discoverIpSecondSpin->setValue(0);
+            m_ui->discoverIpThreeSpin->setValue(0);
             m_ui->startDiscoverButt->setEnabled(false);
             m_ui->spinBeginDiscover->setValue(0);
             m_ui->spinEndDiscover->setValue(0);
@@ -157,7 +159,9 @@ void DiscoverManager::discoverIp(const QString& interface)
     else
     {
         // reset discover value
-        m_ui->lineIpDiscover->clear();
+        m_ui->discoverIpFirstSpin->setValue(0);
+        m_ui->discoverIpSecondSpin->setValue(0);
+        m_ui->discoverIpThreeSpin->setValue(0);
         m_ui->startDiscoverButt->setEnabled(false);
         m_ui->spinBeginDiscover->setValue(0);
         m_ui->spinEndDiscover->setValue(0);
@@ -168,7 +172,6 @@ void DiscoverManager::discoverIp(const QString& interface)
 
 void DiscoverManager::startDiscoverIpsFromRange()
 {
-    // start ip discover
     // disable start discover button
     m_ui->startDiscoverButt->setEnabled(false);
     m_ui->stopDiscoverButt->setEnabled(true);
@@ -179,8 +182,15 @@ void DiscoverManager::startDiscoverIpsFromRange()
     QStringList ipList;
     for (int index = m_ui->spinBeginDiscover->value(); index <= m_ui->spinEndDiscover->value(); ++index)
     {
-        QString tmpIp_ = m_ui->lineIpDiscover->text().append(QString::number(index));
-        ipList.append(tmpIp_);
+        QString tmpIpAddress = QString::number(m_ui->discoverIpFirstSpin->value())
+                         + '.'
+                         + QString::number(m_ui->discoverIpSecondSpin->value())
+                         + '.'
+                         + QString::number(m_ui->discoverIpThreeSpin->value())
+                         + '.'
+                         + QString::number(index);
+
+        ipList.append(tmpIpAddress);
     }
 
     QStringList parameters;
@@ -248,9 +258,10 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
                 m_listTreePackets.push_back(packet);
             }
         }
-    } /*else {
+    } else {
+        // NOTE: host is down
         //qDebug() << "DEBUG:: " << hostname[1] << " Ip is Up:: " << state;
-    }*/
+    }
 
     if (!m_ipCounter)
     {
