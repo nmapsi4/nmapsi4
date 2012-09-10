@@ -820,8 +820,8 @@ void ParserManager::callSaveSingleLogWriter()
     const QString& path = QFileDialog::getSaveFileName(
                               m_ui,
                               tr("Save Log"),
-                              QDir::homePath() + QDir::toNativeSeparators("/"),
-                              tr("Log (*.log);;Html (*.html *.htm)")
+                              QDir::homePath() + QDir::toNativeSeparators("/") + "untitled",
+                              "Log (*.log);;Html (*.html *.htm)"
                           );
 
     if (!path.isEmpty())
@@ -841,7 +841,7 @@ void ParserManager::callSaveAllLogWriter()
 
     const QString& directoryPath = QFileDialog::getExistingDirectory(
                                        m_ui,
-                                       "Open Directory",
+                                       tr("Open Directory"),
                                        QDir::homePath(),
                                        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
                                    );

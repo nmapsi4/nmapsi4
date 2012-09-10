@@ -35,6 +35,7 @@ SET(SOURCES_CPP platform/selectprofiledialog.cpp
                 platform/discovermanager.cpp
                 platform/addparameterstobookmark.cpp
                 platform/logwriter/logwriter.cpp
+                platform/logwriter/logwriterxml.cpp
                 platform/history/history.cpp
                 platform/about/about.cpp
                 platform/monitor/monitor.cpp

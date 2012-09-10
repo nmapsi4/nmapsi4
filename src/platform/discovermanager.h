@@ -29,6 +29,7 @@
 #include "regularexpression.h"
 #include "notify.h"
 #include "selectprofiledialog.h"
+#include "logwriterxml.h"
 
 // system
 #ifndef Q_WS_WIN
@@ -71,6 +72,8 @@ public slots:
     void startDiscover();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();
+    void saveXmlIpsList();
+    void loadXmlIpsList();
 
 private slots:
     void endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff);

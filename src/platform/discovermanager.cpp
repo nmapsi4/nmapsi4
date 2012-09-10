@@ -198,6 +198,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
             this, SLOT(endDiscoverIpsFromRange(QStringList,bool,QByteArray)));
 
     m_discoverIsActive = true;
+    m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(false);
     /*
      * TODO: check nping with QT5 QStandardPaths::findExecutable.
      *
@@ -224,6 +225,8 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
     {
         // active scan all action
         m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+        m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
+        m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
 
         QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->treeDiscover);
         item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
@@ -275,6 +278,8 @@ void DiscoverManager::clearDiscover()
 
     m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(false);
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(false);
+    m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(false);
+    m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
 }
 
 void DiscoverManager::stopDiscoverFromIpsRange()
@@ -393,6 +398,8 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
                                 + '/'
                                 + QString::number(m_ui->discoverCIDRPrefixSizeSpin->value());
 
+    m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(false);
+
      // TODO: check nping with QT5 QStandardPaths::findExecutable.
     discoverPtr->fromCIDR(cidrAddress,parameters,this);
 }
@@ -401,6 +408,8 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
 {
     // restore default button state.
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+    m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
+    m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
     m_ui->cidrButton->setEnabled(true);
     m_ui->stopDiscoverCidrButton->setEnabled(false);
 }
@@ -474,4 +483,42 @@ void DiscoverManager::calculateAddressFromCIDR()
     }
 
     m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
+}
+
+void DiscoverManager::saveXmlIpsList()
+{
+    const QString& path = QFileDialog::getSaveFileName(
+                              m_ui,
+                              tr("Save IP list"),
+                              QDir::homePath() + QDir::toNativeSeparators("/") + "untitled.xml",
+                              "xml (*.xml)"
+                          );
+
+    if (!path.isEmpty()) {
+        LogWriterXml *xmlWriter = new LogWriterXml();
+        if (!xmlWriter->writeXmlDiscoverLog(path, m_ui->treeDiscover)) {
+            qWarning() << "LOG:Writer:Xml:: file not writable.";
+        }
+        delete xmlWriter;
+    }
+}
+
+void DiscoverManager::loadXmlIpsList()
+{
+    const QString& path = QFileDialog::getOpenFileName(
+                              m_ui,
+                              tr("Load IP list"),
+                              QDir::homePath() + QDir::toNativeSeparators("/"),
+                              "xml (*.xml)"
+                          );
+
+    if (!path.isEmpty()) {
+        clearDiscover();
+        LogWriterXml *xmlWriter = new LogWriterXml();
+        //TODO: check for empty QList
+        m_listTreeItemDiscover = xmlWriter->readXmlDiscoverLog(path, m_ui->treeDiscover);
+        delete xmlWriter;
+        m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+        m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
+    }
 }

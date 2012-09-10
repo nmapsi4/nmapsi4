@@ -279,14 +279,14 @@ void ActionManager::createDiscoverBar()
     m_discoverScanTool = new QToolButton(m_ui);
     m_discoverScanTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_discoverScanTool->setPopupMode(QToolButton::InstantPopup);
-    m_discoverScanTool->setText(tr("Scan discovered ips"));
+    m_discoverScanTool->setText(tr("Scan Options"));
     m_discoverScanTool->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
 
     QMenu *menuScanDiscover = new QMenu(m_ui);
     QAction *action;
 
     action = new QAction(m_ui);
-    action->setText("Scan selected ip");
+    action->setText("Scan selected IP/s");
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-single", action);
     connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanSingleDiscoveredIp()));
@@ -294,7 +294,7 @@ void ActionManager::createDiscoverBar()
     menuScanDiscover->addAction(action);
 
     action = new QAction(m_ui);
-    action->setText("Scan all discovered ips");
+    action->setText("Scan all discovered IP/s");
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-all", action);
     connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));
@@ -304,4 +304,20 @@ void ActionManager::createDiscoverBar()
     m_discoverScanTool->setMenu(menuScanDiscover);
     m_discoverToolBar->addWidget(m_discoverScanTool);
     m_discoverToolBar->addSeparator();
+
+    action = new QAction(m_ui);
+    action->setText("Save IP list");
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
+    m_collectionsDiscover.insert("save-ips", action);
+    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(saveXmlIpsList()));
+    action->setEnabled(false);
+    m_discoverToolBar->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setText("Load IP list");
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/folder_open.png")));
+    m_collectionsDiscover.insert("load-ips", action);
+    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(loadXmlIpsList()));
+    action->setEnabled(true);
+    m_discoverToolBar->addAction(action);
 }
