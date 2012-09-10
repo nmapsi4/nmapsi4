@@ -2630,6 +2630,58 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>comboHostBook</tabstop>
+  <tabstop>buttonParametersClear</tabstop>
+  <tabstop>comboAdv</tabstop>
+  <tabstop>comboParametersProfiles</tabstop>
+  <tabstop>treeHostDet</tabstop>
+  <tabstop>GItree</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>buttonHostClear</tabstop>
+  <tabstop>treeNSS</tabstop>
+  <tabstop>listScan</tabstop>
+  <tabstop>listScanError</tabstop>
+  <tabstop>treeMain</tabstop>
+  <tabstop>comboScanLog</tabstop>
+  <tabstop>monitorStopAllScanButt</tabstop>
+  <tabstop>monitorStopCurrentScanButt</tabstop>
+  <tabstop>monitorDetailsScanButt</tabstop>
+  <tabstop>treeLogH</tabstop>
+  <tabstop>treeBookPar</tabstop>
+  <tabstop>comboVulnRis</tabstop>
+  <tabstop>comboVuln</tabstop>
+  <tabstop>comboWebV</tabstop>
+  <tabstop>treeVulnNseRecovered</tabstop>
+  <tabstop>tWresult</tabstop>
+  <tabstop>treeBookVuln</tabstop>
+  <tabstop>treeWidgetVulnUrl</tabstop>
+  <tabstop>treeDiscover</tabstop>
+  <tabstop>treeTracePackets</tabstop>
+  <tabstop>tabRightDiscover</tabstop>
+  <tabstop>discoverProbesCombo</tabstop>
+  <tabstop>comboDiscover</tabstop>
+  <tabstop>reloadComboDiscover</tabstop>
+  <tabstop>listWscan</tabstop>
+  <tabstop>discoverIpFirstSpin</tabstop>
+  <tabstop>discoverIpSecondSpin</tabstop>
+  <tabstop>discoverIpThreeSpin</tabstop>
+  <tabstop>spinBeginDiscover</tabstop>
+  <tabstop>spinEndDiscover</tabstop>
+  <tabstop>startDiscoverButt</tabstop>
+  <tabstop>stopDiscoverButt</tabstop>
+  <tabstop>tabUi</tabstop>
+  <tabstop>discoverCIDRFirstSpin</tabstop>
+  <tabstop>discoverCIDRSecondSpin</tabstop>
+  <tabstop>discoverCIDRThirdSpin</tabstop>
+  <tabstop>discoverCIDRFourthSpin</tabstop>
+  <tabstop>discoverCIDRPrefixSizeSpin</tabstop>
+  <tabstop>lineAddressNumber</tabstop>
+  <tabstop>calculateAddressButton</tabstop>
+  <tabstop>cidrButton</tabstop>
+  <tabstop>stopDiscoverCidrButton</tabstop>
+  <tabstop>hostEdit</tabstop>
+ </tabstops>
  <resources>
   <include location="../../../mainwin.qrc"/>
  </resources>
