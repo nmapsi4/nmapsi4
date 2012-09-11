@@ -1206,7 +1206,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
+              <width>300</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1436,7 +1436,7 @@
               <bool>true</bool>
              </property>
              <property name="selectionMode">
-              <enum>QAbstractItemView::MultiSelection</enum>
+              <enum>QAbstractItemView::ExtendedSelection</enum>
              </property>
              <property name="rootIsDecorated">
               <bool>false</bool>
