@@ -51,7 +51,7 @@ public:
 private:
     void clearDiscover();
     void startSelectProfilesDialog();
-    void resetUiValues();
+    void resetDiscoverfromRangeValues();
     bool activeIpContains(const QString ipAddress);
 
     MainWindow* m_ui;

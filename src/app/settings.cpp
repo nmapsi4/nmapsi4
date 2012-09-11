@@ -191,7 +191,6 @@ void MainWindow::setDefaultAction()
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
 
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    nseNumber->setSegmentStyle(QLCDNumber::Flat);
     tWresult->setVisible(false);
 
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));

@@ -70,7 +70,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
             this, SLOT(runtimeScanDiscover()));
     connect(m_ui->reloadComboDiscover, SIGNAL(clicked()),
             this, SLOT(startDiscover()));
-    connect(m_ui->calculateAddressButton, SIGNAL(clicked()),
+    connect(m_ui->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
             this, SLOT(calculateAddressFromCIDR()));
 
     calculateAddressFromCIDR();
@@ -146,24 +146,24 @@ void DiscoverManager::discoverIp(const QString& interface)
             m_ui->spinEndDiscover->setValue(ipStart+10);
         } else {
             // reset discover value
-            resetUiValues();
+            resetDiscoverfromRangeValues();
         }
     } else {
         // reset discover value
-        resetUiValues();
+        resetDiscoverfromRangeValues();;
     }
 
     delete discover_;
 }
 
-void DiscoverManager::resetUiValues()
+void DiscoverManager::resetDiscoverfromRangeValues()
 {
-    m_ui->discoverIpFirstSpin->setValue(0);
-    m_ui->discoverIpSecondSpin->setValue(0);
-    m_ui->discoverIpThreeSpin->setValue(0);
-    m_ui->startDiscoverButt->setEnabled(false);
-    m_ui->spinBeginDiscover->setValue(0);
-    m_ui->spinEndDiscover->setValue(0);
+    m_ui->discoverIpFirstSpin->setValue(192);
+    m_ui->discoverIpSecondSpin->setValue(168);
+    m_ui->discoverIpThreeSpin->setValue(1);
+    m_ui->spinBeginDiscover->setValue(1);
+    m_ui->spinEndDiscover->setValue(15);
+    m_ui->startDiscoverButt->setEnabled(true);
 }
 
 void DiscoverManager::startDiscoverIpsFromRange()
@@ -205,7 +205,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
      */
     discoverPtr->fromList(addressList,this,parameters);
     m_ipCounter = addressList.size();
-    m_ui->nseNumber->display(m_ipCounter);
+    m_ui->discoverProgressBar->setMaximum(0);
 }
 
 void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff)
@@ -216,7 +216,6 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         --m_ipCounter;
     }
 
-    m_ui->nseNumber->display(m_ipCounter);
     // set values in treeDiscover widget
     m_ui->treeDiscover->setIconSize(QSize(24,24));
     QTextStream stream(callBuff);
@@ -267,6 +266,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_ui->startDiscoverButt->setEnabled(true);
         m_ui->stopDiscoverButt->setEnabled(false);
         m_ui->cidrButton->setEnabled(true);
+        m_ui->discoverProgressBar->setMaximum(100);
     }
 }
 
@@ -288,7 +288,6 @@ void DiscoverManager::stopDiscoverFromIpsRange()
     m_ui->stopDiscoverButt->setEnabled(false);
     m_ipCounter = 0;
     m_discoverIsActive = false;
-    m_ui->nseNumber->display(m_ipCounter);
     //emit signal
     emit killDiscoverFromIpsRange();
 }
@@ -400,6 +399,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
 
     m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(false);
 
+    m_ui->discoverProgressBar->setMaximum(0);
      // TODO: check nping with QT5 QStandardPaths::findExecutable.
     discoverPtr->fromCIDR(cidrAddress,parameters,this);
 }
@@ -412,6 +412,8 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
     m_ui->cidrButton->setEnabled(true);
     m_ui->stopDiscoverCidrButton->setEnabled(false);
+    m_ui->startDiscoverButt->setEnabled(true);
+    m_ui->discoverProgressBar->setMaximum(100);
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)

@@ -1582,7 +1582,7 @@
                     </size>
                    </property>
                    <property name="toolTip">
-                    <string extracomment="Reload Interfaces"/>
+                    <string>Reload Interfaces</string>
                    </property>
                    <property name="text">
                     <string/>
@@ -1628,6 +1628,9 @@
                    <property name="maximum">
                     <number>255</number>
                    </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="2">
@@ -1635,12 +1638,18 @@
                    <property name="maximum">
                     <number>255</number>
                    </property>
+                   <property name="value">
+                    <number>168</number>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="QSpinBox" name="discoverIpFirstSpin">
                    <property name="maximum">
                     <number>255</number>
+                   </property>
+                   <property name="value">
+                    <number>192</number>
                    </property>
                   </widget>
                  </item>
@@ -1659,6 +1668,9 @@
                    <property name="maximum">
                     <number>255</number>
                    </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="2" alignment="Qt::AlignRight">
@@ -1675,6 +1687,9 @@
                   <widget class="QSpinBox" name="spinEndDiscover">
                    <property name="maximum">
                     <number>255</number>
+                   </property>
+                   <property name="value">
+                    <number>15</number>
                    </property>
                   </widget>
                  </item>
@@ -1701,7 +1716,7 @@
                  <item>
                   <widget class="QPushButton" name="startDiscoverButt">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1710,7 +1725,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Start Discover from ips range</string>
+                    <string>Start Discover from IP range</string>
                    </property>
                    <property name="icon">
                     <iconset resource="../../../mainwin.qrc">
@@ -1735,33 +1750,6 @@
                    <property name="icon">
                     <iconset resource="../../../mainwin.qrc">
                      <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_17">
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="label_12">
-                   <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
-                   </property>
-                   <property name="text">
-                    <string>Remaining Ip:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QLCDNumber" name="nseNumber">
-                   <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                   </property>
-                   <property name="lineWidth">
-                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -1856,29 +1844,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="2">
-                  <widget class="QPushButton" name="calculateAddressButton">
-                   <property name="maximumSize">
-                    <size>
-                     <width>25</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="toolTip">
-                    <string>Estimate number of ip to ping</string>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
-                     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
-                   </property>
-                   <property name="flat">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item>
@@ -1938,6 +1903,19 @@
                   </size>
                  </property>
                 </spacer>
+               </item>
+               <item>
+                <widget class="QProgressBar" name="discoverProgressBar">
+                 <property name="maximum">
+                  <number>100</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                 <property name="textVisible">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -2683,7 +2661,6 @@
   <tabstop>discoverCIDRFourthSpin</tabstop>
   <tabstop>discoverCIDRPrefixSizeSpin</tabstop>
   <tabstop>lineAddressNumber</tabstop>
-  <tabstop>calculateAddressButton</tabstop>
   <tabstop>cidrButton</tabstop>
   <tabstop>stopDiscoverCidrButton</tabstop>
   <tabstop>hostEdit</tabstop>
