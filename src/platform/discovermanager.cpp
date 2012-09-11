@@ -286,6 +286,7 @@ void DiscoverManager::stopDiscoverFromIpsRange()
 {
     m_ui->startDiscoverButt->setEnabled(true);
     m_ui->stopDiscoverButt->setEnabled(false);
+    m_ui->discoverProgressBar->setMaximum(100);
     m_ipCounter = 0;
     m_discoverIsActive = false;
     //emit signal
