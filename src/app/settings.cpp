@@ -171,6 +171,7 @@ void MainWindow::setTreeSettings()
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
     scanMonitor->setColumnWidth(1, 350);
+    //treeTraceroot->setColumnWidth(0, 250);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
@@ -197,10 +198,6 @@ void MainWindow::setDefaultAction()
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
 
     actionAdd_vulnerability_search_url->setVisible(false);
-
-#if defined(Q_WS_MAC)
-    setUnifiedTitleAndToolBarOnMac(true);
-#endif
 }
 
 void MainWindow::setDefaultSplitter()
