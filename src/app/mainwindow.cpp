@@ -141,8 +141,7 @@ void MainWindow::startPreferencesDialog()
 
     dialogPreference.data()->exec();
 
-    if (!dialogPreference.isNull())
-    {
+    if (!dialogPreference.isNull()) {
         delete dialogPreference.data();
     }
 }
@@ -156,8 +155,7 @@ void MainWindow::newProfile()
 
     pManager.data()->exec();
 
-    if (!pManager.isNull())
-    {
+    if (!pManager.isNull()) {
         delete pManager.data();
     }
 }
@@ -171,26 +169,22 @@ void MainWindow::editProfile()
 
     pManager.data()->exec();
 
-    if (!pManager.isNull())
-    {
+    if (!pManager.isNull()) {
         delete pManager.data();
     }
 }
 
 void MainWindow::linkCompleterToHostname()
 {
-    if (!actionAdd_Bookmark->isEnabled())
-    {
+    if (!actionAdd_Bookmark->isEnabled()) {
         actionAdd_Bookmark->setEnabled(true);
     }
 
-    if (m_hostModel.isNull())
-    {
+    if (m_hostModel.isNull()) {
         return;
     }
 
-    if (m_completer.isNull())
-    {
+    if (m_completer.isNull()) {
         m_completer = new QCompleter(m_hostModel.data(),this);
         m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
         m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
@@ -201,8 +195,7 @@ void MainWindow::linkCompleterToHostname()
 
 void MainWindow::takeHostFromBookmark()
 {
-     if(treeLogH->currentItem())
-     {
+     if(treeLogH->currentItem()) {
         updateComboHostnameProperties();
         hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
         startScan();
@@ -211,8 +204,7 @@ void MainWindow::takeHostFromBookmark()
 
 void MainWindow::quickAddressSelectionEvent()
 {
-    if(comboHostBook->currentIndex())
-    {
+    if(comboHostBook->currentIndex()) {
         updateComboHostnameProperties();
         hostEdit->insertItem(0, comboHostBook->currentText());
         // reset comboHostBook to default selection item (index=0)
@@ -222,8 +214,7 @@ void MainWindow::quickAddressSelectionEvent()
 
 void MainWindow::startScan()
 {
-    if (hostEdit->currentText().isEmpty())
-    {
+    if (hostEdit->currentText().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
     }
@@ -233,59 +224,57 @@ void MainWindow::startScan()
     hostname = HostTools::clearHost(hostname);
 
     // check for duplicate hostname in the monitor
-    if (m_monitor->isHostOnMonitor(hostname))
-    {
+    if (m_monitor->isHostOnMonitor(hostname)) {
         QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
         return;
     }
 
-    if(!m_monitor->monitorHostNumber())
-    {
+    if(!m_monitor->monitorHostNumber()) {
         // clear details QHash
         m_monitor->clearHostMonitorDetails();
     }
 
 
     // check for ip list
-    if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//"))
-    {
+    if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
         // is a ip list
         QStringList addrPart_ = hostname.split('/', QString::SkipEmptyParts);
-        QStringList ipBase_ = addrPart_[0].split('.');
-        int ipLeft_ = ipBase_[3].toInt();
-        int ipRight_ = addrPart_[1].toInt();
+        QStringList ipfields = addrPart_[0].split('.');
+        int startIpRange = ipfields[3].toInt();
+        int endIpRange = addrPart_[1].toInt();
 
-        for(int index = ipLeft_; index <= ipRight_; index++)
-        {
-            ipBase_[3].setNum(index);
-            hostname = ipBase_.join(".");
+        QHostAddress addressProtocol(addrPart_[0]);
 
-            if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname))
-            {
+        if (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol) {
+            QMessageBox::warning(this, tr("Warning - Nmapsi4"),
+                                 tr("IPv6 Protocol range scan is not yet supported."), tr("Close"));
+            return;
+        }
+
+        for(int index = startIpRange; index <= endIpRange; index++) {
+            ipfields[3].setNum(index);
+            hostname = ipfields.join(".");
+
+            if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname)) {
                 addHostToMonitor(hostname);
             }
         }
         return;
-    }
-    else if (hostname.endsWith(QLatin1String("/")))
-    {
+    } else if (hostname.endsWith(QLatin1String("/"))) {
         hostname.remove('/');
     }
 
     //scan token DNS/IP parser
-    if(hostname.contains(" "))
-    { // space delimiter
+    if(hostname.contains(" ")) {
+        // space delimiter
         QStringList addrPart_ = hostname.split(' ', QString::SkipEmptyParts);
         // check for only one space in hostname
-        if(addrPart_.size() > 1)
-        {
+        if(addrPart_.size() > 1) {
             // multiple ip or dns to scan
-            for(int index=0; index < addrPart_.size(); index++)
-            {
+            for(int index=0; index < addrPart_.size(); index++) {
                 addrPart_[index] = HostTools::clearHost(addrPart_[index]);
                 // check for lookup support
-                if (!HostTools::isDns(addrPart_[index]) || HostTools::isValidDns(addrPart_[index]))
-                {
+                if (!HostTools::isDns(addrPart_[index]) || HostTools::isValidDns(addrPart_[index])) {
                     addHostToMonitor(addrPart_[index]);
                 }
             }
@@ -296,8 +285,7 @@ void MainWindow::startScan()
     }
 
     // single ip or dns after the move
-    if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname))
-    {
+    if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname)) {
         addHostToMonitor(hostname);
     }
 
@@ -318,8 +306,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
     QStringList parameters = loadExtensions();
 
     // check for scan lookup
-    switch (m_lookupType)
-    {
+    switch (m_lookupType) {
     case Monitor::DisabledLookup:
         m_monitor->addMonitorHost(hostname, parameters, Monitor::DisabledLookup);
         break;
@@ -334,8 +321,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
 
 void MainWindow::closeEvent(QCloseEvent * event)
 {
-    if (m_monitor->monitorHostNumber())
-    {
+    if (m_monitor->monitorHostNumber()) {
         QMessageBox box;
         box.setIcon(QMessageBox::Warning);
         box.setText(tr("<b>There are still active scan.</b>"));
@@ -344,8 +330,7 @@ void MainWindow::closeEvent(QCloseEvent * event)
         box.setDefaultButton(QMessageBox::Cancel);
         int ret = box.exec();
 
-        switch (ret)
-        {
+        switch (ret) {
         case QMessageBox::Close:
             m_monitor->clearHostMonitor();
             saveSettings();
@@ -356,9 +341,7 @@ void MainWindow::closeEvent(QCloseEvent * event)
             event->ignore();
             break;
         }
-    }
-    else
-    {
+    } else {
         m_monitor->clearHostMonitor();
         // Save Ui settings
         saveSettings();
@@ -369,49 +352,40 @@ void MainWindow::closeEvent(QCloseEvent * event)
 
 void MainWindow::resizeVerticalSplitterEvent()
 {
-    if (!m_mainVerticalSplitter->sizes()[1])
-    {
+    if (!m_mainVerticalSplitter->sizes()[1]) {
         qDebug() << "Vertical QWidget details:: " << m_mainVerticalSplitter->sizes()[1];
         m_collections->m_collectionsButton.value("details-list")->setChecked(false);
-    }
-    else
-    {
+    } else {
         m_collections->m_collectionsButton.value("details-list")->setChecked(true);
     }
 }
 
 void MainWindow::resizeHorizontalSplitterEvent()
 {
-    if (!m_mainHorizontalSplitter->sizes()[0])
-    {
+    if (!m_mainHorizontalSplitter->sizes()[0]) {
         qDebug() << "Horizotal QWidget details:: " << m_mainHorizontalSplitter->sizes()[0];
         m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
-    }
-    else
-    {
+    } else {
         m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
     }
 }
 
 void MainWindow::resizeHostDetailsWidgetEvent()
 {
-    if (!m_collections->m_collectionsButton.value("details-list")->isChecked() && m_mainVerticalSplitter->sizes()[1])
-    {
+    if (!m_collections->m_collectionsButton.value("details-list")->isChecked()
+        && m_mainVerticalSplitter->sizes()[1]) {
         m_detailsWidgetSize = m_mainVerticalSplitter->saveState();
 
         QList<int> size = m_mainVerticalSplitter->sizes();
         size[1] = 0;
         m_mainVerticalSplitter->setSizes(size);
-    }
-    else if (m_collections->m_collectionsButton.value("details-list")->isChecked() && !m_mainVerticalSplitter->sizes()[1])
-    {
-        if (!m_detailsWidgetSize.isEmpty())
-        {
+    } else if (m_collections->m_collectionsButton.value("details-list")->isChecked()
+        && !m_mainVerticalSplitter->sizes()[1]) {
+
+        if (!m_detailsWidgetSize.isEmpty()) {
             // restore previous value
             m_mainVerticalSplitter->restoreState(m_detailsWidgetSize);
-        }
-        else
-        {
+        } else {
             QList<int> size = m_mainVerticalSplitter->sizes();
             size[0] = 300; // ratio
             size[1] = 200;
@@ -422,25 +396,22 @@ void MainWindow::resizeHostDetailsWidgetEvent()
 
 void MainWindow::resizeScanListWidgetEvent()
 {
-    if (!m_collections->m_collectionsButton.value("scan-list")->isChecked() && m_mainHorizontalSplitter->sizes()[0])
-    {
+    if (!m_collections->m_collectionsButton.value("scan-list")->isChecked()
+        && m_mainHorizontalSplitter->sizes()[0]) {
         m_scanListWidgetSize = m_mainHorizontalSplitter->saveState();
 
         QList<int> size = m_mainHorizontalSplitter->sizes();
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
         Notify::clearButtonNotify(m_collections->m_collectionsButton.value("scan-list"));
-    }
-    else if (m_collections->m_collectionsButton.value("scan-list")->isChecked() && !m_mainHorizontalSplitter->sizes()[0])
-    {
-        if (!m_scanListWidgetSize.isEmpty())
-        {
+    } else if (m_collections->m_collectionsButton.value("scan-list")->isChecked()
+        && !m_mainHorizontalSplitter->sizes()[0]) {
+
+        if (!m_scanListWidgetSize.isEmpty()) {
             // restore previous value
             m_mainHorizontalSplitter->restoreState(m_scanListWidgetSize);
             Notify::setCheckedNotify(m_collections->m_collectionsButton.value("scan-list"));
-        }
-        else
-        {
+        } else {
             QList<int> size = m_mainHorizontalSplitter->sizes();
             size[0] = 100; // ratio
             size[1] = 300;
