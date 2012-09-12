@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>805</width>
-    <height>675</height>
+    <width>820</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -69,7 +69,7 @@
      <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>2</number>
+     <number>0</number>
     </property>
     <item>
      <widget class="QTabWidget" name="tabUi">
@@ -80,18 +80,19 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTabWidget:pane {
-	border: 0px;
-}</string>
+       <string notr="true"/>
       </property>
       <property name="tabPosition">
-       <enum>QTabWidget::South</enum>
+       <enum>QTabWidget::North</enum>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
        <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
       </property>
       <widget class="QWidget" name="tabScan">
        <attribute name="icon">
@@ -102,17 +103,8 @@
         <string>Scan host(s)</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QFrame" name="frameScan">
@@ -362,7 +354,7 @@
             <number>0</number>
            </property>
            <property name="rightMargin">
-            <number>1</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
             <number>1</number>
@@ -466,9 +458,7 @@
               <bool>false</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">QTabWidget:pane {
-	border: 0px;
-}</string>
+              <string notr="true"/>
              </property>
              <property name="tabPosition">
               <enum>QTabWidget::North</enum>
@@ -481,6 +471,9 @@
              </property>
              <property name="elideMode">
               <enum>Qt::ElideNone</enum>
+             </property>
+             <property name="documentMode">
+              <bool>true</bool>
              </property>
              <widget class="QWidget" name="tab_8">
               <attribute name="icon">
@@ -663,6 +656,9 @@
                <string>Raw scan log</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_2">
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayoutRawlog">
                  <item>
@@ -859,7 +855,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <property name="leftMargin">
-            <number>1</number>
+            <number>0</number>
            </property>
            <property name="topMargin">
             <number>0</number>
@@ -934,17 +930,8 @@
         <string>Scan Monitor</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_14">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item>
          <widget class="QProgressBar" name="progressScan">
@@ -1081,17 +1068,8 @@
         <string>Bookmarks</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout">
@@ -1175,6 +1153,9 @@
         <string>Vulnerability</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="margin">
+         <number>0</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
@@ -1319,6 +1300,9 @@
                <property name="currentIndex">
                 <number>0</number>
                </property>
+               <property name="documentMode">
+                <bool>true</bool>
+               </property>
                <widget class="QWidget" name="tab">
                 <attribute name="title">
                  <string/>
@@ -1342,17 +1326,8 @@
         <string>Bookmarks</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_6">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item>
          <widget class="QTreeWidget" name="treeBookVuln">
@@ -1409,17 +1384,8 @@
         <string>Network discover</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
+        <property name="margin">
          <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
         </property>
         <item>
          <widget class="QFrame" name="frameDiscoverTree">
@@ -1473,8 +1439,14 @@
         </item>
         <item>
          <widget class="QTabWidget" name="tabRightDiscover">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="currentIndex">
            <number>0</number>
+          </property>
+          <property name="documentMode">
+           <bool>true</bool>
           </property>
           <widget class="QWidget" name="intervallScan">
            <attribute name="icon">
@@ -1935,8 +1907,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>805</width>
-     <height>20</height>
+     <width>820</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
