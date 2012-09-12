@@ -99,6 +99,8 @@ void Monitor::addMonitorHost(const QString hostName, const QStringList parameter
     hostThread->setIcon(2, QIcon::fromTheme("media-playback-start",QIcon(":/images/images/media-playback-start.png")));
     hostThread->setText(2, "Scanning");
     m_monitorElem.push_front(hostThread);
+    // start indeterminate progress bar
+    m_ui->scanProgressBar->setMaximum(0);
 
     emit monitorUpdated(monitorHostNumber());
 

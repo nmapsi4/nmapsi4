@@ -157,10 +157,5 @@ void MainWindow::resetComboParameters()
 
 QStringList MainWindow::loadExtensions()
 {
-    if(m_monitor->monitorHostNumber())
-    {
-        progressScan->setValue(55); // start progress bar
-    }
-
     return comboAdv->lineEdit()->text().split(' ');
 }

@@ -87,15 +87,12 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
      * TODO: remove this check with QT5 QStandardPaths::findExecutable.
      *
      */
-    if(!dataBuffer.size() && errorBuffer.size())
-    {
+    if(!dataBuffer.size() && errorBuffer.size()) {
         QMessageBox::critical(m_ui, "NmapSI4", tr("Error: check nmap Installation.\n")
             + "\n\n"
             + QString(errorBuffer), tr("Close"));
         return;
     }
-
-    m_ui->progressScan->setValue(75);
 
     Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-list"));
 
@@ -117,20 +114,13 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     dataBuffer.clear();
     errorBuffer.clear();
 
-    m_ui->progressScan->setValue(85);
-
-    if(!m_ui->m_monitor->monitorHostNumber())
-    {
-        m_ui->progressScan->setValue(100);
+    if(!m_ui->m_monitor->monitorHostNumber()) {
+        m_ui->scanProgressBar->setMaximum(100);
         m_ui->monitorStopAllScanButt->setEnabled(false);
         m_ui->monitorStopCurrentScanButt->setEnabled(false);
         m_ui->monitorDetailsScanButt->setEnabled(false);
         m_ui->tabUi->setTabIcon(m_ui->tabUi->indexOf(m_ui->tabMainMonitor),
-                          QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
-    }
-    else
-    {
-        m_ui->progressScan->setValue(55);
+                                QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     }
 
     m_ui->action_Scan_menu->setEnabled(true);
@@ -139,8 +129,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     m_ui->actionSave_Menu->setEnabled(true);
     m_ui->actionSave_As_Menu->setEnabled(true);
 
-    if(!m_ui->m_monitor->monitorHostNumber())
-    {
+    if(!m_ui->m_monitor->monitorHostNumber()) {
         m_ui->m_monitor->clearHostMonitor();
     }
 
