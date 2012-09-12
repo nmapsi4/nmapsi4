@@ -1578,7 +1578,7 @@
                </item>
                <item>
                 <layout class="QGridLayout" name="gridLayout_2">
-                 <item row="0" column="0" alignment="Qt::AlignRight">
+                 <item row="0" column="0">
                   <widget class="QLabel" name="label_2">
                    <property name="text">
                     <string>IP Network:</string>
@@ -1615,7 +1615,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0" alignment="Qt::AlignRight">
+                 <item row="1" column="0">
                   <widget class="QLabel" name="label_3">
                    <property name="text">
                     <string>Start Host Ip:</string>
@@ -1635,7 +1635,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="2" alignment="Qt::AlignRight">
+                 <item row="1" column="2">
                   <widget class="QLabel" name="label_4">
                    <property name="text">
                     <string>End Host Ip:</string>
@@ -1728,7 +1728,7 @@
               <layout class="QVBoxLayout" name="verticalLayout_12">
                <item>
                 <layout class="QGridLayout" name="gridLayout_6">
-                 <item row="0" column="0" alignment="Qt::AlignRight">
+                 <item row="0" column="0">
                   <widget class="QLabel" name="label_5">
                    <property name="text">
                     <string>CIDR Address:</string>
@@ -1772,7 +1772,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0" alignment="Qt::AlignRight">
+                 <item row="1" column="0">
                   <widget class="QLabel" name="label_8">
                    <property name="text">
                     <string>Prefix Size:</string>
@@ -1789,7 +1789,7 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="0" alignment="Qt::AlignRight">
+                 <item row="2" column="0">
                   <widget class="QLabel" name="label_6">
                    <property name="text">
                     <string>Number of ips:</string>

@@ -32,7 +32,7 @@
      <property name="rightMargin">
       <number>4</number>
      </property>
-     <item alignment="Qt::AlignRight">
+     <item>
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Hostname:</string>

@@ -195,8 +195,11 @@
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <layout class="QGridLayout" name="gridLayout_4">
-            <item row="0" column="0" alignment="Qt::AlignRight">
+            <item row="0" column="0">
              <widget class="QLabel" name="label_2">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
               <property name="text">
                <string>Log type:</string>
               </property>
@@ -260,7 +263,7 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0" alignment="Qt::AlignRight">
+            <item row="1" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>Max parallel scan:</string>
@@ -283,7 +286,7 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="0" alignment="Qt::AlignRight">
+            <item row="2" column="0">
              <widget class="QLabel" name="label_4">
               <property name="text">
                <string>Max parallel discover process:</string>
@@ -306,7 +309,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="0" alignment="Qt::AlignRight">
+            <item row="0" column="0">
              <widget class="QLabel" name="label">
               <property name="text">
                <string>History Item Number:</string>
@@ -426,7 +429,7 @@
             <item>
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>Lookup type</string>
+               <string>Lookup type:</string>
               </property>
               <property name="buddy">
                <cstring>comboLookupType</cstring>

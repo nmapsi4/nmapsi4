@@ -85,7 +85,7 @@
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
                <layout class="QGridLayout" name="gridLayout_4">
-                <item row="0" column="0" alignment="Qt::AlignRight">
+                <item row="0" column="0">
                  <widget class="QLabel" name="label">
                   <property name="text">
                    <string>Profile name: </string>
@@ -98,7 +98,7 @@
                 <item row="0" column="1">
                  <widget class="QLineEdit" name="profileNameLine"/>
                 </item>
-                <item row="3" column="0" alignment="Qt::AlignRight">
+                <item row="3" column="0">
                  <widget class="QLabel" name="label_3">
                   <property name="text">
                    <string>Profile parameters:</string>
@@ -115,7 +115,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0" alignment="Qt::AlignRight">
+                <item row="1" column="0">
                  <widget class="QLabel" name="label_4">
                   <property name="text">
                    <string>Base options:</string>
@@ -259,7 +259,7 @@
                   </item>
                  </widget>
                 </item>
-                <item row="0" column="0" alignment="Qt::AlignRight">
+                <item row="0" column="0">
                  <widget class="QLabel" name="label_8">
                   <property name="text">
                    <string>TCP scan:</string>
@@ -269,7 +269,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0" alignment="Qt::AlignRight">
+                <item row="1" column="0">
                  <widget class="QLabel" name="label_2">
                   <property name="text">
                    <string>Non-TCP scans:</string>
@@ -332,7 +332,7 @@
                   </item>
                  </widget>
                 </item>
-                <item row="2" column="0" alignment="Qt::AlignRight">
+                <item row="2" column="0">
                  <widget class="QLabel" name="label_10">
                   <property name="text">
                    <string>Timing Template:</string>
@@ -441,7 +441,7 @@
                   </item>
                  </widget>
                 </item>
-                <item row="0" column="0" alignment="Qt::AlignRight">
+                <item row="0" column="0">
                  <widget class="QLabel" name="label_9">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -860,7 +860,7 @@
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
                <layout class="QGridLayout" name="gridLayout_18">
-                <item row="0" column="0" alignment="Qt::AlignLeft">
+                <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBoxDevice">
                   <property name="text">
                    <string>Specific network interface (-e)</string>
@@ -874,7 +874,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0" alignment="Qt::AlignLeft">
+                <item row="1" column="0">
                  <widget class="QCheckBox" name="checkSpoof">
                   <property name="text">
                    <string>Set source spoof ip address (-S)</string>
@@ -888,7 +888,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="0" alignment="Qt::AlignLeft">
+                <item row="2" column="0">
                  <widget class="QCheckBox" name="checkDecoy">
                   <property name="text">
                    <string>Set decoy (-D)</string>
@@ -902,7 +902,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0" alignment="Qt::AlignLeft">
+                <item row="3" column="0">
                  <widget class="QCheckBox" name="checkSourcePort">
                   <property name="text">
                    <string>Set Source spoof port (-g)</string>
@@ -942,7 +942,7 @@
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
                <layout class="QGridLayout" name="gridLayout_2">
-                <item row="1" column="0" alignment="Qt::AlignRight">
+                <item row="1" column="0">
                  <widget class="QLabel" name="label_40">
                   <property name="text">
                    <string>DNS Resolution</string>
@@ -971,7 +971,7 @@
                   </item>
                  </widget>
                 </item>
-                <item row="2" column="0" alignment="Qt::AlignRight">
+                <item row="2" column="0">
                  <widget class="QLabel" name="label_41">
                   <property name="text">
                    <string>Verbosity level (-v)</string>
@@ -1010,21 +1010,21 @@
                   </item>
                  </widget>
                 </item>
-                <item row="5" column="0" alignment="Qt::AlignLeft">
+                <item row="5" column="0">
                  <widget class="QCheckBox" name="checkOrdered">
                   <property name="text">
                    <string>Ordered scanned port (-r)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0" alignment="Qt::AlignLeft">
+                <item row="6" column="0">
                  <widget class="QCheckBox" name="checkFrag">
                   <property name="text">
                    <string>Fragment IP packets (-f)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0" alignment="Qt::AlignRight">
+                <item row="3" column="0">
                  <widget class="QCheckBox" name="TcheckIpv4ttl">
                   <property name="text">
                    <string>Ipv4 TTL (--ttl)</string>
@@ -1044,7 +1044,7 @@
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0" alignment="Qt::AlignRight">
+                <item row="4" column="0">
                  <widget class="QCheckBox" name="checkMaxRetries">
                   <property name="text">
                    <string>Max Retries (--max-retries)</string>
@@ -1054,7 +1054,7 @@
                 <item row="4" column="1">
                  <widget class="QLineEdit" name="lineMaxRetries"/>
                 </item>
-                <item row="7" column="0" alignment="Qt::AlignLeft">
+                <item row="7" column="0">
                  <widget class="QCheckBox" name="checkTraceroute">
                   <property name="text">
                    <string>Traceroute (--traceroute)</string>
