@@ -134,7 +134,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                     {
                         QString values = parameters[index];
                         values.remove("--script-args=");
-                        m_ui->comboNsePar->lineEdit()->setText(values);
+                        m_ui->m_dialogUi->comboNsePar->lineEdit()->setText(values);
                     }
                     else if (parameters[index].startsWith(QLatin1String("--script=")))
                     {
@@ -152,7 +152,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
 
                         if (scripts.size())
                         {
-                            m_ui->comboNseInv->lineEdit()->setText(scripts.join(","));
+                            m_ui->m_dialogUi->comboNseInv->lineEdit()->setText(scripts.join(","));
                         }
                     }
                 }
@@ -173,7 +173,7 @@ void Profiler::preLoadOptionsCombo()
     QPair<QComboBox*,int> comboDefault;
 
     // TCP Scan
-    comboDefault.first = m_ui->comboScanTcp;
+    comboDefault.first = m_ui->m_dialogUi->comboScanTcp;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-sT",comboDefault);
@@ -195,7 +195,7 @@ void Profiler::preLoadOptionsCombo()
     preLoadComboList.insert("-sW",comboDefault);
 
     // Non-TCP scans
-    comboDefault.first = m_ui->comboScanNonTcp;
+    comboDefault.first = m_ui->m_dialogUi->comboScanNonTcp;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-sL",comboDefault);
@@ -209,7 +209,7 @@ void Profiler::preLoadOptionsCombo()
     preLoadComboList.insert("-sZ",comboDefault);
 
     // Timing Template
-    comboDefault.first = m_ui->comboTiming;
+    comboDefault.first = m_ui->m_dialogUi->comboTiming;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-T0",comboDefault);
@@ -225,7 +225,7 @@ void Profiler::preLoadOptionsCombo()
     preLoadComboList.insert("-T5",comboDefault);
 
     // Port Range
-    comboDefault.first = m_ui->portCombo;
+    comboDefault.first = m_ui->m_dialogUi->portCombo;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-p-",comboDefault);
@@ -234,10 +234,10 @@ void Profiler::preLoadOptionsCombo()
     comboDefault.second = 3;
     //parameters is request
     preLoadComboList.insert("-p",comboDefault);
-    lineEditList.insert("-p",m_ui->portEdit);
+    lineEditList.insert("-p",m_ui->m_dialogUi->portEdit);
 
     // dns Resolution
-    comboDefault.first = m_ui->comboDNSResolv;
+    comboDefault.first = m_ui->m_dialogUi->comboDNSResolv;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-R",comboDefault);
@@ -245,7 +245,7 @@ void Profiler::preLoadOptionsCombo()
     preLoadComboList.insert("-n",comboDefault);
 
     // verbosity level
-    comboDefault.first = m_ui->comboVerbosity;
+    comboDefault.first = m_ui->m_dialogUi->comboVerbosity;
 
     comboDefault.second = 1;
     preLoadComboList.insert("-v",comboDefault);
@@ -264,39 +264,39 @@ void Profiler::preLoadOptionsCheckBox()
 
     // scan stack
     // ftp bounce
-    checkDefault.first = m_ui->checkFtpBounce;
+    checkDefault.first = m_ui->m_dialogUi->checkFtpBounce;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-b", checkDefault);
-    lineEditList.insert("-b",m_ui->bounceEdit);
+    lineEditList.insert("-b",m_ui->m_dialogUi->bounceEdit);
 
     // idle scan
-    checkDefault.first = m_ui->checkIdleScan;
+    checkDefault.first = m_ui->m_dialogUi->checkIdleScan;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-sI", checkDefault);
-    lineEditList.insert("-sI",m_ui->lineIdleScan);
+    lineEditList.insert("-sI",m_ui->m_dialogUi->lineIdleScan);
 
     // Aggressive scan
-    checkDefault.first = m_ui->checkAggressiveOptions;
+    checkDefault.first = m_ui->m_dialogUi->checkAggressiveOptions;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-A", checkDefault);
 
     // RPC scan
-    checkDefault.first = m_ui->rpcBox;
+    checkDefault.first = m_ui->m_dialogUi->rpcBox;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-sR", checkDefault);
 
     // OS Detection
-    checkDefault.first = m_ui->checkOS;
+    checkDefault.first = m_ui->m_dialogUi->checkOS;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-O", checkDefault);
 
     // Version Probe
-    checkDefault.first = m_ui->versionBox;
+    checkDefault.first = m_ui->m_dialogUi->versionBox;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-sV", checkDefault);
 
     // Ipv6
-    checkDefault.first = m_ui->checkIpv6;
+    checkDefault.first = m_ui->m_dialogUi->checkIpv6;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-6", checkDefault);
 
@@ -305,158 +305,158 @@ void Profiler::preLoadOptionsCheckBox()
     // start ping stack
 
     // Dont'ping
-    checkDefault.first = m_ui->notpingBox;
+    checkDefault.first = m_ui->m_dialogUi->notpingBox;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-P0", checkDefault);
 
     // ICMP echo
-    checkDefault.first = m_ui->checkIcmpEcho;
+    checkDefault.first = m_ui->m_dialogUi->checkIcmpEcho;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-PE", checkDefault);
 
     // ICMP timestamp
-    checkDefault.first = m_ui->checkIcmpTimestamp;
+    checkDefault.first = m_ui->m_dialogUi->checkIcmpTimestamp;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-PP", checkDefault);
 
     // ICMP netmask
-    checkDefault.first = m_ui->checkIcmpNetmask;
+    checkDefault.first = m_ui->m_dialogUi->checkIcmpNetmask;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-PM", checkDefault);
 
     //TCP ack ping
-    checkDefault.first = m_ui->checkTcpPing;
+    checkDefault.first = m_ui->m_dialogUi->checkTcpPing;
     checkDefault.second = "21,23,80,3389";
     preLoadCheckBoxList.insert("-PA", checkDefault);
-    lineEditList.insert("-PA",m_ui->lineTcpPing);
+    lineEditList.insert("-PA",m_ui->m_dialogUi->lineTcpPing);
 
     //TCP syn ping
-    checkDefault.first = m_ui->checkTcpSyn;
+    checkDefault.first = m_ui->m_dialogUi->checkTcpSyn;
     checkDefault.second = "22,25,80";
     preLoadCheckBoxList.insert("-PS", checkDefault);
-    lineEditList.insert("-PS",m_ui->lineSynPing);
+    lineEditList.insert("-PS",m_ui->m_dialogUi->lineSynPing);
 
     // UDP Ping
-    checkDefault.first = m_ui->checkUdpPing;
+    checkDefault.first = m_ui->m_dialogUi->checkUdpPing;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-PU", checkDefault);
-    lineEditList.insert("-PU",m_ui->lineUdpPing);
+    lineEditList.insert("-PU",m_ui->m_dialogUi->lineUdpPing);
 
     // IP proto
-    checkDefault.first = m_ui->checkProtoPing;
+    checkDefault.first = m_ui->m_dialogUi->checkProtoPing;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-PO", checkDefault);
-    lineEditList.insert("-PO",m_ui->lineProtoPing);
+    lineEditList.insert("-PO",m_ui->m_dialogUi->lineProtoPing);
 
     //SCTP init ping
-    checkDefault.first = m_ui->checkSctpPing;
+    checkDefault.first = m_ui->m_dialogUi->checkSctpPing;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-PY", checkDefault);
-    lineEditList.insert("-PY",m_ui->lineSctpPing);
+    lineEditList.insert("-PY",m_ui->m_dialogUi->lineSctpPing);
 
     // end ping stack
     // start timing stack
 
     //Min outstanding
-    checkDefault.first = m_ui->TcheckMinPar;
+    checkDefault.first = m_ui->m_dialogUi->TcheckMinPar;
     checkDefault.second = '1';
     preLoadCheckBoxList.insert("--min-parallelism", checkDefault);
-    spinBoxList.insert("--min-parallelism",m_ui->TspinBoxMinP);
+    spinBoxList.insert("--min-parallelism",m_ui->m_dialogUi->TspinBoxMinP);
 
     //Min outstanding
-    checkDefault.first = m_ui->TcheckMaxPar;
+    checkDefault.first = m_ui->m_dialogUi->TcheckMaxPar;
     checkDefault.second = '1';
     preLoadCheckBoxList.insert("--max-parallelism", checkDefault);
-    spinBoxList.insert("--max-parallelism",m_ui->spinBoxMaxPar);
+    spinBoxList.insert("--max-parallelism",m_ui->m_dialogUi->spinBoxMaxPar);
 
     //Max time
-    checkDefault.first = m_ui->TcheckHostTime;
+    checkDefault.first = m_ui->m_dialogUi->TcheckHostTime;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--host-timeout", checkDefault);
-    spinBoxList.insert("--host-timeout",m_ui->spinBoxHostTime);
+    spinBoxList.insert("--host-timeout",m_ui->m_dialogUi->spinBoxHostTime);
 
     //initial probe
-    checkDefault.first = m_ui->TcheckInitRtt;
+    checkDefault.first = m_ui->m_dialogUi->TcheckInitRtt;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--initial-rtt-timeout", checkDefault);
-    spinBoxList.insert("--initial-rtt-timeout",m_ui->spinBoxInitRtt);
+    spinBoxList.insert("--initial-rtt-timeout",m_ui->m_dialogUi->spinBoxInitRtt);
 
     //min probe
-    checkDefault.first = m_ui->TcheckMinRtt;
+    checkDefault.first = m_ui->m_dialogUi->TcheckMinRtt;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--min-rtt-timeout", checkDefault);
-    spinBoxList.insert("--min-rtt-timeout",m_ui->spinBoxMinRtt);
+    spinBoxList.insert("--min-rtt-timeout",m_ui->m_dialogUi->spinBoxMinRtt);
 
     //max probe
-    checkDefault.first = m_ui->TcheckMaxRtt;
+    checkDefault.first = m_ui->m_dialogUi->TcheckMaxRtt;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--max-rtt-timeout", checkDefault);
-    spinBoxList.insert("--max-rtt-timeout",m_ui->spinBoxMaxRtt);
+    spinBoxList.insert("--max-rtt-timeout",m_ui->m_dialogUi->spinBoxMaxRtt);
 
     //scan delay
-    checkDefault.first = m_ui->TcheckScanDelay;
+    checkDefault.first = m_ui->m_dialogUi->TcheckScanDelay;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--scan-delay", checkDefault);
-    spinBoxList.insert("--scan-delay",m_ui->spinBoxScanDelay);
+    spinBoxList.insert("--scan-delay",m_ui->m_dialogUi->spinBoxScanDelay);
 
     //Max scan
-    checkDefault.first = m_ui->TcheckScanDelayMax;
+    checkDefault.first = m_ui->m_dialogUi->TcheckScanDelayMax;
     checkDefault.second = "6000";
     preLoadCheckBoxList.insert("--max-scan-delay", checkDefault);
-    spinBoxList.insert("--max-scan-delay",m_ui->spinBoxScanDelayMax);
+    spinBoxList.insert("--max-scan-delay",m_ui->m_dialogUi->spinBoxScanDelayMax);
 
     // end timing stack
 
     // start options
 
     // network interface
-    checkDefault.first = m_ui->checkBoxDevice;
+    checkDefault.first = m_ui->m_dialogUi->checkBoxDevice;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-e", checkDefault);
-    lineEditList.insert("-e",m_ui->OlineDevice);
+    lineEditList.insert("-e",m_ui->m_dialogUi->OlineDevice);
 
     // source spoof ip
-    checkDefault.first = m_ui->checkSpoof;
+    checkDefault.first = m_ui->m_dialogUi->checkSpoof;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-S", checkDefault);
-    lineEditList.insert("-S",m_ui->lineEditSpoof);
+    lineEditList.insert("-S",m_ui->m_dialogUi->lineEditSpoof);
 
     // set decoy
-    checkDefault.first = m_ui->checkDecoy;
+    checkDefault.first = m_ui->m_dialogUi->checkDecoy;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-D", checkDefault);
-    lineEditList.insert("-D",m_ui->lineDecoy);
+    lineEditList.insert("-D",m_ui->m_dialogUi->lineDecoy);
 
     // source spoof port
-    checkDefault.first = m_ui->checkSourcePort;
+    checkDefault.first = m_ui->m_dialogUi->checkSourcePort;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-g", checkDefault);
-    lineEditList.insert("-g",m_ui->lineSourcePort);
+    lineEditList.insert("-g",m_ui->m_dialogUi->lineSourcePort);
 
     // ipv4 ttl
-    checkDefault.first = m_ui->TcheckIpv4ttl;
+    checkDefault.first = m_ui->m_dialogUi->TcheckIpv4ttl;
     checkDefault.second = "127";
     preLoadCheckBoxList.insert("--ttl", checkDefault);
-    spinBoxList.insert("--ttl",m_ui->spinBoxIpv4ttl);
+    spinBoxList.insert("--ttl",m_ui->m_dialogUi->spinBoxIpv4ttl);
 
     // max retries
-    checkDefault.first = m_ui->checkMaxRetries;
+    checkDefault.first = m_ui->m_dialogUi->checkMaxRetries;
     checkDefault.second = "";
     preLoadCheckBoxList.insert("--max-retries", checkDefault);
-    lineEditList.insert("--max-retries",m_ui->lineMaxRetries);
+    lineEditList.insert("--max-retries",m_ui->m_dialogUi->lineMaxRetries);
 
     // ordered scanned
-    checkDefault.first = m_ui->checkOrdered;
+    checkDefault.first = m_ui->m_dialogUi->checkOrdered;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-r", checkDefault);
 
     // fragment IP
-    checkDefault.first = m_ui->checkFrag;
+    checkDefault.first = m_ui->m_dialogUi->checkFrag;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-f", checkDefault);
 
     // traceroute
-    checkDefault.first = m_ui->checkTraceroute;
+    checkDefault.first = m_ui->m_dialogUi->checkTraceroute;
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("--traceroute", checkDefault);
 
@@ -502,9 +502,9 @@ QStringList Profiler::buildExtensions()
         }
 
         // load nse manual script
-        if (!m_ui->comboNseInv->lineEdit()->text().isEmpty())
+        if (!m_ui->m_dialogUi->comboNseInv->lineEdit()->text().isEmpty())
         {
-            QStringList manualNse = m_ui->comboNseInv->lineEdit()->text().split(',');
+            QStringList manualNse = m_ui->m_dialogUi->comboNseInv->lineEdit()->text().split(',');
             Q_FOREACH (const QString& token, manualNse)
             {
                 tmpList_.append(token);
@@ -519,9 +519,9 @@ QStringList Profiler::buildExtensions()
             tmpListScript_.append(tmpList_);
         }
 
-        if (!m_ui->comboNsePar->lineEdit()->text().isEmpty())
+        if (!m_ui->m_dialogUi->comboNsePar->lineEdit()->text().isEmpty())
         {
-            QString argsClean = m_ui->comboNsePar->lineEdit()->text().remove('"');
+            QString argsClean = m_ui->m_dialogUi->comboNsePar->lineEdit()->text().remove('"');
             argsClean = argsClean.remove('\'');
             QStringList argsNse = argsClean.split(',');
             Q_FOREACH (const QString& token, argsNse)
@@ -542,7 +542,7 @@ QStringList Profiler::buildExtensions()
         parameters << tmpListScript_;
     } // End NSE check
 
-    switch (m_ui->comboScanTcp->currentIndex()) { //scan check
+    switch (m_ui->m_dialogUi->comboScanTcp->currentIndex()) { //scan check
     case 1:
 //    Connect Scan
         parameters << "-sT";
@@ -581,7 +581,7 @@ QStringList Profiler::buildExtensions()
         break;
     } // end switch scan
 
-    switch(m_ui->comboScanNonTcp->currentIndex())
+    switch(m_ui->m_dialogUi->comboScanNonTcp->currentIndex())
     {
     case 1:
         //Host List
@@ -605,56 +605,56 @@ QStringList Profiler::buildExtensions()
         break;
     }
 
-    if (m_ui->checkFtpBounce->isChecked() && !m_ui->bounceEdit->text().isEmpty())
+    if (m_ui->m_dialogUi->checkFtpBounce->isChecked() && !m_ui->m_dialogUi->bounceEdit->text().isEmpty())
     {
         // FTP Bounce attack
         parameters << "-b";
-        parameters << m_ui->bounceEdit->text();
+        parameters << m_ui->m_dialogUi->bounceEdit->text();
     }
     else
     {
-        m_ui->checkFtpBounce->setCheckState(Qt::Unchecked);
+        m_ui->m_dialogUi->checkFtpBounce->setCheckState(Qt::Unchecked);
     }
 
-    if (m_ui->checkIdleScan->isChecked() && !m_ui->lineIdleScan->text().isEmpty())
+    if (m_ui->m_dialogUi->checkIdleScan->isChecked() && !m_ui->m_dialogUi->lineIdleScan->text().isEmpty())
     {
         // Idle scan
         parameters << "-sI";
-        parameters << m_ui->lineIdleScan->text();
+        parameters << m_ui->m_dialogUi->lineIdleScan->text();
     }
     else
     {
-        m_ui->checkIdleScan->setCheckState(Qt::Unchecked);
+        m_ui->m_dialogUi->checkIdleScan->setCheckState(Qt::Unchecked);
     }
 
     // Aggressive options
-    if (m_ui->checkAggressiveOptions->isChecked())
+    if (m_ui->m_dialogUi->checkAggressiveOptions->isChecked())
     {
         parameters << "-A";
     }
     // start option scan
-    if (m_ui->rpcBox->isChecked())
+    if (m_ui->m_dialogUi->rpcBox->isChecked())
     {
         parameters << "-sR";
     }
 
-    if (m_ui->versionBox->isChecked())
+    if (m_ui->m_dialogUi->versionBox->isChecked())
     {
         parameters << "-sV";
     }
 
-    if (m_ui->notpingBox->isChecked())
+    if (m_ui->m_dialogUi->notpingBox->isChecked())
     {
         parameters << "-P0";
     }
 
-    if (m_ui->checkOS->isChecked())
+    if (m_ui->m_dialogUi->checkOS->isChecked())
     {
         parameters << "-O";
     }
     //end Extension
 
-    switch (m_ui->portCombo->currentIndex())
+    switch (m_ui->m_dialogUi->portCombo->currentIndex())
     { // port combo check
     case 1:
 //    All
@@ -666,10 +666,10 @@ QStringList Profiler::buildExtensions()
         break;
     case 3:
 //    Range
-        if (!m_ui->portEdit->text().isEmpty())
+        if (!m_ui->m_dialogUi->portEdit->text().isEmpty())
         {
             parameters << "-p";
-            parameters << m_ui->portEdit->text();
+            parameters << m_ui->m_dialogUi->portEdit->text();
         }
         else
         {
@@ -680,77 +680,77 @@ QStringList Profiler::buildExtensions()
     }
 
 
-    if (m_ui->checkTcpPing->isChecked())
+    if (m_ui->m_dialogUi->checkTcpPing->isChecked())
     { // Discover options (tcp ack)
         QString tmpCommand;
         tmpCommand.append("-PA");
-        tmpCommand.append(m_ui->lineTcpPing->text());
+        tmpCommand.append(m_ui->m_dialogUi->lineTcpPing->text());
         parameters << tmpCommand;
     }
 
-    if (m_ui->checkTcpSyn->isChecked())
+    if (m_ui->m_dialogUi->checkTcpSyn->isChecked())
     { // Discover options (tcp syn)
 
         QString tmpCommand;
         tmpCommand.append("-PS");
-        tmpCommand.append(m_ui->lineSynPing->text());
+        tmpCommand.append(m_ui->m_dialogUi->lineSynPing->text());
         parameters << tmpCommand;
     }
 
-    if (m_ui->checkUdpPing->isChecked())
+    if (m_ui->m_dialogUi->checkUdpPing->isChecked())
     { // Discover options (tcp syn)
         QString tmpCommand;
         tmpCommand.append("-PU");
-        if (!m_ui->lineUdpPing->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineUdpPing->text().isEmpty())
         {
-            tmpCommand.append(m_ui->lineUdpPing->text());
+            tmpCommand.append(m_ui->m_dialogUi->lineUdpPing->text());
         }
         parameters << tmpCommand;
     }
 
-    if (m_ui->checkProtoPing->isChecked())
+    if (m_ui->m_dialogUi->checkProtoPing->isChecked())
     { // IPProto ping (tcp syn)
         QString tmpCommand;
         tmpCommand.append("-PO");
 
-        if (!m_ui->lineProtoPing->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineProtoPing->text().isEmpty())
         {
-            tmpCommand.append(m_ui->lineUdpPing->text());
+            tmpCommand.append(m_ui->m_dialogUi->lineUdpPing->text());
         }
 
         parameters << tmpCommand;
     }
 
-    if (m_ui->checkSctpPing->isChecked())
+    if (m_ui->m_dialogUi->checkSctpPing->isChecked())
     { // IPProto ping (tcp syn)
         QString tmpCommand;
         tmpCommand.append("-PY");
 
-        if (!m_ui->lineSctpPing->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineSctpPing->text().isEmpty())
         {
-            tmpCommand.append(m_ui->lineSctpPing->text());
+            tmpCommand.append(m_ui->m_dialogUi->lineSctpPing->text());
         }
 
         parameters << tmpCommand;
     }
 
     // Discover option
-    if (m_ui->checkIcmpEcho->isChecked())
+    if (m_ui->m_dialogUi->checkIcmpEcho->isChecked())
     {
         parameters << "-PE";
     }
 
-    if (m_ui->checkIcmpTimestamp->isChecked())
+    if (m_ui->m_dialogUi->checkIcmpTimestamp->isChecked())
     {
         parameters << "-PP";
     }
 
-    if (m_ui->checkIcmpNetmask->isChecked())
+    if (m_ui->m_dialogUi->checkIcmpNetmask->isChecked())
     {
         parameters << "-PM";
     }
 
-    switch (m_ui->comboTiming->currentIndex())
+    switch (m_ui->m_dialogUi->comboTiming->currentIndex())
     { // port combo Timing
     case 1:
         //Paranoid
@@ -780,7 +780,7 @@ QStringList Profiler::buildExtensions()
         break;
     }
 
-    switch (m_ui->comboDNSResolv->currentIndex())
+    switch (m_ui->m_dialogUi->comboDNSResolv->currentIndex())
     { // port DNS resolv
     case 1:
 //    Always
@@ -794,7 +794,7 @@ QStringList Profiler::buildExtensions()
         break;
     }
 
-    switch (m_ui->comboVerbosity->currentIndex())
+    switch (m_ui->m_dialogUi->comboVerbosity->currentIndex())
     { // port DNS resolv
     case 1:
 //    Verbose
@@ -817,144 +817,144 @@ QStringList Profiler::buildExtensions()
     }
 
     // Misc Options
-    if (m_ui->checkOrdered->isChecked())
+    if (m_ui->m_dialogUi->checkOrdered->isChecked())
     {
         parameters << "-r"; // Ordered Port
     }
 
-    if (m_ui->checkIpv6->isChecked())
+    if (m_ui->m_dialogUi->checkIpv6->isChecked())
     {
         parameters << "-6"; // Ipv6
     }
 
-    if (m_ui->checkFrag->isChecked())
+    if (m_ui->m_dialogUi->checkFrag->isChecked())
     {
         parameters << "-f";
     }
 
     // traceroute
-    if (m_ui->checkTraceroute->isChecked())
+    if (m_ui->m_dialogUi->checkTraceroute->isChecked())
     {
         parameters << "--traceroute";
     }
 
-    if (m_ui->checkMaxRetries->isChecked())
+    if (m_ui->m_dialogUi->checkMaxRetries->isChecked())
     {
         parameters << "--max-retries";
-        if (!m_ui->lineMaxRetries->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineMaxRetries->text().isEmpty())
         {
-            parameters << m_ui->lineMaxRetries->text();
+            parameters << m_ui->m_dialogUi->lineMaxRetries->text();
         }
     }
 
     // Timing options
-    if (m_ui->TcheckIpv4ttl->isChecked())
+    if (m_ui->m_dialogUi->TcheckIpv4ttl->isChecked())
     {
         parameters << "--ttl";
-        parameters << m_ui->spinBoxIpv4ttl->text();
+        parameters << m_ui->m_dialogUi->spinBoxIpv4ttl->text();
     }
 
-    if (m_ui->TcheckMinPar->isChecked())
+    if (m_ui->m_dialogUi->TcheckMinPar->isChecked())
     {
         parameters << "--min-parallelism";
-        parameters << m_ui->TspinBoxMinP->text();
+        parameters << m_ui->m_dialogUi->TspinBoxMinP->text();
     }
 
-    if (m_ui->TcheckMaxPar->isChecked())
+    if (m_ui->m_dialogUi->TcheckMaxPar->isChecked())
     {
         parameters << "--max-parallelism";
-        parameters << m_ui->spinBoxMaxPar->text();
+        parameters << m_ui->m_dialogUi->spinBoxMaxPar->text();
     }
 
-    if (m_ui->TcheckInitRtt->isChecked())
+    if (m_ui->m_dialogUi->TcheckInitRtt->isChecked())
     {
         parameters << "--initial-rtt-timeout";
-        parameters << m_ui->spinBoxInitRtt->text();
+        parameters << m_ui->m_dialogUi->spinBoxInitRtt->text();
     }
 
-    if (m_ui->TcheckMinRtt->isChecked())
+    if (m_ui->m_dialogUi->TcheckMinRtt->isChecked())
     {
         parameters << "--min-rtt-timeout";
-        parameters << m_ui->spinBoxMinRtt->text();
+        parameters << m_ui->m_dialogUi->spinBoxMinRtt->text();
     }
 
-    if (m_ui->TcheckMaxRtt->isChecked())
+    if (m_ui->m_dialogUi->TcheckMaxRtt->isChecked())
     {
         parameters << "--max-rtt-timeout";
-        parameters << m_ui->spinBoxMaxRtt->text();
+        parameters << m_ui->m_dialogUi->spinBoxMaxRtt->text();
     }
 
-    if (m_ui->TcheckHostTime->isChecked())
+    if (m_ui->m_dialogUi->TcheckHostTime->isChecked())
     {
         parameters << "--host-timeout";
-        parameters << m_ui->spinBoxHostTime->text();
+        parameters << m_ui->m_dialogUi->spinBoxHostTime->text();
     }
 
-    if (m_ui->TcheckScanDelay->isChecked())
+    if (m_ui->m_dialogUi->TcheckScanDelay->isChecked())
     {
         parameters << "--scan-delay";
-        parameters << m_ui->spinBoxScanDelay->text();
+        parameters << m_ui->m_dialogUi->spinBoxScanDelay->text();
     }
 
-    if (m_ui->TcheckScanDelayMax->isChecked())
+    if (m_ui->m_dialogUi->TcheckScanDelayMax->isChecked())
     {
         parameters << "--max-scan-delay";
-        parameters << m_ui->spinBoxScanDelayMax->text();
+        parameters << m_ui->m_dialogUi->spinBoxScanDelayMax->text();
     }
 
     //Options
-    if (m_ui->checkBoxDevice->isChecked() && !m_ui->OlineDevice->text().isEmpty())
+    if (m_ui->m_dialogUi->checkBoxDevice->isChecked() && !m_ui->m_dialogUi->OlineDevice->text().isEmpty())
     { // Discover options (tcp syn)
             parameters << "-e";
-            parameters << m_ui->OlineDevice->text();
+            parameters << m_ui->m_dialogUi->OlineDevice->text();
     }
     else
     {
-        m_ui->checkBoxDevice->setCheckState(Qt::Unchecked);
+        m_ui->m_dialogUi->checkBoxDevice->setCheckState(Qt::Unchecked);
     }
 
-    if (m_ui->checkDecoy->isChecked())
+    if (m_ui->m_dialogUi->checkDecoy->isChecked())
     { // Discover options (tcp syn)
-        if (!m_ui->lineDecoy->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineDecoy->text().isEmpty())
         {
             parameters << "-D";
-            parameters << m_ui->lineDecoy->text();
+            parameters << m_ui->m_dialogUi->lineDecoy->text();
 
         }
         else
         {
             QMessageBox::warning(m_ui, "NmapSI4", "Please, first insert a Decoy\n", "Disable Option");
-            m_ui->checkDecoy->setCheckState(Qt::Unchecked);
+            m_ui->m_dialogUi->checkDecoy->setCheckState(Qt::Unchecked);
         }
     }
 
-    if (m_ui->checkSpoof->isChecked())
+    if (m_ui->m_dialogUi->checkSpoof->isChecked())
     { // Spoof options
-        if (!m_ui->lineEditSpoof->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineEditSpoof->text().isEmpty())
         {
             parameters << "-S";
-            parameters << m_ui->lineEditSpoof->text();
+            parameters << m_ui->m_dialogUi->lineEditSpoof->text();
 
         }
         else
         {
             QMessageBox::warning(m_ui, "NmapSI4", "Please, insert spoof address\n", "Disable Option");
-            m_ui->checkSpoof->setCheckState(Qt::Unchecked);
+            m_ui->m_dialogUi->checkSpoof->setCheckState(Qt::Unchecked);
         }
     }
 
-    if (m_ui->checkSourcePort->isChecked())
+    if (m_ui->m_dialogUi->checkSourcePort->isChecked())
     { // Spoof options
-        if (!m_ui->lineSourcePort->text().isEmpty())
+        if (!m_ui->m_dialogUi->lineSourcePort->text().isEmpty())
         {
             parameters << "-g";
-            parameters << m_ui->lineSourcePort->text();
+            parameters << m_ui->m_dialogUi->lineSourcePort->text();
 
         }
         else
         {
             QMessageBox::warning(m_ui, "NmapSI4", "Please, insert port address\n", "Disable Option");
-            m_ui->checkSourcePort->setCheckState(Qt::Unchecked);
+            m_ui->m_dialogUi->checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }
 

@@ -47,13 +47,13 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 
     if (m_nseScriptAvailList.indexOf(item->text(0)) != -1)
     {
-        m_ui->nseActiveBut->setEnabled(true);
-        m_ui->nseRemoveBut->setEnabled(false);
+        m_ui->m_dialogUi->nseActiveBut->setEnabled(true);
+        m_ui->m_dialogUi->nseRemoveBut->setEnabled(false);
     }
     else
     {
-        m_ui->nseActiveBut->setEnabled(false);
-        m_ui->nseRemoveBut->setEnabled(true);
+        m_ui->m_dialogUi->nseActiveBut->setEnabled(false);
+        m_ui->m_dialogUi->nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = m_nseHelpCache.find(item->text(0));
@@ -79,13 +79,13 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
     {
         // category on cache
         qDebug() << "DEBUG:: load help from cache";
-        m_ui->nseTextHelp->setDocument(i.value());
+        m_ui->m_dialogUi->nseTextHelp->setDocument(i.value());
     }
 }
 
 void NseManager::requestNseScriptHelp()
 {
-    QString searchString_ = m_ui->comboScriptHelp->currentText();
+    QString searchString_ = m_ui->m_dialogUi->comboScriptHelp->currentText();
     if (searchString_.isEmpty())
     {
         return;
@@ -119,7 +119,7 @@ void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QB
     // insert document on cache
     m_nseHelpCache.insert(parameters[parameters.size()-1],document);
     // load document
-    m_ui->nseTextHelp->setDocument(document);
+    m_ui->m_dialogUi->nseTextHelp->setDocument(document);
 }
 
 void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray result, QByteArray errors)
@@ -143,7 +143,7 @@ void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     }
 
     m_documentScript = new QTextDocument(result_);
-    m_ui->textScriptHelp->setDocument(m_documentScript.data());
+    m_ui->m_dialogUi->textScriptHelp->setDocument(m_documentScript.data());
 }
 
 void NseManager::nseTreeDefaultValue()
@@ -177,7 +177,7 @@ void NseManager::nseTreeAvailRestoreValues()
 
     foreach (const QString &token, m_nseScriptAvailList)
     {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->nseTreeAvail);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeAvail);
         m_itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-typedef.png")));
@@ -195,7 +195,7 @@ void NseManager::nseTreeActiveRestoreValues()
 
     foreach (const QString &token, m_nseScriptActiveList)
     {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->nseTreeActive);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeActive);
         m_itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/code-function.png")));
@@ -206,7 +206,7 @@ void NseManager::nseTreeActiveRestoreValues()
 
 void NseManager::nseTreeActiveItem()
 {
-    int indexNseItem = m_ui->nseTreeAvail->indexOfTopLevelItem(m_ui->nseTreeAvail->currentItem());
+    int indexNseItem = m_ui->m_dialogUi->nseTreeAvail->indexOfTopLevelItem(m_ui->m_dialogUi->nseTreeAvail->currentItem());
 
     if (indexNseItem != -1)
     {
@@ -223,7 +223,7 @@ void NseManager::nseTreeActiveItem()
 
 void NseManager::nseTreeRemoveItem()
 {
-    int indexNseItem = m_ui->nseTreeActive->indexOfTopLevelItem(m_ui->nseTreeActive->currentItem());
+    int indexNseItem = m_ui->m_dialogUi->nseTreeActive->indexOfTopLevelItem(m_ui->m_dialogUi->nseTreeActive->currentItem());
 
     if (indexNseItem != -1)
     {

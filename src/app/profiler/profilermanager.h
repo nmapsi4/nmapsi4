@@ -42,16 +42,17 @@ namespace Ui
 
 class MainWindow;
 
-class ProfilerManager : public QDialog, public Ui::profilerDialog
+class ProfilerManager : public QDialog
 {
     Q_OBJECT
 
 public:
     ProfilerManager(MainWindow* parent);
     ProfilerManager(const QString profileName, const QString parameters, MainWindow* parent);
-    ~ProfilerManager();
+    virtual ~ProfilerManager();
 
     NseManager* m_nseManager;
+    Ui::profilerDialog *m_dialogUi;
 
 private:
     void initObject();
