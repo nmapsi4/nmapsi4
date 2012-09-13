@@ -39,6 +39,11 @@ class DigManager : public QObject
     */
     Q_OBJECT
 public:
+    enum DigRequestType
+    {
+        Verbose,
+        Short
+    };
     /*!
      * Create a object for dig lookup Class.
      */
@@ -47,7 +52,7 @@ public:
     /*!
      * Start QThread dig for hostname.
      */
-    void startProcess(const QString hostname, PObjectLookup* objElem);
+    void digRequest(const QString hostname, PObjectLookup* objElem, DigRequestType type);
 
 private:
     PObjectLookup* m_elemObjUtil;
@@ -58,7 +63,8 @@ private slots:
     /*!
      * Set dig result on parser Object utils (objElem)
      */
-    void digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
+    void longDigAnswer(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
+    void shortDigAnswer(const QStringList hostname, QByteArray bufferData, QByteArray bufferError);
 
 signals:
     /*!

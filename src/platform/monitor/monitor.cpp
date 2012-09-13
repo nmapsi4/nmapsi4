@@ -196,13 +196,11 @@ void Monitor::startScan(const QString hostname, QStringList parameters)
 
 void Monitor::startLookup(const QString hostname, LookupType option)
 {
-    if (option == DisabledLookup || !HostTools::isDns(hostname))
-    {
+    if (option == DisabledLookup || !HostTools::isDns(hostname)) {
         return;
     }
 
-    if (option == InternalLookup)
-    {
+    if (option == InternalLookup) {
         LookupManager *internalLookupPtr = new LookupManager(hostname);
         m_internealLookupList.push_back(internalLookupPtr);
 
@@ -210,15 +208,13 @@ void Monitor::startLookup(const QString hostname, LookupType option)
                 this, SLOT(lookupFinisced(QHostInfo,int,QString)));
 
         internalLookupPtr->start();
-    }
-    else
-    {
+    } else {
         PObjectLookup* tmpParserObj_ = new PObjectLookup();
 
-        DigManager *digC = new DigManager();
-        m_digLookupList.push_back(digC);
+        DigManager *digManager = new DigManager();
+        m_digLookupList.push_back(digManager);
 
-        digC->startProcess(hostname,tmpParserObj_);
+        digManager->digRequest(hostname,tmpParserObj_,DigManager::Verbose);
 
         tmpParserObj_->setId(m_hostIdList.value(hostname));
         m_ui->m_parser->addUtilObject(tmpParserObj_);
@@ -241,8 +237,7 @@ void Monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
 
 void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
 {
-    if(state == -1)
-    {
+    if(state == -1) {
         //QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         qWarning() << "Monitor:: Wrong Address for lookUp";
         return;
@@ -252,8 +247,7 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
 
     elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();
-    for(int index=0; index < infoSize_; index++)
-    {
+    for(int index=0; index < infoSize_; index++) {
         elemObjUtil->setInfoLookup(info.addresses()[index].toString());
     }
 
@@ -263,10 +257,8 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
 
 void Monitor::delMonitorHost(const QString hostName)
 {
-     for(int i=0; i < m_monitorElem.size(); i++)
-     {
-          if(m_monitorElem[i]->text(0) == hostName)
-          {
+     for(int i=0; i < m_monitorElem.size(); i++) {
+          if(m_monitorElem[i]->text(0) == hostName) {
               // remove host from monitor and list.
               delete m_monitorElem.takeAt(i);
               break;
@@ -281,10 +273,8 @@ void Monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
     Q_ASSERT(valueIndex < m_monitor->columnCount());
 
     QList<QTreeWidgetItem*>::const_iterator i;
-    for (i = m_monitorElem.constBegin(); i != m_monitorElem.constEnd(); ++i)
-    {
-        if ((*i)->text(0) == hostName)
-        {
+    for (i = m_monitorElem.constBegin(); i != m_monitorElem.constEnd(); ++i) {
+        if ((*i)->text(0) == hostName) {
             (*i)->setText(valueIndex,newData);
         }
 
@@ -298,8 +288,7 @@ void Monitor::clearHostMonitor()
     freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
     freelist<DigManager*>::itemDeleteAll(m_digLookupList);
 
-    if (m_timer->isActive())
-    {
+    if (m_timer->isActive()) {
         m_timer->stop();
     }
 

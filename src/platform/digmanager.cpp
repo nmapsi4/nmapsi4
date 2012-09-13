@@ -30,10 +30,16 @@ DigManager::~DigManager()
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-void DigManager::startProcess(const QString hostname, PObjectLookup* objElem)
+void DigManager::digRequest(const QString hostname, PObjectLookup* objElem, DigRequestType type)
 {
     QStringList command;
-    command << hostname;
+
+    if (type == Verbose) {
+        command << hostname;
+    } else {
+        command << "+short";
+        command << hostname;
+    }
 
     m_hostNameLocal = hostname;
     m_elemObjUtil = objElem;
@@ -41,13 +47,18 @@ void DigManager::startProcess(const QString hostname, PObjectLookup* objElem)
     QWeakPointer<ProcessThread> m_th = new ProcessThread("dig",command);
     m_threadList.push_back(m_th.data());
 
-    connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-      this, SLOT(digReturn(QStringList,QByteArray,QByteArray)));
+    if (type == Verbose) {
+        connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+                this, SLOT(longDigAnswer(QStringList,QByteArray,QByteArray)));
+    } else {
+        connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+                this, SLOT(shortDigAnswer(QStringList,QByteArray,QByteArray)));
+    }
 
     m_th.data()->start();
 }
 
-void DigManager::digReturn(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
+void DigManager::longDigAnswer(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
 {
     Q_UNUSED(hostname);
 
@@ -55,8 +66,7 @@ void DigManager::digReturn(const QStringList hostname, QByteArray bufferData, QB
      * TODO: remove this check with QT5 QStandardPaths::findExecutable.
      *
      */
-    if(!bufferData.size() && bufferError.size())
-    {
+    if(!bufferData.size() && bufferError.size()) {
         qWarning() << "Error: Dig is not installed.";
         return;
     }
@@ -67,15 +77,42 @@ void DigManager::digReturn(const QStringList hostname, QByteArray bufferData, QB
 
     m_elemObjUtil->setHostName(m_hostNameLocal);
 
-    while(!stream1.atEnd())
-    {
+    while(!stream1.atEnd()) {
         line = stream1.readLine();
         if(!line.startsWith(QLatin1String(";;"))
             && !line.startsWith(QLatin1String(";"))
-            && !line.isEmpty())
-        {
+            && !line.isEmpty()) {
             m_elemObjUtil->setInfoLookup(line);
         }
+    }
+
+    // clear thread
+    bufferData.clear();
+    bufferError.clear();
+}
+
+void DigManager::shortDigAnswer(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)
+{
+    Q_UNUSED(hostname);
+
+    /*
+     * TODO: remove this check with QT5 QStandardPaths::findExecutable.
+     *
+     */
+    if(!bufferData.size() && bufferError.size()) {
+        qWarning() << "Error: Dig is not installed.";
+        return;
+    }
+
+    QString buff1(bufferData);
+    QTextStream stream1(&buff1);
+    QString line;
+
+    m_elemObjUtil->setHostName(m_hostNameLocal);
+
+    while(!stream1.atEnd()) {
+        line = stream1.readLine();
+        m_elemObjUtil->setInfoLookup(line);
     }
 
     // clear thread
