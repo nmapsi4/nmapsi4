@@ -112,6 +112,10 @@ void DiscoverManager::startDiscover()
     {
         if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack))
         {
+            /*
+             * TODO: readable name for windows - humanReadableName()
+             * ID is configurable on MS windows.
+             */
             m_ui->comboDiscover->insertItem(1, interface.name());
         }
     }
