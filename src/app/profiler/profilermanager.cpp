@@ -42,6 +42,9 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
     reloadScanParameters();
 
     setWindowTitle(tr("Edit profile ") + QString("\"") + profileName + QString("\"") + " - Nmapsi4");
+    // disable combo base option
+    comboBaseOptions->setVisible(false);
+    baseLabelCombo->setVisible(false);
 }
 
 void ProfilerManager::initObject()
