@@ -472,7 +472,11 @@
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="lineIdleScan"/>
+                 <widget class="QLineEdit" name="lineIdleScan">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item row="5" column="0">
                  <widget class="QCheckBox" name="checkAggressiveOptions">
@@ -527,7 +531,7 @@
                 <item row="4" column="1">
                  <widget class="QLineEdit" name="lineTcpPing">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="text">
                    <string>21,23,80,3389</string>
@@ -544,7 +548,7 @@
                 <item row="5" column="1">
                  <widget class="QLineEdit" name="lineSynPing">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="text">
                    <string>22,25,80</string>
@@ -561,7 +565,7 @@
                 <item row="7" column="1">
                  <widget class="QLineEdit" name="lineUdpPing">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -601,7 +605,11 @@
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QLineEdit" name="lineProtoPing"/>
+                 <widget class="QLineEdit" name="lineProtoPing">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item row="9" column="0">
                  <widget class="QCheckBox" name="checkSctpPing">
@@ -611,7 +619,11 @@
                  </widget>
                 </item>
                 <item row="9" column="1">
-                 <widget class="QLineEdit" name="lineSctpPing"/>
+                 <widget class="QLineEdit" name="lineSctpPing">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -659,7 +671,7 @@
                 <item row="0" column="1">
                  <widget class="QSpinBox" name="TspinBoxMinP">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -679,7 +691,7 @@
                 <item row="1" column="1">
                  <widget class="QSpinBox" name="spinBoxMaxPar">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -699,7 +711,7 @@
                 <item row="2" column="1">
                  <widget class="QSpinBox" name="spinBoxHostTime">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>201</number>
@@ -722,7 +734,7 @@
                 <item row="3" column="1">
                  <widget class="QSpinBox" name="spinBoxInitRtt">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="maximum">
                    <number>9999999</number>
@@ -742,7 +754,7 @@
                 <item row="4" column="1">
                  <widget class="QSpinBox" name="spinBoxMinRtt">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -765,7 +777,7 @@
                 <item row="5" column="1">
                  <widget class="QSpinBox" name="spinBoxMaxRtt">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>6</number>
@@ -788,7 +800,7 @@
                 <item row="6" column="1">
                  <widget class="QSpinBox" name="spinBoxScanDelay">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -810,6 +822,9 @@
                 </item>
                 <item row="7" column="1">
                  <widget class="QSpinBox" name="spinBoxScanDelayMax">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="minimum">
                    <number>1</number>
                   </property>
@@ -1034,7 +1049,7 @@
                 <item row="3" column="1">
                  <widget class="QSpinBox" name="spinBoxIpv4ttl">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="maximum">
                    <number>255</number>
@@ -1052,7 +1067,11 @@
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="lineMaxRetries"/>
+                 <widget class="QLineEdit" name="lineMaxRetries">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item row="7" column="0">
                  <widget class="QCheckBox" name="checkTraceroute">
@@ -1335,5 +1354,342 @@
  <resources>
   <include location="../../../mainwin.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkFtpBounce</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bounceEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkIdleScan</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineIdleScan</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkTcpPing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineTcpPing</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkTcpSyn</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineSynPing</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>269</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpPing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineUdpPing</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkProtoPing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineProtoPing</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSctpPing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineSctpPing</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckMinPar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>TspinBoxMinP</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>513</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckMaxPar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxMaxPar</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>377</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckHostTime</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxHostTime</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>483</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckInitRtt</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxInitRtt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>485</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckMinRtt</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxMinRtt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckMaxRtt</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxMaxRtt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>495</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckScanDelay</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxScanDelay</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>432</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckScanDelayMax</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxScanDelayMax</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>406</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoxDevice</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OlineDevice</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>387</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSpoof</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineEditSpoof</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>394</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkDecoy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineDecoy</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSourcePort</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineSourcePort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>294</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>371</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TcheckIpv4ttl</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinBoxIpv4ttl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkMaxRetries</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineMaxRetries</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>407</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>409</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

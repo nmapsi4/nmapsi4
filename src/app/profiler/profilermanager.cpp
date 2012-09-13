@@ -257,50 +257,14 @@ void ProfilerManager::loadDefaultComboValues()
 
 void ProfilerManager::updateOptions()
 {
-    if (checkBoxDevice->isChecked())
-    {
-        OlineDevice->setEnabled(true);
-    }
-    else
-    {
-        OlineDevice->setEnabled(false);
-        OlineDevice->clear();
-    }
-
-    if (checkDecoy->isChecked())
-    {
-        lineDecoy->setEnabled(true);
-    }
-    else
-    {
-        lineDecoy->setEnabled(false);
-        lineDecoy->clear();
-    }
-
     if (checkSpoof->isChecked())
     {
-        lineEditSpoof->setEnabled(true);
         comboScanTcp->setCurrentIndex(1);
-        notpingBox->setChecked(true);
-        checkBoxDevice->setChecked(true);
-    }
-    else
-    {
-        lineEditSpoof->setEnabled(false);
-        lineEditSpoof->clear();
-        checkBoxDevice->setCheckState(Qt::Unchecked);
-        notpingBox->setChecked(false);
     }
 
     if (checkSourcePort->isChecked())
     {
-        lineSourcePort->setEnabled(true);
         comboScanTcp->setCurrentIndex(3);
-    }
-    else
-    {
-        lineSourcePort->setEnabled(false);
-        lineSourcePort->clear();
     }
 }
 
