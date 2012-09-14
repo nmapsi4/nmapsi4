@@ -31,7 +31,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverHorizontalSplitter = new QSplitter(m_ui);
     m_discoverHorizontalSplitter->setOrientation(Qt::Horizontal);
     m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverTree);
-    m_discoverHorizontalSplitter->addWidget(m_ui->tabRightDiscover);
+    m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverOptions);
 
     m_discoverVerticalSplitter = new QSplitter(m_ui);
     m_discoverVerticalSplitter->setOrientation(Qt::Vertical);
@@ -72,6 +72,8 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
             this, SLOT(startDiscover()));
     connect(m_ui->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
             this, SLOT(calculateAddressFromCIDR()));
+    connect(m_ui->discoverCIDRPasteCombo->lineEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(splitCIDRAddressPasted()));
 
     calculateAddressFromCIDR();
 }
@@ -490,7 +492,52 @@ void DiscoverManager::calculateAddressFromCIDR()
         numberOfIps = 1;
     }
 
+    // TODO: set color ip level (negative/positive background)
     m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
+}
+
+void DiscoverManager::splitCIDRAddressPasted()
+{
+    const QString& cidrAddress = m_ui->discoverCIDRPasteCombo->lineEdit()->text();
+
+    if (cidrAddress.isEmpty()) {
+        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(neutralBackground);
+        return;
+    }
+
+    QStringList addressPart = cidrAddress.split('/', QString::SkipEmptyParts);
+
+    if (addressPart.size() != 2) {
+        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        return;
+    }
+
+    QStringList network = addressPart[0].split('.', QString::SkipEmptyParts);
+
+    if (network.size() != 4 || network[0].toInt() > 255
+        || network[1].toInt() > 255
+        || network[2].toInt() > 255
+        || network[3].toInt() > 255) {
+        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        return;
+    }
+
+    bool ok;
+    addressPart[1].toInt(&ok);
+    if (!ok ||  addressPart[1].toInt() > 32) {
+        // not an integer
+        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        return;
+    }
+
+    m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(positiveBackground);
+
+    m_ui->discoverCIDRFirstSpin->setValue(network[0].toInt());
+    m_ui->discoverCIDRSecondSpin->setValue(network[1].toInt());
+    m_ui->discoverCIDRThirdSpin->setValue(network[2].toInt());
+    m_ui->discoverCIDRFourthSpin->setValue(network[3].toInt());
+    m_ui->discoverCIDRPrefixSizeSpin->setValue(addressPart[1].toInt());
+
 }
 
 void DiscoverManager::saveXmlIpsList()

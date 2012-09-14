@@ -30,6 +30,7 @@
 #include "notify.h"
 #include "selectprofiledialog.h"
 #include "logwriterxml.h"
+#include "style.h"
 
 // system
 #ifndef Q_WS_WIN
@@ -86,6 +87,7 @@ private slots:
     void startDiscoverIpsFromCIDR();
     void startDiscoverIpsFromRange();
     void calculateAddressFromCIDR();
+    void splitCIDRAddressPasted();
 };
 
 #endif // DISCOVERMANAGER_H

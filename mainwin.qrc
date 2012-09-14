@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/dialog-ok-apply.png</file>
     <file>images/applications-system.png</file>
     <file>images/media-playback-pause.png</file>
     <file>images/media-playback-start.png</file>
