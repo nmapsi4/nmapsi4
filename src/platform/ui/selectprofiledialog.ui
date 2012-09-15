@@ -28,7 +28,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+       <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
      </property>
     </widget>
    </item>

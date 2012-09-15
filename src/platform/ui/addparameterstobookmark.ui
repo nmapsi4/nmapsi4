@@ -85,7 +85,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../../mainwin.qrc">
-         <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+         <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
        </property>
       </widget>
      </item>
@@ -96,7 +96,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../../mainwin.qrc">
-         <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
+         <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
        </property>
       </widget>
      </item>

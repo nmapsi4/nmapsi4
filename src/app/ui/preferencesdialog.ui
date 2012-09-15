@@ -52,7 +52,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
+       <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
      </property>
     </widget>
    </item>
@@ -84,7 +84,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../../mainwin.qrc">
-       <normaloff>:/images/images/flag_yellow.png</normaloff>:/images/images/flag_yellow.png</iconset>
+       <normaloff>:/images/images/document-revert.png</normaloff>:/images/images/document-revert.png</iconset>
      </property>
     </widget>
    </item>
@@ -210,6 +210,12 @@
             </item>
             <item row="0" column="1">
              <widget class="QComboBox" name="comboLogType">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <item>
                <property name="text">
                 <string>Fancy format</string>
@@ -312,7 +318,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label">
               <property name="text">
-               <string>History Item Number:</string>
+               <string>History item number:</string>
               </property>
               <property name="buddy">
                <cstring>spinBoxCache</cstring>
