@@ -806,11 +806,21 @@ void ParserManager::callSaveSingleLogWriter()
         return;
     }
 
+    QSettings settings("nmapsi4", "nmapsi4");
+    int logType = settings.value("logType", 0).toInt();
+
+    QString filter;
+    if (logType == LogWriter::HtmlLog) {
+        filter.append("Html (*.html *.htm)");
+    } else {
+        filter.append("Log (*.log)");
+    }
+
     const QString& path = QFileDialog::getSaveFileName(
                               m_ui,
                               tr("Save Log"),
                               QDir::homePath() + QDir::toNativeSeparators("/") + "untitled",
-                              "Log (*.log);;Html (*.html *.htm)"
+                              filter
                           );
 
     if (!path.isEmpty())

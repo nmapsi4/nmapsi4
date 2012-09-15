@@ -34,6 +34,12 @@ class LogWriter
 {
 
 public:
+    enum LogType {
+        FancyLog,
+        RawLog,
+        HtmlLog
+    };
+
     LogWriter();
     ~LogWriter() {};
 
@@ -47,12 +53,6 @@ public:
     void writeAllLogFile(QList<PObject*> pObjectList, const QString& path);
 
 private:
-    enum LogType {
-        FancyLog,
-        RawLog,
-        HtmlLog
-    };
-
     PObject* m_pObject;
 
     void writeRawLogFormat(const QString& path);
