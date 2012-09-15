@@ -27,6 +27,8 @@
 #include <QtCore/QXmlStreamReader>
 #include <QtGui/QTreeWidget>
 
+const double minConfigVersion = 0.1;
+
 class LogWriterXml
 {
 
@@ -36,6 +38,9 @@ public:
 
     bool writeXmlDiscoverLog(const QString& fileName, QTreeWidget* widget);
     QList<QTreeWidgetItem*> readXmlDiscoverLog(const QString& fileName, QTreeWidget* widget);
+
+private:
+    bool readHosts(const QString& fileName, QTreeWidget* widget, QList<QTreeWidgetItem*>& treeWidgetItemlist);
 
 };
 

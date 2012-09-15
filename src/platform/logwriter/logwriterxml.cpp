@@ -40,6 +40,8 @@ bool LogWriterXml::writeXmlDiscoverLog(const QString& fileName, QTreeWidget* wid
     xmlStreamWriter.setAutoFormatting(true);
     xmlStreamWriter.writeStartDocument();
     xmlStreamWriter.writeStartElement("discoveriplist");
+    xmlStreamWriter.writeStartElement("config");
+    xmlStreamWriter.writeAttribute("version", QString::number(minConfigVersion));
 
     for (int i = 0; i < widget->topLevelItemCount(); ++i) {
         xmlStreamWriter.writeStartElement("host");
@@ -48,6 +50,7 @@ bool LogWriterXml::writeXmlDiscoverLog(const QString& fileName, QTreeWidget* wid
         xmlStreamWriter.writeEndElement();
     }
 
+    xmlStreamWriter.writeEndElement();
     xmlStreamWriter.writeEndDocument();
 
     xmlFile.close();
@@ -66,6 +69,31 @@ QList<QTreeWidgetItem*> LogWriterXml::readXmlDiscoverLog(const QString& fileName
     QXmlStreamReader xmlReader(&xmlFile);
     while (!xmlReader.atEnd()) {
         if (xmlReader.readNextStartElement()) {
+            if (xmlReader.name().toString().startsWith(QLatin1String("config"))) {
+                QString versionReaded = xmlReader.attributes().value("version").toString();
+                if (versionReaded.toDouble() == minConfigVersion) {
+                    if (!readHosts(fileName, widget, treeWidgetItemlist)) {
+                        qWarning() << "Xml writer:: file not readable";
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    return treeWidgetItemlist;
+}
+
+bool LogWriterXml::readHosts(const QString& fileName, QTreeWidget* widget, QList<QTreeWidgetItem*>& treeWidgetItemlist)
+{
+    QFile xmlFile(fileName);
+    if (!xmlFile.open(QFile::ReadOnly | QFile::Text)) {
+        return false;
+    }
+
+    QXmlStreamReader xmlReader(&xmlFile);
+    while (!xmlReader.atEnd()) {
+        if (xmlReader.readNextStartElement()) {
             if (xmlReader.name().toString().startsWith(QLatin1String("host"))) {
                 qDebug() << "READ TAG:: " << xmlReader.name().toString();
                 qDebug() << "READ TAG ip:: " << xmlReader.attributes().value("ip").toString();
@@ -79,6 +107,5 @@ QList<QTreeWidgetItem*> LogWriterXml::readXmlDiscoverLog(const QString& fileName
         }
     }
 
-    return treeWidgetItemlist;
+    return true;
 }
-
