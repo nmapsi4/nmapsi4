@@ -20,17 +20,9 @@
 #ifndef STYLE_H
 #define STYLE_H
 
-//sidebar button style
-// static const char verticalStyleSheet[] = "QPushButton:checked {border: 0px; border-radius: 2px; "
-//         "background-color: palette(highlight); color: palette(highlighted-text); "
-//         "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
-
 static const char verticalStyleSheet[] = "QPushButton:checked {border: 2px; border-radius: 2px; "
          "background-color: palette(highlight); color: palette(highlighted-text); "
          "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
-
-
-// background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #f6f7fa, stop: 1 #dadbde);
 
 static const char nofifyStyleSheet[] = "QPushButton { color: red; } ";
 
