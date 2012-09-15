@@ -205,7 +205,9 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += ".sectionHead { width:700px; background: #ccc; color: #000; float: left; padding: 3px; }";
     htmlPage += ".container { width:700px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
     htmlPage += ".title { width:695px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
-    htmlPage += ".result { width:695px; background: #fff; color: #000; float: left; padding: 3px; }";
+    htmlPage += ".result { width:695px; background: #fff; color: #000; float: left; padding: 3px;}";
+    htmlPage += ".resultWhite { width:690px; background: #fff; color: #000; float: left; padding: 1px;}";
+    htmlPage += ".resultGrey { width:690px; background: #ccc; color: #000; float: left; padding: 1px; }";
     htmlPage += ".space { width:700px; background: #fff; float: left; }";
     htmlPage += "</style></head>";
     //Html core
@@ -216,25 +218,49 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "</div>";
 
     //htmlPage += "<div class=\"space\">&nbsp;</div>";
-
+    int index = 0;
     // Open Ports
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Services</b></div>";
     htmlPage += "<div class=\"result\">";
     Q_FOREACH (const QString& token, m_pObject->getPortOpen())
     {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
         htmlPage += token +"<br/>\n";
+        htmlPage += "</div>";
     }
 
     // close Ports
     Q_FOREACH (const QString& token, m_pObject->getPortClose())
     {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
         htmlPage += token +"<br/>\n";
+        htmlPage += "</div>";
     }
 
     // filtered/unfilteres Ports
     Q_FOREACH (const QString& token, m_pObject->getPortFiltered())
     {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
         htmlPage += token +"<br/>\n";
+        htmlPage += "</div>";
     }
 
     htmlPage += "</div></div>";
@@ -245,7 +271,15 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "<div class=\"result\">";
     Q_FOREACH (const QString& token, m_pObject->getMainInfo())
     {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
         htmlPage +=token +"<br/>\n";
+        htmlPage += "</div>";
     }
     htmlPage += "</div></div>";
     //htmlPage += "<div class=\"space\">&nbsp;</div>";
@@ -255,7 +289,15 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "<div class=\"result\">";
     Q_FOREACH (const QString& token, m_pObject->getErrorScan())
     {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
         htmlPage += token + "<br/>\n";
+        htmlPage += "</div>";
     }
     htmlPage += "</div></div>";
     htmlPage += "<div class=\"space\">&nbsp;</div>";
@@ -275,7 +317,15 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         htmlPage += "<div class=\"result\">";
         Q_FOREACH (const QString& value, i.value())
         {
+            if (index % 2 == 0) {
+                htmlPage += "<div class=\"resultWhite\">";
+            } else {
+                htmlPage += "<div class=\"resultGrey\">";
+            }
+            index++;
+
             htmlPage += value + "<br/>\n";
+            htmlPage += "</div>";
         }
 
         htmlPage += "</div></div>";
