@@ -32,6 +32,7 @@ const int verticalButtonWidth = 25;
 
 static const char positiveBackground[] = "background: #C0FFC0;";
 static const char negativeBackground[] = "background: #FFC0C0;";
+static const char highIpNumberBackground[] = "background: #FFDCA8;";
 static const char neutralBackground[] = "background: #fff;";
 
 #endif

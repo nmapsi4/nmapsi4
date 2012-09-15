@@ -492,7 +492,14 @@ void DiscoverManager::calculateAddressFromCIDR()
         numberOfIps = 1;
     }
 
-    // TODO: set color ip level (negative/positive background)
+    if (m_ui->discoverCIDRPrefixSizeSpin->value() >= 23) {
+        m_ui->lineAddressNumber->setStyleSheet(positiveBackground);
+    } else if (m_ui->discoverCIDRPrefixSizeSpin->value() >= 19){
+        m_ui->lineAddressNumber->setStyleSheet(highIpNumberBackground);
+    } else {
+        m_ui->lineAddressNumber->setStyleSheet(negativeBackground);
+    }
+
     m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
 }
 
