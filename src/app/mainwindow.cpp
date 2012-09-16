@@ -238,18 +238,24 @@ void MainWindow::startScan()
     // check for ip list
     if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
         // is a ip list
-        QStringList addrPart_ = hostname.split('/', QString::SkipEmptyParts);
-        QStringList ipfields = addrPart_[0].split('.');
-        int startIpRange = ipfields[3].toInt();
-        int endIpRange = addrPart_[1].toInt();
+        QStringList addressToken = hostname.split('/', QString::SkipEmptyParts);
 
-        QHostAddress addressProtocol(addrPart_[0]);
+        if (addressToken.isEmpty() || addressToken.size() <2) {
+            // TODO: wrong address
+            return;
+        }
+
+        QHostAddress addressProtocol(addressToken[0]);
 
         if (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol) {
             QMessageBox::warning(this, tr("Warning - Nmapsi4"),
                                  tr("IPv6 Protocol range scan is not yet supported."), tr("Close"));
             return;
         }
+
+        QStringList ipfields = addressToken[0].split('.');
+        int startIpRange = ipfields[3].toInt();
+        int endIpRange = addressToken[1].toInt();
 
         for(int index = startIpRange; index <= endIpRange; index++) {
             ipfields[3].setNum(index);
