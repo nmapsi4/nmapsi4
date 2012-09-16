@@ -23,6 +23,7 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 #include <QtCore/QHash>
+#include <QtCore/QMetaType>
 
 class PObject
 {
@@ -82,6 +83,8 @@ private:
 
 };
 
+Q_DECLARE_METATYPE(PObject);
+
 class PObjectLookup
 {
 
@@ -103,5 +106,7 @@ private:
     int m_id;
 
 };
+
+Q_DECLARE_METATYPE(PObjectLookup);
 
 #endif

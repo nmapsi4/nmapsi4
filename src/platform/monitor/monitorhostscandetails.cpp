@@ -19,8 +19,8 @@
 
 #include "monitorhostscandetails.h"
 
-MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname)
-: m_scanLines(processFlow)
+MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname, QWidget* parent)
+: QDialog(parent), m_scanLines(processFlow)
 {
     setupUi(this);
     monitorEditHostname->setText(hostname);

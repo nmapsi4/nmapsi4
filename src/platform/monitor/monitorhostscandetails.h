@@ -37,7 +37,7 @@ class MonitorDetails : public QDialog, private Ui::monitorDetails
     Q_OBJECT
 
 public:
-    MonitorDetails(QStringList& processFlow, const QString hostname);
+    MonitorDetails(QStringList& processFlow, const QString hostname, QWidget* parent);
     ~MonitorDetails();
 
 private:

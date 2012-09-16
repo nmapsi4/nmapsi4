@@ -19,7 +19,8 @@
 
 #include "addparameterstobookmark.h"
 
-addParametersToBookmark::addParametersToBookmark(const QString parameters)
+addParametersToBookmark::addParametersToBookmark(QWidget* parent, const QString parameters)
+: QDialog(parent)
 {
     setupUi(this);
 

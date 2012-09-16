@@ -30,7 +30,7 @@ class addParametersToBookmark : public QDialog, private Ui::addParBook
     Q_OBJECT
 
 public:
-    addParametersToBookmark(const QString parameters);
+    addParametersToBookmark(QWidget* parent, const QString parameters);
     ~addParametersToBookmark();
 
 private slots:

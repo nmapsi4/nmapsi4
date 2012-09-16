@@ -24,7 +24,8 @@
 #include <QtGui/QComboBox>
 
 #include "ui_selectprofiledialog.h"
-#include "mainwindow.h"
+
+class MainWindow;
 
 class SelectProfileDialog : public QDialog, private Ui::selectProfileDialog
 {
