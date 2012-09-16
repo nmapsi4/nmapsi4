@@ -36,7 +36,6 @@ public:
 
 private:
     QListWidgetItem* m_generalItem;
-    QListWidgetItem* m_sizeItem;
     QListWidgetItem* m_lookItem;
 
 public slots:

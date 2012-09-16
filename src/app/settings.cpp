@@ -24,8 +24,6 @@ void MainWindow::syncSettings()
     QSettings settings("nmapsi4", "nmapsi4");
 
     // TODO: load saved profile or simple default
-    m_savePos = settings.value("savePos",true).toBool();
-    m_saveSize = settings.value("saveSize",true).toBool();
     m_hostCache = settings.value("hostCache",10).toInt();
 
 #if defined(Q_WS_WIN)
@@ -45,18 +43,8 @@ void MainWindow::saveSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
 
-    if(m_savePos)
-    {
-        settings.setValue("window/pos", pos());
-    }
-
-    if(m_saveSize)
-    {
-        settings.setValue("window/size", size());
-    }
-
-    settings.setValue("savePos", m_savePos);
-    settings.setValue("saveSize", m_saveSize);
+    settings.setValue("window/pos", pos());
+    settings.setValue("window/size", size());
     settings.setValue("hostCache",10);
     settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
@@ -90,28 +78,20 @@ void MainWindow::saveSettings()
 
 void MainWindow::updateCompleter()
 {
-    if (!m_bookmark->isBookmarkHostListEmpty())
-    {
-        if (!m_completer.isNull())
-        {
+    if (!m_bookmark->isBookmarkHostListEmpty()) {
+        if (!m_completer.isNull()) {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
             newModel->setStringList(m_bookmark->getHostListFromBookmark());
-        }
-        else if (m_hostModel.isNull())
-        {
+        } else if (m_hostModel.isNull()) {
             m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(),this);
         }
     }
 
-    if (!m_bookmark->isBookmarkServicesListEmpty())
-    {
-        if (!m_completerVuln.isNull())
-        {
+    if (!m_bookmark->isBookmarkServicesListEmpty()) {
+        if (!m_completerVuln.isNull()) {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
             newModel->setStringList(m_bookmark->getServicesListFromBookmark());
-        }
-        else if (m_vulnModel.isNull())
-        {
+        } else if (m_vulnModel.isNull()) {
             m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(),this);
         }
     }
@@ -127,39 +107,27 @@ void MainWindow::restoreSettings()
     move(pos);
 
     // restore state of the QAction's connected to splitter widget
-    if (!settings.value("splitterSizes").toByteArray().isEmpty())
-    {
+    if (!settings.value("splitterSizes").toByteArray().isEmpty()) {
         m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
 
-        if (m_mainHorizontalSplitter->sizes()[0])
-        {
+        if (m_mainHorizontalSplitter->sizes()[0]) {
             m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
-        }
-        else
-        {
+        } else {
             m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
         }
-    }
-    else
-    {
+    } else {
         m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
     }
 
-    if (!settings.value("splitterSizesRight").toByteArray().isEmpty())
-    {
+    if (!settings.value("splitterSizesRight").toByteArray().isEmpty()) {
         m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
 
-        if (m_mainVerticalSplitter->sizes()[1])
-        {
+        if (m_mainVerticalSplitter->sizes()[1]) {
             m_collections->m_collectionsButton.value("details-list")->setChecked(true);
-        }
-        else
-        {
+        } else {
             m_collections->m_collectionsButton.value("details-list")->setChecked(false);
         }
-    }
-    else
-    {
+    } else {
         m_collections->m_collectionsButton.value("details-list")->setChecked(true);
     }
 }
@@ -171,7 +139,6 @@ void MainWindow::setTreeSettings()
     treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
     scanMonitor->setColumnWidth(1, 350);
-    //treeTraceroot->setColumnWidth(0, 250);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
@@ -215,7 +182,6 @@ void MainWindow::setDefaultSplitter()
     m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
     m_mainHorizontalSplitter->addWidget(frameLeft);
     m_mainHorizontalSplitter->addWidget(frameCenter);
-    //frameCenter
     m_mainVerticalSplitter->setOrientation(Qt::Vertical);
     m_mainVerticalSplitter->addWidget(tabWidget);
     m_mainVerticalSplitter->addWidget(frameRight);

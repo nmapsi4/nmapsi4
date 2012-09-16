@@ -42,12 +42,6 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     int maxDiscoverProcess = settings.value("maxDiscoverProcess", 20).toInt();
     spinMaxDiscoverProcess->setValue(maxDiscoverProcess);
 
-    bool position = settings.value("savePos",true).toBool();
-    checkWinPos->setChecked(position);
-
-    bool size = settings.value("saveSize",true).toBool();
-    checkSize->setChecked(size);
-
     int lookupTypeIndex = settings.value("lookupType", 1).toInt();
     comboLookupType->setCurrentIndex(lookupTypeIndex);
 
@@ -61,10 +55,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     m_generalItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("General"));
     listViewOptions->addItem(m_generalItem);
 
-    m_sizeItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")), tr("Size"));
-    listViewOptions->addItem(m_sizeItem);
-
-#ifndef Q_WS_WIN
+#if !defined(Q_WS_WIN)
     m_lookItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Lookup"));
     listViewOptions->addItem(m_lookItem);
 #else
@@ -90,45 +81,18 @@ void PreferencesDialog::saveValues()
     settings.setValue("hostCache", spinBoxCache->value());
     settings.setValue("maxParallelScan", spinMaxParallelScan->value());
     settings.setValue("maxDiscoverProcess", spinMaxDiscoverProcess->value());
-
-    if (checkWinPos->isChecked())
-    {
-        settings.setValue("savePos",true);
-    }
-    else
-    {
-        settings.setValue("savePos",false);
-    }
-
-    if (checkSize->isChecked())
-    {
-        settings.setValue("saveSize",true);
-    }
-    else
-    {
-        settings.setValue("saveSize",false);
-    }
-
     settings.setValue("lookupType",comboLookupType->currentIndex());
 }
 
 
 void PreferencesDialog::updateListWidgetItem()
 {
-    if (m_generalItem->isSelected())
-    {
+    if (m_generalItem->isSelected()) {
         labelTitle->setText(tr("<h3>General</h3>"));
         stackPref->setCurrentIndex(0);
-    }
-    else if (m_sizeItem->isSelected())
-    {
-        labelTitle->setText(tr("<h3>Size</h3>"));
-        stackPref->setCurrentIndex(1);
-    }
-    else if (m_lookItem->isSelected())
-    {
+    } else if (m_lookItem->isSelected()) {
         labelTitle->setText(tr("<h3>Lookup</h3>"));
-        stackPref->setCurrentIndex(2);
+        stackPref->setCurrentIndex(1);
     }
 }
 
@@ -140,9 +104,7 @@ void PreferencesDialog::quit()
 
 void PreferencesDialog::setDefaults()
 {
-    checkSize->setChecked(false);
-    checkWinPos->setChecked(false);
-#ifndef Q_WS_WIN
+#if !defined(Q_WS_WIN)
     comboLookupType->setCurrentIndex(1);
 #else
     comboLookupType->setCurrentIndex(0);
