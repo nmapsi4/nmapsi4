@@ -110,14 +110,10 @@ void DiscoverManager::startDiscover()
     m_ui->comboDiscover->insertItem(0, "Select Interface");
 
     Discover *discoverPtr = new Discover(m_userid);
-    foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress))
-    {
-        if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack))
-        {
-            /*
-             * TODO: readable name for windows - humanReadableName()
-             * ID is configurable on MS windows.
-             */
+    foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress)) {
+        if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
+            //TODO: readable name for windows - humanReadableName()
+            //ID is configurable on MS windows.
             m_ui->comboDiscover->insertItem(1, interface.name());
         }
     }
@@ -138,7 +134,7 @@ void DiscoverManager::discoverIp(const QString& interface)
 
         QHostAddress address(ipAdressString);
 
-        // TODO:: ipv6 support
+        // NOTE:: this range mode is not usable with ipv6 at moment.
         if (!ipAdressString.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol) {
             // active discover buttton
             m_ui->startDiscoverButt->setEnabled(true);
@@ -409,7 +405,7 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
 
     m_ui->discoverProgressBar->setMaximum(0);
      // TODO: check nping with QT5 QStandardPaths::findExecutable.
-    discoverPtr->fromCIDR(cidrAddress,parameters,this);
+    discoverPtr->fromCIDR(cidrAddress, parameters, this, Discover::IPv4);
 }
 
 void DiscoverManager::endDiscoverIpsFromCIDR()

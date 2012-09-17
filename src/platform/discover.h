@@ -45,6 +45,12 @@ public:
         AllInterface
     };
 
+    enum IpProtocolType
+    {
+        IPv4,
+        IPv6
+    };
+
     /*!
      * Create a object for discovery Class
      */
@@ -66,7 +72,7 @@ public:
      * Check state of ip on the network (up/down) with nping QThread
      */
     void fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters);
-    void fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent);
+    void fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent, IpProtocolType type);
 
 private:
     void fromList(const QString networkIp, DiscoverManager *parent, QStringList parameters);

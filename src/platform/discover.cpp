@@ -208,10 +208,16 @@ void Discover::stopDiscoverFromList()
     m_timer->stop();
 }
 
-void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent)
+void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, DiscoverManager* parent, IpProtocolType type)
 {
     parameters.append("-c 1");
     parameters.append("-v4");
+
+    if (type == IPv6) {
+        // active support for ipv6 address
+        parameters << "-6";
+    }
+
     parameters.append(networkCIDR);
 
     QWeakPointer<ProcessThread> thread = new ProcessThread("nping",parameters);
