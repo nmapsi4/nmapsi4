@@ -314,9 +314,11 @@ void MainWindow::addHostToMonitor(const QString hostname)
     if ((address.protocol() == QAbstractSocket::IPv6Protocol) && !containsParameter("-6")) {
         // append "-6" parameter, stop/continue the scan
         parameters << "-6";
+        updateComboParametersFromList(parameters);
     } else if ((address.protocol() == QAbstractSocket::IPv4Protocol) && containsParameter("-6")) {
         // remove "-6" parameter, stop/continue the scan
         parameters.removeAll("-6");
+        updateComboParametersFromList(parameters);
     }
 
     // check for scan lookup

@@ -97,6 +97,7 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
+    void updateComboParametersFromList(const QStringList& parameters);
     QStringList getParameters();
     bool containsParameter(const QString& parameter);
 

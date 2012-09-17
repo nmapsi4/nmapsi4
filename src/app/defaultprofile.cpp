@@ -153,3 +153,9 @@ bool MainWindow::containsParameter(const QString& parameter)
 {
     return getParameters().contains(parameter) ? true : false;
 }
+
+void MainWindow::updateComboParametersFromList(const QStringList& parameters)
+{
+    comboAdv->clear();
+    comboAdv->insertItem(0, parameters.join(" "));
+}
