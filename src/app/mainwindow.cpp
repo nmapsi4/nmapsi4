@@ -223,19 +223,12 @@ void MainWindow::startScan()
     // check wrong address
     hostname = HostTools::clearHost(hostname);
 
-    // check for duplicate hostname in the monitor
-    if (m_monitor->isHostOnMonitor(hostname)) {
-        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
-        return;
-    }
-
     if(!m_monitor->monitorHostNumber()) {
         // clear details QHash
         m_monitor->clearHostMonitorDetails();
     }
 
-
-    // check for ip list
+    // check for ip range (x.x.x.x/x)
     if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
         // is a ip list
         QStringList addressToken = hostname.split('/', QString::SkipEmptyParts);
@@ -290,7 +283,7 @@ void MainWindow::startScan()
         hostname.remove(' ');
     }
 
-    // single ip or dns after the move
+    // single ip or dns
     if (!HostTools::isDns(hostname) || HostTools::isValidDns(hostname)) {
         addHostToMonitor(hostname);
     }
@@ -299,6 +292,12 @@ void MainWindow::startScan()
 
 void MainWindow::addHostToMonitor(const QString hostname)
 {
+    // check for duplicate hostname in the monitor
+    if (m_monitor->isHostOnMonitor(hostname)) {
+        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
+        return;
+    }
+
     m_bookmark->saveHostToBookmark(hostname,m_hostCache);
     updateCompleter();
 
@@ -309,7 +308,16 @@ void MainWindow::addHostToMonitor(const QString hostname)
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
 
-    QStringList parameters = loadExtensions();
+    QStringList parameters = getParameters();
+
+    QHostAddress address(hostname);
+    if ((address.protocol() == QAbstractSocket::IPv6Protocol) && !containsParameter("-6")) {
+        // append "-6" parameter, stop/continue the scan
+        parameters << "-6";
+    } else if ((address.protocol() == QAbstractSocket::IPv4Protocol) && containsParameter("-6")) {
+        // remove "-6" parameter, stop/continue the scan
+        parameters.removeAll("-6");
+    }
 
     // check for scan lookup
     switch (m_lookupType) {

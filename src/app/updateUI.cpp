@@ -21,14 +21,10 @@
 
 void MainWindow::setFullScreen()
 {
-
-    if (isFullScreen())
-    {
+    if (isFullScreen()) {
         setWindowState(windowState() & ~Qt::WindowFullScreen );
         actionFullScreen->setChecked(false);
-    }
-    else
-    {
+    } else {
         setWindowState(windowState() | Qt::WindowFullScreen );
         actionFullScreen->setChecked(true);
     }
@@ -36,13 +32,10 @@ void MainWindow::setFullScreen()
 
 void MainWindow::updateMenuBar()
 {
-    if (actionMenuBar->isChecked())
-    {
+    if (actionMenuBar->isChecked()) {
         menuBar()->setVisible(true);
         toolMenuBar->setVisible(false);
-    }
-    else
-    {
+    } else {
         menuBar()->setVisible(false);
         toolMenuBar->setVisible(true);
     }
@@ -56,8 +49,9 @@ void MainWindow::updateComboHostnameProperties()
     hostEdit->setStyleSheet(QString::fromUtf8(""));
     bool signalState = hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
 
-    if (!signalState)
-	return;
+    if (!signalState) {
+        return;
+    }
 
     connect(hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(linkCompleterToHostname()));
@@ -77,14 +71,12 @@ void MainWindow::updateSezScan()
     m_collections->m_discoverToolBar->setVisible(false);
     toolMenuBar->setVisible(true);
 
-    if (!tabScan->isVisible())
-    {
+    if (!tabScan->isVisible()) {
         tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
         tabUi->setCurrentIndex(0);
     }
 
-    if (!tabMainMonitor->isVisible())
-    {
+    if (!tabMainMonitor->isVisible()) {
         tabUi->insertTab(1,tabMainMonitor,tr("Scan Monitor"));
 
         QIcon tabIcon;
@@ -97,8 +89,7 @@ void MainWindow::updateSezScan()
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),tabIcon);
     }
 
-    if (!bookmarks->isVisible())
-    {
+    if (!bookmarks->isVisible()) {
         tabUi->insertTab(tabUi->count(),bookmarks,tr("Bookmarks"));
         tabUi->setTabIcon(tabUi->indexOf(bookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
     }
@@ -140,8 +131,7 @@ void MainWindow::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
     tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
 
-    if (!tabVulnBookmarks->isVisible())
-    {
+    if (!tabVulnBookmarks->isVisible()) {
         tabUi->insertTab(tabUi->count(),tabVulnBookmarks,tr("Bookmarks"));
         tabUi->setTabIcon(tabUi->indexOf(tabVulnBookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
     }
@@ -209,7 +199,7 @@ void MainWindow::setTreeWidgetValues()
 void MainWindow::loadDefaultProfile()
 {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboAdv->insertItem(0, loadExtensions().join(" "));
+    comboAdv->insertItem(0, getParameters().join(" "));
 }
 
 void MainWindow::updateComboBook()
@@ -217,8 +207,7 @@ void MainWindow::updateComboBook()
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
 
-    for(int index=0; index < treeLogH->topLevelItemCount(); index++)
-    {
+    for(int index=0; index < treeLogH->topLevelItemCount(); index++) {
         comboHostBook->insertItem(1, treeLogH->topLevelItem(index)->text(0));
     }
 }

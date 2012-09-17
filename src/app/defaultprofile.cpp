@@ -25,71 +25,67 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
     QPair<QString, QString> profileModel;
     QList< QPair<QString, QString> > listProfileModel;
 
-    if (!m_userId)
-    {
-        profileModel.first = "Default";
+    if (!m_userId) {
+        profileModel.first = tr("Default (ipv4/6)");
         profileModel.second = "-sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = "Default + Aggressive";
+        profileModel.first = tr("Default + Aggressive (ipv4/6)");
         profileModel.second = "-A -sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = "Default + base nse script";
+        profileModel.first = tr("Default + base nse script (ipv4/6)");
         profileModel.second = "--script=default,safe -sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
         //FIXME tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F --traceroute");
-        profileModel.first = tr("Quick Scan");
+        profileModel.first = tr("Quick Scan (ipv4/6)");
         profileModel.second = "-T4 -F --traceroute";
         listProfileModel.push_back(profileModel);
 
         //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v --traceroute");
-        profileModel.first = tr("Intense Scan");
+        profileModel.first = tr("Intense Scan (ipv4/6)");
         profileModel.second = "-T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
         //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v --traceroute");
-        profileModel.first = tr("Intense Scan, all TCP ports");
+        profileModel.first = tr("Intense Scan, all TCP ports (ipv4/6)");
         profileModel.second = "-p 1-65535 -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense scan plus UDP");
+        profileModel.first = tr("Intense scan plus UDP (ipv4/6)");
         profileModel.second = "-sS -sU -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Slow comprehensive scan");
+        profileModel.first = tr("Slow comprehensive scan (ipv4/6)");
         profileModel.second = "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute";
         listProfileModel.push_back(profileModel);
-    }
-    else
-    {
+    } else {
         // for user mode
-
-        profileModel.first = "Default";
+        profileModel.first = tr("Default (ipv4/6)");
         profileModel.second = "-sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = "Default + Aggressive";
+        profileModel.first = tr("Default + Aggressive (ipv4/6)");
         profileModel.second = "-A -sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = "Default + base nse script";
+        profileModel.first = tr("Default + base nse script (ipv4/6)");
         profileModel.second = "--script=default,safe -sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
         //tmpStaticProfileMap_.insert(tr("Intense Scan, all TCP ports"),"-p 1-65535 -T4 -v");
-        profileModel.first = tr("Intense Scan, all TCP ports");
+        profileModel.first = tr("Intense Scan, all TCP ports (ipv4/6)");
         profileModel.second = "-p 1-65535 -T4 -v";
         listProfileModel.push_back(profileModel);
 
         //FIXME tmpStaticProfileMap_.insert(tr("Intense Scan"),"-T4 -v");
-        profileModel.first = tr("Intense Scan");
+        profileModel.first = tr("Intense Scan (ipv4/6)");
         profileModel.second = "-T4 -v";
         listProfileModel.push_back(profileModel);
 
         //FIXME tmpStaticProfileMap_.insert(tr("Quick Scan"),"-T4 -F");
-        profileModel.first = tr("Quick Scan");
+        profileModel.first = tr("Quick Scan (ipv4/6)");
         profileModel.second = "-T4 -F";
         listProfileModel.push_back(profileModel);
     }
@@ -102,16 +98,14 @@ void MainWindow::loadScanProfile()
     comboParametersProfiles->clear();
 
     QListIterator< QPair<QString, QString> > i(defaultScanProfile());
-    while (i.hasNext())
-    {
+    while (i.hasNext()) {
         comboParametersProfiles->insertItem(comboParametersProfiles->count()+1, i.next().first);
     }
 
     comboParametersProfiles->insertSeparator(comboParametersProfiles->count()+1);
 
     // value from treeWidget parameters
-    for(int index=0; index < treeBookPar->topLevelItemCount(); index++)
-    {
+    for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
         comboParametersProfiles->addItem(treeBookPar->topLevelItem(index)->text(1));
     }
 
@@ -127,22 +121,17 @@ void MainWindow::comboParametersSelectedEvent()
     QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
     comboAdv->clear();
 
-    if (parIndex <= listProfileModel.size())
-    {
+    if (parIndex <= listProfileModel.size()) {
         QListIterator< QPair<QString, QString> > i(defaultScanProfile());
-        while (i.hasNext())
-        {
+        while (i.hasNext()) {
             QPair<QString, QString> profile = i.next();
-            if (profile.first == comboParametersProfiles->currentText())
-            {
+            if (profile.first.contains(comboParametersProfiles->currentText())) {
                 // call static default profile for check
                 comboAdv->insertItem(0, profile.second);
                 break;
             }
         }
-    }
-    else
-    {
+    } else {
         // saved user profile
         QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboParametersProfiles->currentText(),Qt::MatchExactly,1);
         comboAdv->insertItem(0, resultList_[0]->text(0));
@@ -155,7 +144,12 @@ void MainWindow::resetComboParameters()
     comboParametersSelectedEvent();
 }
 
-QStringList MainWindow::loadExtensions()
+QStringList MainWindow::getParameters()
 {
     return comboAdv->lineEdit()->text().split(' ');
+}
+
+bool MainWindow::containsParameter(const QString& parameter)
+{
+    return getParameters().contains(parameter) ? true : false;
 }

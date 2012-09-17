@@ -97,7 +97,8 @@ private:
     void setDefaultAction();
     void setDefaultSplitter();
     void defaultComboValues();
-    QStringList loadExtensions();
+    QStringList getParameters();
+    bool containsParameter(const QString& parameter);
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
