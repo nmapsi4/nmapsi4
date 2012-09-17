@@ -573,10 +573,12 @@ void DiscoverManager::loadXmlIpsList()
     if (!path.isEmpty()) {
         clearDiscover();
         LogWriterXml *xmlWriter = new LogWriterXml();
-        //TODO: check for empty QList
         m_listTreeItemDiscover = xmlWriter->readXmlDiscoverLog(path, m_ui->treeDiscover);
         delete xmlWriter;
-        m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
-        m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
+
+        if (!m_listTreeItemDiscover.isEmpty()) {
+            m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
+            m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
+        }
     }
 }
