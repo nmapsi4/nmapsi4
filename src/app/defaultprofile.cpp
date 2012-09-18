@@ -26,84 +26,84 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
     QList< QPair<QString, QString> > listProfileModel;
 
     if (!m_userId) {
-        profileModel.first = tr("Default (ipv4/6)");
+        profileModel.first = tr("Default");
         profileModel.second = "-sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Default, force ipv6");
-        profileModel.second = "-sS -sV -O -T4 -v --traceroute";
+        profileModel.second = "-sS -sV -O -T4 -v -6 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Default, Aggressive (ipv4/6)");
+        profileModel.first = tr("Default, Aggressive");
         profileModel.second = "-A -sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Default, base nse script (ipv4/6)");
+        profileModel.first = tr("Default, base nse script");
         profileModel.second = "--script=default,safe -sS -sV -O -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Default, base nse script, force ipv6");
-        profileModel.second = "--script=default,safe -sS -sV -O -T4 -v --traceroute";
+        profileModel.second = "--script=default,safe -sS -sV -O -T4 -v -6 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Quick Scan (ipv4/6)");
+        profileModel.first = tr("Quick Scan");
         profileModel.second = "-T4 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan (ipv4/6)");
+        profileModel.first = tr("Intense Scan");
         profileModel.second = "-T4 -A -v -PE -PS22,25,80 -PA21,23,80,3389 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan, no ping (ipv4/6)");
+        profileModel.first = tr("Intense Scan, no ping");
         profileModel.second = "-T4 -A -v -P0 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan, all TCP ports (ipv4/6)");
+        profileModel.first = tr("Intense Scan, all TCP ports");
         profileModel.second = "-T4 -A -v -PE -PS22,25,80 -PA21,23,80,3389 --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense scan plus UDP (ipv4/6)");
+        profileModel.first = tr("Intense scan plus UDP");
         profileModel.second = "-sS -sU -T4 -v --traceroute";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Slow comprehensive scan (ipv4/6)");
+        profileModel.first = tr("Slow comprehensive scan");
         profileModel.second = "-sS -sU -T4 -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --traceroute";
         listProfileModel.push_back(profileModel);
     } else {
         // for user mode
-        profileModel.first = tr("Default (ipv4/6)");
+        profileModel.first = tr("Default");
         profileModel.second = "-sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Default, foce ipv6");
-        profileModel.second = "-sT -sV -T4 -v";
+        profileModel.first = tr("Default, force ipv6");
+        profileModel.second = "-sT -sV -T4 -v -6";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Default, Aggressive (ipv4/6)");
+        profileModel.first = tr("Default, Aggressive");
         profileModel.second = "-A -sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Default, base nse script (ipv4/6)");
+        profileModel.first = tr("Default, base nse script");
         profileModel.second = "--script=default,safe -sT -sV -T4 -v";
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Default, base nse script, force ipv6");
-        profileModel.second = "--script=default,safe -sT -sV -T4 -v";
+        profileModel.second = "--script=default,safe -sT -sV -T4 -v -6";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Quick Scan (ipv4/6)");
+        profileModel.first = tr("Quick Scan");
         profileModel.second = "-T4";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan (ipv4/6)");
+        profileModel.first = tr("Intense Scan");
         profileModel.second = "-T4 -A -v -PS22,25,80 -PA21,23,80,3389";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan, no ping (ipv4/6)");
+        profileModel.first = tr("Intense Scan, no ping");
         profileModel.second = "-T4 -A -v -P0";
         listProfileModel.push_back(profileModel);
 
-        profileModel.first = tr("Intense Scan, all TCP ports (ipv4/6)");
+        profileModel.first = tr("Intense Scan, all TCP ports");
         profileModel.second = "-T4 -A -PS22,25,80 -PA21,23,80,3389 -v";
         listProfileModel.push_back(profileModel);
     }
