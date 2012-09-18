@@ -156,14 +156,10 @@ void MainWindow::setDefaultAction()
     actionAdd_Bookmark->setEnabled(false);
     toolBarSearch->setVisible(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
-
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    tWresult->setVisible(false);
-
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     tabUi->removeTab(tabUi->indexOf(tabDiscover));
-
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 

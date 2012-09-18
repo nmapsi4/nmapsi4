@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/images">
+    <file>images/go-previous.png</file>
+    <file>images/go-next.png</file>
     <file>images/document-revert.png</file>
     <file>images/dialog-ok-apply.png</file>
     <file>images/applications-system.png</file>

@@ -91,6 +91,7 @@ SET(SOURCES_UI
         platform/ui/about.ui
         platform/ui/monitorhostscandetails.ui
         platform/ui/selectprofiledialog.ui
+        platform/ui/welcomevulnwidget.ui
         app/ui/preferencesdialog.ui
         app/ui/profilerdialog.ui
         app/ui/mainwindow.ui

@@ -111,9 +111,6 @@ private:
     QByteArray m_detailsWidgetSize;
 
 protected:
-    /**
-     * Reimplement closeEvent protected function
-     */
     virtual void closeEvent(QCloseEvent * event);
 
 public slots:

@@ -41,6 +41,7 @@ void MainWindow::initObject()
 
     tWresult->setTabsClosable(true);
     tWresult->removeTab(0);
+    tWresult->setVisible(false);
 
     // preload mainwindow info
     setTreeWidgetValues();
