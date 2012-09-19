@@ -72,7 +72,7 @@ public:
     ~MainWindow();
     void loadScanProfile();
     void updateComboBook();
-    // NOTE: check completer section in vulnerability
+    // TODO: check completer section in vulnerability
     void updateCompleter();
     QList< QPair<QString, QString> > defaultScanProfile();
 

@@ -20,6 +20,11 @@
 #include "discovermanager.h"
 #include "mainwindow.h"
 
+DiscoverWidget::DiscoverWidget(QWidget* parent): QWidget(parent)
+{
+    setupUi(this);
+}
+
 DiscoverManager::DiscoverManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_ipCounter(0), m_userid(0), m_discoverIsActive(false)
 {
@@ -28,18 +33,21 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_userid = getuid();
 #endif
 
-    m_discoverHorizontalSplitter = new QSplitter(m_ui);
+    m_discoverWidget = new DiscoverWidget(m_ui);
+    m_discoverWidget->treeDiscover->setColumnWidth(0, 300);
+
+    m_discoverHorizontalSplitter = new QSplitter(m_discoverWidget);
     m_discoverHorizontalSplitter->setOrientation(Qt::Horizontal);
-    m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverTree);
-    m_discoverHorizontalSplitter->addWidget(m_ui->frameDiscoverOptions);
+    m_discoverHorizontalSplitter->addWidget(m_discoverWidget->frameDiscoverTree);
+    m_discoverHorizontalSplitter->addWidget(m_discoverWidget->frameDiscoverOptions);
 
-    m_discoverVerticalSplitter = new QSplitter(m_ui);
+    m_discoverVerticalSplitter = new QSplitter(m_discoverWidget);
     m_discoverVerticalSplitter->setOrientation(Qt::Vertical);
-    m_discoverVerticalSplitter->addWidget(m_ui->treeDiscover);
-    m_discoverVerticalSplitter->addWidget(m_ui->treeTracePackets);
+    m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeDiscover);
+    m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeTracePackets);
 
-    m_ui->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
-    m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabDiscover))->layout()->addWidget(m_discoverHorizontalSplitter);
+    m_discoverWidget->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
+    m_discoverWidget->layout()->addWidget(m_discoverHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
 
@@ -53,26 +61,26 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
         m_discoverVerticalSplitter->restoreState(settings.value("discoverVerticalSplitter").toByteArray());
     }
 
-    m_ui->treeTracePackets->setIconSize(QSize(22,22));
-    m_ui->treeDiscover->setIconSize(QSize(22,22));
+    m_discoverWidget->treeTracePackets->setIconSize(QSize(22,22));
+    m_discoverWidget->treeDiscover->setIconSize(QSize(22,22));
 
-    connect(m_ui->comboDiscover, SIGNAL(activated(QString)),
+    connect(m_discoverWidget->comboDiscover, SIGNAL(activated(QString)),
             this, SLOT(discoverIp(QString)));
-    connect(m_ui->startDiscoverButt, SIGNAL(clicked()),
+    connect(m_discoverWidget->startDiscoverButt, SIGNAL(clicked()),
             this, SLOT(startDiscoverIpsFromRange()));
-    connect(m_ui->cidrButton, SIGNAL(clicked()),
+    connect(m_discoverWidget->cidrButton, SIGNAL(clicked()),
             this, SLOT(startDiscoverIpsFromCIDR()));
-    connect(m_ui->stopDiscoverButt, SIGNAL(clicked()),
+    connect(m_discoverWidget->stopDiscoverButt, SIGNAL(clicked()),
             this, SLOT(stopDiscoverFromIpsRange()));
-    connect(m_ui->stopDiscoverCidrButton, SIGNAL(clicked()),
+    connect(m_discoverWidget->stopDiscoverCidrButton, SIGNAL(clicked()),
             this, SLOT(stopDiscoverFromCIDR()));
-    connect(m_ui->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_discoverWidget->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(runtimeScanDiscover()));
-    connect(m_ui->reloadComboDiscover, SIGNAL(clicked()),
+    connect(m_discoverWidget->reloadComboDiscover, SIGNAL(clicked()),
             this, SLOT(startDiscover()));
-    connect(m_ui->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
+    connect(m_discoverWidget->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
             this, SLOT(calculateAddressFromCIDR()));
-    connect(m_ui->discoverCIDRPasteCombo->lineEdit(), SIGNAL(textChanged(QString)),
+    connect(m_discoverWidget->discoverCIDRPasteCombo->lineEdit(), SIGNAL(textChanged(QString)),
             this, SLOT(splitCIDRAddressPasted()));
 
     calculateAddressFromCIDR();
@@ -106,15 +114,15 @@ bool DiscoverManager::activeIpContains(const QString ipAddress)
 void DiscoverManager::startDiscover()
 {
     // take local interfaces
-    m_ui->comboDiscover->clear();
-    m_ui->comboDiscover->insertItem(0, "Select Interface");
+    m_discoverWidget->comboDiscover->clear();
+    m_discoverWidget->comboDiscover->insertItem(0, "Select Interface");
 
     Discover *discoverPtr = new Discover(m_userid);
     foreach (const QNetworkInterface &interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress)) {
         if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
             //TODO: readable name for windows - humanReadableName()
             //ID is configurable on MS windows.
-            m_ui->comboDiscover->insertItem(1, interface.name());
+            m_discoverWidget->comboDiscover->insertItem(1, interface.name());
         }
     }
 
@@ -137,15 +145,15 @@ void DiscoverManager::discoverIp(const QString& interface)
         // NOTE:: this range mode is not usable with ipv6 at moment.
         if (!ipAdressString.contains("127.0.0.1") && address.protocol() != QAbstractSocket::IPv6Protocol) {
             // active discover buttton
-            m_ui->startDiscoverButt->setEnabled(true);
+            m_discoverWidget->startDiscoverButt->setEnabled(true);
             QStringList ipAdressSplitted = ipAdressString.split('.');
             int ipStart = ipAdressSplitted[3].toInt();
             ipAdressSplitted.removeLast();
-            m_ui->discoverIpFirstSpin->setValue(ipAdressSplitted[0].toInt());
-            m_ui->discoverIpSecondSpin->setValue(ipAdressSplitted[1].toInt());
-            m_ui->discoverIpThreeSpin->setValue(ipAdressSplitted[2].toInt());
-            m_ui->spinBeginDiscover->setValue(ipStart);
-            m_ui->spinEndDiscover->setValue(ipStart+10);
+            m_discoverWidget->discoverIpFirstSpin->setValue(ipAdressSplitted[0].toInt());
+            m_discoverWidget->discoverIpSecondSpin->setValue(ipAdressSplitted[1].toInt());
+            m_discoverWidget->discoverIpThreeSpin->setValue(ipAdressSplitted[2].toInt());
+            m_discoverWidget->spinBeginDiscover->setValue(ipStart);
+            m_discoverWidget->spinEndDiscover->setValue(ipStart+10);
         } else {
             // reset discover value
             resetDiscoverfromRangeValues();
@@ -160,30 +168,30 @@ void DiscoverManager::discoverIp(const QString& interface)
 
 void DiscoverManager::resetDiscoverfromRangeValues()
 {
-    m_ui->discoverIpFirstSpin->setValue(192);
-    m_ui->discoverIpSecondSpin->setValue(168);
-    m_ui->discoverIpThreeSpin->setValue(1);
-    m_ui->spinBeginDiscover->setValue(1);
-    m_ui->spinEndDiscover->setValue(15);
-    m_ui->startDiscoverButt->setEnabled(true);
+    m_discoverWidget->discoverIpFirstSpin->setValue(192);
+    m_discoverWidget->discoverIpSecondSpin->setValue(168);
+    m_discoverWidget->discoverIpThreeSpin->setValue(1);
+    m_discoverWidget->spinBeginDiscover->setValue(1);
+    m_discoverWidget->spinEndDiscover->setValue(15);
+    m_discoverWidget->startDiscoverButt->setEnabled(true);
 }
 
 void DiscoverManager::startDiscoverIpsFromRange()
 {
     // disable start discover button
-    m_ui->startDiscoverButt->setEnabled(false);
-    m_ui->stopDiscoverButt->setEnabled(true);
-    m_ui->cidrButton->setEnabled(false);
+    m_discoverWidget->startDiscoverButt->setEnabled(false);
+    m_discoverWidget->stopDiscoverButt->setEnabled(true);
+    m_discoverWidget->cidrButton->setEnabled(false);
     // clear tree discover
     clearDiscover();
 
     QStringList addressList;
-    for (int index = m_ui->spinBeginDiscover->value(); index <= m_ui->spinEndDiscover->value(); ++index) {
-        QString tmpIpAddress = QString::number(m_ui->discoverIpFirstSpin->value())
+    for (int index = m_discoverWidget->spinBeginDiscover->value(); index <= m_discoverWidget->spinEndDiscover->value(); ++index) {
+        QString tmpIpAddress = QString::number(m_discoverWidget->discoverIpFirstSpin->value())
                          + '.'
-                         + QString::number(m_ui->discoverIpSecondSpin->value())
+                         + QString::number(m_discoverWidget->discoverIpSecondSpin->value())
                          + '.'
-                         + QString::number(m_ui->discoverIpThreeSpin->value())
+                         + QString::number(m_discoverWidget->discoverIpThreeSpin->value())
                          + '.'
                          + QString::number(index);
 
@@ -191,7 +199,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
     }
 
     QStringList parameters;
-    parameters << m_ui->discoverProbesCombo->currentText();
+    parameters << m_discoverWidget->discoverProbesCombo->currentText();
 
     Discover *discoverPtr = new Discover(m_userid);
     m_listDiscover.push_back(discoverPtr);
@@ -207,7 +215,7 @@ void DiscoverManager::startDiscoverIpsFromRange()
      */
     discoverPtr->fromList(addressList,this,parameters);
     m_ipCounter = addressList.size();
-    m_ui->discoverProgressBar->setMaximum(0);
+    m_discoverWidget->discoverProgressBar->setMaximum(0);
 }
 
 void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool state, const QByteArray callBuff)
@@ -219,7 +227,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
     }
 
     // set values in treeDiscover widget
-    m_ui->treeDiscover->setIconSize(QSize(24,24));
+    m_discoverWidget->treeDiscover->setIconSize(QSize(24,24));
     QTextStream stream(callBuff);
 
     if (state)
@@ -229,7 +237,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
         m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
 
-        QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->treeDiscover);
+        QTreeWidgetItem *item = new QTreeWidgetItem(m_discoverWidget->treeDiscover);
         item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         m_listTreeItemDiscover.push_back(item);
         item->setText(0, hostname[hostname.size()-1]);
@@ -241,7 +249,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
             if (((line.startsWith(QLatin1String("RECV")) && line.contains("completed")) || line.startsWith(QLatin1String("RCVD")))
                 && line.contains(hostname[hostname.size()-1]))
             {
-                QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+                QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
                 packet->setBackground(0, QBrush(QColor(163, 224, 163)));
                 packet->setToolTip(0,line);
@@ -250,7 +258,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
             }
             else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size()-1]))
             {
-                QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+                QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
                 packet->setToolTip(0,line);
                 packet->setIcon(0,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
@@ -265,10 +273,10 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
     if (!m_ipCounter)
     {
         freelist<Discover*>::itemDeleteAll(m_listDiscover);
-        m_ui->startDiscoverButt->setEnabled(true);
-        m_ui->stopDiscoverButt->setEnabled(false);
-        m_ui->cidrButton->setEnabled(true);
-        m_ui->discoverProgressBar->setMaximum(100);
+        m_discoverWidget->startDiscoverButt->setEnabled(true);
+        m_discoverWidget->stopDiscoverButt->setEnabled(false);
+        m_discoverWidget->cidrButton->setEnabled(true);
+        m_discoverWidget->discoverProgressBar->setMaximum(100);
     }
 }
 
@@ -286,10 +294,10 @@ void DiscoverManager::clearDiscover()
 
 void DiscoverManager::stopDiscoverFromIpsRange()
 {
-    m_ui->startDiscoverButt->setEnabled(true);
-    m_ui->stopDiscoverButt->setEnabled(false);
-    m_ui->discoverProgressBar->setMaximum(100);
-    m_ui->cidrButton->setEnabled(true);
+    m_discoverWidget->startDiscoverButt->setEnabled(true);
+    m_discoverWidget->stopDiscoverButt->setEnabled(false);
+    m_discoverWidget->discoverProgressBar->setMaximum(100);
+    m_discoverWidget->cidrButton->setEnabled(true);
     m_ipCounter = 0;
     m_discoverIsActive = false;
     //emit signal
@@ -298,11 +306,11 @@ void DiscoverManager::stopDiscoverFromIpsRange()
 
 void DiscoverManager::scanSingleDiscoveredIp()
 {
-    if(m_ui->treeDiscover->currentItem()) {
+    if(m_discoverWidget->treeDiscover->currentItem()) {
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        foreach (QTreeWidgetItem* item, m_ui->treeDiscover->selectedItems()) {
+        foreach (QTreeWidgetItem* item, m_discoverWidget->treeDiscover->selectedItems()) {
             m_ui->updateComboHostnameProperties();
             m_ui->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
@@ -351,32 +359,32 @@ void DiscoverManager::defaultDiscoverProbes()
     */
     if (!m_userid)
     {
-        m_ui->discoverProbesCombo->insertItem(0, "--icmp");
-        m_ui->discoverProbesCombo->insertItem(1, "--tcp");
-        m_ui->discoverProbesCombo->insertItem(2, "--udp");
-        m_ui->discoverProbesCombo->insertItem(3, "--arp");
-        m_ui->discoverProbesCombo->insertItem(4, "--tr");
-        m_ui->discoverProbesCombo->insertItem(5, "--tcp-connect");
+        m_discoverWidget->discoverProbesCombo->insertItem(0, "--icmp");
+        m_discoverWidget->discoverProbesCombo->insertItem(1, "--tcp");
+        m_discoverWidget->discoverProbesCombo->insertItem(2, "--udp");
+        m_discoverWidget->discoverProbesCombo->insertItem(3, "--arp");
+        m_discoverWidget->discoverProbesCombo->insertItem(4, "--tr");
+        m_discoverWidget->discoverProbesCombo->insertItem(5, "--tcp-connect");
     }
     else
     {
-        m_ui->discoverProbesCombo->insertItem(0, "--tcp-connect");
+        m_discoverWidget->discoverProbesCombo->insertItem(0, "--tcp-connect");
     }
 }
 
 void DiscoverManager::startDiscoverIpsFromCIDR()
 {
     // disable CIDR button but also ip range discover
-    m_ui->cidrButton->setEnabled(false);
-    m_ui->startDiscoverButt->setEnabled(false);
-    m_ui->stopDiscoverCidrButton->setEnabled(true);
+    m_discoverWidget->cidrButton->setEnabled(false);
+    m_discoverWidget->startDiscoverButt->setEnabled(false);
+    m_discoverWidget->stopDiscoverCidrButton->setEnabled(true);
     // clear tree discover
     clearDiscover();
 
     QStringList parameters;
     if (!m_userid)
     {
-        parameters.append(m_ui->discoverProbesCombo->currentText());
+        parameters.append(m_discoverWidget->discoverProbesCombo->currentText());
     }
     else
     {
@@ -391,19 +399,19 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
             this, SLOT(endDiscoverIpsFromCIDR()));
 
-    const QString& cidrAddress = QString::number(m_ui->discoverCIDRFirstSpin->value())
+    const QString& cidrAddress = QString::number(m_discoverWidget->discoverCIDRFirstSpin->value())
                                 + '.'
-                                + QString::number(m_ui->discoverCIDRSecondSpin->value())
+                                + QString::number(m_discoverWidget->discoverCIDRSecondSpin->value())
                                 + '.'
-                                + QString::number(m_ui->discoverCIDRThirdSpin->value())
+                                + QString::number(m_discoverWidget->discoverCIDRThirdSpin->value())
                                 + '.'
-                                + QString::number(m_ui->discoverCIDRFourthSpin->value())
+                                + QString::number(m_discoverWidget->discoverCIDRFourthSpin->value())
                                 + '/'
-                                + QString::number(m_ui->discoverCIDRPrefixSizeSpin->value());
+                                + QString::number(m_discoverWidget->discoverCIDRPrefixSizeSpin->value());
 
     m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(false);
 
-    m_ui->discoverProgressBar->setMaximum(0);
+    m_discoverWidget->discoverProgressBar->setMaximum(0);
      // TODO: check nping with QT5 QStandardPaths::findExecutable.
     discoverPtr->fromCIDR(cidrAddress, parameters, this, Discover::IPv4);
 }
@@ -414,10 +422,10 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(true);
     m_ui->m_collections->m_collectionsDiscover.value("save-ips")->setEnabled(true);
     m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(true);
-    m_ui->cidrButton->setEnabled(true);
-    m_ui->stopDiscoverCidrButton->setEnabled(false);
-    m_ui->startDiscoverButt->setEnabled(true);
-    m_ui->discoverProgressBar->setMaximum(100);
+    m_discoverWidget->cidrButton->setEnabled(true);
+    m_discoverWidget->stopDiscoverCidrButton->setEnabled(false);
+    m_discoverWidget->startDiscoverButt->setEnabled(true);
+    m_discoverWidget->discoverProgressBar->setMaximum(100);
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
@@ -429,7 +437,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
     if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD")))
     {
         qDebug() << "CIDR::Discover::CIDR::Current::UP:: " << data;
-        QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+        QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
         m_listTreePackets.push_back(packet);
         packet->setBackground(0, QBrush(QColor(163, 224, 163)));
         packet->setText(0,data);
@@ -447,7 +455,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 
         if (matched.size() && !activeIpContains(matched.first()))
         {
-            QTreeWidgetItem *ipItem = new QTreeWidgetItem(m_ui->treeDiscover);
+            QTreeWidgetItem *ipItem = new QTreeWidgetItem(m_discoverWidget->treeDiscover);
             m_listTreeItemDiscover.push_back(ipItem);
             ipItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
             ipItem->setText(0, matched.first());
@@ -456,7 +464,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
     }
     else
     {
-        QTreeWidgetItem *packet = new QTreeWidgetItem(m_ui->treeTracePackets);
+        QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
         m_listTreePackets.push_back(packet);
 
         if (data.startsWith(QLatin1String("SENT"))) {
@@ -476,7 +484,7 @@ void DiscoverManager::stopDiscoverFromCIDR()
 
 void DiscoverManager::calculateAddressFromCIDR()
 {
-    int exp = 32 - m_ui->discoverCIDRPrefixSizeSpin->value();
+    int exp = 32 - m_discoverWidget->discoverCIDRPrefixSizeSpin->value();
     int numberOfIps = 2;
 
     while (exp >= 2) {
@@ -488,30 +496,30 @@ void DiscoverManager::calculateAddressFromCIDR()
         numberOfIps = 1;
     }
 
-    if (m_ui->discoverCIDRPrefixSizeSpin->value() >= 23) {
-        m_ui->lineAddressNumber->setStyleSheet(positiveBackground);
-    } else if (m_ui->discoverCIDRPrefixSizeSpin->value() >= 19){
-        m_ui->lineAddressNumber->setStyleSheet(highIpNumberBackground);
+    if (m_discoverWidget->discoverCIDRPrefixSizeSpin->value() >= 23) {
+        m_discoverWidget->lineAddressNumber->setStyleSheet(positiveBackground);
+    } else if (m_discoverWidget->discoverCIDRPrefixSizeSpin->value() >= 19){
+        m_discoverWidget->lineAddressNumber->setStyleSheet(highIpNumberBackground);
     } else {
-        m_ui->lineAddressNumber->setStyleSheet(negativeBackground);
+        m_discoverWidget->lineAddressNumber->setStyleSheet(negativeBackground);
     }
 
-    m_ui->lineAddressNumber->setText(QString::number(numberOfIps));
+    m_discoverWidget->lineAddressNumber->setText(QString::number(numberOfIps));
 }
 
 void DiscoverManager::splitCIDRAddressPasted()
 {
-    const QString& cidrAddress = m_ui->discoverCIDRPasteCombo->lineEdit()->text();
+    const QString& cidrAddress = m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->text();
 
     if (cidrAddress.isEmpty()) {
-        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(neutralBackground);
+        m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(neutralBackground);
         return;
     }
 
     QStringList addressPart = cidrAddress.split('/', QString::SkipEmptyParts);
 
     if (addressPart.size() != 2) {
-        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
         return;
     }
 
@@ -521,7 +529,7 @@ void DiscoverManager::splitCIDRAddressPasted()
         || network[1].toInt() > 255
         || network[2].toInt() > 255
         || network[3].toInt() > 255) {
-        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
         return;
     }
 
@@ -529,24 +537,24 @@ void DiscoverManager::splitCIDRAddressPasted()
     addressPart[1].toInt(&ok);
     if (!ok ||  addressPart[1].toInt() > 32) {
         // not an integer
-        m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
+        m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
         return;
     }
 
-    m_ui->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(positiveBackground);
+    m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(positiveBackground);
 
-    m_ui->discoverCIDRFirstSpin->setValue(network[0].toInt());
-    m_ui->discoverCIDRSecondSpin->setValue(network[1].toInt());
-    m_ui->discoverCIDRThirdSpin->setValue(network[2].toInt());
-    m_ui->discoverCIDRFourthSpin->setValue(network[3].toInt());
-    m_ui->discoverCIDRPrefixSizeSpin->setValue(addressPart[1].toInt());
+    m_discoverWidget->discoverCIDRFirstSpin->setValue(network[0].toInt());
+    m_discoverWidget->discoverCIDRSecondSpin->setValue(network[1].toInt());
+    m_discoverWidget->discoverCIDRThirdSpin->setValue(network[2].toInt());
+    m_discoverWidget->discoverCIDRFourthSpin->setValue(network[3].toInt());
+    m_discoverWidget->discoverCIDRPrefixSizeSpin->setValue(addressPart[1].toInt());
 
 }
 
 void DiscoverManager::saveXmlIpsList()
 {
     const QString& path = QFileDialog::getSaveFileName(
-                              m_ui,
+                              m_discoverWidget,
                               tr("Save IP list"),
                               QDir::homePath() + QDir::toNativeSeparators("/") + "untitled.xml",
                               "xml (*.xml)"
@@ -554,7 +562,7 @@ void DiscoverManager::saveXmlIpsList()
 
     if (!path.isEmpty()) {
         LogWriterXml *xmlWriter = new LogWriterXml();
-        if (!xmlWriter->writeXmlDiscoverLog(path, m_ui->treeDiscover)) {
+        if (!xmlWriter->writeXmlDiscoverLog(path, m_discoverWidget->treeDiscover)) {
             qWarning() << "LOG:Writer:Xml:: file not writable.";
         }
         delete xmlWriter;
@@ -564,7 +572,7 @@ void DiscoverManager::saveXmlIpsList()
 void DiscoverManager::loadXmlIpsList()
 {
     const QString& path = QFileDialog::getOpenFileName(
-                              m_ui,
+                              m_discoverWidget,
                               tr("Load IP list"),
                               QDir::homePath() + QDir::toNativeSeparators("/"),
                               "xml (*.xml)"
@@ -573,7 +581,7 @@ void DiscoverManager::loadXmlIpsList()
     if (!path.isEmpty()) {
         clearDiscover();
         LogWriterXml *xmlWriter = new LogWriterXml();
-        m_listTreeItemDiscover = xmlWriter->readXmlDiscoverLog(path, m_ui->treeDiscover);
+        m_listTreeItemDiscover = xmlWriter->readXmlDiscoverLog(path, m_discoverWidget->treeDiscover);
         delete xmlWriter;
 
         if (!m_listTreeItemDiscover.isEmpty()) {
