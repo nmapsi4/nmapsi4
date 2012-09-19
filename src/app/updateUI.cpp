@@ -94,7 +94,7 @@ void MainWindow::updateSezScan()
 
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
-    tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
+    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
 
     // enable scan action
     toolBarTab->setVisible(true);
@@ -126,10 +126,9 @@ void MainWindow::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
     tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
 
-    if (!tabVulnBookmarks->isVisible()) {
-        tabUi->insertTab(tabUi->count(),tabVulnBookmarks,tr("Bookmarks"));
-        tabUi->setTabIcon(tabUi->indexOf(tabVulnBookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-    }
+    tabUi->insertTab(tabUi->count(),m_bookmark->m_vulnBookmarkWidget,
+                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
+
 
     tabUi->setCurrentIndex(0);
 
@@ -160,7 +159,7 @@ void MainWindow::updateSezDiscover()
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
-    tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
+    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
     tabUi->insertTab(0,m_discoverManager->m_discoverWidget,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");
     tabUi->setCurrentIndex(0);

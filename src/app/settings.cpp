@@ -141,8 +141,6 @@ void MainWindow::setTreeSettings()
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
-    treeBookVuln->setColumnWidth(0, 400);
-    treeWidgetVulnUrl->setColumnWidth(0, 400);
     treeMain->setColumnWidth(0, 200);
 }
 
@@ -156,7 +154,6 @@ void MainWindow::setDefaultAction()
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
-    tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 

@@ -1222,64 +1222,6 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabVulnBookmarks">
-       <attribute name="icon">
-        <iconset resource="../../../mainwin.qrc">
-         <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
-       </attribute>
-       <attribute name="title">
-        <string>Bookmarks</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <property name="margin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QTreeWidget" name="treeBookVuln">
-          <property name="alternatingRowColors">
-           <bool>true</bool>
-          </property>
-          <property name="rootIsDecorated">
-           <bool>false</bool>
-          </property>
-          <property name="uniformRowHeights">
-           <bool>true</bool>
-          </property>
-          <column>
-           <property name="text">
-            <string>Service</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Data</string>
-           </property>
-          </column>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QTreeWidget" name="treeWidgetVulnUrl">
-            <property name="rootIsDecorated">
-             <bool>false</bool>
-            </property>
-            <column>
-             <property name="text">
-              <string>Url(s) name</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Url(s)</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -1989,8 +1931,6 @@
   <tabstop>comboWebV</tabstop>
   <tabstop>treeVulnNseRecovered</tabstop>
   <tabstop>tWresult</tabstop>
-  <tabstop>treeBookVuln</tabstop>
-  <tabstop>treeWidgetVulnUrl</tabstop>
   <tabstop>comboHostBook</tabstop>
   <tabstop>tabUi</tabstop>
   <tabstop>listWscan</tabstop>
