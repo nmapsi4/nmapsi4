@@ -123,8 +123,8 @@ void MainWindow::loadScanProfile()
     comboParametersProfiles->insertSeparator(comboParametersProfiles->count()+1);
 
     // value from treeWidget parameters
-    for(int index=0; index < treeBookPar->topLevelItemCount(); index++) {
-        comboParametersProfiles->addItem(treeBookPar->topLevelItem(index)->text(1));
+    for(int index=0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
+        comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
     }
 
     comboParametersSelectedEvent();
@@ -151,7 +151,7 @@ void MainWindow::comboParametersSelectedEvent()
         }
     } else {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = treeBookPar->findItems(comboParametersProfiles->currentText(),Qt::MatchExactly,1);
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(comboParametersProfiles->currentText(),Qt::MatchExactly,1);
         comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }

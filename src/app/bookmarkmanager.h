@@ -20,6 +20,8 @@
 #ifndef BOOKMARKMANAGER_H
 #define BOOKMARKMANAGER_H
 
+#include "ui_scanbookmarkwidget.h"
+
 #include <QtCore/QObject>
 #include <QtCore/QList>
 #include <QtCore/QSettings>
@@ -37,6 +39,13 @@
 using namespace memory;
 
 class MainWindow;
+
+class ScanBookmarkWidget : public QWidget, public Ui::ScanBookmarkWidgetForm
+{
+    Q_OBJECT
+public:
+    explicit ScanBookmarkWidget(QWidget* parent = 0);
+};
 
 class BookmarkManager : public QObject
 {
@@ -76,6 +85,8 @@ public:
     bool isBookmarkHostListEmpty();
     bool isBookmarkServicesListEmpty();
     void syncSettings();
+
+    ScanBookmarkWidget* m_scanBookmarkWidget;
 
 private:
     MainWindow* m_ui;

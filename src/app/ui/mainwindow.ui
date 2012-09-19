@@ -1049,91 +1049,6 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="bookmarks">
-       <attribute name="icon">
-        <iconset resource="../../../mainwin.qrc">
-         <normaloff>:/images/images/bookmark_folder.png</normaloff>:/images/images/bookmark_folder.png</iconset>
-       </attribute>
-       <attribute name="title">
-        <string>Bookmarks</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="margin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="leftMargin">
-           <number>2</number>
-          </property>
-          <property name="rightMargin">
-           <number>2</number>
-          </property>
-          <item>
-           <widget class="QTreeWidget" name="treeLogH">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="contextMenuPolicy">
-             <enum>Qt::CustomContextMenu</enum>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="alternatingRowColors">
-             <bool>true</bool>
-            </property>
-            <property name="rootIsDecorated">
-             <bool>false</bool>
-            </property>
-            <column>
-             <property name="text">
-              <string>IP List</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Date</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTreeWidget" name="treeBookPar">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="alternatingRowColors">
-             <bool>true</bool>
-            </property>
-            <property name="rootIsDecorated">
-             <bool>false</bool>
-            </property>
-            <column>
-             <property name="text">
-              <string>Parameters List</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Profile Name</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
       <widget class="QWidget" name="tabVulnMain">
        <attribute name="icon">
         <iconset resource="../../../mainwin.qrc">
@@ -2069,8 +1984,6 @@
   <tabstop>monitorStopAllScanButt</tabstop>
   <tabstop>monitorStopCurrentScanButt</tabstop>
   <tabstop>monitorDetailsScanButt</tabstop>
-  <tabstop>treeLogH</tabstop>
-  <tabstop>treeBookPar</tabstop>
   <tabstop>comboVulnRis</tabstop>
   <tabstop>comboVuln</tabstop>
   <tabstop>comboWebV</tabstop>

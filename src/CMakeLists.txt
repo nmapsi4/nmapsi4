@@ -95,6 +95,7 @@ SET(SOURCES_UI
         app/ui/preferencesdialog.ui
         app/ui/profilerdialog.ui
         app/ui/discoverwidget.ui
+        app/ui/scanbookmarkwidget.ui
         app/ui/mainwindow.ui
 )
 
