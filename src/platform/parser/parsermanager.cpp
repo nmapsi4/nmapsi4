@@ -72,8 +72,8 @@ void ParserManager::clearParserItems()
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 
     // clear combo Vulnerabilities
-    m_ui->comboVuln->clear();
-    m_ui->comboVuln->insertItem(0,"Services");
+    m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
+    m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->insertItem(0,"Services");
 }
 
 void ParserManager::addUtilObject(PObjectLookup* object)
@@ -466,7 +466,7 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->listWscan->clear();
     m_ui->GItree->clear();
     m_ui->treeNSS->clear();
-    m_ui->treeVulnNseRecovered->clear();
+    m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered->clear();
 
     // set combo scan parameters
     m_ui->comboScanLog->clear();
@@ -486,8 +486,8 @@ void ParserManager::showParserObj(int hostIndex)
 
     QString noDes = tr("No description");
     // clear combo Vulnerabilities
-    m_ui->comboVuln->clear();
-    m_ui->comboVuln->insertItem(0,"Services");
+    m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
+    m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->insertItem(0,"Services");
 
     // Show open ports
     foreach (const QString& token, m_parserObjList[hostIndex]->getPortOpen())
@@ -507,7 +507,7 @@ void ParserManager::showParserObj(int hostIndex)
             root->setToolTip(3, split[3]);
             if (!split[3].isEmpty())
             {
-                m_ui->comboVuln->addItem(split[3]);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
             }
         }
         else if (split.size() > 4)
@@ -523,7 +523,7 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty())
             {
-                m_ui->comboVuln->addItem(lineDescription_);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         }
         else
@@ -549,7 +549,7 @@ void ParserManager::showParserObj(int hostIndex)
             root->setToolTip(3, split[3]);
             if (!split[3].isEmpty())
             {
-                m_ui->comboVuln->addItem(split[3]);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
             }
         }
         else if (split.size() > 4)
@@ -565,7 +565,7 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty())
             {
-                m_ui->comboVuln->addItem(lineDescription_);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         }
         else
@@ -592,7 +592,7 @@ void ParserManager::showParserObj(int hostIndex)
             root->setToolTip(3, split[3]);
             if (!split[3].isEmpty())
             {
-                m_ui->comboVuln->addItem(split[3]);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
             }
         }
         else if (split.size() > 4)
@@ -608,7 +608,7 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty())
             {
-                m_ui->comboVuln->addItem(lineDescription_);
+                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         }
         else
@@ -686,7 +686,7 @@ void ParserManager::showParserObj(int hostIndex)
     // Show nse url discovered
     foreach (const QString& url, m_parserObjList[hostIndex]->getVulnDiscoverd())
     {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeVulnNseRecovered);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));

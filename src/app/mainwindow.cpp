@@ -39,10 +39,6 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
-    tWresult->setTabsClosable(true);
-    tWresult->removeTab(0);
-    tWresult->setVisible(false);
-
     // preload mainwindow info
     setTreeWidgetValues();
 

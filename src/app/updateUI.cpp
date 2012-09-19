@@ -92,7 +92,7 @@ void MainWindow::updateSezScan()
     tabUi->insertTab(tabUi->count(),m_bookmark->m_scanBookmarkWidget,
                      QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
 
-    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
 
@@ -124,11 +124,10 @@ void MainWindow::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
-    tabUi->insertTab(0,tabVulnMain,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
+    tabUi->insertTab(0,m_vulnerability->m_vulnerabilityWidget,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
 
     tabUi->insertTab(tabUi->count(),m_bookmark->m_vulnBookmarkWidget,
                      QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
-
 
     tabUi->setCurrentIndex(0);
 
@@ -158,7 +157,7 @@ void MainWindow::updateSezDiscover()
 
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
+    tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
     tabUi->insertTab(0,m_discoverManager->m_discoverWidget,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");

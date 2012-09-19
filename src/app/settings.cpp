@@ -153,7 +153,6 @@ void MainWindow::setDefaultAction()
     toolBarSearch->setVisible(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 
@@ -185,7 +184,5 @@ void MainWindow::defaultComboValues()
 {
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
-    comboVulnRis->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboVulnRis->insertItem(0, tr("Search Vulnerabilities"));
 }
 
