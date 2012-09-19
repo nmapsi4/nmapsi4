@@ -25,6 +25,11 @@ ScanBookmarkWidget::ScanBookmarkWidget(QWidget* parent): QWidget(parent)
     setupUi(this);
 }
 
+VulnBookmarkWidget::VulnBookmarkWidget(QWidget* parent): QWidget(parent)
+{
+    setupUi(this);
+}
+
 BookmarkManager::BookmarkManager(MainWindow* parent)
 : QObject(parent), m_ui(parent), m_userId(0)
 {
@@ -34,9 +39,12 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
 #endif
 
     m_scanBookmarkWidget = new ScanBookmarkWidget(m_ui);
+    m_vulnBookmarkWidget = new VulnBookmarkWidget(m_ui);
 
     m_scanBookmarkWidget->treeLogH->setColumnWidth(0, 400);
     m_scanBookmarkWidget->treeBookPar->setColumnWidth(0, 400);
+    m_vulnBookmarkWidget->treeBookVuln->setColumnWidth(0, 400);
+    m_vulnBookmarkWidget->treeWidgetVulnUrl->setColumnWidth(0, 400);
 
     QSettings settings("nmapsi4", "nmapsi4");
 
@@ -47,11 +55,11 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
 
     m_vulnBookmarkSplitter = new QSplitter(m_ui);
     m_vulnBookmarkSplitter->setOrientation(Qt::Vertical);
-    m_vulnBookmarkSplitter->addWidget(m_ui->treeBookVuln);
-    m_vulnBookmarkSplitter->addWidget(m_ui->treeWidgetVulnUrl);
+    m_vulnBookmarkSplitter->addWidget(m_vulnBookmarkWidget->treeBookVuln);
+    m_vulnBookmarkSplitter->addWidget(m_vulnBookmarkWidget->treeWidgetVulnUrl);
 
     m_scanBookmarkWidget->layout()->addWidget(m_scanBookmarkSplitter);
-    m_ui->tabUi->widget(m_ui->tabUi->indexOf(m_ui->tabVulnBookmarks))->layout()->addWidget(m_vulnBookmarkSplitter);
+    m_vulnBookmarkWidget->layout()->addWidget(m_vulnBookmarkSplitter);
 
     if (!settings.value("scanBookmarkSplitter").toByteArray().isEmpty())
     {
@@ -111,7 +119,7 @@ void BookmarkManager::saveItemToBookmarks()
     else
     {
         const QString& currentHost = m_ui->comboVulnRis->currentText();
-        History *history_ = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(m_ui->comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
 
@@ -126,7 +134,7 @@ void BookmarkManager::saveItemToBookmarks()
 
 void BookmarkManager::deleteItemFromBookmark()
 {
-    if(!m_scanBookmarkWidget->treeLogH->currentItem() && !m_ui->treeBookVuln->currentItem())
+    if(!m_scanBookmarkWidget->treeLogH->currentItem() && !m_vulnBookmarkWidget->treeBookVuln->currentItem())
     {
         return;
     }
@@ -143,8 +151,8 @@ void BookmarkManager::deleteItemFromBookmark()
     }
     else
     {
-        history_ = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-        history_->deleteItemBookmark(m_ui->treeBookVuln->currentItem()->text(0));
+        history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+        history_->deleteItemBookmark(m_vulnBookmarkWidget->treeBookVuln->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();
@@ -268,18 +276,18 @@ void BookmarkManager::restoreAllHistoryValues()
         delete newHistory;
     }
 
-    newHistory = new History(m_ui->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
+    newHistory = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
     m_treebookvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 
-    newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
+    newHistory = new History(m_vulnBookmarkWidget->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln", "nmapsi4/nameUrlAddr", -1);
     m_treewidgetvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 }
 
 void BookmarkManager::saveAddressToBookmark(const QString addressName, const QString address)
 {
-    History *newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
+    History *newHistory = new History(m_vulnBookmarkWidget->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->addItemHistory(addressName, address);
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
@@ -289,7 +297,7 @@ void BookmarkManager::saveAddressToBookmark(const QString addressName, const QSt
 
 void BookmarkManager::deleteAddressFromBookmark(const QString addressName)
 {
-    History *newHistory = new History(m_ui->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
+    History *newHistory = new History(m_vulnBookmarkWidget->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->deleteItemBookmark(addressName);
 
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);

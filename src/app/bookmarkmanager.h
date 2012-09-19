@@ -21,6 +21,7 @@
 #define BOOKMARKMANAGER_H
 
 #include "ui_scanbookmarkwidget.h"
+#include "ui_vulnbookmarkwidget.h"
 
 #include <QtCore/QObject>
 #include <QtCore/QList>
@@ -45,6 +46,13 @@ class ScanBookmarkWidget : public QWidget, public Ui::ScanBookmarkWidgetForm
     Q_OBJECT
 public:
     explicit ScanBookmarkWidget(QWidget* parent = 0);
+};
+
+class VulnBookmarkWidget : public QWidget, public Ui::VulnBookmarkWidgetForm
+{
+    Q_OBJECT
+public:
+    explicit VulnBookmarkWidget(QWidget* parent = 0);
 };
 
 class BookmarkManager : public QObject
@@ -87,6 +95,7 @@ public:
     void syncSettings();
 
     ScanBookmarkWidget* m_scanBookmarkWidget;
+    VulnBookmarkWidget* m_vulnBookmarkWidget;
 
 private:
     MainWindow* m_ui;
