@@ -89,13 +89,8 @@ void MainWindow::updateSezScan()
         tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),tabIcon);
     }
 
-    if (!bookmarks->isVisible()) {
-        tabUi->insertTab(tabUi->count(),bookmarks,tr("Bookmarks"));
-        tabUi->setTabIcon(tabUi->indexOf(bookmarks),QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")));
-    }
-
-    tabUi->setTabIcon(0,QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    tabUi->setTabText(0, "Scan");
+    tabUi->insertTab(tabUi->count(),m_bookmark->m_scanBookmarkWidget,
+                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
 
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
@@ -125,7 +120,7 @@ void MainWindow::updateSezVuln()
     toolMenuBar->setVisible(false);
     m_collections->m_discoverToolBar->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(bookmarks));
+    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
     tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
@@ -162,7 +157,7 @@ void MainWindow::updateSezDiscover()
     toolMenuBar->setVisible(false);
     m_collections->m_discoverToolBar->setVisible(true);
 
-    tabUi->removeTab(tabUi->indexOf(bookmarks));
+    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
@@ -207,8 +202,8 @@ void MainWindow::updateComboBook()
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
 
-    for(int index=0; index < treeLogH->topLevelItemCount(); index++) {
-        comboHostBook->insertItem(1, treeLogH->topLevelItem(index)->text(0));
+    for(int index=0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
+        comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
     }
 }
 

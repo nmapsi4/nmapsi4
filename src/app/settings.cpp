@@ -136,8 +136,6 @@ void MainWindow::restoreSettings()
 void MainWindow::setTreeSettings()
 {
     // set TreeWidget properties
-    treeLogH->setColumnWidth(0, 400);
-    treeBookPar->setColumnWidth(0, 400);
     scanMonitor->setColumnWidth(0, 300);
     scanMonitor->setColumnWidth(1, 350);
     treeTraceroot->setColumnWidth(1, 100);

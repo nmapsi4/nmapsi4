@@ -131,6 +131,8 @@ void MainWindow::initObject()
             this, SLOT(monitorRuntimeEvent()));
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
+
+    updateSezScan();
 }
 
 void MainWindow::startPreferencesDialog()
@@ -196,9 +198,9 @@ void MainWindow::linkCompleterToHostname()
 
 void MainWindow::takeHostFromBookmark()
 {
-     if(treeLogH->currentItem()) {
+     if(m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()) {
         updateComboHostnameProperties();
-        hostEdit->insertItem(0, treeLogH->currentItem()->text(0));
+        hostEdit->insertItem(0, m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
         startScan();
     }
 }
