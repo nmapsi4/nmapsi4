@@ -94,6 +94,7 @@ SET(SOURCES_UI
         platform/ui/welcomevulnwidget.ui
         app/ui/preferencesdialog.ui
         app/ui/profilerdialog.ui
+        app/ui/discoverwidget.ui
         app/ui/mainwindow.ui
 )
 

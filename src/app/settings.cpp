@@ -87,6 +87,7 @@ void MainWindow::updateCompleter()
         }
     }
 
+    // TODO: move to vulnerability
     if (!m_bookmark->isBookmarkServicesListEmpty()) {
         if (!m_completerVuln.isNull()) {
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
@@ -145,7 +146,6 @@ void MainWindow::setTreeSettings()
     treeBookVuln->setColumnWidth(0, 400);
     treeWidgetVulnUrl->setColumnWidth(0, 400);
     treeMain->setColumnWidth(0, 200);
-    treeDiscover->setColumnWidth(0, 300);
 }
 
 void MainWindow::setDefaultAction()
@@ -159,7 +159,6 @@ void MainWindow::setDefaultAction()
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     tabUi->removeTab(tabUi->indexOf(tabVulnMain));
     tabUi->removeTab(tabUi->indexOf(tabVulnBookmarks));
-    tabUi->removeTab(tabUi->indexOf(tabDiscover));
     actionAdd_vulnerability_search_url->setVisible(false);
 }
 

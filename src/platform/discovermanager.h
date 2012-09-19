@@ -20,6 +20,8 @@
 #ifndef DISCOVERMANAGER_H
 #define DISCOVERMANAGER_H
 
+#include "ui_discoverwidget.h"
+
 #include <QtCore/QObject>
 #include <QtCore/QDateTime>
 #include <QtGui/QTreeWidgetItem>
@@ -39,6 +41,13 @@
 
 class MainWindow;
 
+class DiscoverWidget : public QWidget, public Ui::DiscoverWidgetForm
+{
+    Q_OBJECT
+public:
+    explicit DiscoverWidget(QWidget* parent = 0);
+};
+
 class DiscoverManager : public QObject
 {
     Q_OBJECT
@@ -48,6 +57,8 @@ public:
     ~DiscoverManager();
     void defaultDiscoverProbes();
     void syncSettings();
+
+    DiscoverWidget* m_discoverWidget;
 
 private:
     void clearDiscover();
