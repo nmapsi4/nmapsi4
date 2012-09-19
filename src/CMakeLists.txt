@@ -97,6 +97,7 @@ SET(SOURCES_UI
         app/ui/discoverwidget.ui
         app/ui/scanbookmarkwidget.ui
         app/ui/vulnbookmarkwidget.ui
+        app/ui/vulnerabilitywidget.ui
         app/ui/mainwindow.ui
 )
 

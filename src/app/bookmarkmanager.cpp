@@ -91,7 +91,7 @@ void BookmarkManager::syncSettings()
 
 void BookmarkManager::saveItemToBookmarks()
 {
-    if(m_ui->hostEdit->currentText().isEmpty() && m_ui->comboVulnRis->currentText().isEmpty())
+    if(m_ui->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty())
     {
         return;
     }
@@ -118,9 +118,9 @@ void BookmarkManager::saveItemToBookmarks()
     }
     else
     {
-        const QString& currentHost = m_ui->comboVulnRis->currentText();
+        const QString& currentHost = m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText();
         History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-        history_->addItemHistory(m_ui->comboVulnRis->currentText(),
+        history_->addItemHistory(m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText(),
                                  QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
@@ -128,7 +128,7 @@ void BookmarkManager::saveItemToBookmarks()
 
         delete history_;
         m_ui->updateComboBook();
-        m_ui->comboVulnRis->lineEdit()->setText(currentHost);
+        m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->lineEdit()->setText(currentHost);
     }
 }
 
