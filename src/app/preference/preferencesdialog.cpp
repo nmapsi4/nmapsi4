@@ -29,25 +29,18 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
             this, SLOT(quit()));
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
+    connect(comboLookupType, SIGNAL(currentIndexChanged(int)), 
+            this, SLOT(updateLookupState()));
 
     // create a read log config
-    int logType = settings.value("logType", 1).toInt();
-    comboLogType->setCurrentIndex(logType);
-
+    comboLogType->setCurrentIndex(settings.value("logType", 1).toInt());
     // Restore max parallel scan option
-    int maxParallelScan = settings.value("maxParallelScan", 5).toInt();
-    spinMaxParallelScan->setValue(maxParallelScan);
-
+    spinMaxParallelScan->setValue(settings.value("maxParallelScan", 5).toInt());
     // Restore max discover process
-    int maxDiscoverProcess = settings.value("maxDiscoverProcess", 20).toInt();
-    spinMaxDiscoverProcess->setValue(maxDiscoverProcess);
-
-    int lookupTypeIndex = settings.value("lookupType", 1).toInt();
-    comboLookupType->setCurrentIndex(lookupTypeIndex);
-
-
-    int cache = settings.value("hostCache",10).toInt();
-    spinBoxCache->setValue(cache);
+    spinMaxDiscoverProcess->setValue(settings.value("maxDiscoverProcess", 20).toInt());
+    comboLookupType->setCurrentIndex(settings.value("lookupType", 1).toInt());
+    digVerbosityCombo->setCurrentIndex(settings.value("digVerbosityLevel", 0).toInt());
+    spinBoxCache->setValue(settings.value("hostCache",10).toInt());
 
     // Create listview items
     listViewOptions->setIconSize(QSize(42, 42));
@@ -74,6 +67,15 @@ PreferencesDialog::~PreferencesDialog()
 {
 }
 
+void PreferencesDialog::updateLookupState()
+{
+    if (comboLookupType->currentIndex() == 2) {
+        digVerbosityCombo->setEnabled(true);
+    } else {
+        digVerbosityCombo->setEnabled(false);
+    }
+}
+
 void PreferencesDialog::saveValues()
 {
     QSettings settings("nmapsi4", "nmapsi4");
@@ -82,6 +84,7 @@ void PreferencesDialog::saveValues()
     settings.setValue("maxParallelScan", spinMaxParallelScan->value());
     settings.setValue("maxDiscoverProcess", spinMaxDiscoverProcess->value());
     settings.setValue("lookupType",comboLookupType->currentIndex());
+    settings.setValue("digVerbosityLevel",digVerbosityCombo->currentIndex());
 }
 
 

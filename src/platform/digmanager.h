@@ -41,8 +41,8 @@ class DigManager : public QObject
 public:
     enum DigRequestType
     {
-        Verbose,
-        Short
+        Short,
+        Verbose
     };
     /*!
      * Create a object for dig lookup Class.

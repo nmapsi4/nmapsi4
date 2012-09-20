@@ -45,6 +45,7 @@ private slots:
     void updateListWidgetItem();
     void quit();
     void setDefaults();
+    void updateLookupState();
 };
 
 #endif

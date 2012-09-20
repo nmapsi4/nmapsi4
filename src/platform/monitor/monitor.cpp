@@ -227,7 +227,16 @@ void Monitor::startLookup(const QString hostname, LookupType option)
         DigManager *digManager = new DigManager();
         m_digLookupList.push_back(digManager);
 
-        digManager->digRequest(hostname,tmpParserObj_,DigManager::Verbose);
+        QSettings settings("nmapsi4","nmapsi4");
+
+        switch (settings.value("digVerbosityLevel", 0).toInt()) {
+            case 0:
+                digManager->digRequest(hostname,tmpParserObj_,DigManager::Short);
+                break;
+            case 1:
+                digManager->digRequest(hostname,tmpParserObj_,DigManager::Verbose);
+                break;
+        }
 
         tmpParserObj_->setId(m_hostIdList.value(hostname));
         m_ui->m_parser->addUtilObject(tmpParserObj_);
