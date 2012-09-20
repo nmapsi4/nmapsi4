@@ -1,28 +1,32 @@
+# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==11 || n/1000==11 || n/1000000==11 || n/1000000000==11) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==11 || n/1000==11 || "
+"n/1000000==11 || n/1000000000==11) ? 1 : 2);\n"
 "X-Language: ca_ES\n"
 "X-Qt-Contexts: true\n"
+"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
+"PO-Revision-Date: 2012-09-20 23:16+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"X-Generator: Lokalize 1.4\n"
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
 msgstr "Quant a Nmapsi4"
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "Version "
 msgstr "Versió "
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid ""
 "NmapSi4 is a complete Qt4-based Gui with the design\n"
@@ -33,7 +37,6 @@ msgstr ""
 "de proporcionar una interfície de nmap completa per als usuaris,\n"
 "per gestionar totes les opcions d'aquest potent escàner de xarxa."
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid ""
 "\n"
@@ -48,7 +51,6 @@ msgstr ""
 "\n"
 "Llicència: Llicència Pública General de GNU (GPL) versió 2 {2007-2012 ?}"
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "&About"
 msgstr "Qu&ant a"
@@ -92,7 +94,6 @@ msgid ""
 "text-indent:0px;\"><br /></p></body></html>"
 msgstr ""
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "A&uthors"
 msgstr "A&utors"
@@ -148,87 +149,70 @@ msgid ""
 "color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
 msgstr ""
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "&Support"
 msgstr "&Suport"
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "&Close"
 msgstr "&Tanca"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan host(s)"
 msgstr "Escaneja les màquines"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Network Discover"
 msgstr "Descobriment de xarxes"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Vulnerability"
 msgstr "Vulnerabilitat"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr "Comprova vulnerabilitats"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Host List"
 msgstr "Llista de màquines"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr "Mostra/amaga la llista de màquines"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Host Details"
 msgstr "Detalls de la màquina"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr "Mostra/amaga els detalls de la màquina"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr "Elimina la màquina"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr "Escaneja la màquina"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr "Elimina els paràmetres d'escaneig"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr "Elimina el servei"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr "Cerca vulnerabilitats"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Check Vulnerability"
 msgstr "Comprova vulnerabilitat"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove url"
 msgstr "Elimina URL"
@@ -237,22 +221,18 @@ msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Profile"
 msgstr "Perfil"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr "Desa"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Bookmark"
 msgstr "Adreça d'interès"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr "Opcions d'escaneig"
@@ -273,7 +253,6 @@ msgctxt "ActionManager|"
 msgid "Load IP list"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr "està viu"
@@ -290,7 +269,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr "Data"
@@ -303,7 +281,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Packets trace"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr "Sondeja"
@@ -320,7 +297,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Selected your CIDR address:"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Address:"
 msgstr "Adreça CIDR:"
@@ -345,7 +321,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr "Atura el descobriment"
@@ -354,12 +329,10 @@ msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation address"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr "Rang d'IPs (IPv4)"
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr "Interfícies locals"
@@ -388,7 +361,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Range of IP"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Default"
 msgstr "Predeterminat"
@@ -409,12 +381,10 @@ msgctxt "MainWindow|"
 msgid "Default, base nse script, force ipv6"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick Scan"
 msgstr "Escaneig ràpid"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense Scan"
 msgstr "Escaneig intensiu"
@@ -423,17 +393,14 @@ msgctxt "MainWindow|"
 msgid "Intense Scan, no ping"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense Scan, all TCP ports"
 msgstr "Escaneig intensiu, tots els ports TCP"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense scan plus UDP"
 msgstr "Escaneig intensiu més UDP"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Slow comprehensive scan"
 msgstr "Escaneig lent i meticulós"
@@ -442,12 +409,10 @@ msgctxt "MainWindow|"
 msgid "No Host Target\n"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Tanca"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr "Advertència - Nmapsi4"
@@ -456,202 +421,162 @@ msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr "La màquina ja s'està escanejant\n"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "<b>There are still active scan.</b>"
 msgstr "<b>Encara hi ha escanejos actius.</b>"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr "Voleu tancar Nmpasi4 de totes maneres?"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr "Màquines a escanejar (IP/DNS o incremental - ex. 192.168.1.1/20)"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr "Monitor d'escaneig"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Bookmarks"
 msgstr "Adreces d'interès"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "&Add host to bookmark"
 msgstr "Afegeix &màquina a l'adreça d'interès"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Add service to &bookmark"
 msgstr "Afegeix &servei a l'adreça d'interès"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr "Paràmetres del registre d'escaneig"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr " Escaneig actiu "
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&About nmapsi4"
 msgstr "Quant a &Nmapsi4"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Scan"
 msgstr "E&scaneja"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan"
 msgstr "Escaneja"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "About &Qt"
 msgstr "Quant a &Qt"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Preferences"
 msgstr "&Preferències"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Quit"
 msgstr "&Surt"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Stop Scan"
 msgstr "Atura l'escaneig"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear History"
 msgstr "Neteja l'historial"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Close Tree"
 msgstr "Tanca l'arbre"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Close Scan Tree"
 msgstr "Tanca l'arbre d'escaneig"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear HostName"
 msgstr "Neteja el nom de la màquina"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear Hostname IP"
 msgstr "Neteja la IP de la màquina"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save As"
 msgstr "Desa com a"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save Scan"
 msgstr "Desa l'escaneig"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save"
 msgstr "Desa"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "S&ave Scan"
 msgstr "Des&a l'escaneig"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save all scans to &Directory"
 msgstr "Desa tots els escaneijos al un &directori"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "F&ull Screen Mode"
 msgstr "&Mode de pantalla completa"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Shift+F11"
 msgstr "Ctrl+Maj+F11"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Show &Menu Bar"
 msgstr "Mostra la barra de &menú"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Show Status Bar"
 msgstr "Mostra la barra d'estat"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Add host to bookmark"
 msgstr "Afegeix &màquina a l'adreça d'interès"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Add host to bookmark"
 msgstr "Afegeix màquina a l'adreça d'interès"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Main"
 msgstr "Principal"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Log"
 msgstr "Registre"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Vuln"
 msgstr "Vuln"
@@ -668,22 +593,18 @@ msgctxt "MainWindowClass|"
 msgid "Section Vulnerabilities"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Donate Money"
 msgstr "Dona diners"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Documentation"
 msgstr "Documentació"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Visit Website"
 msgstr "Visita la pàgina web"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Report a bug"
 msgstr "Informa d'un error"
@@ -692,17 +613,14 @@ msgctxt "MainWindowClass|"
 msgid "Section Discover"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "New Profile"
 msgstr "Nou perfil"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Edit Profile"
 msgstr "Edita el perfil"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Add &parameters to bookmark"
 msgstr "Afegeix &paràmetres a l'adreça d'interès"
@@ -711,152 +629,122 @@ msgctxt "MainWindowClass|"
 msgid "Add vulnerability search url"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear"
 msgstr "Neteja"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save Profile"
 msgstr "Desa el perfil"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Host Details"
 msgstr "Detalls de la màquina"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Service(s) with info"
 msgstr "Servei(s) amb informació"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Description"
 msgstr "Descripció"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Service"
 msgstr "Servei"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "State"
 msgstr "Estat"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Port"
 msgstr "Port"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Service(s) Details"
 msgstr "Detalls del(s) servei(s)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Nss script result"
 msgstr "Resultat de l'script NSS"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Nse result"
 msgstr "Resultat NSE"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Log(s)"
 msgstr "Registre(s)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Error(s)"
 msgstr "Error(s)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Raw scan log"
 msgstr "Registre de l'escaneig en brut"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Host(s)"
 msgstr "Màquina/es"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Lookup"
 msgstr "Cerca"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "DNS"
 msgstr "DNS"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "IP"
 msgstr "IP"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "RTT"
 msgstr "RTT"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Hop(s)"
 msgstr "Salt(s)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Traceroute"
 msgstr "Traceroute"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Os"
 msgstr "SO"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan log parameters"
 msgstr "Paràmetres del registre d'escaneig"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan host(s)"
 msgstr "Escaneja les màquines"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&File"
 msgstr "&Fitxer"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&View"
 msgstr "&Vista:"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Bookmarks"
 msgstr "&Adreces d'interès"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Help"
 msgstr "&Ajuda"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "S&ettings"
 msgstr "A&rranjament"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Tools"
 msgstr "&Eines"
@@ -873,12 +761,10 @@ msgctxt "MainWindowClass|"
 msgid "toolBar_3"
 msgstr ""
 
-#, fuzzy
 msgctxt "Monitor|"
 msgid "Waiting"
 msgstr "Esperant"
 
-#, fuzzy
 msgctxt "Monitor|"
 msgid "Scanning"
 msgstr "Escanejant"
@@ -887,27 +773,22 @@ msgctxt "MonitorWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop All Scan"
 msgstr "Atura tot escaneig"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop Current Scan"
 msgstr "Atura l'escaneig actual"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Details"
 msgstr "Detalls de l'escaneig"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "State"
 msgstr "Estat"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Options"
 msgstr "Opcions d'escaneig"
@@ -916,22 +797,18 @@ msgctxt "MonitorWidgetForm|"
 msgid "Host Thread"
 msgstr ""
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Error: check nmap Installation.\n"
 msgstr "Error: comproveu la instal·lació de nmap.\n"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Close"
 msgstr "Tanca"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "No description"
 msgstr "Sense descripció"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Save Log"
 msgstr "Desa el registre"
@@ -940,47 +817,38 @@ msgctxt "ParserManager|"
 msgid "Open Directory"
 msgstr ""
 
-#, fuzzy
 msgctxt "PreferencesDialog|"
 msgid "General"
 msgstr "Opcions generals"
 
-#, fuzzy
 msgctxt "PreferencesDialog|"
 msgid "Lookup"
 msgstr "Cerca"
 
-#, fuzzy
 msgctxt "PreferencesDialog|"
 msgid "<h3>General</h3>"
 msgstr "<h3>Opcions generals</h3>"
 
-#, fuzzy
 msgctxt "PreferencesDialog|"
 msgid "<h3>Lookup</h3>"
 msgstr "<h3>Cerca</h3>"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Preferences - Nmapsi4"
 msgstr "Preferències - Nmapsi4"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "&Cancel"
 msgstr "&Cancel·la"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "&Defaults"
 msgstr "&Omissió"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "&Ok"
 msgstr "&D'acord"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Log Preferences"
 msgstr "Preferències del registre"
@@ -989,17 +857,14 @@ msgctxt "ProfileMain|"
 msgid "Log type:"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Fancy format"
 msgstr "Format elaborat"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Nmap raw format"
 msgstr "Format nmap en brut"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Html format"
 msgstr "Format HTML"
@@ -1020,17 +885,14 @@ msgctxt "ProfileMain|"
 msgid "History item number:"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Lookup Preferences"
 msgstr "Preferències de cerca"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "None"
 msgstr "Cap"
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Internal lookup"
 msgstr "Cerca interna"
@@ -1051,7 +913,6 @@ msgctxt "ProfileMain|"
 msgid "Short"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Verbose"
 msgstr "Sortida detallada"
@@ -1060,7 +921,6 @@ msgctxt "Profiler|"
 msgid "No Ports Range (ex: 20-80)\n"
 msgstr ""
 
-#, fuzzy
 msgctxt "Profiler|"
 msgid "Close"
 msgstr "Tanca"
@@ -1081,57 +941,46 @@ msgctxt "Profiler|"
 msgid "Please, insert port address\n"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "New profile"
 msgstr "Nou perfil"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Edit profile "
 msgstr "Edita el perfil "
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Profile"
 msgstr "Perfil"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Scan"
 msgstr "Escaneja"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Options"
 msgstr "Opcions"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Ping"
 msgstr "Ping"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Timing"
 msgstr "Temporització"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Nse"
 msgstr "NSE"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Warning - Nmapsi4"
 msgstr "Advertència - Nmapsi4"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Insert profile name."
 msgstr "Inseriu el nom del perfil"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Close"
 msgstr "Tanca"
@@ -1160,17 +1009,14 @@ msgctxt "ProfilerManager|"
 msgid "XMAS Tree Stealth Scan (-sX)"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "TCP Window Scan (-sW)"
 msgstr "Escaneig de finestra TCP (-sW)"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "UDP Ports Scan (-sU)"
 msgstr "Escaneig de ports UDP (-sU)"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "IP Protocol Scan (-sO)"
 msgstr "Escaneig del protocol IP (-sO)"
@@ -1191,27 +1037,22 @@ msgctxt "ScanBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Date"
 msgstr "Data"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "IP List"
 msgstr "Llista d'IPs"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Profile Name"
 msgstr "Nom del perfil"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Llista de paràmetres"
 
-#, fuzzy
 msgctxt "Utilities|"
 msgid "Select the file"
 msgstr "Seleccioneu el fitxer"
@@ -1220,52 +1061,42 @@ msgctxt "VulnBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Data"
 msgstr "Dades"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Service"
 msgstr "Servei"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s)"
 msgstr "URL(s)"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr "Nom de la URL"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr "Cerca vulnerabilitats"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Search"
 msgstr "Cerca"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Back"
 msgstr "Enrere"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Forward"
 msgstr "Endavant"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Stop"
 msgstr "Atura"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Add service to &bookmark"
 msgstr "Afegeix &servei a l'adreça d'interès"
@@ -1274,7 +1105,6 @@ msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr "Serveis"
@@ -1295,17 +1125,14 @@ msgctxt "addParBook|"
 msgid "Parameters:"
 msgstr ""
 
-#, fuzzy
 msgctxt "addParBook|"
 msgid "Done"
 msgstr "Fet"
 
-#, fuzzy
 msgctxt "addParBook|"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#, fuzzy
 msgctxt "addParametersToBookmark|"
 msgid "Warning - Nmapsi4"
 msgstr "Advertència - Nmapsi4"
@@ -1314,7 +1141,6 @@ msgctxt "addParametersToBookmark|"
 msgid "Insert profile name or/and profile parameters."
 msgstr ""
 
-#, fuzzy
 msgctxt "addParametersToBookmark|"
 msgid "Close"
 msgstr "Tanca"
@@ -1331,7 +1157,6 @@ msgctxt "addUrl|"
 msgid "Url address:"
 msgstr ""
 
-#, fuzzy
 msgctxt "addUrl|"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1382,17 +1207,14 @@ msgstr ""
 "font-weight:600;\">Nota: </span>variable de cerca al final de la "
 "URL</p></body></html>"
 
-#, fuzzy
 msgctxt "addUrl|"
 msgid "Done"
 msgstr "Fet"
 
-#, fuzzy
 msgctxt "addUrl|"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#, fuzzy
 msgctxt "addVulnerabilityUrl|"
 msgid "Warning - Nmapsi4"
 msgstr "Advertència - Nmapsi4"
@@ -1401,27 +1223,22 @@ msgctxt "addVulnerabilityUrl|"
 msgid "Insert url name or/and address."
 msgstr ""
 
-#, fuzzy
 msgctxt "addVulnerabilityUrl|"
 msgid "Close"
 msgstr "Tanca"
 
-#, fuzzy
 msgctxt "monitorDetails|"
 msgid "Scan Process Details"
 msgstr "Detalls del procés d'escaneig"
 
-#, fuzzy
 msgctxt "monitorDetails|"
 msgid "Hostname:"
 msgstr "Nom de la màquina:"
 
-#, fuzzy
 msgctxt "monitorDetails|"
 msgid "Reload"
 msgstr "Recarrega"
 
-#, fuzzy
 msgctxt "monitorDetails|"
 msgid "Close"
 msgstr "Tanca"
@@ -1430,62 +1247,50 @@ msgctxt "profilerDialog|"
 msgid "Profiler - Nmapsi4"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Profile"
 msgstr "Perfil"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Profile name: "
 msgstr "Nom del perfil: "
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Profile parameters:"
 msgstr "Paràmetres del perfil"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Base options:"
 msgstr "Opcions bàsiques:"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "None"
 msgstr "Cap"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Done"
 msgstr "Fet"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Scan"
 msgstr "Escaneja"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "TCP Connect Scan (-sT)"
 msgstr "Escaneig de connexió TCP (-sT)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Ping Sweep (-sP)"
 msgstr "Escombrat de pings (-sP)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "TCP scan:"
 msgstr "Escaneig TCP"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Non-TCP scans:"
 msgstr "Escanejos no TCP:"
@@ -1494,57 +1299,46 @@ msgctxt "profilerDialog|"
 msgid "List Scan (-sL)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Paranoid Throttling (-T0)"
 msgstr "Temporització paranoica (-T0)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Sneaky Throttling (-T1)"
 msgstr "Temporització dissimulada (-T1)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Polite Throttling (-T2)"
 msgstr "Temporització educada (-T2)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Normal Throttling (-T3)"
 msgstr "Temporització normal (-T3)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Aggressive Throttling (-T4)"
 msgstr "Temporització agressiva (-T4)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Insane Throttling (-T5)"
 msgstr "Temporització embogida (-T5)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Timing Template:"
 msgstr "Perfil de temporització"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "RPC Scan (-sR)"
 msgstr "Escaneig RPC (-sR)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "OS Detection (-O)"
 msgstr "Detecció de sistema operatiu (-O)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Version Probe (-sV)"
 msgstr "Sondeig de versió (-sV)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Ipv6 support (-6)"
 msgstr "Suport IPv6 (-6)"
@@ -1557,12 +1351,10 @@ msgctxt "profilerDialog|"
 msgid "Idle Scan (-sl)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "All"
 msgstr "Tot"
@@ -1571,52 +1363,42 @@ msgctxt "profilerDialog|"
 msgid "Most Important"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Range"
 msgstr "Rang"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Port Range:"
 msgstr "Rang de ports:"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Aggressive options (-A)"
 msgstr "Opcions agressives (-A)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Ping options"
 msgstr "Opcions de ping"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "TCP ACK Ping (-PA)"
 msgstr "Ping ACK TCP (-PA)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "21,23,80,3389"
 msgstr "21,23,80,3389"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "TCP SYN Ping (-PS)"
 msgstr "Ping SYN TCP (-PS)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "22,25,80"
 msgstr "22,25,80"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "UDP Ping (-PU)"
 msgstr "Ping UDP (-PU)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "ICMP Netmask (-PM)"
 msgstr "Màscara de xarxa ICMP (-PM)"
@@ -1625,12 +1407,10 @@ msgctxt "profilerDialog|"
 msgid "ICMP TImestamp (-PP)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "ICMP Echo (-PE)"
 msgstr "Eco ICMP (-PE)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Don't Ping (-P0)"
 msgstr "No facis ping (-P0)"
@@ -1639,12 +1419,10 @@ msgctxt "profilerDialog|"
 msgid "IPProto probes (-PO)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "SCTP INIT ping (-PY)"
 msgstr "Ping INIT SCTP (-PY)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Timing"
 msgstr "Temporització"
@@ -1673,22 +1451,18 @@ msgctxt "profilerDialog|"
 msgid "Max probe timeout (seconds, --max-rtt-timeout)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Scan Delay (seconds, --scan-delay)"
 msgstr "Retard d'escaneig (segons, --scan-delay)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Max scan delay (seconds, --max-scan-delay)"
 msgstr "Retard màxim d'escaneig (segons, --max-scan-delay)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Source"
 msgstr "Origen"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Specific network interface (-e)"
 msgstr "Interfície de xarxa específica (-e)"
@@ -1705,82 +1479,66 @@ msgctxt "profilerDialog|"
 msgid "Set Source spoof port (-g)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Extra"
 msgstr "Extra"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "DNS Resolution"
 msgstr "Resolució DNS"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "When Required"
 msgstr "Quan calgui"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Always"
 msgstr "Sempre"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Never"
 msgstr "Mai"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Verbosity level (-v)"
 msgstr "Nivell de detall (-v)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Quiet"
 msgstr "Silenciós"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Verbose"
 msgstr "Sortida detallada"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Very Verbose"
 msgstr "Molt detallada"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Debug"
 msgstr "Depuració"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Verbose Debug"
 msgstr "Depuració detallada"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Ordered scanned port (-r)"
 msgstr "Escaneig ordenat de ports (-r)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Fragment IP packets (-f)"
 msgstr "Fragmenta els paquets IP (-f)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Ipv4 TTL (--ttl)"
 msgstr "IPv4 TTL (--ttl)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Max Retries (--max-retries)"
 msgstr "Reintents màxims (--max-retries)"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Traceroute (--traceroute)"
 msgstr "Traça la ruta (--traceroute)"
@@ -1809,7 +1567,6 @@ msgctxt "profilerDialog|"
 msgid "Nse categories help"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Categories"
 msgstr "Categories"
@@ -1818,7 +1575,6 @@ msgctxt "profilerDialog|"
 msgid "Nse script parameters (Ex. user=foo,pass=test)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
@@ -1828,7 +1584,6 @@ msgctxt "profilerDialog|"
 msgid "Search information from nse script db:"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Search"
 msgstr "Cerca"
@@ -1841,7 +1596,6 @@ msgctxt "selectProfileDialog|"
 msgid "Select a scan profile"
 msgstr ""
 
-#, fuzzy
 msgctxt "selectProfileDialog|"
 msgid "Done"
 msgstr "Fet"
@@ -1853,3 +1607,4 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
+

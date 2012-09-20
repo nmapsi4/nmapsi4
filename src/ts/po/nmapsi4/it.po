@@ -1,3 +1,4 @@
+# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
@@ -7,6 +8,12 @@ msgstr ""
 "X-Language: it_IT\n"
 "X-Source-Language: en\n"
 "X-Qt-Contexts: true\n"
+"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
+"PO-Revision-Date: 2012-09-20 23:20+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"X-Generator: Lokalize 1.4\n"
 
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
@@ -218,7 +225,6 @@ msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr "Opzioni di scansione"
@@ -255,7 +261,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr "Data"
@@ -308,7 +313,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr "Ferma rilevamento"
@@ -321,7 +325,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr "Interfacce locali:"
@@ -446,7 +449,6 @@ msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr "Monitor di scansione"
@@ -763,27 +765,22 @@ msgctxt "MonitorWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop All Scan"
 msgstr "Ferma tutte le scansioni"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop Current Scan"
 msgstr "Ferma la scansione corrente"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Details"
 msgstr "Dettagli scansione"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "State"
 msgstr "Stato"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Options"
 msgstr "Opzioni di scansione"
@@ -908,17 +905,14 @@ msgctxt "ProfileMain|"
 msgid "Short"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Verbose"
 msgstr "Dettagliato"
 
-#, fuzzy
 msgctxt "Profiler|"
 msgid "No Ports Range (ex: 20-80)\n"
 msgstr "Manca l'intervallo delle porte (es: 20-80)\n"
 
-#, fuzzy
 msgctxt "Profiler|"
 msgid "Close"
 msgstr "Chiudi"
@@ -1035,22 +1029,18 @@ msgctxt "ScanBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Date"
 msgstr "Data"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "IP List"
 msgstr "Elenco IP"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Profile Name"
 msgstr "Nome profilo"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Elenco parametri"
@@ -1063,22 +1053,18 @@ msgctxt "VulnBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Data"
 msgstr "Dati"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Service"
 msgstr "Servizio"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s)"
 msgstr "URL"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr "Nome URL"
@@ -1103,7 +1089,6 @@ msgctxt "Vulnerability|"
 msgid "Add service to &bookmark"
 msgstr "Salva il servizio nel &bookmark"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr "Cerca vulnerabilità"
@@ -1112,7 +1097,6 @@ msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr "Servizi"
@@ -1580,7 +1564,6 @@ msgctxt "selectProfileDialog|"
 msgid "Select a scan profile"
 msgstr ""
 
-#, fuzzy
 msgctxt "selectProfileDialog|"
 msgid "Done"
 msgstr "Fatto"
@@ -1592,3 +1575,4 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
+

@@ -1,3 +1,4 @@
+# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
@@ -6,12 +7,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Language: cs_CZ\n"
 "X-Qt-Contexts: true\n"
+"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
+"PO-Revision-Date: 2012-09-20 23:22+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"X-Generator: Lokalize 1.4\n"
 
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
 msgstr ""
 
-#, fuzzy
 msgctxt "AboutUi|"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
@@ -142,22 +148,18 @@ msgid ""
 "color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan host(s)"
 msgstr "Prohledat server(y)"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Network Discover"
 msgstr "Síťové objevování"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Vulnerability"
 msgstr "Zranitelnost"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr "Prověřit zranitelnosti"
@@ -170,7 +172,6 @@ msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Host Details"
 msgstr "Podrobnosti o serveru"
@@ -179,32 +180,26 @@ msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr "Odstranit server"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr "Prohledat server"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr "Odstranit parametry prohledávání"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr "Odstranit službu"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr "Hledat zranitelnosti"
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Check Vulnerability"
 msgstr "Prověřit zranitelnost"
@@ -217,7 +212,6 @@ msgctxt "ActionManager|"
 msgid "Profile"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr "Uložit"
@@ -230,7 +224,6 @@ msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#, fuzzy
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr "Volby pro prohledávání"
@@ -251,7 +244,6 @@ msgctxt "ActionManager|"
 msgid "Load IP list"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr "je Nahoře"
@@ -268,7 +260,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr "Datum"
@@ -285,7 +276,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Probes Modes:"
 msgstr "Režimy pátrání:"
@@ -322,7 +312,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr "Zastavit objevování"
@@ -335,7 +324,6 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr ""
 
-#, fuzzy
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr "Místní rozhraní:"
@@ -376,42 +364,34 @@ msgctxt "MainWindow|"
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick Scan"
 msgstr "Rychlé prohledávání"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense Scan"
 msgstr "Silné prohledávání"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense Scan, all TCP ports"
 msgstr "Silné prohledávání, všechny přípojky TCP"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Intense scan plus UDP"
 msgstr "Silné prohledávání plus UDP"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Slow comprehensive scan"
 msgstr "Ukázat úplné prohlédnutí"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "No Host Target\n"
 msgstr "Žádný cíl se serverem"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Zavřít"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr "Název hostitelského počítače se již prohledává\n"
@@ -424,7 +404,6 @@ msgctxt "MainWindow|"
 msgid "Add service to &bookmark"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr " Činné prohledávání "
@@ -469,89 +448,72 @@ msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr "Dohled nad prohledáváním"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&About nmapsi4"
 msgstr "&O programu Nmapsi4"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Scan"
 msgstr "&Prohledat"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan"
 msgstr "Prohledat"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "About &Qt"
 msgstr "O &Qt"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Preferences"
 msgstr "&Nastavení"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Quit"
 msgstr "&Ukončit"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Stop Scan"
 msgstr "Zastavit prohledávání"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear History"
 msgstr "Smazat historii"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Close Tree"
 msgstr "Zavřít strom"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Close Scan Tree"
 msgstr ""
 "\n"
 "Zavřít strom s prohledáváním"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear HostName"
 msgstr "Smazat název serveru"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear Hostname IP"
 msgstr "Smazat IP u názvu serveru"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save As"
 msgstr "Uložit jako"
@@ -560,7 +522,6 @@ msgctxt "MainWindowClass|"
 msgid "Save Scan"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save"
 msgstr "Uložit"
@@ -573,27 +534,22 @@ msgctxt "MainWindowClass|"
 msgid "Save all scans to &Directory"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "F&ull Screen Mode"
 msgstr "Režim &celé obrazovky"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Shift+F11"
 msgstr "Ctrl+Shift+F11"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Show &Menu Bar"
 msgstr "Ukázat &nabídkový panel"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Show Status Bar"
 msgstr "Ukázat stavový řádek"
@@ -606,27 +562,22 @@ msgctxt "MainWindowClass|"
 msgid "Add host to bookmark"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Main"
 msgstr "Hlavní"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Log"
 msgstr "Zápis"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Vuln"
 msgstr "Zranitelnost"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Section Scan"
 msgstr "Prohledávání části"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Section Log"
 msgstr "Zápis k části"
@@ -635,27 +586,22 @@ msgctxt "MainWindowClass|"
 msgid "Section Vulnerabilities"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Donate Money"
 msgstr "Darujte peníze"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Documentation"
 msgstr "Dokumentace"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Visit Website"
 msgstr "Navštivte stránky projektu"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Report a bug"
 msgstr "Nahlášte chybu"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Section Discover"
 msgstr "Objevování části"
@@ -676,37 +622,30 @@ msgctxt "MainWindowClass|"
 msgid "Add vulnerability search url"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Clear"
 msgstr "Smazat"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Save Profile"
 msgstr "Uložit profil"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Description"
 msgstr "Popis"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Service"
 msgstr "Služba"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "State"
 msgstr "Stav"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Port"
 msgstr "Přípojka"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Nss script result"
 msgstr "Výsledek skriptu NSS"
@@ -715,47 +654,38 @@ msgctxt "MainWindowClass|"
 msgid "Service(s) Details"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Host(s)"
 msgstr "Server"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Lookup"
 msgstr "Vyhledávání"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "DNS"
 msgstr "DNS"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "IP"
 msgstr "IP"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "RTT"
 msgstr "RTT"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Hop(s)"
 msgstr "Poskočení"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Traceroute"
 msgstr "Sledování směrování na síti"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Host Details"
 msgstr "Podrobnosti o serveru"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Service(s) with info"
 msgstr "Služba(y) s informacemi"
@@ -764,27 +694,22 @@ msgctxt "MainWindowClass|"
 msgid "Nse result"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Os"
 msgstr "OS"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan log parameters"
 msgstr "Prohledat parametry zápisů"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Scan host(s)"
 msgstr "Prohledat server(y)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Log(s)"
 msgstr "Zápis(y)"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "Error(s)"
 msgstr "Chyba(y)"
@@ -793,47 +718,38 @@ msgctxt "MainWindowClass|"
 msgid "Raw scan log"
 msgstr ""
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&File"
 msgstr "&Soubor"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&View"
 msgstr "&Pohled"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Bookmarks"
 msgstr "&Záložky"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Help"
 msgstr "&Nápověda"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "S&ettings"
 msgstr "&Nastavení"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "&Tools"
 msgstr "&Nástroje"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "toolBar"
 msgstr "Nástrojový panel"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "toolBar_2"
 msgstr "Nástrojový panel 2"
 
-#, fuzzy
 msgctxt "MainWindowClass|"
 msgid "toolBar_3"
 msgstr "Nástrojový panel 3"
@@ -850,52 +766,42 @@ msgctxt "MonitorWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop All Scan"
 msgstr "Zastavit všechno prohledávání"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Stop Current Scan"
 msgstr "Zastavit nynější prohledávání"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Details"
 msgstr "Podrobnosti prohledávání"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "State"
 msgstr "Stav"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Options"
 msgstr "Volby pro prohledávání"
 
-#, fuzzy
 msgctxt "MonitorWidgetForm|"
 msgid "Host Thread"
 msgstr "Vlákno serveru"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Error: check nmap Installation.\n"
 msgstr "Chyba: prověřte instalaci nmap.\n"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Close"
 msgstr "Zavřít"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "No description"
 msgstr "Žádný popis"
 
-#, fuzzy
 msgctxt "ParserManager|"
 msgid "Save Log"
 msgstr "Uložit zápis"
@@ -908,7 +814,6 @@ msgctxt "PreferencesDialog|"
 msgid "General"
 msgstr ""
 
-#, fuzzy
 msgctxt "PreferencesDialog|"
 msgid "Lookup"
 msgstr "Vyhledávání"
@@ -1001,17 +906,14 @@ msgctxt "ProfileMain|"
 msgid "Short"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfileMain|"
 msgid "Verbose"
 msgstr "Podrobný"
 
-#, fuzzy
 msgctxt "Profiler|"
 msgid "No Ports Range (ex: 20-80)\n"
 msgstr "Žádný rozsah přípojek (ex: 20-80)\n"
 
-#, fuzzy
 msgctxt "Profiler|"
 msgid "Close"
 msgstr "Zavřít"
@@ -1044,12 +946,10 @@ msgctxt "ProfilerManager|"
 msgid "Profile"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Scan"
 msgstr "Prohledat"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Options"
 msgstr "Volby"
@@ -1058,7 +958,6 @@ msgctxt "ProfilerManager|"
 msgid "Ping"
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Timing"
 msgstr "Načasování"
@@ -1075,12 +974,10 @@ msgctxt "ProfilerManager|"
 msgid "Insert profile name."
 msgstr ""
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Close"
 msgstr "Zavřít"
 
-#, fuzzy
 msgctxt "ProfilerManager|"
 msgid "Warning: Operation more expansive.\n"
 msgstr "Upozornění: Úkon je velmi rozsáhlý."
@@ -1133,27 +1030,22 @@ msgctxt "ScanBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Date"
 msgstr "Datum"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "IP List"
 msgstr "Seznam IP"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Profile Name"
 msgstr "Název profilu"
 
-#, fuzzy
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Seznam pomocných proměnných"
 
-#, fuzzy
 msgctxt "Utilities|"
 msgid "Select the file"
 msgstr "Vyberte soubor"
@@ -1162,42 +1054,34 @@ msgctxt "VulnBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Data"
 msgstr "Data"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Service"
 msgstr "Služba"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s)"
 msgstr "Adresa (URL)"
 
-#, fuzzy
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr "Název adresy (URL)"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Search"
 msgstr "Hledat"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Back"
 msgstr "Zpět"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Forward"
 msgstr "Vpřed"
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Stop"
 msgstr "Zastavit"
@@ -1206,7 +1090,6 @@ msgctxt "Vulnerability|"
 msgid "Add service to &bookmark"
 msgstr ""
 
-#, fuzzy
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr "Hledat zranitelnosti"
@@ -1215,7 +1098,6 @@ msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr "Služby"
@@ -1252,7 +1134,6 @@ msgctxt "addParametersToBookmark|"
 msgid "Insert profile name or/and profile parameters."
 msgstr ""
 
-#, fuzzy
 msgctxt "addParametersToBookmark|"
 msgid "Close"
 msgstr "Zavřít"
@@ -1312,7 +1193,6 @@ msgctxt "addVulnerabilityUrl|"
 msgid "Insert url name or/and address."
 msgstr ""
 
-#, fuzzy
 msgctxt "addVulnerabilityUrl|"
 msgid "Close"
 msgstr "Zavřít"
@@ -1353,17 +1233,14 @@ msgctxt "profilerDialog|"
 msgid "None"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Done"
 msgstr "Hotovo"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Scan"
 msgstr "Prohledat"
@@ -1380,7 +1257,6 @@ msgctxt "profilerDialog|"
 msgid "Ping Sweep (-sP)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Timing Template:"
 msgstr "Předloha načasování:"
@@ -1441,27 +1317,22 @@ msgctxt "profilerDialog|"
 msgid "Idle Scan (-sl)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Normal"
 msgstr "Obvyklý"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "All"
 msgstr "Vše"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Most Important"
 msgstr "Nejdůležitější"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Range"
 msgstr "Rozsah"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Port Range:"
 msgstr "Rozsah přípojky:"
@@ -1518,7 +1389,6 @@ msgctxt "profilerDialog|"
 msgid "SCTP INIT ping (-PY)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Timing"
 msgstr "Načasování"
@@ -1579,22 +1449,18 @@ msgctxt "profilerDialog|"
 msgid "Extra"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "DNS Resolution"
 msgstr "Rozlišení DNS"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "When Required"
 msgstr "Při požádání"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Always"
 msgstr "Vždy"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Never"
 msgstr "Nikdy"
@@ -1603,27 +1469,22 @@ msgctxt "profilerDialog|"
 msgid "Verbosity level (-v)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Quiet"
 msgstr "Tichý"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Verbose"
 msgstr "Podrobný"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Very Verbose"
 msgstr "Velmi podrobný"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Debug"
 msgstr "Ladění"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Verbose Debug"
 msgstr "Podrobné ladění"
@@ -1648,27 +1509,22 @@ msgctxt "profilerDialog|"
 msgid "Traceroute (--traceroute)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Nse categories script available"
 msgstr "Skript pro skupiny nse dostupný"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Nse categories Script Active"
 msgstr "Skript pro skupiny nse v činnosti"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Restore Default Categories"
 msgstr "Obnovit výchozí skupiny"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Active Script"
 msgstr "Skript v činnosti"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Disable Script"
 msgstr "Zakázat skript"
@@ -1685,12 +1541,10 @@ msgctxt "profilerDialog|"
 msgid "Nse script parameters (Ex. user=foo,pass=test)"
 msgstr ""
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr "Ruční vyvolání skriptu nse: (Ex. snmp-sysdescr,smb-os-discovery )"
 
-#, fuzzy
 msgctxt "profilerDialog|"
 msgid "Search"
 msgstr "Hledat"
@@ -1711,7 +1565,6 @@ msgctxt "selectProfileDialog|"
 msgid "Select a scan profile"
 msgstr ""
 
-#, fuzzy
 msgctxt "selectProfileDialog|"
 msgid "Done"
 msgstr "Hotovo"
@@ -1723,3 +1576,4 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
+
