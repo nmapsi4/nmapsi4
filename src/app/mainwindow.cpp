@@ -46,7 +46,7 @@ void MainWindow::initObject()
     m_bookmark = new BookmarkManager(this);
     m_bookmark->restoreAllHistoryValues();
 
-    m_monitor = new Monitor(scanMonitor,this);
+    m_monitor = new Monitor(this);
     m_utilities = new Utilities(this);
     m_parser = new ParserManager(this);
     m_vulnerability = new Vulnerability(this);
@@ -106,12 +106,10 @@ void MainWindow::initObject()
             this, SLOT(setFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
-    // Vuln signal
     connect(comboParametersProfiles, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
-    // main session
     connect(actionScan_section, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
     connect(actionVulnerabilities_section, SIGNAL(triggered()),
@@ -123,8 +121,6 @@ void MainWindow::initObject()
     connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateComboHostnameProperties()));
     // monitor events
-    connect(scanMonitor, SIGNAL(itemSelectionChanged()),
-            this, SLOT(monitorRuntimeEvent()));
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
 
@@ -301,7 +297,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
     updateCompleter();
 
     // default action
-    monitorStopAllScanButt->setEnabled(true);
+    m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(true);
     action_Save_As->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
     actionSave->setEnabled(false);

@@ -24,8 +24,13 @@
 #include "nmapsi4adaptor.h"
 #endif
 
-Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
-: QObject(parent), m_monitor(monitor), m_ui(parent), m_idCounter(0)
+MonitorWidget::MonitorWidget(QWidget* parent): QWidget(parent)
+{
+    setupUi(this);
+}
+
+Monitor::Monitor(MainWindow* parent)
+: QObject(parent), m_ui(parent), m_idCounter(0)
 {
 #ifdef Q_WS_X11
     new Nmapsi4Adaptor(this);
@@ -44,17 +49,25 @@ Monitor::Monitor(QTreeWidget* monitor, MainWindow* parent)
     }
 #endif
 
+    m_monitorWidget = new MonitorWidget(m_ui);
+    m_monitorWidget->scanMonitor->setColumnWidth(0, 300);
+    m_monitorWidget->scanMonitor->setColumnWidth(1, 350);
+    m_monitorWidget->scanMonitor->setIconSize(QSize(22, 22));
+    m_monitorWidget->scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
+
     updateMaxParallelScan();
 
     m_isHostcached = false;
     m_timer = new QTimer(this);
 
-    connect(m_ui->monitorStopCurrentScanButt, SIGNAL(clicked()),
+    connect(m_monitorWidget->monitorStopCurrentScanButt, SIGNAL(clicked()),
             this, SLOT(stopSelectedScan()));
-    connect(m_ui->monitorDetailsScanButt, SIGNAL(clicked()),
+    connect(m_monitorWidget->monitorDetailsScanButt, SIGNAL(clicked()),
             this, SLOT(showSelectedScanDetails()));
-    connect(m_ui->monitorStopAllScanButt, SIGNAL(clicked()),
+    connect(m_monitorWidget->monitorStopAllScanButt, SIGNAL(clicked()),
             this, SLOT(stopAllScan()));
+    connect(m_monitorWidget->scanMonitor, SIGNAL(itemSelectionChanged()),
+            this, SLOT(monitorRuntimeEvent()));
 }
 
 Monitor::~Monitor()
@@ -92,7 +105,7 @@ int Monitor::monitorHostNumber()
 
 void Monitor::addMonitorHost(const QString hostName, const QStringList parameters, LookupType option)
 {
-    QTreeWidgetItem *hostThread = new QTreeWidgetItem(m_monitor);
+    QTreeWidgetItem *hostThread = new QTreeWidgetItem(m_monitorWidget->scanMonitor);
     hostThread->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
     hostThread->setText(0, hostName);
     hostThread->setText(1, parameters.join(" "));
@@ -100,7 +113,7 @@ void Monitor::addMonitorHost(const QString hostName, const QStringList parameter
     hostThread->setText(2, "Scanning");
     m_monitorElem.push_front(hostThread);
     // start indeterminate progress bar
-    m_ui->scanProgressBar->setMaximum(0);
+    m_monitorWidget->scanProgressBar->setMaximum(0);
 
     emit monitorUpdated(monitorHostNumber());
 
@@ -238,7 +251,6 @@ void Monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
 void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
 {
     if(state == -1) {
-        //QMessageBox::warning(this, "NmapSI4", tr("Wrong Address\n"), tr("Close"));
         qWarning() << "Monitor:: Wrong Address for lookUp";
         return;
     }
@@ -308,6 +320,18 @@ void Monitor::updateMaxParallelScan()
     m_parallelThreadLimit = settings.value("maxParallelScan", 5).toInt();
 }
 
+void Monitor::monitorRuntimeEvent()
+{
+    if (!m_monitorWidget->monitorStopCurrentScanButt->isEnabled())
+    {
+        m_monitorWidget->monitorStopCurrentScanButt->setEnabled(true);
+    }
+
+    if (!m_monitorWidget->monitorDetailsScanButt->isEnabled())
+    {
+        m_monitorWidget->monitorDetailsScanButt->setEnabled(true);
+    }
+}
 
 void Monitor::clearHostMonitorDetails()
 {
@@ -322,12 +346,12 @@ ProcessThread* Monitor::takeMonitorElem(const QString hostName)
 void Monitor::stopSelectedScan()
 {
     // Stop and wait thread from QHash table
-    if (m_monitor->selectedItems().isEmpty())
+    if (m_monitorWidget->scanMonitor->selectedItems().isEmpty())
     {
         return;
     }
 
-    const QString& hostname = m_monitor->selectedItems()[0]->text(0);
+    const QString& hostname = m_monitorWidget->scanMonitor->selectedItems()[0]->text(0);
 
     ProcessThread *ptrTmp = takeMonitorElem(hostname);
 
@@ -367,13 +391,13 @@ void Monitor::stopAllScan()
 
 void Monitor::showSelectedScanDetails()
 {
-    if (m_monitor->selectedItems().isEmpty())
+    if (m_monitorWidget->scanMonitor->selectedItems().isEmpty())
     {
         return;
     }
     // start details UI
-    QWeakPointer<MonitorDetails> details = new MonitorDetails(m_scanHashListFlow.operator[](m_monitor->selectedItems()[0]->text(0)),
-                         m_monitor->selectedItems()[0]->text(0), m_ui);
+    QWeakPointer<MonitorDetails> details = new MonitorDetails(m_scanHashListFlow.operator[](m_monitorWidget->scanMonitor->selectedItems()[0]->text(0)),
+                         m_monitorWidget->scanMonitor->selectedItems()[0]->text(0), m_ui);
     details.data()->exec();
 
     if (!details.isNull())

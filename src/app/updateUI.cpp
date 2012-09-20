@@ -76,8 +76,8 @@ void MainWindow::updateSezScan()
         tabUi->setCurrentIndex(0);
     }
 
-    if (!tabMainMonitor->isVisible()) {
-        tabUi->insertTab(1,tabMainMonitor,tr("Scan Monitor"));
+    if (!m_monitor->m_monitorWidget->isVisible()) {
+        tabUi->insertTab(1,m_monitor->m_monitorWidget,tr("Scan Monitor"));
 
         QIcon tabIcon;
         if(m_monitor->monitorHostNumber()) {
@@ -86,7 +86,7 @@ void MainWindow::updateSezScan()
             tabIcon.addFile(QString(":/images/images/utilities-log-viewer.png"));
         }
 
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),tabIcon);
+        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget),tabIcon);
     }
 
     tabUi->insertTab(tabUi->count(),m_bookmark->m_scanBookmarkWidget,
@@ -123,7 +123,7 @@ void MainWindow::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
-    tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
+    tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
     tabUi->insertTab(0,m_vulnerability->m_vulnerabilityWidget,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
 
     tabUi->insertTab(tabUi->count(),m_bookmark->m_vulnBookmarkWidget,
@@ -159,7 +159,7 @@ void MainWindow::updateSezDiscover()
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
-    tabUi->removeTab(tabUi->indexOf(tabMainMonitor));
+    tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
     tabUi->insertTab(0,m_discoverManager->m_discoverWidget,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");
     tabUi->setCurrentIndex(0);
 
@@ -185,8 +185,6 @@ void MainWindow::setTreeWidgetValues()
     treeMain->header()->setResizeMode(0, QHeaderView::Interactive);
     treeLookup->setIconSize(QSize(22, 22));
     treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
-    scanMonitor->setIconSize(QSize(22, 22));
-    scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
 }
 
 void MainWindow::loadDefaultProfile()
@@ -232,7 +230,7 @@ void MainWindow::updateScanCounter(int hostNumber)
 {
     if (hostNumber == 1)
     {
-        tabUi->setTabIcon(tabUi->indexOf(tabMainMonitor),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget),QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
 
     QString title(tr(" Active Scan ")
@@ -242,19 +240,6 @@ void MainWindow::updateScanCounter(int hostNumber)
                   + " - Nmapsi4");
 
     setWindowTitle(title);
-}
-
-void MainWindow::monitorRuntimeEvent()
-{
-    if (!monitorStopCurrentScanButt->isEnabled())
-    {
-        monitorStopCurrentScanButt->setEnabled(true);
-    }
-
-    if (!monitorDetailsScanButt->isEnabled())
-    {
-        monitorDetailsScanButt->setEnabled(true);
-    }
 }
 
 void MainWindow::clearHostnameCombo()

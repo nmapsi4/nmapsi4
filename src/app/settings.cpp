@@ -136,8 +136,6 @@ void MainWindow::restoreSettings()
 void MainWindow::setTreeSettings()
 {
     // set TreeWidget properties
-    scanMonitor->setColumnWidth(0, 300);
-    scanMonitor->setColumnWidth(1, 350);
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
@@ -185,4 +183,3 @@ void MainWindow::defaultComboValues()
     hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
 }
-

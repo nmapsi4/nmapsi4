@@ -124,7 +124,6 @@ private slots:
     void setFullScreen();
     void updateMenuBar();
     void takeHostFromBookmark();
-    void monitorRuntimeEvent();
     void updateScanCounter(int hostNumber);
     void startPreferencesDialog();
     void syncSettings();

@@ -115,11 +115,11 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     errorBuffer.clear();
 
     if(!m_ui->m_monitor->monitorHostNumber()) {
-        m_ui->scanProgressBar->setMaximum(100);
-        m_ui->monitorStopAllScanButt->setEnabled(false);
-        m_ui->monitorStopCurrentScanButt->setEnabled(false);
-        m_ui->monitorDetailsScanButt->setEnabled(false);
-        m_ui->tabUi->setTabIcon(m_ui->tabUi->indexOf(m_ui->tabMainMonitor),
+        m_ui->m_monitor->m_monitorWidget->scanProgressBar->setMaximum(100);
+        m_ui->m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(false);
+        m_ui->m_monitor->m_monitorWidget->monitorStopCurrentScanButt->setEnabled(false);
+        m_ui->m_monitor->m_monitorWidget->monitorDetailsScanButt->setEnabled(false);
+        m_ui->tabUi->setTabIcon(m_ui->tabUi->indexOf(m_ui->m_monitor->m_monitorWidget),
                                 QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     }
 

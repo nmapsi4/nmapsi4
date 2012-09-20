@@ -20,6 +20,8 @@
 #ifndef MONITOR_H
 #define MONITOR_H
 
+#include "ui_monitorwidget.h"
+
 // Qt include
 #include <QtGui/QTreeWidget>
 #include <QtCore/QObject>
@@ -45,6 +47,13 @@ using namespace memory;
 
 class MainWindow;
 
+class MonitorWidget : public QWidget, public Ui::MonitorWidgetForm
+{
+    Q_OBJECT
+public:
+    explicit MonitorWidget(QWidget* parent = 0);
+};
+
 class Monitor : public QObject
 {
     Q_OBJECT
@@ -54,7 +63,7 @@ class Monitor : public QObject
 #endif
 
 public:
-    Monitor(QTreeWidget* monitor, MainWindow* parent);
+    Monitor(MainWindow* parent);
     ~Monitor();
 
     enum LookupType
@@ -88,6 +97,8 @@ public:
      */
     void updateMaxParallelScan();
 
+    MonitorWidget* m_monitorWidget;
+
 private:
     void startScan(const QString hostname, QStringList parameters);
     void startLookup(const QString hostname, LookupType option);
@@ -113,7 +124,6 @@ private:
     QHash<QString, ProcessThread*> m_scanHashList;
     QHash<QString, QStringList> m_scanHashListFlow;
     QHash<QString, int> m_hostIdList;
-    QTreeWidget* m_monitor;
     MainWindow* m_ui;
     int m_parallelThreadLimit;
     int m_idCounter;
@@ -141,6 +151,7 @@ private slots:
     void stopSelectedScan();
     void stopAllScan();
     void showSelectedScanDetails();
+    void monitorRuntimeEvent();
 };
 
 #endif
