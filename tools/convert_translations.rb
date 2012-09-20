@@ -16,14 +16,14 @@ def ts2PoNmapsi4
 	    path_string_src = "../src/ts/"+value;
 	    path_string_src = path_string_src.delete("\n")
 	    path_string_dst = path_string_dst.delete("\n")
-	    result = %x[echo; ts2po #{path_string_src} #{path_string_dst}]
+	    result = %x[echo; lconvert -of po #{path_string_src} -o #{path_string_dst}]
 	    puts "Result: #{result}"
 	end
     end
     # TODO generic template pot
     path_string_dst = "../src/ts/po/nmapsi4/nmapsi4.pot"
     path_string_src = "../src/ts/template/nmapsi4.ts"
-    result = %x[echo; ts2po -P #{path_string_src} #{path_string_dst}]
+    result = %x[echo; lconvert -of pot #{path_string_src} -o #{path_string_dst}]
     puts "Result pot2: #{result}"
 end
 end

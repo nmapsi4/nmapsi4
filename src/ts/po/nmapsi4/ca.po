@@ -1,11 +1,16 @@
+# Catalan translation for nmapsi4
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the nmapsi4 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: nmapsi4\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-03-10 20:11+0200\n"
-"PO-Revision-Date: 2012-05-07 17:00+0000\n"
-"Last-Translator: Daniel Winzen <d@winzen4.de>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2012-04-10 19:53+0000\n"
+"Last-Translator: Marc Coll Carrillo <Unknown>\n"
+"Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +19,7 @@ msgstr ""
 
 #: AboutUi#1
 msgid "About Nmapsi4"
-msgstr "Über Nmapsi4"
+msgstr "Quant a Nmapsi4"
 
 #: AboutUi#2
 msgctxt "AboutUi#2"
@@ -27,6 +32,9 @@ msgid ""
 "goals to provide a complete nmap interface for Users,\n"
 "in order to menage all option of this power security net scanner."
 msgstr ""
+"NmapSi4 és una IGU totalment basada en Qt4 amb l'objectiu\n"
+"de proporcionar una interfície de nmap completa per als usuaris,\n"
+"per gestionar totes les opcions d'aquest potent escàner de xarxa."
 
 #: AboutUi#4
 msgid ""
@@ -40,15 +48,15 @@ msgstr ""
 "\n"
 "(c) 2007-2011 Francesco Cecconi\n"
 "\n"
-"Lizenz: GNU General Public License Version 2"
+"Llicència: Llicència Pública General de GNU (GPL) versió 2"
 
 #: AboutUi#5
 msgid "&Close"
-msgstr "S&chließen"
+msgstr "&Tanca"
 
 #: AboutUi#6
 msgid "&About"
-msgstr "&Über"
+msgstr "Qu&ant a"
 
 #: AboutUi#7
 msgid ""
@@ -98,7 +106,7 @@ msgstr ""
 "weight:600;\">Francesco Cecconi</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">Core Entwickler</span></p>\n"
+"style:italic;\">Desenvolupador principal</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
 "href=\"mainto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
@@ -111,7 +119,7 @@ msgstr ""
 "weight:600;\">Innocenzo Ventre</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">MS Windows Pakete</span></p>\n"
+"style:italic;\">Paquets MS Windows</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
 "href=\"mainto:el.diabl09@gmail.com\"><span style=\" text-decoration: "
@@ -122,7 +130,7 @@ msgstr ""
 
 #: AboutUi#8
 msgid "A&uthors"
-msgstr "A&utoren"
+msgstr "A&utors"
 
 #: AboutUi#9
 msgid ""
@@ -171,180 +179,224 @@ msgid ""
 "href=\"http://code.google.com/p/nmapsi4/\"><span style=\" text-decoration: "
 "underline; color:#0057ae;\">code.google.com</span></a></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Pàgina web:</span>  </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://www.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Seguiment d'errors:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://bugs.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Codi font:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://gitorious.org/nmapsi4\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">gitorious.org/nmapsi4</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Codi font:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://code.google.com/p/nmapsi4/\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">code.google.com</span></a></p></body></html>"
 
 #: AboutUi#10
 msgid "&Support"
-msgstr "&Unterstützung"
+msgstr "&Suport"
 
 #: AboutUi#11
 msgid "Version "
-msgstr "Version "
+msgstr "Versió "
 
 #: ActionManager#1
 msgctxt "ActionManager#1"
 msgid "Scan host(s)"
-msgstr ""
+msgstr "Escaneja les màquines"
 
 #: ActionManager#2
 msgid "Network Discover"
-msgstr ""
+msgstr "Descobriment de xarxes"
 
 #: ActionManager#3
 msgctxt "ActionManager#3"
 msgid "Vulnerability"
-msgstr "Verwundbarkeit"
+msgstr "Vulnerabilitat"
 
 #: ActionManager#4
 msgid "Check Vulnerabilities"
-msgstr ""
+msgstr "Comprova vulnerabilitats"
 
 #: ActionManager#5
 msgid "Host List"
-msgstr ""
+msgstr "Llista de màquines"
 
 #: ActionManager#6
 msgid "Show/Hide Host List"
-msgstr ""
+msgstr "Mostra/amaga la llista de màquines"
 
 #: ActionManager#7
 msgctxt "ActionManager#7"
 msgid "Host Details"
-msgstr ""
+msgstr "Detalls de la màquina"
 
 #: ActionManager#8
 msgid "Show/Hide Host Details"
-msgstr ""
+msgstr "Mostra/amaga els detalls de la màquina"
 
 #: ActionManager#9
 msgid "Remove Host"
-msgstr ""
+msgstr "Elimina la màquina"
 
 #: ActionManager#10
 msgid "Scan Host"
-msgstr ""
+msgstr "Escaneja la màquina"
 
 #: ActionManager#11
 msgid "Remove Scan Parameters"
-msgstr ""
+msgstr "Elimina els paràmetres d'escaneig"
 
 #: ActionManager#12
 msgid "Remove Service"
-msgstr ""
+msgstr "Elimina el servei"
 
 #: ActionManager#13
 msgid "Search for vulnerabilities"
-msgstr ""
+msgstr "Cerca vulnerabilitats"
 
 #: ActionManager#14
 msgid "Check Vulnerability"
-msgstr ""
+msgstr "Comprova vulnerabilitat"
 
 #: ActionManager#15
 msgid "Remove url"
-msgstr ""
+msgstr "Elimina URL"
 
 #: ActionManager#16
 msgid "Setup"
-msgstr "Einrichten"
+msgstr ""
 
 #: ActionManager#17
 msgctxt "ActionManager#17"
 msgid "Profile"
-msgstr "Profil"
+msgstr "Perfil"
 
 #: ActionManager#18
 msgctxt "ActionManager#18"
 msgid "Save"
-msgstr "Speichern"
+msgstr "Desa"
 
 #: ActionManager#19
 msgid "Bookmark"
-msgstr "Lesezeichen"
+msgstr "Adreça d'interès"
 
 #: ActionManager#20
 msgid "Scan discovered ips"
-msgstr ""
+msgstr "Escaneja les IPs descobertes"
 
 #: DiscoverManager#1
 msgid "is Up"
-msgstr ""
+msgstr "està viu"
 
 #: DiscoverManager#2
 msgid "Wrong CIDR notation format."
-msgstr ""
+msgstr "Format incorrecte de notació CIDR."
 
 #: MainWindow#1
 msgctxt "MainWindow#1"
 msgid "&Add host to bookmark"
-msgstr ""
+msgstr "Afegeix &màquina a l'adreça d'interès"
 
 #: MainWindow#2
 msgctxt "MainWindow#2"
 msgid "Add service to &bookmark"
-msgstr ""
+msgstr "Afegeix &servei a l'adreça d'interès"
 
 #: MainWindow#3
 msgctxt "MainWindow#3"
 msgid "Scan log parameters"
-msgstr ""
+msgstr "Paràmetres del registre d'escaneig"
 
 #: MainWindow#4
 msgid " Active Scan "
-msgstr ""
+msgstr " Escaneig actiu "
 
 #: MainWindow#5
 msgctxt "MainWindow#5"
 msgid "Bookmarks"
-msgstr "Lesezeichen"
+msgstr "Adreces d'interès"
 
 #: MainWindow#6
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
-msgstr ""
+msgstr "Màquines a escanejar (IP/DNS o incremental - ex. 192.168.1.1/20)"
 
 #: MainWindow#7
 msgid "Search Vulnerabilities"
-msgstr ""
+msgstr "Cerca vulnerabilitats"
 
 #: MainWindow#8
 msgid "Quick Scan"
-msgstr ""
+msgstr "Escaneig ràpid"
 
 #: MainWindow#9
 msgid "Intense Scan"
-msgstr ""
+msgstr "Escaneig intensiu"
 
 #: MainWindow#10
 msgid "Intense Scan, all TCP ports"
-msgstr ""
+msgstr "Escaneig intensiu, tots els ports TCP"
 
 #: MainWindow#11
 msgid "Intense scan plus UDP"
-msgstr ""
+msgstr "Escaneig intensiu més UDP"
 
 #: MainWindow#12
 msgid "Slow comprehensive scan"
-msgstr ""
+msgstr "Escaneig lent i meticulós"
 
 #: MainWindow#13
 msgid "No Host Target\n"
-msgstr "Kein Server Ziel\n"
+msgstr ""
 
 #: MainWindow#14
 msgctxt "MainWindow#14"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: MainWindow#15
 msgid "Hostname already scanning\n"
-msgstr ""
+msgstr "La màquina ja s'està escanejant\n"
 
 #: MainWindow#16
 msgid "<b>There are still active scan.</b>"
-msgstr ""
+msgstr "<b>Encara hi ha escanejos actius.</b>"
 
 #: MainWindow#17
 msgid "Do you want to close nmapsi4 anyway?"
-msgstr "Möchten Sie nmapsi4 trotzdem schließen?"
+msgstr "Voleu tancar Nmpasi4 de totes maneres?"
 
 #: MainWindowClass#1
 msgctxt "MainWindowClass#1"
@@ -353,93 +405,93 @@ msgstr "Nmapsi4"
 
 #: MainWindowClass#2
 msgid "&About nmapsi4"
-msgstr "&Über nmapsi4"
+msgstr "Quant a &Nmapsi4"
 
 #: MainWindowClass#3
 msgid "&Scan"
-msgstr "&Scannen"
+msgstr "E&scaneja"
 
 #: MainWindowClass#4
 msgctxt "MainWindowClass#4"
 msgid "Scan"
-msgstr ""
+msgstr "Escaneja"
 
 #: MainWindowClass#5
 msgid "Ctrl+S"
-msgstr "Strg+S"
+msgstr "Ctrl+S"
 
 #: MainWindowClass#6
 msgid "About &Qt"
-msgstr "Über &Qt"
+msgstr "Quant a &Qt"
 
 #: MainWindowClass#7
 msgid "&Preferences"
-msgstr "&Voreinstellungen"
+msgstr "&Preferències"
 
 #: MainWindowClass#8
 msgid "&Quit"
-msgstr "&Beenden"
+msgstr "&Surt"
 
 #: MainWindowClass#9
 msgid "Ctrl+Q"
-msgstr "Strg+Q"
+msgstr "Ctrl+Q"
 
 #: MainWindowClass#10
 msgid "Stop Scan"
-msgstr "Scan beenden"
+msgstr "Atura l'escaneig"
 
 #: MainWindowClass#11
 msgid "Clear History"
-msgstr "Verlauf löschen"
+msgstr "Neteja l'historial"
 
 #: MainWindowClass#12
 msgid "Close Tree"
-msgstr "Baum schließen"
+msgstr "Tanca l'arbre"
 
 #: MainWindowClass#13
 msgid "Close Scan Tree"
-msgstr "schließe Scan Baum"
+msgstr "Tanca l'arbre d'escaneig"
 
 #: MainWindowClass#14
 msgid "Clear HostName"
-msgstr "Lösche Servername"
+msgstr "Neteja el nom de la màquina"
 
 #: MainWindowClass#15
 msgid "Clear Hostname IP"
-msgstr "Lösche Server IP"
+msgstr "Neteja la IP de la màquina"
 
 #: MainWindowClass#16
 msgid "Save As"
-msgstr "Speichern unter"
+msgstr "Desa com a"
 
 #: MainWindowClass#17
 msgid "Save Scan"
-msgstr ""
+msgstr "Desa l'escaneig"
 
 #: MainWindowClass#18
 msgctxt "MainWindowClass#18"
 msgid "Save"
-msgstr "Speichern"
+msgstr "Desa"
 
 #: MainWindowClass#19
 msgid "S&ave Scan"
-msgstr ""
+msgstr "Des&a l'escaneig"
 
 #: MainWindowClass#20
 msgid "Save all scans to &Directory"
-msgstr ""
+msgstr "Desa tots els escaneijos al un &directori"
 
 #: MainWindowClass#21
 msgid "F&ull Screen Mode"
-msgstr "V&ollbild Modus"
+msgstr "&Mode de pantalla completa"
 
 #: MainWindowClass#22
 msgid "Ctrl+Shift+F11"
-msgstr "Ctrl+Shift+F11"
+msgstr "Ctrl+Maj+F11"
 
 #: MainWindowClass#23
 msgid "Show &Menu Bar"
-msgstr "Zeige &Werkzeugleiste"
+msgstr "Mostra la barra de &menú"
 
 #: MainWindowClass#24
 msgid "Ctrl+M"
@@ -447,28 +499,28 @@ msgstr "Ctrl+M"
 
 #: MainWindowClass#25
 msgid "Show Status Bar"
-msgstr "Zeige Statusleiste"
+msgstr "Mostra la barra d'estat"
 
 #: MainWindowClass#26
 msgctxt "MainWindowClass#26"
 msgid "&Add host to bookmark"
-msgstr ""
+msgstr "Afegeix &màquina a l'adreça d'interès"
 
 #: MainWindowClass#27
 msgid "Add host to bookmark"
-msgstr ""
+msgstr "Afegeix màquina a l'adreça d'interès"
 
 #: MainWindowClass#28
 msgid "Main"
-msgstr ""
+msgstr "Principal"
 
 #: MainWindowClass#29
 msgid "Log"
-msgstr "Protokoll"
+msgstr "Registre"
 
 #: MainWindowClass#30
 msgid "Vuln"
-msgstr ""
+msgstr "Vuln"
 
 #: MainWindowClass#31
 msgid "Section Scan"
@@ -484,19 +536,19 @@ msgstr ""
 
 #: MainWindowClass#34
 msgid "Donate Money"
-msgstr ""
+msgstr "Dona diners"
 
 #: MainWindowClass#35
 msgid "Documentation"
-msgstr "Dokumentation"
+msgstr "Documentació"
 
 #: MainWindowClass#36
 msgid "Visit Website"
-msgstr "Webseite besuchen"
+msgstr "Visita la pàgina web"
 
 #: MainWindowClass#37
 msgid "Report a bug"
-msgstr "Einen Fehler melden"
+msgstr "Informa d'un error"
 
 #: MainWindowClass#38
 msgid "Section Discover"
@@ -504,15 +556,15 @@ msgstr ""
 
 #: MainWindowClass#39
 msgid "New Profile"
-msgstr "Neues Profil"
+msgstr "Nou perfil"
 
 #: MainWindowClass#40
 msgid "Edit Profile"
-msgstr "Profil bearbeiten"
+msgstr "Edita el perfil"
 
 #: MainWindowClass#41
 msgid "Add &parameters to bookmark"
-msgstr ""
+msgstr "Afegeix &paràmetres a l'adreça d'interès"
 
 #: MainWindowClass#42
 msgid "Add vulnerability search url"
@@ -520,23 +572,23 @@ msgstr ""
 
 #: MainWindowClass#43
 msgid "Clear"
-msgstr ""
+msgstr "Neteja"
 
 #: MainWindowClass#44
 msgid "Save Profile"
-msgstr "Profil speichern"
+msgstr "Desa el perfil"
 
 #: MainWindowClass#45
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Descripció"
 
 #: MainWindowClass#46
 msgid "Service"
-msgstr "Dienst"
+msgstr "Servei"
 
 #: MainWindowClass#47
 msgid "State"
-msgstr ""
+msgstr "Estat"
 
 #: MainWindowClass#48
 msgid "Port"
@@ -544,20 +596,20 @@ msgstr "Port"
 
 #: MainWindowClass#49
 msgid "Nss script result"
-msgstr ""
+msgstr "Resultat de l'script NSS"
 
 #: MainWindowClass#50
 msgid "Service(s) Details"
-msgstr ""
+msgstr "Detalls del(s) servei(s)"
 
 #: MainWindowClass#51
 msgid "Host(s)"
-msgstr "Server"
+msgstr "Màquina/es"
 
 #: MainWindowClass#52
 msgctxt "MainWindowClass#52"
 msgid "Lookup"
-msgstr ""
+msgstr "Cerca"
 
 #: MainWindowClass#53
 msgid "DNS"
@@ -573,58 +625,58 @@ msgstr "RTT"
 
 #: MainWindowClass#56
 msgid "Hop(s)"
-msgstr ""
+msgstr "Salt(s)"
 
 #: MainWindowClass#57
 msgid "Traceroute"
-msgstr ""
+msgstr "Traceroute"
 
 #: MainWindowClass#58
 msgctxt "MainWindowClass#58"
 msgid "Host Details"
-msgstr ""
+msgstr "Detalls de la màquina"
 
 #: MainWindowClass#59
 msgid "Service(s) with info"
-msgstr ""
+msgstr "Servei(s) amb informació"
 
 #: MainWindowClass#60
 msgid "Scan host details"
-msgstr ""
+msgstr "Detalls de l'escanejat"
 
 #: MainWindowClass#61
 msgid "Nse result"
-msgstr ""
+msgstr "Resultat NSE"
 
 #: MainWindowClass#62
 msgid "Os"
-msgstr "Os"
+msgstr "SO"
 
 #: MainWindowClass#63
 msgctxt "MainWindowClass#63"
 msgid "Scan log parameters"
-msgstr ""
+msgstr "Paràmetres del registre d'escaneig"
 
 #: MainWindowClass#64
 msgctxt "MainWindowClass#64"
 msgid "Scan host(s)"
-msgstr ""
+msgstr "Escaneja les màquines"
 
 #: MainWindowClass#65
 msgid "Stop All Scan"
-msgstr ""
+msgstr "Atura tot escaneig"
 
 #: MainWindowClass#66
 msgid "Stop Current Scan"
-msgstr ""
+msgstr "Atura l'escaneig actual"
 
 #: MainWindowClass#67
 msgid "Scan Details"
-msgstr ""
+msgstr "Detalls de l'escaneig"
 
 #: MainWindowClass#68
 msgid "Scan Options"
-msgstr ""
+msgstr "Opcions d'escaneig"
 
 #: MainWindowClass#69
 msgid "Host Thread"
@@ -632,62 +684,62 @@ msgstr ""
 
 #: MainWindowClass#70
 msgid "Scan Monitor"
-msgstr ""
+msgstr "Monitor d'escaneig"
 
 #: MainWindowClass#71
 msgid "Date"
-msgstr "Datum"
+msgstr "Data"
 
 #: MainWindowClass#72
 msgid "IP List"
-msgstr ""
+msgstr "Llista d'IPs"
 
 #: MainWindowClass#73
 msgctxt "MainWindowClass#73"
 msgid "Profile Name"
-msgstr "Name des Profils"
+msgstr "Nom del perfil"
 
 #: MainWindowClass#74
 msgid "Parameters List"
-msgstr ""
+msgstr "Llista de paràmetres"
 
 #: MainWindowClass#75
 msgctxt "MainWindowClass#75"
 msgid "Bookmarks"
-msgstr "Lesezeichen"
+msgstr "Adreces d'interès"
 
 #: MainWindowClass#76
 msgid "Log(s)"
-msgstr "Log(s)"
+msgstr "Registre(s)"
 
 #: MainWindowClass#77
 msgid "Error(s)"
-msgstr "Fehler"
+msgstr "Error(s)"
 
 #: MainWindowClass#78
 msgid "Raw scan log"
-msgstr ""
+msgstr "Registre de l'escaneig en brut"
 
 #: MainWindowClass#79
 msgid "Services"
-msgstr "Dienste"
+msgstr "Serveis"
 
 #: MainWindowClass#80
 msgctxt "MainWindowClass#80"
 msgid "Vulnerability"
-msgstr "Verwundbarkeit"
+msgstr "Vulnerabilitat"
 
 #: MainWindowClass#81
 msgid "Data"
-msgstr "Daten"
+msgstr "Dades"
 
 #: MainWindowClass#82
 msgid "Url(s)"
-msgstr "Url(s)"
+msgstr "URL(s)"
 
 #: MainWindowClass#83
 msgid "Url(s) name"
-msgstr ""
+msgstr "Nom de la URL"
 
 #: MainWindowClass#84
 msgid "Packets trace"
@@ -695,15 +747,15 @@ msgstr ""
 
 #: MainWindowClass#85
 msgid "Probe"
-msgstr ""
+msgstr "Sondeja"
 
 #: MainWindowClass#86
 msgid "Ips range (IPv4)"
-msgstr ""
+msgstr "Rang d'IPs (IPv4)"
 
 #: MainWindowClass#87
 msgid "Local Interfaces:"
-msgstr ""
+msgstr "Interfícies locals"
 
 #: MainWindowClass#88
 msgid "Probes Modes:"
@@ -711,7 +763,7 @@ msgstr ""
 
 #: MainWindowClass#89
 msgid "Stop Discover"
-msgstr ""
+msgstr "Atura el descobriment"
 
 #: MainWindowClass#90
 msgid "Discover Group:"
@@ -719,15 +771,15 @@ msgstr ""
 
 #: MainWindowClass#91
 msgid "Start Ip:"
-msgstr ""
+msgstr "IP inicial:"
 
 #: MainWindowClass#92
 msgid "End Ip:"
-msgstr ""
+msgstr "IP final:"
 
 #: MainWindowClass#93
 msgid "Ip"
-msgstr "Ip"
+msgstr "IP"
 
 #: MainWindowClass#94
 msgid "Remaining Ip:"
@@ -735,75 +787,75 @@ msgstr ""
 
 #: MainWindowClass#95
 msgid "Start DIscover from ips range"
-msgstr ""
+msgstr "Inicia el descobriment a partir del rang d'IPs"
 
 #: MainWindowClass#96
 msgid "Cidr notation (IPv4)"
-msgstr ""
+msgstr "Notació CIDR (IPv4)"
 
 #: MainWindowClass#97
 msgid "Start with CIDR-style addressing"
-msgstr ""
+msgstr "Inicia amb direccionament de tipus CIDR"
 
 #: MainWindowClass#98
 msgid "Stop discover"
-msgstr ""
+msgstr "Atura el descobriment"
 
 #: MainWindowClass#99
 msgid "CIDR Address:"
-msgstr ""
+msgstr "Adreça CIDR:"
 
 #: MainWindowClass#100
 msgid "Estimate number of ip to ping"
-msgstr ""
+msgstr "Nombre estimat d'IPs a fer ping"
 
 #: MainWindowClass#101
 msgid "Number of ips:"
-msgstr ""
+msgstr "Nombre d'IPs:"
 
 #: MainWindowClass#102
 msgid "Ex. 192.168.1.0/28 (16 ips)"
-msgstr ""
+msgstr "Ex. 192.168.1.0/28 (16 IPs)"
 
 #: MainWindowClass#103
 msgid "Discover options"
-msgstr ""
+msgstr "Opcions de descobriment"
 
 #: MainWindowClass#104
 msgid "Network discover"
-msgstr ""
+msgstr "Descobriment de xarxes"
 
 #: MainWindowClass#105
 msgid "&File"
-msgstr "&Datei"
+msgstr "&Fitxer"
 
 #: MainWindowClass#106
 msgid "&View"
-msgstr "&Ansicht"
+msgstr "&Vista:"
 
 #: MainWindowClass#107
 msgid "&Bookmarks"
-msgstr "&Lesezeichen"
+msgstr "&Adreces d'interès"
 
 #: MainWindowClass#108
 msgid "&Help"
-msgstr "&Hilfe"
+msgstr "&Ajuda"
 
 #: MainWindowClass#109
 msgid "S&ettings"
-msgstr "E&instellungen"
+msgstr "A&rranjament"
 
 #: MainWindowClass#110
 msgid "&Tools"
-msgstr "Ex&tras"
+msgstr "&Eines"
 
 #: MainWindowClass#111
 msgid "toolBar"
-msgstr "Werkzeugleiste"
+msgstr ""
 
 #: MainWindowClass#112
 msgid "toolBar_2"
-msgstr "Werkzeugleiste_2"
+msgstr ""
 
 #: MainWindowClass#113
 msgid "toolBar_3"
@@ -811,77 +863,77 @@ msgstr ""
 
 #: Monitor#1
 msgid "Waiting"
-msgstr "Es wird gewartet"
+msgstr "Esperant"
 
 #: Monitor#2
 msgid "Scanning"
-msgstr ""
+msgstr "Escanejant"
 
 #: ParserManager#1
 msgid "Error: check nmap Installation.\n"
-msgstr ""
+msgstr "Error: comproveu la instal·lació de nmap.\n"
 
 #: ParserManager#2
 msgctxt "ParserManager#2"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: ParserManager#3
 msgid "No description"
-msgstr "Keine Beschreibung"
+msgstr "Sense descripció"
 
 #: ParserManager#4
 msgid "Save Log"
-msgstr "Speichere Log"
+msgstr "Desa el registre"
 
 #: ParserManager#5
 msgid "Log (*.log);;Html (*.html *.htm)"
-msgstr ""
+msgstr "Registre (*.log);;HTML (*.html *.htm)"
 
 #: PreferencesDialog#1
 msgid "General"
-msgstr "Allgemein"
+msgstr "Opcions generals"
 
 #: PreferencesDialog#2
 msgid "Size"
-msgstr "Größe"
+msgstr "Mida"
 
 #: PreferencesDialog#3
 msgctxt "PreferencesDialog#3"
 msgid "Lookup"
-msgstr ""
+msgstr "Cerca"
 
 #: PreferencesDialog#4
 msgid "<h3>General</h3>"
-msgstr "<h3>Allgemein</h3>"
+msgstr "<h3>Opcions generals</h3>"
 
 #: PreferencesDialog#5
 msgid "<h3>Size</h3>"
-msgstr "<h3>Größe</h3>"
+msgstr "<h3>Mida</h3>"
 
 #: PreferencesDialog#6
 msgid "<h3>Lookup</h3>"
-msgstr ""
+msgstr "<h3>Cerca</h3>"
 
 #: ProfileMain#1
 msgid "Log Preferences"
-msgstr "Log Voreinstellungen"
+msgstr "Preferències del registre"
 
 #: ProfileMain#2
 msgid "Log type"
-msgstr ""
+msgstr "Tipus de registre"
 
 #: ProfileMain#3
 msgid "Fancy format"
-msgstr ""
+msgstr "Format elaborat"
 
 #: ProfileMain#4
 msgid "Nmap raw format"
-msgstr ""
+msgstr "Format nmap en brut"
 
 #: ProfileMain#5
 msgid "Html format"
-msgstr ""
+msgstr "Format HTML"
 
 #: ProfileMain#6
 msgid "Tuning options"
@@ -901,32 +953,32 @@ msgstr ""
 
 #: ProfileMain#10
 msgid "Size Preferences"
-msgstr "Größen Voreinstellungen"
+msgstr "Preferències de mida"
 
 #: ProfileMain#11
 msgid "Save Windows Resize"
-msgstr "Speicher Fenster Größe"
+msgstr "Desa la mida de les finestres"
 
 #: ProfileMain#12
 msgid "Save Windows Positions"
-msgstr "Speicher Fenster Position"
+msgstr "Desa la posició de les finestres"
 
 #: ProfileMain#13
 msgid "Lookup Preferences"
-msgstr ""
+msgstr "Preferències de cerca"
 
 #: ProfileMain#14
 msgid "Lookup type"
-msgstr ""
+msgstr "Tipus de cerca"
 
 #: ProfileMain#15
 msgctxt "ProfileMain#15"
 msgid "None"
-msgstr ""
+msgstr "Cap"
 
 #: ProfileMain#16
 msgid "Internal lookup"
-msgstr ""
+msgstr "Cerca interna"
 
 #: ProfileMain#17
 msgid "Dig lookup"
@@ -934,41 +986,41 @@ msgstr ""
 
 #: ProfileMain#18
 msgid "&Defaults"
-msgstr "&Standards"
+msgstr "&Omissió"
 
 #: ProfileMain#19
 msgid "Preferences - Nmapsi4"
-msgstr ""
+msgstr "Preferències - Nmapsi4"
 
 #: ProfileMain#20
 msgid "&Ok"
-msgstr "&Ok"
+msgstr "&D'acord"
 
 #: ProfileMain#21
 msgid "&Cancel"
-msgstr "&Abbrechen"
+msgstr "&Cancel·la"
 
 #: ProfilerManager#1
 msgid "New profile"
-msgstr "Neues Profil"
+msgstr "Nou perfil"
 
 #: ProfilerManager#2
 msgid "Edit profile "
-msgstr "Profil bearbeiten "
+msgstr "Edita el perfil "
 
 #: ProfilerManager#3
 msgctxt "ProfilerManager#3"
 msgid "Profile"
-msgstr "Profil"
+msgstr "Perfil"
 
 #: ProfilerManager#4
 msgctxt "ProfilerManager#4"
 msgid "Scan"
-msgstr ""
+msgstr "Escaneja"
 
 #: ProfilerManager#5
 msgid "Options"
-msgstr "Optionen"
+msgstr "Opcions"
 
 #: ProfilerManager#6
 msgid "Ping"
@@ -977,59 +1029,59 @@ msgstr "Ping"
 #: ProfilerManager#7
 msgctxt "ProfilerManager#7"
 msgid "Timing"
-msgstr ""
+msgstr "Temporització"
 
 #: ProfilerManager#8
 msgid "Nse"
-msgstr ""
+msgstr "NSE"
 
 #: ProfilerManager#9
 msgctxt "ProfilerManager#9"
 msgid "Warning - Nmapsi4"
-msgstr ""
+msgstr "Advertència - Nmapsi4"
 
 #: ProfilerManager#10
 msgid "Insert profile name."
-msgstr ""
+msgstr "Inseriu el nom del perfil"
 
 #: ProfilerManager#11
 msgctxt "ProfilerManager#11"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: ProfilerManager#12
 msgid "No Ports Range (ex: 20-80)\n"
-msgstr "Kein Port Bereich (ex: 20-80)\n"
+msgstr ""
 
 #: ProfilerManager#13
 msgid "Warning: Operation more expansive.\n"
-msgstr "Warnung: Operation sehr mitteilhaft.\n"
+msgstr ""
 
 #: Utilities#1
 msgid "Select the file"
-msgstr "Wählen Sie die Datei"
+msgstr "Seleccioneu el fitxer"
 
 #: Vulnerability#1
 msgctxt "Vulnerability#1"
 msgid "Search"
-msgstr "Suchen"
+msgstr "Cerca"
 
 #: Vulnerability#2
 msgid "Back"
-msgstr "Zurück"
+msgstr "Enrere"
 
 #: Vulnerability#3
 msgid "Forward"
-msgstr "Vorwärts"
+msgstr "Endavant"
 
 #: Vulnerability#4
 msgid "Stop"
-msgstr "Anhalten"
+msgstr "Atura"
 
 #: Vulnerability#5
 msgctxt "Vulnerability#5"
 msgid "Add service to &bookmark"
-msgstr ""
+msgstr "Afegeix &servei a l'adreça d'interès"
 
 #: addParBook#1
 msgid "Save quick profile - Nmapsi4"
@@ -1038,26 +1090,26 @@ msgstr ""
 #: addParBook#2
 msgctxt "addParBook#2"
 msgid "Profile Name"
-msgstr "Name des Profils"
+msgstr "Nom del perfil"
 
 #: addParBook#3
 msgid "Parameters"
-msgstr "Parameter"
+msgstr "Paràmetres"
 
 #: addParBook#4
 msgctxt "addParBook#4"
 msgid "Done"
-msgstr "Fertig"
+msgstr "Fet"
 
 #: addParBook#5
 msgctxt "addParBook#5"
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Cancel·la"
 
 #: addParametersToBookmark#1
 msgctxt "addParametersToBookmark#1"
 msgid "Warning - Nmapsi4"
-msgstr "Warnung - Nmapsi4"
+msgstr "Advertència - Nmapsi4"
 
 #: addParametersToBookmark#2
 msgid "Insert profile name or/and profile parameters."
@@ -1066,7 +1118,7 @@ msgstr ""
 #: addParametersToBookmark#3
 msgctxt "addParametersToBookmark#3"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: addUrl#1
 msgid "Save vulnerability search address - Nmapsi4"
@@ -1074,11 +1126,11 @@ msgstr ""
 
 #: addUrl#2
 msgid "Url Name"
-msgstr ""
+msgstr "Nom de la URL"
 
 #: addUrl#3
 msgid "Url address"
-msgstr ""
+msgstr "Adreça de la URL"
 
 #: addUrl#4
 msgid ""
@@ -1106,21 +1158,44 @@ msgid ""
 "weight:600;\">Note: </span>search variable at the and of "
 "url</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Exemple:</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
+"indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Nom URL: "
+"cve.mitre.org</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Adreça URL: "
+"http://cve.mitre.org/cgi-bin/cvekey.cgi?<span style=\" font-weight:600; font-"
+"style:italic;\">keyword=</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Nota: </span>variable de cerca al final de la "
+"URL</p></body></html>"
 
 #: addUrl#5
 msgctxt "addUrl#5"
 msgid "Done"
-msgstr "Fertig"
+msgstr "Fet"
 
 #: addUrl#6
 msgctxt "addUrl#6"
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Cancel·la"
 
 #: addVulnerabilityUrl#1
 msgctxt "addVulnerabilityUrl#1"
 msgid "Warning - Nmapsi4"
-msgstr "Warnung - Nmapsi4"
+msgstr "Advertència - Nmapsi4"
 
 #: addVulnerabilityUrl#2
 msgid "Insert url name or/and address."
@@ -1129,24 +1204,24 @@ msgstr ""
 #: addVulnerabilityUrl#3
 msgctxt "addVulnerabilityUrl#3"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: monitorDetails#1
 msgid "Scan Process Details"
-msgstr ""
+msgstr "Detalls del procés d'escaneig"
 
 #: monitorDetails#2
 msgid "Hostname:"
-msgstr "Rechnername:"
+msgstr "Nom de la màquina:"
 
 #: monitorDetails#3
 msgid "Reload"
-msgstr "Neuladen"
+msgstr "Recarrega"
 
 #: monitorDetails#4
 msgctxt "monitorDetails#4"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Tanca"
 
 #: profilerDialog#1
 msgid "Profiler - Nmapsi4"
@@ -1155,28 +1230,28 @@ msgstr ""
 #: profilerDialog#2
 msgctxt "profilerDialog#2"
 msgid "Profile"
-msgstr "Profil"
+msgstr "Perfil"
 
 #: profilerDialog#3
 msgid "Profile name: "
-msgstr "Profilname: "
+msgstr "Nom del perfil: "
 
 #: profilerDialog#4
 msgid "Profile parameters:"
-msgstr ""
+msgstr "Paràmetres del perfil"
 
 #: profilerDialog#5
 msgid "Base options:"
-msgstr ""
+msgstr "Opcions bàsiques:"
 
 #: profilerDialog#6
 msgctxt "profilerDialog#6"
 msgid "None"
-msgstr ""
+msgstr "Cap"
 
 #: profilerDialog#7
 msgid "Default"
-msgstr "Standard"
+msgstr "Predeterminat"
 
 #: profilerDialog#8
 msgid "Default with nse script"
@@ -1185,61 +1260,61 @@ msgstr ""
 #: profilerDialog#9
 msgctxt "profilerDialog#9"
 msgid "Done"
-msgstr "Fertig"
+msgstr "Fet"
 
 #: profilerDialog#10
 msgctxt "profilerDialog#10"
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Cancel·la"
 
 #: profilerDialog#11
 msgctxt "profilerDialog#11"
 msgid "Scan"
-msgstr ""
+msgstr "Escaneja"
 
 #: profilerDialog#12
 msgid "TCP scan:"
-msgstr ""
+msgstr "Escaneig TCP"
 
 #: profilerDialog#13
 msgid "TCP Connect Scan (-sT)"
-msgstr ""
+msgstr "Escaneig de connexió TCP (-sT)"
 
 #: profilerDialog#14
 msgid "Ping Sweep (-sP)"
-msgstr ""
+msgstr "Escombrat de pings (-sP)"
 
 #: profilerDialog#15
 msgid "Timing Template:"
-msgstr ""
+msgstr "Perfil de temporització"
 
 #: profilerDialog#16
 msgid "Paranoid Throttling (-T0)"
-msgstr ""
+msgstr "Temporització paranoica (-T0)"
 
 #: profilerDialog#17
 msgid "Sneaky Throttling (-T1)"
-msgstr ""
+msgstr "Temporització dissimulada (-T1)"
 
 #: profilerDialog#18
 msgid "Polite Throttling (-T2)"
-msgstr ""
+msgstr "Temporització educada (-T2)"
 
 #: profilerDialog#19
 msgid "Normal Throttling (-T3)"
-msgstr ""
+msgstr "Temporització normal (-T3)"
 
 #: profilerDialog#20
 msgid "Aggressive Throttling (-T4)"
-msgstr ""
+msgstr "Temporització agressiva (-T4)"
 
 #: profilerDialog#21
 msgid "Insane Throttling (-T5)"
-msgstr ""
+msgstr "Temporització embogida (-T5)"
 
 #: profilerDialog#22
 msgid "Non-TCP scans:"
-msgstr ""
+msgstr "Escanejos no TCP:"
 
 #: profilerDialog#23
 msgid "List Scan (-sL)"
@@ -1247,19 +1322,19 @@ msgstr ""
 
 #: profilerDialog#24
 msgid "RPC Scan (-sR)"
-msgstr ""
+msgstr "Escaneig RPC (-sR)"
 
 #: profilerDialog#25
 msgid "OS Detection (-O)"
-msgstr ""
+msgstr "Detecció de sistema operatiu (-O)"
 
 #: profilerDialog#26
 msgid "Version Probe (-sV)"
-msgstr ""
+msgstr "Sondeig de versió (-sV)"
 
 #: profilerDialog#27
 msgid "Ipv6 support (-6)"
-msgstr ""
+msgstr "Suport IPv6 (-6)"
 
 #: profilerDialog#28
 msgid "FTP bounce attack (-b)"
@@ -1275,39 +1350,39 @@ msgstr "Normal"
 
 #: profilerDialog#31
 msgid "All"
-msgstr "Alle"
+msgstr "Tot"
 
 #: profilerDialog#32
 msgid "Most Important"
-msgstr "Am wichtigsten"
+msgstr ""
 
 #: profilerDialog#33
 msgid "Range"
-msgstr "Bereich"
+msgstr "Rang"
 
 #: profilerDialog#34
 msgid "Port Range:"
-msgstr ""
+msgstr "Rang de ports:"
 
 #: profilerDialog#35
 msgid "Aggressive options (-A)"
-msgstr ""
+msgstr "Opcions agressives (-A)"
 
 #: profilerDialog#36
 msgid "Ping options"
-msgstr ""
+msgstr "Opcions de ping"
 
 #: profilerDialog#37
 msgid "TCP ACK Ping (-PA)"
-msgstr ""
+msgstr "Ping ACK TCP (-PA)"
 
 #: profilerDialog#38
 msgid "21,23,80,3389"
-msgstr ""
+msgstr "21,23,80,3389"
 
 #: profilerDialog#39
 msgid "TCP SYN Ping (-PS)"
-msgstr ""
+msgstr "Ping SYN TCP (-PS)"
 
 #: profilerDialog#40
 msgid "22,25,80"
@@ -1315,11 +1390,11 @@ msgstr "22,25,80"
 
 #: profilerDialog#41
 msgid "UDP Ping (-PU)"
-msgstr ""
+msgstr "Ping UDP (-PU)"
 
 #: profilerDialog#42
 msgid "ICMP Netmask (-PM)"
-msgstr ""
+msgstr "Màscara de xarxa ICMP (-PM)"
 
 #: profilerDialog#43
 msgid "ICMP TImestamp (-PP)"
@@ -1327,11 +1402,11 @@ msgstr ""
 
 #: profilerDialog#44
 msgid "ICMP Echo (-PE)"
-msgstr ""
+msgstr "Eco ICMP (-PE)"
 
 #: profilerDialog#45
 msgid "Don't Ping (-P0)"
-msgstr ""
+msgstr "No facis ping (-P0)"
 
 #: profilerDialog#46
 msgid "IPProto probes (-PO)"
@@ -1339,12 +1414,12 @@ msgstr ""
 
 #: profilerDialog#47
 msgid "SCTP INIT ping (-PY)"
-msgstr ""
+msgstr "Ping INIT SCTP (-PY)"
 
 #: profilerDialog#48
 msgctxt "profilerDialog#48"
 msgid "Timing"
-msgstr ""
+msgstr "Temporització"
 
 #: profilerDialog#49
 msgid "Min outstanding probes (--min-parallelism)"
@@ -1372,19 +1447,19 @@ msgstr ""
 
 #: profilerDialog#55
 msgid "Scan Delay (seconds, --scan-delay)"
-msgstr ""
+msgstr "Retard d'escaneig (segons, --scan-delay)"
 
 #: profilerDialog#56
 msgid "Max scan delay (seconds, --max-scan-delay)"
-msgstr ""
+msgstr "Retard màxim d'escaneig (segons, --max-scan-delay)"
 
 #: profilerDialog#57
 msgid "Source"
-msgstr "Quelle"
+msgstr "Origen"
 
 #: profilerDialog#58
 msgid "Specific network interface (-e)"
-msgstr ""
+msgstr "Interfície de xarxa específica (-e)"
 
 #: profilerDialog#59
 msgid "Set source spoof ip address (-S)"
@@ -1404,63 +1479,63 @@ msgstr "Extra"
 
 #: profilerDialog#63
 msgid "DNS Resolution"
-msgstr "DNS Auflösung"
+msgstr "Resolució DNS"
 
 #: profilerDialog#64
 msgid "When Required"
-msgstr "Wenn Erforderlich"
+msgstr "Quan calgui"
 
 #: profilerDialog#65
 msgid "Always"
-msgstr "Immer"
+msgstr "Sempre"
 
 #: profilerDialog#66
 msgid "Never"
-msgstr "Niemals"
+msgstr "Mai"
 
 #: profilerDialog#67
 msgid "Verbosity level (-v)"
-msgstr ""
+msgstr "Nivell de detall (-v)"
 
 #: profilerDialog#68
 msgid "Quiet"
-msgstr "Leise"
+msgstr "Silenciós"
 
 #: profilerDialog#69
 msgid "Verbose"
-msgstr "Ausführlich"
+msgstr "Sortida detallada"
 
 #: profilerDialog#70
 msgid "Very Verbose"
-msgstr "Sehr Ausführlich"
+msgstr "Molt detallada"
 
 #: profilerDialog#71
 msgid "Debug"
-msgstr "Debug"
+msgstr "Depuració"
 
 #: profilerDialog#72
 msgid "Verbose Debug"
-msgstr "Ausführliches Debug"
+msgstr "Depuració detallada"
 
 #: profilerDialog#73
 msgid "Ordered scanned port (-r)"
-msgstr ""
+msgstr "Escaneig ordenat de ports (-r)"
 
 #: profilerDialog#74
 msgid "Fragment IP packets (-f)"
-msgstr ""
+msgstr "Fragmenta els paquets IP (-f)"
 
 #: profilerDialog#75
 msgid "Ipv4 TTL (--ttl)"
-msgstr ""
+msgstr "IPv4 TTL (--ttl)"
 
 #: profilerDialog#76
 msgid "Max Retries (--max-retries)"
-msgstr ""
+msgstr "Reintents màxims (--max-retries)"
 
 #: profilerDialog#77
 msgid "Traceroute (--traceroute)"
-msgstr ""
+msgstr "Traça la ruta (--traceroute)"
 
 #: profilerDialog#78
 msgid "Nse categories script available"
@@ -1488,7 +1563,7 @@ msgstr ""
 
 #: profilerDialog#84
 msgid "Categories"
-msgstr "Kategorien"
+msgstr "Categories"
 
 #: profilerDialog#85
 msgid "Nse script parameters (Ex. user=foo,pass=test)"
@@ -1497,6 +1572,7 @@ msgstr ""
 #: profilerDialog#86
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
+"Invocació manual de l'script NSE: (Ex. snmp-sysdescr,smb-os-discovery )"
 
 #: profilerDialog#87
 msgid "Nse script search"
@@ -1505,7 +1581,7 @@ msgstr ""
 #: profilerDialog#88
 msgctxt "profilerDialog#88"
 msgid "Search"
-msgstr "Suchen"
+msgstr "Cerca"
 
 #: profilerDialog#89
 msgid "Single Script"
@@ -1537,15 +1613,15 @@ msgstr ""
 
 #: profilerManager#7
 msgid "TCP Window Scan (-sW)"
-msgstr ""
+msgstr "Escaneig de finestra TCP (-sW)"
 
 #: profilerManager#8
 msgid "UDP Ports Scan (-sU)"
-msgstr ""
+msgstr "Escaneig de ports UDP (-sU)"
 
 #: profilerManager#9
 msgid "IP Protocol Scan (-sO)"
-msgstr ""
+msgstr "Escaneig del protocol IP (-sO)"
 
 #: profilerManager#10
 msgid "SCTP INIT scan (-sY)"

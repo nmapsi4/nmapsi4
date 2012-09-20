@@ -111,11 +111,11 @@ QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 if (RELOAD_TRANSLATIONS)
   QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts
     ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts
-    ts/template/nmapsi4.ts ts/nmapsi4_ru.ts OPTIONS -no-obsolete)
+    ts/template/nmapsi4.ts ts/nmapsi4_ru.ts ts/nmapsi4_ca.ts OPTIONS -no-obsolete)
   message( "nmapsi4:: update and rebuild translation " )
 else (NOT RELOAD_TRANSLATIONS)
   QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts
-    ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts ts/nmapsi4_ru.ts)
+    ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts ts/nmapsi4_ru.ts ts/nmapsi4_ca.ts)
   message( "nmapsi4:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
