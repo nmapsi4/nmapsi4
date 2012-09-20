@@ -40,6 +40,9 @@
        <property name="text">
         <string>Profile Name:</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
        <property name="buddy">
         <cstring>lineProfileName</cstring>
        </property>
@@ -52,6 +55,9 @@
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Parameters:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
        <property name="buddy">
         <cstring>lineProfilePar</cstring>

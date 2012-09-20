@@ -187,6 +187,9 @@
               <property name="text">
                <string>Log type:</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
               <property name="buddy">
                <cstring>comboLogType</cstring>
               </property>
@@ -258,6 +261,9 @@
               <property name="text">
                <string>Max parallel scan:</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
               <property name="buddy">
                <cstring>spinMaxParallelScan</cstring>
               </property>
@@ -281,6 +287,9 @@
               <property name="text">
                <string>Max parallel discover process:</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
               <property name="buddy">
                <cstring>spinMaxDiscoverProcess</cstring>
               </property>
@@ -303,6 +312,9 @@
              <widget class="QLabel" name="label">
               <property name="text">
                <string>History item number:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
               <property name="buddy">
                <cstring>spinBoxCache</cstring>

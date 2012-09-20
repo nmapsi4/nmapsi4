@@ -90,6 +90,9 @@
                   <property name="text">
                    <string>Profile name: </string>
                   </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
                   <property name="buddy">
                    <cstring>profileNameLine</cstring>
                   </property>
@@ -102,6 +105,9 @@
                  <widget class="QLabel" name="label_3">
                   <property name="text">
                    <string>Profile parameters:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                   <property name="buddy">
                    <cstring>lineScanParameters</cstring>
@@ -119,6 +125,9 @@
                  <widget class="QLabel" name="baseLabelCombo">
                   <property name="text">
                    <string>Base options:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                   <property name="buddy">
                    <cstring>comboBaseOptions</cstring>
@@ -264,6 +273,9 @@
                   <property name="text">
                    <string>TCP scan:</string>
                   </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
                   <property name="buddy">
                    <cstring>comboScanTcp</cstring>
                   </property>
@@ -273,6 +285,9 @@
                  <widget class="QLabel" name="label_2">
                   <property name="text">
                    <string>Non-TCP scans:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                   <property name="buddy">
                    <cstring>comboScanNonTcp</cstring>
@@ -336,6 +351,9 @@
                  <widget class="QLabel" name="label_10">
                   <property name="text">
                    <string>Timing Template:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                   <property name="buddy">
                    <cstring>comboTiming</cstring>
@@ -452,6 +470,9 @@
                   <property name="text">
                    <string>Port Range:</string>
                   </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
                   <property name="buddy">
                    <cstring>portCombo</cstring>
                   </property>
@@ -484,6 +505,22 @@
                    <string>Aggressive options (-A)</string>
                   </property>
                  </widget>
+                </item>
+                <item row="2" column="1">
+                 <spacer name="verticalSpacer_11">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </item>
@@ -962,6 +999,9 @@
                   <property name="text">
                    <string>DNS Resolution</string>
                   </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
                   <property name="buddy">
                    <cstring>comboDNSResolv</cstring>
                   </property>
@@ -990,6 +1030,9 @@
                  <widget class="QLabel" name="label_41">
                   <property name="text">
                    <string>Verbosity level (-v)</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                   <property name="buddy">
                    <cstring>comboVerbosity</cstring>
@@ -1025,28 +1068,28 @@
                   </item>
                  </widget>
                 </item>
-                <item row="5" column="0">
+                <item row="6" column="0">
                  <widget class="QCheckBox" name="checkOrdered">
                   <property name="text">
                    <string>Ordered scanned port (-r)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0">
+                <item row="7" column="0">
                  <widget class="QCheckBox" name="checkFrag">
                   <property name="text">
                    <string>Fragment IP packets (-f)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
+                <item row="4" column="0">
                  <widget class="QCheckBox" name="TcheckIpv4ttl">
                   <property name="text">
                    <string>Ipv4 TTL (--ttl)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
+                <item row="4" column="1">
                  <widget class="QSpinBox" name="spinBoxIpv4ttl">
                   <property name="enabled">
                    <bool>false</bool>
@@ -1059,26 +1102,42 @@
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
+                <item row="5" column="0">
                  <widget class="QCheckBox" name="checkMaxRetries">
                   <property name="text">
                    <string>Max Retries (--max-retries)</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="1">
+                <item row="5" column="1">
                  <widget class="QLineEdit" name="lineMaxRetries">
                   <property name="enabled">
                    <bool>false</bool>
                   </property>
                  </widget>
                 </item>
-                <item row="7" column="0">
+                <item row="8" column="0">
                  <widget class="QCheckBox" name="checkTraceroute">
                   <property name="text">
                    <string>Traceroute (--traceroute)</string>
                   </property>
                  </widget>
+                </item>
+                <item row="3" column="1">
+                 <spacer name="verticalSpacer_10">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </item>
@@ -1297,7 +1356,7 @@
                  <item>
                   <widget class="QLabel" name="label_6">
                    <property name="text">
-                    <string>Nse script search</string>
+                    <string>Search information from nse script db:</string>
                    </property>
                   </widget>
                  </item>
