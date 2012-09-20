@@ -34,7 +34,7 @@
 class History
 {
 public:
-    History(QTreeWidget* treeLog,const QString ConfigTag,const QString ConfigTagTime,int cacheSize);
+    History(QTreeWidget* treeLog, const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
     History(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
     explicit History(const QString ConfigTag, int cacheSize = 0);
     ~History();

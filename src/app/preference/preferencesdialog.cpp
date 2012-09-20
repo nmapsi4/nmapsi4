@@ -20,7 +20,7 @@
 #include "preferencesdialog.h"
 
 PreferencesDialog::PreferencesDialog(QWidget *parent)
-: QDialog(parent)
+    : QDialog(parent)
 {
     setupUi(this);
     QSettings settings("nmapsi4", "nmapsi4");
@@ -29,7 +29,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
             this, SLOT(quit()));
     connect(buttonDefault, SIGNAL(clicked()),
             this, SLOT(setDefaults()));
-    connect(comboLookupType, SIGNAL(currentIndexChanged(int)), 
+    connect(comboLookupType, SIGNAL(currentIndexChanged(int)),
             this, SLOT(updateLookupState()));
 
     // create a read log config
@@ -40,7 +40,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     spinMaxDiscoverProcess->setValue(settings.value("maxDiscoverProcess", 20).toInt());
     comboLookupType->setCurrentIndex(settings.value("lookupType", 1).toInt());
     digVerbosityCombo->setCurrentIndex(settings.value("digVerbosityLevel", 0).toInt());
-    spinBoxCache->setValue(settings.value("hostCache",10).toInt());
+    spinBoxCache->setValue(settings.value("hostCache", 10).toInt());
 
     // Create listview items
     listViewOptions->setIconSize(QSize(42, 42));
@@ -83,8 +83,8 @@ void PreferencesDialog::saveValues()
     settings.setValue("hostCache", spinBoxCache->value());
     settings.setValue("maxParallelScan", spinMaxParallelScan->value());
     settings.setValue("maxDiscoverProcess", spinMaxDiscoverProcess->value());
-    settings.setValue("lookupType",comboLookupType->currentIndex());
-    settings.setValue("digVerbosityLevel",digVerbosityCombo->currentIndex());
+    settings.setValue("lookupType", comboLookupType->currentIndex());
+    settings.setValue("digVerbosityLevel", digVerbosityCombo->currentIndex());
 }
 
 

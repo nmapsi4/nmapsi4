@@ -21,7 +21,7 @@
 #include "memorytools.h"
 
 DigManager::DigManager(QObject* parent)
-: QObject(parent)
+    : QObject(parent)
 {
 }
 
@@ -44,7 +44,7 @@ void DigManager::digRequest(const QString hostname, PObjectLookup* objElem, DigR
     m_hostNameLocal = hostname;
     m_elemObjUtil = objElem;
 
-    QWeakPointer<ProcessThread> m_th = new ProcessThread("dig",command);
+    QWeakPointer<ProcessThread> m_th = new ProcessThread("dig", command);
     m_threadList.push_back(m_th.data());
 
     if (type == Verbose) {
@@ -66,7 +66,7 @@ void DigManager::longDigAnswer(const QStringList hostname, QByteArray bufferData
      * TODO: remove this check with QT5 QStandardPaths::findExecutable.
      *
      */
-    if(!bufferData.size() && bufferError.size()) {
+    if (!bufferData.size() && bufferError.size()) {
         qWarning() << "Error: Dig is not installed.";
         return;
     }
@@ -77,11 +77,11 @@ void DigManager::longDigAnswer(const QStringList hostname, QByteArray bufferData
 
     m_elemObjUtil->setHostName(m_hostNameLocal);
 
-    while(!stream1.atEnd()) {
+    while (!stream1.atEnd()) {
         line = stream1.readLine();
-        if(!line.startsWith(QLatin1String(";;"))
-            && !line.startsWith(QLatin1String(";"))
-            && !line.isEmpty()) {
+        if (!line.startsWith(QLatin1String(";;"))
+                && !line.startsWith(QLatin1String(";"))
+                && !line.isEmpty()) {
             m_elemObjUtil->setInfoLookup(line);
         }
     }
@@ -99,7 +99,7 @@ void DigManager::shortDigAnswer(const QStringList hostname, QByteArray bufferDat
      * TODO: remove this check with QT5 QStandardPaths::findExecutable.
      *
      */
-    if(!bufferData.size() && bufferError.size()) {
+    if (!bufferData.size() && bufferError.size()) {
         qWarning() << "Error: Dig is not installed.";
         return;
     }
@@ -110,7 +110,7 @@ void DigManager::shortDigAnswer(const QStringList hostname, QByteArray bufferDat
 
     m_elemObjUtil->setHostName(m_hostNameLocal);
 
-    while(!stream1.atEnd()) {
+    while (!stream1.atEnd()) {
         line = stream1.readLine();
         m_elemObjUtil->setInfoLookup(line);
     }

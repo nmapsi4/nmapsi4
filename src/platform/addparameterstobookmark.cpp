@@ -20,7 +20,7 @@
 #include "addparameterstobookmark.h"
 
 addParametersToBookmark::addParametersToBookmark(QWidget* parent, const QString parameters)
-: QDialog(parent)
+    : QDialog(parent)
 {
     setupUi(this);
 
@@ -38,13 +38,10 @@ addParametersToBookmark::~addParametersToBookmark()
 
 void addParametersToBookmark::exit()
 {
-    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty())
-    {
+    if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) {
         emit doneParBook(lineProfileName->text(), lineProfilePar->text());
         close();
-    }
-    else
-    {
+    } else {
         QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or/and profile parameters."), tr("Close"));
     }
 }

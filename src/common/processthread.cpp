@@ -20,7 +20,7 @@
 #include "processthread.h"
 
 ProcessThread::ProcessThread(const QString& programName, const QStringList& parameters)
-: m_ParList(parameters), m_programName(programName)
+    : m_ParList(parameters), m_programName(programName)
 {
 }
 
@@ -34,44 +34,42 @@ ProcessThread::~ProcessThread()
 
 void ProcessThread::run()
 {
-     m_process = new QProcess();
-     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
+    m_process = new QProcess();
+    qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
-     connect(m_process.data(), SIGNAL(finished(int,QProcess::ExitStatus)),
-             this, SLOT(readFinished()));
-     connect(m_process.data(), SIGNAL(readyReadStandardOutput()),
-             this, SLOT(readyReadData()));
+    connect(m_process.data(), SIGNAL(finished(int,QProcess::ExitStatus)),
+            this, SLOT(readFinished()));
+    connect(m_process.data(), SIGNAL(readyReadStandardOutput()),
+            this, SLOT(readyReadData()));
 
 #ifndef THREAD_NO_DEBUG
-     qDebug() << "ProcessThread::Command:: " << m_ParList;
+    qDebug() << "ProcessThread::Command:: " << m_ParList;
 #endif
 
-     m_process.data()->start(m_programName, m_ParList);
+    m_process.data()->start(m_programName, m_ParList);
 
-     exec();
-     // emit signal, scan is end
-     emit threadEnd(m_ParList, m_pout, m_perr);
+    exec();
+    // emit signal, scan is end
+    emit threadEnd(m_ParList, m_pout, m_perr);
 }
 
 void ProcessThread::readFinished()
 {
-     // set scan return buffer
-     m_perr  = m_process.data()->readAllStandardError(); // read error buffer
-     m_process.data()->close();
-     delete m_process.data();
-     exit(0);
+    // set scan return buffer
+    m_perr  = m_process.data()->readAllStandardError(); // read error buffer
+    m_process.data()->close();
+    delete m_process.data();
+    exit(0);
 }
 
 void ProcessThread::stopProcess()
 {
     // stop scan process
-    if (m_process.isNull())
-    {
+    if (m_process.isNull()) {
         return;
     }
 
-    if (m_process.data()->state() == QProcess::Running)
-    {
+    if (m_process.data()->state() == QProcess::Running) {
         //m_process.data()->close();
         // NOTE:: close() function segfault
         m_process.data()->closeWriteChannel();
@@ -89,8 +87,7 @@ void ProcessThread::readyReadData()
     m_pout.append(realByte);
     QString stream_(realByte);
     // emit signal for data trasmission to parent
-    if (!stream_.isEmpty())
-    {
-        emit flowFromThread(m_ParList[m_ParList.size()-1], stream_);
+    if (!stream_.isEmpty()) {
+        emit flowFromThread(m_ParList[m_ParList.size() - 1], stream_);
     }
 }

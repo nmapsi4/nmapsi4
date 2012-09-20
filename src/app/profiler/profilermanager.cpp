@@ -21,7 +21,7 @@
 #include "mainwindow.h"
 
 ProfilerManager::ProfilerManager(MainWindow* parent)
-: QDialog(parent), m_dialogUi(new Ui::profilerDialog), m_ui(parent)
+    : QDialog(parent), m_dialogUi(new Ui::profilerDialog), m_ui(parent)
 {
     Q_UNUSED(parent);
     initObject();
@@ -30,12 +30,12 @@ ProfilerManager::ProfilerManager(MainWindow* parent)
 }
 
 ProfilerManager::ProfilerManager(const QString profileName, const QString parameters, MainWindow* parent)
-: QDialog(parent), m_dialogUi(new Ui::profilerDialog), m_ui(parent)
+    : QDialog(parent), m_dialogUi(new Ui::profilerDialog), m_ui(parent)
 {
     Q_UNUSED(parent);
     initObject();
     // restore values
-    QStringList parametersList = parameters.split(' ',QString::SkipEmptyParts);
+    QStringList parametersList = parameters.split(' ', QString::SkipEmptyParts);
 
     m_dialogUi->profileNameLine->setText(profileName);
     m_profiler->restoreValuesFromProfile(parametersList);
@@ -49,7 +49,7 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
 
 void ProfilerManager::initObject()
 {
-    #ifndef Q_WS_WIN
+#ifndef Q_WS_WIN
     m_userId = getuid();
 #endif
 
@@ -63,7 +63,7 @@ void ProfilerManager::initObject()
     m_profiler = new Profiler(this);
 
     connect(m_dialogUi->optionsListScan, SIGNAL(itemSelectionChanged()),
-         this, SLOT(optionListUpdate()));
+            this, SLOT(optionListUpdate()));
     connect(m_dialogUi->portCombo, SIGNAL(activated(QString)),
             this, SLOT(updatePortCombo()));
     //Options
@@ -92,9 +92,9 @@ void ProfilerManager::initObject()
     connect(m_dialogUi->nseResetBut, SIGNAL(clicked()),
             m_nseManager, SLOT(nseTreeResetItem()));
     connect(m_dialogUi->nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*, int)));
     connect(m_dialogUi->nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*, int)));
     connect(m_dialogUi->searchButtHelp, SIGNAL(clicked()),
             m_nseManager, SLOT(requestNseScriptHelp()));
 
@@ -112,37 +112,34 @@ ProfilerManager::~ProfilerManager()
 
 void ProfilerManager::createQList()
 {
-    m_profileW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/document-new.png")),tr("Profile"));
+    m_profileW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/document-new.png")), tr("Profile"));
     m_dialogUi->optionsListScan->addItem(m_profileW);
 
-    m_scanW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag.png")),tr("Scan"));
+    m_scanW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag.png")), tr("Scan"));
     m_dialogUi->optionsListScan->addItem(m_scanW);
 
-    m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")),tr("Options"));
+    m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("Options"));
     m_dialogUi->optionsListScan->addItem(m_toolW);
 
-    m_discoverW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Ping"));
+    m_discoverW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Ping"));
     m_dialogUi->optionsListScan->addItem(m_discoverW);
 
-    m_timingW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/player_time.png")),tr("Timing"));
+    m_timingW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/player_time.png")), tr("Timing"));
     m_dialogUi->optionsListScan->addItem(m_timingW);
 
-    m_nseW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Nse"));
+    m_nseW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), tr("Nse"));
     m_dialogUi->optionsListScan->addItem(m_nseW);
 }
 
 void ProfilerManager::exit()
 {
-    if (!m_dialogUi->profileNameLine->text().isEmpty())
-    {
+    if (!m_dialogUi->profileNameLine->text().isEmpty()) {
         QString parameters(m_profiler->buildExtensions().join(" "));
         qDebug() << "Profiler::Parameters:: " << parameters;
 
         emit doneParBook(m_dialogUi->profileNameLine->text(), parameters);
         close();
-    }
-    else
-    {
+    } else {
         QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name."), tr("Close"));
     }
 }
@@ -154,37 +151,25 @@ void ProfilerManager::reloadScanParameters()
 
 void ProfilerManager::optionListUpdate()
 {
-    if (m_profileW->isSelected())
-    {
+    if (m_profileW->isSelected()) {
         reloadScanParameters();
         m_dialogUi->stackedOptions->setCurrentIndex(0);
-    }
-    else if (m_scanW->isSelected())
-    {
+    } else if (m_scanW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(1);
-    }
-    else if (m_discoverW->isSelected())
-    {
+    } else if (m_discoverW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(2);
-    }
-    else if (m_timingW->isSelected())
-    {
+    } else if (m_timingW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(3);
-    }
-    else if (m_toolW->isSelected())
-    {
+    } else if (m_toolW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(4);
-    }
-    else if (m_nseW->isSelected())
-    {
+    } else if (m_nseW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(5);
     }
 }
 
 void ProfilerManager::updatePortCombo()
 {
-    switch (m_dialogUi->portCombo->currentIndex())
-    {
+    switch (m_dialogUi->portCombo->currentIndex()) {
     case 0:
 //    Normal
         m_dialogUi->portEdit->setEnabled(false);
@@ -279,7 +264,7 @@ void ProfilerManager::loadDefaultBaseProfile()
 {
     QListIterator< QPair<QString, QString> > i(m_ui->defaultScanProfile());
     while (i.hasNext()) {
-        m_dialogUi->comboBaseOptions->insertItem(m_dialogUi->comboBaseOptions->count()+1, i.next().first);
+        m_dialogUi->comboBaseOptions->insertItem(m_dialogUi->comboBaseOptions->count() + 1, i.next().first);
     }
 }
 

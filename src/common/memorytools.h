@@ -41,12 +41,12 @@ template <class T, class U>
 class freemap
 {
 public:
-    static void itemDeleteAll(QHash<T,U>& items);
+    static void itemDeleteAll(QHash<T, U>& items);
     /*
      * map itemDeleteAll(QHash<QString, scanThread*>& items)
      * with thread quit() and wait()
      */
-    static void itemDeleteAllWithWait(QHash<T,U>& items);
+    static void itemDeleteAllWithWait(QHash<T, U>& items);
 };
 
 template <class T>
@@ -59,8 +59,7 @@ inline void memory::freelist<T>::itemDeleteAll(QList<T>& items)
 template <class T>
 inline void memory::freelist<T>::itemDeleteAllWithWait(QList<T>& items)
 {
-    foreach (T pointer, items)
-    {
+    foreach(T pointer, items) {
         pointer->quit();
         pointer->wait();
     }
@@ -69,12 +68,12 @@ inline void memory::freelist<T>::itemDeleteAllWithWait(QList<T>& items)
 }
 
 template <class T, class U>
-inline void memory::freemap<T,U>::itemDeleteAll(QHash<T,U>& items)
+inline void memory::freemap<T, U>::itemDeleteAll(QHash<T, U>& items)
 {
     /*
      * Clear QHash
      */
-    foreach (U ptrTmp, items) {
+    foreach(U ptrTmp, items) {
         delete ptrTmp;
     }
 
@@ -82,16 +81,15 @@ inline void memory::freemap<T,U>::itemDeleteAll(QHash<T,U>& items)
 }
 
 template <class T, class U>
-inline void memory::freemap<T,U>::itemDeleteAllWithWait(QHash<T,U>& items)
+inline void memory::freemap<T, U>::itemDeleteAllWithWait(QHash<T, U>& items)
 {
     // scan thread quit
-    foreach (U ptrTmp, items)
-    {
+    foreach(U ptrTmp, items) {
         ptrTmp->quit();
         ptrTmp->wait();
     }
 
-    memory::freemap<T,U>::itemDeleteAll(items);
+    memory::freemap<T, U>::itemDeleteAll(items);
 }
 
 } // end namespace

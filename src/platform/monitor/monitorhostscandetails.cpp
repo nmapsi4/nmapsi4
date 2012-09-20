@@ -20,7 +20,7 @@
 #include "monitorhostscandetails.h"
 
 MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname, QWidget* parent)
-: QDialog(parent), m_scanLines(processFlow)
+    : QDialog(parent), m_scanLines(processFlow)
 {
     setupUi(this);
     monitorEditHostname->setText(hostname);
@@ -41,20 +41,14 @@ MonitorDetails::~MonitorDetails()
 
 void MonitorDetails::loadFlow()
 {
-    foreach (const QString &token, m_scanLines)
-    {
+    foreach(const QString & token, m_scanLines) {
         QListWidgetItem *item_ = new QListWidgetItem(detailsListW);
         m_itemsList.push_back(item_);
-        if (token.contains("open"))
-        {
+        if (token.contains("open")) {
             item_->setForeground(QBrush(QColor(0, 0, 255, 127)));
-        }
-        else if (token.contains("closed"))
-        {
+        } else if (token.contains("closed")) {
             item_->setForeground(QBrush(QColor(255, 0, 0, 127)));
-        }
-        else if (token.contains("filtered") || token.contains("unfiltered"))
-        {
+        } else if (token.contains("filtered") || token.contains("unfiltered")) {
             item_->setForeground(QBrush(QColor(255, 134, 12, 127)));
         }
 
@@ -67,22 +61,15 @@ void MonitorDetails::loadFlow()
 
 void MonitorDetails::reloadFlow()
 {
-    if (m_itemsSize < m_scanLines.size())
-    {
-        for (int i = m_itemsSize; i < m_scanLines.size(); ++i)
-        {
+    if (m_itemsSize < m_scanLines.size()) {
+        for (int i = m_itemsSize; i < m_scanLines.size(); ++i) {
             QListWidgetItem *item_ = new QListWidgetItem(detailsListW);
             m_itemsList.push_back(item_);
-            if (m_scanLines[i].contains("open"))
-            {
+            if (m_scanLines[i].contains("open")) {
                 item_->setForeground(QBrush(QColor(0, 0, 255, 127)));
-            }
-            else if (m_scanLines[i].contains("closed"))
-            {
+            } else if (m_scanLines[i].contains("closed")) {
                 item_->setForeground(QBrush(QColor(255, 0, 0, 127)));
-            }
-            else if (m_scanLines[i].contains("filtered") || m_scanLines[i].contains("unfiltered"))
-            {
+            } else if (m_scanLines[i].contains("filtered") || m_scanLines[i].contains("unfiltered")) {
                 item_->setForeground(QBrush(QColor(255, 134, 12, 127)));
             }
 

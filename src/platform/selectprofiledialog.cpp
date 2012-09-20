@@ -21,7 +21,7 @@
 #include "mainwindow.h"
 
 SelectProfileDialog::SelectProfileDialog(MainWindow* ui)
-: QDialog(ui), m_ui(ui)
+    : QDialog(ui), m_ui(ui)
 {
     setupUi(this);
     loadComboValues();

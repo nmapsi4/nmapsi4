@@ -24,7 +24,7 @@ void MainWindow::syncSettings()
     QSettings settings("nmapsi4", "nmapsi4");
 
     // TODO: load saved profile or simple default
-    m_hostCache = settings.value("hostCache",10).toInt();
+    m_hostCache = settings.value("hostCache", 10).toInt();
 
 #if defined(Q_WS_WIN)
     // disable lookup in MS windows
@@ -45,7 +45,7 @@ void MainWindow::saveSettings()
 
     settings.setValue("window/pos", pos());
     settings.setValue("window/size", size());
-    settings.setValue("hostCache",10);
+    settings.setValue("hostCache", 10);
     settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
     settings.setValue("showMenuBar", actionMenuBar->isChecked());
@@ -62,15 +62,15 @@ void MainWindow::saveSettings()
 
         fileInfo.setFile(settings.fileName());
         if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
-             QFile::setPermissions(settings.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
-                QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+            QFile::setPermissions(settings.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
+                                  QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
         }
 
         QSettings settingsBookmark("nmapsi4", "nmapsi4_bookmark");
         fileInfo.setFile(settingsBookmark.fileName());
         if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
             QFile::setPermissions(settingsBookmark.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
-                QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+                                  QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
         }
     }
 #endif
@@ -83,7 +83,7 @@ void MainWindow::updateCompleter()
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
             newModel->setStringList(m_bookmark->getHostListFromBookmark());
         } else if (m_hostModel.isNull()) {
-            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(),this);
+            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(), this);
         }
     }
 
@@ -93,7 +93,7 @@ void MainWindow::updateCompleter()
             QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
             newModel->setStringList(m_bookmark->getServicesListFromBookmark());
         } else if (m_vulnModel.isNull()) {
-            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(),this);
+            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(), this);
         }
     }
 }

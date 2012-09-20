@@ -39,14 +39,12 @@ class Discover : public QObject
     Q_OBJECT
 
 public:
-    enum InterfaceOption
-    {
+    enum InterfaceOption {
         AllInterfaceWithAddress,
         AllInterface
     };
 
-    enum IpProtocolType
-    {
+    enum IpProtocolType {
         IPv4,
         IPv6
     };

@@ -20,10 +20,10 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget* parent)
-: QMainWindow(parent), m_userId(0)
+    : QMainWindow(parent), m_userId(0)
 {
     initGUI();
-    QTimer::singleShot( 0, this, SLOT(initObject()) );
+    QTimer::singleShot(0, this, SLOT(initObject()));
 }
 
 void MainWindow::initGUI()
@@ -157,7 +157,7 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboParametersProfiles->currentText(),comboAdv->currentText(),this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboParametersProfiles->currentText(), comboAdv->currentText(), this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
@@ -180,7 +180,7 @@ void MainWindow::linkCompleterToHostname()
     }
 
     if (m_completer.isNull()) {
-        m_completer = new QCompleter(m_hostModel.data(),this);
+        m_completer = new QCompleter(m_hostModel.data(), this);
         m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
         m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
         m_completer.data()->setWrapAround(false);
@@ -190,7 +190,7 @@ void MainWindow::linkCompleterToHostname()
 
 void MainWindow::takeHostFromBookmark()
 {
-     if(m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()) {
+    if (m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()) {
         updateComboHostnameProperties();
         hostEdit->insertItem(0, m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
         startScan();
@@ -199,7 +199,7 @@ void MainWindow::takeHostFromBookmark()
 
 void MainWindow::quickAddressSelectionEvent()
 {
-    if(comboHostBook->currentIndex()) {
+    if (comboHostBook->currentIndex()) {
         updateComboHostnameProperties();
         hostEdit->insertItem(0, comboHostBook->currentText());
         // reset comboHostBook to default selection item (index=0)
@@ -218,17 +218,17 @@ void MainWindow::startScan()
     // check wrong address
     hostname = HostTools::clearHost(hostname);
 
-    if(!m_monitor->monitorHostNumber()) {
+    if (!m_monitor->monitorHostNumber()) {
         // clear details QHash
         m_monitor->clearHostMonitorDetails();
     }
 
     // check for ip range (x.x.x.x/x)
-    if(hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
+    if (hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
         // is a ip list
         QStringList addressToken = hostname.split('/', QString::SkipEmptyParts);
 
-        if (addressToken.isEmpty() || addressToken.size() <2) {
+        if (addressToken.isEmpty() || addressToken.size() < 2) {
             // TODO: wrong address
             return;
         }
@@ -245,7 +245,7 @@ void MainWindow::startScan()
         int startIpRange = ipfields[3].toInt();
         int endIpRange = addressToken[1].toInt();
 
-        for(int index = startIpRange; index <= endIpRange; index++) {
+        for (int index = startIpRange; index <= endIpRange; index++) {
             ipfields[3].setNum(index);
             hostname = ipfields.join(".");
 
@@ -259,13 +259,13 @@ void MainWindow::startScan()
     }
 
     //scan token DNS/IP parser
-    if(hostname.contains(" ")) {
+    if (hostname.contains(" ")) {
         // space delimiter
         QStringList addrPart_ = hostname.split(' ', QString::SkipEmptyParts);
         // check for only one space in hostname
-        if(addrPart_.size() > 1) {
+        if (addrPart_.size() > 1) {
             // multiple ip or dns to scan
-            for(int index=0; index < addrPart_.size(); index++) {
+            for (int index = 0; index < addrPart_.size(); index++) {
                 addrPart_[index] = HostTools::clearHost(addrPart_[index]);
                 // check for lookup support
                 if (!HostTools::isDns(addrPart_[index]) || HostTools::isValidDns(addrPart_[index])) {
@@ -293,7 +293,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
         return;
     }
 
-    m_bookmark->saveHostToBookmark(hostname,m_hostCache);
+    m_bookmark->saveHostToBookmark(hostname, m_hostCache);
     updateCompleter();
 
     // default action
@@ -385,14 +385,14 @@ void MainWindow::resizeHorizontalSplitterEvent()
 void MainWindow::resizeHostDetailsWidgetEvent()
 {
     if (!m_collections->m_collectionsButton.value("details-list")->isChecked()
-        && m_mainVerticalSplitter->sizes()[1]) {
+            && m_mainVerticalSplitter->sizes()[1]) {
         m_detailsWidgetSize = m_mainVerticalSplitter->saveState();
 
         QList<int> size = m_mainVerticalSplitter->sizes();
         size[1] = 0;
         m_mainVerticalSplitter->setSizes(size);
     } else if (m_collections->m_collectionsButton.value("details-list")->isChecked()
-        && !m_mainVerticalSplitter->sizes()[1]) {
+               && !m_mainVerticalSplitter->sizes()[1]) {
 
         if (!m_detailsWidgetSize.isEmpty()) {
             // restore previous value
@@ -409,7 +409,7 @@ void MainWindow::resizeHostDetailsWidgetEvent()
 void MainWindow::resizeScanListWidgetEvent()
 {
     if (!m_collections->m_collectionsButton.value("scan-list")->isChecked()
-        && m_mainHorizontalSplitter->sizes()[0]) {
+            && m_mainHorizontalSplitter->sizes()[0]) {
         m_scanListWidgetSize = m_mainHorizontalSplitter->saveState();
 
         QList<int> size = m_mainHorizontalSplitter->sizes();
@@ -417,7 +417,7 @@ void MainWindow::resizeScanListWidgetEvent()
         m_mainHorizontalSplitter->setSizes(size);
         Notify::clearButtonNotify(m_collections->m_collectionsButton.value("scan-list"));
     } else if (m_collections->m_collectionsButton.value("scan-list")->isChecked()
-        && !m_mainHorizontalSplitter->sizes()[0]) {
+               && !m_mainHorizontalSplitter->sizes()[0]) {
 
         if (!m_scanListWidgetSize.isEmpty()) {
             // restore previous value

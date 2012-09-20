@@ -56,7 +56,7 @@ public:
 private:
     void showParserObj(int hostIndex);
     void showParserObjPlugins(int hostIndex);
-    PObject* parserCore(const QStringList parList,QString StdoutStr,QString StderrorStr,QTreeWidgetItem* mainTreeE);
+    PObject* parserCore(const QStringList parList, QString StdoutStr, QString StderrorStr, QTreeWidgetItem* mainTreeE);
 
     MainWindow* m_ui;
     QList<PObject*> m_parserObjList;

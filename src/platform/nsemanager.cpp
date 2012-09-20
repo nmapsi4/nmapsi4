@@ -21,17 +21,16 @@
 #include "profilermanager.h"
 
 NseManager::NseManager(ProfilerManager* parent)
-: QObject(parent), m_ui(parent)
+    : QObject(parent), m_ui(parent)
 {
     nseTreeDefaultValue();
 }
 
 NseManager::~NseManager()
 {
-    freemap<QString,QTextDocument*>::itemDeleteAll(m_nseHelpCache);
+    freemap<QString, QTextDocument*>::itemDeleteAll(m_nseHelpCache);
 
-    if (!m_documentScript.isNull())
-    {
+    if (!m_documentScript.isNull()) {
         delete m_documentScript.data();
     }
 }
@@ -45,21 +44,17 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 {
     Q_UNUSED(column);
 
-    if (m_nseScriptAvailList.indexOf(item->text(0)) != -1)
-    {
+    if (m_nseScriptAvailList.indexOf(item->text(0)) != -1) {
         m_ui->m_dialogUi->nseActiveBut->setEnabled(true);
         m_ui->m_dialogUi->nseRemoveBut->setEnabled(false);
-    }
-    else
-    {
+    } else {
         m_ui->m_dialogUi->nseActiveBut->setEnabled(false);
         m_ui->m_dialogUi->nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
     QHash<QString, QTextDocument*>::const_iterator i = m_nseHelpCache.find(item->text(0));
 
-    if (i == m_nseHelpCache.constEnd())
-    {
+    if (i == m_nseHelpCache.constEnd()) {
         /*
         * not category on cache
         * start help thread for nse
@@ -68,15 +63,13 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
         parameters_.append("--script-help");
         parameters_.append(item->text(0));
 
-        m_thread = new ProcessThread("nmap",parameters_);
+        m_thread = new ProcessThread("nmap", parameters_);
 
         connect(m_thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
         m_thread.data()->start();
-    }
-    else
-    {
+    } else {
         // category on cache
         qDebug() << "DEBUG:: load help from cache";
         m_ui->m_dialogUi->nseTextHelp->setDocument(i.value());
@@ -86,8 +79,7 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 void NseManager::requestNseScriptHelp()
 {
     QString searchString_ = m_ui->m_dialogUi->comboScriptHelp->currentText();
-    if (searchString_.isEmpty())
-    {
+    if (searchString_.isEmpty()) {
         return;
     }
 
@@ -95,7 +87,7 @@ void NseManager::requestNseScriptHelp()
     parameters_.append("--script-help");
     parameters_.append(searchString_);
 
-    m_threadScript = new ProcessThread("nmap",parameters_);
+    m_threadScript = new ProcessThread("nmap", parameters_);
 
     connect(m_threadScript.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
@@ -107,8 +99,7 @@ void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QB
 {
     Q_UNUSED(errors);
     // show help result for nse
-    if (!m_thread.isNull())
-    {
+    if (!m_thread.isNull()) {
         m_thread.data()->quit();
         m_thread.data()->wait();
         delete m_thread.data();
@@ -117,7 +108,7 @@ void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QB
     QString result_(result);
     QTextDocument *document = new QTextDocument(result_);
     // insert document on cache
-    m_nseHelpCache.insert(parameters[parameters.size()-1],document);
+    m_nseHelpCache.insert(parameters[parameters.size() - 1], document);
     // load document
     m_ui->m_dialogUi->nseTextHelp->setDocument(document);
 }
@@ -128,8 +119,7 @@ void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     Q_UNUSED(errors);
     Q_UNUSED(parameters);
     // show help result for nse
-    if (!m_threadScript.isNull())
-    {
+    if (!m_threadScript.isNull()) {
         m_threadScript.data()->quit();
         m_threadScript.data()->wait();
         delete m_threadScript.data();
@@ -137,8 +127,7 @@ void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
 
     QString result_(result);
 
-    if (!m_documentScript.isNull())
-    {
+    if (!m_documentScript.isNull()) {
         delete m_documentScript.data();
     }
 
@@ -170,13 +159,11 @@ void NseManager::nseTreeDefaultValue()
 
 void NseManager::nseTreeAvailRestoreValues()
 {
-    if (m_itemNseAvail.size())
-    {
+    if (m_itemNseAvail.size()) {
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
     }
 
-    foreach (const QString &token, m_nseScriptAvailList)
-    {
+    foreach(const QString & token, m_nseScriptAvailList) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeAvail);
         m_itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -188,13 +175,11 @@ void NseManager::nseTreeAvailRestoreValues()
 
 void NseManager::nseTreeActiveRestoreValues()
 {
-    if (m_itemNseActive.size())
-    {
+    if (m_itemNseActive.size()) {
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
     }
 
-    foreach (const QString &token, m_nseScriptActiveList)
-    {
+    foreach(const QString & token, m_nseScriptActiveList) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeActive);
         m_itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -208,14 +193,12 @@ void NseManager::nseTreeActiveItem()
 {
     int indexNseItem = m_ui->m_dialogUi->nseTreeAvail->indexOfTopLevelItem(m_ui->m_dialogUi->nseTreeAvail->currentItem());
 
-    if (indexNseItem != -1)
-    {
+    if (indexNseItem != -1) {
         QString tmpElem_ = m_nseScriptAvailList.takeAt(indexNseItem);
         m_nseScriptActiveList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!m_nseScriptAvailList.size())
-        {
+        if (!m_nseScriptAvailList.size()) {
             m_nseScriptAvailList.clear();
         }
     }
@@ -225,14 +208,12 @@ void NseManager::nseTreeRemoveItem()
 {
     int indexNseItem = m_ui->m_dialogUi->nseTreeActive->indexOfTopLevelItem(m_ui->m_dialogUi->nseTreeActive->currentItem());
 
-    if (indexNseItem != -1)
-    {
+    if (indexNseItem != -1) {
         QString tmpElem_ = m_nseScriptActiveList.takeAt(indexNseItem);
         m_nseScriptAvailList.append(tmpElem_);
         nseTreeAvailRestoreValues();
         nseTreeActiveRestoreValues();
-        if (!m_nseScriptActiveList.size())
-        {
+        if (!m_nseScriptActiveList.size()) {
             m_nseScriptActiveList.clear();
         }
     }
@@ -240,8 +221,7 @@ void NseManager::nseTreeRemoveItem()
 
 void NseManager::nseTreeResetItem()
 {
-    foreach (const QString &token, m_nseScriptActiveList)
-    {
+    foreach(const QString & token, m_nseScriptActiveList) {
         m_nseScriptAvailList.append(token);
     }
     m_nseScriptActiveList.clear();
@@ -251,16 +231,14 @@ void NseManager::nseTreeResetItem()
 
 void NseManager::nseTreeActiveScriptValues(const QStringList scripts)
 {
-    foreach (const QString& script, scripts)
-    {
+    foreach(const QString & script, scripts) {
         nseTreeActiveSingleScript(script);
     }
 }
 
 bool NseManager::nseTreeActiveSingleScript(const QString script)
 {
-    if (!m_nseScriptAvailList.contains(script))
-    {
+    if (!m_nseScriptAvailList.contains(script)) {
         return false;
     }
 
@@ -269,8 +247,7 @@ bool NseManager::nseTreeActiveSingleScript(const QString script)
     nseTreeAvailRestoreValues();
     nseTreeActiveRestoreValues();
 
-    if (!m_nseScriptAvailList.size())
-    {
+    if (!m_nseScriptAvailList.size()) {
         m_nseScriptAvailList.clear();
     }
 

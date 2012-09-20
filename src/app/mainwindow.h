@@ -60,7 +60,7 @@ using namespace memory;
 
 namespace Ui
 {
-    class MainWindowClass;
+class MainWindowClass;
 }
 
 class MainWindow : public QMainWindow, public Ui::MainWindowClass
@@ -68,7 +68,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindowClass
     Q_OBJECT
 
 public:
-    MainWindow(QWidget* parent=0);
+    MainWindow(QWidget* parent = 0);
     ~MainWindow();
     void loadScanProfile();
     void updateComboBook();

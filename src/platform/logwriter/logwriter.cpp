@@ -30,25 +30,19 @@ void LogWriter::writeAllLogFile(QList<PObject*> pObjectList, const QString& path
     /*
      * TODO: create index.html if logType == HtmlLog
      */
-    Q_FOREACH (PObject* object, pObjectList)
-    {
-        if (object->isValidObject())
-        {
+    Q_FOREACH(PObject * object, pObjectList) {
+        if (object->isValidObject()) {
             QString pathTmp(path);
-            if (!pathTmp.endsWith(QDir::toNativeSeparators("/")))
-            {
+            if (!pathTmp.endsWith(QDir::toNativeSeparators("/"))) {
                 pathTmp.append(QDir::toNativeSeparators("/"));
             }
 
             QString fileName(object->getHostName());
-            fileName = fileName.replace('.','_');
+            fileName = fileName.replace('.', '_');
 
-            if (logType == HtmlLog)
-            {
+            if (logType == HtmlLog) {
                 fileName.append(".html");
-            }
-            else
-            {
+            } else {
                 fileName.append(".log");
             }
 
@@ -68,14 +62,12 @@ void LogWriter::writeSingleLogFile(PObject* pObject, const QString& path)
 
     int logType = settings.value("logType", 0).toInt();
 
-    if (path.endsWith(QLatin1String(".html")))
-    {
+    if (path.endsWith(QLatin1String(".html"))) {
         // force html log format from file extension
         logType = HtmlLog;
     }
 
-    switch (logType)
-    {
+    switch (logType) {
     case FancyLog:
         writeFancyLogFormat(path);
         break;
@@ -93,8 +85,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 
-    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
-    {
+    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
@@ -106,28 +97,24 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "|---------- Services" << "\n\n";
 
     // Open Ports
-    Q_FOREACH (const QString& token, m_pObject->getPortOpen())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortOpen()) {
         fileStream << token << "\n";
     }
 
     // close Ports
-    Q_FOREACH (const QString& token, m_pObject->getPortClose())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortClose()) {
         fileStream << token << "\n";
     }
 
     // filtered/unfilteres Ports
-    Q_FOREACH (const QString& token, m_pObject->getPortFiltered())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortFiltered()) {
         fileStream << token << "\n";
     }
 
     fileStream << "\n|---------- General information" << "\n\n";
 
     // filtered/unfilteres Ports
-    Q_FOREACH (const QString& token, m_pObject->getMainInfo())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getMainInfo()) {
         fileStream << token << "\n";
     }
 
@@ -137,12 +124,10 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     QHash<QString, QStringList> nseResult = m_pObject->getNseResult();
     QHash<QString, QStringList>::const_iterator i;
 
-    for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i)
-    {
+    for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i) {
         fileStream << "\n--- " << i.key() << "\n\n";
 
-        Q_FOREACH (const QString& value, i.value())
-        {
+        Q_FOREACH(const QString & value, i.value()) {
             fileStream << value << "\n";
         }
     }
@@ -150,8 +135,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "\n|---------- Scan Errors/Warning" << "\n\n";
 
     // scan errors/Warning
-    Q_FOREACH (const QString& token, m_pObject->getErrorScan())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getErrorScan()) {
         fileStream << token << "\n";
     }
 
@@ -163,16 +147,14 @@ void LogWriter::writeRawLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 
-    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
-    {
+    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
 
     QTextStream fileStream(filePtr);
 
-    Q_FOREACH (const QString& token, m_pObject->getFullScanLog())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getFullScanLog()) {
         fileStream << token << "\n";
     }
 
@@ -184,14 +166,13 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
 {
     QFile *filePtr = new QFile(path);
 
-    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text))
-    {
+    if (!filePtr->open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning() << "DEBUG::File Writer:: file not writable";
         return;
     }
 
     QStringList scanValues = m_pObject->getHostName().split(' ', QString::SkipEmptyParts);
-    const QString& hostName = scanValues[scanValues.size()-1];
+    const QString& hostName = scanValues[scanValues.size() - 1];
 
     QString htmlPage;
     // Html header
@@ -222,8 +203,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Open Ports
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Services</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH (const QString& token, m_pObject->getPortOpen())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortOpen()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -231,13 +211,12 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         }
         index++;
 
-        htmlPage += token +"<br/>\n";
+        htmlPage += token + "<br/>\n";
         htmlPage += "</div>";
     }
 
     // close Ports
-    Q_FOREACH (const QString& token, m_pObject->getPortClose())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortClose()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -245,13 +224,12 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         }
         index++;
 
-        htmlPage += token +"<br/>\n";
+        htmlPage += token + "<br/>\n";
         htmlPage += "</div>";
     }
 
     // filtered/unfilteres Ports
-    Q_FOREACH (const QString& token, m_pObject->getPortFiltered())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getPortFiltered()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -259,7 +237,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         }
         index++;
 
-        htmlPage += token +"<br/>\n";
+        htmlPage += token + "<br/>\n";
         htmlPage += "</div>";
     }
 
@@ -269,8 +247,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Info
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>General information</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH (const QString& token, m_pObject->getMainInfo())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getMainInfo()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -278,7 +255,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         }
         index++;
 
-        htmlPage +=token +"<br/>\n";
+        htmlPage += token + "<br/>\n";
         htmlPage += "</div>";
     }
     htmlPage += "</div></div>";
@@ -287,8 +264,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // scan errors/Warning
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Scan Errors/Warning</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH (const QString& token, m_pObject->getErrorScan())
-    {
+    Q_FOREACH(const QString & token, m_pObject->getErrorScan()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -308,15 +284,13 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     QHash<QString, QStringList> nseResult = m_pObject->getNseResult();
     QHash<QString, QStringList>::const_iterator i;
 
-    for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i)
-    {
+    for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i) {
         htmlPage += "<div class=\"container\"><div class=\"title\">";
         htmlPage += "<b>" + i.key() + "</b>\n";
         htmlPage += "</div>";
 
         htmlPage += "<div class=\"result\">";
-        Q_FOREACH (const QString& value, i.value())
-        {
+        Q_FOREACH(const QString & value, i.value()) {
             if (index % 2 == 0) {
                 htmlPage += "<div class=\"resultWhite\">";
             } else {

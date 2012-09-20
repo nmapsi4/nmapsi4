@@ -23,19 +23,19 @@
 #include <QtGui/QMenu>
 
 PushButtonOrientated::PushButtonOrientated(QWidget* parent)
-: QPushButton(parent)
+    : QPushButton(parent)
 {
     initObject();
 }
 
 PushButtonOrientated::PushButtonOrientated(const QString& text, QWidget* parent)
-: QPushButton(text, parent)
+    : QPushButton(text, parent)
 {
     initObject();
 }
 
 PushButtonOrientated::PushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent)
-: QPushButton(icon, text, parent)
+    : QPushButton(icon, text, parent)
 {
     initObject();
 }
@@ -58,8 +58,7 @@ Qt::Orientation PushButtonOrientated::getOrientation() const
 void PushButtonOrientated::setOrientation(Qt::Orientation orientation)
 {
     m_orientation = orientation;
-    switch (orientation)
-    {
+    switch (orientation) {
     case Qt::Horizontal:
         setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
         break;
@@ -84,8 +83,7 @@ QSize PushButtonOrientated::sizeHint() const
 {
     QSize size = QPushButton::sizeHint();
 
-    if (m_orientation == Qt::Vertical)
-    {
+    if (m_orientation == Qt::Vertical) {
         size.transpose();
     }
 
@@ -96,8 +94,7 @@ QSize PushButtonOrientated::minimumSizeHint() const
 {
     QSize size = QPushButton::minimumSizeHint();
 
-    if (m_orientation == Qt::Vertical)
-    {
+    if (m_orientation == Qt::Vertical) {
         size.transpose();
     }
 
@@ -109,24 +106,19 @@ void PushButtonOrientated::paintEvent(QPaintEvent* event)
     Q_UNUSED(event);
     QStylePainter painter(this);
 
-    switch (m_orientation)
-    {
+    switch (m_orientation) {
     case Qt::Horizontal:
-        if (m_mirrored)
-        {
+        if (m_mirrored) {
             painter.rotate(180);
             painter.translate(-width(), -height());
         }
         break;
 
     case Qt::Vertical:
-        if (m_mirrored)
-        {
+        if (m_mirrored) {
             painter.rotate(-90);
             painter.translate(-height(), 0);
-        }
-        else
-        {
+        } else {
             painter.rotate(90);
             painter.translate(0, -width());
         }
@@ -140,46 +132,38 @@ QStyleOptionButton PushButtonOrientated::getStyleOption() const
 {
     QStyleOptionButton option;
     option.initFrom(this);
-    if (m_orientation == Qt::Vertical)
-    {
+    if (m_orientation == Qt::Vertical) {
         QSize size = option.rect.size();
         size.transpose();
         option.rect.setSize(size);
     }
     option.features = QStyleOptionButton::None;
 
-    if (isFlat())
-    {
+    if (isFlat()) {
         option.features |= QStyleOptionButton::Flat;
     }
 
-    if (menu())
-    {
+    if (menu()) {
         option.features |= QStyleOptionButton::HasMenu;
     }
 
-    if (autoDefault() || isDefault())
-    {
+    if (autoDefault() || isDefault()) {
         option.features |= QStyleOptionButton::AutoDefaultButton;
     }
 
-    if (isDefault())
-    {
+    if (isDefault()) {
         option.features |= QStyleOptionButton::DefaultButton;
     }
 
-    if (isDown() || (menu() && menu()->isVisible()))
-    {
+    if (isDown() || (menu() && menu()->isVisible())) {
         option.state |= QStyle::State_Sunken;
     }
 
-    if (isChecked())
-    {
+    if (isChecked()) {
         option.state |= QStyle::State_On;
     }
 
-    if (!isFlat() && !isDown())
-    {
+    if (!isFlat() && !isDown()) {
         option.state |= QStyle::State_Raised;
     }
 

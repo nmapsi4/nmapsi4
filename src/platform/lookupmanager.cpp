@@ -21,7 +21,7 @@
 
 
 LookupManager::LookupManager(const QString hostname)
-: m_host(hostname)
+    : m_host(hostname)
 {
 }
 
@@ -35,13 +35,12 @@ void LookupManager::run()
     qRegisterMetaType<QHostInfo>("QHostInfo");
     m_info = QHostInfo::fromName(m_host);
 
-    if(m_info.error() != QHostInfo::NoError
-        && m_info.error() != QHostInfo::UnknownError
-        && m_info.error() != QHostInfo::HostNotFound)
-    {
+    if (m_info.error() != QHostInfo::NoError
+            && m_info.error() != QHostInfo::UnknownError
+            && m_info.error() != QHostInfo::HostNotFound) {
 
-         emit threadEnd(m_info, -1, m_host);
-         return;
+        emit threadEnd(m_info, -1, m_host);
+        return;
     }
     emit threadEnd(m_info, 1, m_host);
 }

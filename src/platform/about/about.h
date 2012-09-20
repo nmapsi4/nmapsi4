@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Francesco Cecconi                    	   *
+ *   Copyright (C) 2008-2011 by Francesco Cecconi                          *
  *   francesco.cecconi@gmail.com                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,9 +29,9 @@
 
 class About : public QDialog, private Ui::AboutUi
 {
-  public:
-     About(QWidget *parent=0);
-     ~About() {};
+public:
+    About(QWidget *parent = 0);
+    ~About() {};
 };
 
 #endif

@@ -21,14 +21,14 @@
 #include "mainwindow.h"
 
 Utilities::Utilities(MainWindow* parent)
-: QObject(parent), m_ui(parent)
+    : QObject(parent), m_ui(parent)
 {
     connect(m_ui->action_About, SIGNAL(triggered()),
             this, SLOT(about()));    // about action menu
     connect(m_ui->actionAbout_Qt, SIGNAL(triggered()),
             this, SLOT(aboutQt()));    // about action menu
 
-        // action help menu (browser call)
+    // action help menu (browser call)
     connect(m_ui->actionReport_Bug, SIGNAL(triggered()),
             this, SLOT(showBugUrl()));
     connect(m_ui->actionVisit_Website, SIGNAL(triggered()),
@@ -60,10 +60,9 @@ void Utilities::openDirectoryDialog(QLineEdit *destination)
     QString url = QDir::homePath();
 
     QString FileName = QFileDialog::getExistingDirectory(m_ui, "Open Directory",
-               url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+                       url, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-    if(FileName.isEmpty())
-    {
+    if (FileName.isEmpty()) {
         FileName.append(QDir::tempPath());
     }
 
@@ -75,8 +74,7 @@ void Utilities::about()
     QWeakPointer<About> about = new About(m_ui);
     about.data()->exec();
 
-    if (!about.isNull())
-    {
+    if (!about.isNull()) {
         delete about.data();
     }
 }

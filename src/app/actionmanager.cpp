@@ -21,7 +21,7 @@
 #include "mainwindow.h"
 
 ActionManager::ActionManager(MainWindow* parent)
-: QObject(parent), m_ui(parent)
+    : QObject(parent), m_ui(parent)
 {
     // ActionManager signals
     connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
@@ -44,42 +44,42 @@ void ActionManager::createSectionsBar()
 {
     PushButtonOrientated* actionButt;
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")),tr("Scan host(s)"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Scan host(s)"), m_ui);
     actionButt->setToolTip(tr("Scan host(s)"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     Notify::setCheckedNotify(actionButt);
-    m_collectionsButton.insert("scan-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezScan()));
+    m_collectionsButton.insert("scan-sez", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezScan()));
     m_ui->sezBar->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),tr("Network Discover"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), tr("Network Discover"), m_ui);
     actionButt->setToolTip(tr("Network Discover"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     Notify::setCheckedNotify(actionButt);
-    m_collectionsButton.insert("discover-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezDiscover()));
+    m_collectionsButton.insert("discover-sez", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezDiscover()));
     m_ui->sezBar->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),tr("Vulnerability"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), tr("Vulnerability"), m_ui);
     actionButt->setToolTip(tr("Check Vulnerabilities"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setFlat(true);
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     Notify::setCheckedNotify(actionButt);
-    m_collectionsButton.insert("vuln-sez",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(updateSezVuln()));
+    m_collectionsButton.insert("vuln-sez", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezVuln()));
     m_ui->sezBar->addWidget(actionButt);
 
     m_ui->sezBar->setContextMenuPolicy(Qt::PreventContextMenu);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host List"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Host List"), m_ui);
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
@@ -87,11 +87,11 @@ void ActionManager::createSectionsBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     Notify::setCheckedNotify(actionButt);
-    m_collectionsButton.insert("scan-list",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(resizeScanListWidgetEvent()));
+    m_collectionsButton.insert("scan-list", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeScanListWidgetEvent()));
     m_ui->toolBarTab->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")),tr("Host Details"),m_ui);
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Host Details"), m_ui);
     actionButt->setToolTip(tr("Show/Hide Host Details"));
     actionButt->setOrientation(Qt::Vertical);
     actionButt->setMirrored(true);
@@ -99,8 +99,8 @@ void ActionManager::createSectionsBar()
     actionButt->setMaximumWidth(verticalButtonWidth);
     actionButt->setCheckable(true);
     Notify::setCheckedNotify(actionButt);
-    m_collectionsButton.insert("details-list",actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)),m_ui, SLOT(resizeHostDetailsWidgetEvent()));
+    m_collectionsButton.insert("details-list", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeHostDetailsWidgetEvent()));
     m_ui->toolBarTab->addWidget(actionButt);
 
     m_ui->toolBarTab->setContextMenuPolicy(Qt::PreventContextMenu);
@@ -193,7 +193,7 @@ void ActionManager::createToolButtonBar()
     m_menuSetup->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_menuSetup->setPopupMode(QToolButton::InstantPopup);
     m_menuSetup->setText(tr("Control"));
-    m_menuSetup->setIcon(QIcon::fromTheme("applications-system",QIcon(":/images/images/applications-system.png")));
+    m_menuSetup->setIcon(QIcon::fromTheme("applications-system", QIcon(":/images/images/applications-system.png")));
 
     QMenu *menu = new QMenu(m_ui);
     menu->addAction(m_ui->action_Scan_2);
@@ -263,7 +263,7 @@ void ActionManager::createToolButtonBar()
 
 void ActionManager::createDiscoverBar()
 {
-        // discover toolbar
+    // discover toolbar
     m_discoverToolBar = new QToolBar(m_ui);
     m_discoverToolBar->setObjectName(QString::fromUtf8("discoverToolBar"));
     m_discoverToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
@@ -289,7 +289,7 @@ void ActionManager::createDiscoverBar()
     action->setText(tr("Scan selected IP/s"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-single", action);
-    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanSingleDiscoveredIp()));
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(scanSingleDiscoveredIp()));
     action->setEnabled(false);
     menuScanDiscover->addAction(action);
 
@@ -297,7 +297,7 @@ void ActionManager::createDiscoverBar()
     action->setText(tr("Scan all discovered IP/s"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-all", action);
-    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));
     action->setEnabled(false);
     menuScanDiscover->addAction(action);
 
@@ -309,7 +309,7 @@ void ActionManager::createDiscoverBar()
     action->setText(tr("Save IP list"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
     m_collectionsDiscover.insert("save-ips", action);
-    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(saveXmlIpsList()));
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(saveXmlIpsList()));
     action->setEnabled(false);
     m_discoverToolBar->addAction(action);
 
@@ -317,7 +317,7 @@ void ActionManager::createDiscoverBar()
     action->setText(tr("Load IP list"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/folder_open.png")));
     m_collectionsDiscover.insert("load-ips", action);
-    connect(action, SIGNAL(triggered(bool)),m_ui->m_discoverManager, SLOT(loadXmlIpsList()));
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(loadXmlIpsList()));
     action->setEnabled(true);
     m_discoverToolBar->addAction(action);
 }

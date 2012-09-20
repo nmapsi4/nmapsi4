@@ -30,8 +30,7 @@
 class HostTools
 {
 public:
-    static bool isDns(const QString& hostname)
-    {
+    static bool isDns(const QString& hostname) {
         /**
          * check if hostname is a dns.
          * QHostAddress is not null only if hostname is a ip.
@@ -41,16 +40,14 @@ public:
         // The check is valid for ipv4 and ipv6 address.
         QHostAddress hostAddress(hostname);
 
-        if (!hostAddress.isNull())
-        {
+        if (!hostAddress.isNull()) {
             return false;
         }
 
         return true;
     }
 
-    static bool isValidDns(const QString& hostname)
-    {
+    static bool isValidDns(const QString& hostname) {
         /**
          * Check for dns validity.
          *
@@ -58,39 +55,33 @@ public:
 
         QRegExp dns(matchDNS);
 
-        if (dns.indexIn(hostname) != -1)
-        {
+        if (dns.indexIn(hostname) != -1) {
             return true;
         }
 
         return false;
     }
 
-    static QString clearHost(const QString hostname)
-    {
+    static QString clearHost(const QString hostname) {
         // check for wrong dns address
         // (http:// ftp:// sftp:// https://)[dns/ip]
         QString hostNew_(hostname);
-        if (hostname.startsWith(QLatin1String("http://")))
-        {
+        if (hostname.startsWith(QLatin1String("http://"))) {
             hostNew_.remove("http://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("https://")))
-        {
+        if (hostname.startsWith(QLatin1String("https://"))) {
             hostNew_.remove("https://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("ftp://")))
-        {
+        if (hostname.startsWith(QLatin1String("ftp://"))) {
             hostNew_.remove("ftp://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("sftp://")))
-        {
+        if (hostname.startsWith(QLatin1String("sftp://"))) {
             hostNew_.remove("sftp://");
             return hostNew_;
         }
@@ -98,49 +89,35 @@ public:
         return hostname;
     }
 
-    static bool checkViewOS(const QString& OSline, QTreeWidgetItem *itemOS)
-    {
+    static bool checkViewOS(const QString& OSline, QTreeWidgetItem *itemOS) {
         // check string OS for Icon selection
         itemOS->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
 
-        if (OSline.contains("Linux"))
-        {
+        if (OSline.contains("Linux")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/linux_logo.png")));
             itemOS->setText(1, "GNU/Linux");
             return true;
-        }
-        else if (OSline.contains("Windows"))
-        {
+        } else if (OSline.contains("Windows")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/windows_logo.png")));
             itemOS->setText(1, "MS Windows");
             return true;
-        }
-        else if (OSline.contains("FreeBSD"))
-        {
+        } else if (OSline.contains("FreeBSD")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/freebsd_logo.png")));
             itemOS->setText(1, "FreeBSD");
             return true;
-        }
-        else if (OSline.contains("OpenBSD"))
-        {
+        } else if (OSline.contains("OpenBSD")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/openbsd_logo.png")));
             itemOS->setText(1, "OpenBSD");
             return true;
-        }
-        else if (OSline.contains("Solaris"))
-        {
+        } else if (OSline.contains("Solaris")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/solaris_logo.png")));
             itemOS->setText(1, "Solaris");
             return true;
-        }
-        else if (OSline.contains("Mac OS X"))
-        {
+        } else if (OSline.contains("Mac OS X")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
             itemOS->setText(1, "MacOsX");
             return true;
-        }
-        else
-        {
+        } else {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
             itemOS->setText(1, "Undiscovered");
             return false;

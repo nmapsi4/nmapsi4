@@ -31,7 +31,7 @@ VulnBookmarkWidget::VulnBookmarkWidget(QWidget* parent): QWidget(parent)
 }
 
 BookmarkManager::BookmarkManager(MainWindow* parent)
-: QObject(parent), m_ui(parent), m_userId(0)
+    : QObject(parent), m_ui(parent), m_userId(0)
 {
 
 #ifndef Q_WS_WIN
@@ -61,13 +61,11 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
     m_scanBookmarkWidget->layout()->addWidget(m_scanBookmarkSplitter);
     m_vulnBookmarkWidget->layout()->addWidget(m_vulnBookmarkSplitter);
 
-    if (!settings.value("scanBookmarkSplitter").toByteArray().isEmpty())
-    {
+    if (!settings.value("scanBookmarkSplitter").toByteArray().isEmpty()) {
         m_scanBookmarkSplitter->restoreState(settings.value("scanBookmarkSplitter").toByteArray());
     }
 
-    if (!settings.value("vulnBookmarkSplitter").toByteArray().isEmpty())
-    {
+    if (!settings.value("vulnBookmarkSplitter").toByteArray().isEmpty()) {
         m_vulnBookmarkSplitter->restoreState(settings.value("vulnBookmarkSplitter").toByteArray());
     }
 
@@ -91,21 +89,18 @@ void BookmarkManager::syncSettings()
 
 void BookmarkManager::saveItemToBookmarks()
 {
-    if(m_ui->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty())
-    {
+    if (m_ui->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty()) {
         return;
     }
 
-    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked())
-    {
+    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked()) {
         const QString& currentHost = m_ui->hostEdit->currentText();
         // save list of ip/dns in input
         History *history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
         QStringList hostList = m_ui->hostEdit->currentText().split(' ', QString::KeepEmptyParts);
 
-        foreach (const QString& host, hostList)
-        {
+        foreach(const QString & host, hostList) {
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         }
 
@@ -115,9 +110,7 @@ void BookmarkManager::saveItemToBookmarks()
         delete history_;
         m_ui->updateComboBook();
         m_ui->hostEdit->lineEdit()->setText(currentHost);
-    }
-    else
-    {
+    } else {
         const QString& currentHost = m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText();
         History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText(),
@@ -134,23 +127,19 @@ void BookmarkManager::saveItemToBookmarks()
 
 void BookmarkManager::deleteItemFromBookmark()
 {
-    if(!m_scanBookmarkWidget->treeLogH->currentItem() && !m_vulnBookmarkWidget->treeBookVuln->currentItem())
-    {
+    if (!m_scanBookmarkWidget->treeLogH->currentItem() && !m_vulnBookmarkWidget->treeBookVuln->currentItem()) {
         return;
     }
 
     History *history_;
 
-    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked())
-    {
+    if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked()) {
         history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
         m_treeloghlist = history_->updateBookMarks();
-    }
-    else
-    {
+    } else {
         history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(m_vulnBookmarkWidget->treeBookVuln->currentItem()->text(0));
 
@@ -165,20 +154,16 @@ void BookmarkManager::deleteItemFromBookmark()
 void BookmarkManager::deleteParametersFromBookmark()
 {
 
-    if(!m_scanBookmarkWidget->treeBookPar->currentItem())
-    {
+    if (!m_scanBookmarkWidget->treeBookPar->currentItem()) {
         return;
     }
 
     History *history_;
 
-    if (!m_userId)
-    {
+    if (!m_userId) {
         history_ = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         history_->deleteItemBookmark(m_scanBookmarkWidget->treeBookPar->currentItem()->text(0));
-    }
-    else
-    {
+    } else {
         history_ = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         history_->deleteItemBookmark(m_scanBookmarkWidget->treeBookPar->currentItem()->text(0));
     }
@@ -194,8 +179,7 @@ void BookmarkManager::startParametersToBookmarksDialog()
 {
     const QString& parameters = m_ui->comboAdv->currentText();
 
-    if (parameters.isEmpty())
-    {
+    if (parameters.isEmpty()) {
         return;
     }
 
@@ -206,45 +190,34 @@ void BookmarkManager::startParametersToBookmarksDialog()
 
     dialogParAdd.data()->exec();
 
-    if (!dialogParAdd.isNull())
-    {
+    if (!dialogParAdd.isNull()) {
         delete dialogParAdd.data();
     }
 }
 
 void BookmarkManager::saveParametersToBookmarks(const QString profileName, const QString profileParameters)
 {
-    if(m_ui->comboAdv->currentText().isEmpty())
-    {
+    if (m_ui->comboAdv->currentText().isEmpty()) {
         return;
     }
 
     History *history_;
 
-    if (!m_userId)
-    {
+    if (!m_userId) {
         history_ = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
 
-        if (!history_->isProfileInHistory(profileName))
-        {
+        if (!history_->isProfileInHistory(profileName)) {
             history_->addItemHistory(profileParameters, profileName);
+        } else {
+            history_->updateProfile(profileParameters, profileName);
         }
-        else
-        {
-            history_->updateProfile(profileParameters,profileName);
-        }
-    }
-    else
-    {
+    } else {
         history_ = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
 
-        if (!history_->isProfileInHistory(profileName))
-        {
+        if (!history_->isProfileInHistory(profileName)) {
             history_->addItemHistory(profileParameters, profileName);
-        }
-        else
-        {
-            history_->updateProfile(profileParameters,profileName);
+        } else {
+            history_->updateProfile(profileParameters, profileName);
         }
     }
 
@@ -263,14 +236,11 @@ void BookmarkManager::restoreAllHistoryValues()
     m_treeloghlist = newHistory->updateBookMarks();
     delete newHistory;
     // check for user or admin parameters bookmarks
-    if (!m_userId)
-    {
+    if (!m_userId) {
         newHistory = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListPar", "nmapsi4/urlListTimePar", -1);
         m_treebookparlist = newHistory->updateBookMarks();
         delete newHistory;
-    }
-    else
-    {
+    } else {
         newHistory = new History(m_scanBookmarkWidget->treeBookPar, "nmapsi4/urlListParUser", "nmapsi4/urlListTimeParUser", -1);
         m_treebookparlist = newHistory->updateBookMarks();
         delete newHistory;
@@ -339,8 +309,7 @@ QStringList BookmarkManager::getServicesListFromBookmark()
 
 bool BookmarkManager::isBookmarkHostListEmpty()
 {
-    if (getHostListFromBookmark().first() != "NULL")
-    {
+    if (getHostListFromBookmark().first() != "NULL") {
         return false;
     }
 
@@ -349,8 +318,7 @@ bool BookmarkManager::isBookmarkHostListEmpty()
 
 bool BookmarkManager::isBookmarkServicesListEmpty()
 {
-    if (getServicesListFromBookmark().first() != "NULL")
-    {
+    if (getServicesListFromBookmark().first() != "NULL") {
         return false;
     }
 

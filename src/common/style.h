@@ -21,8 +21,8 @@
 #define STYLE_H
 
 static const char verticalStyleSheet[] = "QPushButton:checked {border: 2px; border-radius: 2px; "
-         "background-color: palette(highlight); color: palette(highlighted-text); "
-         "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
+        "background-color: palette(highlight); color: palette(highlighted-text); "
+        "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
 
 static const char nofifyStyleSheet[] = "QPushButton { color: red; } ";
 

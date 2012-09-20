@@ -117,13 +117,13 @@ void MainWindow::loadScanProfile()
 
     QListIterator< QPair<QString, QString> > i(defaultScanProfile());
     while (i.hasNext()) {
-        comboParametersProfiles->insertItem(comboParametersProfiles->count()+1, i.next().first);
+        comboParametersProfiles->insertItem(comboParametersProfiles->count() + 1, i.next().first);
     }
 
-    comboParametersProfiles->insertSeparator(comboParametersProfiles->count()+1);
+    comboParametersProfiles->insertSeparator(comboParametersProfiles->count() + 1);
 
     // value from treeWidget parameters
-    for(int index=0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
+    for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
         comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
     }
 
@@ -132,8 +132,8 @@ void MainWindow::loadScanProfile()
 
 void MainWindow::comboParametersSelectedEvent()
 {
-   // insert profile from comboPar to comboAdv
-   int parIndex = comboParametersProfiles->currentIndex();
+    // insert profile from comboPar to comboAdv
+    int parIndex = comboParametersProfiles->currentIndex();
 
     // if not 0
     QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
@@ -151,7 +151,7 @@ void MainWindow::comboParametersSelectedEvent()
         }
     } else {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(comboParametersProfiles->currentText(),Qt::MatchExactly,1);
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(comboParametersProfiles->currentText(), Qt::MatchExactly, 1);
         comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }

@@ -66,8 +66,7 @@ public:
     Monitor(MainWindow* parent);
     ~Monitor();
 
-    enum LookupType
-    {
+    enum LookupType {
         DisabledLookup,
         InternalLookup,
         DigLookup

@@ -34,13 +34,10 @@ int main(int argc, char *argv[])
     QString localeComplete;
     localeComplete.append("nmapsi4_");
 
-    if(locale.contains("pt"))
-    {
-         locale.resize(5);
-    }
-    else
-    {
-         locale.resize(2);
+    if (locale.contains("pt")) {
+        locale.resize(5);
+    } else {
+        locale.resize(2);
     }
 
     localeComplete.append(locale);
@@ -58,8 +55,7 @@ int main(int argc, char *argv[])
 
     tmp_translator = translator.load(localeComplete, urlTranslate);
 
-    if (tmp_translator == false)
-    {
+    if (tmp_translator == false) {
         tmp_translator = translator.load(localeComplete, QDir::currentPath());
     }
 

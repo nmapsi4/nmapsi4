@@ -45,17 +45,14 @@ QList<QNetworkInterface> Discover::getAllInterfaces(InterfaceOption option) cons
      *
      */
 
-    if (option == AllInterface)
-    {
+    if (option == AllInterface) {
         return QNetworkInterface::allInterfaces();
     }
 
     QList<QNetworkInterface> interfacesWithAddress;
 
-    foreach (const QNetworkInterface& address, QNetworkInterface::allInterfaces())
-    {
-        if (address.addressEntries().size())
-        {
+    foreach(const QNetworkInterface & address, QNetworkInterface::allInterfaces()) {
+        if (address.addressEntries().size()) {
             interfacesWithAddress.append(address);
         }
     }
@@ -80,20 +77,16 @@ QList<QNetworkAddressEntry> Discover::getAddressEntries(const QString interfaceN
 
     QList<QNetworkAddressEntry> entryList_;
 
-    if (interface_.isValid())
-    {
+    if (interface_.isValid()) {
         return interface_.addressEntries();
-    }
-    else
-    {
+    } else {
         return entryList_;
     }
 }
 
 void Discover::fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters)
 {
-    foreach (const QString& host, networkIpList)
-    {
+    foreach(const QString & host, networkIpList) {
         fromList(host, parent, parameters);
     }
 }
@@ -110,38 +103,32 @@ void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStrin
     parameters.append("-v4");
     parameters.append(networkIp);
 
-    if (m_threadLimit)
-    {
+    if (m_threadLimit) {
         // acquire one element from thread counter
         m_threadLimit--;
 
-        QWeakPointer<ProcessThread> pingTh = new ProcessThread("nping",parameters);
+        QWeakPointer<ProcessThread> pingTh = new ProcessThread("nping", parameters);
         m_threadList.push_back(pingTh.data());
 
         connect(pingTh.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(fromListReturn(QStringList,QByteArray,QByteArray)));
 
         pingTh.data()->start();
-    }
-    else
-    {
+    } else {
         qDebug() << "DEBUG:: thread suspended:: " << networkIp;
         // create a QStringlist with address suspended
         m_ipSospended.append(networkIp);
     }
 
-    if (!m_connectState)
-    {
+    if (!m_connectState) {
         connect(parent, SIGNAL(killDiscoverFromIpsRange()), this, SLOT(stopDiscoverFromList()));
     }
 
     // check suspended discover ip
-    if (m_ipSospended.size() && !m_connectState)
-    {
+    if (m_ipSospended.size() && !m_connectState) {
         m_connectState = true;
         connect(m_timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
-        if (!m_timer->isActive())
-        {
+        if (!m_timer->isActive()) {
             m_timer->start(5000);
         }
     }
@@ -161,11 +148,9 @@ void Discover::fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QBy
     QTextStream buffStream(&buffString);
     QString buffLine;
 
-    while(!buffStream.atEnd())
-    {
+    while (!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV")))
-        {
+        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) {
             emit fromListFinisched(ipAddr, true, ipBuffer);
             return;
         }
@@ -180,8 +165,7 @@ void Discover::repeatScanner()
      */
     qDebug() << "DEBUG:: scan Counter timer:: " << m_threadLimit;
 
-    if (!m_threadLimit)
-    {
+    if (!m_threadLimit) {
         return;
     }
 
@@ -192,8 +176,7 @@ void Discover::repeatScanner()
     m_timer->stop();
     int freeThreadSpace = 1;
 
-    while (freeThreadSpace <= m_threadLimit && freeThreadSpace <= m_ipSospended.size())
-    {
+    while (freeThreadSpace <= m_threadLimit && freeThreadSpace <= m_ipSospended.size()) {
         fromList(m_ipSospended.takeFirst(), m_parent, m_parameters);
         freeThreadSpace++;
     }
@@ -220,14 +203,14 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, Disco
 
     parameters.append(networkCIDR);
 
-    QWeakPointer<ProcessThread> thread = new ProcessThread("nping",parameters);
+    QWeakPointer<ProcessThread> thread = new ProcessThread("nping", parameters);
 
     connect(thread.data(), SIGNAL(flowFromThread(QString,QString)),
-                this, SLOT(currentCIDRValue(QString,QString)));
+            this, SLOT(currentCIDRValue(QString,QString)));
     connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
+            this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
     connect(parent, SIGNAL(killDiscoverFromCIDR()),
-                this, SLOT(stopDiscoverFromCIDR()));
+            this, SLOT(stopDiscoverFromCIDR()));
 
     m_threadList.push_back(thread.data());
 
@@ -245,20 +228,18 @@ void Discover::currentCIDRValue(const QString parameters, const QString data)
     QTextStream currentValues(&localBuffer);
     QString currentLine;
 
-    while (!currentValues.atEnd())
-    {
+    while (!currentValues.atEnd()) {
         currentLine = currentValues.readLine();
 
         if (currentLine.startsWith(QLatin1String("RCVD"))
                 || currentLine.startsWith(QLatin1String("RECV"))
-                || currentLine.startsWith(QLatin1String("SENT")))
-        {
-            emit cidrCurrentValue(parameters,currentLine);
+                || currentLine.startsWith(QLatin1String("SENT"))) {
+            emit cidrCurrentValue(parameters, currentLine);
         }
     }
 }
 
 void Discover::endCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError)
 {
-    emit cidrFinisced(ipAddr,ipBuffer,bufferError);
+    emit cidrFinisced(ipAddr, ipBuffer, bufferError);
 }

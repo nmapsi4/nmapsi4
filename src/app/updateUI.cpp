@@ -22,10 +22,10 @@
 void MainWindow::setFullScreen()
 {
     if (isFullScreen()) {
-        setWindowState(windowState() & ~Qt::WindowFullScreen );
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
         actionFullScreen->setChecked(false);
     } else {
-        setWindowState(windowState() | Qt::WindowFullScreen );
+        setWindowState(windowState() | Qt::WindowFullScreen);
         actionFullScreen->setChecked(true);
     }
 }
@@ -72,25 +72,25 @@ void MainWindow::updateSezScan()
     toolMenuBar->setVisible(true);
 
     if (!tabScan->isVisible()) {
-        tabUi->insertTab(0,tabScan,QIcon(QString::fromUtf8(":/images/images/network_local.png")),"Scan");
+        tabUi->insertTab(0, tabScan, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
         tabUi->setCurrentIndex(0);
     }
 
     if (!m_monitor->m_monitorWidget->isVisible()) {
-        tabUi->insertTab(1,m_monitor->m_monitorWidget,tr("Scan Monitor"));
+        tabUi->insertTab(1, m_monitor->m_monitorWidget, tr("Scan Monitor"));
 
         QIcon tabIcon;
-        if(m_monitor->monitorHostNumber()) {
+        if (m_monitor->monitorHostNumber()) {
             tabIcon.addFile(QString(":/images/images/reload.png"));
         } else {
             tabIcon.addFile(QString(":/images/images/utilities-log-viewer.png"));
         }
 
-        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget),tabIcon);
+        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget), tabIcon);
     }
 
-    tabUi->insertTab(tabUi->count(),m_bookmark->m_scanBookmarkWidget,
-                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
+    tabUi->insertTab(tabUi->count(), m_bookmark->m_scanBookmarkWidget,
+                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
     tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
@@ -124,10 +124,10 @@ void MainWindow::updateSezVuln()
     tabUi->removeTab(tabUi->indexOf(tabScan));
     tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
     tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
-    tabUi->insertTab(0,m_vulnerability->m_vulnerabilityWidget,QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),"Vulnerability");
+    tabUi->insertTab(0, m_vulnerability->m_vulnerabilityWidget, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
 
-    tabUi->insertTab(tabUi->count(),m_bookmark->m_vulnBookmarkWidget,
-                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")),tr("Bookmarks"));
+    tabUi->insertTab(tabUi->count(), m_bookmark->m_vulnBookmarkWidget,
+                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
     tabUi->setCurrentIndex(0);
 
@@ -141,7 +141,8 @@ void MainWindow::updateSezVuln()
 }
 
 void MainWindow::updateSezDiscover()
-{ // SLOT
+{
+    // SLOT
     // discover section
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
@@ -160,7 +161,7 @@ void MainWindow::updateSezDiscover()
     tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
     tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
-    tabUi->insertTab(0,m_discoverManager->m_discoverWidget,QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),"Network discover");
+    tabUi->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
     tabUi->setCurrentIndex(0);
 
     // disable scan action
@@ -198,7 +199,7 @@ void MainWindow::updateComboBook()
     comboHostBook->clear();
     comboHostBook->insertItem(0, "Select Saved Host");
 
-    for(int index=0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
+    for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
         comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
     }
 }
@@ -228,9 +229,8 @@ void MainWindow::clearAll()
 
 void MainWindow::updateScanCounter(int hostNumber)
 {
-    if (hostNumber == 1)
-    {
-        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget),QIcon(QString::fromUtf8(":/images/images/reload.png")));
+    if (hostNumber == 1) {
+        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget), QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
 
     QString title(tr(" Active Scan ")

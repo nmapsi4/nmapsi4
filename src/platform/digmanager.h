@@ -39,15 +39,14 @@ class DigManager : public QObject
     */
     Q_OBJECT
 public:
-    enum DigRequestType
-    {
+    enum DigRequestType {
         Short,
         Verbose
     };
     /*!
      * Create a object for dig lookup Class.
      */
-    DigManager(QObject* parent=0);
+    DigManager(QObject* parent = 0);
     ~DigManager();
     /*!
      * Start QThread dig for hostname.

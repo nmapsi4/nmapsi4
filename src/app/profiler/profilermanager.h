@@ -37,7 +37,7 @@
 
 namespace Ui
 {
-    class profilerDialog;
+class profilerDialog;
 }
 
 class MainWindow;

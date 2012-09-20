@@ -176,8 +176,7 @@ int PObject::getId()
 
 void PObject::setVulnDiscoverd(const QString vulnAddress)
 {
-    if (!m_vulnDiscoverd.contains(vulnAddress))
-    {
+    if (!m_vulnDiscoverd.contains(vulnAddress)) {
         m_vulnDiscoverd.push_back(vulnAddress);
     }
 }
