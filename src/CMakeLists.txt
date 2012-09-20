@@ -79,6 +79,7 @@ SET(SOURCES_H
         common/utilities.h
         common/processthread.h
         app/profiler/profilermanager.h
+        app/profiler/profiler.h
         app/preference/preferencesdialog.h
         app/bookmarkmanager.h
         app/actionmanager.h

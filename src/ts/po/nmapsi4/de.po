@@ -1,38 +1,40 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 20:11+0200\n"
-"PO-Revision-Date: 2012-05-07 17:00+0000\n"
-"Last-Translator: Daniel Winzen <d@winzen4.de>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-20 19:16+0000\n"
-"X-Generator: Launchpad (build 15985)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: de_DE\n"
+"X-Qt-Contexts: true\n"
 
-#: AboutUi#1
+#, fuzzy
+msgctxt "AboutUi|"
 msgid "About Nmapsi4"
 msgstr "Über Nmapsi4"
 
-#: AboutUi#2
-msgctxt "AboutUi#2"
+#, fuzzy
+msgctxt "AboutUi|"
 msgid "Nmapsi4"
 msgstr "Nmapsi4"
 
-#: AboutUi#3
+#, fuzzy
+msgctxt "AboutUi|"
+msgid "Version "
+msgstr "Version "
+
+msgctxt "AboutUi|"
 msgid ""
 "NmapSi4 is a complete Qt4-based Gui with the design\n"
 "goals to provide a complete nmap interface for Users,\n"
 "in order to menage all option of this power security net scanner."
 msgstr ""
 
-#: AboutUi#4
+#, fuzzy
+msgctxt "AboutUi|"
 msgid ""
 "\n"
 "\n"
-"(c) 2007-2011 Francesco Cecconi\n"
+"(c) 2007-2012 Francesco Cecconi\n"
 "\n"
 "License: GNU General Public License Version 2"
 msgstr ""
@@ -40,1517 +42,1666 @@ msgstr ""
 "\n"
 "(c) 2007-2011 Francesco Cecconi\n"
 "\n"
-"Lizenz: GNU General Public License Version 2"
+"Lizenz: GNU General Public License Version 2 {2007-2012 ?}"
 
-#: AboutUi#5
-msgid "&Close"
-msgstr "S&chließen"
-
-#: AboutUi#6
+#, fuzzy
+msgctxt "AboutUi|"
 msgid "&About"
 msgstr "&Über"
 
-#: AboutUi#7
+msgctxt "AboutUi|"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Francesco Cecconi</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">Core Developer</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mainto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Francesco Cecconi</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-style:italic;\">Core Developer</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:brand@nmapsi4.org\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
 "color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-"
-"decoration: underline; color:#0057ae;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Innocenzo Ventre</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">MS Windows Packages</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mainto:el.diabl09@gmail.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"text-decoration: underline; color:#0057ae;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Innocenzo Ventre</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-style:italic;\">MS Windows Packages</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:el.diabl09@gmail.com\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p></body></html>"
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Francesco Cecconi</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">Core Entwickler</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mainto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-"
-"decoration: underline; color:#0057ae;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Innocenzo Ventre</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"style:italic;\">MS Windows Pakete</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mainto:el.diabl09@gmail.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p></body></html>"
 
-#: AboutUi#8
+#, fuzzy
+msgctxt "AboutUi|"
 msgid "A&uthors"
 msgstr "A&utoren"
 
-#: AboutUi#9
+msgctxt "AboutUi|"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Website:</span>  </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://www.nmapsi4.org\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Website:</span>  </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"www.nmapsi4.org\"><span style=\" font-size:8pt; text-decoration: "
+"underline; color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Bug Tracking:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://bugs.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Bug Tracking:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://bugs.nmapsi4.org\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
 "color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Sources:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://gitorious.org/nmapsi4\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">gitorious.org/nmapsi4</span></a></p>\n"
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Sources Git repository:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://gitorious.org/nmapsi4\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">gitorious.org/nmapsi4</span></a></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Sources:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://code.google.com/p/nmapsi4/\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">code.google.com</span></a></p></body></html>"
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Sources Download:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://code.google.com/nmapsi4\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
 msgstr ""
 
-#: AboutUi#10
+#, fuzzy
+msgctxt "AboutUi|"
 msgid "&Support"
 msgstr "&Unterstützung"
 
-#: AboutUi#11
-msgid "Version "
-msgstr "Version "
+#, fuzzy
+msgctxt "AboutUi|"
+msgid "&Close"
+msgstr "S&chließen"
 
-#: ActionManager#1
-msgctxt "ActionManager#1"
+msgctxt "ActionManager|"
 msgid "Scan host(s)"
 msgstr ""
 
-#: ActionManager#2
+msgctxt "ActionManager|"
 msgid "Network Discover"
 msgstr ""
 
-#: ActionManager#3
-msgctxt "ActionManager#3"
+#, fuzzy
+msgctxt "ActionManager|"
 msgid "Vulnerability"
 msgstr "Verwundbarkeit"
 
-#: ActionManager#4
+msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr ""
 
-#: ActionManager#5
+msgctxt "ActionManager|"
 msgid "Host List"
 msgstr ""
 
-#: ActionManager#6
+msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
 
-#: ActionManager#7
-msgctxt "ActionManager#7"
+msgctxt "ActionManager|"
 msgid "Host Details"
 msgstr ""
 
-#: ActionManager#8
+msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr ""
 
-#: ActionManager#9
+msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr ""
 
-#: ActionManager#10
+msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr ""
 
-#: ActionManager#11
+msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr ""
 
-#: ActionManager#12
+msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr ""
 
-#: ActionManager#13
+msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr ""
 
-#: ActionManager#14
+msgctxt "ActionManager|"
 msgid "Check Vulnerability"
 msgstr ""
 
-#: ActionManager#15
+msgctxt "ActionManager|"
 msgid "Remove url"
 msgstr ""
 
-#: ActionManager#16
-msgid "Setup"
-msgstr "Einrichten"
+msgctxt "ActionManager|"
+msgid "Control"
+msgstr ""
 
-#: ActionManager#17
-msgctxt "ActionManager#17"
+#, fuzzy
+msgctxt "ActionManager|"
 msgid "Profile"
 msgstr "Profil"
 
-#: ActionManager#18
-msgctxt "ActionManager#18"
+#, fuzzy
+msgctxt "ActionManager|"
 msgid "Save"
 msgstr "Speichern"
 
-#: ActionManager#19
+#, fuzzy
+msgctxt "ActionManager|"
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: ActionManager#20
-msgid "Scan discovered ips"
-msgstr ""
-
-#: DiscoverManager#1
-msgid "is Up"
-msgstr ""
-
-#: DiscoverManager#2
-msgid "Wrong CIDR notation format."
-msgstr ""
-
-#: MainWindow#1
-msgctxt "MainWindow#1"
-msgid "&Add host to bookmark"
-msgstr ""
-
-#: MainWindow#2
-msgctxt "MainWindow#2"
-msgid "Add service to &bookmark"
-msgstr ""
-
-#: MainWindow#3
-msgctxt "MainWindow#3"
-msgid "Scan log parameters"
-msgstr ""
-
-#: MainWindow#4
-msgid " Active Scan "
-msgstr ""
-
-#: MainWindow#5
-msgctxt "MainWindow#5"
-msgid "Bookmarks"
-msgstr "Lesezeichen"
-
-#: MainWindow#6
-msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
-msgstr ""
-
-#: MainWindow#7
-msgid "Search Vulnerabilities"
-msgstr ""
-
-#: MainWindow#8
-msgid "Quick Scan"
-msgstr ""
-
-#: MainWindow#9
-msgid "Intense Scan"
-msgstr ""
-
-#: MainWindow#10
-msgid "Intense Scan, all TCP ports"
-msgstr ""
-
-#: MainWindow#11
-msgid "Intense scan plus UDP"
-msgstr ""
-
-#: MainWindow#12
-msgid "Slow comprehensive scan"
-msgstr ""
-
-#: MainWindow#13
-msgid "No Host Target\n"
-msgstr "Kein Server Ziel\n"
-
-#: MainWindow#14
-msgctxt "MainWindow#14"
-msgid "Close"
-msgstr "Schließen"
-
-#: MainWindow#15
-msgid "Hostname already scanning\n"
-msgstr ""
-
-#: MainWindow#16
-msgid "<b>There are still active scan.</b>"
-msgstr ""
-
-#: MainWindow#17
-msgid "Do you want to close nmapsi4 anyway?"
-msgstr "Möchten Sie nmapsi4 trotzdem schließen?"
-
-#: MainWindowClass#1
-msgctxt "MainWindowClass#1"
-msgid "Nmapsi4"
-msgstr "Nmapsi4"
-
-#: MainWindowClass#2
-msgid "&About nmapsi4"
-msgstr "&Über nmapsi4"
-
-#: MainWindowClass#3
-msgid "&Scan"
-msgstr "&Scannen"
-
-#: MainWindowClass#4
-msgctxt "MainWindowClass#4"
-msgid "Scan"
-msgstr ""
-
-#: MainWindowClass#5
-msgid "Ctrl+S"
-msgstr "Strg+S"
-
-#: MainWindowClass#6
-msgid "About &Qt"
-msgstr "Über &Qt"
-
-#: MainWindowClass#7
-msgid "&Preferences"
-msgstr "&Voreinstellungen"
-
-#: MainWindowClass#8
-msgid "&Quit"
-msgstr "&Beenden"
-
-#: MainWindowClass#9
-msgid "Ctrl+Q"
-msgstr "Strg+Q"
-
-#: MainWindowClass#10
-msgid "Stop Scan"
-msgstr "Scan beenden"
-
-#: MainWindowClass#11
-msgid "Clear History"
-msgstr "Verlauf löschen"
-
-#: MainWindowClass#12
-msgid "Close Tree"
-msgstr "Baum schließen"
-
-#: MainWindowClass#13
-msgid "Close Scan Tree"
-msgstr "schließe Scan Baum"
-
-#: MainWindowClass#14
-msgid "Clear HostName"
-msgstr "Lösche Servername"
-
-#: MainWindowClass#15
-msgid "Clear Hostname IP"
-msgstr "Lösche Server IP"
-
-#: MainWindowClass#16
-msgid "Save As"
-msgstr "Speichern unter"
-
-#: MainWindowClass#17
-msgid "Save Scan"
-msgstr ""
-
-#: MainWindowClass#18
-msgctxt "MainWindowClass#18"
-msgid "Save"
-msgstr "Speichern"
-
-#: MainWindowClass#19
-msgid "S&ave Scan"
-msgstr ""
-
-#: MainWindowClass#20
-msgid "Save all scans to &Directory"
-msgstr ""
-
-#: MainWindowClass#21
-msgid "F&ull Screen Mode"
-msgstr "V&ollbild Modus"
-
-#: MainWindowClass#22
-msgid "Ctrl+Shift+F11"
-msgstr "Ctrl+Shift+F11"
-
-#: MainWindowClass#23
-msgid "Show &Menu Bar"
-msgstr "Zeige &Werkzeugleiste"
-
-#: MainWindowClass#24
-msgid "Ctrl+M"
-msgstr "Ctrl+M"
-
-#: MainWindowClass#25
-msgid "Show Status Bar"
-msgstr "Zeige Statusleiste"
-
-#: MainWindowClass#26
-msgctxt "MainWindowClass#26"
-msgid "&Add host to bookmark"
-msgstr ""
-
-#: MainWindowClass#27
-msgid "Add host to bookmark"
-msgstr ""
-
-#: MainWindowClass#28
-msgid "Main"
-msgstr ""
-
-#: MainWindowClass#29
-msgid "Log"
-msgstr "Protokoll"
-
-#: MainWindowClass#30
-msgid "Vuln"
-msgstr ""
-
-#: MainWindowClass#31
-msgid "Section Scan"
-msgstr ""
-
-#: MainWindowClass#32
-msgid "Section Log"
-msgstr ""
-
-#: MainWindowClass#33
-msgid "Section Vulnerabilities"
-msgstr ""
-
-#: MainWindowClass#34
-msgid "Donate Money"
-msgstr ""
-
-#: MainWindowClass#35
-msgid "Documentation"
-msgstr "Dokumentation"
-
-#: MainWindowClass#36
-msgid "Visit Website"
-msgstr "Webseite besuchen"
-
-#: MainWindowClass#37
-msgid "Report a bug"
-msgstr "Einen Fehler melden"
-
-#: MainWindowClass#38
-msgid "Section Discover"
-msgstr ""
-
-#: MainWindowClass#39
-msgid "New Profile"
-msgstr "Neues Profil"
-
-#: MainWindowClass#40
-msgid "Edit Profile"
-msgstr "Profil bearbeiten"
-
-#: MainWindowClass#41
-msgid "Add &parameters to bookmark"
-msgstr ""
-
-#: MainWindowClass#42
-msgid "Add vulnerability search url"
-msgstr ""
-
-#: MainWindowClass#43
-msgid "Clear"
-msgstr ""
-
-#: MainWindowClass#44
-msgid "Save Profile"
-msgstr "Profil speichern"
-
-#: MainWindowClass#45
-msgid "Description"
-msgstr "Beschreibung"
-
-#: MainWindowClass#46
-msgid "Service"
-msgstr "Dienst"
-
-#: MainWindowClass#47
-msgid "State"
-msgstr ""
-
-#: MainWindowClass#48
-msgid "Port"
-msgstr "Port"
-
-#: MainWindowClass#49
-msgid "Nss script result"
-msgstr ""
-
-#: MainWindowClass#50
-msgid "Service(s) Details"
-msgstr ""
-
-#: MainWindowClass#51
-msgid "Host(s)"
-msgstr "Server"
-
-#: MainWindowClass#52
-msgctxt "MainWindowClass#52"
-msgid "Lookup"
-msgstr ""
-
-#: MainWindowClass#53
-msgid "DNS"
-msgstr "DNS"
-
-#: MainWindowClass#54
-msgid "IP"
-msgstr "IP"
-
-#: MainWindowClass#55
-msgid "RTT"
-msgstr "RTT"
-
-#: MainWindowClass#56
-msgid "Hop(s)"
-msgstr ""
-
-#: MainWindowClass#57
-msgid "Traceroute"
-msgstr ""
-
-#: MainWindowClass#58
-msgctxt "MainWindowClass#58"
-msgid "Host Details"
-msgstr ""
-
-#: MainWindowClass#59
-msgid "Service(s) with info"
-msgstr ""
-
-#: MainWindowClass#60
-msgid "Scan host details"
-msgstr ""
-
-#: MainWindowClass#61
-msgid "Nse result"
-msgstr ""
-
-#: MainWindowClass#62
-msgid "Os"
-msgstr "Os"
-
-#: MainWindowClass#63
-msgctxt "MainWindowClass#63"
-msgid "Scan log parameters"
-msgstr ""
-
-#: MainWindowClass#64
-msgctxt "MainWindowClass#64"
-msgid "Scan host(s)"
-msgstr ""
-
-#: MainWindowClass#65
-msgid "Stop All Scan"
-msgstr ""
-
-#: MainWindowClass#66
-msgid "Stop Current Scan"
-msgstr ""
-
-#: MainWindowClass#67
-msgid "Scan Details"
-msgstr ""
-
-#: MainWindowClass#68
+msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr ""
 
-#: MainWindowClass#69
-msgid "Host Thread"
+msgctxt "ActionManager|"
+msgid "Scan selected IP/s"
 msgstr ""
 
-#: MainWindowClass#70
-msgid "Scan Monitor"
+msgctxt "ActionManager|"
+msgid "Scan all discovered IP/s"
 msgstr ""
 
-#: MainWindowClass#71
+msgctxt "ActionManager|"
+msgid "Save IP list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Load IP list"
+msgstr ""
+
+msgctxt "DiscoverManager|"
+msgid "is Up"
+msgstr ""
+
+msgctxt "DiscoverManager|"
+msgid "Save IP list"
+msgstr ""
+
+msgctxt "DiscoverManager|"
+msgid "Load IP list"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr "Datum"
 
-#: MainWindowClass#72
-msgid "IP List"
+msgctxt "DiscoverWidgetForm|"
+msgid "Discovered IP/s"
 msgstr ""
 
-#: MainWindowClass#73
-msgctxt "MainWindowClass#73"
-msgid "Profile Name"
-msgstr "Name des Profils"
-
-#: MainWindowClass#74
-msgid "Parameters List"
-msgstr ""
-
-#: MainWindowClass#75
-msgctxt "MainWindowClass#75"
-msgid "Bookmarks"
-msgstr "Lesezeichen"
-
-#: MainWindowClass#76
-msgid "Log(s)"
-msgstr "Log(s)"
-
-#: MainWindowClass#77
-msgid "Error(s)"
-msgstr "Fehler"
-
-#: MainWindowClass#78
-msgid "Raw scan log"
-msgstr ""
-
-#: MainWindowClass#79
-msgid "Services"
-msgstr "Dienste"
-
-#: MainWindowClass#80
-msgctxt "MainWindowClass#80"
-msgid "Vulnerability"
-msgstr "Verwundbarkeit"
-
-#: MainWindowClass#81
-msgid "Data"
-msgstr "Daten"
-
-#: MainWindowClass#82
-msgid "Url(s)"
-msgstr "Url(s)"
-
-#: MainWindowClass#83
-msgid "Url(s) name"
-msgstr ""
-
-#: MainWindowClass#84
+msgctxt "DiscoverWidgetForm|"
 msgid "Packets trace"
 msgstr ""
 
-#: MainWindowClass#85
+msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr ""
 
-#: MainWindowClass#86
-msgid "Ips range (IPv4)"
-msgstr ""
-
-#: MainWindowClass#87
-msgid "Local Interfaces:"
-msgstr ""
-
-#: MainWindowClass#88
+msgctxt "DiscoverWidgetForm|"
 msgid "Probes Modes:"
 msgstr ""
 
-#: MainWindowClass#89
-msgid "Stop Discover"
+msgctxt "DiscoverWidgetForm|"
+msgid "CIDR Notation (IPv4)"
 msgstr ""
 
-#: MainWindowClass#90
-msgid "Discover Group:"
+msgctxt "DiscoverWidgetForm|"
+msgid "Selected your CIDR address:"
 msgstr ""
 
-#: MainWindowClass#91
-msgid "Start Ip:"
-msgstr ""
-
-#: MainWindowClass#92
-msgid "End Ip:"
-msgstr ""
-
-#: MainWindowClass#93
-msgid "Ip"
-msgstr "Ip"
-
-#: MainWindowClass#94
-msgid "Remaining Ip:"
-msgstr ""
-
-#: MainWindowClass#95
-msgid "Start DIscover from ips range"
-msgstr ""
-
-#: MainWindowClass#96
-msgid "Cidr notation (IPv4)"
-msgstr ""
-
-#: MainWindowClass#97
-msgid "Start with CIDR-style addressing"
-msgstr ""
-
-#: MainWindowClass#98
-msgid "Stop discover"
-msgstr ""
-
-#: MainWindowClass#99
+msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Address:"
 msgstr ""
 
-#: MainWindowClass#100
-msgid "Estimate number of ip to ping"
+msgctxt "DiscoverWidgetForm|"
+msgid "Prefix Size:"
 msgstr ""
 
-#: MainWindowClass#101
-msgid "Number of ips:"
+msgctxt "DiscoverWidgetForm|"
+msgid "Number of IP:"
 msgstr ""
 
-#: MainWindowClass#102
-msgid "Ex. 192.168.1.0/28 (16 ips)"
+msgctxt "DiscoverWidgetForm|"
+msgid "Or you can paste CIDR address below:"
 msgstr ""
 
-#: MainWindowClass#103
-msgid "Discover options"
+msgctxt "DiscoverWidgetForm|"
+msgid "CIDR address:"
 msgstr ""
 
-#: MainWindowClass#104
-msgid "Network discover"
+msgctxt "DiscoverWidgetForm|"
+msgid "Start with CIDR-style address"
 msgstr ""
 
-#: MainWindowClass#105
-msgid "&File"
-msgstr "&Datei"
-
-#: MainWindowClass#106
-msgid "&View"
-msgstr "&Ansicht"
-
-#: MainWindowClass#107
-msgid "&Bookmarks"
-msgstr "&Lesezeichen"
-
-#: MainWindowClass#108
-msgid "&Help"
-msgstr "&Hilfe"
-
-#: MainWindowClass#109
-msgid "S&ettings"
-msgstr "E&instellungen"
-
-#: MainWindowClass#110
-msgid "&Tools"
-msgstr "Ex&tras"
-
-#: MainWindowClass#111
-msgid "toolBar"
-msgstr "Werkzeugleiste"
-
-#: MainWindowClass#112
-msgid "toolBar_2"
-msgstr "Werkzeugleiste_2"
-
-#: MainWindowClass#113
-msgid "toolBar_3"
+msgctxt "DiscoverWidgetForm|"
+msgid "Stop Discover"
 msgstr ""
 
-#: Monitor#1
-msgid "Waiting"
-msgstr "Es wird gewartet"
-
-#: Monitor#2
-msgid "Scanning"
+msgctxt "DiscoverWidgetForm|"
+msgid "CIDR Notation address"
 msgstr ""
 
-#: ParserManager#1
-msgid "Error: check nmap Installation.\n"
+msgctxt "DiscoverWidgetForm|"
+msgid "Ips range (IPv4)"
 msgstr ""
 
-#: ParserManager#2
-msgctxt "ParserManager#2"
+msgctxt "DiscoverWidgetForm|"
+msgid "Local Interfaces:"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "Reload Interfaces"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "IP Network:"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "Start Host Ip:"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "End Host Ip:"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "Start Discover from IP range"
+msgstr ""
+
+msgctxt "DiscoverWidgetForm|"
+msgid "Range of IP"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindow|"
+msgid "Default"
+msgstr "Standard"
+
+msgctxt "MainWindow|"
+msgid "Default, force ipv6"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Default, Aggressive"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Default, base nse script"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Default, base nse script, force ipv6"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick Scan"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Intense Scan"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Intense Scan, no ping"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Intense Scan, all TCP ports"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Intense scan plus UDP"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Slow comprehensive scan"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindow|"
+msgid "No Host Target\n"
+msgstr "Kein Server Ziel\n"
+
+#, fuzzy
+msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Schließen"
 
-#: ParserManager#3
-msgid "No description"
-msgstr "Keine Beschreibung"
-
-#: ParserManager#4
-msgid "Save Log"
-msgstr "Speichere Log"
-
-#: ParserManager#5
-msgid "Log (*.log);;Html (*.html *.htm)"
-msgstr ""
-
-#: PreferencesDialog#1
-msgid "General"
-msgstr "Allgemein"
-
-#: PreferencesDialog#2
-msgid "Size"
-msgstr "Größe"
-
-#: PreferencesDialog#3
-msgctxt "PreferencesDialog#3"
-msgid "Lookup"
-msgstr ""
-
-#: PreferencesDialog#4
-msgid "<h3>General</h3>"
-msgstr "<h3>Allgemein</h3>"
-
-#: PreferencesDialog#5
-msgid "<h3>Size</h3>"
-msgstr "<h3>Größe</h3>"
-
-#: PreferencesDialog#6
-msgid "<h3>Lookup</h3>"
-msgstr ""
-
-#: ProfileMain#1
-msgid "Log Preferences"
-msgstr "Log Voreinstellungen"
-
-#: ProfileMain#2
-msgid "Log type"
-msgstr ""
-
-#: ProfileMain#3
-msgid "Fancy format"
-msgstr ""
-
-#: ProfileMain#4
-msgid "Nmap raw format"
-msgstr ""
-
-#: ProfileMain#5
-msgid "Html format"
-msgstr ""
-
-#: ProfileMain#6
-msgid "Tuning options"
-msgstr ""
-
-#: ProfileMain#7
-msgid "History Item Number"
-msgstr ""
-
-#: ProfileMain#8
-msgid "Max parallel scan"
-msgstr ""
-
-#: ProfileMain#9
-msgid "Max parallel discover process"
-msgstr ""
-
-#: ProfileMain#10
-msgid "Size Preferences"
-msgstr "Größen Voreinstellungen"
-
-#: ProfileMain#11
-msgid "Save Windows Resize"
-msgstr "Speicher Fenster Größe"
-
-#: ProfileMain#12
-msgid "Save Windows Positions"
-msgstr "Speicher Fenster Position"
-
-#: ProfileMain#13
-msgid "Lookup Preferences"
-msgstr ""
-
-#: ProfileMain#14
-msgid "Lookup type"
-msgstr ""
-
-#: ProfileMain#15
-msgctxt "ProfileMain#15"
-msgid "None"
-msgstr ""
-
-#: ProfileMain#16
-msgid "Internal lookup"
-msgstr ""
-
-#: ProfileMain#17
-msgid "Dig lookup"
-msgstr ""
-
-#: ProfileMain#18
-msgid "&Defaults"
-msgstr "&Standards"
-
-#: ProfileMain#19
-msgid "Preferences - Nmapsi4"
-msgstr ""
-
-#: ProfileMain#20
-msgid "&Ok"
-msgstr "&Ok"
-
-#: ProfileMain#21
-msgid "&Cancel"
-msgstr "&Abbrechen"
-
-#: ProfilerManager#1
-msgid "New profile"
-msgstr "Neues Profil"
-
-#: ProfilerManager#2
-msgid "Edit profile "
-msgstr "Profil bearbeiten "
-
-#: ProfilerManager#3
-msgctxt "ProfilerManager#3"
-msgid "Profile"
-msgstr "Profil"
-
-#: ProfilerManager#4
-msgctxt "ProfilerManager#4"
-msgid "Scan"
-msgstr ""
-
-#: ProfilerManager#5
-msgid "Options"
-msgstr "Optionen"
-
-#: ProfilerManager#6
-msgid "Ping"
-msgstr "Ping"
-
-#: ProfilerManager#7
-msgctxt "ProfilerManager#7"
-msgid "Timing"
-msgstr ""
-
-#: ProfilerManager#8
-msgid "Nse"
-msgstr ""
-
-#: ProfilerManager#9
-msgctxt "ProfilerManager#9"
-msgid "Warning - Nmapsi4"
-msgstr ""
-
-#: ProfilerManager#10
-msgid "Insert profile name."
-msgstr ""
-
-#: ProfilerManager#11
-msgctxt "ProfilerManager#11"
-msgid "Close"
-msgstr "Schließen"
-
-#: ProfilerManager#12
-msgid "No Ports Range (ex: 20-80)\n"
-msgstr "Kein Port Bereich (ex: 20-80)\n"
-
-#: ProfilerManager#13
-msgid "Warning: Operation more expansive.\n"
-msgstr "Warnung: Operation sehr mitteilhaft.\n"
-
-#: Utilities#1
-msgid "Select the file"
-msgstr "Wählen Sie die Datei"
-
-#: Vulnerability#1
-msgctxt "Vulnerability#1"
-msgid "Search"
-msgstr "Suchen"
-
-#: Vulnerability#2
-msgid "Back"
-msgstr "Zurück"
-
-#: Vulnerability#3
-msgid "Forward"
-msgstr "Vorwärts"
-
-#: Vulnerability#4
-msgid "Stop"
-msgstr "Anhalten"
-
-#: Vulnerability#5
-msgctxt "Vulnerability#5"
-msgid "Add service to &bookmark"
-msgstr ""
-
-#: addParBook#1
-msgid "Save quick profile - Nmapsi4"
-msgstr ""
-
-#: addParBook#2
-msgctxt "addParBook#2"
-msgid "Profile Name"
-msgstr "Name des Profils"
-
-#: addParBook#3
-msgid "Parameters"
-msgstr "Parameter"
-
-#: addParBook#4
-msgctxt "addParBook#4"
-msgid "Done"
-msgstr "Fertig"
-
-#: addParBook#5
-msgctxt "addParBook#5"
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: addParametersToBookmark#1
-msgctxt "addParametersToBookmark#1"
+#, fuzzy
+msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr "Warnung - Nmapsi4"
 
-#: addParametersToBookmark#2
-msgid "Insert profile name or/and profile parameters."
+msgctxt "MainWindow|"
+msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#: addParametersToBookmark#3
-msgctxt "addParametersToBookmark#3"
+msgctxt "MainWindow|"
+msgid "Hostname already scanning\n"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "<b>There are still active scan.</b>"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindow|"
+msgid "Do you want to close nmapsi4 anyway?"
+msgstr "Möchten Sie nmapsi4 trotzdem schließen?"
+
+msgctxt "MainWindow|"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Scan Monitor"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindow|"
+msgid "Bookmarks"
+msgstr "Lesezeichen"
+
+msgctxt "MainWindow|"
+msgid "&Add host to bookmark"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Add service to &bookmark"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Scan log parameters"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid " Active Scan "
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Nmapsi4"
+msgstr "Nmapsi4"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&About nmapsi4"
+msgstr "&Über nmapsi4"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Scan"
+msgstr "&Scannen"
+
+msgctxt "MainWindowClass|"
+msgid "Scan"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Ctrl+S"
+msgstr "Strg+S"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "About &Qt"
+msgstr "Über &Qt"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Preferences"
+msgstr "&Voreinstellungen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Quit"
+msgstr "&Beenden"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Ctrl+Q"
+msgstr "Strg+Q"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Stop Scan"
+msgstr "Scan beenden"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Clear History"
+msgstr "Verlauf löschen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Close Tree"
+msgstr "Baum schließen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Close Scan Tree"
+msgstr "schließe Scan Baum"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Clear HostName"
+msgstr "Lösche Servername"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Clear Hostname IP"
+msgstr "Lösche Server IP"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Save As"
+msgstr "Speichern unter"
+
+msgctxt "MainWindowClass|"
+msgid "Save Scan"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Save"
+msgstr "Speichern"
+
+msgctxt "MainWindowClass|"
+msgid "S&ave Scan"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Save all scans to &Directory"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "F&ull Screen Mode"
+msgstr "V&ollbild Modus"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Ctrl+Shift+F11"
+msgstr "Ctrl+Shift+F11"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Show &Menu Bar"
+msgstr "Zeige &Werkzeugleiste"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Ctrl+M"
+msgstr "Ctrl+M"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Show Status Bar"
+msgstr "Zeige Statusleiste"
+
+msgctxt "MainWindowClass|"
+msgid "&Add host to bookmark"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Add host to bookmark"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Main"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Log"
+msgstr "Protokoll"
+
+msgctxt "MainWindowClass|"
+msgid "Vuln"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Section Scan"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Section Log"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Section Vulnerabilities"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Donate Money"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Visit Website"
+msgstr "Webseite besuchen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Report a bug"
+msgstr "Einen Fehler melden"
+
+msgctxt "MainWindowClass|"
+msgid "Section Discover"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "New Profile"
+msgstr "Neues Profil"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Edit Profile"
+msgstr "Profil bearbeiten"
+
+msgctxt "MainWindowClass|"
+msgid "Add &parameters to bookmark"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Add vulnerability search url"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Clear"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Save Profile"
+msgstr "Profil speichern"
+
+msgctxt "MainWindowClass|"
+msgid "Host Details"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Service(s) with info"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Description"
+msgstr "Beschreibung"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Service"
+msgstr "Dienst"
+
+msgctxt "MainWindowClass|"
+msgid "State"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Port"
+msgstr "Port"
+
+msgctxt "MainWindowClass|"
+msgid "Service(s) Details"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Nss script result"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Nse result"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Log(s)"
+msgstr "Log(s)"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Error(s)"
+msgstr "Fehler"
+
+msgctxt "MainWindowClass|"
+msgid "Raw scan log"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Host(s)"
+msgstr "Server"
+
+msgctxt "MainWindowClass|"
+msgid "Lookup"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "DNS"
+msgstr "DNS"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "IP"
+msgstr "IP"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "RTT"
+msgstr "RTT"
+
+msgctxt "MainWindowClass|"
+msgid "Hop(s)"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Traceroute"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "Os"
+msgstr "Os"
+
+msgctxt "MainWindowClass|"
+msgid "Scan log parameters"
+msgstr ""
+
+msgctxt "MainWindowClass|"
+msgid "Scan host(s)"
+msgstr ""
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&File"
+msgstr "&Datei"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&View"
+msgstr "&Ansicht"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Bookmarks"
+msgstr "&Lesezeichen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Help"
+msgstr "&Hilfe"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "S&ettings"
+msgstr "E&instellungen"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "&Tools"
+msgstr "Ex&tras"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "toolBar"
+msgstr "Werkzeugleiste"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "toolBar_2"
+msgstr "Werkzeugleiste_2"
+
+#, fuzzy
+msgctxt "MainWindowClass|"
+msgid "toolBar_3"
+msgstr "Werkzeugleiste_3"
+
+#, fuzzy
+msgctxt "Monitor|"
+msgid "Waiting"
+msgstr "Es wird gewartet"
+
+msgctxt "Monitor|"
+msgid "Scanning"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Form"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Stop All Scan"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Stop Current Scan"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Scan Details"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "State"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Scan Options"
+msgstr ""
+
+msgctxt "MonitorWidgetForm|"
+msgid "Host Thread"
+msgstr ""
+
+msgctxt "ParserManager|"
+msgid "Error: check nmap Installation.\n"
+msgstr ""
+
+#, fuzzy
+msgctxt "ParserManager|"
 msgid "Close"
 msgstr "Schließen"
 
-#: addUrl#1
+#, fuzzy
+msgctxt "ParserManager|"
+msgid "No description"
+msgstr "Keine Beschreibung"
+
+#, fuzzy
+msgctxt "ParserManager|"
+msgid "Save Log"
+msgstr "Speichere Log"
+
+msgctxt "ParserManager|"
+msgid "Open Directory"
+msgstr ""
+
+#, fuzzy
+msgctxt "PreferencesDialog|"
+msgid "General"
+msgstr "Allgemein"
+
+msgctxt "PreferencesDialog|"
+msgid "Lookup"
+msgstr ""
+
+#, fuzzy
+msgctxt "PreferencesDialog|"
+msgid "<h3>General</h3>"
+msgstr "<h3>Allgemein</h3>"
+
+msgctxt "PreferencesDialog|"
+msgid "<h3>Lookup</h3>"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Preferences - Nmapsi4"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfileMain|"
+msgid "&Cancel"
+msgstr "&Abbrechen"
+
+#, fuzzy
+msgctxt "ProfileMain|"
+msgid "&Defaults"
+msgstr "&Standards"
+
+#, fuzzy
+msgctxt "ProfileMain|"
+msgid "&Ok"
+msgstr "&Ok"
+
+#, fuzzy
+msgctxt "ProfileMain|"
+msgid "Log Preferences"
+msgstr "Log Voreinstellungen"
+
+msgctxt "ProfileMain|"
+msgid "Log type:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Fancy format"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Nmap raw format"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Html format"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Tuning options"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Max parallel scan:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Max parallel discover process:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "History item number:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Lookup Preferences"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "None"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Internal lookup"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Dig lookup"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Lookup type:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Dig verbosity level:"
+msgstr ""
+
+msgctxt "ProfileMain|"
+msgid "Short"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfileMain|"
+msgid "Verbose"
+msgstr "Ausführlich"
+
+#, fuzzy
+msgctxt "Profiler|"
+msgid "No Ports Range (ex: 20-80)\n"
+msgstr "Kein Port Bereich (ex: 20-80)\n"
+
+#, fuzzy
+msgctxt "Profiler|"
+msgid "Close"
+msgstr "Schließen"
+
+msgctxt "Profiler|"
+msgid "Please, first insert a Decoy\n"
+msgstr ""
+
+msgctxt "Profiler|"
+msgid "Disable Option"
+msgstr ""
+
+msgctxt "Profiler|"
+msgid "Please, insert spoof address\n"
+msgstr ""
+
+msgctxt "Profiler|"
+msgid "Please, insert port address\n"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "New profile"
+msgstr "Neues Profil"
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Edit profile "
+msgstr "Profil bearbeiten "
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Profile"
+msgstr "Profil"
+
+msgctxt "ProfilerManager|"
+msgid "Scan"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Options"
+msgstr "Optionen"
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Ping"
+msgstr "Ping"
+
+msgctxt "ProfilerManager|"
+msgid "Timing"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "Nse"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Warning - Nmapsi4"
+msgstr "Warnung - Nmapsi4"
+
+msgctxt "ProfilerManager|"
+msgid "Insert profile name."
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Close"
+msgstr "Schließen"
+
+msgctxt "ProfilerManager|"
+msgid "TCP SYN Stealth Scan (-sS)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "ACK Stealth Scan (-sA)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "Mainmon Scan (-sM)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "FIN Stealth Scan (-sF)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "NULL Stealth Scan (-sN)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "XMAS Tree Stealth Scan (-sX)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "TCP Window Scan (-sW)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "UDP Ports Scan (-sU)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "IP Protocol Scan (-sO)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "SCTP INIT scan (-sY)"
+msgstr ""
+
+msgctxt "ProfilerManager|"
+msgid "SCTP cookie-echo scan (-sZ)"
+msgstr ""
+
+#, fuzzy
+msgctxt "ProfilerManager|"
+msgid "Warning: Operation more expansive.\n"
+msgstr "Warnung: Operation sehr mitteilhaft.\n"
+
+msgctxt "ScanBookmarkWidgetForm|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "ScanBookmarkWidgetForm|"
+msgid "Date"
+msgstr "Datum"
+
+msgctxt "ScanBookmarkWidgetForm|"
+msgid "IP List"
+msgstr ""
+
+#, fuzzy
+msgctxt "ScanBookmarkWidgetForm|"
+msgid "Profile Name"
+msgstr "Name des Profils"
+
+msgctxt "ScanBookmarkWidgetForm|"
+msgid "Parameters List"
+msgstr ""
+
+#, fuzzy
+msgctxt "Utilities|"
+msgid "Select the file"
+msgstr "Wählen Sie die Datei"
+
+msgctxt "VulnBookmarkWidgetForm|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "VulnBookmarkWidgetForm|"
+msgid "Data"
+msgstr "Daten"
+
+#, fuzzy
+msgctxt "VulnBookmarkWidgetForm|"
+msgid "Service"
+msgstr "Dienst"
+
+#, fuzzy
+msgctxt "VulnBookmarkWidgetForm|"
+msgid "Url(s)"
+msgstr "Url(s)"
+
+msgctxt "VulnBookmarkWidgetForm|"
+msgid "Url(s) name"
+msgstr ""
+
+msgctxt "Vulnerability|"
+msgid "Search Vulnerabilities"
+msgstr ""
+
+#, fuzzy
+msgctxt "Vulnerability|"
+msgid "Search"
+msgstr "Suchen"
+
+#, fuzzy
+msgctxt "Vulnerability|"
+msgid "Back"
+msgstr "Zurück"
+
+#, fuzzy
+msgctxt "Vulnerability|"
+msgid "Forward"
+msgstr "Vorwärts"
+
+#, fuzzy
+msgctxt "Vulnerability|"
+msgid "Stop"
+msgstr "Anhalten"
+
+msgctxt "Vulnerability|"
+msgid "Add service to &bookmark"
+msgstr ""
+
+msgctxt "VulnerabilityWidgetForm|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "VulnerabilityWidgetForm|"
+msgid "Services"
+msgstr "Dienste"
+
+msgctxt "VulnerabilityWidgetForm|"
+msgid "Discovered vulnerabilities"
+msgstr ""
+
+msgctxt "addParBook|"
+msgid "Save quick profile - Nmapsi4"
+msgstr ""
+
+msgctxt "addParBook|"
+msgid "Profile Name:"
+msgstr ""
+
+msgctxt "addParBook|"
+msgid "Parameters:"
+msgstr ""
+
+#, fuzzy
+msgctxt "addParBook|"
+msgid "Done"
+msgstr "Fertig"
+
+#, fuzzy
+msgctxt "addParBook|"
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#, fuzzy
+msgctxt "addParametersToBookmark|"
+msgid "Warning - Nmapsi4"
+msgstr "Warnung - Nmapsi4"
+
+msgctxt "addParametersToBookmark|"
+msgid "Insert profile name or/and profile parameters."
+msgstr ""
+
+#, fuzzy
+msgctxt "addParametersToBookmark|"
+msgid "Close"
+msgstr "Schließen"
+
+msgctxt "addUrl|"
 msgid "Save vulnerability search address - Nmapsi4"
 msgstr ""
 
-#: addUrl#2
-msgid "Url Name"
+msgctxt "addUrl|"
+msgid "Url Name:"
 msgstr ""
 
-#: addUrl#3
-msgid "Url address"
+msgctxt "addUrl|"
+msgid "Url address:"
 msgstr ""
 
-#: addUrl#4
+msgctxt "addUrl|"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
 "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
 "type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Example:</p>\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Example:</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-"
-"indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Url Name: "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Url Name: "
 "cve.mitre.org</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Url Address: "
-"http://cve.mitre.org/cgi-bin/cvekey.cgi?<span style=\" font-weight:600; font-"
-"style:italic;\">keyword=</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Note: </span>search variable at the and of "
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Url Address: "
+"http://cve.mitre.org/cgi-bin/cvekey.cgi?<span style=\" font-weight:600; "
+"font-style:italic;\">keyword=</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Note: </span>search variable at the and of "
 "url</p></body></html>"
 msgstr ""
 
-#: addUrl#5
-msgctxt "addUrl#5"
+#, fuzzy
+msgctxt "addUrl|"
 msgid "Done"
 msgstr "Fertig"
 
-#: addUrl#6
-msgctxt "addUrl#6"
+#, fuzzy
+msgctxt "addUrl|"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: addVulnerabilityUrl#1
-msgctxt "addVulnerabilityUrl#1"
+#, fuzzy
+msgctxt "addVulnerabilityUrl|"
 msgid "Warning - Nmapsi4"
 msgstr "Warnung - Nmapsi4"
 
-#: addVulnerabilityUrl#2
+msgctxt "addVulnerabilityUrl|"
 msgid "Insert url name or/and address."
 msgstr ""
 
-#: addVulnerabilityUrl#3
-msgctxt "addVulnerabilityUrl#3"
+#, fuzzy
+msgctxt "addVulnerabilityUrl|"
 msgid "Close"
 msgstr "Schließen"
 
-#: monitorDetails#1
+msgctxt "monitorDetails|"
 msgid "Scan Process Details"
 msgstr ""
 
-#: monitorDetails#2
+#, fuzzy
+msgctxt "monitorDetails|"
 msgid "Hostname:"
 msgstr "Rechnername:"
 
-#: monitorDetails#3
+#, fuzzy
+msgctxt "monitorDetails|"
 msgid "Reload"
 msgstr "Neuladen"
 
-#: monitorDetails#4
-msgctxt "monitorDetails#4"
+#, fuzzy
+msgctxt "monitorDetails|"
 msgid "Close"
 msgstr "Schließen"
 
-#: profilerDialog#1
+msgctxt "profilerDialog|"
 msgid "Profiler - Nmapsi4"
 msgstr ""
 
-#: profilerDialog#2
-msgctxt "profilerDialog#2"
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Profile"
 msgstr "Profil"
 
-#: profilerDialog#3
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Profile name: "
 msgstr "Profilname: "
 
-#: profilerDialog#4
+msgctxt "profilerDialog|"
 msgid "Profile parameters:"
 msgstr ""
 
-#: profilerDialog#5
+msgctxt "profilerDialog|"
 msgid "Base options:"
 msgstr ""
 
-#: profilerDialog#6
-msgctxt "profilerDialog#6"
+msgctxt "profilerDialog|"
 msgid "None"
 msgstr ""
 
-#: profilerDialog#7
-msgid "Default"
-msgstr "Standard"
-
-#: profilerDialog#8
-msgid "Default with nse script"
-msgstr ""
-
-#: profilerDialog#9
-msgctxt "profilerDialog#9"
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Done"
 msgstr "Fertig"
 
-#: profilerDialog#10
-msgctxt "profilerDialog#10"
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: profilerDialog#11
-msgctxt "profilerDialog#11"
+msgctxt "profilerDialog|"
 msgid "Scan"
 msgstr ""
 
-#: profilerDialog#12
-msgid "TCP scan:"
-msgstr ""
-
-#: profilerDialog#13
+msgctxt "profilerDialog|"
 msgid "TCP Connect Scan (-sT)"
 msgstr ""
 
-#: profilerDialog#14
+msgctxt "profilerDialog|"
 msgid "Ping Sweep (-sP)"
 msgstr ""
 
-#: profilerDialog#15
-msgid "Timing Template:"
+msgctxt "profilerDialog|"
+msgid "TCP scan:"
 msgstr ""
 
-#: profilerDialog#16
-msgid "Paranoid Throttling (-T0)"
-msgstr ""
-
-#: profilerDialog#17
-msgid "Sneaky Throttling (-T1)"
-msgstr ""
-
-#: profilerDialog#18
-msgid "Polite Throttling (-T2)"
-msgstr ""
-
-#: profilerDialog#19
-msgid "Normal Throttling (-T3)"
-msgstr ""
-
-#: profilerDialog#20
-msgid "Aggressive Throttling (-T4)"
-msgstr ""
-
-#: profilerDialog#21
-msgid "Insane Throttling (-T5)"
-msgstr ""
-
-#: profilerDialog#22
+msgctxt "profilerDialog|"
 msgid "Non-TCP scans:"
 msgstr ""
 
-#: profilerDialog#23
+msgctxt "profilerDialog|"
 msgid "List Scan (-sL)"
 msgstr ""
 
-#: profilerDialog#24
+msgctxt "profilerDialog|"
+msgid "Paranoid Throttling (-T0)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Sneaky Throttling (-T1)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Polite Throttling (-T2)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Normal Throttling (-T3)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Aggressive Throttling (-T4)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Insane Throttling (-T5)"
+msgstr ""
+
+msgctxt "profilerDialog|"
+msgid "Timing Template:"
+msgstr ""
+
+msgctxt "profilerDialog|"
 msgid "RPC Scan (-sR)"
 msgstr ""
 
-#: profilerDialog#25
+msgctxt "profilerDialog|"
 msgid "OS Detection (-O)"
 msgstr ""
 
-#: profilerDialog#26
+msgctxt "profilerDialog|"
 msgid "Version Probe (-sV)"
 msgstr ""
 
-#: profilerDialog#27
+msgctxt "profilerDialog|"
 msgid "Ipv6 support (-6)"
 msgstr ""
 
-#: profilerDialog#28
+msgctxt "profilerDialog|"
 msgid "FTP bounce attack (-b)"
 msgstr ""
 
-#: profilerDialog#29
+msgctxt "profilerDialog|"
 msgid "Idle Scan (-sl)"
 msgstr ""
 
-#: profilerDialog#30
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Normal"
 msgstr "Normal"
 
-#: profilerDialog#31
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "All"
 msgstr "Alle"
 
-#: profilerDialog#32
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Most Important"
 msgstr "Am wichtigsten"
 
-#: profilerDialog#33
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Range"
 msgstr "Bereich"
 
-#: profilerDialog#34
+msgctxt "profilerDialog|"
 msgid "Port Range:"
 msgstr ""
 
-#: profilerDialog#35
+msgctxt "profilerDialog|"
 msgid "Aggressive options (-A)"
 msgstr ""
 
-#: profilerDialog#36
+msgctxt "profilerDialog|"
 msgid "Ping options"
 msgstr ""
 
-#: profilerDialog#37
+msgctxt "profilerDialog|"
 msgid "TCP ACK Ping (-PA)"
 msgstr ""
 
-#: profilerDialog#38
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "21,23,80,3389"
-msgstr ""
+msgstr "21,23,80,3389"
 
-#: profilerDialog#39
+msgctxt "profilerDialog|"
 msgid "TCP SYN Ping (-PS)"
 msgstr ""
 
-#: profilerDialog#40
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "22,25,80"
 msgstr "22,25,80"
 
-#: profilerDialog#41
+msgctxt "profilerDialog|"
 msgid "UDP Ping (-PU)"
 msgstr ""
 
-#: profilerDialog#42
+msgctxt "profilerDialog|"
 msgid "ICMP Netmask (-PM)"
 msgstr ""
 
-#: profilerDialog#43
+msgctxt "profilerDialog|"
 msgid "ICMP TImestamp (-PP)"
 msgstr ""
 
-#: profilerDialog#44
+msgctxt "profilerDialog|"
 msgid "ICMP Echo (-PE)"
 msgstr ""
 
-#: profilerDialog#45
+msgctxt "profilerDialog|"
 msgid "Don't Ping (-P0)"
 msgstr ""
 
-#: profilerDialog#46
+msgctxt "profilerDialog|"
 msgid "IPProto probes (-PO)"
 msgstr ""
 
-#: profilerDialog#47
+msgctxt "profilerDialog|"
 msgid "SCTP INIT ping (-PY)"
 msgstr ""
 
-#: profilerDialog#48
-msgctxt "profilerDialog#48"
+msgctxt "profilerDialog|"
 msgid "Timing"
 msgstr ""
 
-#: profilerDialog#49
+msgctxt "profilerDialog|"
 msgid "Min outstanding probes (--min-parallelism)"
 msgstr ""
 
-#: profilerDialog#50
+msgctxt "profilerDialog|"
 msgid "Max outstanding probes (--max-parallelism)"
 msgstr ""
 
-#: profilerDialog#51
+msgctxt "profilerDialog|"
 msgid "Max time to scan a target (seconds, --host-timeout)"
 msgstr ""
 
-#: profilerDialog#52
+msgctxt "profilerDialog|"
 msgid "Initial probe timeout (seconds, --initial-rtt-timeout)"
 msgstr ""
 
-#: profilerDialog#53
+msgctxt "profilerDialog|"
 msgid "Min probe timeout (seconds, --min-rtt-timeout)"
 msgstr ""
 
-#: profilerDialog#54
+msgctxt "profilerDialog|"
 msgid "Max probe timeout (seconds, --max-rtt-timeout)"
 msgstr ""
 
-#: profilerDialog#55
+msgctxt "profilerDialog|"
 msgid "Scan Delay (seconds, --scan-delay)"
 msgstr ""
 
-#: profilerDialog#56
+msgctxt "profilerDialog|"
 msgid "Max scan delay (seconds, --max-scan-delay)"
 msgstr ""
 
-#: profilerDialog#57
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Source"
 msgstr "Quelle"
 
-#: profilerDialog#58
+msgctxt "profilerDialog|"
 msgid "Specific network interface (-e)"
 msgstr ""
 
-#: profilerDialog#59
+msgctxt "profilerDialog|"
 msgid "Set source spoof ip address (-S)"
 msgstr ""
 
-#: profilerDialog#60
+msgctxt "profilerDialog|"
 msgid "Set decoy (-D)"
 msgstr ""
 
-#: profilerDialog#61
+msgctxt "profilerDialog|"
 msgid "Set Source spoof port (-g)"
 msgstr ""
 
-#: profilerDialog#62
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Extra"
 msgstr "Extra"
 
-#: profilerDialog#63
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "DNS Resolution"
 msgstr "DNS Auflösung"
 
-#: profilerDialog#64
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "When Required"
 msgstr "Wenn Erforderlich"
 
-#: profilerDialog#65
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Always"
 msgstr "Immer"
 
-#: profilerDialog#66
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Never"
 msgstr "Niemals"
 
-#: profilerDialog#67
+msgctxt "profilerDialog|"
 msgid "Verbosity level (-v)"
 msgstr ""
 
-#: profilerDialog#68
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Quiet"
 msgstr "Leise"
 
-#: profilerDialog#69
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Verbose"
 msgstr "Ausführlich"
 
-#: profilerDialog#70
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Very Verbose"
 msgstr "Sehr Ausführlich"
 
-#: profilerDialog#71
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Debug"
 msgstr "Debug"
 
-#: profilerDialog#72
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Verbose Debug"
 msgstr "Ausführliches Debug"
 
-#: profilerDialog#73
+msgctxt "profilerDialog|"
 msgid "Ordered scanned port (-r)"
 msgstr ""
 
-#: profilerDialog#74
+msgctxt "profilerDialog|"
 msgid "Fragment IP packets (-f)"
 msgstr ""
 
-#: profilerDialog#75
+msgctxt "profilerDialog|"
 msgid "Ipv4 TTL (--ttl)"
 msgstr ""
 
-#: profilerDialog#76
+msgctxt "profilerDialog|"
 msgid "Max Retries (--max-retries)"
 msgstr ""
 
-#: profilerDialog#77
+msgctxt "profilerDialog|"
 msgid "Traceroute (--traceroute)"
 msgstr ""
 
-#: profilerDialog#78
+msgctxt "profilerDialog|"
 msgid "Nse categories script available"
 msgstr ""
 
-#: profilerDialog#79
+msgctxt "profilerDialog|"
 msgid "Nse categories Script Active"
 msgstr ""
 
-#: profilerDialog#80
+msgctxt "profilerDialog|"
 msgid "Restore Default Categories"
 msgstr ""
 
-#: profilerDialog#81
+msgctxt "profilerDialog|"
 msgid "Active Script"
 msgstr ""
 
-#: profilerDialog#82
+msgctxt "profilerDialog|"
 msgid "Disable Script"
 msgstr ""
 
-#: profilerDialog#83
+msgctxt "profilerDialog|"
 msgid "Nse categories help"
 msgstr ""
 
-#: profilerDialog#84
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: profilerDialog#85
+msgctxt "profilerDialog|"
 msgid "Nse script parameters (Ex. user=foo,pass=test)"
 msgstr ""
 
-#: profilerDialog#86
+msgctxt "profilerDialog|"
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
 
-#: profilerDialog#87
-msgid "Nse script search"
+msgctxt "profilerDialog|"
+msgid "Search information from nse script db:"
 msgstr ""
 
-#: profilerDialog#88
-msgctxt "profilerDialog#88"
+#, fuzzy
+msgctxt "profilerDialog|"
 msgid "Search"
 msgstr "Suchen"
 
-#: profilerDialog#89
+msgctxt "profilerDialog|"
 msgid "Single Script"
 msgstr ""
 
-#: profilerManager#1
-msgid "TCP SYN Stealth Scan (-sS)"
+msgctxt "selectProfileDialog|"
+msgid "Select a scan profile"
 msgstr ""
 
-#: profilerManager#2
-msgid "ACK Stealth Scan (-sA)"
+#, fuzzy
+msgctxt "selectProfileDialog|"
+msgid "Done"
+msgstr "Fertig"
+
+msgctxt "welcomeVulnWidgetForm|"
+msgid "Form"
 msgstr ""
 
-#: profilerManager#3
-msgid "Mainmon Scan (-sM)"
-msgstr ""
-
-#: profilerManager#4
-msgid "FIN Stealth Scan (-sF)"
-msgstr ""
-
-#: profilerManager#5
-msgid "NULL Stealth Scan (-sN)"
-msgstr ""
-
-#: profilerManager#6
-msgid "XMAS Tree Stealth Scan (-sX)"
-msgstr ""
-
-#: profilerManager#7
-msgid "TCP Window Scan (-sW)"
-msgstr ""
-
-#: profilerManager#8
-msgid "UDP Ports Scan (-sU)"
-msgstr ""
-
-#: profilerManager#9
-msgid "IP Protocol Scan (-sO)"
-msgstr ""
-
-#: profilerManager#10
-msgid "SCTP INIT scan (-sY)"
-msgstr ""
-
-#: profilerManager#11
-msgid "SCTP cookie-echo scan (-sZ)"
+msgctxt "welcomeVulnWidgetForm|"
+msgid "Search Network Vulnerabilities"
 msgstr ""

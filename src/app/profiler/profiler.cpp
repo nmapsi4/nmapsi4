@@ -621,7 +621,7 @@ QStringList Profiler::buildExtensions()
             parameters << "-p";
             parameters << m_ui->m_dialogUi->portEdit->text();
         } else {
-            QMessageBox::warning(m_ui, "NmapSI4", m_ui->tr("No Ports Range (ex: 20-80)\n"), m_ui->tr("Close"));
+            QMessageBox::warning(m_ui, "NmapSI4", tr("No Ports Range (ex: 20-80)\n"), tr("Close"));
         }
     default:
         break;
@@ -845,7 +845,7 @@ QStringList Profiler::buildExtensions()
             parameters << m_ui->m_dialogUi->lineDecoy->text();
 
         } else {
-            QMessageBox::warning(m_ui, "NmapSI4", "Please, first insert a Decoy\n", "Disable Option");
+            QMessageBox::warning(m_ui, "NmapSI4", tr("Please, first insert a Decoy\n"), tr("Disable Option"));
             m_ui->m_dialogUi->checkDecoy->setCheckState(Qt::Unchecked);
         }
     }
@@ -857,7 +857,7 @@ QStringList Profiler::buildExtensions()
             parameters << m_ui->m_dialogUi->lineEditSpoof->text();
 
         } else {
-            QMessageBox::warning(m_ui, "NmapSI4", "Please, insert spoof address\n", "Disable Option");
+            QMessageBox::warning(m_ui, "NmapSI4", tr("Please, insert spoof address\n"), tr("Disable Option"));
             m_ui->m_dialogUi->checkSpoof->setCheckState(Qt::Unchecked);
         }
     }
@@ -869,7 +869,7 @@ QStringList Profiler::buildExtensions()
             parameters << m_ui->m_dialogUi->lineSourcePort->text();
 
         } else {
-            QMessageBox::warning(m_ui, "NmapSI4", "Please, insert port address\n", "Disable Option");
+            QMessageBox::warning(m_ui, "NmapSI4", tr("Please, insert port address\n"), tr("Disable Option"));
             m_ui->m_dialogUi->checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }

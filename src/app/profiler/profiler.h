@@ -30,8 +30,9 @@
 
 class ProfilerManager;
 
-class Profiler
+class Profiler : public QObject
 {
+    Q_OBJECT
 
 public:
     Profiler(ProfilerManager *parent);
