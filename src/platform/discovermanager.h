@@ -81,7 +81,7 @@ signals:
     void killDiscoverFromCIDR();
 
 public slots:
-    void startDiscover();
+    void loadFoundInterfaces();
     void scanSingleDiscoveredIp();
     void scanAllDiscoveredIps();
     void saveXmlIpsList();

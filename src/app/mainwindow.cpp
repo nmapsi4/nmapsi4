@@ -52,7 +52,7 @@ void MainWindow::initObject()
     m_vulnerability = new Vulnerability(this);
     m_discoverManager = new DiscoverManager(this);
     m_collections = new ActionManager(this);
-
+    m_collections->createDiscoverBar();
     m_collections->createSectionsBar();
     m_collections->createToolButtonBar();
 
@@ -75,11 +75,6 @@ void MainWindow::initObject()
     // load quick combo items
     loadScanProfile();
     updateComboBook();
-
-    // call discover startup, NPING is REQUIRED
-    m_discoverManager->startDiscover();
-    m_discoverManager->defaultDiscoverProbes();
-    m_collections->createDiscoverBar();
 
     // connect slots
     connect(action_Quit, SIGNAL(triggered()),

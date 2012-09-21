@@ -46,6 +46,10 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeDiscover);
     m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeTracePackets);
 
+    // call discover startup, NPING is REQUIRED
+    loadFoundInterfaces();
+    defaultDiscoverProbes();
+
     m_discoverWidget->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
     m_discoverWidget->layout()->addWidget(m_discoverHorizontalSplitter);
 
@@ -75,7 +79,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     connect(m_discoverWidget->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(runtimeScanDiscover()));
     connect(m_discoverWidget->reloadComboDiscover, SIGNAL(clicked()),
-            this, SLOT(startDiscover()));
+            this, SLOT(loadFoundInterfaces()));
     connect(m_discoverWidget->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
             this, SLOT(calculateAddressFromCIDR()));
     connect(m_discoverWidget->discoverCIDRPasteCombo->lineEdit(), SIGNAL(textChanged(QString)),
@@ -107,7 +111,7 @@ bool DiscoverManager::activeIpContains(const QString ipAddress)
     return false;
 }
 
-void DiscoverManager::startDiscover()
+void DiscoverManager::loadFoundInterfaces()
 {
     // take local interfaces
     m_discoverWidget->comboDiscover->clear();
