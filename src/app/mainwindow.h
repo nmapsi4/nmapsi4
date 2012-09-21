@@ -88,12 +88,8 @@ private:
     void addHostToMonitor(const QString hostname);
     void resetOptions();
     void initGUI();
-    void setTreeWidgetValues();
     void restoreSettings();
-    void setTreeSettings();
-    void setDefaultAction();
     void setDefaultSplitter();
-    void defaultComboValues();
     void updateComboParametersFromList(const QStringList& parameters);
     QStringList getParameters();
     bool containsParameter(const QString& parameter);

@@ -170,24 +170,6 @@ void MainWindow::updateSezDiscover()
     menu_Bookmaks->setEnabled(false);
 }
 
-void MainWindow::setTreeWidgetValues()
-{
-    listWscan->setIconSize(QSize(22, 22));
-    listWscan->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScanError->setIconSize(QSize(22, 22));
-    listScanError->header()->setResizeMode(0, QHeaderView::Interactive);
-    listScan->setIconSize(QSize(22, 22));
-    listScan->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeTraceroot->setIconSize(QSize(22, 22));
-    treeTraceroot->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeNSS->setIconSize(QSize(22, 22));
-    treeNSS->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeMain->setIconSize(QSize(22, 22));
-    treeMain->header()->setResizeMode(0, QHeaderView::Interactive);
-    treeLookup->setIconSize(QSize(22, 22));
-    treeLookup->header()->setResizeMode(0, QHeaderView::Interactive);
-}
-
 void MainWindow::loadDefaultProfile()
 {
     comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));

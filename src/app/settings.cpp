@@ -123,27 +123,6 @@ void MainWindow::restoreSettings()
     }
 }
 
-void MainWindow::setTreeSettings()
-{
-    // set TreeWidget properties
-    treeTraceroot->setColumnWidth(1, 100);
-    treeTraceroot->setColumnWidth(2, 200);
-    treeTraceroot->setColumnWidth(3, 200);
-    treeMain->setColumnWidth(0, 200);
-}
-
-void MainWindow::setDefaultAction()
-{
-    // Set default properties
-    action_Scan_menu->setEnabled(false);
-    action_Scan_2->setEnabled(false);
-    actionAdd_Bookmark->setEnabled(false);
-    toolBarSearch->setVisible(false);
-    m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
-    menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    actionAdd_vulnerability_search_url->setVisible(false);
-}
-
 void MainWindow::setDefaultSplitter()
 {
     // define default Ui splitter
@@ -166,10 +145,4 @@ void MainWindow::setDefaultSplitter()
     tabUi->widget(0)->layout()->addWidget(m_mainHorizontalSplitter);
     frameCenter->layout()->addWidget(m_mainVerticalSplitter);
     frameCenter->layout()->addWidget(frame_2);
-}
-
-void MainWindow::defaultComboValues()
-{
-    hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
 }

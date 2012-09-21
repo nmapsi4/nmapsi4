@@ -30,7 +30,8 @@ void MainWindow::initGUI()
 {
     setupUi(this);
     // set default value in combo editable
-    defaultComboValues();
+    hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
 }
 
 void MainWindow::initObject()
@@ -40,7 +41,13 @@ void MainWindow::initObject()
 #endif
 
     // preload mainwindow info
-    setTreeWidgetValues();
+    listWscan->setIconSize(QSize(22, 22));
+    listScanError->setIconSize(QSize(22, 22));
+    listScan->setIconSize(QSize(22, 22));
+    treeTraceroot->setIconSize(QSize(22, 22));
+    treeNSS->setIconSize(QSize(22, 22));
+    treeMain->setIconSize(QSize(22, 22));
+    treeLookup->setIconSize(QSize(22, 22));
 
     // declare and restore items from bookmark
     m_bookmark = new BookmarkManager(this);
@@ -57,11 +64,20 @@ void MainWindow::initObject()
     m_collections->createToolButtonBar();
 
     // Set default properties
-    setDefaultAction();
+    action_Scan_menu->setEnabled(false);
+    action_Scan_2->setEnabled(false);
+    actionAdd_Bookmark->setEnabled(false);
+    toolBarSearch->setVisible(false);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
+    menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
+    actionAdd_vulnerability_search_url->setVisible(false);
     syncSettings();
 
     // set tree default settings
-    setTreeSettings();
+    treeTraceroot->setColumnWidth(1, 100);
+    treeTraceroot->setColumnWidth(2, 200);
+    treeTraceroot->setColumnWidth(3, 200);
+    treeMain->setColumnWidth(0, 200);
     // create mainwindow Qsplitter
     setDefaultSplitter();
     // restore saved settings
