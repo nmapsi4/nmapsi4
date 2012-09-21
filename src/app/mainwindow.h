@@ -72,7 +72,6 @@ public:
     ~MainWindow();
     void loadScanProfile();
     void updateComboBook();
-    // TODO: check completer section in vulnerability
     void updateCompleter();
     QList< QPair<QString, QString> > defaultScanProfile();
 
@@ -84,8 +83,6 @@ public:
     BookmarkManager* m_bookmark;
     ActionManager* m_collections;
     int m_hostCache;
-    QWeakPointer<QCompleter> m_completerVuln;
-    QWeakPointer<QStringListModel> m_vulnModel;
 
 private:
     void addHostToMonitor(const QString hostname);

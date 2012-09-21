@@ -67,7 +67,6 @@ void MainWindow::initObject()
     // restore saved settings
     restoreSettings();
     updateCompleter();
-
     loadDefaultProfile();
 
     // load first profile
@@ -76,7 +75,6 @@ void MainWindow::initObject()
     // load quick combo items
     loadScanProfile();
     updateComboBook();
-    m_vulnerability->loadSearchUrlIntoCombo();
 
     // call discover startup, NPING is REQUIRED
     m_discoverManager->startDiscover();

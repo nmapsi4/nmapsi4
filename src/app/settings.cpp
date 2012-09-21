@@ -86,16 +86,6 @@ void MainWindow::updateCompleter()
             m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(), this);
         }
     }
-
-    // TODO: move to vulnerability
-    if (!m_bookmark->isBookmarkServicesListEmpty()) {
-        if (!m_completerVuln.isNull()) {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completerVuln.data()->model());
-            newModel->setStringList(m_bookmark->getServicesListFromBookmark());
-        } else if (m_vulnModel.isNull()) {
-            m_vulnModel = new QStringListModel(m_bookmark->getServicesListFromBookmark(), this);
-        }
-    }
 }
 
 void MainWindow::restoreSettings()
