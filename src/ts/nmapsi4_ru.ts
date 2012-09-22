@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="ru_RU">
+    <extra-po-header-po_revision_date>2012-09-20 23:33+0200</extra-po-header-po_revision_date>
+    <extra-po-headers>MIME-Version,Content-Type,Content-Transfer-Encoding,X-Qt-Contexts,Last-Translator,PO-Revision-Date,Project-Id-Version,Language-Team,Language,Plural-Forms,X-Generator</extra-po-headers>
+    <extra-po-header-x_generator>Lokalize 1.4</extra-po-header-x_generator>
+    <extra-po-header-language_team>American English &lt;kde-i18n-doc@kde.org&gt;</extra-po-header-language_team>
+    <extra-po-header-project_id_version></extra-po-header-project_id_version>
+    <extra-po-header-language>en_US</extra-po-header-language>
+    <extra-po-header_comment># Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;, 2012.</extra-po-header_comment>
+    <extra-po-header-last_translator>Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;</extra-po-header-last_translator>
 <context>
     <name>AboutUi</name>
     <message>
@@ -9,7 +17,7 @@
     </message>
     <message>
         <source>Nmapsi4</source>
-        <translation type="unfinished">Nmapsi4</translation>
+        <translation>Nmapsi4</translation>
     </message>
     <message>
         <source>NmapSi4 is a complete Qt4-based Gui with the design
@@ -83,23 +91,19 @@ p, li { white-space: pre-wrap; }
     <name>ActionManager</name>
     <message>
         <source>Scan host(s)</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Network Discover</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Vulnerability</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Check Vulnerabilities</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Host List</source>
@@ -111,8 +115,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show/Hide Host Details</source>
@@ -120,33 +123,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remove Host</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Scan Host</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove Scan Parameters</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove Service</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search for vulnerabilities</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Check Vulnerability</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove url</source>
@@ -158,7 +155,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Сохранить</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>Bookmark</source>
@@ -170,7 +167,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Параметры сканирования</translation>
+        <translation>Параметры сканирования</translation>
     </message>
     <message>
         <source>Scan selected IP/s</source>
@@ -193,8 +190,7 @@ p, li { white-space: pre-wrap; }
     <name>DiscoverManager</name>
     <message>
         <source>is Up</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Save IP list</source>
@@ -213,7 +209,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Дата</translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>Discovered IP/s</source>
@@ -229,8 +225,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Probes Modes:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>CIDR Notation (IPv4)</source>
@@ -266,8 +261,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop Discover</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>CIDR Notation address</source>
@@ -279,8 +273,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Local Interfaces:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reload Interfaces</source>
@@ -311,8 +304,7 @@ p, li { white-space: pre-wrap; }
     <name>MainWindow</name>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Bookmarks</source>
@@ -324,43 +316,37 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Quick Scan</source>
-        <translation type="unfinished">Быстрое сканирование</translation>
+        <translation>Быстрое сканирование</translation>
     </message>
     <message>
         <source>Intense Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Intense Scan, all TCP ports</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Intense scan plus UDP</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Slow comprehensive scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No Host Target
 </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
     <message>
         <source>Hostname already scanning
 </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Add host to bookmark</source>
@@ -372,8 +358,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Active Scan </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
@@ -417,23 +402,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Monitor</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainWindowClass</name>
     <message>
         <source>Nmapsi4</source>
-        <translation type="unfinished">Nmapsi4</translation>
+        <translation>Nmapsi4</translation>
     </message>
     <message>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished">О пр&amp;ограмме nmapsi4</translation>
+        <translation>О пр&amp;ограмме nmapsi4</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
-        <translation type="unfinished">&amp;Сканировать</translation>
+        <translation>&amp;Сканировать</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -441,53 +425,51 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">О &amp;Qt</translation>
+        <translation>О &amp;Qt</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished">&amp;Свойства</translation>
+        <translation>&amp;Свойства</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Выход</translation>
+        <translation>&amp;Выход</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Stop Scan</source>
-        <translation type="unfinished">Остановить поиск</translation>
+        <translation>Остановить поиск</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation type="unfinished">&amp;Очистить журнал команд</translation>
+        <translation>&amp;Очистить журнал команд</translation>
     </message>
     <message>
         <source>Close Tree</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close Scan Tree</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Clear HostName</source>
-        <translation type="unfinished">Очистить ИмяХоста</translation>
+        <translation>Очистить ИмяХоста</translation>
     </message>
     <message>
         <source>Clear Hostname IP</source>
-        <translation type="unfinished">Clear IP адрес узла</translation>
+        <translation>Clear IP адрес узла</translation>
     </message>
     <message>
         <source>Save As</source>
-        <translation type="unfinished">Сохранить как</translation>
+        <translation>Сохранить как</translation>
     </message>
     <message>
         <source>Save Scan</source>
@@ -495,7 +477,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Сохранить</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>S&amp;ave Scan</source>
@@ -507,23 +489,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished">П_олноэкранный режим</translation>
+        <translation>П_олноэкранный режим</translation>
     </message>
     <message>
         <source>Ctrl+Shift+F11</source>
-        <translation type="unfinished">Ctrl+Shift+F11</translation>
+        <translation>Ctrl+Shift+F11</translation>
     </message>
     <message>
         <source>Show &amp;Menu Bar</source>
-        <translation type="unfinished">Показать &amp;меню</translation>
+        <translation>Показать &amp;меню</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="unfinished">Показать строку состояния</translation>
+        <translation>Показать строку состояния</translation>
     </message>
     <message>
         <source>&amp;Add host to bookmark</source>
@@ -535,26 +517,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Main</source>
-        <translation type="unfinished">Основное</translation>
+        <translation>Основное</translation>
     </message>
     <message>
         <source>Log</source>
-        <translation type="unfinished">Журнал</translation>
+        <translation>Журнал</translation>
     </message>
     <message>
         <source>Vuln</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Section Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Section Log</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Section Vulnerabilities</source>
@@ -562,24 +541,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Donate Money</source>
-        <translation type="unfinished">Пожертвовать средства</translation>
+        <translation>Пожертвовать средства</translation>
     </message>
     <message>
         <source>Documentation</source>
-        <translation type="unfinished">Руководство</translation>
+        <translation>Руководство</translation>
     </message>
     <message>
         <source>Visit Website</source>
-        <translation type="unfinished">Посетить веб-сайт</translation>
+        <translation>Посетить веб-сайт</translation>
     </message>
     <message>
         <source>Report a bug</source>
-        <translation type="unfinished">Сообщить о проблеме</translation>
+        <translation>Сообщить о проблеме</translation>
     </message>
     <message>
         <source>Section Discover</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Profile</source>
@@ -599,31 +577,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Очистить</translation>
+        <translation>Очистить</translation>
     </message>
     <message>
         <source>Save Profile</source>
-        <translation type="unfinished">Сохранить профиль</translation>
+        <translation>Сохранить профиль</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Описание</translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Служба</translation>
+        <translation>Служба</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Состояние</translation>
+        <translation>Состояние</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished">Порт</translation>
+        <translation>Порт</translation>
     </message>
     <message>
         <source>Nss script result</source>
-        <translation type="unfinished">Результаты сценария Nss</translation>
+        <translation>Результаты сценария Nss</translation>
     </message>
     <message>
         <source>Service(s) Details</source>
@@ -631,42 +609,39 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Host(s)</source>
-        <translation type="unfinished">Узел(ы)</translation>
+        <translation>Узел(ы)</translation>
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <source>DNS</source>
-        <translation type="unfinished">DNS</translation>
+        <translation>DNS</translation>
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished">IP</translation>
+        <translation>IP</translation>
     </message>
     <message>
         <source>RTT</source>
-        <translation type="unfinished">RTT</translation>
+        <translation>RTT</translation>
     </message>
     <message>
         <source>Hop(s)</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Traceroute</source>
-        <translation type="unfinished">Трассировка</translation>
+        <translation>Трассировка</translation>
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Service(s) with info</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Nse result</source>
@@ -674,25 +649,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Os</source>
-        <translation type="unfinished">ОС</translation>
+        <translation>ОС</translation>
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Scan host(s)</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Log(s)</source>
-        <translation type="unfinished">События</translation>
+        <translation>События</translation>
     </message>
     <message>
         <source>Error(s)</source>
-        <translation type="unfinished">Ошибка(и)</translation>
+        <translation>Ошибка(и)</translation>
     </message>
     <message>
         <source>Raw scan log</source>
@@ -700,40 +673,39 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished">Ф&amp;айл</translation>
+        <translation>Ф&amp;айл</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished">В&amp;ид</translation>
+        <translation>В&amp;ид</translation>
     </message>
     <message>
         <source>&amp;Bookmarks</source>
-        <translation type="unfinished">&amp;Закладки</translation>
+        <translation>&amp;Закладки</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished">Справ&amp;ка</translation>
+        <translation>Справ&amp;ка</translation>
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Настройки</translation>
+        <translation>&amp;Настройки</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished">&amp;Инструменты</translation>
+        <translation>&amp;Инструменты</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>toolBar_2</source>
-        <translation type="unfinished">Панель инструментов 2</translation>
+        <translation>Панель инструментов 2</translation>
     </message>
     <message>
         <source>toolBar_3</source>
-        <translation type="unfinished">Панель инструментов 3</translation>
+        <translation>Панель инструментов 3</translation>
     </message>
 </context>
 <context>
@@ -755,28 +727,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop All Scan</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Stop Current Scan</source>
-        <translation type="unfinished">Остановить текущее сканирование</translation>
+        <translation>Остановить текущее сканирование</translation>
     </message>
     <message>
         <source>Scan Details</source>
-        <translation type="unfinished">Детали сканирования</translation>
+        <translation>Детали сканирования</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Состояние</translation>
+        <translation>Состояние</translation>
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Параметры сканирования</translation>
+        <translation>Параметры сканирования</translation>
     </message>
     <message>
         <source>Host Thread</source>
-        <translation type="unfinished">Узел потока</translation>
+        <translation>Узел потока</translation>
     </message>
 </context>
 <context>
@@ -784,21 +755,19 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Error: check nmap Installation.
 </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
     <message>
         <source>No description</source>
-        <translation type="unfinished">Нет описания</translation>
+        <translation>Нет описания</translation>
     </message>
     <message>
         <source>Save Log</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open Directory</source>
@@ -813,7 +782,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <source>&lt;h3&gt;General&lt;/h3&gt;</source>
@@ -828,8 +797,7 @@ p, li { white-space: pre-wrap; }
     <name>ProfileMain</name>
     <message>
         <source>Log Preferences</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Defaults</source>
@@ -909,7 +877,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Verbose</source>
-        <translation type="unfinished">Подробно</translation>
+        <translation>Подробно</translation>
     </message>
 </context>
 <context>
@@ -917,12 +885,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>No Ports Range (ex: 20-80)
 </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
     <message>
         <source>Please, first insert a Decoy
@@ -964,8 +931,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Ping</source>
@@ -973,8 +939,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Nse</source>
@@ -990,13 +955,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
     <message>
         <source>Warning: Operation more expansive.
 </source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>TCP SYN Stealth Scan (-sS)</source>
@@ -1051,26 +1015,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Дата</translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>IP List</source>
-        <translation type="unfinished">Список IP</translation>
+        <translation>Список IP</translation>
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished">Название профиля</translation>
+        <translation>Название профиля</translation>
     </message>
     <message>
         <source>Parameters List</source>
-        <translation type="unfinished">Список параметров</translation>
+        <translation>Список параметров</translation>
     </message>
 </context>
 <context>
     <name>Utilities</name>
     <message>
         <source>Select the file</source>
-        <translation type="unfinished">Выбрать файл</translation>
+        <translation>Выбрать файл</translation>
     </message>
 </context>
 <context>
@@ -1081,39 +1045,38 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Data</source>
-        <translation type="unfinished">Данные</translation>
+        <translation>Данные</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Служба</translation>
+        <translation>Служба</translation>
     </message>
     <message>
         <source>Url(s)</source>
-        <translation type="unfinished">Ссылка(и)</translation>
+        <translation>Ссылка(и)</translation>
     </message>
     <message>
         <source>Url(s) name</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Vulnerability</name>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Назад</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished">Вперёд</translation>
+        <translation>Вперёд</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Остановить</translation>
+        <translation>Остановить</translation>
     </message>
     <message>
         <source>Add service to &amp;bookmark</source>
@@ -1121,8 +1084,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Search Vulnerabilities</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1175,7 +1137,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
 </context>
 <context>
@@ -1225,15 +1187,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">&amp;Закрыть</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
 </context>
 <context>
     <name>monitorDetails</name>
     <message>
         <source>Scan Process Details</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hostname:</source>
@@ -1272,11 +1233,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">Завершено</translation>
+        <translation>Завершено</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Отмена</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -1296,8 +1257,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing Template:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Paranoid Throttling (-T0)</source>
@@ -1357,24 +1317,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished">Нормальный</translation>
+        <translation>Нормальный</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Все</translation>
+        <translation>Все</translation>
     </message>
     <message>
         <source>Most Important</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Диапазон</translation>
+        <translation>Диапазон</translation>
     </message>
     <message>
         <source>Port Range:</source>
-        <translation type="unfinished">Диапазон портов:</translation>
+        <translation>Диапазон портов:</translation>
     </message>
     <message>
         <source>Aggressive options (-A)</source>
@@ -1430,8 +1389,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Min outstanding probes (--min-parallelism)</source>
@@ -1491,21 +1449,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>DNS Resolution</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>When Required</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished">Всегда</translation>
+        <translation>Всегда</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished">Никогда</translation>
+        <translation>Никогда</translation>
     </message>
     <message>
         <source>Verbosity level (-v)</source>
@@ -1513,25 +1469,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Quiet</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Verbose</source>
-        <translation type="unfinished">Подробно</translation>
+        <translation>Подробно</translation>
     </message>
     <message>
         <source>Very Verbose</source>
-        <translation type="unfinished">Очень подробно</translation>
+        <translation>Очень подробно</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Отладочный режим</translation>
+        <translation>Отладочный режим</translation>
     </message>
     <message>
         <source>Verbose Debug</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Ordered scanned port (-r)</source>
@@ -1555,28 +1509,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse categories script available</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Nse categories Script Active</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Restore Default Categories</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Active Script</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable Script</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Nse categories help</source>
@@ -1592,12 +1541,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <source>Single Script</source>
@@ -1620,7 +1568,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">Завершено</translation>
+        <translation>Завершено</translation>
     </message>
 </context>
 <context>

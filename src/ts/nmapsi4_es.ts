@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="es_ES">
+    <extra-po-header-po_revision_date>2012-09-20 23:24+0200</extra-po-header-po_revision_date>
+    <extra-po-headers>MIME-Version,Content-Type,Content-Transfer-Encoding,X-Qt-Contexts,Last-Translator,PO-Revision-Date,Project-Id-Version,Language-Team,Language,Plural-Forms,X-Generator</extra-po-headers>
+    <extra-po-header-x_generator>Lokalize 1.4</extra-po-header-x_generator>
+    <extra-po-header-language_team>American English &lt;kde-i18n-doc@kde.org&gt;</extra-po-header-language_team>
+    <extra-po-header-project_id_version></extra-po-header-project_id_version>
+    <extra-po-header-language>en_US</extra-po-header-language>
+    <extra-po-header_comment># Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;, 2012.</extra-po-header_comment>
+    <extra-po-header-last_translator>Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;</extra-po-header-last_translator>
 <context>
     <name>AboutUi</name>
     <message>
@@ -9,7 +17,7 @@
     </message>
     <message>
         <source>Nmapsi4</source>
-        <translation type="unfinished">Nmapsi4</translation>
+        <translation>Nmapsi4</translation>
     </message>
     <message>
         <source>NmapSi4 is a complete Qt4-based Gui with the design
@@ -83,19 +91,19 @@ p, li { white-space: pre-wrap; }
     <name>ActionManager</name>
     <message>
         <source>Scan host(s)</source>
-        <translation type="unfinished">Escanear host(s)</translation>
+        <translation>Escanear host(s)</translation>
     </message>
     <message>
         <source>Network Discover</source>
-        <translation type="unfinished">Descubrir Red</translation>
+        <translation>Descubrir Red</translation>
     </message>
     <message>
         <source>Vulnerability</source>
-        <translation type="unfinished">Vulnerabilidad</translation>
+        <translation>Vulnerabilidad</translation>
     </message>
     <message>
         <source>Check Vulnerabilities</source>
-        <translation type="unfinished">Revisar Vulnerabilidades</translation>
+        <translation>Revisar Vulnerabilidades</translation>
     </message>
     <message>
         <source>Host List</source>
@@ -107,7 +115,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished">Detalles del host</translation>
+        <translation>Detalles del host</translation>
     </message>
     <message>
         <source>Show/Hide Host Details</source>
@@ -115,27 +123,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remove Host</source>
-        <translation type="unfinished">Eliminar Host</translation>
+        <translation>Eliminar Host</translation>
     </message>
     <message>
         <source>Scan Host</source>
-        <translation type="unfinished">Escanear Host</translation>
+        <translation>Escanear Host</translation>
     </message>
     <message>
         <source>Remove Scan Parameters</source>
-        <translation type="unfinished">Eliminar Parámetros de Scaneo</translation>
+        <translation>Eliminar Parámetros de Scaneo</translation>
     </message>
     <message>
         <source>Remove Service</source>
-        <translation type="unfinished">Quitar Servicio</translation>
+        <translation>Quitar Servicio</translation>
     </message>
     <message>
         <source>Search for vulnerabilities</source>
-        <translation type="unfinished">Buscar vulnerabilidades</translation>
+        <translation>Buscar vulnerabilidades</translation>
     </message>
     <message>
         <source>Check Vulnerability</source>
-        <translation type="unfinished">Comprobar Vulnerabilidades</translation>
+        <translation>Comprobar Vulnerabilidades</translation>
     </message>
     <message>
         <source>Remove url</source>
@@ -147,7 +155,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <source>Bookmark</source>
@@ -159,7 +167,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Opciones de Escaneo</translation>
+        <translation>Opciones de Escaneo</translation>
     </message>
     <message>
         <source>Scan selected IP/s</source>
@@ -182,7 +190,7 @@ p, li { white-space: pre-wrap; }
     <name>DiscoverManager</name>
     <message>
         <source>is Up</source>
-        <translation type="unfinished">está Encendido</translation>
+        <translation>está Encendido</translation>
     </message>
     <message>
         <source>Save IP list</source>
@@ -201,7 +209,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Fecha</translation>
+        <translation>Fecha</translation>
     </message>
     <message>
         <source>Discovered IP/s</source>
@@ -217,7 +225,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Probes Modes:</source>
-        <translation type="unfinished">Modos de Exploración</translation>
+        <translation>Modos de Exploración</translation>
     </message>
     <message>
         <source>CIDR Notation (IPv4)</source>
@@ -253,7 +261,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop Discover</source>
-        <translation type="unfinished">Parar de Descubrir</translation>
+        <translation>Parar de Descubrir</translation>
     </message>
     <message>
         <source>CIDR Notation address</source>
@@ -265,7 +273,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Local Interfaces:</source>
-        <translation type="unfinished">Interfaces Locales</translation>
+        <translation>Interfaces Locales</translation>
     </message>
     <message>
         <source>Reload Interfaces</source>
@@ -312,33 +320,33 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intense Scan</source>
-        <translation type="unfinished">Escaneo Intensivo</translation>
+        <translation>Escaneo Intensivo</translation>
     </message>
     <message>
         <source>Intense Scan, all TCP ports</source>
-        <translation type="unfinished">Escaneo Intensivo, todos los puertos TCP</translation>
+        <translation>Escaneo Intensivo, todos los puertos TCP</translation>
     </message>
     <message>
         <source>Intense scan plus UDP</source>
-        <translation type="unfinished">Escaneo Intensivo más UDP</translation>
+        <translation>Escaneo Intensivo más UDP</translation>
     </message>
     <message>
         <source>Slow comprehensive scan</source>
-        <translation type="unfinished">Escaneo lento completo</translation>
+        <translation>Escaneo lento completo</translation>
     </message>
     <message>
         <source>No Host Target
 </source>
-        <translation type="unfinished">No hay Host Objetivo</translation>
+        <translation>No hay Host Objetivo</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <source>Hostname already scanning
 </source>
-        <translation type="unfinished">El nombre de Host está actualmente escaneando
+        <translation>El nombre de Host está actualmente escaneando
 </translation>
     </message>
     <message>
@@ -351,7 +359,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Active Scan </source>
-        <translation type="unfinished"> Escaneo Activo </translation>
+        <translation> Escaneo Activo </translation>
     </message>
     <message>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
@@ -395,74 +403,74 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Monitor</source>
-        <translation type="unfinished">Estado del Escaneo</translation>
+        <translation>Estado del Escaneo</translation>
     </message>
 </context>
 <context>
     <name>MainWindowClass</name>
     <message>
         <source>Nmapsi4</source>
-        <translation type="unfinished">Nmapsi4</translation>
+        <translation>Nmapsi4</translation>
     </message>
     <message>
         <source>&amp;About nmapsi4</source>
-        <translation type="unfinished">Acerca de &amp;nmapsi4</translation>
+        <translation>Acerca de &amp;nmapsi4</translation>
     </message>
     <message>
         <source>&amp;Scan</source>
-        <translation type="unfinished">&amp;Escanear</translation>
+        <translation>&amp;Escanear</translation>
     </message>
     <message>
         <source>Scan</source>
-        <translation type="unfinished">Escanear</translation>
+        <translation>Escanear</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Acerca de &amp;Qt</translation>
+        <translation>Acerca de &amp;Qt</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished">&amp;Preferencias</translation>
+        <translation>&amp;Preferencias</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Salir</translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Stop Scan</source>
-        <translation type="unfinished">Detener escaneo</translation>
+        <translation>Detener escaneo</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation type="unfinished">Limpiar Historial</translation>
+        <translation>Limpiar Historial</translation>
     </message>
     <message>
         <source>Close Tree</source>
-        <translation type="unfinished">Cerrar Árbol</translation>
+        <translation>Cerrar Árbol</translation>
     </message>
     <message>
         <source>Close Scan Tree</source>
-        <translation type="unfinished">Cerrar Árbol de Scaneo</translation>
+        <translation>Cerrar Árbol de Scaneo</translation>
     </message>
     <message>
         <source>Clear HostName</source>
-        <translation type="unfinished">Limpiar nombre de Host</translation>
+        <translation>Limpiar nombre de Host</translation>
     </message>
     <message>
         <source>Clear Hostname IP</source>
-        <translation type="unfinished">Limpiar IP de nombre de Host</translation>
+        <translation>Limpiar IP de nombre de Host</translation>
     </message>
     <message>
         <source>Save As</source>
-        <translation type="unfinished">Guardar como</translation>
+        <translation>Guardar como</translation>
     </message>
     <message>
         <source>Save Scan</source>
@@ -470,7 +478,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <source>S&amp;ave Scan</source>
@@ -482,23 +490,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished">&amp;Pantalla completa</translation>
+        <translation>&amp;Pantalla completa</translation>
     </message>
     <message>
         <source>Ctrl+Shift+F11</source>
-        <translation type="unfinished">Ctrl+Shift+F11</translation>
+        <translation>Ctrl+Shift+F11</translation>
     </message>
     <message>
         <source>Show &amp;Menu Bar</source>
-        <translation type="unfinished">Mostrar &amp;Barra de Menús</translation>
+        <translation>Mostrar &amp;Barra de Menús</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Show Status Bar</source>
-        <translation type="unfinished">Mostrar Barra de Estado</translation>
+        <translation>Mostrar Barra de Estado</translation>
     </message>
     <message>
         <source>&amp;Add host to bookmark</source>
@@ -510,23 +518,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Main</source>
-        <translation type="unfinished">Principal</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <source>Log</source>
-        <translation type="unfinished">Log</translation>
+        <translation>Log</translation>
     </message>
     <message>
         <source>Vuln</source>
-        <translation type="unfinished">Vuln</translation>
+        <translation>Vuln</translation>
     </message>
     <message>
         <source>Section Scan</source>
-        <translation type="unfinished">Sección Escanear</translation>
+        <translation>Sección Escanear</translation>
     </message>
     <message>
         <source>Section Log</source>
-        <translation type="unfinished">Sección Log</translation>
+        <translation>Sección Log</translation>
     </message>
     <message>
         <source>Section Vulnerabilities</source>
@@ -534,23 +542,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Donate Money</source>
-        <translation type="unfinished">Donar Dinero</translation>
+        <translation>Donar Dinero</translation>
     </message>
     <message>
         <source>Documentation</source>
-        <translation type="unfinished">Documentación</translation>
+        <translation>Documentación</translation>
     </message>
     <message>
         <source>Visit Website</source>
-        <translation type="unfinished">Visitar Web</translation>
+        <translation>Visitar Web</translation>
     </message>
     <message>
         <source>Report a bug</source>
-        <translation type="unfinished">Reportar Error</translation>
+        <translation>Reportar Error</translation>
     </message>
     <message>
         <source>Section Discover</source>
-        <translation type="unfinished">Sección Descubrir</translation>
+        <translation>Sección Descubrir</translation>
     </message>
     <message>
         <source>New Profile</source>
@@ -570,31 +578,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Limpia</translation>
+        <translation>Limpia</translation>
     </message>
     <message>
         <source>Save Profile</source>
-        <translation type="unfinished">Guardar Perfil</translation>
+        <translation>Guardar Perfil</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Descripción</translation>
+        <translation>Descripción</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Servicio</translation>
+        <translation>Servicio</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished">Puerto</translation>
+        <translation>Puerto</translation>
     </message>
     <message>
         <source>Nss script result</source>
-        <translation type="unfinished">Resultado del script NSS</translation>
+        <translation>Resultado del script NSS</translation>
     </message>
     <message>
         <source>Service(s) Details</source>
@@ -602,39 +610,39 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Host(s)</source>
-        <translation type="unfinished">Host(s)</translation>
+        <translation>Host(s)</translation>
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">Lookup</translation>
+        <translation>Lookup</translation>
     </message>
     <message>
         <source>DNS</source>
-        <translation type="unfinished">DNS</translation>
+        <translation>DNS</translation>
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished">IP</translation>
+        <translation>IP</translation>
     </message>
     <message>
         <source>RTT</source>
-        <translation type="unfinished">RTT</translation>
+        <translation>RTT</translation>
     </message>
     <message>
         <source>Hop(s)</source>
-        <translation type="unfinished">Salto(s)</translation>
+        <translation>Salto(s)</translation>
     </message>
     <message>
         <source>Traceroute</source>
-        <translation type="unfinished">Traceroute</translation>
+        <translation>Traceroute</translation>
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished">Detalles del host</translation>
+        <translation>Detalles del host</translation>
     </message>
     <message>
         <source>Service(s) with info</source>
-        <translation type="unfinished">Servicio(s) con información</translation>
+        <translation>Servicio(s) con información</translation>
     </message>
     <message>
         <source>Nse result</source>
@@ -642,23 +650,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Os</source>
-        <translation type="unfinished">OS</translation>
+        <translation>OS</translation>
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished">Log de parámetros de escaneo</translation>
+        <translation>Log de parámetros de escaneo</translation>
     </message>
     <message>
         <source>Scan host(s)</source>
-        <translation type="unfinished">Escanear host(s)</translation>
+        <translation>Escanear host(s)</translation>
     </message>
     <message>
         <source>Log(s)</source>
-        <translation type="unfinished">Log(s)</translation>
+        <translation>Log(s)</translation>
     </message>
     <message>
         <source>Error(s)</source>
-        <translation type="unfinished">Error(es)</translation>
+        <translation>Error(es)</translation>
     </message>
     <message>
         <source>Raw scan log</source>
@@ -666,39 +674,39 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Archivo</translation>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished">&amp;Vista</translation>
+        <translation>&amp;Vista</translation>
     </message>
     <message>
         <source>&amp;Bookmarks</source>
-        <translation type="unfinished">&amp;Favoritos</translation>
+        <translation>&amp;Favoritos</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished">A&amp;yuda</translation>
+        <translation>A&amp;yuda</translation>
     </message>
     <message>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Configuración</translation>
+        <translation>&amp;Configuración</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished">&amp;Herramientas</translation>
+        <translation>&amp;Herramientas</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished">toolBar</translation>
+        <translation>toolBar</translation>
     </message>
     <message>
         <source>toolBar_2</source>
-        <translation type="unfinished">toolBar_2</translation>
+        <translation>toolBar_2</translation>
     </message>
     <message>
         <source>toolBar_3</source>
-        <translation type="unfinished">toolBar_3</translation>
+        <translation>toolBar_3</translation>
     </message>
 </context>
 <context>
@@ -720,27 +728,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop All Scan</source>
-        <translation type="unfinished">Parar Todos los Escaneos</translation>
+        <translation>Parar Todos los Escaneos</translation>
     </message>
     <message>
         <source>Stop Current Scan</source>
-        <translation type="unfinished">Parar el Escaneo Actual</translation>
+        <translation>Parar el Escaneo Actual</translation>
     </message>
     <message>
         <source>Scan Details</source>
-        <translation type="unfinished">Detalles de scaneo</translation>
+        <translation>Detalles de scaneo</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Opciones de Escaneo</translation>
+        <translation>Opciones de Escaneo</translation>
     </message>
     <message>
         <source>Host Thread</source>
-        <translation type="unfinished">Hilo de Host</translation>
+        <translation>Hilo de Host</translation>
     </message>
 </context>
 <context>
@@ -748,19 +756,19 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Error: check nmap Installation.
 </source>
-        <translation type="unfinished">Error: revisa la instalación de nmap</translation>
+        <translation>Error: revisa la instalación de nmap</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <source>No description</source>
-        <translation type="unfinished">Sin descripción</translation>
+        <translation>Sin descripción</translation>
     </message>
     <message>
         <source>Save Log</source>
-        <translation type="unfinished">Guardar log</translation>
+        <translation>Guardar log</translation>
     </message>
     <message>
         <source>Open Directory</source>
@@ -775,7 +783,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">Lookup</translation>
+        <translation>Lookup</translation>
     </message>
     <message>
         <source>&lt;h3&gt;General&lt;/h3&gt;</source>
@@ -870,7 +878,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Verbose</source>
-        <translation type="unfinished">Detallado</translation>
+        <translation>Detallado</translation>
     </message>
 </context>
 <context>
@@ -878,12 +886,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>No Ports Range (ex: 20-80)
 </source>
-        <translation type="unfinished">Sin Rango de Puertos (ej. 20-80)
+        <translation>Sin Rango de Puertos (ej. 20-80)
 </translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <source>Please, first insert a Decoy
@@ -921,11 +929,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan</source>
-        <translation type="unfinished">Escanear</translation>
+        <translation>Escanear</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">Opciones</translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <source>Ping</source>
@@ -933,7 +941,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing</source>
-        <translation type="unfinished">Tiempos</translation>
+        <translation>Tiempos</translation>
     </message>
     <message>
         <source>Nse</source>
@@ -949,12 +957,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <source>Warning: Operation more expansive.
 </source>
-        <translation type="unfinished">Peligro: Operación más amplia.
+        <translation>Peligro: Operación más amplia.
 </translation>
     </message>
     <message>
@@ -1010,26 +1018,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Fecha</translation>
+        <translation>Fecha</translation>
     </message>
     <message>
         <source>IP List</source>
-        <translation type="unfinished">Lista de IP</translation>
+        <translation>Lista de IP</translation>
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished">Nombre del Perfil</translation>
+        <translation>Nombre del Perfil</translation>
     </message>
     <message>
         <source>Parameters List</source>
-        <translation type="unfinished">Lista de Parámetros</translation>
+        <translation>Lista de Parámetros</translation>
     </message>
 </context>
 <context>
     <name>Utilities</name>
     <message>
         <source>Select the file</source>
-        <translation type="unfinished">Selecciona un fichero</translation>
+        <translation>Selecciona un fichero</translation>
     </message>
 </context>
 <context>
@@ -1040,38 +1048,38 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Data</source>
-        <translation type="unfinished">Datos</translation>
+        <translation>Datos</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Servicio</translation>
+        <translation>Servicio</translation>
     </message>
     <message>
         <source>Url(s)</source>
-        <translation type="unfinished">Url(s)</translation>
+        <translation>Url(s)</translation>
     </message>
     <message>
         <source>Url(s) name</source>
-        <translation type="unfinished">Nombre de Url(s)</translation>
+        <translation>Nombre de Url(s)</translation>
     </message>
 </context>
 <context>
     <name>Vulnerability</name>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Buscar</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Volver</translation>
+        <translation>Volver</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished">Avanzar</translation>
+        <translation>Avanzar</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Detener</translation>
+        <translation>Detener</translation>
     </message>
     <message>
         <source>Add service to &amp;bookmark</source>
@@ -1079,7 +1087,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Search Vulnerabilities</source>
-        <translation type="unfinished">Buscar Vulnerabilidades</translation>
+        <translation>Buscar Vulnerabilidades</translation>
     </message>
 </context>
 <context>
@@ -1090,7 +1098,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Services</source>
-        <translation type="unfinished">Servicios</translation>
+        <translation>Servicios</translation>
     </message>
     <message>
         <source>Discovered vulnerabilities</source>
@@ -1132,7 +1140,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
 </context>
 <context>
@@ -1182,7 +1190,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation>Cerrar</translation>
     </message>
 </context>
 <context>
@@ -1228,15 +1236,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">Hecho</translation>
+        <translation>Hecho</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Scan</source>
-        <translation type="unfinished">Escanear</translation>
+        <translation>Escanear</translation>
     </message>
     <message>
         <source>TCP scan:</source>
@@ -1252,7 +1260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing Template:</source>
-        <translation type="unfinished">Plantilla de Tiempo</translation>
+        <translation>Plantilla de Tiempo</translation>
     </message>
     <message>
         <source>Paranoid Throttling (-T0)</source>
@@ -1312,23 +1320,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Todo</translation>
+        <translation>Todo</translation>
     </message>
     <message>
         <source>Most Important</source>
-        <translation type="unfinished">Lo más importante</translation>
+        <translation>Lo más importante</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Rango</translation>
+        <translation>Rango</translation>
     </message>
     <message>
         <source>Port Range:</source>
-        <translation type="unfinished">Rango de Puertos:</translation>
+        <translation>Rango de Puertos:</translation>
     </message>
     <message>
         <source>Aggressive options (-A)</source>
@@ -1384,7 +1392,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing</source>
-        <translation type="unfinished">Tiempos</translation>
+        <translation>Tiempos</translation>
     </message>
     <message>
         <source>Min outstanding probes (--min-parallelism)</source>
@@ -1444,19 +1452,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>DNS Resolution</source>
-        <translation type="unfinished">Resolución DNS</translation>
+        <translation>Resolución DNS</translation>
     </message>
     <message>
         <source>When Required</source>
-        <translation type="unfinished">Solo cuando es requerido</translation>
+        <translation>Solo cuando es requerido</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished">Siempre</translation>
+        <translation>Siempre</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished">Nunca</translation>
+        <translation>Nunca</translation>
     </message>
     <message>
         <source>Verbosity level (-v)</source>
@@ -1464,23 +1472,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Quiet</source>
-        <translation type="unfinished">Silencioso</translation>
+        <translation>Silencioso</translation>
     </message>
     <message>
         <source>Verbose</source>
-        <translation type="unfinished">Detallado</translation>
+        <translation>Detallado</translation>
     </message>
     <message>
         <source>Very Verbose</source>
-        <translation type="unfinished">Muy Detallado</translation>
+        <translation>Muy Detallado</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Depurar</translation>
+        <translation>Depurar</translation>
     </message>
     <message>
         <source>Verbose Debug</source>
-        <translation type="unfinished">Depuración detallada</translation>
+        <translation>Depuración detallada</translation>
     </message>
     <message>
         <source>Ordered scanned port (-r)</source>
@@ -1504,23 +1512,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse categories script available</source>
-        <translation type="unfinished">Categorías de script Nse posibles</translation>
+        <translation>Categorías de script Nse posibles</translation>
     </message>
     <message>
         <source>Nse categories Script Active</source>
-        <translation type="unfinished">Categorías de Script Nse Activas</translation>
+        <translation>Categorías de Script Nse Activas</translation>
     </message>
     <message>
         <source>Restore Default Categories</source>
-        <translation type="unfinished">Restaurar Categorías por Defecto</translation>
+        <translation>Restaurar Categorías por Defecto</translation>
     </message>
     <message>
         <source>Active Script</source>
-        <translation type="unfinished">Activar Script</translation>
+        <translation>Activar Script</translation>
     </message>
     <message>
         <source>Disable Script</source>
-        <translation type="unfinished">Desactivar Script</translation>
+        <translation>Desactivar Script</translation>
     </message>
     <message>
         <source>Nse categories help</source>
@@ -1536,11 +1544,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
-        <translation type="unfinished">Manual de invocación de script Nse: (Ej. snmp-sysdescr,smb-os-discovery )</translation>
+        <translation>Manual de invocación de script Nse: (Ej. snmp-sysdescr,smb-os-discovery )</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Buscar</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <source>Single Script</source>
@@ -1563,7 +1571,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">Hecho</translation>
+        <translation>Hecho</translation>
     </message>
 </context>
 <context>

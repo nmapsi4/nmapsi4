@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="it_IT" sourcelanguage="en">
+    <extra-po-header-po_revision_date>2012-09-20 23:20+0200</extra-po-header-po_revision_date>
+    <extra-po-headers>MIME-Version,Content-Type,Content-Transfer-Encoding,Plural-Forms,X-Language,X-Source-Language,X-Qt-Contexts,Last-Translator,PO-Revision-Date,Project-Id-Version,Language-Team,Language,X-Generator</extra-po-headers>
+    <extra-po-header-x_generator>Lokalize 1.4</extra-po-header-x_generator>
+    <extra-po-header-language_team>American English &lt;kde-i18n-doc@kde.org&gt;</extra-po-header-language_team>
+    <extra-po-header-project_id_version></extra-po-header-project_id_version>
+    <extra-po-header-language>en_US</extra-po-header-language>
+    <extra-po-header_comment># Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;, 2012.</extra-po-header_comment>
+    <extra-po-header-last_translator>Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;</extra-po-header-last_translator>
 <context>
     <name>AboutUi</name>
     <message>
@@ -159,7 +167,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Opzioni di scansione</translation>
+        <translation>Opzioni di scansione</translation>
     </message>
     <message>
         <source>Scan selected IP/s</source>
@@ -201,7 +209,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Data</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <source>Discovered IP/s</source>
@@ -253,7 +261,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop Discover</source>
-        <translation type="unfinished">Ferma rilevamento</translation>
+        <translation>Ferma rilevamento</translation>
     </message>
     <message>
         <source>CIDR Notation address</source>
@@ -265,7 +273,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Local Interfaces:</source>
-        <translation type="unfinished">Interfacce locali:</translation>
+        <translation>Interfacce locali:</translation>
     </message>
     <message>
         <source>Reload Interfaces</source>
@@ -394,7 +402,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan Monitor</source>
-        <translation type="unfinished">Monitor di scansione</translation>
+        <translation>Monitor di scansione</translation>
     </message>
 </context>
 <context>
@@ -719,23 +727,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Stop All Scan</source>
-        <translation type="unfinished">Ferma tutte le scansioni</translation>
+        <translation>Ferma tutte le scansioni</translation>
     </message>
     <message>
         <source>Stop Current Scan</source>
-        <translation type="unfinished">Ferma la scansione corrente</translation>
+        <translation>Ferma la scansione corrente</translation>
     </message>
     <message>
         <source>Scan Details</source>
-        <translation type="unfinished">Dettagli scansione</translation>
+        <translation>Dettagli scansione</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Stato</translation>
+        <translation>Stato</translation>
     </message>
     <message>
         <source>Scan Options</source>
-        <translation type="unfinished">Opzioni di scansione</translation>
+        <translation>Opzioni di scansione</translation>
     </message>
     <message>
         <source>Host Thread</source>
@@ -869,7 +877,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Verbose</source>
-        <translation type="unfinished">Dettagliato</translation>
+        <translation>Dettagliato</translation>
     </message>
 </context>
 <context>
@@ -877,12 +885,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>No Ports Range (ex: 20-80)
 </source>
-        <translation type="unfinished">Manca l&apos;intervallo delle porte (es: 20-80)
+        <translation>Manca l&apos;intervallo delle porte (es: 20-80)
 </translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <source>Please, first insert a Decoy
@@ -1009,19 +1017,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Data</translation>
+        <translation>Data</translation>
     </message>
     <message>
         <source>IP List</source>
-        <translation type="unfinished">Elenco IP</translation>
+        <translation>Elenco IP</translation>
     </message>
     <message>
         <source>Profile Name</source>
-        <translation type="unfinished">Nome profilo</translation>
+        <translation>Nome profilo</translation>
     </message>
     <message>
         <source>Parameters List</source>
-        <translation type="unfinished">Elenco parametri</translation>
+        <translation>Elenco parametri</translation>
     </message>
 </context>
 <context>
@@ -1039,19 +1047,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Data</source>
-        <translation type="unfinished">Dati</translation>
+        <translation>Dati</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Servizio</translation>
+        <translation>Servizio</translation>
     </message>
     <message>
         <source>Url(s)</source>
-        <translation type="unfinished">URL</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Url(s) name</source>
-        <translation type="unfinished">Nome URL</translation>
+        <translation>Nome URL</translation>
     </message>
 </context>
 <context>
@@ -1078,7 +1086,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Search Vulnerabilities</source>
-        <translation type="unfinished">Cerca vulnerabilità</translation>
+        <translation>Cerca vulnerabilità</translation>
     </message>
 </context>
 <context>
@@ -1089,7 +1097,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Services</source>
-        <translation type="unfinished">Servizi</translation>
+        <translation>Servizi</translation>
     </message>
     <message>
         <source>Discovered vulnerabilities</source>
@@ -1562,7 +1570,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Done</source>
-        <translation type="unfinished">Fatto</translation>
+        <translation>Fatto</translation>
     </message>
 </context>
 <context>
