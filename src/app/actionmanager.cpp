@@ -28,7 +28,7 @@ ActionManager::ActionManager(MainWindow* parent)
             this, SLOT(scanBookmarkContextMenu()));
     connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(parametersBookmarkContextMenu()));
-    connect(m_ui->GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_scanWidget->GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(mainServicesContextMenu()));
     connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(servicesContextMenu()));

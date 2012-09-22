@@ -21,6 +21,7 @@
 #define MAINWINDOW_H
 
 #include "ui_mainwindow.h"
+#include "ui_scanwidget.h"
 
 // Qt4 include
 #include <QtGui/QMainWindow>
@@ -63,6 +64,13 @@ namespace Ui
 class MainWindowClass;
 }
 
+class ScanWidget : public QWidget, public Ui::ScanWidgetForm
+{
+   Q_OBJECT
+public:
+    explicit ScanWidget(QWidget* parent = 0);
+};
+
 class MainWindow : public QMainWindow, public Ui::MainWindowClass
 {
     Q_OBJECT
@@ -83,6 +91,8 @@ public:
     BookmarkManager* m_bookmark;
     ActionManager* m_collections;
     int m_hostCache;
+    ScanWidget* m_scanWidget;
+    QTabWidget* m_mainTabWidget;
 
 private:
     void addHostToMonitor(const QString hostname);
@@ -136,7 +146,6 @@ private slots:
     void resizeHorizontalSplitterEvent();
     void resizeScanListWidgetEvent();
     void resizeHostDetailsWidgetEvent();
-
 };
 
 #endif

@@ -25,10 +25,10 @@ ParserManager::ParserManager(MainWindow* parent)
 {
     m_rawlogHorizontalSplitter = new QSplitter(m_ui);
     m_rawlogHorizontalSplitter->setOrientation(Qt::Horizontal);
-    m_rawlogHorizontalSplitter->addWidget(m_ui->listScan);
-    m_rawlogHorizontalSplitter->addWidget(m_ui->listScanError);
+    m_rawlogHorizontalSplitter->addWidget(m_ui->m_scanWidget->listScan);
+    m_rawlogHorizontalSplitter->addWidget(m_ui->m_scanWidget->listScanError);
 
-    m_ui->horizontalLayoutRawlog->layout()->addWidget(m_rawlogHorizontalSplitter);
+    m_ui->m_scanWidget->horizontalLayoutRawlog->layout()->addWidget(m_rawlogHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
 
@@ -36,9 +36,9 @@ ParserManager::ParserManager(MainWindow* parent)
         m_rawlogHorizontalSplitter->restoreState(settings.value("rawlogHorizontalSplitter").toByteArray());
     }
 
-    connect(m_ui->treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
+    connect(m_ui->m_scanWidget->treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(showParserResult(QTreeWidgetItem*, int)));
-    connect(m_ui->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
+    connect(m_ui->m_scanWidget->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(showParserTracerouteResult(QTreeWidgetItem*, int)));
     connect(m_ui->actionSave, SIGNAL(triggered()),
             this, SLOT(callSaveSingleLogWriter()));
@@ -99,7 +99,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     QString StderrorStr(errorBuffer);
 
     // create a scan host item.
-    QTreeWidgetItem *treeItem = new QTreeWidgetItem(m_ui->treeMain);
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem(m_ui->m_scanWidget->treeMain);
     m_treeItems.push_front(treeItem);
     treeItem->setSizeHint(0, QSize(32, 32));
 
@@ -118,7 +118,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
         m_ui->m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(false);
         m_ui->m_monitor->m_monitorWidget->monitorStopCurrentScanButt->setEnabled(false);
         m_ui->m_monitor->m_monitorWidget->monitorDetailsScanButt->setEnabled(false);
-        m_ui->tabUi->setTabIcon(m_ui->tabUi->indexOf(m_ui->m_monitor->m_monitorWidget),
+        m_ui->m_mainTabWidget->setTabIcon(m_ui->m_mainTabWidget->indexOf(m_ui->m_monitor->m_monitorWidget),
                                 QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     }
 
@@ -143,13 +143,13 @@ void ParserManager::showParserResult(QTreeWidgetItem *item, int column)
     QString hostName_ = item->text(0);
     hostName_  = hostName_.left(hostName_.indexOf("\n"));
 
-    if (m_ui->hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
-        m_ui->hostEdit->addItem(hostName_);
+    if (m_ui->m_scanWidget->hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
+        m_ui->m_scanWidget->hostEdit->addItem(hostName_);
     } else if (item->parent() == NULL) {
-        m_ui->hostEdit->setItemText(0, hostName_);
+        m_ui->m_scanWidget->hostEdit->setItemText(0, hostName_);
     }
 
-    int indexObj = m_ui->treeMain->indexOfTopLevelItem(item);
+    int indexObj = m_ui->m_scanWidget->treeMain->indexOfTopLevelItem(item);
 
     if (indexObj != -1) {
         showParserObj(indexObj);
@@ -162,17 +162,17 @@ void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
     // SLOT
     Q_UNUSED(column);
 
-    if (m_ui->hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty()) {
+    if (m_ui->m_scanWidget->hostEdit->itemText(0).isEmpty() && !item->parent() && !item->text(2).isEmpty()) {
         if (!item->text(3).contains("DNS")) {
-            m_ui->hostEdit->addItem(item->text(3));
+            m_ui->m_scanWidget->hostEdit->addItem(item->text(3));
         } else {
-            m_ui->hostEdit->addItem(item->text(2));
+            m_ui->m_scanWidget->hostEdit->addItem(item->text(2));
         }
     } else if (!item->parent() && !item->text(2).isEmpty()) {
         if (!item->text(3).contains("DNS")) {
-            m_ui->hostEdit->setItemText(0, item->text(3));
+            m_ui->m_scanWidget->hostEdit->setItemText(0, item->text(3));
         } else {
-            m_ui->hostEdit->setItemText(0, item->text(2));
+            m_ui->m_scanWidget->hostEdit->setItemText(0, item->text(2));
         }
     }
 }
@@ -413,19 +413,19 @@ void ParserManager::showParserObj(int hostIndex)
     // Clear widget
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
-    m_ui->listWscan->clear();
-    m_ui->GItree->clear();
-    m_ui->treeNSS->clear();
+    m_ui->m_scanWidget->listWscan->clear();
+    m_ui->m_scanWidget->GItree->clear();
+    m_ui->m_scanWidget->treeNSS->clear();
     m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered->clear();
 
     // set combo scan parameters
-    m_ui->comboScanLog->clear();
-    m_ui->comboScanLog->insertItem(0, m_parserObjList[hostIndex]->getParameters());
+    m_ui->m_scanWidget->comboScanLog->clear();
+    m_ui->m_scanWidget->comboScanLog->insertItem(0, m_parserObjList[hostIndex]->getParameters());
 
     QString noInfo("not Discovered");
 
     foreach(const QString & token, m_parserObjList[hostIndex]->getMainInfo()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeHostDet);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeHostDet);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
@@ -440,7 +440,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     // Show open ports
     foreach(const QString & token, m_parserObjList[hostIndex]->getPortOpen()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
@@ -474,7 +474,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     // Show Close ports
     foreach(const QString & token, m_parserObjList[hostIndex]->getPortClose()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
@@ -507,7 +507,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     // Show Filtered ports
     foreach(const QString & token, m_parserObjList[hostIndex]->getPortFiltered()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listWscan);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
@@ -542,8 +542,8 @@ void ParserManager::showParserObj(int hostIndex)
     // show services
     int servicesWithDetails = 0;
     foreach(const QString & token, m_parserObjList[hostIndex]->getServices()) {
-        if (!m_ui->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) {
-            QTreeWidgetItem *objItem = new QTreeWidgetItem(m_ui->GItree);
+        if (!m_ui->m_scanWidget->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) {
+            QTreeWidgetItem *objItem = new QTreeWidgetItem(m_ui->m_scanWidget->GItree);
             objItem->setSizeHint(0, QSize(22, 22));
             objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
             m_objectItems.push_front(objItem);
@@ -561,10 +561,10 @@ void ParserManager::showParserObj(int hostIndex)
     // Show Nse Info
     QHash<QString, QStringList> nseResult = m_parserObjList[hostIndex]->getNseResult();
     QHash<QString, QStringList>::const_iterator i;
-    m_ui->treeNSS->setRootIsDecorated(true);
+    m_ui->m_scanWidget->treeNSS->setRootIsDecorated(true);
 
     for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeNSS);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeNSS);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(32, 32));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
@@ -608,7 +608,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     // Show full scan log
     foreach(const QString & token, m_parserObjList[hostIndex]->getFullScanLog()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listScan);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listScan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
@@ -618,7 +618,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     // Show scan error
     foreach(const QString & token, m_parserObjList[hostIndex]->getErrorScan()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->listScanError);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listScanError);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_critical.png")));
@@ -631,7 +631,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
     foreach(const QString & token, m_parserObjList[hostIndex]->getTraceRouteInfo()) {
-        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeTraceroot);
+        QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeTraceroot);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
@@ -677,7 +677,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     foreach(PObjectLookup * elem, m_parserObjUtilList) {
         if (m_parserObjList[hostIndex]->getId() == elem->getId()) {
             foreach(const QString & token, elem->getInfoLookup()) {
-                QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->treeLookup);
+                QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeLookup);
                 m_itemListScan.push_front(root);
                 root->setSizeHint(0, QSize(22, 22));
                 root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit.png")));
@@ -690,11 +690,11 @@ void ParserManager::showParserObjPlugins(int hostIndex)
 
 void ParserManager::callSaveSingleLogWriter()
 {
-    if (!m_ui->treeMain->selectedItems().size()) {
+    if (!m_ui->m_scanWidget->treeMain->selectedItems().size()) {
         return;
     }
 
-    int selectedItemsIndex = m_ui->treeMain->indexOfTopLevelItem(m_ui->treeMain->selectedItems()[0]);
+    int selectedItemsIndex = m_ui->m_scanWidget->treeMain->indexOfTopLevelItem(m_ui->m_scanWidget->treeMain->selectedItems()[0]);
     PObject *object = m_parserObjList[selectedItemsIndex];
 
     if (!object->isValidObject()) {

@@ -45,15 +45,15 @@ void MainWindow::updateComboHostnameProperties()
 {
     action_Scan_menu->setEnabled(true);
     action_Scan_2->setEnabled(true);
-    hostEdit->clear();
-    hostEdit->setStyleSheet(QString::fromUtf8(""));
-    bool signalState = hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
+    m_scanWidget->hostEdit->clear();
+    m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8(""));
+    bool signalState = m_scanWidget->hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
 
     if (!signalState) {
         return;
     }
 
-    connect(hostEdit, SIGNAL(editTextChanged(QString)),
+    connect(m_scanWidget->hostEdit, SIGNAL(editTextChanged(QString)),
             this, SLOT(linkCompleterToHostname()));
 }
 
@@ -71,13 +71,11 @@ void MainWindow::updateSezScan()
     m_collections->m_discoverToolBar->setVisible(false);
     toolMenuBar->setVisible(true);
 
-    if (!tabScan->isVisible()) {
-        tabUi->insertTab(0, tabScan, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
-        tabUi->setCurrentIndex(0);
-    }
+    m_mainTabWidget->insertTab(0, m_scanWidget, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
+    m_mainTabWidget->setCurrentIndex(0);
 
     if (!m_monitor->m_monitorWidget->isVisible()) {
-        tabUi->insertTab(1, m_monitor->m_monitorWidget, tr("Scan Monitor"));
+        m_mainTabWidget->insertTab(1, m_monitor->m_monitorWidget, tr("Scan Monitor"));
 
         QIcon tabIcon;
         if (m_monitor->monitorHostNumber()) {
@@ -86,15 +84,15 @@ void MainWindow::updateSezScan()
             tabIcon.addFile(QString(":/images/images/utilities-log-viewer.png"));
         }
 
-        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget), tabIcon);
+        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget), tabIcon);
     }
 
-    tabUi->insertTab(tabUi->count(), m_bookmark->m_scanBookmarkWidget,
+    m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_scanBookmarkWidget,
                      QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
-    tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
-    tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
-    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
 
     // enable scan action
     m_collections->enableScanUiActions();
@@ -120,16 +118,16 @@ void MainWindow::updateSezVuln()
     toolMenuBar->setVisible(false);
     m_collections->m_discoverToolBar->setVisible(false);
 
-    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
-    tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(m_discoverManager->m_discoverWidget));
-    tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
-    tabUi->insertTab(0, m_vulnerability->m_vulnerabilityWidget, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
 
-    tabUi->insertTab(tabUi->count(), m_bookmark->m_vulnBookmarkWidget,
+    m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_vulnBookmarkWidget,
                      QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
-    tabUi->setCurrentIndex(0);
+    m_mainTabWidget->setCurrentIndex(0);
 
     // disable scan action
     m_collections->disableScanUiActions();
@@ -155,13 +153,13 @@ void MainWindow::updateSezDiscover()
     toolMenuBar->setVisible(false);
     m_collections->m_discoverToolBar->setVisible(true);
 
-    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_scanBookmarkWidget));
-    tabUi->removeTab(tabUi->indexOf(tabScan));
-    tabUi->removeTab(tabUi->indexOf(m_vulnerability->m_vulnerabilityWidget));
-    tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
-    tabUi->removeTab(tabUi->indexOf(m_monitor->m_monitorWidget));
-    tabUi->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
-    tabUi->setCurrentIndex(0);
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
+    m_mainTabWidget->setCurrentIndex(0);
 
     // disable scan action
     m_collections->disableScanUiActions();
@@ -171,17 +169,17 @@ void MainWindow::updateSezDiscover()
 
 void MainWindow::loadDefaultProfile()
 {
-    comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboAdv->insertItem(0, getParameters().join(" "));
+    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    m_scanWidget->comboAdv->insertItem(0, getParameters().join(" "));
 }
 
 void MainWindow::updateComboBook()
 {
-    comboHostBook->clear();
-    comboHostBook->insertItem(0, "Select Saved Host");
+    m_scanWidget->comboHostBook->clear();
+    m_scanWidget->comboHostBook->insertItem(0, "Select Saved Host");
 
     for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
-        comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
+        m_scanWidget->comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
     }
 }
 
@@ -189,29 +187,29 @@ void MainWindow::clearAll()
 {
     // Host list
     m_parser->clearParserItems();
-    listScanError->clear();
-    treeMain->clear();
-    treeLookup->clear();
-    treeTraceroot->clear();
-    treeHostDet->clear();
-    GItree->clear();
-    listWscan->clear();
-    treeNSS->clear();
-    listScan->clear();
+    m_scanWidget->listScanError->clear();
+    m_scanWidget->treeMain->clear();
+    m_scanWidget->treeLookup->clear();
+    m_scanWidget->treeTraceroot->clear();
+    m_scanWidget->treeHostDet->clear();
+    m_scanWidget->GItree->clear();
+    m_scanWidget->listWscan->clear();
+    m_scanWidget->treeNSS->clear();
+    m_scanWidget->listScan->clear();
     actionClear_History->setEnabled(false);
 
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);
     actionSave_As_Menu->setEnabled(false);
 
-    comboScanLog->clear();
-    comboScanLog->addItem(tr("Scan log parameters"));
+    m_scanWidget->comboScanLog->clear();
+    m_scanWidget->comboScanLog->addItem(tr("Scan log parameters"));
 }
 
 void MainWindow::updateScanCounter(int hostNumber)
 {
     if (hostNumber == 1) {
-        tabUi->setTabIcon(tabUi->indexOf(m_monitor->m_monitorWidget), QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget), QIcon(QString::fromUtf8(":/images/images/reload.png")));
     }
 
     QString title(tr(" Active Scan ")
@@ -226,8 +224,8 @@ void MainWindow::updateScanCounter(int hostNumber)
 void MainWindow::clearHostnameCombo()
 {
     // reset combo host bookmarks to default value
-    comboHostBook->setCurrentIndex(0);
-    hostEdit->clearEditText();
+    m_scanWidget->comboHostBook->setCurrentIndex(0);
+    m_scanWidget->hostEdit->clearEditText();
 }
 
 void MainWindow::clearParametersCombo()

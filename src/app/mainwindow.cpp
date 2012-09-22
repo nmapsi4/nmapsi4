@@ -19,6 +19,11 @@
 
 #include "mainwindow.h"
 
+ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
+{
+    setupUi(this);
+}
+
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), m_userId(0)
 {
@@ -29,9 +34,6 @@ MainWindow::MainWindow(QWidget* parent)
 void MainWindow::initGUI()
 {
     setupUi(this);
-    // set default value in combo editable
-    hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
 }
 
 void MainWindow::initObject()
@@ -40,14 +42,22 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
+    m_scanWidget = new ScanWidget(this);
+    m_mainTabWidget = new QTabWidget(this);
+    m_mainTabWidget->setDocumentMode(true);
+    centralWidget()->layout()->addWidget(m_mainTabWidget);
+
+    // set default value in combo editable
+    m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    m_scanWidget->hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
     // preload mainwindow info
-    listWscan->setIconSize(QSize(22, 22));
-    listScanError->setIconSize(QSize(22, 22));
-    listScan->setIconSize(QSize(22, 22));
-    treeTraceroot->setIconSize(QSize(22, 22));
-    treeNSS->setIconSize(QSize(22, 22));
-    treeMain->setIconSize(QSize(22, 22));
-    treeLookup->setIconSize(QSize(22, 22));
+    m_scanWidget->listWscan->setIconSize(QSize(22, 22));
+    m_scanWidget->listScanError->setIconSize(QSize(22, 22));
+    m_scanWidget->listScan->setIconSize(QSize(22, 22));
+    m_scanWidget->treeTraceroot->setIconSize(QSize(22, 22));
+    m_scanWidget->treeNSS->setIconSize(QSize(22, 22));
+    m_scanWidget->treeMain->setIconSize(QSize(22, 22));
+    m_scanWidget->treeLookup->setIconSize(QSize(22, 22));
 
     // declare and restore items from bookmark
     m_bookmark = new BookmarkManager(this);
@@ -74,10 +84,10 @@ void MainWindow::initObject()
     syncSettings();
 
     // set tree default settings
-    treeTraceroot->setColumnWidth(1, 100);
-    treeTraceroot->setColumnWidth(2, 200);
-    treeTraceroot->setColumnWidth(3, 200);
-    treeMain->setColumnWidth(0, 200);
+    m_scanWidget->treeTraceroot->setColumnWidth(1, 100);
+    m_scanWidget->treeTraceroot->setColumnWidth(2, 200);
+    m_scanWidget->treeTraceroot->setColumnWidth(3, 200);
+    m_scanWidget->treeMain->setColumnWidth(0, 200);
     // create mainwindow Qsplitter
     setDefaultSplitter();
     // restore saved settings
@@ -99,9 +109,9 @@ void MainWindow::initObject()
             this, SLOT(startScan()));
     connect(actionClear_History, SIGNAL(triggered()),
             this, SLOT(clearAll()));
-    connect(buttonHostClear, SIGNAL(clicked()),
+    connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
-    connect(buttonParametersClear, SIGNAL(clicked()),
+    connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
             this, SLOT(clearParametersCombo()));
     connect(action_Scan_2, SIGNAL(triggered()),
             this, SLOT(startScan()));
@@ -115,9 +125,9 @@ void MainWindow::initObject()
             this, SLOT(setFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),
             this, SLOT(updateMenuBar()));
-    connect(comboParametersProfiles, SIGNAL(activated(QString)),
+    connect(m_scanWidget->comboParametersProfiles, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
-    connect(comboHostBook, SIGNAL(currentIndexChanged(QString)),
+    connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
     connect(actionScan_section, SIGNAL(triggered()),
             this, SLOT(updateSezScan()));
@@ -125,9 +135,9 @@ void MainWindow::initObject()
             this, SLOT(updateSezVuln()));
     connect(actionSection_Discover, SIGNAL(triggered()),
             this, SLOT(updateSezDiscover()));
-    connect(hostEdit->lineEdit(), SIGNAL(returnPressed()),
+    connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
-    connect(hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
+    connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
             this, SLOT(updateComboHostnameProperties()));
     // monitor events
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
@@ -166,7 +176,7 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(comboParametersProfiles->currentText(), comboAdv->currentText(), this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(), m_scanWidget->comboAdv->currentText(), this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
@@ -193,7 +203,7 @@ void MainWindow::linkCompleterToHostname()
         m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
         m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
         m_completer.data()->setWrapAround(false);
-        hostEdit->setCompleter(m_completer.data());
+        m_scanWidget->hostEdit->setCompleter(m_completer.data());
     }
 }
 
@@ -201,29 +211,29 @@ void MainWindow::takeHostFromBookmark()
 {
     if (m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()) {
         updateComboHostnameProperties();
-        hostEdit->insertItem(0, m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
+        m_scanWidget->hostEdit->insertItem(0, m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
         startScan();
     }
 }
 
 void MainWindow::quickAddressSelectionEvent()
 {
-    if (comboHostBook->currentIndex()) {
+    if (m_scanWidget->comboHostBook->currentIndex()) {
         updateComboHostnameProperties();
-        hostEdit->insertItem(0, comboHostBook->currentText());
+        m_scanWidget->hostEdit->insertItem(0, m_scanWidget->comboHostBook->currentText());
         // reset comboHostBook to default selection item (index=0)
-        comboHostBook->setCurrentIndex(0);
+        m_scanWidget->comboHostBook->setCurrentIndex(0);
     }
 }
 
 void MainWindow::startScan()
 {
-    if (hostEdit->currentText().isEmpty()) {
+    if (m_scanWidget->hostEdit->currentText().isEmpty()) {
         QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
         return;
     }
 
-    QString hostname = hostEdit->currentText();
+    QString hostname = m_scanWidget->hostEdit->currentText();
     // check wrong address
     hostname = HostTools::clearHost(hostname);
 

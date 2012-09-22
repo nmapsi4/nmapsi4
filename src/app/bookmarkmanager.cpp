@@ -89,16 +89,16 @@ void BookmarkManager::syncSettings()
 
 void BookmarkManager::saveItemToBookmarks()
 {
-    if (m_ui->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty()) {
+    if (m_ui->m_scanWidget->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty()) {
         return;
     }
 
     if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked()) {
-        const QString& currentHost = m_ui->hostEdit->currentText();
+        const QString& currentHost = m_ui->m_scanWidget->hostEdit->currentText();
         // save list of ip/dns in input
         History *history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
-        QStringList hostList = m_ui->hostEdit->currentText().split(' ', QString::KeepEmptyParts);
+        QStringList hostList = m_ui->m_scanWidget->hostEdit->currentText().split(' ', QString::KeepEmptyParts);
 
         foreach(const QString & host, hostList) {
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
@@ -109,7 +109,7 @@ void BookmarkManager::saveItemToBookmarks()
 
         delete history_;
         m_ui->updateComboBook();
-        m_ui->hostEdit->lineEdit()->setText(currentHost);
+        m_ui->m_scanWidget->hostEdit->lineEdit()->setText(currentHost);
     } else {
         const QString& currentHost = m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText();
         History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
@@ -177,7 +177,7 @@ void BookmarkManager::deleteParametersFromBookmark()
 
 void BookmarkManager::startParametersToBookmarksDialog()
 {
-    const QString& parameters = m_ui->comboAdv->currentText();
+    const QString& parameters = m_ui->m_scanWidget->comboAdv->currentText();
 
     if (parameters.isEmpty()) {
         return;
@@ -197,7 +197,7 @@ void BookmarkManager::startParametersToBookmarksDialog()
 
 void BookmarkManager::saveParametersToBookmarks(const QString profileName, const QString profileParameters)
 {
-    if (m_ui->comboAdv->currentText().isEmpty()) {
+    if (m_ui->m_scanWidget->comboAdv->currentText().isEmpty()) {
         return;
     }
 

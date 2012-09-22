@@ -136,13 +136,13 @@ void MainWindow::setDefaultSplitter()
             this, SLOT(resizeHorizontalSplitterEvent()));
 
     m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
-    m_mainHorizontalSplitter->addWidget(frameLeft);
-    m_mainHorizontalSplitter->addWidget(frameCenter);
+    m_mainHorizontalSplitter->addWidget(m_scanWidget->frameLeft);
+    m_mainHorizontalSplitter->addWidget(m_scanWidget->frameCenter);
     m_mainVerticalSplitter->setOrientation(Qt::Vertical);
-    m_mainVerticalSplitter->addWidget(tabWidget);
-    m_mainVerticalSplitter->addWidget(frameRight);
+    m_mainVerticalSplitter->addWidget(m_scanWidget->tabWidget);
+    m_mainVerticalSplitter->addWidget(m_scanWidget->frameRight);
     // insert splitter
-    tabUi->widget(0)->layout()->addWidget(m_mainHorizontalSplitter);
-    frameCenter->layout()->addWidget(m_mainVerticalSplitter);
-    frameCenter->layout()->addWidget(frame_2);
+    m_scanWidget->layout()->addWidget(m_mainHorizontalSplitter);
+    m_scanWidget->frameCenter->layout()->addWidget(m_mainVerticalSplitter);
+    m_scanWidget->frameCenter->layout()->addWidget(m_scanWidget->frame_2);
 }

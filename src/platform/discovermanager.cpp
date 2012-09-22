@@ -305,7 +305,7 @@ void DiscoverManager::scanSingleDiscoveredIp()
 
         foreach(QTreeWidgetItem * item, m_discoverWidget->treeDiscover->selectedItems()) {
             m_ui->updateComboHostnameProperties();
-            m_ui->hostEdit->insertItem(0, item->text(0));
+            m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
         }
     }
@@ -319,7 +319,7 @@ void DiscoverManager::scanAllDiscoveredIps()
 
         foreach(QTreeWidgetItem * item, m_listTreeItemDiscover) {
             m_ui->updateComboHostnameProperties();
-            m_ui->hostEdit->insertItem(0, item->text(0));
+            m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
         }
     }

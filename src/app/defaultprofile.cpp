@@ -113,18 +113,18 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
 
 void MainWindow::loadScanProfile()
 {
-    comboParametersProfiles->clear();
+    m_scanWidget->comboParametersProfiles->clear();
 
     QListIterator< QPair<QString, QString> > i(defaultScanProfile());
     while (i.hasNext()) {
-        comboParametersProfiles->insertItem(comboParametersProfiles->count() + 1, i.next().first);
+        m_scanWidget->comboParametersProfiles->insertItem(m_scanWidget->comboParametersProfiles->count() + 1, i.next().first);
     }
 
-    comboParametersProfiles->insertSeparator(comboParametersProfiles->count() + 1);
+    m_scanWidget->comboParametersProfiles->insertSeparator(m_scanWidget->comboParametersProfiles->count() + 1);
 
     // value from treeWidget parameters
     for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
-        comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
+        m_scanWidget->comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
     }
 
     comboParametersSelectedEvent();
@@ -133,38 +133,38 @@ void MainWindow::loadScanProfile()
 void MainWindow::comboParametersSelectedEvent()
 {
     // insert profile from comboPar to comboAdv
-    int parIndex = comboParametersProfiles->currentIndex();
+    int parIndex = m_scanWidget->comboParametersProfiles->currentIndex();
 
     // if not 0
     QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
-    comboAdv->clear();
+    m_scanWidget->comboAdv->clear();
 
     if (parIndex <= listProfileModel.size()) {
         QListIterator< QPair<QString, QString> > i(defaultScanProfile());
         while (i.hasNext()) {
             QPair<QString, QString> profile = i.next();
-            if (profile.first.contains(comboParametersProfiles->currentText())) {
+            if (profile.first.contains(m_scanWidget->comboParametersProfiles->currentText())) {
                 // call static default profile for check
-                comboAdv->insertItem(0, profile.second);
+                m_scanWidget->comboAdv->insertItem(0, profile.second);
                 break;
             }
         }
     } else {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(comboParametersProfiles->currentText(), Qt::MatchExactly, 1);
-        comboAdv->insertItem(0, resultList_[0]->text(0));
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(), Qt::MatchExactly, 1);
+        m_scanWidget->comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }
 
 void MainWindow::resetComboParameters()
 {
-    comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboParametersSelectedEvent();
 }
 
 QStringList MainWindow::getParameters()
 {
-    return comboAdv->lineEdit()->text().split(' ');
+    return m_scanWidget->comboAdv->lineEdit()->text().split(' ');
 }
 
 bool MainWindow::containsParameter(const QString& parameter)
@@ -174,6 +174,6 @@ bool MainWindow::containsParameter(const QString& parameter)
 
 void MainWindow::updateComboParametersFromList(const QStringList& parameters)
 {
-    comboAdv->clear();
-    comboAdv->insertItem(0, parameters.join(" "));
+    m_scanWidget->comboAdv->clear();
+    m_scanWidget->comboAdv->insertItem(0, parameters.join(" "));
 }
