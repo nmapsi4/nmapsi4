@@ -424,20 +424,17 @@ void MainWindow::resizeScanListWidgetEvent()
         QList<int> size = m_mainHorizontalSplitter->sizes();
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
-        Notify::clearButtonNotify(m_collections->m_collectionsButton.value("scan-list"));
     } else if (m_collections->m_collectionsButton.value("scan-list")->isChecked()
                && !m_mainHorizontalSplitter->sizes()[0]) {
 
         if (!m_scanListWidgetSize.isEmpty()) {
             // restore previous value
             m_mainHorizontalSplitter->restoreState(m_scanListWidgetSize);
-            Notify::setCheckedNotify(m_collections->m_collectionsButton.value("scan-list"));
         } else {
             QList<int> size = m_mainHorizontalSplitter->sizes();
             size[0] = 100; // ratio
             size[1] = 300;
             m_mainHorizontalSplitter->setSizes(size);
-            Notify::setCheckedNotify(m_collections->m_collectionsButton.value("scan-list"));
         }
     }
 }

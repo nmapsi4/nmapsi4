@@ -59,7 +59,7 @@ void MainWindow::updateComboHostnameProperties()
 
 void MainWindow::updateSezScan()
 {
-    Notify::setCheckedNotify(m_collections->m_collectionsButton.value("scan-sez"));
+    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("scan-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
@@ -97,7 +97,7 @@ void MainWindow::updateSezScan()
     tabUi->removeTab(tabUi->indexOf(m_bookmark->m_vulnBookmarkWidget));
 
     // enable scan action
-    toolBarTab->setVisible(true);
+    m_collections->enableScanUiActions();
 
     menu_Bookmaks->setEnabled(true);
     actionAdd_Bookmark->setText(tr("&Add host to bookmark"));
@@ -107,7 +107,7 @@ void MainWindow::updateSezScan()
 
 void MainWindow::updateSezVuln()
 {
-    Notify::setCheckedNotify(m_collections->m_collectionsButton.value("vuln-sez"));
+    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
@@ -132,7 +132,7 @@ void MainWindow::updateSezVuln()
     tabUi->setCurrentIndex(0);
 
     // disable scan action
-    toolBarTab->setVisible(false);
+    m_collections->disableScanUiActions();
 
     menu_Bookmaks->setEnabled(true);
     actionAdd_Bookmark->setText(tr("Add service to &bookmark"));
@@ -142,8 +142,7 @@ void MainWindow::updateSezVuln()
 
 void MainWindow::updateSezDiscover()
 {
-    // SLOT
-    // discover section
+    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
@@ -165,7 +164,7 @@ void MainWindow::updateSezDiscover()
     tabUi->setCurrentIndex(0);
 
     // disable scan action
-    toolBarTab->setVisible(false);
+    m_collections->disableScanUiActions();
 
     menu_Bookmaks->setEnabled(false);
 }

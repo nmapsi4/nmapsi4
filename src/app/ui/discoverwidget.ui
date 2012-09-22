@@ -7,13 +7,16 @@
     <x>0</x>
     <y>0</y>
     <width>635</width>
-    <height>470</height>
+    <height>469</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="margin">
+    <number>2</number>
+   </property>
    <item>
     <widget class="QFrame" name="frameDiscoverTree">
      <property name="frameShape">
@@ -23,6 +26,9 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_9">
+      <property name="margin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QTreeWidget" name="treeDiscover">
         <property name="alternatingRowColors">
@@ -646,6 +652,30 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>treeDiscover</tabstop>
+  <tabstop>discoverProbesCombo</tabstop>
+  <tabstop>tabRightDiscover</tabstop>
+  <tabstop>discoverCIDRFirstSpin</tabstop>
+  <tabstop>discoverCIDRSecondSpin</tabstop>
+  <tabstop>discoverCIDRThirdSpin</tabstop>
+  <tabstop>discoverCIDRFourthSpin</tabstop>
+  <tabstop>discoverCIDRPrefixSizeSpin</tabstop>
+  <tabstop>lineAddressNumber</tabstop>
+  <tabstop>discoverCIDRPasteCombo</tabstop>
+  <tabstop>cidrButton</tabstop>
+  <tabstop>stopDiscoverCidrButton</tabstop>
+  <tabstop>treeTracePackets</tabstop>
+  <tabstop>discoverIpFirstSpin</tabstop>
+  <tabstop>spinBeginDiscover</tabstop>
+  <tabstop>reloadComboDiscover</tabstop>
+  <tabstop>startDiscoverButt</tabstop>
+  <tabstop>stopDiscoverButt</tabstop>
+  <tabstop>comboDiscover</tabstop>
+  <tabstop>discoverIpThreeSpin</tabstop>
+  <tabstop>discoverIpSecondSpin</tabstop>
+  <tabstop>spinEndDiscover</tabstop>
+ </tabstops>
  <resources>
   <include location="../../../mainwin.qrc"/>
  </resources>

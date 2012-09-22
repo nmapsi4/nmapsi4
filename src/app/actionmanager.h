@@ -41,6 +41,8 @@ public:
     void createToolButtonBar();
     void createSectionsBar();
     void createDiscoverBar();
+    void enableScanUiActions();
+    void disableScanUiActions();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
