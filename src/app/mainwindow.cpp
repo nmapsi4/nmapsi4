@@ -22,6 +22,23 @@
 ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
 {
     setupUi(this);
+
+    // set default value in combo editable
+    hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
+    // preload mainwindow info
+    listWscan->setIconSize(QSize(22, 22));
+    listScanError->setIconSize(QSize(22, 22));
+    listScan->setIconSize(QSize(22, 22));
+    treeTraceroot->setIconSize(QSize(22, 22));
+    treeNSS->setIconSize(QSize(22, 22));
+    treeMain->setIconSize(QSize(22, 22));
+    treeLookup->setIconSize(QSize(22, 22));
+    // set tree default settings
+    treeTraceroot->setColumnWidth(1, 100);
+    treeTraceroot->setColumnWidth(2, 200);
+    treeTraceroot->setColumnWidth(3, 200);
+    treeMain->setColumnWidth(0, 200);
 }
 
 MainWindow::MainWindow(QWidget* parent)
@@ -47,18 +64,6 @@ void MainWindow::initObject()
     m_mainTabWidget->setDocumentMode(true);
     centralWidget()->layout()->addWidget(m_mainTabWidget);
 
-    // set default value in combo editable
-    m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    m_scanWidget->hostEdit->insertItem(0, tr("Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"));
-    // preload mainwindow info
-    m_scanWidget->listWscan->setIconSize(QSize(22, 22));
-    m_scanWidget->listScanError->setIconSize(QSize(22, 22));
-    m_scanWidget->listScan->setIconSize(QSize(22, 22));
-    m_scanWidget->treeTraceroot->setIconSize(QSize(22, 22));
-    m_scanWidget->treeNSS->setIconSize(QSize(22, 22));
-    m_scanWidget->treeMain->setIconSize(QSize(22, 22));
-    m_scanWidget->treeLookup->setIconSize(QSize(22, 22));
-
     // declare and restore items from bookmark
     m_bookmark = new BookmarkManager(this);
     m_bookmark->restoreAllHistoryValues();
@@ -83,11 +88,6 @@ void MainWindow::initObject()
     actionAdd_vulnerability_search_url->setVisible(false);
     syncSettings();
 
-    // set tree default settings
-    m_scanWidget->treeTraceroot->setColumnWidth(1, 100);
-    m_scanWidget->treeTraceroot->setColumnWidth(2, 200);
-    m_scanWidget->treeTraceroot->setColumnWidth(3, 200);
-    m_scanWidget->treeMain->setColumnWidth(0, 200);
     // create mainwindow Qsplitter
     setDefaultSplitter();
     // restore saved settings
