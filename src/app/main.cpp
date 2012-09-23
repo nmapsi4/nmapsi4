@@ -20,6 +20,7 @@
 #include <QtGui/QApplication>
 #include <QtCore/QTranslator>
 #include <QtCore/QDir>
+#include <QtCore/QLibraryInfo>
 
 #include <config.h>
 #include "mainwindow.h"
@@ -27,36 +28,26 @@
 
 int main(int argc, char *argv[])
 {
-    Q_INIT_RESOURCE(mainwin);
     QApplication app(argc, argv);
 
-    QString locale = QLocale::system().name();
-    QString localeComplete;
-    localeComplete.append("nmapsi4_");
+    QTranslator qtTranslator;
+    qtTranslator.load("qt_" + QLocale::system().name(),
+             QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    app.installTranslator(&qtTranslator);
 
-    if (locale.contains("pt")) {
-        locale.resize(5);
-    } else {
-        locale.resize(2);
-    }
-
-    localeComplete.append(locale);
-
-    QTranslator translator;
-    bool tmp_translator;
-    QString urlTranslate;
+    QString translationsPath;
 
 #ifndef Q_WS_WIN
-    urlTranslate = __LinuxTranslateUrl__;
+    translationsPath = TRANSLATIONS_PATH;
 #else
-    urlTranslate = QDir::rootPath();
-    urlTranslate.append(QDir::toNativeSeparators("program files/nmapsi4/"));
+    translationsPath.append(QDir::rootPath() + QDir::toNativeSeparators("program files/nmapsi4/"));
 #endif
 
-    tmp_translator = translator.load(localeComplete, urlTranslate);
+    QTranslator translator;
+    bool translatorResult = translator.load("nmapsi4_" + QLocale::system().name(), translationsPath);
 
-    if (tmp_translator == false) {
-        tmp_translator = translator.load(localeComplete, QDir::currentPath());
+    if (translatorResult == false) {
+        translatorResult = translator.load("nmapsi4_" + QLocale::system().name(), QDir::currentPath());
     }
 
     app.installTranslator(&translator);
