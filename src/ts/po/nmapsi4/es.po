@@ -945,57 +945,46 @@ msgctxt "ScanWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Clear"
 msgstr "Limpia"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Save Profile"
 msgstr "Guardar Perfil"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Os"
 msgstr "OS"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Host(s)"
 msgstr "Host(s)"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Scan log parameters"
 msgstr "Log de parámetros de escaneo"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Host Details"
 msgstr "Detalles del host"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) with info"
 msgstr "Servicio(s) con información"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Description"
 msgstr "Descripción"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Service"
 msgstr "Servicio"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "State"
 msgstr "Estado"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Port"
 msgstr "Puerto"
@@ -1004,7 +993,6 @@ msgctxt "ScanWidgetForm|"
 msgid "Service(s) Details"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Nss script result"
 msgstr "Resultado del script NSS"
@@ -1013,12 +1001,10 @@ msgctxt "ScanWidgetForm|"
 msgid "Nse result"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Log(s)"
 msgstr "Log(s)"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Error(s)"
 msgstr "Error(es)"
@@ -1027,32 +1013,26 @@ msgctxt "ScanWidgetForm|"
 msgid "Raw scan log"
 msgstr ""
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Lookup"
 msgstr "Lookup"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "DNS"
 msgstr "DNS"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "IP"
 msgstr "IP"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "RTT"
 msgstr "RTT"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Hop(s)"
 msgstr "Salto(s)"
 
-#, fuzzy
 msgctxt "ScanWidgetForm|"
 msgid "Traceroute"
 msgstr "Traceroute"

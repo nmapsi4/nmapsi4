@@ -940,47 +940,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Limpia</translation>
+        <translation>Limpia</translation>
     </message>
     <message>
         <source>Save Profile</source>
-        <translation type="unfinished">Guardar Perfil</translation>
+        <translation>Guardar Perfil</translation>
     </message>
     <message>
         <source>Os</source>
-        <translation type="unfinished">OS</translation>
+        <translation>OS</translation>
     </message>
     <message>
         <source>Host(s)</source>
-        <translation type="unfinished">Host(s)</translation>
+        <translation>Host(s)</translation>
     </message>
     <message>
         <source>Scan log parameters</source>
-        <translation type="unfinished">Log de parámetros de escaneo</translation>
+        <translation>Log de parámetros de escaneo</translation>
     </message>
     <message>
         <source>Host Details</source>
-        <translation type="unfinished">Detalles del host</translation>
+        <translation>Detalles del host</translation>
     </message>
     <message>
         <source>Service(s) with info</source>
-        <translation type="unfinished">Servicio(s) con información</translation>
+        <translation>Servicio(s) con información</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Descripción</translation>
+        <translation>Descripción</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished">Servicio</translation>
+        <translation>Servicio</translation>
     </message>
     <message>
         <source>State</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished">Puerto</translation>
+        <translation>Puerto</translation>
     </message>
     <message>
         <source>Service(s) Details</source>
@@ -988,7 +988,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nss script result</source>
-        <translation type="unfinished">Resultado del script NSS</translation>
+        <translation>Resultado del script NSS</translation>
     </message>
     <message>
         <source>Nse result</source>
@@ -996,11 +996,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Log(s)</source>
-        <translation type="unfinished">Log(s)</translation>
+        <translation>Log(s)</translation>
     </message>
     <message>
         <source>Error(s)</source>
-        <translation type="unfinished">Error(es)</translation>
+        <translation>Error(es)</translation>
     </message>
     <message>
         <source>Raw scan log</source>
@@ -1008,27 +1008,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lookup</source>
-        <translation type="unfinished">Lookup</translation>
+        <translation>Lookup</translation>
     </message>
     <message>
         <source>DNS</source>
-        <translation type="unfinished">DNS</translation>
+        <translation>DNS</translation>
     </message>
     <message>
         <source>IP</source>
-        <translation type="unfinished">IP</translation>
+        <translation>IP</translation>
     </message>
     <message>
         <source>RTT</source>
-        <translation type="unfinished">RTT</translation>
+        <translation>RTT</translation>
     </message>
     <message>
         <source>Hop(s)</source>
-        <translation type="unfinished">Salto(s)</translation>
+        <translation>Salto(s)</translation>
     </message>
     <message>
         <source>Traceroute</source>
-        <translation type="unfinished">Traceroute</translation>
+        <translation>Traceroute</translation>
     </message>
 </context>
 <context>
