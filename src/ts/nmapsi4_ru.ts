@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="ru_RU">
-    <extra-po-header-po_revision_date>2012-09-20 23:33+0200</extra-po-header-po_revision_date>
-    <extra-po-headers>MIME-Version,Content-Type,Content-Transfer-Encoding,X-Qt-Contexts,Last-Translator,PO-Revision-Date,Project-Id-Version,Language-Team,Language,Plural-Forms,X-Generator</extra-po-headers>
-    <extra-po-header-x_generator>Lokalize 1.4</extra-po-header-x_generator>
-    <extra-po-header-language_team>American English &lt;kde-i18n-doc@kde.org&gt;</extra-po-header-language_team>
-    <extra-po-header-project_id_version></extra-po-header-project_id_version>
-    <extra-po-header-language>en_US</extra-po-header-language>
-    <extra-po-header_comment># Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;, 2012.</extra-po-header_comment>
-    <extra-po-header-last_translator>Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;</extra-po-header-last_translator>
 <context>
     <name>AboutUi</name>
     <message>
@@ -106,15 +98,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Host List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show/Hide Host List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -183,6 +167,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Load IP list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide host list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -311,10 +303,6 @@ p, li { white-space: pre-wrap; }
         <translation>Закладка</translation>
     </message>
     <message>
-        <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Quick Scan</source>
         <translation>Быстрое сканирование</translation>
     </message>
@@ -341,7 +329,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Hostname already scanning
@@ -449,7 +437,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clear History</source>
-        <translation>&amp;Очистить журнал команд</translation>
+        <translation>Очистить журнал команд</translation>
     </message>
     <message>
         <source>Close Tree</source>
@@ -576,102 +564,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>Save Profile</source>
-        <translation>Сохранить профиль</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Описание</translation>
-    </message>
-    <message>
-        <source>Service</source>
-        <translation>Служба</translation>
-    </message>
-    <message>
-        <source>State</source>
-        <translation>Состояние</translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation>Порт</translation>
-    </message>
-    <message>
-        <source>Nss script result</source>
-        <translation>Результаты сценария Nss</translation>
-    </message>
-    <message>
-        <source>Service(s) Details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host(s)</source>
-        <translation>Узел(ы)</translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
-        <source>DNS</source>
-        <translation>DNS</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>IP</translation>
-    </message>
-    <message>
-        <source>RTT</source>
-        <translation>RTT</translation>
-    </message>
-    <message>
-        <source>Hop(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Traceroute</source>
-        <translation>Трассировка</translation>
-    </message>
-    <message>
-        <source>Host Details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Service(s) with info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nse result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Os</source>
-        <translation>ОС</translation>
-    </message>
-    <message>
-        <source>Scan log parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan host(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Log(s)</source>
-        <translation>События</translation>
-    </message>
-    <message>
-        <source>Error(s)</source>
-        <translation>Ошибка(и)</translation>
-    </message>
-    <message>
-        <source>Raw scan log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>Ф&amp;айл</translation>
     </message>
@@ -759,7 +651,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>No description</source>
@@ -889,7 +781,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Please, first insert a Decoy
@@ -955,7 +847,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Warning: Operation more expansive.
@@ -1028,6 +920,112 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Parameters List</source>
         <translation>Список параметров</translation>
+    </message>
+</context>
+<context>
+    <name>ScanWidget</name>
+    <message>
+        <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScanWidgetForm</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистить</translation>
+    </message>
+    <message>
+        <source>Save Profile</source>
+        <translation>Сохранить профиль</translation>
+    </message>
+    <message>
+        <source>Os</source>
+        <translation>ОС</translation>
+    </message>
+    <message>
+        <source>Host(s)</source>
+        <translation>Узел(ы)</translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Service(s) with info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
+    </message>
+    <message>
+        <source>Service</source>
+        <translation>Служба</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Состояние</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <source>Service(s) Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nss script result</source>
+        <translation>Результаты сценария Nss</translation>
+    </message>
+    <message>
+        <source>Nse result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log(s)</source>
+        <translation>События</translation>
+    </message>
+    <message>
+        <source>Error(s)</source>
+        <translation>Ошибка(и)</translation>
+    </message>
+    <message>
+        <source>Raw scan log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Поиск</translation>
+    </message>
+    <message>
+        <source>DNS</source>
+        <translation>DNS</translation>
+    </message>
+    <message>
+        <source>IP</source>
+        <translation>IP</translation>
+    </message>
+    <message>
+        <source>RTT</source>
+        <translation>RTT</translation>
+    </message>
+    <message>
+        <source>Hop(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Traceroute</source>
+        <translation>Трассировка</translation>
     </message>
 </context>
 <context>
@@ -1137,7 +1135,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -1187,7 +1185,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -1206,7 +1204,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Close</source>
-        <translation>&amp;Закрыть</translation>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>

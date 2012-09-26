@@ -1,4 +1,3 @@
-# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
@@ -7,12 +6,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Language: cs_CZ\n"
 "X-Qt-Contexts: true\n"
-"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
-"PO-Revision-Date: 2012-09-20 23:22+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
-"X-Generator: Lokalize 1.4\n"
 
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
@@ -165,16 +158,8 @@ msgid "Check Vulnerabilities"
 msgstr "Prověřit zranitelnosti"
 
 msgctxt "ActionManager|"
-msgid "Host List"
-msgstr ""
-
-msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
-
-msgctxt "ActionManager|"
-msgid "Host Details"
-msgstr "Podrobnosti o serveru"
 
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
@@ -242,6 +227,14 @@ msgstr ""
 
 msgctxt "ActionManager|"
 msgid "Load IP list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Show/Hide host list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Show/Hide host details"
 msgstr ""
 
 msgctxt "DiscoverManager|"
@@ -359,10 +352,6 @@ msgstr "Záložky"
 msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr "Prohledat parametry zápisů"
-
-msgctxt "MainWindow|"
-msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
-msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Quick Scan"
@@ -620,102 +609,6 @@ msgstr ""
 
 msgctxt "MainWindowClass|"
 msgid "Add vulnerability search url"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Clear"
-msgstr "Smazat"
-
-msgctxt "MainWindowClass|"
-msgid "Save Profile"
-msgstr "Uložit profil"
-
-msgctxt "MainWindowClass|"
-msgid "Description"
-msgstr "Popis"
-
-msgctxt "MainWindowClass|"
-msgid "Service"
-msgstr "Služba"
-
-msgctxt "MainWindowClass|"
-msgid "State"
-msgstr "Stav"
-
-msgctxt "MainWindowClass|"
-msgid "Port"
-msgstr "Přípojka"
-
-msgctxt "MainWindowClass|"
-msgid "Nss script result"
-msgstr "Výsledek skriptu NSS"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) Details"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Host(s)"
-msgstr "Server"
-
-msgctxt "MainWindowClass|"
-msgid "Lookup"
-msgstr "Vyhledávání"
-
-msgctxt "MainWindowClass|"
-msgid "DNS"
-msgstr "DNS"
-
-msgctxt "MainWindowClass|"
-msgid "IP"
-msgstr "IP"
-
-msgctxt "MainWindowClass|"
-msgid "RTT"
-msgstr "RTT"
-
-msgctxt "MainWindowClass|"
-msgid "Hop(s)"
-msgstr "Poskočení"
-
-msgctxt "MainWindowClass|"
-msgid "Traceroute"
-msgstr "Sledování směrování na síti"
-
-msgctxt "MainWindowClass|"
-msgid "Host Details"
-msgstr "Podrobnosti o serveru"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) with info"
-msgstr "Služba(y) s informacemi"
-
-msgctxt "MainWindowClass|"
-msgid "Nse result"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Os"
-msgstr "OS"
-
-msgctxt "MainWindowClass|"
-msgid "Scan log parameters"
-msgstr "Prohledat parametry zápisů"
-
-msgctxt "MainWindowClass|"
-msgid "Scan host(s)"
-msgstr "Prohledat server(y)"
-
-msgctxt "MainWindowClass|"
-msgid "Log(s)"
-msgstr "Zápis(y)"
-
-msgctxt "MainWindowClass|"
-msgid "Error(s)"
-msgstr "Chyba(y)"
-
-msgctxt "MainWindowClass|"
-msgid "Raw scan log"
 msgstr ""
 
 msgctxt "MainWindowClass|"
@@ -1046,6 +939,106 @@ msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Seznam pomocných proměnných"
 
+msgctxt "ScanWidget|"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Form"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Clear"
+msgstr "Smazat"
+
+msgctxt "ScanWidgetForm|"
+msgid "Save Profile"
+msgstr "Uložit profil"
+
+msgctxt "ScanWidgetForm|"
+msgid "Os"
+msgstr "OS"
+
+msgctxt "ScanWidgetForm|"
+msgid "Host(s)"
+msgstr "Server"
+
+msgctxt "ScanWidgetForm|"
+msgid "Scan log parameters"
+msgstr "Prohledat parametry zápisů"
+
+msgctxt "ScanWidgetForm|"
+msgid "Host Details"
+msgstr "Podrobnosti o serveru"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) with info"
+msgstr "Služba(y) s informacemi"
+
+msgctxt "ScanWidgetForm|"
+msgid "Description"
+msgstr "Popis"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service"
+msgstr "Služba"
+
+msgctxt "ScanWidgetForm|"
+msgid "State"
+msgstr "Stav"
+
+msgctxt "ScanWidgetForm|"
+msgid "Port"
+msgstr "Přípojka"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) Details"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Nss script result"
+msgstr "Výsledek skriptu NSS"
+
+msgctxt "ScanWidgetForm|"
+msgid "Nse result"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Log(s)"
+msgstr "Zápis(y)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Error(s)"
+msgstr "Chyba(y)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Raw scan log"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Lookup"
+msgstr "Vyhledávání"
+
+msgctxt "ScanWidgetForm|"
+msgid "DNS"
+msgstr "DNS"
+
+msgctxt "ScanWidgetForm|"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "ScanWidgetForm|"
+msgid "RTT"
+msgstr "RTT"
+
+msgctxt "ScanWidgetForm|"
+msgid "Hop(s)"
+msgstr "Poskočení"
+
+msgctxt "ScanWidgetForm|"
+msgid "Traceroute"
+msgstr "Sledování směrování na síti"
+
 msgctxt "Utilities|"
 msgid "Select the file"
 msgstr "Vyberte soubor"
@@ -1203,7 +1196,7 @@ msgstr "Podrobnosti o postupu prohledávání"
 
 msgctxt "monitorDetails|"
 msgid "Hostname:"
-msgstr "Jméno hostitelského počítače"
+msgstr "Jméno hostitelského počítače:"
 
 msgctxt "monitorDetails|"
 msgid "Reload"
@@ -1576,4 +1569,3 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
-

@@ -1,4 +1,3 @@
-# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
@@ -8,12 +7,6 @@ msgstr ""
 "X-Language: it_IT\n"
 "X-Source-Language: en\n"
 "X-Qt-Contexts: true\n"
-"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
-"PO-Revision-Date: 2012-09-20 23:20+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
-"X-Generator: Lokalize 1.4\n"
 
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
@@ -166,16 +159,8 @@ msgid "Check Vulnerabilities"
 msgstr "Controlla vulnerabilità"
 
 msgctxt "ActionManager|"
-msgid "Host List"
-msgstr ""
-
-msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
-
-msgctxt "ActionManager|"
-msgid "Host Details"
-msgstr "Dettagli host"
 
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
@@ -245,17 +230,25 @@ msgctxt "ActionManager|"
 msgid "Load IP list"
 msgstr ""
 
+msgctxt "ActionManager|"
+msgid "Show/Hide host list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Show/Hide host details"
+msgstr ""
+
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr "è attivo"
 
 msgctxt "DiscoverManager|"
 msgid "Save IP list"
-msgstr ""
+msgstr "Salva lista IP"
 
 msgctxt "DiscoverManager|"
 msgid "Load IP list"
-msgstr ""
+msgstr "Carica lista IP"
 
 msgctxt "DiscoverWidgetForm|"
 msgid "Form"
@@ -360,10 +353,6 @@ msgstr "Parametri di scansione"
 msgctxt "MainWindow|"
 msgid "Bookmarks"
 msgstr "Segnalibri"
-
-msgctxt "MainWindow|"
-msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
-msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Quick Scan"
@@ -619,102 +608,6 @@ msgstr ""
 
 msgctxt "MainWindowClass|"
 msgid "Add vulnerability search url"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Clear"
-msgstr "Pulisci"
-
-msgctxt "MainWindowClass|"
-msgid "Save Profile"
-msgstr "Salva profilo"
-
-msgctxt "MainWindowClass|"
-msgid "Description"
-msgstr "Descrizione"
-
-msgctxt "MainWindowClass|"
-msgid "Service"
-msgstr "Servizio"
-
-msgctxt "MainWindowClass|"
-msgid "State"
-msgstr "Stato"
-
-msgctxt "MainWindowClass|"
-msgid "Port"
-msgstr "Porta"
-
-msgctxt "MainWindowClass|"
-msgid "Nss script result"
-msgstr "Risultati script NSS"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) Details"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Host(s)"
-msgstr "Host"
-
-msgctxt "MainWindowClass|"
-msgid "Lookup"
-msgstr "Lookup"
-
-msgctxt "MainWindowClass|"
-msgid "DNS"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "IP"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "RTT"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Hop(s)"
-msgstr "Hop"
-
-msgctxt "MainWindowClass|"
-msgid "Traceroute"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Host Details"
-msgstr "Dettagli host"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) with info"
-msgstr "Servizi(o) con informazioni"
-
-msgctxt "MainWindowClass|"
-msgid "Nse result"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Os"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Scan log parameters"
-msgstr "Parametri di scansione"
-
-msgctxt "MainWindowClass|"
-msgid "Scan host(s)"
-msgstr "Scansione host"
-
-msgctxt "MainWindowClass|"
-msgid "Log(s)"
-msgstr "Log"
-
-msgctxt "MainWindowClass|"
-msgid "Error(s)"
-msgstr "Errori"
-
-msgctxt "MainWindowClass|"
-msgid "Raw scan log"
 msgstr ""
 
 msgctxt "MainWindowClass|"
@@ -1044,6 +937,106 @@ msgstr "Nome profilo"
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Elenco parametri"
+
+msgctxt "ScanWidget|"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Form"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Clear"
+msgstr "Pulisci"
+
+msgctxt "ScanWidgetForm|"
+msgid "Save Profile"
+msgstr "Salva profilo"
+
+msgctxt "ScanWidgetForm|"
+msgid "Os"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Host(s)"
+msgstr "Host"
+
+msgctxt "ScanWidgetForm|"
+msgid "Scan log parameters"
+msgstr "Parametri di scansione"
+
+msgctxt "ScanWidgetForm|"
+msgid "Host Details"
+msgstr "Dettagli host"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) with info"
+msgstr "Servizi(o) con informazioni"
+
+msgctxt "ScanWidgetForm|"
+msgid "Description"
+msgstr "Descrizione"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service"
+msgstr "Servizio"
+
+msgctxt "ScanWidgetForm|"
+msgid "State"
+msgstr "Stato"
+
+msgctxt "ScanWidgetForm|"
+msgid "Port"
+msgstr "Porta"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) Details"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Nss script result"
+msgstr "Risultati script NSS"
+
+msgctxt "ScanWidgetForm|"
+msgid "Nse result"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Log(s)"
+msgstr "Log"
+
+msgctxt "ScanWidgetForm|"
+msgid "Error(s)"
+msgstr "Errori"
+
+msgctxt "ScanWidgetForm|"
+msgid "Raw scan log"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Lookup"
+msgstr "Lookup"
+
+msgctxt "ScanWidgetForm|"
+msgid "DNS"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "IP"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "RTT"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Hop(s)"
+msgstr "Hop"
+
+msgctxt "ScanWidgetForm|"
+msgid "Traceroute"
+msgstr ""
 
 msgctxt "Utilities|"
 msgid "Select the file"
@@ -1575,4 +1568,3 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
-

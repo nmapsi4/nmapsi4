@@ -1,19 +1,11 @@
-# Francesco Cecconi <francesco.cecconi@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==11 || n/1000==11 || "
-"n/1000000==11 || n/1000000000==11) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==11 || n/1000==11 || n/1000000==11 || n/1000000000==11) ? 1 : 2);\n"
 "X-Language: ca_ES\n"
 "X-Qt-Contexts: true\n"
-"Last-Translator: Francesco Cecconi <francesco.cecconi@gmail.com>\n"
-"PO-Revision-Date: 2012-09-20 23:16+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
-"X-Generator: Lokalize 1.4\n"
 
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
@@ -174,16 +166,8 @@ msgid "Check Vulnerabilities"
 msgstr "Comprova vulnerabilitats"
 
 msgctxt "ActionManager|"
-msgid "Host List"
-msgstr "Llista de màquines"
-
-msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr "Mostra/amaga la llista de màquines"
-
-msgctxt "ActionManager|"
-msgid "Host Details"
-msgstr "Detalls de la màquina"
 
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
@@ -251,6 +235,14 @@ msgstr ""
 
 msgctxt "ActionManager|"
 msgid "Load IP list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Show/Hide host list"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Show/Hide host details"
 msgstr ""
 
 msgctxt "DiscoverManager|"
@@ -335,7 +327,7 @@ msgstr "Rang d'IPs (IPv4)"
 
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
-msgstr "Interfícies locals"
+msgstr "Interfícies locals:"
 
 msgctxt "DiscoverWidgetForm|"
 msgid "Reload Interfaces"
@@ -432,10 +424,6 @@ msgstr "<b>Encara hi ha escanejos actius.</b>"
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr "Voleu tancar Nmpasi4 de totes maneres?"
-
-msgctxt "MainWindow|"
-msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
-msgstr "Màquines a escanejar (IP/DNS o incremental - ex. 192.168.1.1/20)"
 
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
@@ -630,108 +618,12 @@ msgid "Add vulnerability search url"
 msgstr ""
 
 msgctxt "MainWindowClass|"
-msgid "Clear"
-msgstr "Neteja"
-
-msgctxt "MainWindowClass|"
-msgid "Save Profile"
-msgstr "Desa el perfil"
-
-msgctxt "MainWindowClass|"
-msgid "Host Details"
-msgstr "Detalls de la màquina"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) with info"
-msgstr "Servei(s) amb informació"
-
-msgctxt "MainWindowClass|"
-msgid "Description"
-msgstr "Descripció"
-
-msgctxt "MainWindowClass|"
-msgid "Service"
-msgstr "Servei"
-
-msgctxt "MainWindowClass|"
-msgid "State"
-msgstr "Estat"
-
-msgctxt "MainWindowClass|"
-msgid "Port"
-msgstr "Port"
-
-msgctxt "MainWindowClass|"
-msgid "Service(s) Details"
-msgstr "Detalls del(s) servei(s)"
-
-msgctxt "MainWindowClass|"
-msgid "Nss script result"
-msgstr "Resultat de l'script NSS"
-
-msgctxt "MainWindowClass|"
-msgid "Nse result"
-msgstr "Resultat NSE"
-
-msgctxt "MainWindowClass|"
-msgid "Log(s)"
-msgstr "Registre(s)"
-
-msgctxt "MainWindowClass|"
-msgid "Error(s)"
-msgstr "Error(s)"
-
-msgctxt "MainWindowClass|"
-msgid "Raw scan log"
-msgstr "Registre de l'escaneig en brut"
-
-msgctxt "MainWindowClass|"
-msgid "Host(s)"
-msgstr "Màquina/es"
-
-msgctxt "MainWindowClass|"
-msgid "Lookup"
-msgstr "Cerca"
-
-msgctxt "MainWindowClass|"
-msgid "DNS"
-msgstr "DNS"
-
-msgctxt "MainWindowClass|"
-msgid "IP"
-msgstr "IP"
-
-msgctxt "MainWindowClass|"
-msgid "RTT"
-msgstr "RTT"
-
-msgctxt "MainWindowClass|"
-msgid "Hop(s)"
-msgstr "Salt(s)"
-
-msgctxt "MainWindowClass|"
-msgid "Traceroute"
-msgstr "Traceroute"
-
-msgctxt "MainWindowClass|"
-msgid "Os"
-msgstr "SO"
-
-msgctxt "MainWindowClass|"
-msgid "Scan log parameters"
-msgstr "Paràmetres del registre d'escaneig"
-
-msgctxt "MainWindowClass|"
-msgid "Scan host(s)"
-msgstr "Escaneja les màquines"
-
-msgctxt "MainWindowClass|"
 msgid "&File"
 msgstr "&Fitxer"
 
 msgctxt "MainWindowClass|"
 msgid "&View"
-msgstr "&Vista:"
+msgstr "&Vista"
 
 msgctxt "MainWindowClass|"
 msgid "&Bookmarks"
@@ -979,7 +871,7 @@ msgstr "Advertència - Nmapsi4"
 
 msgctxt "ProfilerManager|"
 msgid "Insert profile name."
-msgstr "Inseriu el nom del perfil"
+msgstr "Inseriu el nom del perfil."
 
 msgctxt "ProfilerManager|"
 msgid "Close"
@@ -1052,6 +944,106 @@ msgstr "Nom del perfil"
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr "Llista de paràmetres"
+
+msgctxt "ScanWidget|"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr "Màquines a escanejar (IP/DNS o incremental - ex. 192.168.1.1/20)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Form"
+msgstr ""
+
+msgctxt "ScanWidgetForm|"
+msgid "Clear"
+msgstr "Neteja"
+
+msgctxt "ScanWidgetForm|"
+msgid "Save Profile"
+msgstr "Desa el perfil"
+
+msgctxt "ScanWidgetForm|"
+msgid "Os"
+msgstr "SO"
+
+msgctxt "ScanWidgetForm|"
+msgid "Host(s)"
+msgstr "Màquina/es"
+
+msgctxt "ScanWidgetForm|"
+msgid "Scan log parameters"
+msgstr "Paràmetres del registre d'escaneig"
+
+msgctxt "ScanWidgetForm|"
+msgid "Host Details"
+msgstr "Detalls de la màquina"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) with info"
+msgstr "Servei(s) amb informació"
+
+msgctxt "ScanWidgetForm|"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service"
+msgstr "Servei"
+
+msgctxt "ScanWidgetForm|"
+msgid "State"
+msgstr "Estat"
+
+msgctxt "ScanWidgetForm|"
+msgid "Port"
+msgstr "Port"
+
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) Details"
+msgstr "Detalls del(s) servei(s)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Nss script result"
+msgstr "Resultat de l'script NSS"
+
+msgctxt "ScanWidgetForm|"
+msgid "Nse result"
+msgstr "Resultat NSE"
+
+msgctxt "ScanWidgetForm|"
+msgid "Log(s)"
+msgstr "Registre(s)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Error(s)"
+msgstr "Error(s)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Raw scan log"
+msgstr "Registre de l'escaneig en brut"
+
+msgctxt "ScanWidgetForm|"
+msgid "Lookup"
+msgstr "Cerca"
+
+msgctxt "ScanWidgetForm|"
+msgid "DNS"
+msgstr "DNS"
+
+msgctxt "ScanWidgetForm|"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "ScanWidgetForm|"
+msgid "RTT"
+msgstr "RTT"
+
+msgctxt "ScanWidgetForm|"
+msgid "Hop(s)"
+msgstr "Salt(s)"
+
+msgctxt "ScanWidgetForm|"
+msgid "Traceroute"
+msgstr "Traceroute"
 
 msgctxt "Utilities|"
 msgid "Select the file"
@@ -1257,7 +1249,7 @@ msgstr "Nom del perfil: "
 
 msgctxt "profilerDialog|"
 msgid "Profile parameters:"
-msgstr "Paràmetres del perfil"
+msgstr "Paràmetres del perfil:"
 
 msgctxt "profilerDialog|"
 msgid "Base options:"
@@ -1289,7 +1281,7 @@ msgstr "Escombrat de pings (-sP)"
 
 msgctxt "profilerDialog|"
 msgid "TCP scan:"
-msgstr "Escaneig TCP"
+msgstr "Escaneig TCP:"
 
 msgctxt "profilerDialog|"
 msgid "Non-TCP scans:"
@@ -1325,7 +1317,7 @@ msgstr "Temporització embogida (-T5)"
 
 msgctxt "profilerDialog|"
 msgid "Timing Template:"
-msgstr "Perfil de temporització"
+msgstr "Perfil de temporització:"
 
 msgctxt "profilerDialog|"
 msgid "RPC Scan (-sR)"
@@ -1607,4 +1599,3 @@ msgstr ""
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""
-

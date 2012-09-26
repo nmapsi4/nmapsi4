@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby1.8
 # Francesco Cecconi francesco dot cecconi at gmail dot com
 # convert ts template file to po file
 # Required: ts2po tool

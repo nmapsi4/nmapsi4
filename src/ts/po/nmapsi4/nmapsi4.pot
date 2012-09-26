@@ -150,295 +150,290 @@ msgctxt "AboutUi|"
 msgid "Version "
 msgstr ""
 
-#: ../../app/actionmanager.cpp:47 ../../app/actionmanager.cpp:48
+#: ../../app/actionmanager.cpp:55 ../../app/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Scan host(s)"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:58 ../../app/actionmanager.cpp:59
+#: ../../app/actionmanager.cpp:63 ../../app/actionmanager.cpp:64
 msgctxt "ActionManager|"
 msgid "Network Discover"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:69
+#: ../../app/actionmanager.cpp:71
 msgctxt "ActionManager|"
 msgid "Vulnerability"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:70
+#: ../../app/actionmanager.cpp:72
 msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr ""
 
 #: ../../app/actionmanager.cpp:82
 msgctxt "ActionManager|"
-msgid "Host List"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:83
-msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:94
-msgctxt "ActionManager|"
-msgid "Host Details"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:95
+#: ../../app/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:113
+#: ../../app/actionmanager.cpp:102
 msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:117
+#: ../../app/actionmanager.cpp:106
 msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:133
+#: ../../app/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:147
+#: ../../app/actionmanager.cpp:136
 msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:151
+#: ../../app/actionmanager.cpp:140
 msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:168
+#: ../../app/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Check Vulnerability"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:181
+#: ../../app/actionmanager.cpp:170
 msgctxt "ActionManager|"
 msgid "Remove url"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:195
+#: ../../app/actionmanager.cpp:184
 msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:282
+#: ../../app/actionmanager.cpp:271
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:289
+#: ../../app/actionmanager.cpp:278
 msgctxt "ActionManager|"
 msgid "Scan selected IP/s"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:297
+#: ../../app/actionmanager.cpp:286
 msgctxt "ActionManager|"
 msgid "Scan all discovered IP/s"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:309
+#: ../../app/actionmanager.cpp:298
 msgctxt "ActionManager|"
 msgid "Save IP list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:317
+#: ../../app/actionmanager.cpp:306
 msgctxt "ActionManager|"
 msgid "Load IP list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:227
+#: ../../app/actionmanager.cpp:216
 msgctxt "ActionManager|"
 msgid "Profile"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:241
+#: ../../app/actionmanager.cpp:81
+msgctxt "ActionManager|"
+msgid "Show/Hide host list"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:89
+msgctxt "ActionManager|"
+msgid "Show/Hide host details"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:230
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:256
+#: ../../app/actionmanager.cpp:245
 msgctxt "ActionManager|"
 msgid "Bookmark"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:238
+#: ../../platform/discovermanager.cpp:242
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:534
+#: ../../platform/discovermanager.cpp:538
 msgctxt "DiscoverManager|"
 msgid "Save IP list"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:552
+#: ../../platform/discovermanager.cpp:556
 msgctxt "DiscoverManager|"
 msgid "Load IP list"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:496
+#: ../../../build/src/ui_discoverwidget.h:519
 msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:498
+#: ../../../build/src/ui_discoverwidget.h:521
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:499
+#: ../../../build/src/ui_discoverwidget.h:522
 msgctxt "DiscoverWidgetForm|"
 msgid "Discovered IP/s"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:501
+#: ../../../build/src/ui_discoverwidget.h:524
 msgctxt "DiscoverWidgetForm|"
 msgid "Packets trace"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:502
+#: ../../../build/src/ui_discoverwidget.h:525
 msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:503
+#: ../../../build/src/ui_discoverwidget.h:526
 msgctxt "DiscoverWidgetForm|"
 msgid "Probes Modes:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:504
+#: ../../../build/src/ui_discoverwidget.h:527
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation (IPv4)"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:505
+#: ../../../build/src/ui_discoverwidget.h:528
 msgctxt "DiscoverWidgetForm|"
 msgid "Selected your CIDR address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:506
+#: ../../../build/src/ui_discoverwidget.h:529
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:507
+#: ../../../build/src/ui_discoverwidget.h:530
 msgctxt "DiscoverWidgetForm|"
 msgid "Prefix Size:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:508
+#: ../../../build/src/ui_discoverwidget.h:531
 msgctxt "DiscoverWidgetForm|"
 msgid "Number of IP:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:509
+#: ../../../build/src/ui_discoverwidget.h:532
 msgctxt "DiscoverWidgetForm|"
 msgid "Or you can paste CIDR address below:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:510
+#: ../../../build/src/ui_discoverwidget.h:533
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:511
+#: ../../../build/src/ui_discoverwidget.h:534
 msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:512
-#: ../../../build/src/ui_discoverwidget.h:524
+#: ../../../build/src/ui_discoverwidget.h:535
+#: ../../../build/src/ui_discoverwidget.h:547
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:513
+#: ../../../build/src/ui_discoverwidget.h:536
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation address"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:514
+#: ../../../build/src/ui_discoverwidget.h:537
 msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:515
+#: ../../../build/src/ui_discoverwidget.h:538
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:517
+#: ../../../build/src/ui_discoverwidget.h:540
 msgctxt "DiscoverWidgetForm|"
 msgid "Reload Interfaces"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:520
+#: ../../../build/src/ui_discoverwidget.h:543
 msgctxt "DiscoverWidgetForm|"
 msgid "IP Network:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:521
+#: ../../../build/src/ui_discoverwidget.h:544
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Host Ip:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:522
+#: ../../../build/src/ui_discoverwidget.h:545
 msgctxt "DiscoverWidgetForm|"
 msgid "End Host Ip:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:523
+#: ../../../build/src/ui_discoverwidget.h:546
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Discover from IP range"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:525
+#: ../../../build/src/ui_discoverwidget.h:548
 msgctxt "DiscoverWidgetForm|"
 msgid "Range of IP"
 msgstr ""
 
-#: ../../app/updateUI.cpp:80
+#: ../../app/updateUI.cpp:78
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr ""
 
-#: ../../app/updateUI.cpp:103
+#: ../../app/updateUI.cpp:101
 msgctxt "MainWindow|"
 msgid "&Add host to bookmark"
 msgstr ""
 
-#: ../../app/updateUI.cpp:138
+#: ../../app/updateUI.cpp:136
 msgctxt "MainWindow|"
 msgid "Add service to &bookmark"
 msgstr ""
 
-#: ../../app/updateUI.cpp:227
+#: ../../app/updateUI.cpp:206
 msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../app/updateUI.cpp:236
+#: ../../app/updateUI.cpp:215
 msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr ""
 
-#: ../../app/updateUI.cpp:93 ../../app/updateUI.cpp:130
+#: ../../app/updateUI.cpp:91 ../../app/updateUI.cpp:128
 msgctxt "MainWindow|"
 msgid "Bookmarks"
-msgstr ""
-
-#: ../../app/settings.cpp:184
-msgctxt "MainWindow|"
-msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
 
 #: ../../app/defaultprofile.cpp:29 ../../app/defaultprofile.cpp:74
@@ -496,419 +491,299 @@ msgctxt "MainWindow|"
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:213
+#: ../../app/mainwindow.cpp:232
 msgctxt "MainWindow|"
 msgid "No Host Target\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:213 ../../app/mainwindow.cpp:240
-#: ../../app/mainwindow.cpp:292
+#: ../../app/mainwindow.cpp:232 ../../app/mainwindow.cpp:259
+#: ../../app/mainwindow.cpp:311
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:239
+#: ../../app/mainwindow.cpp:258
 msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:240
+#: ../../app/mainwindow.cpp:259
 msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#: ../../app/mainwindow.cpp:292
+#: ../../app/mainwindow.cpp:311
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:339
+#: ../../app/mainwindow.cpp:358
 msgctxt "MainWindow|"
 msgid "<b>There are still active scan.</b>"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:340
+#: ../../app/mainwindow.cpp:359
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:831
+#: ../../../build/src/ui_mainwindow.h:391
 msgctxt "MainWindowClass|"
 msgid "Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:832
+#: ../../../build/src/ui_mainwindow.h:392
 msgctxt "MainWindowClass|"
 msgid "&About nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:833
-#: ../../../build/src/ui_mainwindow.h:834 ../../../build/src/ui_mainwindow.h:842
+#: ../../../build/src/ui_mainwindow.h:393
+#: ../../../build/src/ui_mainwindow.h:394 ../../../build/src/ui_mainwindow.h:402
 msgctxt "MainWindowClass|"
 msgid "&Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:835
-#: ../../../build/src/ui_mainwindow.h:837
-#: ../../../build/src/ui_mainwindow.h:878 ../../../build/src/ui_mainwindow.h:879
+#: ../../../build/src/ui_mainwindow.h:395
+#: ../../../build/src/ui_mainwindow.h:397
+#: ../../../build/src/ui_mainwindow.h:438 ../../../build/src/ui_mainwindow.h:439
 msgctxt "MainWindowClass|"
 msgid "Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:839
+#: ../../../build/src/ui_mainwindow.h:399
 msgctxt "MainWindowClass|"
 msgid "Ctrl+S"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:840
+#: ../../../build/src/ui_mainwindow.h:400
 msgctxt "MainWindowClass|"
 msgid "About &Qt"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:841
+#: ../../../build/src/ui_mainwindow.h:401
 msgctxt "MainWindowClass|"
 msgid "&Preferences"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:843
+#: ../../../build/src/ui_mainwindow.h:403
 msgctxt "MainWindowClass|"
 msgid "&Quit"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:844
+#: ../../../build/src/ui_mainwindow.h:404
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:845
+#: ../../../build/src/ui_mainwindow.h:405
 msgctxt "MainWindowClass|"
 msgid "Stop Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:846
+#: ../../../build/src/ui_mainwindow.h:406
 msgctxt "MainWindowClass|"
 msgid "Clear History"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:850
+#: ../../../build/src/ui_mainwindow.h:410
 msgctxt "MainWindowClass|"
 msgid "Close Tree"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:852
+#: ../../../build/src/ui_mainwindow.h:412
 msgctxt "MainWindowClass|"
 msgid "Close Scan Tree"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:854
+#: ../../../build/src/ui_mainwindow.h:414
 msgctxt "MainWindowClass|"
 msgid "Clear HostName"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:856
+#: ../../../build/src/ui_mainwindow.h:416
 msgctxt "MainWindowClass|"
 msgid "Clear Hostname IP"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:858 ../../../build/src/ui_mainwindow.h:860
+#: ../../../build/src/ui_mainwindow.h:418 ../../../build/src/ui_mainwindow.h:420
 msgctxt "MainWindowClass|"
 msgid "Save As"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:862
+#: ../../../build/src/ui_mainwindow.h:422
 msgctxt "MainWindowClass|"
 msgid "Save Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:864
+#: ../../../build/src/ui_mainwindow.h:424
 msgctxt "MainWindowClass|"
 msgid "Save"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:866
+#: ../../../build/src/ui_mainwindow.h:426
 msgctxt "MainWindowClass|"
 msgid "S&ave Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:867
+#: ../../../build/src/ui_mainwindow.h:427
 msgctxt "MainWindowClass|"
 msgid "Save all scans to &Directory"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:868
+#: ../../../build/src/ui_mainwindow.h:428
 msgctxt "MainWindowClass|"
 msgid "F&ull Screen Mode"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:869
+#: ../../../build/src/ui_mainwindow.h:429
 msgctxt "MainWindowClass|"
 msgid "Ctrl+Shift+F11"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:870
+#: ../../../build/src/ui_mainwindow.h:430
 msgctxt "MainWindowClass|"
 msgid "Show &Menu Bar"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:871
+#: ../../../build/src/ui_mainwindow.h:431
 msgctxt "MainWindowClass|"
 msgid "Ctrl+M"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:872
+#: ../../../build/src/ui_mainwindow.h:432
 msgctxt "MainWindowClass|"
 msgid "Show Status Bar"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:873
+#: ../../../build/src/ui_mainwindow.h:433
 msgctxt "MainWindowClass|"
 msgid "&Add host to bookmark"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:874
+#: ../../../build/src/ui_mainwindow.h:434
 msgctxt "MainWindowClass|"
 msgid "Add host to bookmark"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:875
+#: ../../../build/src/ui_mainwindow.h:435
 msgctxt "MainWindowClass|"
 msgid "Main"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:876
+#: ../../../build/src/ui_mainwindow.h:436
 msgctxt "MainWindowClass|"
 msgid "Log"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:877
+#: ../../../build/src/ui_mainwindow.h:437
 msgctxt "MainWindowClass|"
 msgid "Vuln"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:880
+#: ../../../build/src/ui_mainwindow.h:440
 msgctxt "MainWindowClass|"
 msgid "Section Scan"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:881
+#: ../../../build/src/ui_mainwindow.h:441
 msgctxt "MainWindowClass|"
 msgid "Section Log"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:882
+#: ../../../build/src/ui_mainwindow.h:442
 msgctxt "MainWindowClass|"
 msgid "Section Vulnerabilities"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:883
+#: ../../../build/src/ui_mainwindow.h:443
 msgctxt "MainWindowClass|"
 msgid "Donate Money"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:884
+#: ../../../build/src/ui_mainwindow.h:444
 msgctxt "MainWindowClass|"
 msgid "Documentation"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:885
+#: ../../../build/src/ui_mainwindow.h:445
 msgctxt "MainWindowClass|"
 msgid "Visit Website"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:886
+#: ../../../build/src/ui_mainwindow.h:446
 msgctxt "MainWindowClass|"
 msgid "Report a bug"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:887
+#: ../../../build/src/ui_mainwindow.h:447
 msgctxt "MainWindowClass|"
 msgid "Section Discover"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:888 ../../../build/src/ui_mainwindow.h:889
+#: ../../../build/src/ui_mainwindow.h:448 ../../../build/src/ui_mainwindow.h:449
 msgctxt "MainWindowClass|"
 msgid "New Profile"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:890
+#: ../../../build/src/ui_mainwindow.h:450
 msgctxt "MainWindowClass|"
 msgid "Edit Profile"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:891
+#: ../../../build/src/ui_mainwindow.h:451
 msgctxt "MainWindowClass|"
 msgid "Add &parameters to bookmark"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:892
+#: ../../../build/src/ui_mainwindow.h:452
 msgctxt "MainWindowClass|"
 msgid "Add vulnerability search url"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:894
-msgctxt "MainWindowClass|"
-msgid "Clear"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:898
-msgctxt "MainWindowClass|"
-msgid "Save Profile"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:906
-msgctxt "MainWindowClass|"
-msgid "Description"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:907
-msgctxt "MainWindowClass|"
-msgid "Service"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:908
-msgctxt "MainWindowClass|"
-msgid "State"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:909
-msgctxt "MainWindowClass|"
-msgid "Port"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:912
-msgctxt "MainWindowClass|"
-msgid "Nss script result"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:910
-msgctxt "MainWindowClass|"
-msgid "Service(s) Details"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:920 ../../../build/src/ui_mainwindow.h:930
-msgctxt "MainWindowClass|"
-msgid "Host(s)"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:921
-msgctxt "MainWindowClass|"
-msgid "Lookup"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:923
-msgctxt "MainWindowClass|"
-msgid "DNS"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:924
-msgctxt "MainWindowClass|"
-msgid "IP"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:925
-msgctxt "MainWindowClass|"
-msgid "RTT"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:926
-msgctxt "MainWindowClass|"
-msgid "Hop(s)"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:927
-msgctxt "MainWindowClass|"
-msgid "Traceroute"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:902
-msgctxt "MainWindowClass|"
-msgid "Host Details"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:904
-msgctxt "MainWindowClass|"
-msgid "Service(s) with info"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:913
-msgctxt "MainWindowClass|"
-msgid "Nse result"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:929
-msgctxt "MainWindowClass|"
-msgid "Os"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:933
-msgctxt "MainWindowClass|"
-msgid "Scan log parameters"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:935
-msgctxt "MainWindowClass|"
-msgid "Scan host(s)"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:915
-msgctxt "MainWindowClass|"
-msgid "Log(s)"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:917
-msgctxt "MainWindowClass|"
-msgid "Error(s)"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:918
-msgctxt "MainWindowClass|"
-msgid "Raw scan log"
-msgstr ""
-
-#: ../../../build/src/ui_mainwindow.h:936
+#: ../../../build/src/ui_mainwindow.h:453
 msgctxt "MainWindowClass|"
 msgid "&File"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:937
+#: ../../../build/src/ui_mainwindow.h:454
 msgctxt "MainWindowClass|"
 msgid "&View"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:938
+#: ../../../build/src/ui_mainwindow.h:455
 msgctxt "MainWindowClass|"
 msgid "&Bookmarks"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:939
+#: ../../../build/src/ui_mainwindow.h:456
 msgctxt "MainWindowClass|"
 msgid "&Help"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:940
+#: ../../../build/src/ui_mainwindow.h:457
 msgctxt "MainWindowClass|"
 msgid "S&ettings"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:941
+#: ../../../build/src/ui_mainwindow.h:458
 msgctxt "MainWindowClass|"
 msgid "&Tools"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:942
+#: ../../../build/src/ui_mainwindow.h:459
 msgctxt "MainWindowClass|"
 msgid "toolBar"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:943
+#: ../../../build/src/ui_mainwindow.h:460
 msgctxt "MainWindowClass|"
 msgid "toolBar_2"
 msgstr ""
 
-#: ../../../build/src/ui_mainwindow.h:944
-#: ../../../build/src/ui_mainwindow.h:945
-#: ../../../build/src/ui_mainwindow.h:946
-#: ../../../build/src/ui_mainwindow.h:947 ../../../build/src/ui_mainwindow.h:948
+#: ../../../build/src/ui_mainwindow.h:461
+#: ../../../build/src/ui_mainwindow.h:462
+#: ../../../build/src/ui_mainwindow.h:463
+#: ../../../build/src/ui_mainwindow.h:464 ../../../build/src/ui_mainwindow.h:465
 msgctxt "MainWindowClass|"
 msgid "toolBar_3"
 msgstr ""
@@ -923,37 +798,37 @@ msgctxt "Monitor|"
 msgid "Scanning"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:108
+#: ../../../build/src/ui_monitorwidget.h:109
 msgctxt "MonitorWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:109
+#: ../../../build/src/ui_monitorwidget.h:110
 msgctxt "MonitorWidgetForm|"
 msgid "Stop All Scan"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:110
+#: ../../../build/src/ui_monitorwidget.h:111
 msgctxt "MonitorWidgetForm|"
 msgid "Stop Current Scan"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:111
+#: ../../../build/src/ui_monitorwidget.h:112
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Details"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:113
+#: ../../../build/src/ui_monitorwidget.h:114
 msgctxt "MonitorWidgetForm|"
 msgid "State"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:114
+#: ../../../build/src/ui_monitorwidget.h:115
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Options"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:115
+#: ../../../build/src/ui_monitorwidget.h:116
 msgctxt "MonitorWidgetForm|"
 msgid "Host Thread"
 msgstr ""
@@ -1255,29 +1130,154 @@ msgctxt "ProfilerManager|"
 msgid "Warning: Operation more expansive.\n"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:73
+#: ../../../build/src/ui_scanbookmarkwidget.h:74
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:75
+#: ../../../build/src/ui_scanbookmarkwidget.h:76
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Date"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:76
+#: ../../../build/src/ui_scanbookmarkwidget.h:77
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "IP List"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:78
+#: ../../../build/src/ui_scanbookmarkwidget.h:79
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Profile Name"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:79
+#: ../../../build/src/ui_scanbookmarkwidget.h:80
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
+msgstr ""
+
+#: ../../app/mainwindow.cpp:28
+msgctxt "ScanWidget|"
+msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:432
+msgctxt "ScanWidgetForm|"
+msgid "Form"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:434
+msgctxt "ScanWidgetForm|"
+msgid "Clear"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:438
+msgctxt "ScanWidgetForm|"
+msgid "Save Profile"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:442
+msgctxt "ScanWidgetForm|"
+msgid "Os"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:443 ../../../build/src/ui_scanwidget.h:467
+msgctxt "ScanWidgetForm|"
+msgid "Host(s)"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:446
+msgctxt "ScanWidgetForm|"
+msgid "Scan log parameters"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:449
+msgctxt "ScanWidgetForm|"
+msgid "Host Details"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:451
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) with info"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:453
+msgctxt "ScanWidgetForm|"
+msgid "Description"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:454
+msgctxt "ScanWidgetForm|"
+msgid "Service"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:455
+msgctxt "ScanWidgetForm|"
+msgid "State"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:456
+msgctxt "ScanWidgetForm|"
+msgid "Port"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:457
+msgctxt "ScanWidgetForm|"
+msgid "Service(s) Details"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:459
+msgctxt "ScanWidgetForm|"
+msgid "Nss script result"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:460
+msgctxt "ScanWidgetForm|"
+msgid "Nse result"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:462
+msgctxt "ScanWidgetForm|"
+msgid "Log(s)"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:464
+msgctxt "ScanWidgetForm|"
+msgid "Error(s)"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:465
+msgctxt "ScanWidgetForm|"
+msgid "Raw scan log"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:468
+msgctxt "ScanWidgetForm|"
+msgid "Lookup"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:470
+msgctxt "ScanWidgetForm|"
+msgid "DNS"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:471
+msgctxt "ScanWidgetForm|"
+msgid "IP"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:472
+msgctxt "ScanWidgetForm|"
+msgid "RTT"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:473
+msgctxt "ScanWidgetForm|"
+msgid "Hop(s)"
+msgstr ""
+
+#: ../../../build/src/ui_scanwidget.h:474
+msgctxt "ScanWidgetForm|"
+msgid "Traceroute"
 msgstr ""
 
 #: ../../common/utilities.cpp:53
@@ -1285,72 +1285,72 @@ msgctxt "Utilities|"
 msgid "Select the file"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:60
+#: ../../../build/src/ui_vulnbookmarkwidget.h:61
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Form"
-msgstr ""
-
-#: ../../../build/src/ui_vulnbookmarkwidget.h:62
-msgctxt "VulnBookmarkWidgetForm|"
-msgid "Data"
 msgstr ""
 
 #: ../../../build/src/ui_vulnbookmarkwidget.h:63
 msgctxt "VulnBookmarkWidgetForm|"
-msgid "Service"
+msgid "Data"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:65
+#: ../../../build/src/ui_vulnbookmarkwidget.h:64
 msgctxt "VulnBookmarkWidgetForm|"
-msgid "Url(s)"
+msgid "Service"
 msgstr ""
 
 #: ../../../build/src/ui_vulnbookmarkwidget.h:66
 msgctxt "VulnBookmarkWidgetForm|"
+msgid "Url(s)"
+msgstr ""
+
+#: ../../../build/src/ui_vulnbookmarkwidget.h:67
+msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:44
+#: ../../platform/vulnerability.cpp:46
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:105
+#: ../../platform/vulnerability.cpp:119
 msgctxt "Vulnerability|"
 msgid "Search"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:113
+#: ../../platform/vulnerability.cpp:127
 msgctxt "Vulnerability|"
 msgid "Back"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:121
+#: ../../platform/vulnerability.cpp:135
 msgctxt "Vulnerability|"
 msgid "Forward"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:129
+#: ../../platform/vulnerability.cpp:143
 msgctxt "Vulnerability|"
 msgid "Stop"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:357
+#: ../../platform/vulnerability.cpp:371
 msgctxt "Vulnerability|"
 msgid "Add service to &bookmark"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:157
+#: ../../../build/src/ui_vulnerabilitywidget.h:158
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:160
+#: ../../../build/src/ui_vulnerabilitywidget.h:161
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:163
+#: ../../../build/src/ui_vulnerabilitywidget.h:164
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Discovered vulnerabilities"
 msgstr ""

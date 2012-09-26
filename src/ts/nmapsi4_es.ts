@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="es_ES">
-    <extra-po-header-po_revision_date>2012-09-20 23:24+0200</extra-po-header-po_revision_date>
-    <extra-po-headers>MIME-Version,Content-Type,Content-Transfer-Encoding,X-Qt-Contexts,Last-Translator,PO-Revision-Date,Project-Id-Version,Language-Team,Language,Plural-Forms,X-Generator</extra-po-headers>
-    <extra-po-header-x_generator>Lokalize 1.4</extra-po-header-x_generator>
-    <extra-po-header-language_team>American English &lt;kde-i18n-doc@kde.org&gt;</extra-po-header-language_team>
-    <extra-po-header-project_id_version></extra-po-header-project_id_version>
-    <extra-po-header-language>en_US</extra-po-header-language>
-    <extra-po-header_comment># Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;, 2012.</extra-po-header_comment>
-    <extra-po-header-last_translator>Francesco Cecconi &lt;francesco.cecconi@gmail.com&gt;</extra-po-header-last_translator>
 <context>
     <name>AboutUi</name>
     <message>
@@ -106,16 +98,8 @@ p, li { white-space: pre-wrap; }
         <translation>Revisar Vulnerabilidades</translation>
     </message>
     <message>
-        <source>Host List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show/Hide Host List</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host Details</source>
-        <translation>Detalles del host</translation>
     </message>
     <message>
         <source>Show/Hide Host Details</source>
@@ -185,6 +169,14 @@ p, li { white-space: pre-wrap; }
         <source>Load IP list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show/Hide host list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Hide host details</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DiscoverManager</name>
@@ -225,7 +217,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Probes Modes:</source>
-        <translation>Modos de Exploración</translation>
+        <translation>Modos de Exploración:</translation>
     </message>
     <message>
         <source>CIDR Notation (IPv4)</source>
@@ -273,7 +265,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Local Interfaces:</source>
-        <translation>Interfaces Locales</translation>
+        <translation>Interfaces Locales:</translation>
     </message>
     <message>
         <source>Reload Interfaces</source>
@@ -309,10 +301,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Bookmarks</source>
         <translation>Marcadores</translation>
-    </message>
-    <message>
-        <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Quick Scan</source>
@@ -574,102 +562,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Limpia</translation>
-    </message>
-    <message>
-        <source>Save Profile</source>
-        <translation>Guardar Perfil</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Descripción</translation>
-    </message>
-    <message>
-        <source>Service</source>
-        <translation>Servicio</translation>
-    </message>
-    <message>
-        <source>State</source>
-        <translation>Estado</translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation>Puerto</translation>
-    </message>
-    <message>
-        <source>Nss script result</source>
-        <translation>Resultado del script NSS</translation>
-    </message>
-    <message>
-        <source>Service(s) Details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host(s)</source>
-        <translation>Host(s)</translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation>Lookup</translation>
-    </message>
-    <message>
-        <source>DNS</source>
-        <translation>DNS</translation>
-    </message>
-    <message>
-        <source>IP</source>
-        <translation>IP</translation>
-    </message>
-    <message>
-        <source>RTT</source>
-        <translation>RTT</translation>
-    </message>
-    <message>
-        <source>Hop(s)</source>
-        <translation>Salto(s)</translation>
-    </message>
-    <message>
-        <source>Traceroute</source>
-        <translation>Traceroute</translation>
-    </message>
-    <message>
-        <source>Host Details</source>
-        <translation>Detalles del host</translation>
-    </message>
-    <message>
-        <source>Service(s) with info</source>
-        <translation>Servicio(s) con información</translation>
-    </message>
-    <message>
-        <source>Nse result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Os</source>
-        <translation>OS</translation>
-    </message>
-    <message>
-        <source>Scan log parameters</source>
-        <translation>Log de parámetros de escaneo</translation>
-    </message>
-    <message>
-        <source>Scan host(s)</source>
-        <translation>Escanear host(s)</translation>
-    </message>
-    <message>
-        <source>Log(s)</source>
-        <translation>Log(s)</translation>
-    </message>
-    <message>
-        <source>Error(s)</source>
-        <translation>Error(es)</translation>
-    </message>
-    <message>
-        <source>Raw scan log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1034,6 +926,112 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>ScanWidget</name>
+    <message>
+        <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScanWidgetForm</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Limpia</translation>
+    </message>
+    <message>
+        <source>Save Profile</source>
+        <translation type="unfinished">Guardar Perfil</translation>
+    </message>
+    <message>
+        <source>Os</source>
+        <translation type="unfinished">OS</translation>
+    </message>
+    <message>
+        <source>Host(s)</source>
+        <translation type="unfinished">Host(s)</translation>
+    </message>
+    <message>
+        <source>Scan log parameters</source>
+        <translation type="unfinished">Log de parámetros de escaneo</translation>
+    </message>
+    <message>
+        <source>Host Details</source>
+        <translation type="unfinished">Detalles del host</translation>
+    </message>
+    <message>
+        <source>Service(s) with info</source>
+        <translation type="unfinished">Servicio(s) con información</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Descripción</translation>
+    </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished">Servicio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished">Estado</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished">Puerto</translation>
+    </message>
+    <message>
+        <source>Service(s) Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nss script result</source>
+        <translation type="unfinished">Resultado del script NSS</translation>
+    </message>
+    <message>
+        <source>Nse result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log(s)</source>
+        <translation type="unfinished">Log(s)</translation>
+    </message>
+    <message>
+        <source>Error(s)</source>
+        <translation type="unfinished">Error(es)</translation>
+    </message>
+    <message>
+        <source>Raw scan log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished">Lookup</translation>
+    </message>
+    <message>
+        <source>DNS</source>
+        <translation type="unfinished">DNS</translation>
+    </message>
+    <message>
+        <source>IP</source>
+        <translation type="unfinished">IP</translation>
+    </message>
+    <message>
+        <source>RTT</source>
+        <translation type="unfinished">RTT</translation>
+    </message>
+    <message>
+        <source>Hop(s)</source>
+        <translation type="unfinished">Salto(s)</translation>
+    </message>
+    <message>
+        <source>Traceroute</source>
+        <translation type="unfinished">Traceroute</translation>
+    </message>
+</context>
+<context>
     <name>Utilities</name>
     <message>
         <source>Select the file</source>
@@ -1260,7 +1258,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Timing Template:</source>
-        <translation>Plantilla de Tiempo</translation>
+        <translation>Plantilla de Tiempo:</translation>
     </message>
     <message>
         <source>Paranoid Throttling (-T0)</source>
