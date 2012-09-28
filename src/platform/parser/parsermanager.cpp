@@ -122,7 +122,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
                                 QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
     }
 
-    m_ui->action_Scan_menu->setEnabled(true);
+    m_ui->m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);
     m_ui->action_Scan_2->setEnabled(true);
     m_ui->actionSave->setEnabled(true);
     m_ui->actionSave_Menu->setEnabled(true);
@@ -383,7 +383,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
 
     // save nse result with QHash
     parserObjectElem->setNseResult(nseResult);
-    m_ui->actionClear_History->setEnabled(true);
+    m_ui->m_collections->m_collectionsScanSection.value("clearHistory-action")->setEnabled(true);
 
     QTextStream bufferLogStream(&StdoutStr);
     QString bufferLogStream_line;

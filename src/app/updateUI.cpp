@@ -43,7 +43,7 @@ void MainWindow::updateMenuBar()
 
 void MainWindow::updateComboHostnameProperties()
 {
-    action_Scan_menu->setEnabled(true);
+    m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);
     action_Scan_2->setEnabled(true);
     m_scanWidget->hostEdit->clear();
     m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8(""));
@@ -63,8 +63,7 @@ void MainWindow::updateSezScan()
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
-    toolBar->setVisible(true);
-    toolBar_2->setVisible(true);
+    scanToolBar->setVisible(true);
     toolBarSearch->setVisible(false);
     toolBarBook->setVisible(true);
 
@@ -110,9 +109,8 @@ void MainWindow::updateSezVuln()
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
-    toolBar->setVisible(false);
+    scanToolBar->setVisible(false);
     toolBarBook->setVisible(true);
-    toolBar_2->setVisible(false);
     toolBarSearch->setVisible(true);
 
     toolMenuBar->setVisible(false);
@@ -145,9 +143,8 @@ void MainWindow::updateSezDiscover()
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index
-    toolBar->setVisible(false);
+    scanToolBar->setVisible(false);
     toolBarBook->setVisible(false);
-    toolBar_2->setVisible(false);
     toolBarSearch->setVisible(false);
 
     toolMenuBar->setVisible(false);
@@ -196,7 +193,7 @@ void MainWindow::clearAll()
     m_scanWidget->listWscan->clear();
     m_scanWidget->treeNSS->clear();
     m_scanWidget->listScan->clear();
-    actionClear_History->setEnabled(false);
+    m_collections->m_collectionsScanSection.value("clearHistory-action")->setEnabled(false);
 
     actionSave->setEnabled(false);
     actionSave_Menu->setEnabled(false);

@@ -41,11 +41,13 @@ public:
     void createToolButtonBar();
     void createSectionsBar();
     void createDiscoverBar();
+    void createScanSectionBar();
     void enableScanUiActions();
     void disableScanUiActions();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
+    QHash<QString, QAction*> m_collectionsScanSection;
     QToolBar *m_discoverToolBar;
 
 private:

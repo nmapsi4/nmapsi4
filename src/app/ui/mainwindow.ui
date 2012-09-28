@@ -66,7 +66,7 @@
      <x>0</x>
      <y>0</y>
      <width>783</width>
-     <height>19</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -130,7 +130,7 @@
    <addaction name="menu_Settings"/>
    <addaction name="menu_Help"/>
   </widget>
-  <widget class="QToolBar" name="toolBar">
+  <widget class="QToolBar" name="scanToolBar">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -163,40 +163,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_Scan_menu"/>
-   <addaction name="separator"/>
-  </widget>
-  <widget class="QToolBar" name="toolBar_2">
-   <property name="contextMenuPolicy">
-    <enum>Qt::PreventContextMenu</enum>
-   </property>
-   <property name="windowTitle">
-    <string>toolBar_2</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QToolBar {
-	border: 0px;
-}</string>
-   </property>
-   <property name="movable">
-    <bool>false</bool>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>22</width>
-     <height>22</height>
-    </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextBesideIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionClear_History"/>
   </widget>
   <widget class="QToolBar" name="toolBarBook">
    <property name="contextMenuPolicy">
@@ -312,6 +278,9 @@
    <property name="windowTitle">
     <string>toolBar_3</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar { border: 0px; }</string>
+   </property>
    <attribute name="toolBarArea">
     <enum>BottomToolBarArea</enum>
    </attribute>
@@ -339,7 +308,7 @@
   </action>
   <action name="action_Scan_menu">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="icon">
     <iconset resource="../../../mainwin.qrc">
@@ -414,7 +383,7 @@
   </action>
   <action name="actionClear_History">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="icon">
     <iconset resource="../../../mainwin.qrc">

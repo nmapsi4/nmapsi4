@@ -74,12 +74,13 @@ void MainWindow::initObject()
     m_vulnerability = new Vulnerability(this);
     m_discoverManager = new DiscoverManager(this);
     m_collections = new ActionManager(this);
+    m_collections->createScanSectionBar();
     m_collections->createDiscoverBar();
     m_collections->createSectionsBar();
     m_collections->createToolButtonBar();
 
     // Set default properties
-    action_Scan_menu->setEnabled(false);
+    m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(false);
     action_Scan_2->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
     toolBarSearch->setVisible(false);
@@ -105,10 +106,6 @@ void MainWindow::initObject()
     // connect slots
     connect(action_Quit, SIGNAL(triggered()),
             this, SLOT(close()));
-    connect(action_Scan_menu, SIGNAL(triggered()),
-            this, SLOT(startScan()));
-    connect(actionClear_History, SIGNAL(triggered()),
-            this, SLOT(clearAll()));
     connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
@@ -229,7 +226,7 @@ void MainWindow::quickAddressSelectionEvent()
 void MainWindow::startScan()
 {
     if (m_scanWidget->hostEdit->currentText().isEmpty()) {
-        QMessageBox::warning(this, "NmapSI4", tr("No Host Target\n"), tr("Close"));
+        QMessageBox::warning(this, "NmapSI4", tr("Insert an host/ip address to scan\n"), tr("Close"));
         return;
     }
 

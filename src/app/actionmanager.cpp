@@ -206,22 +206,20 @@ void ActionManager::createToolButtonBar()
     menu->addAction(m_ui->action_Quit);
     menu->setLayoutDirection(Qt::LeftToRight);
     m_menuSetup->setMenu(menu);
-
     m_ui->toolMenuBar->addWidget(m_menuSetup);
+}
 
-    // profiler menu
-    m_profilerTool = new QToolButton(m_ui);
-    m_profilerTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    m_profilerTool->setPopupMode(QToolButton::InstantPopup);
-    m_profilerTool->setText(tr("Profile"));
-    m_profilerTool->setIcon(QIcon(QString::fromUtf8(":/images/images/documentation.png")));
+void ActionManager::createScanSectionBar()
+{
+    QAction *action;
 
-    QMenu *menuProfiler = new QMenu(m_ui);
-    menuProfiler->addAction(m_ui->actionNew_Profile);
-    menuProfiler->addAction(m_ui->actionEdit_Profile);
-    m_profilerTool->setMenu(menuProfiler);
-
-    m_ui->toolBar_2->addWidget(m_profilerTool);
+    action = new QAction(m_ui);
+    action->setText(tr("Scan"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    m_collectionsScanSection.insert("scan-action", action);
+    connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(startScan()));
+    action->setEnabled(false);
+    m_ui->scanToolBar->addAction(action);
 
     // save menu
     m_saveTool = new QToolButton(m_ui);
@@ -235,8 +233,31 @@ void ActionManager::createToolButtonBar()
     menuSave->addAction(m_ui->actionSave_As_Menu);
     m_saveTool->setMenu(menuSave);
 
-    m_ui->toolBar->addWidget(m_saveTool);
-    m_ui->toolBar->addSeparator();
+    m_ui->scanToolBar->addWidget(m_saveTool);
+    m_ui->scanToolBar->addSeparator();
+
+    // clear action
+    action = new QAction(m_ui);
+    action->setText(tr("Clear History"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/edit-clear-list.png")));
+    m_collectionsScanSection.insert("clearHistory-action", action);
+    connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(clearAll()));
+    action->setEnabled(false);
+    m_ui->scanToolBar->addAction(action);
+
+    // profiler menu
+    m_profilerTool = new QToolButton(m_ui);
+    m_profilerTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_profilerTool->setPopupMode(QToolButton::InstantPopup);
+    m_profilerTool->setText(tr("Profile"));
+    m_profilerTool->setIcon(QIcon(QString::fromUtf8(":/images/images/documentation.png")));
+
+    QMenu *menuProfiler = new QMenu(m_ui);
+    menuProfiler->addAction(m_ui->actionNew_Profile);
+    menuProfiler->addAction(m_ui->actionEdit_Profile);
+    m_profilerTool->setMenu(menuProfiler);
+
+    m_ui->scanToolBar->addWidget(m_profilerTool);
 
     // bookmark menu
     m_bookmarksTool = new QToolButton(m_ui);
@@ -247,7 +268,6 @@ void ActionManager::createToolButtonBar()
     m_bookmarksTool->setMenu(m_ui->menu_Bookmaks);
 
     m_ui->toolBarBook->addWidget(m_bookmarksTool);
-
 }
 
 void ActionManager::createDiscoverBar()
