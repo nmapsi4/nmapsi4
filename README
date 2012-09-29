@@ -1,4 +1,4 @@
-Build Information for Linux:
+Build nmapsi4 on GNU/Linux
 
 Required:
 * qt4
@@ -14,25 +14,21 @@ Build:
 # ./cmake_verbose_script.sh
 cd ../build/
 # make
-# make install (only root) || search or create a package for your disto ;)
+# make install (only root) || download or create a package for your disto ;)
 
-Packages:
+For the Packages:
 http://www.nmapsi4.org
 
-**********************************************************************
+
 The nmapsi4-admin.desktop used kdesu by default or is possible:
-**********************************************************************
 
 * change Exec=nmapsi4 with Exec=kdesu/su-to-root nmapsi4
 
+__________________________________________________________________________________
 
-***********************************************************************************
-MS windows build:
+MS Windows:
+for build nmapsi4 on MS windows visit: http://www.nmapsi4.org
 
-for build informations with MS windows OS visit: http://www.nmapsi4.org
-
-***********************************************************************************
 Mac Os:
-
-nmapsi4 build on Mac OSx snow leopard. ;)
+for build nmapsi4 on Max Osx read: http://www.nmapsi4.org/node/38
 
