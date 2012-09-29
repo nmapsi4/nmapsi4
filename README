@@ -19,10 +19,10 @@ cd ../build/
 For the Packages:
 http://www.nmapsi4.org
 
+nmapsi4-admin.desktop uses by default kdesu for execute nmap with root uid. 
+However, it is possible change kdesu in the desktop file:
 
-The nmapsi4-admin.desktop used kdesu by default or is possible:
-
-* change Exec=nmapsi4 with Exec=kdesu/su-to-root nmapsi4
+nmapsi4-admin.desktop: Exec=kdesu nmapsi4 with Exec=[what you want] nmapsi4
 
 __________________________________________________________________________________
 
