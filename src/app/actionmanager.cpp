@@ -23,6 +23,23 @@
 ActionManager::ActionManager(MainWindow* parent)
     : QObject(parent), m_ui(parent)
 {
+    m_bottomScanBar = new QToolBar(m_ui);
+    m_bottomToolBar = new QToolBar(m_ui);
+
+    m_bottomScanBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_bottomScanBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_bottomScanBar->setFloatable(false);
+    m_bottomScanBar->setMovable(false);
+
+    m_bottomToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_bottomToolBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_bottomToolBar->setFloatable(false);
+    m_bottomToolBar->setMovable(false);
+
+    m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomToolBar);
+    m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomScanBar);
+
+
     // ActionManager signals
     connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(scanBookmarkContextMenu()));
@@ -42,14 +59,6 @@ ActionManager::~ActionManager()
 
 void ActionManager::createSectionsBar()
 {
-    m_ui->bottomToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    m_ui->bottomToolBar->setFloatable(false);
-    m_ui->bottomToolBar->setMovable(false);
-
-    m_ui->bottomScanBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    m_ui->bottomScanBar->setFloatable(false);
-    m_ui->bottomScanBar->setMovable(false);
-
     PushButtonOrientated* actionButt;
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Scan host(s)"), m_ui);
@@ -58,7 +67,7 @@ void ActionManager::createSectionsBar()
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezScan()));
-    m_ui->bottomToolBar->addWidget(actionButt);
+    m_bottomToolBar->addWidget(actionButt);
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), tr("Network Discover"), m_ui);
     actionButt->setToolTip(tr("Network Discover"));
@@ -66,7 +75,7 @@ void ActionManager::createSectionsBar()
     actionButt->setCheckable(true);
     m_collectionsButton.insert("discover-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezDiscover()));
-    m_ui->bottomToolBar->addWidget(actionButt);
+    m_bottomToolBar->addWidget(actionButt);
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), tr("Vulnerability"), m_ui);
     actionButt->setToolTip(tr("Check Vulnerabilities"));
@@ -74,9 +83,9 @@ void ActionManager::createSectionsBar()
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezVuln()));
-    m_ui->bottomToolBar->addWidget(actionButt);
+    m_bottomToolBar->addWidget(actionButt);
 
-    m_ui->bottomToolBar->addSeparator();
+    m_bottomToolBar->addSeparator();
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Show/Hide host list"), m_ui);
     actionButt->setToolTip(tr("Show/Hide Host List"));
@@ -84,7 +93,7 @@ void ActionManager::createSectionsBar()
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-list", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeScanListWidgetEvent()));
-    m_ui->bottomScanBar->addWidget(actionButt);
+    m_bottomScanBar->addWidget(actionButt);
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Show/Hide host details"), m_ui);
     actionButt->setToolTip(tr("Show/Hide Host Details"));
@@ -92,7 +101,7 @@ void ActionManager::createSectionsBar()
     actionButt->setCheckable(true);
     m_collectionsButton.insert("details-list", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeHostDetailsWidgetEvent()));
-    m_ui->bottomScanBar->addWidget(actionButt);
+    m_bottomScanBar->addWidget(actionButt);
 }
 
 void ActionManager::scanBookmarkContextMenu()
@@ -333,10 +342,10 @@ void ActionManager::createDiscoverBar()
 
 void ActionManager::disableScanUiActions()
 {
-    m_ui->bottomScanBar->setVisible(false);
+    m_bottomScanBar->setVisible(false);
 }
 
 void ActionManager::enableScanUiActions()
 {
-    m_ui->bottomScanBar->setVisible(true);
+    m_bottomScanBar->setVisible(true);
 }

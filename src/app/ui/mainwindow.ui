@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>783</width>
-    <height>481</height>
+    <height>482</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -258,31 +258,6 @@
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QToolBar" name="bottomToolBar">
-   <property name="windowTitle">
-    <string>toolBar_3</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QToolBar" name="bottomScanBar">
-   <property name="windowTitle">
-    <string>toolBar_3</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QToolBar { border: 0px; }</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>

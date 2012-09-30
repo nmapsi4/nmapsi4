@@ -49,6 +49,8 @@ public:
     QHash<QString, QAction*> m_collectionsDiscover;
     QHash<QString, QAction*> m_collectionsScanSection;
     QToolBar *m_discoverToolBar;
+    QToolBar *m_bottomToolBar;
+    QToolBar *m_bottomScanBar;
 
 private:
     MainWindow* m_ui;
