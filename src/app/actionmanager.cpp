@@ -29,7 +29,7 @@ ActionManager::ActionManager(MainWindow* parent)
     m_bookmarkToolBar = new QToolBar(m_ui);
     m_globalMenuToolBar = new QToolBar(m_ui);
     m_vulnerabilityToolBar = new QToolBar(m_ui);
-
+    m_discoverToolBar = new QToolBar(m_ui);
 
     m_bottomUiToggleBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_bottomUiToggleBar->setStyleSheet("QToolBar { border: 0px; }");
@@ -69,11 +69,22 @@ ActionManager::ActionManager(MainWindow* parent)
     m_vulnerabilityToolBar->setMovable(false);
     m_vulnerabilityToolBar->setIconSize(QSize(22,22));
 
+    // discover toolbar
+    m_discoverToolBar->setObjectName(QString::fromUtf8("discoverToolBar"));
+    m_discoverToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_discoverToolBar->setLayoutDirection(Qt::LeftToRight);
+    m_discoverToolBar->setStyleSheet(QString::fromUtf8("QToolBar { border: 0px; }"));
+    m_discoverToolBar->setMovable(false);
+    m_discoverToolBar->setIconSize(QSize(22, 22));
+    m_discoverToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_discoverToolBar->setVisible(false);
+
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomSectionBar);
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomUiToggleBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_scanToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_vulnerabilityToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_bookmarkToolBar);
+    m_ui->addToolBar(Qt::TopToolBarArea, m_discoverToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_globalMenuToolBar);
 
     // ActionManager signals
@@ -230,19 +241,11 @@ void ActionManager::createToolButtonBar()
     m_menuSetup->setIcon(QIcon::fromTheme("applications-system", QIcon(":/images/images/applications-system.png")));
 
     QMenu *menu = new QMenu(m_ui);
-    menu->addAction(m_ui->action_Scan_2);
-    menu->addAction(m_ui->actionSave);
-    menu->addAction(m_ui->actionSave_As_Menu);
-    menu->addSeparator();
-    menu->addMenu(m_ui->menu_Bookmaks);
-    menu->addSeparator();
     menu->addAction(m_ui->actionScan_section);
     menu->addAction(m_ui->actionVulnerabilities_section);
     menu->addAction(m_ui->actionSection_Discover);
     menu->addSeparator();
     menu->addAction(m_ui->actionProfile);
-    menu->addAction(m_ui->actionNew_Profile);
-    menu->addAction(m_ui->actionEdit_Profile);
     menu->addSeparator();
     menu->addMenu(m_ui->menu_Help);
     menu->addSeparator();
@@ -317,18 +320,6 @@ void ActionManager::createScanSectionBar()
 
 void ActionManager::createDiscoverBar()
 {
-    // discover toolbar
-    m_discoverToolBar = new QToolBar(m_ui);
-    m_discoverToolBar->setObjectName(QString::fromUtf8("discoverToolBar"));
-    m_discoverToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    m_discoverToolBar->setLayoutDirection(Qt::LeftToRight);
-    m_discoverToolBar->setStyleSheet(QString::fromUtf8("QToolBar { border: 0px; }"));
-    m_discoverToolBar->setMovable(false);
-    m_discoverToolBar->setIconSize(QSize(22, 22));
-    m_discoverToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    m_ui->addToolBar(Qt::TopToolBarArea, m_discoverToolBar);
-    m_discoverToolBar->setVisible(false);
-
     // scan discover action
     m_discoverScanTool = new QToolButton(m_ui);
     m_discoverScanTool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -450,7 +441,9 @@ void ActionManager::disableGlobalMenuToolBar()
 
 void ActionManager::enableGlobalMenuToolBar()
 {
-    m_globalMenuToolBar->setVisible(true);
+    if (!m_ui->menuBar()->isVisible()) {
+        m_globalMenuToolBar->setVisible(true);
+    }
 }
 
 void ActionManager::disableVulnerabilityToolBar()

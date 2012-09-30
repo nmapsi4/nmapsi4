@@ -112,7 +112,7 @@ void MainWindow::updateSezVuln()
     m_collections->enableVulnerabilityToolBar();
     m_collections->enableBookmarkToolBar();
 
-    m_collections->disableGlobalMenuToolBar();
+    m_collections->enableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(false);
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
@@ -145,9 +145,8 @@ void MainWindow::updateSezDiscover()
     m_collections->disableScanSectionToolBar();
     m_collections->disableBookmarkToolBar();
     m_collections->disableVulnerabilityToolBar();
-
-    m_collections->disableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(true);
+    m_collections->enableGlobalMenuToolBar();
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
