@@ -42,12 +42,22 @@ public:
     void createSectionsBar();
     void createDiscoverBar();
     void createScanSectionBar();
+    void createVulnerabilityBar();
     void enableBottomUiToggleActions();
     void disableBottomUiToggleActions();
+    void enableScanSectionToolBar();
+    void disableScanSectionToolBar();
+    void enableBookmarkToolBar();
+    void disableBookmarkToolBar();
+    void enableGlobalMenuToolBar();
+    void disableGlobalMenuToolBar();
+    void enableVulnerabilityToolBar();
+    void disableVulnerabilityToolBar();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
     QHash<QString, QAction*> m_collectionsScanSection;
+    QHash<QString, QAction*> m_collectionsVulnerability;
     QToolBar *m_discoverToolBar;
 
 private:
@@ -59,6 +69,10 @@ private:
     QToolButton *m_discoverScanTool;
     QToolBar *m_bottomSectionBar;
     QToolBar *m_bottomUiToggleBar;
+    QToolBar *m_scanToolBar;
+    QToolBar *m_bookmarkToolBar;
+    QToolBar *m_globalMenuToolBar;
+    QToolBar *m_vulnerabilityToolBar;
 
 public slots:
     void scanBookmarkContextMenu();

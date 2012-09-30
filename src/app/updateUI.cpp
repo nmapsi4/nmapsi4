@@ -34,10 +34,10 @@ void MainWindow::updateMenuBar()
 {
     if (actionMenuBar->isChecked()) {
         menuBar()->setVisible(true);
-        toolMenuBar->setVisible(false);
+        m_collections->disableGlobalMenuToolBar();
     } else {
         menuBar()->setVisible(false);
-        toolMenuBar->setVisible(true);
+        m_collections->enableGlobalMenuToolBar();
     }
 }
 
@@ -63,12 +63,11 @@ void MainWindow::updateSezScan()
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
-    scanToolBar->setVisible(true);
-    toolBarSearch->setVisible(false);
-    toolBarBook->setVisible(true);
-
     m_collections->m_discoverToolBar->setVisible(false);
-    toolMenuBar->setVisible(true);
+    m_collections->disableVulnerabilityToolBar();
+    m_collections->enableBookmarkToolBar();
+    m_collections->enableScanSectionToolBar();
+    m_collections->enableGlobalMenuToolBar();
 
     m_mainTabWidget->insertTab(0, m_scanWidget, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
     m_mainTabWidget->setCurrentIndex(0);
@@ -109,11 +108,11 @@ void MainWindow::updateSezVuln()
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
     // main and action bar only in scan index
-    scanToolBar->setVisible(false);
-    toolBarBook->setVisible(true);
-    toolBarSearch->setVisible(true);
+    m_collections->disableScanSectionToolBar();
+    m_collections->enableVulnerabilityToolBar();
+    m_collections->enableBookmarkToolBar();
 
-    toolMenuBar->setVisible(false);
+    m_collections->disableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(false);
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
@@ -143,11 +142,11 @@ void MainWindow::updateSezDiscover()
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
     // main and action bar only in scan index
-    scanToolBar->setVisible(false);
-    toolBarBook->setVisible(false);
-    toolBarSearch->setVisible(false);
+    m_collections->disableScanSectionToolBar();
+    m_collections->disableBookmarkToolBar();
+    m_collections->disableVulnerabilityToolBar();
 
-    toolMenuBar->setVisible(false);
+    m_collections->disableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(true);
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));

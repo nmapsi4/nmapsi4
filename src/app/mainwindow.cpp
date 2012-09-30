@@ -79,12 +79,13 @@ void MainWindow::initObject()
     m_collections->createDiscoverBar();
     m_collections->createSectionsBar();
     m_collections->createToolButtonBar();
+    m_collections->createVulnerabilityBar();
 
     // Set default properties
     m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(false);
     action_Scan_2->setEnabled(false);
     actionAdd_Bookmark->setEnabled(false);
-    toolBarSearch->setVisible(false);
+    m_collections->disableVulnerabilityToolBar();
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
     actionAdd_vulnerability_search_url->setVisible(false);

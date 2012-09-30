@@ -25,6 +25,11 @@ ActionManager::ActionManager(MainWindow* parent)
 {
     m_bottomUiToggleBar = new QToolBar(m_ui);
     m_bottomSectionBar = new QToolBar(m_ui);
+    m_scanToolBar = new QToolBar(m_ui);
+    m_bookmarkToolBar = new QToolBar(m_ui);
+    m_globalMenuToolBar = new QToolBar(m_ui);
+    m_vulnerabilityToolBar = new QToolBar(m_ui);
+
 
     m_bottomUiToggleBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_bottomUiToggleBar->setStyleSheet("QToolBar { border: 0px; }");
@@ -36,9 +41,40 @@ ActionManager::ActionManager(MainWindow* parent)
     m_bottomSectionBar->setFloatable(false);
     m_bottomSectionBar->setMovable(false);
 
+    m_scanToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_scanToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_scanToolBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_scanToolBar->setFloatable(false);
+    m_scanToolBar->setMovable(false);
+    m_scanToolBar->setIconSize(QSize(22,22));
+
+    m_bookmarkToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_bookmarkToolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
+    m_bookmarkToolBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_bookmarkToolBar->setFloatable(false);
+    m_bookmarkToolBar->setMovable(false);
+    m_bookmarkToolBar->setIconSize(QSize(22,22));
+
+    m_globalMenuToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_globalMenuToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_globalMenuToolBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_globalMenuToolBar->setFloatable(false);
+    m_globalMenuToolBar->setMovable(false);
+    m_globalMenuToolBar->setIconSize(QSize(22,22));
+
+    m_vulnerabilityToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_vulnerabilityToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_vulnerabilityToolBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_vulnerabilityToolBar->setFloatable(false);
+    m_vulnerabilityToolBar->setMovable(false);
+    m_vulnerabilityToolBar->setIconSize(QSize(22,22));
+
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomSectionBar);
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomUiToggleBar);
-
+    m_ui->addToolBar(Qt::TopToolBarArea, m_scanToolBar);
+    m_ui->addToolBar(Qt::TopToolBarArea, m_vulnerabilityToolBar);
+    m_ui->addToolBar(Qt::TopToolBarArea, m_bookmarkToolBar);
+    m_ui->addToolBar(Qt::TopToolBarArea, m_globalMenuToolBar);
 
     // ActionManager signals
     connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
@@ -215,7 +251,7 @@ void ActionManager::createToolButtonBar()
     menu->addAction(m_ui->action_Quit);
     menu->setLayoutDirection(Qt::LeftToRight);
     m_menuSetup->setMenu(menu);
-    m_ui->toolMenuBar->addWidget(m_menuSetup);
+    m_globalMenuToolBar->addWidget(m_menuSetup);
 }
 
 void ActionManager::createScanSectionBar()
@@ -228,7 +264,7 @@ void ActionManager::createScanSectionBar()
     m_collectionsScanSection.insert("scan-action", action);
     connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(startScan()));
     action->setEnabled(false);
-    m_ui->scanToolBar->addAction(action);
+    m_scanToolBar->addAction(action);
 
     // save menu
     m_saveTool = new QToolButton(m_ui);
@@ -242,8 +278,8 @@ void ActionManager::createScanSectionBar()
     menuSave->addAction(m_ui->actionSave_As_Menu);
     m_saveTool->setMenu(menuSave);
 
-    m_ui->scanToolBar->addWidget(m_saveTool);
-    m_ui->scanToolBar->addSeparator();
+    m_scanToolBar->addWidget(m_saveTool);
+    m_scanToolBar->addSeparator();
 
     // clear action
     action = new QAction(m_ui);
@@ -252,7 +288,7 @@ void ActionManager::createScanSectionBar()
     m_collectionsScanSection.insert("clearHistory-action", action);
     connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(clearAll()));
     action->setEnabled(false);
-    m_ui->scanToolBar->addAction(action);
+    m_scanToolBar->addAction(action);
 
     // profiler menu
     m_profilerTool = new QToolButton(m_ui);
@@ -266,7 +302,7 @@ void ActionManager::createScanSectionBar()
     menuProfiler->addAction(m_ui->actionEdit_Profile);
     m_profilerTool->setMenu(menuProfiler);
 
-    m_ui->scanToolBar->addWidget(m_profilerTool);
+    m_scanToolBar->addWidget(m_profilerTool);
 
     // bookmark menu
     m_bookmarksTool = new QToolButton(m_ui);
@@ -276,7 +312,7 @@ void ActionManager::createScanSectionBar()
     m_bookmarksTool->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
     m_bookmarksTool->setMenu(m_ui->menu_Bookmaks);
 
-    m_ui->toolBarBook->addWidget(m_bookmarksTool);
+    m_bookmarkToolBar->addWidget(m_bookmarksTool);
 }
 
 void ActionManager::createDiscoverBar()
@@ -340,6 +376,43 @@ void ActionManager::createDiscoverBar()
     m_discoverToolBar->addAction(action);
 }
 
+void ActionManager::createVulnerabilityBar()
+{
+    QAction* action;
+
+    action = new QAction(m_ui);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
+    action->setIconText(tr("Search"));
+    action->setEnabled(false);
+    m_collectionsVulnerability.insert("search-act", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(searchVulnerabilityFromCombo()));
+    m_vulnerabilityToolBar->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/go-previous.png")));
+    action->setIconText(tr("Back"));
+    action->setEnabled(false);
+    m_collectionsVulnerability.insert("back-act", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebBack()));
+    m_vulnerabilityToolBar->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/go-next.png")));
+    action->setIconText(tr("Forward"));
+    action->setEnabled(false);
+    m_collectionsVulnerability.insert("forward-act", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebForward()));
+    m_vulnerabilityToolBar->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
+    action->setIconText(tr("Stop"));
+    action->setEnabled(false);
+    m_collectionsVulnerability.insert("stop-act", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebStop()));
+    m_vulnerabilityToolBar->addAction(action);
+}
+
 void ActionManager::disableBottomUiToggleActions()
 {
     m_bottomUiToggleBar->setVisible(false);
@@ -348,4 +421,44 @@ void ActionManager::disableBottomUiToggleActions()
 void ActionManager::enableBottomUiToggleActions()
 {
     m_bottomUiToggleBar->setVisible(true);
+}
+
+void ActionManager::disableScanSectionToolBar()
+{
+    m_scanToolBar->setVisible(false);
+}
+
+void ActionManager::enableScanSectionToolBar()
+{
+    m_scanToolBar->setVisible(true);
+}
+
+void ActionManager::disableBookmarkToolBar()
+{
+    m_bookmarkToolBar->setVisible(false);
+}
+
+void ActionManager::enableBookmarkToolBar()
+{
+    m_bookmarkToolBar->setVisible(true);
+}
+
+void ActionManager::disableGlobalMenuToolBar()
+{
+    m_globalMenuToolBar->setVisible(false);
+}
+
+void ActionManager::enableGlobalMenuToolBar()
+{
+    m_globalMenuToolBar->setVisible(true);
+}
+
+void ActionManager::disableVulnerabilityToolBar()
+{
+    m_vulnerabilityToolBar->setVisible(false);
+}
+
+void ActionManager::enableVulnerabilityToolBar()
+{
+    m_vulnerabilityToolBar->setVisible(true);
 }
