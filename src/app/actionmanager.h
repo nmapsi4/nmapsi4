@@ -42,8 +42,8 @@ public:
     void createSectionsBar();
     void createDiscoverBar();
     void createScanSectionBar();
-    void enableScanUiActions();
-    void disableScanUiActions();
+    void enableBottomUiToggleActions();
+    void disableBottomUiToggleActions();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
@@ -57,8 +57,8 @@ private:
     QToolButton *m_saveTool;
     QToolButton *m_bookmarksTool;
     QToolButton *m_discoverScanTool;
-    QToolBar *m_bottomToolBar;
-    QToolBar *m_bottomScanBar;
+    QToolBar *m_bottomSectionBar;
+    QToolBar *m_bottomUiToggleBar;
 
 public slots:
     void scanBookmarkContextMenu();

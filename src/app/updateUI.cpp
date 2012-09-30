@@ -94,7 +94,7 @@ void MainWindow::updateSezScan()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
 
     // enable scan action
-    m_collections->enableScanUiActions();
+    m_collections->enableBottomUiToggleActions();
 
     menu_Bookmaks->setEnabled(true);
     actionAdd_Bookmark->setText(tr("&Add host to bookmark"));
@@ -128,7 +128,7 @@ void MainWindow::updateSezVuln()
     m_mainTabWidget->setCurrentIndex(0);
 
     // disable scan action
-    m_collections->disableScanUiActions();
+    m_collections->disableBottomUiToggleActions();
 
     menu_Bookmaks->setEnabled(true);
     actionAdd_Bookmark->setText(tr("Add service to &bookmark"));
@@ -159,7 +159,7 @@ void MainWindow::updateSezDiscover()
     m_mainTabWidget->setCurrentIndex(0);
 
     // disable scan action
-    m_collections->disableScanUiActions();
+    m_collections->disableBottomUiToggleActions();
 
     menu_Bookmaks->setEnabled(false);
 }
