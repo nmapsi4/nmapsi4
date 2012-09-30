@@ -42,7 +42,10 @@ ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
 }
 
 MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent), m_userId(0)
+    : QMainWindow(parent),
+    m_scanWidget(new ScanWidget(this)),
+    m_mainTabWidget(new QTabWidget(this)),
+    m_userId(0)
 {
     initGUI();
     QTimer::singleShot(0, this, SLOT(initObject()));
@@ -59,8 +62,6 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
-    m_scanWidget = new ScanWidget(this);
-    m_mainTabWidget = new QTabWidget(this);
     m_mainTabWidget->setDocumentMode(true);
     centralWidget()->layout()->addWidget(m_mainTabWidget);
 
