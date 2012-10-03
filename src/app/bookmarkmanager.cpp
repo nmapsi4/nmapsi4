@@ -68,12 +68,6 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
     if (!settings.value("vulnBookmarkSplitter").toByteArray().isEmpty()) {
         m_vulnBookmarkSplitter->restoreState(settings.value("vulnBookmarkSplitter").toByteArray());
     }
-
-    connect(m_ui->actionAdd_Bookmark, SIGNAL(triggered()),
-            this, SLOT(saveItemToBookmarks()));
-    connect(m_ui->actionAdd_Parameters_to_bookmark, SIGNAL(triggered()),
-            this, SLOT(startParametersToBookmarksDialog()));
-
 }
 
 BookmarkManager::~BookmarkManager()
@@ -87,18 +81,32 @@ void BookmarkManager::syncSettings()
     settings.setValue("vulnBookmarkSplitter", m_vulnBookmarkSplitter->saveState());
 }
 
-void BookmarkManager::saveItemToBookmarks()
+void BookmarkManager::saveHostnameItemToBookmark()
 {
-    if (m_ui->m_scanWidget->hostEdit->currentText().isEmpty() && m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty()) {
+    if (m_ui->m_scanWidget->hostEdit->currentText().isEmpty()) {
         return;
     }
 
+    saveItemToBookmarks(m_ui->m_scanWidget->hostEdit->currentText());
+}
+
+void BookmarkManager::saveServiceItemToBookmark()
+{
+    if (m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText().isEmpty()) {
+        return;
+    }
+
+    saveItemToBookmarks(m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText());
+}
+
+void BookmarkManager::saveItemToBookmarks(QString value)
+{
     if (m_ui->m_collections->m_collectionsButton.value("scan-sez")->isChecked()) {
-        const QString& currentHost = m_ui->m_scanWidget->hostEdit->currentText();
         // save list of ip/dns in input
         History *history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
-        QStringList hostList = m_ui->m_scanWidget->hostEdit->currentText().split(' ', QString::KeepEmptyParts);
+        // save list of address
+        QStringList hostList = value.split(' ', QString::KeepEmptyParts);
 
         foreach(const QString & host, hostList) {
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
@@ -109,19 +117,17 @@ void BookmarkManager::saveItemToBookmarks()
 
         delete history_;
         m_ui->updateComboBook();
-        m_ui->m_scanWidget->hostEdit->lineEdit()->setText(currentHost);
+        m_ui->m_scanWidget->hostEdit->lineEdit()->setText(value);
     } else {
-        const QString& currentHost = m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText();
         History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
-        history_->addItemHistory(m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->currentText(),
-                                 QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
+        history_->addItemHistory(value,QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
 
         freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();
 
         delete history_;
         m_ui->updateComboBook();
-        m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->lineEdit()->setText(currentHost);
+        m_ui->m_vulnerability->m_vulnerabilityWidget->comboVulnRis->lineEdit()->setText(value);
     }
 }
 

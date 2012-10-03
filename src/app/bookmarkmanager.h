@@ -98,6 +98,11 @@ public:
     VulnBookmarkWidget* m_vulnBookmarkWidget;
 
 private:
+    /**
+     * Save selected Vulnerability service, host from bookmark (contextual menu)
+     */
+    void saveItemToBookmarks(QString value);
+
     MainWindow* m_ui;
     int m_userId;
     QList<QTreeWidgetItem*> m_treeloghlist;
@@ -117,12 +122,10 @@ public slots:
      */
     void deleteParametersFromBookmark();
     void startParametersToBookmarksDialog();
+    void saveHostnameItemToBookmark();
+    void saveServiceItemToBookmark();
 
 private slots:
-    /**
-     * Save selected Vulnerability service, host from bookmark (contextual menu)
-     */
-    void saveItemToBookmarks();
     /**
      * Save scan parameters to bookmark
      */

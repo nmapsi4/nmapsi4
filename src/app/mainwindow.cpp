@@ -84,11 +84,12 @@ void MainWindow::initObject()
     // Set default properties
     m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(false);
     action_Scan_2->setEnabled(false);
-    actionAdd_Bookmark->setEnabled(false);
+    m_collections->m_collectionsScanSection.value("bookmarkAddHost-action")->setEnabled(false);
+    m_collections->m_collectionsScanSection.value("bookmarkAddService-action")->setEnabled(false);
     m_collections->disableVulnerabilityToolBar();
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     menuBar()->setContextMenuPolicy(Qt::PreventContextMenu);
-    actionAdd_vulnerability_search_url->setVisible(false);
+    m_collections->m_collectionsScanSection.value("bookmarkAddVulnUrl-action")->setVisible(false);
     syncSettings();
 
     // create mainwindow Qsplitter
@@ -189,8 +190,8 @@ void MainWindow::editProfile()
 
 void MainWindow::linkCompleterToHostname()
 {
-    if (!actionAdd_Bookmark->isEnabled()) {
-        actionAdd_Bookmark->setEnabled(true);
+    if (!m_collections->m_collectionsScanSection.value("bookmarkAddHost-action")->isEnabled()) {
+        m_collections->m_collectionsScanSection.value("bookmarkAddHost-action")->setEnabled(true);
     }
 
     if (m_hostModel.isNull()) {

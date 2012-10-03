@@ -313,8 +313,37 @@ void ActionManager::createScanSectionBar()
     m_bookmarksTool->setPopupMode(QToolButton::InstantPopup);
     m_bookmarksTool->setText(tr("Bookmark"));
     m_bookmarksTool->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
-    m_bookmarksTool->setMenu(m_ui->menu_Bookmaks);
 
+    m_menuBookmark = new QMenu(m_ui);
+    action = new QAction(m_ui);
+    action->setText(tr("&Add host to bookmark"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
+    m_collectionsScanSection.insert("bookmarkAddHost-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(saveHostnameItemToBookmark()));
+    m_menuBookmark->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setText(tr("Add service to &bookmark"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
+    m_collectionsScanSection.insert("bookmarkAddService-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(saveServiceItemToBookmark()));
+    m_menuBookmark->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setText(tr("Add &parameters to bookmark"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
+    m_collectionsScanSection.insert("bookmarkAddParameters-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(startParametersToBookmarksDialog()));
+    m_menuBookmark->addAction(action);
+
+    action = new QAction(m_ui);
+    action->setText(tr("Add vulnerability search url"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/bookmark_add.png")));
+    m_collectionsScanSection.insert("bookmarkAddVulnUrl-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(showAddUrlUi()));
+    m_menuBookmark->addAction(action);
+
+    m_bookmarksTool->setMenu(m_menuBookmark);
     m_bookmarkToolBar->addWidget(m_bookmarksTool);
 }
 
@@ -454,4 +483,27 @@ void ActionManager::disableVulnerabilityToolBar()
 void ActionManager::enableVulnerabilityToolBar()
 {
     m_vulnerabilityToolBar->setVisible(true);
+}
+
+void ActionManager::disableBookmarkMenu()
+{
+    m_menuBookmark->setEnabled(false);
+}
+
+void ActionManager::enableScanBookmarkMenu()
+{
+    m_menuBookmark->setEnabled(true);
+    m_collectionsScanSection.value("bookmarkAddHost-action")->setVisible(true);
+    m_collectionsScanSection.value("bookmarkAddService-action")->setVisible(false);
+    m_collectionsScanSection.value("bookmarkAddParameters-action")->setVisible(true);
+    m_collectionsScanSection.value("bookmarkAddVulnUrl-action")->setVisible(false);
+}
+
+void ActionManager::enableVulnerabilityBookmarkMenu()
+{
+    m_menuBookmark->setEnabled(true);
+    m_collectionsScanSection.value("bookmarkAddHost-action")->setVisible(false);
+    m_collectionsScanSection.value("bookmarkAddService-action")->setVisible(true);
+    m_collectionsScanSection.value("bookmarkAddParameters-action")->setVisible(false);
+    m_collectionsScanSection.value("bookmarkAddVulnUrl-action")->setVisible(true);
 }

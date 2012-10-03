@@ -94,11 +94,7 @@ void MainWindow::updateSezScan()
 
     // enable scan action
     m_collections->enableBottomUiToggleActions();
-
-    menu_Bookmaks->setEnabled(true);
-    actionAdd_Bookmark->setText(tr("&Add host to bookmark"));
-    actionAdd_Parameters_to_bookmark->setVisible(true);
-    actionAdd_vulnerability_search_url->setVisible(false);
+    m_collections->enableScanBookmarkMenu();
 }
 
 void MainWindow::updateSezVuln()
@@ -128,11 +124,7 @@ void MainWindow::updateSezVuln()
 
     // disable scan action
     m_collections->disableBottomUiToggleActions();
-
-    menu_Bookmaks->setEnabled(true);
-    actionAdd_Bookmark->setText(tr("Add service to &bookmark"));
-    actionAdd_Parameters_to_bookmark->setVisible(false);
-    actionAdd_vulnerability_search_url->setVisible(true);
+    m_collections->enableVulnerabilityBookmarkMenu();
 }
 
 void MainWindow::updateSezDiscover()
@@ -158,8 +150,7 @@ void MainWindow::updateSezDiscover()
 
     // disable scan action
     m_collections->disableBottomUiToggleActions();
-
-    menu_Bookmaks->setEnabled(false);
+    m_collections->disableBookmarkMenu();
 }
 
 void MainWindow::loadDefaultProfile()

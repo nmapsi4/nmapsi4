@@ -53,6 +53,9 @@ public:
     void disableGlobalMenuToolBar();
     void enableVulnerabilityToolBar();
     void disableVulnerabilityToolBar();
+    void enableScanBookmarkMenu();
+    void enableVulnerabilityBookmarkMenu();
+    void disableBookmarkMenu();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
@@ -73,6 +76,7 @@ private:
     QToolBar *m_bookmarkToolBar;
     QToolBar *m_globalMenuToolBar;
     QToolBar *m_vulnerabilityToolBar;
+    QMenu *m_menuBookmark;
 
 public slots:
     void scanBookmarkContextMenu();
