@@ -56,6 +56,8 @@ public:
     void enableScanBookmarkMenu();
     void enableVulnerabilityBookmarkMenu();
     void disableBookmarkMenu();
+    void enableSaveActions();
+    void disableSaveActions();
 
     QHash<QString, PushButtonOrientated*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
@@ -64,6 +66,8 @@ public:
     QToolBar *m_discoverToolBar;
 
 private:
+    void setupActions();
+
     MainWindow* m_ui;
     QToolButton *m_menuSetup;
     QToolButton *m_profilerTool;

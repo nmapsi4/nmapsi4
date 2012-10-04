@@ -40,12 +40,6 @@ ParserManager::ParserManager(MainWindow* parent)
             this, SLOT(showParserResult(QTreeWidgetItem*, int)));
     connect(m_ui->m_scanWidget->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
             this, SLOT(showParserTracerouteResult(QTreeWidgetItem*, int)));
-    connect(m_ui->actionSave, SIGNAL(triggered()),
-            this, SLOT(callSaveSingleLogWriter()));
-    connect(m_ui->actionSave_Menu, SIGNAL(triggered()),
-            this, SLOT(callSaveSingleLogWriter()));
-    connect(m_ui->actionSave_As_Menu, SIGNAL(triggered()),
-            this, SLOT(callSaveAllLogWriter()));
     connect(m_ui->m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray,int)),
             this, SLOT(startParser(QStringList,QByteArray,QByteArray,int)));
 }
@@ -123,10 +117,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     }
 
     m_ui->m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);
-    m_ui->action_Scan_2->setEnabled(true);
-    m_ui->actionSave->setEnabled(true);
-    m_ui->actionSave_Menu->setEnabled(true);
-    m_ui->actionSave_As_Menu->setEnabled(true);
+    m_ui->m_collections->enableSaveActions();
 
     if (!m_ui->m_monitor->monitorHostNumber()) {
         m_ui->m_monitor->clearHostMonitor();

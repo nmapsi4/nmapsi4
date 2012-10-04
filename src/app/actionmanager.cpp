@@ -98,6 +98,27 @@ ActionManager::ActionManager(MainWindow* parent)
             this, SLOT(servicesContextMenu()));
     connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(vulnerabilityUrlContextMenu()));
+
+    setupActions();
+}
+
+void ActionManager::setupActions()
+{
+    QAction *action;
+
+    action = new QAction(m_ui);
+    action->setText(tr("S&ave Scan"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
+    m_collectionsScanSection.insert("save-action", action);
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_parser, SLOT(callSaveSingleLogWriter()));
+    action->setEnabled(false);
+
+    action = new QAction(m_ui);
+    action->setText(tr("Save all scans to &Directory"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-save-as.png")));
+    m_collectionsScanSection.insert("saveAll-action", action);
+    connect(action, SIGNAL(triggered(bool)), m_ui->m_parser, SLOT(callSaveAllLogWriter()));
+    action->setEnabled(false);
 }
 
 ActionManager::~ActionManager()
@@ -277,8 +298,8 @@ void ActionManager::createScanSectionBar()
     m_saveTool->setIcon(QIcon(QString::fromUtf8(":/images/images/save_all.png")));
 
     QMenu *menuSave = new QMenu(m_ui);
-    menuSave->addAction(m_ui->actionSave_Menu);
-    menuSave->addAction(m_ui->actionSave_As_Menu);
+    menuSave->addAction(m_collectionsScanSection.value("save-action"));
+    menuSave->addAction(m_collectionsScanSection.value("saveAll-action"));
     m_saveTool->setMenu(menuSave);
 
     m_scanToolBar->addWidget(m_saveTool);
@@ -506,4 +527,16 @@ void ActionManager::enableVulnerabilityBookmarkMenu()
     m_collectionsScanSection.value("bookmarkAddService-action")->setVisible(true);
     m_collectionsScanSection.value("bookmarkAddParameters-action")->setVisible(false);
     m_collectionsScanSection.value("bookmarkAddVulnUrl-action")->setVisible(true);
+}
+
+void ActionManager::disableSaveActions()
+{
+    m_collectionsScanSection.value("save-action")->setEnabled(false);
+    m_collectionsScanSection.value("saveAll-action")->setEnabled(false);
+}
+
+void ActionManager::enableSaveActions()
+{
+    m_collectionsScanSection.value("save-action")->setEnabled(true);
+    m_collectionsScanSection.value("saveAll-action")->setEnabled(true);
 }

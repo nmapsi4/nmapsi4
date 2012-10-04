@@ -66,6 +66,10 @@ private:
     QList<QTreeWidgetItem*> m_treeItems;
     QSplitter *m_rawlogHorizontalSplitter;
 
+public slots:
+    void callSaveSingleLogWriter();
+    void callSaveAllLogWriter();
+
 private slots:
     /*
      * Start data QByteArray scan result parser.
@@ -73,8 +77,6 @@ private slots:
     void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer, int id);
     void showParserResult(QTreeWidgetItem *item, int column);
     void showParserTracerouteResult(QTreeWidgetItem *item, int column);
-    void callSaveSingleLogWriter();
-    void callSaveAllLogWriter();
 };
 
 #endif // PARSER_H

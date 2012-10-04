@@ -44,7 +44,6 @@ void MainWindow::updateMenuBar()
 void MainWindow::updateComboHostnameProperties()
 {
     m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);
-    action_Scan_2->setEnabled(true);
     m_scanWidget->hostEdit->clear();
     m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8(""));
     bool signalState = m_scanWidget->hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
@@ -183,10 +182,7 @@ void MainWindow::clearAll()
     m_scanWidget->treeNSS->clear();
     m_scanWidget->listScan->clear();
     m_collections->m_collectionsScanSection.value("clearHistory-action")->setEnabled(false);
-
-    actionSave->setEnabled(false);
-    actionSave_Menu->setEnabled(false);
-    actionSave_As_Menu->setEnabled(false);
+    m_collections->disableSaveActions();
 
     m_scanWidget->comboScanLog->clear();
     m_scanWidget->comboScanLog->addItem(tr("Scan log parameters"));

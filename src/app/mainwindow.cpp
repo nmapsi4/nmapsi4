@@ -83,7 +83,6 @@ void MainWindow::initObject()
 
     // Set default properties
     m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(false);
-    action_Scan_2->setEnabled(false);
     m_collections->m_collectionsScanSection.value("bookmarkAddHost-action")->setEnabled(false);
     m_collections->m_collectionsScanSection.value("bookmarkAddService-action")->setEnabled(false);
     m_collections->disableVulnerabilityToolBar();
@@ -113,8 +112,6 @@ void MainWindow::initObject()
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
             this, SLOT(clearParametersCombo()));
-    connect(action_Scan_2, SIGNAL(triggered()),
-            this, SLOT(startScan()));
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startPreferencesDialog()));
     connect(actionNew_Profile, SIGNAL(triggered()),
@@ -317,10 +314,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
 
     // default action
     m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(true);
-    action_Save_As->setEnabled(false);
-    actionSave_As_Menu->setEnabled(false);
-    actionSave->setEnabled(false);
-    actionSave_Menu->setEnabled(false);
+    m_collections->disableSaveActions();
 
     QStringList parameters = getParameters();
 

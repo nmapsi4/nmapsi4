@@ -73,11 +73,6 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_Scan_2"/>
-    <addaction name="separator"/>
-    <addaction name="actionSave_Menu"/>
-    <addaction name="actionSave_As_Menu"/>
-    <addaction name="separator"/>
     <addaction name="action_Quit"/>
    </widget>
    <widget class="QMenu" name="menu_View">
@@ -178,18 +173,6 @@
     <string>&amp;Preferences</string>
    </property>
   </action>
-  <action name="action_Scan_2">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Scan</string>
-   </property>
-  </action>
   <action name="action_Quit">
    <property name="icon">
     <iconset resource="../../../mainwin.qrc">
@@ -212,99 +195,6 @@
    </property>
    <property name="text">
     <string>Stop Scan</string>
-   </property>
-  </action>
-  <action name="actionClear_History">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/edit-clear-list.png</normaloff>:/images/images/edit-clear-list.png</iconset>
-   </property>
-   <property name="text">
-    <string>Clear History</string>
-   </property>
-   <property name="whatsThis">
-    <string/>
-   </property>
-  </action>
-  <action name="actionClose_Tree">
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/view-tree.png</normaloff>:/images/images/view-tree.png</iconset>
-   </property>
-   <property name="text">
-    <string>Close Tree</string>
-   </property>
-   <property name="whatsThis">
-    <string>Close Scan Tree</string>
-   </property>
-  </action>
-  <action name="actionClear_Hostname">
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
-   </property>
-   <property name="text">
-    <string>Clear HostName</string>
-   </property>
-   <property name="whatsThis">
-    <string>Clear Hostname IP</string>
-   </property>
-  </action>
-  <action name="action_Save_As">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
-   </property>
-   <property name="text">
-    <string>Save As</string>
-   </property>
-   <property name="whatsThis">
-    <string>Save As</string>
-   </property>
-  </action>
-  <action name="actionSave">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
-   </property>
-   <property name="text">
-    <string>Save Scan</string>
-   </property>
-   <property name="whatsThis">
-    <string>Save</string>
-   </property>
-  </action>
-  <action name="actionSave_Menu">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/save_all.png</normaloff>:/images/images/save_all.png</iconset>
-   </property>
-   <property name="text">
-    <string>S&amp;ave Scan</string>
-   </property>
-  </action>
-  <action name="actionSave_As_Menu">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../mainwin.qrc">
-     <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
-   </property>
-   <property name="text">
-    <string>Save all scans to &amp;Directory</string>
    </property>
   </action>
   <action name="actionFullScreen">
