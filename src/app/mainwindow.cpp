@@ -141,6 +141,11 @@ void MainWindow::initObject()
             this, SLOT(updateScanCounter(int)));
 
     updateSezScan();
+
+#if defined(Q_WS_MAC)
+    // w/o show() call, mainwindow is not visible in mac osx
+    show();
+#endif
 }
 
 void MainWindow::startPreferencesDialog()
