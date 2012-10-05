@@ -37,7 +37,7 @@ class ActionManager : public QObject
 
 public:
     ActionManager(MainWindow* parent = 0);
-    ~ActionManager();
+    ~ActionManager() {}
     void createToolButtonBar();
     void createSectionsBar();
     void createDiscoverBar();
@@ -67,6 +67,7 @@ public:
 
 private:
     void setupActions();
+    void setupMenuBar();
 
     MainWindow* m_ui;
     QToolButton *m_menuSetup;

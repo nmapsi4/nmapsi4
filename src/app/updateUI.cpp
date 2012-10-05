@@ -23,16 +23,16 @@ void MainWindow::setFullScreen()
 {
     if (isFullScreen()) {
         setWindowState(windowState() & ~Qt::WindowFullScreen);
-        actionFullScreen->setChecked(false);
+        m_collections->m_collectionsScanSection.value("fullscreen-action")->setChecked(false);
     } else {
         setWindowState(windowState() | Qt::WindowFullScreen);
-        actionFullScreen->setChecked(true);
+        m_collections->m_collectionsScanSection.value("fullscreen-action")->setChecked(true);
     }
 }
 
 void MainWindow::updateMenuBar()
 {
-    if (actionMenuBar->isChecked()) {
+    if (m_collections->m_collectionsScanSection.value("showmenubar-action")->isChecked()) {
         menuBar()->setVisible(true);
         m_collections->disableGlobalMenuToolBar();
     } else {

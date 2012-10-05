@@ -23,20 +23,6 @@
 Utilities::Utilities(MainWindow* parent)
     : QObject(parent), m_ui(parent)
 {
-    connect(m_ui->action_About, SIGNAL(triggered()),
-            this, SLOT(about()));    // about action menu
-    connect(m_ui->actionAbout_Qt, SIGNAL(triggered()),
-            this, SLOT(aboutQt()));    // about action menu
-
-    // action help menu (browser call)
-    connect(m_ui->actionReport_Bug, SIGNAL(triggered()),
-            this, SLOT(showBugUrl()));
-    connect(m_ui->actionVisit_Website, SIGNAL(triggered()),
-            this, SLOT(showHomepageUrl()));
-    connect(m_ui->actionDocumentation, SIGNAL(triggered()),
-            this, SLOT(showDocumentationUrl()));
-    connect(m_ui->actionDonate_Money, SIGNAL(triggered()),
-            this, SLOT(showDonateUrl()));
 }
 
 Utilities::~Utilities()

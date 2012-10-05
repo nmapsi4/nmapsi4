@@ -100,6 +100,7 @@ ActionManager::ActionManager(MainWindow* parent)
             this, SLOT(vulnerabilityUrlContextMenu()));
 
     setupActions();
+    setupMenuBar();
 }
 
 void ActionManager::setupActions()
@@ -230,10 +231,111 @@ void ActionManager::setupActions()
     action->setEnabled(false);
     m_collectionsVulnerability.insert("stop-act", action);
     connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebStop()));
+
+    // global QActions
+    action = new QAction(m_ui);
+    action->setText(tr("&Quit"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
+    action->setShortcut(Qt::CTRL + Qt::Key_Q);
+    m_collectionsScanSection.insert("quit-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(close()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("&Preferences"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/tool.png")));
+    m_collectionsScanSection.insert("preferences-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(startPreferencesDialog()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("F&ull Screen Mode"));
+    action->setCheckable(true);
+    action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_F11);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/view-fullscreen.png")));
+    m_collectionsScanSection.insert("fullscreen-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(setFullScreen()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Show &Menu Bar"));
+    action->setCheckable(true);
+    action->setShortcut(Qt::CTRL + Qt::Key_M);
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
+    m_collectionsScanSection.insert("showmenubar-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateMenuBar()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Section Scan"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    m_collectionsScanSection.insert("sectionScan-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezScan()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Section Vulnerabilities"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    m_collectionsScanSection.insert("sectionVuln-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezVuln()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Section Discover"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+    m_collectionsScanSection.insert("sectionDiscover-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezDiscover()));
+
+    // FIXME: Help actions
+    action = new QAction(m_ui);
+    action->setText(tr("Report a bug"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/tools-report-bug.png")));
+    m_collectionsScanSection.insert("bug-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showBugUrl()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Visit Website"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+    m_collectionsScanSection.insert("home-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showHomepageUrl()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Documentation"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/book2.png")));
+    m_collectionsScanSection.insert("documentation-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showDocumentationUrl()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Donate Money"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/kwalletmanager.png")));
+    m_collectionsScanSection.insert("donate-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showDonateUrl()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("&About nmapsi4"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/icons/64x64/nmapsi4.png")));
+    m_collectionsScanSection.insert("aboutui-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(about()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("About &Qt"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
+    m_collectionsScanSection.insert("aboutqt-action", action);
+    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(aboutQt()));
 }
 
-ActionManager::~ActionManager()
+void ActionManager::setupMenuBar()
 {
+    m_ui->menu_File->addAction(m_collectionsScanSection.value("quit-action"));
+    m_ui->menu_Settings->addAction(m_collectionsScanSection.value("preferences-action"));
+    m_ui->menu_View->addAction(m_collectionsScanSection.value("fullscreen-action"));
+    m_ui->menu_View->addAction(m_collectionsScanSection.value("showmenubar-action"));
+    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionScan-action"));
+    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionVuln-action"));
+    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionDiscover-action"));
+
+    // Help menu
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("bug-action"));
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("home-action"));
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("documentation-action"));
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("donate-action"));
+    m_ui->menu_Help->addSeparator();
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("aboutui-action"));
+    m_ui->menu_Help->addAction(m_collectionsScanSection.value("aboutqt-action"));
 }
 
 void ActionManager::createSectionsBar()
@@ -293,17 +395,17 @@ void ActionManager::createToolButtonBar()
     m_menuSetup->setIcon(QIcon::fromTheme("applications-system", QIcon(":/images/images/applications-system.png")));
 
     QMenu *menu = new QMenu(m_ui);
-    menu->addAction(m_ui->actionScan_section);
-    menu->addAction(m_ui->actionVulnerabilities_section);
-    menu->addAction(m_ui->actionSection_Discover);
+    menu->addAction(m_collectionsScanSection.value("sectionScan-action"));
+    menu->addAction(m_collectionsScanSection.value("sectionVuln-action"));
+    menu->addAction(m_collectionsScanSection.value("sectionDiscover-action"));
     menu->addSeparator();
-    menu->addAction(m_ui->actionProfile);
+    menu->addAction(m_collectionsScanSection.value("preferences-action"));
     menu->addSeparator();
     menu->addMenu(m_ui->menu_Help);
     menu->addSeparator();
-    menu->addAction(m_ui->actionMenuBar);
+    menu->addAction(m_collectionsScanSection.value("showmenubar-action"));
     menu->addSeparator();
-    menu->addAction(m_ui->action_Quit);
+    menu->addAction(m_collectionsScanSection.value("quit-action"));
     menu->setLayoutDirection(Qt::LeftToRight);
     m_menuSetup->setMenu(menu);
     m_globalMenuToolBar->addWidget(m_menuSetup);

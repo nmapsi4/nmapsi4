@@ -34,7 +34,7 @@ void MainWindow::syncSettings()
 #endif
 
     // restore actionMenuBar
-    actionMenuBar->setChecked(settings.value("showMenuBar", false).toBool());
+    m_collections->m_collectionsScanSection.value("showmenubar-action")->setChecked(settings.value("showMenuBar", false).toBool());
     // update max parallel scan option
     m_monitor->updateMaxParallelScan();
 }
@@ -48,7 +48,7 @@ void MainWindow::saveSettings()
     settings.setValue("hostCache", 10);
     settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
-    settings.setValue("showMenuBar", actionMenuBar->isChecked());
+    settings.setValue("showMenuBar", m_collections->m_collectionsScanSection.value("showmenubar-action")->isChecked());
 
     m_bookmark->syncSettings();
     m_discoverManager->syncSettings();

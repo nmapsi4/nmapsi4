@@ -63,6 +63,7 @@ void MainWindow::initObject()
 #endif
 
     m_mainTabWidget->setDocumentMode(true);
+    // TODO: allocate centralWidget with layout QVBoxLayout(centralWidget)
     centralWidget()->layout()->addWidget(m_mainTabWidget);
 
     // declare and restore items from bookmark
@@ -106,28 +107,14 @@ void MainWindow::initObject()
     updateComboBook();
 
     // connect slots
-    connect(action_Quit, SIGNAL(triggered()),
-            this, SLOT(close()));
     connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
             this, SLOT(clearParametersCombo()));
-    connect(actionProfile, SIGNAL(triggered()),
-            this, SLOT(startPreferencesDialog()));
-    connect(actionFullScreen, SIGNAL(triggered()),
-            this, SLOT(setFullScreen()));
-    connect(actionMenuBar, SIGNAL(triggered()),
-            this, SLOT(updateMenuBar()));
     connect(m_scanWidget->comboParametersProfiles, SIGNAL(activated(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
-    connect(actionScan_section, SIGNAL(triggered()),
-            this, SLOT(updateSezScan()));
-    connect(actionVulnerabilities_section, SIGNAL(triggered()),
-            this, SLOT(updateSezVuln()));
-    connect(actionSection_Discover, SIGNAL(triggered()),
-            this, SLOT(updateSezDiscover()));
     connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(startScan()));
     connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
