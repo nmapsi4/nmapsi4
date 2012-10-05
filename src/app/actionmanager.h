@@ -26,6 +26,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QToolButton>
 #include <QtGui/QToolBar>
+#include <QtGui/QMenuBar>
 
 #include <pushbuttonorientated.h>
 
@@ -82,6 +83,11 @@ private:
     QToolBar *m_globalMenuToolBar;
     QToolBar *m_vulnerabilityToolBar;
     QMenu *m_menuBookmark;
+    QMenu *m_menuFile;
+    QMenu *m_menuSettings;
+    QMenu *m_menuView;
+    QMenu *m_menuTools;
+    QMenu *m_menuHelp;
 
 public slots:
     void scanBookmarkContextMenu();

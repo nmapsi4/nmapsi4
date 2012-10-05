@@ -320,22 +320,48 @@ void ActionManager::setupActions()
 
 void ActionManager::setupMenuBar()
 {
-    m_ui->menu_File->addAction(m_collectionsScanSection.value("quit-action"));
-    m_ui->menu_Settings->addAction(m_collectionsScanSection.value("preferences-action"));
-    m_ui->menu_View->addAction(m_collectionsScanSection.value("fullscreen-action"));
-    m_ui->menu_View->addAction(m_collectionsScanSection.value("showmenubar-action"));
-    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionScan-action"));
-    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionVuln-action"));
-    m_ui->menu_Tools->addAction(m_collectionsScanSection.value("sectionDiscover-action"));
+    QMenuBar *menubar = new QMenuBar(m_ui);
+    // File menu
+    m_menuFile = new QMenu(menubar);
+    m_menuFile->setTitle(tr("&File"));
+    m_menuFile->addAction(m_collectionsScanSection.value("quit-action"));
+
+    // Settings menu
+    m_menuSettings = new QMenu(menubar);
+    m_menuSettings->setTitle(tr("S&ettings"));
+    m_menuSettings->addAction(m_collectionsScanSection.value("preferences-action"));
+
+    // View menu
+    m_menuView = new QMenu(menubar);
+    m_menuView->setTitle(tr("&View"));
+    m_menuView->addAction(m_collectionsScanSection.value("fullscreen-action"));
+    m_menuView->addAction(m_collectionsScanSection.value("showmenubar-action"));
+
+    // Tools menu
+    m_menuTools = new QMenu(menubar);
+    m_menuTools->setTitle(tr("&Tools"));
+    m_menuTools->addAction(m_collectionsScanSection.value("sectionScan-action"));
+    m_menuTools->addAction(m_collectionsScanSection.value("sectionVuln-action"));
+    m_menuTools->addAction(m_collectionsScanSection.value("sectionDiscover-action"));
 
     // Help menu
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("bug-action"));
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("home-action"));
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("documentation-action"));
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("donate-action"));
-    m_ui->menu_Help->addSeparator();
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("aboutui-action"));
-    m_ui->menu_Help->addAction(m_collectionsScanSection.value("aboutqt-action"));
+    m_menuHelp = new QMenu(menubar);
+    m_menuHelp->setTitle(tr("&Help"));
+    m_menuHelp->addAction(m_collectionsScanSection.value("bug-action"));
+    m_menuHelp->addAction(m_collectionsScanSection.value("home-action"));
+    m_menuHelp->addAction(m_collectionsScanSection.value("documentation-action"));
+    m_menuHelp->addAction(m_collectionsScanSection.value("donate-action"));
+    m_menuHelp->addSeparator();
+    m_menuHelp->addAction(m_collectionsScanSection.value("aboutui-action"));
+    m_menuHelp->addAction(m_collectionsScanSection.value("aboutqt-action"));
+
+    menubar->addAction(m_menuFile->menuAction());
+    menubar->addAction(m_menuView->menuAction());
+    menubar->addAction(m_menuTools->menuAction());
+    menubar->addAction(m_menuSettings->menuAction());
+    menubar->addAction(m_menuHelp->menuAction());
+
+    m_ui->setMenuBar(menubar);
 }
 
 void ActionManager::createSectionsBar()
@@ -401,7 +427,7 @@ void ActionManager::createToolButtonBar()
     menu->addSeparator();
     menu->addAction(m_collectionsScanSection.value("preferences-action"));
     menu->addSeparator();
-    menu->addMenu(m_ui->menu_Help);
+    menu->addMenu(m_menuHelp);
     menu->addSeparator();
     menu->addAction(m_collectionsScanSection.value("showmenubar-action"));
     menu->addSeparator();

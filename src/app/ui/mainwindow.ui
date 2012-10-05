@@ -60,46 +60,15 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>581</width>
-     <height>20</height>
-    </rect>
+  <action name="action_About">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
    </property>
-   <widget class="QMenu" name="menu_File">
-    <property name="title">
-     <string>&amp;File</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_View">
-    <property name="title">
-     <string>&amp;View</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_Help">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_Settings">
-    <property name="title">
-     <string>S&amp;ettings</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_Tools">
-    <property name="title">
-     <string>&amp;Tools</string>
-    </property>
-   </widget>
-   <addaction name="menu_File"/>
-   <addaction name="menu_View"/>
-   <addaction name="menu_Tools"/>
-   <addaction name="menu_Settings"/>
-   <addaction name="menu_Help"/>
-  </widget>
+   <property name="text">
+    <string>&amp;About nmapsi4</string>
+   </property>
+  </action>
   <action name="action_Scan">
    <property name="icon">
     <iconset resource="../../../mainwin.qrc">
@@ -128,6 +97,15 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Qt</string>
    </property>
   </action>
   <action name="actionProfile">
@@ -197,6 +175,141 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionShow_Status_Bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Status Bar</string>
+   </property>
+  </action>
+  <action name="actionMain">
+   <property name="text">
+    <string>Main</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="text">
+    <string>Log</string>
+   </property>
+  </action>
+  <action name="actionVulnerabilities">
+   <property name="text">
+    <string>Vuln</string>
+   </property>
+  </action>
+  <action name="actionScan">
+   <property name="text">
+    <string>Scan</string>
+   </property>
+  </action>
+  <action name="actionScan_2">
+   <property name="text">
+    <string>Scan</string>
+   </property>
+  </action>
+  <action name="actionScan_section">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
+   </property>
+   <property name="text">
+    <string>Section Scan</string>
+   </property>
+  </action>
+  <action name="actionLog_section">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
+   </property>
+   <property name="text">
+    <string>Section Log</string>
+   </property>
+  </action>
+  <action name="actionVulnerabilities_section">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+   </property>
+   <property name="text">
+    <string>Section Vulnerabilities</string>
+   </property>
+  </action>
+  <action name="actionDonate_Money">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/kwalletmanager.png</normaloff>:/images/images/kwalletmanager.png</iconset>
+   </property>
+   <property name="text">
+    <string>Donate Money</string>
+   </property>
+  </action>
+  <action name="actionDocumentation">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="actionVisit_Website">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/icons/64x64/nmapsi4.png</normaloff>:/images/icons/64x64/nmapsi4.png</iconset>
+   </property>
+   <property name="text">
+    <string>Visit Website</string>
+   </property>
+  </action>
+  <action name="actionReport_Bug">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/tools-report-bug.png</normaloff>:/images/images/tools-report-bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>Report a bug</string>
+   </property>
+  </action>
+  <action name="actionSection_Discover">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Section Discover</string>
+   </property>
+  </action>
+  <action name="actionNew_Profile">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/document-new.png</normaloff>:/images/images/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Profile</string>
+   </property>
+  </action>
+  <action name="actionNew_ProfileMenu">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/document-new.png</normaloff>:/images/images/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Profile</string>
+   </property>
+  </action>
+  <action name="actionEdit_Profile">
+   <property name="icon">
+    <iconset resource="../../../mainwin.qrc">
+     <normaloff>:/images/images/document-properties.png</normaloff>:/images/images/document-properties.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Profile</string>
    </property>
   </action>
  </widget>
