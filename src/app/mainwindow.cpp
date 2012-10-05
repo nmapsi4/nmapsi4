@@ -60,8 +60,8 @@ void MainWindow::initObject()
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
+    centralLayout->addWidget(m_mainTabWidget);
     centralwidget->setLayout(centralLayout);
-    centralwidget->layout()->addWidget(m_mainTabWidget);
     setCentralWidget(centralwidget);
 
     // declare and restore items from bookmark

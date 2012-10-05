@@ -72,7 +72,7 @@ void Utilities::aboutQt()
 
 void Utilities::showBugUrl()
 {
-    QDesktopServices::openUrl(QUrl("https://launchpad.net/nmapsi4"));
+    QDesktopServices::openUrl(QUrl("http://bugs.nmapsi4.org"));
 }
 
 void Utilities::showHomepageUrl()
