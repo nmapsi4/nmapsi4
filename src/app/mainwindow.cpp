@@ -114,10 +114,6 @@ void MainWindow::initObject()
             this, SLOT(clearParametersCombo()));
     connect(actionProfile, SIGNAL(triggered()),
             this, SLOT(startPreferencesDialog()));
-    connect(actionNew_Profile, SIGNAL(triggered()),
-            this, SLOT(newProfile()));
-    connect(actionEdit_Profile, SIGNAL(triggered()),
-            this, SLOT(editProfile()));
     connect(actionFullScreen, SIGNAL(triggered()),
             this, SLOT(setFullScreen()));
     connect(actionMenuBar, SIGNAL(triggered()),

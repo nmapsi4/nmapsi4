@@ -160,6 +160,19 @@ void ActionManager::setupActions()
     m_collectionsScanSection.insert("bookmarkAddVulnUrl-action", action);
     connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(showAddUrlUi()));
 
+    // Profiler QActions
+    action = new QAction(m_ui);
+    action->setText(tr("New Profile"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-new.png")));
+    m_collectionsScanSection.insert("newProfile-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(newProfile()));
+
+    action = new QAction(m_ui);
+    action->setText(tr("Edit Profile"));
+    action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-properties.png")));
+    m_collectionsScanSection.insert("editProfile-action", action);
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(editProfile()));
+
     // discover Actions
     action = new QAction(m_ui);
     action->setText(tr("Scan selected IP/s"));
@@ -326,8 +339,8 @@ void ActionManager::createScanSectionBar()
     m_profilerTool->setIcon(QIcon(QString::fromUtf8(":/images/images/documentation.png")));
 
     QMenu *menuProfiler = new QMenu(m_ui);
-    menuProfiler->addAction(m_ui->actionNew_Profile);
-    menuProfiler->addAction(m_ui->actionEdit_Profile);
+    menuProfiler->addAction(m_collectionsScanSection.value("newProfile-action"));
+    menuProfiler->addAction(m_collectionsScanSection.value("editProfile-action"));
     m_profilerTool->setMenu(menuProfiler);
 
     m_scanToolBar->addWidget(m_profilerTool);

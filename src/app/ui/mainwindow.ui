@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>783</width>
-    <height>482</height>
+    <width>581</width>
+    <height>377</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -65,8 +65,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>783</width>
-     <height>19</height>
+     <width>581</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -99,8 +99,6 @@
      <string>S&amp;ettings</string>
     </property>
     <addaction name="actionProfile"/>
-    <addaction name="actionNew_Profile"/>
-    <addaction name="actionEdit_Profile"/>
    </widget>
    <widget class="QMenu" name="menu_Tools">
     <property name="title">
