@@ -101,7 +101,6 @@ SET(SOURCES_UI
         app/ui/vulnerabilitywidget.ui
         app/ui/monitorwidget.ui
         app/ui/scanwidget.ui
-        #app/ui/mainwindow.ui
 )
 
 SET(RESOURCES_QRC ../mainwin.qrc)
