@@ -245,6 +245,134 @@ msgctxt "ActionManager|"
 msgid "Show/Hide host details"
 msgstr ""
 
+msgctxt "ActionManager|"
+msgid "Scan"
+msgstr "Escaneja"
+
+msgctxt "ActionManager|"
+msgid "Clear History"
+msgstr "Neteja l'historial"
+
+msgctxt "ActionManager|"
+msgid "S&ave Scan"
+msgstr "Des&a l'escaneig"
+
+msgctxt "ActionManager|"
+msgid "Save all scans to &Directory"
+msgstr "Desa tots els escaneijos al un &directori"
+
+msgctxt "ActionManager|"
+msgid "&Add host to bookmark"
+msgstr "Afegeix &màquina a l'adreça d'interès"
+
+msgctxt "ActionManager|"
+msgid "Add service to &bookmark"
+msgstr "Afegeix &servei a l'adreça d'interès"
+
+msgctxt "ActionManager|"
+msgid "Add &parameters to bookmark"
+msgstr "Afegeix &paràmetres a l'adreça d'interès"
+
+msgctxt "ActionManager|"
+msgid "Add vulnerability search url"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "New Profile"
+msgstr "Nou perfil"
+
+msgctxt "ActionManager|"
+msgid "Edit Profile"
+msgstr "Edita el perfil"
+
+msgctxt "ActionManager|"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "ActionManager|"
+msgid "Back"
+msgstr "Enrere"
+
+msgctxt "ActionManager|"
+msgid "Forward"
+msgstr "Endavant"
+
+msgctxt "ActionManager|"
+msgid "Stop"
+msgstr "Atura"
+
+msgctxt "ActionManager|"
+msgid "&Quit"
+msgstr "&Surt"
+
+msgctxt "ActionManager|"
+msgid "&Preferences"
+msgstr "&Preferències"
+
+msgctxt "ActionManager|"
+msgid "F&ull Screen Mode"
+msgstr "&Mode de pantalla completa"
+
+msgctxt "ActionManager|"
+msgid "Show &Menu Bar"
+msgstr "Mostra la barra de &menú"
+
+msgctxt "ActionManager|"
+msgid "Section Scan"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Section Vulnerabilities"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Section Discover"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Report a bug"
+msgstr "Informa d'un error"
+
+msgctxt "ActionManager|"
+msgid "Visit Website"
+msgstr "Visita la pàgina web"
+
+msgctxt "ActionManager|"
+msgid "Documentation"
+msgstr "Documentació"
+
+msgctxt "ActionManager|"
+msgid "Donate Money"
+msgstr "Dona diners"
+
+msgctxt "ActionManager|"
+msgid "&About nmapsi4"
+msgstr "Quant a &Nmapsi4"
+
+msgctxt "ActionManager|"
+msgid "About &Qt"
+msgstr "Quant a &Qt"
+
+msgctxt "ActionManager|"
+msgid "&File"
+msgstr "&Fitxer"
+
+msgctxt "ActionManager|"
+msgid "S&ettings"
+msgstr "A&rranjament"
+
+msgctxt "ActionManager|"
+msgid "&View"
+msgstr "&Vista"
+
+msgctxt "ActionManager|"
+msgid "&Tools"
+msgstr "&Eines"
+
+msgctxt "ActionManager|"
+msgid "&Help"
+msgstr "&Ajuda"
+
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr "està viu"
@@ -398,10 +526,6 @@ msgid "Slow comprehensive scan"
 msgstr "Escaneig lent i meticulós"
 
 msgctxt "MainWindow|"
-msgid "No Host Target\n"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Tanca"
 
@@ -434,14 +558,6 @@ msgid "Bookmarks"
 msgstr "Adreces d'interès"
 
 msgctxt "MainWindow|"
-msgid "&Add host to bookmark"
-msgstr "Afegeix &màquina a l'adreça d'interès"
-
-msgctxt "MainWindow|"
-msgid "Add service to &bookmark"
-msgstr "Afegeix &servei a l'adreça d'interès"
-
-msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr "Paràmetres del registre d'escaneig"
 
@@ -449,208 +565,8 @@ msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr " Escaneig actiu "
 
-msgctxt "MainWindowClass|"
-msgid "Nmapsi4"
-msgstr "Nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&About nmapsi4"
-msgstr "Quant a &Nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&Scan"
-msgstr "E&scaneja"
-
-msgctxt "MainWindowClass|"
-msgid "Scan"
-msgstr "Escaneja"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-msgctxt "MainWindowClass|"
-msgid "About &Qt"
-msgstr "Quant a &Qt"
-
-msgctxt "MainWindowClass|"
-msgid "&Preferences"
-msgstr "&Preferències"
-
-msgctxt "MainWindowClass|"
-msgid "&Quit"
-msgstr "&Surt"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-msgctxt "MainWindowClass|"
-msgid "Stop Scan"
-msgstr "Atura l'escaneig"
-
-msgctxt "MainWindowClass|"
-msgid "Clear History"
-msgstr "Neteja l'historial"
-
-msgctxt "MainWindowClass|"
-msgid "Close Tree"
-msgstr "Tanca l'arbre"
-
-msgctxt "MainWindowClass|"
-msgid "Close Scan Tree"
-msgstr "Tanca l'arbre d'escaneig"
-
-msgctxt "MainWindowClass|"
-msgid "Clear HostName"
-msgstr "Neteja el nom de la màquina"
-
-msgctxt "MainWindowClass|"
-msgid "Clear Hostname IP"
-msgstr "Neteja la IP de la màquina"
-
-msgctxt "MainWindowClass|"
-msgid "Save As"
-msgstr "Desa com a"
-
-msgctxt "MainWindowClass|"
-msgid "Save Scan"
-msgstr "Desa l'escaneig"
-
-msgctxt "MainWindowClass|"
-msgid "Save"
-msgstr "Desa"
-
-msgctxt "MainWindowClass|"
-msgid "S&ave Scan"
-msgstr "Des&a l'escaneig"
-
-msgctxt "MainWindowClass|"
-msgid "Save all scans to &Directory"
-msgstr "Desa tots els escaneijos al un &directori"
-
-msgctxt "MainWindowClass|"
-msgid "F&ull Screen Mode"
-msgstr "&Mode de pantalla completa"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Shift+F11"
-msgstr "Ctrl+Maj+F11"
-
-msgctxt "MainWindowClass|"
-msgid "Show &Menu Bar"
-msgstr "Mostra la barra de &menú"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+M"
-msgstr "Ctrl+M"
-
-msgctxt "MainWindowClass|"
-msgid "Show Status Bar"
-msgstr "Mostra la barra d'estat"
-
-msgctxt "MainWindowClass|"
-msgid "&Add host to bookmark"
-msgstr "Afegeix &màquina a l'adreça d'interès"
-
-msgctxt "MainWindowClass|"
-msgid "Add host to bookmark"
-msgstr "Afegeix màquina a l'adreça d'interès"
-
-msgctxt "MainWindowClass|"
-msgid "Main"
-msgstr "Principal"
-
-msgctxt "MainWindowClass|"
-msgid "Log"
-msgstr "Registre"
-
-msgctxt "MainWindowClass|"
-msgid "Vuln"
-msgstr "Vuln"
-
-msgctxt "MainWindowClass|"
-msgid "Section Scan"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Section Log"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Section Vulnerabilities"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Donate Money"
-msgstr "Dona diners"
-
-msgctxt "MainWindowClass|"
-msgid "Documentation"
-msgstr "Documentació"
-
-msgctxt "MainWindowClass|"
-msgid "Visit Website"
-msgstr "Visita la pàgina web"
-
-msgctxt "MainWindowClass|"
-msgid "Report a bug"
-msgstr "Informa d'un error"
-
-msgctxt "MainWindowClass|"
-msgid "Section Discover"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "New Profile"
-msgstr "Nou perfil"
-
-msgctxt "MainWindowClass|"
-msgid "Edit Profile"
-msgstr "Edita el perfil"
-
-msgctxt "MainWindowClass|"
-msgid "Add &parameters to bookmark"
-msgstr "Afegeix &paràmetres a l'adreça d'interès"
-
-msgctxt "MainWindowClass|"
-msgid "Add vulnerability search url"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "&File"
-msgstr "&Fitxer"
-
-msgctxt "MainWindowClass|"
-msgid "&View"
-msgstr "&Vista"
-
-msgctxt "MainWindowClass|"
-msgid "&Bookmarks"
-msgstr "&Adreces d'interès"
-
-msgctxt "MainWindowClass|"
-msgid "&Help"
-msgstr "&Ajuda"
-
-msgctxt "MainWindowClass|"
-msgid "S&ettings"
-msgstr "A&rranjament"
-
-msgctxt "MainWindowClass|"
-msgid "&Tools"
-msgstr "&Eines"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_2"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_3"
+msgctxt "MainWindow|"
+msgid "Insert an host/ip address to scan\n"
 msgstr ""
 
 msgctxt "Monitor|"
@@ -1072,26 +988,6 @@ msgstr "Nom de la URL"
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr "Cerca vulnerabilitats"
-
-msgctxt "Vulnerability|"
-msgid "Search"
-msgstr "Cerca"
-
-msgctxt "Vulnerability|"
-msgid "Back"
-msgstr "Enrere"
-
-msgctxt "Vulnerability|"
-msgid "Forward"
-msgstr "Endavant"
-
-msgctxt "Vulnerability|"
-msgid "Stop"
-msgstr "Atura"
-
-msgctxt "Vulnerability|"
-msgid "Add service to &bookmark"
-msgstr "Afegeix &servei a l'adreça d'interès"
 
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"

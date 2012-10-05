@@ -93,124 +93,284 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ActionManager</name>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="55"/>
-        <location filename="../../app/actionmanager.cpp" line="56"/>
+        <location filename="../../app/actionmanager.cpp" line="371"/>
+        <location filename="../../app/actionmanager.cpp" line="372"/>
         <source>Scan host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="63"/>
-        <location filename="../../app/actionmanager.cpp" line="64"/>
+        <location filename="../../app/actionmanager.cpp" line="379"/>
+        <location filename="../../app/actionmanager.cpp" line="380"/>
         <source>Network Discover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="71"/>
+        <location filename="../../app/actionmanager.cpp" line="387"/>
         <source>Vulnerability</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="72"/>
+        <location filename="../../app/actionmanager.cpp" line="388"/>
         <source>Check Vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="82"/>
+        <location filename="../../app/actionmanager.cpp" line="398"/>
         <source>Show/Hide Host List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="90"/>
+        <location filename="../../app/actionmanager.cpp" line="406"/>
         <source>Show/Hide Host Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="102"/>
+        <location filename="../../app/actionmanager.cpp" line="614"/>
         <source>Remove Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="106"/>
+        <location filename="../../app/actionmanager.cpp" line="618"/>
         <source>Scan Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="122"/>
+        <location filename="../../app/actionmanager.cpp" line="634"/>
         <source>Remove Scan Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="136"/>
+        <location filename="../../app/actionmanager.cpp" line="648"/>
         <source>Remove Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="140"/>
+        <location filename="../../app/actionmanager.cpp" line="652"/>
         <source>Search for vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="157"/>
+        <location filename="../../app/actionmanager.cpp" line="668"/>
         <source>Check Vulnerability</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="170"/>
+        <location filename="../../app/actionmanager.cpp" line="681"/>
         <source>Remove url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="184"/>
+        <location filename="../../app/actionmanager.cpp" line="420"/>
         <source>Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="271"/>
+        <location filename="../../app/actionmanager.cpp" line="499"/>
         <source>Scan Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="278"/>
+        <location filename="../../app/actionmanager.cpp" line="179"/>
         <source>Scan selected IP/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="286"/>
+        <location filename="../../app/actionmanager.cpp" line="111"/>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="119"/>
+        <source>Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="126"/>
+        <source>S&amp;ave Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="133"/>
+        <source>Save all scans to &amp;Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="141"/>
+        <source>&amp;Add host to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="147"/>
+        <source>Add service to &amp;bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="153"/>
+        <source>Add &amp;parameters to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="159"/>
+        <source>Add vulnerability search url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="166"/>
+        <source>New Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="172"/>
+        <source>Edit Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="186"/>
         <source>Scan all discovered IP/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="298"/>
+        <location filename="../../app/actionmanager.cpp" line="193"/>
         <source>Save IP list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="306"/>
+        <location filename="../../app/actionmanager.cpp" line="200"/>
         <source>Load IP list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../app/actionmanager.cpp" line="209"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../app/actionmanager.cpp" line="216"/>
-        <source>Profile</source>
+        <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="81"/>
-        <source>Show/Hide host list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../app/actionmanager.cpp" line="89"/>
-        <source>Show/Hide host details</source>
+        <location filename="../../app/actionmanager.cpp" line="223"/>
+        <source>Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../app/actionmanager.cpp" line="230"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="237"/>
+        <source>&amp;Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="244"/>
+        <source>&amp;Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="250"/>
+        <source>F&amp;ull Screen Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="258"/>
+        <source>Show &amp;Menu Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="266"/>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="272"/>
+        <source>Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="278"/>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="285"/>
+        <source>Report a bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="291"/>
+        <source>Visit Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="297"/>
+        <source>Documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="303"/>
+        <source>Donate Money</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="309"/>
+        <source>&amp;About nmapsi4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="315"/>
+        <source>About &amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="326"/>
+        <source>&amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="331"/>
+        <source>S&amp;ettings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="336"/>
+        <source>&amp;View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="342"/>
+        <source>&amp;Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="349"/>
+        <source>&amp;Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="466"/>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="397"/>
+        <source>Show/Hide host list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="405"/>
+        <source>Show/Hide host details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/actionmanager.cpp" line="448"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="245"/>
+        <location filename="../../app/actionmanager.cpp" line="480"/>
         <source>Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -360,33 +520,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../app/updateUI.cpp" line="78"/>
+        <location filename="../../app/updateUI.cpp" line="75"/>
         <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="101"/>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../app/updateUI.cpp" line="136"/>
-        <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../app/updateUI.cpp" line="206"/>
+        <location filename="../../app/updateUI.cpp" line="188"/>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="215"/>
+        <location filename="../../app/updateUI.cpp" line="197"/>
         <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="91"/>
-        <location filename="../../app/updateUI.cpp" line="128"/>
+        <location filename="../../app/updateUI.cpp" line="88"/>
+        <location filename="../../app/updateUI.cpp" line="120"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -455,311 +605,42 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="232"/>
-        <source>No Host Target
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../app/mainwindow.cpp" line="232"/>
-        <location filename="../../app/mainwindow.cpp" line="259"/>
-        <location filename="../../app/mainwindow.cpp" line="311"/>
+        <location filename="../../app/mainwindow.cpp" line="215"/>
+        <location filename="../../app/mainwindow.cpp" line="242"/>
+        <location filename="../../app/mainwindow.cpp" line="294"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="258"/>
+        <location filename="../../app/mainwindow.cpp" line="215"/>
+        <source>Insert an host/ip address to scan
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../app/mainwindow.cpp" line="241"/>
         <source>Warning - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="259"/>
+        <location filename="../../app/mainwindow.cpp" line="242"/>
         <source>IPv6 Protocol range scan is not yet supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="311"/>
+        <location filename="../../app/mainwindow.cpp" line="294"/>
         <source>Hostname already scanning
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="358"/>
+        <location filename="../../app/mainwindow.cpp" line="338"/>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="359"/>
+        <location filename="../../app/mainwindow.cpp" line="339"/>
         <source>Do you want to close nmapsi4 anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MainWindowClass</name>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="391"/>
-        <source>Nmapsi4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="392"/>
-        <source>&amp;About nmapsi4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="393"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="394"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="402"/>
-        <source>&amp;Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="395"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="397"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="438"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="439"/>
-        <source>Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="399"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="400"/>
-        <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="401"/>
-        <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="403"/>
-        <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="404"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="405"/>
-        <source>Stop Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="406"/>
-        <source>Clear History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="410"/>
-        <source>Close Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="412"/>
-        <source>Close Scan Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="414"/>
-        <source>Clear HostName</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="416"/>
-        <source>Clear Hostname IP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="418"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="420"/>
-        <source>Save As</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="422"/>
-        <source>Save Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="424"/>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="426"/>
-        <source>S&amp;ave Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="427"/>
-        <source>Save all scans to &amp;Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="428"/>
-        <source>F&amp;ull Screen Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="429"/>
-        <source>Ctrl+Shift+F11</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="430"/>
-        <source>Show &amp;Menu Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="431"/>
-        <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="432"/>
-        <source>Show Status Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="433"/>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="434"/>
-        <source>Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="435"/>
-        <source>Main</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="436"/>
-        <source>Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="437"/>
-        <source>Vuln</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="440"/>
-        <source>Section Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="441"/>
-        <source>Section Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="442"/>
-        <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="443"/>
-        <source>Donate Money</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="444"/>
-        <source>Documentation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="445"/>
-        <source>Visit Website</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="446"/>
-        <source>Report a bug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="447"/>
-        <source>Section Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="448"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="449"/>
-        <source>New Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="450"/>
-        <source>Edit Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="451"/>
-        <source>Add &amp;parameters to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="452"/>
-        <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="453"/>
-        <source>&amp;File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="454"/>
-        <source>&amp;View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="455"/>
-        <source>&amp;Bookmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="456"/>
-        <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="457"/>
-        <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="458"/>
-        <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="459"/>
-        <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="460"/>
-        <source>toolBar_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_mainwindow.h" line="461"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="462"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="463"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="464"/>
-        <location filename="../../../build/src/ui_mainwindow.h" line="465"/>
-        <source>toolBar_3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -817,28 +698,28 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ParserManager</name>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="90"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="84"/>
         <source>Error: check nmap Installation.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="92"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="86"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="436"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="427"/>
         <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="716"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="707"/>
         <source>Save Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="736"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="727"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1296,7 +1177,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Utilities</name>
     <message>
-        <location filename="../../common/utilities.cpp" line="53"/>
+        <location filename="../../common/utilities.cpp" line="39"/>
         <source>Select the file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1334,31 +1215,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../platform/vulnerability.cpp" line="46"/>
         <source>Search Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../platform/vulnerability.cpp" line="119"/>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../platform/vulnerability.cpp" line="127"/>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../platform/vulnerability.cpp" line="135"/>
-        <source>Forward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../platform/vulnerability.cpp" line="143"/>
-        <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../platform/vulnerability.cpp" line="371"/>
-        <source>Add service to &amp;bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -177,6 +177,134 @@ p, li { white-space: pre-wrap; }
         <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation>Очистить журнал команд</translation>
+    </message>
+    <message>
+        <source>S&amp;ave Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save all scans to &amp;Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add host to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add service to &amp;bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add &amp;parameters to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add vulnerability search url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Поиск</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Вперёд</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Остановить</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>&amp;Выход</translation>
+    </message>
+    <message>
+        <source>&amp;Preferences</source>
+        <translation>&amp;Свойства</translation>
+    </message>
+    <message>
+        <source>F&amp;ull Screen Mode</source>
+        <translation>П_&amp;олноэкранный режим</translation>
+    </message>
+    <message>
+        <source>Show &amp;Menu Bar</source>
+        <translation>Показать &amp;меню</translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation>Сообщить о проблеме</translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation>Посетить веб-сайт</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Руководство</translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation>Пожертвовать средства</translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation>О пр&amp;ограмме nmapsi4</translation>
+    </message>
+    <message>
+        <source>About &amp;Qt</source>
+        <translation>О &amp;Qt</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>Ф&amp;айл</translation>
+    </message>
+    <message>
+        <source>S&amp;ettings</source>
+        <translation>&amp;Настройки</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>В&amp;ид</translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
+        <translation>&amp;Инструменты</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>Справ&amp;ка</translation>
+    </message>
 </context>
 <context>
     <name>DiscoverManager</name>
@@ -323,25 +451,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No Host Target
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
         <source>Hostname already scanning
 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -392,212 +507,10 @@ p, li { white-space: pre-wrap; }
         <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>MainWindowClass</name>
     <message>
-        <source>Nmapsi4</source>
-        <translation>Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;About nmapsi4</source>
-        <translation>О пр&amp;ограмме nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;Scan</source>
-        <translation>&amp;Сканировать</translation>
-    </message>
-    <message>
-        <source>Scan</source>
+        <source>Insert an host/ip address to scan
+</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>О &amp;Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Preferences</source>
-        <translation>&amp;Свойства</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation>&amp;Выход</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Stop Scan</source>
-        <translation>Остановить поиск</translation>
-    </message>
-    <message>
-        <source>Clear History</source>
-        <translation>Очистить журнал команд</translation>
-    </message>
-    <message>
-        <source>Close Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Scan Tree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear HostName</source>
-        <translation>Очистить ИмяХоста</translation>
-    </message>
-    <message>
-        <source>Clear Hostname IP</source>
-        <translation>Clear IP адрес узла</translation>
-    </message>
-    <message>
-        <source>Save As</source>
-        <translation>Сохранить как</translation>
-    </message>
-    <message>
-        <source>Save Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Сохранить</translation>
-    </message>
-    <message>
-        <source>S&amp;ave Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save all scans to &amp;Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>F&amp;ull Screen Mode</source>
-        <translation>П_олноэкранный режим</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+F11</source>
-        <translation>Ctrl+Shift+F11</translation>
-    </message>
-    <message>
-        <source>Show &amp;Menu Bar</source>
-        <translation>Показать &amp;меню</translation>
-    </message>
-    <message>
-        <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
-    </message>
-    <message>
-        <source>Show Status Bar</source>
-        <translation>Показать строку состояния</translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Main</source>
-        <translation>Основное</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Журнал</translation>
-    </message>
-    <message>
-        <source>Vuln</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate Money</source>
-        <translation>Пожертвовать средства</translation>
-    </message>
-    <message>
-        <source>Documentation</source>
-        <translation>Руководство</translation>
-    </message>
-    <message>
-        <source>Visit Website</source>
-        <translation>Посетить веб-сайт</translation>
-    </message>
-    <message>
-        <source>Report a bug</source>
-        <translation>Сообщить о проблеме</translation>
-    </message>
-    <message>
-        <source>Section Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add &amp;parameters to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>Ф&amp;айл</translation>
-    </message>
-    <message>
-        <source>&amp;View</source>
-        <translation>В&amp;ид</translation>
-    </message>
-    <message>
-        <source>&amp;Bookmarks</source>
-        <translation>&amp;Закладки</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>Справ&amp;ка</translation>
-    </message>
-    <message>
-        <source>S&amp;ettings</source>
-        <translation>&amp;Настройки</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Инструменты</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation>Панель инструментов 2</translation>
-    </message>
-    <message>
-        <source>toolBar_3</source>
-        <translation>Панель инструментов 3</translation>
     </message>
 </context>
 <context>
@@ -1060,26 +973,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>Vulnerability</name>
-    <message>
-        <source>Search</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Назад</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Вперёд</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Остановить</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Search Vulnerabilities</source>
         <translation type="unfinished"></translation>

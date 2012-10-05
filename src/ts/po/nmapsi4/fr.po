@@ -237,6 +237,155 @@ msgctxt "ActionManager|"
 msgid "Show/Hide host details"
 msgstr ""
 
+msgctxt "ActionManager|"
+msgid "Scan"
+msgstr ""
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Clear History"
+msgstr "Effacer l'historique"
+
+msgctxt "ActionManager|"
+msgid "S&ave Scan"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Save all scans to &Directory"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "&Add host to bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add service to &bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add &parameters to bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add vulnerability search url"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "New Profile"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Edit Profile"
+msgstr ""
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Search"
+msgstr "Rechercher"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Back"
+msgstr "Retour"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Forward"
+msgstr "En avant"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Stop"
+msgstr "Arrêter"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&Quit"
+msgstr "&Quitter"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&Preferences"
+msgstr "&Préférences"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "F&ull Screen Mode"
+msgstr "Mode P&lein Ecran"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Show &Menu Bar"
+msgstr "Afficher La Barre de &Menu"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Section Scan"
+msgstr "Section de numérisation"
+
+msgctxt "ActionManager|"
+msgid "Section Vulnerabilities"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Section Discover"
+msgstr ""
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Report a bug"
+msgstr "Signaler un bug"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Visit Website"
+msgstr "Visiter le site Web"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Documentation"
+msgstr "Documentation"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "Donate Money"
+msgstr "Don en Argent"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&About nmapsi4"
+msgstr "&A propos de nmapsi4"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "About &Qt"
+msgstr "A propos de &Qt"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&File"
+msgstr "&Fichier"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "S&ettings"
+msgstr "P&aramètres"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&View"
+msgstr "&Afficher"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&Tools"
+msgstr "&Outils"
+
+#, fuzzy
+msgctxt "ActionManager|"
+msgid "&Help"
+msgstr "&Aide"
+
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr ""
@@ -376,23 +525,11 @@ msgid "Slow comprehensive scan"
 msgstr "scan complet Lent"
 
 msgctxt "MainWindow|"
-msgid "No Host Target\n"
-msgstr "Aucun Hôte Cible\n"
-
-msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Fermer"
 
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "&Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Add service to &bookmark"
 msgstr ""
 
 msgctxt "MainWindow|"
@@ -443,209 +580,9 @@ msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr "Moniteur de Scan"
 
-msgctxt "MainWindowClass|"
-msgid "Nmapsi4"
-msgstr "Nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&About nmapsi4"
-msgstr "&A propos de nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&Scan"
-msgstr "&Numériser"
-
-msgctxt "MainWindowClass|"
-msgid "Scan"
+msgctxt "MainWindow|"
+msgid "Insert an host/ip address to scan\n"
 msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-msgctxt "MainWindowClass|"
-msgid "About &Qt"
-msgstr "A propos de &Qt"
-
-msgctxt "MainWindowClass|"
-msgid "&Preferences"
-msgstr "&Préférences"
-
-msgctxt "MainWindowClass|"
-msgid "&Quit"
-msgstr "&Quitter"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-msgctxt "MainWindowClass|"
-msgid "Stop Scan"
-msgstr "Arrêter la numérisation"
-
-msgctxt "MainWindowClass|"
-msgid "Clear History"
-msgstr "Effacer l'historique"
-
-msgctxt "MainWindowClass|"
-msgid "Close Tree"
-msgstr "Fermer l'arborescence"
-
-msgctxt "MainWindowClass|"
-msgid "Close Scan Tree"
-msgstr "Fermer l'arborescence de la numérisation"
-
-msgctxt "MainWindowClass|"
-msgid "Clear HostName"
-msgstr "Effacer Le nom d'hôte"
-
-msgctxt "MainWindowClass|"
-msgid "Clear Hostname IP"
-msgstr "Effacer l'IP du nom d'hôte"
-
-msgctxt "MainWindowClass|"
-msgid "Save As"
-msgstr "Enregistrer sous"
-
-msgctxt "MainWindowClass|"
-msgid "Save Scan"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Save"
-msgstr "Enregistrer"
-
-msgctxt "MainWindowClass|"
-msgid "S&ave Scan"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Save all scans to &Directory"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "F&ull Screen Mode"
-msgstr "Mode P&lein Ecran"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Shift+F11"
-msgstr "Ctrl+Shift+F11"
-
-msgctxt "MainWindowClass|"
-msgid "Show &Menu Bar"
-msgstr "Afficher La Barre de &Menu"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+M"
-msgstr "Ctrl+M"
-
-msgctxt "MainWindowClass|"
-msgid "Show Status Bar"
-msgstr "Afficher La Barre d'Etat"
-
-msgctxt "MainWindowClass|"
-msgid "&Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Main"
-msgstr "Principal"
-
-msgctxt "MainWindowClass|"
-msgid "Log"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Vuln"
-msgstr "Vuln"
-
-msgctxt "MainWindowClass|"
-msgid "Section Scan"
-msgstr "Section de numérisation"
-
-msgctxt "MainWindowClass|"
-msgid "Section Log"
-msgstr "Se connecter Section"
-
-msgctxt "MainWindowClass|"
-msgid "Section Vulnerabilities"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Donate Money"
-msgstr "Don en Argent"
-
-msgctxt "MainWindowClass|"
-msgid "Documentation"
-msgstr "Documentation"
-
-msgctxt "MainWindowClass|"
-msgid "Visit Website"
-msgstr "Visiter le site Web"
-
-msgctxt "MainWindowClass|"
-msgid "Report a bug"
-msgstr "Signaler un bug"
-
-msgctxt "MainWindowClass|"
-msgid "Section Discover"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "New Profile"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Edit Profile"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add &parameters to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add vulnerability search url"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "&File"
-msgstr "&Fichier"
-
-msgctxt "MainWindowClass|"
-msgid "&View"
-msgstr "&Afficher"
-
-msgctxt "MainWindowClass|"
-msgid "&Bookmarks"
-msgstr "&Favoris"
-
-msgctxt "MainWindowClass|"
-msgid "&Help"
-msgstr "&Aide"
-
-msgctxt "MainWindowClass|"
-msgid "S&ettings"
-msgstr "P&aramètres"
-
-msgctxt "MainWindowClass|"
-msgid "&Tools"
-msgstr "&Outils"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar"
-msgstr "Barre d'outils"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_2"
-msgstr "Barre d'outils_2"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_3"
-msgstr "Barre d'outils_3"
 
 msgctxt "Monitor|"
 msgid "Waiting"
@@ -1062,26 +999,6 @@ msgstr "Url(s)"
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr "Url(s) nom"
-
-msgctxt "Vulnerability|"
-msgid "Search"
-msgstr "Rechercher"
-
-msgctxt "Vulnerability|"
-msgid "Back"
-msgstr "Retour"
-
-msgctxt "Vulnerability|"
-msgid "Forward"
-msgstr "En avant"
-
-msgctxt "Vulnerability|"
-msgid "Stop"
-msgstr "Arrêter"
-
-msgctxt "Vulnerability|"
-msgid "Add service to &bookmark"
-msgstr ""
 
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"

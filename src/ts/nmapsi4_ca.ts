@@ -183,6 +183,134 @@ p, li { white-space: pre-wrap; }
         <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scan</source>
+        <translation>Escaneja</translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation>Neteja l&apos;historial</translation>
+    </message>
+    <message>
+        <source>S&amp;ave Scan</source>
+        <translation>Des&amp;a l&apos;escaneig</translation>
+    </message>
+    <message>
+        <source>Save all scans to &amp;Directory</source>
+        <translation>Desa tots els escaneijos al un &amp;directori</translation>
+    </message>
+    <message>
+        <source>&amp;Add host to bookmark</source>
+        <translation>Afegeix &amp;màquina a l&apos;adreça d&apos;interès</translation>
+    </message>
+    <message>
+        <source>Add service to &amp;bookmark</source>
+        <translation>Afegeix &amp;servei a l&apos;adreça d&apos;interès</translation>
+    </message>
+    <message>
+        <source>Add &amp;parameters to bookmark</source>
+        <translation>Afegeix &amp;paràmetres a l&apos;adreça d&apos;interès</translation>
+    </message>
+    <message>
+        <source>Add vulnerability search url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation>Nou perfil</translation>
+    </message>
+    <message>
+        <source>Edit Profile</source>
+        <translation>Edita el perfil</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Enrere</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Endavant</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Atura</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>&amp;Surt</translation>
+    </message>
+    <message>
+        <source>&amp;Preferences</source>
+        <translation>&amp;Preferències</translation>
+    </message>
+    <message>
+        <source>F&amp;ull Screen Mode</source>
+        <translation>&amp;Mode de pantalla completa</translation>
+    </message>
+    <message>
+        <source>Show &amp;Menu Bar</source>
+        <translation>Mostra la barra de &amp;menú</translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation>Informa d&apos;un error</translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation>Visita la pàgina web</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Documentació</translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation>Dona diners</translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation>Quant a &amp;Nmapsi4</translation>
+    </message>
+    <message>
+        <source>About &amp;Qt</source>
+        <translation>Quant a &amp;Qt</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Fitxer</translation>
+    </message>
+    <message>
+        <source>S&amp;ettings</source>
+        <translation>A&amp;rranjament</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Vista</translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
+        <translation>&amp;Eines</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Ajuda</translation>
+    </message>
 </context>
 <context>
     <name>DiscoverManager</name>
@@ -345,11 +473,6 @@ p, li { white-space: pre-wrap; }
         <translation>Escaneig lent i meticulós</translation>
     </message>
     <message>
-        <source>No Host Target
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -384,14 +507,6 @@ p, li { white-space: pre-wrap; }
         <translation>Adreces d&apos;interès</translation>
     </message>
     <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation>Afegeix &amp;màquina a l&apos;adreça d&apos;interès</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation>Afegeix &amp;servei a l&apos;adreça d&apos;interès</translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation>Paràmetres del registre d&apos;escaneig</translation>
     </message>
@@ -399,211 +514,9 @@ p, li { white-space: pre-wrap; }
         <source> Active Scan </source>
         <translation> Escaneig actiu </translation>
     </message>
-</context>
-<context>
-    <name>MainWindowClass</name>
     <message>
-        <source>Nmapsi4</source>
-        <translation>Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;About nmapsi4</source>
-        <translation>Quant a &amp;Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;Scan</source>
-        <translation>E&amp;scaneja</translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation>Escaneja</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Quant a &amp;Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Preferences</source>
-        <translation>&amp;Preferències</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation>&amp;Surt</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Stop Scan</source>
-        <translation>Atura l&apos;escaneig</translation>
-    </message>
-    <message>
-        <source>Clear History</source>
-        <translation>Neteja l&apos;historial</translation>
-    </message>
-    <message>
-        <source>Close Tree</source>
-        <translation>Tanca l&apos;arbre</translation>
-    </message>
-    <message>
-        <source>Close Scan Tree</source>
-        <translation>Tanca l&apos;arbre d&apos;escaneig</translation>
-    </message>
-    <message>
-        <source>Clear HostName</source>
-        <translation>Neteja el nom de la màquina</translation>
-    </message>
-    <message>
-        <source>Clear Hostname IP</source>
-        <translation>Neteja la IP de la màquina</translation>
-    </message>
-    <message>
-        <source>Save As</source>
-        <translation>Desa com a</translation>
-    </message>
-    <message>
-        <source>Save Scan</source>
-        <translation>Desa l&apos;escaneig</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Desa</translation>
-    </message>
-    <message>
-        <source>S&amp;ave Scan</source>
-        <translation>Des&amp;a l&apos;escaneig</translation>
-    </message>
-    <message>
-        <source>Save all scans to &amp;Directory</source>
-        <translation>Desa tots els escaneijos al un &amp;directori</translation>
-    </message>
-    <message>
-        <source>F&amp;ull Screen Mode</source>
-        <translation>&amp;Mode de pantalla completa</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+F11</source>
-        <translation>Ctrl+Maj+F11</translation>
-    </message>
-    <message>
-        <source>Show &amp;Menu Bar</source>
-        <translation>Mostra la barra de &amp;menú</translation>
-    </message>
-    <message>
-        <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
-    </message>
-    <message>
-        <source>Show Status Bar</source>
-        <translation>Mostra la barra d&apos;estat</translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation>Afegeix &amp;màquina a l&apos;adreça d&apos;interès</translation>
-    </message>
-    <message>
-        <source>Add host to bookmark</source>
-        <translation>Afegeix màquina a l&apos;adreça d&apos;interès</translation>
-    </message>
-    <message>
-        <source>Main</source>
-        <translation>Principal</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Registre</translation>
-    </message>
-    <message>
-        <source>Vuln</source>
-        <translation>Vuln</translation>
-    </message>
-    <message>
-        <source>Section Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate Money</source>
-        <translation>Dona diners</translation>
-    </message>
-    <message>
-        <source>Documentation</source>
-        <translation>Documentació</translation>
-    </message>
-    <message>
-        <source>Visit Website</source>
-        <translation>Visita la pàgina web</translation>
-    </message>
-    <message>
-        <source>Report a bug</source>
-        <translation>Informa d&apos;un error</translation>
-    </message>
-    <message>
-        <source>Section Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Profile</source>
-        <translation>Nou perfil</translation>
-    </message>
-    <message>
-        <source>Edit Profile</source>
-        <translation>Edita el perfil</translation>
-    </message>
-    <message>
-        <source>Add &amp;parameters to bookmark</source>
-        <translation>Afegeix &amp;paràmetres a l&apos;adreça d&apos;interès</translation>
-    </message>
-    <message>
-        <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Fitxer</translation>
-    </message>
-    <message>
-        <source>&amp;View</source>
-        <translation>&amp;Vista</translation>
-    </message>
-    <message>
-        <source>&amp;Bookmarks</source>
-        <translation>&amp;Adreces d&apos;interès</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Ajuda</translation>
-    </message>
-    <message>
-        <source>S&amp;ettings</source>
-        <translation>A&amp;rranjament</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Eines</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>toolBar_3</source>
+        <source>Insert an host/ip address to scan
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1071,26 +984,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Search Vulnerabilities</source>
         <translation>Cerca vulnerabilitats</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Cerca</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Enrere</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Endavant</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Atura</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation>Afegeix &amp;servei a l&apos;adreça d&apos;interès</translation>
     </message>
 </context>
 <context>

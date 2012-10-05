@@ -181,6 +181,134 @@ p, li { white-space: pre-wrap; }
         <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation>Verlauf löschen</translation>
+    </message>
+    <message>
+        <source>S&amp;ave Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save all scans to &amp;Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add host to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add service to &amp;bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add &amp;parameters to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add vulnerability search url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation>Neues Profil</translation>
+    </message>
+    <message>
+        <source>Edit Profile</source>
+        <translation>Profil bearbeiten</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Vorwärts</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Anhalten</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>&amp;Beenden</translation>
+    </message>
+    <message>
+        <source>&amp;Preferences</source>
+        <translation>&amp;Voreinstellungen</translation>
+    </message>
+    <message>
+        <source>F&amp;ull Screen Mode</source>
+        <translation>V&amp;ollbild Modus</translation>
+    </message>
+    <message>
+        <source>Show &amp;Menu Bar</source>
+        <translation>Zeige &amp;Werkzeugleiste</translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Discover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation>Einen Fehler melden</translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation>Webseite besuchen</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentation</translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation>&amp;Über nmapsi4</translation>
+    </message>
+    <message>
+        <source>About &amp;Qt</source>
+        <translation>Über &amp;Qt</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Datei</translation>
+    </message>
+    <message>
+        <source>S&amp;ettings</source>
+        <translation>E&amp;instellungen</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Ansicht</translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
+        <translation>Ex&amp;tras</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Hilfe</translation>
+    </message>
 </context>
 <context>
     <name>DiscoverManager</name>
@@ -343,12 +471,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No Host Target
-</source>
-        <translation>Kein Server Ziel
-</translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
@@ -382,14 +504,6 @@ p, li { white-space: pre-wrap; }
         <translation>Lesezeichen</translation>
     </message>
     <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -397,212 +511,10 @@ p, li { white-space: pre-wrap; }
         <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>MainWindowClass</name>
     <message>
-        <source>Nmapsi4</source>
-        <translation>Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;About nmapsi4</source>
-        <translation>&amp;Über nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;Scan</source>
-        <translation>&amp;Scannen</translation>
-    </message>
-    <message>
-        <source>Scan</source>
+        <source>Insert an host/ip address to scan
+</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Strg+S</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Über &amp;Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Preferences</source>
-        <translation>&amp;Voreinstellungen</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation>&amp;Beenden</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation>Strg+Q</translation>
-    </message>
-    <message>
-        <source>Stop Scan</source>
-        <translation>Scan beenden</translation>
-    </message>
-    <message>
-        <source>Clear History</source>
-        <translation>Verlauf löschen</translation>
-    </message>
-    <message>
-        <source>Close Tree</source>
-        <translation>Baum schließen</translation>
-    </message>
-    <message>
-        <source>Close Scan Tree</source>
-        <translation>schließe Scan Baum</translation>
-    </message>
-    <message>
-        <source>Clear HostName</source>
-        <translation>Lösche Servername</translation>
-    </message>
-    <message>
-        <source>Clear Hostname IP</source>
-        <translation>Lösche Server IP</translation>
-    </message>
-    <message>
-        <source>Save As</source>
-        <translation>Speichern unter</translation>
-    </message>
-    <message>
-        <source>Save Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>S&amp;ave Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save all scans to &amp;Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>F&amp;ull Screen Mode</source>
-        <translation>V&amp;ollbild Modus</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+F11</source>
-        <translation>Ctrl+Shift+F11</translation>
-    </message>
-    <message>
-        <source>Show &amp;Menu Bar</source>
-        <translation>Zeige &amp;Werkzeugleiste</translation>
-    </message>
-    <message>
-        <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
-    </message>
-    <message>
-        <source>Show Status Bar</source>
-        <translation>Zeige Statusleiste</translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Main</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Protokoll</translation>
-    </message>
-    <message>
-        <source>Vuln</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate Money</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Documentation</source>
-        <translation>Dokumentation</translation>
-    </message>
-    <message>
-        <source>Visit Website</source>
-        <translation>Webseite besuchen</translation>
-    </message>
-    <message>
-        <source>Report a bug</source>
-        <translation>Einen Fehler melden</translation>
-    </message>
-    <message>
-        <source>Section Discover</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Profile</source>
-        <translation>Neues Profil</translation>
-    </message>
-    <message>
-        <source>Edit Profile</source>
-        <translation>Profil bearbeiten</translation>
-    </message>
-    <message>
-        <source>Add &amp;parameters to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Datei</translation>
-    </message>
-    <message>
-        <source>&amp;View</source>
-        <translation>&amp;Ansicht</translation>
-    </message>
-    <message>
-        <source>&amp;Bookmarks</source>
-        <translation>&amp;Lesezeichen</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
-    </message>
-    <message>
-        <source>S&amp;ettings</source>
-        <translation>E&amp;instellungen</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>Ex&amp;tras</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation>Werkzeugleiste</translation>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation>Werkzeugleiste_2</translation>
-    </message>
-    <message>
-        <source>toolBar_3</source>
-        <translation>Werkzeugleiste_3</translation>
     </message>
 </context>
 <context>
@@ -1069,26 +981,6 @@ p, li { white-space: pre-wrap; }
     <name>Vulnerability</name>
     <message>
         <source>Search Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Suchen</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Zurück</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Vorwärts</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Anhalten</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

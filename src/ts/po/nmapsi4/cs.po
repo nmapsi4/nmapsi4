@@ -237,6 +237,134 @@ msgctxt "ActionManager|"
 msgid "Show/Hide host details"
 msgstr ""
 
+msgctxt "ActionManager|"
+msgid "Scan"
+msgstr "Prohledat"
+
+msgctxt "ActionManager|"
+msgid "Clear History"
+msgstr "Smazat historii"
+
+msgctxt "ActionManager|"
+msgid "S&ave Scan"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Save all scans to &Directory"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "&Add host to bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add service to &bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add &parameters to bookmark"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Add vulnerability search url"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "New Profile"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Edit Profile"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Search"
+msgstr "Hledat"
+
+msgctxt "ActionManager|"
+msgid "Back"
+msgstr "Zpět"
+
+msgctxt "ActionManager|"
+msgid "Forward"
+msgstr "Vpřed"
+
+msgctxt "ActionManager|"
+msgid "Stop"
+msgstr "Zastavit"
+
+msgctxt "ActionManager|"
+msgid "&Quit"
+msgstr "&Ukončit"
+
+msgctxt "ActionManager|"
+msgid "&Preferences"
+msgstr "&Nastavení"
+
+msgctxt "ActionManager|"
+msgid "F&ull Screen Mode"
+msgstr "Režim &celé obrazovky"
+
+msgctxt "ActionManager|"
+msgid "Show &Menu Bar"
+msgstr "Ukázat &nabídkový panel"
+
+msgctxt "ActionManager|"
+msgid "Section Scan"
+msgstr "Prohledávání části"
+
+msgctxt "ActionManager|"
+msgid "Section Vulnerabilities"
+msgstr ""
+
+msgctxt "ActionManager|"
+msgid "Section Discover"
+msgstr "Objevování části"
+
+msgctxt "ActionManager|"
+msgid "Report a bug"
+msgstr "Nahlášte chybu"
+
+msgctxt "ActionManager|"
+msgid "Visit Website"
+msgstr "Navštivte stránky projektu"
+
+msgctxt "ActionManager|"
+msgid "Documentation"
+msgstr "Dokumentace"
+
+msgctxt "ActionManager|"
+msgid "Donate Money"
+msgstr "Darujte peníze"
+
+msgctxt "ActionManager|"
+msgid "&About nmapsi4"
+msgstr "&O programu Nmapsi4"
+
+msgctxt "ActionManager|"
+msgid "About &Qt"
+msgstr "O &Qt"
+
+msgctxt "ActionManager|"
+msgid "&File"
+msgstr "&Soubor"
+
+msgctxt "ActionManager|"
+msgid "S&ettings"
+msgstr "&Nastavení"
+
+msgctxt "ActionManager|"
+msgid "&View"
+msgstr "&Pohled"
+
+msgctxt "ActionManager|"
+msgid "&Tools"
+msgstr "&Nástroje"
+
+msgctxt "ActionManager|"
+msgid "&Help"
+msgstr "&Nápověda"
+
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr "je Nahoře"
@@ -374,24 +502,12 @@ msgid "Slow comprehensive scan"
 msgstr "Ukázat úplné prohlédnutí"
 
 msgctxt "MainWindow|"
-msgid "No Host Target\n"
-msgstr "Žádný cíl se serverem"
-
-msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Zavřít"
 
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr "Název hostitelského počítače se již prohledává\n"
-
-msgctxt "MainWindow|"
-msgid "&Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Add service to &bookmark"
-msgstr ""
 
 msgctxt "MainWindow|"
 msgid " Active Scan "
@@ -441,211 +557,9 @@ msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr "Dohled nad prohledáváním"
 
-msgctxt "MainWindowClass|"
-msgid "Nmapsi4"
-msgstr "Nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&About nmapsi4"
-msgstr "&O programu Nmapsi4"
-
-msgctxt "MainWindowClass|"
-msgid "&Scan"
-msgstr "&Prohledat"
-
-msgctxt "MainWindowClass|"
-msgid "Scan"
-msgstr "Prohledat"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-msgctxt "MainWindowClass|"
-msgid "About &Qt"
-msgstr "O &Qt"
-
-msgctxt "MainWindowClass|"
-msgid "&Preferences"
-msgstr "&Nastavení"
-
-msgctxt "MainWindowClass|"
-msgid "&Quit"
-msgstr "&Ukončit"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
-
-msgctxt "MainWindowClass|"
-msgid "Stop Scan"
-msgstr "Zastavit prohledávání"
-
-msgctxt "MainWindowClass|"
-msgid "Clear History"
-msgstr "Smazat historii"
-
-msgctxt "MainWindowClass|"
-msgid "Close Tree"
-msgstr "Zavřít strom"
-
-msgctxt "MainWindowClass|"
-msgid "Close Scan Tree"
+msgctxt "MainWindow|"
+msgid "Insert an host/ip address to scan\n"
 msgstr ""
-"\n"
-"Zavřít strom s prohledáváním"
-
-msgctxt "MainWindowClass|"
-msgid "Clear HostName"
-msgstr "Smazat název serveru"
-
-msgctxt "MainWindowClass|"
-msgid "Clear Hostname IP"
-msgstr "Smazat IP u názvu serveru"
-
-msgctxt "MainWindowClass|"
-msgid "Save As"
-msgstr "Uložit jako"
-
-msgctxt "MainWindowClass|"
-msgid "Save Scan"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Save"
-msgstr "Uložit"
-
-msgctxt "MainWindowClass|"
-msgid "S&ave Scan"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Save all scans to &Directory"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "F&ull Screen Mode"
-msgstr "Režim &celé obrazovky"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+Shift+F11"
-msgstr "Ctrl+Shift+F11"
-
-msgctxt "MainWindowClass|"
-msgid "Show &Menu Bar"
-msgstr "Ukázat &nabídkový panel"
-
-msgctxt "MainWindowClass|"
-msgid "Ctrl+M"
-msgstr "Ctrl+M"
-
-msgctxt "MainWindowClass|"
-msgid "Show Status Bar"
-msgstr "Ukázat stavový řádek"
-
-msgctxt "MainWindowClass|"
-msgid "&Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add host to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Main"
-msgstr "Hlavní"
-
-msgctxt "MainWindowClass|"
-msgid "Log"
-msgstr "Zápis"
-
-msgctxt "MainWindowClass|"
-msgid "Vuln"
-msgstr "Zranitelnost"
-
-msgctxt "MainWindowClass|"
-msgid "Section Scan"
-msgstr "Prohledávání části"
-
-msgctxt "MainWindowClass|"
-msgid "Section Log"
-msgstr "Zápis k části"
-
-msgctxt "MainWindowClass|"
-msgid "Section Vulnerabilities"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Donate Money"
-msgstr "Darujte peníze"
-
-msgctxt "MainWindowClass|"
-msgid "Documentation"
-msgstr "Dokumentace"
-
-msgctxt "MainWindowClass|"
-msgid "Visit Website"
-msgstr "Navštivte stránky projektu"
-
-msgctxt "MainWindowClass|"
-msgid "Report a bug"
-msgstr "Nahlášte chybu"
-
-msgctxt "MainWindowClass|"
-msgid "Section Discover"
-msgstr "Objevování části"
-
-msgctxt "MainWindowClass|"
-msgid "New Profile"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Edit Profile"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add &parameters to bookmark"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "Add vulnerability search url"
-msgstr ""
-
-msgctxt "MainWindowClass|"
-msgid "&File"
-msgstr "&Soubor"
-
-msgctxt "MainWindowClass|"
-msgid "&View"
-msgstr "&Pohled"
-
-msgctxt "MainWindowClass|"
-msgid "&Bookmarks"
-msgstr "&Záložky"
-
-msgctxt "MainWindowClass|"
-msgid "&Help"
-msgstr "&Nápověda"
-
-msgctxt "MainWindowClass|"
-msgid "S&ettings"
-msgstr "&Nastavení"
-
-msgctxt "MainWindowClass|"
-msgid "&Tools"
-msgstr "&Nástroje"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar"
-msgstr "Nástrojový panel"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_2"
-msgstr "Nástrojový panel 2"
-
-msgctxt "MainWindowClass|"
-msgid "toolBar_3"
-msgstr "Nástrojový panel 3"
 
 msgctxt "Monitor|"
 msgid "Waiting"
@@ -1062,26 +976,6 @@ msgstr "Adresa (URL)"
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr "Název adresy (URL)"
-
-msgctxt "Vulnerability|"
-msgid "Search"
-msgstr "Hledat"
-
-msgctxt "Vulnerability|"
-msgid "Back"
-msgstr "Zpět"
-
-msgctxt "Vulnerability|"
-msgid "Forward"
-msgstr "Vpřed"
-
-msgctxt "Vulnerability|"
-msgid "Stop"
-msgstr "Zastavit"
-
-msgctxt "Vulnerability|"
-msgid "Add service to &bookmark"
-msgstr ""
 
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"

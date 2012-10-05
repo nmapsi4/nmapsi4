@@ -177,6 +177,134 @@ p, li { white-space: pre-wrap; }
         <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scan</source>
+        <translation>Prohledat</translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation>Smazat historii</translation>
+    </message>
+    <message>
+        <source>S&amp;ave Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save all scans to &amp;Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add host to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add service to &amp;bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add &amp;parameters to bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add vulnerability search url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hledat</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zpět</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Vpřed</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Zastavit</translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation>&amp;Ukončit</translation>
+    </message>
+    <message>
+        <source>&amp;Preferences</source>
+        <translation>&amp;Nastavení</translation>
+    </message>
+    <message>
+        <source>F&amp;ull Screen Mode</source>
+        <translation>Režim &amp;celé obrazovky</translation>
+    </message>
+    <message>
+        <source>Show &amp;Menu Bar</source>
+        <translation>Ukázat &amp;nabídkový panel</translation>
+    </message>
+    <message>
+        <source>Section Scan</source>
+        <translation>Prohledávání části</translation>
+    </message>
+    <message>
+        <source>Section Vulnerabilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section Discover</source>
+        <translation>Objevování části</translation>
+    </message>
+    <message>
+        <source>Report a bug</source>
+        <translation>Nahlášte chybu</translation>
+    </message>
+    <message>
+        <source>Visit Website</source>
+        <translation>Navštivte stránky projektu</translation>
+    </message>
+    <message>
+        <source>Documentation</source>
+        <translation>Dokumentace</translation>
+    </message>
+    <message>
+        <source>Donate Money</source>
+        <translation>Darujte peníze</translation>
+    </message>
+    <message>
+        <source>&amp;About nmapsi4</source>
+        <translation>&amp;O programu Nmapsi4</translation>
+    </message>
+    <message>
+        <source>About &amp;Qt</source>
+        <translation>O &amp;Qt</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Soubor</translation>
+    </message>
+    <message>
+        <source>S&amp;ettings</source>
+        <translation>&amp;Nastavení</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Pohled</translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
+        <translation>&amp;Nástroje</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Nápověda</translation>
+    </message>
 </context>
 <context>
     <name>DiscoverManager</name>
@@ -323,11 +451,6 @@ p, li { white-space: pre-wrap; }
         <translation>Ukázat úplné prohlédnutí</translation>
     </message>
     <message>
-        <source>No Host Target
-</source>
-        <translation>Žádný cíl se serverem</translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation>Zavřít</translation>
     </message>
@@ -336,14 +459,6 @@ p, li { white-space: pre-wrap; }
 </source>
         <translation>Název hostitelského počítače se již prohledává
 </translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source> Active Scan </source>
@@ -393,213 +508,10 @@ p, li { white-space: pre-wrap; }
         <source>Scan Monitor</source>
         <translation>Dohled nad prohledáváním</translation>
     </message>
-</context>
-<context>
-    <name>MainWindowClass</name>
     <message>
-        <source>Nmapsi4</source>
-        <translation>Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;About nmapsi4</source>
-        <translation>&amp;O programu Nmapsi4</translation>
-    </message>
-    <message>
-        <source>&amp;Scan</source>
-        <translation>&amp;Prohledat</translation>
-    </message>
-    <message>
-        <source>Scan</source>
-        <translation>Prohledat</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Preferences</source>
-        <translation>&amp;Nastavení</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Stop Scan</source>
-        <translation>Zastavit prohledávání</translation>
-    </message>
-    <message>
-        <source>Clear History</source>
-        <translation>Smazat historii</translation>
-    </message>
-    <message>
-        <source>Close Tree</source>
-        <translation>Zavřít strom</translation>
-    </message>
-    <message>
-        <source>Close Scan Tree</source>
-        <translation>
-Zavřít strom s prohledáváním</translation>
-    </message>
-    <message>
-        <source>Clear HostName</source>
-        <translation>Smazat název serveru</translation>
-    </message>
-    <message>
-        <source>Clear Hostname IP</source>
-        <translation>Smazat IP u názvu serveru</translation>
-    </message>
-    <message>
-        <source>Save As</source>
-        <translation>Uložit jako</translation>
-    </message>
-    <message>
-        <source>Save Scan</source>
+        <source>Insert an host/ip address to scan
+</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Uložit</translation>
-    </message>
-    <message>
-        <source>S&amp;ave Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save all scans to &amp;Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>F&amp;ull Screen Mode</source>
-        <translation>Režim &amp;celé obrazovky</translation>
-    </message>
-    <message>
-        <source>Ctrl+Shift+F11</source>
-        <translation>Ctrl+Shift+F11</translation>
-    </message>
-    <message>
-        <source>Show &amp;Menu Bar</source>
-        <translation>Ukázat &amp;nabídkový panel</translation>
-    </message>
-    <message>
-        <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
-    </message>
-    <message>
-        <source>Show Status Bar</source>
-        <translation>Ukázat stavový řádek</translation>
-    </message>
-    <message>
-        <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add host to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Main</source>
-        <translation>Hlavní</translation>
-    </message>
-    <message>
-        <source>Log</source>
-        <translation>Zápis</translation>
-    </message>
-    <message>
-        <source>Vuln</source>
-        <translation>Zranitelnost</translation>
-    </message>
-    <message>
-        <source>Section Scan</source>
-        <translation>Prohledávání části</translation>
-    </message>
-    <message>
-        <source>Section Log</source>
-        <translation>Zápis k části</translation>
-    </message>
-    <message>
-        <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate Money</source>
-        <translation>Darujte peníze</translation>
-    </message>
-    <message>
-        <source>Documentation</source>
-        <translation>Dokumentace</translation>
-    </message>
-    <message>
-        <source>Visit Website</source>
-        <translation>Navštivte stránky projektu</translation>
-    </message>
-    <message>
-        <source>Report a bug</source>
-        <translation>Nahlášte chybu</translation>
-    </message>
-    <message>
-        <source>Section Discover</source>
-        <translation>Objevování části</translation>
-    </message>
-    <message>
-        <source>New Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add &amp;parameters to bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Soubor</translation>
-    </message>
-    <message>
-        <source>&amp;View</source>
-        <translation>&amp;Pohled</translation>
-    </message>
-    <message>
-        <source>&amp;Bookmarks</source>
-        <translation>&amp;Záložky</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
-    </message>
-    <message>
-        <source>S&amp;ettings</source>
-        <translation>&amp;Nastavení</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Nástroje</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation>Nástrojový panel</translation>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation>Nástrojový panel 2</translation>
-    </message>
-    <message>
-        <source>toolBar_3</source>
-        <translation>Nástrojový panel 3</translation>
     </message>
 </context>
 <context>
@@ -1064,26 +976,6 @@ Zavřít strom s prohledáváním</translation>
 </context>
 <context>
     <name>Vulnerability</name>
-    <message>
-        <source>Search</source>
-        <translation>Hledat</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Zpět</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Vpřed</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Zastavit</translation>
-    </message>
-    <message>
-        <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Search Vulnerabilities</source>
         <translation>Hledat zranitelnosti</translation>
