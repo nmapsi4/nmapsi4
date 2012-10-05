@@ -47,13 +47,7 @@ MainWindow::MainWindow(QWidget* parent)
     m_mainTabWidget(new QTabWidget(this)),
     m_userId(0)
 {
-    initGUI();
     QTimer::singleShot(0, this, SLOT(initObject()));
-}
-
-void MainWindow::initGUI()
-{
-    setupUi(this);
 }
 
 void MainWindow::initObject()
@@ -63,8 +57,12 @@ void MainWindow::initObject()
 #endif
 
     m_mainTabWidget->setDocumentMode(true);
-    // TODO: allocate centralWidget with layout QVBoxLayout(centralWidget)
-    centralWidget()->layout()->addWidget(m_mainTabWidget);
+    //allocate centralWidget with layout QVBoxLayout(centralWidget)
+    QWidget *centralwidget = new QWidget(this);
+    QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
+    centralwidget->setLayout(centralLayout);
+    centralwidget->layout()->addWidget(m_mainTabWidget);
+    setCentralWidget(centralwidget);
 
     // declare and restore items from bookmark
     m_bookmark = new BookmarkManager(this);

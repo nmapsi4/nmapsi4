@@ -20,7 +20,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "ui_mainwindow.h"
 #include "ui_scanwidget.h"
 
 // Qt4 include
@@ -59,11 +58,6 @@
 // define class namespace
 using namespace memory;
 
-namespace Ui
-{
-class MainWindowClass;
-}
-
 class ScanWidget : public QWidget, public Ui::ScanWidgetForm
 {
    Q_OBJECT
@@ -71,7 +65,7 @@ public:
     explicit ScanWidget(QWidget* parent = 0);
 };
 
-class MainWindow : public QMainWindow, public Ui::MainWindowClass
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -97,7 +91,6 @@ public:
 private:
     void addHostToMonitor(const QString hostname);
     void resetOptions();
-    void initGUI();
     void restoreSettings();
     void setDefaultSplitter();
     void updateComboParametersFromList(const QStringList& parameters);

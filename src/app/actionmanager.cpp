@@ -280,7 +280,7 @@ void ActionManager::setupActions()
     m_collectionsScanSection.insert("sectionDiscover-action", action);
     connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezDiscover()));
 
-    // FIXME: Help actions
+    // Help menu actions
     action = new QAction(m_ui);
     action->setText(tr("Report a bug"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/tools-report-bug.png")));
