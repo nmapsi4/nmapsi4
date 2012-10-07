@@ -56,9 +56,8 @@ void MainWindow::updateComboHostnameProperties()
             this, SLOT(linkCompleterToHostname()));
 }
 
-void MainWindow::updateSezScan()
+void MainWindow::updateScanSection()
 {
-    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("scan-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
@@ -96,7 +95,7 @@ void MainWindow::updateSezScan()
     m_collections->enableScanBookmarkMenu();
 }
 
-void MainWindow::updateSezVuln()
+void MainWindow::updateVulnerabilitySection()
 {
     Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
@@ -126,9 +125,8 @@ void MainWindow::updateSezVuln()
     m_collections->enableVulnerabilityBookmarkMenu();
 }
 
-void MainWindow::updateSezDiscover()
+void MainWindow::updateDiscoverSection()
 {
-    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);

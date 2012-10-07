@@ -21,9 +21,7 @@
 
 void Notify::startButtonNotify(PushButtonOrientated* button)
 {
-    if (!button->isChecked()) {
-        button->setStyleSheet(nofifyStyleSheet);
-    }
+    button->setStyleSheet(nofifyStyleSheet);
 }
 
 void Notify::setCheckedNotify(PushButtonOrientated* button)

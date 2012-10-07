@@ -87,8 +87,6 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
         return;
     }
 
-    Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-list"));
-
     QString StdoutStr(dataBuffer);
     QString StderrorStr(errorBuffer);
 
@@ -114,6 +112,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
         m_ui->m_monitor->m_monitorWidget->monitorDetailsScanButt->setEnabled(false);
         m_ui->m_mainTabWidget->setTabIcon(m_ui->m_mainTabWidget->indexOf(m_ui->m_monitor->m_monitorWidget),
                                 QIcon(QString::fromUtf8(":/images/images/utilities-system-monitor.png")));
+        Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
     }
 
     m_ui->m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);

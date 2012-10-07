@@ -266,19 +266,19 @@ void ActionManager::setupActions()
     action->setText(tr("Section Scan"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     m_collectionsScanSection.insert("sectionScan-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezScan()));
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateScanSection()));
 
     action = new QAction(m_ui);
     action->setText(tr("Section Vulnerabilities"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     m_collectionsScanSection.insert("sectionVuln-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezVuln()));
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateVulnerabilitySection()));
 
     action = new QAction(m_ui);
     action->setText(tr("Section Discover"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     m_collectionsScanSection.insert("sectionDiscover-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateSezDiscover()));
+    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateDiscoverSection()));
 
     // Help menu actions
     action = new QAction(m_ui);
@@ -373,15 +373,7 @@ void ActionManager::createSectionsBar()
     //actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezScan()));
-    m_bottomSectionBar->addWidget(actionButt);
-
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), tr("Network Discover"), m_ui);
-    actionButt->setToolTip(tr("Network Discover"));
-    //actionButt->setFlat(true);
-    actionButt->setCheckable(true);
-    m_collectionsButton.insert("discover-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezDiscover()));
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateScanSection()));
     m_bottomSectionBar->addWidget(actionButt);
 
     actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), tr("Vulnerability"), m_ui);
@@ -389,7 +381,15 @@ void ActionManager::createSectionsBar()
     //actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateSezVuln()));
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateVulnerabilitySection()));
+    m_bottomSectionBar->addWidget(actionButt);
+
+    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), tr("Network Discover"), m_ui);
+    actionButt->setToolTip(tr("Network Discover"));
+    //actionButt->setFlat(true);
+    actionButt->setCheckable(true);
+    m_collectionsButton.insert("discover-sez", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateDiscoverSection()));
     m_bottomSectionBar->addWidget(actionButt);
 
     m_bottomSectionBar->addSeparator();

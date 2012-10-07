@@ -124,9 +124,9 @@ private slots:
     void startPreferencesDialog();
     void syncSettings();
     void linkCompleterToHostname();
-    void updateSezScan();
-    void updateSezVuln();
-    void updateSezDiscover();
+    void updateScanSection();
+    void updateVulnerabilitySection();
+    void updateDiscoverSection();
     void loadDefaultProfile();
     void resetComboParameters();
     void quickAddressSelectionEvent();

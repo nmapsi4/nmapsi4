@@ -178,6 +178,7 @@ void DiscoverManager::resetDiscoverfromRangeValues()
 
 void DiscoverManager::startDiscoverIpsFromRange()
 {
+    Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
     // disable start discover button
     m_discoverWidget->startDiscoverButt->setEnabled(false);
     m_discoverWidget->stopDiscoverButt->setEnabled(true);
@@ -270,6 +271,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_discoverWidget->stopDiscoverButt->setEnabled(false);
         m_discoverWidget->cidrButton->setEnabled(true);
         m_discoverWidget->discoverProgressBar->setMaximum(100);
+        Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
     }
 }
 
@@ -293,6 +295,7 @@ void DiscoverManager::stopDiscoverFromIpsRange()
     m_discoverWidget->cidrButton->setEnabled(true);
     m_ipCounter = 0;
     m_discoverIsActive = false;
+    Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
     //emit signal
     emit killDiscoverFromIpsRange();
 }
@@ -362,6 +365,7 @@ void DiscoverManager::defaultDiscoverProbes()
 
 void DiscoverManager::startDiscoverIpsFromCIDR()
 {
+    Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
     // disable CIDR button but also ip range discover
     m_discoverWidget->cidrButton->setEnabled(false);
     m_discoverWidget->startDiscoverButt->setEnabled(false);
@@ -411,6 +415,7 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     m_discoverWidget->stopDiscoverCidrButton->setEnabled(false);
     m_discoverWidget->startDiscoverButt->setEnabled(true);
     m_discoverWidget->discoverProgressBar->setMaximum(100);
+    Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
@@ -460,6 +465,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 void DiscoverManager::stopDiscoverFromCIDR()
 {
     emit killDiscoverFromCIDR();
+    Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 }
 
 void DiscoverManager::calculateAddressFromCIDR()

@@ -121,7 +121,7 @@ void MainWindow::initObject()
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
 
-    updateSezScan();
+    updateScanSection();
 
 #if defined(Q_WS_MAC)
     // w/o show() call, mainwindow is not visible in mac osx
@@ -328,6 +328,8 @@ void MainWindow::addHostToMonitor(const QString hostname)
         m_monitor->addMonitorHost(hostname, parameters, Monitor::DigLookup);
         break;
     }
+
+    Notify::startButtonNotify(m_collections->m_collectionsButton.value("scan-sez"));
 }
 
 void MainWindow::closeEvent(QCloseEvent * event)
