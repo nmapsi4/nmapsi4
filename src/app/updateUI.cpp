@@ -73,18 +73,18 @@ void MainWindow::updateScanSection()
     if (!m_monitor->m_monitorWidget->isVisible()) {
         m_mainTabWidget->insertTab(1, m_monitor->m_monitorWidget, tr("Scan Monitor"));
 
-        QIcon tabIcon;
         if (m_monitor->monitorHostNumber()) {
-            tabIcon.addFile(QString(":/images/images/reload.png"));
+            m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                        QIcon::fromTheme("process-working", QIcon(":/images/images/reload.png")));
         } else {
-            tabIcon.addFile(QString(":/images/images/utilities-log-viewer.png"));
+            m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                        QIcon::fromTheme("utilities-system-monitor", QIcon(":/images/images/utilities-log-viewer.png")));
         }
 
-        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget), tabIcon);
     }
 
     m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_scanBookmarkWidget,
-                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+                     QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
@@ -116,7 +116,7 @@ void MainWindow::updateVulnerabilitySection()
     m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget, QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
 
     m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_vulnBookmarkWidget,
-                     QIcon(QString::fromUtf8(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+                               QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
 
     m_mainTabWidget->setCurrentIndex(0);
 

@@ -85,7 +85,6 @@ private:
     QMenu *m_menuBookmark;
     QMenu *m_menuFile;
     QMenu *m_menuSettings;
-    QMenu *m_menuView;
     QMenu *m_menuTools;
     QMenu *m_menuHelp;
 
