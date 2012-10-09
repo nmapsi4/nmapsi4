@@ -191,43 +191,42 @@ void ActionManager::setupActions()
 
     action = new QAction(m_ui);
     action->setText(tr("Save IP list"));
-    action->setIcon(QIcon::fromTheme("document-save",QIcon(":/images/images/save_all.png")));
+    action->setIcon(QIcon::fromTheme("document-save", QIcon(":/images/images/save_all.png")));
     m_collectionsDiscover.insert("save-ips", action);
     connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(saveXmlIpsList()));
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("Load IP list"));
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/folder_open.png")));
+    action->setIcon(QIcon::fromTheme("folder-open", QIcon(":/images/images/folder_open.png")));
     m_collectionsDiscover.insert("load-ips", action);
     connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(loadXmlIpsList()));
     action->setEnabled(true);
 
     // Vulnerability Actions
     action = new QAction(m_ui);
-    action->setIcon(QIcon::fromTheme("system-search",QIcon(":/images/images/viewmag.png")));
+    action->setIcon(QIcon::fromTheme("system-search", QIcon(":/images/images/viewmag.png")));
     action->setIconText(tr("Search"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("search-act", action);
     connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(searchVulnerabilityFromCombo()));
 
     action = new QAction(m_ui);
-    action->setIcon(QIcon::fromTheme("go-previous",QIcon(":/images/images/go-previous.png")));
+    action->setIcon(QIcon::fromTheme("go-previous", QIcon(":/images/images/go-previous.png")));
     action->setIconText(tr("Back"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("back-act", action);
     connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebBack()));
 
     action = new QAction(m_ui);
-    action->setIcon(QIcon::fromTheme("go-next",QIcon(":/images/images/go-next.png")));
+    action->setIcon(QIcon::fromTheme("go-next", QIcon(":/images/images/go-next.png")));
     action->setIconText(tr("Forward"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("forward-act", action);
     connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebForward()));
 
     action = new QAction(m_ui);
-    action->setIcon(QIcon(QString::fromUtf8(":/images/images/button_cancel.png")));
-    action->setIcon(QIcon::fromTheme("process-stop",QIcon(":/images/images/button_cancel.png")));
+    action->setIcon(QIcon::fromTheme("process-stop", QIcon(":/images/images/button_cancel.png")));
     action->setIconText(tr("Stop"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("stop-act", action);
@@ -251,7 +250,7 @@ void ActionManager::setupActions()
     action->setText(tr("F&ull Screen Mode"));
     action->setCheckable(true);
     action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_F11);
-    action->setIcon(QIcon::fromTheme("view-fullscreen",QIcon(":/images/images/view-fullscreen.png")));
+    action->setIcon(QIcon::fromTheme("view-fullscreen", QIcon(":/images/images/view-fullscreen.png")));
     m_collectionsScanSection.insert("fullscreen-action", action);
     connect(action, SIGNAL(triggered()), m_ui, SLOT(setFullScreen()));
 
