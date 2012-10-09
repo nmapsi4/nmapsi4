@@ -1,34 +1,53 @@
-Build nmapsi4 on GNU/Linux
 
-Required:
-* qt4
+Description:
+
+NmapSi4 is a complete Qt-based Gui with the design goals to provide a complete nmap 
+interface for Users, in order to management all options of this powerful 
+security net scanner.
+
+HomePage: www.nmapsi4.org
+
+Required for build:
+
+* qt4 >= 4.6
 * cmake >= 2.6
-* nmap >= 5.51 with nping for discovery tool
 
-Recommend:
+Required for runtime:
+
+* nmap + nping >= 6.00
 * dig package (debian: dnsutils)
 
-Build:
+Build on GNU/Linux:
 
+# cd nmapsi4
 # cd tools/
 # ./cmake_verbose_script.sh
-cd ../build/
-# make
-# make install (only root) || download or create a package for your disto ;)
 
-For the Packages:
+--> OR <--
+
+# cd nmapsi4
+# mkdir build
+# cd build/
+
+--> AND <--
+
+# make
+# make install (only root) or create a package for your disto ;)
+
+List of distro packages:
+
 http://www.nmapsi4.org
+
+Info for admin desktop file:
 
 nmapsi4-admin.desktop uses by default kdesu for execute nmap with root uid. 
 However, it is possible change kdesu in the desktop file:
-
 nmapsi4-admin.desktop: Exec=kdesu nmapsi4 with Exec=[what you want] nmapsi4
 
 __________________________________________________________________________________
 
-MS Windows:
+Build on MS Windows:
 for build nmapsi4 on MS windows visit: http://www.nmapsi4.org
 
-Mac Os:
+Build on Mac Osx:
 for build nmapsi4 on Max Osx read: http://www.nmapsi4.org/node/38
-
