@@ -56,7 +56,6 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
-    m_mainTabWidget->setDocumentMode(true);
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);

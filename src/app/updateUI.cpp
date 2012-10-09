@@ -75,7 +75,7 @@ void MainWindow::updateScanSection()
 
         if (m_monitor->monitorHostNumber()) {
             m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
-                                        QIcon::fromTheme("process-working", QIcon(":/images/images/reload.png")));
+                                        QIcon::fromTheme("view-refresh", QIcon(":/images/images/reload.png")));
         } else {
             m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
                                         QIcon::fromTheme("utilities-system-monitor", QIcon(":/images/images/utilities-log-viewer.png")));
@@ -189,7 +189,8 @@ void MainWindow::clearAll()
 void MainWindow::updateScanCounter(int hostNumber)
 {
     if (hostNumber == 1) {
-        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget), QIcon(QString::fromUtf8(":/images/images/reload.png")));
+        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                    QIcon::fromTheme("view-refresh", QIcon(":/images/images/reload.png")));
     }
 
     QString title(tr(" Active Scan ")
