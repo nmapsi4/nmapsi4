@@ -144,5 +144,4 @@ void MainWindow::setDefaultSplitter()
     // insert splitter
     m_scanWidget->layout()->addWidget(m_mainHorizontalSplitter);
     m_scanWidget->frameCenter->layout()->addWidget(m_mainVerticalSplitter);
-    m_scanWidget->frameCenter->layout()->addWidget(m_scanWidget->frame_2);
 }
