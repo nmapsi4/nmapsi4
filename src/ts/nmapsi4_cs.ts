@@ -5,7 +5,7 @@
     <name>AboutUi</name>
     <message>
         <source>About Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu Nmapsi4</translation>
     </message>
     <message>
         <source>Nmapsi4</source>
@@ -15,27 +15,30 @@
         <source>NmapSi4 is a complete Qt4-based Gui with the design
 goals to provide a complete nmap interface for Users,
 in order to menage all option of this power security net scanner.</source>
-        <translation type="unfinished"></translation>
+        <translation>NmapSi4 je na Qt4 založené rozhraní, které si
+klade za cíl uživatelům poskytnout úplné rozhraní
+nmap na správu všech voleb tohoto silného
+bezpečnostního prohledávače sítě.</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zavřít</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;O programu</translation>
     </message>
     <message>
         <source>A&amp;uthors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Autoři</translation>
     </message>
     <message>
         <source>&amp;Support</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Podpora</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Verze </translation>
     </message>
     <message>
         <source>
@@ -43,7 +46,11 @@ in order to menage all option of this power security net scanner.</source>
 (c) 2007-2012 Francesco Cecconi
 
 License: GNU General Public License Version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+(c) 2007-2012 Francesco Cecconi
+
+Povolení: GNU General Public License Version 2</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -58,7 +65,18 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Hlavní vývojář&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Balíčky pro MS Windows&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -76,7 +94,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources Download:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Stránky:&lt;/span&gt;  &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;www.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sledování chyb:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Skladiště Git se zdrojovým kódem:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://gitorious.org/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;gitorious.org/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Stažení zdrojových kódů:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -87,7 +119,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Network Discover</source>
-        <translation>Síťové objevování</translation>
+        <translation>Zjišťování sítě</translation>
     </message>
     <message>
         <source>Vulnerability</source>
@@ -99,11 +131,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show/Hide Host List</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat/Skrýt seznam serverů</translation>
     </message>
     <message>
         <source>Show/Hide Host Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat/Skrýt podrobnosti serverů</translation>
     </message>
     <message>
         <source>Remove Host</source>
@@ -131,11 +163,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remove url</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit adresu (URL)</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Save</source>
@@ -143,11 +175,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Záložka</translation>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrola</translation>
     </message>
     <message>
         <source>Scan Options</source>
@@ -155,27 +187,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scan selected IP/s</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledat vybrané IP</translation>
     </message>
     <message>
         <source>Scan all discovered IP/s</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledat všechny zjištěné IP</translation>
     </message>
     <message>
         <source>Save IP list</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit seznam IP</translation>
     </message>
     <message>
         <source>Load IP list</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrát seznam IP</translation>
     </message>
     <message>
         <source>Show/Hide host list</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat/Skrýt seznam serverů</translation>
     </message>
     <message>
         <source>Show/Hide host details</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat/Skrýt podrobnosti serverů</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -187,35 +219,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>S&amp;ave Scan</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Uložit prohledávání</translation>
     </message>
     <message>
         <source>Save all scans to &amp;Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit všechna prohledávání do &amp;adresáře</translation>
     </message>
     <message>
         <source>&amp;Add host to bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Přidat server do záložek</translation>
     </message>
     <message>
         <source>Add service to &amp;bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat službu do &amp;záložek</translation>
     </message>
     <message>
         <source>Add &amp;parameters to bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat &amp;parametry do záložek</translation>
     </message>
     <message>
         <source>Add vulnerability search url</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat adresu (URL) hledání zranitelnosti</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový profil</translation>
     </message>
     <message>
         <source>Edit Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit profil</translation>
     </message>
     <message>
         <source>Search</source>
@@ -255,11 +287,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Section Vulnerabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Zranitelnosti části</translation>
     </message>
     <message>
         <source>Section Discover</source>
-        <translation>Objevování části</translation>
+        <translation>Zjišťování části</translation>
     </message>
     <message>
         <source>Report a bug</source>
@@ -314,18 +346,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save IP list</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit seznam IP</translation>
     </message>
     <message>
         <source>Load IP list</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrát seznam IP</translation>
     </message>
 </context>
 <context>
     <name>DiscoverWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Date</source>
@@ -333,15 +365,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Discovered IP/s</source>
-        <translation type="unfinished"></translation>
+        <translation>Zjištěné IP</translation>
     </message>
     <message>
         <source>Packets trace</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopa paketů</translation>
     </message>
     <message>
         <source>Probe</source>
-        <translation type="unfinished"></translation>
+        <translation>Pátrání</translation>
     </message>
     <message>
         <source>Probes Modes:</source>
@@ -349,47 +381,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CIDR Notation (IPv4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zápis CIDR (IPv4)</translation>
     </message>
     <message>
         <source>Selected your CIDR address:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraná adresa vašeho CIDR:</translation>
     </message>
     <message>
         <source>CIDR Address:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa CIDR:</translation>
     </message>
     <message>
         <source>Prefix Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost předpony:</translation>
     </message>
     <message>
         <source>Number of IP:</source>
-        <translation type="unfinished"></translation>
+        <translation>Číslo IP:</translation>
     </message>
     <message>
         <source>Or you can paste CIDR address below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebo můžete vložit adresu CIDR níže:</translation>
     </message>
     <message>
         <source>CIDR address:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa CIDR:</translation>
     </message>
     <message>
         <source>Start with CIDR-style address</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít s adresou stylu CIDR</translation>
     </message>
     <message>
         <source>Stop Discover</source>
-        <translation>Zastavit objevování</translation>
+        <translation>Zastavit zjišťování</translation>
     </message>
     <message>
         <source>CIDR Notation address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa zápisu CIDR</translation>
     </message>
     <message>
         <source>Ips range (IPv4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozsah IP (IPv4)</translation>
     </message>
     <message>
         <source>Local Interfaces:</source>
@@ -397,27 +429,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Reload Interfaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrát rozhraní znovu</translation>
     </message>
     <message>
         <source>IP Network:</source>
-        <translation type="unfinished"></translation>
+        <translation>Síť IP:</translation>
     </message>
     <message>
         <source>Start Host Ip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustit IP serveru:</translation>
     </message>
     <message>
         <source>End Host Ip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit IP serveru:</translation>
     </message>
     <message>
         <source>Start Discover from IP range</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustit zjišťování z rozsahu IP</translation>
     </message>
     <message>
         <source>Range of IP</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozsah IP</translation>
     </message>
 </context>
 <context>
@@ -466,43 +498,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Ještě stále běží nějaká prohledávání.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Do you want to close nmapsi4 anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Přesto chcete Nmapsi4 zavřít?</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <source>Default, force ipv6</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí, vynucení ipv6</translation>
     </message>
     <message>
         <source>Default, Aggressive</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí, bojovný</translation>
     </message>
     <message>
         <source>Default, base nse script</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí, základní skript NSE</translation>
     </message>
     <message>
         <source>Default, base nse script, force ipv6</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí, základní skript NSE, vynucení ipv6</translation>
     </message>
     <message>
         <source>Intense Scan, no ping</source>
-        <translation type="unfinished"></translation>
+        <translation>Soustředěné prohledávání, žádné zvonění</translation>
     </message>
     <message>
         <source>Warning - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování - Nmapsi4</translation>
     </message>
     <message>
         <source>IPv6 Protocol range scan is not yet supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání rozsahu protokolu IPv6 ještě není podporováno.</translation>
     </message>
     <message>
         <source>Scan Monitor</source>
@@ -511,25 +543,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Insert an host/ip address to scan
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Vložit adresu serveru/IP k prohledání</translation>
     </message>
 </context>
 <context>
     <name>Monitor</name>
     <message>
         <source>Waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Čeká se</translation>
     </message>
     <message>
         <source>Scanning</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledává se</translation>
     </message>
 </context>
 <context>
     <name>MonitorWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Stop All Scan</source>
@@ -578,14 +610,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Open Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít adresář</translation>
     </message>
 </context>
 <context>
     <name>PreferencesDialog</name>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Obecné</translation>
     </message>
     <message>
         <source>Lookup</source>
@@ -593,11 +625,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;h3&gt;General&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Obecné&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Lookup&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Vyhledávání&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
@@ -620,67 +652,67 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Fancy format</source>
-        <translation type="unfinished"></translation>
+        <translation>Elegantní formát</translation>
     </message>
     <message>
         <source>Nmap raw format</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezpracovaný formát Nmap</translation>
     </message>
     <message>
         <source>Html format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formát HTML</translation>
     </message>
     <message>
         <source>Tuning options</source>
-        <translation type="unfinished"></translation>
+        <translation>Volby pro ladění</translation>
     </message>
     <message>
         <source>Lookup Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení vyhledávání</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné</translation>
     </message>
     <message>
         <source>Internal lookup</source>
-        <translation type="unfinished"></translation>
+        <translation>Vnitřní vyhledávání</translation>
     </message>
     <message>
         <source>Dig lookup</source>
-        <translation type="unfinished"></translation>
+        <translation>Provést důkladné vyhledávání</translation>
     </message>
     <message>
         <source>Preferences - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení - Nmapsi4</translation>
     </message>
     <message>
         <source>Log type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ zápisu:</translation>
     </message>
     <message>
         <source>Max parallel scan:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejvíce souběžných prohledávání:</translation>
     </message>
     <message>
         <source>Max parallel discover process:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejvíce souběžných zjišťovacích procesů:</translation>
     </message>
     <message>
         <source>History item number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet položek historie:</translation>
     </message>
     <message>
         <source>Lookup type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ vyhledávání:</translation>
     </message>
     <message>
         <source>Dig verbosity level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň podrobnosti kopání:</translation>
     </message>
     <message>
         <source>Short</source>
-        <translation type="unfinished"></translation>
+        <translation>Krátce</translation>
     </message>
     <message>
         <source>Verbose</source>
@@ -702,36 +734,36 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Please, first insert a Decoy
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve, prosím, vložte návnadu</translation>
     </message>
     <message>
         <source>Disable Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakázat volbu</translation>
     </message>
     <message>
         <source>Please, insert spoof address
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Vložte, prosím, mystifikační adresu</translation>
     </message>
     <message>
         <source>Please, insert port address
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Vložte, prosím, adresu přípojky</translation>
     </message>
 </context>
 <context>
     <name>ProfilerManager</name>
     <message>
         <source>New profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový profil</translation>
     </message>
     <message>
         <source>Edit profile </source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit profil</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Scan</source>
@@ -743,7 +775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ping</source>
-        <translation type="unfinished"></translation>
+        <translation>Zazvonění</translation>
     </message>
     <message>
         <source>Timing</source>
@@ -751,15 +783,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse</source>
-        <translation type="unfinished"></translation>
+        <translation>NSE</translation>
     </message>
     <message>
         <source>Warning - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování - Nmapsi4</translation>
     </message>
     <message>
         <source>Insert profile name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložit název profilu.</translation>
     </message>
     <message>
         <source>Close</source>
@@ -772,54 +804,54 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>TCP SYN Stealth Scan (-sS)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenápadné prohledávání TCP SYN (-sS)</translation>
     </message>
     <message>
         <source>ACK Stealth Scan (-sA)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenápadné prohledávání ACK (-sA)</translation>
     </message>
     <message>
         <source>Mainmon Scan (-sM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání Mainmon (-sM)</translation>
     </message>
     <message>
         <source>FIN Stealth Scan (-sF)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenápadné prohledávání FIN (-sF)</translation>
     </message>
     <message>
         <source>NULL Stealth Scan (-sN)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenápadné prohledávání NULL (-sN)</translation>
     </message>
     <message>
         <source>XMAS Tree Stealth Scan (-sX)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenápadné prohledávání XMAS Tree (-sX)</translation>
     </message>
     <message>
         <source>TCP Window Scan (-sW)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání TCP Window (-sW)</translation>
     </message>
     <message>
         <source>UDP Ports Scan (-sU)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání přípojek UDP (-sU)</translation>
     </message>
     <message>
         <source>IP Protocol Scan (-sO)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání protokolu IP (-sO)</translation>
     </message>
     <message>
         <source>SCTP INIT scan (-sY)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání INIT SCTP (-sY)</translation>
     </message>
     <message>
         <source>SCTP cookie-echo scan (-sZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání cookie-echo SCT (-sZ)</translation>
     </message>
 </context>
 <context>
     <name>ScanBookmarkWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Date</source>
@@ -842,14 +874,14 @@ p, li { white-space: pre-wrap; }
     <name>ScanWidget</name>
     <message>
         <source>Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)</source>
-        <translation type="unfinished"></translation>
+        <translation>Server(y) k prohledání (ip/dns nebo přírůstkový - Např. 192.168.1.1/20)</translation>
     </message>
 </context>
 <context>
     <name>ScanWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -897,7 +929,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Service(s) Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrobnosti o službě</translation>
     </message>
     <message>
         <source>Nss script result</source>
@@ -905,7 +937,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse result</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledek NSE</translation>
     </message>
     <message>
         <source>Log(s)</source>
@@ -917,7 +949,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Raw scan log</source>
-        <translation type="unfinished"></translation>
+        <translation>Surový zápis prohledávání</translation>
     </message>
     <message>
         <source>Lookup</source>
@@ -955,7 +987,7 @@ p, li { white-space: pre-wrap; }
     <name>VulnBookmarkWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Data</source>
@@ -985,7 +1017,7 @@ p, li { white-space: pre-wrap; }
     <name>VulnerabilityWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Services</source>
@@ -993,7 +1025,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Discovered vulnerabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Zjištěné zranitelnosti</translation>
     </message>
 </context>
 <context>
@@ -1008,26 +1040,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save quick profile - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit rychlý profil - Nmapsi4</translation>
     </message>
     <message>
         <source>Profile Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název profilu:</translation>
     </message>
     <message>
         <source>Parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametry:</translation>
     </message>
 </context>
 <context>
     <name>addParametersToBookmark</name>
     <message>
         <source>Warning - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování - Nmapsi4</translation>
     </message>
     <message>
         <source>Insert profile name or/and profile parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložit název profilu. a/nebo parametry profilu.</translation>
     </message>
     <message>
         <source>Close</source>
@@ -1046,7 +1078,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save vulnerability search address - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit adresu hledání zranitelnosti - Nmapsi4</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1058,26 +1090,34 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Name: cve.mitre.org&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url Address: http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;search variable at the and of url&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Příklad:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Název adresy (URL): cve.mitre.org&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adresa (URL): http://cve.mitre.org/cgi-bin/cvekey.cgi?&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;keyword=&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka: &lt;/span&gt;Proměnná hledání na konci URL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Url Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název adresy (URL):</translation>
     </message>
     <message>
         <source>Url address:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa (URL):</translation>
     </message>
 </context>
 <context>
     <name>addVulnerabilityUrl</name>
     <message>
         <source>Warning - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování - Nmapsi4</translation>
     </message>
     <message>
         <source>Insert url name or/and address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložit název adresy (URL). a/nebo adresu.</translation>
     </message>
     <message>
         <source>Close</source>
@@ -1107,23 +1147,23 @@ p, li { white-space: pre-wrap; }
     <name>profilerDialog</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Profile name: </source>
-        <translation type="unfinished"></translation>
+        <translation>Název profilu:</translation>
     </message>
     <message>
         <source>Profile parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametry profilu:</translation>
     </message>
     <message>
         <source>Base options:</source>
-        <translation type="unfinished"></translation>
+        <translation>Základní volby:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný</translation>
     </message>
     <message>
         <source>Done</source>
@@ -1139,15 +1179,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>TCP scan:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání TCP:</translation>
     </message>
     <message>
         <source>TCP Connect Scan (-sT)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání TCP Connect (-sT)</translation>
     </message>
     <message>
         <source>Ping Sweep (-sP)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokropení zazvoněním (-sP)</translation>
     </message>
     <message>
         <source>Timing Template:</source>
@@ -1155,59 +1195,59 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Paranoid Throttling (-T0)</source>
-        <translation type="unfinished"></translation>
+        <translation>Podezíravé přiškrcení (-T0)</translation>
     </message>
     <message>
         <source>Sneaky Throttling (-T1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Záludné přiškrcení (-T1)</translation>
     </message>
     <message>
         <source>Polite Throttling (-T2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Slušné přiškrcení (-T2)</translation>
     </message>
     <message>
         <source>Normal Throttling (-T3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Normální přiškrcení (-T3)</translation>
     </message>
     <message>
         <source>Aggressive Throttling (-T4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Napadající přiškrcení (-T4)</translation>
     </message>
     <message>
         <source>Insane Throttling (-T5)</source>
-        <translation type="unfinished"></translation>
+        <translation>Šílené přiškrcení (-T5)</translation>
     </message>
     <message>
         <source>Non-TCP scans:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání ne-TCP:</translation>
     </message>
     <message>
         <source>List Scan (-sL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání seznamu (-sL)</translation>
     </message>
     <message>
         <source>RPC Scan (-sR)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledávání RPC (-sR)</translation>
     </message>
     <message>
         <source>OS Detection (-O)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zjištění OS (-O)</translation>
     </message>
     <message>
         <source>Version Probe (-sV)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prošetření verze (-sV)</translation>
     </message>
     <message>
         <source>Ipv6 support (-6)</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpora IPv6 (-6)</translation>
     </message>
     <message>
         <source>FTP bounce attack (-b)</source>
-        <translation type="unfinished"></translation>
+        <translation>Útok odrazem FTP (-b)</translation>
     </message>
     <message>
         <source>Idle Scan (-sl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nečinné prohledávání (-sl)</translation>
     </message>
     <message>
         <source>Normal</source>
@@ -1231,55 +1271,55 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Aggressive options (-A)</source>
-        <translation type="unfinished"></translation>
+        <translation>Napadající volby (-A)</translation>
     </message>
     <message>
         <source>Ping options</source>
-        <translation type="unfinished"></translation>
+        <translation>Volby pro zazvonění</translation>
     </message>
     <message>
         <source>TCP ACK Ping (-PA)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zazvonění ACK TCP (-PA)</translation>
     </message>
     <message>
         <source>21,23,80,3389</source>
-        <translation type="unfinished"></translation>
+        <translation>21,23,80,3389</translation>
     </message>
     <message>
         <source>TCP SYN Ping (-PS)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zazvonění SYN TCP (-PS)</translation>
     </message>
     <message>
         <source>22,25,80</source>
-        <translation type="unfinished"></translation>
+        <translation>22,25,80</translation>
     </message>
     <message>
         <source>UDP Ping (-PU)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zazvonění UDP (-PU)</translation>
     </message>
     <message>
         <source>ICMP Netmask (-PM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Síťová maska ICMP (-PM)</translation>
     </message>
     <message>
         <source>ICMP TImestamp (-PP)</source>
-        <translation type="unfinished"></translation>
+        <translation>Časové razítko ICMP (-PP)</translation>
     </message>
     <message>
         <source>ICMP Echo (-PE)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ozvěna ICMP (-PE)</translation>
     </message>
     <message>
         <source>Don&apos;t Ping (-P0)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezvonit (-P0)</translation>
     </message>
     <message>
         <source>IPProto probes (-PO)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sondy IPProto (-PO)</translation>
     </message>
     <message>
         <source>SCTP INIT ping (-PY)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zazvonění INIT SCTP (-sY)</translation>
     </message>
     <message>
         <source>Timing</source>
@@ -1287,59 +1327,59 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Min outstanding probes (--min-parallelism)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejméně mimořádných sond (--min-parallelism)</translation>
     </message>
     <message>
         <source>Max outstanding probes (--max-parallelism)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejvíce mimořádných sond (--max-parallelism)</translation>
     </message>
     <message>
         <source>Max time to scan a target (seconds, --host-timeout)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejvíce času na prohledání cíle (sekundy, --host-timeout)</translation>
     </message>
     <message>
         <source>Initial probe timeout (seconds, --initial-rtt-timeout)</source>
-        <translation type="unfinished"></translation>
+        <translation>Časové omezení počáteční sondy (sekundy, --initial-rtt-timeout)</translation>
     </message>
     <message>
         <source>Min probe timeout (seconds, --min-rtt-timeout)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejmenší omezení počáteční sondy (sekundy, --min-rtt-timeout)</translation>
     </message>
     <message>
         <source>Max probe timeout (seconds, --max-rtt-timeout)</source>
-        <translation type="unfinished"></translation>
+        <translation>Největší omezení počáteční sondy (sekundy, --min-rtt-timeout)</translation>
     </message>
     <message>
         <source>Scan Delay (seconds, --scan-delay)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpoždění prohledávání (sekundy, --scan-delay)</translation>
     </message>
     <message>
         <source>Max scan delay (seconds, --max-scan-delay)</source>
-        <translation type="unfinished"></translation>
+        <translation>Největší zpoždění prohledávání (sekundy, --max-scan-delay)</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdroj</translation>
     </message>
     <message>
         <source>Specific network interface (-e)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvláštní síťové rozhraní (-e)</translation>
     </message>
     <message>
         <source>Set source spoof ip address (-S)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit zdrojovou mystifikační adresu IP (-S)</translation>
     </message>
     <message>
         <source>Set decoy (-D)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit návnadu (-D)</translation>
     </message>
     <message>
         <source>Set Source spoof port (-g)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit zdrojovou mystifikační přípojku (-g)</translation>
     </message>
     <message>
         <source>Extra</source>
-        <translation type="unfinished"></translation>
+        <translation>Navíc</translation>
     </message>
     <message>
         <source>DNS Resolution</source>
@@ -1359,7 +1399,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Verbosity level (-v)</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň podrobnosti (-v)</translation>
     </message>
     <message>
         <source>Quiet</source>
@@ -1383,23 +1423,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ordered scanned port (-r)</source>
-        <translation type="unfinished"></translation>
+        <translation>Řádná prohledávaná přípojka (-r)</translation>
     </message>
     <message>
         <source>Fragment IP packets (-f)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fragmentové pakety IP (-f)</translation>
     </message>
     <message>
         <source>Ipv4 TTL (--ttl)</source>
-        <translation type="unfinished"></translation>
+        <translation>TTL IPv4 (--ttl)</translation>
     </message>
     <message>
         <source>Max Retries (--max-retries)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejvíce nových pokusů (--max-retries)</translation>
     </message>
     <message>
         <source>Traceroute (--traceroute)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sledování směrování na síti (--traceroute)</translation>
     </message>
     <message>
         <source>Nse categories script available</source>
@@ -1423,19 +1463,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Nse categories help</source>
-        <translation type="unfinished"></translation>
+        <translation>Nápověda ke skupinám NSE</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <source>Nse script parameters (Ex. user=foo,pass=test)</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametry pro skripty NSE (Např. user=foo,pass=test)</translation>
     </message>
     <message>
         <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
-        <translation>Ruční vyvolání skriptu nse: (Ex. snmp-sysdescr,smb-os-discovery )</translation>
+        <translation>Ruční vyvolání skriptu NSE: (Např. snmp-sysdescr,smb-os-discovery )</translation>
     </message>
     <message>
         <source>Search</source>
@@ -1443,22 +1483,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Single Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednoduchý skript</translation>
     </message>
     <message>
         <source>Profiler - Nmapsi4</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiler - Nmapsi4</translation>
     </message>
     <message>
         <source>Search information from nse script db:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat informace z databáze skriptů NSE:</translation>
     </message>
 </context>
 <context>
     <name>selectProfileDialog</name>
     <message>
         <source>Select a scan profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat profil prohledání</translation>
     </message>
     <message>
         <source>Done</source>
@@ -1469,11 +1509,11 @@ p, li { white-space: pre-wrap; }
     <name>welcomeVulnWidgetForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Search Network Vulnerabilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat zranitelnosti sítě</translation>
     </message>
 </context>
 </TS>
