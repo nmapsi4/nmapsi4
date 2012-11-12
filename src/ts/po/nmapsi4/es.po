@@ -599,7 +599,7 @@ msgstr "Hilo de Host"
 
 msgctxt "ParserManager|"
 msgid "Error: check nmap Installation.\n"
-msgstr "Error: revisa la instalación de nmap"
+msgstr "Error: revisa la instalación de nmap.\n"
 
 msgctxt "ParserManager|"
 msgid "Close"

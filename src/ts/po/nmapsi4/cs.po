@@ -650,7 +650,7 @@ msgstr "Dohled nad prohledáváním"
 
 msgctxt "MainWindow|"
 msgid "Insert an host/ip address to scan\n"
-msgstr "Vložit adresu serveru/IP k prohledání"
+msgstr "Vložit adresu serveru/IP k prohledání\n"
 
 msgctxt "Monitor|"
 msgid "Waiting"
@@ -818,7 +818,7 @@ msgstr "Zavřít"
 
 msgctxt "Profiler|"
 msgid "Please, first insert a Decoy\n"
-msgstr "Nejprve, prosím, vložte návnadu"
+msgstr "Nejprve, prosím, vložte návnadu\n"
 
 msgctxt "Profiler|"
 msgid "Disable Option"
@@ -826,11 +826,11 @@ msgstr "Zakázat volbu"
 
 msgctxt "Profiler|"
 msgid "Please, insert spoof address\n"
-msgstr "Vložte, prosím, mystifikační adresu"
+msgstr "Vložte, prosím, mystifikační adresu\n"
 
 msgctxt "Profiler|"
 msgid "Please, insert port address\n"
-msgstr "Vložte, prosím, adresu přípojky"
+msgstr "Vložte, prosím, adresu přípojky\n"
 
 msgctxt "ProfilerManager|"
 msgid "New profile"
@@ -878,7 +878,7 @@ msgstr "Zavřít"
 
 msgctxt "ProfilerManager|"
 msgid "Warning: Operation more expansive.\n"
-msgstr "Upozornění: Úkon je velmi rozsáhlý."
+msgstr "Upozornění: Úkon je velmi rozsáhlý.\n"
 
 msgctxt "ProfilerManager|"
 msgid "TCP SYN Stealth Scan (-sS)"

@@ -389,8 +389,6 @@ msgstr "&Aide"
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr ""
-"\n"
-"            "
 
 msgctxt "DiscoverManager|"
 msgid "Save IP list"
