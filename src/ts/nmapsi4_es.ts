@@ -561,7 +561,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Error: check nmap Installation.
 </source>
-        <translation>Error: revisa la instalación de nmap</translation>
+        <translation>Error: revisa la instalación de nmap.
+</translation>
     </message>
     <message>
         <source>Close</source>

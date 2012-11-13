@@ -310,8 +310,7 @@ p, li { white-space: pre-wrap; }
     <name>DiscoverManager</name>
     <message>
         <source>is Up</source>
-        <translation>
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Save IP list</source>

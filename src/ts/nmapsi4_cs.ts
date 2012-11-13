@@ -543,7 +543,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Insert an host/ip address to scan
 </source>
-        <translation>Vložit adresu serveru/IP k prohledání</translation>
+        <translation>Vložit adresu serveru/IP k prohledání
+</translation>
     </message>
 </context>
 <context>
@@ -734,7 +735,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Please, first insert a Decoy
 </source>
-        <translation>Nejprve, prosím, vložte návnadu</translation>
+        <translation>Nejprve, prosím, vložte návnadu
+</translation>
     </message>
     <message>
         <source>Disable Option</source>
@@ -743,12 +745,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Please, insert spoof address
 </source>
-        <translation>Vložte, prosím, mystifikační adresu</translation>
+        <translation>Vložte, prosím, mystifikační adresu
+</translation>
     </message>
     <message>
         <source>Please, insert port address
 </source>
-        <translation>Vložte, prosím, adresu přípojky</translation>
+        <translation>Vložte, prosím, adresu přípojky
+</translation>
     </message>
 </context>
 <context>
@@ -800,7 +804,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Warning: Operation more expansive.
 </source>
-        <translation>Upozornění: Úkon je velmi rozsáhlý.</translation>
+        <translation>Upozornění: Úkon je velmi rozsáhlý.
+</translation>
     </message>
     <message>
         <source>TCP SYN Stealth Scan (-sS)</source>
