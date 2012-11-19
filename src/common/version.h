@@ -20,6 +20,6 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-static const char version[] = "0.3.80";
+static const char version[] = "0.3.85";
 
 #endif
