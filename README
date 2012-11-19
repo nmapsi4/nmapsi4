@@ -12,6 +12,10 @@ Required for build:
 * qt4 >= 4.6
 * cmake >= 2.6
 
+Optional for build:
+
+* kdelibs (debian/kubuntu: kde4libs-dev)
+
 Required for runtime:
 
 * nmap + nping >= 6.00
