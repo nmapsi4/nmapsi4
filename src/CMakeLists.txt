@@ -120,7 +120,11 @@ else (NOT RELOAD_TRANSLATIONS)
   message( "nmapsi4:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
-INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+if(KDE4_FOUND)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
+else(KDE4_FOUND)
+  INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+endif(KDE4_FOUND)
 
 if (Q_WS_X11)
   ADD_EXECUTABLE(nmapsi4 ${SOURCES_H} ${SOURCES_CPP} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
@@ -146,6 +150,12 @@ if (Q_WS_X11)
         ${QT_QTDBUS_LIBRARY}
  )
 endif(Q_WS_X11)
+
+if(KDE4_FOUND)
+ target_link_libraries (nmapsi4
+        ${KDE4_KDEUI_LIBS}
+ )
+endif(KDE4_FOUND)
 
 if (Q_WS_X11)
   install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)

@@ -105,6 +105,9 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     dataBuffer.clear();
     errorBuffer.clear();
 
+    // NOTE: It works only with kdelibs
+    Notify::notificationMessage(parList[parList.size()-1],tr("Scan completed"));
+
     if (!m_ui->m_monitor->monitorHostNumber()) {
         m_ui->m_monitor->m_monitorWidget->scanProgressBar->setMaximum(100);
         m_ui->m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(false);

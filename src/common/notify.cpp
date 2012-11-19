@@ -33,3 +33,15 @@ void Notify::clearButtonNotify(PushButtonOrientated* button)
 {
     button->setStyleSheet("");
 }
+
+void Notify::notificationMessage(const QString& sender, const QString& message)
+{
+#if defined(USE_KDELIBS)
+    KNotification::event(KNotification::Notification, "nmapsi4 - " + sender,
+        message,
+        QPixmap(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")),
+        QApplication::activeWindow(),
+        KNotification::CloseWhenWidgetActivated
+    );
+#endif
+}

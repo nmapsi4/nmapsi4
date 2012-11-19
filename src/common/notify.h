@@ -22,6 +22,16 @@
 
 #include "style.h"
 #include "pushbuttonorientated.h"
+#include <config.h>
+
+// qt includes
+#include <QtCore/QDebug>
+#include <QtGui/QApplication>
+
+// kde includes
+#if defined(USE_KDELIBS)
+#include <KNotification>
+#endif
 
 class Notify
 {
@@ -30,7 +40,7 @@ public:
     static void startButtonNotify(PushButtonOrientated* button);
     static void setCheckedNotify(PushButtonOrientated* button);
     static void clearButtonNotify(PushButtonOrientated* button);
-
+    static void notificationMessage(const QString& hostName, const QString& message);
 };
 
 #endif // NOTIFY_H

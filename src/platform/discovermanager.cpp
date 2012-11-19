@@ -272,6 +272,8 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_discoverWidget->cidrButton->setEnabled(true);
         m_discoverWidget->discoverProgressBar->setMaximum(100);
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
+        // NOTE: It works only with kdelibs support
+        Notify::notificationMessage("Discover (RANGE)", tr("Discover completed"));
     }
 }
 
@@ -416,6 +418,8 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     m_discoverWidget->startDiscoverButt->setEnabled(true);
     m_discoverWidget->discoverProgressBar->setMaximum(100);
     Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
+    // NOTE: It works only with kdelibs support
+    Notify::notificationMessage("Discover (CIDR)", tr("Discover completed"));
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)
