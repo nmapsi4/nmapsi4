@@ -105,8 +105,26 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     dataBuffer.clear();
     errorBuffer.clear();
 
+    QString message(tr("Scan completed"));
     // NOTE: It works only with kdelibs
-    Notify::notificationMessage(parList[parList.size()-1],tr("Scan completed"));
+    Notify::notificationMessage(parList[parList.size()-1], message);
+
+#if defined(USE_KDELIBS)
+    // limit Widget lines to 5
+    int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
+    if (lineNumber == 5) {
+        m_ui->m_kWidgetNotification->setText(QString(""));
+    }
+
+    if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
+        message.prepend(m_ui->m_kWidgetNotification->text() + "\n> " + parList[parList.size()-1] + " - ");
+    } else {
+        message.prepend("> " + parList[parList.size()-1] + " - ");
+    }
+
+    m_ui->m_kWidgetNotification->setText(message);
+    m_ui->m_kWidgetNotification->show();
+#endif
 
     if (!m_ui->m_monitor->monitorHostNumber()) {
         m_ui->m_monitor->m_monitorWidget->scanProgressBar->setMaximum(100);

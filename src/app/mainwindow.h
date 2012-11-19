@@ -21,6 +21,7 @@
 #define MAINWINDOW_H
 
 #include "ui_scanwidget.h"
+#include <config.h>
 
 // Qt4 include
 #include <QtGui/QMainWindow>
@@ -33,6 +34,11 @@
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
 #include <QtCore/QList>
+
+// KDE include
+#if defined(USE_KDELIBS)
+#include <KMessageWidget>
+#endif
 
 // local include
 #include "preferencesdialog.h"
@@ -88,6 +94,10 @@ public:
     ScanWidget* m_scanWidget;
     QTabWidget* m_mainTabWidget;
 
+#if defined(USE_KDELIBS)
+    KMessageWidget *m_kWidgetNotification;
+#endif
+
 private:
     void addHostToMonitor(const QString hostname);
     void resetOptions();
@@ -139,6 +149,10 @@ private slots:
     void resizeHorizontalSplitterEvent();
     void resizeScanListWidgetEvent();
     void resizeHostDetailsWidgetEvent();
+
+#if defined(USE_KDELIBS)
+    void hideKWidget();
+#endif
 };
 
 #endif

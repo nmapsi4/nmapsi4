@@ -59,6 +59,20 @@ void MainWindow::initObject()
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
+
+#if defined(USE_KDELIBS)
+    m_kWidgetNotification = new KMessageWidget(this);
+    m_kWidgetNotification->setCloseButtonVisible(false);
+    QAction* action = new QAction(m_kWidgetNotification);
+    action->setText(tr("Close"));
+    action->setIcon(QIcon::fromTheme("application-exit", QIcon(":/images/images/window-close.png")));
+    m_kWidgetNotification->addAction(action);
+    connect(action, SIGNAL(triggered(bool)), this, SLOT(hideKWidget()));
+    m_kWidgetNotification->hide();
+
+    centralLayout->addWidget(m_kWidgetNotification);
+#endif
+
     centralLayout->addWidget(m_mainTabWidget);
     centralwidget->setLayout(centralLayout);
     setCentralWidget(centralwidget);
@@ -433,3 +447,13 @@ void MainWindow::resizeScanListWidgetEvent()
 MainWindow::~MainWindow()
 {
 }
+
+#if defined(USE_KDELIBS)
+
+void MainWindow::hideKWidget()
+{
+    m_kWidgetNotification->hide();
+    m_kWidgetNotification->setText(QString(""));
+}
+
+#endif
