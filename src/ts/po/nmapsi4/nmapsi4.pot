@@ -33,99 +33,7 @@ msgid ""
 "License: GNU General Public License Version 2"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:203
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Francesco Cecconi</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-style:italic;\">Core Developer</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:brand@nmapsi4.org\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"text-decoration: underline; color:#0057ae;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Innocenzo Ventre</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-style:italic;\">MS Windows Packages</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:el.diabl09@gmail.com\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p></body></html>"
-msgstr ""
-
-#: ../../../build/src/ui_about.h:217
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Website:</span>  </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"www.nmapsi4.org\"><span style=\" font-size:8pt; text-decoration: "
-"underline; color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Bug Tracking:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://bugs.nmapsi4.org\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Sources Git repository:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://gitorious.org/nmapsi4\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">gitorious.org/nmapsi4</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Sources Download:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://code.google.com/nmapsi4\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
-msgstr ""
-
-#: ../../../build/src/ui_about.h:235
+#: ../../../build/src/ui_about.h:236
 msgctxt "AboutUi|"
 msgid "&Close"
 msgstr ""
@@ -135,12 +43,101 @@ msgctxt "AboutUi|"
 msgid "&About"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:216
+#: ../../../build/src/ui_about.h:203
+msgctxt "AboutUi|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Francesco Cecconi</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-style:italic;\">Core Developer</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"font-size:9pt; text-decoration: underline; color:#0057ae;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Innocenzo Ventre</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-style:italic;\">MS Windows Packages</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:el.diabl09@gmail.com\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"font-size:9pt;\"><br /></p></body></html>"
+msgstr ""
+
+#: ../../../build/src/ui_about.h:217
 msgctxt "AboutUi|"
 msgid "A&uthors"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:234
+#: ../../../build/src/ui_about.h:218
+msgctxt "AboutUi|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Website:</span><span style=\" "
+"font-size:9pt;\">  </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://www.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"font-size:9pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Bug Tracking:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://bugs.nmapsi4.org\"><span style=\" text-decoration: underline; "
+"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"font-size:9pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Sources Git repository:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"https://github.com/nmapsi4/nmapsi4\"><span style=\" text-decoration: "
+"underline; color:#0057ae;\">github.com/nmapsi4/nmapsi4</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"font-size:9pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-size:9pt; font-weight:600;\">Sources Download:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://code.google.com/nmapsi4\"><span style=\" text-decoration: "
+"underline; "
+"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
+msgstr ""
+
+#: ../../../build/src/ui_about.h:235
 msgctxt "AboutUi|"
 msgid "&Support"
 msgstr ""
@@ -150,77 +147,77 @@ msgctxt "AboutUi|"
 msgid "Version "
 msgstr ""
 
-#: ../../app/actionmanager.cpp:371 ../../app/actionmanager.cpp:372
+#: ../../app/actionmanager.cpp:367 ../../app/actionmanager.cpp:368
 msgctxt "ActionManager|"
 msgid "Scan host(s)"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:379 ../../app/actionmanager.cpp:380
+#: ../../app/actionmanager.cpp:383 ../../app/actionmanager.cpp:384
 msgctxt "ActionManager|"
 msgid "Network Discover"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:387
+#: ../../app/actionmanager.cpp:375
 msgctxt "ActionManager|"
 msgid "Vulnerability"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:388
+#: ../../app/actionmanager.cpp:376
 msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:398
+#: ../../app/actionmanager.cpp:394
 msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:406
+#: ../../app/actionmanager.cpp:402
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:614
+#: ../../app/actionmanager.cpp:610
 msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:618
+#: ../../app/actionmanager.cpp:614
 msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:634
+#: ../../app/actionmanager.cpp:630
 msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:648
+#: ../../app/actionmanager.cpp:644
 msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:652
+#: ../../app/actionmanager.cpp:648
 msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:668
+#: ../../app/actionmanager.cpp:664
 msgctxt "ActionManager|"
 msgid "Check Vulnerability"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:681
+#: ../../app/actionmanager.cpp:677
 msgctxt "ActionManager|"
 msgid "Remove url"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:420
+#: ../../app/actionmanager.cpp:416
 msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:499
+#: ../../app/actionmanager.cpp:495
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr ""
@@ -390,57 +387,57 @@ msgctxt "ActionManager|"
 msgid "S&ettings"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:336
-msgctxt "ActionManager|"
-msgid "&View"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:342
+#: ../../app/actionmanager.cpp:339
 msgctxt "ActionManager|"
 msgid "&Tools"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:349
+#: ../../app/actionmanager.cpp:346
 msgctxt "ActionManager|"
 msgid "&Help"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:466
+#: ../../app/actionmanager.cpp:462
 msgctxt "ActionManager|"
 msgid "Profile"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:397
+#: ../../app/actionmanager.cpp:393
 msgctxt "ActionManager|"
 msgid "Show/Hide host list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:405
+#: ../../app/actionmanager.cpp:401
 msgctxt "ActionManager|"
 msgid "Show/Hide host details"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:448
+#: ../../app/actionmanager.cpp:444
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:480
+#: ../../app/actionmanager.cpp:476
 msgctxt "ActionManager|"
 msgid "Bookmark"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:242
+#: ../../platform/discovermanager.cpp:243
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:538
+#: ../../platform/discovermanager.cpp:276 ../../platform/discovermanager.cpp:438
+msgctxt "DiscoverManager|"
+msgid "Discover completed"
+msgstr ""
+
+#: ../../platform/discovermanager.cpp:580
 msgctxt "DiscoverManager|"
 msgid "Save IP list"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:556
+#: ../../platform/discovermanager.cpp:598
 msgctxt "DiscoverManager|"
 msgid "Load IP list"
 msgstr ""
@@ -566,22 +563,22 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Range of IP"
 msgstr ""
 
-#: ../../app/updateUI.cpp:75
+#: ../../app/updateUI.cpp:74
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr ""
 
-#: ../../app/updateUI.cpp:188
+#: ../../app/updateUI.cpp:186
 msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../app/updateUI.cpp:197
+#: ../../app/updateUI.cpp:196
 msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr ""
 
-#: ../../app/updateUI.cpp:88 ../../app/updateUI.cpp:120
+#: ../../app/updateUI.cpp:87 ../../app/updateUI.cpp:119
 msgctxt "MainWindow|"
 msgid "Bookmarks"
 msgstr ""
@@ -641,38 +638,38 @@ msgctxt "MainWindow|"
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:215 ../../app/mainwindow.cpp:242
-#: ../../app/mainwindow.cpp:294
+#: ../../app/mainwindow.cpp:67 ../../app/mainwindow.cpp:228
+#: ../../app/mainwindow.cpp:255 ../../app/mainwindow.cpp:307
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:215
+#: ../../app/mainwindow.cpp:228
 msgctxt "MainWindow|"
 msgid "Insert an host/ip address to scan\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:241
+#: ../../app/mainwindow.cpp:254
 msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:242
+#: ../../app/mainwindow.cpp:255
 msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#: ../../app/mainwindow.cpp:294
+#: ../../app/mainwindow.cpp:307
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:338
+#: ../../app/mainwindow.cpp:353
 msgctxt "MainWindow|"
 msgid "<b>There are still active scan.</b>"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:339
+#: ../../app/mainwindow.cpp:354
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr ""
@@ -732,17 +729,22 @@ msgctxt "ParserManager|"
 msgid "Close"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:427
+#: ../../platform/parser/parsermanager.cpp:108
+msgctxt "ParserManager|"
+msgid "Scan completed"
+msgstr ""
+
+#: ../../platform/parser/parsermanager.cpp:447
 msgctxt "ParserManager|"
 msgid "No description"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:707
+#: ../../platform/parser/parsermanager.cpp:727
 msgctxt "ParserManager|"
 msgid "Save Log"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:727
+#: ../../platform/parser/parsermanager.cpp:747
 msgctxt "ParserManager|"
 msgid "Open Directory"
 msgstr ""
@@ -1049,122 +1051,122 @@ msgctxt "ScanWidget|"
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:432
+#: ../../../build/src/ui_scanwidget.h:419
 msgctxt "ScanWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:434
+#: ../../../build/src/ui_scanwidget.h:428
 msgctxt "ScanWidgetForm|"
 msgid "Clear"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:438
+#: ../../../build/src/ui_scanwidget.h:432
 msgctxt "ScanWidgetForm|"
 msgid "Save Profile"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:442
+#: ../../../build/src/ui_scanwidget.h:421
 msgctxt "ScanWidgetForm|"
 msgid "Os"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:443 ../../../build/src/ui_scanwidget.h:467
+#: ../../../build/src/ui_scanwidget.h:422 ../../../build/src/ui_scanwidget.h:450
 msgctxt "ScanWidgetForm|"
 msgid "Host(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:446
+#: ../../../build/src/ui_scanwidget.h:425
 msgctxt "ScanWidgetForm|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:449
+#: ../../../build/src/ui_scanwidget.h:459
 msgctxt "ScanWidgetForm|"
 msgid "Host Details"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:451
+#: ../../../build/src/ui_scanwidget.h:461
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) with info"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:453
+#: ../../../build/src/ui_scanwidget.h:436
 msgctxt "ScanWidgetForm|"
 msgid "Description"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:454
+#: ../../../build/src/ui_scanwidget.h:437
 msgctxt "ScanWidgetForm|"
 msgid "Service"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:455
+#: ../../../build/src/ui_scanwidget.h:438
 msgctxt "ScanWidgetForm|"
 msgid "State"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:456
+#: ../../../build/src/ui_scanwidget.h:439
 msgctxt "ScanWidgetForm|"
 msgid "Port"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:457
+#: ../../../build/src/ui_scanwidget.h:440
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) Details"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:459
+#: ../../../build/src/ui_scanwidget.h:442
 msgctxt "ScanWidgetForm|"
 msgid "Nss script result"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:460
+#: ../../../build/src/ui_scanwidget.h:443
 msgctxt "ScanWidgetForm|"
 msgid "Nse result"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:462
+#: ../../../build/src/ui_scanwidget.h:445
 msgctxt "ScanWidgetForm|"
 msgid "Log(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:464
+#: ../../../build/src/ui_scanwidget.h:447
 msgctxt "ScanWidgetForm|"
 msgid "Error(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:465
+#: ../../../build/src/ui_scanwidget.h:448
 msgctxt "ScanWidgetForm|"
 msgid "Raw scan log"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:468
+#: ../../../build/src/ui_scanwidget.h:451
 msgctxt "ScanWidgetForm|"
 msgid "Lookup"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:470
+#: ../../../build/src/ui_scanwidget.h:453
 msgctxt "ScanWidgetForm|"
 msgid "DNS"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:471
+#: ../../../build/src/ui_scanwidget.h:454
 msgctxt "ScanWidgetForm|"
 msgid "IP"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:472
+#: ../../../build/src/ui_scanwidget.h:455
 msgctxt "ScanWidgetForm|"
 msgid "RTT"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:473
+#: ../../../build/src/ui_scanwidget.h:456
 msgctxt "ScanWidgetForm|"
 msgid "Hop(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:474
+#: ../../../build/src/ui_scanwidget.h:457
 msgctxt "ScanWidgetForm|"
 msgid "Traceroute"
 msgstr ""
@@ -1204,17 +1206,17 @@ msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:158
+#: ../../../build/src/ui_vulnerabilitywidget.h:147
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:161
+#: ../../../build/src/ui_vulnerabilitywidget.h:152
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:164
+#: ../../../build/src/ui_vulnerabilitywidget.h:149
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Discovered vulnerabilities"
 msgstr ""

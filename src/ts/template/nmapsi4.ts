@@ -30,42 +30,7 @@ License: GNU General Public License Version 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="203"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Core Developer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_about.h" line="217"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Website:&lt;/span&gt;  &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;www.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bug Tracking:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources Git repository:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://gitorious.org/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;gitorious.org/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources Download:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_about.h" line="235"/>
+        <location filename="../../../build/src/ui_about.h" line="236"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -75,12 +40,47 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="216"/>
+        <location filename="../../../build/src/ui_about.h" line="203"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;Core Developer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../build/src/ui_about.h" line="217"/>
         <source>A&amp;uthors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="234"/>
+        <location filename="../../../build/src/ui_about.h" line="218"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Website:&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Bug Tracking:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Sources Git repository:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/nmapsi4/nmapsi4&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;github.com/nmapsi4/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Sources Download:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../build/src/ui_about.h" line="235"/>
         <source>&amp;Support</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,79 +93,79 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ActionManager</name>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="371"/>
-        <location filename="../../app/actionmanager.cpp" line="372"/>
+        <location filename="../../app/actionmanager.cpp" line="367"/>
+        <location filename="../../app/actionmanager.cpp" line="368"/>
         <source>Scan host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="379"/>
-        <location filename="../../app/actionmanager.cpp" line="380"/>
+        <location filename="../../app/actionmanager.cpp" line="383"/>
+        <location filename="../../app/actionmanager.cpp" line="384"/>
         <source>Network Discover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="387"/>
+        <location filename="../../app/actionmanager.cpp" line="375"/>
         <source>Vulnerability</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="388"/>
+        <location filename="../../app/actionmanager.cpp" line="376"/>
         <source>Check Vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="398"/>
+        <location filename="../../app/actionmanager.cpp" line="394"/>
         <source>Show/Hide Host List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="406"/>
+        <location filename="../../app/actionmanager.cpp" line="402"/>
         <source>Show/Hide Host Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="614"/>
+        <location filename="../../app/actionmanager.cpp" line="610"/>
         <source>Remove Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="618"/>
+        <location filename="../../app/actionmanager.cpp" line="614"/>
         <source>Scan Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="634"/>
+        <location filename="../../app/actionmanager.cpp" line="630"/>
         <source>Remove Scan Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="648"/>
+        <location filename="../../app/actionmanager.cpp" line="644"/>
         <source>Remove Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="652"/>
+        <location filename="../../app/actionmanager.cpp" line="648"/>
         <source>Search for vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="668"/>
+        <location filename="../../app/actionmanager.cpp" line="664"/>
         <source>Check Vulnerability</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="681"/>
+        <location filename="../../app/actionmanager.cpp" line="677"/>
         <source>Remove url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="420"/>
+        <location filename="../../app/actionmanager.cpp" line="416"/>
         <source>Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="499"/>
+        <location filename="../../app/actionmanager.cpp" line="495"/>
         <source>Scan Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -335,42 +335,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="336"/>
-        <source>&amp;View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../app/actionmanager.cpp" line="342"/>
+        <location filename="../../app/actionmanager.cpp" line="339"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="349"/>
+        <location filename="../../app/actionmanager.cpp" line="346"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="466"/>
+        <location filename="../../app/actionmanager.cpp" line="462"/>
         <source>Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="397"/>
+        <location filename="../../app/actionmanager.cpp" line="393"/>
         <source>Show/Hide host list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="405"/>
+        <location filename="../../app/actionmanager.cpp" line="401"/>
         <source>Show/Hide host details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="448"/>
+        <location filename="../../app/actionmanager.cpp" line="444"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/actionmanager.cpp" line="480"/>
+        <location filename="../../app/actionmanager.cpp" line="476"/>
         <source>Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -378,17 +373,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DiscoverManager</name>
     <message>
-        <location filename="../../platform/discovermanager.cpp" line="242"/>
+        <location filename="../../platform/discovermanager.cpp" line="243"/>
         <source>is Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/discovermanager.cpp" line="538"/>
+        <location filename="../../platform/discovermanager.cpp" line="276"/>
+        <location filename="../../platform/discovermanager.cpp" line="438"/>
+        <source>Discover completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../platform/discovermanager.cpp" line="580"/>
         <source>Save IP list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/discovermanager.cpp" line="556"/>
+        <location filename="../../platform/discovermanager.cpp" line="598"/>
         <source>Load IP list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -520,23 +521,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../app/updateUI.cpp" line="75"/>
+        <location filename="../../app/updateUI.cpp" line="74"/>
         <source>Scan Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="188"/>
+        <location filename="../../app/updateUI.cpp" line="186"/>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="197"/>
+        <location filename="../../app/updateUI.cpp" line="196"/>
         <source> Active Scan </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/updateUI.cpp" line="88"/>
-        <location filename="../../app/updateUI.cpp" line="120"/>
+        <location filename="../../app/updateUI.cpp" line="87"/>
+        <location filename="../../app/updateUI.cpp" line="119"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -605,41 +606,42 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="215"/>
-        <location filename="../../app/mainwindow.cpp" line="242"/>
-        <location filename="../../app/mainwindow.cpp" line="294"/>
+        <location filename="../../app/mainwindow.cpp" line="67"/>
+        <location filename="../../app/mainwindow.cpp" line="228"/>
+        <location filename="../../app/mainwindow.cpp" line="255"/>
+        <location filename="../../app/mainwindow.cpp" line="307"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="215"/>
+        <location filename="../../app/mainwindow.cpp" line="228"/>
         <source>Insert an host/ip address to scan
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="241"/>
+        <location filename="../../app/mainwindow.cpp" line="254"/>
         <source>Warning - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="242"/>
+        <location filename="../../app/mainwindow.cpp" line="255"/>
         <source>IPv6 Protocol range scan is not yet supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="294"/>
+        <location filename="../../app/mainwindow.cpp" line="307"/>
         <source>Hostname already scanning
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="338"/>
+        <location filename="../../app/mainwindow.cpp" line="353"/>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="339"/>
+        <location filename="../../app/mainwindow.cpp" line="354"/>
         <source>Do you want to close nmapsi4 anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -709,17 +711,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="427"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="108"/>
+        <source>Scan completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../platform/parser/parsermanager.cpp" line="447"/>
         <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="707"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="727"/>
         <source>Save Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="727"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="747"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1053,123 +1060,123 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ScanWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="432"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="419"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="434"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="428"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="438"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="432"/>
         <source>Save Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="442"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="421"/>
         <source>Os</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="443"/>
-        <location filename="../../../build/src/ui_scanwidget.h" line="467"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="422"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="450"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="446"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="425"/>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="449"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="459"/>
         <source>Host Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="451"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="461"/>
         <source>Service(s) with info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="453"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="436"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="454"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="437"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="455"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="438"/>
         <source>State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="456"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="439"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="457"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="440"/>
         <source>Service(s) Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="459"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="442"/>
         <source>Nss script result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="460"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="443"/>
         <source>Nse result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="462"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="445"/>
         <source>Log(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="464"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="447"/>
         <source>Error(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="465"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="448"/>
         <source>Raw scan log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="468"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="451"/>
         <source>Lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="470"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="453"/>
         <source>DNS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="471"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="454"/>
         <source>IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="472"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="455"/>
         <source>RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="473"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="456"/>
         <source>Hop(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="474"/>
+        <location filename="../../../build/src/ui_scanwidget.h" line="457"/>
         <source>Traceroute</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1221,17 +1228,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>VulnerabilityWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="158"/>
+        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="147"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="161"/>
+        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="152"/>
         <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="164"/>
+        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="149"/>
         <source>Discovered vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
