@@ -382,7 +382,8 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
             // Save nse vulnerabilies url discovered
             if ((nseStreamLine.startsWith(QLatin1String("http://"))
                     || nseStreamLine.startsWith(QLatin1String("https://")))
-                    && !nseStreamLine.contains(hostCheck)) {
+                    && !nseStreamLine.contains(hostCheck)
+                    && !nseStreamLine.contains("localhost")) {
                 parserObjectElem->setVulnDiscoverd(nseStreamLine);
             }
         }
