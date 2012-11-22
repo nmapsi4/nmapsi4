@@ -14,7 +14,7 @@ Required for build:
 
 Optional for build:
 
-* kdelibs (debian/kubuntu: kde4libs-dev)
+* kdelibs (debian/kubuntu: kdelibs5-dev)
 
 Required for runtime:
 
