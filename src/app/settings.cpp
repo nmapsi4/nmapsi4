@@ -44,7 +44,7 @@ void MainWindow::saveSettings()
     QSettings settings("nmapsi4", "nmapsi4");
 
     settings.setValue("window/pos", pos());
-    settings.setValue("window/size", size());
+    settings.setValue("window/geometry", saveGeometry());
     settings.setValue("hostCache", 10);
     settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
@@ -93,9 +93,13 @@ void MainWindow::restoreSettings()
     // restore window position
     QSettings settings("nmapsi4", "nmapsi4");
     QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
-    QSize size = settings.value("window/size", QSize(910, 672)).toSize();
-    resize(size);
     move(pos);
+
+    if (settings.contains("window/geometry")) {
+        restoreGeometry(settings.value("window/geometry").toByteArray());
+    } else {
+        resize(QSize(700, 500));
+    }
 
     // restore state of the QAction's connected to splitter widget
     if (!settings.value("splitterSizes").toByteArray().isEmpty()) {
