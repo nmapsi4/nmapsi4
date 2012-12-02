@@ -211,7 +211,7 @@ void MainWindow::clearHostnameCombo()
 
 void MainWindow::clearParametersCombo()
 {
-    // TODO:set to default saved parameters profile
-    //comboPar->setCurrentIndex(0);
+    // reset saved profile or simply the default one
+    m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
     comboParametersSelectedEvent();
 }

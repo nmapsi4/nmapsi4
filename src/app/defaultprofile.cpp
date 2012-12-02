@@ -111,7 +111,7 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
     return listProfileModel;
 }
 
-void MainWindow::loadScanProfile()
+void MainWindow::buildScanProfileList()
 {
     m_scanWidget->comboParametersProfiles->clear();
 
@@ -133,13 +133,13 @@ void MainWindow::loadScanProfile()
 void MainWindow::comboParametersSelectedEvent()
 {
     // insert profile from comboPar to comboAdv
-    int parIndex = m_scanWidget->comboParametersProfiles->currentIndex();
+    int currentProfileIndex = m_scanWidget->comboParametersProfiles->currentIndex();
 
     // if not 0
     QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
     m_scanWidget->comboAdv->clear();
 
-    if (parIndex <= listProfileModel.size()) {
+    if (currentProfileIndex <= listProfileModel.size()) {
         QListIterator< QPair<QString, QString> > i(defaultScanProfile());
         while (i.hasNext()) {
             QPair<QString, QString> profile = i.next();

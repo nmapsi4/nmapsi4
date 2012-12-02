@@ -78,7 +78,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget* parent = 0);
     ~MainWindow();
-    void loadScanProfile();
+    void buildScanProfileList();
     void updateComboBook();
     void updateCompleter();
     QList< QPair<QString, QString> > defaultScanProfile();
@@ -113,6 +113,7 @@ private:
     QWeakPointer<QStringListModel> m_hostModel;
     int m_userId;
     int m_lookupType;
+    int m_savedProfileIndex;
     QByteArray m_scanListWidgetSize;
     QByteArray m_detailsWidgetSize;
 

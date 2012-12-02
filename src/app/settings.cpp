@@ -23,7 +23,8 @@ void MainWindow::syncSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
 
-    // TODO: load saved profile or simple default
+    // load saved profile index
+    m_savedProfileIndex = settings.value("savedProfileIndex", 0).toInt();
     m_hostCache = settings.value("hostCache", 10).toInt();
 
 #if defined(Q_WS_WIN)
@@ -45,10 +46,11 @@ void MainWindow::saveSettings()
 
     settings.setValue("window/pos", pos());
     settings.setValue("window/geometry", saveGeometry());
-    settings.setValue("hostCache", 10);
+    settings.setValue("hostCache", m_hostCache);
     settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
     settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
     settings.setValue("showMenuBar", m_collections->m_collectionsScanSection.value("showmenubar-action")->isChecked());
+    settings.setValue("savedProfileIndex", m_scanWidget->comboParametersProfiles->currentIndex());
 
     m_bookmark->syncSettings();
     m_discoverManager->syncSettings();

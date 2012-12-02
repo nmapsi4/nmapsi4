@@ -178,7 +178,7 @@ void BookmarkManager::deleteParametersFromBookmark()
     m_treebookparlist = history_->updateBookMarks();
 
     delete history_;
-    m_ui->loadScanProfile();
+    m_ui->buildScanProfileList();
 }
 
 void BookmarkManager::startParametersToBookmarksDialog()
@@ -231,7 +231,7 @@ void BookmarkManager::saveParametersToBookmarks(const QString profileName, const
     m_treebookparlist = history_->updateBookMarks();
 
     delete history_;
-    m_ui->loadScanProfile();
+    m_ui->buildScanProfileList();
 }
 
 void BookmarkManager::restoreAllHistoryValues()

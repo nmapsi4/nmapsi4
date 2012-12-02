@@ -114,7 +114,7 @@ void MainWindow::initObject()
     updateMenuBar();
 
     // load quick combo items
-    loadScanProfile();
+    buildScanProfileList();
     updateComboBook();
 
     // connect slots
@@ -122,7 +122,7 @@ void MainWindow::initObject()
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
             this, SLOT(clearParametersCombo()));
-    connect(m_scanWidget->comboParametersProfiles, SIGNAL(activated(QString)),
+    connect(m_scanWidget->comboParametersProfiles, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(quickAddressSelectionEvent()));
@@ -134,6 +134,8 @@ void MainWindow::initObject()
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
 
+    // set saved profile or simply the default one
+    m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
     updateScanSection();
 
 #if defined(Q_WS_MAC)
