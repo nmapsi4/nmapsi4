@@ -246,7 +246,7 @@ void MainWindow::startScan()
         QStringList addressToken = hostname.split('/', QString::SkipEmptyParts);
 
         if (addressToken.isEmpty() || addressToken.size() < 2) {
-            // TODO: wrong address
+            // TODO: wrong ip range
             return;
         }
 
