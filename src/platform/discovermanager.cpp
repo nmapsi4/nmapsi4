@@ -284,7 +284,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         }
 
         if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
-            message.prepend(m_ui->m_kWidgetNotification->text() + "\n");
+            message.prepend(m_ui->m_kWidgetNotification->text() + '\n');
         }
 
         m_ui->m_kWidgetNotification->setText(message);
@@ -446,7 +446,7 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     }
 
     if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
-        message.prepend(m_ui->m_kWidgetNotification->text() + "\n");
+        message.prepend(m_ui->m_kWidgetNotification->text() + '\n');
     }
 
     m_ui->m_kWidgetNotification->setText(message);
