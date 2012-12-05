@@ -157,7 +157,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../../mainwin.qrc">
+            <iconset resource="../../images.qrc">
              <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
            </property>
            <property name="flat">
@@ -263,7 +263,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../../mainwin.qrc">
+            <iconset resource="../../images.qrc">
              <normaloff>:/images/images/erase.png</normaloff>:/images/images/erase.png</iconset>
            </property>
            <property name="flat">
@@ -319,7 +319,7 @@
         </property>
         <widget class="QWidget" name="tab_8">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/messagebox_info.png</normaloff>:/images/images/messagebox_info.png</iconset>
          </attribute>
          <attribute name="title">
@@ -435,7 +435,7 @@
         </widget>
         <widget class="QWidget" name="nseResultTab">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
          </attribute>
          <attribute name="title">
@@ -491,7 +491,7 @@
         </widget>
         <widget class="QWidget" name="tabRawLog">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
          </attribute>
          <attribute name="title">
@@ -593,7 +593,7 @@
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/network-workgroup.png</normaloff>:/images/images/network-workgroup.png</iconset>
          </attribute>
          <attribute name="title">
@@ -628,7 +628,7 @@
         </widget>
         <widget class="QWidget" name="tab_7">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/network-wired.png</normaloff>:/images/images/network-wired.png</iconset>
          </attribute>
          <attribute name="title">
@@ -765,7 +765,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>

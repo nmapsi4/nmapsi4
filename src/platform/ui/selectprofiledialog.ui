@@ -14,7 +14,7 @@
    <string>Select a scan profile</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../mainwin.qrc">
+   <iconset resource="../../images.qrc">
     <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
@@ -27,7 +27,7 @@
       <string>Done</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../mainwin.qrc">
+      <iconset resource="../../images.qrc">
        <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
      </property>
     </widget>
@@ -35,7 +35,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>

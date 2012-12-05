@@ -195,7 +195,7 @@
                    <string>Done</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../../../mainwin.qrc">
+                   <iconset resource="../../images.qrc">
                     <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
                   </property>
                  </widget>
@@ -206,7 +206,7 @@
                    <string>Cancel</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="../../../mainwin.qrc">
+                   <iconset resource="../../images.qrc">
                     <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                   </property>
                  </widget>
@@ -1171,7 +1171,7 @@
              </property>
              <widget class="QWidget" name="tab">
               <attribute name="icon">
-               <iconset resource="../../../mainwin.qrc">
+               <iconset resource="../../images.qrc">
                 <normaloff>:/images/images/book2.png</normaloff>:/images/images/book2.png</iconset>
               </attribute>
               <attribute name="title">
@@ -1220,7 +1220,7 @@
                     <string>Restore Default Categories</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
+                    <iconset resource="../../images.qrc">
                      <normaloff>:/images/images/document-revert.png</normaloff>:/images/images/document-revert.png</iconset>
                    </property>
                   </widget>
@@ -1234,7 +1234,7 @@
                     <string>Active Script</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
+                    <iconset resource="../../images.qrc">
                      <normaloff>:/images/images/flag_green.png</normaloff>:/images/images/flag_green.png</iconset>
                    </property>
                    <property name="flat">
@@ -1251,7 +1251,7 @@
                     <string>Disable Script</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../mainwin.qrc">
+                    <iconset resource="../../images.qrc">
                      <normaloff>:/images/images/flag_red.png</normaloff>:/images/images/flag_red.png</iconset>
                    </property>
                   </widget>
@@ -1282,7 +1282,7 @@
              </widget>
              <widget class="QWidget" name="tab_2">
               <attribute name="icon">
-               <iconset resource="../../../mainwin.qrc">
+               <iconset resource="../../images.qrc">
                 <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
               </attribute>
               <attribute name="title">
@@ -1381,7 +1381,7 @@
                       <string>Search</string>
                      </property>
                      <property name="icon">
-                      <iconset resource="../../../mainwin.qrc">
+                      <iconset resource="../../images.qrc">
                        <normaloff>:/images/images/viewmag.png</normaloff>:/images/images/viewmag.png</iconset>
                      </property>
                      <property name="flat">
@@ -1411,7 +1411,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections>
   <connection>

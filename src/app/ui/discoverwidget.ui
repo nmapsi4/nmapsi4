@@ -156,7 +156,7 @@
         </property>
         <widget class="QWidget" name="tab_2">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset>
            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
          </attribute>
          <attribute name="title">
@@ -338,7 +338,7 @@
                   <string>Start with CIDR-style address</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../../mainwin.qrc">
+                  <iconset>
                    <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
                  </property>
                 </widget>
@@ -352,7 +352,7 @@
                   <string>Stop Discover</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../../mainwin.qrc">
+                  <iconset>
                    <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                  </property>
                 </widget>
@@ -379,7 +379,7 @@
         </widget>
         <widget class="QWidget" name="intervallScan">
          <attribute name="icon">
-          <iconset resource="../../../mainwin.qrc">
+          <iconset>
            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
          </attribute>
          <attribute name="title">
@@ -447,7 +447,7 @@
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../../mainwin.qrc">
+                  <iconset>
                    <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
                  </property>
                  <property name="flat">
@@ -587,7 +587,7 @@
                   <string>Start Discover from IP range</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../../mainwin.qrc">
+                  <iconset>
                    <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
                  </property>
                 </widget>
@@ -607,7 +607,7 @@
                   <string>Stop Discover</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../../../mainwin.qrc">
+                  <iconset>
                    <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                  </property>
                 </widget>
@@ -677,7 +677,7 @@
   <tabstop>spinEndDiscover</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>

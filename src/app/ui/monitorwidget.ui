@@ -28,7 +28,7 @@
         <string>Stop All Scan</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../mainwin.qrc">
+        <iconset>
          <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
        </property>
       </widget>
@@ -42,7 +42,7 @@
         <string>Stop Current Scan</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../mainwin.qrc">
+        <iconset>
          <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
        </property>
       </widget>
@@ -56,7 +56,7 @@
         <string>Scan Details</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../mainwin.qrc">
+        <iconset>
          <normaloff>:/images/images/traceroute.png</normaloff>:/images/images/traceroute.png</iconset>
        </property>
       </widget>
@@ -134,7 +134,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>

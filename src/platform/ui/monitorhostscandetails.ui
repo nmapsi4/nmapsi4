@@ -20,7 +20,7 @@
    <string>Scan Process Details</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../mainwin.qrc">
+   <iconset resource="../../images.qrc">
     <normaloff>:/images/icons/128x128/nmapsi4.png</normaloff>:/images/icons/128x128/nmapsi4.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -124,7 +124,7 @@
         <string>Reload</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../mainwin.qrc">
+        <iconset resource="../../images.qrc">
          <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
        </property>
       </widget>
@@ -135,7 +135,7 @@
         <string>Close</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../mainwin.qrc">
+        <iconset resource="../../images.qrc">
          <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
        </property>
       </widget>
@@ -145,7 +145,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>

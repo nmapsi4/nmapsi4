@@ -93,7 +93,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../../mainwin.qrc">:/images/icons/64x64/nmapsi4.png</pixmap>
+           <pixmap resource="../../images.qrc">:/images/icons/64x64/nmapsi4.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -203,7 +203,7 @@ background-color: rgba(255, 255, 255, 0);</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../../mainwin.qrc">:/images/images/go-next.png</pixmap>
+           <pixmap resource="../../images.qrc">:/images/images/go-next.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -225,7 +225,7 @@ background-color: rgba(255, 255, 255, 0);</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../../mainwin.qrc">:/images/images/network_local.png</pixmap>
+           <pixmap resource="../../images.qrc">:/images/images/network_local.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -247,7 +247,7 @@ background-color: rgba(255, 255, 255, 0);</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../../mainwin.qrc">:/images/images/go-previous.png</pixmap>
+           <pixmap resource="../../images.qrc">:/images/images/go-previous.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -285,7 +285,7 @@ background-color: rgba(255, 255, 255, 0);</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../../mainwin.qrc">:/images/images/viewmag+.png</pixmap>
+           <pixmap resource="../../images.qrc">:/images/images/viewmag+.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -329,8 +329,9 @@ background-color: rgba(255, 255, 255, 0);</string>
   </layout>
  </widget>
  <resources>
-  <include location="../../../mainwin.qrc"/>
-  <include location="../../../mainwin.qrc"/>
+  <include location="../../images.qrc"/>
+  <include location="../../images.qrc"/>
+  <include location="../../images.qrc"/>
  </resources>
  <connections/>
 </ui>
