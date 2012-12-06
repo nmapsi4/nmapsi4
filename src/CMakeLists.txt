@@ -86,22 +86,22 @@ SET(SOURCES_H
         app/mainwindow.h
 )
 
-SET(SOURCES_UI
-        platform/ui/addvulnerabilityurl.ui
-        platform/ui/addparameterstobookmark.ui
-        platform/ui/about.ui
-        platform/ui/monitorhostscandetails.ui
-        platform/ui/selectprofiledialog.ui
-        platform/ui/welcomevulnwidget.ui
-        app/ui/preferencesdialog.ui
-        app/ui/profilerdialog.ui
-        app/ui/discoverwidget.ui
-        app/ui/scanbookmarkwidget.ui
-        app/ui/vulnbookmarkwidget.ui
-        app/ui/vulnerabilitywidget.ui
-        app/ui/monitorwidget.ui
-        app/ui/scanwidget.ui
-)
+set(SOURCES_UI
+   platform/ui/addvulnerabilityurl.ui
+   platform/ui/addparameterstobookmark.ui
+   platform/ui/about.ui
+   platform/ui/monitorhostscandetails.ui
+   platform/ui/selectprofiledialog.ui
+   platform/ui/welcomevulnwidget.ui
+   app/ui/preferencesdialog.ui
+   app/ui/profilerdialog.ui
+   app/ui/discoverwidget.ui
+   app/ui/scanbookmarkwidget.ui
+   app/ui/vulnbookmarkwidget.ui
+   app/ui/vulnerabilitywidget.ui
+   app/ui/monitorwidget.ui
+   app/ui/scanwidget.ui
+   )
 
 SET(RESOURCES_QRC images.qrc)
 
@@ -109,14 +109,29 @@ qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
 QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
 
+set(TRANSLATIONS_FILES 
+   ts/nmapsi4_it.ts
+   ts/nmapsi4_fr.ts 
+   ts/nmapsi4_es.ts 
+   ts/nmapsi4_de.ts 
+   ts/nmapsi4_cs.ts
+   ts/nmapsi4_ru.ts 
+   ts/nmapsi4_ca.ts
+   )
+
 if (RELOAD_TRANSLATIONS)
-  QT4_CREATE_TRANSLATION(qms ${SOURCES_CPP} ${SOURCES_UI_H} ts/nmapsi4_it.ts
-    ts/nmapsi4_fr.ts ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts
-    ts/template/nmapsi4.ts ts/nmapsi4_ru.ts ts/nmapsi4_ca.ts OPTIONS -no-obsolete)
+  QT4_CREATE_TRANSLATION(qms 
+      ${SOURCES_CPP} 
+      ${SOURCES_UI_H} 
+      ${TRANSLASTIONS_FILES} 
+      ts/template/nmapsi4.ts 
+      OPTIONS -no-obsolete
+      )
   message( "nmapsi4:: update and rebuild translation " )
 else (NOT RELOAD_TRANSLATIONS)
-  QT4_ADD_TRANSLATION(qms ts/nmapsi4_it.ts ts/nmapsi4_fr.ts
-    ts/nmapsi4_es.ts ts/nmapsi4_de.ts ts/nmapsi4_cs.ts ts/nmapsi4_ru.ts ts/nmapsi4_ca.ts)
+  QT4_ADD_TRANSLATION(qms 
+      ${TRANSLATIONS_FILES}
+      )
   message( "nmapsi4:: update translation " )
 endif (RELOAD_TRANSLATIONS)
 
@@ -139,22 +154,22 @@ elseif(Q_WS_MAC)
         COMMAND cp ARGS *.qm ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources)
 endif (Q_WS_X11)
 
-target_link_libraries (nmapsi4
-       ${QT_LIBRARIES}
-       ${QT_QTWEBKIT_LIBRARY}
-       ${QT_QTNETWORK_LIBRARY}
-)
+target_link_libraries(nmapsi4
+    ${QT_LIBRARIES}
+    ${QT_QTWEBKIT_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+    )
 
 if (Q_WS_X11)
-  target_link_libraries (nmapsi4
-        ${QT_QTDBUS_LIBRARY}
- )
+  target_link_libraries(nmapsi4
+      ${QT_QTDBUS_LIBRARY}
+      )
 endif(Q_WS_X11)
 
 if(KDE4_FOUND)
- target_link_libraries (nmapsi4
-        ${KDE4_KDEUI_LIBS}
- )
+ target_link_libraries(nmapsi4
+     ${KDE4_KDEUI_LIBS}
+     )
 endif(KDE4_FOUND)
 
 if (Q_WS_X11)
