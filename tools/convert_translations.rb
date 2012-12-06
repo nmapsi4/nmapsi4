@@ -1,31 +1,52 @@
-#!/usr/bin/env ruby1.8
-# Francesco Cecconi francesco dot cecconi at gmail dot com
-# convert ts template file to po file
-# Required: ts2po tool
+#!/usr/bin/ruby
+# Francesco Cecconi <francesco.cecconi@gmail.com>
+# convert ts2po / po2ts and create a pot file from ts
+# Required: lconvert(qt4 script)
 
 class Tools
-def ts2PoNmapsi4
-    @tmp = %x[echo; ls ../src/ts/]
-    for value in @tmp
-	if (value_str = value.eql?("po\n")) == false && (value_str2 = value.eql?("\n")) == false && (value_str3 = value.eql?("template\n")) == false
+def ts2po
+    result = %x[echo; ls ../src/ts/]
+    result.lines("\n") do |value|
+        if (value.start_with?("nmapsi4_"))
 	    tmp_clear = value.delete("\n")
-	    tmp_clear = value.chop.chop.chop.chop
+            tmp_clear[".ts"] = ""
+            tmp_clear["nmapsi4_"] = ""
 	    tmp_clear = tmp_clear + ".po"
-	    tmp_clear["nmapsi4_"] = ""
 	    path_string_dst = "../src/ts/po/nmapsi4/"+tmp_clear
 	    path_string_src = "../src/ts/"+value;
 	    path_string_src = path_string_src.delete("\n")
 	    path_string_dst = path_string_dst.delete("\n")
 	    result = %x[echo; lconvert -of po #{path_string_src} -o #{path_string_dst}]
-	    puts "Result: #{result}"
+            puts "DEBUG::ts2po -- source file:: #{path_string_src} -- dst file:: #{path_string_dst}"
 	end
     end
-    # TODO generic template pot
+    buildPot
+end
+
+def po2ts
+    result = %x[echo; ls ../src/ts/po/nmapsi4/]
+    result.lines("\n") do |value|
+        if ((value != "\n") && (!value.start_with?("nmapsi4")))
+            tmp_clear = "nmapsi4_" + value.delete("\n")
+            tmp_clear[".po"] = ""
+            tmp_clear = tmp_clear + ".ts"
+            path_string_src = "../src/ts/po/nmapsi4/"+value
+            path_string_dst = "../src/ts/"+tmp_clear;
+            path_string_src = path_string_src.delete("\n")
+            path_string_dst = path_string_dst.delete("\n")
+            result = %x[echo; lconvert -of ts #{path_string_src} -o #{path_string_dst}]
+            puts "DEBUG::po2ts -- source file:: #{path_string_src} -- dst file:: #{path_string_dst}"
+        end
+    end
+end
+
+def buildPot
     path_string_dst = "../src/ts/po/nmapsi4/nmapsi4.pot"
     path_string_src = "../src/ts/template/nmapsi4.ts"
     result = %x[echo; lconvert -of pot #{path_string_src} -o #{path_string_dst}]
-    puts "Result pot2: #{result}"
+    puts "DEBUG::POT:: -- source file:: #{path_string_src} -- dst file:: #{path_string_dst}"
 end
+
 end
 
 
@@ -33,15 +54,21 @@ end
 if __FILE__ == $0
 
     if $*.size == 0
-	print "Syntax: update.rb convert...\n"
-    else if ARGV.first == "convert"
+	print "Syntax: convert_translations.rb ts2po/po2ts...\n"
+    else if ARGV.first == "ts2po"
 	    ts = Tools.new
-	    ts.ts2PoNmapsi4
-	else if ARGV.first == "revert"
-	    ts = Tools.new
-	    # revert metod
-             end
-         end
+	    ts.ts2po
+        else if ARGV.first == "buildPot"
+            ts = Tools.new
+            ts.buildPot
+            else if ARGV.first == "po2ts"
+                ts = Tools.new
+                ts.po2ts
+                else
+                    print "Syntax: convert_translations.rb ts2po/po2ts...\n"
+                end
+            end
+        end
     end
-end
 
+end
