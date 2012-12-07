@@ -105,9 +105,9 @@ set(SOURCES_UI
 
 SET(RESOURCES_QRC images.qrc)
 
-qt4_add_RESOURCES(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
-QT4_WRAP_UI(SOURCES_UI_H ${SOURCES_UI})
-QT4_WRAP_CPP( SOURCES_CPP ${SOURCES_H} )
+qt4_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
+qt4_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
+qt4_wrap_cpp( SOURCES_CPP ${SOURCES_H} )
 
 set(TRANSLATIONS_FILES 
    ts/nmapsi4_it.ts
@@ -119,21 +119,8 @@ set(TRANSLATIONS_FILES
    ts/nmapsi4_ca.ts
    )
 
-if (RELOAD_TRANSLATIONS)
-  QT4_CREATE_TRANSLATION(qms 
-      ${SOURCES_CPP} 
-      ${SOURCES_UI_H} 
-      ${TRANSLASTIONS_FILES} 
-      ts/template/nmapsi4.ts 
-      OPTIONS -no-obsolete
-      )
-  message( "nmapsi4:: update and rebuild translation " )
-else (NOT RELOAD_TRANSLATIONS)
-  QT4_ADD_TRANSLATION(qms 
-      ${TRANSLATIONS_FILES}
-      )
-  message( "nmapsi4:: update translation " )
-endif (RELOAD_TRANSLATIONS)
+qt4_add_translation(qms ${TRANSLATIONS_FILES})
+message( "nmapsi4:: update translation " )
 
 if(KDE4_FOUND)
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
