@@ -120,7 +120,6 @@ set(TRANSLATIONS_FILES
    )
 
 qt4_add_translation(qms ${TRANSLATIONS_FILES})
-message( "nmapsi4:: update translation " )
 
 if(KDE4_FOUND)
   INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
