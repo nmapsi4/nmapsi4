@@ -5,17 +5,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 
-#: ../../../build/src/ui_about.h:191
+#: ../../platform/ui/about.ui:20
 msgctxt "AboutUi|"
 msgid "About Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:192
+#: ../../platform/ui/about.ui:74
 msgctxt "AboutUi|"
 msgid "Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:194
+#: ../../platform/ui/about.ui:151
 msgctxt "AboutUi|"
 msgid ""
 "NmapSi4 is a complete Qt4-based Gui with the design\n"
@@ -23,7 +23,7 @@ msgid ""
 "in order to menage all option of this power security net scanner."
 msgstr ""
 
-#: ../../../build/src/ui_about.h:197
+#: ../../platform/ui/about.ui:169
 msgctxt "AboutUi|"
 msgid ""
 "\n"
@@ -33,116 +33,119 @@ msgid ""
 "License: GNU General Public License Version 2"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:236
+#: ../../platform/ui/about.ui:209
+msgctxt "AboutUi|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Francesco Cecconi</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-style:italic;\">Core Developer</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:brand@nmapsi4.org\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"text-decoration: underline; color:#0057ae;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Innocenzo Ventre</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-style:italic;\">MS Windows Packages</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"mailto:el.diabl09@gmail.com\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p></body></html>"
+msgstr ""
+
+#: ../../platform/ui/about.ui:246
+msgctxt "AboutUi|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Website:</span>  </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://www.nmapsi4.org\"><span style=\" font-size:8pt; "
+"text-decoration: underline; color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Bug Tracking:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://bugs.nmapsi4.org\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Sources Git repository:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"https://github.com/nmapsi4/nmapsi4\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">github.com/nmapsi4/nmapsi4</span></a></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Sources Download:</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
+"href=\"http://code.google.com/nmapsi4\"><span style=\" font-size:8pt; "
+"text-decoration: underline; "
+"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
+msgstr ""
+
+#: ../../platform/ui/about.ui:295
 msgctxt "AboutUi|"
 msgid "&Close"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:202
+#: ../../platform/ui/about.ui:133
 msgctxt "AboutUi|"
 msgid "&About"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:203
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Francesco Cecconi</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-style:italic;\">Core Developer</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:brand@nmapsi4.org\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"font-size:9pt; text-decoration: underline; color:#0057ae;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Innocenzo Ventre</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-style:italic;\">MS Windows Packages</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:el.diabl09@gmail.com\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"font-size:9pt;\"><br /></p></body></html>"
-msgstr ""
-
-#: ../../../build/src/ui_about.h:217
+#: ../../platform/ui/about.ui:194
 msgctxt "AboutUi|"
 msgid "A&uthors"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:218
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Website:</span><span style=\" "
-"font-size:9pt;\">  </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://www.nmapsi4.org\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"font-size:9pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Bug Tracking:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://bugs.nmapsi4.org\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"font-size:9pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Sources Git repository:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"https://github.com/nmapsi4/nmapsi4\"><span style=\" text-decoration: "
-"underline; color:#0057ae;\">github.com/nmapsi4/nmapsi4</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"font-size:9pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-size:9pt; font-weight:600;\">Sources Download:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://code.google.com/nmapsi4\"><span style=\" text-decoration: "
-"underline; "
-"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
-msgstr ""
-
-#: ../../../build/src/ui_about.h:235
+#: ../../platform/ui/about.ui:231
 msgctxt "AboutUi|"
 msgid "&Support"
 msgstr ""
 
-#: ../../../build/src/ui_about.h:193
+#: ../../platform/ui/about.ui:116
 msgctxt "AboutUi|"
 msgid "Version "
 msgstr ""
@@ -442,123 +445,122 @@ msgctxt "DiscoverManager|"
 msgid "Load IP list"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:519
+#: ../../app/ui/discoverwidget.ui:14
 msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:521
+#: ../../app/ui/discoverwidget.ui:50
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:522
+#: ../../app/ui/discoverwidget.ui:45
 msgctxt "DiscoverWidgetForm|"
 msgid "Discovered IP/s"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:524
+#: ../../app/ui/discoverwidget.ui:65
 msgctxt "DiscoverWidgetForm|"
 msgid "Packets trace"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:525
+#: ../../app/ui/discoverwidget.ui:91
 msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:526
+#: ../../app/ui/discoverwidget.ui:108
 msgctxt "DiscoverWidgetForm|"
 msgid "Probes Modes:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:527
+#: ../../app/ui/discoverwidget.ui:169
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation (IPv4)"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:528
+#: ../../app/ui/discoverwidget.ui:175
 msgctxt "DiscoverWidgetForm|"
 msgid "Selected your CIDR address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:529
+#: ../../app/ui/discoverwidget.ui:184
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:530
+#: ../../app/ui/discoverwidget.ui:228
 msgctxt "DiscoverWidgetForm|"
 msgid "Prefix Size:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:531
+#: ../../app/ui/discoverwidget.ui:248
 msgctxt "DiscoverWidgetForm|"
 msgid "Number of IP:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:532
+#: ../../app/ui/discoverwidget.ui:283
 msgctxt "DiscoverWidgetForm|"
 msgid "Or you can paste CIDR address below:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:533
+#: ../../app/ui/discoverwidget.ui:298
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR address:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:534
+#: ../../app/ui/discoverwidget.ui:338
 msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:535
-#: ../../../build/src/ui_discoverwidget.h:547
+#: ../../app/ui/discoverwidget.ui:352 ../../app/ui/discoverwidget.ui:607
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:536
+#: ../../app/ui/discoverwidget.ui:163
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation address"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:537
+#: ../../app/ui/discoverwidget.ui:392
 msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:538
+#: ../../app/ui/discoverwidget.ui:406
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:540
+#: ../../app/ui/discoverwidget.ui:444
 msgctxt "DiscoverWidgetForm|"
 msgid "Reload Interfaces"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:543
+#: ../../app/ui/discoverwidget.ui:481
 msgctxt "DiscoverWidgetForm|"
 msgid "IP Network:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:544
+#: ../../app/ui/discoverwidget.ui:518
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Host Ip:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:545
+#: ../../app/ui/discoverwidget.ui:538
 msgctxt "DiscoverWidgetForm|"
 msgid "End Host Ip:"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:546
+#: ../../app/ui/discoverwidget.ui:587
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Discover from IP range"
 msgstr ""
 
-#: ../../../build/src/ui_discoverwidget.h:548
+#: ../../app/ui/discoverwidget.ui:386
 msgctxt "DiscoverWidgetForm|"
 msgid "Range of IP"
 msgstr ""
@@ -638,38 +640,38 @@ msgctxt "MainWindow|"
 msgid "Slow comprehensive scan"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:67 ../../app/mainwindow.cpp:228
-#: ../../app/mainwindow.cpp:255 ../../app/mainwindow.cpp:307
+#: ../../app/mainwindow.cpp:67 ../../app/mainwindow.cpp:230
+#: ../../app/mainwindow.cpp:257 ../../app/mainwindow.cpp:309
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:228
+#: ../../app/mainwindow.cpp:230
 msgctxt "MainWindow|"
 msgid "Insert an host/ip address to scan\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:254
+#: ../../app/mainwindow.cpp:256
 msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:255
+#: ../../app/mainwindow.cpp:257
 msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#: ../../app/mainwindow.cpp:307
+#: ../../app/mainwindow.cpp:309
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:353
+#: ../../app/mainwindow.cpp:355
 msgctxt "MainWindow|"
 msgid "<b>There are still active scan.</b>"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:354
+#: ../../app/mainwindow.cpp:356
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr ""
@@ -684,37 +686,37 @@ msgctxt "Monitor|"
 msgid "Scanning"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:109
+#: ../../app/ui/monitorwidget.ui:14
 msgctxt "MonitorWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:110
+#: ../../app/ui/monitorwidget.ui:28
 msgctxt "MonitorWidgetForm|"
 msgid "Stop All Scan"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:111
+#: ../../app/ui/monitorwidget.ui:42
 msgctxt "MonitorWidgetForm|"
 msgid "Stop Current Scan"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:112
+#: ../../app/ui/monitorwidget.ui:56
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Details"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:114
+#: ../../app/ui/monitorwidget.ui:129
 msgctxt "MonitorWidgetForm|"
 msgid "State"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:115
+#: ../../app/ui/monitorwidget.ui:124
 msgctxt "MonitorWidgetForm|"
 msgid "Scan Options"
 msgstr ""
 
-#: ../../../build/src/ui_monitorwidget.h:116
+#: ../../app/ui/monitorwidget.ui:119
 msgctxt "MonitorWidgetForm|"
 msgid "Host Thread"
 msgstr ""
@@ -734,17 +736,17 @@ msgctxt "ParserManager|"
 msgid "Scan completed"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:447
+#: ../../platform/parser/parsermanager.cpp:448
 msgctxt "ParserManager|"
 msgid "No description"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:727
+#: ../../platform/parser/parsermanager.cpp:728
 msgctxt "ParserManager|"
 msgid "Save Log"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:747
+#: ../../platform/parser/parsermanager.cpp:748
 msgctxt "ParserManager|"
 msgid "Open Directory"
 msgstr ""
@@ -769,107 +771,107 @@ msgctxt "PreferencesDialog|"
 msgid "<h3>Lookup</h3>"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:332
+#: ../../app/ui/preferencesdialog.ui:177
 msgctxt "ProfileMain|"
 msgid "Log Preferences"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:333
+#: ../../app/ui/preferencesdialog.ui:188
 msgctxt "ProfileMain|"
 msgid "Log type:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:336
+#: ../../app/ui/preferencesdialog.ui:208
 msgctxt "ProfileMain|"
 msgid "Fancy format"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:337
+#: ../../app/ui/preferencesdialog.ui:213
 msgctxt "ProfileMain|"
 msgid "Nmap raw format"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:338
+#: ../../app/ui/preferencesdialog.ui:218
 msgctxt "ProfileMain|"
 msgid "Html format"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:340
+#: ../../app/ui/preferencesdialog.ui:244
 msgctxt "ProfileMain|"
 msgid "Tuning options"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:341
+#: ../../app/ui/preferencesdialog.ui:262
 msgctxt "ProfileMain|"
 msgid "Max parallel scan:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:342
+#: ../../app/ui/preferencesdialog.ui:288
 msgctxt "ProfileMain|"
 msgid "Max parallel discover process:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:343
+#: ../../app/ui/preferencesdialog.ui:314
 msgctxt "ProfileMain|"
 msgid "History item number:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:351
+#: ../../app/ui/preferencesdialog.ui:404
 msgctxt "ProfileMain|"
 msgid "Lookup type:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:352
+#: ../../app/ui/preferencesdialog.ui:417
 msgctxt "ProfileMain|"
 msgid "Dig verbosity level:"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:355
+#: ../../app/ui/preferencesdialog.ui:440
 msgctxt "ProfileMain|"
 msgid "Short"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:356
+#: ../../app/ui/preferencesdialog.ui:445
 msgctxt "ProfileMain|"
 msgid "Verbose"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:344
+#: ../../app/ui/preferencesdialog.ui:371
 msgctxt "ProfileMain|"
 msgid "Lookup Preferences"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:347
+#: ../../app/ui/preferencesdialog.ui:386
 msgctxt "ProfileMain|"
 msgid "None"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:348
+#: ../../app/ui/preferencesdialog.ui:391
 msgctxt "ProfileMain|"
 msgid "Internal lookup"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:349
+#: ../../app/ui/preferencesdialog.ui:396
 msgctxt "ProfileMain|"
 msgid "Dig lookup"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:329
+#: ../../app/ui/preferencesdialog.ui:117
 msgctxt "ProfileMain|"
 msgid "&Defaults"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:327
+#: ../../app/ui/preferencesdialog.ui:35
 msgctxt "ProfileMain|"
 msgid "Preferences - Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:331
+#: ../../app/ui/preferencesdialog.ui:138
 msgctxt "ProfileMain|"
 msgid "&Ok"
 msgstr ""
 
-#: ../../../build/src/ui_preferencesdialog.h:328
+#: ../../app/ui/preferencesdialog.ui:51
 msgctxt "ProfileMain|"
 msgid "&Cancel"
 msgstr ""
@@ -1021,27 +1023,27 @@ msgctxt "ProfilerManager|"
 msgid "Warning: Operation more expansive.\n"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:74
+#: ../../app/ui/scanbookmarkwidget.ui:14
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:76
+#: ../../app/ui/scanbookmarkwidget.ui:58
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Date"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:77
+#: ../../app/ui/scanbookmarkwidget.ui:53
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "IP List"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:79
+#: ../../app/ui/scanbookmarkwidget.ui:84
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Profile Name"
 msgstr ""
 
-#: ../../../build/src/ui_scanbookmarkwidget.h:80
+#: ../../app/ui/scanbookmarkwidget.ui:79
 msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr ""
@@ -1051,122 +1053,122 @@ msgctxt "ScanWidget|"
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:419
+#: ../../app/ui/scanwidget.ui:14
 msgctxt "ScanWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:428
+#: ../../app/ui/scanwidget.ui:154
 msgctxt "ScanWidgetForm|"
 msgid "Clear"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:432
+#: ../../app/ui/scanwidget.ui:260
 msgctxt "ScanWidgetForm|"
 msgid "Save Profile"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:421
+#: ../../app/ui/scanwidget.ui:65
 msgctxt "ScanWidgetForm|"
 msgid "Os"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:422 ../../../build/src/ui_scanwidget.h:450
+#: ../../app/ui/scanwidget.ui:60 ../../app/ui/scanwidget.ui:622
 msgctxt "ScanWidgetForm|"
 msgid "Host(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:425
+#: ../../app/ui/scanwidget.ui:77
 msgctxt "ScanWidgetForm|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:459
+#: ../../app/ui/scanwidget.ui:718
 msgctxt "ScanWidgetForm|"
 msgid "Host Details"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:461
+#: ../../app/ui/scanwidget.ui:754
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) with info"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:436
+#: ../../app/ui/scanwidget.ui:429
 msgctxt "ScanWidgetForm|"
 msgid "Description"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:437
+#: ../../app/ui/scanwidget.ui:424
 msgctxt "ScanWidgetForm|"
 msgid "Service"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:438
+#: ../../app/ui/scanwidget.ui:419
 msgctxt "ScanWidgetForm|"
 msgid "State"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:439
+#: ../../app/ui/scanwidget.ui:414
 msgctxt "ScanWidgetForm|"
 msgid "Port"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:440
+#: ../../app/ui/scanwidget.ui:326
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) Details"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:442
+#: ../../app/ui/scanwidget.ui:485
 msgctxt "ScanWidgetForm|"
 msgid "Nss script result"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:443
+#: ../../app/ui/scanwidget.ui:442
 msgctxt "ScanWidgetForm|"
 msgid "Nse result"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:445
+#: ../../app/ui/scanwidget.ui:546
 msgctxt "ScanWidgetForm|"
 msgid "Log(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:447
+#: ../../app/ui/scanwidget.ui:585
 msgctxt "ScanWidgetForm|"
 msgid "Error(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:448
+#: ../../app/ui/scanwidget.ui:498
 msgctxt "ScanWidgetForm|"
 msgid "Raw scan log"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:451
+#: ../../app/ui/scanwidget.ui:600
 msgctxt "ScanWidgetForm|"
 msgid "Lookup"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:453
+#: ../../app/ui/scanwidget.ui:678
 msgctxt "ScanWidgetForm|"
 msgid "DNS"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:454
+#: ../../app/ui/scanwidget.ui:673
 msgctxt "ScanWidgetForm|"
 msgid "IP"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:455
+#: ../../app/ui/scanwidget.ui:668
 msgctxt "ScanWidgetForm|"
 msgid "RTT"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:456
+#: ../../app/ui/scanwidget.ui:663
 msgctxt "ScanWidgetForm|"
 msgid "Hop(s)"
 msgstr ""
 
-#: ../../../build/src/ui_scanwidget.h:457
+#: ../../app/ui/scanwidget.ui:635
 msgctxt "ScanWidgetForm|"
 msgid "Traceroute"
 msgstr ""
@@ -1176,27 +1178,27 @@ msgctxt "Utilities|"
 msgid "Select the file"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:61
+#: ../../app/ui/vulnbookmarkwidget.ui:14
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:63
+#: ../../app/ui/vulnbookmarkwidget.ui:38
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Data"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:64
+#: ../../app/ui/vulnbookmarkwidget.ui:33
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Service"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:66
+#: ../../app/ui/vulnbookmarkwidget.ui:55
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s)"
 msgstr ""
 
-#: ../../../build/src/ui_vulnbookmarkwidget.h:67
+#: ../../app/ui/vulnbookmarkwidget.ui:50
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr ""
@@ -1206,42 +1208,42 @@ msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:147
+#: ../../app/ui/vulnerabilitywidget.ui:14
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:152
+#: ../../app/ui/vulnerabilitywidget.ui:108
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr ""
 
-#: ../../../build/src/ui_vulnerabilitywidget.h:149
+#: ../../app/ui/vulnerabilitywidget.ui:45
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Discovered vulnerabilities"
 msgstr ""
 
-#: ../../../build/src/ui_addparameterstobookmark.h:120
+#: ../../platform/ui/addparameterstobookmark.ui:29
 msgctxt "addParBook|"
 msgid "Save quick profile - Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_addparameterstobookmark.h:121
+#: ../../platform/ui/addparameterstobookmark.ui:41
 msgctxt "addParBook|"
 msgid "Profile Name:"
 msgstr ""
 
-#: ../../../build/src/ui_addparameterstobookmark.h:122
+#: ../../platform/ui/addparameterstobookmark.ui:57
 msgctxt "addParBook|"
 msgid "Parameters:"
 msgstr ""
 
-#: ../../../build/src/ui_addparameterstobookmark.h:123
+#: ../../platform/ui/addparameterstobookmark.ui:90
 msgctxt "addParBook|"
 msgid "Done"
 msgstr ""
 
-#: ../../../build/src/ui_addparameterstobookmark.h:124
+#: ../../platform/ui/addparameterstobookmark.ui:101
 msgctxt "addParBook|"
 msgid "Cancel"
 msgstr ""
@@ -1261,22 +1263,22 @@ msgctxt "addParametersToBookmark|"
 msgid "Close"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:137
+#: ../../platform/ui/addvulnerabilityurl.ui:29
 msgctxt "addUrl|"
 msgid "Save vulnerability search address - Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:138
+#: ../../platform/ui/addvulnerabilityurl.ui:41
 msgctxt "addUrl|"
 msgid "Url Name:"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:139
+#: ../../platform/ui/addvulnerabilityurl.ui:57
 msgctxt "addUrl|"
 msgid "Url address:"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:140
+#: ../../platform/ui/addvulnerabilityurl.ui:89
 msgctxt "addUrl|"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -1304,12 +1306,12 @@ msgid ""
 "url</p></body></html>"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:150
+#: ../../platform/ui/addvulnerabilityurl.ui:121
 msgctxt "addUrl|"
 msgid "Done"
 msgstr ""
 
-#: ../../../build/src/ui_addvulnerabilityurl.h:151
+#: ../../platform/ui/addvulnerabilityurl.ui:132
 msgctxt "addUrl|"
 msgid "Cancel"
 msgstr ""
@@ -1329,480 +1331,478 @@ msgctxt "addVulnerabilityUrl|"
 msgid "Close"
 msgstr ""
 
-#: ../../../build/src/ui_monitorhostscandetails.h:135
+#: ../../platform/ui/monitorhostscandetails.ui:20
 msgctxt "monitorDetails|"
 msgid "Scan Process Details"
 msgstr ""
 
-#: ../../../build/src/ui_monitorhostscandetails.h:136
+#: ../../platform/ui/monitorhostscandetails.ui:38
 msgctxt "monitorDetails|"
 msgid "Hostname:"
 msgstr ""
 
-#: ../../../build/src/ui_monitorhostscandetails.h:137
+#: ../../platform/ui/monitorhostscandetails.ui:124
 msgctxt "monitorDetails|"
 msgid "Reload"
 msgstr ""
 
-#: ../../../build/src/ui_monitorhostscandetails.h:138
+#: ../../platform/ui/monitorhostscandetails.ui:135
 msgctxt "monitorDetails|"
 msgid "Close"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1060
+#: ../../app/ui/profilerdialog.ui:14
 msgctxt "profilerDialog|"
 msgid "Profiler - Nmapsi4"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1061
+#: ../../app/ui/profilerdialog.ui:83
 msgctxt "profilerDialog|"
 msgid "Profile"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1062
+#: ../../app/ui/profilerdialog.ui:91
 msgctxt "profilerDialog|"
 msgid "Profile name: "
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1063
+#: ../../app/ui/profilerdialog.ui:107
 msgctxt "profilerDialog|"
 msgid "Profile parameters:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1064
+#: ../../app/ui/profilerdialog.ui:127
 msgctxt "profilerDialog|"
 msgid "Base options:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1067
-#: ../../../build/src/ui_profilerdialog.h:1074
-#: ../../../build/src/ui_profilerdialog.h:1082
-#: ../../../build/src/ui_profilerdialog.h:1087
+#: ../../app/ui/profilerdialog.ui:141 ../../app/ui/profilerdialog.ui:256
+#: ../../app/ui/profilerdialog.ui:301 ../../app/ui/profilerdialog.ui:315
 msgctxt "profilerDialog|"
 msgid "None"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1069
+#: ../../app/ui/profilerdialog.ui:195
 msgctxt "profilerDialog|"
 msgid "Done"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1070
+#: ../../app/ui/profilerdialog.ui:206
 msgctxt "profilerDialog|"
 msgid "Cancel"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1071
+#: ../../app/ui/profilerdialog.ui:235
 msgctxt "profilerDialog|"
 msgid "Scan"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1078
+#: ../../app/ui/profilerdialog.ui:274
 msgctxt "profilerDialog|"
 msgid "TCP scan:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1075
+#: ../../app/ui/profilerdialog.ui:261
 msgctxt "profilerDialog|"
 msgid "TCP Connect Scan (-sT)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1076
+#: ../../app/ui/profilerdialog.ui:266
 msgctxt "profilerDialog|"
 msgid "Ping Sweep (-sP)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1095
+#: ../../app/ui/profilerdialog.ui:353
 msgctxt "profilerDialog|"
 msgid "Timing Template:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1088
+#: ../../app/ui/profilerdialog.ui:320
 msgctxt "profilerDialog|"
 msgid "Paranoid Throttling (-T0)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1089
+#: ../../app/ui/profilerdialog.ui:325
 msgctxt "profilerDialog|"
 msgid "Sneaky Throttling (-T1)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1090
+#: ../../app/ui/profilerdialog.ui:330
 msgctxt "profilerDialog|"
 msgid "Polite Throttling (-T2)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1091
+#: ../../app/ui/profilerdialog.ui:335
 msgctxt "profilerDialog|"
 msgid "Normal Throttling (-T3)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1092
+#: ../../app/ui/profilerdialog.ui:340
 msgctxt "profilerDialog|"
 msgid "Aggressive Throttling (-T4)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1093
+#: ../../app/ui/profilerdialog.ui:345
 msgctxt "profilerDialog|"
 msgid "Insane Throttling (-T5)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1079
+#: ../../app/ui/profilerdialog.ui:287
 msgctxt "profilerDialog|"
 msgid "Non-TCP scans:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1083
+#: ../../app/ui/profilerdialog.ui:306
 msgctxt "profilerDialog|"
 msgid "List Scan (-sL)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1096
+#: ../../app/ui/profilerdialog.ui:393
 msgctxt "profilerDialog|"
 msgid "RPC Scan (-sR)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1097
+#: ../../app/ui/profilerdialog.ui:400
 msgctxt "profilerDialog|"
 msgid "OS Detection (-O)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1098
+#: ../../app/ui/profilerdialog.ui:407
 msgctxt "profilerDialog|"
 msgid "Version Probe (-sV)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1099
+#: ../../app/ui/profilerdialog.ui:414
 msgctxt "profilerDialog|"
 msgid "Ipv6 support (-6)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1100
+#: ../../app/ui/profilerdialog.ui:421
 msgctxt "profilerDialog|"
 msgid "FTP bounce attack (-b)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1101
+#: ../../app/ui/profilerdialog.ui:428
 msgctxt "profilerDialog|"
 msgid "Idle Scan (-sl)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1104
+#: ../../app/ui/profilerdialog.ui:442
 msgctxt "profilerDialog|"
 msgid "Normal"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1105
+#: ../../app/ui/profilerdialog.ui:447
 msgctxt "profilerDialog|"
 msgid "All"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1106
+#: ../../app/ui/profilerdialog.ui:452
 msgctxt "profilerDialog|"
 msgid "Most Important"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1107
+#: ../../app/ui/profilerdialog.ui:457
 msgctxt "profilerDialog|"
 msgid "Range"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1109
+#: ../../app/ui/profilerdialog.ui:471
 msgctxt "profilerDialog|"
 msgid "Port Range:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1110
+#: ../../app/ui/profilerdialog.ui:505
 msgctxt "profilerDialog|"
 msgid "Aggressive options (-A)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1111
+#: ../../app/ui/profilerdialog.ui:556
 msgctxt "profilerDialog|"
 msgid "Ping options"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1112
+#: ../../app/ui/profilerdialog.ui:564
 msgctxt "profilerDialog|"
 msgid "TCP ACK Ping (-PA)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1113
+#: ../../app/ui/profilerdialog.ui:574
 msgctxt "profilerDialog|"
 msgid "21,23,80,3389"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1114
+#: ../../app/ui/profilerdialog.ui:581
 msgctxt "profilerDialog|"
 msgid "TCP SYN Ping (-PS)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1115
+#: ../../app/ui/profilerdialog.ui:591
 msgctxt "profilerDialog|"
 msgid "22,25,80"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1116
+#: ../../app/ui/profilerdialog.ui:598
 msgctxt "profilerDialog|"
 msgid "UDP Ping (-PU)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1117
+#: ../../app/ui/profilerdialog.ui:612
 msgctxt "profilerDialog|"
 msgid "ICMP Netmask (-PM)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1118
+#: ../../app/ui/profilerdialog.ui:619
 msgctxt "profilerDialog|"
 msgid "ICMP TImestamp (-PP)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1119
+#: ../../app/ui/profilerdialog.ui:626
 msgctxt "profilerDialog|"
 msgid "ICMP Echo (-PE)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1120
+#: ../../app/ui/profilerdialog.ui:633
 msgctxt "profilerDialog|"
 msgid "Don't Ping (-P0)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1121
+#: ../../app/ui/profilerdialog.ui:640
 msgctxt "profilerDialog|"
 msgid "IPProto probes (-PO)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1122
+#: ../../app/ui/profilerdialog.ui:654
 msgctxt "profilerDialog|"
 msgid "SCTP INIT ping (-PY)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1123
+#: ../../app/ui/profilerdialog.ui:696
 msgctxt "profilerDialog|"
 msgid "Timing"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1124
+#: ../../app/ui/profilerdialog.ui:704
 msgctxt "profilerDialog|"
 msgid "Min outstanding probes (--min-parallelism)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1125
+#: ../../app/ui/profilerdialog.ui:724
 msgctxt "profilerDialog|"
 msgid "Max outstanding probes (--max-parallelism)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1126
+#: ../../app/ui/profilerdialog.ui:744
 msgctxt "profilerDialog|"
 msgid "Max time to scan a target (seconds, --host-timeout)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1127
+#: ../../app/ui/profilerdialog.ui:767
 msgctxt "profilerDialog|"
 msgid "Initial probe timeout (seconds, --initial-rtt-timeout)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1128
+#: ../../app/ui/profilerdialog.ui:787
 msgctxt "profilerDialog|"
 msgid "Min probe timeout (seconds, --min-rtt-timeout)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1129
+#: ../../app/ui/profilerdialog.ui:810
 msgctxt "profilerDialog|"
 msgid "Max probe timeout (seconds, --max-rtt-timeout)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1130
+#: ../../app/ui/profilerdialog.ui:833
 msgctxt "profilerDialog|"
 msgid "Scan Delay (seconds, --scan-delay)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1131
+#: ../../app/ui/profilerdialog.ui:856
 msgctxt "profilerDialog|"
 msgid "Max scan delay (seconds, --max-scan-delay)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1132
+#: ../../app/ui/profilerdialog.ui:910
 msgctxt "profilerDialog|"
 msgid "Source"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1133
+#: ../../app/ui/profilerdialog.ui:918
 msgctxt "profilerDialog|"
 msgid "Specific network interface (-e)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1134
+#: ../../app/ui/profilerdialog.ui:932
 msgctxt "profilerDialog|"
 msgid "Set source spoof ip address (-S)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1135
+#: ../../app/ui/profilerdialog.ui:946
 msgctxt "profilerDialog|"
 msgid "Set decoy (-D)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1136
+#: ../../app/ui/profilerdialog.ui:960
 msgctxt "profilerDialog|"
 msgid "Set Source spoof port (-g)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1137
+#: ../../app/ui/profilerdialog.ui:992
 msgctxt "profilerDialog|"
 msgid "Extra"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1138
+#: ../../app/ui/profilerdialog.ui:1000
 msgctxt "profilerDialog|"
 msgid "DNS Resolution"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1141
+#: ../../app/ui/profilerdialog.ui:1014
 msgctxt "profilerDialog|"
 msgid "When Required"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1142
+#: ../../app/ui/profilerdialog.ui:1019
 msgctxt "profilerDialog|"
 msgid "Always"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1143
+#: ../../app/ui/profilerdialog.ui:1024
 msgctxt "profilerDialog|"
 msgid "Never"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1145
+#: ../../app/ui/profilerdialog.ui:1032
 msgctxt "profilerDialog|"
 msgid "Verbosity level (-v)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1148
+#: ../../app/ui/profilerdialog.ui:1046
 msgctxt "profilerDialog|"
 msgid "Quiet"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1149
+#: ../../app/ui/profilerdialog.ui:1051
 msgctxt "profilerDialog|"
 msgid "Verbose"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1150
+#: ../../app/ui/profilerdialog.ui:1056
 msgctxt "profilerDialog|"
 msgid "Very Verbose"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1151
+#: ../../app/ui/profilerdialog.ui:1061
 msgctxt "profilerDialog|"
 msgid "Debug"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1152
+#: ../../app/ui/profilerdialog.ui:1066
 msgctxt "profilerDialog|"
 msgid "Verbose Debug"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1154
+#: ../../app/ui/profilerdialog.ui:1074
 msgctxt "profilerDialog|"
 msgid "Ordered scanned port (-r)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1155
+#: ../../app/ui/profilerdialog.ui:1081
 msgctxt "profilerDialog|"
 msgid "Fragment IP packets (-f)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1156
+#: ../../app/ui/profilerdialog.ui:1088
 msgctxt "profilerDialog|"
 msgid "Ipv4 TTL (--ttl)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1157
+#: ../../app/ui/profilerdialog.ui:1108
 msgctxt "profilerDialog|"
 msgid "Max Retries (--max-retries)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1158
+#: ../../app/ui/profilerdialog.ui:1122
 msgctxt "profilerDialog|"
 msgid "Traceroute (--traceroute)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1160
+#: ../../app/ui/profilerdialog.ui:1193
 msgctxt "profilerDialog|"
 msgid "Nse categories script available"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1162
+#: ../../app/ui/profilerdialog.ui:1208
 msgctxt "profilerDialog|"
 msgid "Nse categories Script Active"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1163
+#: ../../app/ui/profilerdialog.ui:1220
 msgctxt "profilerDialog|"
 msgid "Restore Default Categories"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1164
+#: ../../app/ui/profilerdialog.ui:1234
 msgctxt "profilerDialog|"
 msgid "Active Script"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1165
+#: ../../app/ui/profilerdialog.ui:1251
 msgctxt "profilerDialog|"
 msgid "Disable Script"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1166
+#: ../../app/ui/profilerdialog.ui:1262
 msgctxt "profilerDialog|"
 msgid "Nse categories help"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1167
+#: ../../app/ui/profilerdialog.ui:1178
 msgctxt "profilerDialog|"
 msgid "Categories"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1168
+#: ../../app/ui/profilerdialog.ui:1300
 msgctxt "profilerDialog|"
 msgid "Nse script parameters (Ex. user=foo,pass=test)"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1169
+#: ../../app/ui/profilerdialog.ui:1323
 msgctxt "profilerDialog|"
 msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1170
+#: ../../app/ui/profilerdialog.ui:1359
 msgctxt "profilerDialog|"
 msgid "Search information from nse script db:"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1171
+#: ../../app/ui/profilerdialog.ui:1381
 msgctxt "profilerDialog|"
 msgid "Search"
 msgstr ""
 
-#: ../../../build/src/ui_profilerdialog.h:1172
+#: ../../app/ui/profilerdialog.ui:1289
 msgctxt "profilerDialog|"
 msgid "Single Script"
 msgstr ""
 
-#: ../../../build/src/ui_selectprofiledialog.h:63
+#: ../../platform/ui/selectprofiledialog.ui:14
 msgctxt "selectProfileDialog|"
 msgid "Select a scan profile"
 msgstr ""
 
-#: ../../../build/src/ui_selectprofiledialog.h:64
+#: ../../platform/ui/selectprofiledialog.ui:27
 msgctxt "selectProfileDialog|"
 msgid "Done"
 msgstr ""
 
-#: ../../../build/src/ui_welcomevulnwidget.h:202
+#: ../../platform/ui/welcomevulnwidget.ui:14
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../../build/src/ui_welcomevulnwidget.h:204
+#: ../../platform/ui/welcomevulnwidget.ui:122
 msgctxt "welcomeVulnWidgetForm|"
 msgid "Search Network Vulnerabilities"
 msgstr ""

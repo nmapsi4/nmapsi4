@@ -4,24 +4,24 @@
 <context>
     <name>AboutUi</name>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="191"/>
+        <location filename="../../platform/ui/about.ui" line="20"/>
         <source>About Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="192"/>
+        <location filename="../../platform/ui/about.ui" line="74"/>
         <source>Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="194"/>
+        <location filename="../../platform/ui/about.ui" line="151"/>
         <source>NmapSi4 is a complete Qt4-based Gui with the design
 goals to provide a complete nmap interface for Users,
 in order to menage all option of this power security net scanner.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="197"/>
+        <location filename="../../platform/ui/about.ui" line="169"/>
         <source>
 
 (c) 2007-2012 Francesco Cecconi
@@ -30,62 +30,62 @@ License: GNU General Public License Version 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="236"/>
+        <location filename="../../platform/ui/about.ui" line="209"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Core Developer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../platform/ui/about.ui" line="246"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Website:&lt;/span&gt;  &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bug Tracking:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources Git repository:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/nmapsi4/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;github.com/nmapsi4/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sources Download:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../platform/ui/about.ui" line="295"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="202"/>
+        <location filename="../../platform/ui/about.ui" line="133"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="203"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Francesco Cecconi&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;Core Developer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:brand@nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;brand@nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; text-decoration: underline; color:#0057ae;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Innocenzo Ventre&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;MS Windows Packages&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:el.diabl09@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;el.diabl09@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_about.h" line="217"/>
+        <location filename="../../platform/ui/about.ui" line="194"/>
         <source>A&amp;uthors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="218"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Website:&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;www.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Bug Tracking:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://bugs.nmapsi4.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;bugs.nmapsi4.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Sources Git repository:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/nmapsi4/nmapsi4&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;github.com/nmapsi4/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Sources Download:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://code.google.com/nmapsi4&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;code.google.com/nmapsi4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../build/src/ui_about.h" line="235"/>
+        <location filename="../../platform/ui/about.ui" line="231"/>
         <source>&amp;Support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_about.h" line="193"/>
+        <location filename="../../platform/ui/about.ui" line="116"/>
         <source>Version </source>
         <translation type="unfinished"></translation>
     </message>
@@ -397,123 +397,123 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DiscoverWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="519"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="521"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="50"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="522"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="45"/>
         <source>Discovered IP/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="524"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="65"/>
         <source>Packets trace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="525"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="91"/>
         <source>Probe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="526"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="108"/>
         <source>Probes Modes:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="527"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="169"/>
         <source>CIDR Notation (IPv4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="528"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="175"/>
         <source>Selected your CIDR address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="529"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="184"/>
         <source>CIDR Address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="530"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="228"/>
         <source>Prefix Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="531"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="248"/>
         <source>Number of IP:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="532"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="283"/>
         <source>Or you can paste CIDR address below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="533"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="298"/>
         <source>CIDR address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="534"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="338"/>
         <source>Start with CIDR-style address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="535"/>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="547"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="352"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="607"/>
         <source>Stop Discover</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="536"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="163"/>
         <source>CIDR Notation address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="537"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="392"/>
         <source>Ips range (IPv4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="538"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="406"/>
         <source>Local Interfaces:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="540"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="444"/>
         <source>Reload Interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="543"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="481"/>
         <source>IP Network:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="544"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="518"/>
         <source>Start Host Ip:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="545"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="538"/>
         <source>End Host Ip:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="546"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="587"/>
         <source>Start Discover from IP range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_discoverwidget.h" line="548"/>
+        <location filename="../../app/ui/discoverwidget.ui" line="386"/>
         <source>Range of IP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -607,41 +607,41 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../app/mainwindow.cpp" line="67"/>
-        <location filename="../../app/mainwindow.cpp" line="228"/>
-        <location filename="../../app/mainwindow.cpp" line="255"/>
-        <location filename="../../app/mainwindow.cpp" line="307"/>
+        <location filename="../../app/mainwindow.cpp" line="230"/>
+        <location filename="../../app/mainwindow.cpp" line="257"/>
+        <location filename="../../app/mainwindow.cpp" line="309"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="228"/>
+        <location filename="../../app/mainwindow.cpp" line="230"/>
         <source>Insert an host/ip address to scan
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="254"/>
+        <location filename="../../app/mainwindow.cpp" line="256"/>
         <source>Warning - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="255"/>
+        <location filename="../../app/mainwindow.cpp" line="257"/>
         <source>IPv6 Protocol range scan is not yet supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="307"/>
+        <location filename="../../app/mainwindow.cpp" line="309"/>
         <source>Hostname already scanning
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="353"/>
+        <location filename="../../app/mainwindow.cpp" line="355"/>
         <source>&lt;b&gt;There are still active scan.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../app/mainwindow.cpp" line="354"/>
+        <location filename="../../app/mainwindow.cpp" line="356"/>
         <source>Do you want to close nmapsi4 anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -662,37 +662,37 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MonitorWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="109"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="110"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="28"/>
         <source>Stop All Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="111"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="42"/>
         <source>Stop Current Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="112"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="56"/>
         <source>Scan Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="114"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="129"/>
         <source>State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="115"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="124"/>
         <source>Scan Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorwidget.h" line="116"/>
+        <location filename="../../app/ui/monitorwidget.ui" line="119"/>
         <source>Host Thread</source>
         <translation type="unfinished"></translation>
     </message>
@@ -716,17 +716,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="447"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="448"/>
         <source>No description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="727"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="728"/>
         <source>Save Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../platform/parser/parsermanager.cpp" line="747"/>
+        <location filename="../../platform/parser/parsermanager.cpp" line="748"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -757,107 +757,107 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProfileMain</name>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="332"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="177"/>
         <source>Log Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="333"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="188"/>
         <source>Log type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="336"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="208"/>
         <source>Fancy format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="337"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="213"/>
         <source>Nmap raw format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="338"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="218"/>
         <source>Html format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="340"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="244"/>
         <source>Tuning options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="341"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="262"/>
         <source>Max parallel scan:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="342"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="288"/>
         <source>Max parallel discover process:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="343"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="314"/>
         <source>History item number:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="351"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="404"/>
         <source>Lookup type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="352"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="417"/>
         <source>Dig verbosity level:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="355"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="440"/>
         <source>Short</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="356"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="445"/>
         <source>Verbose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="344"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="371"/>
         <source>Lookup Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="347"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="386"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="348"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="391"/>
         <source>Internal lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="349"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="396"/>
         <source>Dig lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="329"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="117"/>
         <source>&amp;Defaults</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="327"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="35"/>
         <source>Preferences - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="331"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="138"/>
         <source>&amp;Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_preferencesdialog.h" line="328"/>
+        <location filename="../../app/ui/preferencesdialog.ui" line="51"/>
         <source>&amp;Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1024,27 +1024,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ScanBookmarkWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_scanbookmarkwidget.h" line="74"/>
+        <location filename="../../app/ui/scanbookmarkwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanbookmarkwidget.h" line="76"/>
+        <location filename="../../app/ui/scanbookmarkwidget.ui" line="58"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanbookmarkwidget.h" line="77"/>
+        <location filename="../../app/ui/scanbookmarkwidget.ui" line="53"/>
         <source>IP List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanbookmarkwidget.h" line="79"/>
+        <location filename="../../app/ui/scanbookmarkwidget.ui" line="84"/>
         <source>Profile Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanbookmarkwidget.h" line="80"/>
+        <location filename="../../app/ui/scanbookmarkwidget.ui" line="79"/>
         <source>Parameters List</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1060,123 +1060,123 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ScanWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="419"/>
+        <location filename="../../app/ui/scanwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="428"/>
+        <location filename="../../app/ui/scanwidget.ui" line="154"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="432"/>
+        <location filename="../../app/ui/scanwidget.ui" line="260"/>
         <source>Save Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="421"/>
+        <location filename="../../app/ui/scanwidget.ui" line="65"/>
         <source>Os</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="422"/>
-        <location filename="../../../build/src/ui_scanwidget.h" line="450"/>
+        <location filename="../../app/ui/scanwidget.ui" line="60"/>
+        <location filename="../../app/ui/scanwidget.ui" line="622"/>
         <source>Host(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="425"/>
+        <location filename="../../app/ui/scanwidget.ui" line="77"/>
         <source>Scan log parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="459"/>
+        <location filename="../../app/ui/scanwidget.ui" line="718"/>
         <source>Host Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="461"/>
+        <location filename="../../app/ui/scanwidget.ui" line="754"/>
         <source>Service(s) with info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="436"/>
+        <location filename="../../app/ui/scanwidget.ui" line="429"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="437"/>
+        <location filename="../../app/ui/scanwidget.ui" line="424"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="438"/>
+        <location filename="../../app/ui/scanwidget.ui" line="419"/>
         <source>State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="439"/>
+        <location filename="../../app/ui/scanwidget.ui" line="414"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="440"/>
+        <location filename="../../app/ui/scanwidget.ui" line="326"/>
         <source>Service(s) Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="442"/>
+        <location filename="../../app/ui/scanwidget.ui" line="485"/>
         <source>Nss script result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="443"/>
+        <location filename="../../app/ui/scanwidget.ui" line="442"/>
         <source>Nse result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="445"/>
+        <location filename="../../app/ui/scanwidget.ui" line="546"/>
         <source>Log(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="447"/>
+        <location filename="../../app/ui/scanwidget.ui" line="585"/>
         <source>Error(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="448"/>
+        <location filename="../../app/ui/scanwidget.ui" line="498"/>
         <source>Raw scan log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="451"/>
+        <location filename="../../app/ui/scanwidget.ui" line="600"/>
         <source>Lookup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="453"/>
+        <location filename="../../app/ui/scanwidget.ui" line="678"/>
         <source>DNS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="454"/>
+        <location filename="../../app/ui/scanwidget.ui" line="673"/>
         <source>IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="455"/>
+        <location filename="../../app/ui/scanwidget.ui" line="668"/>
         <source>RTT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="456"/>
+        <location filename="../../app/ui/scanwidget.ui" line="663"/>
         <source>Hop(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_scanwidget.h" line="457"/>
+        <location filename="../../app/ui/scanwidget.ui" line="635"/>
         <source>Traceroute</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,27 +1192,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>VulnBookmarkWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_vulnbookmarkwidget.h" line="61"/>
+        <location filename="../../app/ui/vulnbookmarkwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnbookmarkwidget.h" line="63"/>
+        <location filename="../../app/ui/vulnbookmarkwidget.ui" line="38"/>
         <source>Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnbookmarkwidget.h" line="64"/>
+        <location filename="../../app/ui/vulnbookmarkwidget.ui" line="33"/>
         <source>Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnbookmarkwidget.h" line="66"/>
+        <location filename="../../app/ui/vulnbookmarkwidget.ui" line="55"/>
         <source>Url(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnbookmarkwidget.h" line="67"/>
+        <location filename="../../app/ui/vulnbookmarkwidget.ui" line="50"/>
         <source>Url(s) name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1228,17 +1228,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>VulnerabilityWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="147"/>
+        <location filename="../../app/ui/vulnerabilitywidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="152"/>
+        <location filename="../../app/ui/vulnerabilitywidget.ui" line="108"/>
         <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_vulnerabilitywidget.h" line="149"/>
+        <location filename="../../app/ui/vulnerabilitywidget.ui" line="45"/>
         <source>Discovered vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1246,27 +1246,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addParBook</name>
     <message>
-        <location filename="../../../build/src/ui_addparameterstobookmark.h" line="120"/>
+        <location filename="../../platform/ui/addparameterstobookmark.ui" line="29"/>
         <source>Save quick profile - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addparameterstobookmark.h" line="121"/>
+        <location filename="../../platform/ui/addparameterstobookmark.ui" line="41"/>
         <source>Profile Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addparameterstobookmark.h" line="122"/>
+        <location filename="../../platform/ui/addparameterstobookmark.ui" line="57"/>
         <source>Parameters:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addparameterstobookmark.h" line="123"/>
+        <location filename="../../platform/ui/addparameterstobookmark.ui" line="90"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addparameterstobookmark.h" line="124"/>
+        <location filename="../../platform/ui/addparameterstobookmark.ui" line="101"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1292,22 +1292,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addUrl</name>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="137"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="29"/>
         <source>Save vulnerability search address - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="138"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="41"/>
         <source>Url Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="139"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="57"/>
         <source>Url address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="140"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="89"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1320,12 +1320,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="150"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="121"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_addvulnerabilityurl.h" line="151"/>
+        <location filename="../../platform/ui/addvulnerabilityurl.ui" line="132"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1351,22 +1351,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>monitorDetails</name>
     <message>
-        <location filename="../../../build/src/ui_monitorhostscandetails.h" line="135"/>
+        <location filename="../../platform/ui/monitorhostscandetails.ui" line="20"/>
         <source>Scan Process Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorhostscandetails.h" line="136"/>
+        <location filename="../../platform/ui/monitorhostscandetails.ui" line="38"/>
         <source>Hostname:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorhostscandetails.h" line="137"/>
+        <location filename="../../platform/ui/monitorhostscandetails.ui" line="124"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_monitorhostscandetails.h" line="138"/>
+        <location filename="../../platform/ui/monitorhostscandetails.ui" line="135"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1374,440 +1374,440 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>profilerDialog</name>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1060"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="14"/>
         <source>Profiler - Nmapsi4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1061"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="83"/>
         <source>Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1062"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="91"/>
         <source>Profile name: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1063"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="107"/>
         <source>Profile parameters:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1064"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="127"/>
         <source>Base options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1067"/>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1074"/>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1082"/>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1087"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="141"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="256"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="301"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="315"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1069"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="195"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1070"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="206"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1071"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="235"/>
         <source>Scan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1078"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="274"/>
         <source>TCP scan:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1075"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="261"/>
         <source>TCP Connect Scan (-sT)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1076"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="266"/>
         <source>Ping Sweep (-sP)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1095"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="353"/>
         <source>Timing Template:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1088"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="320"/>
         <source>Paranoid Throttling (-T0)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1089"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="325"/>
         <source>Sneaky Throttling (-T1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1090"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="330"/>
         <source>Polite Throttling (-T2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1091"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="335"/>
         <source>Normal Throttling (-T3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1092"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="340"/>
         <source>Aggressive Throttling (-T4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1093"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="345"/>
         <source>Insane Throttling (-T5)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1079"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="287"/>
         <source>Non-TCP scans:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1083"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="306"/>
         <source>List Scan (-sL)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1096"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="393"/>
         <source>RPC Scan (-sR)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1097"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="400"/>
         <source>OS Detection (-O)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1098"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="407"/>
         <source>Version Probe (-sV)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1099"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="414"/>
         <source>Ipv6 support (-6)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1100"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="421"/>
         <source>FTP bounce attack (-b)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1101"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="428"/>
         <source>Idle Scan (-sl)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1104"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="442"/>
         <source>Normal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1105"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="447"/>
         <source>All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1106"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="452"/>
         <source>Most Important</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1107"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="457"/>
         <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1109"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="471"/>
         <source>Port Range:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1110"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="505"/>
         <source>Aggressive options (-A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1111"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="556"/>
         <source>Ping options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1112"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="564"/>
         <source>TCP ACK Ping (-PA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1113"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="574"/>
         <source>21,23,80,3389</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1114"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="581"/>
         <source>TCP SYN Ping (-PS)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1115"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="591"/>
         <source>22,25,80</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1116"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="598"/>
         <source>UDP Ping (-PU)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1117"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="612"/>
         <source>ICMP Netmask (-PM)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1118"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="619"/>
         <source>ICMP TImestamp (-PP)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1119"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="626"/>
         <source>ICMP Echo (-PE)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1120"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="633"/>
         <source>Don&apos;t Ping (-P0)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1121"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="640"/>
         <source>IPProto probes (-PO)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1122"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="654"/>
         <source>SCTP INIT ping (-PY)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1123"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="696"/>
         <source>Timing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1124"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="704"/>
         <source>Min outstanding probes (--min-parallelism)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1125"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="724"/>
         <source>Max outstanding probes (--max-parallelism)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1126"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="744"/>
         <source>Max time to scan a target (seconds, --host-timeout)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1127"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="767"/>
         <source>Initial probe timeout (seconds, --initial-rtt-timeout)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1128"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="787"/>
         <source>Min probe timeout (seconds, --min-rtt-timeout)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1129"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="810"/>
         <source>Max probe timeout (seconds, --max-rtt-timeout)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1130"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="833"/>
         <source>Scan Delay (seconds, --scan-delay)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1131"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="856"/>
         <source>Max scan delay (seconds, --max-scan-delay)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1132"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="910"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1133"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="918"/>
         <source>Specific network interface (-e)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1134"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="932"/>
         <source>Set source spoof ip address (-S)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1135"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="946"/>
         <source>Set decoy (-D)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1136"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="960"/>
         <source>Set Source spoof port (-g)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1137"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="992"/>
         <source>Extra</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1138"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1000"/>
         <source>DNS Resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1141"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1014"/>
         <source>When Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1142"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1019"/>
         <source>Always</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1143"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1024"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1145"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1032"/>
         <source>Verbosity level (-v)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1148"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1046"/>
         <source>Quiet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1149"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1051"/>
         <source>Verbose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1150"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1056"/>
         <source>Very Verbose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1151"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1061"/>
         <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1152"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1066"/>
         <source>Verbose Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1154"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1074"/>
         <source>Ordered scanned port (-r)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1155"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1081"/>
         <source>Fragment IP packets (-f)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1156"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1088"/>
         <source>Ipv4 TTL (--ttl)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1157"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1108"/>
         <source>Max Retries (--max-retries)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1158"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1122"/>
         <source>Traceroute (--traceroute)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1160"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1193"/>
         <source>Nse categories script available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1162"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1208"/>
         <source>Nse categories Script Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1163"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1220"/>
         <source>Restore Default Categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1164"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1234"/>
         <source>Active Script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1165"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1251"/>
         <source>Disable Script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1166"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1262"/>
         <source>Nse categories help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1167"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1178"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1168"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1300"/>
         <source>Nse script parameters (Ex. user=foo,pass=test)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1169"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1323"/>
         <source>Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1170"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1359"/>
         <source>Search information from nse script db:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1171"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1381"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_profilerdialog.h" line="1172"/>
+        <location filename="../../app/ui/profilerdialog.ui" line="1289"/>
         <source>Single Script</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1815,12 +1815,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>selectProfileDialog</name>
     <message>
-        <location filename="../../../build/src/ui_selectprofiledialog.h" line="63"/>
+        <location filename="../../platform/ui/selectprofiledialog.ui" line="14"/>
         <source>Select a scan profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_selectprofiledialog.h" line="64"/>
+        <location filename="../../platform/ui/selectprofiledialog.ui" line="27"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1828,12 +1828,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>welcomeVulnWidgetForm</name>
     <message>
-        <location filename="../../../build/src/ui_welcomevulnwidget.h" line="202"/>
+        <location filename="../../platform/ui/welcomevulnwidget.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../build/src/ui_welcomevulnwidget.h" line="204"/>
+        <location filename="../../platform/ui/welcomevulnwidget.ui" line="122"/>
         <source>Search Network Vulnerabilities</source>
         <translation type="unfinished"></translation>
     </message>
