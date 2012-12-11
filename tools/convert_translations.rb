@@ -40,8 +40,14 @@ def po2ts
     end
 end
 
-def buildPot
-    path_string_dst = "../src/ts/po/nmapsi4/nmapsi4.pot"
+def buildPot(path)
+
+    if (path != nil)
+        path_string_dst = path+"nmapsi4.pot"
+    else
+        path_string_dst = "../src/ts/po/nmapsi4/nmapsi4.pot"
+    end
+
     path_string_src = "../src/ts/template/nmapsi4.ts"
     result = %x[echo; lconvert -of pot #{path_string_src} -o #{path_string_dst}]
     puts "DEBUG::POT:: -- source file:: #{path_string_src} -- dst file:: #{path_string_dst}"
@@ -60,7 +66,11 @@ if __FILE__ == $0
 	    ts.ts2po
         else if ARGV.first == "buildPot"
             ts = Tools.new
-            ts.buildPot
+            if ARGV[1] != nil
+                ts.buildPot(ARGV[1])
+            else
+                ts.buildPot(nil)
+            end
             else if ARGV.first == "po2ts"
                 ts = Tools.new
                 ts.po2ts
