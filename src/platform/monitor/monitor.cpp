@@ -280,7 +280,7 @@ void Monitor::delMonitorHost(const QString hostName)
 
 void Monitor::updateMonitorHost(const QString hostName, int valueIndex, const QString newData)
 {
-    Q_ASSERT(valueIndex < m_monitor->columnCount());
+    Q_ASSERT(valueIndex < m_monitorWidget->scanMonitor->columnCount());
 
     QList<QTreeWidgetItem*>::const_iterator i;
     for (i = m_monitorElem.constBegin(); i != m_monitorElem.constEnd(); ++i) {
