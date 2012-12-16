@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 LookupManager::LookupManager(const QString hostname)
-    : m_host(hostname)
+    : m_host(hostname), m_par(0)
 {
 }
 

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pobjects.h"
 
-PObject::PObject() : m_id(0)
+PObject::PObject() : m_validFlag(false), m_id(0)
 {
 
 }

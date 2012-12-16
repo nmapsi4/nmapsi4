@@ -50,7 +50,6 @@ private:
     void addItemToHistory(const QString url, const QString scanTime);
 
     QTreeWidget* logTree;
-    QTreeWidgetItem* historyItem;
     QString configTag;
     QString configTagTime;
     int m_cacheSize;

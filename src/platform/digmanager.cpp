@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "memorytools.h"
 
 DigManager::DigManager(QObject* parent)
-    : QObject(parent)
+    : QObject(parent), m_elemObjUtil(0)
 {
 }
 

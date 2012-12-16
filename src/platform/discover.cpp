@@ -21,7 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Discover::Discover(int uid)
     : m_ipState(false),
-      m_uid(uid)
+      m_uid(uid),
+      m_parent(0)
 {
     m_timer = new QTimer(this);
     m_connectState = false;

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "logwriter.h"
 
-LogWriter::LogWriter()
+LogWriter::LogWriter() : m_pObject(0)
 {
 }
 

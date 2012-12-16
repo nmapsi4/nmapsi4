@@ -138,7 +138,7 @@ QList<QTreeWidgetItem*> History::updateBookMarks()
             && !urlListTime.first().contains("NULL")) {
         short index = 0;
         foreach(const QString & item, urlList) {
-            historyItem = new QTreeWidgetItem(logTree);
+            QTreeWidgetItem* historyItem = new QTreeWidgetItem(logTree);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);
             historyItem->setText(0, item);

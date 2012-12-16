@@ -44,11 +44,13 @@ int main(int argc, char *argv[])
     QTranslator translator;
     bool translatorResult = translator.load("nmapsi4_" + QLocale::system().name(), translationsPath);
 
-    if (translatorResult == false) {
+    if (!translatorResult) {
         translatorResult = translator.load("nmapsi4_" + QLocale::system().name(), QDir::currentPath());
     }
 
-    app.installTranslator(&translator);
+    if (translatorResult) {
+        app.installTranslator(&translator);
+    }
 
     MainWindow* dialog = new MainWindow();
     dialog->show();
