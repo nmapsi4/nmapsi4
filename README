@@ -9,8 +9,9 @@ HomePage: www.nmapsi4.org
 
 Required for build:
 
-* qt4 >= 4.6
 * cmake >= 2.6
+* qt4 >= 4.6
+* qtwebkit
 
 Optional for build:
 
