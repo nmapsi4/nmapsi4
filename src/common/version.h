@@ -18,6 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef VERSION_H
 #define VERSION_H
 
-static const char version[] = "0.4";
+static const char version[] = "0.4.99";
 
 #endif
