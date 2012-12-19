@@ -41,5 +41,8 @@ void Notify::notificationMessage(const QString& sender, const QString& message)
         QApplication::activeWindow(),
         KNotification::CloseWhenWidgetActivated
     );
+#else
+    Q_UNUSED(sender);
+    Q_UNUSED(message);
 #endif
 }
