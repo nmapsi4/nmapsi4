@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    Q_INIT_RESOURCE(images);
 
     QTranslator qtTranslator;
     qtTranslator.load("qt_" + QLocale::system().name(),
