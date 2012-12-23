@@ -50,8 +50,6 @@ SET(SOURCES_CPP platform/selectprofiledialog.cpp
                 app/profiler/profilermanager.cpp
                 app/profiler/profiler.cpp
                 app/defaultprofile.cpp
-                app/updateUI.cpp
-                app/settings.cpp
                 app/mainwindow.cpp
                 app/bookmarkmanager.cpp
                 app/actionmanager.cpp

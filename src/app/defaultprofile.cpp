@@ -149,7 +149,8 @@ void MainWindow::comboParametersSelectedEvent()
         }
     } else {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(), Qt::MatchExactly, 1);
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(),
+                                                                                                        Qt::MatchExactly, 1);
         m_scanWidget->comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }
@@ -174,4 +175,17 @@ void MainWindow::updateComboParametersFromList(const QStringList& parameters)
 {
     m_scanWidget->comboAdv->clear();
     m_scanWidget->comboAdv->insertItem(0, parameters.join(" "));
+}
+
+void MainWindow::loadDefaultProfile()
+{
+    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    m_scanWidget->comboAdv->insertItem(0, getParameters().join(" "));
+}
+
+void MainWindow::clearParametersCombo()
+{
+    // reset saved profile or simply the default one
+    m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
+    comboParametersSelectedEvent();
 }

@@ -142,6 +142,10 @@ void MainWindow::initObject()
 #endif
 }
 
+MainWindow::~MainWindow()
+{
+}
+
 void MainWindow::startPreferencesDialog()
 {
     QWeakPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
@@ -172,7 +176,8 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(), m_scanWidget->comboAdv->currentText(), this);
+    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
+                                                                 m_scanWidget->comboAdv->currentText(), this);
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
@@ -444,10 +449,6 @@ void MainWindow::resizeScanListWidgetEvent()
     }
 }
 
-MainWindow::~MainWindow()
-{
-}
-
 #if defined(USE_KDELIBS)
 
 void MainWindow::hideKWidget()
@@ -457,3 +458,321 @@ void MainWindow::hideKWidget()
 }
 
 #endif
+
+void MainWindow::syncSettings()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    // load saved profile index
+    m_savedProfileIndex = settings.value("savedProfileIndex", 0).toInt();
+    m_hostCache = settings.value("hostCache", 10).toInt();
+
+#if defined(Q_WS_WIN)
+    // disable lookup in MS windows
+    m_lookupType = 0;
+#else
+    m_lookupType = settings.value("lookupType", 1).toInt();
+#endif
+
+    // restore actionMenuBar
+    m_collections->m_collectionsScanSection.value("showmenubar-action")->setChecked(settings.value("showMenuBar", false).toBool());
+    // update max parallel scan option
+    m_monitor->updateMaxParallelScan();
+}
+
+void MainWindow::saveSettings()
+{
+    QSettings settings("nmapsi4", "nmapsi4");
+
+    settings.setValue("window/pos", pos());
+    settings.setValue("window/geometry", saveGeometry());
+    settings.setValue("hostCache", m_hostCache);
+    settings.setValue("splitterSizes", m_mainHorizontalSplitter->saveState());
+    settings.setValue("splitterSizesRight", m_mainVerticalSplitter->saveState());
+    settings.setValue("showMenuBar", m_collections->m_collectionsScanSection.value("showmenubar-action")->isChecked());
+    settings.setValue("savedProfileIndex", m_scanWidget->comboParametersProfiles->currentIndex());
+
+    m_bookmark->syncSettings();
+    m_discoverManager->syncSettings();
+    m_parser->syncSettings();
+    m_vulnerability->syncSettings();
+
+// check and reset for settings file permission
+#if !defined(Q_WS_WIN)
+    if (!m_userId) {
+        QFileInfo fileInfo;
+
+        fileInfo.setFile(settings.fileName());
+        if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
+            QFile::setPermissions(settings.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
+                                  QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+        }
+
+        QSettings settingsBookmark("nmapsi4", "nmapsi4_bookmark");
+        fileInfo.setFile(settingsBookmark.fileName());
+        if ((!fileInfo.permissions().testFlag(QFile::WriteOther) && !fileInfo.ownerId())) {
+            QFile::setPermissions(settingsBookmark.fileName(), QFile::ReadOwner | QFile::ReadUser | QFile::ReadOther |
+                                  QFile::WriteOwner | QFile::WriteUser | QFile::WriteOther);
+        }
+    }
+#endif
+}
+
+void MainWindow::updateCompleter()
+{
+    if (!m_bookmark->isBookmarkHostListEmpty()) {
+        if (!m_completer.isNull()) {
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
+            newModel->setStringList(m_bookmark->getHostListFromBookmark());
+        } else if (m_hostModel.isNull()) {
+            m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(), this);
+        }
+    }
+}
+
+void MainWindow::restoreSettings()
+{
+    // restore window position
+    QSettings settings("nmapsi4", "nmapsi4");
+    QPoint pos = settings.value("window/pos", QPoint(200, 200)).toPoint();
+    move(pos);
+
+    if (settings.contains("window/geometry")) {
+        restoreGeometry(settings.value("window/geometry").toByteArray());
+    } else {
+        resize(QSize(700, 500));
+    }
+
+    // restore state of the QAction's connected to splitter widget
+    if (!settings.value("splitterSizes").toByteArray().isEmpty()) {
+        m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
+
+        if (m_mainHorizontalSplitter->sizes()[0]) {
+            m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
+        } else {
+            m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
+        }
+    } else {
+        m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
+    }
+
+    if (!settings.value("splitterSizesRight").toByteArray().isEmpty()) {
+        m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
+
+        if (m_mainVerticalSplitter->sizes()[1]) {
+            m_collections->m_collectionsButton.value("details-list")->setChecked(true);
+        } else {
+            m_collections->m_collectionsButton.value("details-list")->setChecked(false);
+        }
+    } else {
+        m_collections->m_collectionsButton.value("details-list")->setChecked(true);
+    }
+}
+
+void MainWindow::setDefaultSplitter()
+{
+    // define default Ui splitter
+    m_mainHorizontalSplitter = new QSplitter(this);
+    m_mainVerticalSplitter = new QSplitter(this);
+
+    connect(m_mainVerticalSplitter, SIGNAL(splitterMoved(int,int)),
+            this, SLOT(resizeVerticalSplitterEvent()));
+
+    connect(m_mainHorizontalSplitter, SIGNAL(splitterMoved(int,int)),
+            this, SLOT(resizeHorizontalSplitterEvent()));
+
+    m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
+    m_mainHorizontalSplitter->addWidget(m_scanWidget->frameLeft);
+    m_mainHorizontalSplitter->addWidget(m_scanWidget->frameCenter);
+    m_mainVerticalSplitter->setOrientation(Qt::Vertical);
+    m_mainVerticalSplitter->addWidget(m_scanWidget->tabWidget);
+    m_mainVerticalSplitter->addWidget(m_scanWidget->frameRight);
+    // insert splitter
+    m_scanWidget->layout()->addWidget(m_mainHorizontalSplitter);
+    m_scanWidget->frameCenter->layout()->addWidget(m_mainVerticalSplitter);
+}
+
+void MainWindow::setFullScreen()
+{
+    if (isFullScreen()) {
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
+        m_collections->m_collectionsScanSection.value("fullscreen-action")->setChecked(false);
+    } else {
+        setWindowState(windowState() | Qt::WindowFullScreen);
+        m_collections->m_collectionsScanSection.value("fullscreen-action")->setChecked(true);
+    }
+}
+
+void MainWindow::updateMenuBar()
+{
+    if (m_collections->m_collectionsScanSection.value("showmenubar-action")->isChecked()) {
+        menuBar()->setVisible(true);
+        m_collections->disableGlobalMenuToolBar();
+    } else {
+        menuBar()->setVisible(false);
+        m_collections->enableGlobalMenuToolBar();
+    }
+}
+
+void MainWindow::updateComboHostnameProperties()
+{
+    m_collections->m_collectionsScanSection.value("scan-action")->setEnabled(true);
+    m_scanWidget->hostEdit->clear();
+    m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8(""));
+    bool signalState = m_scanWidget->hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
+
+    if (!signalState) {
+        return;
+    }
+
+    connect(m_scanWidget->hostEdit, SIGNAL(editTextChanged(QString)),
+            this, SLOT(linkCompleterToHostname()));
+}
+
+void MainWindow::updateScanSection()
+{
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
+    m_collections->m_discoverToolBar->setVisible(false);
+    m_collections->disableVulnerabilityToolBar();
+    m_collections->enableBookmarkToolBar();
+    m_collections->enableScanSectionToolBar();
+    m_collections->enableGlobalMenuToolBar();
+
+    m_mainTabWidget->insertTab(0, m_scanWidget, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
+    m_mainTabWidget->setCurrentIndex(0);
+
+    if (!m_monitor->m_monitorWidget->isVisible()) {
+        m_mainTabWidget->insertTab(1, m_monitor->m_monitorWidget, tr("Scan Monitor"));
+
+        if (m_monitor->monitorHostNumber()) {
+            m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                        QIcon::fromTheme("view-refresh", QIcon(":/images/images/reload.png")));
+        } else {
+            m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                        QIcon::fromTheme("utilities-system-monitor", QIcon(":/images/images/utilities-log-viewer.png")));
+        }
+
+    }
+
+    m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_scanBookmarkWidget,
+                     QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
+
+    // enable scan action
+    m_collections->enableBottomUiToggleActions();
+    m_collections->enableScanBookmarkMenu();
+}
+
+void MainWindow::updateVulnerabilitySection()
+{
+    Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
+    // main and action bar only in scan index
+    m_collections->disableScanSectionToolBar();
+    m_collections->enableVulnerabilityToolBar();
+    m_collections->enableBookmarkToolBar();
+
+    m_collections->enableGlobalMenuToolBar();
+    m_collections->m_discoverToolBar->setVisible(false);
+
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget,
+                               QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
+
+    m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_vulnBookmarkWidget,
+                               QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+
+    m_mainTabWidget->setCurrentIndex(0);
+
+    // disable scan action
+    m_collections->disableBottomUiToggleActions();
+    m_collections->enableVulnerabilityBookmarkMenu();
+}
+
+void MainWindow::updateDiscoverSection()
+{
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
+    // main and action bar only in scan index
+    m_collections->disableScanSectionToolBar();
+    m_collections->disableBookmarkToolBar();
+    m_collections->disableVulnerabilityToolBar();
+    m_collections->m_discoverToolBar->setVisible(true);
+    m_collections->enableGlobalMenuToolBar();
+
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
+    m_mainTabWidget->setCurrentIndex(0);
+
+    // disable scan action
+    m_collections->disableBottomUiToggleActions();
+    m_collections->disableBookmarkMenu();
+}
+
+void MainWindow::updateComboBook()
+{
+    m_scanWidget->comboHostBook->clear();
+    m_scanWidget->comboHostBook->insertItem(0, "Select Saved Host");
+
+    for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
+        m_scanWidget->comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
+    }
+}
+
+void MainWindow::clearAll()
+{
+    // Host list
+    m_parser->clearParserItems();
+    m_scanWidget->listScanError->clear();
+    m_scanWidget->treeMain->clear();
+    m_scanWidget->treeLookup->clear();
+    m_scanWidget->treeTraceroot->clear();
+    m_scanWidget->treeHostDet->clear();
+    m_scanWidget->GItree->clear();
+    m_scanWidget->listWscan->clear();
+    m_scanWidget->treeNSS->clear();
+    m_scanWidget->listScan->clear();
+    m_collections->m_collectionsScanSection.value("clearHistory-action")->setEnabled(false);
+    m_collections->disableSaveActions();
+
+    m_scanWidget->comboScanLog->clear();
+    m_scanWidget->comboScanLog->addItem(tr("Scan log parameters"));
+}
+
+void MainWindow::updateScanCounter(int hostNumber)
+{
+    if (hostNumber == 1) {
+        m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
+                                    QIcon::fromTheme("view-refresh", QIcon(":/images/images/reload.png")));
+    }
+
+    QString title(tr(" Active Scan ")
+                  + QLatin1String("(")
+                  + QString("%1").arg(m_monitor->monitorHostNumber())
+                  + QLatin1String(")")
+                  + " - Nmapsi4");
+
+    setWindowTitle(title);
+}
+
+void MainWindow::clearHostnameCombo()
+{
+    // reset combo host bookmarks to default value
+    m_scanWidget->comboHostBook->setCurrentIndex(0);
+    m_scanWidget->hostEdit->clearEditText();
+}
