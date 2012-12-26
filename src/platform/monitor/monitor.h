@@ -59,7 +59,7 @@ class Monitor : public QObject
 #endif
 
 public:
-    Monitor(MainWindow* parent);
+    explicit Monitor(MainWindow* parent);
     ~Monitor();
 
     enum LookupType {

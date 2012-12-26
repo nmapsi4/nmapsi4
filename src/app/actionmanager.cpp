@@ -44,28 +44,28 @@ ActionManager::ActionManager(MainWindow* parent)
     m_scanToolBar->setStyleSheet("QToolBar { border: 0px; }");
     m_scanToolBar->setFloatable(false);
     m_scanToolBar->setMovable(false);
-    m_scanToolBar->setIconSize(QSize(22,22));
+    m_scanToolBar->setIconSize(QSize(22, 22));
 
     m_bookmarkToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_bookmarkToolBar->setToolButtonStyle(Qt::ToolButtonFollowStyle);
     m_bookmarkToolBar->setStyleSheet("QToolBar { border: 0px; }");
     m_bookmarkToolBar->setFloatable(false);
     m_bookmarkToolBar->setMovable(false);
-    m_bookmarkToolBar->setIconSize(QSize(22,22));
+    m_bookmarkToolBar->setIconSize(QSize(22, 22));
 
     m_globalMenuToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_globalMenuToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_globalMenuToolBar->setStyleSheet("QToolBar { border: 0px; }");
     m_globalMenuToolBar->setFloatable(false);
     m_globalMenuToolBar->setMovable(false);
-    m_globalMenuToolBar->setIconSize(QSize(22,22));
+    m_globalMenuToolBar->setIconSize(QSize(22, 22));
 
     m_vulnerabilityToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_vulnerabilityToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_vulnerabilityToolBar->setStyleSheet("QToolBar { border: 0px; }");
     m_vulnerabilityToolBar->setFloatable(false);
     m_vulnerabilityToolBar->setMovable(false);
-    m_vulnerabilityToolBar->setIconSize(QSize(22,22));
+    m_vulnerabilityToolBar->setIconSize(QSize(22, 22));
 
     // discover toolbar
     m_discoverToolBar->setObjectName(QString::fromUtf8("discoverToolBar"));
@@ -86,15 +86,15 @@ ActionManager::ActionManager(MainWindow* parent)
     m_ui->addToolBar(Qt::TopToolBarArea, m_globalMenuToolBar);
 
     // ActionManager signals
-    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(scanBookmarkContextMenu()));
-    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(parametersBookmarkContextMenu()));
-    connect(m_ui->m_scanWidget->GItree, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_scanWidget->GItree, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(mainServicesContextMenu()));
-    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(servicesContextMenu()));
-    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(vulnerabilityUrlContextMenu()));
 
     setupActions();

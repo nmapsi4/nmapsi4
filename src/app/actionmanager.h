@@ -35,7 +35,7 @@ class ActionManager : public QObject
     Q_OBJECT
 
 public:
-    ActionManager(MainWindow* parent = 0);
+    explicit ActionManager(MainWindow* parent = 0);
     ~ActionManager() {}
     void createToolButtonBar();
     void createSectionsBar();

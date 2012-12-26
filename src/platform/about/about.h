@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class About : public QDialog, private Ui::AboutUi
 {
 public:
-    About(QWidget *parent = 0);
+    explicit About(QWidget *parent = 0);
     ~About() {};
 };
 

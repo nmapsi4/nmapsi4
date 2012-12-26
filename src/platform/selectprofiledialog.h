@@ -30,7 +30,7 @@ class SelectProfileDialog : public QDialog, private Ui::selectProfileDialog
     Q_OBJECT
 
 public:
-    SelectProfileDialog(MainWindow* ui);
+    explicit SelectProfileDialog(MainWindow* ui);
     ~SelectProfileDialog();
 
 private:

@@ -50,7 +50,7 @@ public:
     /*!
      * Create a object for discovery Class
      */
-    Discover(int uid);
+    explicit Discover(int uid);
     ~Discover();
     /*!
      * Return a QList of network interfaces

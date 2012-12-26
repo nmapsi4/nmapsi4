@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class PushButtonOrientated : public QPushButton
 {
 public:
-    PushButtonOrientated(QWidget* parent = 0);
+    explicit PushButtonOrientated(QWidget* parent = 0);
     explicit PushButtonOrientated(const QString& text, QWidget* parent = 0);
     PushButtonOrientated(const QIcon& icon, const QString& text, QWidget* parent = 0);
     ~PushButtonOrientated();

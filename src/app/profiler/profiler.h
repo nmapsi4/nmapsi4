@@ -32,7 +32,7 @@ class Profiler : public QObject
     Q_OBJECT
 
 public:
-    Profiler(ProfilerManager *parent);
+    explicit Profiler(ProfilerManager *parent);
     ~Profiler() { };
     void restoreValuesFromProfile(const QStringList parameters);
     void loadDefaultHash();

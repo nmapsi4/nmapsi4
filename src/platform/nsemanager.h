@@ -35,7 +35,7 @@ class NseManager : public QObject
     Q_OBJECT
 
 public:
-    NseManager(ProfilerManager* parent);
+    explicit NseManager(ProfilerManager* parent);
     ~NseManager();
     /**
      * Get QString List with all actived script

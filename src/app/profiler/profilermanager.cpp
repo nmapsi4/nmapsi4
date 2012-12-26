@@ -89,10 +89,10 @@ void ProfilerManager::initObject()
             m_nseManager, SLOT(nseTreeRemoveItem()));
     connect(m_dialogUi->nseResetBut, SIGNAL(clicked()),
             m_nseManager, SLOT(nseTreeResetItem()));
-    connect(m_dialogUi->nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*, int)));
-    connect(m_dialogUi->nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*, int)));
+    connect(m_dialogUi->nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
+    connect(m_dialogUi->nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
     connect(m_dialogUi->searchButtHelp, SIGNAL(clicked()),
             m_nseManager, SLOT(requestNseScriptHelp()));
 

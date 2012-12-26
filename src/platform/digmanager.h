@@ -44,7 +44,7 @@ public:
     /*!
      * Create a object for dig lookup Class.
      */
-    DigManager(QObject* parent = 0);
+    explicit DigManager(QObject* parent = 0);
     ~DigManager();
     /*!
      * Start QThread dig for hostname.

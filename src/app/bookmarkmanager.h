@@ -56,7 +56,7 @@ class BookmarkManager : public QObject
     Q_OBJECT
 
 public:
-    BookmarkManager(MainWindow* parent);
+    explicit BookmarkManager(MainWindow* parent);
     ~BookmarkManager();
     /**
      * Restore all saved values on treeWidget

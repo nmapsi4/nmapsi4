@@ -29,7 +29,7 @@ class PreferencesDialog : public QDialog, private Ui::ProfileMain
     Q_OBJECT
 
 public:
-    PreferencesDialog(QWidget *parent = 0);
+    explicit PreferencesDialog(QWidget *parent = 0);
     ~PreferencesDialog();
 
 private:

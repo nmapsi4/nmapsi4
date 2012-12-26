@@ -74,7 +74,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
             this, SLOT(stopDiscoverFromIpsRange()));
     connect(m_discoverWidget->stopDiscoverCidrButton, SIGNAL(clicked()),
             this, SLOT(stopDiscoverFromCIDR()));
-    connect(m_discoverWidget->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
+    connect(m_discoverWidget->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(runtimeScanDiscover()));
     connect(m_discoverWidget->reloadComboDiscover, SIGNAL(clicked()),
             this, SLOT(loadFoundInterfaces()));

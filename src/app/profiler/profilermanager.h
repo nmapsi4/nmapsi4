@@ -44,7 +44,7 @@ class ProfilerManager : public QDialog
     Q_OBJECT
 
 public:
-    ProfilerManager(MainWindow* parent);
+    explicit ProfilerManager(MainWindow* parent);
     ProfilerManager(const QString profileName, const QString parameters, MainWindow* parent);
     virtual ~ProfilerManager();
 

@@ -34,10 +34,10 @@ ParserManager::ParserManager(MainWindow* parent)
         m_rawlogHorizontalSplitter->restoreState(settings.value("rawlogHorizontalSplitter").toByteArray());
     }
 
-    connect(m_ui->m_scanWidget->treeMain, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            this, SLOT(showParserResult(QTreeWidgetItem*, int)));
-    connect(m_ui->m_scanWidget->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
-            this, SLOT(showParserTracerouteResult(QTreeWidgetItem*, int)));
+    connect(m_ui->m_scanWidget->treeMain, SIGNAL(itemActivated(QTreeWidgetItem*,int)),
+            this, SLOT(showParserResult(QTreeWidgetItem*,int)));
+    connect(m_ui->m_scanWidget->treeTraceroot, SIGNAL(itemActivated(QTreeWidgetItem*,int)),
+            this, SLOT(showParserTracerouteResult(QTreeWidgetItem*,int)));
     connect(m_ui->m_monitor, SIGNAL(hostFinisced(QStringList,QByteArray,QByteArray,int)),
             this, SLOT(startParser(QStringList,QByteArray,QByteArray,int)));
 }

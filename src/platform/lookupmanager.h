@@ -39,7 +39,7 @@ public:
     /*!
      * Create a QThread and start static QHostInfo resolv.
      */
-    LookupManager(const QString hostname);
+    explicit LookupManager(const QString hostname);
     ~LookupManager();
 
 signals:

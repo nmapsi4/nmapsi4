@@ -31,7 +31,6 @@ VulnBookmarkWidget::VulnBookmarkWidget(QWidget* parent): QWidget(parent)
 BookmarkManager::BookmarkManager(MainWindow* parent)
     : QObject(parent), m_ui(parent), m_userId(0)
 {
-
 #ifndef Q_WS_WIN
     m_userId = getuid();
 #endif
