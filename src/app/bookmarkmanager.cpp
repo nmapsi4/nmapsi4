@@ -110,7 +110,7 @@ void BookmarkManager::saveItemToBookmarks(QString value)
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         }
 
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
         m_treeloghlist = history_->updateBookMarks();
 
         delete history_;
@@ -120,7 +120,7 @@ void BookmarkManager::saveItemToBookmarks(QString value)
         History *history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->addItemHistory(value,QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
 
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();
 
         delete history_;
@@ -141,13 +141,13 @@ void BookmarkManager::deleteItemFromBookmark()
         history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
         history_->deleteItemBookmark(m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
 
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeloghlist);
         m_treeloghlist = history_->updateBookMarks();
     } else {
         history_ = new History(m_vulnBookmarkWidget->treeBookVuln, "nmapsi4/urlListVuln", "nmapsi4/urlListTimeVuln", -1);
         history_->deleteItemBookmark(m_vulnBookmarkWidget->treeBookVuln->currentItem()->text(0));
 
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookvulnlist);
         m_treebookvulnlist = history_->updateBookMarks();
     }
 
@@ -172,7 +172,7 @@ void BookmarkManager::deleteParametersFromBookmark()
         history_->deleteItemBookmark(m_scanBookmarkWidget->treeBookPar->currentItem()->text(0));
     }
 
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
     m_treebookparlist = history_->updateBookMarks();
 
     delete history_;
@@ -225,7 +225,7 @@ void BookmarkManager::saveParametersToBookmarks(const QString profileName, const
         }
     }
 
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treebookparlist);
     m_treebookparlist = history_->updateBookMarks();
 
     delete history_;
@@ -264,7 +264,7 @@ void BookmarkManager::saveAddressToBookmark(const QString addressName, const QSt
     History *newHistory = new History(m_vulnBookmarkWidget->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->addItemHistory(addressName, address);
 
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
     m_treewidgetvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 }
@@ -274,7 +274,7 @@ void BookmarkManager::deleteAddressFromBookmark(const QString addressName)
     History *newHistory = new History(m_vulnBookmarkWidget->treeWidgetVulnUrl, "nmapsi4/nameUrlVuln" , "nmapsi4/nameUrlAddr", -1);
     newHistory->deleteItemBookmark(addressName);
 
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treewidgetvulnlist);
     m_treewidgetvulnlist = newHistory->updateBookMarks();
     delete newHistory;
 }

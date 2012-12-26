@@ -15,43 +15,34 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MONITORHOSTSCANDETAILS_H
-#define MONITORHOSTSCANDETAILS_H
+#ifndef PROFILEHANDLER_H
+#define PROFILEHANDLER_H
 
-#include <QtGui/QDialog>
-#include <QtCore/QList>
-#include <QtCore/QStringList>
 #include <QtCore/QObject>
-#include <QtCore/QTimer>
+#include <QtCore/QPair>
+#include <QtCore/QStringList>
 
-// local include
-#include "ui_monitorhostscandetails.h"
-#include "memorytools.h"
+class MainWindow;
 
-class MonitorDetails : public QDialog, private Ui::monitorDetails
+class ProfileHandler : public QObject
 {
     Q_OBJECT
-
 public:
-    MonitorDetails(QStringList& processFlow, const QString hostname, QWidget* parent);
-    ~MonitorDetails();
+    ProfileHandler(MainWindow* ui, int userId, int defaultProfile);
+    ~ProfileHandler() {};
+    QList< QPair<QString, QString> > defaultScanProfile() const;
+    QStringList getParameters() const;
+    bool containsParameter(const QString& parameter) const;
+    void updateComboParametersFromList(const QStringList& parameters);
 
 private:
-    /*
-     * Load scan realtime line to QListWidget
-     */
-    void loadFlow();
+    int m_userId;
+    int m_savedProfileIndex;
+    MainWindow* m_ui;
 
-    QStringList& m_scanLines;
-    QList<QListWidgetItem*> m_itemsList;
-    int m_itemsSize;
-    QTimer* m_timer;
-
-private slots:
-    /*
-     * Reload scan realtime line, append to QListWidget
-     * only the new line.
-     */
-    void reloadFlow();
+public slots:
+    void loadDefaultProfile();
+    void clearParametersCombo();
 };
+
 #endif

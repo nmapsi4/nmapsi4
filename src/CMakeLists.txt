@@ -49,7 +49,7 @@ SET(SOURCES_CPP platform/selectprofiledialog.cpp
                 app/preference/preferencesdialog.cpp
                 app/profiler/profilermanager.cpp
                 app/profiler/profiler.cpp
-                app/defaultprofile.cpp
+                app/profilehandler.cpp
                 app/mainwindow.cpp
                 app/bookmarkmanager.cpp
                 app/actionmanager.cpp
@@ -81,6 +81,7 @@ SET(SOURCES_H
         app/preference/preferencesdialog.h
         app/bookmarkmanager.h
         app/actionmanager.h
+        app/profilehandler.h
         app/mainwindow.h
 )
 

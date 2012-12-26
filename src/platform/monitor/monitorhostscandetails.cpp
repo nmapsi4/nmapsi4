@@ -32,7 +32,7 @@ MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname,
 
 MonitorDetails::~MonitorDetails()
 {
-    freelist<QListWidgetItem*>::itemDeleteAll(m_itemsList);
+    memory::freelist<QListWidgetItem*>::itemDeleteAll(m_itemsList);
     m_timer->stop();
     delete m_timer;
 }

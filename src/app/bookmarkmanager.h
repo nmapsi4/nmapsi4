@@ -35,8 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #endif
 
-using namespace memory;
-
 class MainWindow;
 
 class ScanBookmarkWidget : public QWidget, public Ui::ScanBookmarkWidgetForm

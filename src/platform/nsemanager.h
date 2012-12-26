@@ -28,8 +28,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "processthread.h"
 #include "memorytools.h"
 
-using namespace memory;
-
 class ProfilerManager;
 
 class NseManager : public QObject

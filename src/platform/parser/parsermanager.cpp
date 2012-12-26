@@ -44,8 +44,8 @@ ParserManager::ParserManager(MainWindow* parent)
 
 ParserManager::~ParserManager()
 {
-    freelist<PObject*>::itemDeleteAll(m_parserObjList);
-    freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
+    memory::freelist<PObject*>::itemDeleteAll(m_parserObjList);
+    memory::freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
 }
 
 void ParserManager::syncSettings()
@@ -56,11 +56,11 @@ void ParserManager::syncSettings()
 
 void ParserManager::clearParserItems()
 {
-    freelist<PObject*>::itemDeleteAll(m_parserObjList);
-    freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
+    memory::freelist<PObject*>::itemDeleteAll(m_parserObjList);
+    memory::freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 
     // clear combo Vulnerabilities
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
@@ -421,8 +421,8 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
 void ParserManager::showParserObj(int hostIndex)
 {
     // Clear widget
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     m_ui->m_scanWidget->listWscan->clear();
     m_ui->m_scanWidget->GItree->clear();
     m_ui->m_scanWidget->treeNSS->clear();

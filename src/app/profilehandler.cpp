@@ -15,9 +15,19 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "profilehandler.h"
 #include "mainwindow.h"
 
-QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
+ProfileHandler::ProfileHandler(MainWindow* ui, int userId, int defaultProfile) :
+    QObject(ui),
+    m_userId(userId),
+    m_savedProfileIndex(defaultProfile),
+    m_ui(ui)
+{
+
+}
+
+QList< QPair<QString, QString> > ProfileHandler::defaultScanProfile() const
 {
     // preload StringList with default static Scan profile
     QPair<QString, QString> profileModel;
@@ -109,83 +119,31 @@ QList< QPair<QString, QString> > MainWindow::defaultScanProfile()
     return listProfileModel;
 }
 
-void MainWindow::buildScanProfileList()
+QStringList ProfileHandler::getParameters() const
 {
-    m_scanWidget->comboParametersProfiles->clear();
-
-    QListIterator< QPair<QString, QString> > i(defaultScanProfile());
-    while (i.hasNext()) {
-        m_scanWidget->comboParametersProfiles->insertItem(m_scanWidget->comboParametersProfiles->count() + 1, i.next().first);
-    }
-
-    m_scanWidget->comboParametersProfiles->insertSeparator(m_scanWidget->comboParametersProfiles->count() + 1);
-
-    // value from treeWidget parameters
-    for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
-        m_scanWidget->comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
-    }
-
-    comboParametersSelectedEvent();
+    return m_ui->m_scanWidget->comboAdv->lineEdit()->text().split(' ');
 }
 
-void MainWindow::comboParametersSelectedEvent()
-{
-    // insert profile from comboPar to comboAdv
-    int currentProfileIndex = m_scanWidget->comboParametersProfiles->currentIndex();
-
-    // if not 0
-    QList< QPair<QString, QString> > listProfileModel = defaultScanProfile();
-    m_scanWidget->comboAdv->clear();
-
-    if (currentProfileIndex <= listProfileModel.size()) {
-        QListIterator< QPair<QString, QString> > i(defaultScanProfile());
-        while (i.hasNext()) {
-            QPair<QString, QString> profile = i.next();
-            if (profile.first.contains(m_scanWidget->comboParametersProfiles->currentText())) {
-                // call static default profile for check
-                m_scanWidget->comboAdv->insertItem(0, profile.second);
-                break;
-            }
-        }
-    } else {
-        // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(),
-                                                                                                        Qt::MatchExactly, 1);
-        m_scanWidget->comboAdv->insertItem(0, resultList_[0]->text(0));
-    }
-}
-
-void MainWindow::resetComboParameters()
-{
-    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    comboParametersSelectedEvent();
-}
-
-QStringList MainWindow::getParameters()
-{
-    return m_scanWidget->comboAdv->lineEdit()->text().split(' ');
-}
-
-bool MainWindow::containsParameter(const QString& parameter)
+bool ProfileHandler::containsParameter(const QString& parameter) const
 {
     return getParameters().contains(parameter) ? true : false;
 }
 
-void MainWindow::updateComboParametersFromList(const QStringList& parameters)
+void ProfileHandler::updateComboParametersFromList(const QStringList& parameters)
 {
-    m_scanWidget->comboAdv->clear();
-    m_scanWidget->comboAdv->insertItem(0, parameters.join(" "));
+    m_ui->m_scanWidget->comboAdv->clear();
+    m_ui->m_scanWidget->comboAdv->insertItem(0, parameters.join(" "));
 }
 
-void MainWindow::loadDefaultProfile()
+void ProfileHandler::loadDefaultProfile()
 {
-    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
-    m_scanWidget->comboAdv->insertItem(0, getParameters().join(" "));
+    m_ui->m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    m_ui->m_scanWidget->comboAdv->insertItem(0, getParameters().join(" "));
 }
 
-void MainWindow::clearParametersCombo()
+void ProfileHandler::clearParametersCombo()
 {
     // reset saved profile or simply the default one
-    m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
-    comboParametersSelectedEvent();
+    m_ui->m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
+    m_ui->comboParametersSelectedEvent();
 }

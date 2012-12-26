@@ -106,7 +106,8 @@ void MainWindow::initObject()
     // restore saved settings
     restoreSettings();
     updateCompleter();
-    loadDefaultProfile();
+    m_profileHandler = new ProfileHandler(this, m_userId, m_savedProfileIndex);
+    m_profileHandler->loadDefaultProfile();
 
     // load first profile
     updateMenuBar();
@@ -119,7 +120,7 @@ void MainWindow::initObject()
     connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
-            this, SLOT(clearParametersCombo()));
+            m_profileHandler, SLOT(clearParametersCombo()));
     connect(m_scanWidget->comboParametersProfiles, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),
@@ -320,18 +321,18 @@ void MainWindow::addHostToMonitor(const QString hostname)
     m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(true);
     m_collections->disableSaveActions();
 
-    QStringList parameters = getParameters();
+    QStringList parameters = m_profileHandler->getParameters();
 
     QHostAddress address(hostname);
 
-    if ((address.protocol() == QAbstractSocket::IPv6Protocol) && !containsParameter("-6")) {
+    if ((address.protocol() == QAbstractSocket::IPv6Protocol) && !m_profileHandler->containsParameter("-6")) {
         // append "-6" parameter
         parameters << "-6";
-        updateComboParametersFromList(parameters);
-    } else if ((address.protocol() == QAbstractSocket::IPv4Protocol) && containsParameter("-6")) {
+        m_profileHandler->updateComboParametersFromList(parameters);
+    } else if ((address.protocol() == QAbstractSocket::IPv4Protocol) && m_profileHandler->containsParameter("-6")) {
         // remove "-6" parameter
         parameters.removeAll("-6");
-        updateComboParametersFromList(parameters);
+        m_profileHandler->updateComboParametersFromList(parameters);
     }
 
     // check for scan lookup
@@ -775,4 +776,56 @@ void MainWindow::clearHostnameCombo()
     // reset combo host bookmarks to default value
     m_scanWidget->comboHostBook->setCurrentIndex(0);
     m_scanWidget->hostEdit->clearEditText();
+}
+
+void MainWindow::buildScanProfileList()
+{
+    m_scanWidget->comboParametersProfiles->clear();
+
+    QListIterator< QPair<QString, QString> > i(m_profileHandler->defaultScanProfile());
+    while (i.hasNext()) {
+        m_scanWidget->comboParametersProfiles->insertItem(m_scanWidget->comboParametersProfiles->count() + 1, i.next().first);
+    }
+
+    m_scanWidget->comboParametersProfiles->insertSeparator(m_scanWidget->comboParametersProfiles->count() + 1);
+
+    // value from treeWidget parameters
+    for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
+        m_scanWidget->comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
+    }
+
+    comboParametersSelectedEvent();
+}
+
+void MainWindow::comboParametersSelectedEvent()
+{
+    // insert profile from comboPar to comboAdv
+    int currentProfileIndex = m_scanWidget->comboParametersProfiles->currentIndex();
+
+    // if not 0
+    QList< QPair<QString, QString> > listProfileModel = m_profileHandler->defaultScanProfile();
+    m_scanWidget->comboAdv->clear();
+
+    if (currentProfileIndex <= listProfileModel.size()) {
+        QListIterator< QPair<QString, QString> > i(m_profileHandler->defaultScanProfile());
+        while (i.hasNext()) {
+            QPair<QString, QString> profile = i.next();
+            if (profile.first.contains(m_scanWidget->comboParametersProfiles->currentText())) {
+                // call static default profile for check
+                m_scanWidget->comboAdv->insertItem(0, profile.second);
+                break;
+            }
+        }
+    } else {
+        // saved user profile
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(),
+                                                                                                        Qt::MatchExactly, 1);
+        m_scanWidget->comboAdv->insertItem(0, resultList_[0]->text(0));
+    }
+}
+
+void MainWindow::resetComboParameters()
+{
+    m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
+    comboParametersSelectedEvent();
 }

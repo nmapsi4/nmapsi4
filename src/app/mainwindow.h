@@ -53,14 +53,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "bookmarkmanager.h"
 #include "actionmanager.h"
 #include "notify.h"
+#include "profilehandler.h"
 
 // system
 #ifndef Q_WS_WIN
 #include <unistd.h>
 #endif
-
-// define class namespace
-using namespace memory;
 
 class ScanWidget : public QWidget, public Ui::ScanWidgetForm
 {
@@ -76,10 +74,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget* parent = 0);
     ~MainWindow();
-    void buildScanProfileList();
     void updateComboBook();
     void updateCompleter();
-    QList< QPair<QString, QString> > defaultScanProfile();
+    void buildScanProfileList();
 
     Vulnerability* m_vulnerability;
     DiscoverManager* m_discoverManager;
@@ -88,6 +85,7 @@ public:
     ParserManager* m_parser;
     BookmarkManager* m_bookmark;
     ActionManager* m_collections;
+    ProfileHandler* m_profileHandler;
     int m_hostCache;
     ScanWidget* m_scanWidget;
     QTabWidget* m_mainTabWidget;
@@ -101,9 +99,6 @@ private:
     void resetOptions();
     void restoreSettings();
     void setDefaultSplitter();
-    void updateComboParametersFromList(const QStringList& parameters);
-    QStringList getParameters();
-    bool containsParameter(const QString& parameter);
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
@@ -136,18 +131,16 @@ private slots:
     void updateScanSection();
     void updateVulnerabilitySection();
     void updateDiscoverSection();
-    void loadDefaultProfile();
-    void resetComboParameters();
     void quickAddressSelectionEvent();
     void saveSettings();
     void newProfile();
     void editProfile();
     void clearHostnameCombo();
-    void clearParametersCombo();
     void resizeVerticalSplitterEvent();
     void resizeHorizontalSplitterEvent();
     void resizeScanListWidgetEvent();
     void resizeHostDetailsWidgetEvent();
+    void resetComboParameters();
 
 #if defined(USE_KDELIBS)
     void hideKWidget();

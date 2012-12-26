@@ -26,7 +26,7 @@ NseManager::NseManager(ProfilerManager* parent)
 
 NseManager::~NseManager()
 {
-    freemap<QString, QTextDocument*>::itemDeleteAll(m_nseHelpCache);
+    memory::freemap<QString, QTextDocument*>::itemDeleteAll(m_nseHelpCache);
 
     if (!m_documentScript.isNull()) {
         delete m_documentScript.data();
@@ -158,7 +158,7 @@ void NseManager::nseTreeDefaultValue()
 void NseManager::nseTreeAvailRestoreValues()
 {
     if (m_itemNseAvail.size()) {
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
     }
 
     foreach(const QString & token, m_nseScriptAvailList) {
@@ -174,7 +174,7 @@ void NseManager::nseTreeAvailRestoreValues()
 void NseManager::nseTreeActiveRestoreValues()
 {
     if (m_itemNseActive.size()) {
-        freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
+        memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
     }
 
     foreach(const QString & token, m_nseScriptActiveList) {

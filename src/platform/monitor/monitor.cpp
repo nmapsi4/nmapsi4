@@ -69,9 +69,9 @@ Monitor::Monitor(MainWindow* parent)
 
 Monitor::~Monitor()
 {
-    freemap<QString, ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
-    freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
-    freelist<DigManager*>::itemDeleteAll(m_digLookupList);
+    memory::freemap<QString, ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
+    memory::freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
+    memory::freelist<DigManager*>::itemDeleteAll(m_digLookupList);
 
     if (m_timer->isActive()) {
         m_timer->stop();
@@ -292,9 +292,9 @@ void Monitor::updateMonitorHost(const QString hostName, int valueIndex, const QS
 
 void Monitor::clearHostMonitor()
 {
-    freemap<QString, ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
-    freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
-    freelist<DigManager*>::itemDeleteAll(m_digLookupList);
+    memory::freemap<QString, ProcessThread*>::itemDeleteAllWithWait(m_scanHashList);
+    memory::freelist<LookupManager*>::itemDeleteAllWithWait(m_internealLookupList);
+    memory::freelist<DigManager*>::itemDeleteAll(m_digLookupList);
 
     if (m_timer->isActive()) {
         m_timer->stop();
@@ -306,7 +306,7 @@ void Monitor::clearHostMonitor()
     m_isHostcached = false;
     updateMaxParallelScan();
 
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_monitorElem);
     m_hostIdList.clear();
 }
 

@@ -88,7 +88,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
 
 DiscoverManager::~DiscoverManager()
 {
-    freelist<Discover*>::itemDeleteAll(m_listDiscover);
+    memory::freelist<Discover*>::itemDeleteAll(m_listDiscover);
 }
 
 void DiscoverManager::syncSettings()
@@ -264,7 +264,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
     }
 
     if (!m_ipCounter) {
-        freelist<Discover*>::itemDeleteAll(m_listDiscover);
+        memory::freelist<Discover*>::itemDeleteAll(m_listDiscover);
         m_discoverWidget->startDiscoverButt->setEnabled(true);
         m_discoverWidget->stopDiscoverButt->setEnabled(false);
         m_discoverWidget->cidrButton->setEnabled(true);
@@ -293,9 +293,9 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
 
 void DiscoverManager::clearDiscover()
 {
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
-    freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreePackets);
-    freelist<Discover*>::itemDeleteAll(m_listDiscover);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreeItemDiscover);
+    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_listTreePackets);
+    memory::freelist<Discover*>::itemDeleteAll(m_listDiscover);
 
     m_ui->m_collections->m_collectionsDiscover.value("scan-single")->setEnabled(false);
     m_ui->m_collections->m_collectionsDiscover.value("scan-all")->setEnabled(false);

@@ -260,7 +260,7 @@ void ProfilerManager::updateComboVerbosity()
 
 void ProfilerManager::loadDefaultBaseProfile()
 {
-    QListIterator< QPair<QString, QString> > i(m_ui->defaultScanProfile());
+    QListIterator< QPair<QString, QString> > i(m_ui->m_profileHandler->defaultScanProfile());
     while (i.hasNext()) {
         m_dialogUi->comboBaseOptions->insertItem(m_dialogUi->comboBaseOptions->count() + 1, i.next().first);
     }
@@ -275,7 +275,7 @@ void ProfilerManager::updateBaseOptions()
     }
 
     QString parameters;
-    QListIterator< QPair<QString, QString> > i(m_ui->defaultScanProfile());
+    QListIterator< QPair<QString, QString> > i(m_ui->m_profileHandler->defaultScanProfile());
     while (i.hasNext()) {
         QPair<QString, QString> profile = i.next();
         if (profile.first == m_dialogUi->comboBaseOptions->currentText()) {

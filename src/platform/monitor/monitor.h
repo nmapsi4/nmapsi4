@@ -41,8 +41,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "lookupmanager.h"
 #include "digmanager.h"
 
-using namespace memory;
-
 class MainWindow;
 
 class MonitorWidget : public QWidget, public Ui::MonitorWidgetForm
