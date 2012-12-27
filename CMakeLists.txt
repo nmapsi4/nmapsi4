@@ -1,7 +1,5 @@
 PROJECT( nmapsi4 )
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
-
 cmake_minimum_required(VERSION 2.6.0)
 
 if (NOT WIN32 AND NOT APPLE)
@@ -21,6 +19,8 @@ else(KDE4_FOUND)
     add_definitions (${QT_DEFINITIONS})
     include(${QT_USE_FILE})
 endif(KDE4_FOUND)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
 
 ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
