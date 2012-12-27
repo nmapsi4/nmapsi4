@@ -18,8 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "config-nmapsi4.h"
+
 #include "ui_scanwidget.h"
-#include <config.h>
 
 // Qt4 include
 #include <QtGui/QMainWindow>

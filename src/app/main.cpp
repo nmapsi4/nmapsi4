@@ -15,13 +15,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config-nmapsi4.h"
+
+#include "mainwindow.h"
+
 #include <QtGui/QApplication>
 #include <QtCore/QTranslator>
 #include <QtCore/QDir>
 #include <QtCore/QLibraryInfo>
-
-#include <config.h>
-#include "mainwindow.h"
 
 
 int main(int argc, char *argv[])

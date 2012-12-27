@@ -18,9 +18,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef NOTIFY_H
 #define NOTIFY_H
 
+#include "config-nmapsi4.h"
+
 #include "style.h"
 #include "pushbuttonorientated.h"
-#include <config.h>
 
 // qt includes
 #include <QtCore/QDebug>

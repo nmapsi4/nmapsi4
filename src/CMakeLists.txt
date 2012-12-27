@@ -1,6 +1,4 @@
-PROJECT(nmapsi4)
 
-configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}

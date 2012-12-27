@@ -1,3 +1,7 @@
+PROJECT( nmapsi4 )
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
+
 cmake_minimum_required(VERSION 2.6.0)
 
 if (NOT WIN32 AND NOT APPLE)
@@ -29,8 +33,6 @@ if(Q_WS_MAC)
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
 endif(Q_WS_MAC)
 
-add_subdirectory( src )
-
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
                 "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake"
                 IMMEDIATE @ONLY )
@@ -50,3 +52,4 @@ endif(KDE4_FOUND)
 
 message("-------------------------------------------------------------------")
 
+add_subdirectory( src )
