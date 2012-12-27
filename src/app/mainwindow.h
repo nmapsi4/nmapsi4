@@ -56,7 +56,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "profilehandler.h"
 
 // system
-#ifndef Q_WS_WIN
+#if !defined(Q_WS_WIN)
 #include <unistd.h>
 #endif
 
