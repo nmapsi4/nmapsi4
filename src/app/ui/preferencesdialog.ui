@@ -135,7 +135,7 @@
    <item row="2" column="2">
     <widget class="QPushButton" name="buttonSave">
      <property name="text">
-      <string>&amp;Ok</string>
+      <string>&amp;OK</string>
      </property>
      <property name="icon">
       <iconset resource="../../images.qrc">

@@ -192,7 +192,7 @@
                 <item>
                  <widget class="QPushButton" name="doneButton">
                   <property name="text">
-                   <string>Done</string>
+                   <string>&amp;OK</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../../images.qrc">
