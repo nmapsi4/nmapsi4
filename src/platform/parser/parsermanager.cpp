@@ -284,11 +284,13 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     if (!generalBuffer_.isEmpty()) {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
-        mainScanTreeElem->setText(0, tmp_host);
+        //tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(0, generalBuffer_);
+        mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
     } else {
-        tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
-        mainScanTreeElem->setText(0, tmp_host);
+        //tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(0, hostCheck);
+        mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
@@ -342,9 +344,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     }
 
     if (mainScanTreeElem->icon(0).isNull()) {
-        mainScanTreeElem->setTextAlignment(1, Qt::AlignHCenter | Qt::AlignVCenter);
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-        mainScanTreeElem->setText(1, "Undiscovered");
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer

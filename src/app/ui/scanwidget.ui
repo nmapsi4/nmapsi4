@@ -62,10 +62,7 @@
         </column>
         <column>
          <property name="text">
-          <string>Os</string>
-         </property>
-         <property name="textAlignment">
-          <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+          <string>Date</string>
          </property>
         </column>
        </widget>
