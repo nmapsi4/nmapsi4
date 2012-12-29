@@ -994,6 +994,29 @@
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
                <layout class="QGridLayout" name="gridLayout_2">
+                <item row="8" column="0">
+                 <widget class="QCheckBox" name="checkTraceroute">
+                  <property name="text">
+                   <string>Traceroute (--traceroute)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <spacer name="verticalSpacer_10">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_40">
                   <property name="text">
@@ -1116,28 +1139,12 @@
                   </property>
                  </widget>
                 </item>
-                <item row="8" column="0">
-                 <widget class="QCheckBox" name="checkTraceroute">
+                <item row="9" column="0">
+                 <widget class="QCheckBox" name="checkPacketTrace">
                   <property name="text">
-                   <string>Traceroute (--traceroute)</string>
+                   <string>Packet trace (--packet-trace)</string>
                   </property>
                  </widget>
-                </item>
-                <item row="3" column="1">
-                 <spacer name="verticalSpacer_10">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Fixed</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                </layout>
               </item>

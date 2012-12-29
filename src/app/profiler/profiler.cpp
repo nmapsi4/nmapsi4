@@ -431,6 +431,11 @@ void Profiler::preLoadOptionsCheckBox()
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("--traceroute", checkDefault);
 
+    // packet-trace
+    checkDefault.first = m_ui->m_dialogUi->checkPacketTrace;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("--packet-trace", checkDefault);
+
     // end options
 }
 
@@ -772,6 +777,11 @@ QStringList Profiler::buildExtensions()
     // traceroute
     if (m_ui->m_dialogUi->checkTraceroute->isChecked()) {
         parameters << "--traceroute";
+    }
+
+    // packet-trace
+    if (m_ui->m_dialogUi->checkPacketTrace->isChecked()) {
+        parameters << "--packet-trace";
     }
 
     if (m_ui->m_dialogUi->checkMaxRetries->isChecked()) {
