@@ -3,9 +3,9 @@ PROJECT( nmapsi4 )
 cmake_minimum_required(VERSION 2.6.0)
 
 if (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt4 4.6 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus REQUIRED)
+    FIND_PACKAGE(Qt4 4.7 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDBus QtDeclarative REQUIRED)
 else (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt4 4.6 COMPONENTS QtCore QtGui QtNetwork QtWebKit REQUIRED)
+    FIND_PACKAGE(Qt4 4.7 COMPONENTS QtCore QtGui QtNetwork QtWebKit QtDeclarative REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
 
 find_package(KDE4)
@@ -41,7 +41,7 @@ ADD_CUSTOM_TARGET( uninstall
   "${CMAKE_COMMAND}" -P "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake" )
 
 message("-------------------------------------------------------------------")
-message(" Required for build:   qt4-dev (>>= 4.6) ")
+message(" Required for build:   qt4-dev (>>= 4.7) ")
 message(" Required for runtime: nmap+nping ( >= 6.00 ), dig ")
 
 if(KDE4_FOUND)

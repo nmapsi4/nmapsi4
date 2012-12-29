@@ -44,6 +44,7 @@ SET(SOURCES_CPP platform/selectprofiledialog.cpp
                 common/processthread.cpp
                 common/pobjects.cpp
                 common/notify.cpp
+                common/package.cpp
                 app/preference/preferencesdialog.cpp
                 app/profiler/profilermanager.cpp
                 app/profiler/profiler.cpp
@@ -89,7 +90,6 @@ set(SOURCES_UI
    platform/ui/about.ui
    platform/ui/monitorhostscandetails.ui
    platform/ui/selectprofiledialog.ui
-   platform/ui/welcomevulnwidget.ui
    app/ui/preferencesdialog.ui
    app/ui/profilerdialog.ui
    app/ui/discoverwidget.ui
@@ -158,6 +158,7 @@ endif(KDE4_FOUND)
 if (Q_WS_X11)
   install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
   install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
+  #install(FILES "platform/qml/vulnerabilityWelcome.qml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/qml)
   install(FILES "desktop/nmapsi4.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
   install(FILES "desktop/nmapsi4-admin.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
   install(FILES "dbus/org.nmapsi4.Nmapsi4.xml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces/)

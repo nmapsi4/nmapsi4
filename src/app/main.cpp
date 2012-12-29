@@ -15,9 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config-nmapsi4.h"
-
 #include "mainwindow.h"
+#include "package.h"
 
 #include <QtGui/QApplication>
 #include <QtCore/QTranslator>
@@ -35,13 +34,7 @@ int main(int argc, char *argv[])
              QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
 
-    QString translationsPath;
-
-#ifndef Q_WS_WIN
-    translationsPath = TRANSLATIONS_PATH;
-#else
-    translationsPath.append(QDir::rootPath() + QDir::toNativeSeparators("program files/nmapsi4/"));
-#endif
+    QString translationsPath(Package::localePath());
 
     QTranslator translator;
     bool translatorResult = translator.load("nmapsi4_" + QLocale::system().name(), translationsPath);
