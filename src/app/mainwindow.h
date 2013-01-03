@@ -23,12 +23,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ui_scanwidget.h"
 
 // Qt4 include
-#include <QtGui/QMainWindow>
-#include <QtGui/QMessageBox>
-#include <QtGui/QSplitter>
-#include <QtGui/QCompleter>
-#include <QtGui/QStringListModel>
-#include <QtGui/QCloseEvent>
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QSplitter>
+#include <QCompleter>
+#include <QStringListModel>
+#include <QCloseEvent>
 #include <QtCore/QHash>
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>

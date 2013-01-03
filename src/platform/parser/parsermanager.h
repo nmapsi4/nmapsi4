@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -21,9 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QObject>
 #include <QtCore/QDir>
 #include <QtCore/QDateTime>
-#include <QtGui/QTreeWidgetItem>
-#include <QtGui/QMessageBox>
-#include <QtGui/QSplitter>
+#include <QTreeWidgetItem>
+#include <QMessageBox>
+#include <QSplitter>
 
 // local inclusion
 #include "pobjects.h"

@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // qt includes
 #include <QtCore/QDebug>
-#include <QtGui/QApplication>
-#include <QtGui/QToolButton>
+#include <QApplication>
+#include <QToolButton>
 
 // kde includes
 #if defined(USE_KDELIBS)

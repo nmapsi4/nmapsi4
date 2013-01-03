@@ -20,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtCore/QObject>
 #include <QtCore/QHash>
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
-#include <QtGui/QToolButton>
-#include <QtGui/QToolBar>
-#include <QtGui/QMenuBar>
+#include <QAction>
+#include <QMenu>
+#include <QToolButton>
+#include <QToolBar>
+#include <QMenuBar>
 
 class MainWindow;
 

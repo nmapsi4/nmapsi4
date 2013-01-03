@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2008-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,9 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QWidget>
-#include <QtGui/QMessageBox>
+#include <QDialog>
+#include <QWidget>
 
 #include "ui_about.h"
 #include "version.h"

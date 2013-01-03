@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "mainwindow.h"
 #include "package.h"
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QtCore/QTranslator>
 #include <QtCore/QDir>
 #include <QtCore/QLibraryInfo>
