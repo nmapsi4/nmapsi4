@@ -18,11 +18,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef STYLE_H
 #define STYLE_H
 
-static const char verticalStyleSheet[] = "QPushButton:checked {border: 2px; border-radius: 2px; "
+static const char verticalStyleSheet[] = "QToolButton:checked {border: 2px; border-radius: 2px; "
         "background-color: palette(highlight); color: palette(highlighted-text); "
         "margin-left: 0px; margin-right: 3px; padding: 4px;} ";
 
-static const char nofifyStyleSheet[] = "QPushButton { color: red; } ";
+static const char nofifyStyleSheet[] = "QToolButton { background-color: palette(highlight) } ";
 
 // sidebar button width
 const int verticalButtonWidth = 25;

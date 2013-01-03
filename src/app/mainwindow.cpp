@@ -42,7 +42,6 @@ ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
-    m_scanWidget(new ScanWidget(this)),
     m_mainTabWidget(new QTabWidget(this)),
     m_userId(0)
 {
@@ -55,6 +54,8 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
+    // allocate memory for scan widget
+    m_scanWidget = new ScanWidget(this);
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
@@ -134,9 +135,22 @@ void MainWindow::initObject()
     connect(m_monitor, SIGNAL(monitorUpdated(int)),
             this, SLOT(updateScanCounter(int)));
 
+    // create welcome qml view
+    QSpacerItem *verticalSpacer = new QSpacerItem(20, 163, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    m_welcomeQmlView = new QDeclarativeView(this);
+    QVBoxLayout *qmlWelcomeLayout = new QVBoxLayout(m_welcomeQmlView);
+    m_welcomeQmlView->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    qmlWelcomeLayout->addItem(verticalSpacer);
+    m_welcomeQmlView->rootContext()->setContextProperty("mainObject", this);
+    m_welcomeQmlView->rootContext()->setContextProperty("version_number", version);
+    //m_hostModel.data()->stringList()
+    updateQmlScanHistory();
+
+    m_welcomeQmlView->setSource(Package::qmlPath("mainWelcome"));
+
     // set saved profile or simply the default one
     m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
-    updateScanSection();
+    updateWelcomeSection();
 
 #if defined(Q_WS_MAC)
     // w/o show() call, mainwindow is not visible in mac osx
@@ -631,8 +645,39 @@ void MainWindow::updateComboHostnameProperties()
             this, SLOT(linkCompleterToHostname()));
 }
 
+void MainWindow::updateWelcomeSection()
+{
+    m_collections->m_collectionsButton.value("welcome-sez")->setChecked(true);
+    m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
+    m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
+
+    m_collections->disableScanSectionToolBar();
+    m_collections->disableBookmarkToolBar();
+    m_collections->disableVulnerabilityToolBar();
+    //m_collections->disableGlobalMenuToolBar();
+    m_collections->enableGlobalMenuToolBar();
+    m_collections->m_discoverToolBar->setVisible(false);
+
+    m_mainTabWidget->insertTab(0, m_welcomeQmlView, QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")), tr("Welcome"));
+    m_mainTabWidget->setCurrentIndex(0);
+
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_scanBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
+
+    m_collections->disableBottomUiToggleActions();
+    m_collections->disableBookmarkMenu();
+
+    updateQmlScanHistory();
+}
+
 void MainWindow::updateScanSection()
 {
+    m_collections->m_collectionsButton.value("welcome-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
@@ -664,6 +709,7 @@ void MainWindow::updateScanSection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
 
     // enable scan action
     m_collections->enableBottomUiToggleActions();
@@ -673,6 +719,7 @@ void MainWindow::updateScanSection()
 void MainWindow::updateVulnerabilitySection()
 {
     Notify::clearButtonNotify(m_collections->m_collectionsButton.value("vuln-sez"));
+    m_collections->m_collectionsButton.value("welcome-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(true);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(false);
@@ -688,6 +735,7 @@ void MainWindow::updateVulnerabilitySection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
     m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget,
                                QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
 
@@ -703,6 +751,7 @@ void MainWindow::updateVulnerabilitySection()
 
 void MainWindow::updateDiscoverSection()
 {
+    m_collections->m_collectionsButton.value("welcome-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("scan-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("vuln-sez")->setChecked(false);
     m_collections->m_collectionsButton.value("discover-sez")->setChecked(true);
@@ -718,6 +767,7 @@ void MainWindow::updateDiscoverSection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
     m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
     m_mainTabWidget->setCurrentIndex(0);
 
@@ -829,4 +879,16 @@ void MainWindow::resetComboParameters()
 {
     m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     comboParametersSelectedEvent();
+}
+
+
+void MainWindow::updateQmlScanHistory()
+{
+    QString hostScanned;
+
+    for (int index = 0; index < 8 && index < m_hostModel.data()->stringList().size(); ++index) {
+        hostScanned.append("+ " + m_hostModel.data()->stringList()[index] + "<hr/>");
+    }
+
+    m_welcomeQmlView->rootContext()->setContextProperty("historyListText", hostScanned);
 }

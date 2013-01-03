@@ -30,5 +30,5 @@ QString Package::localePath()
 
 QUrl Package::qmlPath(QString qmlScript)
 {
-    return QUrl("qrc:/images/platform/qml/" + qmlScript);
+    return QUrl("qrc:/images/platform/qml/" + qmlScript + ".qml");
 }

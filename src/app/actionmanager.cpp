@@ -77,7 +77,8 @@ ActionManager::ActionManager(MainWindow* parent)
     m_discoverToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     m_discoverToolBar->setVisible(false);
 
-    m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomSectionBar);
+    //m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomSectionBar);
+    m_ui->addToolBar(Qt::LeftToolBarArea, m_bottomSectionBar);
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomUiToggleBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_scanToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_vulnerabilityToolBar);
@@ -360,45 +361,70 @@ void ActionManager::setupMenuBar()
 
 void ActionManager::createSectionsBar()
 {
-    PushButtonOrientated* actionButt;
+    QToolButton* actionButt;
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Scan host(s)"), m_ui);
+    m_bottomSectionBar->setIconSize(QSize(26,26));
+    // FIXME: qtoolbutton problem with textunderIcon
+
+    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")));
+    actionButt->setText(tr("Welcome"));
+    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    actionButt->setCheckable(true);
+    m_collectionsButton.insert("welcome-sez", actionButt);
+    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateWelcomeSection()));
+    m_bottomSectionBar->addWidget(actionButt);
+
+    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+    actionButt->setText(tr("Scan host(s)"));
+    actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     actionButt->setToolTip(tr("Scan host(s)"));
-    //actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateScanSection()));
     m_bottomSectionBar->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), tr("Vulnerability"), m_ui);
+    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    actionButt->setText(tr("Vulnerability"));
+    actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     actionButt->setToolTip(tr("Check Vulnerabilities"));
-    //actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateVulnerabilitySection()));
     m_bottomSectionBar->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), tr("Network Discover"), m_ui);
+    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
+    actionButt->setText(tr("Discover"));
+    actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     actionButt->setToolTip(tr("Network Discover"));
-    //actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("discover-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateDiscoverSection()));
     m_bottomSectionBar->addWidget(actionButt);
 
-    m_bottomSectionBar->addSeparator();
-
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Show/Hide host list"), m_ui);
+    // toggle action
+    actionButt = new QToolButton(m_ui);
+    actionButt->setText(tr("Show/Hide host list"));
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/view-restore.png")));
+    actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     actionButt->setToolTip(tr("Show/Hide Host List"));
-    actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-list", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeScanListWidgetEvent()));
     m_bottomUiToggleBar->addWidget(actionButt);
 
-    actionButt = new PushButtonOrientated(QIcon(QString::fromUtf8(":/images/images/view-restore.png")), tr("Show/Hide host details"), m_ui);
+    actionButt = new QToolButton(m_ui);
+    actionButt->setText(tr("Show/Hide host details"));
+    actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/view-restore.png")));
+    actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     actionButt->setToolTip(tr("Show/Hide Host Details"));
-    actionButt->setFlat(true);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("details-list", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeHostDetailsWidgetEvent()));

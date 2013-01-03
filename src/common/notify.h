@@ -21,11 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config-nmapsi4.h"
 
 #include "style.h"
-#include "pushbuttonorientated.h"
 
 // qt includes
 #include <QtCore/QDebug>
 #include <QtGui/QApplication>
+#include <QtGui/QToolButton>
 
 // kde includes
 #if defined(USE_KDELIBS)
@@ -37,9 +37,9 @@ class Notify
 {
 
 public:
-    static void startButtonNotify(PushButtonOrientated* button);
-    static void setCheckedNotify(PushButtonOrientated* button);
-    static void clearButtonNotify(PushButtonOrientated* button);
+    static void startButtonNotify(QToolButton* button);
+    static void setCheckedNotify(QToolButton* button);
+    static void clearButtonNotify(QToolButton* button);
     static void notificationMessage(const QString& hostName, const QString& message);
 };
 

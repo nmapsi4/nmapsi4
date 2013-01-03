@@ -17,17 +17,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "notify.h"
 
-void Notify::startButtonNotify(PushButtonOrientated* button)
+void Notify::startButtonNotify(QToolButton* button)
 {
     button->setStyleSheet(nofifyStyleSheet);
 }
 
-void Notify::setCheckedNotify(PushButtonOrientated* button)
+void Notify::setCheckedNotify(QToolButton* button)
 {
     button->setStyleSheet(verticalStyleSheet);
 }
 
-void Notify::clearButtonNotify(PushButtonOrientated* button)
+void Notify::clearButtonNotify(QToolButton* button)
 {
     button->setStyleSheet("");
 }

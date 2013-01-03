@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
 #include <QtCore/QList>
+#include <QtDeclarative/QDeclarativeContext>
 
 // KDE include
 #if defined(USE_KDELIBS)
@@ -89,6 +90,7 @@ public:
     ProfileHandler* m_profileHandler;
     int m_hostCache;
     ScanWidget* m_scanWidget;
+    QDeclarativeView* m_welcomeQmlView;
     QTabWidget* m_mainTabWidget;
 
 #if defined(USE_KDELIBS)
@@ -100,6 +102,7 @@ private:
     void resetOptions();
     void restoreSettings();
     void setDefaultSplitter();
+    void updateQmlScanHistory();
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
@@ -118,6 +121,9 @@ public slots:
     void startScan();
     void updateComboHostnameProperties();
     void comboParametersSelectedEvent();
+    Q_INVOKABLE void updateScanSection();
+    Q_INVOKABLE void updateVulnerabilitySection();
+    Q_INVOKABLE void updateDiscoverSection();
 
 private slots:
     void initObject();
@@ -129,9 +135,7 @@ private slots:
     void startPreferencesDialog();
     void syncSettings();
     void linkCompleterToHostname();
-    void updateScanSection();
-    void updateVulnerabilitySection();
-    void updateDiscoverSection();
+    void updateWelcomeSection();
     void quickAddressSelectionEvent();
     void saveSettings();
     void newProfile();

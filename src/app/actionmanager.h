@@ -26,8 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtGui/QToolBar>
 #include <QtGui/QMenuBar>
 
-#include <pushbuttonorientated.h>
-
 class MainWindow;
 
 class ActionManager : public QObject
@@ -58,7 +56,7 @@ public:
     void enableSaveActions();
     void disableSaveActions();
 
-    QHash<QString, PushButtonOrientated*> m_collectionsButton;
+    QHash<QString, QToolButton*> m_collectionsButton;
     QHash<QString, QAction*> m_collectionsDiscover;
     QHash<QString, QAction*> m_collectionsScanSection;
     QHash<QString, QAction*> m_collectionsVulnerability;
