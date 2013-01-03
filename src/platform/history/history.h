@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2008-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -19,11 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HISTORY_H
 
 #include <QtCore/QList>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
 #include <QtCore/QSettings>
 #include <QtCore/QDateTime>
 #include <QtCore/QString>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 
 #include "memorytools.h"
 

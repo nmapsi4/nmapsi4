@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,9 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PROFILERMANAGER_H
 #define PROFILERMANAGER_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QListWidgetItem>
-#include <QtGui/QMessageBox>
+#include <QDialog>
+#include <QListWidgetItem>
+#include <QMessageBox>
 #include <QtCore/QDebug>
 
 #include "ui_profilerdialog.h"

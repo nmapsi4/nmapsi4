@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NSEMANAGER_H
 
 #include <QtCore/QObject>
-#include <QtGui/QTextDocument>
-#include <QtGui/QTreeWidgetItem>
+#include <QTextDocument>
+#include <QTreeWidgetItem>
 #include <QtCore/QSettings>
 #include <QtCore/QWeakPointer>
 #include <QtWebKit/QWebView>

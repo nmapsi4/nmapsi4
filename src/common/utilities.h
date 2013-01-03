@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,9 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
-#include <QtGui/QFileDialog>
-#include <QtGui/QLineEdit>
-#include <QtGui/QDesktopServices>
+#include <QFileDialog>
+#include <QLineEdit>
+#include <QDesktopServices>
 #include <QtCore/QObject>
 #include <QtCore/QDir>
 #include <QtCore/QUrl>

@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PREFERENCESDIALOG_H
 #define PREFERENCESDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QtCore/QSettings>
 
 // local include

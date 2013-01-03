@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -20,10 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtCore/QStringList>
 #include <QtCore/QPair>
-#include <QtGui/QLineEdit>
-#include <QtGui/QSpinBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QCheckBox>
+#include <QLineEdit>
+#include <QSpinBox>
+#include <QComboBox>
+#include <QCheckBox>
 
 class ProfilerManager;
 
