@@ -41,7 +41,6 @@ ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
-    m_scanWidget(new ScanWidget(this)),
     m_mainTabWidget(new QTabWidget(this)),
     m_userId(0)
 {
@@ -54,6 +53,8 @@ void MainWindow::initObject()
     m_userId = getuid();
 #endif
 
+    //allocate scanWidget
+    m_scanWidget = new ScanWidget(this);
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
