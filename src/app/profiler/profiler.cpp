@@ -74,6 +74,9 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
 
                             if (j != lineEditList.end()) {
                                 (*j)->setText(parameters[index + 1]);
+                                if (!(*j)->isEnabled()) {
+                                    (*j)->setEnabled(true);
+                                }
                             }
                             // check value for spin box
                             QHash<QString, QSpinBox*>::const_iterator z = spinBoxList.find(parameters[index]);
@@ -620,6 +623,8 @@ QStringList Profiler::buildExtensions()
             parameters << m_ui->m_dialogUi->portEdit->text();
         } else {
             QMessageBox::warning(m_ui, "NmapSI4", tr("No Ports Range (ex: 20-80)\n"), tr("Close"));
+            m_ui->m_dialogUi->portCombo->setCurrentIndex(0);
+            m_ui->m_dialogUi->portEdit->setEnabled(false);
         }
     default:
         break;
