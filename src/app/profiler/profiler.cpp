@@ -278,7 +278,7 @@ void Profiler::preLoadOptionsCheckBox()
     // Dont'ping
     checkDefault.first = m_ui->m_dialogUi->notpingBox;
     checkDefault.second = "none";
-    preLoadCheckBoxList.insert("-P0", checkDefault);
+    preLoadCheckBoxList.insert("-Pn", checkDefault);
 
     // ICMP echo
     checkDefault.first = m_ui->m_dialogUi->checkIcmpEcho;
@@ -600,7 +600,7 @@ QStringList Profiler::buildExtensions()
     }
 
     if (m_ui->m_dialogUi->notpingBox->isChecked()) {
-        parameters << "-P0";
+        parameters << "-Pn";
     }
 
     if (m_ui->m_dialogUi->checkOS->isChecked()) {

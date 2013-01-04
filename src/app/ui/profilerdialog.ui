@@ -630,7 +630,7 @@
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="notpingBox">
                   <property name="text">
-                   <string>Don't Ping (-P0)</string>
+                   <string>Don't Ping (-Pn)</string>
                   </property>
                  </widget>
                 </item>

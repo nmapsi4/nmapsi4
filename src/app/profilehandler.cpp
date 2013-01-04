@@ -63,7 +63,7 @@ QList< QPair<QString, QString> > ProfileHandler::defaultScanProfile() const
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Intense Scan, no ping");
-        profileModel.second = "-T4 -A -v -P0 --traceroute";
+        profileModel.second = "-T4 -A -v -Pn --traceroute";
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Intense Scan, all TCP ports");
@@ -108,7 +108,7 @@ QList< QPair<QString, QString> > ProfileHandler::defaultScanProfile() const
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Intense Scan, no ping");
-        profileModel.second = "-T4 -A -v -P0";
+        profileModel.second = "-T4 -A -v -Pn";
         listProfileModel.push_back(profileModel);
 
         profileModel.first = tr("Intense Scan, all TCP ports");
