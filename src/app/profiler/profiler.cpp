@@ -51,6 +51,9 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
 
                             if (j != lineEditList.end()) {
                                 (*j)->setText(parameters[index + 1]);
+                                if (!(*j)->isEnabled()) {
+                                    (*j)->setEnabled(true);
+                                }
                                 index++;
                             }
                         }
@@ -625,7 +628,9 @@ QStringList Profiler::buildExtensions()
             parameters << "-p";
             parameters << m_ui->m_dialogUi->portEdit->text();
         } else {
-            QMessageBox::warning(m_ui, "NmapSI4", tr("No Ports Range (ex: 20-80)\n"), tr("Close"));
+            QMessageBox::warning(m_ui, "NmapSI4", tr("No Ports Range (ex: 20-80,2000)\n"), tr("Close"));
+            m_ui->m_dialogUi->portCombo->setCurrentIndex(0);
+            m_ui->m_dialogUi->portEdit->setEnabled(false);
         }
     default:
         break;

@@ -116,6 +116,9 @@ void ProfilerManager::createQList()
     m_scanW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/viewmag.png")), tr("Scan"));
     m_dialogUi->optionsListScan->addItem(m_scanW);
 
+    m_targetW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/Categories-applications-development-web-icon.png")), tr("Target"));
+    m_dialogUi->optionsListScan->addItem(m_targetW);
+
     m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("Options"));
     m_dialogUi->optionsListScan->addItem(m_toolW);
 
@@ -162,6 +165,8 @@ void ProfilerManager::optionListUpdate()
         m_dialogUi->stackedOptions->setCurrentIndex(4);
     } else if (m_nseW->isSelected()) {
         m_dialogUi->stackedOptions->setCurrentIndex(5);
+    } else if (m_targetW->isSelected()) {
+        m_dialogUi->stackedOptions->setCurrentIndex(6);
     }
 }
 

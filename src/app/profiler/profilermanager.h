@@ -64,6 +64,7 @@ private:
     QListWidgetItem *m_discoverW;
     QListWidgetItem *m_timingW;
     QListWidgetItem *m_nseW;
+    QListWidgetItem *m_targetW;
     int m_userId;
     Profiler *m_profiler;
     MainWindow *m_ui;
