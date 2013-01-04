@@ -183,6 +183,9 @@ void MainWindow::newProfile()
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
 
+    connect(pManager.data(), SIGNAL(doneQuickProfile(QStringList)),
+            m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
+
     pManager.data()->exec();
 
     if (!pManager.isNull()) {
@@ -197,6 +200,9 @@ void MainWindow::editProfile()
 
     connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
+
+    connect(pManager.data(), SIGNAL(doneQuickProfile(QStringList)),
+            m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
 
     pManager.data()->exec();
 

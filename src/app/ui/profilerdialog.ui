@@ -201,6 +201,20 @@
                  </widget>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="pushButtonQuickProfile">
+                  <property name="toolTip">
+                   <string>Do not save the profile</string>
+                  </property>
+                  <property name="text">
+                   <string>Quick Profile</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../../images.qrc">
+                    <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="cancelButton">
                   <property name="text">
                    <string>Cancel</string>

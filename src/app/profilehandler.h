@@ -33,7 +33,6 @@ public:
     QList< QPair<QString, QString> > defaultScanProfile() const;
     QStringList getParameters() const;
     bool containsParameter(const QString& parameter) const;
-    void updateComboParametersFromList(const QStringList& parameters);
 
 private:
     int m_userId;
@@ -43,6 +42,7 @@ private:
 public slots:
     void loadDefaultProfile();
     void clearParametersCombo();
+    void updateComboParametersFromList(const QStringList& parameters);
 };
 
 #endif

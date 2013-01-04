@@ -77,6 +77,8 @@ void ProfilerManager::initObject()
             this, SLOT(updateComboVerbosity()));
     connect(m_dialogUi->doneButton, SIGNAL(clicked(bool)),
             this, SLOT(exit()));
+    connect(m_dialogUi->pushButtonQuickProfile, SIGNAL(clicked(bool)),
+            this, SLOT(exitWithQuickProfile()));
     connect(m_dialogUi->cancelButton, SIGNAL(clicked(bool)),
             this, SLOT(close()));
     connect(m_dialogUi->comboBaseOptions, SIGNAL(activated(QString)),
@@ -143,6 +145,19 @@ void ProfilerManager::exit()
     } else {
         QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name."), tr("Close"));
     }
+}
+
+void ProfilerManager::exitWithQuickProfile()
+{
+    QStringList parameters(m_profiler->buildExtensions());
+
+    if (!parameters.isEmpty()) {
+        emit doneQuickProfile(parameters);
+        close();
+    } else {
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("No option selected."), tr("Close"));
+    }
+
 }
 
 void ProfilerManager::reloadScanParameters()

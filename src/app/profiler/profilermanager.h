@@ -71,6 +71,7 @@ private:
 
 signals:
     void doneParBook(const QString profileName, const QString profilePar);
+    void doneQuickProfile(const QStringList profilePar);
 
 private slots:
     void optionListUpdate();
@@ -78,6 +79,7 @@ private slots:
     void updateOptions();
     void updateComboVerbosity();
     void exit();
+    void exitWithQuickProfile();
     void updateBaseOptions();
 };
 
