@@ -182,10 +182,6 @@ void ProfilerManager::updatePortCombo()
         m_dialogUi->portEdit->setEnabled(false);
         break;
     case 2:
-//    Most Important
-        m_dialogUi->portEdit->setEnabled(false);
-        break;
-    case 3:
 //    Range
         m_dialogUi->portEdit->setEnabled(true);
         break;

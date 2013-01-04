@@ -204,8 +204,6 @@ void Profiler::preLoadOptionsCombo()
     comboDefault.second = 1;
     preLoadComboList.insert("-p-", comboDefault);
     comboDefault.second = 2;
-    preLoadComboList.insert("-F", comboDefault);
-    comboDefault.second = 3;
     //parameters is request
     preLoadComboList.insert("-p", comboDefault);
     lineEditList.insert("-p", m_ui->m_dialogUi->portEdit);
@@ -441,6 +439,15 @@ void Profiler::preLoadOptionsCheckBox()
     preLoadCheckBoxList.insert("--packet-trace", checkDefault);
 
     // end options
+
+    // start Target
+
+    // Fast Scan
+    checkDefault.first = m_ui->m_dialogUi->checkBoxFastScan;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-F", checkDefault);
+
+    // end Target
 }
 
 void Profiler::resetOptions()
@@ -619,10 +626,6 @@ QStringList Profiler::buildExtensions()
         parameters << "-p-";
         break;
     case 2:
-//    Most Important
-        parameters << "-F";
-        break;
-    case 3:
 //    Range
         if (!m_ui->m_dialogUi->portEdit->text().isEmpty()) {
             parameters << "-p";
@@ -884,6 +887,15 @@ QStringList Profiler::buildExtensions()
             m_ui->m_dialogUi->checkSourcePort->setCheckState(Qt::Unchecked);
         }
     }
+
+    // start Target
+
+    // Fast Scan
+    if (m_ui->m_dialogUi->checkBoxFastScan->isChecked()) {
+        parameters << "-F";
+    }
+
+    // end Target
 
     return parameters;
 }
