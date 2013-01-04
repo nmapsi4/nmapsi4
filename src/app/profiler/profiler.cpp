@@ -222,10 +222,6 @@ void Profiler::preLoadOptionsCombo()
     preLoadComboList.insert("-v", comboDefault);
     comboDefault.second = 2;
     preLoadComboList.insert("-vv", comboDefault);
-    comboDefault.second = 3;
-    preLoadComboList.insert("-d", comboDefault);
-    comboDefault.second = 4;
-    preLoadComboList.insert("-d2", comboDefault);
 }
 
 void Profiler::preLoadOptionsCheckBox()
@@ -403,6 +399,11 @@ void Profiler::preLoadOptionsCheckBox()
     checkDefault.second = "";
     preLoadCheckBoxList.insert("-g", checkDefault);
     lineEditList.insert("-g", m_ui->m_dialogUi->lineSourcePort);
+
+    // debugging level
+    checkDefault.first = m_ui->m_dialogUi->checkBoxDebuggingLevel;
+    checkDefault.second = "none";
+    preLoadCheckBoxList.insert("-d", checkDefault);
 
     // ipv4 ttl
     checkDefault.first = m_ui->m_dialogUi->TcheckIpv4ttl;
@@ -749,14 +750,6 @@ QStringList Profiler::buildExtensions()
 //    Very Verbose
         parameters << "-vv";
         break;
-    case 3:
-//    Debug
-        parameters << "-d";
-        break;
-    case 4:
-//    Verbose Debug
-        parameters << "-d2";
-        break;
     default:
         break;
     }
@@ -789,6 +782,11 @@ QStringList Profiler::buildExtensions()
         if (!m_ui->m_dialogUi->lineMaxRetries->text().isEmpty()) {
             parameters << m_ui->m_dialogUi->lineMaxRetries->text();
         }
+    }
+
+    // Debugging level
+    if (m_ui->m_dialogUi->checkBoxDebuggingLevel->isChecked()) {
+        parameters << "-d";
     }
 
     // Timing options
