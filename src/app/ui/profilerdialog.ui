@@ -192,11 +192,11 @@
                 <item>
                  <widget class="QPushButton" name="doneButton">
                   <property name="text">
-                   <string>&amp;OK</string>
+                   <string>Save Profile</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../../images.qrc">
-                    <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
+                    <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
                   </property>
                  </widget>
                 </item>
@@ -206,7 +206,7 @@
                    <string>Do not save the profile</string>
                   </property>
                   <property name="text">
-                   <string>Quick Profile</string>
+                   <string>Use Profile</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../../images.qrc">
