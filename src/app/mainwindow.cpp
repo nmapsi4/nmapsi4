@@ -121,6 +121,8 @@ void MainWindow::initObject()
     // connect slots
     connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
             this, SLOT(clearHostnameCombo()));
+    connect(m_scanWidget->pushButtonLoadFromFile, SIGNAL(clicked()),
+            this, SLOT(loadTargetListFromFile()));
     connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
             m_profileHandler, SLOT(clearParametersCombo()));
     connect(m_scanWidget->comboParametersProfiles, SIGNAL(currentIndexChanged(QString)),
@@ -897,4 +899,46 @@ void MainWindow::updateQmlScanHistory()
     }
 
     m_welcomeQmlView->rootContext()->setContextProperty("historyListText", hostScanned);
+}
+
+void MainWindow::loadTargetListFromFile()
+{
+    const QString& fileName = QFileDialog::getOpenFileName(this, tr("Select the file"), "/home", "");
+
+    QFile *targetFile = new QFile(fileName);
+
+    if (!targetFile->open(QIODevice::ReadOnly))
+    {
+        return;
+    }
+
+    QTextStream buffer(targetFile);
+    QString targetListOneLine;
+    QString tmpLine;
+    int lineCounter=0;
+
+    while (!buffer.atEnd())
+    {
+        tmpLine = buffer.readLine();
+        lineCounter++;
+
+        if ((lineCounter >= 2) && (!tmpLine.startsWith(QLatin1String(" ")))) {
+            targetListOneLine.append(' ');
+        }
+
+        targetListOneLine.append(tmpLine);
+    }
+
+    // fix wrong list format (target1,target2,target3)
+    if (targetListOneLine.contains(',')) {
+        targetListOneLine.replace(',',' ');
+    }
+
+    qDebug() << "Load list from file:: " << targetListOneLine;
+
+    delete targetFile;
+
+    // to load the host list in the hostname line edit
+    updateComboHostnameProperties();
+    m_scanWidget->hostEdit->insertItem(0, targetListOneLine);
 }

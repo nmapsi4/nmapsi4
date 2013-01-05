@@ -148,7 +148,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Clear</string>
+            <string>Clear host list</string>
            </property>
            <property name="text">
             <string/>
@@ -185,6 +185,35 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="pushButtonLoadFromFile">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load target list from file &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ex&lt;/span&gt;: target_test.txt&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Format&lt;/span&gt;: &lt;/p&gt;&lt;p&gt;target1 target2 target3&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;OR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;target1(no space)&lt;/p&gt;&lt;p&gt;target2(no space)&lt;/p&gt;&lt;p&gt;target3(no space)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../images.qrc">
+             <normaloff>:/images/images/arrow-down-double.png</normaloff>:/images/images/arrow-down-double.png</iconset>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QComboBox" name="comboHostBook">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -209,6 +238,9 @@
              <width>0</width>
              <height>0</height>
             </size>
+           </property>
+           <property name="toolTip">
+            <string>Select an host or a range from history</string>
            </property>
           </widget>
          </item>
@@ -254,7 +286,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Save Profile</string>
+            <string>Clear parameters list</string>
            </property>
            <property name="text">
             <string/>
@@ -282,6 +314,9 @@
              <width>300</width>
              <height>16777215</height>
             </size>
+           </property>
+           <property name="toolTip">
+            <string>Select a profile</string>
            </property>
            <property name="insertPolicy">
             <enum>QComboBox::InsertAfterCurrent</enum>

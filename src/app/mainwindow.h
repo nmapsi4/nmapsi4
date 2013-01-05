@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
 #include <QtCore/QList>
+#include <QtCore/QFile>
 #include <QtDeclarative/QDeclarativeContext>
 
 // KDE include
@@ -146,6 +147,7 @@ private slots:
     void resizeScanListWidgetEvent();
     void resizeHostDetailsWidgetEvent();
     void resetComboParameters();
+    void loadTargetListFromFile();
 
 #if defined(USE_KDELIBS)
     void hideKWidget();
