@@ -144,8 +144,7 @@ void MainWindow::initObject()
     m_welcomeQmlView->setResizeMode(QDeclarativeView::SizeRootObjectToView);
     qmlWelcomeLayout->addItem(verticalSpacer);
     m_welcomeQmlView->rootContext()->setContextProperty("mainObject", this);
-    m_welcomeQmlView->rootContext()->setContextProperty("version_number", version);
-    //m_hostModel.data()->stringList()
+    m_welcomeQmlView->rootContext()->setContextProperty("version_number", VERSION);
     updateQmlScanHistory();
 
     m_welcomeQmlView->setSource(Package::qmlPath("mainWelcome"));

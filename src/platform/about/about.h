@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QWidget>
 
 #include "ui_about.h"
-#include "version.h"
+#include "config-nmapsi4.h"
 
 class About : public QDialog, private Ui::AboutUi
 {

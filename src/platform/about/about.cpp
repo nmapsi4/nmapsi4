@@ -23,6 +23,6 @@ About::About(QWidget *parent)
     setupUi(this);
 
     QString versionText = labelVersion->text();
-    versionText.append(version);
+    versionText.append(VERSION);
     labelVersion->setText(versionText);
 }
