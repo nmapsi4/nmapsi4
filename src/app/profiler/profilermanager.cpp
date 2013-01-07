@@ -121,7 +121,7 @@ void ProfilerManager::createQList()
     m_targetW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/Categories-applications-development-web-icon.png")), tr("Target"));
     m_dialogUi->optionsListScan->addItem(m_targetW);
 
-    m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("Options"));
+    m_toolW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("Other"));
     m_dialogUi->optionsListScan->addItem(m_toolW);
 
     m_discoverW = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Ping"));
