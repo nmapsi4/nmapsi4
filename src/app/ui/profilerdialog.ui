@@ -73,10 +73,7 @@
           <number>0</number>
          </property>
          <widget class="QWidget" name="page">
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <property name="margin">
-            <number>0</number>
-           </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
            <item>
             <widget class="QGroupBox" name="groupBox_8">
              <property name="title">
@@ -173,59 +170,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <spacer name="horizontalSpacer">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="doneButton">
-                  <property name="text">
-                   <string>Save Profile</string>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../../images.qrc">
-                    <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="pushButtonQuickProfile">
-                  <property name="toolTip">
-                   <string>Do not save the profile</string>
-                  </property>
-                  <property name="text">
-                   <string>Use Profile</string>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../../images.qrc">
-                    <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="cancelButton">
-                  <property name="text">
-                   <string>Cancel</string>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="../../images.qrc">
-                    <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
               </item>
              </layout>
             </widget>
@@ -1439,6 +1383,59 @@
            </item>
           </layout>
          </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="doneButton">
+         <property name="text">
+          <string>Save Profile</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../images.qrc">
+           <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonQuickProfile">
+         <property name="toolTip">
+          <string>Do not save the profile</string>
+         </property>
+         <property name="text">
+          <string>Use Profile</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../images.qrc">
+           <normaloff>:/images/images/dialog-ok-apply.png</normaloff>:/images/images/dialog-ok-apply.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancelButton">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../images.qrc">
+           <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
+         </property>
         </widget>
        </item>
       </layout>

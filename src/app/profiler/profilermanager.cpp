@@ -136,14 +136,14 @@ void ProfilerManager::createQList()
 
 void ProfilerManager::exit()
 {
-    if (!m_dialogUi->profileNameLine->text().isEmpty()) {
-        QString parameters(m_profiler->buildExtensions().join(" "));
-        qDebug() << "Profiler::Parameters:: " << parameters;
+    QString parameters(m_profiler->buildExtensions().join(" "));
+    qDebug() << "Profiler::Parameters:: " << parameters;
 
+    if (!m_dialogUi->profileNameLine->text().isEmpty() && !parameters.isEmpty()) {
         emit doneParBook(m_dialogUi->profileNameLine->text(), parameters);
         close();
     } else {
-        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or selected the options."), tr("Close"));
     }
 }
 
