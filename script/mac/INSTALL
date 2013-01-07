@@ -1,0 +1,18 @@
+NOTE: This package for Mac Osx is highly experimental.
+COMPILED: Mac Osx 10.7.4 with Qt 4.8.3
+
+Using nmapsi4
+
+First:
+* Install nmap
++ http://nmap.org/dist/nmap-6.25.dmg
+* Install Qt4
++ http://releases.qt-project.org/qt4/source/qt-mac-opensource-4.8.4.dmg
+
+Second: 
++ crate a directory (ex: nmapsi4-0.4)
++ copy on it nmapsi4.app and start-nmapsi4.command script
+* NOTE: change path in start-nmapsi4.command with current "nmapsi4.app" location (open it with text editor)
++ launch start-nmapsi4.command and to type the administrator password
+
++ OR to use sudo nmapsi4.app/Contents/MacOS/nmapsi4
