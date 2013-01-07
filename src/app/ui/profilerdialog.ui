@@ -70,7 +70,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedOptions">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -133,6 +133,9 @@
                 </item>
                 <item row="1" column="1">
                  <widget class="QComboBox" name="comboBaseOptions">
+                  <property name="toolTip">
+                   <string>Select base parameters for your profile</string>
+                  </property>
                   <item>
                    <property name="text">
                     <string>None</string>
@@ -347,6 +350,9 @@
                <layout class="QGridLayout" name="gridLayout_3">
                 <item row="4" column="0">
                  <widget class="QCheckBox" name="checkOS">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Operating system detection&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Attempt to discover the operating &lt;/p&gt;&lt;p&gt;system running on remote systems.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>OS Detection (-O)</string>
                   </property>
@@ -354,6 +360,9 @@
                 </item>
                 <item row="6" column="0">
                  <widget class="QCheckBox" name="checkIpv6">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IPv6 support&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Enable IPv6 scanning.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>Ipv6 support (-6)</string>
                   </property>
@@ -368,6 +377,9 @@
                 </item>
                 <item row="2" column="0">
                  <widget class="QCheckBox" name="checkAggressiveOptions">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable all advanced/aggressive options&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Enable OS detection (-O), &lt;/p&gt;&lt;p&gt;version detection (-sV), &lt;/p&gt;&lt;p&gt;script scanning (-sC), &lt;/p&gt;&lt;p&gt;and traceroute (--traceroute).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>Aggressive options (-A)</string>
                   </property>
@@ -382,6 +394,9 @@
                 </item>
                 <item row="1" column="0">
                  <widget class="QCheckBox" name="checkIdleScan">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Idle Scan (Zombie)&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Scan by spoofing packets from a zombie computer &lt;/p&gt;&lt;p&gt;so that the targets receive no packets from your &lt;/p&gt;&lt;p&gt;IP address. The zombie must meet certain conditions &lt;/p&gt;&lt;p&gt;which Nmap will check before scanning.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Example input:&lt;/p&gt;&lt;p&gt;host.example.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>Idle Scan (-sl)</string>
                   </property>
@@ -396,6 +411,9 @@
                 </item>
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="checkFtpBounce">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;FTP bounce attack&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Use an FTP server to port scan other hosts by sending &lt;/p&gt;&lt;p&gt;a file to each interesting port of a target host.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Example input:&lt;/p&gt;&lt;p&gt;username:password@server:port&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>FTP bounce attack (-b)</string>
                   </property>
@@ -403,6 +421,9 @@
                 </item>
                 <item row="5" column="0">
                  <widget class="QCheckBox" name="versionBox">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version detection&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Attempt to discover the version &lt;/p&gt;&lt;p&gt;number of services running on remote ports.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string>Version Probe (-sV)</string>
                   </property>
