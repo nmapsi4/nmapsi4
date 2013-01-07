@@ -248,11 +248,6 @@ void Profiler::preLoadOptionsCheckBox()
     checkDefault.second = "none";
     preLoadCheckBoxList.insert("-A", checkDefault);
 
-    // RPC scan
-    checkDefault.first = m_ui->m_dialogUi->rpcBox;
-    checkDefault.second = "none";
-    preLoadCheckBoxList.insert("-sR", checkDefault);
-
     // OS Detection
     checkDefault.first = m_ui->m_dialogUi->checkOS;
     checkDefault.second = "none";
@@ -600,10 +595,6 @@ QStringList Profiler::buildExtensions()
     // Aggressive options
     if (m_ui->m_dialogUi->checkAggressiveOptions->isChecked()) {
         parameters << "-A";
-    }
-    // start option scan
-    if (m_ui->m_dialogUi->rpcBox->isChecked()) {
-        parameters << "-sR";
     }
 
     if (m_ui->m_dialogUi->versionBox->isChecked()) {
