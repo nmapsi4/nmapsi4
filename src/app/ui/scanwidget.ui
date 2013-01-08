@@ -465,69 +465,13 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="nseResultTab">
-         <attribute name="icon">
-          <iconset resource="../../images.qrc">
-           <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
-         </attribute>
-         <attribute name="title">
-          <string>Nse result</string>
-         </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_15">
-          <property name="margin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QTreeWidget" name="treeNSS">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>170</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Sunken</enum>
-            </property>
-            <property name="lineWidth">
-             <number>1</number>
-            </property>
-            <property name="autoScroll">
-             <bool>false</bool>
-            </property>
-            <property name="showDropIndicator" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="alternatingRowColors">
-             <bool>true</bool>
-            </property>
-            <property name="selectionMode">
-             <enum>QAbstractItemView::SingleSelection</enum>
-            </property>
-            <property name="rootIsDecorated">
-             <bool>false</bool>
-            </property>
-            <property name="uniformRowHeights">
-             <bool>false</bool>
-            </property>
-            <column>
-             <property name="text">
-              <string>Nss script result</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
-        </widget>
         <widget class="QWidget" name="tabRawLog">
          <attribute name="icon">
           <iconset resource="../../images.qrc">
-           <normaloff>:/images/images/book.png</normaloff>:/images/images/book.png</iconset>
+           <normaloff>:/images/images/utilities-log-viewer.png</normaloff>:/images/images/utilities-log-viewer.png</iconset>
          </attribute>
          <attribute name="title">
-          <string>Raw scan log</string>
+          <string>Full scan output</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="margin">
@@ -620,6 +564,62 @@
              </widget>
             </item>
            </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="nseResultTab">
+         <attribute name="icon">
+          <iconset resource="../../images.qrc">
+           <normaloff>:/images/images/viewmag+.png</normaloff>:/images/images/viewmag+.png</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Nse result</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTreeWidget" name="treeNSS">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>170</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="autoScroll">
+             <bool>false</bool>
+            </property>
+            <property name="showDropIndicator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <property name="uniformRowHeights">
+             <bool>false</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>Nss script result</string>
+             </property>
+            </column>
+           </widget>
           </item>
          </layout>
         </widget>
