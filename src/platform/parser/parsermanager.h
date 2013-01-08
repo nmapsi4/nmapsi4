@@ -50,6 +50,7 @@ public:
      */
     void addUtilObject(PObjectLookup* object);
     void syncSettings();
+    void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer, int id);
 
 private:
     void showParserObj(int hostIndex);
@@ -72,7 +73,6 @@ private slots:
     /*
      * Start data QByteArray scan result parser.
      */
-    void startParser(const QStringList parList, QByteArray dataBuffer,  QByteArray errorBuffer, int id);
     void showParserResult(QTreeWidgetItem *item, int column);
     void showParserTracerouteResult(QTreeWidgetItem *item, int column);
 };

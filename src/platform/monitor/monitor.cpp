@@ -239,9 +239,12 @@ void Monitor::scanFinisced(const QStringList parametersList, QByteArray dataBuff
 
     m_parallelThreadLimit++;
     /*
-     * Return scan result with a signal.
+     * Start Scan parser
      */
-    emit hostFinisced(parametersList, dataBuffer, errorBuffer, m_hostIdList.value(parametersList[parametersList.size() - 1]));
+    m_ui->m_parser->startParser(parametersList,
+                                dataBuffer,
+                                errorBuffer,
+                                m_hostIdList.value(parametersList[parametersList.size() - 1]));
 }
 
 void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
