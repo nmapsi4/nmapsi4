@@ -82,7 +82,7 @@ void ProcessThread::stopProcess()
 void ProcessThread::readyReadData()
 {
     // read realtime data from QProcess
-    QByteArray realByte = m_process.data()->readAllStandardOutput();
+    QByteArray realByte(m_process.data()->readAllStandardOutput());
     if (!realByte.isEmpty()) {
         m_pout.append(realByte);
         // emit signal for data trasmission to paren
