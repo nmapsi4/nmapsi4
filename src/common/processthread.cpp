@@ -82,10 +82,10 @@ void ProcessThread::stopProcess()
 void ProcessThread::readyReadData()
 {
     // read realtime data from QProcess
-    QByteArray realByte(m_process.data()->readAllStandardOutput());
-    if (!realByte.isEmpty()) {
-        m_pout.append(realByte);
-        // emit signal for data trasmission to paren
-        emit flowFromThread(m_ParList[m_ParList.size() - 1], realByte);
+    QByteArray realtimeByteArray(m_process.data()->readAllStandardOutput());
+    if (!realtimeByteArray.isEmpty()) {
+        m_pout.append(realtimeByteArray);
+        // emit signal for data trasmission to parent
+        emit flowFromThread(m_ParList[m_ParList.size() - 1], realtimeByteArray);
     }
 }
