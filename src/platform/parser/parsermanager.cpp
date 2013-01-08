@@ -83,23 +83,16 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
         return;
     }
 
-    QString StdoutStr(dataBuffer);
-    QString StderrorStr(errorBuffer);
-
     // create a scan host item.
     QTreeWidgetItem *treeItem = new QTreeWidgetItem(m_ui->m_scanWidget->treeMain);
     m_treeItems.push_front(treeItem);
     treeItem->setSizeHint(0, QSize(32, 32));
 
     // call real parser
-    PObject* elemObj = parserCore(parList, StdoutStr, StderrorStr, treeItem);
+    PObject* elemObj = parserCore(parList, dataBuffer, errorBuffer, treeItem);
 
     elemObj->setParameters(parList.join(" "));
     elemObj->setId(id);
-
-    // clear output and error thread buffer.
-    dataBuffer.clear();
-    errorBuffer.clear();
 
     QString message(tr("Scan completed"));
     // NOTE: It works only with kdelibs
@@ -184,8 +177,8 @@ void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
     }
 }
 
-PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
-                                   QString StderrorStr, QTreeWidgetItem* mainScanTreeElem)
+PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutStr,
+                                   QByteArray StderrorStr, QTreeWidgetItem* mainScanTreeElem)
 {
     // Create parser Obect
     PObject *parserObjectElem = new PObject();
@@ -282,11 +275,9 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     if (!generalBuffer_.isEmpty()) {
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
-        //tmp_host.append(generalBuffer_ + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
         mainScanTreeElem->setText(0, generalBuffer_);
         mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
     } else {
-        //tmp_host.append(hostCheck + '\n' + QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
         mainScanTreeElem->setText(0, hostCheck);
         mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
     }

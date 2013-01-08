@@ -117,7 +117,7 @@ private:
     QList< QPair<QString, QStringList> > m_hostScanCacheList;
     QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
     QHash<QString, ProcessThread*> m_scanHashList;
-    QHash<QString, QStringList> m_scanHashListFlow;
+    QHash<QString, QPair<QByteArray,QStringList> > m_scanHashListFlow;
     QHash<QString, int> m_hostIdList;
     MainWindow* m_ui;
     int m_parallelThreadLimit;
@@ -132,8 +132,8 @@ signals:
     Q_SCRIPTABLE void monitorUpdated(int hostNumber);
 
 private slots:
-    void readFlowFromThread(const QString hostname, QString lineData);
-    void scanFinisced(const QStringList parametersList, QByteArray dataBuffer, QByteArray errorBuffer);
+    void readFlowFromThread(const QString hostname, QByteArray lineData);
+    void scanFinisced(const QStringList parameters, QByteArray errorBuffer);
     void lookupFinisced(QHostInfo info, int state, const QString hostname);
     void cacheRepeat();
     /*

@@ -49,6 +49,7 @@ void ProcessThread::run()
     exec();
     // emit signal, scan is end
     emit threadEnd(m_ParList, m_pout, m_perr);
+    emit dataIsReady(m_ParList, m_perr);
 }
 
 void ProcessThread::readFinished()
@@ -85,6 +86,6 @@ void ProcessThread::readyReadData()
     if (!realByte.isEmpty()) {
         m_pout.append(realByte);
         // emit signal for data trasmission to paren
-        emit flowFromThread(m_ParList[m_ParList.size() - 1], QString(realByte));
+        emit flowFromThread(m_ParList[m_ParList.size() - 1], realByte);
     }
 }

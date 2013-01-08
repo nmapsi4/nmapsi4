@@ -204,8 +204,8 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, Disco
 
     QWeakPointer<ProcessThread> thread = new ProcessThread("nping", parameters);
 
-    connect(thread.data(), SIGNAL(flowFromThread(QString,QString)),
-            this, SLOT(currentCIDRValue(QString,QString)));
+    connect(thread.data(), SIGNAL(flowFromThread(QString,QByteArray)),
+            this, SLOT(currentCIDRValue(QString,QByteArray)));
     connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
     connect(parent, SIGNAL(killDiscoverFromCIDR()),
@@ -221,10 +221,9 @@ void Discover::stopDiscoverFromCIDR()
     memory::freelist<ProcessThread*>::itemDeleteAllWithWait(m_threadList);
 }
 
-void Discover::currentCIDRValue(const QString parameters, const QString data)
+void Discover::currentCIDRValue(const QString parameters, QByteArray data)
 {
-    QString localBuffer(data);
-    QTextStream currentValues(&localBuffer);
+    QTextStream currentValues(&data);
     QString currentLine;
 
     while (!currentValues.atEnd()) {

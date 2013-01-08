@@ -91,7 +91,7 @@ private slots:
     void repeatScanner();
     void stopDiscoverFromList();
     void stopDiscoverFromCIDR();
-    void currentCIDRValue(const QString parameters, const QString data);
+    void currentCIDRValue(const QString parameters, QByteArray data);
     void endCIDR(const QStringList ipAddr, QByteArray ipBuffer, QByteArray bufferError);
 
 signals:

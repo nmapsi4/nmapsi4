@@ -52,7 +52,8 @@ signals:
     /*!
      * Return nmap QThread stdout for ETC and remaining scan time.
      */
-    void flowFromThread(const QString parameters, const QString data);
+    void flowFromThread(const QString parameters, QByteArray data);
+    void dataIsReady(const QStringList parameters, QByteArray errorBuffer);
 
 private:
     QByteArray m_pout;
