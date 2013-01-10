@@ -150,58 +150,58 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     QString bufferInfo;
     QString bufferTraceroot;
     QString nseBuffer;
-    QString tmp;
+    QString tmpBufferLine;
 
     QTextStream stream(&StdoutStr);
 
     while (!stream.atEnd()) {
-        tmp = stream.readLine();
+        tmpBufferLine = stream.readLine();
 
-        if ((portRx.indexIn(tmp) != -1)
-                && (tmp.contains("open")
-                    || tmp.contains("closed")
-                    || tmp.contains("filtered")
-                    || tmp.contains("unfiltered"))
-                && !tmp.contains("Not shown:")
-                && !tmp.contains("Discovered")) {
+        if ((portRx.indexIn(tmpBufferLine) != -1)
+                && (tmpBufferLine.contains("open")
+                    || tmpBufferLine.contains("closed")
+                    || tmpBufferLine.contains("filtered")
+                    || tmpBufferLine.contains("unfiltered"))
+                && !tmpBufferLine.contains("Not shown:")
+                && !tmpBufferLine.contains("Discovered")) {
 
-            scanBuffer.append(tmp);
+            scanBuffer.append(tmpBufferLine);
             scanBuffer.append("\n");
 
             // Insert new elem to nse buffer result
-            nseBuffer.append("|--" + tmp + '\n');
+            nseBuffer.append("|--" + tmpBufferLine + '\n');
         }
 
-        if (tmp.startsWith(QLatin1String("Host script results:"))) {
-            nseBuffer.append("|--" + tmp + '\n');
+        if (tmpBufferLine.startsWith(QLatin1String("Host script results:"))) {
+            nseBuffer.append("|--" + tmpBufferLine + '\n');
         }
 
-        if ((tmp.contains("MAC")
-                || tmp.contains("Running:")
-                || tmp.contains("Running")
-                || tmp.contains("OS details:")
-                || tmp.contains("Aggressive OS guesses:")
-                || tmp.contains("Device type:")
-                || tmp.contains("Uptime:")
-                || tmp.contains("TCP Sequence Prediction:")
-                || tmp.contains("IPID Sequence Generation:")
-                || tmp.contains("IP ID Sequence Generation:")
-                || (tmp.contains("Service Info:") && tmp.compare(generalBuffer_))
-                || tmp.contains("Initiating Ping ")
-                || tmp.contains("Completed Ping ")
-                || tmp.contains("Network Distance:")
-                || tmp.contains("Note:")
-                || tmp.contains("Nmap done:")
-                || tmp.startsWith(QLatin1String("Hosts"))
-                || (tmp.startsWith(QLatin1String("Host")) && !tmp.contains("Host script results:")))
-                && !tmp.startsWith(QLatin1String("|"))) {
-            bufferInfo.append(tmp);
+        if ((tmpBufferLine.contains("MAC")
+                || tmpBufferLine.contains("Running:")
+                || tmpBufferLine.contains("Running")
+                || tmpBufferLine.contains("OS details:")
+                || tmpBufferLine.contains("Aggressive OS guesses:")
+                || tmpBufferLine.contains("Device type:")
+                || tmpBufferLine.contains("Uptime:")
+                || tmpBufferLine.contains("TCP Sequence Prediction:")
+                || tmpBufferLine.contains("IPID Sequence Generation:")
+                || tmpBufferLine.contains("IP ID Sequence Generation:")
+                || (tmpBufferLine.contains("Service Info:") && tmpBufferLine.compare(generalBuffer_))
+                || tmpBufferLine.contains("Initiating Ping ")
+                || tmpBufferLine.contains("Completed Ping ")
+                || tmpBufferLine.contains("Network Distance:")
+                || tmpBufferLine.contains("Note:")
+                || tmpBufferLine.contains("Nmap done:")
+                || tmpBufferLine.startsWith(QLatin1String("Hosts"))
+                || (tmpBufferLine.startsWith(QLatin1String("Host")) && !tmpBufferLine.contains("Host script results:")))
+                && !tmpBufferLine.startsWith(QLatin1String("|"))) {
+            bufferInfo.append(tmpBufferLine);
             bufferInfo.append("\n");
         }
 
         // pars for subtree service
-        if (tmp.startsWith(QLatin1String("|")) && !nseBuffer.isEmpty()) {
-            QString tmpClean(tmp);
+        if (tmpBufferLine.startsWith(QLatin1String("|")) && !nseBuffer.isEmpty()) {
+            QString tmpClean(tmpBufferLine);
             if (tmpClean.startsWith(QLatin1String("|"))) {
                 tmpClean.remove('|');
             }
@@ -221,8 +221,8 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             nseBuffer.append(tmpClean + '\n');
         }
 
-        if ((tracerouteRx.indexIn(tmp) != -1) && (!tmp.contains("/"))) {
-            bufferTraceroot.append(tmp);
+        if ((tracerouteRx.indexIn(tmpBufferLine) != -1) && (!tmpBufferLine.contains("/"))) {
+            bufferTraceroot.append(tmpBufferLine);
             bufferTraceroot.append("\n");
         }
 
@@ -432,7 +432,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setToolTip(0, token);
     }
 
-    QString noDes = tr("No description");
+    QString noDescription = tr("No description");
     // clear combo Vulnerabilities
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->insertItem(0, "Services");
@@ -467,7 +467,7 @@ void ParserManager::showParserObj(int hostIndex)
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         } else {
-            root->setText(3, noDes);
+            root->setText(3, noDescription);
         }
     }
 
@@ -500,7 +500,7 @@ void ParserManager::showParserObj(int hostIndex)
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         } else {
-            root->setText(3, noDes);
+            root->setText(3, noDescription);
         }
     }
 
@@ -534,14 +534,14 @@ void ParserManager::showParserObj(int hostIndex)
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
         } else {
-            root->setText(3, noDes);
+            root->setText(3, noDescription);
         }
     }
 
     // show services
     int servicesWithDetails = 0;
     foreach(const QString& token, m_parserObjList[hostIndex]->getServices()) {
-        if (!m_ui->m_scanWidget->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDes)) {
+        if (!m_ui->m_scanWidget->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDescription)) {
             QTreeWidgetItem *objItem = new QTreeWidgetItem(m_ui->m_scanWidget->GItree);
             objItem->setSizeHint(0, QSize(22, 22));
             objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
