@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 QString Package::localePath()
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     return INSTALL_PATH + QString("locale/");
 #else
     return QDir::rootPath() + QDir::toNativeSeparators("program files/nmapsi4/");

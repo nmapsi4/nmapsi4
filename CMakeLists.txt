@@ -30,14 +30,14 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURREN
 
 ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
-if (Q_WS_WIN)
+if (Q_OS_WIN32)
     include(CMakeMinGWFindMake)
-endif (Q_WS_WIN)
+endif (Q_OS_WIN32)
 
-if(Q_WS_MAC)
+if(Q_OS_MAC)
     SET( CMAKE_OSX_ARCHITECTURES i386;x86_64 )
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
-endif(Q_WS_MAC)
+endif(Q_OS_MAC)
 
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
                 "${PROJECT_BINARY_DIR}/cmake_uninstall.cmake"

@@ -27,7 +27,7 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     : QObject(parent), m_ui(parent), m_ipCounter(0), m_userid(0), m_discoverIsActive(false)
 {
 
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     m_userid = getuid();
 #endif
 

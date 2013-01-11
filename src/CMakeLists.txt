@@ -16,13 +16,13 @@ include_directories(${CMAKE_SOURCE_DIR}
     )
 
 
-if (Q_WS_X11)
+if (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
     dbus/org.nmapsi4.Nmapsi4.xml
     src/platform/monitor/monitor.h
     Monitor
     )
-endif (Q_WS_X11)
+endif (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 
 SET(SOURCES_CPP
     platform/selectprofiledialog.cpp
@@ -58,9 +58,9 @@ SET(SOURCES_CPP
     )
 
 
-if (Q_WS_X11)
+if (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
     SET(SOURCES_CPP ${SOURCES_CPP} ${nmapsi4adaptor_SRCS})
-endif (Q_WS_X11)
+endif (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 
 SET(SOURCES_MOC
     platform/lookupmanager.h
@@ -126,18 +126,18 @@ else(KDE4_FOUND)
     INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
 endif(KDE4_FOUND)
 
-if (Q_WS_X11)
+if (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
     ADD_EXECUTABLE(nmapsi4 ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-elseif(WIN32)
+elseif(Q_OS_WIN32)
     ADD_EXECUTABLE(nmapsi4 WIN32 ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
-elseif(Q_WS_MAC)
+elseif(Q_OS_MAC)
     MESSAGE( STATUS MAC Osx)
     ADD_EXECUTABLE(nmapsi4 MACOSX_BUNDLE ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
     ADD_CUSTOM_COMMAND(TARGET nmapsi4 POST_BUILD
         COMMAND mkdir ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS ${MACOSX_BUNDLE_ICON_FILE} ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS *.qm ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources)
-endif (Q_WS_X11)
+endif (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 
 target_link_libraries(nmapsi4
     ${QT_LIBRARIES}
@@ -145,11 +145,11 @@ target_link_libraries(nmapsi4
     ${QT_QTNETWORK_LIBRARY}
     )
 
-if (Q_WS_X11)
+if (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
     target_link_libraries(nmapsi4
         ${QT_QTDBUS_LIBRARY}
         )
-endif(Q_WS_X11)
+endif (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 
 if(KDE4_FOUND)
     target_link_libraries(nmapsi4
@@ -157,7 +157,7 @@ if(KDE4_FOUND)
         )
 endif(KDE4_FOUND)
 
-if (Q_WS_X11)
+if (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
     install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
     #install(FILES "platform/qml/vulnerabilityWelcome.qml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/qml)
@@ -167,5 +167,5 @@ if (Q_WS_X11)
     install(FILES "../icons/32x32/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
     install(FILES "../icons/64x64/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)
     install(FILES "../icons/128x128/nmapsi4.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/)
-endif (Q_WS_X11)
+endif (NOT Q_OS_WIN32 AND NOT Q_OS_MAC)
 

@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget* parent)
 
 void MainWindow::initObject()
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     m_userId = getuid();
 #endif
 
@@ -153,7 +153,7 @@ void MainWindow::initObject()
     m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
     updateWelcomeSection();
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
     // w/o show() call, mainwindow is not visible in mac osx
     show();
 #endif
@@ -490,7 +490,7 @@ void MainWindow::syncSettings()
     m_savedProfileIndex = settings.value("savedProfileIndex", 0).toInt();
     m_hostCache = settings.value("hostCache", 10).toInt();
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN32)
     // disable lookup in MS windows
     m_lookupType = 0;
 #else
@@ -521,7 +521,7 @@ void MainWindow::saveSettings()
     m_vulnerability->syncSettings();
 
 // check and reset for settings file permission
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     if (!m_userId) {
         QFileInfo fileInfo;
 

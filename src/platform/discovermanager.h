@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "style.h"
 
 // system
-#ifndef Q_WS_WIN
+#if !defined(Q_OS_WIN32)
 #include <unistd.h>
 #endif
 

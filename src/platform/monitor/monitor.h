@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QSettings>
 #include <QtNetwork/QHostInfo>
 
-#ifdef Q_WS_X11
+#if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
 #include <QtDBus/QDBusConnection>
 #endif
 
@@ -54,7 +54,7 @@ class Monitor : public QObject
 {
     Q_OBJECT
 
-#ifdef Q_WS_X11
+#if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
     Q_CLASSINFO("D-Bus Interface", "org.nmapsi4.Nmapsi4")
 #endif
 
