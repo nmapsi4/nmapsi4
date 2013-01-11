@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     QString translationsPath;
 
-#ifndef Q_WS_WIN
+#if !defined(Q_OS_WIN32)
     translationsPath = TRANSLATIONS_PATH;
 #else
     translationsPath.append(QDir::rootPath() + QDir::toNativeSeparators("program files/nmapsi4/"));

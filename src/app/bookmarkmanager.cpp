@@ -32,7 +32,7 @@ BookmarkManager::BookmarkManager(MainWindow* parent)
     : QObject(parent), m_ui(parent), m_userId(0)
 {
 
-#ifndef Q_WS_WIN
+#if !defined(Q_OS_WIN32)
     m_userId = getuid();
 #endif
 

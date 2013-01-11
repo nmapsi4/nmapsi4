@@ -46,7 +46,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     m_generalItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/tool.png")), tr("General"));
     listViewOptions->addItem(m_generalItem);
 
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     m_lookItem = new QListWidgetItem(QIcon(QString::fromUtf8(":/images/images/network_local.png")), tr("Lookup"));
     listViewOptions->addItem(m_lookItem);
 #else
@@ -105,7 +105,7 @@ void PreferencesDialog::quit()
 
 void PreferencesDialog::setDefaults()
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     comboLookupType->setCurrentIndex(1);
 #else
     comboLookupType->setCurrentIndex(0);

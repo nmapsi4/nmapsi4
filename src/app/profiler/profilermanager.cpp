@@ -47,7 +47,7 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
 
 void ProfilerManager::initObject()
 {
-#ifndef Q_WS_WIN
+#if !defined(Q_OS_WIN32)
     m_userId = getuid();
 #endif
 

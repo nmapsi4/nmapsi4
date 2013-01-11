@@ -49,7 +49,7 @@ MainWindow::MainWindow(QWidget* parent)
 
 void MainWindow::initObject()
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN32)
     m_userId = getuid();
 #endif
 
@@ -137,7 +137,7 @@ void MainWindow::initObject()
     m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
     updateScanSection();
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
     // w/o show() call, mainwindow is not visible in mac osx
     show();
 #endif

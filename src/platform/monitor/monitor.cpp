@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "monitor.h"
 #include "mainwindow.h"
 
-#ifdef Q_WS_X11
+#if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
 #include "nmapsi4adaptor.h"
 #endif
 
@@ -30,7 +30,7 @@ MonitorWidget::MonitorWidget(QWidget* parent): QWidget(parent)
 Monitor::Monitor(MainWindow* parent)
     : QObject(parent), m_ui(parent), m_idCounter(0)
 {
-#ifdef Q_WS_X11
+#if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
     new Nmapsi4Adaptor(this);
     // FIXME: with full mode It is registrered into root dbus session
     QDBusConnection dbus = QDBusConnection::sessionBus();
