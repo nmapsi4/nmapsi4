@@ -409,15 +409,16 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
      * read data line form thread
      */
     QHash<QString, QPair<QByteArray,QStringList> >::const_iterator i = m_scanHashListFlow.find(hostname);
-    QString tmpString(lineData);
-    QTextStream stream(&tmpString);
+    QTextStream stream(lineData);
 
     if (i == m_scanHashListFlow.constEnd()) {
         QPair<QByteArray, QStringList> dataElement;
         dataElement.first.append(lineData);
 
         while (!stream.atEnd()) {
-            dataElement.second.append(stream.readLine());
+            QString currentLine(stream.readLine());
+            findRemaingTime(currentLine,hostname);
+            dataElement.second.append(currentLine);
         }
 
         m_scanHashListFlow.insert(hostname, dataElement);
@@ -429,23 +430,25 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
             dataElement.first.append(lineData);
 
             while (!stream.atEnd()) {
-                dataElement.second.append(stream.readLine());
+                QString currentLine(stream.readLine());
+                findRemaingTime(currentLine,hostname);
+                dataElement.second.append(currentLine);
             }
 
             m_scanHashListFlow.insert(i.key(), dataElement);
             ++i;
         }
     }
+}
 
-    QString line(lineData);
-    // search hostname on treeWidget and update data rows (index = 2)
-    // take only remaining time and remove character unused, only [remaining || ETA]
-    if (line.contains("remaining") || line.contains("ETC")) {
-        QString infoTmp_ = line.mid(line.indexOf("("), line.indexOf(")"));
-        infoTmp_ = infoTmp_.remove('(');
-        infoTmp_ = infoTmp_.remove(')');
-        infoTmp_.remove('\n');
+void Monitor::findRemaingTime(const QString& textLine, const QString& hostName)
+{
+    if (textLine.contains("remaining") || textLine.contains("ETC")) {
+        QString cleanLine = textLine.mid(textLine.indexOf("("), textLine.indexOf(")"));
+        cleanLine = cleanLine.remove('(');
+        cleanLine = cleanLine.remove(')');
+        cleanLine.remove('\n');
         // insert new information into monitor
-        updateMonitorHost(hostname, 2, infoTmp_);
+        updateMonitorHost(hostName, 2, cleanLine);
     }
 }
