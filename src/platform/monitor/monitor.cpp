@@ -417,7 +417,7 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
 
         while (!stream.atEnd()) {
             QString currentLine(stream.readLine());
-            findRemaingTime(currentLine,hostname);
+            findRemainingTime(currentLine,hostname);
             dataElement.second.append(currentLine);
         }
 
@@ -431,7 +431,7 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
 
             while (!stream.atEnd()) {
                 QString currentLine(stream.readLine());
-                findRemaingTime(currentLine,hostname);
+                findRemainingTime(currentLine,hostname);
                 dataElement.second.append(currentLine);
             }
 
@@ -441,7 +441,7 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
     }
 }
 
-void Monitor::findRemaingTime(const QString& textLine, const QString& hostName)
+void Monitor::findRemainingTime(const QString& textLine, const QString& hostName)
 {
     if (textLine.contains("remaining") || textLine.contains("ETC")) {
         QString cleanLine = textLine.mid(textLine.indexOf("("), textLine.indexOf(")"));

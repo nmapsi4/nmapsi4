@@ -110,7 +110,7 @@ private:
      * Cache for parallel host thread
      */
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
-    void findRemaingTime(const QString& textLine, const QString& hostName);
+    void findRemainingTime(const QString& textLine, const QString& hostName);
 
     QList<QTreeWidgetItem*> m_monitorTreeWidgetItemsList;
     QList<LookupManager*> m_internealLookupList;
