@@ -112,16 +112,16 @@ private:
     void cacheScan(const QString& hostname, const QStringList& parameters, LookupType option, QTreeWidgetItem *item);
     void findRemaingTime(const QString& textLine, const QString& hostName);
 
-    QList<QTreeWidgetItem*> m_monitorElem;
+    QList<QTreeWidgetItem*> m_monitorTreeWidgetItemsList;
     QList<LookupManager*> m_internealLookupList;
-    QList<DigManager*> m_digLookupList;
-    QList< QPair<QString, QStringList> > m_hostScanCacheList;
-    QList< QPair<LookupType, QTreeWidgetItem*> > m_lookupScanCacheList;
-    QHash<QString, ProcessThread*> m_scanHashList;
-    QHash<QString, QPair<QByteArray,QStringList> > m_scanHashListFlow;
+    QList<DigManager*> m_digLookupPointersList;
+    QList< QPair<QString, QStringList> > m_firstScanCacheList;
+    QList< QPair<LookupType, QTreeWidgetItem*> > m_secondScanCacheList;
+    QHash<QString, ProcessThread*> m_scanThreadHashList;
+    QHash<QString, QPair<QByteArray,QStringList> > m_scanHashListRealtime;
     QHash<QString, int> m_hostIdList;
     MainWindow* m_ui;
-    int m_parallelThreadLimit;
+    int m_parallelThreadLimitValue;
     int m_idCounter;
     bool m_isHostcached;
     QTimer* m_timer;
