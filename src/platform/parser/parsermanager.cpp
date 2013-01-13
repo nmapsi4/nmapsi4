@@ -596,7 +596,20 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show nse url discovered
-    foreach(const QString& url, m_parserObjList[hostIndex]->getVulnDiscoverd()) {
+    const QStringList& vulnUrlList(m_parserObjList[hostIndex]->getVulnDiscoverd());
+    if (!vulnUrlList.size()) {
+        m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered->setVisible(false);
+    } else {
+        m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered->setVisible(true);
+
+        QList<int> size = m_ui->m_vulnerability->m_mainHorizontalLeftSplitter->sizes();
+        if (!size[0]) {
+            size[0] = 100; // ratio
+            m_ui->m_vulnerability->m_mainHorizontalLeftSplitter->setSizes(size);
+        }
+    }
+
+    foreach(const QString& url, vulnUrlList) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
