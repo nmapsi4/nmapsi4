@@ -910,7 +910,7 @@ void MainWindow::updateQmlScanHistory()
     }
 
     if (hostScanned.isEmpty()) {
-        hostScanned.append(tr("History empty"));
+        hostScanned.append(tr("Empty history"));
     }
 
     m_welcomeQmlView->rootContext()->setContextProperty("historyListText", hostScanned);
