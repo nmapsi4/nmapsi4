@@ -72,7 +72,6 @@ private:
     int m_userid;
     bool m_discoverIsActive;
     QSplitter *m_discoverHorizontalSplitter;
-    QSplitter *m_discoverVerticalSplitter;
 
 signals:
     void killDiscoverFromIpsRange();

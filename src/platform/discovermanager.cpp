@@ -39,26 +39,17 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverHorizontalSplitter->addWidget(m_discoverWidget->frameDiscoverTree);
     m_discoverHorizontalSplitter->addWidget(m_discoverWidget->frameDiscoverOptions);
 
-    m_discoverVerticalSplitter = new QSplitter(m_discoverWidget);
-    m_discoverVerticalSplitter->setOrientation(Qt::Vertical);
-    m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeDiscover);
-    m_discoverVerticalSplitter->addWidget(m_discoverWidget->treeTracePackets);
-
     // call discover startup, NPING is REQUIRED
     loadFoundInterfaces();
     defaultDiscoverProbes();
 
-    m_discoverWidget->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
+    //m_discoverWidget->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
     m_discoverWidget->layout()->addWidget(m_discoverHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
 
     if (!settings.value("discoverHorizontalSplitter").toByteArray().isEmpty()) {
         m_discoverHorizontalSplitter->restoreState(settings.value("discoverHorizontalSplitter").toByteArray());
-    }
-
-    if (!settings.value("discoverVerticalSplitter").toByteArray().isEmpty()) {
-        m_discoverVerticalSplitter->restoreState(settings.value("discoverVerticalSplitter").toByteArray());
     }
 
     m_discoverWidget->treeTracePackets->setIconSize(QSize(22, 22));
@@ -95,7 +86,6 @@ void DiscoverManager::syncSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
     settings.setValue("discoverHorizontalSplitter", m_discoverHorizontalSplitter->saveState());
-    settings.setValue("discoverVerticalSplitter", m_discoverVerticalSplitter->saveState());
 }
 
 bool DiscoverManager::activeIpContains(const QString ipAddress)

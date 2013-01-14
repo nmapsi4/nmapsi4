@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
-    <height>469</height>
+    <width>828</width>
+    <height>585</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,46 +25,89 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_9">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="margin">
        <number>0</number>
       </property>
       <item>
-       <widget class="QTreeWidget" name="treeDiscover">
-        <property name="alternatingRowColors">
-         <bool>true</bool>
+       <widget class="QToolBox" name="toolBox">
+        <property name="currentIndex">
+         <number>0</number>
         </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::ExtendedSelection</enum>
-        </property>
-        <property name="rootIsDecorated">
-         <bool>false</bool>
-        </property>
-        <column>
-         <property name="text">
-          <string>Discovered IP/s</string>
+        <widget class="QWidget" name="page">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>399</width>
+           <height>519</height>
+          </rect>
          </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Date</string>
+         <attribute name="label">
+          <string>Discovered</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTreeWidget" name="treeDiscover">
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::ExtendedSelection</enum>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>IP/s</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Date</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>391</width>
+           <height>511</height>
+          </rect>
          </property>
-        </column>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTreeWidget" name="treeTracePackets">
-        <property name="alternatingRowColors">
-         <bool>true</bool>
-        </property>
-        <property name="rootIsDecorated">
-         <bool>false</bool>
-        </property>
-        <column>
-         <property name="text">
+         <attribute name="label">
           <string>Packets trace</string>
-         </property>
-        </column>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTreeWidget" name="treeTracePackets">
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>List</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -156,7 +199,7 @@
         </property>
         <widget class="QWidget" name="tab_2">
          <attribute name="icon">
-          <iconset>
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
          </attribute>
          <attribute name="title">
@@ -338,7 +381,7 @@
                   <string>Start with CIDR-style address</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../../images.qrc">
                    <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
                  </property>
                 </widget>
@@ -352,7 +395,7 @@
                   <string>Stop Discover</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../../images.qrc">
                    <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                  </property>
                 </widget>
@@ -379,7 +422,7 @@
         </widget>
         <widget class="QWidget" name="intervallScan">
          <attribute name="icon">
-          <iconset>
+          <iconset resource="../../images.qrc">
            <normaloff>:/images/images/network_local.png</normaloff>:/images/images/network_local.png</iconset>
          </attribute>
          <attribute name="title">
@@ -447,7 +490,7 @@
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../../images.qrc">
                    <normaloff>:/images/images/reload.png</normaloff>:/images/images/reload.png</iconset>
                  </property>
                  <property name="flat">
@@ -587,7 +630,7 @@
                   <string>Start Discover from IP range</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../../images.qrc">
                    <normaloff>:/images/images/document-preview-archive.png</normaloff>:/images/images/document-preview-archive.png</iconset>
                  </property>
                 </widget>
@@ -607,7 +650,7 @@
                   <string>Stop Discover</string>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../../images.qrc">
                    <normaloff>:/images/images/button_cancel.png</normaloff>:/images/images/button_cancel.png</iconset>
                  </property>
                 </widget>
