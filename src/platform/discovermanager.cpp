@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -43,7 +43,6 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     loadFoundInterfaces();
     defaultDiscoverProbes();
 
-    //m_discoverWidget->frameDiscoverTree->layout()->addWidget(m_discoverVerticalSplitter);
     m_discoverWidget->layout()->addWidget(m_discoverHorizontalSplitter);
 
     QSettings settings("nmapsi4", "nmapsi4");
