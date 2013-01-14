@@ -666,7 +666,9 @@ void MainWindow::updateWelcomeSection()
     m_collections->enableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(false);
 
-    m_mainTabWidget->insertTab(0, m_welcomeQmlView, QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")), tr("Welcome"));
+    m_mainTabWidget->insertTab(0, m_welcomeQmlView,
+                               QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")),
+                               tr("Welcome"));
     m_mainTabWidget->setCurrentIndex(0);
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
@@ -694,7 +696,8 @@ void MainWindow::updateScanSection()
     m_collections->enableScanSectionToolBar();
     m_collections->enableGlobalMenuToolBar();
 
-    m_mainTabWidget->insertTab(0, m_scanWidget, QIcon(QString::fromUtf8(":/images/images/network_local.png")), "Scan");
+    m_mainTabWidget->insertTab(0, m_scanWidget, QIcon(QString::fromUtf8(":/images/images/network_local.png")),
+                               "Scan");
     m_mainTabWidget->setCurrentIndex(0);
 
     if (!m_monitor->m_monitorWidget->isVisible()) {
@@ -705,13 +708,15 @@ void MainWindow::updateScanSection()
                                         QIcon::fromTheme("view-refresh", QIcon(":/images/images/reload.png")));
         } else {
             m_mainTabWidget->setTabIcon(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget),
-                                        QIcon::fromTheme("utilities-system-monitor", QIcon(":/images/images/utilities-log-viewer.png")));
+                                        QIcon::fromTheme("utilities-system-monitor",
+                                                         QIcon(":/images/images/utilities-log-viewer.png")));
         }
 
     }
 
     m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_scanBookmarkWidget,
-                     QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+                     QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")),
+                               tr("Bookmarks"));
 
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
@@ -744,10 +749,12 @@ void MainWindow::updateVulnerabilitySection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
     m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget,
-                               QIcon(QString::fromUtf8(":/images/images/viewmag+.png")), "Vulnerability");
+                               QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),
+                               tr("Vulnerability"));
 
     m_mainTabWidget->insertTab(m_mainTabWidget->count(), m_bookmark->m_vulnBookmarkWidget,
-                               QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")), tr("Bookmarks"));
+                               QIcon::fromTheme("user-bookmarks", QIcon(":/images/images/bookmark_folder.png")),
+                               tr("Bookmarks"));
 
     m_mainTabWidget->setCurrentIndex(0);
 
@@ -775,7 +782,9 @@ void MainWindow::updateDiscoverSection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
-    m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")), "Network discover");
+    m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget,
+                               QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),
+                               tr("Network discover"));
     m_mainTabWidget->setCurrentIndex(0);
 
     // disable scan action
@@ -789,7 +798,8 @@ void MainWindow::updateComboBook()
     m_scanWidget->comboHostBook->insertItem(0, "Select Saved Host");
 
     for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItemCount(); index++) {
-        m_scanWidget->comboHostBook->insertItem(1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
+        m_scanWidget->comboHostBook->insertItem(
+            1, m_bookmark->m_scanBookmarkWidget->treeLogH->topLevelItem(index)->text(0));
     }
 }
 
@@ -842,14 +852,16 @@ void MainWindow::buildScanProfileList()
 
     QListIterator< QPair<QString, QString> > i(m_profileHandler->defaultScanProfile());
     while (i.hasNext()) {
-        m_scanWidget->comboParametersProfiles->insertItem(m_scanWidget->comboParametersProfiles->count() + 1, i.next().first);
+        m_scanWidget->comboParametersProfiles->insertItem(
+            m_scanWidget->comboParametersProfiles->count() + 1, i.next().first);
     }
 
     m_scanWidget->comboParametersProfiles->insertSeparator(m_scanWidget->comboParametersProfiles->count() + 1);
 
     // value from treeWidget parameters
     for (int index = 0; index < m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItemCount(); index++) {
-        m_scanWidget->comboParametersProfiles->addItem(m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
+        m_scanWidget->comboParametersProfiles->addItem(
+            m_bookmark->m_scanBookmarkWidget->treeBookPar->topLevelItem(index)->text(1));
     }
 
     comboParametersSelectedEvent();
@@ -876,8 +888,8 @@ void MainWindow::comboParametersSelectedEvent()
         }
     } else {
         // saved user profile
-        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(m_scanWidget->comboParametersProfiles->currentText(),
-                                                                                                        Qt::MatchExactly, 1);
+        QList<QTreeWidgetItem *> resultList_ = m_bookmark->m_scanBookmarkWidget->treeBookPar->findItems(
+            m_scanWidget->comboParametersProfiles->currentText(), Qt::MatchExactly, 1);
         m_scanWidget->comboAdv->insertItem(0, resultList_[0]->text(0));
     }
 }
@@ -895,6 +907,10 @@ void MainWindow::updateQmlScanHistory()
 
     for (int index = 0; index < 8 && index < m_hostModel.data()->stringList().size(); ++index) {
         hostScanned.append("+ " + m_hostModel.data()->stringList()[index] + "<hr/>");
+    }
+
+    if (hostScanned.isEmpty()) {
+        hostScanned.append(tr("History empty"));
     }
 
     m_welcomeQmlView->rootContext()->setContextProperty("historyListText", hostScanned);
