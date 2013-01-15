@@ -32,9 +32,14 @@ const QString &PObject::getHostName() const
     return m_hostName;
 }
 
-const QStringList &PObject::getMainInfo() const
+const QStringList &PObject::getHostInfo() const
 {
     return m_mainInfo;
+}
+
+const QString& PObject::scanDate() const
+{
+    return m_scanDate;
 }
 
 const QStringList &PObject::getServices() const
@@ -107,9 +112,14 @@ void PObject::setHostName(const QString hostName)
     m_hostName.append(hostName);
 }
 
-void PObject::setMainInfo(const QString elemMainInfo)
+void PObject::setHostInfo(const QString hostInfoLine)
 {
-    m_mainInfo.append(elemMainInfo);
+    m_mainInfo.append(hostInfoLine);
+}
+
+void PObject::setScanDate(const QString date)
+{
+    m_scanDate.append(date);
 }
 
 void PObject::setServices(const QString service)

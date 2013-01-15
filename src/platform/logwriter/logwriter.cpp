@@ -112,7 +112,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "\n|---------- General information" << "\n\n";
 
     // filtered/unfilteres Ports
-    Q_FOREACH(const QString & token, m_pObject->getMainInfo()) {
+    Q_FOREACH(const QString & token, m_pObject->getHostInfo()) {
         fileStream << token << "\n";
     }
 
@@ -245,7 +245,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Info
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>General information</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH(const QString & token, m_pObject->getMainInfo()) {
+    Q_FOREACH(const QString & token, m_pObject->getHostInfo()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {

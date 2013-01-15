@@ -32,7 +32,8 @@ public:
 
     const QString &getHostName() const;
     const QString &getParameters() const;
-    const QStringList &getMainInfo() const;
+    const QString &scanDate() const;
+    const QStringList &getHostInfo() const;
     const QStringList &getServices() const;
     const QStringList &getPortServices() const;
     const QStringList &getPortOpen() const;
@@ -47,7 +48,8 @@ public:
     int getId();
 
     void setHostName(const QString hostName);
-    void setMainInfo(const QString infoMainElem);
+    void setHostInfo(const QString hostInfoLine);
+    void setScanDate(const QString date);
     void setServices(const QString Service);
     void setPortServices(const QString portService);
     void setPortOpen(const QString portOpen);
@@ -65,6 +67,7 @@ public:
 private:
     QString m_hostName;
     QString m_parameters;
+    QString m_scanDate;
     QStringList m_mainInfo;
     QStringList m_services;
     QStringList m_portServices;

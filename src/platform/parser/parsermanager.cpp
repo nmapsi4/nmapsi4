@@ -234,10 +234,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         //QFont rootFont = root->font(0);
         //rootFont.setWeight(QFont::Normal);
         mainScanTreeElem->setText(0, generalBuffer_);
-        mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(1, parserObjectElem->scanDate());
     } else {
         mainScanTreeElem->setText(0, hostCheck);
-        mainScanTreeElem->setText(1, QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
+        mainScanTreeElem->setText(1, parserObjectElem->scanDate());
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
@@ -287,7 +289,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             isOsFound = HostTools::checkViewOS(bufferInfoStream_line, mainScanTreeElem);
         }
 
-        parserObjectElem->setMainInfo(bufferInfoStream_line);
+        parserObjectElem->setHostInfo(bufferInfoStream_line);
     }
 
     if (mainScanTreeElem->icon(0).isNull()) {
@@ -423,7 +425,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     QString noInfo("not Discovered");
 
-    foreach(const QString& token, m_parserObjList[hostIndex]->getMainInfo()) {
+    foreach(const QString& token, m_parserObjList[hostIndex]->getHostInfo()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeHostDet);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
