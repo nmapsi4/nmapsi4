@@ -368,7 +368,7 @@ void ParserManager::showParserResult(QTreeWidgetItem *item, int column)
     Q_UNUSED(column);
 
     QString hostName_ = item->text(0);
-    hostName_  = hostName_.left(hostName_.indexOf("\n"));
+    hostName_  = hostName_.left(hostName_.indexOf(' '));
 
     if (m_ui->m_scanWidget->hostEdit->itemText(0).isEmpty() && item->parent() == NULL) {
         m_ui->m_scanWidget->hostEdit->addItem(hostName_);
