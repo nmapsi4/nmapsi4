@@ -84,12 +84,12 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     }
 
     // create a scan host item.
-    QTreeWidgetItem *treeItem = new QTreeWidgetItem(m_ui->m_scanWidget->treeMain);
-    m_treeItems.push_front(treeItem);
-    treeItem->setSizeHint(0, QSize(32, 32));
+    QTreeWidgetItem *scanTreeItem = new QTreeWidgetItem(m_ui->m_scanWidget->treeMain);
+    m_treeItems.push_front(scanTreeItem);
+    scanTreeItem->setSizeHint(0, QSize(32, 32));
 
     // call real parser
-    PObject* elemObj = parserCore(parList, dataBuffer, errorBuffer, treeItem);
+    PObject* elemObj = parserCore(parList, dataBuffer, errorBuffer, scanTreeItem);
 
     elemObj->setParameters(parList.join(" "));
     elemObj->setId(id);
@@ -291,7 +291,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     }
 
     if (mainScanTreeElem->icon(0).isNull()) {
-        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
+        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
