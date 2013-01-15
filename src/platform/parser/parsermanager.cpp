@@ -229,17 +229,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     } // End first While
 
     QString tmp_host;
+    parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
 
     if (!generalBuffer_.isEmpty()) {
-        //QFont rootFont = root->font(0);
-        //rootFont.setWeight(QFont::Normal);
-        mainScanTreeElem->setText(0, generalBuffer_);
-        parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
-        mainScanTreeElem->setText(1, parserObjectElem->scanDate());
+        mainScanTreeElem->setText(0, generalBuffer_ + " (" + parserObjectElem->scanDate() + ")");
     } else {
-        mainScanTreeElem->setText(0, hostCheck);
-        parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
-        mainScanTreeElem->setText(1, parserObjectElem->scanDate());
+        mainScanTreeElem->setText(0, hostCheck + " (" + parserObjectElem->scanDate() + ")");
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)

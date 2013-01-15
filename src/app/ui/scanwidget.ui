@@ -43,6 +43,9 @@
           <height>0</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -57,12 +60,7 @@
         </property>
         <column>
          <property name="text">
-          <string>Host(s)</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Date</string>
+          <string>Hosts</string>
          </property>
         </column>
        </widget>

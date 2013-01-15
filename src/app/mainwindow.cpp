@@ -36,8 +36,7 @@ ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
     treeTraceroot->setColumnWidth(1, 100);
     treeTraceroot->setColumnWidth(2, 200);
     treeTraceroot->setColumnWidth(3, 200);
-    treeMain->setColumnWidth(0, 200);
-    treeMain->setColumnWidth(1, 150);
+    treeMain->setColumnWidth(0, 100);
 }
 
 MainWindow::MainWindow(QWidget* parent)
