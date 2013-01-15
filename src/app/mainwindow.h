@@ -122,6 +122,7 @@ public slots:
     void startScan();
     void updateComboHostnameProperties();
     void comboParametersSelectedEvent();
+    void updateVulnerabilitySection();
 
 private slots:
     void initObject();
@@ -134,7 +135,6 @@ private slots:
     void syncSettings();
     void linkCompleterToHostname();
     void updateScanSection();
-    void updateVulnerabilitySection();
     void updateDiscoverSection();
     void loadDefaultProfile();
     void resetComboParameters();
