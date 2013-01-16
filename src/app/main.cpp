@@ -1,5 +1,5 @@
 /*
-Copyright 2007-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2007-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -15,13 +15,13 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "mainwindow.h"
-#include "package.h"
-
-#include <QApplication>
 #include <QtCore/QTranslator>
 #include <QtCore/QDir>
 #include <QtCore/QLibraryInfo>
+#include <QApplication>
+
+#include "mainwindow.h"
+#include "package.h"
 
 
 int main(int argc, char *argv[])
