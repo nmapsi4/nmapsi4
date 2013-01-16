@@ -440,7 +440,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
         root->setText(0, token);
-        root->setToolTip(0, token);
+        root->setToolTip(0, startRichTextTags + token + endRichTextTags);
     }
 
     QString noDes = tr("No description");
@@ -601,7 +601,7 @@ void ParserManager::showParserObj(int hostIndex)
             }
 
             item->setText(0, value);
-            item->setToolTip(0, value);
+            item->setToolTip(0, startRichTextTags + value + endRichTextTags);
             item->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
         }
     }
@@ -623,7 +623,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/book.png")));
         root->setText(0, token);
-        root->setToolTip(0, token);
+        root->setToolTip(0, startRichTextTags + token + endRichTextTags);
     }
 
     // Show scan error

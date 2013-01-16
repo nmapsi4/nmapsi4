@@ -32,4 +32,7 @@ static const char negativeBackground[] = "background: #FFC0C0;";
 static const char highIpNumberBackground[] = "background: #FFDCA8;";
 static const char neutralBackground[] = "background: #fff;";
 
+static const char startRichTextTags[] = "<p><font>";
+static const char endRichTextTags[] = "</font></p>";
+
 #endif
