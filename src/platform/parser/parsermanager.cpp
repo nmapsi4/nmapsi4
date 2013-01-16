@@ -237,7 +237,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         mainScanTreeElem->setText(0, hostCheck + " (" + parserObjectElem->scanDate() + ")");
     }
 
-    QTextStream scanBufferToStream_(&scanBuffer); // QString to QtextStream (scan Tree)
+    QTextStream scanBufferToStream_(&scanBuffer); // scan ports
     QString scanBufferToStream_line;
 
     // check for scan result
@@ -263,14 +263,11 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
                 parserObjectElem->setPortServices(lStr[0]);
             }
         } // end while
-
-        parserObjectElem->setValidity(true);
     } else {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
-        parserObjectElem->setValidity(false);
     }
 
-    QTextStream bufferInfoStream(&bufferInfo); // QString to QtextStrem (scan Tree)
+    QTextStream bufferInfoStream(&bufferInfo); // Host info
     QString bufferInfoStream_line;
 
     // check for Host information
@@ -289,6 +286,13 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
     if (mainScanTreeElem->icon(0).isNull()) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
+    }
+
+    // set validity of parser object
+    if (!scanBuffer.isEmpty() || !bufferInfo.isEmpty()) {
+        parserObjectElem->setValidity(true);
+    } else {
+        parserObjectElem->setValidity(false);
     }
 
     QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
