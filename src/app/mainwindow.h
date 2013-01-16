@@ -23,17 +23,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ui_scanwidget.h"
 
 // Qt4 include
+#include <QtCore/QHash>
+#include <QtCore/QWeakPointer>
+#include <QtCore/QTimer>
+#include <QtCore/QList>
+#include <QtCore/QFile>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QSplitter>
 #include <QCompleter>
 #include <QStringListModel>
 #include <QCloseEvent>
-#include <QtCore/QHash>
-#include <QtCore/QWeakPointer>
-#include <QtCore/QTimer>
-#include <QtCore/QList>
-#include <QtCore/QFile>
+#include <QClipboard>
 #include <QtDeclarative/QDeclarativeContext>
 
 // KDE include
@@ -102,10 +103,10 @@ public:
 
 private:
     void addHostToMonitor(const QString hostname);
-    void resetOptions();
     void restoreSettings();
     void setDefaultSplitter();
     void updateQmlScanHistory();
+    void copyToClipboard(const QString& text);
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
@@ -124,6 +125,10 @@ public slots:
     void startScan();
     void updateComboHostnameProperties();
     void comboParametersSelectedEvent();
+    void takeHostFromBookmark();
+    void copyTextFromHostInfoTree();
+    void copyTextFromScanPortsTree();
+    void copyTextFromScanFullOutputTree();
     Q_INVOKABLE void updateScanSection();
     Q_INVOKABLE void updateVulnerabilitySection();
     Q_INVOKABLE void updateDiscoverSection();
@@ -133,7 +138,6 @@ private slots:
     void clearAll();
     void setFullScreen();
     void updateMenuBar();
-    void takeHostFromBookmark();
     void updateScanCounter(int hostNumber);
     void startPreferencesDialog();
     void syncSettings();

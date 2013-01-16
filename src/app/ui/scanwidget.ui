@@ -407,7 +407,7 @@
              <bool>true</bool>
             </property>
             <property name="selectionMode">
-             <enum>QAbstractItemView::SingleSelection</enum>
+             <enum>QAbstractItemView::ExtendedSelection</enum>
             </property>
             <property name="verticalScrollMode">
              <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -498,7 +498,7 @@
                <bool>true</bool>
               </property>
               <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
+               <enum>QAbstractItemView::ExtendedSelection</enum>
               </property>
               <property name="indentation">
                <number>20</number>
@@ -736,6 +736,9 @@
           <widget class="QTreeWidget" name="treeHostDet">
            <property name="alternatingRowColors">
             <bool>true</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::ExtendedSelection</enum>
            </property>
            <property name="rootIsDecorated">
             <bool>false</bool>

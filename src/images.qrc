@@ -3,6 +3,7 @@
     <file>platform/qml/vulnerabilityWelcome.qml</file>
     <file>platform/qml/mainWelcome.qml</file>
     <file>../images/arrow-down-double.png</file>
+    <file>../images/edit-copy.png</file>
     <file>../images/Categories-applications-development-web-icon.png</file>
     <file>../images/go-previous.png</file>
     <file>../images/go-next.png</file>

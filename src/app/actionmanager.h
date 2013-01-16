@@ -89,6 +89,9 @@ private slots:
 
 public slots:
     void scanBookmarkContextMenu();
+    void scanHostInfoContextMenu();
+    void scanPortsInfoContextMenu();
+    void scanFullOutputContextMenu();
     void parametersBookmarkContextMenu();
     void mainServicesContextMenu();
     void servicesContextMenu();

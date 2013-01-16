@@ -155,6 +155,9 @@ void MainWindow::initObject()
 
     // Set mouse event filter
     m_scanWidget->GItree->installEventFilter(m_mouseFilter);
+    m_scanWidget->treeHostDet->installEventFilter(m_mouseFilter);
+    m_scanWidget->listWscan->installEventFilter(m_mouseFilter);
+    m_scanWidget->listScan->installEventFilter(m_mouseFilter);
     m_bookmark->m_scanBookmarkWidget->treeLogH->installEventFilter(m_mouseFilter);
     m_bookmark->m_scanBookmarkWidget->treeBookPar->installEventFilter(m_mouseFilter);
     m_bookmark->m_vulnBookmarkWidget->treeBookVuln->installEventFilter(m_mouseFilter);
@@ -245,6 +248,42 @@ void MainWindow::takeHostFromBookmark()
         m_scanWidget->hostEdit->insertItem(0, m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem()->text(0));
         startScan();
     }
+}
+
+void MainWindow::copyTextFromHostInfoTree()
+{
+    QString clipLine;
+    foreach (QTreeWidgetItem* item, m_scanWidget->treeHostDet->selectedItems()) {
+        clipLine.append(item->text(0));
+        clipLine.append('\n');
+    }
+    copyToClipboard(clipLine);
+}
+
+void MainWindow::copyTextFromScanPortsTree()
+{
+    QString clipLine;
+    foreach (QTreeWidgetItem* item, m_scanWidget->listWscan->selectedItems()) {
+        clipLine.append(item->text(0) + ' ' + item->text(1) + ' ' + item->text(2) + ' ' + item->text(3));
+        clipLine.append('\n');
+    }
+    copyToClipboard(clipLine);
+}
+
+void MainWindow::copyTextFromScanFullOutputTree()
+{
+    QString clipLine;
+    foreach (QTreeWidgetItem* item, m_scanWidget->listScan->selectedItems()) {
+        clipLine.append(item->text(0));
+        clipLine.append('\n');
+    }
+    copyToClipboard(clipLine);
+}
+
+void MainWindow::copyToClipboard(const QString& text)
+{
+    QClipboard* clipboard = QApplication::clipboard();
+    clipboard->setText(text);
 }
 
 void MainWindow::quickAddressSelectionEvent()

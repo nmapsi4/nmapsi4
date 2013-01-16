@@ -124,6 +124,24 @@ void ActionManager::mouseClickEvent(QObject* obj)
             vulnerabilityUrlContextMenu();
         }
     }
+
+    if (obj == m_ui->m_scanWidget->treeHostDet) {
+        if (m_ui->m_scanWidget->treeHostDet->currentItem() != NULL) {
+            scanHostInfoContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_scanWidget->listWscan) {
+        if (m_ui->m_scanWidget->listWscan->currentItem() != NULL) {
+            scanPortsInfoContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_scanWidget->listScan) {
+        if (m_ui->m_scanWidget->listScan->currentItem() != NULL) {
+            scanFullOutputContextMenu();
+        }
+    }
 }
 
 void ActionManager::setupActions()
@@ -669,6 +687,47 @@ void ActionManager::scanBookmarkContextMenu()
     menuBook.addAction(&removeBook);
 
     menuBook.exec(QCursor::pos());
+}
+
+void ActionManager::scanHostInfoContextMenu()
+{
+    QAction copyHostDetail(m_ui);
+    copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
+    copyHostDetail.setIconText(tr("Copy"));
+
+    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromHostInfoTree()));
+
+    QMenu menuHostInfo(m_ui);
+    menuHostInfo.addAction(&copyHostDetail);
+    menuHostInfo.exec(QCursor::pos());
+}
+
+void ActionManager::scanPortsInfoContextMenu()
+{
+    QAction copyHostDetail(m_ui);
+    copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
+    copyHostDetail.setIconText(tr("Copy"));
+
+    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanPortsTree()));
+
+    QMenu menuHostInfo(m_ui);
+    menuHostInfo.addAction(&copyHostDetail);
+    menuHostInfo.exec(QCursor::pos());
+
+}
+
+void ActionManager::scanFullOutputContextMenu()
+{
+    QAction copyHostDetail(m_ui);
+    copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
+    copyHostDetail.setIconText(tr("Copy"));
+
+    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanFullOutputTree()));
+
+    QMenu menuHostInfo(m_ui);
+    menuHostInfo.addAction(&copyHostDetail);
+    menuHostInfo.exec(QCursor::pos());
+
 }
 
 void ActionManager::parametersBookmarkContextMenu()
