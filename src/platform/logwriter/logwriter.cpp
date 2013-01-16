@@ -180,13 +180,13 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "<title>" + hostName + "</title>";
     // css Style
     htmlPage += "<style type=\"text/css\">";
-    htmlPage += ".head { width:700px; background: #ccc; color: #000; float: left; padding: 3px; }";
-    htmlPage += ".sectionHead { width:700px; background: #ccc; color: #000; float: left; padding: 3px; }";
-    htmlPage += ".container { width:700px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
-    htmlPage += ".title { width:695px; background: #82b9ed; color: #000; float: left; padding: 3px; }";
-    htmlPage += ".result { width:695px; background: #fff; color: #000; float: left; padding: 3px;}";
-    htmlPage += ".resultWhite { width:690px; background: #fff; color: #000; float: left; padding: 1px;}";
-    htmlPage += ".resultGrey { width:690px; background: #ccc; color: #000; float: left; padding: 1px; }";
+    htmlPage += ".head { width:700px; background: #ccc; color: #000; float: left;}";
+    htmlPage += ".sectionHead { width:700px; background: #ccc; color: #000; float:}";
+    htmlPage += ".container { width:700px; background: #82b9ed; color: #000;}";
+    htmlPage += ".title { width:700px; background: #82b9ed; color: #000; float: left;}";
+    htmlPage += ".result { width:700px; background: #fff; color: #000; float: left;}";
+    htmlPage += ".resultWhite { width:700px; background: #fff; color: #000; float: left;}";
+    htmlPage += ".resultGrey { width:700px; background: #ccc; color: #000; float: left;}";
     htmlPage += ".space { width:700px; background: #fff; float: left; }";
     htmlPage += "</style></head>";
     //Html core
