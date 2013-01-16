@@ -57,6 +57,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "actionmanager.h"
 #include "notify.h"
 #include "profilehandler.h"
+#include "mouseeventfilter.h"
 
 // system
 #if !defined(Q_OS_WIN32)
@@ -93,6 +94,7 @@ public:
     ScanWidget* m_scanWidget;
     QDeclarativeView* m_welcomeQmlView;
     QTabWidget* m_mainTabWidget;
+    MouseEventFilter* m_mouseFilter;
 
 #if defined(USE_KDELIBS)
     KMessageWidget *m_kWidgetNotification;

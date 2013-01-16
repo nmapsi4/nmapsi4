@@ -47,6 +47,7 @@ SET(SOURCES_CPP
     common/pobjects.cpp
     common/notify.cpp
     common/package.cpp
+    common/mouseeventfilter.cpp
     app/preference/preferencesdialog.cpp
     app/profiler/profilermanager.cpp
     app/profiler/profiler.cpp
@@ -77,6 +78,7 @@ SET(SOURCES_MOC
     platform/parser/parsermanager.h
     common/utilities.h
     common/processthread.h
+    common/mouseeventfilter.h
     app/profiler/profilermanager.h
     app/profiler/profiler.h
     app/preference/preferencesdialog.h

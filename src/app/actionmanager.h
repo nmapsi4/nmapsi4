@@ -84,6 +84,9 @@ private:
     QMenu *m_menuTools;
     QMenu *m_menuHelp;
 
+private slots:
+    void mouseClickEvent(QObject* obj);
+
 public slots:
     void scanBookmarkContextMenu();
     void parametersBookmarkContextMenu();

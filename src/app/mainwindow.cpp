@@ -55,6 +55,7 @@ void MainWindow::initObject()
 
     // allocate memory for scan widget
     m_scanWidget = new ScanWidget(this);
+    m_mouseFilter = new MouseEventFilter(this);
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
@@ -151,6 +152,13 @@ void MainWindow::initObject()
     // set saved profile or simply the default one
     m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
     updateWelcomeSection();
+
+    // Set mouse event filter
+    m_scanWidget->GItree->installEventFilter(m_mouseFilter);
+    m_bookmark->m_scanBookmarkWidget->treeLogH->installEventFilter(m_mouseFilter);
+    m_bookmark->m_scanBookmarkWidget->treeBookPar->installEventFilter(m_mouseFilter);
+    m_bookmark->m_vulnBookmarkWidget->treeBookVuln->installEventFilter(m_mouseFilter);
+    m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl->installEventFilter(m_mouseFilter);
 
 #if defined(Q_OS_MAC)
     // w/o show() call, mainwindow is not visible in mac osx

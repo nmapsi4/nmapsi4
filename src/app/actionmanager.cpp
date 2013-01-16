@@ -86,20 +86,44 @@ ActionManager::ActionManager(MainWindow* parent)
     m_ui->addToolBar(Qt::TopToolBarArea, m_discoverToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_globalMenuToolBar);
 
-    // ActionManager signals
-    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(scanBookmarkContextMenu()));
-    connect(m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(parametersBookmarkContextMenu()));
-    connect(m_ui->m_scanWidget->GItree, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(mainServicesContextMenu()));
-    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(servicesContextMenu()));
-    connect(m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(vulnerabilityUrlContextMenu()));
+    connect(m_ui->m_mouseFilter, SIGNAL(mouseRightClickEvent(QObject*)),
+            this, SLOT(mouseClickEvent(QObject*)));
 
     setupActions();
     setupMenuBar();
+}
+
+void ActionManager::mouseClickEvent(QObject* obj)
+{
+    if (obj == m_ui->m_scanWidget->GItree) {
+        if (m_ui->m_scanWidget->GItree->currentItem() != NULL) {
+            mainServicesContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH) {
+        if (m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem() != NULL) {
+            scanBookmarkContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar) {
+        if (m_ui->m_bookmark->m_scanBookmarkWidget->treeBookPar->currentItem() != NULL) {
+            parametersBookmarkContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln) {
+        if (m_ui->m_bookmark->m_vulnBookmarkWidget->treeBookVuln->currentItem() != NULL) {
+            servicesContextMenu();
+        }
+    }
+
+    if (obj == m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl) {
+        if (m_ui->m_bookmark->m_vulnBookmarkWidget->treeWidgetVulnUrl->currentItem() != NULL) {
+            vulnerabilityUrlContextMenu();
+        }
+    }
 }
 
 void ActionManager::setupActions()
