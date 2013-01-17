@@ -232,8 +232,13 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
     if (!generalBuffer_.isEmpty()) {
         mainScanTreeElem->setText(0, generalBuffer_ + " (" + parserObjectElem->scanDate() + ")");
+        mainScanTreeElem->setToolTip(0, startRichTextTags + generalBuffer_
+                                     + " (" + parserObjectElem->scanDate() + ")" + endRichTextTags);
     } else {
         mainScanTreeElem->setText(0, hostCheck + " (" + parserObjectElem->scanDate() + ")");
+        mainScanTreeElem->setToolTip(0, startRichTextTags
+                                     + hostCheck + " (" + parserObjectElem->scanDate() + ")"
+                                     + endRichTextTags);
     }
 
     QTextStream scanBufferToStream_(&scanBuffer); // scan ports
