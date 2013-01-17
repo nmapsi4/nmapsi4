@@ -56,7 +56,6 @@ void ParserManager::clearParserItems()
 {
     memory::freelist<PObject*>::itemDeleteAll(m_parserObjList);
     memory::freelist<PObjectLookup*>::itemDeleteAll(m_parserObjUtilList);
-    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
     memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_treeItems);
 
@@ -412,9 +411,7 @@ void ParserManager::showParserObj(int hostIndex)
 {
     // Clear widget
     memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemListScan);
-    memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_objectItems);
     m_ui->m_scanWidget->listWscan->clear();
-    m_ui->m_scanWidget->GItree->clear();
     m_ui->m_scanWidget->treeNSS->clear();
     m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered->clear();
 
@@ -433,7 +430,6 @@ void ParserManager::showParserObj(int hostIndex)
         root->setToolTip(0, startRichTextTags + token + endRichTextTags);
     }
 
-    QString noDescription = tr("No description");
     // clear combo Vulnerabilities
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->insertItem(0, "Services");
@@ -467,8 +463,6 @@ void ParserManager::showParserObj(int hostIndex)
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
-        } else {
-            root->setText(3, noDescription);
         }
     }
 
@@ -500,8 +494,6 @@ void ParserManager::showParserObj(int hostIndex)
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
-        } else {
-            root->setText(3, noDescription);
         }
     }
 
@@ -534,25 +526,10 @@ void ParserManager::showParserObj(int hostIndex)
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
             }
-        } else {
-            root->setText(3, noDescription);
         }
     }
 
-    // show services
-    int servicesWithDetails = 0;
-    foreach(const QString& token, m_parserObjList[hostIndex]->getServices()) {
-        if (!m_ui->m_scanWidget->listWscan->findItems(token, Qt::MatchExactly, 2)[0]->text(3).contains(noDescription)) {
-            QTreeWidgetItem *objItem = new QTreeWidgetItem(m_ui->m_scanWidget->GItree);
-            objItem->setSizeHint(0, QSize(22, 22));
-            objItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-            m_objectItems.push_front(objItem);
-            objItem->setText(0, token);
-            servicesWithDetails++;
-        }
-    }
-
-    if (servicesWithDetails) {
+    if (m_parserObjList[hostIndex]->getServices().size()) {
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
     } else {
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));

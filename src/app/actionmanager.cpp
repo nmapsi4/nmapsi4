@@ -95,12 +95,6 @@ ActionManager::ActionManager(MainWindow* parent)
 
 void ActionManager::mouseClickEvent(QObject* obj)
 {
-    if (obj == m_ui->m_scanWidget->GItree) {
-        if (m_ui->m_scanWidget->GItree->currentItem() != NULL) {
-            mainServicesContextMenu();
-        }
-    }
-
     if (obj == m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH) {
         if (m_ui->m_bookmark->m_scanBookmarkWidget->treeLogH->currentItem() != NULL) {
             scanBookmarkContextMenu();
@@ -708,10 +702,16 @@ void ActionManager::scanPortsInfoContextMenu()
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
     copyHostDetail.setIconText(tr("Copy"));
 
+    QAction checkVuln(m_ui);
+    checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
+    checkVuln.setIconText(tr("Check Vulnerability"));
+
+    connect(&checkVuln, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(checkVulnerabilitiesFromPortsTree()));
     connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanPortsTree()));
 
     QMenu menuHostInfo(m_ui);
     menuHostInfo.addAction(&copyHostDetail);
+    menuHostInfo.addAction(&checkVuln);
     menuHostInfo.exec(QCursor::pos());
 
 }
@@ -762,19 +762,6 @@ void ActionManager::servicesContextMenu()
     menuBook.addAction(&removeBook);
 
     menuBook.exec(QCursor::pos());
-}
-
-void ActionManager::mainServicesContextMenu()
-{
-    QAction checkVuln(m_ui);
-    checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    checkVuln.setIconText(tr("Check Vulnerability"));
-
-    connect(&checkVuln, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(objVulnButton()));
-
-    QMenu menuVulnMain(m_ui);
-    menuVulnMain.addAction(&checkVuln);
-    menuVulnMain.exec(QCursor::pos());
 }
 
 void ActionManager::vulnerabilityUrlContextMenu()

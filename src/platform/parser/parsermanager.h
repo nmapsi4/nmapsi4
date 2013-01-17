@@ -61,7 +61,6 @@ private:
     QList<PObject*> m_parserObjList;
     QList<PObjectLookup*> m_parserObjUtilList;
     QList<QTreeWidgetItem*> m_itemListScan;
-    QList<QTreeWidgetItem*> m_objectItems;
     QList<QTreeWidgetItem*> m_treeItems;
     QSplitter *m_rawlogHorizontalSplitter;
 

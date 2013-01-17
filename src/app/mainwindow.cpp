@@ -154,7 +154,6 @@ void MainWindow::initObject()
     updateWelcomeSection();
 
     // Set mouse event filter
-    m_scanWidget->GItree->installEventFilter(m_mouseFilter);
     m_scanWidget->treeHostDet->installEventFilter(m_mouseFilter);
     m_scanWidget->listWscan->installEventFilter(m_mouseFilter);
     m_scanWidget->listScan->installEventFilter(m_mouseFilter);
@@ -858,7 +857,6 @@ void MainWindow::clearAll()
     m_scanWidget->treeLookup->clear();
     m_scanWidget->treeTraceroot->clear();
     m_scanWidget->treeHostDet->clear();
-    m_scanWidget->GItree->clear();
     m_scanWidget->listWscan->clear();
     m_scanWidget->treeNSS->clear();
     m_scanWidget->listScan->clear();
