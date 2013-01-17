@@ -236,13 +236,13 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
                 packet->setBackground(0, QBrush(QColor(163, 224, 163)));
-                packet->setToolTip(0, line);
+                packet->setToolTip(0, startRichTextTags + line + endRichTextTags);
                 packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
             } else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size() - 1])) {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
-                packet->setToolTip(0, line);
+                packet->setToolTip(0, startRichTextTags + line + endRichTextTags);
                 packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
             }
@@ -453,7 +453,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         m_listTreePackets.push_back(packet);
         packet->setBackground(0, QBrush(QColor(163, 224, 163)));
         packet->setText(0, data);
-        packet->setToolTip(0, data);
+        packet->setToolTip(0, startRichTextTags + data + endRichTextTags);
         packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
 
         int positionMatched = 0;
@@ -480,7 +480,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         }
 
         packet->setText(0, data);
-        packet->setToolTip(0, data);
+        packet->setToolTip(0, startRichTextTags + data + endRichTextTags);
         packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     }
 }
