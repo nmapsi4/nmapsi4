@@ -566,7 +566,7 @@ void ParserManager::showParserObj(int hostIndex)
     for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeNSS);
         m_itemListScan.push_front(root);
-        root->setSizeHint(0, QSize(32, 32));
+        root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
 
         QStringList rootValue = i.key().split(' ', QString::SkipEmptyParts);
