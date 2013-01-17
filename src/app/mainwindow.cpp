@@ -279,6 +279,24 @@ void MainWindow::copyTextFromScanFullOutputTree()
     copyToClipboard(clipLine);
 }
 
+void MainWindow::openUrlFromScanPortsTree()
+{
+    QString address;
+    foreach (QTreeWidgetItem* item, m_scanWidget->listWscan->selectedItems()) {
+        if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
+            address.append("http://");
+            address.append(m_scanWidget->treeMain->currentItem()->text(0).split(' ')[0]);
+            address.append(':' + item->text(0).split('/')[0]);
+            // open tab for the address
+            m_vulnerability->openTab(QUrl(address), address);
+        }
+
+        address.clear();
+    }
+
+    updateVulnerabilitySection();
+}
+
 void MainWindow::copyToClipboard(const QString& text)
 {
     QClipboard* clipboard = QApplication::clipboard();

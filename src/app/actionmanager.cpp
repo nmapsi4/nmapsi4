@@ -704,16 +704,32 @@ void ActionManager::scanPortsInfoContextMenu()
 
     QAction checkVuln(m_ui);
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    checkVuln.setIconText(tr("Check Vulnerability"));
+    checkVuln.setIconText(tr("Check Vulnerabilities"));
+
+    QAction openUrl(m_ui);
+    openUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
+    openUrl.setIconText(tr("Open address via http"));
 
     connect(&checkVuln, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(checkVulnerabilitiesFromPortsTree()));
     connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanPortsTree()));
+    connect(&openUrl, SIGNAL(triggered()), m_ui, SLOT(openUrlFromScanPortsTree()));
+
+    openUrl.setEnabled(false);
+
+    // check for http port
+    foreach (QTreeWidgetItem* item, m_ui->m_scanWidget->listWscan->selectedItems()) {
+        if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
+            openUrl.setEnabled(true);
+            break;
+        }
+    }
 
     QMenu menuHostInfo(m_ui);
-    menuHostInfo.addAction(&copyHostDetail);
     menuHostInfo.addAction(&checkVuln);
+    menuHostInfo.addSeparator();
+    menuHostInfo.addAction(&copyHostDetail);
+    menuHostInfo.addAction(&openUrl);
     menuHostInfo.exec(QCursor::pos());
-
 }
 
 void ActionManager::scanFullOutputContextMenu()
