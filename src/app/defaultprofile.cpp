@@ -160,9 +160,36 @@ void MainWindow::resetComboParameters()
     comboParametersSelectedEvent();
 }
 
+bool MainWindow::removeUnsupportedOptions(QString& parameters) const
+{
+    bool isChanged = false;
+
+    if (parameters.contains("-oX")) {
+        parameters = parameters.remove("-oX");
+        isChanged = true;
+    }
+
+    if (parameters.contains("-oS")) {
+        parameters = parameters.remove("-oS");
+        isChanged = true;
+    }
+
+    if (parameters.contains("-oG")) {
+        parameters = parameters.remove("-oG");
+        isChanged = true;
+    }
+
+    return isChanged;
+}
+
 QStringList MainWindow::getParameters()
 {
-    return m_scanWidget->comboAdv->lineEdit()->text().split(' ');
+    QString parameters(m_scanWidget->comboAdv->lineEdit()->text());
+    if (removeUnsupportedOptions(parameters)) {
+        m_scanWidget->comboAdv->lineEdit()->setText(parameters);
+    }
+
+    return parameters.split(' ');
 }
 
 bool MainWindow::containsParameter(const QString& parameter)

@@ -104,6 +104,7 @@ private:
     void updateComboParametersFromList(const QStringList& parameters);
     QStringList getParameters();
     bool containsParameter(const QString& parameter);
+    bool removeUnsupportedOptions(QString& parameters) const;
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
