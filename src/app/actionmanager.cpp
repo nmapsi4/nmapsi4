@@ -712,7 +712,7 @@ void ActionManager::scanPortsInfoContextMenu()
 
     connect(&checkVuln, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(checkVulnerabilitiesFromPortsTree()));
     connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanPortsTree()));
-    connect(&openUrl, SIGNAL(triggered()), m_ui, SLOT(openUrlFromScanPortsTree()));
+    connect(&openUrl, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(openUrlFromScanPortsTree()));
 
     openUrl.setEnabled(false);
 

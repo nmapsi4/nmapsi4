@@ -129,7 +129,6 @@ public slots:
     void copyTextFromHostInfoTree();
     void copyTextFromScanPortsTree();
     void copyTextFromScanFullOutputTree();
-    void openUrlFromScanPortsTree();
     Q_INVOKABLE void updateScanSection();
     Q_INVOKABLE void updateVulnerabilitySection();
     Q_INVOKABLE void updateDiscoverSection();
