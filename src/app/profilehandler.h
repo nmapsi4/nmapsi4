@@ -35,6 +35,8 @@ public:
     bool containsParameter(const QString& parameter) const;
 
 private:
+    bool removeUnsupportedOptions(QString& parameters) const;
+
     int m_userId;
     int m_savedProfileIndex;
     MainWindow* m_ui;

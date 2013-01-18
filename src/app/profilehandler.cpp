@@ -119,9 +119,36 @@ QList< QPair<QString, QString> > ProfileHandler::defaultScanProfile() const
     return listProfileModel;
 }
 
+bool ProfileHandler::removeUnsupportedOptions(QString& parameters) const
+{
+    bool isChanged = false;
+
+    if (parameters.contains("-oX")) {
+        parameters = parameters.remove("-oX");
+        isChanged = true;
+    }
+
+    if (parameters.contains("-oS")) {
+        parameters = parameters.remove("-oS");
+        isChanged = true;
+    }
+
+    if (parameters.contains("-oG")) {
+        parameters = parameters.remove("-oG");
+        isChanged = true;
+    }
+
+    return isChanged;
+}
+
 QStringList ProfileHandler::getParameters() const
 {
-    return m_ui->m_scanWidget->comboAdv->lineEdit()->text().split(' ');
+    QString parameters(m_ui->m_scanWidget->comboAdv->lineEdit()->text());
+    if (removeUnsupportedOptions(parameters)) {
+        m_ui->m_scanWidget->comboAdv->lineEdit()->setText(parameters);
+    }
+
+    return parameters.split(' ');
 }
 
 bool ProfileHandler::containsParameter(const QString& parameter) const
