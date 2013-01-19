@@ -687,7 +687,7 @@ void ActionManager::scanHostInfoContextMenu()
 {
     QAction copyHostDetail(m_ui);
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
-    copyHostDetail.setIconText(tr("Copy"));
+    copyHostDetail.setIconText(tr("Copy text"));
 
     connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromHostInfoTree()));
 
@@ -700,7 +700,7 @@ void ActionManager::scanPortsInfoContextMenu()
 {
     QAction copyHostDetail(m_ui);
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
-    copyHostDetail.setIconText(tr("Copy"));
+    copyHostDetail.setIconText(tr("Copy text"));
 
     QAction checkVuln(m_ui);
     checkVuln.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
@@ -736,7 +736,7 @@ void ActionManager::scanFullOutputContextMenu()
 {
     QAction copyHostDetail(m_ui);
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
-    copyHostDetail.setIconText(tr("Copy"));
+    copyHostDetail.setIconText(tr("Copy text"));
 
     connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanFullOutputTree()));
 
