@@ -134,7 +134,13 @@ font: bold;</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" colspan="2">
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="descriptionLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -144,13 +150,11 @@ font: bold;</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>30</height>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
-          <string>NmapSi4 is a complete Qt4-based Gui with the design
-goals to provide a complete nmap interface for Users,
-in order to menage all option of this power security net scanner.</string>
+          <string/>
          </property>
         </widget>
        </item>

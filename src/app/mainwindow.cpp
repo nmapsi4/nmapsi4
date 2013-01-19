@@ -145,6 +145,7 @@ void MainWindow::initObject()
     qmlWelcomeLayout->addItem(verticalSpacer);
     m_welcomeQmlView->rootContext()->setContextProperty("mainObject", this);
     m_welcomeQmlView->rootContext()->setContextProperty("version_number", VERSION);
+    m_welcomeQmlView->rootContext()->setContextProperty("description", About::description());
     updateQmlScanHistory();
 
     m_welcomeQmlView->setSource(Package::qmlPath("mainWelcome"));

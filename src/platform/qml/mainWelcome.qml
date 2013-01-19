@@ -225,11 +225,7 @@ Rectangle {
                 anchors.horizontalCenter: history.horizontalCenter
                 font.family: palette.text
                 //font.pointSize: 16
-                text: qsTr("NmapSi4 is a complete Qt4-based Gui with <br/>\
-                the design goals to provide a complete nmap<br/>\
-                interface for users, in order to manage all<br/>\
-                option of this power security net scanner<br/>\
-                and search services vulnerability.")
+                text: description
             }
 
             Text {

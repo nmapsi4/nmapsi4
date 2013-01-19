@@ -29,6 +29,8 @@ class About : public QDialog, private Ui::AboutUi
 public:
     explicit About(QWidget *parent = 0);
     ~About() {};
+
+    static QString description();
 };
 
 #endif

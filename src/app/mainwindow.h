@@ -59,6 +59,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "notify.h"
 #include "profilehandler.h"
 #include "mouseeventfilter.h"
+#include "about.h"
 
 // system
 #if !defined(Q_OS_WIN32)
