@@ -277,14 +277,33 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     // check for Host information
     // OS not detected
     bool isOsFound = false;
+    bool osGuessesFound = false;
     while (!bufferInfoStream.atEnd()) {
         bufferInfoStream_line = bufferInfoStream.readLine();
 
+        // check for specific device type
         if (bufferInfoStream_line.startsWith("Device type:") && bufferInfoStream_line.contains("switch")) {
             mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
         }
-        // Check OS String
-        if (bufferInfoStream_line.contains("OS") && !isOsFound) {
+
+        // check for Os guesses string (more specific)
+        if (bufferInfoStream_line.startsWith("Aggressive OS guesses:")) {
+
+            QString osInfo(bufferInfoStream_line.left(bufferInfoStream_line.indexOf("%")));
+            osInfo = osInfo.remove("Aggressive OS guesses:");
+            osInfo = osInfo.remove('(');
+            osInfo = osInfo.remove(')');
+            isOsFound = HostTools::checkViewOS(osInfo, mainScanTreeElem);
+
+            if (!isOsFound && (osInfo.contains("router") || osInfo.contains("switch"))) {
+                mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
+            }
+            mainScanTreeElem->setToolTip(0, mainScanTreeElem->toolTip(0) + "<br/>" + "Os: " + osInfo + "%");
+            osGuessesFound = true;
+        }
+
+        // Check OS String (more generic information)
+        if (bufferInfoStream_line.contains("OS") && !isOsFound && !osGuessesFound) {
             // OS was found ?
             isOsFound = HostTools::checkViewOS(bufferInfoStream_line, mainScanTreeElem);
         }
