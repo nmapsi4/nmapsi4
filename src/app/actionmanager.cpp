@@ -152,7 +152,7 @@ void ActionManager::setupActions()
     // clear action
     action = new QAction(m_ui);
     action->setText(tr("Clear History"));
-    action->setIcon(QIcon::fromTheme("edit-clear", QIcon(":/images/images/edit-clear-list.png")));
+    action->setIcon(QIcon::fromTheme("edit-clear-list", QIcon(":/images/images/edit-clear-list.png")));
     m_collectionsScanSection.insert("clearHistory-action", action);
     connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(clearAll()));
     action->setEnabled(false);

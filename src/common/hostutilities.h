@@ -107,10 +107,7 @@ public:
         } else if (OSline.contains("Mac OS X")) {
             itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/os-logo/mac-os-x_logo.png")));
             return true;
-        } /*else {
-            itemOS->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
-            return false;
-        }*/
+        }
 
         return false;
     }
