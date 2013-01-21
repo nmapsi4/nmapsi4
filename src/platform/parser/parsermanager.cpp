@@ -279,6 +279,10 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     bool isOsFound = false;
     while (!bufferInfoStream.atEnd()) {
         bufferInfoStream_line = bufferInfoStream.readLine();
+
+        if (bufferInfoStream_line.startsWith("Device type:") && bufferInfoStream_line.contains("switch")) {
+            mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
+        }
         // Check OS String
         if (bufferInfoStream_line.contains("OS") && !isOsFound) {
             // OS was found ?
