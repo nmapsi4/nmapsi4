@@ -123,8 +123,6 @@ void MainWindow::initObject()
             this, SLOT(clearHostnameCombo()));
     connect(m_scanWidget->pushButtonLoadFromFile, SIGNAL(clicked()),
             this, SLOT(loadTargetListFromFile()));
-    connect(m_scanWidget->buttonParametersClear, SIGNAL(clicked()),
-            m_profileHandler, SLOT(clearParametersCombo()));
     connect(m_scanWidget->comboParametersProfiles, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(comboParametersSelectedEvent()));
     connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),

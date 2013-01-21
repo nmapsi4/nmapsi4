@@ -167,10 +167,3 @@ void ProfileHandler::loadDefaultProfile()
     m_ui->m_scanWidget->comboAdv->setStyleSheet(QString::fromUtf8("color: rgb(153, 153, 153);"));
     m_ui->m_scanWidget->comboAdv->insertItem(0, getParameters().join(" "));
 }
-
-void ProfileHandler::clearParametersCombo()
-{
-    // reset saved profile or simply the default one
-    m_ui->m_scanWidget->comboParametersProfiles->setCurrentIndex(m_savedProfileIndex);
-    m_ui->comboParametersSelectedEvent();
-}

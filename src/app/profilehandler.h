@@ -43,7 +43,6 @@ private:
 
 public slots:
     void loadDefaultProfile();
-    void clearParametersCombo();
     void updateComboParametersFromList(const QStringList& parameters);
 };
 
