@@ -404,8 +404,7 @@ void ActionManager::createSectionsBar()
 
     actionButt = new QToolButton(m_bottomSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")));
-    actionButt->setText(tr("Welcome"));
-    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    actionButt->setToolTip(tr("Welcome"));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("welcome-sez", actionButt);
@@ -414,10 +413,8 @@ void ActionManager::createSectionsBar()
 
     actionButt = new QToolButton(m_bottomSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
-    actionButt->setText(tr("Scan host(s)"));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
-    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    actionButt->setToolTip(tr("Scan host(s)"));
+    actionButt->setToolTip(tr("Scan an host"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateScanSection()));
@@ -425,10 +422,8 @@ void ActionManager::createSectionsBar()
 
     actionButt = new QToolButton(m_bottomSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
-    actionButt->setText(tr("Vulnerability"));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
-    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    actionButt->setToolTip(tr("Check Vulnerabilities"));
+    actionButt->setToolTip(tr("Search a vulnerability"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateVulnerabilitySection()));
@@ -436,10 +431,8 @@ void ActionManager::createSectionsBar()
 
     actionButt = new QToolButton(m_bottomSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
-    actionButt->setText(tr("Discover"));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
-    //actionButt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    actionButt->setToolTip(tr("Network Discover"));
+    actionButt->setToolTip(tr("Discover a network"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("discover-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateDiscoverSection()));
