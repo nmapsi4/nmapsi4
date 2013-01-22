@@ -295,11 +295,16 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             osInfo = osInfo.remove(')');
             isOsFound = HostTools::checkViewOS(osInfo, mainScanTreeElem);
 
-            if (!isOsFound && (osInfo.contains("router") || osInfo.contains("switch"))) {
+            if (!isOsFound && (osInfo.contains("router") || osInfo.contains("switch") || osInfo.contains("hub"))) {
                 mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
+                osGuessesFound = true;
+            }
+
+            if (!osGuessesFound && osInfo.contains("WAP")) {
+                mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/wap.png")));
+                osGuessesFound = true;
             }
             mainScanTreeElem->setToolTip(0, mainScanTreeElem->toolTip(0) + "<br/>" + "Os: " + osInfo + "%");
-            osGuessesFound = true;
         }
 
         // Check OS String (more generic information)
