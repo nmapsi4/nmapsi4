@@ -245,31 +245,27 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     QString scanBufferToStream_line;
 
     // check for scan result
-    if (!scanBufferToStream_.atEnd()) {
-        while (!scanBufferToStream_.atEnd()) {
-            scanBufferToStream_line = scanBufferToStream_.readLine();
-            if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
-                    || scanBufferToStream_line.contains("unfiltered")) {
+    while (!scanBufferToStream_.atEnd()) {
+        scanBufferToStream_line = scanBufferToStream_.readLine();
+        if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
+                || scanBufferToStream_line.contains("unfiltered")) {
 
-                if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) {
-                    parserObjectElem->setPortFiltered(scanBufferToStream_line);
-                } else {
-                    parserObjectElem->setPortOpen(scanBufferToStream_line);
-                }
+            if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) {
+                parserObjectElem->setPortFiltered(scanBufferToStream_line);
             } else {
-                parserObjectElem->setPortClose(scanBufferToStream_line);
+                parserObjectElem->setPortOpen(scanBufferToStream_line);
             }
+        } else {
+            parserObjectElem->setPortClose(scanBufferToStream_line);
+        }
 
-            if (!scanBufferToStream_line.isEmpty()) {
-                QString tmpStr = scanBufferToStream_line;
-                QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
-                parserObjectElem->setServices(lStr[2]); // Obj Services
-                parserObjectElem->setPortServices(lStr[0]);
-            }
-        } // end while
-    } else {
-        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
-    }
+        if (!scanBufferToStream_line.isEmpty()) {
+            QString tmpStr = scanBufferToStream_line;
+            QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
+            parserObjectElem->setServices(lStr[2]); // Obj Services
+            parserObjectElem->setPortServices(lStr[0]);
+        }
+    } // end while
 
     QTextStream bufferInfoStream(&bufferInfo); // Host info
     QString bufferInfoStream_line;
@@ -394,6 +390,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         bufferErrorStream_line = bufferErrorStream.readLine();
         parserObjectElem->setErrorScan(bufferErrorStream_line);
     }
+
+    // no result for scan and ip is down
+    if (scanBuffer.isEmpty() && !bufferInfo.isEmpty() && bufferInfo.contains("Host seems down")) {
+        mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
+    }
+
 
     return parserObjectElem;
 }
