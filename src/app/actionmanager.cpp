@@ -709,12 +709,18 @@ void ActionManager::scanPortsInfoContextMenu()
 
     openUrl.setEnabled(false);
 
+    QList<QTreeWidgetItem*> itemsList = m_ui->m_scanWidget->listWscan->selectedItems();
+
+    if ((itemsList.size() == 1) && (itemsList[0]->text(3).isEmpty())) {
+        checkVuln.setEnabled(false);
+    } else {
     // check for http port
-    foreach (QTreeWidgetItem* item, m_ui->m_scanWidget->listWscan->selectedItems()) {
+    foreach (QTreeWidgetItem* item, itemsList) {
         if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
             openUrl.setEnabled(true);
             break;
         }
+    }
     }
 
     QMenu menuHostInfo(m_ui);
