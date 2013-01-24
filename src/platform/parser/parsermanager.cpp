@@ -445,7 +445,16 @@ void ParserManager::showParserObj(int hostIndex)
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
-        root->setText(0, token);
+
+        if (token.contains("OS")) {
+            QFont font = root->font(0);
+            font.setBold(true);
+            root->setFont(0, font);
+            root->setText(0, token);
+        } else {
+            root->setText(0, token);
+        }
+
         root->setToolTip(0, startRichTextTags + token + endRichTextTags);
     }
 
