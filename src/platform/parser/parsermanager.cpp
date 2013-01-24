@@ -438,8 +438,6 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->m_scanWidget->comboScanLog->clear();
     m_ui->m_scanWidget->comboScanLog->insertItem(0, m_parserObjList[hostIndex]->getParameters());
 
-    QString noInfo("not Discovered");
-
     foreach(const QString& token, m_parserObjList[hostIndex]->getHostInfo()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeHostDet);
         m_itemListScan.push_front(root);
