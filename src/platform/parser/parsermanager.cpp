@@ -146,7 +146,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     QRegExp tracerouteRx(matchTraceroute);
     QString scanBuffer;
     QString bufferInfo;
-    QString bufferTraceRoute;
     QString nseBuffer;
 
     QStringList infoParserStringList;
@@ -214,9 +213,11 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             nseBuffer.append(tmpClean + '\n');
         }
 
+        // collect trace route information
         if ((tracerouteRx.indexIn(tmpBufferLine) != -1) && (!tmpBufferLine.contains("/"))) {
-            bufferTraceRoute.append(tmpBufferLine);
-            bufferTraceRoute.append("\n");
+            if (!tmpBufferLine.isEmpty() && !tmpBufferLine.contains("guessing hop")) {
+                parserObjectElem->setTraceRouteInfo(tmpBufferLine);
+            }
         }
 
     } // End first While
@@ -299,17 +300,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         parserObjectElem->setValidity(true);
     } else {
         parserObjectElem->setValidity(false);
-    }
-
-    QTextStream bufferTraceStream(&bufferTraceRoute); // Traceroute buffer
-    QString bufferTraceStream_line;
-
-    // check for traceroute scan information
-    while (!bufferTraceStream.atEnd()) {
-        bufferTraceStream_line = bufferTraceStream.readLine();
-        if (!bufferTraceStream_line.isEmpty() && !bufferTraceStream_line.contains("guessing hop")) {
-            parserObjectElem->setTraceRouteInfo(bufferTraceStream_line);
-        }
     }
 
     QTextStream nseStream(&nseBuffer);
