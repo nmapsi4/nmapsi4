@@ -35,7 +35,6 @@ public:
     const QString &scanDate() const;
     const QStringList &getHostInfo() const;
     const QStringList &getServices() const;
-    const QStringList &getPortServices() const;
     const QStringList &getPortOpen() const;
     const QStringList &getPortClose() const;
     const QStringList &getPortFiltered() const;
@@ -51,7 +50,6 @@ public:
     void setHostInfo(const QString hostInfoLine);
     void setScanDate(const QString date);
     void setServices(const QString Service);
-    void setPortServices(const QString portService);
     void setPortOpen(const QString portOpen);
     void setPortClose(const QString portClose);
     void setPortFiltered(const QString portFiltered);
@@ -70,7 +68,6 @@ private:
     QString m_scanDate;
     QStringList m_mainInfo;
     QStringList m_services;
-    QStringList m_portServices;
     QStringList m_portOpened;
     QStringList m_portFiltered;
     QStringList m_portClosed;

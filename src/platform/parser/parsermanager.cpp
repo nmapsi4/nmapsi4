@@ -250,7 +250,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             QString tmpStr = scanBufferToStreamLine;
             QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
             parserObjectElem->setServices(lStr[2]); // Obj Services
-            parserObjectElem->setPortServices(lStr[0]);
         }
     } // end while
 
