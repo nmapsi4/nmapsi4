@@ -965,8 +965,7 @@ void MainWindow::loadTargetListFromFile()
 
     QFile *targetFile = new QFile(fileName);
 
-    if (!targetFile->open(QIODevice::ReadOnly))
-    {
+    if (!targetFile->open(QIODevice::ReadOnly)) {
         return;
     }
 
@@ -975,8 +974,7 @@ void MainWindow::loadTargetListFromFile()
     QString tmpLine;
     int lineCounter=0;
 
-    while (!buffer.atEnd())
-    {
+    while (!buffer.atEnd()) {
         tmpLine = buffer.readLine();
         lineCounter++;
 
@@ -984,7 +982,13 @@ void MainWindow::loadTargetListFromFile()
             targetListOneLine.append(' ');
         }
 
-        targetListOneLine.append(tmpLine);
+        // It's a ip or dns
+        QHostAddress addressProtocol(tmpLine);
+        if ((addressProtocol.protocol() == QAbstractSocket::IPv4Protocol)
+            || (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol)
+            || (HostTools::isValidDns(tmpLine))) {
+            targetListOneLine.append(tmpLine);
+        }
     }
 
     // fix wrong list format (target1,target2,target3)
