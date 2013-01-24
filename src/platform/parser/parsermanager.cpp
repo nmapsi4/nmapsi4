@@ -137,7 +137,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
 PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutStr,
                                    QByteArray StderrorStr, QTreeWidgetItem* mainScanTreeElem)
 {
-    // Create parser Obect
+    // Create parser Object
     PObject *parserObjectElem = new PObject();
     QString hostName(parList[parList.size() - 1]);
     parserObjectElem->setHostName(hostName);
@@ -148,6 +148,13 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     QString bufferInfo;
     QString bufferTraceRoute;
     QString nseBuffer;
+
+    QStringList infoParserStringList;
+    infoParserStringList << "MAC" << "Running" << "OS details:" << "Aggressive OS guesses:"
+                     << "OS CPE:" << "Device type:" << "Uptime:" << "TCP Sequence Prediction:"
+                     << "IPID Sequence Generation:" << "IP ID Sequence Generation:" << "Service Info:"
+                     << "Initiating Ping " << "Completed Ping " << "Network Distance:" << "Note:"
+                     << "Nmap done:" << "Hosts";
 
     QTextStream stream(&StdoutStr);
     QString tmpBufferLine;
@@ -167,31 +174,24 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             nseBuffer.append("|--" + tmpBufferLine + '\n');
         }
 
-        if ((tmpBufferLine.startsWith(QLatin1String("MAC"))
-                || tmpBufferLine.startsWith(QLatin1String("Running:"))
-                || tmpBufferLine.startsWith(QLatin1String("Running"))
-                || tmpBufferLine.startsWith(QLatin1String("OS details:"))
-                || tmpBufferLine.startsWith(QLatin1String("Aggressive OS guesses:"))
-                || tmpBufferLine.startsWith(QLatin1String("OS CPE:"))
-                || tmpBufferLine.startsWith(QLatin1String("Device type:"))
-                || tmpBufferLine.startsWith(QLatin1String("Uptime:"))
-                || tmpBufferLine.startsWith(QLatin1String("TCP Sequence Prediction:"))
-                || tmpBufferLine.startsWith(QLatin1String("IPID Sequence Generation:"))
-                || tmpBufferLine.startsWith(QLatin1String("IP ID Sequence Generation:"))
-                || tmpBufferLine.startsWith(QLatin1String("Service Info:"))
-                || tmpBufferLine.startsWith(QLatin1String("Initiating Ping "))
-                || tmpBufferLine.startsWith(QLatin1String("Completed Ping "))
-                || tmpBufferLine.startsWith(QLatin1String("Network Distance:"))
-                || tmpBufferLine.startsWith(QLatin1String("Note:"))
-                || tmpBufferLine.startsWith(QLatin1String("Nmap done:"))
-                || tmpBufferLine.startsWith(QLatin1String("Hosts"))
-                || (tmpBufferLine.startsWith(QLatin1String("Host")) && !tmpBufferLine.contains("Host script results:")))
-                && !tmpBufferLine.startsWith(QLatin1String("|"))) {
+        bool isInfoStringFounded = false;
+        // check for specific info
+        foreach (const QString& infoString, infoParserStringList) {
+            if (tmpBufferLine.startsWith(infoString)) {
+                bufferInfo.append(tmpBufferLine);
+                bufferInfo.append("\n");
+                isInfoStringFounded = true;
+                break;
+            }
+        }
+
+        if (!isInfoStringFounded && (tmpBufferLine.startsWith(QLatin1String("Host"))
+                                     && !tmpBufferLine.contains("Host script results:"))) {
             bufferInfo.append(tmpBufferLine);
             bufferInfo.append("\n");
         }
 
-        // pars for subtree service
+        // check for nse subtree service
         if (tmpBufferLine.startsWith(QLatin1String("|")) && !nseBuffer.isEmpty()) {
             QString tmpClean(tmpBufferLine);
             if (tmpClean.startsWith(QLatin1String("|"))) {
