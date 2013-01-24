@@ -416,7 +416,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QString StdoutStr,
     }
 
     // no result for scan and ip is down
-    if (scanBuffer.isEmpty() && !bufferInfo.isEmpty() && bufferInfo.contains("Host seems down")) {
+    if (scanBuffer.isEmpty() && (bufferInfo.isEmpty() || (!bufferInfo.isEmpty() && !bufferInfo.contains("Host is up")))) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
