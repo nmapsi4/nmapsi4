@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef REGULAREXPRESSION_H
 #define REGULAREXPRESSION_H
 
-static const char matchPorts[] = "^\\d{1,5}/+\\d?";
+static const char matchPorts[] = "^\\d{1,5}/.{1,5}\\s+\\b(open|closed|filtered|unfiltered)\\b";
 
 static const char matchTraceroute[] = "^\\d\\s+\\d+\\.\\d+\\s+\\bms\\b\\s+";
 

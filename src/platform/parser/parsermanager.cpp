@@ -156,14 +156,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     while (!stream.atEnd()) {
         tmpBufferLine = stream.readLine();
 
-        if ((portRx.indexIn(tmpBufferLine) != -1)
-                && (tmpBufferLine.contains("open")
-                    || tmpBufferLine.contains("closed")
-                    || tmpBufferLine.contains("filtered")
-                    || tmpBufferLine.contains("unfiltered"))
-                && !tmpBufferLine.contains("Not shown:")
-                && !tmpBufferLine.contains("Discovered")) {
-
+        if (portRx.indexIn(tmpBufferLine) != -1) {
             scanBuffer.append(tmpBufferLine);
             scanBuffer.append("\n");
 
@@ -310,9 +303,9 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         }
 
         parserObjectElem->setHostInfo(bufferInfoStream_line);
-    }
+    } // end while
 
-    if (mainScanTreeElem->icon(0).isNull()) {
+    if (mainScanTreeElem->icon(0).isNull() && !bufferInfo.isEmpty()) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/no-os.png")));
     }
 
@@ -392,7 +385,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     }
 
     // no result for scan and ip is down
-    if (scanBuffer.isEmpty() && !bufferInfo.isEmpty() && bufferInfo.contains("Host seems down")) {
+    if (scanBuffer.isEmpty() && (bufferInfo.isEmpty() || (!bufferInfo.isEmpty() && !bufferInfo.contains("Host is up")))) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
