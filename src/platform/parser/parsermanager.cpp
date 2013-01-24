@@ -244,13 +244,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         } else {
             parserObjectElem->setPortClose(scanBufferToStreamLine);
         }
-
-        // TODO: is this necessary anymore ?
-        if (!scanBufferToStreamLine.isEmpty()) {
-            QString tmpStr = scanBufferToStreamLine;
-            QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
-            parserObjectElem->setServices(lStr[2]); // Obj Services
-        }
     } // end while
 
     QTextStream bufferInfoStream(&bufferInfo); // Host info
@@ -451,6 +444,7 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->clear();
     m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->insertItem(0, "Services");
 
+    bool isPortDescriptionPresent = false;
     // Show open ports
     foreach(const QString& token, m_parserObjList[hostIndex]->getPortOpen()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
@@ -479,6 +473,7 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
+                isPortDescriptionPresent = true;
             }
         }
     }
@@ -510,6 +505,7 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
+                isPortDescriptionPresent = true;
             }
         }
     }
@@ -542,11 +538,12 @@ void ParserManager::showParserObj(int hostIndex)
             //load comboVuln
             if (!lineDescription_.isEmpty()) {
                 m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
+                isPortDescriptionPresent = true;
             }
         }
     }
 
-    if (m_parserObjList[hostIndex]->getServices().size()) {
+    if (isPortDescriptionPresent) {
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));
     } else {
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("vuln-sez"));

@@ -42,11 +42,6 @@ const QString& PObject::scanDate() const
     return m_scanDate;
 }
 
-const QStringList &PObject::getServices() const
-{
-    return m_services;
-}
-
 const QStringList &PObject::getPortOpen() const
 {
     return m_portOpened;
@@ -115,11 +110,6 @@ void PObject::setHostInfo(const QString hostInfoLine)
 void PObject::setScanDate(const QString date)
 {
     m_scanDate.append(date);
-}
-
-void PObject::setServices(const QString service)
-{
-    m_services.push_back(service);
 }
 
 void PObject::setPortOpen(const QString portOpen)
