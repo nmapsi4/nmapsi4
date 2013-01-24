@@ -139,19 +139,18 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 {
     // Create parser Obect
     PObject *parserObjectElem = new PObject();
-    QString hostCheck = parList[parList.size() - 1];
-    parserObjectElem->setHostName(hostCheck);
+    QString hostName(parList[parList.size() - 1]);
+    parserObjectElem->setHostName(hostName);
 
     QRegExp portRx(matchPorts);
     QRegExp tracerouteRx(matchTraceroute);
-    QString generalBuffer_(hostCheck);
     QString scanBuffer;
     QString bufferInfo;
-    QString bufferTraceroot;
+    QString bufferTraceRoute;
     QString nseBuffer;
-    QString tmpBufferLine;
 
     QTextStream stream(&StdoutStr);
+    QString tmpBufferLine;
 
     while (!stream.atEnd()) {
         tmpBufferLine = stream.readLine();
@@ -178,7 +177,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
                 || tmpBufferLine.contains("TCP Sequence Prediction:")
                 || tmpBufferLine.contains("IPID Sequence Generation:")
                 || tmpBufferLine.contains("IP ID Sequence Generation:")
-                || (tmpBufferLine.contains("Service Info:") && tmpBufferLine.compare(generalBuffer_))
+                || (tmpBufferLine.contains("Service Info:") && tmpBufferLine.compare(hostName))
                 || tmpBufferLine.contains("Initiating Ping ")
                 || tmpBufferLine.contains("Completed Ping ")
                 || tmpBufferLine.contains("Network Distance:")
@@ -204,6 +203,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
             int pos;
             while (tmpClean.startsWith(QLatin1String(" "))) {
+                // remove space at begin of string
                 pos = tmpClean.indexOf(" ");
                 if (pos == 0) {
                     tmpClean.remove(pos, 1);
@@ -214,46 +214,39 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         }
 
         if ((tracerouteRx.indexIn(tmpBufferLine) != -1) && (!tmpBufferLine.contains("/"))) {
-            bufferTraceroot.append(tmpBufferLine);
-            bufferTraceroot.append("\n");
+            bufferTraceRoute.append(tmpBufferLine);
+            bufferTraceRoute.append("\n");
         }
 
     } // End first While
 
-    QString tmp_host;
     parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
 
-    if (!generalBuffer_.isEmpty()) {
-        mainScanTreeElem->setText(0, generalBuffer_ + " (" + parserObjectElem->scanDate() + ")");
-        mainScanTreeElem->setToolTip(0, startRichTextTags + generalBuffer_
-                                     + " (" + parserObjectElem->scanDate() + ")" + endRichTextTags);
-    } else {
-        mainScanTreeElem->setText(0, hostCheck + " (" + parserObjectElem->scanDate() + ")");
-        mainScanTreeElem->setToolTip(0, startRichTextTags
-                                     + hostCheck + " (" + parserObjectElem->scanDate() + ")"
-                                     + endRichTextTags);
-    }
+    mainScanTreeElem->setText(0, hostName + " (" + parserObjectElem->scanDate() + ")");
+    mainScanTreeElem->setToolTip(0, startRichTextTags + hostName
+                                 + " (" + parserObjectElem->scanDate() + ")" + endRichTextTags);
 
-    QTextStream scanBufferToStream_(&scanBuffer); // scan ports
-    QString scanBufferToStream_line;
+    QTextStream scanBufferToStream(&scanBuffer); // scan ports
+    QString scanBufferToStreamLine;
 
     // check for scan result
-    while (!scanBufferToStream_.atEnd()) {
-        scanBufferToStream_line = scanBufferToStream_.readLine();
-        if (scanBufferToStream_line.contains("open") || scanBufferToStream_line.contains("filtered")
-                || scanBufferToStream_line.contains("unfiltered")) {
+    while (!scanBufferToStream.atEnd()) {
+        scanBufferToStreamLine = scanBufferToStream.readLine();
+        if (scanBufferToStreamLine.contains("open") || scanBufferToStreamLine.contains("filtered")
+                || scanBufferToStreamLine.contains("unfiltered")) {
 
-            if (scanBufferToStream_line.contains("filtered") || scanBufferToStream_line.contains("unfiltered")) {
-                parserObjectElem->setPortFiltered(scanBufferToStream_line);
+            if (scanBufferToStreamLine.contains("filtered") || scanBufferToStreamLine.contains("unfiltered")) {
+                parserObjectElem->setPortFiltered(scanBufferToStreamLine);
             } else {
-                parserObjectElem->setPortOpen(scanBufferToStream_line);
+                parserObjectElem->setPortOpen(scanBufferToStreamLine);
             }
         } else {
-            parserObjectElem->setPortClose(scanBufferToStream_line);
+            parserObjectElem->setPortClose(scanBufferToStreamLine);
         }
 
-        if (!scanBufferToStream_line.isEmpty()) {
-            QString tmpStr = scanBufferToStream_line;
+        // TODO: is this necessary anymore ?
+        if (!scanBufferToStreamLine.isEmpty()) {
+            QString tmpStr = scanBufferToStreamLine;
             QStringList lStr = tmpStr.split(' ', QString::SkipEmptyParts);
             parserObjectElem->setServices(lStr[2]); // Obj Services
             parserObjectElem->setPortServices(lStr[0]);
@@ -264,7 +257,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     QString bufferInfoStream_line;
 
     // check for Host information
-    // OS not detected
     bool isOsFound = false;
     bool osGuessesFound = false;
     while (!bufferInfoStream.atEnd()) {
@@ -316,7 +308,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         parserObjectElem->setValidity(false);
     }
 
-    QTextStream bufferTraceStream(&bufferTraceroot); // Traceroute buffer
+    QTextStream bufferTraceStream(&bufferTraceRoute); // Traceroute buffer
     QString bufferTraceStream_line;
 
     // check for traceroute scan information
@@ -349,7 +341,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             // Save nse vulnerabilies url discovered
             if ((nseStreamLine.startsWith(QLatin1String("http://"))
                     || nseStreamLine.startsWith(QLatin1String("https://")))
-                    && !nseStreamLine.contains(hostCheck)
+                    && !nseStreamLine.contains(hostName)
                     && !nseStreamLine.contains("localhost")) {
                 parserObjectElem->setVulnDiscoverd(nseStreamLine);
             }
@@ -388,7 +380,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     if (scanBuffer.isEmpty() && (bufferInfo.isEmpty() || (!bufferInfo.isEmpty() && !bufferInfo.contains("Host is up")))) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
-
 
     return parserObjectElem;
 }
