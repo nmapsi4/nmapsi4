@@ -446,7 +446,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
 
-        if (token.contains("OS")) {
+        if (token.contains("OS") || token.startsWith(QLatin1String("Device type:"))) {
             QFont font = root->font(0);
             font.setBold(true);
             root->setFont(0, font);
