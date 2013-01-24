@@ -144,26 +144,34 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
     QRegExp portRx(matchPorts);
     QRegExp tracerouteRx(matchTraceroute);
-    QString scanBuffer;
-    QString bufferInfo;
-    QString nseBuffer;
 
     QStringList infoParserStringList;
     infoParserStringList << "MAC" << "Running" << "OS details:" << "Aggressive OS guesses:"
-                     << "OS CPE:" << "Device type:" << "Uptime:" << "TCP Sequence Prediction:"
+                     << "OS CPE:" << "Device type:" << "Uptime:" << "Uptime guess:" << "TCP Sequence Prediction:"
                      << "IPID Sequence Generation:" << "IP ID Sequence Generation:" << "Service Info:"
                      << "Initiating Ping " << "Completed Ping " << "Network Distance:" << "Note:"
                      << "Nmap done:" << "Hosts";
 
     QTextStream stream(&StdoutStr);
     QString tmpBufferLine;
+    QString nseBuffer;
+    QString bufferInfo;
 
     while (!stream.atEnd()) {
         tmpBufferLine = stream.readLine();
 
         if (portRx.indexIn(tmpBufferLine) != -1) {
-            scanBuffer.append(tmpBufferLine);
-            scanBuffer.append("\n");
+            if (tmpBufferLine.contains("open") || tmpBufferLine.contains("filtered")
+                    || tmpBufferLine.contains("unfiltered")) {
+
+                if (tmpBufferLine.contains("filtered") || tmpBufferLine.contains("unfiltered")) {
+                    parserObjectElem->setPortFiltered(tmpBufferLine);
+                } else {
+                    parserObjectElem->setPortOpen(tmpBufferLine);
+                }
+            } else {
+                parserObjectElem->setPortClose(tmpBufferLine);
+            }
 
             // Insert new elem to nse buffer result
             nseBuffer.append("|--" + tmpBufferLine + '\n');
@@ -228,25 +236,6 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     mainScanTreeElem->setToolTip(0, startRichTextTags + hostName
                                  + " (" + parserObjectElem->scanDate() + ")" + endRichTextTags);
 
-    QTextStream scanBufferToStream(&scanBuffer); // scan ports
-    QString scanBufferToStreamLine;
-
-    // check for scan result
-    while (!scanBufferToStream.atEnd()) {
-        scanBufferToStreamLine = scanBufferToStream.readLine();
-        if (scanBufferToStreamLine.contains("open") || scanBufferToStreamLine.contains("filtered")
-                || scanBufferToStreamLine.contains("unfiltered")) {
-
-            if (scanBufferToStreamLine.contains("filtered") || scanBufferToStreamLine.contains("unfiltered")) {
-                parserObjectElem->setPortFiltered(scanBufferToStreamLine);
-            } else {
-                parserObjectElem->setPortOpen(scanBufferToStreamLine);
-            }
-        } else {
-            parserObjectElem->setPortClose(scanBufferToStreamLine);
-        }
-    } // end while
-
     QTextStream bufferInfoStream(&bufferInfo); // Host info
     QString bufferInfoStream_line;
 
@@ -296,7 +285,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     }
 
     // set validity of parser object
-    if (!scanBuffer.isEmpty() || !bufferInfo.isEmpty()) {
+    if (!bufferInfo.isEmpty()) {
         parserObjectElem->setValidity(true);
     } else {
         parserObjectElem->setValidity(false);
@@ -360,7 +349,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
     }
 
     // no result for scan and ip is down
-    if (scanBuffer.isEmpty() && (bufferInfo.isEmpty() || (!bufferInfo.isEmpty() && !bufferInfo.contains("Host is up")))) {
+    if (bufferInfo.isEmpty() || (!bufferInfo.isEmpty() && !bufferInfo.contains("Host is up"))) {
         mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/viewmagfit_noresult.png")));
     }
 
