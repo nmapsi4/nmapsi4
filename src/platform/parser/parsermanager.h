@@ -55,6 +55,7 @@ public:
 private:
     void showParserObj(int hostIndex);
     void showParserObjPlugins(int hostIndex);
+    void setPortItem(QTreeWidgetItem* item, const QStringList& details, bool& isPortDescriptionPresent);
     PObject* parserCore(const QStringList parList, QByteArray StdoutStr, QByteArray StderrorStr, QTreeWidgetItem* mainTreeE);
 
     MainWindow* m_ui;

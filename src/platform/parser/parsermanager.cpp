@@ -409,6 +409,36 @@ void ParserManager::showParserTracerouteResult(QTreeWidgetItem *item, int column
     }
 }
 
+void ParserManager::setPortItem(QTreeWidgetItem* item, const QStringList& details, bool& isPortDescriptionPresent)
+{
+    Q_ASSERT(details.size() >= 3);
+
+    item->setText(0, details[0]);
+    item->setText(1, details[1]);
+    item->setText(2, details[2]);
+
+    if (details.size() == 4) {
+        item->setText(3, details[3]);
+        item->setToolTip(3, details[3]);
+        if (!details[3].isEmpty()) {
+            m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(details[3]);
+        }
+    } else if (details.size() > 4) {
+        QString lineDescription_("");
+        for (int index = 3; index < details.size(); index++) {
+            lineDescription_.append(details[index]);
+            lineDescription_.append(" ");
+        }
+        item->setText(3, lineDescription_);
+        item->setToolTip(3, lineDescription_);
+        //load comboVuln
+        if (!lineDescription_.isEmpty()) {
+            m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
+            isPortDescriptionPresent = true;
+        }
+    }
+}
+
 void ParserManager::showParserObj(int hostIndex)
 {
     // Clear widget
@@ -443,29 +473,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
         QStringList split = token.split(' ', QString::SkipEmptyParts);
-        root->setText(0, split[0]);
-        root->setText(1, split[1]);
-        root->setText(2, split[2]);
-        if (split.size() == 4) {
-            root->setText(3, split[3]);
-            root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
-            }
-        } else if (split.size() > 4) {
-            QString lineDescription_("");
-            for (int index = 3; index < split.size(); index++) {
-                lineDescription_.append(split[index]);
-                lineDescription_.append(" ");
-            }
-            root->setText(3, lineDescription_);
-            root->setToolTip(3, lineDescription_);
-            //load comboVuln
-            if (!lineDescription_.isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
-                isPortDescriptionPresent = true;
-            }
-        }
+        setPortItem(root, split, isPortDescriptionPresent);
     }
 
     // Show Close ports
@@ -475,29 +483,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
         QStringList split = token.split(' ', QString::SkipEmptyParts);
-        root->setText(0, split[0]);
-        root->setText(1, split[1]);
-        root->setText(2, split[2]);
-        if (split.size() == 4) {
-            root->setText(3, split[3]);
-            root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
-            }
-        } else if (split.size() > 4) {
-            QString lineDescription_("");
-            for (int index = 3; index < split.size(); index++) {
-                lineDescription_.append(split[index]);
-                lineDescription_.append(" ");
-            }
-            root->setText(3, lineDescription_);
-            root->setToolTip(3, lineDescription_);
-            //load comboVuln
-            if (!lineDescription_.isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
-                isPortDescriptionPresent = true;
-            }
-        }
+        setPortItem(root, split, isPortDescriptionPresent);
     }
 
     // Show Filtered ports
@@ -508,29 +494,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
         root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
         QStringList split = token.split(' ', QString::SkipEmptyParts);
-        root->setText(0, split[0]);
-        root->setText(1, split[1]);
-        root->setText(2, split[2]);
-        if (split.size() == 4) {
-            root->setText(3, split[3]);
-            root->setToolTip(3, split[3]);
-            if (!split[3].isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(split[3]);
-            }
-        } else if (split.size() > 4) {
-            QString lineDescription_("");
-            for (int index = 3; index < split.size(); index++) {
-                lineDescription_.append(split[index]);
-                lineDescription_.append(" ");
-            }
-            root->setText(3, lineDescription_);
-            root->setToolTip(3, lineDescription_);
-            //load comboVuln
-            if (!lineDescription_.isEmpty()) {
-                m_ui->m_vulnerability->m_vulnerabilityWidget->comboVuln->addItem(lineDescription_);
-                isPortDescriptionPresent = true;
-            }
-        }
+        setPortItem(root, split, isPortDescriptionPresent);
     }
 
     if (isPortDescriptionPresent) {
