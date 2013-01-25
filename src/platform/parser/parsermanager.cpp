@@ -232,9 +232,9 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
     parserObjectElem->setScanDate(QDateTime::currentDateTime().toString("M/d/yyyy - hh:mm:ss"));
 
-    mainScanTreeElem->setText(0, hostName + " (" + parserObjectElem->scanDate() + ")");
+    mainScanTreeElem->setText(0, hostName + " (" + parserObjectElem->scanDate() + ')');
     mainScanTreeElem->setToolTip(0, startRichTextTags + hostName
-                                 + " (" + parserObjectElem->scanDate() + ")" + endRichTextTags);
+                                 + " (" + parserObjectElem->scanDate() + ')' + endRichTextTags);
 
     QTextStream bufferInfoStream(&bufferInfo); // Host info
     QString bufferInfoStream_line;
@@ -246,12 +246,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         bufferInfoStream_line = bufferInfoStream.readLine();
 
         // check for specific device type
-        if (bufferInfoStream_line.startsWith("Device type:") && bufferInfoStream_line.contains("switch")) {
+        if (bufferInfoStream_line.startsWith(QLatin1String("Device type:")) && bufferInfoStream_line.contains("switch")) {
             mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
         }
 
         // check for Os guesses string (more specific)
-        if (bufferInfoStream_line.startsWith("Aggressive OS guesses:")) {
+        if (bufferInfoStream_line.startsWith(QLatin1String("Aggressive OS guesses:"))) {
 
             QString osInfo(bufferInfoStream_line.left(bufferInfoStream_line.indexOf("%")));
             osInfo = osInfo.remove("Aggressive OS guesses:");
@@ -268,7 +268,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
                 mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/wap.png")));
                 osGuessesFound = true;
             }
-            mainScanTreeElem->setToolTip(0, mainScanTreeElem->toolTip(0) + "<br/>" + "Os: " + osInfo + "%");
+            mainScanTreeElem->setToolTip(0, mainScanTreeElem->toolTip(0) + "<br/>" + "Os: " + osInfo + '%');
         }
 
         // Check OS String (more generic information)

@@ -28,7 +28,7 @@ class MouseEventFilter : public QObject
     Q_OBJECT
 
 public:
-    MouseEventFilter(QObject *parent = 0);
+    explicit MouseEventFilter(QObject *parent = 0);
 
 protected:
     bool eventFilter(QObject *obj, QEvent *evt);
