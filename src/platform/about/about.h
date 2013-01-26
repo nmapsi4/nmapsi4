@@ -32,6 +32,9 @@ public:
 
     static const QString description();
     static const QString copyright();
+    static const QString authors();
+    static const QString support();
+    static const QString thanksTo();
 };
 
 #endif

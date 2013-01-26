@@ -23,6 +23,9 @@ About::About(QWidget *parent)
     setupUi(this);
 
     textDescription->setText(description() + "<br/><br/>" + copyright());
+    textAuthors->setText(authors());
+    textSupport->setText(support());
+    textThanks->setText(thanksTo());
     labelVersion->setText(labelVersion->text() + VERSION);
 }
 
@@ -41,4 +44,53 @@ const QString About::copyright()
     return QApplication::tr("(c) 2007-2013 Francesco Cecconi"
                             "<br/>License: GNU General Public License Version 2");
 
+}
+
+const QString About::authors()
+{
+    QString authorsList;
+
+    authorsList.append("<strong>Francesco Cecconi</strong><br/>");
+    authorsList.append(QApplication::tr("Maintainer and developer") + "<br/>");
+    authorsList.append("<a href=\"mailto:brand@nmapsi4.org\">brand@nmapsi4.org</a>");
+
+    return authorsList;
+}
+
+const QString About::support()
+{
+    QString supportList;
+
+    supportList.append(QApplication::tr("HomePage") + "<br/>");
+    supportList.append("<a href=\"http://www.nmapsi4.org\">www.nmapsi4.org</a>");
+    supportList.append("<br/><br/>");
+    supportList.append(QApplication::tr("Bug Tracking") + "<br/>");
+    supportList.append("<a href=\"http://bugs.nmapsi4.org\">bugs.nmapsi4.org</a>");
+    supportList.append("<br/><br/>");
+    supportList.append(QApplication::tr("Sources Repository") + "<br/>");
+    supportList.append("<a href=\"https://github.com/nmapsi4/nmapsi4\">github.com/nmapsi4/nmapsi4</a>");
+    supportList.append("<br/><br/>");
+    supportList.append(QApplication::tr("Forum") + "<br/>");
+    supportList.append("<a href=\"http://forum.nmapsi4.org\">forum.nmapsi4.org</a>");
+
+    return supportList;
+}
+
+const QString About::thanksTo()
+{
+    QString thanksToList;
+
+    thanksToList.append("<strong>Innocenzo Ventre</strong><br/>");
+    thanksToList.append(QApplication::tr("MS Windows Packages and Italian localization") + "<br/>");
+    thanksToList.append("<a href=\"mailto:el.diabl09@gmail.com\">el.diabl09@gmail.com</a>");
+    thanksToList.append("<br/><br/>");
+    thanksToList.append("<strong>Pavel Fric</strong><br/>");
+    thanksToList.append(QApplication::tr("Czech localization") + "<br/>");
+    thanksToList.append("<a href=\"mailto:pavelfric@seznam.cz\">pavelfric@seznam.cz</a>");
+    thanksToList.append("<br/><br/>");
+    thanksToList.append("<strong>Vincenzo Reale</strong><br/>");
+    thanksToList.append(QApplication::tr("Italian localization") + "<br/>");
+    thanksToList.append("<a href=\"mailto:smart2128@baslug.org\">smart2128@baslug.org</a>");
+
+    return thanksToList;
 }
