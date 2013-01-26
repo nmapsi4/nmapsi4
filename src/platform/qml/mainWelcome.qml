@@ -30,6 +30,7 @@ Rectangle {
 
     property color onHoverColor: palette.highlight
     property color borderColor:  palette.light
+    property real opacityValue: 0.8
 
 
     Item {
@@ -49,6 +50,7 @@ Rectangle {
             radius: 10
             border.width: 2
             border.color: borderColor
+            opacity: opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop; position: 0.0; color: palette.light }
@@ -93,6 +95,7 @@ Rectangle {
             radius: 10
             border.width: 2
             border.color: borderColor
+            opacity: opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop2; position: 0.0; color: palette.light }
@@ -138,6 +141,7 @@ Rectangle {
             radius: 10
             border.width: 2
             border.color: borderColor
+            opacity: opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop3; position: 0.0; color: palette.light }
@@ -191,6 +195,7 @@ Rectangle {
             radius: 10
             border.width: 2
             border.color: borderColor
+            opacity: opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop4; position: 0.0; color: palette.light }
@@ -272,6 +277,7 @@ Rectangle {
             radius: 10
             border.width: 2
             border.color: borderColor
+            opacity: opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop5; position: 0.0; color: palette.light }
