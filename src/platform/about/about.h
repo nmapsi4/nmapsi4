@@ -30,7 +30,8 @@ public:
     explicit About(QWidget *parent = 0);
     ~About() {};
 
-    static QString description();
+    static const QString description();
+    static const QString copyright();
 };
 
 #endif

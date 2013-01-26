@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2008-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -22,15 +22,23 @@ About::About(QWidget *parent)
 {
     setupUi(this);
 
-    descriptionLabel->setText(description());
+    textDescription->setText(description() + "<br/><br/>" + copyright());
     labelVersion->setText(labelVersion->text() + VERSION);
 }
 
-QString About::description()
+const QString About::description()
 {
-    return QApplication::tr("NmapSi4 is a complete Qt4-based Gui with <br/>"
-                            "the design goals to provide a complete nmap<br/>"
-                            "interface for users, in order to manage all<br/>"
-                            "option of this power security net scanner<br/>"
+    return QApplication::tr("NmapSi4 is a complete Qt4-based Gui with "
+                            "the design goals to provide a complete nmap "
+                            "interface for users, in order to manage al "
+                            "option of this power security net scanner "
                             "and search services vulnerability.");
+}
+
+
+const QString About::copyright()
+{
+    return QApplication::tr("(c) 2007-2013 Francesco Cecconi"
+                            "<br/>License: GNU General Public License Version 2");
+
 }

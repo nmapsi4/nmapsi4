@@ -218,14 +218,14 @@ Rectangle {
 
             Text {
                 id: nmapsi4Description
+                width: cCenter.width - 10
                 anchors.top: ipHistoryTitle.bottom
                 anchors.topMargin: 20
-                anchors.leftMargin: 5
-                anchors.rightMargin: 5
                 anchors.horizontalCenter: history.horizontalCenter
                 font.family: palette.text
                 //font.pointSize: 16
                 text: description
+                wrapMode: Text.WordWrap
             }
 
             Text {
