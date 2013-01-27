@@ -28,4 +28,14 @@ Item {
     property color highlightText: palette.highlightedText
     property color normalText: palette.text
     property real opacityValue: 0.8
+
+    property Gradient backgroundGradient: Gradient {
+        GradientStop { position: 0.140; color: "#39c244" }
+        GradientStop { position: 1; color: "#24955b" }
+    }
+
+    property Gradient widgetGradient: Gradient {
+        GradientStop { position: 0.0; color: palette.light }
+        GradientStop { position: 1.0; color: palette.button }
+    }
 }

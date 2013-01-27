@@ -22,13 +22,10 @@ Rectangle {
     id: baseRect
     width: 500
     height: 500
-    gradient: Gradient {
-        GradientStop { position: 0.140; color: "#39c244" }
-        GradientStop { position: 1; color: "#24955b" }
-    }
 
-    SystemPalette { id: palette }
     Properties { id: style }
+
+    gradient: style.backgroundGradient
 
     Item {
         id: cLeft
@@ -48,17 +45,12 @@ Rectangle {
             border.width: 2
             border.color: style.borderColor
             opacity: style.opacityValue
-
-            gradient: Gradient {
-                GradientStop { id: gradientStop; position: 0.0; color: palette.light }
-                GradientStop { position: 1.0; color: palette.button }
-            }
+            gradient: style.widgetGradient
 
             Text {
                 id: hostScanLabel
                 anchors.horizontalCenter: b1.horizontalCenter
                 y: (b1.height / 2) - 42 //(32x32 + 10 margin)
-                font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Scan an host")
             }
@@ -93,16 +85,12 @@ Rectangle {
             border.color: style.borderColor
             opacity: style.opacityValue
 
-            gradient: Gradient {
-                GradientStop { id: gradientStop2; position: 0.0; color: palette.light }
-                GradientStop { position: 1.0; color: palette.button }
-            }
+            gradient: style.widgetGradient
 
             Text {
                 id: vulnerabilityLabel
                 anchors.horizontalCenter: b2.horizontalCenter
                 y: (b2.height / 2) - 42 //(32x32 + 10 margin)
-                font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Search a vulnerability")
             }
@@ -138,16 +126,12 @@ Rectangle {
             border.color: style.borderColor
             opacity: style.opacityValue
 
-            gradient: Gradient {
-                GradientStop { id: gradientStop3; position: 0.0; color: palette.light }
-                GradientStop { position: 1.0; color: palette.button }
-            }
+            gradient: style.widgetGradient
 
             Text {
                 id: discoverNetLabel
                 anchors.horizontalCenter: b3.horizontalCenter
                 y: (b3.height / 2) - 42 //(32x32 + 10 margin)
-                font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Discover a network")
             }
@@ -191,10 +175,7 @@ Rectangle {
             border.color: style.borderColor
             opacity: style.opacityValue
 
-            gradient: Gradient {
-                GradientStop { id: gradientStop4; position: 0.0; color: palette.light }
-                GradientStop { position: 1.0; color: palette.button }
-            }
+            gradient: style.widgetGradient
 
             Image {
                 id: nmapsi4Image
@@ -210,7 +191,6 @@ Rectangle {
                 anchors.topMargin: 10
                 height: 25
                 anchors.horizontalCenter: history.horizontalCenter
-                font.family: palette.text
                 font.pointSize: 22
                 text: "Nmapsi4"
             }
@@ -221,7 +201,6 @@ Rectangle {
                 anchors.top: ipHistoryTitle.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: history.horizontalCenter
-                font.family: palette.text
                 text: description
                 wrapMode: Text.WordWrap
             }
@@ -232,7 +211,6 @@ Rectangle {
                 anchors.topMargin: 20
                 height: 25
                 anchors.horizontalCenter: history.horizontalCenter
-                font.family: palette.text
                 font.pointSize: 18
                 text: qsTr("Version")
             }
@@ -243,7 +221,6 @@ Rectangle {
                 anchors.topMargin: 10
                 height: 25
                 anchors.horizontalCenter: history.horizontalCenter
-                font.family: palette.text
                 font.pointSize: 14
                 text: version_number
             }
@@ -272,17 +249,13 @@ Rectangle {
             border.color: style.borderColor
             opacity: style.opacityValue
 
-            gradient: Gradient {
-                GradientStop { id: gradientStop5; position: 0.0; color: palette.light }
-                GradientStop { position: 1.0; color: palette.button }
-            }
+            gradient: style.widgetGradient
 
             Text {
                 id: historyPrevLabel
                 anchors.top: webreference.top
                 anchors.topMargin: 20
                 anchors.horizontalCenter: webreference.horizontalCenter
-                font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Last scanned hosts")
             }
@@ -306,7 +279,6 @@ Rectangle {
                     Text {
                         id: hostLabel
                         anchors.centerIn: rectModel
-                        font.family: palette.text
                         font.pointSize: 12
                         text: modelData
                     }
