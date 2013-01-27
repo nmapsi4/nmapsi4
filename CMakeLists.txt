@@ -26,14 +26,14 @@ endif (BUILD_KDELIBS)
 
 ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
-if (Q_OS_WIN32)
+if (WIN32)
     include(CMakeMinGWFindMake)
-endif (Q_OS_WIN32)
+endif (WIN32)
 
-if(Q_OS_MAC)
+if(APPLE)
     SET( CMAKE_OSX_ARCHITECTURES i386;x86_64 )
     SET( MACOSX_BUNDLE_ICON_FILE ${PROJECT_SOURCE_DIR}/icons/nmapsi4.icns )
-endif(Q_OS_MAC)
+endif(APPLE)
 
 add_subdirectory( src )
 
