@@ -141,7 +141,8 @@ void MainWindow::initObject()
     QVBoxLayout *qmlWelcomeLayout = new QVBoxLayout(m_welcomeQmlView);
     m_welcomeQmlView->setResizeMode(QDeclarativeView::SizeRootObjectToView);
     qmlWelcomeLayout->addItem(verticalSpacer);
-    m_welcomeQmlView->rootContext()->setContextProperty("mainObject", this);
+    m_qmlWelcome = new QmlWelcome(this);
+    m_welcomeQmlView->rootContext()->setContextProperty("mainObject", m_qmlWelcome);
     m_welcomeQmlView->rootContext()->setContextProperty("version_number", VERSION);
     m_welcomeQmlView->rootContext()->setContextProperty("description", About::description());
     updateQmlScanHistory();
@@ -946,17 +947,12 @@ void MainWindow::resetComboParameters()
 
 void MainWindow::updateQmlScanHistory()
 {
-    QString hostScanned;
-
-    for (int index = 0; index < 8 && index < m_hostModel.data()->stringList().size(); ++index) {
-        hostScanned.append("+ " + m_hostModel.data()->stringList()[index] + "<hr/>");
-    }
+    QStringList hostScanned(m_hostModel.data()->stringList());
 
     if (hostScanned.isEmpty()) {
-        hostScanned.append(tr("Empty history"));
+        hostScanned << tr("Empty history");
     }
-
-    m_welcomeQmlView->rootContext()->setContextProperty("historyListText", hostScanned);
+    m_welcomeQmlView->rootContext()->setContextProperty("ipModel", QVariant::fromValue(hostScanned));
 }
 
 void MainWindow::loadTargetListFromFile()

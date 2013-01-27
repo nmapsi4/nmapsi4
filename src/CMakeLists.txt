@@ -55,6 +55,7 @@ SET(SOURCES_CPP
     app/mainwindow.cpp
     app/bookmarkmanager.cpp
     app/actionmanager.cpp
+    app/qmlwelcome.cpp
     app/main.cpp
     )
 
@@ -86,6 +87,7 @@ SET(SOURCES_MOC
     app/actionmanager.h
     app/profilehandler.h
     app/mainwindow.h
+    app/qmlwelcome.h
     )
 
 SET(SOURCES_UI

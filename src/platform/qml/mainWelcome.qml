@@ -30,6 +30,10 @@ Rectangle {
 
     property color onHoverColor: palette.highlight
     property color borderColor:  palette.light
+    property color listItemColor: "#39c244"
+    property color transparentColor: "#00FFFFFF"
+    property color highlightText: palette.highlightedText
+    property color normalText: palette.text
     property real opacityValue: 0.8
 
 
@@ -59,9 +63,8 @@ Rectangle {
 
             Text {
                 id: hostScanLabel
-                anchors.top: b1.top
-                anchors.topMargin: 20
                 anchors.horizontalCenter: b1.horizontalCenter
+                y: (b1.height / 2) - 42 //(32x32 + 10 margin)
                 font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Scan an host")
@@ -70,7 +73,7 @@ Rectangle {
             Image {
                 anchors.top: hostScanLabel.bottom
                 anchors.topMargin: 10
-                anchors.horizontalCenter: hostScanLabel.horizontalCenter
+                anchors.horizontalCenter: b1.horizontalCenter
                 source: "qrc:/images/images/network_local.png"
             }
 
@@ -79,7 +82,7 @@ Rectangle {
                 hoverEnabled: true
                 onEntered: parent.border.color = onHoverColor
                 onExited: parent.border.color = borderColor
-                onClicked: mainObject.updateScanSection()
+                onClicked: mainObject.scanSection()
             }
         }
 
@@ -104,9 +107,8 @@ Rectangle {
 
             Text {
                 id: vulnerabilityLabel
-                anchors.top: b2.top
-                anchors.topMargin: 20
                 anchors.horizontalCenter: b2.horizontalCenter
+                y: (b2.height / 2) - 42 //(32x32 + 10 margin)
                 font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Search a vulnerability")
@@ -115,7 +117,7 @@ Rectangle {
             Image {
                 anchors.top: vulnerabilityLabel.bottom
                 anchors.topMargin: 10
-                anchors.horizontalCenter: vulnerabilityLabel.horizontalCenter
+                anchors.horizontalCenter: b2.horizontalCenter
                 source: "qrc:/images/images/viewmag+.png"
             }
 
@@ -124,7 +126,7 @@ Rectangle {
                 hoverEnabled: true
                 onEntered: parent.border.color = onHoverColor
                 onExited: parent.border.color = borderColor
-                onClicked: mainObject.updateVulnerabilitySection()
+                onClicked: mainObject.vulnerabilitySection()
             }
         }
 
@@ -150,9 +152,8 @@ Rectangle {
 
             Text {
                 id: discoverNetLabel
-                anchors.top: b3.top
-                anchors.topMargin: 20
                 anchors.horizontalCenter: b3.horizontalCenter
+                y: (b3.height / 2) - 42 //(32x32 + 10 margin)
                 font.family: palette.text
                 font.pointSize: 16
                 text: qsTr("Discover a network")
@@ -161,7 +162,7 @@ Rectangle {
             Image {
                 anchors.top: discoverNetLabel.bottom
                 anchors.topMargin: 10
-                anchors.horizontalCenter: discoverNetLabel.horizontalCenter
+                anchors.horizontalCenter: b3.horizontalCenter
                 source: "qrc:/images/images/document-preview-archive.png"
             }
 
@@ -170,7 +171,7 @@ Rectangle {
                 hoverEnabled: true
                 onEntered: parent.border.color = onHoverColor
                 onExited: parent.border.color = borderColor
-                onClicked: mainObject.updateDiscoverSection()
+                onClicked: mainObject.discoverSection()
             }
         }
     }
@@ -228,7 +229,6 @@ Rectangle {
                 anchors.topMargin: 20
                 anchors.horizontalCenter: history.horizontalCenter
                 font.family: palette.text
-                //font.pointSize: 16
                 text: description
                 wrapMode: Text.WordWrap
             }
@@ -294,15 +294,44 @@ Rectangle {
                 text: qsTr("Last scanned hosts")
             }
 
-            Text {
+            ListView {
                 id: ipHistoryText
                 height: webreference.height - historyPrevLabel.height
+                width: webreference.width - 10
                 anchors.top: historyPrevLabel.bottom
                 anchors.topMargin: 15
                 anchors.horizontalCenter: webreference.horizontalCenter
-                font.family: palette.text
-                font.pointSize: 12
-                text: historyListText
+
+                model: ipModel
+                delegate: Rectangle {
+                    id: rectModel
+                    height: 25
+                    width: ipHistoryText.width
+                    radius: 10
+                    color: transparentColor
+
+                    Text {
+                        id: hostLabel
+                        anchors.centerIn: rectModel
+                        font.family: palette.text
+                        font.pointSize: 12
+                        text: modelData
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onEntered: {
+                            parent.color = listItemColor
+                            hostLabel.color = highlightText
+                        }
+                        onExited: {
+                            parent.color = transparentColor
+                            hostLabel.color = normalText
+                        }
+                        onClicked: mainObject.callScan(modelData)
+                    }
+                }
             }
         }
     }

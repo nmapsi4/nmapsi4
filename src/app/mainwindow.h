@@ -60,6 +60,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "profilehandler.h"
 #include "mouseeventfilter.h"
 #include "about.h"
+#include "qmlwelcome.h"
 
 // system
 #if !defined(Q_OS_WIN32)
@@ -118,6 +119,7 @@ private:
     int m_savedProfileIndex;
     QByteArray m_scanListWidgetSize;
     QByteArray m_detailsWidgetSize;
+    QmlWelcome* m_qmlWelcome;
 
 protected:
     virtual void closeEvent(QCloseEvent * event);
@@ -130,9 +132,9 @@ public slots:
     void copyTextFromHostInfoTree();
     void copyTextFromScanPortsTree();
     void copyTextFromScanFullOutputTree();
-    Q_INVOKABLE void updateScanSection();
-    Q_INVOKABLE void updateVulnerabilitySection();
-    Q_INVOKABLE void updateDiscoverSection();
+    void updateScanSection();
+    void updateVulnerabilitySection();
+    void updateDiscoverSection();
 
 private slots:
     void initObject();
