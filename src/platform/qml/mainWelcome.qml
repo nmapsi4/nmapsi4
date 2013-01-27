@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import QtQuick 1.1
+import "style" 0.1
 
 Rectangle {
     id: baseRect
@@ -27,15 +28,7 @@ Rectangle {
     }
 
     SystemPalette { id: palette }
-
-    property color onHoverColor: palette.highlight
-    property color borderColor:  palette.light
-    property color listItemColor: "#39c244"
-    property color transparentColor: "#00FFFFFF"
-    property color highlightText: palette.highlightedText
-    property color normalText: palette.text
-    property real opacityValue: 0.8
-
+    Properties { id: style }
 
     Item {
         id: cLeft
@@ -53,8 +46,8 @@ Rectangle {
             smooth: true
             radius: 10
             border.width: 2
-            border.color: borderColor
-            opacity: opacityValue
+            border.color: style.borderColor
+            opacity: style.opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop; position: 0.0; color: palette.light }
@@ -80,8 +73,8 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: parent.border.color = onHoverColor
-                onExited: parent.border.color = borderColor
+                onEntered: parent.border.color = style.onHoverColor
+                onExited: parent.border.color = style.borderColor
                 onClicked: mainObject.scanSection()
             }
         }
@@ -97,8 +90,8 @@ Rectangle {
             smooth: true
             radius: 10
             border.width: 2
-            border.color: borderColor
-            opacity: opacityValue
+            border.color: style.borderColor
+            opacity: style.opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop2; position: 0.0; color: palette.light }
@@ -124,8 +117,8 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: parent.border.color = onHoverColor
-                onExited: parent.border.color = borderColor
+                onEntered: parent.border.color = style.onHoverColor
+                onExited: parent.border.color = style.borderColor
                 onClicked: mainObject.vulnerabilitySection()
             }
         }
@@ -142,8 +135,8 @@ Rectangle {
             smooth: true
             radius: 10
             border.width: 2
-            border.color: borderColor
-            opacity: opacityValue
+            border.color: style.borderColor
+            opacity: style.opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop3; position: 0.0; color: palette.light }
@@ -169,8 +162,8 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: parent.border.color = onHoverColor
-                onExited: parent.border.color = borderColor
+                onEntered: parent.border.color = style.onHoverColor
+                onExited: parent.border.color = style.borderColor
                 onClicked: mainObject.discoverSection()
             }
         }
@@ -195,8 +188,8 @@ Rectangle {
             smooth: true
             radius: 10
             border.width: 2
-            border.color: borderColor
-            opacity: opacityValue
+            border.color: style.borderColor
+            opacity: style.opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop4; position: 0.0; color: palette.light }
@@ -276,8 +269,8 @@ Rectangle {
             smooth: true
             radius: 10
             border.width: 2
-            border.color: borderColor
-            opacity: opacityValue
+            border.color: style.borderColor
+            opacity: style.opacityValue
 
             gradient: Gradient {
                 GradientStop { id: gradientStop5; position: 0.0; color: palette.light }
@@ -308,7 +301,7 @@ Rectangle {
                     height: 25
                     width: ipHistoryText.width
                     radius: 10
-                    color: transparentColor
+                    color: style.transparentColor
 
                     Text {
                         id: hostLabel
@@ -322,12 +315,12 @@ Rectangle {
                         anchors.fill: parent
                         hoverEnabled: true
                         onEntered: {
-                            parent.color = listItemColor
-                            hostLabel.color = highlightText
+                            parent.color = style.listItemColor
+                            hostLabel.color = style.highlightText
                         }
                         onExited: {
-                            parent.color = transparentColor
-                            hostLabel.color = normalText
+                            parent.color = style.transparentColor
+                            hostLabel.color = style.normalText
                         }
                         onClicked: mainObject.callScan(modelData)
                     }
