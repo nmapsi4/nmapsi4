@@ -44,7 +44,7 @@ void QmlWelcome::callScan(const QString hostName)
     QHostAddress addressProtocol(hostName);
     if ((addressProtocol.protocol() != QAbstractSocket::IPv4Protocol)
             && (addressProtocol.protocol() != QAbstractSocket::IPv6Protocol)
-            && (HostTools::isValidDns(hostName))) {
+            && (!HostTools::isValidDns(hostName))) {
         return;
     }
 
