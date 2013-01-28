@@ -271,6 +271,11 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
                 mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/wap.png")));
                 osGuessesFound = true;
             }
+
+            if (!osGuessesFound && osInfo.contains("printer")) {
+                mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/printer.png")));
+                osGuessesFound = true;
+            }
             mainScanTreeElem->setToolTip(0, mainScanTreeElem->toolTip(0) + "<br/>" + "Os: " + osInfo + '%');
         }
 
