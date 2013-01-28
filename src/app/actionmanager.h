@@ -72,7 +72,7 @@ private:
     QToolButton *m_saveTool;
     QToolButton *m_bookmarksTool;
     QToolButton *m_discoverScanTool;
-    QToolBar *m_bottomSectionBar;
+    QToolBar *m_rightSectionBar;
     QToolBar *m_bottomUiToggleBar;
     QToolBar *m_scanToolBar;
     QToolBar *m_bookmarkToolBar;

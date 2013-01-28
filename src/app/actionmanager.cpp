@@ -22,7 +22,7 @@ ActionManager::ActionManager(MainWindow* parent)
     : QObject(parent), m_ui(parent)
 {
     m_bottomUiToggleBar = new QToolBar(m_ui);
-    m_bottomSectionBar = new QToolBar(m_ui);
+    m_rightSectionBar = new QToolBar(m_ui);
     m_scanToolBar = new QToolBar(m_ui);
     m_bookmarkToolBar = new QToolBar(m_ui);
     m_globalMenuToolBar = new QToolBar(m_ui);
@@ -33,11 +33,12 @@ ActionManager::ActionManager(MainWindow* parent)
     m_bottomUiToggleBar->setStyleSheet("QToolBar { border: 0px; }");
     m_bottomUiToggleBar->setFloatable(false);
     m_bottomUiToggleBar->setMovable(false);
+    m_bottomUiToggleBar->setIconSize(QSize(22, 22));
 
-    m_bottomSectionBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    m_bottomSectionBar->setStyleSheet("QToolBar { border: 0px; }");
-    m_bottomSectionBar->setFloatable(false);
-    m_bottomSectionBar->setMovable(false);
+    m_rightSectionBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    m_rightSectionBar->setStyleSheet("QToolBar { border: 0px; }");
+    m_rightSectionBar->setFloatable(false);
+    m_rightSectionBar->setMovable(false);
 
     m_scanToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
     m_scanToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -78,7 +79,7 @@ ActionManager::ActionManager(MainWindow* parent)
     m_discoverToolBar->setVisible(false);
 
     //m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomSectionBar);
-    m_ui->addToolBar(Qt::LeftToolBarArea, m_bottomSectionBar);
+    m_ui->addToolBar(Qt::LeftToolBarArea, m_rightSectionBar);
     m_ui->addToolBar(Qt::BottomToolBarArea, m_bottomUiToggleBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_scanToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_vulnerabilityToolBar);
@@ -399,44 +400,44 @@ void ActionManager::createSectionsBar()
 {
     QToolButton* actionButt;
 
-    m_bottomSectionBar->setIconSize(QSize(26,26));
+    m_rightSectionBar->setIconSize(QSize(26,26));
     // FIXME: qtoolbutton problem with textunderIcon
 
-    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt = new QToolButton(m_rightSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")));
     actionButt->setToolTip(tr("Welcome"));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("welcome-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateWelcomeSection()));
-    m_bottomSectionBar->addWidget(actionButt);
+    m_rightSectionBar->addWidget(actionButt);
 
-    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt = new QToolButton(m_rightSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setToolTip(tr("Scan an host"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateScanSection()));
-    m_bottomSectionBar->addWidget(actionButt);
+    m_rightSectionBar->addWidget(actionButt);
 
-    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt = new QToolButton(m_rightSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setToolTip(tr("Search a vulnerability"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateVulnerabilitySection()));
-    m_bottomSectionBar->addWidget(actionButt);
+    m_rightSectionBar->addWidget(actionButt);
 
-    actionButt = new QToolButton(m_bottomSectionBar);
+    actionButt = new QToolButton(m_rightSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setToolTip(tr("Discover a network"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("discover-sez", actionButt);
     connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateDiscoverSection()));
-    m_bottomSectionBar->addWidget(actionButt);
+    m_rightSectionBar->addWidget(actionButt);
 
     // toggle action
     actionButt = new QToolButton(m_ui);
