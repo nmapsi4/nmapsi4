@@ -33,6 +33,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                     && !parameters[index].startsWith(QLatin1String("-PU"))
                     && !parameters[index].startsWith(QLatin1String("-PO"))
                     && !parameters[index].startsWith(QLatin1String("-PY"))
+                    && !parameters[index].startsWith(QLatin1String("-d"))
                     && !parameters[index].startsWith(QLatin1String("--script"))) {
                 bool isFounded = false;
 
@@ -92,7 +93,10 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                 if (!parameters[index].startsWith(QLatin1String("--script"))) {
                     // parameter with value on append
                     QString token = parameters[index];
-                    QString option = token.left(3);
+                    QString option = parameters[index];
+
+                    option.remove(QRegExp("\\d+"));
+                    option.remove(',');
                     token.remove(option);
 
                     QHash<QString, QPair<QCheckBox*, QString> >::const_iterator i = preLoadCheckBoxList.find(option);
@@ -106,6 +110,11 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
 
                         if (j != lineEditList.end()) {
                             (*j)->setText(token);
+                        } else {
+                            QHash<QString, QSpinBox*>::const_iterator j = spinBoxList.find(option);
+                            if (j != spinBoxList.end()) {
+                                (*j)->setValue(token.toInt());
+                            }
                         }
                     }
                 } else {
@@ -398,8 +407,9 @@ void Profiler::preLoadOptionsCheckBox()
 
     // debugging level
     checkDefault.first = m_ui->m_dialogUi->checkBoxDebuggingLevel;
-    checkDefault.second = "none";
+    checkDefault.second = "1";
     preLoadCheckBoxList.insert("-d", checkDefault);
+    spinBoxList.insert("-d", m_ui->m_dialogUi->spinBoxDebugLevel);
 
     // ipv4 ttl
     checkDefault.first = m_ui->m_dialogUi->TcheckIpv4ttl;
@@ -785,7 +795,10 @@ QStringList Profiler::buildExtensions()
 
     // Debugging level
     if (m_ui->m_dialogUi->checkBoxDebuggingLevel->isChecked()) {
-        parameters << "-d";
+        QString tmpCommand;
+        tmpCommand.append("-d");
+        tmpCommand.append(m_ui->m_dialogUi->spinBoxDebugLevel->text());
+        parameters << tmpCommand;
     }
 
     // Timing options
