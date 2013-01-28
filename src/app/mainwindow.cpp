@@ -947,7 +947,11 @@ void MainWindow::resetComboParameters()
 
 void MainWindow::updateQmlScanHistory()
 {
-    QStringList hostScanned(m_hostModel.data()->stringList());
+    QStringList hostScanned;
+
+    if (!m_hostModel.isNull()) {
+        hostScanned = m_hostModel.data()->stringList();
+    }
 
     if (hostScanned.isEmpty()) {
         hostScanned << tr("Empty history");
