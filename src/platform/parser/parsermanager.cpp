@@ -164,11 +164,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             if (tmpBufferLine.contains("open") || tmpBufferLine.contains("filtered")
                     || tmpBufferLine.contains("unfiltered")) {
 
-                if (tmpBufferLine.contains("filtered") || tmpBufferLine.contains("unfiltered")) {
-                    parserObjectElem->setPortFiltered(tmpBufferLine);
-                } else {
+                if (tmpBufferLine.contains("open")) {
                     parserObjectElem->setPortOpen(tmpBufferLine);
+                } else {
+                    parserObjectElem->setPortFiltered(tmpBufferLine);
                 }
+
             } else {
                 parserObjectElem->setPortClose(tmpBufferLine);
             }
@@ -192,8 +193,10 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             }
         }
 
-        if (!isInfoStringFounded && (tmpBufferLine.startsWith(QLatin1String("Host"))
-                                     && !tmpBufferLine.contains("Host script results:"))) {
+        if (!isInfoStringFounded
+                && tmpBufferLine.startsWith(QLatin1String("Host"))
+                && !tmpBufferLine.contains("Host script results:")
+                && !tmpBufferLine.contains("Probes")) {
             bufferInfo.append(tmpBufferLine);
             bufferInfo.append("\n");
         }
