@@ -140,7 +140,8 @@ elseif(APPLE)
     MESSAGE( STATUS MAC Osx)
     ADD_EXECUTABLE(nmapsi4 MACOSX_BUNDLE ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
     ADD_CUSTOM_COMMAND(TARGET nmapsi4 POST_BUILD
-        COMMAND mkdir ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
+        COMMAND mkdir -p ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
+        COMMAND mkdir -p ARGS ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/MacOS
         COMMAND cp ARGS ${MACOSX_BUNDLE_ICON_FILE} ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources
         COMMAND cp ARGS *.qm ${CMAKE_CURRENT_BINARY_DIR}/nmapsi4.app/Contents/Resources)
 endif (NOT WIN32 AND NOT APPLE)
