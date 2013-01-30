@@ -124,13 +124,11 @@ SET(TRANSLATIONS_FILES
 
 qt4_add_translation(qms ${TRANSLATIONS_FILES})
 
-if (BUILD_KDELIBS)
-    if(KDE4_FOUND)
-        INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
-    else(KDE4_FOUND)
-        INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-    endif(KDE4_FOUND)
-endif (BUILD_KDELIBS)
+if(BUILD_KDELIBS AND KDE4_FOUND)
+    INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
+else(BUILD_KDELIBS AND KDE4_FOUND)
+    INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
+endif (BUILD_KDELIBS AND KDE4_FOUND)
 
 if (NOT WIN32 AND NOT APPLE)
     ADD_EXECUTABLE(nmapsi4 ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
@@ -158,18 +156,16 @@ if (NOT WIN32 AND NOT APPLE)
         )
 endif (NOT WIN32 AND NOT APPLE)
 
-if (BUILD_KDELIBS)
-    if(KDE4_FOUND)
-        target_link_libraries(nmapsi4
-            ${KDE4_KDEUI_LIBS}
-            )
-    endif(KDE4_FOUND)
-endif (BUILD_KDELIBS)
+if(BUILD_KDELIBS AND KDE4_FOUND)
+     target_link_libraries(nmapsi4
+        ${KDE4_KDEUI_LIBS}
+        )
+endif(BUILD_KDELIBS AND KDE4_FOUND)
+
 
 if (NOT WIN32 AND NOT APPLE)
     install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/locale)
-    #install(FILES "platform/qml/vulnerabilityWelcome.qml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/nmapsi4/qml)
     install(FILES "desktop/nmapsi4.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
     install(FILES "desktop/nmapsi4-admin.desktop" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/kde4/)
     install(FILES "dbus/org.nmapsi4.Nmapsi4.xml" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces/)
