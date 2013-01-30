@@ -1,8 +1,5 @@
 <RCC>
   <qresource prefix="/images">
-    <file>platform/qml/vulnerabilityWelcome.qml</file>
-    <file>platform/qml/mainWelcome.qml</file>
-    <file>platform/qml/style/Properties.qml</file>
     <file>../images/arrow-down-double.png</file>
     <file>../images/hub.png</file>
     <file>../images/wap.png</file>

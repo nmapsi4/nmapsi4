@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>platform/qml/vulnerabilityWelcome.qml</file>
+        <file>platform/qml/mainWelcome.qml</file>
+        <file>platform/qml/style/Properties.qml</file>
+    </qresource>
+</RCC>

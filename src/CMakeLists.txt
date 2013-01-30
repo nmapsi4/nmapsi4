@@ -106,7 +106,10 @@ SET(SOURCES_UI
     app/ui/scanwidget.ui
     )
 
-SET(RESOURCES_QRC images.qrc)
+SET(RESOURCES_QRC
+    images.qrc
+    qml.qrc
+    )
 
 qt4_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
 qt4_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
