@@ -34,12 +34,16 @@ Rectangle {
 
         Rectangle {
             id: b1
+
+            anchors {
+                top: cLeft.top
+                topMargin: 5
+                left: cLeft.left
+                leftMargin: 5
+            }
+
             width: cLeft.width - 5
             height: (cLeft.height / 3) - 5
-            anchors.top: cLeft.top
-            anchors.topMargin: 5
-            anchors.left: cLeft.left
-            anchors.leftMargin: 5
             smooth: true
             radius: 10
             border.width: 2
@@ -56,9 +60,13 @@ Rectangle {
             }
 
             Image {
-                anchors.top: hostScanLabel.bottom
-                anchors.topMargin: 10
-                anchors.horizontalCenter: b1.horizontalCenter
+
+                anchors {
+                    top: hostScanLabel.bottom
+                    topMargin: 10
+                    horizontalCenter: b1.horizontalCenter
+                }
+
                 source: "qrc:/images/images/network_local.png"
             }
 
@@ -73,12 +81,16 @@ Rectangle {
 
         Rectangle {
             id: b2
+
+            anchors {
+                top: b1.bottom
+                topMargin: 5
+                left: cLeft.left
+                leftMargin: 5
+            }
+
             width: cLeft.width - 5
             height: (cLeft.height / 3) - 5
-            anchors.top: b1.bottom
-            anchors.topMargin: 5
-            anchors.left: cLeft.left
-            anchors.leftMargin: 5
             smooth: true
             radius: 10
             border.width: 2
@@ -96,9 +108,13 @@ Rectangle {
             }
 
             Image {
-                anchors.top: vulnerabilityLabel.bottom
-                anchors.topMargin: 10
-                anchors.horizontalCenter: b2.horizontalCenter
+
+                anchors {
+                    top: vulnerabilityLabel.bottom
+                    topMargin: 10
+                    horizontalCenter: b2.horizontalCenter
+                }
+
                 source: "qrc:/images/images/viewmag+.png"
             }
 
@@ -113,13 +129,17 @@ Rectangle {
 
         Rectangle {
             id: b3
+
+            anchors {
+                top: b2.bottom
+                topMargin: 5
+                left: cLeft.left
+                leftMargin: 5
+                bottomMargin: 5
+            }
+
             width: cLeft.width - 5
             height: (cLeft.height / 3) - 10
-            anchors.top: b2.bottom
-            anchors.topMargin: 5
-            anchors.left: cLeft.left
-            anchors.leftMargin: 5
-            anchors.bottomMargin: 5
             smooth: true
             radius: 10
             border.width: 2
@@ -137,9 +157,13 @@ Rectangle {
             }
 
             Image {
-                anchors.top: discoverNetLabel.bottom
-                anchors.topMargin: 10
-                anchors.horizontalCenter: b3.horizontalCenter
+
+                anchors {
+                    top: discoverNetLabel.bottom
+                    topMargin: 10
+                    horizontalCenter: b3.horizontalCenter
+                }
+
                 source: "qrc:/images/images/document-preview-archive.png"
             }
 
@@ -155,20 +179,28 @@ Rectangle {
 
     Item {
         id: cCenter
-        anchors.left: cLeft.right
-        anchors.verticalCenter: baseRect.verticalCenter
-        anchors.leftMargin: 5
-        anchors.rightMargin: 5
+
+        anchors {
+            left: cLeft.right
+            verticalCenter: baseRect.verticalCenter
+            leftMargin: 5
+            rightMargin: 5
+        }
+
         width: (baseRect.width / 3) - 5
         height: baseRect.height
 
         Rectangle {
             id: history
+
+            anchors {
+                top: cCenter.top
+                topMargin: 5
+                bottomMargin: 5
+            }
+
             width: cCenter.width
             height: cCenter.height - 10
-            anchors.top: cCenter.top
-            anchors.topMargin: 5
-            anchors.bottomMargin: 5
             smooth: true
             radius: 10
             border.width: 2
@@ -179,48 +211,68 @@ Rectangle {
 
             Image {
                 id: nmapsi4Image
-                anchors.top: history.top
-                anchors.topMargin: 10
-                anchors.horizontalCenter: history.horizontalCenter
+
+                anchors {
+                    top: history.top
+                    topMargin: 10
+                    horizontalCenter: history.horizontalCenter
+                }
+
                 source: "qrc:/images/icons/128x128/nmapsi4.png"
             }
 
             Text {
                 id: ipHistoryTitle
-                anchors.top: nmapsi4Image.bottom
-                anchors.topMargin: 10
+
+                anchors {
+                    top: nmapsi4Image.bottom
+                    topMargin: 10
+                    horizontalCenter: history.horizontalCenter
+                }
+
                 height: 25
-                anchors.horizontalCenter: history.horizontalCenter
                 font.pointSize: 22
                 text: "Nmapsi4"
             }
 
             Text {
                 id: nmapsi4Description
+
+                anchors {
+                    top: ipHistoryTitle.bottom
+                    topMargin: 20
+                    horizontalCenter: history.horizontalCenter
+                }
+
                 width: cCenter.width - 10
-                anchors.top: ipHistoryTitle.bottom
-                anchors.topMargin: 20
-                anchors.horizontalCenter: history.horizontalCenter
                 text: description
                 wrapMode: Text.WordWrap
             }
 
             Text {
                 id: versionTitle
-                anchors.top: nmapsi4Description.bottom
-                anchors.topMargin: 20
+
+                anchors {
+                    top: nmapsi4Description.bottom
+                    topMargin: 20
+                    horizontalCenter: history.horizontalCenter
+                }
+
                 height: 25
-                anchors.horizontalCenter: history.horizontalCenter
                 font.pointSize: 18
                 text: qsTr("Version")
             }
 
             Text {
                 id: versionNumber
-                anchors.top: versionTitle.bottom
-                anchors.topMargin: 10
+
+                anchors {
+                    top: versionTitle.bottom
+                    topMargin: 10
+                    horizontalCenter: history.horizontalCenter
+                }
+
                 height: 25
-                anchors.horizontalCenter: history.horizontalCenter
                 font.pointSize: 14
                 text: version_number
             }
@@ -229,20 +281,28 @@ Rectangle {
 
     Item {
         id: cRight
-        anchors.left: cCenter.right
-        anchors.verticalCenter: baseRect.verticalCenter
-        anchors.leftMargin: 5
-        anchors.rightMargin: 5
+
+        anchors {
+            left: cCenter.right
+            verticalCenter: baseRect.verticalCenter
+            leftMargin: 5
+            rightMargin: 5
+        }
+
         width: (baseRect.width / 3) - 5
         height: baseRect.height
 
         Rectangle {
             id: webreference
+
+            anchors {
+                top: cRight.top
+                topMargin: 5
+                bottomMargin: 5
+            }
+
             width: cRight.width
             height: cRight.height - 10
-            anchors.top: cRight.top
-            anchors.topMargin: 5
-            anchors.bottomMargin: 5
             smooth: true
             radius: 10
             border.width: 2
@@ -253,20 +313,28 @@ Rectangle {
 
             Text {
                 id: historyPrevLabel
-                anchors.top: webreference.top
-                anchors.topMargin: 20
-                anchors.horizontalCenter: webreference.horizontalCenter
+
+                anchors {
+                    top: webreference.top
+                    topMargin: 20
+                    horizontalCenter: webreference.horizontalCenter
+                }
+
                 font.pointSize: 16
                 text: qsTr("Last scanned hosts")
             }
 
             ListView {
                 id: ipHistoryText
+
+                anchors {
+                    top: historyPrevLabel.bottom
+                    topMargin: 15
+                    horizontalCenter: webreference.horizontalCenter
+                }
+
                 height: webreference.height - historyPrevLabel.height
                 width: webreference.width - 10
-                anchors.top: historyPrevLabel.bottom
-                anchors.topMargin: 15
-                anchors.horizontalCenter: webreference.horizontalCenter
 
                 model: ipModel
                 delegate: Rectangle {
