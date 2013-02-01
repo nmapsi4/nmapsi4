@@ -312,18 +312,18 @@ QStringList BookmarkManager::getServicesListFromBookmark()
 
 bool BookmarkManager::isBookmarkHostListEmpty()
 {
-    if (getHostListFromBookmark().first() != "NULL") {
-        return false;
+    if (getHostListFromBookmark().isEmpty()) {
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 bool BookmarkManager::isBookmarkServicesListEmpty()
 {
-    if (getServicesListFromBookmark().first() != "NULL") {
-        return false;
+    if (getServicesListFromBookmark().isEmpty()) {
+        return true;
     }
 
-    return true;
+    return false;
 }

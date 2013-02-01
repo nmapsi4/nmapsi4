@@ -32,26 +32,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class History
 {
 public:
-    History(QTreeWidget* treeLog, const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
-    History(const QString ConfigTag, const QString ConfigTagTime, int cacheSize);
-    explicit History(const QString ConfigTag, int cacheSize = 0);
+    History(QTreeWidget* treeWidget, const QString firstConfigTag, const QString secondConfigTag, int cacheSize);
+    History(const QString firstConfigTag, const QString secondConfigTag, int cacheSize);
+    explicit History(const QString configTag, int cacheSize = 0);
     ~History();
     QList<QTreeWidgetItem*> updateBookMarks();
-    void addItemHistory(const QString name);
-    void addItemHistory(const QString name, const QString value);
-    void deleteItemBookmark(const QString item);
     QStringList getHostCache();
-    bool isProfileInHistory(const QString profileName);
+    void addItemHistory(const QString item);
+    void addItemHistory(const QString item, const QString value);
+    void deleteItemBookmark(const QString item);
     void updateProfile(const QString parameters, const QString profileName);
+    bool isProfileInHistory(const QString profileName);
 
 private:
-    const QStringList historyReadUrl();
-    const QList<QString> historyReadUrlTime();
-    void addItemToHistory(const QString url, const QString scanTime);
+    const QStringList readBaseHistoryList();
+    const QStringList readOptionalHistoryList();
+    void addItemToHistory(const QString item, const QString timeStamp);
 
-    QTreeWidget* logTree;
-    QString configTag;
-    QString configTagTime;
+    QTreeWidget* m_treeWidget;
+    QString m_firstConfigTag;
+    QString m_secondConfigTag;
     int m_cacheSize;
 
 };

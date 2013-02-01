@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2008-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -17,30 +17,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "history.h"
 
-History::History(QTreeWidget* treeLog, const QString ConfigTag, const QString ConfigTagTime, int cacheSize)
+History::History(QTreeWidget* treeWidget, const QString firstConfigTag, const QString secondConfigTag, int cacheSize)
 {
-    Q_ASSERT(treeLog->columnCount() == 2 || treeLog->columnCount() == 3);
+    Q_ASSERT(treeWidget->columnCount() == 2 || treeWidget->columnCount() == 3);
 
-    logTree = treeLog;
-    configTag = ConfigTag;
-    configTagTime = ConfigTagTime;
+    m_treeWidget = treeWidget;
+    m_firstConfigTag = firstConfigTag;
+    m_secondConfigTag = secondConfigTag;
     m_cacheSize = cacheSize;
 }
 
-// cache host contructor
-History::History(const QString ConfigTag, const QString ConfigTagTime, int cacheSize)
-    : logTree(0)
+History::History(const QString firstConfigTag, const QString secondConfigTag, int cacheSize)
+    : m_treeWidget(0)
 {
-    configTag = ConfigTag;
-    configTagTime = ConfigTagTime;
+    m_firstConfigTag = firstConfigTag;
+    m_secondConfigTag = secondConfigTag;
     m_cacheSize = cacheSize;
 }
 
-// cache host contructor
-History::History(const QString ConfigTag, int cacheSize)
-    : logTree(0)
+History::History(const QString configTag, int cacheSize)
+    : m_treeWidget(0)
 {
-    configTag = ConfigTag;
+    m_firstConfigTag = configTag;
     m_cacheSize = cacheSize;
 }
 
@@ -48,54 +46,70 @@ History::~History()
 {
 }
 
-const QStringList History::historyReadUrl()
+const QStringList History::readBaseHistoryList()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
-    return settings.value(configTag, "NULL").toStringList();
+    QVariant value = settings.value(m_firstConfigTag, QStringList());
+
+    if (value.isValid()) {
+        QStringList list = value.toStringList();
+        // NOTE: backward compatibility (to remove with 0.6.x)
+        if (list.size() == 1 && list[0].contains("NULL")) {
+            list.clear();
+        }
+        return list;
+    }
+
+    return QStringList();
 }
 
-const QList<QString> History::historyReadUrlTime()
+const QStringList History::readOptionalHistoryList()
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
-    return settings.value(configTagTime, "NULL").toStringList();
+    QVariant value = settings.value(m_secondConfigTag, QStringList());
+
+    if (value.isValid()) {
+        QStringList list = value.toStringList();
+        // NOTE: backward compatibility (to remove with 0.6.x)
+        if (list.size() == 1 && list[0].contains("NULL")) {
+            list.clear();
+        }
+        return list;
+    }
+
+    return QStringList();
 }
 
-void History::addItemHistory(const QString name)
+void History::addItemHistory(const QString item)
 {
-    addItemToHistory(name, NULL);
+    addItemToHistory(item, QString());
 }
 
-void History::addItemHistory(const QString name, const QString value)
+void History::addItemHistory(const QString item, const QString value)
 {
-    addItemToHistory(name, value);
+    addItemToHistory(item, value);
 }
 
 bool History::isProfileInHistory(const QString profileName)
 {
-    return historyReadUrlTime().contains(profileName);
+    return readOptionalHistoryList().contains(profileName);
 }
 
 void History::updateProfile(const QString parameters, const QString profileName)
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
-    QList<QString> urlList = historyReadUrl();
-    QList<QString> urlListTime = historyReadUrlTime();
+    QStringList baseList = readBaseHistoryList();
+    QStringList optionalList = readOptionalHistoryList();
 
-    if (urlListTime.contains(profileName)) {
-        int index = urlListTime.indexOf(profileName);
-        urlList.removeAt(index);
-        urlListTime.removeAt(index);
-
-        if (urlList.size()) {
-            settings.setValue(configTag, QVariant(urlList));
-            settings.setValue(configTagTime, QVariant(urlListTime));
-        } else {
-            settings.setValue(configTag, "NULL");
-            settings.setValue(configTagTime, "NULL");
-        }
+    if (optionalList.contains(profileName)) {
+        int index = optionalList.indexOf(profileName);
+        baseList.removeAt(index);
+        optionalList.removeAt(index);
+        settings.setValue(m_firstConfigTag, baseList);
+        settings.setValue(m_secondConfigTag, optionalList);
     }
 
     addItemHistory(parameters, profileName);
@@ -104,21 +118,16 @@ void History::updateProfile(const QString parameters, const QString profileName)
 void History::deleteItemBookmark(const QString item)
 {
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
-    QList<QString> urlList = historyReadUrl();
-    QList<QString> urlListTime = historyReadUrlTime();
+    QStringList baseList = readBaseHistoryList();
+    QStringList optionalList = readOptionalHistoryList();
 
-    for (int index = 0; index < urlList.size(); index++) {
-        if (urlList[index].contains(item)) {
-            int index = urlList.indexOf(item);
-            urlList.removeAt(index);
-            urlListTime.removeAt(index);
-            if (urlList.size()) {
-                settings.setValue(configTag, QVariant(urlList));
-                settings.setValue(configTagTime, QVariant(urlListTime));
-            } else {
-                settings.setValue(configTag, "NULL");
-                settings.setValue(configTagTime, "NULL");
-            }
+    for (int index = 0; index < baseList.size(); index++) {
+        if (baseList[index].contains(item)) {
+            int index = baseList.indexOf(item);
+            baseList.removeAt(index);
+            optionalList.removeAt(index);
+            settings.setValue(m_firstConfigTag, baseList);
+            settings.setValue(m_secondConfigTag, optionalList);
             break;
         }
     }
@@ -126,25 +135,24 @@ void History::deleteItemBookmark(const QString item)
 
 QList<QTreeWidgetItem*> History::updateBookMarks()
 {
-    QList<QString> urlList = historyReadUrl();
-    QList<QString> urlListTime = historyReadUrlTime();
+    QStringList baseList = readBaseHistoryList();
+    QStringList optionalList = readOptionalHistoryList();
 
     QList<QTreeWidgetItem*> ItemListHistory;
 
-    logTree->clear();
-    logTree->setIconSize(QSize(22, 22));
+    m_treeWidget->clear();
+    m_treeWidget->setIconSize(QSize(22, 22));
 
-    if (!urlList.isEmpty() && !urlList.first().contains("NULL")
-            && !urlListTime.first().contains("NULL")) {
+    if (!baseList.isEmpty() && !optionalList.isEmpty()) {
         short index = 0;
-        foreach(const QString & item, urlList) {
-            QTreeWidgetItem* historyItem = new QTreeWidgetItem(logTree);
+        foreach(const QString & item, baseList) {
+            QTreeWidgetItem* historyItem = new QTreeWidgetItem(m_treeWidget);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);
             historyItem->setText(0, item);
             historyItem->setToolTip(0, item);
-            historyItem->setText(1, urlListTime[index]);
-            historyItem->setToolTip(1, urlListTime[index]);
+            historyItem->setText(1, optionalList[index]);
+            historyItem->setToolTip(1, optionalList[index]);
             index++;
         }
     }
@@ -154,55 +162,54 @@ QList<QTreeWidgetItem*> History::updateBookMarks()
 
 QStringList History::getHostCache()
 {
-    return historyReadUrl();
+    return readBaseHistoryList();
 }
 
-void History::addItemToHistory(const QString url, const QString scanTime)
+void History::addItemToHistory(const QString item, const QString timeStamp)
 {
-    Q_ASSERT(!url.isEmpty());
+    Q_ASSERT(!item.isEmpty());
 
     QSettings settings("nmapsi4", "nmapsi4_bookmark");
 
-    QList<QString> urlList = historyReadUrl();
-    QList<QString> urlListTime;
+    QStringList baseList = readBaseHistoryList();
+    QStringList optionalList;
 
-    if (!scanTime.isNull()) {
-        urlListTime = historyReadUrlTime();
+    if (!timeStamp.isEmpty()) {
+        optionalList = readOptionalHistoryList();
     }
 
-    if (urlList.contains("NULL")) {
-        urlList.removeFirst();
-        urlList.append(url);
-        settings.setValue(configTag, QVariant(urlList));
-        if (!scanTime.isNull()) {
-            urlListTime.removeFirst();
-            urlListTime.append(scanTime);
-            settings.setValue(configTagTime, QVariant(urlListTime));
+    if (baseList.isEmpty()) {
+        baseList.append(item);
+        settings.setValue(m_firstConfigTag, baseList);
+        if (!timeStamp.isEmpty()) {
+            optionalList.append(timeStamp);
+            settings.setValue(m_secondConfigTag, optionalList);
         }
-    } else if ((urlList.size() == m_cacheSize) && (m_cacheSize != -1) && (!urlList.contains(url))) {
+    } else if ((baseList.size() == m_cacheSize) && (m_cacheSize != -1) && (!baseList.contains(item))) {
         // new value with m_cacheSize limit
-        urlList.removeLast();
-        urlList.push_front(url);
-        settings.setValue(configTag, QVariant(urlList));
+        baseList.removeLast();
+        baseList.push_front(item);
+        settings.setValue(m_firstConfigTag, baseList);
 
-        if (!scanTime.isNull()) {
-            urlListTime.removeLast();
-            urlListTime.push_front(scanTime);
-            settings.setValue(configTagTime, QVariant(urlListTime));
+        if (!timeStamp.isEmpty()) {
+            optionalList.removeLast();
+            optionalList.push_front(timeStamp);
+            settings.setValue(m_secondConfigTag, optionalList);
         }
-    } else if (!urlList.contains(url)) {
+    } else if (!baseList.contains(item)) {
         // new value with not m_cacheSize limit
-        urlList.push_front(url);
-        settings.setValue(configTag, QVariant(urlList));
+        baseList.push_front(item);
+        settings.setValue(m_firstConfigTag, baseList);
 
-        if (!scanTime.isNull()) {
-            urlListTime.push_front(scanTime);
-            settings.setValue(configTagTime, QVariant(urlListTime));
+        if (!timeStamp.isEmpty()) {
+            optionalList.push_front(timeStamp);
+            settings.setValue(m_secondConfigTag, optionalList);
         }
-    } else if (!scanTime.isNull()) {
-        int index = urlList.indexOf(url);
-        urlListTime[index].clear();
-        urlListTime[index].append(QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
-        settings.setValue(configTagTime, QVariant(urlListTime));
+    } else if (!timeStamp.isEmpty()) {
+        // append time
+        int index = baseList.indexOf(item);
+        optionalList[index].clear();
+        optionalList[index].append(timeStamp);
+        settings.setValue(m_secondConfigTag, optionalList);
     }
 }
