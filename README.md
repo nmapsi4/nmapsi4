@@ -27,20 +27,20 @@ security net scanner.
 
 ## Build on GNU/Linux:
 
-$ cd nmapsi4
-$ cd tools/
-$ ./cmake_verbose_script.sh
+    $ cd nmapsi4
+    $ cd tools/
+    $ ./cmake_verbose_script.sh
 
---> OR <--
+### OR
 
-$ cd nmapsi4
-$ mkdir build
-$ cd build/
+    $ cd nmapsi4
+    $ mkdir build
+    $ cd build/
 
---> AND <--
+### AND 
 
-$ make
-$ make install (only root) or create a package for your disto ;)
+    $ make
+    $ make install (only root) or create a package for your disto ;)
 
 ## Packages:
 
