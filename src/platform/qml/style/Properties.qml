@@ -23,7 +23,7 @@ Item {
 
     property color transparentColor: "#00FFFFFF"
     property color listItemColor: "#39c244"
-    property color onHoverColor: palette.highlight
+    property color onHoverColor: "#39c244"
     property color borderColor:  palette.light
     property color highlightText: palette.highlightedText
     property color normalText: palette.text
