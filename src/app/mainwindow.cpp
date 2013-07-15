@@ -961,7 +961,7 @@ void MainWindow::updateQmlScanHistory()
 
 void MainWindow::loadTargetListFromFile()
 {
-    const QString& fileName = QFileDialog::getOpenFileName(this, tr("Select the file"), "/home", "");
+    const QString& fileName = QFileDialog::getOpenFileName(this, tr("Select the file"), QDir::homePath(), "");
 
     QFile *targetFile = new QFile(fileName);
 
@@ -978,22 +978,27 @@ void MainWindow::loadTargetListFromFile()
         tmpLine = buffer.readLine();
         lineCounter++;
 
-        if ((lineCounter >= 2) && (!tmpLine.startsWith(QLatin1String(" ")))) {
+        tmpLine = tmpLine.remove(" ");
+
+        if (lineCounter >= 2) {
             targetListOneLine.append(' ');
         }
 
-        // It's a ip or dns
-        QHostAddress addressProtocol(tmpLine);
-        if ((addressProtocol.protocol() == QAbstractSocket::IPv4Protocol)
-            || (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol)
-            || (HostTools::isValidDns(tmpLine))) {
-            targetListOneLine.append(tmpLine);
-        }
-    }
+        int tokenCounter = 0;
+        foreach(const QString& token, tmpLine.split(',')) {
+            // It's a ip or dns
+            QHostAddress addressProtocol(token);
+            if ((addressProtocol.protocol() == QAbstractSocket::IPv4Protocol)
+                || (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol)
+                || (HostTools::isValidDns(token))) {
+                tokenCounter++;
+                if (tokenCounter > 1) {
+                    targetListOneLine.append(' ');
+                }
 
-    // fix wrong list format (target1,target2,target3)
-    if (targetListOneLine.contains(',')) {
-        targetListOneLine.replace(',',' ');
+                targetListOneLine.append(token);
+            }
+        }
     }
 
     qDebug() << "Load list from file:: " << targetListOneLine;

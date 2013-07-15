@@ -197,7 +197,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load target list from file &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ex&lt;/span&gt;: target_test.txt&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Format&lt;/span&gt;: &lt;/p&gt;&lt;p&gt;target1 target2 target3&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;OR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;target1(no space)&lt;/p&gt;&lt;p&gt;target2(no space)&lt;/p&gt;&lt;p&gt;target3(no space)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load target list from file &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ex&lt;/span&gt;: target_test.txt&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Format&lt;/span&gt;:&lt;/p&gt;&lt;p&gt;target1,target2,target3&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;OR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;target1&lt;br/&gt;target2&lt;br/&gt;target3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="text">
             <string/>
