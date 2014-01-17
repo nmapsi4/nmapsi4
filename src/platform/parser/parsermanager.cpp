@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2014  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -94,8 +94,9 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     elemObj->setId(id);
 
     QString message(tr("Scan completed"));
-    // NOTE: It works only with kdelibs
-    Notify::notificationMessage(parList[parList.size()-1], message);
+
+    // TODO: no action
+    //Notify::notificationMessage(parList[parList.size()-1], message);
 
 #if defined(USE_KDELIBS)
     // limit Widget lines to 5

@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2014 Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -26,11 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QDebug>
 #include <QApplication>
 #include <QToolButton>
-
-// kde includes
-#if defined(USE_KDELIBS)
-#include <KNotification>
-#endif
 
 
 class Notify

@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2014  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as

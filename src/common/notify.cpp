@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2014 Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -34,15 +34,7 @@ void Notify::clearButtonNotify(QToolButton* button)
 
 void Notify::notificationMessage(const QString& sender, const QString& message)
 {
-#if defined(USE_KDELIBS)
-    KNotification::event(KNotification::Notification, "nmapsi4 - " + sender,
-        message,
-        QPixmap(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")),
-        QApplication::activeWindow(),
-        KNotification::CloseWhenWidgetActivated
-    );
-#else
+    // TODO: removed KDELIBS notification. QT5 solution soon
     Q_UNUSED(sender);
     Q_UNUSED(message);
-#endif
 }

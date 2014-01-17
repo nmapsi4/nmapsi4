@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2014  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -261,8 +261,9 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 
         QString message("> " + tr("Discover completed"));
-        // NOTE: It works only with kdelibs support
-        Notify::notificationMessage("Discover (RANGE)", message);
+
+        // NOTE: no action
+        //Notify::notificationMessage("Discover (RANGE)", message);
 
 #if defined(USE_KDELIBS)
         int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
@@ -423,8 +424,9 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 
     QString message("> " + tr("Discover completed"));
-    // NOTE: It works only with kdelibs support
-    Notify::notificationMessage("Discover (CIDR)", message);
+
+    // NOTE: no action
+    //Notify::notificationMessage("Discover (CIDR)", message);
 
 #if defined(USE_KDELIBS)
     int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
