@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 static const char matchPorts[] = "^\\d{1,5}/.{1,5}\\s+\\b(open|closed|filtered|unfiltered)\\b";
 
-static const char matchTraceroute[] = "^\\d\\s+\\d+\\.\\d+\\s+\\bms\\b\\s+";
+static const char matchTraceroute[] = "^\\d{1,5}\\s+\\d+\\.\\d+\\s+\\bms\\b\\s+";
 
 static const char matchIpv4[] = "((([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])\\.){3})"
                                 "([2][5][0-5]|([2][0-4]|[1][0-9]|[0-9])?[0-9])";
