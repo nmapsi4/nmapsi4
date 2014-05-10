@@ -163,7 +163,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::startPreferencesDialog()
 {
-    PreferencesDialog* dialogPreference = new PreferencesDialog(this);
+    QPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
 
     connect(dialogPreference, SIGNAL(accepted()),
             this, SLOT(syncSettings()));
@@ -177,7 +177,7 @@ void MainWindow::startPreferencesDialog()
 
 void MainWindow::newProfile()
 {
-    ProfilerManager* pManager = new ProfilerManager(this);
+    QPointer<ProfilerManager> pManager = new ProfilerManager(this);
 
     connect(pManager, SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
@@ -194,7 +194,7 @@ void MainWindow::newProfile()
 
 void MainWindow::editProfile()
 {
-    ProfilerManager* pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
+    QPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
                                                                  m_scanWidget->comboAdv->currentText(), this);
 
     connect(pManager, SIGNAL(doneParBook(QString,QString)),
