@@ -106,13 +106,13 @@ void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStrin
         // acquire one element from thread counter
         m_threadLimit--;
 
-        QWeakPointer<ProcessThread> pingTh = new ProcessThread("nping", parameters);
-        m_threadList.push_back(pingTh.data());
+        ProcessThread* pingTh = new ProcessThread("nping", parameters);
+        m_threadList.push_back(pingTh);
 
-        connect(pingTh.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(fromListReturn(QStringList,QByteArray,QByteArray)));
 
-        pingTh.data()->start();
+        pingTh->start();
     } else {
         qDebug() << "DEBUG:: thread suspended:: " << networkIp;
         // create a QStringlist with address suspended
@@ -202,18 +202,18 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, Disco
 
     parameters.append(networkCIDR);
 
-    QWeakPointer<ProcessThread> thread = new ProcessThread("nping", parameters);
+    ProcessThread* thread = new ProcessThread("nping", parameters);
 
-    connect(thread.data(), SIGNAL(flowFromThread(QString,QByteArray)),
+    connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),
             this, SLOT(currentCIDRValue(QString,QByteArray)));
-    connect(thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+    connect(thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
     connect(parent, SIGNAL(killDiscoverFromCIDR()),
             this, SLOT(stopDiscoverFromCIDR()));
 
-    m_threadList.push_back(thread.data());
+    m_threadList.push_back(thread);
 
-    thread.data()->start();
+    thread->start();
 }
 
 void Discover::stopDiscoverFromCIDR()

@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTreeWidgetItem>
 #include <QtCore/QSettings>
 #include <QtCore/QWeakPointer>
-#include <QtWebKit/QWebView>
+#include <QWebView>
 
 #include "processthread.h"
 #include "memorytools.h"
@@ -50,9 +50,9 @@ private:
     void nseTreeActiveRestoreValues();
 
     ProfilerManager* m_ui;
-    QWeakPointer<ProcessThread> m_thread;
-    QWeakPointer<ProcessThread> m_threadScript;
-    QWeakPointer<QTextDocument> m_documentScript;
+    ProcessThread* m_thread;
+    ProcessThread* m_threadScript;
+    QTextDocument* m_documentScript;
     QList<QTreeWidgetItem*> m_itemNseAvail;
     QList<QTreeWidgetItem*> m_itemNseActive;
     QHash<QString, QTextDocument*> m_nseHelpCache;

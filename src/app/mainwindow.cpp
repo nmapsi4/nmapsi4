@@ -42,6 +42,8 @@ ScanWidget::ScanWidget(QWidget* parent): QWidget(parent)
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
     m_mainTabWidget(new QTabWidget(this)),
+    m_completer(0),
+    m_hostModel(0),
     m_userId(0)
 {
     QTimer::singleShot(0, this, SLOT(initObject()));
@@ -59,19 +61,6 @@ void MainWindow::initObject()
     //allocate centralWidget with layout QVBoxLayout(centralWidget)
     QWidget *centralwidget = new QWidget(this);
     QVBoxLayout *centralLayout = new QVBoxLayout(centralwidget);
-
-#if defined(USE_KDELIBS)
-    m_kWidgetNotification = new KMessageWidget(this);
-    m_kWidgetNotification->setCloseButtonVisible(false);
-    QAction* action = new QAction(m_kWidgetNotification);
-    action->setText(tr("Close"));
-    action->setIcon(QIcon::fromTheme("application-exit", QIcon(":/images/images/window-close.png")));
-    m_kWidgetNotification->addAction(action);
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(hideKWidget()));
-    m_kWidgetNotification->hide();
-
-    centralLayout->addWidget(m_kWidgetNotification);
-#endif
 
     centralLayout->addWidget(m_mainTabWidget);
     centralwidget->setLayout(centralLayout);
@@ -174,50 +163,50 @@ MainWindow::~MainWindow()
 
 void MainWindow::startPreferencesDialog()
 {
-    QWeakPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
+    PreferencesDialog* dialogPreference = new PreferencesDialog(this);
 
-    connect(dialogPreference.data(), SIGNAL(accepted()),
+    connect(dialogPreference, SIGNAL(accepted()),
             this, SLOT(syncSettings()));
 
-    dialogPreference.data()->exec();
+    dialogPreference->exec();
 
-    if (!dialogPreference.isNull()) {
-        delete dialogPreference.data();
+    if (dialogPreference) {
+        delete dialogPreference;
     }
 }
 
 void MainWindow::newProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(this);
+    ProfilerManager* pManager = new ProfilerManager(this);
 
-    connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
+    connect(pManager, SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
 
-    connect(pManager.data(), SIGNAL(doneQuickProfile(QStringList)),
+    connect(pManager, SIGNAL(doneQuickProfile(QStringList)),
             m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
 
-    pManager.data()->exec();
+    pManager->exec();
 
-    if (!pManager.isNull()) {
-        delete pManager.data();
+    if (pManager) {
+        delete pManager;
     }
 }
 
 void MainWindow::editProfile()
 {
-    QWeakPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
+    ProfilerManager* pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
                                                                  m_scanWidget->comboAdv->currentText(), this);
 
-    connect(pManager.data(), SIGNAL(doneParBook(QString,QString)),
+    connect(pManager, SIGNAL(doneParBook(QString,QString)),
             m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
 
-    connect(pManager.data(), SIGNAL(doneQuickProfile(QStringList)),
+    connect(pManager, SIGNAL(doneQuickProfile(QStringList)),
             m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
 
-    pManager.data()->exec();
+    pManager->exec();
 
-    if (!pManager.isNull()) {
-        delete pManager.data();
+    if (pManager) {
+        delete pManager;
     }
 }
 
@@ -227,16 +216,16 @@ void MainWindow::linkCompleterToHostname()
         m_collections->m_collectionsScanSection.value("bookmarkAddHost-action")->setEnabled(true);
     }
 
-    if (m_hostModel.isNull()) {
+    if (!m_hostModel) {
         return;
     }
 
-    if (m_completer.isNull()) {
-        m_completer = new QCompleter(m_hostModel.data(), this);
-        m_completer.data()->setCompletionRole(QCompleter::InlineCompletion);
-        m_completer.data()->setCaseSensitivity(Qt::CaseInsensitive);
-        m_completer.data()->setWrapAround(false);
-        m_scanWidget->hostEdit->setCompleter(m_completer.data());
+    if (!m_completer) {
+        m_completer = new QCompleter(m_hostModel, this);
+        m_completer->setCompletionRole(QCompleter::InlineCompletion);
+        m_completer->setCaseSensitivity(Qt::CaseInsensitive);
+        m_completer->setWrapAround(false);
+        m_scanWidget->hostEdit->setCompleter(m_completer);
     }
 }
 
@@ -517,16 +506,6 @@ void MainWindow::resizeScanListWidgetEvent()
     }
 }
 
-#if defined(USE_KDELIBS)
-
-void MainWindow::hideKWidget()
-{
-    m_kWidgetNotification->hide();
-    m_kWidgetNotification->setText(QString(""));
-}
-
-#endif
-
 void MainWindow::syncSettings()
 {
     QSettings settings("nmapsi4", "nmapsi4");
@@ -589,10 +568,10 @@ void MainWindow::saveSettings()
 void MainWindow::updateCompleter()
 {
     if (!m_bookmark->isBookmarkHostListEmpty()) {
-        if (!m_completer.isNull()) {
-            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer.data()->model());
+        if (m_completer) {
+            QStringListModel *newModel = qobject_cast<QStringListModel*>(m_completer->model());
             newModel->setStringList(m_bookmark->getHostListFromBookmark());
-        } else if (m_hostModel.isNull()) {
+        } else if (!m_hostModel) {
             m_hostModel = new QStringListModel(m_bookmark->getHostListFromBookmark(), this);
         }
     }
@@ -949,8 +928,8 @@ void MainWindow::updateQmlScanHistory()
 {
     QStringList hostScanned;
 
-    if (!m_hostModel.isNull()) {
-        hostScanned = m_hostModel.data()->stringList();
+    if (m_hostModel) {
+        hostScanned = m_hostModel->stringList();
     }
 
     if (hostScanned.isEmpty()) {

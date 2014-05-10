@@ -42,18 +42,18 @@ void DigManager::digRequest(const QString hostname, PObjectLookup* objElem, DigR
     m_hostNameLocal = hostname;
     m_elemObjUtil = objElem;
 
-    QWeakPointer<ProcessThread> m_th = new ProcessThread("dig", command);
-    m_threadList.push_back(m_th.data());
+    ProcessThread* m_th = new ProcessThread("dig", command);
+    m_threadList.push_back(m_th);
 
     if (type == Verbose) {
-        connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(longDigAnswer(QStringList,QByteArray,QByteArray)));
     } else {
-        connect(m_th.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(shortDigAnswer(QStringList,QByteArray,QByteArray)));
     }
 
-    m_th.data()->start();
+    m_th->start();
 }
 
 void DigManager::longDigAnswer(const QStringList hostname, QByteArray bufferData, QByteArray bufferError)

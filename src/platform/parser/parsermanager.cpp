@@ -98,23 +98,6 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     // TODO: no action
     //Notify::notificationMessage(parList[parList.size()-1], message);
 
-#if defined(USE_KDELIBS)
-    // limit Widget lines to 5
-    int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
-    if (lineNumber == 5) {
-        m_ui->m_kWidgetNotification->setText(QString(""));
-    }
-
-    if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
-        message.prepend(m_ui->m_kWidgetNotification->text() + "\n> " + parList[parList.size()-1] + " - ");
-    } else {
-        message.prepend("> " + parList[parList.size()-1] + " - ");
-    }
-
-    m_ui->m_kWidgetNotification->setText(message);
-    m_ui->m_kWidgetNotification->show();
-#endif
-
     if (!m_ui->m_monitor->monitorHostNumber()) {
         m_ui->m_monitor->m_monitorWidget->scanProgressBar->setMaximum(100);
         m_ui->m_monitor->m_monitorWidget->monitorStopAllScanButt->setEnabled(false);

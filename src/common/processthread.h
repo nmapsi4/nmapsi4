@@ -60,7 +60,7 @@ private:
     QByteArray m_perr;
     QStringList m_ParList;
     QString m_programName;
-    QWeakPointer<QProcess> m_process;
+    QProcess* m_process;
 
 private slots:
     void readFinished();

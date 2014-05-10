@@ -34,7 +34,7 @@ void Notify::clearButtonNotify(QToolButton* button)
 
 void Notify::notificationMessage(const QString& sender, const QString& message)
 {
-    // TODO: removed KDELIBS notification. QT5 solution soon
+    // QT5 solution soon
     Q_UNUSED(sender);
     Q_UNUSED(message);
 }

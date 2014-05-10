@@ -264,20 +264,6 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
 
         // NOTE: no action
         //Notify::notificationMessage("Discover (RANGE)", message);
-
-#if defined(USE_KDELIBS)
-        int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
-        if (lineNumber == 5) {
-            m_ui->m_kWidgetNotification->setText(QString(""));
-        }
-
-        if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
-            message.prepend(m_ui->m_kWidgetNotification->text() + '\n');
-        }
-
-        m_ui->m_kWidgetNotification->setText(message);
-        m_ui->m_kWidgetNotification->show();
-#endif
     }
 }
 
@@ -336,12 +322,12 @@ void DiscoverManager::scanAllDiscoveredIps()
 
 void DiscoverManager::startSelectProfilesDialog()
 {
-    QWeakPointer<SelectProfileDialog> profileDialg = new SelectProfileDialog(m_ui);
+    SelectProfileDialog* profileDialg = new SelectProfileDialog(m_ui);
 
-    profileDialg.data()->exec();
+    profileDialg->exec();
 
-    if (!profileDialg.isNull()) {
-        delete profileDialg.data();
+    if (profileDialg) {
+        delete profileDialg;
     }
 }
 
@@ -427,20 +413,6 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
 
     // NOTE: no action
     //Notify::notificationMessage("Discover (CIDR)", message);
-
-#if defined(USE_KDELIBS)
-    int lineNumber = m_ui->m_kWidgetNotification->text().split('\n').size();
-    if (lineNumber == 5) {
-        m_ui->m_kWidgetNotification->setText(QString(""));
-    }
-
-    if (!m_ui->m_kWidgetNotification->text().isEmpty()) {
-        message.prepend(m_ui->m_kWidgetNotification->text() + '\n');
-    }
-
-    m_ui->m_kWidgetNotification->setText(message);
-    m_ui->m_kWidgetNotification->show();
-#endif
 }
 
 void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const QString data)

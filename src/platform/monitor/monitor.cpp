@@ -50,7 +50,7 @@ Monitor::Monitor(MainWindow* parent)
     m_monitorWidget->scanMonitor->setColumnWidth(0, 300);
     m_monitorWidget->scanMonitor->setColumnWidth(1, 350);
     m_monitorWidget->scanMonitor->setIconSize(QSize(22, 22));
-    m_monitorWidget->scanMonitor->header()->setResizeMode(0, QHeaderView::Interactive);
+    m_monitorWidget->scanMonitor->header()->setSectionResizeMode(QHeaderView::Interactive);
 
     updateMaxParallelScan();
 
@@ -185,16 +185,16 @@ void Monitor::startScan(const QString hostname, QStringList parameters)
     parameters.append(hostname); // add hostname
 
     // start scan Thread
-    QWeakPointer<ProcessThread> thread = new ProcessThread("nmap", parameters);
-    m_scanThreadHashList.insert(hostname, thread.data());
+    ProcessThread* thread = new ProcessThread("nmap", parameters);
+    m_scanThreadHashList.insert(hostname, thread);
     // read current data scan from the thread
-    connect(thread.data(), SIGNAL(flowFromThread(QString,QByteArray)),
+    connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),
             this, SLOT(readFlowFromThread(QString,QByteArray)));
     // read scan data return
-    connect(thread.data(), SIGNAL(dataIsReady(QStringList,QByteArray)),
+    connect(thread, SIGNAL(dataIsReady(QStringList,QByteArray)),
             this, SLOT(scanFinisced(QStringList,QByteArray)));
     // start scan
-    thread.data()->start();
+    thread->start();
 }
 
 void Monitor::startLookup(const QString hostname, LookupType option)
@@ -392,14 +392,14 @@ void Monitor::showSelectedScanDetails()
         return;
     }
     // start details UI
-    QWeakPointer<MonitorDetails> details = new MonitorDetails(
+    MonitorDetails* details = new MonitorDetails(
         m_scanHashListRealtime.operator[](m_monitorWidget->scanMonitor->selectedItems()[0]->text(0)).second,
         m_monitorWidget->scanMonitor->selectedItems()[0]->text(0), m_ui);
 
-    details.data()->exec();
+    details->exec();
 
-    if (!details.isNull()) {
-        delete details.data();
+    if (details) {
+        delete details;
     }
 }
 

@@ -186,15 +186,15 @@ void BookmarkManager::startParametersToBookmarksDialog()
         return;
     }
 
-    QWeakPointer<addParametersToBookmark> dialogParAdd = new addParametersToBookmark(m_ui, parameters);
+    addParametersToBookmark* dialogParAdd = new addParametersToBookmark(m_ui, parameters);
 
-    connect(dialogParAdd.data(), SIGNAL(doneParBook(QString,QString)),
+    connect(dialogParAdd, SIGNAL(doneParBook(QString,QString)),
             this, SLOT(saveParametersToBookmarks(QString,QString)));
 
-    dialogParAdd.data()->exec();
+    dialogParAdd->exec();
 
-    if (!dialogParAdd.isNull()) {
-        delete dialogParAdd.data();
+    if (dialogParAdd) {
+        delete dialogParAdd;
     }
 }
 

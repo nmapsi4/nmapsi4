@@ -35,16 +35,16 @@ void ProcessThread::run()
     m_process = new QProcess();
     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
-    connect(m_process.data(), SIGNAL(finished(int,QProcess::ExitStatus)),
+    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(readFinished()));
-    connect(m_process.data(), SIGNAL(readyReadStandardOutput()),
+    connect(m_process, SIGNAL(readyReadStandardOutput()),
             this, SLOT(readyReadData()));
 
 #ifndef THREAD_NO_DEBUG
     qDebug() << "ProcessThread::Command:: " << m_ParList;
 #endif
 
-    m_process.data()->start(m_programName, m_ParList);
+    m_process->start(m_programName, m_ParList);
 
     exec();
     // emit signal, scan is end
@@ -55,34 +55,34 @@ void ProcessThread::run()
 void ProcessThread::readFinished()
 {
     // set scan return buffer
-    m_perr  = m_process.data()->readAllStandardError(); // read error buffer
-    m_process.data()->close();
-    delete m_process.data();
+    m_perr  = m_process->readAllStandardError(); // read error buffer
+    m_process->close();
+    delete m_process;
     exit(0);
 }
 
 void ProcessThread::stopProcess()
 {
     // stop scan process
-    if (m_process.isNull()) {
+    if (!m_process) {
         return;
     }
 
-    if (m_process.data()->state() == QProcess::Running) {
+    if (m_process->state() == QProcess::Running) {
         //m_process.data()->close();
         // NOTE:: close() function segfault
-        m_process.data()->closeWriteChannel();
-        m_process.data()->closeReadChannel(m_process.data()->readChannel());
-        m_process.data()->kill();
-        m_process.data()->waitForFinished();
-        delete m_process.data();
+        m_process->closeWriteChannel();
+        m_process->closeReadChannel(m_process->readChannel());
+        m_process->kill();
+        m_process->waitForFinished();
+        delete m_process;
     }
 }
 
 void ProcessThread::readyReadData()
 {
     // read realtime data from QProcess
-    QByteArray realtimeByteArray(m_process.data()->readAllStandardOutput());
+    QByteArray realtimeByteArray(m_process->readAllStandardOutput());
     if (!realtimeByteArray.isEmpty()) {
         m_pout.append(realtimeByteArray);
         // emit signal for data trasmission to parent

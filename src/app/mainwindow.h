@@ -35,12 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringListModel>
 #include <QCloseEvent>
 #include <QClipboard>
-#include <QtDeclarative/QDeclarativeContext>
-
-// KDE include
-#if defined(USE_KDELIBS)
-#include <KMessageWidget>
-#endif
+#include <QDeclarativeView>
 
 // local include
 #include "preferencesdialog.h"
@@ -99,10 +94,6 @@ public:
     QTabWidget* m_mainTabWidget;
     MouseEventFilter* m_mouseFilter;
 
-#if defined(USE_KDELIBS)
-    KMessageWidget *m_kWidgetNotification;
-#endif
-
 private:
     void addHostToMonitor(const QString hostname);
     void restoreSettings();
@@ -112,8 +103,8 @@ private:
 
     QSplitter *m_mainHorizontalSplitter;
     QSplitter *m_mainVerticalSplitter;
-    QWeakPointer<QCompleter> m_completer;
-    QWeakPointer<QStringListModel> m_hostModel;
+    QCompleter* m_completer;
+    QStringListModel* m_hostModel;
     int m_userId;
     int m_lookupType;
     int m_savedProfileIndex;
@@ -158,9 +149,6 @@ private slots:
     void resetComboParameters();
     void loadTargetListFromFile();
 
-#if defined(USE_KDELIBS)
-    void hideKWidget();
-#endif
 };
 
 #endif

@@ -28,8 +28,8 @@ NseManager::~NseManager()
 {
     memory::freemap<QString, QTextDocument*>::itemDeleteAll(m_nseHelpCache);
 
-    if (!m_documentScript.isNull()) {
-        delete m_documentScript.data();
+    if (m_documentScript) {
+        delete m_documentScript;
     }
 }
 
@@ -63,10 +63,10 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 
         m_thread = new ProcessThread("nmap", parameters_);
 
-        connect(m_thread.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+        connect(m_thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
                 this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
 
-        m_thread.data()->start();
+        m_thread->start();
     } else {
         // category on cache
         qDebug() << "DEBUG:: load help from cache";
@@ -87,20 +87,20 @@ void NseManager::requestNseScriptHelp()
 
     m_threadScript = new ProcessThread("nmap", parameters_);
 
-    connect(m_threadScript.data(), SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
+    connect(m_threadScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
             this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
 
-    m_threadScript.data()->start();
+    m_threadScript->start();
 }
 
 void NseManager::showNseHelp(const QStringList parameters, QByteArray result, QByteArray errors)
 {
     Q_UNUSED(errors);
     // show help result for nse
-    if (!m_thread.isNull()) {
-        m_thread.data()->quit();
-        m_thread.data()->wait();
-        delete m_thread.data();
+    if (m_thread) {
+        m_thread->quit();
+        m_thread->wait();
+        delete m_thread;
     }
 
     QString result_(result);
@@ -117,20 +117,20 @@ void NseManager::showNseScriptHelp(const QStringList parameters, QByteArray resu
     Q_UNUSED(errors);
     Q_UNUSED(parameters);
     // show help result for nse
-    if (!m_threadScript.isNull()) {
-        m_threadScript.data()->quit();
-        m_threadScript.data()->wait();
-        delete m_threadScript.data();
+    if (m_threadScript) {
+        m_threadScript->quit();
+        m_threadScript->wait();
+        delete m_threadScript;
     }
 
     QString result_(result);
 
-    if (!m_documentScript.isNull()) {
-        delete m_documentScript.data();
+    if (m_documentScript) {
+        delete m_documentScript;
     }
 
     m_documentScript = new QTextDocument(result_);
-    m_ui->m_dialogUi->textScriptHelp->setDocument(m_documentScript.data());
+    m_ui->m_dialogUi->textScriptHelp->setDocument(m_documentScript);
 }
 
 void NseManager::nseTreeDefaultValue()

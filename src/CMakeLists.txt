@@ -17,7 +17,7 @@ include_directories(${CMAKE_SOURCE_DIR}
 
 
 if (NOT WIN32 AND NOT APPLE)
-QT4_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
+QT5_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
     dbus/org.nmapsi4.Nmapsi4.xml
     src/platform/monitor/monitor.h
     Monitor
@@ -111,9 +111,9 @@ SET(RESOURCES_QRC
     qml.qrc
     )
 
-qt4_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
-qt4_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
-qt4_wrap_cpp(SOURCES_MOC_H ${SOURCES_MOC} )
+qt5_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
+qt5_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
+qt5_wrap_cpp(SOURCES_MOC_H ${SOURCES_MOC} )
 
 SET(TRANSLATIONS_FILES
     ts/nmapsi4_it.ts
@@ -125,13 +125,9 @@ SET(TRANSLATIONS_FILES
     ts/nmapsi4_ca.ts
     )
 
-qt4_add_translation(qms ${TRANSLATIONS_FILES})
+qt5_add_translation(qms ${TRANSLATIONS_FILES})
 
-if(BUILD_KDELIBS AND KDE4_FOUND)
-    INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} ${KDE4_INCLUDE_DIR} ${KDE4_INCLUDES})
-else(BUILD_KDELIBS AND KDE4_FOUND)
-    INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
-endif (BUILD_KDELIBS AND KDE4_FOUND)
+INCLUDE_DIRECTORIES( ${QT5_INCLUDE_DIR} )
 
 if (NOT WIN32 AND NOT APPLE)
     ADD_EXECUTABLE(nmapsi4 ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
@@ -148,23 +144,20 @@ elseif(APPLE)
 endif (NOT WIN32 AND NOT APPLE)
 
 target_link_libraries(nmapsi4
-    ${QT_LIBRARIES}
-    ${QT_QTWEBKIT_LIBRARY}
-    ${QT_QTNETWORK_LIBRARY}
+    ${QT5_LIBRARIES}
+    ${QT5_QTWEBKIT_LIBRARY}
+    ${QT5_QTNETWORK_LIBRARY}
+    Qt5::Widgets
+    Qt5::WebKitWidgets
+    Qt5::Declarative
+    Qt5::DBus
     )
 
 if (NOT WIN32 AND NOT APPLE)
     target_link_libraries(nmapsi4
-        ${QT_QTDBUS_LIBRARY}
+        ${QT5_QTDBUS_LIBRARY}
         )
 endif (NOT WIN32 AND NOT APPLE)
-
-if(BUILD_KDELIBS AND KDE4_FOUND)
-     target_link_libraries(nmapsi4
-        ${KDE4_KDEUI_LIBS}
-        )
-endif(BUILD_KDELIBS AND KDE4_FOUND)
-
 
 if (NOT WIN32 AND NOT APPLE)
     install(TARGETS nmapsi4 DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
