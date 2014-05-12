@@ -13,7 +13,7 @@ security net scanner.
 ## Required for build:
 
 * cmake >= 2.8.2
-* qt4 >= 5.2
+* Qt5 >= 5.2
 * qtwebkit
 
 ## Required for runtime:
