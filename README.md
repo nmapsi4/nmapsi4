@@ -12,13 +12,9 @@ security net scanner.
 
 ## Required for build:
 
-* cmake >= 2.6
-* qt4 >= 4.7
+* cmake >= 2.8.2
+* qt4 >= 5.2
 * qtwebkit
-
-## Optional for build:
-
-* kdelibs (debian/kubuntu: kdelibs5-dev)
 
 ## Required for runtime:
 

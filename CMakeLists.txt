@@ -6,7 +6,7 @@ set(VERSION_PATCH 65)
 set(VERSION  ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
 
-cmake_minimum_required(VERSION 2.8.1)
+cmake_minimum_required(VERSION 2.8.2)
 
 if (NOT WIN32 AND NOT APPLE)
     FIND_PACKAGE(Qt5 5.2.0 COMPONENTS 
@@ -41,11 +41,15 @@ else (NOT WIN32 AND NOT APPLE)
 endif (NOT WIN32 AND NOT APPLE)
 
 add_definitions (${QT5_DEFINITIONS})
-include_directories(${QT_USE_FILE})
+include_directories(${QT5_USE_FILE})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
 
-ADD_DEFINITIONS(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+
+if(UNIX)
+   add_definitions(-std=c++0x)
+endif()
 
 if (WIN32)
     include(CMakeMinGWFindMake)
