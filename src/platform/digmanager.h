@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QDebug>
 #include <QtCore/QTextStream>
 #include <QtCore/QList>
-#include <QtCore/QWeakPointer>
+#include <QtCore/QPointer>
 
 // local include
 #include "processthread.h"

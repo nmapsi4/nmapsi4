@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextDocument>
 #include <QTreeWidgetItem>
 #include <QtCore/QSettings>
-#include <QtCore/QWeakPointer>
+#include <QtCore/QPointer>
 #include <QWebView>
 
 #include "processthread.h"
@@ -50,8 +50,8 @@ private:
     void nseTreeActiveRestoreValues();
 
     ProfilerManager* m_ui;
-    ProcessThread* m_thread;
-    ProcessThread* m_threadScript;
+    QPointer<ProcessThread> m_thread;
+    QPointer<ProcessThread> m_threadScript;
     QTextDocument* m_documentScript;
     QList<QTreeWidgetItem*> m_itemNseAvail;
     QList<QTreeWidgetItem*> m_itemNseActive;

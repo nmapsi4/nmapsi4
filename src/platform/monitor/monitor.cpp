@@ -185,7 +185,7 @@ void Monitor::startScan(const QString hostname, QStringList parameters)
     parameters.append(hostname); // add hostname
 
     // start scan Thread
-    ProcessThread* thread = new ProcessThread("nmap", parameters);
+    QPointer<ProcessThread> thread = new ProcessThread("nmap", parameters);
     m_scanThreadHashList.insert(hostname, thread);
     // read current data scan from the thread
     connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),

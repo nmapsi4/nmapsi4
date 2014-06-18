@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QList>
 #include <QtCore/QDebug>
 #include <QtCore/QStringList>
-#include <QtCore/QWeakPointer>
+#include <QtCore/QPointer>
 #include <QtCore/QTimer>
 #include <QtCore/QSettings>
 #include <QtNetwork/QNetworkInterface>

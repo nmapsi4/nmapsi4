@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QStringList>
 #include <QtCore/QProcess>
 #include <QtCore/QMetaType>
-#include <QtCore/QWeakPointer>
+#include <QtCore/QPointer>
 #include <QtCore/QDebug>
 
 //local include
@@ -60,7 +60,7 @@ private:
     QByteArray m_perr;
     QStringList m_ParList;
     QString m_programName;
-    QProcess* m_process;
+    QPointer<QProcess> m_process;
 
 private slots:
     void readFinished();

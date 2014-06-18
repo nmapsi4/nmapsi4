@@ -42,7 +42,7 @@ void DigManager::digRequest(const QString hostname, PObjectLookup* objElem, DigR
     m_hostNameLocal = hostname;
     m_elemObjUtil = objElem;
 
-    ProcessThread* m_th = new ProcessThread("dig", command);
+    QPointer<ProcessThread> m_th = new ProcessThread("dig", command);
     m_threadList.push_back(m_th);
 
     if (type == Verbose) {

@@ -106,7 +106,7 @@ void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStrin
         // acquire one element from thread counter
         m_threadLimit--;
 
-        ProcessThread* pingTh = new ProcessThread("nping", parameters);
+        QPointer<ProcessThread> pingTh = new ProcessThread("nping", parameters);
         m_threadList.push_back(pingTh);
 
         connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
@@ -202,7 +202,7 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, Disco
 
     parameters.append(networkCIDR);
 
-    ProcessThread* thread = new ProcessThread("nping", parameters);
+    QPointer<ProcessThread> thread = new ProcessThread("nping", parameters);
 
     connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),
             this, SLOT(currentCIDRValue(QString,QByteArray)));
