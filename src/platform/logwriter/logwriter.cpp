@@ -116,6 +116,13 @@ void LogWriter::writeFancyLogFormat(const QString& path)
         fileStream << token << "\n";
     }
 
+    fileStream << "\n|---------- Traceroute information" << "\n\n";
+
+    // Traceroute info
+    Q_FOREACH(const QString & token, m_pObject->getTraceRouteInfo()) {
+        fileStream << token << "\n";
+    }
+
     fileStream << "\n|---------- Nse result" << "\n";
 
     // Show Nss Info
@@ -246,6 +253,22 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>General information</b></div>";
     htmlPage += "<div class=\"result\">";
     Q_FOREACH(const QString & token, m_pObject->getHostInfo()) {
+        if (index % 2 == 0) {
+            htmlPage += "<div class=\"resultWhite\">";
+        } else {
+            htmlPage += "<div class=\"resultGrey\">";
+        }
+        index++;
+
+        htmlPage += token + "<br/>\n";
+        htmlPage += "</div>";
+    }
+    htmlPage += "</div></div>";
+
+    // Traceroute
+    htmlPage += "<div class=\"container\"><div class=\"title\"><b>Traceroute information</b></div>";
+    htmlPage += "<div class=\"result\">";
+    Q_FOREACH(const QString & token, m_pObject->getTraceRouteInfo()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
