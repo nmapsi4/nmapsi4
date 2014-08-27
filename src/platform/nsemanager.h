@@ -52,7 +52,7 @@ private:
     ProfilerManager* m_ui;
     QPointer<ProcessThread> m_thread;
     QPointer<ProcessThread> m_threadScript;
-    QTextDocument* m_documentScript;
+    QPointer<QTextDocument> m_documentScript;
     QList<QTreeWidgetItem*> m_itemNseAvail;
     QList<QTreeWidgetItem*> m_itemNseActive;
     QHash<QString, QTextDocument*> m_nseHelpCache;
