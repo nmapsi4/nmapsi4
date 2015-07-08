@@ -20,7 +20,7 @@ def ts2po
             puts "DEBUG::ts2po -- source file:: #{path_string_src} -- dst file:: #{path_string_dst}"
 	end
     end
-    buildPot
+    buildPot(nil)
 end
 
 def po2ts

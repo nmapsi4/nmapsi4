@@ -15,117 +15,7 @@ msgctxt "AboutUi|"
 msgid "Nmapsi4"
 msgstr ""
 
-#: ../../platform/ui/about.ui:151
-msgctxt "AboutUi|"
-msgid ""
-"NmapSi4 is a complete Qt4-based Gui with the design\n"
-"goals to provide a complete nmap interface for Users,\n"
-"in order to menage all option of this power security net scanner."
-msgstr ""
-
-#: ../../platform/ui/about.ui:169
-msgctxt "AboutUi|"
-msgid ""
-"\n"
-"\n"
-"(c) 2007-2012 Francesco Cecconi\n"
-"\n"
-"License: GNU General Public License Version 2"
-msgstr ""
-
-#: ../../platform/ui/about.ui:209
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Francesco Cecconi</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-style:italic;\">Core Developer</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:brand@nmapsi4.org\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">brand@nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-"text-decoration: underline; color:#0057ae;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Innocenzo Ventre</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-style:italic;\">MS Windows Packages</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"mailto:el.diabl09@gmail.com\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">el.diabl09@gmail.com</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p></body></html>"
-msgstr ""
-
-#: ../../platform/ui/about.ui:246
-msgctxt "AboutUi|"
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-"type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Website:</span>  </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://www.nmapsi4.org\"><span style=\" font-size:8pt; "
-"text-decoration: underline; color:#0057ae;\">www.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Bug Tracking:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://bugs.nmapsi4.org\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">bugs.nmapsi4.org</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Sources Git repository:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"https://github.com/nmapsi4/nmapsi4\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">github.com/nmapsi4/nmapsi4</span></a></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
-"text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"font-weight:600;\">Sources Download:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
-"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a "
-"href=\"http://code.google.com/nmapsi4\"><span style=\" font-size:8pt; "
-"text-decoration: underline; "
-"color:#0057ae;\">code.google.com/nmapsi4</span></a></p></body></html>"
-msgstr ""
-
-#: ../../platform/ui/about.ui:295
+#: ../../platform/ui/about.ui:274
 msgctxt "AboutUi|"
 msgid "&Close"
 msgstr ""
@@ -135,14 +25,19 @@ msgctxt "AboutUi|"
 msgid "&About"
 msgstr ""
 
-#: ../../platform/ui/about.ui:194
+#: ../../platform/ui/about.ui:163
 msgctxt "AboutUi|"
 msgid "A&uthors"
 msgstr ""
 
-#: ../../platform/ui/about.ui:231
+#: ../../platform/ui/about.ui:193
 msgctxt "AboutUi|"
 msgid "&Support"
+msgstr ""
+
+#: ../../platform/ui/about.ui:223
+msgctxt "AboutUi|"
+msgid "&Thanks To"
 msgstr ""
 
 #: ../../platform/ui/about.ui:116
@@ -150,297 +45,338 @@ msgctxt "AboutUi|"
 msgid "Version "
 msgstr ""
 
-#: ../../app/actionmanager.cpp:367 ../../app/actionmanager.cpp:368
-msgctxt "ActionManager|"
-msgid "Scan host(s)"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:383 ../../app/actionmanager.cpp:384
-msgctxt "ActionManager|"
-msgid "Network Discover"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:375
-msgctxt "ActionManager|"
-msgid "Vulnerability"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:376
+#: ../../app/actionmanager.cpp:701
 msgctxt "ActionManager|"
 msgid "Check Vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:394
+#: ../../app/actionmanager.cpp:447
 msgctxt "ActionManager|"
 msgid "Show/Hide Host List"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:402
+#: ../../app/actionmanager.cpp:457
 msgctxt "ActionManager|"
 msgid "Show/Hide Host Details"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:610
+#: ../../app/actionmanager.cpp:664
 msgctxt "ActionManager|"
 msgid "Remove Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:614
+#: ../../app/actionmanager.cpp:668
 msgctxt "ActionManager|"
 msgid "Scan Host"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:630
+#: ../../app/actionmanager.cpp:684 ../../app/actionmanager.cpp:697
+#: ../../app/actionmanager.cpp:739
+msgctxt "ActionManager|"
+msgid "Copy text"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:705
+msgctxt "ActionManager|"
+msgid "Open address via http"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:753
 msgctxt "ActionManager|"
 msgid "Remove Scan Parameters"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:644
+#: ../../app/actionmanager.cpp:767
 msgctxt "ActionManager|"
 msgid "Remove Service"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:648
+#: ../../app/actionmanager.cpp:771
 msgctxt "ActionManager|"
 msgid "Search for vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:664
-msgctxt "ActionManager|"
-msgid "Check Vulnerability"
-msgstr ""
-
-#: ../../app/actionmanager.cpp:677
+#: ../../app/actionmanager.cpp:787
 msgctxt "ActionManager|"
 msgid "Remove url"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:416
+#: ../../app/actionmanager.cpp:470
 msgctxt "ActionManager|"
 msgid "Control"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:495
+#: ../../app/actionmanager.cpp:549
 msgctxt "ActionManager|"
 msgid "Scan Options"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:179
+#: ../../app/actionmanager.cpp:215
 msgctxt "ActionManager|"
 msgid "Scan selected IP/s"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:111
+#: ../../app/actionmanager.cpp:147
 msgctxt "ActionManager|"
 msgid "Scan"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:119
+#: ../../app/actionmanager.cpp:155
 msgctxt "ActionManager|"
 msgid "Clear History"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:126
+#: ../../app/actionmanager.cpp:162
 msgctxt "ActionManager|"
 msgid "S&ave Scan"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:133
+#: ../../app/actionmanager.cpp:169
 msgctxt "ActionManager|"
 msgid "Save all scans to &Directory"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:141
+#: ../../app/actionmanager.cpp:177
 msgctxt "ActionManager|"
 msgid "&Add host to bookmark"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:147
+#: ../../app/actionmanager.cpp:183
 msgctxt "ActionManager|"
 msgid "Add service to &bookmark"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:153
+#: ../../app/actionmanager.cpp:189
 msgctxt "ActionManager|"
 msgid "Add &parameters to bookmark"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:159
+#: ../../app/actionmanager.cpp:195
 msgctxt "ActionManager|"
 msgid "Add vulnerability search url"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:166
+#: ../../app/actionmanager.cpp:202
 msgctxt "ActionManager|"
 msgid "New Profile"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:172
+#: ../../app/actionmanager.cpp:208
 msgctxt "ActionManager|"
 msgid "Edit Profile"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:186
+#: ../../app/actionmanager.cpp:222
 msgctxt "ActionManager|"
 msgid "Scan all discovered IP/s"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:193
+#: ../../app/actionmanager.cpp:229
 msgctxt "ActionManager|"
 msgid "Save IP list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:200
+#: ../../app/actionmanager.cpp:236
 msgctxt "ActionManager|"
 msgid "Load IP list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:209
+#: ../../app/actionmanager.cpp:245
 msgctxt "ActionManager|"
 msgid "Search"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:216
+#: ../../app/actionmanager.cpp:252
 msgctxt "ActionManager|"
 msgid "Back"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:223
+#: ../../app/actionmanager.cpp:259
 msgctxt "ActionManager|"
 msgid "Forward"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:230
+#: ../../app/actionmanager.cpp:266
 msgctxt "ActionManager|"
 msgid "Stop"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:237
+#: ../../app/actionmanager.cpp:273
 msgctxt "ActionManager|"
 msgid "&Quit"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:244
+#: ../../app/actionmanager.cpp:280
 msgctxt "ActionManager|"
 msgid "&Preferences"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:250
+#: ../../app/actionmanager.cpp:286
 msgctxt "ActionManager|"
 msgid "F&ull Screen Mode"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:258
+#: ../../app/actionmanager.cpp:294
 msgctxt "ActionManager|"
 msgid "Show &Menu Bar"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:266
+#: ../../app/actionmanager.cpp:302
 msgctxt "ActionManager|"
 msgid "Section Scan"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:272
+#: ../../app/actionmanager.cpp:308
 msgctxt "ActionManager|"
 msgid "Section Vulnerabilities"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:278
+#: ../../app/actionmanager.cpp:314
 msgctxt "ActionManager|"
 msgid "Section Discover"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:285
+#: ../../app/actionmanager.cpp:321
 msgctxt "ActionManager|"
 msgid "Report a bug"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:291
+#: ../../app/actionmanager.cpp:327
 msgctxt "ActionManager|"
 msgid "Visit Website"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:297
+#: ../../app/actionmanager.cpp:333
 msgctxt "ActionManager|"
 msgid "Documentation"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:303
+#: ../../app/actionmanager.cpp:339
 msgctxt "ActionManager|"
 msgid "Donate Money"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:309
+#: ../../app/actionmanager.cpp:345
 msgctxt "ActionManager|"
 msgid "&About nmapsi4"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:315
+#: ../../app/actionmanager.cpp:351
 msgctxt "ActionManager|"
 msgid "About &Qt"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:326
+#: ../../app/actionmanager.cpp:362
 msgctxt "ActionManager|"
 msgid "&File"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:331
+#: ../../app/actionmanager.cpp:367
 msgctxt "ActionManager|"
 msgid "S&ettings"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:339
+#: ../../app/actionmanager.cpp:375
 msgctxt "ActionManager|"
 msgid "&Tools"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:346
+#: ../../app/actionmanager.cpp:382
 msgctxt "ActionManager|"
 msgid "&Help"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:462
+#: ../../app/actionmanager.cpp:408
+msgctxt "ActionManager|"
+msgid "Welcome"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:418
+msgctxt "ActionManager|"
+msgid "Scan an host"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:427
+msgctxt "ActionManager|"
+msgid "Search a vulnerability"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:436
+msgctxt "ActionManager|"
+msgid "Discover a network"
+msgstr ""
+
+#: ../../app/actionmanager.cpp:516
 msgctxt "ActionManager|"
 msgid "Profile"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:393
+#: ../../app/actionmanager.cpp:444
 msgctxt "ActionManager|"
 msgid "Show/Hide host list"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:401
+#: ../../app/actionmanager.cpp:454
 msgctxt "ActionManager|"
 msgid "Show/Hide host details"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:444
+#: ../../app/actionmanager.cpp:498
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr ""
 
-#: ../../app/actionmanager.cpp:476
+#: ../../app/actionmanager.cpp:530
 msgctxt "ActionManager|"
 msgid "Bookmark"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:243
+#: ../../platform/addparameterstobookmark.cpp:43
+msgctxt "AddParametersToBookmark|"
+msgid "Warning - Nmapsi4"
+msgstr ""
+
+#: ../../platform/addparameterstobookmark.cpp:43
+msgctxt "AddParametersToBookmark|"
+msgid "Insert profile name or/and profile parameters."
+msgstr ""
+
+#: ../../platform/addparameterstobookmark.cpp:43
+msgctxt "AddParametersToBookmark|"
+msgid "Close"
+msgstr ""
+
+#: ../../platform/addvulnerabilityurl.cpp:44
+msgctxt "AddVulnerabilityUrl|"
+msgid "Warning - Nmapsi4"
+msgstr ""
+
+#: ../../platform/addvulnerabilityurl.cpp:44
+msgctxt "AddVulnerabilityUrl|"
+msgid "Insert url name or/and address."
+msgstr ""
+
+#: ../../platform/addvulnerabilityurl.cpp:44
+msgctxt "AddVulnerabilityUrl|"
+msgid "Close"
+msgstr ""
+
+#: ../../platform/discovermanager.cpp:230
 msgctxt "DiscoverManager|"
 msgid "is Up"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:276 ../../platform/discovermanager.cpp:438
+#: ../../platform/discovermanager.cpp:263 ../../platform/discovermanager.cpp:412
 msgctxt "DiscoverManager|"
 msgid "Discover completed"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:580
+#: ../../platform/discovermanager.cpp:541
 msgctxt "DiscoverManager|"
 msgid "Save IP list"
 msgstr ""
 
-#: ../../platform/discovermanager.cpp:598
+#: ../../platform/discovermanager.cpp:559
 msgctxt "DiscoverManager|"
 msgid "Load IP list"
 msgstr ""
@@ -450,233 +386,213 @@ msgctxt "DiscoverWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:50
+#: ../../app/ui/discoverwidget.ui:71
 msgctxt "DiscoverWidgetForm|"
 msgid "Date"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:45
-msgctxt "DiscoverWidgetForm|"
-msgid "Discovered IP/s"
-msgstr ""
-
-#: ../../app/ui/discoverwidget.ui:65
+#: ../../app/ui/discoverwidget.ui:88
 msgctxt "DiscoverWidgetForm|"
 msgid "Packets trace"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:91
+#: ../../app/ui/discoverwidget.ui:104
+msgctxt "DiscoverWidgetForm|"
+msgid "List"
+msgstr ""
+
+#: ../../app/ui/discoverwidget.ui:134
 msgctxt "DiscoverWidgetForm|"
 msgid "Probe"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:108
+#: ../../app/ui/discoverwidget.ui:151
 msgctxt "DiscoverWidgetForm|"
 msgid "Probes Modes:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:169
+#: ../../app/ui/discoverwidget.ui:212
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation (IPv4)"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:175
+#: ../../app/ui/discoverwidget.ui:218
 msgctxt "DiscoverWidgetForm|"
 msgid "Selected your CIDR address:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:184
+#: ../../app/ui/discoverwidget.ui:227
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Address:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:228
+#: ../../app/ui/discoverwidget.ui:271
 msgctxt "DiscoverWidgetForm|"
 msgid "Prefix Size:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:248
+#: ../../app/ui/discoverwidget.ui:291
 msgctxt "DiscoverWidgetForm|"
 msgid "Number of IP:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:283
+#: ../../app/ui/discoverwidget.ui:326
 msgctxt "DiscoverWidgetForm|"
 msgid "Or you can paste CIDR address below:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:298
+#: ../../app/ui/discoverwidget.ui:341
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR address:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:338
+#: ../../app/ui/discoverwidget.ui:381
 msgctxt "DiscoverWidgetForm|"
 msgid "Start with CIDR-style address"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:352 ../../app/ui/discoverwidget.ui:607
+#: ../../app/ui/discoverwidget.ui:395 ../../app/ui/discoverwidget.ui:650
 msgctxt "DiscoverWidgetForm|"
 msgid "Stop Discover"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:163
+#: ../../app/ui/discoverwidget.ui:206
 msgctxt "DiscoverWidgetForm|"
 msgid "CIDR Notation address"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:392
+#: ../../app/ui/discoverwidget.ui:47
+msgctxt "DiscoverWidgetForm|"
+msgid "Discovered"
+msgstr ""
+
+#: ../../app/ui/discoverwidget.ui:66
+msgctxt "DiscoverWidgetForm|"
+msgid "IP/s"
+msgstr ""
+
+#: ../../app/ui/discoverwidget.ui:435
 msgctxt "DiscoverWidgetForm|"
 msgid "Ips range (IPv4)"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:406
+#: ../../app/ui/discoverwidget.ui:449
 msgctxt "DiscoverWidgetForm|"
 msgid "Local Interfaces:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:444
+#: ../../app/ui/discoverwidget.ui:487
 msgctxt "DiscoverWidgetForm|"
 msgid "Reload Interfaces"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:481
+#: ../../app/ui/discoverwidget.ui:524
 msgctxt "DiscoverWidgetForm|"
 msgid "IP Network:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:518
+#: ../../app/ui/discoverwidget.ui:561
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Host Ip:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:538
+#: ../../app/ui/discoverwidget.ui:581
 msgctxt "DiscoverWidgetForm|"
 msgid "End Host Ip:"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:587
+#: ../../app/ui/discoverwidget.ui:630
 msgctxt "DiscoverWidgetForm|"
 msgid "Start Discover from IP range"
 msgstr ""
 
-#: ../../app/ui/discoverwidget.ui:386
+#: ../../app/ui/discoverwidget.ui:429
 msgctxt "DiscoverWidgetForm|"
 msgid "Range of IP"
 msgstr ""
 
-#: ../../app/updateUI.cpp:74
+#: ../../app/mainwindow.cpp:731
 msgctxt "MainWindow|"
 msgid "Scan Monitor"
 msgstr ""
 
-#: ../../app/updateUI.cpp:186
+#: ../../app/mainwindow.cpp:780
+msgctxt "MainWindow|"
+msgid "Vulnerability"
+msgstr ""
+
+#: ../../app/mainwindow.cpp:814
+msgctxt "MainWindow|"
+msgid "Network discover"
+msgstr ""
+
+#: ../../app/mainwindow.cpp:849
 msgctxt "MainWindow|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../app/updateUI.cpp:196
+#: ../../app/mainwindow.cpp:859
 msgctxt "MainWindow|"
 msgid " Active Scan "
 msgstr ""
 
-#: ../../app/updateUI.cpp:87 ../../app/updateUI.cpp:119
+#: ../../app/mainwindow.cpp:746 ../../app/mainwindow.cpp:784
 msgctxt "MainWindow|"
 msgid "Bookmarks"
 msgstr ""
 
-#: ../../app/defaultprofile.cpp:29 ../../app/defaultprofile.cpp:74
-msgctxt "MainWindow|"
-msgid "Default"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:33 ../../app/defaultprofile.cpp:78
-msgctxt "MainWindow|"
-msgid "Default, force ipv6"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:37 ../../app/defaultprofile.cpp:82
-msgctxt "MainWindow|"
-msgid "Default, Aggressive"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:41 ../../app/defaultprofile.cpp:86
-msgctxt "MainWindow|"
-msgid "Default, base nse script"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:45 ../../app/defaultprofile.cpp:90
-msgctxt "MainWindow|"
-msgid "Default, base nse script, force ipv6"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:49 ../../app/defaultprofile.cpp:94
-msgctxt "MainWindow|"
-msgid "Quick Scan"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:53 ../../app/defaultprofile.cpp:98
-msgctxt "MainWindow|"
-msgid "Intense Scan"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:57 ../../app/defaultprofile.cpp:102
-msgctxt "MainWindow|"
-msgid "Intense Scan, no ping"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:61 ../../app/defaultprofile.cpp:106
-msgctxt "MainWindow|"
-msgid "Intense Scan, all TCP ports"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:65
-msgctxt "MainWindow|"
-msgid "Intense scan plus UDP"
-msgstr ""
-
-#: ../../app/defaultprofile.cpp:69
-msgctxt "MainWindow|"
-msgid "Slow comprehensive scan"
-msgstr ""
-
-#: ../../app/mainwindow.cpp:67 ../../app/mainwindow.cpp:230
-#: ../../app/mainwindow.cpp:257 ../../app/mainwindow.cpp:309
+#: ../../app/mainwindow.cpp:291 ../../app/mainwindow.cpp:318
+#: ../../app/mainwindow.cpp:370
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:230
+#: ../../app/mainwindow.cpp:291
 msgctxt "MainWindow|"
 msgid "Insert an host/ip address to scan\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:256
+#: ../../app/mainwindow.cpp:317
 msgctxt "MainWindow|"
 msgid "Warning - Nmapsi4"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:257
+#: ../../app/mainwindow.cpp:318
 msgctxt "MainWindow|"
 msgid "IPv6 Protocol range scan is not yet supported."
 msgstr ""
 
-#: ../../app/mainwindow.cpp:309
+#: ../../app/mainwindow.cpp:370
 msgctxt "MainWindow|"
 msgid "Hostname already scanning\n"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:355
+#: ../../app/mainwindow.cpp:416
 msgctxt "MainWindow|"
 msgid "<b>There are still active scan.</b>"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:356
+#: ../../app/mainwindow.cpp:417
 msgctxt "MainWindow|"
 msgid "Do you want to close nmapsi4 anyway?"
 msgstr ""
 
-#: ../../platform/monitor/monitor.cpp:140
+#: ../../app/mainwindow.cpp:698
+msgctxt "MainWindow|"
+msgid "Welcome"
+msgstr ""
+
+#: ../../app/mainwindow.cpp:939
+msgctxt "MainWindow|"
+msgid "Empty history"
+msgstr ""
+
+#: ../../app/mainwindow.cpp:946
+msgctxt "MainWindow|"
+msgid "Select the file"
+msgstr ""
+
+#: ../../platform/monitor/monitor.cpp:139
 msgctxt "Monitor|"
 msgid "Waiting"
 msgstr ""
@@ -721,54 +637,104 @@ msgctxt "MonitorWidgetForm|"
 msgid "Host Thread"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:84
+#: ../../platform/parser/parsermanager.cpp:79
 msgctxt "ParserManager|"
 msgid "Error: check nmap Installation.\n"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:86
+#: ../../platform/parser/parsermanager.cpp:81
 msgctxt "ParserManager|"
 msgid "Close"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:108
+#: ../../platform/parser/parsermanager.cpp:96
 msgctxt "ParserManager|"
 msgid "Scan completed"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:448
-msgctxt "ParserManager|"
-msgid "No description"
-msgstr ""
-
-#: ../../platform/parser/parsermanager.cpp:728
+#: ../../platform/parser/parsermanager.cpp:671
 msgctxt "ParserManager|"
 msgid "Save Log"
 msgstr ""
 
-#: ../../platform/parser/parsermanager.cpp:748
+#: ../../platform/parser/parsermanager.cpp:691
 msgctxt "ParserManager|"
 msgid "Open Directory"
 msgstr ""
 
-#: ../../app/preference/preferencesdialog.cpp:48
+#: ../../app/preference/preferencesdialog.cpp:46
 msgctxt "PreferencesDialog|"
 msgid "General"
 msgstr ""
 
-#: ../../app/preference/preferencesdialog.cpp:52
+#: ../../app/preference/preferencesdialog.cpp:50
 msgctxt "PreferencesDialog|"
 msgid "Lookup"
 msgstr ""
 
-#: ../../app/preference/preferencesdialog.cpp:94
+#: ../../app/preference/preferencesdialog.cpp:92
 msgctxt "PreferencesDialog|"
 msgid "<h3>General</h3>"
 msgstr ""
 
-#: ../../app/preference/preferencesdialog.cpp:97
+#: ../../app/preference/preferencesdialog.cpp:95
 msgctxt "PreferencesDialog|"
 msgid "<h3>Lookup</h3>"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:37 ../../app/profilehandler.cpp:82
+msgctxt "ProfileHandler|"
+msgid "Default"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:41 ../../app/profilehandler.cpp:86
+msgctxt "ProfileHandler|"
+msgid "Default, force ipv6"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:45 ../../app/profilehandler.cpp:90
+msgctxt "ProfileHandler|"
+msgid "Default, Aggressive"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:49 ../../app/profilehandler.cpp:94
+msgctxt "ProfileHandler|"
+msgid "Default, base nse script"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:53 ../../app/profilehandler.cpp:98
+msgctxt "ProfileHandler|"
+msgid "Default, base nse script, force ipv6"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:57 ../../app/profilehandler.cpp:102
+msgctxt "ProfileHandler|"
+msgid "Quick Scan"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:61 ../../app/profilehandler.cpp:106
+msgctxt "ProfileHandler|"
+msgid "Intense Scan"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:65 ../../app/profilehandler.cpp:110
+msgctxt "ProfileHandler|"
+msgid "Intense Scan, no ping"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:69 ../../app/profilehandler.cpp:114
+msgctxt "ProfileHandler|"
+msgid "Intense Scan, all TCP ports"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:73
+msgctxt "ProfileHandler|"
+msgid "Intense scan plus UDP"
+msgstr ""
+
+#: ../../app/profilehandler.cpp:77
+msgctxt "ProfileHandler|"
+msgid "Slow comprehensive scan"
 msgstr ""
 
 #: ../../app/ui/preferencesdialog.ui:177
@@ -841,6 +807,11 @@ msgctxt "ProfileMain|"
 msgid "Lookup Preferences"
 msgstr ""
 
+#: ../../app/ui/preferencesdialog.ui:138
+msgctxt "ProfileMain|"
+msgid "&OK"
+msgstr ""
+
 #: ../../app/ui/preferencesdialog.ui:386
 msgctxt "ProfileMain|"
 msgid "None"
@@ -866,161 +837,223 @@ msgctxt "ProfileMain|"
 msgid "Preferences - Nmapsi4"
 msgstr ""
 
-#: ../../app/ui/preferencesdialog.ui:138
-msgctxt "ProfileMain|"
-msgid "&Ok"
-msgstr ""
-
 #: ../../app/ui/preferencesdialog.ui:51
 msgctxt "ProfileMain|"
 msgid "&Cancel"
 msgstr ""
 
-#: ../../app/profiler/profiler.cpp:624
-msgctxt "Profiler|"
-msgid "No Ports Range (ex: 20-80)\n"
-msgstr ""
-
-#: ../../app/profiler/profiler.cpp:624
+#: ../../app/profiler/profiler.cpp:635
 msgctxt "Profiler|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/profiler/profiler.cpp:848
+#: ../../app/profiler/profiler.cpp:635
+msgctxt "Profiler|"
+msgid "No Ports Range (ex: 20-80,2000)\n"
+msgstr ""
+
+#: ../../app/profiler/profiler.cpp:866
 msgctxt "Profiler|"
 msgid "Please, first insert a Decoy\n"
 msgstr ""
 
-#: ../../app/profiler/profiler.cpp:848 ../../app/profiler/profiler.cpp:860
-#: ../../app/profiler/profiler.cpp:872
+#: ../../app/profiler/profiler.cpp:866 ../../app/profiler/profiler.cpp:878
+#: ../../app/profiler/profiler.cpp:890
 msgctxt "Profiler|"
 msgid "Disable Option"
 msgstr ""
 
-#: ../../app/profiler/profiler.cpp:860
+#: ../../app/profiler/profiler.cpp:878
 msgctxt "Profiler|"
 msgid "Please, insert spoof address\n"
 msgstr ""
 
-#: ../../app/profiler/profiler.cpp:872
+#: ../../app/profiler/profiler.cpp:890
 msgctxt "Profiler|"
 msgid "Please, insert port address\n"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:29
+#: ../../app/profiler/profilermanager.cpp:27
 msgctxt "ProfilerManager|"
 msgid "New profile"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:44
+#: ../../app/profiler/profilermanager.cpp:42
 msgctxt "ProfilerManager|"
 msgid "Edit profile "
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:115
+#: ../../app/profiler/profilermanager.cpp:116
 msgctxt "ProfilerManager|"
 msgid "Profile"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:118
+#: ../../app/profiler/profilermanager.cpp:119
 msgctxt "ProfilerManager|"
 msgid "Scan"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:121
-msgctxt "ProfilerManager|"
-msgid "Options"
-msgstr ""
-
-#: ../../app/profiler/profilermanager.cpp:124
+#: ../../app/profiler/profilermanager.cpp:128
 msgctxt "ProfilerManager|"
 msgid "Ping"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:127
+#: ../../app/profiler/profilermanager.cpp:131
 msgctxt "ProfilerManager|"
 msgid "Timing"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:130
+#: ../../app/profiler/profilermanager.cpp:134
 msgctxt "ProfilerManager|"
 msgid "Nse"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:143
+#: ../../app/profiler/profilermanager.cpp:147
+#: ../../app/profiler/profilermanager.cpp:159
 msgctxt "ProfilerManager|"
 msgid "Warning - Nmapsi4"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:143
+#: ../../app/profiler/profilermanager.cpp:122
 msgctxt "ProfilerManager|"
-msgid "Insert profile name."
+msgid "Target"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:143
-#: ../../app/profiler/profilermanager.cpp:259
+#: ../../app/profiler/profilermanager.cpp:125
+msgctxt "ProfilerManager|"
+msgid "Other"
+msgstr ""
+
+#: ../../app/profiler/profilermanager.cpp:147
+#: ../../app/profiler/profilermanager.cpp:159
+#: ../../app/profiler/profilermanager.cpp:274
 msgctxt "ProfilerManager|"
 msgid "Close"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:199
+#: ../../app/profiler/profilermanager.cpp:147
+msgctxt "ProfilerManager|"
+msgid "Insert profile name or selected the options."
+msgstr ""
+
+#: ../../app/profiler/profilermanager.cpp:159
+msgctxt "ProfilerManager|"
+msgid "No option selected."
+msgstr ""
+
+#: ../../app/profiler/profilermanager.cpp:214
 msgctxt "ProfilerManager|"
 msgid "TCP SYN Stealth Scan (-sS)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:200
+#: ../../app/profiler/profilermanager.cpp:215
 msgctxt "ProfilerManager|"
 msgid "ACK Stealth Scan (-sA)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:201
+#: ../../app/profiler/profilermanager.cpp:216
 msgctxt "ProfilerManager|"
 msgid "Mainmon Scan (-sM)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:202
+#: ../../app/profiler/profilermanager.cpp:217
 msgctxt "ProfilerManager|"
 msgid "FIN Stealth Scan (-sF)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:203
+#: ../../app/profiler/profilermanager.cpp:218
 msgctxt "ProfilerManager|"
 msgid "NULL Stealth Scan (-sN)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:204
+#: ../../app/profiler/profilermanager.cpp:219
 msgctxt "ProfilerManager|"
 msgid "XMAS Tree Stealth Scan (-sX)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:205
+#: ../../app/profiler/profilermanager.cpp:220
 msgctxt "ProfilerManager|"
 msgid "TCP Window Scan (-sW)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:207
+#: ../../app/profiler/profilermanager.cpp:222
 msgctxt "ProfilerManager|"
 msgid "UDP Ports Scan (-sU)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:208
+#: ../../app/profiler/profilermanager.cpp:223
 msgctxt "ProfilerManager|"
 msgid "IP Protocol Scan (-sO)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:209
+#: ../../app/profiler/profilermanager.cpp:224
 msgctxt "ProfilerManager|"
 msgid "SCTP INIT scan (-sY)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:210
+#: ../../app/profiler/profilermanager.cpp:225
 msgctxt "ProfilerManager|"
 msgid "SCTP cookie-echo scan (-sZ)"
 msgstr ""
 
-#: ../../app/profiler/profilermanager.cpp:259
+#: ../../app/profiler/profilermanager.cpp:274
 msgctxt "ProfilerManager|"
 msgid "Warning: Operation more expansive.\n"
+msgstr ""
+
+#: ../../platform/about/about.cpp:34
+msgctxt "QApplication|"
+msgid ""
+"NmapSi4 is a complete Qt5-based Gui with the design goals to provide a "
+"complete nmap interface for users, in order to manage al option of this "
+"power security net scanner and search services vulnerability."
+msgstr ""
+
+#: ../../platform/about/about.cpp:44
+msgctxt "QApplication|"
+msgid ""
+"(c) 2007-2015 Francesco Cecconi<br/>License: GNU General Public License "
+"Version 2"
+msgstr ""
+
+#: ../../platform/about/about.cpp:54
+msgctxt "QApplication|"
+msgid "Maintainer and developer"
+msgstr ""
+
+#: ../../platform/about/about.cpp:64
+msgctxt "QApplication|"
+msgid "HomePage"
+msgstr ""
+
+#: ../../platform/about/about.cpp:67
+msgctxt "QApplication|"
+msgid "Bug Tracking"
+msgstr ""
+
+#: ../../platform/about/about.cpp:70
+msgctxt "QApplication|"
+msgid "Sources Repository"
+msgstr ""
+
+#: ../../platform/about/about.cpp:73
+msgctxt "QApplication|"
+msgid "Forum"
+msgstr ""
+
+#: ../../platform/about/about.cpp:84
+msgctxt "QApplication|"
+msgid "MS Windows Packages and Italian localization"
+msgstr ""
+
+#: ../../platform/about/about.cpp:88
+msgctxt "QApplication|"
+msgid "Czech localization"
+msgstr ""
+
+#: ../../platform/about/about.cpp:92
+msgctxt "QApplication|"
+msgid "Italian localization"
 msgstr ""
 
 #: ../../app/ui/scanbookmarkwidget.ui:14
@@ -1048,7 +1081,7 @@ msgctxt "ScanBookmarkWidgetForm|"
 msgid "Parameters List"
 msgstr ""
 
-#: ../../app/mainwindow.cpp:28
+#: ../../app/mainwindow.cpp:26
 msgctxt "ScanWidget|"
 msgid "Host(s) to scan (ip/dns or incremental - ex. 192.168.1.1/20)"
 msgstr ""
@@ -1058,122 +1091,132 @@ msgctxt "ScanWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:154
-msgctxt "ScanWidgetForm|"
-msgid "Clear"
-msgstr ""
-
-#: ../../app/ui/scanwidget.ui:260
-msgctxt "ScanWidgetForm|"
-msgid "Save Profile"
-msgstr ""
-
-#: ../../app/ui/scanwidget.ui:65
-msgctxt "ScanWidgetForm|"
-msgid "Os"
-msgstr ""
-
-#: ../../app/ui/scanwidget.ui:60 ../../app/ui/scanwidget.ui:622
+#: ../../app/ui/scanwidget.ui:629
 msgctxt "ScanWidgetForm|"
 msgid "Host(s)"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:77
+#: ../../app/ui/scanwidget.ui:72
 msgctxt "ScanWidgetForm|"
 msgid "Scan log parameters"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:718
+#: ../../app/ui/scanwidget.ui:728
 msgctxt "ScanWidgetForm|"
 msgid "Host Details"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:754
-msgctxt "ScanWidgetForm|"
-msgid "Service(s) with info"
-msgstr ""
-
-#: ../../app/ui/scanwidget.ui:429
+#: ../../app/ui/scanwidget.ui:436
 msgctxt "ScanWidgetForm|"
 msgid "Description"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:424
+#: ../../app/ui/scanwidget.ui:431
 msgctxt "ScanWidgetForm|"
 msgid "Service"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:419
+#: ../../app/ui/scanwidget.ui:426
 msgctxt "ScanWidgetForm|"
 msgid "State"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:414
+#: ../../app/ui/scanwidget.ui:421
 msgctxt "ScanWidgetForm|"
 msgid "Port"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:326
+#: ../../app/ui/scanwidget.ui:63
+msgctxt "ScanWidgetForm|"
+msgid "Hosts"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:171
+msgctxt "ScanWidgetForm|"
+msgid "Clear host list"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:200
+msgctxt "ScanWidgetForm|"
+msgid ""
+"<html><head/><body><p>Load target list from file </p><p><span style=\" "
+"font-weight:600;\">Ex</span>: target_test.txt</p><p><span style=\" "
+"font-weight:600;\">Format</span>:</p><p>target1,target2,target3</p><p><span "
+"style=\" "
+"font-weight:600;\">OR</span></p><p>target1<br/>target2<br/>target3</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:241
+msgctxt "ScanWidgetForm|"
+msgid "Select an host or a range from history"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:294
+msgctxt "ScanWidgetForm|"
+msgid "Select a profile"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:333
 msgctxt "ScanWidgetForm|"
 msgid "Service(s) Details"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:485
+#: ../../app/ui/scanwidget.ui:449
+msgctxt "ScanWidgetForm|"
+msgid "Full scan output"
+msgstr ""
+
+#: ../../app/ui/scanwidget.ui:594
 msgctxt "ScanWidgetForm|"
 msgid "Nss script result"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:442
+#: ../../app/ui/scanwidget.ui:551
 msgctxt "ScanWidgetForm|"
 msgid "Nse result"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:546
+#: ../../app/ui/scanwidget.ui:497
 msgctxt "ScanWidgetForm|"
 msgid "Log(s)"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:585
+#: ../../app/ui/scanwidget.ui:536
 msgctxt "ScanWidgetForm|"
 msgid "Error(s)"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:498
-msgctxt "ScanWidgetForm|"
-msgid "Raw scan log"
-msgstr ""
-
-#: ../../app/ui/scanwidget.ui:600
+#: ../../app/ui/scanwidget.ui:607
 msgctxt "ScanWidgetForm|"
 msgid "Lookup"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:678
+#: ../../app/ui/scanwidget.ui:685
 msgctxt "ScanWidgetForm|"
 msgid "DNS"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:673
+#: ../../app/ui/scanwidget.ui:680
 msgctxt "ScanWidgetForm|"
 msgid "IP"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:668
+#: ../../app/ui/scanwidget.ui:675
 msgctxt "ScanWidgetForm|"
 msgid "RTT"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:663
+#: ../../app/ui/scanwidget.ui:670
 msgctxt "ScanWidgetForm|"
 msgid "Hop(s)"
 msgstr ""
 
-#: ../../app/ui/scanwidget.ui:635
+#: ../../app/ui/scanwidget.ui:642
 msgctxt "ScanWidgetForm|"
 msgid "Traceroute"
 msgstr ""
 
-#: ../../common/utilities.cpp:39
+#: ../../common/utilities.cpp:37
 msgctxt "Utilities|"
 msgid "Select the file"
 msgstr ""
@@ -1193,17 +1236,17 @@ msgctxt "VulnBookmarkWidgetForm|"
 msgid "Service"
 msgstr ""
 
-#: ../../app/ui/vulnbookmarkwidget.ui:55
+#: ../../app/ui/vulnbookmarkwidget.ui:58
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s)"
 msgstr ""
 
-#: ../../app/ui/vulnbookmarkwidget.ui:50
+#: ../../app/ui/vulnbookmarkwidget.ui:53
 msgctxt "VulnBookmarkWidgetForm|"
 msgid "Url(s) name"
 msgstr ""
 
-#: ../../platform/vulnerability.cpp:46
+#: ../../platform/vulnerability.cpp:39
 msgctxt "Vulnerability|"
 msgid "Search Vulnerabilities"
 msgstr ""
@@ -1213,12 +1256,22 @@ msgctxt "VulnerabilityWidgetForm|"
 msgid "Form"
 msgstr ""
 
-#: ../../app/ui/vulnerabilitywidget.ui:108
+#: ../../app/ui/vulnerabilitywidget.ui:95
+msgctxt "VulnerabilityWidgetForm|"
+msgid "Search a service:"
+msgstr ""
+
+#: ../../app/ui/vulnerabilitywidget.ui:133
+msgctxt "VulnerabilityWidgetForm|"
+msgid "Select a discovered service"
+msgstr ""
+
+#: ../../app/ui/vulnerabilitywidget.ui:140
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Services"
 msgstr ""
 
-#: ../../app/ui/vulnerabilitywidget.ui:45
+#: ../../app/ui/vulnerabilitywidget.ui:42
 msgctxt "VulnerabilityWidgetForm|"
 msgid "Discovered vulnerabilities"
 msgstr ""
@@ -1240,27 +1293,12 @@ msgstr ""
 
 #: ../../platform/ui/addparameterstobookmark.ui:90
 msgctxt "addParBook|"
-msgid "Done"
+msgid "&OK"
 msgstr ""
 
 #: ../../platform/ui/addparameterstobookmark.ui:101
 msgctxt "addParBook|"
 msgid "Cancel"
-msgstr ""
-
-#: ../../platform/addparameterstobookmark.cpp:45
-msgctxt "addParametersToBookmark|"
-msgid "Warning - Nmapsi4"
-msgstr ""
-
-#: ../../platform/addparameterstobookmark.cpp:45
-msgctxt "addParametersToBookmark|"
-msgid "Insert profile name or/and profile parameters."
-msgstr ""
-
-#: ../../platform/addparameterstobookmark.cpp:45
-msgctxt "addParametersToBookmark|"
-msgid "Close"
 msgstr ""
 
 #: ../../platform/ui/addvulnerabilityurl.ui:29
@@ -1308,7 +1346,7 @@ msgstr ""
 
 #: ../../platform/ui/addvulnerabilityurl.ui:121
 msgctxt "addUrl|"
-msgid "Done"
+msgid "&OK"
 msgstr ""
 
 #: ../../platform/ui/addvulnerabilityurl.ui:132
@@ -1316,19 +1354,29 @@ msgctxt "addUrl|"
 msgid "Cancel"
 msgstr ""
 
-#: ../../platform/addvulnerabilityurl.cpp:46
-msgctxt "addVulnerabilityUrl|"
-msgid "Warning - Nmapsi4"
+#: ../../platform/qml/mainWelcome.qml:59
+msgctxt "mainWelcome|"
+msgid "Scan an host"
 msgstr ""
 
-#: ../../platform/addvulnerabilityurl.cpp:46
-msgctxt "addVulnerabilityUrl|"
-msgid "Insert url name or/and address."
+#: ../../platform/qml/mainWelcome.qml:107
+msgctxt "mainWelcome|"
+msgid "Search a vulnerability"
 msgstr ""
 
-#: ../../platform/addvulnerabilityurl.cpp:46
-msgctxt "addVulnerabilityUrl|"
-msgid "Close"
+#: ../../platform/qml/mainWelcome.qml:156
+msgctxt "mainWelcome|"
+msgid "Discover a network"
+msgstr ""
+
+#: ../../platform/qml/mainWelcome.qml:263
+msgctxt "mainWelcome|"
+msgid "Version"
+msgstr ""
+
+#: ../../platform/qml/mainWelcome.qml:324
+msgctxt "mainWelcome|"
+msgid "Last scanned hosts"
 msgstr ""
 
 #: ../../platform/ui/monitorhostscandetails.ui:20
@@ -1356,433 +1404,1502 @@ msgctxt "profilerDialog|"
 msgid "Profiler - Nmapsi4"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:83
+#: ../../app/ui/profilerdialog.ui:80
 msgctxt "profilerDialog|"
 msgid "Profile"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:91
+#: ../../app/ui/profilerdialog.ui:88
 msgctxt "profilerDialog|"
 msgid "Profile name: "
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:107
+#: ../../app/ui/profilerdialog.ui:104
 msgctxt "profilerDialog|"
 msgid "Profile parameters:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:127
+#: ../../app/ui/profilerdialog.ui:124
 msgctxt "profilerDialog|"
 msgid "Base options:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:141 ../../app/ui/profilerdialog.ui:256
-#: ../../app/ui/profilerdialog.ui:301 ../../app/ui/profilerdialog.ui:315
+#: ../../app/ui/profilerdialog.ui:145 ../../app/ui/profilerdialog.ui:221
+#: ../../app/ui/profilerdialog.ui:266 ../../app/ui/profilerdialog.ui:280
 msgctxt "profilerDialog|"
 msgid "None"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:195
-msgctxt "profilerDialog|"
-msgid "Done"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:206
+#: ../../app/ui/profilerdialog.ui:1878
 msgctxt "profilerDialog|"
 msgid "Cancel"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:235
+#: ../../app/ui/profilerdialog.ui:200
 msgctxt "profilerDialog|"
 msgid "Scan"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:274
+#: ../../app/ui/profilerdialog.ui:239
 msgctxt "profilerDialog|"
 msgid "TCP scan:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:261
+#: ../../app/ui/profilerdialog.ui:226
 msgctxt "profilerDialog|"
 msgid "TCP Connect Scan (-sT)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:266
+#: ../../app/ui/profilerdialog.ui:231
 msgctxt "profilerDialog|"
 msgid "Ping Sweep (-sP)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:353
+#: ../../app/ui/profilerdialog.ui:318
 msgctxt "profilerDialog|"
 msgid "Timing Template:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:320
+#: ../../app/ui/profilerdialog.ui:285
 msgctxt "profilerDialog|"
 msgid "Paranoid Throttling (-T0)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:325
+#: ../../app/ui/profilerdialog.ui:290
 msgctxt "profilerDialog|"
 msgid "Sneaky Throttling (-T1)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:330
+#: ../../app/ui/profilerdialog.ui:295
 msgctxt "profilerDialog|"
 msgid "Polite Throttling (-T2)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:335
+#: ../../app/ui/profilerdialog.ui:300
 msgctxt "profilerDialog|"
 msgid "Normal Throttling (-T3)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:340
+#: ../../app/ui/profilerdialog.ui:305
 msgctxt "profilerDialog|"
 msgid "Aggressive Throttling (-T4)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:345
+#: ../../app/ui/profilerdialog.ui:310
 msgctxt "profilerDialog|"
 msgid "Insane Throttling (-T5)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:287
+#: ../../app/ui/profilerdialog.ui:252
 msgctxt "profilerDialog|"
 msgid "Non-TCP scans:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:306
+#: ../../app/ui/profilerdialog.ui:271
 msgctxt "profilerDialog|"
 msgid "List Scan (-sL)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:393
-msgctxt "profilerDialog|"
-msgid "RPC Scan (-sR)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:400
+#: ../../app/ui/profilerdialog.ui:418
 msgctxt "profilerDialog|"
 msgid "OS Detection (-O)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:407
+#: ../../app/ui/profilerdialog.ui:477
 msgctxt "profilerDialog|"
 msgid "Version Probe (-sV)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:414
+#: ../../app/ui/profilerdialog.ui:367
 msgctxt "profilerDialog|"
 msgid "Ipv6 support (-6)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:421
+#: ../../app/ui/profilerdialog.ui:460
 msgctxt "profilerDialog|"
 msgid "FTP bounce attack (-b)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:428
+#: ../../app/ui/profilerdialog.ui:440
 msgctxt "profilerDialog|"
 msgid "Idle Scan (-sl)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:442
+#: ../../app/ui/profilerdialog.ui:1731
+msgctxt "profilerDialog|"
+msgid "Target"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1745
+msgctxt "profilerDialog|"
+msgid "Port Range (-p):"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1764
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ports to scan</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />This option "
+"specifies which ports </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">you want to scan "
+"and overrides </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">the "
+"default.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1775
 msgctxt "profilerDialog|"
 msgid "Normal"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:447
+#: ../../app/ui/profilerdialog.ui:1780
 msgctxt "profilerDialog|"
 msgid "All"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:452
-msgctxt "profilerDialog|"
-msgid "Most Important"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:457
-msgctxt "profilerDialog|"
-msgid "Range"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:471
-msgctxt "profilerDialog|"
-msgid "Port Range:"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:505
+#: ../../app/ui/profilerdialog.ui:394
 msgctxt "profilerDialog|"
 msgid "Aggressive options (-A)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:556
+#: ../../app/ui/profilerdialog.ui:408
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Operating system "
+"detection</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Attempt to discover "
+"the operating </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">system running on "
+"remote systems.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:425
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Idle Scan "
+"(Zombie)</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Scan by spoofing "
+"packets from a zombie computer </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">so that the targets "
+"receive no packets from your </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">IP address. The "
+"zombie must meet certain conditions </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">which Nmap will "
+"check before scanning.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">host.example.com</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:447
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">FTP bounce "
+"attack</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Use an FTP server "
+"to port scan other hosts by sending </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">a file to each "
+"interesting port of a target host.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">username:password@server:port</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:467
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Version "
+"detection</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Attempt to discover "
+"the version </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">number of services "
+"running on remote ports.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:512
 msgctxt "profilerDialog|"
 msgid "Ping options"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:564
+#: ../../app/ui/profilerdialog.ui:520
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ACK ping</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send one or more "
+"ACK probes to see </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">if targets are up. "
+"</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">21,23,80,3389</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:533
 msgctxt "profilerDialog|"
 msgid "TCP ACK Ping (-PA)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:574
+#: ../../app/ui/profilerdialog.ui:543
 msgctxt "profilerDialog|"
 msgid "21,23,80,3389"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:581
+#: ../../app/ui/profilerdialog.ui:550
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SYN ping<br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send one or more "
+"SYN probes to see </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">if targets are "
+"up.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">22,25,80</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:562
 msgctxt "profilerDialog|"
 msgid "TCP SYN Ping (-PS)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:591
+#: ../../app/ui/profilerdialog.ui:572
 msgctxt "profilerDialog|"
 msgid "22,25,80"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:598
+#: ../../app/ui/profilerdialog.ui:579
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">UDP probes</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Send one or "
+"more UDP probes to see </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">if targets are "
+"up.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">100,31338</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:591
 msgctxt "profilerDialog|"
 msgid "UDP Ping (-PU)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:612
+#: ../../app/ui/profilerdialog.ui:605 ../../app/ui/profilerdialog.ui:622
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ICMP timestamp "
+"request</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send an ICMP "
+"timestamp probe </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">to see if targets "
+"are up.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:615
 msgctxt "profilerDialog|"
 msgid "ICMP Netmask (-PM)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:619
+#: ../../app/ui/profilerdialog.ui:632
 msgctxt "profilerDialog|"
 msgid "ICMP TImestamp (-PP)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:626
+#: ../../app/ui/profilerdialog.ui:639
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ICMP ping</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send an ICMP echo "
+"request </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">probe to see if "
+"targets are up.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:649
 msgctxt "profilerDialog|"
 msgid "ICMP Echo (-PE)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:633
-msgctxt "profilerDialog|"
-msgid "Don't Ping (-P0)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:640
+#: ../../app/ui/profilerdialog.ui:686
 msgctxt "profilerDialog|"
 msgid "IPProto probes (-PO)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:654
+#: ../../app/ui/profilerdialog.ui:700
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SCTP INIT ping "
+"probes</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send SCTP INIT "
+"chunk packets to see </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">if targets are "
+"up.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">20,80,179</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:713
 msgctxt "profilerDialog|"
 msgid "SCTP INIT ping (-PY)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:696
+#: ../../app/ui/profilerdialog.ui:755
 msgctxt "profilerDialog|"
 msgid "Timing"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:704
+#: ../../app/ui/profilerdialog.ui:763
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Min outstanding "
+"probes</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Try to maintain at "
+"least the given number </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">of probes "
+"outstanding during a scan. </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Common usage is to "
+"set to a number higher </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">than 1 to speed up "
+"scans of poorly </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">performing hosts or "
+"networks.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">10</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:779
 msgctxt "profilerDialog|"
 msgid "Min outstanding probes (--min-parallelism)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:724
+#: ../../app/ui/profilerdialog.ui:799
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Max outstanding "
+"probes</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Never allow more "
+"than the given number </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">of probes to be "
+"outstanding at a time.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">May be set to 1 to "
+"prevent Nmap from </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">sending more than "
+"one probe </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">at a time to "
+"hosts.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:815
 msgctxt "profilerDialog|"
 msgid "Max outstanding probes (--max-parallelism)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:744
+#: ../../app/ui/profilerdialog.ui:835
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Max time to scan a "
+"target</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Give up on a host "
+"if it has not finished </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">being scanning in "
+"this long. </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Time is in seconds "
+"by default.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:849
 msgctxt "profilerDialog|"
 msgid "Max time to scan a target (seconds, --host-timeout)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:767
+#: ../../app/ui/profilerdialog.ui:872
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Initial probe "
+"timeout</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Use the time given "
+"as the initial estimate </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">of round-trip time. "
+"This can speed up scans </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">if you know a good "
+"time for the network </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">you're "
+"scanning.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:887
 msgctxt "profilerDialog|"
 msgid "Initial probe timeout (seconds, --initial-rtt-timeout)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:787
+#: ../../app/ui/profilerdialog.ui:907
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Min probe "
+"timeout</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Wait at least this "
+"long for a probe </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">response before "
+"giving up or retransmitting </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">the probe. Time is "
+"in seconds by default.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:921
 msgctxt "profilerDialog|"
 msgid "Min probe timeout (seconds, --min-rtt-timeout)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:810
+#: ../../app/ui/profilerdialog.ui:944
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Max probe "
+"timeout</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Wait no longer than "
+"this for a probe </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">response before "
+"giving up or retransmitting </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">the probe. Time is "
+"in seconds by default.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:958
 msgctxt "profilerDialog|"
 msgid "Max probe timeout (seconds, --max-rtt-timeout)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:833
+#: ../../app/ui/profilerdialog.ui:981
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Min delay between "
+"probes</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Wait at least the "
+"given amount of time </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">between each probe "
+"sent to a </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">given host. </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Time is in seconds "
+"by default.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:996
 msgctxt "profilerDialog|"
 msgid "Scan Delay (seconds, --scan-delay)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:856
+#: ../../app/ui/profilerdialog.ui:1019
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Max scan delay</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Do not allow the "
+"scan delay (time delay between </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">successive probes) "
+"to grow larger than the </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">given amount of "
+"time. </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Time is in seconds "
+"by default.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">6000</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1033
 msgctxt "profilerDialog|"
 msgid "Max scan delay (seconds, --max-scan-delay)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:910
+#: ../../app/ui/profilerdialog.ui:1087
 msgctxt "profilerDialog|"
 msgid "Source"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:918
+#: ../../app/ui/profilerdialog.ui:1095
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set network "
+"interface</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Interface to send "
+"and receive </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">packets.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">eth0</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1107
 msgctxt "profilerDialog|"
 msgid "Specific network interface (-e)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:932
+#: ../../app/ui/profilerdialog.ui:1121
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set spoof source IP "
+"address</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Specify the IP "
+"address of the interface </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">you wish to send "
+"packets through.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">192.168.1.2</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1133
 msgctxt "profilerDialog|"
 msgid "Set source spoof ip address (-S)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:946
+#: ../../app/ui/profilerdialog.ui:1147
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Use decoys to hide "
+"identity</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Send fake "
+"decoy probes from spoofed addresses </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">to hide your own "
+"address. Use RND for a </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">random address and "
+"ME to set the </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">position of your "
+"address.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">decoy1,decoy2,ME,RND,RND</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1160
 msgctxt "profilerDialog|"
 msgid "Set decoy (-D)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:960
+#: ../../app/ui/profilerdialog.ui:1174
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set spoof source "
+"port</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Nmap will "
+"send packets from that </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">port where "
+"possible.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">1033</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1185
 msgctxt "profilerDialog|"
 msgid "Set Source spoof port (-g)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:992
+#: ../../app/ui/profilerdialog.ui:1217
 msgctxt "profilerDialog|"
 msgid "Extra"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1000
+#: ../../app/ui/profilerdialog.ui:1225
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">race routes to "
+"targets</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Trace the "
+"network path to each target </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">after scanning. "
+"This works with all scan </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">types except "
+"connect scan </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">(-sT) and idle scan "
+"(-sI).</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1243
 msgctxt "profilerDialog|"
 msgid "DNS Resolution"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1014
+#: ../../app/ui/profilerdialog.ui:1257
 msgctxt "profilerDialog|"
 msgid "When Required"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1019
+#: ../../app/ui/profilerdialog.ui:1262
 msgctxt "profilerDialog|"
 msgid "Always"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1024
+#: ../../app/ui/profilerdialog.ui:1267
 msgctxt "profilerDialog|"
 msgid "Never"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1032
+#: ../../app/ui/profilerdialog.ui:1275
 msgctxt "profilerDialog|"
 msgid "Verbosity level (-v)"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1046
+#: ../../app/ui/profilerdialog.ui:1288
 msgctxt "profilerDialog|"
-msgid "Quiet"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1051
-msgctxt "profilerDialog|"
-msgid "Verbose"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1056
-msgctxt "profilerDialog|"
-msgid "Very Verbose"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1061
-msgctxt "profilerDialog|"
-msgid "Debug"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1066
-msgctxt "profilerDialog|"
-msgid "Verbose Debug"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1074
-msgctxt "profilerDialog|"
-msgid "Ordered scanned port (-r)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1081
-msgctxt "profilerDialog|"
-msgid "Fragment IP packets (-f)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1088
-msgctxt "profilerDialog|"
-msgid "Ipv4 TTL (--ttl)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1108
-msgctxt "profilerDialog|"
-msgid "Max Retries (--max-retries)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1122
-msgctxt "profilerDialog|"
-msgid "Traceroute (--traceroute)"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1193
-msgctxt "profilerDialog|"
-msgid "Nse categories script available"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1208
-msgctxt "profilerDialog|"
-msgid "Nse categories Script Active"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1220
-msgctxt "profilerDialog|"
-msgid "Restore Default Categories"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1234
-msgctxt "profilerDialog|"
-msgid "Active Script"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1251
-msgctxt "profilerDialog|"
-msgid "Disable Script"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1262
-msgctxt "profilerDialog|"
-msgid "Nse categories help"
-msgstr ""
-
-#: ../../app/ui/profilerdialog.ui:1178
-msgctxt "profilerDialog|"
-msgid "Categories"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Verbosity "
+"level</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Print more "
+"information about the scan </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">in progress. Open "
+"ports are shown as </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">they are found as "
+"well as completion </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">time "
+"estimates.</p></body></html>"
 msgstr ""
 
 #: ../../app/ui/profilerdialog.ui:1300
 msgctxt "profilerDialog|"
-msgid "Nse script parameters (Ex. user=foo,pass=test)"
+msgid "Quiet"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1323
+#: ../../app/ui/profilerdialog.ui:1305
 msgctxt "profilerDialog|"
-msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
+msgid "Verbose"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1310
+msgctxt "profilerDialog|"
+msgid "Very Verbose"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1785
+msgctxt "profilerDialog|"
+msgid "Range (User defined)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1813
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Only scan ports in "
+"nmap-services.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1820
+msgctxt "profilerDialog|"
+msgid "Fast Scan (-F )"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1853
+msgctxt "profilerDialog|"
+msgid "Save Profile"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1864
+msgctxt "profilerDialog|"
+msgid "Do not save the profile"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1867
+msgctxt "profilerDialog|"
+msgid "Use Profile"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1325
+msgctxt "profilerDialog|"
+msgid "Ordered scanned port (-r)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1341
+msgctxt "profilerDialog|"
+msgid "Fragment IP packets (-f)"
 msgstr ""
 
 #: ../../app/ui/profilerdialog.ui:1359
 msgctxt "profilerDialog|"
+msgid "Ipv4 TTL (--ttl)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1391
+msgctxt "profilerDialog|"
+msgid "Max Retries (--max-retries)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1236
+msgctxt "profilerDialog|"
+msgid "Traceroute (--traceroute)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:137
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select base "
+"parameters for your profile.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:358
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">IPv6 support</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Enable IPv6 "
+"scanning.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:381
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Enable all "
+"advanced/aggressive options.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Enable</span>: </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">OS detection "
+"(-O)</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">version detection "
+"(-sV)</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">script scanning "
+"(-sC)</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">and traceroute "
+"(--traceroute)</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:656
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Don't ping before "
+"scanning</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Don't check if "
+"targets are up </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">before scanning "
+"them.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:666
+msgctxt "profilerDialog|"
+msgid "Don't Ping (-Pn)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:673
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">IPProto probes</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Send one or more "
+"raw IP protocol probes </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">to see if targets "
+"are up.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
+"font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">1,2,4</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1318
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Disable randomizing "
+"scanned ports.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1332
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Fragment IP "
+"packets</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Causes the "
+"requested scan (including ping scans) </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">to split up TCP "
+"headers over several packets.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1348
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set IPv4 time to "
+"live (ttl)</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Set the IPv4 "
+"time-to-live field in sent </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">packets to the "
+"given value.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px;\">127</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1379
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Max Retries</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Try sending a "
+"probe to each port </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">no more than this "
+"many times </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">before giving "
+"up.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><span "
+"style=\" font-weight:600;\">Example input</span>:</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">10</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1405
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Packet trace</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Print a "
+"summary (in Scan host(S) -&gt;&quot;row scan log&quot;) </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">of every packet "
+"sent or received.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1414
+msgctxt "profilerDialog|"
+msgid "Packet trace (--packet-trace)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1421
+msgctxt "profilerDialog|"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+"\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
+"type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Debugging "
+"level</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Debugging "
+"level is available to </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; "
+"margin-right:0px; -qt-block-indent:0; text-indent:0px;\">show more detailed "
+"output.</p></body></html>"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1430
+msgctxt "profilerDialog|"
+msgid "Debugging level (-d)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1514
+msgctxt "profilerDialog|"
+msgid "Nse categories script available"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1529
+msgctxt "profilerDialog|"
+msgid "Nse categories Script Active"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1541
+msgctxt "profilerDialog|"
+msgid "Restore Default Categories"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1555
+msgctxt "profilerDialog|"
+msgid "Active Script"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1572
+msgctxt "profilerDialog|"
+msgid "Disable Script"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1583
+msgctxt "profilerDialog|"
+msgid "Nse categories help"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1499
+msgctxt "profilerDialog|"
+msgid "Categories"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1621
+msgctxt "profilerDialog|"
+msgid "Nse script parameters (Ex. user=foo,pass=test)"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1644
+msgctxt "profilerDialog|"
+msgid "Nse manual script invocation: (Ex. snmp-sysdescr,smb-os-discovery )"
+msgstr ""
+
+#: ../../app/ui/profilerdialog.ui:1680
+msgctxt "profilerDialog|"
 msgid "Search information from nse script db:"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1381
+#: ../../app/ui/profilerdialog.ui:1702
 msgctxt "profilerDialog|"
 msgid "Search"
 msgstr ""
 
-#: ../../app/ui/profilerdialog.ui:1289
+#: ../../app/ui/profilerdialog.ui:1610
 msgctxt "profilerDialog|"
 msgid "Single Script"
 msgstr ""
@@ -1794,15 +2911,5 @@ msgstr ""
 
 #: ../../platform/ui/selectprofiledialog.ui:27
 msgctxt "selectProfileDialog|"
-msgid "Done"
-msgstr ""
-
-#: ../../platform/ui/welcomevulnwidget.ui:14
-msgctxt "welcomeVulnWidgetForm|"
-msgid "Form"
-msgstr ""
-
-#: ../../platform/ui/welcomevulnwidget.ui:122
-msgctxt "welcomeVulnWidgetForm|"
-msgid "Search Network Vulnerabilities"
+msgid "&OK"
 msgstr ""
