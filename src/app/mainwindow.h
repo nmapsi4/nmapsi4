@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ui_scanwidget.h"
 
-// Qt4 include
+// Qt5 include
 #include <QtCore/QHash>
 #include <QtCore/QWeakPointer>
 #include <QtCore/QTimer>
@@ -35,7 +35,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringListModel>
 #include <QCloseEvent>
 #include <QClipboard>
-#include <QDeclarativeView>
+#include <QtQuick/QQuickView>
+#include <QtQml/QQmlContext>
 
 // local include
 #include "preferencesdialog.h"
@@ -90,7 +91,7 @@ public:
     ProfileHandler* m_profileHandler;
     int m_hostCache;
     ScanWidget* m_scanWidget;
-    QDeclarativeView* m_welcomeQmlView;
+    QQuickView* m_welcomeQmlView;
     QTabWidget* m_mainTabWidget;
     MouseEventFilter* m_mouseFilter;
 
@@ -111,6 +112,7 @@ private:
     QByteArray m_scanListWidgetSize;
     QByteArray m_detailsWidgetSize;
     QmlWelcome* m_qmlWelcome;
+    QWidget* qmlWelcomeWidget;
 
 protected:
     virtual void closeEvent(QCloseEvent * event);

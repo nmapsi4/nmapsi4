@@ -1,5 +1,5 @@
 /*
-Copyright 2012-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "style" 0.1
 
 Rectangle {

@@ -2,7 +2,7 @@ PROJECT( nmapsi4 )
 
 set(VERSION_MAJOR 0)
 set(VERSION_MINOR 4)
-set(VERSION_PATCH 65)
+set(VERSION_PATCH 70)
 set(VERSION  ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
 
@@ -16,7 +16,6 @@ if (NOT WIN32 AND NOT APPLE)
 	WebKitWidgets 
 	WebKit
 	DBus 
-	Declarative 
 	Script 
 	LinguistTools 
 	Quick
@@ -31,7 +30,6 @@ else (NOT WIN32 AND NOT APPLE)
 	Network 
 	WebKitWidgets 
 	WebKit 
-	Declarative 
 	Script 
 	LinguistTools 
 	Quick

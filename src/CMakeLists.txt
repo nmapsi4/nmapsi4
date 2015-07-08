@@ -149,8 +149,8 @@ target_link_libraries(nmapsi4
     ${QT5_QTNETWORK_LIBRARY}
     Qt5::Widgets
     Qt5::WebKitWidgets
-    Qt5::Declarative
     Qt5::DBus
+    Qt5::Quick
     )
 
 if (NOT WIN32 AND NOT APPLE)

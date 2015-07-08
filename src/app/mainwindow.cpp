@@ -1,5 +1,5 @@
 /*
-Copyright 2007-2014  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2007-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -126,9 +126,10 @@ void MainWindow::initObject()
 
     // create welcome qml view
     QSpacerItem *verticalSpacer = new QSpacerItem(20, 163, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_welcomeQmlView = new QDeclarativeView(this);
-    QVBoxLayout *qmlWelcomeLayout = new QVBoxLayout(m_welcomeQmlView);
-    m_welcomeQmlView->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    m_welcomeQmlView = new QQuickView;
+    qmlWelcomeWidget = QWidget::createWindowContainer(m_welcomeQmlView);
+    QVBoxLayout *qmlWelcomeLayout = new QVBoxLayout(qmlWelcomeWidget);
+    m_welcomeQmlView->setResizeMode(QQuickView::SizeRootObjectToView);
     qmlWelcomeLayout->addItem(verticalSpacer);
     m_qmlWelcome = new QmlWelcome(this);
     m_welcomeQmlView->rootContext()->setContextProperty("mainObject", m_qmlWelcome);
@@ -690,7 +691,7 @@ void MainWindow::updateWelcomeSection()
     m_collections->enableGlobalMenuToolBar();
     m_collections->m_discoverToolBar->setVisible(false);
 
-    m_mainTabWidget->insertTab(0, m_welcomeQmlView,
+    m_mainTabWidget->insertTab(0, qmlWelcomeWidget,
                                QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")),
                                tr("Welcome"));
     m_mainTabWidget->setCurrentIndex(0);
@@ -745,7 +746,7 @@ void MainWindow::updateScanSection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
-    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(qmlWelcomeWidget));
 
     // enable scan action
     m_collections->enableBottomUiToggleActions();
@@ -771,7 +772,7 @@ void MainWindow::updateVulnerabilitySection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_scanWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_discoverManager->m_discoverWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
-    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(qmlWelcomeWidget));
     m_mainTabWidget->insertTab(0, m_vulnerability->m_vulnerabilityWidget,
                                QIcon(QString::fromUtf8(":/images/images/viewmag+.png")),
                                tr("Vulnerability"));
@@ -805,7 +806,7 @@ void MainWindow::updateDiscoverSection()
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_vulnerability->m_vulnerabilityWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_bookmark->m_vulnBookmarkWidget));
     m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_monitor->m_monitorWidget));
-    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(m_welcomeQmlView));
+    m_mainTabWidget->removeTab(m_mainTabWidget->indexOf(qmlWelcomeWidget));
     m_mainTabWidget->insertTab(0, m_discoverManager->m_discoverWidget,
                                QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")),
                                tr("Network discover"));
