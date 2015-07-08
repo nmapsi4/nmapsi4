@@ -120,11 +120,6 @@ public slots:
     void startParametersToBookmarksDialog();
     void saveHostnameItemToBookmark();
     void saveServiceItemToBookmark();
-
-private slots:
-    /**
-     * Save scan parameters to bookmark
-     */
     void saveParametersToBookmarks(const QString profileName, const QString profileParameters);
 
 };

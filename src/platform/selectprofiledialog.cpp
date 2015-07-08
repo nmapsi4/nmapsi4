@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -24,8 +24,8 @@ SelectProfileDialog::SelectProfileDialog(MainWindow* ui)
     setupUi(this);
     loadComboValues();
 
-    connect(doneButton, SIGNAL(clicked(bool)),
-            this, SLOT(closeDialog()));
+    connect(doneButton, &QPushButton::clicked,
+            this, &SelectProfileDialog::closeDialog);
 }
 
 SelectProfileDialog::~SelectProfileDialog()

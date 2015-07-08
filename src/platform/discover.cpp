@@ -109,8 +109,8 @@ void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStrin
         QPointer<ProcessThread> pingTh = new ProcessThread("nping", parameters);
         m_threadList.push_back(pingTh);
 
-        connect(pingTh, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(fromListReturn(QStringList,QByteArray,QByteArray)));
+        connect(pingTh, &ProcessThread::threadEnd,
+                this, &Discover::fromListReturn);
 
         pingTh->start();
     } else {
@@ -120,13 +120,13 @@ void Discover::fromList(const QString networkIp, DiscoverManager *parent, QStrin
     }
 
     if (!m_connectState) {
-        connect(parent, SIGNAL(killDiscoverFromIpsRange()), this, SLOT(stopDiscoverFromList()));
+        connect(parent, &DiscoverManager::killDiscoverFromIpsRange, this, &Discover::stopDiscoverFromList);
     }
 
     // check suspended discover ip
     if (m_ipSospended.size() && !m_connectState) {
         m_connectState = true;
-        connect(m_timer, SIGNAL(timeout()), this, SLOT(repeatScanner()));
+        connect(m_timer, &QTimer::timeout, this, &Discover::repeatScanner);
         if (!m_timer->isActive()) {
             m_timer->start(5000);
         }
@@ -204,12 +204,12 @@ void Discover::fromCIDR(const QString networkCIDR, QStringList parameters, Disco
 
     QPointer<ProcessThread> thread = new ProcessThread("nping", parameters);
 
-    connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),
-            this, SLOT(currentCIDRValue(QString,QByteArray)));
-    connect(thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-            this, SLOT(endCIDR(QStringList,QByteArray,QByteArray)));
-    connect(parent, SIGNAL(killDiscoverFromCIDR()),
-            this, SLOT(stopDiscoverFromCIDR()));
+    connect(thread, &ProcessThread::flowFromThread,
+            this, &Discover::currentCIDRValue);
+    connect(thread, &ProcessThread::threadEnd,
+            this, &Discover::endCIDR);
+    connect(parent, &DiscoverManager::killDiscoverFromCIDR,
+            this, &Discover::stopDiscoverFromCIDR);
 
     m_threadList.push_back(thread);
 

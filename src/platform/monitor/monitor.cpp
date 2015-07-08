@@ -57,14 +57,14 @@ Monitor::Monitor(MainWindow* parent)
     m_isHostcached = false;
     m_timer = new QTimer(this);
 
-    connect(m_monitorWidget->monitorStopCurrentScanButt, SIGNAL(clicked()),
-            this, SLOT(stopSelectedScan()));
-    connect(m_monitorWidget->monitorDetailsScanButt, SIGNAL(clicked()),
-            this, SLOT(showSelectedScanDetails()));
-    connect(m_monitorWidget->monitorStopAllScanButt, SIGNAL(clicked()),
-            this, SLOT(stopAllScan()));
-    connect(m_monitorWidget->scanMonitor, SIGNAL(itemSelectionChanged()),
-            this, SLOT(monitorRuntimeEvent()));
+    connect(m_monitorWidget->monitorStopCurrentScanButt, &QPushButton::clicked,
+            this, &Monitor::stopSelectedScan);
+    connect(m_monitorWidget->monitorDetailsScanButt, &QPushButton::clicked,
+            this, &Monitor::showSelectedScanDetails);
+    connect(m_monitorWidget->monitorStopAllScanButt, &QPushButton::clicked,
+            this, &Monitor::stopAllScan);
+    connect(m_monitorWidget->scanMonitor, &QTreeWidget::itemSelectionChanged,
+            this, &Monitor::monitorRuntimeEvent);
 }
 
 Monitor::~Monitor()
@@ -144,7 +144,7 @@ void Monitor::cacheScan(const QString& hostname, const QStringList& parameters, 
 
     if (m_firstScanCacheList.size() && !m_isHostcached) {
         m_isHostcached = true;
-        connect(m_timer, SIGNAL(timeout()), this, SLOT(cacheRepeat()));
+        connect(m_timer, &QTimer::timeout, this, &Monitor::cacheRepeat);
 
         if (!m_timer->isActive()) {
             m_timer->start(5000);
@@ -188,11 +188,11 @@ void Monitor::startScan(const QString hostname, QStringList parameters)
     QPointer<ProcessThread> thread = new ProcessThread("nmap", parameters);
     m_scanThreadHashList.insert(hostname, thread);
     // read current data scan from the thread
-    connect(thread, SIGNAL(flowFromThread(QString,QByteArray)),
-            this, SLOT(readFlowFromThread(QString,QByteArray)));
+    connect(thread, &ProcessThread::flowFromThread,
+            this, &Monitor::readFlowFromThread);
     // read scan data return
-    connect(thread, SIGNAL(dataIsReady(QStringList,QByteArray)),
-            this, SLOT(scanFinisced(QStringList,QByteArray)));
+    connect(thread, &ProcessThread::dataIsReady,
+            this, &Monitor::scanFinisced);
     // start scan
     thread->start();
 }
@@ -207,8 +207,8 @@ void Monitor::startLookup(const QString hostname, LookupType option)
         LookupManager *internalLookupPtr = new LookupManager(hostname);
         m_internealLookupList.push_back(internalLookupPtr);
 
-        connect(internalLookupPtr, SIGNAL(threadEnd(QHostInfo,int,QString)),
-                this, SLOT(lookupFinisced(QHostInfo,int,QString)));
+        connect(internalLookupPtr, &LookupManager::threadEnd,
+                this, &Monitor::lookupFinisced);
 
         internalLookupPtr->start();
     } else {

@@ -128,26 +128,26 @@ public slots:
     void updateScanSection();
     void updateVulnerabilitySection();
     void updateDiscoverSection();
+    void clearAll();
+    void newProfile();
+    void editProfile();
+    void setFullScreen();
+    void updateMenuBar();
+    void updateWelcomeSection();
+    void resizeScanListWidgetEvent();
+    void resizeHostDetailsWidgetEvent();
+    void startPreferencesDialog();
 
 private slots:
     void initObject();
-    void clearAll();
-    void setFullScreen();
-    void updateMenuBar();
     void updateScanCounter(int hostNumber);
-    void startPreferencesDialog();
     void syncSettings();
     void linkCompleterToHostname();
-    void updateWelcomeSection();
     void quickAddressSelectionEvent();
     void saveSettings();
-    void newProfile();
-    void editProfile();
     void clearHostnameCombo();
     void resizeVerticalSplitterEvent();
     void resizeHorizontalSplitterEvent();
-    void resizeScanListWidgetEvent();
-    void resizeHostDetailsWidgetEvent();
     void resetComboParameters();
     void loadTargetListFromFile();
 

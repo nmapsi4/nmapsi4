@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -17,24 +17,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "addparameterstobookmark.h"
 
-addParametersToBookmark::addParametersToBookmark(QWidget* parent, const QString parameters)
+AddParametersToBookmark::AddParametersToBookmark(QWidget* parent, const QString parameters)
     : QDialog(parent)
 {
     setupUi(this);
 
-    connect(doneButt, SIGNAL(clicked(bool)),
-            this, SLOT(exit()));
-    connect(cancelButt, SIGNAL(clicked(bool)),
-            this, SLOT(close()));
+    connect(doneButt, &QPushButton::clicked,
+            this, &AddParametersToBookmark::exit);
+    connect(cancelButt, &QPushButton::clicked,
+            this, &AddParametersToBookmark::close);
     lineProfilePar->setText(parameters);
 }
 
-addParametersToBookmark::~addParametersToBookmark()
+AddParametersToBookmark::~AddParametersToBookmark()
 {
 
 }
 
-void addParametersToBookmark::exit()
+void AddParametersToBookmark::exit()
 {
     if (!lineProfileName->text().isEmpty() && !lineProfilePar->text().isEmpty()) {
         emit doneParBook(lineProfileName->text(), lineProfilePar->text());

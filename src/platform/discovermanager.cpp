@@ -54,24 +54,24 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverWidget->treeTracePackets->setIconSize(QSize(22, 22));
     m_discoverWidget->treeDiscover->setIconSize(QSize(22, 22));
 
-    connect(m_discoverWidget->comboDiscover, SIGNAL(activated(QString)),
-            this, SLOT(discoverIp(QString)));
-    connect(m_discoverWidget->startDiscoverButt, SIGNAL(clicked()),
-            this, SLOT(startDiscoverIpsFromRange()));
-    connect(m_discoverWidget->cidrButton, SIGNAL(clicked()),
-            this, SLOT(startDiscoverIpsFromCIDR()));
-    connect(m_discoverWidget->stopDiscoverButt, SIGNAL(clicked()),
-            this, SLOT(stopDiscoverFromIpsRange()));
-    connect(m_discoverWidget->stopDiscoverCidrButton, SIGNAL(clicked()),
-            this, SLOT(stopDiscoverFromCIDR()));
-    connect(m_discoverWidget->treeDiscover, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            this, SLOT(runtimeScanDiscover()));
-    connect(m_discoverWidget->reloadComboDiscover, SIGNAL(clicked()),
-            this, SLOT(loadFoundInterfaces()));
-    connect(m_discoverWidget->discoverCIDRPrefixSizeSpin, SIGNAL(valueChanged(int)),
-            this, SLOT(calculateAddressFromCIDR()));
-    connect(m_discoverWidget->discoverCIDRPasteCombo->lineEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(splitCIDRAddressPasted()));
+    connect(m_discoverWidget->comboDiscover, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::activated),
+            this, &DiscoverManager::discoverIp);
+    connect(m_discoverWidget->startDiscoverButt, &QPushButton::clicked,
+            this, &DiscoverManager::startDiscoverIpsFromRange);
+    connect(m_discoverWidget->cidrButton, &QPushButton::clicked,
+            this, &DiscoverManager::startDiscoverIpsFromCIDR);
+    connect(m_discoverWidget->stopDiscoverButt, &QPushButton::clicked,
+            this, &DiscoverManager::stopDiscoverFromIpsRange);
+    connect(m_discoverWidget->stopDiscoverCidrButton, &QPushButton::clicked,
+            this, &DiscoverManager::stopDiscoverFromCIDR);
+    connect(m_discoverWidget->treeDiscover, &QTreeWidget::itemClicked,
+            this, &DiscoverManager::runtimeScanDiscover);
+    connect(m_discoverWidget->reloadComboDiscover, &QPushButton::clicked,
+            this, &DiscoverManager::loadFoundInterfaces);
+    connect(m_discoverWidget->discoverCIDRPrefixSizeSpin, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
+            this, &DiscoverManager::calculateAddressFromCIDR);
+    connect(m_discoverWidget->discoverCIDRPasteCombo->lineEdit(), &QLineEdit::textChanged,
+            this, &DiscoverManager::splitCIDRAddressPasted);
 
     calculateAddressFromCIDR();
 }
@@ -192,8 +192,8 @@ void DiscoverManager::startDiscoverIpsFromRange()
     Discover *discoverPtr = new Discover(m_userid);
     m_listDiscover.push_back(discoverPtr);
 
-    connect(discoverPtr, SIGNAL(fromListFinisched(QStringList,bool,QByteArray)),
-            this, SLOT(endDiscoverIpsFromRange(QStringList,bool,QByteArray)));
+    connect(discoverPtr, &Discover::fromListFinisched,
+            this, &DiscoverManager::endDiscoverIpsFromRange);
 
     m_discoverIsActive = true;
     m_ui->m_collections->m_collectionsDiscover.value("load-ips")->setEnabled(false);
@@ -375,10 +375,10 @@ void DiscoverManager::startDiscoverIpsFromCIDR()
     Discover *discoverPtr = new Discover(m_userid);
     m_listDiscover.push_back(discoverPtr);
 
-    connect(discoverPtr, SIGNAL(cidrCurrentValue(QString,QString)),
-            this, SLOT(currentDiscoverIpsFromCIDR(QString,QString)));
-    connect(discoverPtr, SIGNAL(cidrFinisced(QStringList,QByteArray,QByteArray)),
-            this, SLOT(endDiscoverIpsFromCIDR()));
+    connect(discoverPtr, &Discover::cidrCurrentValue,
+            this, &DiscoverManager::currentDiscoverIpsFromCIDR);
+    connect(discoverPtr, &Discover::cidrFinisced,
+            this, &DiscoverManager::endDiscoverIpsFromCIDR);
 
     const QString& cidrAddress = QString::number(m_discoverWidget->discoverCIDRFirstSpin->value())
                                  + '.'

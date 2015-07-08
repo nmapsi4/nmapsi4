@@ -23,12 +23,12 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     setupUi(this);
     QSettings settings("nmapsi4", "nmapsi4");
 
-    connect(buttonSave, SIGNAL(clicked(bool)),
-            this, SLOT(quit()));
-    connect(buttonDefault, SIGNAL(clicked()),
-            this, SLOT(setDefaults()));
-    connect(comboLookupType, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(updateLookupState()));
+    connect(buttonSave, &QPushButton::clicked,
+            this, &PreferencesDialog::quit);
+    connect(buttonDefault, &QPushButton::clicked,
+            this, &PreferencesDialog::setDefaults);
+    connect(comboLookupType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            this, &PreferencesDialog::updateLookupState);
 
     // create a read log config
     comboLogType->setCurrentIndex(settings.value("logType", 1).toInt());
@@ -55,8 +55,8 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     comboLookupType->setDisabled(true);
 #endif
 
-    connect(listViewOptions, SIGNAL(itemSelectionChanged()),
-            this, SLOT(updateListWidgetItem()));
+    connect(listViewOptions, &QListWidget::itemSelectionChanged,
+            this, &PreferencesDialog::updateListWidgetItem);
 
     m_generalItem->setSelected(true);
 }

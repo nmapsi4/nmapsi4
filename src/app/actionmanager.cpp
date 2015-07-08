@@ -87,8 +87,8 @@ ActionManager::ActionManager(MainWindow* parent)
     m_ui->addToolBar(Qt::TopToolBarArea, m_discoverToolBar);
     m_ui->addToolBar(Qt::TopToolBarArea, m_globalMenuToolBar);
 
-    connect(m_ui->m_mouseFilter, SIGNAL(mouseRightClickEvent(QObject*)),
-            this, SLOT(mouseClickEvent(QObject*)));
+    connect(m_ui->m_mouseFilter, &MouseEventFilter::mouseRightClickEvent,
+            this, &ActionManager::mouseClickEvent);
 
     setupActions();
     setupMenuBar();
@@ -147,7 +147,7 @@ void ActionManager::setupActions()
     action->setText(tr("Scan"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsScanSection.insert("scan-action", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(startScan()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::startScan);
     action->setEnabled(false);
 
     // clear action
@@ -155,21 +155,21 @@ void ActionManager::setupActions()
     action->setText(tr("Clear History"));
     action->setIcon(QIcon::fromTheme("edit-clear-list", QIcon(":/images/images/edit-clear-list.png")));
     m_collectionsScanSection.insert("clearHistory-action", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui, SLOT(clearAll()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::clearAll);
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("S&ave Scan"));
     action->setIcon(QIcon::fromTheme("document-save", QIcon(":/images/images/save_all.png")));
     m_collectionsScanSection.insert("save-action", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_parser, SLOT(callSaveSingleLogWriter()));
+    connect(action, &QAction::triggered, m_ui->m_parser, &ParserManager::callSaveSingleLogWriter);
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("Save all scans to &Directory"));
     action->setIcon(QIcon::fromTheme("document-save-as", QIcon(":/images/images/document-save-as.png")));
     m_collectionsScanSection.insert("saveAll-action", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_parser, SLOT(callSaveAllLogWriter()));
+    connect(action, &QAction::triggered, m_ui->m_parser, &ParserManager::callSaveAllLogWriter);
     action->setEnabled(false);
 
     m_menuBookmark = new QMenu(m_ui);
@@ -177,66 +177,66 @@ void ActionManager::setupActions()
     action->setText(tr("&Add host to bookmark"));
     action->setIcon(QIcon::fromTheme("address-book-new", QIcon(":/images/images/bookmark_add.png")));
     m_collectionsScanSection.insert("bookmarkAddHost-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(saveHostnameItemToBookmark()));
+    connect(action, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::saveHostnameItemToBookmark);
 
     action = new QAction(m_ui);
     action->setText(tr("Add service to &bookmark"));
     action->setIcon(QIcon::fromTheme("address-book-new", QIcon(":/images/images/bookmark_add.png")));
     m_collectionsScanSection.insert("bookmarkAddService-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(saveServiceItemToBookmark()));
+    connect(action, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::saveServiceItemToBookmark);
 
     action = new QAction(m_ui);
     action->setText(tr("Add &parameters to bookmark"));
     action->setIcon(QIcon::fromTheme("address-book-new", QIcon(":/images/images/bookmark_add.png")));
     m_collectionsScanSection.insert("bookmarkAddParameters-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(startParametersToBookmarksDialog()));
+    connect(action, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::startParametersToBookmarksDialog);
 
     action = new QAction(m_ui);
     action->setText(tr("Add vulnerability search url"));
     action->setIcon(QIcon::fromTheme("address-book-new", QIcon(":/images/images/bookmark_add.png")));
     m_collectionsScanSection.insert("bookmarkAddVulnUrl-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(showAddUrlUi()));
+    connect(action, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::showAddUrlUi);
 
     // Profiler QActions
     action = new QAction(m_ui);
     action->setText(tr("New Profile"));
     action->setIcon(QIcon::fromTheme("document-new", QIcon(":/images/images/document-new.png")));
     m_collectionsScanSection.insert("newProfile-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(newProfile()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::newProfile);
 
     action = new QAction(m_ui);
     action->setText(tr("Edit Profile"));
     action->setIcon(QIcon::fromTheme("document-properties", QIcon(":/images/images/document-properties.png")));
     m_collectionsScanSection.insert("editProfile-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(editProfile()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::editProfile);
 
     // discover Actions
     action = new QAction(m_ui);
     action->setText(tr("Scan selected IP/s"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-single", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(scanSingleDiscoveredIp()));
+    connect(action, &QAction::triggered, m_ui->m_discoverManager, &DiscoverManager::scanSingleDiscoveredIp);
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("Scan all discovered IP/s"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     m_collectionsDiscover.insert("scan-all", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(scanAllDiscoveredIps()));
+    connect(action, &QAction::triggered, m_ui->m_discoverManager, &DiscoverManager::scanAllDiscoveredIps);
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("Save IP list"));
     action->setIcon(QIcon::fromTheme("document-save", QIcon(":/images/images/save_all.png")));
     m_collectionsDiscover.insert("save-ips", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(saveXmlIpsList()));
+    connect(action, &QAction::triggered, m_ui->m_discoverManager, &DiscoverManager::saveXmlIpsList);
     action->setEnabled(false);
 
     action = new QAction(m_ui);
     action->setText(tr("Load IP list"));
     action->setIcon(QIcon::fromTheme("folder-open", QIcon(":/images/images/folder_open.png")));
     m_collectionsDiscover.insert("load-ips", action);
-    connect(action, SIGNAL(triggered(bool)), m_ui->m_discoverManager, SLOT(loadXmlIpsList()));
+    connect(action, &QAction::triggered, m_ui->m_discoverManager, &DiscoverManager::loadXmlIpsList);
     action->setEnabled(true);
 
     // Vulnerability Actions
@@ -245,28 +245,28 @@ void ActionManager::setupActions()
     action->setIconText(tr("Search"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("search-act", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(searchVulnerabilityFromCombo()));
+    connect(action, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::searchVulnerabilityFromCombo);
 
     action = new QAction(m_ui);
     action->setIcon(QIcon::fromTheme("go-previous", QIcon(":/images/images/go-previous.png")));
     action->setIconText(tr("Back"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("back-act", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebBack()));
+    connect(action, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::tabWebBack);
 
     action = new QAction(m_ui);
     action->setIcon(QIcon::fromTheme("go-next", QIcon(":/images/images/go-next.png")));
     action->setIconText(tr("Forward"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("forward-act", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebForward()));
+    connect(action, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::tabWebForward);
 
     action = new QAction(m_ui);
     action->setIcon(QIcon::fromTheme("process-stop", QIcon(":/images/images/button_cancel.png")));
     action->setIconText(tr("Stop"));
     action->setEnabled(false);
     m_collectionsVulnerability.insert("stop-act", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(tabWebStop()));
+    connect(action, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::tabWebStop);
 
     // global QActions
     action = new QAction(m_ui);
@@ -274,13 +274,13 @@ void ActionManager::setupActions()
     action->setIcon(QIcon::fromTheme("application-exit", QIcon(":/images/images/window-close.png")));
     action->setShortcut(Qt::CTRL + Qt::Key_Q);
     m_collectionsScanSection.insert("quit-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(close()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::close);
 
     action = new QAction(m_ui);
     action->setText(tr("&Preferences"));
     action->setIcon(QIcon::fromTheme("preferences-other", QIcon(":/images/images/tool.png")));
     m_collectionsScanSection.insert("preferences-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(startPreferencesDialog()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::startPreferencesDialog);
 
     action = new QAction(m_ui);
     action->setText(tr("F&ull Screen Mode"));
@@ -288,7 +288,7 @@ void ActionManager::setupActions()
     action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_F11);
     action->setIcon(QIcon::fromTheme("view-fullscreen", QIcon(":/images/images/view-fullscreen.png")));
     m_collectionsScanSection.insert("fullscreen-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(setFullScreen()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::setFullScreen);
 
     action = new QAction(m_ui);
     action->setText(tr("Show &Menu Bar"));
@@ -296,62 +296,62 @@ void ActionManager::setupActions()
     action->setShortcut(Qt::CTRL + Qt::Key_M);
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
     m_collectionsScanSection.insert("showmenubar-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateMenuBar()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::updateMenuBar);
 
     action = new QAction(m_ui);
     action->setText(tr("Section Scan"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/network_local.png")));
     m_collectionsScanSection.insert("sectionScan-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateScanSection()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::updateScanSection);
 
     action = new QAction(m_ui);
     action->setText(tr("Section Vulnerabilities"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag+.png")));
     m_collectionsScanSection.insert("sectionVuln-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateVulnerabilitySection()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::updateVulnerabilitySection);
 
     action = new QAction(m_ui);
     action->setText(tr("Section Discover"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
     m_collectionsScanSection.insert("sectionDiscover-action", action);
-    connect(action, SIGNAL(triggered()), m_ui, SLOT(updateDiscoverSection()));
+    connect(action, &QAction::triggered, m_ui, &MainWindow::updateDiscoverSection);
 
     // Help menu actions
     action = new QAction(m_ui);
     action->setText(tr("Report a bug"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/tools-report-bug.png")));
     m_collectionsScanSection.insert("bug-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showBugUrl()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::showBugUrl);
 
     action = new QAction(m_ui);
     action->setText(tr("Visit Website"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
     m_collectionsScanSection.insert("home-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showHomepageUrl()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::showHomepageUrl);
 
     action = new QAction(m_ui);
     action->setText(tr("Documentation"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/book2.png")));
     m_collectionsScanSection.insert("documentation-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showDocumentationUrl()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::showDocumentationUrl);
 
     action = new QAction(m_ui);
     action->setText(tr("Donate Money"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/kwalletmanager.png")));
     m_collectionsScanSection.insert("donate-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(showDonateUrl()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::showDonateUrl);
 
     action = new QAction(m_ui);
     action->setText(tr("&About nmapsi4"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/icons/64x64/nmapsi4.png")));
     m_collectionsScanSection.insert("aboutui-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(about()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::about);
 
     action = new QAction(m_ui);
     action->setText(tr("About &Qt"));
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
     m_collectionsScanSection.insert("aboutqt-action", action);
-    connect(action, SIGNAL(triggered()), m_ui->m_utilities, SLOT(aboutQt()));
+    connect(action, &QAction::triggered, m_ui->m_utilities, &Utilities::aboutQt);
 }
 
 void ActionManager::setupMenuBar()
@@ -409,7 +409,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolButtonStyle(Qt::ToolButtonIconOnly);
     actionButt->setCheckable(true);
     m_collectionsButton.insert("welcome-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateWelcomeSection()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::updateWelcomeSection);
     m_rightSectionBar->addWidget(actionButt);
 
     actionButt = new QToolButton(m_rightSectionBar);
@@ -418,7 +418,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolTip(tr("Scan an host"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateScanSection()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::updateScanSection);
     m_rightSectionBar->addWidget(actionButt);
 
     actionButt = new QToolButton(m_rightSectionBar);
@@ -427,7 +427,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolTip(tr("Search a vulnerability"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("vuln-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateVulnerabilitySection()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::updateVulnerabilitySection);
     m_rightSectionBar->addWidget(actionButt);
 
     actionButt = new QToolButton(m_rightSectionBar);
@@ -436,7 +436,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolTip(tr("Discover a network"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("discover-sez", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(updateDiscoverSection()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::updateDiscoverSection);
     m_rightSectionBar->addWidget(actionButt);
 
     // toggle action
@@ -447,7 +447,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolTip(tr("Show/Hide Host List"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("scan-list", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeScanListWidgetEvent()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::resizeScanListWidgetEvent);
     m_bottomUiToggleBar->addWidget(actionButt);
 
     actionButt = new QToolButton(m_ui);
@@ -457,7 +457,7 @@ void ActionManager::createSectionsBar()
     actionButt->setToolTip(tr("Show/Hide Host Details"));
     actionButt->setCheckable(true);
     m_collectionsButton.insert("details-list", actionButt);
-    connect(actionButt, SIGNAL(clicked(bool)), m_ui, SLOT(resizeHostDetailsWidgetEvent()));
+    connect(actionButt, &QToolButton::clicked, m_ui, &MainWindow::resizeHostDetailsWidgetEvent);
     m_bottomUiToggleBar->addWidget(actionButt);
 }
 
@@ -667,8 +667,8 @@ void ActionManager::scanBookmarkContextMenu()
     scanBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     scanBook.setIconText(tr("Scan Host"));
 
-    connect(&scanBook, SIGNAL(triggered()), m_ui, SLOT(takeHostFromBookmark()));
-    connect(&removeBook, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(deleteItemFromBookmark()));
+    connect(&scanBook, &QAction::triggered, m_ui, &MainWindow::takeHostFromBookmark);
+    connect(&removeBook, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::deleteItemFromBookmark);
 
     QMenu menuBook(m_ui);
     menuBook.addAction(&scanBook);
@@ -683,7 +683,7 @@ void ActionManager::scanHostInfoContextMenu()
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
     copyHostDetail.setIconText(tr("Copy text"));
 
-    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromHostInfoTree()));
+    connect(&copyHostDetail, &QAction::triggered, m_ui, &MainWindow::copyTextFromHostInfoTree);
 
     QMenu menuHostInfo(m_ui);
     menuHostInfo.addAction(&copyHostDetail);
@@ -704,9 +704,9 @@ void ActionManager::scanPortsInfoContextMenu()
     openUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/network-workgroup.png")));
     openUrl.setIconText(tr("Open address via http"));
 
-    connect(&checkVuln, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(checkVulnerabilitiesFromPortsTree()));
-    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanPortsTree()));
-    connect(&openUrl, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(openUrlFromScanPortsTree()));
+    connect(&checkVuln, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::checkVulnerabilitiesFromPortsTree);
+    connect(&copyHostDetail, &QAction::triggered, m_ui, &MainWindow::copyTextFromScanPortsTree);
+    connect(&openUrl, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::openUrlFromScanPortsTree);
 
     openUrl.setEnabled(false);
 
@@ -715,13 +715,13 @@ void ActionManager::scanPortsInfoContextMenu()
     if ((itemsList.size() == 1) && (itemsList[0]->text(3).isEmpty())) {
         checkVuln.setEnabled(false);
     } else {
-    // check for http port
-    foreach (QTreeWidgetItem* item, itemsList) {
-        if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
-            openUrl.setEnabled(true);
-            break;
-        }
-    }
+      // check for http port
+      foreach (QTreeWidgetItem* item, itemsList) {
+	  if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
+	      openUrl.setEnabled(true);
+	      break;
+	  }
+      }
     }
 
     QMenu menuHostInfo(m_ui);
@@ -738,7 +738,7 @@ void ActionManager::scanFullOutputContextMenu()
     copyHostDetail.setIcon(QIcon::fromTheme("edit-copy", QIcon(":/images/images/edit-copy.png")));
     copyHostDetail.setIconText(tr("Copy text"));
 
-    connect(&copyHostDetail, SIGNAL(triggered()), m_ui, SLOT(copyTextFromScanFullOutputTree()));
+    connect(&copyHostDetail, &QAction::triggered, m_ui, &MainWindow::copyTextFromScanFullOutputTree);
 
     QMenu menuHostInfo(m_ui);
     menuHostInfo.addAction(&copyHostDetail);
@@ -752,7 +752,7 @@ void ActionManager::parametersBookmarkContextMenu()
     removeBook.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeBook.setIconText(tr("Remove Scan Parameters"));
 
-    connect(&removeBook, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(deleteParametersFromBookmark()));
+    connect(&removeBook, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::deleteParametersFromBookmark);
 
     QMenu menuBook(m_ui);
     menuBook.addAction(&removeBook);
@@ -770,8 +770,8 @@ void ActionManager::servicesContextMenu()
     addBook.setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag.png")));
     addBook.setIconText(tr("Search for vulnerabilities"));
 
-    connect(&addBook, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(callVulnCheck()));
-    connect(&removeBook, SIGNAL(triggered()), m_ui->m_bookmark, SLOT(deleteItemFromBookmark()));
+    connect(&addBook, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::callVulnCheck);
+    connect(&removeBook, &QAction::triggered, m_ui->m_bookmark, &BookmarkManager::deleteItemFromBookmark);
 
     QMenu menuBook(m_ui);
     menuBook.addAction(&addBook);
@@ -785,7 +785,7 @@ void ActionManager::vulnerabilityUrlContextMenu()
     QAction removeVulnUrl(m_ui);
     removeVulnUrl.setIcon(QIcon(QString::fromUtf8(":/images/images/window-close.png")));
     removeVulnUrl.setIconText(tr("Remove url"));
-    connect(&removeVulnUrl, SIGNAL(triggered()), m_ui->m_vulnerability, SLOT(removeUrlToBookmarks()));
+    connect(&removeVulnUrl, &QAction::triggered, m_ui->m_vulnerability, &Vulnerability::removeUrlToBookmarks);
 
     QMenu menuVulnUrl(m_ui);
     menuVulnUrl.addAction(&removeVulnUrl);

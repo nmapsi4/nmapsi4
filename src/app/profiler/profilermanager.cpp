@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -60,43 +60,44 @@ void ProfilerManager::initObject()
     m_nseManager = new NseManager(this);
     m_profiler = new Profiler(this);
 
-    connect(m_dialogUi->optionsListScan, SIGNAL(itemSelectionChanged()),
-            this, SLOT(optionListUpdate()));
-    connect(m_dialogUi->portCombo, SIGNAL(activated(QString)),
-            this, SLOT(updatePortCombo()));
+    connect(m_dialogUi->optionsListScan, &QListWidget::itemSelectionChanged,
+            this, &ProfilerManager::optionListUpdate);
+    connect(m_dialogUi->portCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+            this, &ProfilerManager::updatePortCombo);
+    
     //Options
-    connect(m_dialogUi->checkBoxDevice, SIGNAL(toggled(bool)),
-            this, SLOT(updateOptions()));
-    connect(m_dialogUi->checkDecoy, SIGNAL(toggled(bool)),
-            this, SLOT(updateOptions()));
-    connect(m_dialogUi->checkSpoof, SIGNAL(toggled(bool)),
-            this, SLOT(updateOptions()));
-    connect(m_dialogUi->checkSourcePort, SIGNAL(toggled(bool)),
-            this, SLOT(updateOptions()));
-    connect(m_dialogUi->comboVerbosity, SIGNAL(activated(QString)),
-            this, SLOT(updateComboVerbosity()));
-    connect(m_dialogUi->doneButton, SIGNAL(clicked(bool)),
-            this, SLOT(exit()));
-    connect(m_dialogUi->pushButtonQuickProfile, SIGNAL(clicked(bool)),
-            this, SLOT(exitWithQuickProfile()));
-    connect(m_dialogUi->cancelButton, SIGNAL(clicked(bool)),
-            this, SLOT(close()));
-    connect(m_dialogUi->comboBaseOptions, SIGNAL(activated(QString)),
-            this, SLOT(updateBaseOptions()));
+    connect(m_dialogUi->checkBoxDevice, &QAbstractButton::toggled,
+            this, &ProfilerManager::updateOptions);
+    connect(m_dialogUi->checkDecoy, &QCheckBox::toggled,
+            this, &ProfilerManager::updateOptions);
+    connect(m_dialogUi->checkSpoof, &QCheckBox::toggled,
+            this, &ProfilerManager::updateOptions);
+    connect(m_dialogUi->checkSourcePort, &QCheckBox::toggled,
+            this, &ProfilerManager::updateOptions);
+    connect(m_dialogUi->comboVerbosity, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+            this, &ProfilerManager::updateComboVerbosity);
+    connect(m_dialogUi->doneButton, &QPushButton::clicked,
+            this, &ProfilerManager::exit);
+    connect(m_dialogUi->pushButtonQuickProfile, &QPushButton::clicked,
+            this, &ProfilerManager::exitWithQuickProfile);
+    connect(m_dialogUi->cancelButton, &QPushButton::clicked,
+            this, &ProfilerManager::close);
+    connect(m_dialogUi->comboBaseOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+            this, &ProfilerManager::updateBaseOptions);
 
     // nse slots
-    connect(m_dialogUi->nseActiveBut, SIGNAL(clicked()),
-            m_nseManager, SLOT(nseTreeActiveItem()));
-    connect(m_dialogUi->nseRemoveBut, SIGNAL(clicked()),
-            m_nseManager, SLOT(nseTreeRemoveItem()));
-    connect(m_dialogUi->nseResetBut, SIGNAL(clicked()),
-            m_nseManager, SLOT(nseTreeResetItem()));
-    connect(m_dialogUi->nseTreeAvail, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
-    connect(m_dialogUi->nseTreeActive, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            m_nseManager, SLOT(requestNseHelp(QTreeWidgetItem*,int)));
-    connect(m_dialogUi->searchButtHelp, SIGNAL(clicked()),
-            m_nseManager, SLOT(requestNseScriptHelp()));
+    connect(m_dialogUi->nseActiveBut, &QPushButton::clicked,
+            m_nseManager, &NseManager::nseTreeActiveItem);
+    connect(m_dialogUi->nseRemoveBut, &QPushButton::clicked,
+            m_nseManager, &NseManager::nseTreeRemoveItem);
+    connect(m_dialogUi->nseResetBut, &QPushButton::clicked,
+            m_nseManager, &NseManager::nseTreeResetItem);
+    connect(m_dialogUi->nseTreeAvail, &QTreeWidget::itemClicked,
+            m_nseManager, &NseManager::requestNseHelp);
+    connect(m_dialogUi->nseTreeActive, &QTreeWidget::itemClicked,
+            m_nseManager, &NseManager::requestNseHelp);
+    connect(m_dialogUi->searchButtHelp, &QPushButton::clicked,
+            m_nseManager, &NseManager::requestNseScriptHelp);
 
     loadDefaultComboValues();
     loadDefaultBaseProfile();

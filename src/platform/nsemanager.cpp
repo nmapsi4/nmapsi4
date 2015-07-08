@@ -63,8 +63,8 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
 
         m_thread = new ProcessThread("nmap", parameters_);
 
-        connect(m_thread, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(showNseHelp(QStringList,QByteArray,QByteArray)));
+        connect(m_thread, &ProcessThread::threadEnd,
+                this, &NseManager::showNseHelp);
 
         m_thread->start();
     } else {
@@ -87,8 +87,8 @@ void NseManager::requestNseScriptHelp()
 
     m_threadScript = new ProcessThread("nmap", parameters_);
 
-    connect(m_threadScript, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-            this, SLOT(showNseScriptHelp(QStringList,QByteArray,QByteArray)));
+    connect(m_threadScript, &ProcessThread::threadEnd,
+            this, &NseManager::showNseScriptHelp);
 
     m_threadScript->start();
 }

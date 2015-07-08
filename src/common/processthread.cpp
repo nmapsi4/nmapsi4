@@ -35,10 +35,10 @@ void ProcessThread::run()
     m_process = new QProcess();
     qRegisterMetaType<QProcess::ExitStatus>("QProcess::ExitStatus");
 
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(readFinished()));
-    connect(m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(readyReadData()));
+    connect(m_process, static_cast<void (QProcess::*)(int,QProcess::ExitStatus)>(&QProcess::finished),
+            this, &ProcessThread::readFinished);
+    connect(m_process, &QProcess::readyReadStandardOutput,
+            this, &ProcessThread::readyReadData);
 
 #ifndef THREAD_NO_DEBUG
     qDebug() << "ProcessThread::Command:: " << m_ParList;

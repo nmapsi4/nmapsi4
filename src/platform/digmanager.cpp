@@ -46,11 +46,11 @@ void DigManager::digRequest(const QString hostname, PObjectLookup* objElem, DigR
     m_threadList.push_back(m_th);
 
     if (type == Verbose) {
-        connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(longDigAnswer(QStringList,QByteArray,QByteArray)));
+        connect(m_th, &ProcessThread::threadEnd,
+                this, &DigManager::longDigAnswer);
     } else {
-        connect(m_th, SIGNAL(threadEnd(QStringList,QByteArray,QByteArray)),
-                this, SLOT(shortDigAnswer(QStringList,QByteArray,QByteArray)));
+        connect(m_th, &ProcessThread::threadEnd,
+                this, &DigManager::shortDigAnswer);
     }
 
     m_th->start();

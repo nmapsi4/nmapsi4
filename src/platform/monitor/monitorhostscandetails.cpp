@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -24,9 +24,9 @@ MonitorDetails::MonitorDetails(QStringList& processFlow, const QString hostname,
     monitorEditHostname->setText(hostname);
     m_itemsSize = processFlow.size();
     m_timer = new QTimer(this);
-    connect(monitorCloseButt, SIGNAL(clicked(bool)), this, SLOT(close()));
-    connect(monitorReloadButt, SIGNAL(clicked(bool)), this, SLOT(reloadFlow()));
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(reloadFlow()));
+    connect(monitorCloseButt, &QPushButton::clicked, this, &MonitorDetails::close);
+    connect(monitorReloadButt, &QPushButton::clicked, this, &MonitorDetails::reloadFlow);
+    connect(m_timer, &QTimer::timeout, this, &MonitorDetails::reloadFlow);
     loadFlow();
 }
 

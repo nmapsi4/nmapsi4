@@ -1,5 +1,5 @@
 /*
-Copyright 2011-2013  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2011-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -23,13 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ui_addparameterstobookmark.h"
 
-class addParametersToBookmark : public QDialog, private Ui::addParBook
+class AddParametersToBookmark : public QDialog, private Ui::addParBook
 {
     Q_OBJECT
 
 public:
-    addParametersToBookmark(QWidget* parent, const QString parameters);
-    ~addParametersToBookmark();
+    AddParametersToBookmark(QWidget* parent, const QString parameters);
+    ~AddParametersToBookmark();
 
 private slots:
     void exit();

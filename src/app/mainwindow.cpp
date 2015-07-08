@@ -108,21 +108,21 @@ void MainWindow::initObject()
     updateComboBook();
 
     // connect slots
-    connect(m_scanWidget->buttonHostClear, SIGNAL(clicked()),
-            this, SLOT(clearHostnameCombo()));
-    connect(m_scanWidget->pushButtonLoadFromFile, SIGNAL(clicked()),
-            this, SLOT(loadTargetListFromFile()));
-    connect(m_scanWidget->comboParametersProfiles, SIGNAL(currentIndexChanged(QString)),
-            this, SLOT(comboParametersSelectedEvent()));
-    connect(m_scanWidget->comboHostBook, SIGNAL(currentIndexChanged(QString)),
-            this, SLOT(quickAddressSelectionEvent()));
-    connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(returnPressed()),
-            this, SLOT(startScan()));
-    connect(m_scanWidget->hostEdit->lineEdit(), SIGNAL(cursorPositionChanged(int,int)),
-            this, SLOT(updateComboHostnameProperties()));
+    connect(m_scanWidget->buttonHostClear, &QPushButton::clicked,
+            this, &MainWindow::clearHostnameCombo);
+    connect(m_scanWidget->pushButtonLoadFromFile, &QPushButton::clicked,
+            this, &MainWindow::loadTargetListFromFile);
+    connect(m_scanWidget->comboParametersProfiles, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
+            this, &MainWindow::comboParametersSelectedEvent);
+    connect(m_scanWidget->comboHostBook, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
+            this, &MainWindow::quickAddressSelectionEvent);
+    connect(m_scanWidget->hostEdit->lineEdit(), &QLineEdit::returnPressed,
+            this, &MainWindow::startScan);
+    connect(m_scanWidget->hostEdit->lineEdit(), &QLineEdit::cursorPositionChanged,
+            this, &MainWindow::updateComboHostnameProperties);
     // monitor events
-    connect(m_monitor, SIGNAL(monitorUpdated(int)),
-            this, SLOT(updateScanCounter(int)));
+    connect(m_monitor, &Monitor::monitorUpdated,
+            this, &MainWindow::updateScanCounter);
 
     // create welcome qml view
     QSpacerItem *verticalSpacer = new QSpacerItem(20, 163, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -166,8 +166,8 @@ void MainWindow::startPreferencesDialog()
 {
     QPointer<PreferencesDialog> dialogPreference = new PreferencesDialog(this);
 
-    connect(dialogPreference, SIGNAL(accepted()),
-            this, SLOT(syncSettings()));
+    connect(dialogPreference, &PreferencesDialog::accepted,
+            this, &MainWindow::syncSettings);
 
     dialogPreference->exec();
 
@@ -180,11 +180,11 @@ void MainWindow::newProfile()
 {
     QPointer<ProfilerManager> pManager = new ProfilerManager(this);
 
-    connect(pManager, SIGNAL(doneParBook(QString,QString)),
-            m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
+    connect(pManager, &ProfilerManager::doneParBook,
+            m_bookmark, &BookmarkManager::saveParametersToBookmarks);
 
-    connect(pManager, SIGNAL(doneQuickProfile(QStringList)),
-            m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
+    connect(pManager, &ProfilerManager::doneQuickProfile,
+            m_profileHandler, &ProfileHandler::updateComboParametersFromList);
 
     pManager->exec();
 
@@ -198,11 +198,11 @@ void MainWindow::editProfile()
     QPointer<ProfilerManager> pManager = new ProfilerManager(m_scanWidget->comboParametersProfiles->currentText(),
                                                                  m_scanWidget->comboAdv->currentText(), this);
 
-    connect(pManager, SIGNAL(doneParBook(QString,QString)),
-            m_bookmark, SLOT(saveParametersToBookmarks(QString,QString)));
+    connect(pManager, &ProfilerManager::doneParBook,
+            m_bookmark, &BookmarkManager::saveParametersToBookmarks);
 
-    connect(pManager, SIGNAL(doneQuickProfile(QStringList)),
-            m_profileHandler, SLOT(updateComboParametersFromList(QStringList)));
+    connect(pManager, &ProfilerManager::doneQuickProfile,
+            m_profileHandler, &ProfileHandler::updateComboParametersFromList);
 
     pManager->exec();
 
@@ -623,11 +623,11 @@ void MainWindow::setDefaultSplitter()
     m_mainHorizontalSplitter = new QSplitter(this);
     m_mainVerticalSplitter = new QSplitter(this);
 
-    connect(m_mainVerticalSplitter, SIGNAL(splitterMoved(int,int)),
-            this, SLOT(resizeVerticalSplitterEvent()));
+    connect(m_mainVerticalSplitter, &QSplitter::splitterMoved,
+            this, &MainWindow::resizeVerticalSplitterEvent);
 
-    connect(m_mainHorizontalSplitter, SIGNAL(splitterMoved(int,int)),
-            this, SLOT(resizeHorizontalSplitterEvent()));
+    connect(m_mainHorizontalSplitter, &QSplitter::splitterMoved,
+            this, &MainWindow::resizeHorizontalSplitterEvent);
 
     m_mainHorizontalSplitter->setOrientation(Qt::Horizontal);
     m_mainHorizontalSplitter->addWidget(m_scanWidget->frameLeft);
@@ -668,13 +668,15 @@ void MainWindow::updateComboHostnameProperties()
     m_scanWidget->hostEdit->clear();
     m_scanWidget->hostEdit->setStyleSheet(QString::fromUtf8(""));
     bool signalState = m_scanWidget->hostEdit->lineEdit()->disconnect(SIGNAL(cursorPositionChanged(int,int)));
+    
+    
 
     if (!signalState) {
         return;
     }
 
-    connect(m_scanWidget->hostEdit, SIGNAL(editTextChanged(QString)),
-            this, SLOT(linkCompleterToHostname()));
+    connect(m_scanWidget->hostEdit, &QComboBox::editTextChanged,
+            this, &MainWindow::linkCompleterToHostname);
 }
 
 void MainWindow::updateWelcomeSection()

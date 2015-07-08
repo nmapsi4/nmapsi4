@@ -1,5 +1,5 @@
 /*
-Copyright 2012  Francesco Cecconi <francesco.cecconi@gmail.com>
+Copyright 2012-2015  Francesco Cecconi <francesco.cecconi@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -186,10 +186,10 @@ void BookmarkManager::startParametersToBookmarksDialog()
         return;
     }
 
-    addParametersToBookmark* dialogParAdd = new addParametersToBookmark(m_ui, parameters);
+    AddParametersToBookmark* dialogParAdd = new AddParametersToBookmark(m_ui, parameters);
 
-    connect(dialogParAdd, SIGNAL(doneParBook(QString,QString)),
-            this, SLOT(saveParametersToBookmarks(QString,QString)));
+    connect(dialogParAdd, &AddParametersToBookmark::doneParBook,
+            this, &BookmarkManager::saveParametersToBookmarks);
 
     dialogParAdd->exec();
 
