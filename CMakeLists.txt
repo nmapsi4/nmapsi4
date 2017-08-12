@@ -2,19 +2,18 @@ PROJECT( nmapsi4 )
 
 set(VERSION_MAJOR 0)
 set(VERSION_MINOR 4)
-set(VERSION_PATCH 70)
+set(VERSION_PATCH 80)
 set(VERSION  ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
 
 cmake_minimum_required(VERSION 2.8.2)
 
 if (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt5 5.2.0 COMPONENTS 
+    FIND_PACKAGE(Qt5 5.4.0 COMPONENTS
 	Core 
 	Widgets 
 	Network 
-	WebKitWidgets 
-	WebKit
+	WebEngineWidgets
 	DBus 
 	Script 
 	LinguistTools 
@@ -23,13 +22,12 @@ if (NOT WIN32 AND NOT APPLE)
 	Gui
 	REQUIRED)
 else (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt5 5.2.0 
+    FIND_PACKAGE(Qt5 5.4.0
 	COMPONENTS 
 	Core 
 	Widgets 
 	Network 
-	WebKitWidgets 
-	WebKit 
+	WebEngineWidgets
 	Script 
 	LinguistTools 
 	Quick

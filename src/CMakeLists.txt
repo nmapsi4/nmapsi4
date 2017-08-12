@@ -145,10 +145,9 @@ endif (NOT WIN32 AND NOT APPLE)
 
 target_link_libraries(nmapsi4
     ${QT5_LIBRARIES}
-    ${QT5_QTWEBKIT_LIBRARY}
     ${QT5_QTNETWORK_LIBRARY}
     Qt5::Widgets
-    Qt5::WebKitWidgets
+    Qt5::WebEngineWidgets
     Qt5::DBus
     Qt5::Quick
     )
