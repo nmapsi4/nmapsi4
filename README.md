@@ -8,8 +8,9 @@ security net scanner.
 
 ## Download:
 
-<https://github.com/nmapsi4/nmapsi4/releases>
-<https://sourceforge.net/projects/nmapsi/>
+Github: <https://github.com/nmapsi4/nmapsi4/releases>
+
+SourceForge: <https://sourceforge.net/projects/nmapsi/>
 
 ## HomePage:
 
