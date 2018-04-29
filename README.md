@@ -19,7 +19,7 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
 ## Required for build:
 
 * cmake >= 2.8.2
-* Qt5 >= 5.2
+* Qt5 >= 5.4
 * qtwebkit
 
 ## Required for runtime:
