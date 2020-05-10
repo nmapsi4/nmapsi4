@@ -5,6 +5,9 @@ set(VERSION_MINOR 4)
 set(VERSION_PATCH 80)
 set(VERSION  ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 cmake_minimum_required(VERSION 2.8.2)
 
@@ -41,11 +44,7 @@ include_directories(${QT5_USE_FILE})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
 
-add_definitions(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-
-if(UNIX)
-   add_definitions(-std=c++0x)
-endif()
+add_definitions(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING)
 
 if (WIN32)
     include(CMakeMinGWFindMake)
@@ -69,7 +68,7 @@ CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
                 IMMEDIATE @ONLY )
 
 message("-------------------------------------------------------------------")
-message(" Required for build:   qt5-dev (>>= 5.2.0) ")
+message(" Required for build:   qt5-dev (>>= 5.4.0) ")
 message(" Required for runtime: nmap+nping ( >= 6.00 ), dig ")
 message("-------------------------------------------------------------------")
 

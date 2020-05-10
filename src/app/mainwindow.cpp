@@ -424,7 +424,6 @@ void MainWindow::closeEvent(QCloseEvent * event)
             m_monitor->clearHostMonitor();
             saveSettings();
             event->accept();
-            delete this;
             break;
         case QMessageBox::Cancel:
             event->ignore();
@@ -435,7 +434,6 @@ void MainWindow::closeEvent(QCloseEvent * event)
         // Save Ui settings
         saveSettings();
         event->accept();
-        delete this;
     }
 }
 
