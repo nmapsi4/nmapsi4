@@ -14,13 +14,13 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
 
 ## HomePage:
 
-<http://www.nmapsi4.org>
+<https://github.com/nmapsi4/nmapsi4>
 
 ## Required for build:
 
 * cmake >= 2.8.2
 * Qt5 >= 5.4
-* qtwebkit
+* webenginewidgets
 
 ## Required for runtime:
 
@@ -44,9 +44,6 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
     $ make
     $ make install (only root) or create a package for your disto ;)
 
-## Packages:
-
-Visit <http://www.nmapsi4.org>
 
 ## Info for admin desktop file:
 
@@ -55,17 +52,9 @@ nmapsi4-admin.desktop uses by default kdesu for execute nmap with root uid.
 However, it is possible change kdesu in the desktop file:
 nmapsi4-admin.desktop: Exec=kdesu nmapsi4 with Exec=[what you want] nmapsi4
 
-## Build on MS Windows:
-
-visit: <http://www.nmapsi4.org>
-
-## Build on Mac Osx:
-
-Read: <http://www.nmapsi4.org/node/38>
-
 ## Contributing
 
-Report bugs on <http://bugs.nmapsi4.org>
+Report bugs on <https://github.com/nmapsi4/nmapsi4/issues>
 
 Clone git repository with:
 
