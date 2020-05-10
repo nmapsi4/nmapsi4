@@ -22,8 +22,6 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
 * Qt5 >= 5.4
 * webenginewidgets
 
-NOTE: 
-
 ## Required for runtime:
 
 * nmap + nping >= 6.00
