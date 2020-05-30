@@ -716,7 +716,7 @@ void ActionManager::scanPortsInfoContextMenu()
         checkVuln.setEnabled(false);
     } else {
       // check for http port
-      foreach (QTreeWidgetItem* item, itemsList) {
+      for (QTreeWidgetItem* item : itemsList) {
 	  if (item->text(2).contains("http") && !item->text(2).contains("ssl")) {
 	      openUrl.setEnabled(true);
 	      break;

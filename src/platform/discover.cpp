@@ -50,7 +50,7 @@ QList<QNetworkInterface> Discover::getAllInterfaces(InterfaceOption option) cons
 
     QList<QNetworkInterface> interfacesWithAddress;
 
-    foreach(const QNetworkInterface & address, QNetworkInterface::allInterfaces()) {
+    for (const QNetworkInterface & address : QNetworkInterface::allInterfaces()) {
         if (address.addressEntries().size()) {
             interfacesWithAddress.append(address);
         }
@@ -85,7 +85,7 @@ QList<QNetworkAddressEntry> Discover::getAddressEntries(const QString interfaceN
 
 void Discover::fromList(const QStringList networkIpList, DiscoverManager *parent, QStringList parameters)
 {
-    foreach(const QString & host, networkIpList) {
+    for (const QString & host : networkIpList) {
         fromList(host, parent, parameters);
     }
 }

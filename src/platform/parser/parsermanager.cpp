@@ -168,7 +168,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
         bool isInfoStringFounded = false;
         // check for specific info
-        foreach (const QString& infoString, infoParserStringList) {
+        for (const QString& infoString : infoParserStringList) {
             if (tmpBufferLine.startsWith(infoString)) {
                 bufferInfo.append(tmpBufferLine);
                 bufferInfo.append("\n");
@@ -432,7 +432,7 @@ void ParserManager::showParserObj(int hostIndex)
     m_ui->m_scanWidget->comboScanLog->clear();
     m_ui->m_scanWidget->comboScanLog->insertItem(0, m_parserObjList[hostIndex]->getParameters());
 
-    foreach(const QString& token, m_parserObjList[hostIndex]->getHostInfo()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getHostInfo()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeHostDet);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -456,7 +456,7 @@ void ParserManager::showParserObj(int hostIndex)
 
     bool isPortDescriptionPresent = false;
     // Show open ports
-    foreach(const QString& token, m_parserObjList[hostIndex]->getPortOpen()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getPortOpen()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -467,7 +467,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show Close ports
-    foreach(const QString& token, m_parserObjList[hostIndex]->getPortClose()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getPortClose()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -477,7 +477,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show Filtered ports
-    foreach(const QString& token, m_parserObjList[hostIndex]->getPortFiltered()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getPortFiltered()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listWscan);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -512,7 +512,7 @@ void ParserManager::showParserObj(int hostIndex)
             root->setText(0, rootValue[0]);
         }
 
-        foreach(const QString& value, i.value()) {
+        for (const QString& value : i.value()) {
             QTreeWidgetItem *item = new QTreeWidgetItem(root);
             m_itemListScan.push_front(item);
 
@@ -545,7 +545,7 @@ void ParserManager::showParserObj(int hostIndex)
         }
     }
 
-    foreach(const QString& url, vulnUrlList) {
+    for (const QString& url : vulnUrlList) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_vulnerability->m_vulnerabilityWidget->treeVulnNseRecovered);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -555,7 +555,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show full scan log
-    foreach(const QString& token, m_parserObjList[hostIndex]->getFullScanLog()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getFullScanLog()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listScan);
         m_itemListScan.push_front(root);
 
@@ -572,7 +572,7 @@ void ParserManager::showParserObj(int hostIndex)
     }
 
     // Show scan error
-    foreach(const QString& token, m_parserObjList[hostIndex]->getErrorScan()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getErrorScan()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->listScanError);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -585,7 +585,7 @@ void ParserManager::showParserObj(int hostIndex)
 void ParserManager::showParserObjPlugins(int hostIndex)
 {
     // show traceroute
-    foreach(const QString& token, m_parserObjList[hostIndex]->getTraceRouteInfo()) {
+    for (const QString& token : m_parserObjList[hostIndex]->getTraceRouteInfo()) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeTraceroot);
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -629,9 +629,9 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     }
 
     // show lookUp info
-    foreach(PObjectLookup * elem, m_parserObjUtilList) {
+    for (PObjectLookup * elem : m_parserObjUtilList) {
         if (m_parserObjList[hostIndex]->getId() == elem->getId()) {
-            foreach(const QString& token, elem->getInfoLookup()) {
+            for (const QString& token : elem->getInfoLookup()) {
                 QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeLookup);
                 m_itemListScan.push_front(root);
                 root->setSizeHint(0, QSize(22, 22));

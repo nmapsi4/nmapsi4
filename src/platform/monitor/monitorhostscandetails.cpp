@@ -39,7 +39,7 @@ MonitorDetails::~MonitorDetails()
 
 void MonitorDetails::loadFlow()
 {
-    foreach(const QString & token, m_scanLines) {
+    for (const QString & token : m_scanLines) {
         QListWidgetItem *item_ = new QListWidgetItem(detailsListW);
         m_itemsList.push_back(item_);
         if (token.contains("open")) {

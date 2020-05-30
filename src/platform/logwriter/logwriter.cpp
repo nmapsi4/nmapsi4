@@ -28,7 +28,7 @@ void LogWriter::writeAllLogFile(QList<PObject*> pObjectList, const QString& path
     /*
      * TODO: create index.html if logType == HtmlLog
      */
-    Q_FOREACH(PObject * object, pObjectList) {
+    for (PObject * object : pObjectList) {
         if (object->isValidObject()) {
             QString pathTmp(path);
             if (!pathTmp.endsWith(QDir::toNativeSeparators("/"))) {
@@ -95,31 +95,31 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "|---------- Services" << "\n\n";
 
     // Open Ports
-    Q_FOREACH(const QString & token, m_pObject->getPortOpen()) {
+    for (const QString & token : m_pObject->getPortOpen()) {
         fileStream << token << "\n";
     }
 
     // close Ports
-    Q_FOREACH(const QString & token, m_pObject->getPortClose()) {
+    for (const QString & token : m_pObject->getPortClose()) {
         fileStream << token << "\n";
     }
 
     // filtered/unfilteres Ports
-    Q_FOREACH(const QString & token, m_pObject->getPortFiltered()) {
+    for (const QString & token : m_pObject->getPortFiltered()) {
         fileStream << token << "\n";
     }
 
     fileStream << "\n|---------- General information" << "\n\n";
 
     // filtered/unfilteres Ports
-    Q_FOREACH(const QString & token, m_pObject->getHostInfo()) {
+    for (const QString & token : m_pObject->getHostInfo()) {
         fileStream << token << "\n";
     }
 
     fileStream << "\n|---------- Traceroute information" << "\n\n";
 
     // Traceroute info
-    Q_FOREACH(const QString & token, m_pObject->getTraceRouteInfo()) {
+    for (const QString & token : m_pObject->getTraceRouteInfo()) {
         fileStream << token << "\n";
     }
 
@@ -132,7 +132,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     for (i = nseResult.constBegin(); i != nseResult.constEnd(); ++i) {
         fileStream << "\n--- " << i.key() << "\n\n";
 
-        Q_FOREACH(const QString & value, i.value()) {
+        for (const QString & value : i.value()) {
             fileStream << value << "\n";
         }
     }
@@ -140,7 +140,7 @@ void LogWriter::writeFancyLogFormat(const QString& path)
     fileStream << "\n|---------- Scan Errors/Warning" << "\n\n";
 
     // scan errors/Warning
-    Q_FOREACH(const QString & token, m_pObject->getErrorScan()) {
+    for (const QString & token : m_pObject->getErrorScan()) {
         fileStream << token << "\n";
     }
 
@@ -159,7 +159,7 @@ void LogWriter::writeRawLogFormat(const QString& path)
 
     QTextStream fileStream(filePtr);
 
-    Q_FOREACH(const QString & token, m_pObject->getFullScanLog()) {
+    for (const QString & token : m_pObject->getFullScanLog()) {
         fileStream << token << "\n";
     }
 
@@ -208,7 +208,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Open Ports
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Services</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH(const QString & token, m_pObject->getPortOpen()) {
+    for (const QString & token : m_pObject->getPortOpen()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -221,7 +221,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     }
 
     // close Ports
-    Q_FOREACH(const QString & token, m_pObject->getPortClose()) {
+    for (const QString & token : m_pObject->getPortClose()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -234,7 +234,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     }
 
     // filtered/unfilteres Ports
-    Q_FOREACH(const QString & token, m_pObject->getPortFiltered()) {
+    for (const QString & token : m_pObject->getPortFiltered()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -252,7 +252,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Info
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>General information</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH(const QString & token, m_pObject->getHostInfo()) {
+    for (const QString & token : m_pObject->getHostInfo()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -268,7 +268,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // Traceroute
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Traceroute information</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH(const QString & token, m_pObject->getTraceRouteInfo()) {
+    for (const QString & token : m_pObject->getTraceRouteInfo()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -285,7 +285,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
     // scan errors/Warning
     htmlPage += "<div class=\"container\"><div class=\"title\"><b>Scan Errors/Warning</b></div>";
     htmlPage += "<div class=\"result\">";
-    Q_FOREACH(const QString & token, m_pObject->getErrorScan()) {
+    for (const QString & token : m_pObject->getErrorScan()) {
         if (index % 2 == 0) {
             htmlPage += "<div class=\"resultWhite\">";
         } else {
@@ -311,7 +311,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         htmlPage += "</div>";
 
         htmlPage += "<div class=\"result\">";
-        Q_FOREACH(const QString & value, i.value()) {
+        for (const QString & value : i.value()) {
             if (index % 2 == 0) {
                 htmlPage += "<div class=\"resultWhite\">";
             } else {

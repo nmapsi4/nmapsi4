@@ -242,7 +242,7 @@ void MainWindow::takeHostFromBookmark()
 void MainWindow::copyTextFromHostInfoTree()
 {
     QString clipLine;
-    foreach (QTreeWidgetItem* item, m_scanWidget->treeHostDet->selectedItems()) {
+    for (QTreeWidgetItem* item : m_scanWidget->treeHostDet->selectedItems()) {
         clipLine.append(item->text(0));
         clipLine.append('\n');
     }
@@ -252,7 +252,7 @@ void MainWindow::copyTextFromHostInfoTree()
 void MainWindow::copyTextFromScanPortsTree()
 {
     QString clipLine;
-    foreach (QTreeWidgetItem* item, m_scanWidget->listWscan->selectedItems()) {
+    for (QTreeWidgetItem* item : m_scanWidget->listWscan->selectedItems()) {
         clipLine.append(item->text(0) + ' ' + item->text(1) + ' ' + item->text(2) + ' ' + item->text(3));
         clipLine.append('\n');
     }
@@ -262,7 +262,7 @@ void MainWindow::copyTextFromScanPortsTree()
 void MainWindow::copyTextFromScanFullOutputTree()
 {
     QString clipLine;
-    foreach (QTreeWidgetItem* item, m_scanWidget->listScan->selectedItems()) {
+    for (QTreeWidgetItem* item : m_scanWidget->listScan->selectedItems()) {
         clipLine.append(item->text(0));
         clipLine.append('\n');
     }
@@ -965,7 +965,7 @@ void MainWindow::loadTargetListFromFile()
         }
 
         int tokenCounter = 0;
-        foreach(const QString& token, tmpLine.split(',')) {
+        for (const QString& token : tmpLine.split(',')) {
             // It's a ip or dns
             QHostAddress addressProtocol(token);
             if ((addressProtocol.protocol() == QAbstractSocket::IPv4Protocol)

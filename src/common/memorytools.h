@@ -57,7 +57,7 @@ inline void memory::freelist<T>::itemDeleteAll(QList<T>& items)
 template <class T>
 inline void memory::freelist<T>::itemDeleteAllWithWait(QList<T>& items)
 {
-    foreach(T pointer, items) {
+    for (T pointer : items) {
         pointer->quit();
         pointer->wait();
     }
@@ -71,7 +71,7 @@ inline void memory::freemap<T, U>::itemDeleteAll(QHash<T, U>& items)
     /*
      * Clear QHash
      */
-    foreach(U ptrTmp, items) {
+    for (U ptrTmp : items) {
         delete ptrTmp;
     }
 
@@ -82,7 +82,7 @@ template <class T, class U>
 inline void memory::freemap<T, U>::itemDeleteAllWithWait(QHash<T, U>& items)
 {
     // scan thread quit
-    foreach(U ptrTmp, items) {
+    for (U ptrTmp : items) {
         ptrTmp->quit();
         ptrTmp->wait();
     }

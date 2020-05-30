@@ -128,7 +128,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                         values.remove("--script=");
 
                         QStringList scripts = values.split(',', QString::SkipEmptyParts);
-                        foreach(const QString & script, scripts) {
+                        for (const QString & script : scripts) {
                             if (m_ui->m_nseManager->nseTreeActiveSingleScript(script)) {
                                 scripts.removeAt(script.indexOf(script));
                             }
@@ -484,7 +484,7 @@ QStringList Profiler::buildExtensions()
         QString tmpListArgs_;
 
         // read nse category actived
-        Q_FOREACH(const QString & token, m_ui->m_nseManager->getActiveNseScript()) {
+        for (const QString & token : m_ui->m_nseManager->getActiveNseScript()) {
             tmpList_.append(token);
             tmpList_.append(",");
         }
@@ -492,7 +492,7 @@ QStringList Profiler::buildExtensions()
         // load nse manual script
         if (!m_ui->m_dialogUi->comboNseInv->lineEdit()->text().isEmpty()) {
             QStringList manualNse = m_ui->m_dialogUi->comboNseInv->lineEdit()->text().split(',');
-            Q_FOREACH(const QString & token, manualNse) {
+            for (const QString & token : manualNse) {
                 tmpList_.append(token);
                 tmpList_.append(",");
             }
@@ -508,7 +508,7 @@ QStringList Profiler::buildExtensions()
             QString argsClean = m_ui->m_dialogUi->comboNsePar->lineEdit()->text().remove('"');
             argsClean = argsClean.remove('\'');
             QStringList argsNse = argsClean.split(',');
-            Q_FOREACH(const QString & token, argsNse) {
+            for (const QString & token : argsNse) {
                 tmpListArgs_.append(token);
                 tmpListArgs_.append(",");
             }

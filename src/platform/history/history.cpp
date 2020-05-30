@@ -145,7 +145,7 @@ QList<QTreeWidgetItem*> History::updateBookMarks()
 
     if (!baseList.isEmpty() && !optionalList.isEmpty()) {
         short index = 0;
-        foreach(const QString & item, baseList) {
+        for (const QString & item : baseList) {
             QTreeWidgetItem* historyItem = new QTreeWidgetItem(m_treeWidget);
             historyItem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/bookmark.png")));
             ItemListHistory.push_front(historyItem);

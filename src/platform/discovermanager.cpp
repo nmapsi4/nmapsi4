@@ -89,7 +89,7 @@ void DiscoverManager::syncSettings()
 
 bool DiscoverManager::activeIpContains(const QString ipAddress)
 {
-    foreach(QTreeWidgetItem * item, m_listTreeItemDiscover) {
+    for (QTreeWidgetItem * item : m_listTreeItemDiscover) {
         if (item->text(0) == ipAddress) {
             return true;
         }
@@ -105,7 +105,7 @@ void DiscoverManager::loadFoundInterfaces()
     m_discoverWidget->comboDiscover->insertItem(0, "Select Interface");
 
     Discover *discoverPtr = new Discover(m_userid);
-    foreach(const QNetworkInterface & interface, discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress)) {
+    for (const QNetworkInterface & interface : discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress)) {
         if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
             //TODO: readable name for windows - humanReadableName()
             //ID is configurable on MS windows.
@@ -298,7 +298,7 @@ void DiscoverManager::scanSingleDiscoveredIp()
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        foreach(QTreeWidgetItem * item, m_discoverWidget->treeDiscover->selectedItems()) {
+        for (QTreeWidgetItem * item : m_discoverWidget->treeDiscover->selectedItems()) {
             m_ui->updateComboHostnameProperties();
             m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
@@ -312,7 +312,7 @@ void DiscoverManager::scanAllDiscoveredIps()
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        foreach(QTreeWidgetItem * item, m_listTreeItemDiscover) {
+        for (QTreeWidgetItem * item : m_listTreeItemDiscover) {
             m_ui->updateComboHostnameProperties();
             m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
