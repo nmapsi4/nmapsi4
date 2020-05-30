@@ -32,7 +32,7 @@ Monitor::Monitor(MainWindow* parent)
 {
 #if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
     new Nmapsi4Adaptor(this);
-    // FIXME: with full mode It is registrered into root dbus session
+    // NOTE: with full mode It is registrered into root dbus session
     QDBusConnection dbus = QDBusConnection::sessionBus();
 //     if (!dbus.isConnected())
 //     {

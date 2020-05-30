@@ -401,7 +401,6 @@ void ActionManager::createSectionsBar()
     QToolButton* actionButt;
 
     m_rightSectionBar->setIconSize(QSize(26,26));
-    // FIXME: qtoolbutton problem with textunderIcon
 
     actionButt = new QToolButton(m_rightSectionBar);
     actionButt->setIcon(QIcon(QString::fromUtf8(":/images/icons/128x128/nmapsi4.png")));
