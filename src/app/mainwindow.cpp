@@ -112,10 +112,19 @@ void MainWindow::initObject()
             this, &MainWindow::clearHostnameCombo);
     connect(m_scanWidget->pushButtonLoadFromFile, &QPushButton::clicked,
             this, &MainWindow::loadTargetListFromFile);
-    connect(m_scanWidget->comboParametersProfiles, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
+
+    //connect(m_scanWidget->comboParametersProfiles, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
+    //        this, &MainWindow::comboParametersSelectedEvent);
+
+    connect(m_scanWidget->comboParametersProfiles, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::comboParametersSelectedEvent);
-    connect(m_scanWidget->comboHostBook, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
-            this, &MainWindow::quickAddressSelectionEvent);
+
+    //connect(m_scanWidget->comboHostBook, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
+    //        this, &MainWindow::quickAddressSelectionEvent);
+
+    connect(m_scanWidget->comboHostBook, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,  &MainWindow::quickAddressSelectionEvent);
+
     connect(m_scanWidget->hostEdit->lineEdit(), &QLineEdit::returnPressed,
             this, &MainWindow::startScan);
     connect(m_scanWidget->hostEdit->lineEdit(), &QLineEdit::cursorPositionChanged,
@@ -304,7 +313,7 @@ void MainWindow::startScan()
     // check for ip range (x.x.x.x/x)
     if (hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
         // is a ip list
-        QStringList addressToken = hostname.split('/', QString::SkipEmptyParts);
+        QStringList addressToken = hostname.split(QChar('/'), Qt::SkipEmptyParts);
 
         if (addressToken.isEmpty() || addressToken.size() < 2) {
             // TODO: wrong ip range
@@ -339,7 +348,7 @@ void MainWindow::startScan()
     //scan token DNS/IP parser
     if (hostname.contains(" ")) {
         // space delimiter
-        QStringList addrPart_ = hostname.split(' ', QString::SkipEmptyParts);
+        QStringList addrPart_ = hostname.split(QChar(' '), Qt::SkipEmptyParts);
         // check for only one space in hostname
         if (addrPart_.size() > 1) {
             // multiple ip or dns to scan
@@ -893,6 +902,7 @@ void MainWindow::buildScanProfileList()
 
 void MainWindow::comboParametersSelectedEvent()
 {
+    qDebug() << "DEBUG: test for new signal implemented";
     // insert profile from comboPar to comboAdv
     int currentProfileIndex = m_scanWidget->comboParametersProfiles->currentIndex();
 

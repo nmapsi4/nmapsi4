@@ -33,7 +33,7 @@ ProfilerManager::ProfilerManager(const QString profileName, const QString parame
     Q_UNUSED(parent);
     initObject();
     // restore values
-    QStringList parametersList = parameters.split(' ', QString::SkipEmptyParts);
+    QStringList parametersList = parameters.split(QChar(' '), Qt::SkipEmptyParts);
 
     m_dialogUi->profileNameLine->setText(profileName);
     m_profiler->restoreValuesFromProfile(parametersList);

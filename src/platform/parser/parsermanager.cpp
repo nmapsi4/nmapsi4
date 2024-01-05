@@ -462,7 +462,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
         root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
-        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        QStringList split = token.split(QChar(' '), Qt::SkipEmptyParts);
         setPortItem(root, split, isPortDescriptionPresent);
     }
 
@@ -472,7 +472,7 @@ void ParserManager::showParserObj(int hostIndex)
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_red.png")));
-        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        QStringList split = token.split(QChar(' '), Qt::SkipEmptyParts);
         setPortItem(root, split, isPortDescriptionPresent);
     }
 
@@ -483,7 +483,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
         root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
-        QStringList split = token.split(' ', QString::SkipEmptyParts);
+        QStringList split = token.split(QChar(' '), Qt::SkipEmptyParts);
         setPortItem(root, split, isPortDescriptionPresent);
     }
 
@@ -504,7 +504,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
 
-        QStringList rootValue = i.key().split(' ', QString::SkipEmptyParts);
+        QStringList rootValue = i.key().split(QChar(' '), Qt::SkipEmptyParts);
 
         if (rootValue.size() >= 3) {
             root->setText(0, rootValue[0] + ' ' + rootValue[2]);
@@ -590,7 +590,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/traceroute.png")));
-        QStringList tmpToken = token.split(' ', QString::SkipEmptyParts);
+        QStringList tmpToken = token.split(QChar(' '), Qt::SkipEmptyParts);
 
         // MS windows check for ms string
         if (tmpToken.size() == 5) {

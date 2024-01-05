@@ -499,14 +499,14 @@ void DiscoverManager::splitCIDRAddressPasted()
         return;
     }
 
-    QStringList addressPart = cidrAddress.split('/', QString::SkipEmptyParts);
+    QStringList addressPart = cidrAddress.split(QChar('/'), Qt::SkipEmptyParts);
 
     if (addressPart.size() != 2) {
         m_discoverWidget->discoverCIDRPasteCombo->lineEdit()->setStyleSheet(negativeBackground);
         return;
     }
 
-    QStringList network = addressPart[0].split('.', QString::SkipEmptyParts);
+    QStringList network = addressPart[0].split(QChar('.'), Qt::SkipEmptyParts);
 
     if (network.size() != 4 || network[0].toInt() > 255
             || network[1].toInt() > 255

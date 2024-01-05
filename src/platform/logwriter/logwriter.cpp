@@ -176,7 +176,7 @@ void LogWriter::writeHtmlLogFormat(const QString& path)
         return;
     }
 
-    QStringList scanValues = m_pObject->getHostName().split(' ', QString::SkipEmptyParts);
+    QStringList scanValues = m_pObject->getHostName().split(QChar(' '), Qt::SkipEmptyParts);
     const QString& hostName = scanValues[scanValues.size() - 1];
 
     QString htmlPage;

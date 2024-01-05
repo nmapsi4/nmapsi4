@@ -103,7 +103,7 @@ void BookmarkManager::saveItemToBookmarks(QString value)
         History *history_ = new History(m_scanBookmarkWidget->treeLogH, "nmapsi4/urlList", "nmapsi4/urlListTime", -1);
 
         // save list of address
-        QStringList hostList = value.split(' ', QString::KeepEmptyParts);
+        QStringList hostList = value.split(QChar(' '), Qt::KeepEmptyParts);
 
         for (const QString & host : hostList) {
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));

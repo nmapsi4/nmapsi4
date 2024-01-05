@@ -127,7 +127,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                         QString values = parameters[index];
                         values.remove("--script=");
 
-                        QStringList scripts = values.split(',', QString::SkipEmptyParts);
+                        QStringList scripts = values.split(QChar(','), Qt::SkipEmptyParts);
                         for (const QString & script : scripts) {
                             if (m_ui->m_nseManager->nseTreeActiveSingleScript(script)) {
                                 scripts.removeAt(script.indexOf(script));
