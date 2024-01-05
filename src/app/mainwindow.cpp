@@ -113,14 +113,8 @@ void MainWindow::initObject()
     connect(m_scanWidget->pushButtonLoadFromFile, &QPushButton::clicked,
             this, &MainWindow::loadTargetListFromFile);
 
-    //connect(m_scanWidget->comboParametersProfiles, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
-    //        this, &MainWindow::comboParametersSelectedEvent);
-
     connect(m_scanWidget->comboParametersProfiles, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::comboParametersSelectedEvent);
-
-    //connect(m_scanWidget->comboHostBook, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::currentIndexChanged),
-    //        this, &MainWindow::quickAddressSelectionEvent);
 
     connect(m_scanWidget->comboHostBook, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,  &MainWindow::quickAddressSelectionEvent);
