@@ -54,8 +54,9 @@ DiscoverManager::DiscoverManager(MainWindow* parent)
     m_discoverWidget->treeTracePackets->setIconSize(QSize(22, 22));
     m_discoverWidget->treeDiscover->setIconSize(QSize(22, 22));
 
-    connect(m_discoverWidget->comboDiscover, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::activated),
+    connect(m_discoverWidget->comboDiscover, static_cast<void (QComboBox::*)(const QString&)>(&QComboBox::textActivated),
             this, &DiscoverManager::discoverIp);
+
     connect(m_discoverWidget->startDiscoverButt, &QPushButton::clicked,
             this, &DiscoverManager::startDiscoverIpsFromRange);
     connect(m_discoverWidget->cidrButton, &QPushButton::clicked,

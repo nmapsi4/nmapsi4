@@ -902,7 +902,6 @@ void MainWindow::buildScanProfileList()
 
 void MainWindow::comboParametersSelectedEvent()
 {
-    qDebug() << "DEBUG: test for new signal implemented";
     // insert profile from comboPar to comboAdv
     int currentProfileIndex = m_scanWidget->comboParametersProfiles->currentIndex();
 
