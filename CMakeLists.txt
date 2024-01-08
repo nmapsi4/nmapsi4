@@ -41,8 +41,8 @@ else (NOT WIN32 AND NOT APPLE)
 	REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
 
-add_definitions (${QT5_DEFINITIONS})
-include_directories(${QT5_USE_FILE})
+add_definitions (${QT_DEFINITIONS})
+include_directories(${QT_USE_FILE})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
 
