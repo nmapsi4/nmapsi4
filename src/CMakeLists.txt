@@ -17,7 +17,7 @@ include_directories(${CMAKE_SOURCE_DIR}
 
 
 if (NOT WIN32 AND NOT APPLE)
-QT5_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
+QT_ADD_DBUS_ADAPTOR(nmapsi4adaptor_SRCS
     dbus/org.nmapsi4.Nmapsi4.xml
     src/platform/monitor/monitor.h
     Monitor
@@ -111,9 +111,9 @@ SET(RESOURCES_QRC
     qml.qrc
     )
 
-qt5_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
-qt5_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
-qt5_wrap_cpp(SOURCES_MOC_H ${SOURCES_MOC} )
+qt_add_resources(RESOURCES_QRC_SOURCES  ${RESOURCES_QRC} )
+qt_wrap_ui(SOURCES_UI_H ${SOURCES_UI})
+qt_wrap_cpp(SOURCES_MOC_H ${SOURCES_MOC} )
 
 SET(TRANSLATIONS_FILES
     ts/nmapsi4_it.ts
@@ -125,9 +125,9 @@ SET(TRANSLATIONS_FILES
     ts/nmapsi4_ca.ts
     )
 
-qt5_add_translation(qms ${TRANSLATIONS_FILES})
+qt_add_translation(qms ${TRANSLATIONS_FILES})
 
-INCLUDE_DIRECTORIES( ${QT5_INCLUDE_DIR} )
+INCLUDE_DIRECTORIES( ${QT_INCLUDE_DIR} )
 
 if (NOT WIN32 AND NOT APPLE)
     ADD_EXECUTABLE(nmapsi4 ${SOURCES_MOC} ${SOURCES_CPP} ${SOURCES_MOC_H} ${SOURCES_UI_H} ${RESOURCES_QRC_SOURCES} ${qms})
@@ -144,17 +144,18 @@ elseif(APPLE)
 endif (NOT WIN32 AND NOT APPLE)
 
 target_link_libraries(nmapsi4
-    ${QT5_LIBRARIES}
-    ${QT5_QTNETWORK_LIBRARY}
-    Qt5::Widgets
-    Qt5::WebEngineWidgets
-    Qt5::DBus
-    Qt5::Quick
+    ${QT_LIBRARIES}
+    ${QT_QTNETWORK_LIBRARY}
+    Qt6::Widgets
+    Qt6::WebEngineWidgets
+    Qt6::DBus
+    Qt6::Quick
+    Qt6::Core5Compat
     )
 
 if (NOT WIN32 AND NOT APPLE)
     target_link_libraries(nmapsi4
-        ${QT5_QTDBUS_LIBRARY}
+        ${QT_QTDBUS_LIBRARY}
         )
 endif (NOT WIN32 AND NOT APPLE)
 

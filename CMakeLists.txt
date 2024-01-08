@@ -7,35 +7,37 @@ set(VERSION  ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
 PROJECT( nmapsi4 )
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt5 5.15.0 COMPONENTS
+    FIND_PACKAGE(Qt6 6.4.0 COMPONENTS
 	Core 
 	Widgets 
 	Network 
 	WebEngineWidgets
 	DBus 
-	Script 
+	#Script
 	LinguistTools 
 	Quick
 	Qml
 	Gui
+	Core5Compat
 	REQUIRED)
 else (NOT WIN32 AND NOT APPLE)
-    FIND_PACKAGE(Qt5 5.15.0
+    FIND_PACKAGE(Qt6 6.4.0
 	COMPONENTS 
 	Core 
 	Widgets 
 	Network 
 	WebEngineWidgets
-	Script 
+	#Script
 	LinguistTools 
 	Quick
 	Qml
 	Gui
+	Core5Compat
 	REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
 
@@ -68,7 +70,7 @@ CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake_uninstall.cmake.in"
                 IMMEDIATE @ONLY )
 
 message("-------------------------------------------------------------------")
-message(" Required for build:   qt5-dev (>>= 5.15.0) ")
+message(" Required for build:   qt6-dev (>>= 6.4.0) ")
 message(" Required for runtime: nmap+nping ( >= 6.00 ), dig ")
 message("-------------------------------------------------------------------")
 

@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTreeWidgetItem>
 #include <QMessageBox>
 #include <QSplitter>
+#include <QRegExp>
 
 // local inclusion
 #include "pobjects.h"

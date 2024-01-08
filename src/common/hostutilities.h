@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOSTUTILITIES_H
 
 #include <QtCore/QString>
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #include <QTreeWidgetItem>
 #include <QtNetwork/QHostAddress>
 

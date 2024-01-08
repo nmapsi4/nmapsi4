@@ -285,7 +285,7 @@ void ActionManager::setupActions()
     action = new QAction(m_ui);
     action->setText(tr("F&ull Screen Mode"));
     action->setCheckable(true);
-    action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_F11);
+    action->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_F11);
     action->setIcon(QIcon::fromTheme("view-fullscreen", QIcon(":/images/images/view-fullscreen.png")));
     m_collectionsScanSection.insert("fullscreen-action", action);
     connect(action, &QAction::triggered, m_ui, &MainWindow::setFullScreen);

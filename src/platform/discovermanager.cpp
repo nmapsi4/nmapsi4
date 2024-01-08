@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "discovermanager.h"
 #include "mainwindow.h"
 
+#include <QRegExp>
+
 DiscoverWidget::DiscoverWidget(QWidget* parent): QWidget(parent)
 {
     setupUi(this);
