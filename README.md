@@ -19,7 +19,7 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
 ## Required for build:
 
 * cmake >= 3.16.0
-* Qt5 >= 5.15.0
+* Qt6 >= 6.4.0
 * webenginewidgets
 
 ## Required for runtime:
