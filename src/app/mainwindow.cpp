@@ -291,7 +291,7 @@ void MainWindow::quickAddressSelectionEvent()
 void MainWindow::startScan()
 {
     if (m_scanWidget->hostEdit->currentText().isEmpty()) {
-        QMessageBox::warning(this, "NmapSI4", tr("Insert an host/ip address to scan\n"), tr("Close"));
+        QMessageBox::warning(this, "NmapSI4", tr("Insert an host/ip address to scan\n"));
         return;
     }
 
@@ -318,7 +318,7 @@ void MainWindow::startScan()
 
         if (addressProtocol.protocol() == QAbstractSocket::IPv6Protocol) {
             QMessageBox::warning(this, tr("Warning - Nmapsi4"),
-                                 tr("IPv6 Protocol range scan is not yet supported."), tr("Close"));
+                                 tr("IPv6 Protocol range scan is not yet supported."));
             return;
         }
 
@@ -370,7 +370,7 @@ void MainWindow::addHostToMonitor(const QString hostname)
 {
     // check for duplicate hostname in the monitor
     if (m_monitor->isHostOnMonitor(hostname)) {
-        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"), tr("Close"));
+        QMessageBox::warning(this, "NmapSI4", tr("Hostname already scanning\n"));
         return;
     }
 

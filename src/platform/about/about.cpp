@@ -31,7 +31,7 @@ About::About(QWidget *parent)
 
 const QString About::description()
 {
-    return QApplication::tr("NmapSi4 is a complete Qt5-based Gui with "
+    return QApplication::tr("NmapSi4 is a complete Qt6-based Gui with "
                             "the design goals to provide a complete nmap "
                             "interface for users, in order to manage al "
                             "option of this power security net scanner "
@@ -41,7 +41,7 @@ const QString About::description()
 
 const QString About::copyright()
 {
-    return QApplication::tr("(c) 2007-2015 Francesco Cecconi"
+    return QApplication::tr("(c) 2007-2024 Francesco Cecconi"
                             "<br/>License: GNU General Public License Version 2");
 
 }

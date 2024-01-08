@@ -40,6 +40,6 @@ void AddParametersToBookmark::exit()
         emit doneParBook(lineProfileName->text(), lineProfilePar->text());
         close();
     } else {
-        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or/and profile parameters."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or/and profile parameters."));
     }
 }

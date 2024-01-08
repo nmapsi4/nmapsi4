@@ -30,9 +30,12 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(images);
 
     QTranslator qtTranslator;
-    qtTranslator.load("qt_" + QLocale::system().name(),
-             QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    app.installTranslator(&qtTranslator);
+    bool translation = qtTranslator.load("qt_" + QLocale::system().name(),
+             QLibraryInfo::path(QLibraryInfo::TranslationsPath));
+
+    if (translation) {
+        app.installTranslator(&qtTranslator);
+    }
 
     QString translationsPath(Package::localePath());
 

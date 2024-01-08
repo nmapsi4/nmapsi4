@@ -144,7 +144,7 @@ void ProfilerManager::exit()
         emit doneParBook(m_dialogUi->profileNameLine->text(), parameters);
         close();
     } else {
-        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or selected the options."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("Insert profile name or selected the options."));
     }
 }
 
@@ -156,7 +156,7 @@ void ProfilerManager::exitWithQuickProfile()
         emit doneQuickProfile(parameters);
         close();
     } else {
-        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("No option selected."), tr("Close"));
+        QMessageBox::warning(this, tr("Warning - Nmapsi4"), tr("No option selected."));
     }
 
 }
@@ -271,7 +271,7 @@ void ProfilerManager::updateOptions()
 void ProfilerManager::updateComboVerbosity()
 {
     if (m_dialogUi->comboVerbosity->currentIndex() == 4) {
-        QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"), tr("Close"));
+        QMessageBox::warning(this, "NmapSI4", tr("Warning: Operation more expansive.\n"));
     }
 }
 

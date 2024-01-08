@@ -78,7 +78,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     if (!dataBuffer.size() && errorBuffer.size()) {
         QMessageBox::critical(m_ui, "NmapSI4", tr("Error: check nmap Installation.\n")
                               + "\n\n"
-                              + QString(errorBuffer), tr("Close"));
+                              + QString(errorBuffer));
         return;
     }
 

@@ -272,7 +272,7 @@ void ActionManager::setupActions()
     action = new QAction(m_ui);
     action->setText(tr("&Quit"));
     action->setIcon(QIcon::fromTheme("application-exit", QIcon(":/images/images/window-close.png")));
-    action->setShortcut(Qt::CTRL + Qt::Key_Q);
+    action->setShortcut(Qt::CTRL | Qt::Key_Q);
     m_collectionsScanSection.insert("quit-action", action);
     connect(action, &QAction::triggered, m_ui, &MainWindow::close);
 
@@ -293,7 +293,7 @@ void ActionManager::setupActions()
     action = new QAction(m_ui);
     action->setText(tr("Show &Menu Bar"));
     action->setCheckable(true);
-    action->setShortcut(Qt::CTRL + Qt::Key_M);
+    action->setShortcut(Qt::CTRL | Qt::Key_M);
     action->setIcon(QIcon(QString::fromUtf8(":/images/images/show-menu.png")));
     m_collectionsScanSection.insert("showmenubar-action", action);
     connect(action, &QAction::triggered, m_ui, &MainWindow::updateMenuBar);
