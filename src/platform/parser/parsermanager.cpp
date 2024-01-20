@@ -461,7 +461,7 @@ void ParserManager::showParserObj(int hostIndex)
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_green.png")));
-        root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+        root->setForeground(0, QBrush(QColor(27, 117, 9)));
         QStringList split = token.split(QChar(' '), Qt::SkipEmptyParts);
         setPortItem(root, split, isPortDescriptionPresent);
     }
@@ -482,7 +482,7 @@ void ParserManager::showParserObj(int hostIndex)
         m_itemListScan.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/flag_yellow.png")));
-        root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+        root->setForeground(0, QBrush(QColor(255, 0, 0)));
         QStringList split = token.split(QChar(' '), Qt::SkipEmptyParts);
         setPortItem(root, split, isPortDescriptionPresent);
     }
@@ -518,11 +518,11 @@ void ParserManager::showParserObj(int hostIndex)
 
             if (value.contains(":") && !value.contains("//")
                     && !value.contains("ERROR")) {
-                item->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+                item->setForeground(0, QBrush(QColor(27, 117, 9)));
             }
 
             if (value.contains("ERROR")) {
-                item->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+                item->setForeground(0, QBrush(QColor(255, 0, 0)));
             }
 
             item->setText(0, value);
@@ -560,11 +560,11 @@ void ParserManager::showParserObj(int hostIndex)
         m_itemListScan.push_front(root);
 
         if (token.contains("open")) {
-            root->setForeground(0, QBrush(QColor(0, 0, 255, 127)));
+            root->setForeground(0, QBrush(QColor(27, 117, 9)));
         } else if (token.contains("closed")) {
-            root->setForeground(0, QBrush(QColor(255, 0, 0, 127)));
+            root->setForeground(0, QBrush(QColor(255, 0, 0)));
         } else if (token.contains("filtered") || token.contains("unfiltered")) {
-            root->setForeground(0, QBrush(QColor(255, 134, 12, 127)));
+            root->setForeground(0, QBrush(QColor(255, 134, 12)));
         }
 
         root->setText(0, token);
@@ -621,7 +621,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
             root->setText(1, tmpToken[1]);
             root->setText(2, tmpToken[2]);
             root->setText(3, "no DNS");
-            root->setForeground(3, QBrush(QColor(255, 0, 0, 127)));
+            root->setForeground(3, QBrush(QColor(255, 0, 0)));
         } else {
             root->setText(0, token);
             root->setToolTip(0, token);

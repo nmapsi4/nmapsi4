@@ -43,11 +43,12 @@ void MonitorDetails::loadFlow()
         QListWidgetItem *item_ = new QListWidgetItem(detailsListW);
         m_itemsList.push_back(item_);
         if (token.contains("open")) {
-            item_->setForeground(QBrush(QColor(0, 0, 255, 127)));
+            item_->setForeground(QBrush(QColor(27, 117, 9)));
+            //item_->setForeground(QBrush(QColor(0, 0, 255, 127)));
         } else if (token.contains("closed")) {
-            item_->setForeground(QBrush(QColor(255, 0, 0, 127)));
+            item_->setForeground(QBrush(QColor(255, 0, 0)));
         } else if (token.contains("filtered") || token.contains("unfiltered")) {
-            item_->setForeground(QBrush(QColor(255, 134, 12, 127)));
+            item_->setForeground(QBrush(QColor(255, 134, 12)));
         }
 
         item_->setText(token);
@@ -64,11 +65,11 @@ void MonitorDetails::reloadFlow()
             QListWidgetItem *item_ = new QListWidgetItem(detailsListW);
             m_itemsList.push_back(item_);
             if (m_scanLines[i].contains("open")) {
-                item_->setForeground(QBrush(QColor(0, 0, 255, 127)));
+                item_->setForeground(QBrush(QColor(27, 117, 9)));
             } else if (m_scanLines[i].contains("closed")) {
-                item_->setForeground(QBrush(QColor(255, 0, 0, 127)));
+                item_->setForeground(QBrush(QColor(255, 0, 0)));
             } else if (m_scanLines[i].contains("filtered") || m_scanLines[i].contains("unfiltered")) {
-                item_->setForeground(QBrush(QColor(255, 134, 12, 127)));
+                item_->setForeground(QBrush(QColor(255, 134, 12)));
             }
 
             item_->setText(m_scanLines[i]);
