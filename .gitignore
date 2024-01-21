@@ -5,3 +5,4 @@ doxygen/*
 astyle-nmapsi4
 *.user*
 *.kdev4
+start-debug.sh

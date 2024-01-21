@@ -265,7 +265,7 @@ void Monitor::lookupFinisced(QHostInfo info, int state, const QString hostname)
     elemObjUtil->setHostName(hostname);
     const int infoSize_ = info.addresses().size();
     for (int index = 0; index < infoSize_; index++) {
-        elemObjUtil->setInfoLookup(info.addresses()[index].toString());
+        elemObjUtil->setInfoLookup(info.addresses().at(index).toString());
     }
 
     elemObjUtil->setId(m_hostIdList.value(hostname));
@@ -408,7 +408,7 @@ void Monitor::readFlowFromThread(const QString hostname, QByteArray lineData)
     /*
      * read data line form thread
      */
-    QHash<QString, QPair<QByteArray,QStringList> >::const_iterator i = m_scanHashListRealtime.find(hostname);
+    QHash<QString, QPair<QByteArray,QStringList> >::const_iterator i = m_scanHashListRealtime.constFind(hostname);
     QTextStream stream(lineData);
 
     if (i == m_scanHashListRealtime.constEnd()) {

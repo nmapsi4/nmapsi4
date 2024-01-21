@@ -50,7 +50,7 @@ void NseManager::requestNseHelp(QTreeWidgetItem *item, int column)
         m_ui->m_dialogUi->nseRemoveBut->setEnabled(true);
     }
     // search nse category on nse Cache
-    QHash<QString, QTextDocument*>::const_iterator i = m_nseHelpCache.find(item->text(0));
+    QHash<QString, QTextDocument*>::const_iterator i = m_nseHelpCache.constFind(item->text(0));
 
     if (i == m_nseHelpCache.constEnd()) {
         /*

@@ -1,14 +1,12 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=NmapSI4 - Full mode
-Comment=Is a Qt4 interface for nmap scanner
-Comment[ru]=Qt4 интерфейс для сканера nmap
-Comment[uk]=Qt4 інтерфейс для сканера nmap
-Comment[it]=Interfaccia Qt4 per nmap
-Exec=kdesu QTWEBENGINE_DISABLE_SANDBOX=1 nmapsi4
+Comment=Is a Qt6 interface for nmap scanner
+Comment[ru]=Qt6 интерфейс для сканера nmap
+Comment[uk]=Qt6 інтерфейс для сканера nmap
+Comment[it]=Interfaccia Qt6 per nmap
+Exec=pkexec nmapsi4
 Icon=nmapsi4
 Terminal=false
 Type=Application
-X-KDE-SubstituteUID=true
-X-KDE-Username=root
-X-GNOME-Username=root
 Categories=Qt;System;Security;

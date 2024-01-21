@@ -442,8 +442,8 @@ void MainWindow::closeEvent(QCloseEvent * event)
 
 void MainWindow::resizeVerticalSplitterEvent()
 {
-    if (!m_mainVerticalSplitter->sizes()[1]) {
-        qDebug() << "Vertical QWidget details:: " << m_mainVerticalSplitter->sizes()[1];
+    if (!m_mainVerticalSplitter->sizes().at(1)) {
+        qDebug() << "Vertical QWidget details:: " << m_mainVerticalSplitter->sizes().at(1);
         m_collections->m_collectionsButton.value("details-list")->setChecked(false);
     } else {
         m_collections->m_collectionsButton.value("details-list")->setChecked(true);
@@ -452,8 +452,8 @@ void MainWindow::resizeVerticalSplitterEvent()
 
 void MainWindow::resizeHorizontalSplitterEvent()
 {
-    if (!m_mainHorizontalSplitter->sizes()[0]) {
-        qDebug() << "Horizotal QWidget details:: " << m_mainHorizontalSplitter->sizes()[0];
+    if (!m_mainHorizontalSplitter->sizes().at(0)) {
+        qDebug() << "Horizotal QWidget details:: " << m_mainHorizontalSplitter->sizes().at(0);
         m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
     } else {
         m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
@@ -463,14 +463,14 @@ void MainWindow::resizeHorizontalSplitterEvent()
 void MainWindow::resizeHostDetailsWidgetEvent()
 {
     if (!m_collections->m_collectionsButton.value("details-list")->isChecked()
-            && m_mainVerticalSplitter->sizes()[1]) {
+        && m_mainVerticalSplitter->sizes().at(1)) {
         m_detailsWidgetSize = m_mainVerticalSplitter->saveState();
 
         QList<int> size = m_mainVerticalSplitter->sizes();
         size[1] = 0;
         m_mainVerticalSplitter->setSizes(size);
     } else if (m_collections->m_collectionsButton.value("details-list")->isChecked()
-               && !m_mainVerticalSplitter->sizes()[1]) {
+               && !m_mainVerticalSplitter->sizes().at(1)) {
 
         if (!m_detailsWidgetSize.isEmpty()) {
             // restore previous value
@@ -487,14 +487,14 @@ void MainWindow::resizeHostDetailsWidgetEvent()
 void MainWindow::resizeScanListWidgetEvent()
 {
     if (!m_collections->m_collectionsButton.value("scan-list")->isChecked()
-            && m_mainHorizontalSplitter->sizes()[0]) {
+        && m_mainHorizontalSplitter->sizes().at(0)) {
         m_scanListWidgetSize = m_mainHorizontalSplitter->saveState();
 
         QList<int> size = m_mainHorizontalSplitter->sizes();
         size[0] = 0;
         m_mainHorizontalSplitter->setSizes(size);
     } else if (m_collections->m_collectionsButton.value("scan-list")->isChecked()
-               && !m_mainHorizontalSplitter->sizes()[0]) {
+               && !m_mainHorizontalSplitter->sizes().at(0)) {
 
         if (!m_scanListWidgetSize.isEmpty()) {
             // restore previous value
@@ -596,7 +596,7 @@ void MainWindow::restoreSettings()
     if (!settings.value("splitterSizes").toByteArray().isEmpty()) {
         m_mainHorizontalSplitter->restoreState(settings.value("splitterSizes").toByteArray());
 
-        if (m_mainHorizontalSplitter->sizes()[0]) {
+        if (m_mainHorizontalSplitter->sizes().at(0)) {
             m_collections->m_collectionsButton.value("scan-list")->setChecked(true);
         } else {
             m_collections->m_collectionsButton.value("scan-list")->setChecked(false);
@@ -608,7 +608,7 @@ void MainWindow::restoreSettings()
     if (!settings.value("splitterSizesRight").toByteArray().isEmpty()) {
         m_mainVerticalSplitter->restoreState(settings.value("splitterSizesRight").toByteArray());
 
-        if (m_mainVerticalSplitter->sizes()[1]) {
+        if (m_mainVerticalSplitter->sizes().at(1)) {
             m_collections->m_collectionsButton.value("details-list")->setChecked(true);
         } else {
             m_collections->m_collectionsButton.value("details-list")->setChecked(false);

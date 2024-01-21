@@ -26,6 +26,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 int main(int argc, char *argv[])
 {
+    qputenv("QT_WIDGETS_RHI", "1");
+    qputenv("QTWEBENGINE_DISABLE_SANDBOX", "1");
+
     QApplication app(argc, argv);
     Q_INIT_RESOURCE(images);
 

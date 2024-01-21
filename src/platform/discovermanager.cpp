@@ -127,7 +127,7 @@ void DiscoverManager::discoverIp(const QString& interface)
     QList<QNetworkAddressEntry> entryList_ = discover_->getAddressEntries(interface);
 
     if (!entryList_.isEmpty()) {
-        QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).first();
+        QNetworkAddressEntry entry_ = discover_->getAddressEntries(interface).constFirst();
         QString ipAdressString = entry_.ip().toString();
 
         QHostAddress address(ipAdressString);
@@ -263,7 +263,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         m_discoverWidget->discoverProgressBar->setMaximum(100);
         Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 
-        QString message("> " + tr("Discover completed"));
+        //QString message("> " + tr("Discover completed"));
 
         // NOTE: no action
         //Notify::notificationMessage("Discover (RANGE)", message);
@@ -412,7 +412,7 @@ void DiscoverManager::endDiscoverIpsFromCIDR()
     m_discoverWidget->discoverProgressBar->setMaximum(100);
     Notify::clearButtonNotify(m_ui->m_collections->m_collectionsButton.value("discover-sez"));
 
-    QString message("> " + tr("Discover completed"));
+    //QString message("> " + tr("Discover completed"));
 
     // NOTE: no action
     //Notify::notificationMessage("Discover (CIDR)", message);

@@ -95,7 +95,8 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                     QString token = parameters[index];
                     QString option = parameters[index];
 
-                    option.remove(QRegularExpression("\\d+"));
+                    static QRegularExpression re("\\d+");
+                    option.remove(re);
                     option.remove(',');
                     token.remove(option);
 

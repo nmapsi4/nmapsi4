@@ -93,7 +93,7 @@ void ParserManager::startParser(const QStringList parList, QByteArray dataBuffer
     elemObj->setParameters(parList.join(" "));
     elemObj->setId(id);
 
-    QString message(tr("Scan completed"));
+    //QString message(tr("Scan completed"));
 
     // TODO: no action
     //Notify::notificationMessage(parList[parList.size()-1], message);
