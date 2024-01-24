@@ -305,7 +305,7 @@ void MainWindow::startScan()
     }
 
     // check for ip range (x.x.x.x/x)
-    if (hostname.contains("/") && !hostname.endsWith(QLatin1String("/")) && !hostname.contains("//")) {
+    if (hostname.contains("/") && !hostname.endsWith(u"/") && !hostname.contains("//")) {
         // is a ip list
         QStringList addressToken = hostname.split(QChar('/'), Qt::SkipEmptyParts);
 
@@ -335,7 +335,7 @@ void MainWindow::startScan()
             }
         }
         return;
-    } else if (hostname.endsWith(QLatin1String("/"))) {
+    } else if (hostname.endsWith(u"/")) {
         hostname.remove('/');
     }
 
@@ -858,9 +858,9 @@ void MainWindow::updateScanCounter(int hostNumber)
     }
 
     QString title(tr(" Active Scan ")
-                  + QLatin1String("(")
+                  + u"("
                   + QString("%1").arg(m_monitor->monitorHostNumber())
-                  + QLatin1String(")")
+                  + u")"
                   + " - Nmapsi4");
 
     setWindowTitle(title);

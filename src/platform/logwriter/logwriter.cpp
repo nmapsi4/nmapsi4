@@ -60,7 +60,7 @@ void LogWriter::writeSingleLogFile(PObject* pObject, const QString& path)
 
     int logType = settings.value("logType", 0).toInt();
 
-    if (path.endsWith(QLatin1String(".html"))) {
+    if (path.endsWith(u".html")) {
         // force html log format from file extension
         logType = HtmlLog;
     }

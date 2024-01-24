@@ -77,8 +77,8 @@ void DigManager::longDigAnswer(const QStringList hostname, QByteArray bufferData
 
     while (!stream1.atEnd()) {
         line = stream1.readLine();
-        if (!line.startsWith(QLatin1String(";;"))
-                && !line.startsWith(QLatin1String(";"))
+        if (!line.startsWith(u";;")
+                && !line.startsWith(u";")
                 && !line.isEmpty()) {
             m_elemObjUtil->setInfoLookup(line);
         }

@@ -67,7 +67,7 @@ QList<QTreeWidgetItem*> LogWriterXml::readXmlDiscoverLog(const QString& fileName
     QXmlStreamReader xmlReader(&xmlFile);
     while (!xmlReader.atEnd()) {
         if (xmlReader.readNextStartElement()) {
-            if (xmlReader.name().toString().startsWith(QLatin1String("config"))) {
+            if (xmlReader.name().toString().startsWith(u"config")) {
                 QString versionReaded = xmlReader.attributes().value("version").toString();
                 if (versionReaded.toDouble() == minConfigVersion) {
                     if (!readHosts(fileName, widget, treeWidgetItemlist)) {
@@ -92,7 +92,7 @@ bool LogWriterXml::readHosts(const QString& fileName, QTreeWidget* widget, QList
     QXmlStreamReader xmlReader(&xmlFile);
     while (!xmlReader.atEnd()) {
         if (xmlReader.readNextStartElement()) {
-            if (xmlReader.name().toString().startsWith(QLatin1String("host"))) {
+            if (xmlReader.name().toString().startsWith(u"host")) {
                 qDebug() << "READ TAG:: " << xmlReader.name().toString();
                 qDebug() << "READ TAG ip:: " << xmlReader.attributes().value("ip").toString();
                 qDebug() << "READ TAG data:: " << xmlReader.attributes().value("data").toString();
