@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=NmapSI4 - User mode
-Comment=Is a Qt6 interface for nmap scanner
-Comment[ru]=Qt6 интерфейс для сканера nmap
-Comment[uk]=Qt6 інтерфейс для сканера nmap
-Comment[it]=Interfaccia Qt6 per nmap
+Comment=Is a Qt interface for nmap scanner
+Comment[ru]=Qt интерфейс для сканера nmap
+Comment[uk]=Qt інтерфейс для сканера nmap
+Comment[it]=Interfaccia Qt per nmap
 Exec=nmapsi4
 Icon=nmapsi4
 Terminal=false
