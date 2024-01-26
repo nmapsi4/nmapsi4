@@ -40,11 +40,16 @@ void ProcessThread::run()
     connect(m_process, &QProcess::readyReadStandardOutput,
             this, &ProcessThread::readyReadData);
 
+    QString parameters = m_ParList.constFirst();
+    for (int index = 1; index < m_ParList.size(); index++)
+        parameters.append(" " + m_ParList.at(index));
+
 #ifndef THREAD_NO_DEBUG
-    qDebug() << "ProcessThread::Command:: " << m_ParList;
+    qDebug() << "ProcessThread::Command:: " << parameters;
 #endif
 
-    m_process->start(m_programName, m_ParList);
+    m_process->startCommand(m_programName + " " + parameters);
+    //m_process->start(m_programName, m_ParList);
 
     exec();
     // emit signal, scan is end

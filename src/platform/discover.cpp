@@ -149,7 +149,7 @@ void Discover::fromListReturn(const QStringList ipAddr, QByteArray ipBuffer, QBy
 
     while (!buffStream.atEnd()) {
         buffLine = buffStream.readLine();
-        if (buffLine.startsWith(QLatin1String("RCVD")) || buffLine.startsWith(QLatin1String("RECV"))) {
+        if (buffLine.startsWith(u"RCVD") || buffLine.startsWith(u"RECV")) {
             emit fromListFinisched(ipAddr, true, ipBuffer);
             return;
         }
@@ -229,9 +229,9 @@ void Discover::currentCIDRValue(const QString parameters, QByteArray data)
     while (!currentValues.atEnd()) {
         currentLine = currentValues.readLine();
 
-        if (currentLine.startsWith(QLatin1String("RCVD"))
-                || currentLine.startsWith(QLatin1String("RECV"))
-                || currentLine.startsWith(QLatin1String("SENT"))) {
+        if (currentLine.startsWith(u"RCVD")
+                || currentLine.startsWith(u"RECV")
+                || currentLine.startsWith(u"SENT")) {
             emit cidrCurrentValue(parameters, currentLine);
         }
     }

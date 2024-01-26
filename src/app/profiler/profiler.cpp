@@ -27,30 +27,30 @@ Profiler::Profiler(ProfilerManager* parent)
 void Profiler::restoreValuesFromProfile(const QStringList parameters)
 {
     for (int index = 0; index < parameters.size(); ++index) {
-        if (parameters[index].startsWith(QLatin1String("-")) || parameters[index].startsWith(QLatin1String("--"))) {
-            if (!parameters[index].startsWith(QLatin1String("-PA"))
-                    && !parameters[index].startsWith(QLatin1String("-PS"))
-                    && !parameters[index].startsWith(QLatin1String("-PU"))
-                    && !parameters[index].startsWith(QLatin1String("-PO"))
-                    && !parameters[index].startsWith(QLatin1String("-PY"))
-                    && !parameters[index].startsWith(QLatin1String("-d"))
-                    && !parameters[index].startsWith(QLatin1String("--script"))) {
+        if (parameters[index].startsWith(u"-") || parameters[index].startsWith(u"--")) {
+            if (!parameters[index].startsWith(u"-PA")
+                    && !parameters[index].startsWith(u"-PS")
+                    && !parameters[index].startsWith(u"-PU")
+                    && !parameters[index].startsWith(u"-PO")
+                    && !parameters[index].startsWith(u"-PY")
+                    && !parameters[index].startsWith(u"-d")
+                    && !parameters[index].startsWith(u"--script")) {
                 bool isFounded = false;
 
                 // check combo options
-                QHash<QString, QPair<QComboBox*, int> >::const_iterator i = preLoadComboList.find(parameters[index]);
+                QHash<QString, QPair<QComboBox*, int> >::const_iterator i = preLoadComboList.constFind(parameters[index]);
 
-                if (i != preLoadComboList.end()) {
+                if (i != preLoadComboList.constEnd()) {
                     // value founded
                     (*i).first->setCurrentIndex((*i).second);
 
                     if (index < parameters.size() - 1) {
                         // check if the next string value is an integer
-                        if (!parameters[index + 1].startsWith(QLatin1String("-")) && !parameters[index + 1].startsWith(QLatin1String("--"))) {
+                        if (!parameters[index + 1].startsWith(u"-") && !parameters[index + 1].startsWith(u"--")) {
                             // recover combo value
-                            QHash<QString, QLineEdit*>::const_iterator j = lineEditList.find(parameters[index]);
+                            QHash<QString, QLineEdit*>::const_iterator j = lineEditList.constFind(parameters[index]);
 
-                            if (j != lineEditList.end()) {
+                            if (j != lineEditList.constEnd()) {
                                 (*j)->setText(parameters[index + 1]);
                                 if (!(*j)->isEnabled()) {
                                     (*j)->setEnabled(true);
@@ -64,25 +64,25 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
 
                 if (!isFounded) {
                     // check checkBox options
-                    QHash<QString, QPair<QCheckBox*, QString> >::const_iterator i = preLoadCheckBoxList.find(parameters[index]);
+                    QHash<QString, QPair<QCheckBox*, QString> >::const_iterator i = preLoadCheckBoxList.constFind(parameters[index]);
 
-                    if (i != preLoadCheckBoxList.end()) {
+                    if (i != preLoadCheckBoxList.constEnd()) {
                         (*i).first->setChecked(true);
                     }
 
                     if (index < parameters.size() - 1) {
                         // check if the next string value is an integer
-                        if (!parameters[index + 1].startsWith(QLatin1String("-")) && !parameters[index + 1].startsWith(QLatin1String("--"))) {
+                        if (!parameters[index + 1].startsWith(u"-") && !parameters[index + 1].startsWith(u"--")) {
                             // check value for line edit
-                            QHash<QString, QLineEdit*>::const_iterator j = lineEditList.find(parameters[index]);
+                            QHash<QString, QLineEdit*>::const_iterator j = lineEditList.constFind(parameters[index]);
 
-                            if (j != lineEditList.end()) {
+                            if (j != lineEditList.constEnd()) {
                                 (*j)->setText(parameters[index + 1]);
                             }
                             // check value for spin box
-                            QHash<QString, QSpinBox*>::const_iterator z = spinBoxList.find(parameters[index]);
+                            QHash<QString, QSpinBox*>::const_iterator z = spinBoxList.constFind(parameters[index]);
 
-                            if (z != spinBoxList.end()) {
+                            if (z != spinBoxList.constEnd()) {
                                 int value = parameters[index + 1].toInt();
                                 (*z)->setValue(value);
                             }
@@ -90,7 +90,7 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                     }
                 }
             } else {
-                if (!parameters[index].startsWith(QLatin1String("--script"))) {
+                if (!parameters[index].startsWith(u"--script")) {
                     // parameter with value on append
                     QString token = parameters[index];
                     QString option = parameters[index];
@@ -100,31 +100,31 @@ void Profiler::restoreValuesFromProfile(const QStringList parameters)
                     option.remove(',');
                     token.remove(option);
 
-                    QHash<QString, QPair<QCheckBox*, QString> >::const_iterator i = preLoadCheckBoxList.find(option);
+                    QHash<QString, QPair<QCheckBox*, QString> >::const_iterator i = preLoadCheckBoxList.constFind(option);
 
-                    if (i != preLoadCheckBoxList.end()) {
+                    if (i != preLoadCheckBoxList.constEnd()) {
                         (*i).first->setChecked(true);
                     }
 
                     if (!token.isEmpty()) {
-                        QHash<QString, QLineEdit*>::const_iterator j = lineEditList.find(option);
+                        QHash<QString, QLineEdit*>::const_iterator j = lineEditList.constFind(option);
 
-                        if (j != lineEditList.end()) {
+                        if (j != lineEditList.constEnd()) {
                             (*j)->setText(token);
                         } else {
-                            QHash<QString, QSpinBox*>::const_iterator j = spinBoxList.find(option);
-                            if (j != spinBoxList.end()) {
+                            QHash<QString, QSpinBox*>::const_iterator j = spinBoxList.constFind(option);
+                            if (j != spinBoxList.constEnd()) {
                                 (*j)->setValue(token.toInt());
                             }
                         }
                     }
                 } else {
                     // nse script value
-                    if (parameters[index].startsWith(QLatin1String("--script-args="))) {
+                    if (parameters[index].startsWith(u"--script-args=")) {
                         QString values = parameters[index];
                         values.remove("--script-args=");
                         m_ui->m_dialogUi->comboNsePar->lineEdit()->setText(values);
-                    } else if (parameters[index].startsWith(QLatin1String("--script="))) {
+                    } else if (parameters[index].startsWith(u"--script=")) {
                         QString values = parameters[index];
                         values.remove("--script=");
 

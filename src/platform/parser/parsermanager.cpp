@@ -162,7 +162,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
             nseBuffer.append("|--" + tmpBufferLine + '\n');
         }
 
-        if (tmpBufferLine.startsWith(QLatin1String("Host script results:"))) {
+        if (tmpBufferLine.startsWith(u"Host script results:")) {
             nseBuffer.append("|--" + tmpBufferLine + '\n');
         }
 
@@ -178,7 +178,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         }
 
         if (!isInfoStringFounded
-                && tmpBufferLine.startsWith(QLatin1String("Host"))
+                && tmpBufferLine.startsWith(u"Host")
                 && !tmpBufferLine.contains("Host script results:")
                 && !tmpBufferLine.contains("Probes")) {
             bufferInfo.append(tmpBufferLine);
@@ -186,18 +186,18 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         }
 
         // check for nse subtree service
-        if (tmpBufferLine.startsWith(QLatin1String("|")) && !nseBuffer.isEmpty()) {
+        if (tmpBufferLine.startsWith(u"|") && !nseBuffer.isEmpty()) {
             QString tmpClean(tmpBufferLine);
-            if (tmpClean.startsWith(QLatin1String("|"))) {
+            if (tmpClean.startsWith(u"|")) {
                 tmpClean.remove('|');
             }
 
-            if (tmpClean.startsWith(QLatin1String("_"))) {
+            if (tmpClean.startsWith(u"_")) {
                 tmpClean.remove('_');
             }
 
             int pos;
-            while (tmpClean.startsWith(QLatin1String(" "))) {
+            while (tmpClean.startsWith(u" ")) {
                 // remove space at begin of string
                 pos = tmpClean.indexOf(" ");
                 if (pos == 0) {
@@ -233,12 +233,12 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         bufferInfoStream_line = bufferInfoStream.readLine();
 
         // check for specific device type
-        if (bufferInfoStream_line.startsWith(QLatin1String("Device type:")) && bufferInfoStream_line.contains("switch")) {
+        if (bufferInfoStream_line.startsWith(u"Device type:") && bufferInfoStream_line.contains("switch")) {
             mainScanTreeElem->setIcon(0, QIcon(QString::fromUtf8(":/images/images/hub.png")));
         }
 
         // check for Os guesses string (more specific)
-        if (bufferInfoStream_line.startsWith(QLatin1String("Aggressive OS guesses:"))) {
+        if (bufferInfoStream_line.startsWith(u"Aggressive OS guesses:")) {
 
             QString osInfo(bufferInfoStream_line.left(bufferInfoStream_line.indexOf("%")));
             osInfo = osInfo.remove("Aggressive OS guesses:");
@@ -291,20 +291,20 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
         QString service;
         QStringList serviceNseResult;
 
-        if (nseStreamLine.startsWith(QLatin1String("|--"))) {
+        if (nseStreamLine.startsWith(u"|--")) {
             service = nseStreamLine.remove("|--");
             nseStreamLine = nseStream.readLine();
         }
 
-        while (!nseStreamLine.startsWith(QLatin1String("|--")) && !nseStream.atEnd()) {
+        while (!nseStreamLine.startsWith(u"|--") && !nseStream.atEnd()) {
             if (!nseStreamLine.isEmpty()) {
                 serviceNseResult.append(nseStreamLine);
             }
             nseStreamLine = nseStream.readLine();
 
             // Save nse vulnerabilies url discovered
-            if ((nseStreamLine.startsWith(QLatin1String("http://"))
-                    || nseStreamLine.startsWith(QLatin1String("https://")))
+            if ((nseStreamLine.startsWith(u"http://")
+                    || nseStreamLine.startsWith(u"https://"))
                     && !nseStreamLine.contains(hostName)
                     && !nseStreamLine.contains("localhost")) {
                 parserObjectElem->setVulnDiscoverd(nseStreamLine);
@@ -438,7 +438,7 @@ void ParserManager::showParserObj(int hostIndex)
         root->setSizeHint(0, QSize(22, 22));
         root->setIcon(0, QIcon(QString::fromUtf8(":/images/images/messagebox_info.png")));
 
-        if (token.contains("OS") || token.startsWith(QLatin1String("Device type:"))) {
+        if (token.contains("OS") || token.startsWith(u"Device type:")) {
             QFont font = root->font(0);
             font.setBold(true);
             root->setFont(0, font);

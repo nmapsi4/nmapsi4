@@ -100,7 +100,7 @@ void PreferencesDialog::updateListWidgetItem()
 void PreferencesDialog::quit()
 {
     saveValues(); // save Options
-    emit accept();   // send accept signal and exit
+    accept();   // accept and exit
 }
 
 void PreferencesDialog::setDefaults()

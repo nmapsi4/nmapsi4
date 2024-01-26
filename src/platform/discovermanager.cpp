@@ -234,7 +234,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
 
         while (!stream.atEnd()) {
             QString line = stream.readLine();
-            if (((line.startsWith(QLatin1String("RECV")) && line.contains("completed")) || line.startsWith(QLatin1String("RCVD")))
+            if (((line.startsWith(u"RECV") && line.contains("completed")) || line.startsWith(u"RCVD"))
                     && line.contains(hostname[hostname.size() - 1])) {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
@@ -242,7 +242,7 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
                 packet->setToolTip(0, startRichTextTags + line + endRichTextTags);
                 packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
-            } else if (line.startsWith(QLatin1String("SENT")) && line.contains(hostname[hostname.size() - 1])) {
+            } else if (line.startsWith(u"SENT") && line.contains(hostname[hostname.size() - 1])) {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
                 packet->setToolTip(0, startRichTextTags + line + endRichTextTags);
@@ -424,7 +424,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 
     QRegExp ipv4(matchIpv4);
 
-    if ((data.startsWith(QLatin1String("RECV")) && data.contains("completed")) || data.startsWith(QLatin1String("RCVD"))) {
+    if ((data.startsWith(u"RECV") && data.contains("completed")) || data.startsWith(u"RCVD")) {
         qDebug() << "CIDR::Discover::CIDR::Current::UP:: " << data;
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
         m_listTreePackets.push_back(packet);
@@ -452,7 +452,7 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
         m_listTreePackets.push_back(packet);
 
-        if (data.startsWith(QLatin1String("SENT"))) {
+        if (data.startsWith(u"SENT")) {
             packet->setBackground(0, QBrush(QColor(221, 224, 163)));
         }
 
