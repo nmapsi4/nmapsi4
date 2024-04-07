@@ -52,7 +52,7 @@ const QString About::authors()
 
     authorsList.append("<strong>Francesco Cecconi</strong><br/>");
     authorsList.append(QApplication::tr("Maintainer and developer") + "<br/>");
-    authorsList.append("<a href=\"mailto:brand@nmapsi4.org\">brand@nmapsi4.org</a>");
+    authorsList.append("<a href=\"mailto:francesco.cecconi@gmail.com\">francesco.cecconi@gmail.com</a>");
 
     return authorsList;
 }
@@ -62,16 +62,13 @@ const QString About::support()
     QString supportList;
 
     supportList.append(QApplication::tr("HomePage") + "<br/>");
-    supportList.append("<a href=\"http://www.nmapsi4.org\">www.nmapsi4.org</a>");
+    supportList.append("<a href=\"https://github.com/nmapsi4/nmapsi4\">https://github.com/nmapsi4/nmapsi4</a>");
     supportList.append("<br/><br/>");
     supportList.append(QApplication::tr("Bug Tracking") + "<br/>");
-    supportList.append("<a href=\"http://bugs.nmapsi4.org\">bugs.nmapsi4.org</a>");
+    supportList.append("<a href=\"https://github.com/nmapsi4/nmapsi4/issues\">https://github.com/nmapsi4/nmapsi4/issues</a>");
     supportList.append("<br/><br/>");
     supportList.append(QApplication::tr("Sources Repository") + "<br/>");
     supportList.append("<a href=\"https://github.com/nmapsi4/nmapsi4\">github.com/nmapsi4/nmapsi4</a>");
-    supportList.append("<br/><br/>");
-    supportList.append(QApplication::tr("Forum") + "<br/>");
-    supportList.append("<a href=\"http://forum.nmapsi4.org\">forum.nmapsi4.org</a>");
 
     return supportList;
 }

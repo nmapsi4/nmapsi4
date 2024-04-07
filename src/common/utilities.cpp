@@ -70,12 +70,12 @@ void Utilities::aboutQt()
 
 void Utilities::showBugUrl()
 {
-    QDesktopServices::openUrl(QUrl("http://bugs.nmapsi4.org"));
+    QDesktopServices::openUrl(QUrl("https://github.com/nmapsi4/nmapsi4/issues"));
 }
 
 void Utilities::showHomepageUrl()
 {
-    QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
+    QDesktopServices::openUrl(QUrl("https://github.com/nmapsi4/nmapsi4"));
 }
 
 void Utilities::showDocumentationUrl()
@@ -85,5 +85,5 @@ void Utilities::showDocumentationUrl()
 
 void Utilities::showDonateUrl()
 {
-    QDesktopServices::openUrl(QUrl("http://www.nmapsi4.org"));
+    QDesktopServices::openUrl(QUrl("https://github.com/nmapsi4/nmapsi4"));
 }
