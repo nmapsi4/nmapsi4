@@ -105,7 +105,7 @@ void BookmarkManager::saveItemToBookmarks(QString value)
         // save list of address
         QStringList hostList = value.split(QChar(' '), Qt::KeepEmptyParts);
 
-        for (const QString & host : hostList) {
+        for (const QString & host : std::as_const(hostList)) {
             history_->addItemHistory(host, QDateTime::currentDateTime().toString("MMMM d yyyy - hh:mm:ss"));
         }
 

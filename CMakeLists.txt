@@ -23,7 +23,7 @@ if (NOT WIN32 AND NOT APPLE)
 	Quick
 	Qml
 	Gui
-	Core5Compat
+        Core5Compat
 	REQUIRED)
 else (NOT WIN32 AND NOT APPLE)
     FIND_PACKAGE(Qt6 6.4.0
@@ -37,7 +37,7 @@ else (NOT WIN32 AND NOT APPLE)
 	Quick
 	Qml
 	Gui
-	Core5Compat
+        Core5Compat
 	REQUIRED)
 endif (NOT WIN32 AND NOT APPLE)
 
@@ -46,7 +46,7 @@ include_directories(${QT_USE_FILE})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-nmapsi4.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nmapsi4.h )
 
-add_definitions(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING -DQT_NO_FOREACH)
+add_definitions(-O2 -Wall -Wextra -g -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_NO_URL_CAST_FROM_STRING -DQT_NO_FOREACH -DQT_DISABLE_DEPRECATED_UP_TO=0x050F00)
 
 if (WIN32)
     include(CMakeMinGWFindMake)

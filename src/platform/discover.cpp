@@ -50,7 +50,8 @@ QList<QNetworkInterface> Discover::getAllInterfaces(InterfaceOption option) cons
 
     QList<QNetworkInterface> interfacesWithAddress;
 
-    for (const QNetworkInterface & address : QNetworkInterface::allInterfaces()) {
+    auto interfaces = QNetworkInterface::allInterfaces();
+    for (const QNetworkInterface & address : std::as_const(interfaces)) {
         if (address.addressEntries().size()) {
             interfacesWithAddress.append(address);
         }

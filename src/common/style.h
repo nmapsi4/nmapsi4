@@ -27,9 +27,9 @@ static const char nofifyStyleSheet[] = "QToolButton { background-color: palette(
 // sidebar button width
 const int verticalButtonWidth = 25;
 
-static const char positiveBackground[] = "background: #C0FFC0;";
-static const char negativeBackground[] = "background: #FFC0C0;";
-static const char highIpNumberBackground[] = "background: #FFDCA8;";
+static const char positiveBackground[] = "background: #2cab5d;";
+static const char negativeBackground[] = "background: #f05656;";
+static const char highIpNumberBackground[] = "background: #f7be68;";
 static const char neutralBackground[] = "background: #fff;";
 
 static const char startRichTextTags[] = "<p><font>";

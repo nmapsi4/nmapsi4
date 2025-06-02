@@ -64,22 +64,22 @@ public:
         // check for wrong dns address
         // (http:// ftp:// sftp:// https://)[dns/ip]
         QString hostNew_(hostname);
-        if (hostname.startsWith(QLatin1String("http://"))) {
+        if (hostname.startsWith(u"http://")) {
             hostNew_.remove("http://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("https://"))) {
+        if (hostname.startsWith(u"https://")) {
             hostNew_.remove("https://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("ftp://"))) {
+        if (hostname.startsWith(u"ftp://")) {
             hostNew_.remove("ftp://");
             return hostNew_;
         }
 
-        if (hostname.startsWith(QLatin1String("sftp://"))) {
+        if (hostname.startsWith(u"sftp://")) {
             hostNew_.remove("sftp://");
             return hostNew_;
         }

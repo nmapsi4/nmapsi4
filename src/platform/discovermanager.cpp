@@ -92,7 +92,7 @@ void DiscoverManager::syncSettings()
 
 bool DiscoverManager::activeIpContains(const QString ipAddress)
 {
-    for (QTreeWidgetItem * item : m_listTreeItemDiscover) {
+    for (QTreeWidgetItem * item : std::as_const(m_listTreeItemDiscover)) {
         if (item->text(0) == ipAddress) {
             return true;
         }
@@ -108,7 +108,10 @@ void DiscoverManager::loadFoundInterfaces()
     m_discoverWidget->comboDiscover->insertItem(0, "Select Interface");
 
     Discover *discoverPtr = new Discover(m_userid);
-    for (const QNetworkInterface & interface : discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress)) {
+
+    auto interfaces = discoverPtr->getAllInterfaces(Discover::AllInterfaceWithAddress);
+
+    for (const QNetworkInterface & interface : std::as_const(interfaces)) {
         if (!interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
             //TODO: readable name for windows - humanReadableName()
             //ID is configurable on MS windows.
@@ -235,10 +238,11 @@ void DiscoverManager::endDiscoverIpsFromRange(const QStringList hostname, bool s
         while (!stream.atEnd()) {
             QString line = stream.readLine();
             if (((line.startsWith(u"RECV") && line.contains("completed")) || line.startsWith(u"RCVD"))
-                    && line.contains(hostname[hostname.size() - 1])) {
+                    && line.contains(hostname[hostname.size() - 1]) && !line.contains(u"No route to host")) {
                 QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
                 packet->setText(0, line);
-                packet->setBackground(0, QBrush(QColor(163, 224, 163)));
+                //packet->setBackground(0, QBrush(QColor(163, 224, 163)));  QBrush(QColor(27, 117, 9)
+                packet->setBackground(0, QBrush(QColor(27, 117, 9)));
                 packet->setToolTip(0, startRichTextTags + line + endRichTextTags);
                 packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
                 m_listTreePackets.push_back(packet);
@@ -301,7 +305,9 @@ void DiscoverManager::scanSingleDiscoveredIp()
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        for (QTreeWidgetItem * item : m_discoverWidget->treeDiscover->selectedItems()) {
+        auto items = m_discoverWidget->treeDiscover->selectedItems();
+
+        for (QTreeWidgetItem * item : std::as_const(items)) {
             m_ui->updateComboHostnameProperties();
             m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
@@ -315,7 +321,7 @@ void DiscoverManager::scanAllDiscoveredIps()
         startSelectProfilesDialog();
         Notify::startButtonNotify(m_ui->m_collections->m_collectionsButton.value("scan-sez"));
 
-        for (QTreeWidgetItem * item : m_listTreeItemDiscover) {
+        for (QTreeWidgetItem * item : std::as_const(m_listTreeItemDiscover)) {
             m_ui->updateComboHostnameProperties();
             m_ui->m_scanWidget->hostEdit->insertItem(0, item->text(0));
             m_ui->startScan();
@@ -424,11 +430,12 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
 
     QRegExp ipv4(matchIpv4);
 
-    if ((data.startsWith(u"RECV") && data.contains("completed")) || data.startsWith(u"RCVD")) {
+    if ((data.startsWith(u"RECV") && data.contains("completed")) || (data.startsWith(u"RCVD") && !data.contains(u"No route to host"))) {
         qDebug() << "CIDR::Discover::CIDR::Current::UP:: " << data;
         QTreeWidgetItem *packet = new QTreeWidgetItem(m_discoverWidget->treeTracePackets);
         m_listTreePackets.push_back(packet);
-        packet->setBackground(0, QBrush(QColor(163, 224, 163)));
+        //packet->setBackground(0, QBrush(QColor(163, 224, 163)));
+        packet->setBackground(0, QBrush(QColor(27, 117, 9)));
         packet->setText(0, data);
         packet->setToolTip(0, startRichTextTags + data + endRichTextTags);
         packet->setIcon(0, QIcon(QString::fromUtf8(":/images/images/document-preview-archive.png")));
@@ -453,7 +460,8 @@ void DiscoverManager::currentDiscoverIpsFromCIDR(const QString parameters, const
         m_listTreePackets.push_back(packet);
 
         if (data.startsWith(u"SENT")) {
-            packet->setBackground(0, QBrush(QColor(221, 224, 163)));
+            //packet->setBackground(0, QBrush(QColor(221, 224, 163)));
+            packet->setBackground(0, QBrush(QColor(255, 134, 12)));
         }
 
         packet->setText(0, data);

@@ -161,7 +161,7 @@ void NseManager::nseTreeAvailRestoreValues()
         memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseAvail);
     }
 
-    for (const QString & token : m_nseScriptAvailList) {
+    for (const QString & token : std::as_const(m_nseScriptAvailList)) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeAvail);
         m_itemNseAvail.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -177,7 +177,7 @@ void NseManager::nseTreeActiveRestoreValues()
         memory::freelist<QTreeWidgetItem*>::itemDeleteAll(m_itemNseActive);
     }
 
-    for (const QString & token : m_nseScriptActiveList) {
+    for (const QString & token : std::as_const(m_nseScriptActiveList)) {
         QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_dialogUi->nseTreeActive);
         m_itemNseActive.push_front(root);
         root->setSizeHint(0, QSize(22, 22));
@@ -219,7 +219,7 @@ void NseManager::nseTreeRemoveItem()
 
 void NseManager::nseTreeResetItem()
 {
-    for (const QString & token : m_nseScriptActiveList) {
+    for (const QString & token : std::as_const(m_nseScriptActiveList)) {
         m_nseScriptAvailList.append(token);
     }
     m_nseScriptActiveList.clear();

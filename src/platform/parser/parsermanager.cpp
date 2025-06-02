@@ -168,7 +168,7 @@ PObject* ParserManager::parserCore(const QStringList parList, QByteArray StdoutS
 
         bool isInfoStringFounded = false;
         // check for specific info
-        for (const QString& infoString : infoParserStringList) {
+        for (const QString& infoString : std::as_const(infoParserStringList)) {
             if (tmpBufferLine.startsWith(infoString)) {
                 bufferInfo.append(tmpBufferLine);
                 bufferInfo.append("\n");
@@ -629,7 +629,7 @@ void ParserManager::showParserObjPlugins(int hostIndex)
     }
 
     // show lookUp info
-    for (PObjectLookup * elem : m_parserObjUtilList) {
+    for (PObjectLookup * elem : std::as_const(m_parserObjUtilList)) {
         if (m_parserObjList[hostIndex]->getId() == elem->getId()) {
             for (const QString& token : elem->getInfoLookup()) {
                 QTreeWidgetItem *root = new QTreeWidgetItem(m_ui->m_scanWidget->treeLookup);
