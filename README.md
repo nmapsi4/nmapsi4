@@ -47,10 +47,7 @@ SourceForge: <https://sourceforge.net/projects/nmapsi/>
 
 ## Info for admin desktop file:
 
-nmapsi4-admin.desktop uses by default kdesu for execute nmap with root uid. 
-
-However, it is possible change kdesu in the desktop file:
-nmapsi4-admin.desktop: Exec=kdesu QT_WIDGETS_RHI=1 QTWEBENGINE_DISABLE_SANDBOX=1 nmapsi4 with Exec=[what you want] nmapsi4
+nmapsi4-admin.desktop uses by default **pkexec** with a specific PolicyKit (src/policy/org.nmapsi4.Nmapsi4.policy) for execute nmap with root uid. 
 
 ## Contributing
 
